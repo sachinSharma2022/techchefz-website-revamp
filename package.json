@@ -9,9 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "cookies-next": "^4.1.0",
+    "js-base64": "^3.7.5",
+    "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.0.4"
+    "sass": "^1.69.5"
   },
   "devDependencies": {
     "eslint": "^8",
