@@ -1,0 +1,18 @@
+@import "~/styles/partials/config";
+
+.landingBannerStyle {
+  padding: 0 7.5rem 0 7.5rem;
+  .title {
+    font-size: 6.25rem;
+    font-weight: 500;
+    line-height: 7rem;
+    margin: 5rem 0 5rem;
+    .titleHighlight {
+      color: color(heading-liner);
+      background: linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}

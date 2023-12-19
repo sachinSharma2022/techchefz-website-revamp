@@ -1,4 +1,4 @@
-@import "../../../public/styles/partials/config";
+@import "../../../styles/partials/config";
 
 .base {
   display: inline-flex;
@@ -20,30 +20,30 @@
 
   &:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 0.125rem rgba(color(foreground), 0.5);
+    box-shadow: 0 0 0 0.125rem rgba(color(primary-blue), 0.5);
   }
 
   &:disabled {
     pointer-events: none;
-    border-color: color(border-foreground);
+    border-color: color(primary-blue);
     background-color: color(gray-medium);
     color: color(muted-background);
   }
 }
 
 .variant_default {
-  text-transform: uppercase;
   padding: 0;
   height: auto;
-
+  background-color: color(primary-blue);
+  color: color(primary-white);
   &:hover {
-    color: color(secondary-foreground);
-    background-color: color(secondary-background);
+    color: color(primary-blue);
+    background-color: color(heading-liner);
+    color: color(primary-white);
   }
 }
 
 .variant_defaultRed {
-  text-transform: uppercase;
   color: color(foreground);
   border: 0.063rem solid color(border);
   background-color: color(accent);
@@ -74,12 +74,14 @@
   height: 1.98rem;
   padding: 0.625rem 1.15rem;
   font-size: 0.75rem;
+  border-radius: 0.75rem;
 }
 
 .size_md {
-  height: 2.5rem;
-  padding: 1.5rem 1.2rem;
+  height: 3rem;
+  padding: 0px 2rem;
   font-size: 0.75rem;
+  border-radius: 0.75rem;
 }
 
 .size_number {
