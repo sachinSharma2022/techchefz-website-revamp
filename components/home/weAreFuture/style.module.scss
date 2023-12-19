@@ -5,6 +5,12 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 7.5rem;
+  @include mobile {
+    justify-content: start;
+    align-items: start;
+    margin-bottom: 2.5rem;
+  }
   .text {
     margin: 0;
     margin-bottom: 2.5rem;
@@ -13,15 +19,40 @@
     font-weight: 700;
     color: color(text-primary);
     opacity: 0.6;
+    @include mobile {
+      margin-bottom: 0;
+    }
+  }
+  .globalText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: text(xl-larger);
+    font-weight: 500;
+    line-height: 5rem;
+
+    img {
+      margin: 0 1rem;
+      border-radius: 7.5rem;
+      @include mobile {
+        display: none;
+      }
+    }
+    @include mobile {
+      font-size: text(xxxl);
+      line-height: 2.5rem;
+      margin-bottom: 0;
+      justify-content: start;
+    }
   }
   .title {
     font-size: text(xl-larger);
     font-weight: 500;
     line-height: 5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
+    @include mobile {
+      text-align: left;
+    }
     .titleHighlight {
       font-size: text(xl-larger);
       font-weight: 500;
@@ -35,6 +66,35 @@
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      @include mobile {
+        font-size: text(xxxl);
+        line-height: 2.5rem;
+      }
     }
+    @include mobile {
+      font-size: text(xxxl);
+      line-height: 2.5rem;
+    }
+  }
+}
+.datingText {
+  font-size: text(larger);
+  font-weight: 500;
+  line-height: 3.375rem;
+  @include mobile {
+    font-size: text(xl);
+    line-height: 1.875rem;
+  }
+}
+
+.aboutText {
+  font-size: text(lg);
+  font-weight: 500;
+  opacity: 0.6;
+  margin-bottom: text(larger);
+  @include mobile {
+    font-size: text(xl);
+    line-height: 1.875rem;
+    margin-bottom: 2.25rem;
   }
 }
