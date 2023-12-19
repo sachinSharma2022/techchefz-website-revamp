@@ -10,7 +10,7 @@ const LandingBanner = () => {
         <span className={styles.titleHighlight}>Through Data.</span>
       </h1>
 
-      <Button className="" variant="default" size="md">
+      <Button variant="blueBtn" size="md">
         Let’s Work Together
       </Button>
     </div>

@@ -54,14 +54,25 @@
   }
 }
 
-.variant_outline {
-  background-color: transparent;
-  color: color(muted-foreground);
-  border: 0.063rem solid color(muted-foreground);
+.variant_blueBtn {
+  background-color: color(primary-blue);
+  color: color(primary-white);
+  border: 0.063rem solid color(primary-blue);
 
   &:hover {
-    color: color(foreground);
-    background-color: color(secondary-background);
+    color: color(primary-blue);
+    background-color: transparent;
+  }
+}
+
+.variant_outline {
+  background-color: transparent;
+  color: color(primary-blue);
+  border: 0.063rem solid color(primary-blue);
+
+  &:hover {
+    color: color(primary-white);
+    background-color: color(primary-blue);
   }
 }
 
@@ -78,9 +89,9 @@
 }
 
 .size_md {
-  height: 3rem;
+  height: 3.75rem;
   padding: 0px 2rem;
-  font-size: 0.75rem;
+  font-size: text(lg);
   border-radius: 0.75rem;
 }
 
