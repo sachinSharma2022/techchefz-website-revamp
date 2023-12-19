@@ -1,28 +1,13 @@
-import Image from "next/image"
-import { cn } from "../../../lib/utils"
-import styles from "./style.module.scss"
+import Image from "next/image";
 
-function ImageCustom({
-  className,
-  containerStyle,
-  src,
-  height,
-  width,
-  alt,
-  layout,
-}) {
+import styles from "./style.module.scss";
+
+function ImageCustom({ src, height, width, alt }) {
   return (
-    <div className={cn(styles.imgContainerStyle, containerStyle)}>
-      <Image
-        src={`${process.env.NEXT_PUBLIC_SITE_BASE_URL}${API.imageBasePath}${src}`}
-        width={width}
-        height={height}
-        alt={alt || "theme image"}
-        className={cn(className)}
-        layout={layout}
-      />
+    <div className={`${styles.imgContainerStyle}`}>
+      <Image src={src} width={width} height={height} alt={alt} />
     </div>
-  )
+  );
 }
 
-export { ImageCustom }
+export { ImageCustom };
