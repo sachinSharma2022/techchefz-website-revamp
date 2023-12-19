@@ -81,9 +81,11 @@
   font-size: text(larger);
   font-weight: 500;
   line-height: 3.375rem;
+  padding-right: 17.5rem;
   @include mobile {
     font-size: text(xl);
     line-height: 1.875rem;
+    padding-right: 0;
   }
 }
 
