@@ -8,11 +8,11 @@ function AboutPage() {
     <div>
         <AboutBanner/>
        <div className='container'>
-        <div className='row d-flex justify-content-around'>
-            <div className='col-md-6 col-lg-6'>
+        <div className='row '>
+            <div className='col-md-6 col-lg-6 col-5'>
                 <h3>Our guiding lights in the dynamic tech landscape, fueling our dedication to innovation, excellence, and a brighter technological tomorrow.</h3>
             </div>
-            <div className='col-md-6 col-lg-5'>
+            <div className='col-md-6 col-lg-5 col-5'>
                 <h3>Our guiding lights in the dynamic tech landscape, fueling our dedication to innovation, excellence, and a brighter technological tomorrow.</h3>
             </div>
         </div>
