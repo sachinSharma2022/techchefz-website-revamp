@@ -2,4 +2,9 @@
 
 .sectionSpace{
     margin: 5rem 0 5rem;
+    padding: 0 8.5rem 0 7.8rem;
+
+    @include mobile{
+        padding: 0 1.25rem;
+    }
 }
