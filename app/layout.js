@@ -1,10 +1,9 @@
-import { Inter } from "next/font/google";
 import Header from "@/components/layouts/header";
 import Footer from "@/components/layouts/footer";
+import { aeonik, helvetica } from "../lib/fonts";
+import { cn } from "../lib/utils";
 import "bootstrap/dist/css/bootstrap.css";
 import "../styles/globals.scss";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -14,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={cn(aeonik.variable, helvetica.variable)}>
         <Header />
         {children}
         <Footer />

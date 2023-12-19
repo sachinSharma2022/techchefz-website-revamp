@@ -9,6 +9,7 @@ const HomePage = () => {
       <section className={styles.sectionSpace}>
         <LandingBanner />
       </section>
+      
       <section>
         <LandingPlayer />
       </section>
