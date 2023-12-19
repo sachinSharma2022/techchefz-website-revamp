@@ -1,26 +1,25 @@
 @import "~/styles/partials/config";
 
-.aboutBanner{
-    .bannerTitle{
+.aboutBanner {
+   .bannerTitle {
       margin: 3rem 4rem;
       width: 70%;
       font-weight: 500;
-      font-size: 4rem;
-        span{
-            color: color(heading-liner);
-        }
-    }
+      font-size: text(xl-larger);
+      span {
+         color: color(heading-liner);
+         font-size: text(xl-larger);
+      }
+   }
 
-    .bannerImg{
-        background: url("../../../public/Assets/img/about-bg.png");
-        // border: 1px solid red;
-        height: 100vh;
-       position: relative;
+   .bannerImg {
+      background: url("../../../public/Assets/img/about-bg.png");
+      height: 100vh;
+      position: relative;
 
-       img{
-        position: absolute;
-        bottom: 0;
-        
-       }
-    }
+      img {
+         position: absolute;
+         bottom: 0;
+      }
+   }
 }
