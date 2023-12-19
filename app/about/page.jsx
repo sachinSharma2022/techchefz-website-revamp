@@ -17,6 +17,7 @@ function AboutPage() {
             </div>
         </div>
        </div>
+       
     </div>
   )
 }
