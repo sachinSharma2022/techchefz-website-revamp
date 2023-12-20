@@ -1,8 +1,8 @@
-import Header from "@/components/layouts/header";
 import Footer from "@/components/layouts/footer";
+import Header from "@/components/layouts/header";
+import "bootstrap/dist/css/bootstrap.css";
 import { aeonik, helvetica } from "../lib/fonts";
 import { cn } from "../lib/utils";
-import "bootstrap/dist/css/bootstrap.css";
 import "../styles/globals.scss";
 
 export const metadata = {

@@ -1,19 +1,19 @@
 @import "../../styles/partials/config";
 
-.aboutHeading{
-    font-size: text(larger);
+.aboutHeading {
+  font-size: text(larger);
 
-    span{
-        font-size: text(larger);
-        // color: linear-gradient(118deg, color(primary-blue) 11.5%, color(heading-liner) 55.42%);
-        // color: linear-gradient(118deg, #1E8AF2 11.5%, #05BED7 55.42%);
-        color: color(heading-liner);
-    }
+  span {
+    font-size: text(larger);
+    color: color(heading-liner);
+  }
 }
-.aboutsubHeading{
-    font-size: text(xxxl);
+
+.aboutSubHeading {
+  font-size: text(xxxl);
 }
-.aboutParagraph{
-    font-size: text(normal);
-    opacity: 0.6;
+
+.aboutParagraph {
+  font-size: text(normal);
+  opacity: 0.6;
 }
