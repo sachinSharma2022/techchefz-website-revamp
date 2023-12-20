@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={cn(aeonik.variable, helvetica.variable)}>
         <Header />
-        {children}
+        <main className="main-style">{children}</main>
         <Footer />
       </body>
     </html>

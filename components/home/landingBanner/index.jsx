@@ -4,7 +4,7 @@ import { Button } from "../../ui/button";
 
 const LandingBanner = () => {
   return (
-    <section className={`${styles.landingBannerStyle} primary-padding`}>
+    <section className={`${styles.landingBannerStyle}`}>
       <h1 className={styles.title}>
         Humanizing <br /> Digital Experience <br />
         <span className={styles.titleHighlight}>Through Data.</span>

@@ -24,3 +24,13 @@
   @warn "Unknown '#{$key}' in $font-sizes.";
   @return null;
 }
+
+@function spacing($key) {
+  @if map-has-key($spacings, $key) {
+    @return map-get($spacings, $key);
+  }
+
+  @warn "Unknown '#{$key}' in $spacings.";
+  @return null;
+}
+
