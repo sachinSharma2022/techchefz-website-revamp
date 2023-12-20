@@ -18,9 +18,9 @@ const HomePage = () => {
         <WeAreFuture />
       </section>
 
-      {/* <section className={styles.sectionSpace}>
+      <section className={styles.sectionSpace}>
         <Service />
-      </section> */}
+      </section>
     </div>
   );
 };

@@ -6,7 +6,8 @@ import { Button } from "@/components/ui/button";
 const WeAreFuture = () => {
   return (
     <>
-      <div className={styles.futureTitle}>
+    <div className={styles.futureSpacing}>
+    <div className={styles.futureTitle}>
         <p className={styles.text}>We are a</p>
         <h2 className={styles.title}>
           Pioneering
@@ -38,6 +39,8 @@ const WeAreFuture = () => {
           </Button>
         </div>
       </div>
+    </div>
+      
     </>
   );
 };

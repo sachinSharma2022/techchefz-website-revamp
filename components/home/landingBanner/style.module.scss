@@ -1,7 +1,7 @@
 @import "~/styles/partials/config";
 
 .landingBannerStyle {
-  padding-inline: spacing(section-inline-padding);
+  padding: spacing(section-primary-padding);
 
   .title {
     font-size: text(xxl-larger);
@@ -9,7 +9,7 @@
     line-height: 7rem;
     margin: 0 0 5rem;
 
-    @include mobile{
+    @include mobile {
       font-size: text(larger);
       line-height: 3.5rem;
       margin: 0 0 2.188rem;
@@ -29,7 +29,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
 
-      @include mobile{
+      @include mobile {
         font-size: text(larger);
         line-height: 3.5rem;
       }
