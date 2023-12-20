@@ -2,6 +2,9 @@
 
 .landingBannerStyle {
   padding: spacing(section-primary-padding);
+  @include mobile {
+    padding: spacing(section-mob-padding);
+  }
 
   .title {
     font-size: text(xxl-larger);

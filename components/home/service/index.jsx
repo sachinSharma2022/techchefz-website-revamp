@@ -7,9 +7,54 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import styles from "./style.module.scss";
-import Image from "next/image";
+import { Icons } from "@/components/icons";
+import { Button } from "@/components/ui/button";
 
 const Service = () => {
+  const serviceCard = [
+    {
+      icon: <Icons.Transform width={64} height={64} />,
+      sbTitle: "Strategy & Digital Transformation",
+      sbText:
+        "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
+    },
+    {
+      icon: <Icons.Transform width={64} height={64} />,
+      sbTitle: "Product Engineering & Custom Development",
+      sbText:
+        "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
+    },
+    {
+      icon: <Icons.Transform width={64} height={64} />,
+      sbTitle: "Strategy & Digital Transformation",
+      sbText:
+        "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
+    },
+    {
+      icon: <Icons.Transform width={64} height={64} />,
+      sbTitle: "Strategy & Digital Transformation",
+      sbText:
+        "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
+    },
+    {
+      icon: <Icons.Transform width={64} height={64} />,
+      sbTitle: "Strategy & Digital Transformation",
+      sbText:
+        "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
+    },
+    {
+      icon: <Icons.Transform width={64} height={64} />,
+      sbTitle: "Strategy & Digital Transformation",
+      sbText:
+        "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
+    },
+    {
+      icon: <Icons.Transform width={64} height={64} />,
+      sbTitle: "Strategy & Digital Transformation",
+      sbText:
+        "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
+    },
+  ];
   const settings = {
     className: "center",
     centerPadding: "0px",
@@ -33,7 +78,7 @@ const Service = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
           arrows: true,
         },
@@ -52,28 +97,39 @@ const Service = () => {
 
   return (
     <section className={styles.serviceDetailsMain}>
-      <div className={`${styles.serviceOption} plan-slider`}>
+      <div className={styles.serviceGrid}>
+        <div className={styles.serviceHeading}>
+          <p className={styles.serviceText}>Service</p>
+          <h3 className={styles.serviceTitle}>
+            Exclusive development leveraging top notch technologies
+          </h3>
+          <Button variant="outline" size="md">
+          Our Solutions
+          </Button>
+        </div>
+
+        <div className={`${styles.desktopCards} ${styles.serviceOption} `}>
+          {serviceCard.map((data, index) => (
+            <div key={index} className={styles.serviceBox}>
+              <div className={styles.bgIcon}>{data.icon}</div>
+              <div className={styles.sbTitle}>{data.sbTitle}</div>
+              <div className={styles.sbText}>{data.sbText}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className={`${styles.serviceOption} service-mobile-slider`}>
         <Slider {...settings}>
-          <div>
-            <div className={styles.serviceBox}>
-              <div className={styles.bgIcon}>
-                <Image
-                  //src="/in/en/service/ride-sure/images/shield.svg"
-                  src=""
-                  alt=""
-                  width="160"
-                  height="160"
-                />
-              </div>
-              <div className={styles.sbTitle}>
-                Strategy & Digital Transformation
-              </div>
-              <div className={styles.sbText}>
-                We Provide A Humanized And Contextual Experience To Build An
-                Exclusive Digital Experience.
+          {serviceCard.map((data, index) => (
+            <div>
+              <div key={index} className={styles.serviceBox}>
+                <div className={styles.bgIcon}>{data.icon}</div>
+                <div className={styles.sbTitle}>{data.sbTitle}</div>
+                <div className={styles.sbText}>{data.sbText}</div>
               </div>
             </div>
-          </div>
+          ))}
         </Slider>
       </div>
     </section>
