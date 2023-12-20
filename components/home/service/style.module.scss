@@ -1,2 +1,132 @@
 @import "~/styles/partials/config";
 
+.ridePlanDetailsMain {
+  padding: 0;
+  margin-top: 1rem;
+
+  .planTitleMobileView {
+    padding-top: 1.5rem;
+    display: none;
+
+    @include mobile {
+      display: block;
+      font-family: font(secondary);
+      font-size: text(lg);
+    }
+  }
+
+  .ridePlanDetails {
+    background: color(background);
+    border: 0.0625rem solid color(muted-background);
+    position: relative;
+    padding: 2rem 3rem;
+    overflow: hidden;
+
+    @include mobile {
+      padding: 0rem 0 2rem;
+      border: none;
+      background-color: color(secondary-background);
+      overflow: visible;
+
+      button {
+        width: 100%;
+      }
+    }
+
+    .title {
+      font-size: text(xl);
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+
+      @include mobile {
+        background-color: color(border-foreground);
+        margin-left: -1.313rem;
+        margin-right: -1.313rem;
+        font-size: text(primary);
+        padding: 1.2rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    p {
+      width: 100%;
+      max-width: 52%;
+      font-size: text(ssm);
+      font-weight: 400;
+      color: color(muted-foreground);
+
+      @include mobile-tablet-p {
+        max-width: 100%;
+      }
+
+      @include mobile {
+        color: color(gray-light);
+      }
+    }
+
+    .bgIcon {
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      @include mobile-tablet-p {
+        display: none;
+      }
+    }
+  }
+
+  .ridePlanOption {
+    gap: 0 1.5rem;
+    margin-top: 1.2rem;
+    margin-right: -7.5rem;
+    margin-left: -7.5rem;
+    margin-bottom: 1.8rem;
+
+    @include mobile {
+      margin-right: 0;
+      margin-bottom: 1.5rem;
+      margin-left: 0;
+    }
+
+    .planBox {
+      text-align: center;
+      background: linear-gradient(
+        to bottom,
+        rgba(24, 24, 24, 0.6) 38.64%,
+        color(secondary-background) 68.39%
+      );
+      padding: 1.5rem 0.5rem;
+      border: 0.0625rem solid color(border-foreground);
+      margin-right: 1.6rem;
+      min-height: 8.6rem;
+
+      @include mobile {
+        margin-right: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(5, 5, 5, 0.9) 38.64%,
+          color(secondary-background) 68.39%
+        );
+      }
+
+      .sbTitle {
+        font-size: text(sm);
+        margin-top: 1rem;
+      }
+
+      .icons {
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 50%;
+        background-color: color(border-foreground);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        @include mobile {
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}
