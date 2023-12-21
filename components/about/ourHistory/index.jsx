@@ -9,7 +9,7 @@ const OurHistory = () => {
             <div className="row">
                <div className="col-md-6 col-md-5 mb-4">
                   <h6 className={styles.ourHistoryTitle}>Our History</h6>
-                  <h2 className={styles.ourHistoryHeading}>Tracing Innovation Through Time: Our IT Journey.</h2>
+                  <h3 className={styles.ourHistoryHeading}>Tracing Innovation Through Time: Our IT Journey.</h3>
                </div>
             </div>
 

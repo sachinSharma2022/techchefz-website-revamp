@@ -9,7 +9,7 @@ const WhatWeDo = () => {
             <div className="row">
                <div className="col-md-6 col-md-5 mb-4">
                   <h6 className={styles.weDoTitle}>What we do</h6>
-                  <h2 className={styles.weDoHead} >Empowering Innovation: Our Role in the Tech Industry.</h2>
+                  <h3 className={styles.weDoHead} >Empowering Innovation: Our Role in the Tech Industry.</h3>
                </div>
             </div>
 
