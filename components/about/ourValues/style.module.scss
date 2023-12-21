@@ -1,0 +1,13 @@
+@import "~/styles/partials/config";
+
+.ourValues{
+    padding: 3rem 2rem;
+    background-color: color(bg-soft);
+
+    .ourValuesTitle{
+        color: color(text-primary);
+        text-transform: uppercase;
+        opacity: 0.8;
+    }
+
+}

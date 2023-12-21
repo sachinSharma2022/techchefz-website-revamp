@@ -4,21 +4,30 @@ $fonts: (
 );
 
 $colors: (
+  "primary-background": #f1f1f1,
   "primary-white": #ffffff,
   "primary-black": #000000,
   "text-primary": #111111,
   "primary-blue": #06c,
   "heading-liner": #05bed7,
   "dark-gray": #1f1f1f,
+  "bg-soft": #f1f1f1,
 );
 
 $font-sizes: (
   "xxs": 0.875rem,
   "normal": 1rem,
-  "xl": 1.5rem,
   "lg": 1.25rem,
+  "xl": 1.5rem,  
   "larger": 2.7rem,
   "xxxl": 2rem,
   "xl-larger": 4rem,
   "xxl-larger": 6.25rem,
+);
+
+$spacings: (
+  "section-primary-padding": 8.75rem 7.5rem,
+  "section-inline-padding": 10rem,
+  "section-block-padding": 8.75rem,
+  "section-mob-padding": 5rem 1.25rem,
 );

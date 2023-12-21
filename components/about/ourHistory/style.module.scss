@@ -1,0 +1,10 @@
+@import "~/styles/partials/config";
+
+.ourHistory{
+    padding: 3rem 0;
+    .ourHistoryTitle{
+        color: color(text-primary);
+        text-transform: uppercase;
+        opacity: 0.8;
+    }
+}

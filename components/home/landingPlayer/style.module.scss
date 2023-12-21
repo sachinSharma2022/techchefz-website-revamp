@@ -1,2 +1,14 @@
 @import "~/styles/partials/config";
 
+.landingPlayerStyle {
+  
+  .playerBox {
+    object-fit: cover;
+    width: 100%;
+    height: 50.625rem;
+
+    @include mobile {
+      height: 13.188rem;
+    }
+  }
+}

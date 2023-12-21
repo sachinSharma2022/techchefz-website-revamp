@@ -1,2 +1,114 @@
 @import "~/styles/partials/config";
 
+.serviceDetailsMain {
+  padding: spacing(section-primary-padding);
+  background: color(primary-background);
+  @include mobile {
+    padding: spacing(section-mob-padding);
+  }
+  .serviceGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8.938rem;
+
+    @include mobile-tablet-p {
+      gap: 0 1rem;
+      display: unset;
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .serviceHeading {
+      @include mobile {
+        margin-bottom: 3.75rem;
+      }
+      .serviceText {
+        margin-bottom: text(normal);
+        font-size: text(normal);
+        font-weight: 700;
+        line-height: text(xl);
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+        @include mobile {
+          font-size: text(normal);
+          margin-bottom: 0.75rem;
+          font-weight: 400;
+        }
+      }
+      .serviceTitle {
+        font-size: 2.75rem;
+        font-weight: 500;
+        line-height: 3.375rem;
+        margin-bottom: 3.75rem;
+        @include mobile {
+          font-size: text(xxxl);
+          line-height: 2.5rem;
+          font-weight: 500;
+          margin-bottom: 2.25rem;
+        }
+      }
+    }
+    .desktopCards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0 1rem;
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+
+  .serviceOption {
+    .serviceBox {
+      text-align: center;
+      background-color: color(primary-white);
+      padding: text(xxxl);
+      margin-right: 1.6rem;
+      min-height: 8.6rem;
+      border-radius: text(xl);
+      margin-bottom: 1.25rem;
+      border: 0.125rem solid color(primary-white);
+
+      &:hover {
+        border: 0.125rem solid color(heading-liner);
+        cursor: pointer;
+      }
+
+      &:nth-child(even) {
+        position: relative;
+        top: 100px;
+      }
+
+      @include mobile {
+        margin-right: text(xl);
+        min-height: 18.5rem;
+        padding: text(lg);
+      }
+      .bgIcon {
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: start;
+      }
+
+      .sbTitle {
+        font-size: text(xl);
+        font-weight: 500;
+        margin-top: 1rem;
+        line-height: text(xxxl);
+        margin-bottom: 0.75rem;
+        text-align: left;
+        @include mobile {
+          font-size: text(lg);
+        }
+      }
+      .sbText {
+        font-weight: 400;
+        font-size: text(normal);
+        line-height: text(xxxl);
+        opacity: 0.8;
+        text-align: left;
+        @include mobile {
+          font-size: text(normal);
+        }
+      }
+    }
+  }
+}

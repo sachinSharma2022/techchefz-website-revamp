@@ -1,0 +1,35 @@
+@import "~/styles/partials/config";
+
+.whatWeDo{
+    padding: 3rem 0;
+    .weDoTitle{
+        color: color(text-primary);
+        text-transform: uppercase;
+        opacity: 0.8;
+    }
+    .workCardWrapper{
+        display: flex;
+        flex-wrap: wrap;
+        .workCard{
+            width: 40vh;
+            height: 19.25rem;
+            border: 2px solid color(heading-liner);
+            border-radius: 1.25rem;
+            padding: 2rem;
+            margin: 1rem 2rem 1rem 0rem;
+
+            &:hover{
+                border-color: black ;
+
+            }
+
+            h6{
+                font-size: text(xl);
+            }
+
+            p{
+                font-size: text(normal);
+            }
+        }
+    }
+}

@@ -1,8 +1,8 @@
-import Header from "@/components/layouts/header";
 import Footer from "@/components/layouts/footer";
+import Header from "@/components/layouts/header";
+import "bootstrap/dist/css/bootstrap.css";
 import { aeonik, helvetica } from "../lib/fonts";
 import { cn } from "../lib/utils";
-import "bootstrap/dist/css/bootstrap.css";
 import "../styles/globals.scss";
 
 export const metadata = {
@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={cn(aeonik.variable, helvetica.variable)}>
         <Header />
-        {children}
+        <main className="main-style">{children}</main>
         <Footer />
       </body>
     </html>

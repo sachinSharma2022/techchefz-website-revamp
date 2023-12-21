@@ -1,0 +1,32 @@
+@import "~/styles/partials/config";
+
+.ourResults {
+    padding: 2rem;
+
+    .ourResultsTitle{
+        color: color(text-primary);
+        text-transform: uppercase;
+        opacity: 0.8;
+    }
+   .resultCardWrapper {
+    display: flex;
+      .resultCard {
+         border: 2px solid rgba(color(text-primary),12%);
+         width: 16.875rem;
+         height: 13.87rem;
+         padding: 2rem;
+         background-color: color(bg-soft);
+         border-radius: 1.25rem;
+         margin: 1rem 2.5rem 1rem 0;
+         &:hover{
+            border-color: color(heading-liner);
+         }
+
+         .cardNum{
+            font-size: text(larger);
+            color: color(heading-liner);
+            margin-bottom: 0;
+         }
+      }
+   }
+}

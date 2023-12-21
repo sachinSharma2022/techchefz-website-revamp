@@ -1,24 +1,18 @@
-import React from "react";
 import LandingBanner from "@/components/home/landingBanner";
-import styles from "./style.module.scss";
 import LandingPlayer from "@/components/home/landingPlayer";
 import WeAreFuture from "@/components/home/weAreFuture";
+import Service from "@/components/home/service";
+import Projects from "@/components/home/projects";
 
 const HomePage = () => {
   return (
-    <div>
-      <section className={styles.sectionSpace}>
-        <LandingBanner />
-      </section>
-      
-      <section>
-        <LandingPlayer />
-      </section>
-
-      <section className={styles.sectionSpace}>
-        <WeAreFuture />
-      </section>
-    </div>
+    <>
+      <LandingBanner />
+      <LandingPlayer />
+      <WeAreFuture />
+      <Service />
+      <Projects />
+    </>
   );
 };
 

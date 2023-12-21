@@ -1,0 +1,9 @@
+@import "~/styles/partials/config";
+
+.numberStyle {
+  padding: spacing(section-primary-padding);
+  background: color(dark-gray);
+  @include mobile {
+    padding: spacing(section-mob-padding);
+  }
+}

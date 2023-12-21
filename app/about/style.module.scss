@@ -1,0 +1,19 @@
+@import "../../styles/partials/config";
+
+.aboutHeading {
+  font-size: text(larger);
+
+  span {
+    font-size: text(larger);
+    color: color(heading-liner);
+  }
+}
+
+.aboutSubHeading {
+  font-size: text(xxxl);
+}
+
+.aboutParagraph {
+  font-size: text(normal);
+  opacity: 0.6;
+}
