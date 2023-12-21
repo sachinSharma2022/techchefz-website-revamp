@@ -1,13 +1,38 @@
 @import "~/styles/partials/config";
 
 .ourValues{
-    padding: 3rem 2rem;
+    padding: spacing(section-primary-padding);
     background-color: color(bg-soft);
 
     .ourValuesTitle{
         color: color(text-primary);
         text-transform: uppercase;
         opacity: 0.8;
+    }
+
+    .ourValuesContent{
+        margin-top: 5rem;
+        // border: 1px solid red;
+
+        .ourValuesText{
+            font-size: text(lg);
+            opacity: 0.6;
+        }
+
+        .ourValuesAccordiaon{
+            .accordiaonHead{
+                width: 100%;
+                text-align: left;
+                font-size: text(xl);
+                font-weight: 500;
+                // border: 1px solid red;
+                padding: 1.25rem 0;
+                border-bottom: 1px solid rgba(17, 17, 17, 0.12);
+            }
+            .accordiaonBody{
+                padding: 1.25rem 0;
+            }
+        }
     }
 
 }

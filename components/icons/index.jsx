@@ -15,8 +15,9 @@ export const Icons = {
           fill="#EDEDED"
         />
       </g>
-    </svg>
+    </svg>    
   ),
+  
   Transform: ({ size, ...props }) => (
     <svg
       viewBox="0 0 64 64"
