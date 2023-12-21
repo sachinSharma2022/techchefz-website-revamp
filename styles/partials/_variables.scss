@@ -4,6 +4,7 @@ $fonts: (
 );
 
 $colors: (
+  "primary-background": #f1f1f1,
   "primary-white": #ffffff,
   "primary-black": #000000,
   "text-primary": #111111,
@@ -29,4 +30,5 @@ $spacings: (
   "section-primary-padding": 8.75rem 7.5rem,
   "section-inline-padding": 10rem,
   "section-block-padding": 8.75rem,
+  "section-mob-padding": 5rem 1.25rem,
 );

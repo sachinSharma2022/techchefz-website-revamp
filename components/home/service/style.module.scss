@@ -2,18 +2,80 @@
 
 .serviceDetailsMain {
   padding: spacing(section-primary-padding);
-  background: #f1f1f1;
+  background: color(primary-background);
+  @include mobile {
+    padding: spacing(section-mob-padding);
+  }
+  .serviceGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8.938rem;
+
+    @include mobile-tablet-p {
+      gap: 0 1rem;
+      display: unset;
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .serviceHeading {
+      @include mobile {
+        margin-bottom: 3.75rem;
+      }
+      .serviceText {
+        margin-bottom: text(normal);
+        font-size: text(normal);
+        font-weight: 700;
+        line-height: text(xl);
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+        @include mobile {
+          font-size: text(normal);
+          margin-bottom: 0.75rem;
+          font-weight: 400;
+        }
+      }
+      .serviceTitle {
+        font-size: 2.75rem;
+        font-weight: 500;
+        line-height: 3.375rem;
+        margin-bottom: 3.75rem;
+        @include mobile {
+          font-size: text(xxxl);
+          line-height: 2.5rem;
+          font-weight: 500;
+          margin-bottom: 2.25rem;
+        }
+      }
+    }
+    .desktopCards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0 1rem;
+      @include mobile {
+        display: none;
+      }
+    }
+  }
 
   .serviceOption {
     .serviceBox {
       text-align: center;
       background-color: color(primary-white);
       padding: text(xxxl);
-      border: 0.0625rem solid color(border-foreground);
       margin-right: 1.6rem;
       min-height: 8.6rem;
       border-radius: text(xl);
-      border: 0.125rem solid color(primary-blue);
+      margin-bottom: 1.25rem;
+      border: 0.125rem solid color(primary-white);
+
+      &:hover {
+        border: 0.125rem solid color(heading-liner);
+        cursor: pointer;
+      }
+
+      &:nth-child(even) {
+        position: relative;
+        top: 100px;
+      }
 
       @include mobile {
         margin-right: text(xl);
@@ -22,8 +84,8 @@
       }
       .bgIcon {
         margin-bottom: 2rem;
-        img {
-        }
+        display: flex;
+        align-items: start;
       }
 
       .sbTitle {
