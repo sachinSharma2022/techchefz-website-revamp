@@ -1,12 +1,16 @@
+
 import React from 'react';
-import styles from "./style.module.scss";
 import Link from 'next/link';
-import { Button } from 'bootstrap';
+import styles from "./style.module.scss";
+import { Button } from '@/components/ui/button';
+import { ImageCustom } from '@/components/ui/imageCustom';
 
 const Header = () => {
   return (
     <header className={styles.headerMain}>
-      <div className={styles.logo}></div>
+      <div className={styles.logo}>
+        <ImageCustom src="/images/logo.svg" width={100} height={100} alt="" />
+      </div>
       <nav>
         <ul>
           <li><Link href="/">About Us</Link></li>
@@ -18,7 +22,7 @@ const Header = () => {
       </nav>
       <div className={styles.headerRight}>
         <div className={styles.modeBtn}></div>
-        <Button variant="blueBtn" size="md">Estimate Project</Button>
+        <Button variant="blueBtn" size="sm">Estimate Project</Button>
       </div>
     </header>
   )
