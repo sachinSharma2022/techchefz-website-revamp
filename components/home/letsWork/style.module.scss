@@ -108,8 +108,10 @@
         display: flex;
         justify-content: end;
         img {
-          width: 30rem;
+          width: 38rem;
           height: 38.5rem;
+          object-fit: cover;
+          border-radius: 0.75rem;
           @include mobile {
             display: none;
           }

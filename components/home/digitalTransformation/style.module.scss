@@ -11,6 +11,10 @@
     @include mobile {
       margin-bottom: 2.5rem;
     }
+    .servicesBtn{
+      display: flex;
+      justify-content: end;
+    }
   }
 
   .ProjectHighlight {

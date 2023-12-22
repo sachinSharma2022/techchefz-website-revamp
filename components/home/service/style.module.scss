@@ -49,7 +49,7 @@
     .desktopCards {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 0 1rem;
+      gap: 1rem 2.5rem;
       @include mobile {
         display: none;
       }
@@ -61,10 +61,8 @@
       text-align: center;
       background-color: color(primary-white);
       padding: text(xxxl);
-      margin-right: 1.6rem;
       min-height: 8.6rem;
       border-radius: text(xl);
-      margin-bottom: 1.25rem;
       border: 0.125rem solid color(primary-white);
 
       &:hover {
