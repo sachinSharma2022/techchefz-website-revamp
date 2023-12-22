@@ -1,0 +1,86 @@
+@import "~/styles/partials/config";
+
+.ourTeam {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 4rem 0;
+
+   .ourTeamTitle {
+      font-size: text(normal);
+      opacity: 0.6;
+      letter-spacing: 3.2px;
+      text-transform: uppercase;
+   }
+   .buttonWrapper{
+    border: 2px solid color(heading-liner);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+
+    .teamButton1{
+        background-color: color(info-blue);
+        color: color(primary-white);
+        border-radius: 0.5rem;
+        padding: 0.75rem;     
+        font-size: text(normal);
+        font-weight: 500;
+        width: 50%;   
+    }
+    .teamButton2{
+        color: color(primary-black);
+        padding: 0.75rem; 
+        width: 50%;   
+        font-size: text(normal);
+        font-weight: 500;
+    }
+   }
+   .teamCards {
+      display: flex;
+      gap: 40px;
+      margin-top: 3rem;
+
+      .teamCardBg {
+         border: 1px solid #4cc3da;
+         background: linear-gradient(328deg, #4cc3da 20.24%, #3376d9 49.39%, #2720a9 102.1%);
+         background-blend-mode: soft-light, normal;
+         height: 26.063rem;
+         width: 19.688rem;
+         border-radius: 0.7rem;
+         color: color(primary-white);
+
+         .teamCardContent {
+            position: relative;
+            height: 100%;
+
+            .cardHead {
+               display: flex;
+               justify-content: space-between;
+               // border: 1px solid red;
+               padding: 1rem 0.8rem;
+
+               h6 {
+                  font-size: text(xl);
+                  font-style: normal;
+                  font-weight: 500;
+               }
+               p {
+                  font-size: text(lg);
+                  font-weight: 400;
+                  opacity: 0.6;
+               }
+            }
+            .linkdinIcon{
+                position: absolute;
+                bottom: 2rem;
+                left: 1rem;
+            }
+            img {
+               position: absolute;
+               bottom: 0;
+               right: 0;
+               border-radius: 0.7rem;
+            }
+         }
+      }
+   }
+}

@@ -1,35 +1,57 @@
 @import "~/styles/partials/config";
 
-.whatWeDo{
-    padding: 3rem 0;
-    .weDoTitle{
-        color: color(text-primary);
-        text-transform: uppercase;
-        opacity: 0.8;
-    }
-    .workCardWrapper{
-        display: flex;
-        flex-wrap: wrap;
-        .workCard{
-            width: 40vh;
-            height: 19.25rem;
-            border: 2px solid color(heading-liner);
-            border-radius: 1.25rem;
-            padding: 2rem;
-            margin: 1rem 2rem 1rem 0rem;
+.whatWeDo {
+   padding: 3rem 0;
+   // border: 1px solid red;
+   .weDoTitle {
+      color: color(text-primary);
+      text-transform: uppercase;
+      opacity: 0.8;
+   }
+   .workCardWrapper {
+      display: flex;
+      flex-wrap: wrap;
+      .workCard {
+         width: 40vh;
+         height: 19.25rem;
+         border: 2px solid rgba(17, 17, 17, 0.12);
+         border-radius: 1.25rem;
+         padding: 2rem;
+         margin: 1rem 2rem 1rem 0rem;
+         position: relative;
+         cursor: pointer;
+         transition: 0.3;
 
-            &:hover{
-                border-color: black ;
+         &:hover {
+            border-color: color(heading-liner);
 
+            p {
+               display: block;
+               position: relative;
+               transform: translateY(-1rem);
             }
 
+            .workCardIcon {
+               display: none;
+            }
+            
             h6{
-                font-size: text(xl);
-            }
+                transform: translateY(-7rem);
 
-            p{
-                font-size: text(normal);
             }
-        }
-    }
+         }
+
+         h6 {
+            font-size: text(xl);
+            position: relative;
+            top: 40%;
+            width: 50%;
+         }
+
+         p {
+            font-size: text(normal);
+            display: none;
+         }
+      }
+   }
 }
