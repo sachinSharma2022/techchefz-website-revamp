@@ -5,6 +5,7 @@ import { Disclosure } from "@headlessui/react";
 
 import styles from "./style.module.scss";
 import { ImageCustom } from "@/components/ui/imageCustom";
+import { Icons } from "@/components/icons";
 
 const OurValues = () => {
    const accordianData = [
@@ -49,7 +50,7 @@ const OurValues = () => {
                      <div className={styles.ourValuesAccordiaon}>
                         {accordianData.map((data, index)=>(
                             <Disclosure key={index}>
-                           <Disclosure.Button className={styles.accordiaonHead}>{data.title} </Disclosure.Button>
+                           <Disclosure.Button className={styles.accordiaonHead}>{data.title} <Icons.ArrowDown  /> </Disclosure.Button>
                            <Disclosure.Panel className={styles.accordiaonBody}>
                             {data.content}
                            </Disclosure.Panel>

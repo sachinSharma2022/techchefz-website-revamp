@@ -1,27 +1,28 @@
 import React from "react";
 
 import styles from "./style.module.scss";
+import { Icons } from "@/components/icons";
 
 const OurResults = () => {
    const resultCardData = [
       {
          number: "4+",
-         icon: "Icon",
+         icon: <Icons.Graph width={36} height={36} />,
          title: "Years of Experience in Market.",
       },
       {
-         number: "4+",
-         icon: "Icon",
+         number: "1M+",
+         icon: <Icons.Graph width={36} height={36} />,
          title: "Users growth in marketplace.",
       },
       {
-         number: "4+",
-         icon: "Icon",
+         number: "300%",
+         icon: <Icons.Graph width={36} height={36} />,
          title: "Years of Experience in Market.",
       },
       {
-         number: "4+",
-         icon: "Icon",
+         number: "120%",
+         icon: <Icons.Graph width={36} height={36} />,
          title: "Years of Experience in Market.",
       },
    ];
@@ -44,14 +45,12 @@ const OurResults = () => {
             <div className={styles.resultCardWrapper}>
                {resultCardData.map((data, index) => (
                   <div key={index} className={styles.resultCard}>
-                     <div className="d-flex justify-content-between mb-5">
-                        <h6 className={styles.cardNum}>{data.number} </h6> <p className={styles.cardNum}>{data.icon} </p>{" "}
+                     <div className="d-flex justify-content-between align-items-center mb-5">
+                        <h6 className={styles.cardNum}>{data.number} </h6> <p className={styles.cardNum}>{data.icon} </p>
                      </div>
                      <p>{data.title} </p>
                   </div>
                ))}
-
-              
             </div>
          </div>
       </section>

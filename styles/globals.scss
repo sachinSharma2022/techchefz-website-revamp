@@ -16,11 +16,12 @@ h6 {
   font-family: font(primary);
 }
 
-html, body{
+html,
+body {
   font-family: font(secondary);
 }
 .service-mobile-slider {
-  @include desktop{
+  @include desktop {
     display: none;
   }
   .slick-slider {
@@ -113,26 +114,98 @@ html, body{
   }
 }
 
-.primary-padding{
+.primary-padding {
   padding: 0 8.5rem 0 7.8rem;
 
-  @include mobile{
-      padding: 0 1.25rem;
+  @include mobile {
+    padding: 0 1.25rem;
   }
 }
 
-.modeBtn{
+.modeBtn {
   margin: 0 1rem;
-  input{
+  input {
     border: 0.063rem solid color(text-primary);
 
-    &:focus{
+    &:focus {
       box-shadow: none;
       border: 0.063rem solid color(text-primary);
     }
-    &:checked{
+    &:checked {
       background-color: color(text-primary);
       border-color: color(text-primary);
     }
   }
+}
+
+.ourHistorySlider {
+  // border: 1px solid red;
+  .slick-prev:before,
+  .slick-next:before {
+    background-color: color(primary-blue);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+  }
+  .slick-prev {
+    left: 1px;
+    top: 15rem;
+    z-index: 999;
+    background: url("../public/images/img/prev.svg");
+    background-size: contain;
+    // fill: url("../public/images/img/prev.svg");
+  }
+  .slick-next {
+    top: 15rem;
+    left: 6rem;
+    background: url("../public/images/img/next.svg");
+  }
+  .slick-prev.slick-disabled:before,
+  .slick-next.slick-disabled:before {
+    border: 1px solid rgba(17, 17, 17, 0.2);
+    opacity: 0.6;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background: color(primary-white);
+    color: black;
+  }
+
+  .slick-dots {
+    bottom: -7rem;
+    border-bottom: 1px dashed #a0a0a0;
+    width: 100vw;
+    left: -9%;
+
+    li {
+      margin: 0 6rem;
+    }
+  }
+
+  .slick-dots li button:before {
+    font-size: 1rem;
+    top: 0.7rem;
+    z-index: 99;
+  }
+  .slick-dots li.slick-active button:before {
+    opacity: 0.75;
+    color: color(info-blue);
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
 }
