@@ -3,6 +3,7 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import Link from "next/link";
 import { Icons } from "@/components/icons";
 import styles from "./style.module.scss";
+import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   return (
@@ -40,7 +41,10 @@ const Footer = () => {
 
             <div className={styles.subscribe}>
               <h4>Stay Ahead of the Tech Curve</h4>
-              <form action=""></form>
+              <div className={styles.formFlex}>
+                <input type="text" />
+                <Button variant="blueBtn" />
+              </div>
             </div>
           </div>
         </div>
