@@ -2,8 +2,134 @@
 
 .numberStyle {
   padding: spacing(section-primary-padding);
-  background: color(dark-gray);
+  background: color(primary-background);
   @include mobile {
     padding: spacing(section-mob-padding);
+  }
+  .careerRow {
+    margin-bottom: 5rem;
+    @include mobile {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  .ProjectHighlight {
+    font-size: text(normal);
+    font-weight: 700;
+    margin-bottom: text(lg);
+    opacity: 0.6;
+    text-transform: uppercase;
+    @include mobile {
+      margin-bottom: 0.75rem;
+    }
+  }
+  .datingText {
+    font-size: 2.75rem;
+    font-weight: 500;
+    line-height: 3.375rem;
+    padding-right: 17.5rem;
+    @include mobile {
+      font-size: text(xxxl);
+      line-height: 2.5rem;
+      padding-right: 0;
+      margin-bottom: text(lg);
+    }
+  }
+
+  .ourNumberMain {
+    .ourNumberGrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8.938rem;
+
+      @include mobile-tablet-p {
+        gap: 0 1rem;
+        display: unset;
+        grid-template-columns: repeat(1, 1fr);
+      }
+      .ourNumbersImg {
+        img {
+          width: 31.5rem;
+          height: 40.688rem;
+          flex-shrink: 0;
+          border-radius: 0.75rem;
+        }
+        @include mobile {
+          display: none;
+        }
+      }
+
+      .desktopCards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+        @include mobile {
+          display: none;
+        }
+      }
+    }
+    .ourNumbersText {
+      margin-bottom: text(normal);
+      font-size: text(lg);
+      font-weight: 400;
+      line-height: 1.875rem;
+      letter-spacing: 0.2rem;
+      margin-bottom: 3.75rem;
+      @include mobile {
+        font-size: text(normal);
+        margin-bottom: 2.75rem;
+        font-weight: 400;
+      }
+    }
+    .ourNumberOption {
+      .serviceBox {
+        text-align: center;
+        background-color: color(primary-white);
+        padding: text(xxxl);
+        border-radius: text(xl);
+        border: 0.125rem solid color(primary-white);
+
+        &:hover {
+          border: 0.125rem solid color(heading-liner);
+          cursor: pointer;
+        }
+
+        @include mobile {
+          margin-right: text(xl);
+          min-height: 18.5rem;
+          padding: text(lg);
+        }
+        .numberCardFlex {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: text(xxxl);
+          .sbTitle {
+            font-size: 2.75rem;
+            font-weight: 500;
+            min-height: 2.75rem;
+            color: color(heading-liner);
+            background: linear-gradient(
+              118deg,
+              color(primary-blue) 11.5%,
+              color(heading-liner) 55.42%
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+        .sbText {
+          font-weight: 400;
+          font-size: text(lg);
+          line-height: 1.875rem;
+          opacity: 0.8;
+          text-align: left;
+          @include mobile {
+            font-size: text(normal);
+          }
+        }
+      }
+    }
   }
 }

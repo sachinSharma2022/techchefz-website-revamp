@@ -1,0 +1,26 @@
+@import "~/styles/partials/config";
+
+.inputContainerStyle {
+    .floatInput{
+        padding: 1.125rem 0.8rem;
+        font-size: text(normal);
+        border-radius: 0.75rem;
+        font-weight: 500;
+        &:focus{
+            box-shadow: none;
+            border: none;
+            border-color: transparent;
+        }
+    }
+    .labelCustom{
+        font-size: text(normal);
+        opacity: 0.8;
+        line-height: text(xl);
+        font-weight: 400;
+    }
+  
+  }
+
+
+
+
