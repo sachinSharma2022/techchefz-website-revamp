@@ -52,6 +52,37 @@
       margin: 1rem 0;
     }
 
+    .formFlex{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      input{
+        padding: 0.5rem 1rem;
+        background-color: color(input-bg);
+        color: color(primary-white);
+        border: none;
+        font-weight: 400;
+        font-size: text(normal);
+
+        &::placeholder{
+          color: rgba(color(primary-white), 0.50);
+        }
+
+        &:focus{
+          &::placeholder{
+            opacity: 0;
+          }
+        }
+      }
+      label{
+        display: none;
+      }
+
+      button{
+        margin-left: 1rem;
+      }
+    }
+
     .partenerCard {
       display: flex;
       align-items: center;

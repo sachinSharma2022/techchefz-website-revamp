@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./style.module.scss";
 
-const InputCustom = ({ label, type, placeholder, disabled, as, rows }) => {
+const InputCustom = ({ label, type, placeholder, disabled, as, rows, isLabelShow }) => {
   return (
     <div className={styles.inputContainerStyle}>
       <div class="form-floating">
@@ -14,7 +14,7 @@ const InputCustom = ({ label, type, placeholder, disabled, as, rows }) => {
           as={as}
           rows={rows}
         />
-        <label className={styles.labelCustom} for="floatingInput">{label}</label>
+          <label className={styles.labelCustom} for="floatingInput">{label}</label>
       </div>
     </div>
   );
