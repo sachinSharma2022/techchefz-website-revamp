@@ -1,7 +1,31 @@
 @import "~/styles/partials/config";
 
+.galleryImages {
+   column-count: 6;
+//    column-width: auto;
+column-fill: balance;
+   padding: 0 0.7rem;
+   border: 1px solid red;
+   overflow-x: scroll;
+   box-sizing: border-box;
 
+   .galleryImage {
+      cursor: pointer;
+      margin-bottom: 0.7rem;
+      border: 1px solid red;
+      width: inherit;
 
-.galleryImages{
-    
+      img {
+         width: 100%;
+         border-radius: 0.5rem;
+      }
+   }
 }
+
+
+// .galleryImages{
+//     display: grid;
+//     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+//     grid-gap: 20px;
+//     width: 100%;
+// }

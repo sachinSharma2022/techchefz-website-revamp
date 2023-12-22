@@ -94,9 +94,7 @@ body {
          pointer-events: none;
       }
 
-      // .slick-list {
-      //   padding-left: 7.5rem;
-      // }
+    
    }
 
    .slider {
@@ -116,8 +114,8 @@ body {
 
 .ourHistorySlider {
    // border: 1px solid red;
-   .slick-prev:before,
-   .slick-next:before {
+
+   .slick-arrow {
       background-color: color(primary-blue);
       padding: 1.5rem;
       border-radius: 0.5rem;
@@ -126,25 +124,38 @@ body {
       left: 1px;
       top: 15rem;
       z-index: 999;
-      background: url("../public/images/img/prev.svg");
-      background-size: contain;
-      // fill: url("../public/images/img/prev.svg");
-      
+
+      &::before {
+         content: "";
+         background: url("../public/images/img/prev.svg");
+      }
    }
    .slick-next {
       top: 15rem;
       left: 6rem;
-      background: url("../public/images/img/next.svg");
-     
+
+      &::before {
+         content: "";
+         background: url("../public/images/img/next.svg");
+      }
    }
-   .slick-prev.slick-disabled:before,
-   .slick-next.slick-disabled:before {
+   .slick-prev:before,
+   .slick-next:before {
+      background-repeat: no-repeat;
+      padding: 12px;
+      opacity: 1;
+      right: 0.4rem;
+      top: 0.2rem;
+      position: relative;
+   }
+
+   .slick-arrow.slick-disabled {
       border: 1px solid rgba(17, 17, 17, 0.2);
-      opacity: 0.6;
-      padding: 1.5rem;
+      background-color: transparent;
       border-radius: 0.5rem;
-      background: color(primary-white);
-      color: black;
+      height: 3rem;
+      width: 3rem;
+      // opacity: 1;
    }
 
    .slick-dots {
@@ -167,27 +178,6 @@ body {
       opacity: 0.75;
       color: color(info-blue);
    }
-
-   
 }
 
 
-.row {
-   display: flex;
-   flex-wrap: wrap;
-   padding: 0 4px;
- }
- 
- /* Create four equal columns that sits next to each other */
- .column {
-   flex: 25%;
-   max-width: 25%;
-   padding: 0 4px;
- }
- 
- .column img {
-   margin-top: 8px;
-   vertical-align: middle;
-   width: 100%;
- }
- 
