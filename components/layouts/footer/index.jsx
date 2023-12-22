@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Icons } from "@/components/icons";
 import styles from "./style.module.scss";
 import { Button } from "@/components/ui/button";
+import InputCustom from "@/components/ui/inputCustom";
 
 const Footer = () => {
   return (
@@ -40,10 +41,15 @@ const Footer = () => {
             </div>
 
             <div className={styles.subscribe}>
-              <h4>Stay Ahead of the Tech Curve</h4>
+              <h4 className="mb-3">Stay Ahead of the Tech Curve</h4>
               <div className={styles.formFlex}>
-                <input type="text" />
-                <Button variant="blueBtn" />
+                <InputCustom placeholder="Business Email Address" />
+                <div className="d-flex align-items-center">
+                  <Button variant="blueBtn" size="md">
+                    Subscribe
+                  </Button>
+                  <Icons.ArrowRight size={20} className="ms-2" />
+                </div>
               </div>
             </div>
           </div>
@@ -51,9 +57,15 @@ const Footer = () => {
         <div className="col-md-6">
           <div className={styles.footSocial}>
             <h4 className="mb-3">Follow Us on Social Media</h4>
-            <Link href="/"><Icons.facebook size={16} /> Linkedin</Link>
-            <Link href="/"><Icons.linkedin size={16} /> Facebook</Link>
-            <Link href="/"><Icons.twitter size={16} /> Twitter</Link>
+            <Link href="/">
+              <Icons.facebook size={16} /> Linkedin
+            </Link>
+            <Link href="/">
+              <Icons.linkedin size={16} /> Facebook
+            </Link>
+            <Link href="/">
+              <Icons.twitter size={16} /> Twitter
+            </Link>
           </div>
 
           <div className="row mt-5">
@@ -116,9 +128,15 @@ const Footer = () => {
         <p>© 2023 TCZ Digital Pvt. Ltd. All rights reserved.</p>
 
         <ul>
-          <li><Link href="/">Terms of Use</Link></li>
-          <li><Link href="/">Security</Link></li>
-          <li><Link href="/">Privacy Policy</Link></li>
+          <li>
+            <Link href="/">Terms of Use</Link>
+          </li>
+          <li>
+            <Link href="/">Security</Link>
+          </li>
+          <li>
+            <Link href="/">Privacy Policy</Link>
+          </li>
         </ul>
       </div>
     </footer>
