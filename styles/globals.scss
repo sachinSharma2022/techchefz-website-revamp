@@ -120,3 +120,19 @@ html, body{
       padding: 0 1.25rem;
   }
 }
+
+.modeBtn{
+  margin: 0 1rem;
+  input{
+    border: 0.063rem solid color(text-primary);
+
+    &:focus{
+      box-shadow: none;
+      border: 0.063rem solid color(text-primary);
+    }
+    &:checked{
+      background-color: color(text-primary);
+      border-color: color(text-primary);
+    }
+  }
+}

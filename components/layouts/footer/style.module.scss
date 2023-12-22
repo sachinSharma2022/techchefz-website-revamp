@@ -1,6 +1,15 @@
 @import "~/styles/partials/config";
 
-.footerSection{
- background-color: black;
- height: 300px;
+.footerSection {
+  background-color: color(text-primary);
+  padding: 2rem 7.5rem 0;
+  color: color(primary-white);
+
+  p{
+    font-size: text(normal);
+  }
+
+  .footlogo{
+
+  }
 }
