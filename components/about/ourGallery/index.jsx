@@ -4,6 +4,58 @@ import styles from "./style.module.scss";
 import { ImageCustom } from "@/components/ui/imageCustom";
 
 const OurGallery = () => {
+  const galleryImages = [
+    {
+      imgSrc:"/images/img/gallery/img1.png",
+      width:"400",
+      height:"600"
+    },
+    {
+      imgSrc:"/images/img/gallery/img2.png" ,
+      width:"300",
+      height:"300"
+    },
+    {
+      imgSrc:"/images/img/gallery/img3.png" ,
+      width:"300",
+      height:"300"
+    },
+    {
+      imgSrc:"/images/img/gallery/img1.png",
+      width:"300",
+      height:"300"
+    },
+    {
+      imgSrc:"/images/img/gallery/img2.png" ,
+      width:"300",
+      height:"300"
+    },
+    {
+      imgSrc:"/images/img/gallery/img3.png" ,
+      width:"300",
+      height:"300"
+    },
+    {
+      imgSrc:"/images/img/gallery/img1.png" ,
+      width:"300",
+      height:"300"
+    },
+    {
+      imgSrc:"/images/img/gallery/img2.png" ,
+      width:"300",
+      height:"300"
+    },
+    {
+      imgSrc:"/images/img/gallery/img3.png" ,
+      width:"300",
+      height:"300"
+    },
+    {
+      imgSrc:"/images/img/gallery/img1.png" ,
+      width:"300",
+      height:"300"
+    },
+  ]
    return (
       <section>
          <div className="container">
@@ -19,26 +71,12 @@ const OurGallery = () => {
             </div>
          </div>
          <div className={styles.galleryImages}>
-            <div className="row">
-               <div className="column">
-                  <ImageCustom src={"/images/img/gallery/img1.png"} width={500} height={300}  alt="gallery-img" />
-               </div>
-               <div className="column">
-                  <ImageCustom src={"/images/img/gallery/img2.png"} height={148} width={100} alt="gallery-img" />
-                  <ImageCustom src={"/images/img/gallery/img3.png"} height={148} width={100} alt="gallery-img" />
-               </div>
-               <div className="column">
-                  <ImageCustom src={"/images/img/gallery/img1.png"} height={100} width={100} alt="gallery-img" />
-                  <div className="row">
-                     <div className="column ">
-                        <ImageCustom src={"/images/img/gallery/img2.png"} height={200} width={400} alt="gallery-img" />
-                     </div>
-                     <div className="column">
-                        <ImageCustom src={"/images/img/gallery/img3.png"} height={100} width={300} alt="gallery-img" />
-                     </div>
-                  </div>
-               </div>
+          {galleryImages.map((data,index)=>(
+            <div key={index} className={styles.galleryImage}>
+            <ImageCustom src={data.imgSrc} width={data.width} height={data.height}  alt="gallery-img" />
             </div>
+          ))}
+            
          </div>
       </section>
    );
