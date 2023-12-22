@@ -1,0 +1,21 @@
+@import "~/styles/partials/config";
+
+.technologyStyle {
+  background-color: color(primary-white);
+  padding: 20px;
+
+  $background-color_1: #2196f3;
+  $background-color_2: rgba(255, 255, 255, 0.8);
+
+  .gridContainer {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px;
+    background-color: $background-color_1;
+    padding: 10px;
+   
+    .techCardLogo{
+        background-color: $background-color_2;  
+    }
+  }
+}
