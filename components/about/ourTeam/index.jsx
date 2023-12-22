@@ -2,6 +2,7 @@ import React from "react";
 
 import styles from "./style.module.scss";
 import { ImageCustom } from "@/components/ui/imageCustom";
+import { Icons } from "@/components/icons";
 
 const OurTeam = () => {
    const teamData = [
@@ -46,9 +47,9 @@ const OurTeam = () => {
                                  <h6>{data.mebName} </h6>
                                  <p>{data.role}</p>
                               </div>
-                              <div>icon</div>
+                              <Icons.ArrowRight width={26} height={24} />
                            </div>
-
+                           <Icons.Linkdin width={34} height={34} className={styles.linkdinIcon} />
                            <ImageCustom src={data.image} width={240} height={320} alt="team-member" />
                         </div>
                      </div>

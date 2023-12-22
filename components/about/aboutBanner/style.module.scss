@@ -16,10 +16,12 @@
       background: url("../../../public/images/img/about-bg.png");
       height: 100vh;
       position: relative;
-
+      display: flex;
       img {
          position: absolute;
          bottom: 0;
+         width: 100%;
+         height: auto;
       }
    }
 }
