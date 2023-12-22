@@ -83,7 +83,7 @@ const OurNumbers = () => {
               Let the Numbers Tell the Success Story.
             </p>
           </div>
-          <div className="col-md-4 col-12">
+          <div className={`${styles.careerBtn} col-md-4 col-12`}>
             <Button variant="outline" size="md">
               Career Opportunities
             </Button>

@@ -11,6 +11,10 @@
     @include mobile {
       margin-bottom: 2.5rem;
     }
+    .careerBtn{
+      display: flex;
+      justify-content: end;
+    }
   }
 
   .ProjectHighlight {
@@ -75,6 +79,7 @@
       line-height: 1.875rem;
       letter-spacing: 0.2rem;
       margin-bottom: 3.75rem;
+      font-family: font(primary);
       @include mobile {
         font-size: text(normal);
         margin-bottom: 2.75rem;
