@@ -77,6 +77,84 @@ const TechnologyStack = () => {
     {
       icon: <Icons.Adobe width={72} height={72} />,
     },
+    {
+      icon: <Icons.Adobe width={72} height={72} />,
+    },
+    {
+      icon: <Icons.Adobe width={72} height={72} />,
+    },
+    {
+      icon: <Icons.Adobe width={72} height={72} />,
+    },
+    {
+      icon: <Icons.Adobe width={72} height={72} />,
+    },
+    {
+      icon: <Icons.Adobe width={72} height={72} />,
+    },
+    {
+      icon: <Icons.Adobe width={72} height={72} />,
+    },
+    {
+      icon: <Icons.Adobe width={72} height={72} />,
+    },
+    {
+      icon: <Icons.Adobe width={72} height={72} />,
+    },
+    {
+      icon: <Icons.Adobe width={72} height={72} />,
+    },
+    {
+      icon: <Icons.Adobe width={72} height={72} />,
+    },
+    {
+      icon: <Icons.Adobe width={72} height={72} />,
+    },
+    {
+      icon: <Icons.Adobe width={72} height={72} />,
+    },
+    {
+      icon: <Icons.Adobe width={72} height={72} />,
+    },
+    {
+      icon: <Icons.Adobe width={72} height={72} />,
+    },
+    {
+      icon: <Icons.Adobe width={72} height={72} />,
+    },
+    {
+      icon: <Icons.Adobe width={72} height={72} />,
+    },
+    {
+      icon: <Icons.Adobe width={72} height={72} />,
+    },
+    {
+      icon: <Icons.Adobe width={72} height={72} />,
+    },
+    {
+      icon: <Icons.Adobe width={72} height={72} />,
+    },
+    {
+      icon: <Icons.Adobe width={72} height={72} />,
+    },
+    {
+      icon: <Icons.Adobe width={72} height={72} />,
+    },
+  ];
+
+  const countsCard = [
+    {
+      count: "930+",
+      countText: "Partners",
+    },
+    {
+      count: "3000+",
+      countText: "Integrations",
+    },
+    {
+      count: "500+",
+      countText: "System Integrations",
+    },
   ];
   return (
     <section className={`${styles.technologyStyle}`}>
@@ -106,7 +184,14 @@ const TechnologyStack = () => {
               </p>
             </div>
             <div className="row">
-              <div className=""></div>
+              <div className={styles.partnerCounter}>
+                {countsCard.map((data, index) => (
+                  <div key={index} className={styles.counterCard}>
+                    <h2 className={styles.counts}>{data.count}</h2>
+                    <p className={styles.countsText}>{data.countText}</p>
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="col-md-12 col-12">
               <Button variant="outline" size="md">
