@@ -1,6 +1,40 @@
 @import "~/styles/partials/config";
 
-.headerSection{
- background-color: black;
- height: 70px;
+.headerMain {
+  padding: 1rem 7.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  nav {
+    position: absolute;
+    left: 50%;
+    top: 1.4rem;
+    transform: translate(-50%);
+
+    ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      li {
+        list-style-type: none;
+        a {
+          font-size: text(normal);
+          color: color(text-primary);
+          font-weight: 600;
+          margin: 0 1.2rem;
+        }
+      }
+    }
+  }
+
+  .headerRight{
+    display: flex;
+    align-items: center;
+
+    .modeBtn{
+      margin: 0 1rem;
+    }
+  }
 }
