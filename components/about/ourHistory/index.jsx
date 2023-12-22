@@ -15,12 +15,7 @@ const OurHistory = () => {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      // nextArrow: (
-      //    <button className={styles.btnNext}>
-      //       <Icons.ArrowRight width={18} height={16} />
-      //    </button>
-      // ),
-      // prevArrow: <Icons.ArrowLeft width={18} height={16} />,
+    
 
       // responsive: [
       //    {
@@ -96,14 +91,6 @@ const OurHistory = () => {
                                  Founded in 2017, TechChefz arose from a shared passion for technology, uniting a team of pioneers. Fueled by
                                  enthusiasm and determination, they set on a transformative journey to shape the future.
                               </p>
-                              {/* <div className={styles.sliderButtons}>
-                                    <button className={`${styles.btnPrev} `}>
-                                       <Icons.ArrowLeft width={18} height={16} />
-                                    </button>
-                                    <button className={styles.btnNext}>
-                                       <Icons.ArrowRight width={18} height={16} />
-                                    </button>
-                                 </div> */}
                            </div>
                            <div className="col-md-6 col-lg-5">
                               <div className={styles.OurHistoryImage}>
@@ -120,7 +107,6 @@ const OurHistory = () => {
                   <div>6</div>
                </Slider>
             </div>
-            {/* <div>Progress bar</div> */}
          </div>
       </section>
    );
