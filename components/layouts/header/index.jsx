@@ -35,9 +35,9 @@ const Header = () => {
       </nav>
       <div className={styles.headerRight}>
         <div className="modeBtn">
-          <div class="form-check form-switch">
+          <div className="form-check form-switch">
             <input
-              class="form-check-input"
+              className="form-check-input"
               type="checkbox"
               role="switch"
               id="flexSwitchCheckDefault"

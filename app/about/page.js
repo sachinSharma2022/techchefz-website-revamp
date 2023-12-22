@@ -1,3 +1,5 @@
+"use client"
+
 import AboutBanner from "@/components/about/aboutBanner";
 import OurHistory from "@/components/about/ourHistory";
 import OurResults from "@/components/about/ourResults";

@@ -97,16 +97,16 @@
 
           .buttonGrid {
             display: flex;
-            justify-content: end;
+            justify-content: flex-end;
             @include mobile {
-              justify-content: start;
+              justify-content: flex-start;
             }
           }
         }
       }
       .contactImg {
         display: flex;
-        justify-content: end;
+        justify-content: flex-end;
         img {
           width: 30rem;
           height: 38.5rem;

@@ -2,7 +2,6 @@ import React from "react";
 
 import styles from "./style.module.scss";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import Image from "next/image";
 
 const AboutBanner = () => {
   return (

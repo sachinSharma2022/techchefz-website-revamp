@@ -8,25 +8,25 @@ export const Icons = {
       fill="none"
       {...props}
     >
-      <g clip-path="url(#clip0_4_821)">
+      <g clipPath="url(#clip0_4_821)">
         <path
           d="M16.0035 45.6765C12.2788 41.6758 10 36.311 10 30.4097C10 18.0297 20.0348 8 32.4148 8C44.7948 8 54.8245 18.0297 54.8245 30.4097C54.8245 36.311 52.5457 41.6758 48.821 45.6765"
           stroke="url(#paint0_linear_4_821)"
-          stroke-width="4"
-          stroke-miterlimit="10"
-          stroke-linecap="round"
+          strokeWidth="4"
+          strokeMiterlimit="10"
+          strokeLinecap="round"
         />
         <path
           d="M43.1434 37.1948C43.9405 35.5905 44.3901 33.7818 44.3901 31.8709C44.3901 25.2542 39.0253 19.8843 32.4036 19.8843C25.7818 19.8843 20.417 25.2491 20.417 31.8709C20.417 33.7818 20.8666 35.5854 21.6586 37.1897"
           stroke="url(#paint1_linear_4_821)"
-          stroke-width="4"
-          stroke-miterlimit="10"
-          stroke-linecap="round"
+          strokeWidth="4"
+          strokeMiterlimit="10"
+          strokeLinecap="round"
         />
         <path
           d="M39.1179 53.0336C38.9186 52.7832 39.0873 52.4818 39.169 52.2059C39.5011 51.1278 38.9851 50.1059 37.8968 49.7381C37.2734 49.5286 36.88 48.9052 37.0486 48.4965C37.4471 47.5155 37.0129 47.1067 36.4048 46.417C34.8414 44.644 34.6574 42.4265 34.8925 40.1529C34.9385 39.7084 35.1224 39.55 35.526 39.4222C35.9246 39.2945 36.4968 39.177 36.461 38.6252C36.4304 38.1398 35.899 38.1807 35.5414 38.0632C34.9078 37.8537 34.7698 37.3376 35.2501 36.9544C36.5326 35.9274 36.9771 34.6041 37.0231 32.9742C37.0793 31.0786 35.1633 28.432 32.1692 28.5393C30.1663 28.6108 28.4444 30.0108 27.8926 31.8195C27.3051 33.7508 27.9029 35.6464 29.5021 36.9493C29.9364 37.3018 29.8546 37.8486 29.313 38.0529C29.124 38.1245 28.8992 38.1091 28.6999 38.1756C28.4802 38.2522 28.235 38.3391 28.2094 38.6252C28.189 38.9011 28.3831 39.0646 28.5977 39.1617C28.8328 39.269 29.0933 39.3201 29.3386 39.4069C29.6503 39.5142 29.9057 39.6675 29.9006 40.0609C29.87 41.8134 29.8086 43.566 29.032 45.1856C28.7306 45.8141 28.5109 46.5498 27.8364 46.8717C27.2897 47.1323 27.3306 47.4439 27.5197 47.8782C27.8824 48.706 27.6269 49.3804 26.8299 49.7329C25.716 50.2234 25.3022 51.0052 25.5679 52.1803C25.6394 52.492 25.7569 52.819 25.5934 53.0949C25.1642 53.8307 25.338 54.5562 25.5423 55.2919C30.0897 56.2627 34.637 56.1963 39.1843 55.3277C39.4449 54.5511 39.7208 53.7898 39.1128 53.0285L39.1179 53.0336Z"
           fill="url(#paint2_linear_4_821)"
-          fill-opacity="0.6"
+          fillOpacity="0.6"
         />
       </g>
       <defs>
@@ -38,8 +38,8 @@ export const Icons = {
           y2="33.2659"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_4_821"
@@ -49,8 +49,8 @@ export const Icons = {
           y2="32.9333"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_4_821"
@@ -60,8 +60,8 @@ export const Icons = {
           y2="39.4653"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <clipPath id="clip0_4_821">
           <rect width="64" height="64" fill="white" />
@@ -81,7 +81,7 @@ export const Icons = {
       <path
         d="M36.2617 39.4765C44.9537 39.4765 52 32.4303 52 23.7383C52 15.0463 44.9537 8 36.2617 8C27.5697 8 20.5234 15.0463 20.5234 23.7383C20.5234 32.4303 27.5697 39.4765 36.2617 39.4765Z"
         fill="url(#paint0_linear_4_981)"
-        fill-opacity="0.6"
+        fillOpacity="0.6"
       />
       <path
         d="M6.71918 33.9462C8.22094 33.9462 9.43837 32.7287 9.43837 31.227C9.43837 29.7252 8.22094 28.5078 6.71918 28.5078C5.21742 28.5078 4 29.7252 4 31.227C4 32.7287 5.21742 33.9462 6.71918 33.9462Z"
@@ -90,9 +90,9 @@ export const Icons = {
       <path
         d="M8.88024 22.9046C11.7351 18.9009 16.4174 16.2884 21.7103 16.2884C30.4059 16.2884 37.4485 23.336 37.4485 32.0266C37.4485 40.7173 30.401 47.7649 21.7103 47.7649C15.8793 47.7649 10.79 44.595 8.0708 39.8837"
         stroke="url(#paint2_linear_4_981)"
-        stroke-width="4"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
+        strokeWidth="4"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
       />
       <defs>
         <linearGradient
@@ -103,8 +103,8 @@ export const Icons = {
           y2="26.507"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_4_981"
@@ -114,8 +114,8 @@ export const Icons = {
           y2="31.7054"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_4_981"
@@ -125,12 +125,41 @@ export const Icons = {
           y2="33.8891"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
       </defs>
     </svg>
   ),
+
+  Graph: ({ size, ...props }) => (
+    <svg
+      viewBox="0 0 56 56"
+      xmlns="http://www.w3.org/2000/svg"
+      height={size}
+      width={size}
+      fill="none"
+      {...props}
+    >
+      <g clip-path="url(#clip0_9_6196)">
+        <path
+          d="M24 5C24 3.89543 24.8954 3 26 3H34C35.1046 3 36 3.89543 36 5V33H24V5Z"
+          fill="#26A0F8"
+        />
+        <path
+          opacity="0.6"
+          d="M12 13C12 11.8954 12.8954 11 14 11H24V33H12V13Z"
+          fill="#26A0F8"
+        />
+        <path
+          opacity="0.4"
+          d="M0 18.9999C0 17.8953 0.895431 16.9999 2 16.9999H12V32.9999H0V18.9999Z"
+          fill="#26A0F8"
+        />
+      </g>
+    </svg>
+  ),
+
   MarketPlace: ({ size, ...props }) => (
     <svg
       viewBox="0 0 56 56"
@@ -143,14 +172,14 @@ export const Icons = {
       <path
         d="M24.6578 20.139L22.5947 18.3081C22.2544 18.0056 22.2112 17.5034 22.5028 17.1793L33.9581 4.25504C34.2443 3.93098 34.752 3.9148 35.0922 4.21185L51.0788 18.3837C51.4191 18.6862 51.4623 19.1884 51.1706 19.5125L39.7154 32.4367C39.4292 32.7608 38.9215 32.777 38.5812 32.48L36.4641 30.6005"
         stroke="url(#paint0_linear_4_990)"
-        stroke-width="4"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
+        strokeWidth="4"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
       />
       <path
         d="M38.4216 37.3407L26.7233 50.5404C25.1354 52.3335 22.4026 52.4956 20.6095 50.9077L6.45925 38.3669C4.66616 36.7791 4.50412 34.0462 6.09198 32.2531L17.7903 19.0534L24.644 25.1294C25.1894 25.4534 25.7727 25.5128 26.4101 25.259C27.1608 24.9565 27.5874 24.3409 27.7062 23.5415C28.0735 20.9059 30.909 19.2208 33.5392 20.5171C34.8246 21.149 35.6293 22.2669 35.7373 23.7684C35.8561 25.313 35.2891 26.5444 34.0307 27.4626C33.5986 27.7758 33.1125 27.9486 32.621 28.116C31.0656 28.6399 30.8604 30.2548 31.5409 31.2486L38.4162 37.3461L38.4216 37.3407Z"
         fill="url(#paint1_linear_4_990)"
-        fill-opacity="0.4"
+        fillOpacity="0.4"
       />
       <defs>
         <linearGradient
@@ -161,8 +190,8 @@ export const Icons = {
           y2="21.0276"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_4_990"
@@ -172,8 +201,8 @@ export const Icons = {
           y2="38.631"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
       </defs>
     </svg>
@@ -190,9 +219,9 @@ export const Icons = {
       <path
         d="M11.7071 42.7107C2.82628 33.9182 2.75453 19.5896 11.5526 10.7087C18.601 3.58855 29.2039 2.13141 37.7095 6.35933"
         stroke="url(#paint0_linear_4_998)"
-        stroke-width="4"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
+        strokeWidth="4"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
       />
       <path
         d="M47.363 40.5301C49.0731 40.5301 50.4595 39.1438 50.4595 37.4337C50.4595 35.7236 49.0731 34.3373 47.363 34.3373C45.6529 34.3373 44.2666 35.7236 44.2666 37.4337C44.2666 39.1438 45.6529 40.5301 47.363 40.5301Z"
@@ -213,14 +242,14 @@ export const Icons = {
       <path
         d="M46.9653 14.1473C49.9293 18.8499 51.1822 24.6453 50.0342 30.5346"
         stroke="url(#paint5_linear_4_998)"
-        stroke-width="4"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
+        strokeWidth="4"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
       />
       <path
         d="M32.5269 34.5637C28.5142 37.754 22.6856 37.0861 19.5009 33.0734C16.3161 29.0608 16.9785 23.2377 20.9911 20.0475C21.1181 19.9426 21.2505 19.8432 21.383 19.7715C21.394 19.7605 21.4051 19.7328 21.4161 19.7273L21.4989 19.6997L24.6616 18.2923L45.6025 8.96985L35.0713 31.3845L32.985 34.1498C32.9739 34.1774 32.9574 34.205 32.9353 34.2215C32.9243 34.2325 32.8967 34.2381 32.8856 34.2436C32.7863 34.3595 32.6538 34.4644 32.5269 34.5637Z"
         fill="url(#paint6_linear_4_998)"
-        fill-opacity="0.6"
+        fillOpacity="0.6"
       />
       <path
         d="M17.8225 25.2418H17.7949L17.806 25.1866C17.806 25.1866 17.817 25.2252 17.817 25.2418H17.8225Z"
@@ -239,8 +268,8 @@ export const Icons = {
           y2="24.1966"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_4_998"
@@ -250,8 +279,8 @@ export const Icons = {
           y2="37.9784"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_4_998"
@@ -261,8 +290,8 @@ export const Icons = {
           y2="46.3519"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_4_998"
@@ -272,8 +301,8 @@ export const Icons = {
           y2="49.4483"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_4_998"
@@ -283,8 +312,8 @@ export const Icons = {
           y2="48.8189"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint5_linear_4_998"
@@ -294,8 +323,8 @@ export const Icons = {
           y2="19.4887"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint6_linear_4_998"
@@ -305,8 +334,8 @@ export const Icons = {
           y2="25.4233"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
       </defs>
     </svg>
@@ -327,14 +356,14 @@ export const Icons = {
       <path
         d="M33.0245 49.4915C29.8536 50.4157 26.4282 50.6592 22.9474 50.0726C10.5904 48.003 2.24541 36.3044 4.31506 23.9474C6.3847 11.5904 18.0832 3.24541 30.4402 5.31506C38.7299 6.70405 45.21 12.4205 47.9548 19.7694"
         stroke="url(#paint1_linear_4_1013)"
-        stroke-width="4"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
+        strokeWidth="4"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
       />
       <path
         d="M48.4719 43.1423C47.3185 41.9052 46.077 40.7517 44.8883 39.5454C42.8984 37.5202 40.8777 35.5259 38.8657 33.5227C38.1878 32.8491 37.862 32.0611 37.9016 31.1057C37.9192 30.6655 38.0249 30.2384 38.0689 29.7982C38.1745 28.7107 38.1173 27.6365 37.884 26.5755C37.6815 25.6422 37.3469 24.7528 36.8934 23.9076C36.0834 22.3975 34.9696 21.1692 33.552 20.2226C31.8174 19.0692 29.9023 18.4837 27.8156 18.4969C27.2653 18.4969 26.7194 18.51 26.1779 18.6289C26.0018 18.6685 25.8212 18.6774 25.6452 18.717C25.381 18.783 25.3238 18.9943 25.5043 19.1969C25.5351 19.2277 25.5615 19.2629 25.5923 19.2893C27.3753 21.0679 29.1583 22.8465 30.9369 24.6296C31.3243 25.017 31.4652 25.4881 31.2759 26.012C31.1878 26.2585 31.0426 26.4875 30.9193 26.7208C30.1533 28.178 29.1275 29.4196 27.8684 30.4762C27.098 31.1189 26.2571 31.6516 25.3678 32.1051C24.6854 32.4529 24.1395 32.4089 23.6684 31.9378C22.1452 30.4189 20.6264 28.8912 19.0987 27.3724C18.7949 27.0686 18.5264 26.734 18.161 26.5051C17.9188 26.3554 17.7824 26.4126 17.7295 26.6856C17.6239 27.2359 17.5446 27.7906 17.5226 28.3541C17.4522 30.0315 17.7559 31.6384 18.4603 33.1529C19.1339 34.5969 20.0981 35.8164 21.3351 36.8246C22.1232 37.463 22.9817 37.9869 23.9238 38.3611C24.8527 38.731 25.8213 38.9643 26.825 39.0523C27.7803 39.1316 28.7225 39.0831 29.669 38.9334C30.6684 38.775 31.5929 38.9423 32.3457 39.6731C33.3406 40.6373 34.3136 41.6278 35.2997 42.6052C36.1714 43.4681 37.0255 44.353 37.9148 45.2027C38.2186 45.4932 38.5179 45.8014 38.8085 46.1096C39.7947 47.1354 40.8204 48.1216 41.8198 49.1386C42.5594 49.887 43.4047 50.4285 44.4657 50.609C45.3682 50.7675 46.2398 50.6662 47.0543 50.2832C48.4499 49.6272 49.3348 48.5398 49.6121 47.0077C49.8851 45.5329 49.4977 44.2341 48.4763 43.1423H48.4719Z"
         fill="url(#paint2_linear_4_1013)"
-        fill-opacity="0.6"
+        fillOpacity="0.6"
       />
       <defs>
         <linearGradient
@@ -345,8 +374,8 @@ export const Icons = {
           y2="29.2763"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_4_1013"
@@ -356,8 +385,8 @@ export const Icons = {
           y2="31.066"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_4_1013"
@@ -367,8 +396,8 @@ export const Icons = {
           y2="37.4198"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
       </defs>
     </svg>
@@ -397,7 +426,7 @@ export const Icons = {
       {...props}
       viewBox="0 0 72 72"
     >
-      <g clip-path="url(#clip0_4_1113)">
+      <g clipPath="url(#clip0_4_1113)">
         <path d="M0 0H72V72H0V0Z" fill="#EEEEEE" />
         <path
           d="M4.99219 36C4.99219 53.1281 18.8719 67.0078 36 67.0078C53.1281 67.0078 67.0078 53.1281 67.0078 36C67.0078 18.8719 53.1281 4.99219 36 4.99219C18.8719 4.99219 4.99219 18.8719 4.99219 36ZM8.15625 35.9648C8.17734 20.5875 20.6578 8.13516 36.0352 8.15625C51.4125 8.17734 63.8648 20.6578 63.8438 36.0352C63.8227 51.4125 51.3633 63.8438 36 63.8438C20.6367 63.8438 8.14922 51.3563 8.15625 35.9719V35.9648Z"
@@ -429,23 +458,23 @@ export const Icons = {
       <path
         d="M1 12.0005H25"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M14.713 22.2862L24.9987 12.0005"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M14.713 1.71399L24.9987 11.9997"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   ),
@@ -461,23 +490,23 @@ export const Icons = {
       <path
         d="M17 8.00024H1.00021"
         stroke="#111111"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M7.85718 14.8573L1.00013 8.00024"
         stroke="#111111"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M7.85718 1.14282L1.00013 7.99987"
         stroke="#111111"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   ),
@@ -502,9 +531,9 @@ export const Icons = {
       <path
         d="M23.6 18.4668L18 24.0668"
         stroke="url(#paint0_linear_146_690)"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M12.4004 18.4668L18.0004 24.0668L12.4004 18.4668Z"
@@ -513,17 +542,17 @@ export const Icons = {
       <path
         d="M12.4004 18.4668L18.0004 24.0668"
         stroke="url(#paint1_linear_146_690)"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path d="M18 11V24.0667V11Z" fill="white" />
       <path
         d="M18 11V24.0667"
         stroke="url(#paint2_linear_146_690)"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <defs>
         <linearGradient
@@ -534,8 +563,8 @@ export const Icons = {
           y2="21.7594"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_146_690"
@@ -545,8 +574,8 @@ export const Icons = {
           y2="21.7594"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_146_690"
@@ -556,8 +585,8 @@ export const Icons = {
           y2="15.0779"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
       </defs>
     </svg>
@@ -572,7 +601,7 @@ export const Icons = {
       fill="none"
       {...props}
     >
-      <g clip-path="url(#clip0_146_955)">
+      <g clipPath="url(#clip0_146_955)">
         <rect width="34" height="34" rx="4" fill="white" />
         <path
           d="M31.4901 0H2.50986C1.8442 0 1.20581 0.264431 0.735122 0.735122C0.264431 1.20581 0 1.8442 0 2.50986V31.4901C0 32.1558 0.264431 32.7942 0.735122 33.2649C1.20581 33.7356 1.8442 34 2.50986 34H31.4901C32.1558 34 32.7942 33.7356 33.2649 33.2649C33.7356 32.7942 34 32.1558 34 31.4901V2.50986C34 1.8442 33.7356 1.20581 33.2649 0.735122C32.7942 0.264431 32.1558 0 31.4901 0ZM10.1339 28.9637H5.02208V12.7264H10.1339V28.9637ZM7.57445 10.4763C6.9946 10.473 6.42871 10.298 5.94821 9.97346C5.4677 9.64889 5.09411 9.18925 4.87458 8.65256C4.65505 8.11587 4.59942 7.52617 4.71471 6.95789C4.83 6.38962 5.11105 5.86823 5.52239 5.45952C5.93372 5.05082 6.4569 4.77313 7.02591 4.66149C7.59492 4.54984 8.18424 4.60926 8.71951 4.83223C9.25479 5.0552 9.71201 5.43174 10.0335 5.91432C10.355 6.3969 10.5263 6.9639 10.5258 7.54375C10.5313 7.93196 10.4586 8.31731 10.3119 8.67681C10.1653 9.03631 9.94781 9.36261 9.67239 9.63626C9.39698 9.90991 9.06929 10.1253 8.70885 10.2696C8.34842 10.4139 7.96262 10.4842 7.57445 10.4763ZM28.9756 28.9779H23.8661V20.1072C23.8661 17.4911 22.754 16.6836 21.3185 16.6836C19.8026 16.6836 18.3151 17.8264 18.3151 20.1733V28.9779H13.2033V12.7382H18.1192V14.9883H18.1853C18.6788 13.9896 20.4071 12.2825 23.0444 12.2825C25.8967 12.2825 28.9779 13.9754 28.9779 18.9338L28.9756 28.9779Z"
@@ -588,8 +617,8 @@ export const Icons = {
           y2="19.9907"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <clipPath id="clip0_146_955">
           <rect width="34" height="34" rx="4" fill="white" />
@@ -607,7 +636,7 @@ export const Icons = {
       fill="none"
       {...props}
     >
-      <g clip-path="url(#clip0_9_6073)">
+      <g clipPath="url(#clip0_9_6073)">
         <path
           opacity="0.6"
           d="M59.9273 69.3917C75.6375 69.3917 88.3732 56.6561 88.3732 40.9458C88.3732 25.2356 75.6375 12.5 59.9273 12.5C44.2171 12.5 31.4814 25.2356 31.4814 40.9458C31.4814 56.6561 44.2171 69.3917 59.9273 69.3917Z"
@@ -637,8 +666,8 @@ export const Icons = {
           y2="45.9502"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_9_6073"
@@ -648,8 +677,8 @@ export const Icons = {
           y2="73.3047"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_9_6073"
@@ -659,8 +688,8 @@ export const Icons = {
           y2="73.9526"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_9_6073"
@@ -670,8 +699,8 @@ export const Icons = {
           y2="47.8906"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <clipPath id="clip0_9_6073">
           <rect width="100" height="100" fill="white" />
@@ -689,18 +718,18 @@ export const Icons = {
       fill="none"
       {...props}
     >
-      <g clip-path="url(#clip0_9_6082)">
+      <g clipPath="url(#clip0_9_6082)">
         <path
           d="M44.7155 38.2173L41.4919 35.3565C40.9602 34.884 40.8927 34.0991 41.3484 33.5928L59.2473 13.3985C59.6946 12.8922 60.4878 12.8669 61.0195 13.331L85.9987 35.4747C86.5303 35.9473 86.5978 36.7321 86.1421 37.2384L68.2432 57.4327C67.796 57.939 67.0027 57.9644 66.471 57.5002L63.163 54.5635"
           stroke="url(#paint0_linear_9_6082)"
-          stroke-width="4"
-          stroke-miterlimit="10"
-          stroke-linecap="round"
+          strokeWidth="4"
+          strokeMiterlimit="10"
+          strokeLinecap="round"
         />
         <path
           d="M66.2215 65.0954L47.9428 85.7201C45.4618 88.5218 41.1918 88.7749 38.39 86.2939L16.2801 66.6988C13.4784 64.2177 13.2252 59.9476 15.7062 57.1459L33.9849 36.5212L44.6939 46.015C45.5462 46.5213 46.4576 46.6142 47.4534 46.2175C48.6264 45.745 49.2931 44.7829 49.4787 43.534C50.0526 39.4158 54.483 36.7829 58.5928 38.8082C60.6012 39.7956 61.8586 41.5424 62.0274 43.8884C62.213 46.3019 61.327 48.226 59.3607 49.6606C58.6856 50.1501 57.9261 50.4201 57.1582 50.6817C54.7278 51.5003 54.4071 54.0235 55.4704 55.5763L66.2131 65.1038L66.2215 65.0954Z"
           fill="url(#paint1_linear_9_6082)"
-          fill-opacity="0.4"
+          fillOpacity="0.4"
         />
       </g>
       <defs>
@@ -712,8 +741,8 @@ export const Icons = {
           y2="39.6058"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_9_6082"
@@ -723,8 +752,8 @@ export const Icons = {
           y2="67.1115"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <clipPath id="clip0_9_6082">
           <rect width="100" height="100" fill="white" />
@@ -742,37 +771,37 @@ export const Icons = {
       fill="none"
       {...props}
     >
-      <g clip-path="url(#clip0_9_6089)">
+      <g clipPath="url(#clip0_9_6089)">
         <path
           d="M63.9686 12.5H87.4998V36.1787"
           stroke="url(#paint0_linear_9_6089)"
-          stroke-width="4"
-          stroke-miterlimit="10"
+          strokeWidth="4"
+          strokeMiterlimit="10"
         />
         <path
           opacity="0.6"
           d="M14.5 85.5V14.5H46.7987V85.5H14.5Z"
           fill="url(#paint1_linear_9_6089)"
           stroke="url(#paint2_linear_9_6089)"
-          stroke-width="4"
+          strokeWidth="4"
         />
         <path
           d="M36.6818 87.3955H13.1505V63.6908"
           stroke="url(#paint3_linear_9_6089)"
-          stroke-width="4"
-          stroke-miterlimit="10"
+          strokeWidth="4"
+          strokeMiterlimit="10"
         />
         <path
           d="M87.4998 63.6908V87.3955H63.9686"
           stroke="url(#paint4_linear_9_6089)"
-          stroke-width="4"
-          stroke-miterlimit="10"
+          strokeWidth="4"
+          strokeMiterlimit="10"
         />
         <path
           d="M13.1505 36.1787V12.5H36.6818"
           stroke="url(#paint5_linear_9_6089)"
-          stroke-width="4"
-          stroke-miterlimit="10"
+          strokeWidth="4"
+          strokeMiterlimit="10"
         />
       </g>
       <defs>
@@ -784,8 +813,8 @@ export const Icons = {
           y2="26.3582"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_9_6089"
@@ -795,8 +824,8 @@ export const Icons = {
           y2="41.6181"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_9_6089"
@@ -806,8 +835,8 @@ export const Icons = {
           y2="41.6181"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_9_6089"
@@ -817,8 +846,8 @@ export const Icons = {
           y2="77.553"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_9_6089"
@@ -828,8 +857,8 @@ export const Icons = {
           y2="77.553"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint5_linear_9_6089"
@@ -839,8 +868,8 @@ export const Icons = {
           y2="26.3582"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <clipPath id="clip0_9_6089">
           <rect width="100" height="100" fill="white" />
@@ -858,25 +887,25 @@ export const Icons = {
       fill="none"
       {...props}
     >
-      <g clip-path="url(#clip0_9_6100)">
+      <g clipPath="url(#clip0_9_6100)">
         <path
           d="M80.7593 38.6553C80.7593 49.4825 72.2664 58.3286 61.5697 58.8969C61.2088 58.9122 60.8478 58.9199 60.4793 58.9199C57.0929 58.9199 53.8984 58.0983 51.1033 56.6239C44.63 53.2452 40.2146 46.4647 40.2146 38.6553C40.2146 38.3327 40.23 38.0102 40.2376 37.6954C40.7368 26.9449 49.6136 18.3752 60.4793 18.3752C71.3449 18.3752 80.2602 26.9526 80.7363 37.7338C80.7516 38.0333 80.7593 38.3404 80.7593 38.6553Z"
           stroke="url(#paint0_linear_9_6100)"
-          stroke-width="4"
-          stroke-miterlimit="10"
+          strokeWidth="4"
+          strokeMiterlimit="10"
         />
         <path
           d="M67.8892 62.3523C67.8892 73.1796 59.3963 82.0257 48.6996 82.5939C48.3386 82.6093 47.9777 82.617 47.6091 82.617C44.2227 82.617 41.0283 81.7954 38.2332 80.321C31.7599 76.9423 27.3445 70.1618 27.3445 62.3523C27.3445 62.0298 27.3598 61.7073 27.3675 61.3925C27.8666 50.642 36.7435 42.0723 47.6091 42.0723C58.4748 42.0723 67.39 50.6497 67.8661 61.4309C67.8815 61.7304 67.8892 62.0375 67.8892 62.3523Z"
           stroke="url(#paint1_linear_9_6100)"
-          stroke-width="4"
-          stroke-miterlimit="10"
+          strokeWidth="4"
+          strokeMiterlimit="10"
         />
         <path
           opacity="0.4"
           d="M53.5447 38.6553C53.5447 49.4825 45.0518 58.3286 34.3551 58.8969C33.9942 58.9122 33.6332 58.9199 33.2647 58.9199C29.8783 58.9199 26.6838 58.0983 23.8887 56.6239C17.4154 53.2452 13 46.4647 13 38.6553C13 38.3327 13.0154 38.0102 13.023 37.6954C13.5222 26.9449 22.399 18.3752 33.2647 18.3752C44.1303 18.3752 53.0456 26.9526 53.5217 37.7338C53.537 38.0333 53.5447 38.3404 53.5447 38.6553Z"
           stroke="url(#paint2_linear_9_6100)"
-          stroke-width="4"
-          stroke-miterlimit="10"
+          strokeWidth="4"
+          strokeMiterlimit="10"
         />
         <mask
           id="mask0_9_6100"
@@ -896,8 +925,8 @@ export const Icons = {
           <path
             d="M80.7586 38.6553C80.7586 49.4825 72.2657 58.3286 61.5689 58.8969C61.208 58.9122 60.8471 58.9199 60.4785 58.9199C57.0921 58.9199 53.8977 58.0983 51.1026 56.6239C44.6292 53.2452 40.2139 46.4647 40.2139 38.6553C40.2139 38.3327 40.2292 38.0102 40.2369 37.6954C40.736 26.9449 49.6129 18.3752 60.4785 18.3752C71.3442 18.3752 80.2594 26.9526 80.7355 37.7338C80.7509 38.0333 80.7586 38.3404 80.7586 38.6553Z"
             stroke="url(#paint3_linear_9_6100)"
-            stroke-width="4"
-            stroke-miterlimit="10"
+            strokeWidth="4"
+            strokeMiterlimit="10"
           />
         </g>
         <mask
@@ -918,8 +947,8 @@ export const Icons = {
           <path
             d="M67.8889 62.3522C67.8889 73.1795 59.396 82.0256 48.6993 82.5938C48.3384 82.6092 47.9775 82.6169 47.6089 82.6169C44.2225 82.6169 41.0281 81.7952 38.2329 80.3209C31.7596 76.9422 27.3442 70.1617 27.3442 62.3522C27.3442 62.0297 27.3596 61.7072 27.3673 61.3923C27.8664 50.6418 36.7432 42.0721 47.6089 42.0721C58.4746 42.0721 67.3898 50.6496 67.8659 61.4308C67.8812 61.7302 67.8889 62.0374 67.8889 62.3522Z"
             stroke="url(#paint4_linear_9_6100)"
-            stroke-width="4"
-            stroke-miterlimit="10"
+            strokeWidth="4"
+            strokeMiterlimit="10"
           />
         </g>
       </g>
@@ -932,8 +961,8 @@ export const Icons = {
           y2="42.214"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_9_6100"
@@ -943,8 +972,8 @@ export const Icons = {
           y2="65.911"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_9_6100"
@@ -954,8 +983,8 @@ export const Icons = {
           y2="42.214"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_9_6100"
@@ -965,8 +994,8 @@ export const Icons = {
           y2="42.214"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_9_6100"
@@ -976,8 +1005,8 @@ export const Icons = {
           y2="65.9109"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <clipPath id="clip0_9_6100">
           <rect width="100" height="100" fill="white" />
@@ -995,7 +1024,7 @@ export const Icons = {
       fill="none"
       {...props}
     >
-      <g clip-path="url(#clip0_9_6119)">
+      <g clipPath="url(#clip0_9_6119)">
         <path
           d="M85.2652 56.6013C87.7741 56.6013 89.808 54.5674 89.808 52.0585C89.808 49.5496 87.7741 47.5157 85.2652 47.5157C82.7563 47.5157 80.7224 49.5496 80.7224 52.0585C80.7224 54.5674 82.7563 56.6013 85.2652 56.6013Z"
           fill="url(#paint0_linear_9_6119)"
@@ -1003,14 +1032,14 @@ export const Icons = {
         <path
           d="M58.6531 86.0472C53.4471 87.5645 47.8232 87.9643 42.1083 87.0013C21.8203 83.6033 8.11927 64.3963 11.5173 44.1083C14.9153 23.8202 34.1221 10.1193 54.4102 13.5173C68.0203 15.7977 78.6595 25.1831 83.166 37.2487"
           stroke="url(#paint1_linear_9_6119)"
-          stroke-width="4"
-          stroke-miterlimit="10"
-          stroke-linecap="round"
+          strokeWidth="4"
+          strokeMiterlimit="10"
+          strokeLinecap="round"
         />
         <path
           d="M84.0152 75.6229C82.1215 73.5918 80.0831 71.6979 78.1316 69.7174C74.8645 66.3924 71.5468 63.118 68.2436 59.8292C67.1305 58.7233 66.5956 57.4294 66.6606 55.8609C66.6895 55.1381 66.863 54.437 66.9353 53.7142C67.1088 51.9288 67.0148 50.1651 66.6317 48.4232C66.2992 46.8908 65.7499 45.4306 65.0054 44.0428C63.6754 41.5635 61.8468 39.5469 59.5193 37.9928C56.6715 36.099 53.5273 35.1377 50.1012 35.1594C49.1977 35.1594 48.3014 35.181 47.4123 35.3762C47.1232 35.4413 46.8268 35.4558 46.5377 35.5208C46.104 35.6292 46.0101 35.9762 46.3064 36.3087C46.357 36.3593 46.4004 36.4171 46.451 36.4604C49.3784 39.3806 52.3057 42.3008 55.2259 45.2283C55.8619 45.8643 56.0932 46.6378 55.7824 47.4979C55.6378 47.9027 55.3993 48.2786 55.1969 48.6617C53.9393 51.0542 52.2551 53.0926 50.1879 54.8273C48.923 55.8826 47.5424 56.7572 46.0824 57.5017C44.962 58.0728 44.0657 58.0005 43.2923 57.2271C40.7914 54.7333 38.2977 52.2251 35.7896 49.7314C35.2909 49.2327 34.85 48.6833 34.25 48.3075C33.8525 48.0617 33.6284 48.1557 33.5417 48.6039C33.3682 49.5074 33.2381 50.4181 33.202 51.3433C33.0863 54.0972 33.585 56.7355 34.7415 59.222C35.8474 61.5929 37.4304 63.5951 39.4615 65.2503C40.7553 66.2984 42.1648 67.1587 43.7116 67.7731C45.2367 68.3802 46.8268 68.7633 48.4748 68.9079C50.0433 69.038 51.5901 68.9584 53.1442 68.7127C54.7849 68.4525 56.3028 68.7272 57.5388 69.9271C59.1724 71.51 60.7698 73.1363 62.3889 74.741C63.82 76.1577 65.2223 77.6106 66.6823 79.0056C67.1811 79.4827 67.6726 79.9887 68.1496 80.4947C69.7687 82.1789 71.4528 83.798 73.0936 85.4677C74.3079 86.6965 75.6957 87.5855 77.4377 87.8819C78.9194 88.1421 80.3506 87.9759 81.6878 87.347C83.9791 86.27 85.4319 84.4846 85.8873 81.9692C86.3354 79.5477 85.6993 77.4155 84.0224 75.6229H84.0152Z"
           fill="url(#paint2_linear_9_6119)"
-          fill-opacity="0.6"
+          fillOpacity="0.6"
         />
       </g>
       <defs>
@@ -1022,8 +1051,8 @@ export const Icons = {
           y2="52.8577"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_9_6119"
@@ -1033,8 +1062,8 @@ export const Icons = {
           y2="55.7958"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_9_6119"
@@ -1044,8 +1073,8 @@ export const Icons = {
           y2="66.2275"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <clipPath id="clip0_9_6119">
           <rect width="100" height="100" fill="white" />
@@ -1063,34 +1092,34 @@ export const Icons = {
       fill="none"
       {...props}
     >
-      <g clip-path="url(#clip0_9_6128)">
+      <g clipPath="url(#clip0_9_6128)">
         <path
           opacity="0.6"
           d="M48.9688 66.9296H64.6956C71.9826 66.9296 77.9069 72.8539 77.9069 80.1408V82.9296C77.9069 84.6222 76.5291 86 74.8364 86H38.828C37.1354 86 35.7576 84.6222 35.7576 82.9296V80.1408C35.7576 72.8539 41.6819 66.9296 48.9688 66.9296Z"
           fill="url(#paint0_linear_9_6128)"
           stroke="url(#paint1_linear_9_6128)"
-          stroke-width="4"
+          strokeWidth="4"
         />
         <path
           opacity="0.6"
           d="M74.3577 33.2817C74.3577 43.3784 66.1727 51.5634 56.076 51.5634C45.9793 51.5634 37.7943 43.3784 37.7943 33.2817C37.7943 23.185 45.9793 15 56.076 15C66.1727 15 74.3577 23.185 74.3577 33.2817Z"
           fill="url(#paint2_linear_9_6128)"
           stroke="url(#paint3_linear_9_6128)"
-          stroke-width="4"
+          strokeWidth="4"
         />
         <path
           d="M31.8815 23.0141C35.5576 17.8507 41.5914 14.4873 48.4111 14.4873C59.6167 14.4873 68.6928 23.5718 68.6928 34.769C68.6928 45.9662 59.6083 55.0507 48.4111 55.0507C40.8984 55.0507 34.3322 50.9605 30.8336 44.8929"
           stroke="url(#paint4_linear_9_6128)"
-          stroke-width="4"
-          stroke-miterlimit="10"
-          stroke-linecap="round"
+          strokeWidth="4"
+          strokeMiterlimit="10"
+          strokeLinecap="round"
         />
         <path
           d="M44.2789 56.4535H55.2479C68.6423 56.4535 79.5268 67.3295 79.5268 80.7323V85.7774H20V80.7323C20 67.338 30.8761 56.4535 44.2789 56.4535Z"
           stroke="url(#paint5_linear_9_6128)"
-          stroke-width="4"
-          stroke-miterlimit="10"
-          stroke-linecap="round"
+          strokeWidth="4"
+          strokeMiterlimit="10"
+          strokeLinecap="round"
         />
       </g>
       <defs>
@@ -1102,8 +1131,8 @@ export const Icons = {
           y2="87.5595"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_9_6128"
@@ -1113,8 +1142,8 @@ export const Icons = {
           y2="87.5595"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_9_6128"
@@ -1124,8 +1153,8 @@ export const Icons = {
           y2="36.8497"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_9_6128"
@@ -1135,8 +1164,8 @@ export const Icons = {
           y2="36.8497"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_9_6128"
@@ -1146,8 +1175,8 @@ export const Icons = {
           y2="37.1693"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint5_linear_9_6128"
@@ -1157,8 +1186,8 @@ export const Icons = {
           y2="85.4895"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <clipPath id="clip0_9_6128">
           <rect width="100" height="100" fill="white" />
@@ -1205,7 +1234,7 @@ export const Icons = {
       stroke="currentColor"
       {...props}
     >
-      <g clip-path="url(#clip0_4_1637)">
+      <g clipPath="url(#clip0_4_1637)">
         <path
           d="M11.8947 8.46958L19.3352 0H17.5726L11.1094 7.35251L5.95102 0H0L7.80214 11.1194L0 19.9999H1.76253L8.58348 12.2338L14.0323 19.9999H19.9833M2.39866 1.30158H5.10639L17.5713 18.7623H14.8629"
           fill="white"

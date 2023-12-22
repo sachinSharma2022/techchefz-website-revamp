@@ -4,10 +4,10 @@ import styles from "./style.module.scss";
 const InputCustom = ({ label, type, placeholder, disabled, as, rows, isLabelShow }) => {
   return (
     <div className={styles.inputContainerStyle}>
-      <div class="form-floating">
+      <div className="form-floating">
         <input
           type={type}
-          class={`${styles.floatInput} form-control`}
+          className={`${styles.floatInput} form-control`}
           id="floatingInput"
           disabled={disabled}
           placeholder={placeholder}

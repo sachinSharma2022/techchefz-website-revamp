@@ -96,31 +96,29 @@ const DigitalTransformation = () => {
       <div className={`${styles.digitalMain} digital-transformation`}>
         <Slider {...settings}>
           {serviceCard.map((data, index) => (
-            <div>
-              <div key={index} className={styles.digitalGrid}>
-                <div className={styles.digitalImg}>
-                  <ImageCustom
-                    src={data.img}
-                    width={421}
-                    height={318}
-                    alt="bannerImg"
-                  />
-                </div>
+            <div key={index} className={styles.digitalGrid}>
+              <div className={styles.digitalImg}>
+                <ImageCustom
+                  src={data.img}
+                  width={421}
+                  height={318}
+                  alt="bannerImg"
+                />
+              </div>
 
-                <div className={styles.experienceCardBox}>
-                  <h4 className={styles.CustomerHeading}>
-                    {data.digitalHeading}
-                  </h4>
-                  <p className={styles.digitalText}>{data.digitalText}</p>
+              <div className={styles.experienceCardBox}>
+                <h4 className={styles.CustomerHeading}>
+                  {data.digitalHeading}
+                </h4>
+                <p className={styles.digitalText}>{data.digitalText}</p>
 
-                  <ul className={styles.customerList}>
-                    <li className={styles.list}>
-                      Attract & Engage more users/customers
-                    </li>
-                    <li className={styles.list}>Increase Conversions</li>
-                    <li className={styles.list}>Automate Marketing Tasks</li>
-                  </ul>
-                </div>
+                <ul className={styles.customerList}>
+                  <li className={styles.list}>
+                    Attract & Engage more users/customers
+                  </li>
+                  <li className={styles.list}>Increase Conversions</li>
+                  <li className={styles.list}>Automate Marketing Tasks</li>
+                </ul>
               </div>
             </div>
           ))}
