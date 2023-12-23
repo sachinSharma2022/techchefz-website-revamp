@@ -2,11 +2,20 @@
 
 .whatWeDo {
    padding: 3rem 0;
-   // border: 1px solid red;
+   margin-top: 14rem;
    .weDoTitle {
       color: color(text-primary);
       text-transform: uppercase;
       opacity: 0.8;
+      opacity: 0.8;
+      font-size: text(normal);
+      font-weight: 700;
+      line-height: 24px;
+      letter-spacing: 3.2px;
+   }
+   .weDoHeading {
+      font-size: text(larger);
+      margin-bottom: 2.75rem;
    }
    .workCardWrapper {
       display: flex;
@@ -20,7 +29,7 @@
          margin: 1rem 2rem 1rem 0rem;
          position: relative;
          cursor: pointer;
-         transition: 0.3;
+         transition: 2s;
 
          &:hover {
             border-color: color(heading-liner);
@@ -29,15 +38,17 @@
                display: block;
                position: relative;
                transform: translateY(-1rem);
+               transition: 1s;
             }
 
             .workCardIcon {
                display: none;
+               transition: 1s;
             }
-            
-            h6{
-                transform: translateY(-7rem);
 
+            h6 {
+               transform: translateY(-7rem);
+               transition: 1s;
             }
          }
 

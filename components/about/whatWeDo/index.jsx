@@ -52,9 +52,9 @@ const WhatWeDo = () => {
       <section className={styles.whatWeDo}>
          <div className="container">
             <div className="row">
-               <div className="col-md-6 col-md-5 mb-4">
+               <div className="col-md-6 col-lg-7 mb-4">
                   <h6 className={styles.weDoTitle}>What we do</h6>
-                  <h3 className={styles.weDoHead}>Empowering Innovation: Our Role in the Tech Industry.</h3>
+                  <h3 className={styles.weDoHeading}>Empowering Innovation: Our Role in the Tech Industry.</h3>
                </div>
             </div>
 
