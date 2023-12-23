@@ -2,7 +2,8 @@ import React from "react";
 import styles from "./style.module.scss";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { Button } from "@/components/ui/button";
-import CustomInput, { Textarea } from "@/components/ui/inputCustom";
+import CustomInput from "@/components/ui/inputCustom";
+import DropdownCustom from "@/components/ui/dropdownCustom";
 
 const LetsWork = () => {
   return (
@@ -35,10 +36,8 @@ const LetsWork = () => {
                   />
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                  <CustomInput
-                    label="Phone Number*"
-                    placeholder="Phone Number*"
-                    type="name"
+                  <DropdownCustom
+                   
                   />
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>

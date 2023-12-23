@@ -7,34 +7,221 @@
   justify-content: space-between;
   position: relative;
 
+  @include tablet {
+    padding: 1rem 0.8rem;
+  }
+
   nav {
     position: absolute;
     left: 50%;
-    top: 1.4rem;
+    top: 0;
     transform: translate(-50%);
+
+    @include tablet {
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100vh;
+      width: 100%;
+      transform: inherit;
+      z-index: 9;
+      background-color: rgba(color(primary-white), 0.9);
+      left: -100%;
+      transition: all 0.5s;
+    }
+
+    &.showNav {
+      left: 0;
+    }
 
     ul {
       display: flex;
       align-items: center;
       list-style: none;
+      padding: 0;
+      margin: 0;
+      @include tablet {
+        flex-wrap: wrap;
+        padding: 0;
+        padding-top: 2rem;
+      }
       li {
         list-style-type: none;
+        position: relative;
+        padding: 1.5rem 0;
+        @include tablet {
+          width: 100%;
+          padding: 0.5rem 0;
+        }
+
+        &:hover {
+          .subMenu {
+            display: block;
+          }
+          .arrow {
+            border-color: color(accent);
+            transform: rotate(-135deg);
+            position: relative;
+            top: 0.063rem;
+
+            @include mobile {
+              transform: rotate(-45deg);
+              border-color: color(foreground);
+            }
+          }
+        }
+
         a {
           font-size: text(normal);
           color: color(text-primary);
           font-weight: 600;
           margin: 0 1.2rem;
+          display: inline-flex;
+          align-items: center;
+
+          .arrow {
+            box-sizing: border-box;
+            height: 0.4rem;
+            width: 0.4rem;
+            border-style: solid;
+            border-color: color(text-primary);
+            border-width: 0rem 0.155rem 0.155rem 0rem;
+            transform: rotate(45deg);
+            transition: border-width 150ms ease-in-out;
+            margin-left: 0.5rem;
+            transition: all 0.5s;
+
+            @include mobile {
+              transform: rotate(-45deg);
+            }
+          }
+        }
+
+        .subMenu {
+          display: none;
+          position: absolute;
+          left: 50%;
+          top: 4rem;
+          transform: translate(-50%);
+          background-color: color(primary-white);
+          width: 100%;
+          min-width: fit-content;
+          z-index: 2;
+          padding: 0;
+          margin: 0;
+          border: 0.063rem solid rgba(color(text-primary), 0.2);
+
+          @include tablet {
+            left: 0;
+            transform: inherit;
+            top: 3rem;
+          }
+          li {
+            line-height: normal;
+            padding: 0;
+            a {
+              display: block;
+              padding: 0.7rem 1.5rem;
+              border-bottom: 0.063rem solid rgba(color(text-primary), 0.2);
+              font-weight: 500;
+              color: color(text-primary);
+              margin: 0;
+              white-space: nowrap;
+            }
+
+            &:last-child {
+              a {
+                border-bottom: none;
+              }
+            }
+          }
         }
       }
     }
   }
 
-  .headerRight{
+  .activeHumburger {
+    button {
+      span {
+        background: 0;
+        &::before {
+          top: 0;
+          transform: rotate(45deg);
+        }
+        &::after {
+          bottom: 0;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  .navHamburger {
+    display: none;
+
+    @include tablet {
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      width: 1.5625rem;
+      height: 2.8125rem;
+      font-size: 0;
+      text-indent: -9999px;
+      appearance: none;
+      box-shadow: none;
+      border-radius: none;
+      cursor: pointer;
+      background: 0;
+      z-index: 99;
+
+      span {
+        display: block;
+        position: absolute;
+        top: 1.4375rem;
+        left: 0;
+        right: 0;
+        height: 0.125rem;
+        background: color(text-primary);
+
+        &::before,
+        &::after {
+          position: absolute;
+          display: block;
+          left: 0;
+          width: 100%;
+          height: 0.125rem;
+          background-color: color(text-primary);
+          content: "";
+          transition-delay: 0.3s, 0;
+        }
+
+        &::before {
+          top: -0.5rem;
+          transition-property: top;
+          transition: 0.3s all;
+        }
+        &::after {
+          bottom: -0.5rem;
+          transition-property: bottom;
+          transition: 0.3s all;
+        }
+      }
+    }
+  }
+
+  .headerRight {
     display: flex;
     align-items: center;
 
-    .modeBtn{
+    .modeBtn {
       margin: 0 1rem;
+    }
+    .headerBtn {
+      @include tablet {
+        display: none;
+      }
     }
   }
 }
