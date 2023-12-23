@@ -60,7 +60,7 @@ const Testimonials = () => {
     <section className={`${styles.digitalStyle}`}>
       <div className={`${styles.digitalMain} digital-transformation`}>
         <div className={styles.testimonialsLeft}>
-          <div className={styles.ProjectHighlight}>Digital Transformation</div>
+          <div className={styles.ProjectHighlight}>Testimonials</div>
           <div className={styles.testimonialsHeading}>
             <h3>Voices of Delightful Experiences.</h3>
           </div>

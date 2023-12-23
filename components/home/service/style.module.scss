@@ -38,6 +38,7 @@
         font-weight: 500;
         line-height: 3.375rem;
         margin-bottom: 3.75rem;
+        font-family: font(primary);
         @include mobile {
           font-size: text(xxxl);
           line-height: 2.5rem;
@@ -89,9 +90,9 @@
       .sbTitle {
         font-size: text(xl);
         font-weight: 500;
-        margin-top: 1rem;
         line-height: text(xxxl);
         margin-bottom: 0.75rem;
+        font-family: font(primary);
         text-align: left;
         @include mobile {
           font-size: text(lg);

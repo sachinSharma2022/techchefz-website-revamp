@@ -190,12 +190,41 @@ body {
       pointer-events: none;
     }
     .slick-dots {
+      bottom: 0px;
+      li {
+        width: 0.75rem;
+        height: 0.75rem;
+        margin: 0 1.25rem 0 0;
+
+        button {
+          width: 0.75rem;
+          height: 0.75rem;
+          background: #dedede;
+          border-radius: 3.125rem;
+          font-size: 0px;
+
+          &::before {
+            width: 1.25rem;
+            height: 1.25rem;
+            display: none;
+          }
+        }
+      }
+
       @include mobile {
         position: relative;
         top: 0;
         padding-bottom: 20px;
       }
+      .slick-active {
+        button {
+          background-color: #adadad;
+          width: 20px;
+          height: 20px;
+        }
+      }
     }
+
     // .slick-list {
     //   padding-left: 7.5rem;
     // }

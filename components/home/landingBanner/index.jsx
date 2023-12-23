@@ -6,8 +6,8 @@ const LandingBanner = () => {
   return (
     <section className={`${styles.landingBannerStyle}`}>
       <h1 className={styles.title}>
-        Humanizing <br /> Digital Experience <br />
-        <span className={styles.titleHighlight}>Through Data.</span>
+        Humanizing <div /> Digital Experience <div />
+        <div className={styles.titleHighlight}>Through Data.</div>
       </h1>
 
       <Button variant="blueBtn" size="md">

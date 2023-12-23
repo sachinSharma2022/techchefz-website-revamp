@@ -86,7 +86,8 @@
     font-size: text(larger);
     font-weight: 500;
     line-height: 3.375rem;
-    padding-right: 17.5rem;
+    padding-right: 16.5rem;
+    font-family: font(primary);
     @include mobile {
       font-size: text(xl);
       line-height: 1.875rem;
@@ -99,6 +100,7 @@
     font-weight: 500;
     opacity: 0.6;
     margin-bottom: text(larger);
+    font-family: font(secondary);
     @include mobile {
       font-size: text(xl);
       line-height: 1.875rem;
