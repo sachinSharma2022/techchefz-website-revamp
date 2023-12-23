@@ -2,34 +2,39 @@
 
 .ourHistory {
    padding: 3rem 0;
-//    border: 1px solid red;
    height: 100vh;
+   // border: 1px solid red;
+   margin-bottom: 4rem;
    .ourHistoryTitle {
       color: color(text-primary);
       text-transform: uppercase;
       opacity: 0.8;
+      font-size: text(normal);
+      font-weight: 700;
+      line-height: 24px;
+      letter-spacing: 3.2px;
+   }
+   .ourHistoryHeading {
+      font-size: text(larger);
+      margin-bottom: 2.75rem;
    }
 
-   .ourHistorySlider {
-      .sliderButtons {
-        display: flex;
-        gap: 24px;
-         .btnPrev {
-            border: 1px solid rgba(17, 17, 17, 0.2);
-            opacity: 0.6;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-         }
-         .btnNext{
-            background-color:color(primary-blue) ;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-         }
-      }
-      .OurHistoryImage {
-         img {
-            border-radius: 0.5rem;
-         }
+   .subHeading {
+      font-size: text(xxxl);
+      font-weight: 500;
+      line-height: 40px;
+      margin-bottom: 0.5rem;
+   }
+   .ourHistoryContent {
+      opacity: 0.6;
+      font-weight: 400;
+      font-size: text(lg);
+      line-height: 30px;
+   }
+
+   .OurHistoryImage {
+      img {
+         border-radius: 0.5rem;
       }
    }
 }

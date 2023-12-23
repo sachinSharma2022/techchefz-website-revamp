@@ -2,7 +2,7 @@
 
 .aboutBanner {
    .bannerTitle {
-      margin: 3rem 4rem;
+      margin: 5rem 4rem 3rem 5rem;
       width: 70%;
       font-weight: 500;
       font-size: text(xl-larger);
@@ -14,6 +14,7 @@
 
    .bannerImg {
       background: url("../../../public/images/img/about-bg.png");
+      background-repeat: no-repeat;
       height: 100vh;
       position: relative;
       display: flex;

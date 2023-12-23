@@ -6,33 +6,53 @@
    align-items: center;
    padding: 4rem 0;
 
+   .ourTeamHead{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      
    .ourTeamTitle {
       font-size: text(normal);
       opacity: 0.6;
       letter-spacing: 3.2px;
       text-transform: uppercase;
    }
-   .buttonWrapper{
-    border: 2px solid color(heading-liner);
-    padding: 0.5rem;
-    border-radius: 0.5rem;
+   .ourTeamHeading{
+      font-size: text(larger);
+   }
+   }
+   .titleWrapper{
+      width: 40%;
+   }
+   .tabWrapper {
+      border: 2px solid color(heading-liner);
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      width: 35%;
+      height: 30%;
 
-    .teamButton1{
-        background-color: color(info-blue);
-        color: color(primary-white);
-        border-radius: 0.5rem;
-        padding: 0.75rem;     
-        font-size: text(normal);
-        font-weight: 500;
-        width: 50%;   
-    }
-    .teamButton2{
-        color: color(primary-black);
-        padding: 0.75rem; 
-        width: 50%;   
-        font-size: text(normal);
-        font-weight: 500;
-    }
+      .teamButton1 {
+         background-color: color(info-blue);
+         color: color(primary-white);
+         border-radius: 0.5rem;
+         padding: 0.4rem 0.75rem;
+         font-size: text(normal);
+         font-weight: 500;
+         width: 48%;
+         margin: 0 0.2rem;
+
+      }
+       .teamButton2{
+           color: color(primary-black);
+           padding: 0.4rem 0.75rem;
+           width: 50%;
+           font-size: text(normal);
+           font-weight: 500;
+       }
+   }
+   .contentWrapper{
+      position: relative;
    }
    .teamCards {
       display: flex;
@@ -69,13 +89,13 @@
                   opacity: 0.6;
                }
             }
-            .linkdinIcon{
-                position: absolute;
-                bottom: 2rem;
-                left: 1rem;
+            .linkdinIcon {
+               position: absolute;
+               bottom: 2rem;
+               left: 1rem;
             }
             img {
-               position: absolute;
+               position: absolute;               
                bottom: 0;
                right: 0;
                border-radius: 0.7rem;

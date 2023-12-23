@@ -30,7 +30,7 @@ const OurValues = () => {
       <section className={styles.ourValues}>
          <div className="container">
             <div className="row mb-3">
-               <div className="col-md-6 col-lg-6">
+               <div className="col-md-7 col-lg-8">
                   <h6 className={styles.ourValuesTitle}>Our Values</h6>
                   <h3 className={styles.ourValuesHeading}>Our values are part of everything we create at Instrument.</h3>
                </div>

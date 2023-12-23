@@ -15,7 +15,6 @@ const OurHistory = () => {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-    
 
       // responsive: [
       //    {
@@ -46,65 +45,72 @@ const OurHistory = () => {
       //    },
       // ],
    };
+
+   const sliderData = [
+      {
+         title: "Bridging Dreams to Reality in a Transformative Journey of Innovation and Impact at TechChefz.",
+         content:
+            "Founded in 2017, TechChefz arose from a shared passion for technology, uniting a team of pioneers. Fueled by enthusiasm and determination, they set on a transformative journey to shape the future.",
+         imgSrc: "/images/img/about/slider1.png",
+      },
+      {
+         title: "Bridging Dreams to Reality in a Transformative Journey of Innovation and Impact at TechChefz.",
+         content:
+            "Founded in 2017, TechChefz arose from a shared passion for technology, uniting a team of pioneers. Fueled by enthusiasm and determination, they set on a transformative journey to shape the future.",
+         imgSrc: "/images/img/about/slider1.png",
+      },
+      {
+         title: "Bridging Dreams to Reality in a Transformative Journey of Innovation and Impact at TechChefz.",
+         content:
+            "Founded in 2017, TechChefz arose from a shared passion for technology, uniting a team of pioneers. Fueled by enthusiasm and determination, they set on a transformative journey to shape the future.",
+         imgSrc: "/images/img/about/slider1.png",
+      },
+      {
+         title: "Bridging Dreams to Reality in a Transformative Journey of Innovation and Impact at TechChefz.",
+         content:
+            "Founded in 2017, TechChefz arose from a shared passion for technology, uniting a team of pioneers. Fueled by enthusiasm and determination, they set on a transformative journey to shape the future.",
+         imgSrc: "/images/img/about/slider1.png",
+      },
+      {
+         title: "Bridging Dreams to Reality in a Transformative Journey of Innovation and Impact at TechChefz.",
+         content:
+            "Founded in 2017, TechChefz arose from a shared passion for technology, uniting a team of pioneers. Fueled by enthusiasm and determination, they set on a transformative journey to shape the future.",
+         imgSrc: "/images/img/about/slider1.png",
+      },
+      {
+         title: "Bridging Dreams to Reality in a Transformative Journey of Innovation and Impact at TechChefz.",
+         content:
+            "Founded in 2017, TechChefz arose from a shared passion for technology, uniting a team of pioneers. Fueled by enthusiasm and determination, they set on a transformative journey to shape the future.",
+         imgSrc: "/images/img/about/slider1.png",
+      },
+   ];
    return (
       <section className={styles.ourHistory}>
          <div className="container">
             <div className="row">
-               <div className="col-md-6 col-md-5 mb-4">
+               <div className="col-md-6 col-md-7 mb-4">
                   <h6 className={styles.ourHistoryTitle}>Our History</h6>
                   <h3 className={styles.ourHistoryHeading}>Tracing Innovation Through Time: Our IT Journey.</h3>
                </div>
             </div>
 
-            {/* <div className={styles.ourHistorySlider}>
-               <div className="row justify-content-between">
-                  <div className="col-md-6 col-lg-5">
-                     <h4>Bridging Dreams to Reality in a Transformative Journey of Innovation and Impact at TechChefz.</h4>
-                     <p>
-                        Founded in 2017, TechChefz arose from a shared passion for technology, uniting a team of pioneers. Fueled by enthusiasm and
-                        determination, they set on a transformative journey to shape the future.
-                     </p>
-                     <div className={styles.sliderButtons}>
-                        <button className={`${styles.btnPrev} `}>
-                           <Icons.ArrowLeft width={18} height={16} />
-                        </button>
-                        <button className={styles.btnNext}>
-                           <Icons.ArrowRight width={18} height={16} />
-                        </button>
-                     </div>
-                  </div>
-                  <div className="col-md-6 col-lg-5">
-                     <div className={styles.OurHistoryImage}>
-                        <ImageCustom src={"/images/img/about/slider1.png"} width={450} height={300} alt="slider-img" />
-                     </div>
-                  </div>
-               </div>
-            </div> */}
             <div className="ourHistorySlider">
                <Slider {...settings}>
-                  <div>
-                     <div className={styles.ourHistorySlider}>
+                  {sliderData.map((data, index) => (
+                     <div key={index}>
                         <div className="row justify-content-between">
                            <div className="col-md-6 col-lg-5">
-                              <h4>Bridging Dreams to Reality in a Transformative Journey of Innovation and Impact at TechChefz.</h4>
-                              <p>
-                                 Founded in 2017, TechChefz arose from a shared passion for technology, uniting a team of pioneers. Fueled by
-                                 enthusiasm and determination, they set on a transformative journey to shape the future.
-                              </p>
+                              <h4 className={styles.subHeading}>{data.title}</h4>
+                              <p className={styles.ourHistoryContent}>{data.content}</p>
                            </div>
-                           <div className="col-md-6 col-lg-5">
+                           <div className="col-md-6 col-lg-6">
                               <div className={styles.OurHistoryImage}>
-                                 <ImageCustom src={"/images/img/about/slider1.png"} width={450} height={300} alt="slider-img" />
+                                 <ImageCustom src={data.imgSrc} width={540} height={397} alt="slider-img" />
                               </div>
                            </div>
                         </div>
                      </div>
-                  </div>
-                  <div>2</div>
-                  <div>3</div>
-                  <div>4</div>
-                  <div>5</div>
-                  <div>6</div>
+                  ))}
                </Slider>
             </div>
          </div>

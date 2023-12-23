@@ -3,26 +3,41 @@
 .ourResults {
    padding: spacing(section-primary-padding);
 
-    .ourResultsTitle{
-        color: color(text-primary);
-        text-transform: uppercase;
-        opacity: 0.8;
-    }
+   .ourResultsTitle {
+      color: color(text-primary);
+      text-transform: uppercase;
+      opacity: 0.8;
+      font-size: text(normal);
+      font-weight: 700;
+      line-height: 24px;
+      letter-spacing: 3.2px;
+   }
+   .ourResultsHeading {
+      font-size: text(larger);
+      margin-bottom: 2.75rem;
+   }
+   .ourResultsText {
+      opacity: 0.6;
+      font-weight: 400;
+      line-height: 30px;
+      font-size: text(lg);
+      margin-bottom: 5rem;
+   }
    .resultCardWrapper {
-    display: flex;
+      display: flex;
       .resultCard {
-         border: 2px solid rgba(color(text-primary),12%);
+         border: 2px solid rgba(color(text-primary), 12%);
          width: 16.875rem;
          height: 13.87rem;
          padding: 2rem;
          background-color: color(bg-soft);
          border-radius: 1.25rem;
          margin: 1rem 2.5rem 1rem 0;
-         &:hover{
+         &:hover {
             border-color: color(heading-liner);
          }
 
-         .cardNum{
+         .cardNum {
             font-size: text(larger);
             color: color(heading-liner);
             margin-bottom: 0;
