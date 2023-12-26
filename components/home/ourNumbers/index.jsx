@@ -24,7 +24,7 @@ const OurNumbers = () => {
       sbText: "Elevated Conversion Rates.",
     },
     {
-      icon: <Icons.Rates width={56} height={56} />,
+      icon: <Icons.Performance width={56} height={56} />,
       sbTitle: "120%",
       sbText: "Enhanced SaaS CRO Performance.",
     },
@@ -112,7 +112,7 @@ const OurNumbers = () => {
               {serviceCard.map((data, index) => (
                 <div key={index} className={styles.serviceBox}>
                   <div className={styles.numberCardFlex}>
-                    <p className={styles.sbTitle}>{data.sbTitle}</p>
+                    <h2 className={styles.sbTitle}>{data.sbTitle}</h2>
                     <div className={styles.bgIcon}>{data.icon}</div>
                   </div>
 
@@ -128,7 +128,7 @@ const OurNumbers = () => {
             {serviceCard.map((data, index) => (
               <div key={index} className={styles.serviceBox}>
                 <div className={styles.numberCardFlex}>
-                  <p className={styles.sbTitle}>{data.sbTitle}</p>
+                  <h2 className={styles.sbTitle}>{data.sbTitle}</h2>
                   <div className={styles.bgIcon}>{data.icon}</div>
                 </div>
 
