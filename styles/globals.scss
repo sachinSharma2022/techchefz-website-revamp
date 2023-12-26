@@ -4,7 +4,7 @@
 @import "./partials/mixins";
 
 // Slick Slider
-@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
 * {
@@ -103,12 +103,6 @@ a {
   //   padding-left: 7.5rem;
   // }
 }
-
-// .slider {
-//   display: grid;
-//   grid-template-columns: repeat(2, 1fr);
-//   gap: 0.9375rem;
-// }
 
 .digital-transformation {
   .slick-slider {
@@ -238,6 +232,24 @@ a {
 }
 
 .testimonials-slider {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    content: "";
+    background: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 0) 18.24%,
+      rgba(255, 255, 255, 0.2) 21.61%,
+      #ffffff 91.29%
+    );
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+  }
+
   .slick-slider {
     .slick-arrow {
       z-index: 2;
@@ -352,10 +364,24 @@ a {
       }
     }
   }
+
+  /* the slides */
+  .slick-slide {
+    margin: 0 10px;
+    min-width: 478px;
+    max-width: 478px;
+  }
+
+  /* the parent */
+  .slick-list {
+    margin: 0 -10px;
+    padding-left: 0px !important;
+  }
 }
 
 .primary-padding {
   padding: 0 8.5rem 0 7.8rem;
+
   .primary-padding {
     padding: 0 8.5rem 0 7.8rem;
 
@@ -425,16 +451,17 @@ a {
     height: 3rem;
     width: 3rem;
   }
-//   .slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
-//     color: color(primary-white);
-//     outline: none;
-//     background: color(primary-blue);
-// }
-  .slick-prev:hover, .slick-next:hover {
+  //   .slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
+  //     color: color(primary-white);
+  //     outline: none;
+  //     background: color(primary-blue);
+  // }
+  .slick-prev:hover,
+  .slick-next:hover {
     color: color(primary-white);
     outline: none;
     background: color(primary-blue);
-}
+  }
 
   .slick-dots {
     bottom: -7rem;
@@ -464,22 +491,9 @@ a {
     top: 0.2rem;
   }
 
-  .slick-dots li button:hover:before, .slick-dots li button:focus:before {
-     opacity: 0.75rem;
+  .slick-dots li button:hover:before,
+  .slick-dots li button:focus:before {
+    opacity: 0.75rem;
     color: color(info-blue);
-
+  }
 }
-}
-
-/* Create four equal columns that sits next to each other */
-// .column {
-//   flex: 25%;
-//   max-width: 25%;
-//   padding: 0 4px;
-// }
-
-// .column img {
-//   margin-top: 8px;
-//   vertical-align: middle;
-//   width: 100%;
-// }

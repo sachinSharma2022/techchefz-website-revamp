@@ -1,14 +1,12 @@
 @import "~/styles/partials/config";
 
-.digitalStyle {
+.testimonialsStyle {
   padding: spacing(section-primary-padding);
+  padding-right: 0;
   background-color: color(primary-white);
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8.938rem;
+  overflow-x: hidden;
 
   @include mobile {
-    padding: spacing(section-mob-padding);
     padding: spacing(section-mob-padding);
     grid-template-columns: repeat(1, 1fr);
     padding: 20px;
