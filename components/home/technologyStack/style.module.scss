@@ -5,8 +5,8 @@
   padding: 20px;
   position: relative;
   overflow: hidden;
-  &::before{
-    content: '';
+  &::before {
+    content: "";
     width: 30rem;
     height: 30rem;
     border-radius: 50%;
@@ -18,8 +18,8 @@
     opacity: 0.3;
   }
 
-  &::after{
-    content: '';
+  &::after {
+    content: "";
     width: 30rem;
     height: 30rem;
     border-radius: 50%;
@@ -61,6 +61,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 65.75rem;
+    z-index: 1;
     .careerRow {
       text-align: center;
       .ProjectHighlight {
@@ -95,6 +97,7 @@
       .partnerCounter {
         display: flex;
         justify-content: center;
+        align-items: center;
         gap: 5rem;
         margin-bottom: 3.75rem;
         .counterCard {

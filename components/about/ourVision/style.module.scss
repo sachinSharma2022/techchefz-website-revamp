@@ -17,6 +17,8 @@
 
    .aboutSubHeading {
       font-size: text(xxxl);
+      font-weight: 500;
+      line-height: 40px;
    }
 
    .aboutParagraph {
@@ -29,7 +31,7 @@
    .videoWrapper {
       margin-top: spacing(p-120);
 
-      video{
+      video {
          border-radius: 0.5rem;
       }
    }

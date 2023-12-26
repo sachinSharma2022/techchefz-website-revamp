@@ -67,14 +67,12 @@ const Testimonials = () => {
             <div className={styles.testimonialsHeading}>
               <h3>Voices of Delightful Experiences.</h3>
             </div>
-            <div className={styles.testimonialsText}>
-              <p>
-                Delve into our case studies to witness firsthand how we&apos;ve
-                tackled challenges, delivered solutions, and achieved measurable
-                success. Each story is a testament to our commitment, expertise,
-                and the transformative impact.
-              </p>
-            </div>
+            <p className={styles.testimonialsText}>
+              Delve into our case studies to witness firsthand how we&apos;ve
+              tackled challenges, delivered solutions, and achieved measurable
+              success. Each story is a testament to our commitment, expertise,
+              and the transformative impact.
+            </p>
           </div>
         </div>
 

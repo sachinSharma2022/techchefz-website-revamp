@@ -13,14 +13,16 @@
     padding: 20px;
     margin-bottom: 2.75rem;
   }
-  
+
   .testimonialsLeft {
     .ProjectHighlight {
       font-size: text(normal);
       font-weight: 700;
       margin-bottom: text(lg);
-      opacity: 0.6;
+      opacity: 0.8;
       text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      color: color(text-primary);
       @include mobile {
         margin-bottom: 0.75rem;
       }
@@ -31,24 +33,16 @@
         font-weight: 500;
         line-height: 3.375rem;
         margin-bottom: 2rem;
-        font-family: font(primary);
+        max-width: 50%;
       }
     }
-    .testimonialsHeading {
-      font-size: 2.75rem;
-      font-weight: 500;
-      line-height: 3.375rem;
-      margin-bottom: 2rem;
-      @include mobile {
-        font-size: text(xxxl);
-        line-height: 2.5rem;
-      }
-    }
+
     .testimonialsText {
-      font-size: text(xl);
+      font-size: text(lg);
       font-weight: 400;
       opacity: 0.6;
       line-height: 1.875rem;
+      max-width: 50%;
       @include mobile {
         font-size: text(normal);
         line-height: text(xl);
@@ -61,7 +55,7 @@
     background-color: color(primary-background);
     border: 1px solid rgba(color(text-primary), 0.12);
     border-radius: 12px;
-    
+
     .commaImg {
       margin-bottom: text(lg);
     }

@@ -1,108 +1,109 @@
 @import "~/styles/partials/config";
 
 .ourTeam {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   padding:  spacing(section-primary-padding);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: spacing(section-primary-padding);
 
-   .ourTeamHead{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+  .ourTeamHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-      
-   .ourTeamTitle {
+    .ourTeamTitle {
       font-size: text(normal);
       opacity: 0.6;
       letter-spacing: 0.2rem;
       text-transform: uppercase;
       font-family: font(secondary);
       font-weight: 700;
-line-height: 1.5rem;
-   }
-   .ourTeamHeading{
+      line-height: 1.5rem;
+    }
+    .ourTeamHeading {
       font-size: text(larger);
-   }
-   }
-   .titleWrapper{
-      width: 40%;
-   }
-   .tabWrapper {
-      border: 2px solid color(heading-liner);
-      padding: 0.5rem;
-      border-radius: 0.5rem;
-      width: 35%;
-      height: 30%;
+    }
+  }
+  .titleWrapper {
+    width: 40%;
+  }
+  .tabWrapper {
+    border: 2px solid color(heading-liner);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    width: fit-content;
+    display: flex;
 
-      .teamButton1 {
-         background-color: color(info-blue);
-         color: color(primary-white);
-         border-radius: 0.5rem;
-         padding: 0.4rem 0.75rem;
-         font-size: text(normal);
-         font-weight: 500;
-         width: 48%;
-         margin: 0 0.2rem;
+    button {
+      white-space: nowrap;
+      span {
+        padding: 0 2rem;
+        height: 2.375rem;
+        align-items: center;
+        border-radius: 0.5rem;
+        display: inline-flex;
 
+        &.btnActive {
+          background-color: color(primary-blue);
+          color: color(primary-white);
+        }
       }
-       .teamButton2{
-           color: color(primary-black);
-           padding: 0.4rem 0.75rem;
-           width: 50%;
-           font-size: text(normal);
-           font-weight: 500;
-       }
-   }
-   .contentWrapper{
-      position: relative;
-   }
-   .teamCards {
-      display: flex;
-      gap: 40px;
-      margin-top: 3rem;
+    }
+  }
+  .contentWrapper {
+    position: relative;
+  }
+  .teamCards {
+    display: flex;
+    gap: 40px;
+    margin-top: 3rem;
 
-      .teamCardBg {
-         border: 1px solid #4cc3da;
-         background: linear-gradient(328deg, #4cc3da 20.24%, #3376d9 49.39%, #2720a9 102.1%);
-         background-blend-mode: soft-light, normal;
-         height: 26.063rem;
-         width: 19.688rem;
-         border-radius: 0.7rem;
-         color: color(primary-white);
+    .teamCardBg {
+      border: 1px solid #4cc3da;
+      background: linear-gradient(
+        328deg,
+        #4cc3da 20.24%,
+        #3376d9 49.39%,
+        #2720a9 102.1%
+      );
+      background-blend-mode: soft-light, normal;
+      height: 26.063rem;
+      width: 100%;
+      border-radius: 0.7rem;
+      overflow: hidden;
+      color: color(primary-white);
 
-         .teamCardContent {
-            position: relative;
-            height: 100%;
-
-            .cardHead {
-               display: flex;
-               justify-content: space-between;
-               padding: 1rem 0.8rem;
-
-               h6 {
-                  font-size: text(xl);
-                  font-style: normal;
-                  font-weight: 500;
-               }
-               p {
-                  font-size: text(lg);
-                  font-weight: 400;
-                  opacity: 0.6;
-               }
-            }
-            .linkdinIcon {
-               position: absolute;
-               bottom: 2rem;
-               left: 1rem;
-            }
-            img {
-               position: absolute;               
-               bottom: 0;
-               right: 0;
-               border-radius: 0.7rem;
-            }
-         }
+      .teamImg{
+        display: flex;
+        justify-content: flex-end;
       }
-   }
+
+      .teamCardContent {
+        position: relative;
+        height: 100%;
+
+        .cardHead {
+          display: flex;
+          justify-content: space-between;
+          padding: 1rem 0.8rem;
+
+          h6 {
+            font-size: text(xl);
+            font-style: normal;
+            font-weight: 500;
+          }
+          p {
+            font-size: text(lg);
+            font-weight: 400;
+            opacity: 0.6;
+          }
+        }
+        .linkdinIcon {
+          position: absolute;
+          bottom: 2rem;
+          left: 1rem;
+        }
+      }
+    }
+  }
 }
