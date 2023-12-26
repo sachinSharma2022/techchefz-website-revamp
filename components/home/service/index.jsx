@@ -107,8 +107,8 @@ const Service = () => {
           {serviceCard.map((data, index) => (
             <div key={index} className={styles.serviceBox}>
               <div className={styles.bgIcon}>{data.icon}</div>
-              <div className={styles.sbTitle}>{data.sbTitle}</div>
-              <div className={styles.sbText}>{data.sbText}</div>
+              <h4 className={styles.sbTitle}>{data.sbTitle}</h4>
+                <p className={styles.sbText}>{data.sbText}</p>
             </div>
           ))}
         </div>
@@ -120,8 +120,8 @@ const Service = () => {
             <div key={index}>
               <div key={index} className={styles.serviceBox}>
                 <div className={styles.bgIcon}>{data.icon}</div>
-                <div className={styles.sbTitle}>{data.sbTitle}</div>
-                <div className={styles.sbText}>{data.sbText}</div>
+                <h4 className={styles.sbTitle}>{data.sbTitle}</h4>
+                <p className={styles.sbText}>{data.sbText}</p>
               </div>
             </div>
           ))}

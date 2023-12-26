@@ -34,17 +34,32 @@
 .variant_default {
   padding: 0;
   height: auto;
-  background-color: color(primary-blue);
   color: color(primary-white);
-  &:hover {
-    color: color(primary-blue);
-    background-color: color(heading-liner);
-    color: color(primary-white);
-  }
 }
 
 .variant_blueBtn {
   background-color: color(primary-blue);
+  color: color(primary-white);
+  border: 0.063rem solid color(primary-blue);
+
+  &:hover {
+    color: color(primary-blue);
+    background-color: transparent;
+    svg{
+      path{
+        stroke: color(primary-blue);
+      }
+    }
+  }
+  svg{
+    display: inline-block;
+    margin-left: 0.4rem;
+    margin-top: 0.2rem;
+  }
+}
+
+.variant_ligthBlueBtn {
+  background-color: color(info-blue);
   color: color(primary-white);
   border: 0.063rem solid color(primary-blue);
 
@@ -94,6 +109,21 @@
 }
 
 .size_sm {
+  height: 2.75rem;
+  padding: 0.625rem 1.15rem;
+  font-size: text(normal);
+  border-radius: 0.5rem;
+}
+
+.size_lg {
+  height: 3.25rem;
+  padding: 0.625rem 1.15rem;
+  font-size: text(normal);
+  border-radius: 0.5rem;
+  font-weight: 500;
+}
+
+.size_xs {
   height: 2.188rem;
   padding: 0.625rem 1.15rem;
   font-size: text(normal);
@@ -105,6 +135,7 @@
   padding: 0px 2rem;
   font-size: text(lg);
   border-radius: 0.75rem;
+  font-weight: 500;
 }
 
 .size_number {

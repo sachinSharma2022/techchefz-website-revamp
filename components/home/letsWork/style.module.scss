@@ -108,7 +108,7 @@
         display: flex;
         justify-content: flex-end;
         img {
-          width: 38rem;
+          max-width: 38rem;
           height: 38.5rem;
           object-fit: cover;
           border-radius: 0.75rem;

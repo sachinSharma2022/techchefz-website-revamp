@@ -1,23 +1,27 @@
 @import "~/styles/partials/config";
 
-.ourVision{
-    padding:2rem ;
+.ourVision {
+   padding: spacing(p-120);
 
-    .aboutHeading {
-        font-size: text(larger);
-      
-        span {
-          font-size: text(larger);
-          color: color(heading-liner);
-        }
+   .aboutHeading {
+      font-size: text(larger);
+
+      span {
+         font-size: text(larger);
+         color: color(heading-liner);
       }
-      
-      .aboutSubHeading {
-        font-size: text(xxxl);
-      }
-      
-      .aboutParagraph {
-        font-size: text(normal);
-        opacity: 0.6;
-      }
+   }
+
+   .aboutSubHeading {
+      font-size: text(xxxl);
+   }
+
+   .aboutParagraph {
+      font-size: text(normal);
+      opacity: 0.6;
+   }
+
+   .videoWrapper {
+      margin-top: spacing(p-120);
+   }
 }
