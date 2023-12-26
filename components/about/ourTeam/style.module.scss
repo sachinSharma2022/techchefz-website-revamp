@@ -37,9 +37,11 @@
     button {
       white-space: nowrap;
       span {
-        padding: 0.5rem 2rem;
+        padding: 0 2rem;
+        height: 2.375rem;
+        align-items: center;
         border-radius: 0.5rem;
-        display: inline-block;
+        display: inline-flex;
 
         &.btnActive {
           background-color: color(primary-blue);
@@ -66,9 +68,15 @@
       );
       background-blend-mode: soft-light, normal;
       height: 26.063rem;
-      width: 19.688rem;
+      width: 100%;
       border-radius: 0.7rem;
+      overflow: hidden;
       color: color(primary-white);
+
+      .teamImg{
+        display: flex;
+        justify-content: flex-end;
+      }
 
       .teamCardContent {
         position: relative;
@@ -94,12 +102,6 @@
           position: absolute;
           bottom: 2rem;
           left: 1rem;
-        }
-        img {
-          position: absolute;
-          bottom: 0;
-          right: 0;
-          border-radius: 0.7rem;
         }
       }
     }
