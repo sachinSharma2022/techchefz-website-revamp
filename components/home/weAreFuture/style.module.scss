@@ -88,7 +88,6 @@
     font-weight: 500;
     line-height: 3.375rem;
     max-width: 65%;
-    font-family: font(primary);
     @include mobile {
       font-size: text(xl);
       line-height: 1.875rem;
@@ -98,10 +97,10 @@
   
   .aboutText {
     font-size: text(lg);
-    font-weight: 7400;
+    font-weight: 400;
     opacity: 0.6;
     margin-bottom: text(larger);
-    font-family: font(secondary);
+    color: color(text-primary);
     @include mobile {
       font-size: text(xl);
       line-height: 1.875rem;

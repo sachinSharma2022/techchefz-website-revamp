@@ -1,7 +1,7 @@
 @import "~/styles/partials/config";
 
 .landingBannerStyle {
-  padding: spacing(section-primary-padding);
+  padding-inline: spacing(p-120);
   position: relative;
 
   &::before{

@@ -60,18 +60,16 @@ const Testimonials = () => {
     <section className={`${styles.digitalStyle}`}>
       <div className={`${styles.digitalMain} digital-transformation`}>
         <div className={styles.testimonialsLeft}>
-          <div className={styles.ProjectHighlight}>Testimonials</div>
+          <p className={styles.ProjectHighlight}>Testimonials</p>
           <div className={styles.testimonialsHeading}>
             <h3>Voices of Delightful Experiences.</h3>
           </div>
-          <div className={styles.testimonialsText}>
-            <p>
-              Delve into our case studies to witness firsthand how we've tackled
-              challenges, delivered solutions, and achieved measurable success.
-              Each story is a testament to our commitment, expertise, and the
-              transformative impact.
-            </p>
-          </div>
+          <p className={styles.testimonialsText}>
+            Delve into our case studies to witness firsthand how we've tackled
+            challenges, delivered solutions, and achieved measurable success.
+            Each story is a testament to our commitment, expertise, and the
+            transformative impact.
+          </p>
         </div>
         <Slider {...settings}>
           {serviceCard.map((data, index) => (

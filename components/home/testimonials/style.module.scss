@@ -26,6 +26,7 @@
         margin-bottom: text(lg);
         opacity: 0.6;
         text-transform: uppercase;
+        letter-spacing: 0.2rem;
         @include mobile {
           margin-bottom: 0.75rem;
         }
@@ -36,7 +37,6 @@
           font-weight: 500;
           line-height: 3.375rem;
           margin-bottom: 2rem;
-          font-family: font(primary);
         }
       }
       .testimonialsHeading {
@@ -44,6 +44,7 @@
         font-weight: 500;
         line-height: 3.375rem;
         margin-bottom: 2rem;
+        max-width: 50%;
         @include mobile {
           font-size: text(xxxl);
           line-height: 2.5rem;
@@ -54,6 +55,7 @@
         font-weight: 400;
         opacity: 0.6;
         line-height: 1.875rem;
+        max-width: 50%;
         @include mobile {
           font-size: text(normal);
           line-height: text(xl);

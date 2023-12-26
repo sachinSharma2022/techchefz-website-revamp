@@ -75,7 +75,7 @@ const OurNumbers = () => {
       <div className={styles.careerRow}>
         <div className="row">
           <div className="col-md-12 col-12">
-            <div className={styles.ProjectHighlight}>our numbers</div>
+            <p className={styles.ProjectHighlight}>our numbers</p>
           </div>
 
           <div className="col-md-8 col-12">
@@ -114,11 +114,11 @@ const OurNumbers = () => {
               {serviceCard.map((data, index) => (
                 <div key={index} className={styles.serviceBox}>
                   <div className={styles.numberCardFlex}>
-                    <div className={styles.sbTitle}>{data.sbTitle}</div>
+                    <p className={styles.sbTitle}>{data.sbTitle}</p>
                     <div className={styles.bgIcon}>{data.icon}</div>
                   </div>
 
-                  <div className={styles.sbText}>{data.sbText}</div>
+                  <p className={styles.sbText}>{data.sbText}</p>
                 </div>
               ))}
             </div>
@@ -130,11 +130,11 @@ const OurNumbers = () => {
             {serviceCard.map((data, index) => (
               <div key={index} className={styles.serviceBox}>
                 <div className={styles.numberCardFlex}>
-                  <div className={styles.sbTitle}>{data.sbTitle}</div>
+                  <p className={styles.sbTitle}>{data.sbTitle}</p>
                   <div className={styles.bgIcon}>{data.icon}</div>
                 </div>
 
-                <div className={styles.sbText}>{data.sbText}</div>
+                <p className={styles.sbText}>{data.sbText}</p>
               </div>
             ))}
           </Slider>

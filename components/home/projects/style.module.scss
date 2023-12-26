@@ -24,7 +24,6 @@
     line-height: 3.375rem;
     max-width: 50%;
     color: color(primary-white);
-    font-family: font(primary);
     @include mobile {
       font-size: text(xxxl);
       line-height: 2.5rem;
@@ -65,7 +64,6 @@
     font-size: 2rem;
     font-weight: 500;
     color: color(primary-white);
-    font-family: font(primary);
     margin-bottom: text(lg);
     @include mobile {
       font-size: text(xl);
@@ -77,6 +75,7 @@
     font-weight: 400;
     color: color(primary-white);
     opacity: 0.8;
+    line-height: 1.5rem;
     @include mobile {
       font-size: text(lg);
       margin-bottom: text(xxxl);

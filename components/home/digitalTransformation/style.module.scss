@@ -6,6 +6,7 @@
   @include mobile {
     padding: spacing(section-mob-padding);
   }
+
   .serviceRow {
     margin-bottom: 5rem;
     @include mobile {
@@ -23,6 +24,7 @@
     margin-bottom: text(lg);
     opacity: 0.6;
     text-transform: uppercase;
+    letter-spacing: 0.2rem;
     @include mobile {
       margin-bottom: 0.75rem;
     }
@@ -31,7 +33,6 @@
     font-size: 2.75rem;
     font-weight: 500;
     line-height: 3.375rem;
-    font-family: font(primary);
     .digitalTechText {
       color: color(primary-blue);
       font-size: 2.75rem;
