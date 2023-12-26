@@ -1,0 +1,18 @@
+@import "~/styles/partials/config";
+
+.scrollTop {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 10rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  background-color: color(info-blue);
+  color: color(primary-white);
+  z-index: 99;
+  transition: all 0.5s;
+  transform: rotate(-90deg);
+}
