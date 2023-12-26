@@ -17,37 +17,37 @@ const Service = () => {
       icon: <Icons.CustomDevelopment width={64} height={64} />,
       sbTitle: "Product Engineering & Custom Development",
       sbText:
-        "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
+        "We Believe In Quality Backend Development For Faster Backend Processing. ",
     },
     {
       icon: <Icons.MarTech width={64} height={64} />,
-      sbTitle: "Strategy & Digital Transformation",
+      sbTitle: "Customer Experience & MarTech",
       sbText:
-        "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
+        "We Believe In Superior Frontend Development With The Combination Of JavaScript, HTML And CSS.",
     },
     {
       icon: <Icons.Intelligence width={64} height={64} />,
-      sbTitle: "Strategy & Digital Transformation",
+      sbTitle: "Data Analytics & Intelligence",
       sbText:
-        "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
+        "We Have Expertise In Development Of Mobile Applications Using Native And Hybrid Technologies.",
     },
     {
       icon: <Icons.Platforms width={64} height={64} />,
-      sbTitle: "Strategy & Digital Transformation",
+      sbTitle: "Enterprise Technology Platforms",
       sbText:
-        "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
+        "At TechChefz We Provide First-Class Artificial Intelligence And Machine Learning with Expertise.",
     },
     {
       icon: <Icons.Cloud width={64} height={64} />,
-      sbTitle: "Strategy & Digital Transformation",
+      sbTitle: "Cloud & Dev-Sec-Ops",
       sbText:
-        "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
+        "We Facilitate Easy Cloud Migration And Deliver DevOps Automation And 24*7 Incident Management Services.",
     },
     {
       icon: <Icons.DataIntelligence width={64} height={64} />,
-      sbTitle: "Strategy & Digital Transformation",
+      sbTitle: "Data Analytics & Intelligence",
       sbText:
-        "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
+        "We Facilitate Easy Cloud Migration And Deliver DevOps Automation And 24*7 Incident Management Services.",
     },
   ];
   const settings = {
@@ -108,7 +108,7 @@ const Service = () => {
             <div key={index} className={styles.serviceBox}>
               <div className={styles.bgIcon}>{data.icon}</div>
               <h4 className={styles.sbTitle}>{data.sbTitle}</h4>
-                <p className={styles.sbText}>{data.sbText}</p>
+              <p className={styles.sbText}>{data.sbText}</p>
             </div>
           ))}
         </div>
