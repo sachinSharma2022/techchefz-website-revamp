@@ -55,19 +55,19 @@ const Projects = () => {
         </div>
         <div className="col-md-4 col-12">
           <div className={styles.ProjectBtn}>
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="xs">
               Web Design
             </Button>
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="xs">
               Dashboard Design
             </Button>
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="xs">
               UI
             </Button>
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="xs">
               UX
             </Button>
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="xs">
               Responsive
             </Button>
           </div>
