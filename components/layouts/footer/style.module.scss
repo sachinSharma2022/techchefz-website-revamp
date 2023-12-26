@@ -95,7 +95,9 @@
         padding: 0.5rem 1.5rem;
         a {
           color: color(primary-blue);
-          font-size: text(xl);
+          font-size: text(lg);
+          font-family: font(secondary);
+          font-weight: 500;
           display: flex;
           align-items: center;
           white-space: nowrap;
@@ -107,7 +109,8 @@
           }
         }
         p {
-          font-size: text(lg);
+          font-size: text(normal);
+          font-family: font(secondary);
           font-weight: 400;
           margin: 0;
         }
@@ -121,6 +124,7 @@
   }
 
   .footSocial {
+    margin-top: 4.2rem;
     a {
       display: inline-flex;
       align-items: center;

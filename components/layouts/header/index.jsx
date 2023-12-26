@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import styles from "./style.module.scss";
+import { Icons } from "@/components/icons";
 
 const Header = () => {
   const [isActive, setActive] = useState(false);
@@ -55,15 +56,18 @@ const Header = () => {
         </ul>
       </nav>
       <div className={styles.headerRight}>
-        <div className="modeBtn">
-          <div className="form-check form-switch">
+        <div className={`${styles.modeBtn} modeBtn`}>
+          {/* <div className="form-check form-switch">
             <input
               className="form-check-input"
               type="checkbox"
               role="switch"
               id="flexSwitchCheckDefault"
             />
-          </div>
+          </div> */}
+          <Button variant="default">
+            <Icons.moon size={15} />
+          </Button>
         </div>
         <Button variant="blueBtn" className={styles.headerBtn} size="sm">
           Estimate Project

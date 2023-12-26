@@ -46,9 +46,8 @@ const Footer = () => {
                 <InputCustom placeholder="Business Email Address" />
                 <div className="d-flex align-items-center">
                   <Button variant="blueBtn" size="md">
-                    Subscribe
-                  </Button>
-                  <Icons.ArrowRight size={20} className="ms-2" />
+                    Subscribe <Icons.ArrowRight size={20} className="ms-2" />
+                  </Button>                  
                 </div>
               </div>
             </div>

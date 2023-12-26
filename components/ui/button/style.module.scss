@@ -34,13 +34,7 @@
 .variant_default {
   padding: 0;
   height: auto;
-  background-color: color(primary-blue);
   color: color(primary-white);
-  &:hover {
-    color: color(primary-blue);
-    background-color: color(heading-liner);
-    color: color(primary-white);
-  }
 }
 
 .variant_blueBtn {
@@ -94,6 +88,13 @@
 }
 
 .size_sm {
+  height: 2.75rem;
+  padding: 0.625rem 1.15rem;
+  font-size: text(normal);
+  border-radius: 0.5rem;
+}
+
+.size_xs {
   height: 2.188rem;
   padding: 0.625rem 1.15rem;
   font-size: text(normal);
