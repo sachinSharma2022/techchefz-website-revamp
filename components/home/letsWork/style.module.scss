@@ -26,6 +26,8 @@
           font-weight: 500;
           margin-bottom: text(xxxl);
           line-height: 3.375rem;
+          display: flex;
+          flex-direction: column;
           @include mobile {
             margin-bottom: text(lg);
             line-height: 2.5rem;

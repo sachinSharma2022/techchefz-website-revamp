@@ -4,6 +4,7 @@
   background-color: color(primary-white);
   padding: 20px;
   position: relative;
+  overflow: hidden;
   &::before{
     content: '';
     width: 30rem;
@@ -13,7 +14,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    filter: blur(13rem);
+    filter: blur(12.5rem);
     opacity: 0.3;
   }
 
@@ -26,8 +27,8 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    filter: blur(13rem);
-    opacity: 0.3;
+    filter: blur(12.5rem);
+    opacity: 0.4;
   }
 
   .gridContainer {

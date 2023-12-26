@@ -10,8 +10,9 @@
       opacity: 0.8;
       font-size: text(normal);
       font-weight: 700;
-      line-height: 24px;
-      letter-spacing: 3.2px;
+      line-height: 1.5rem;
+      letter-spacing: 0.2rem;
+      font-family: font(secondary);
    }
    .ourValuesHeading {
       font-size: text(larger);
@@ -32,7 +33,6 @@
             text-align: left;
             font-size: text(xl);
             font-weight: 500;
-            // border: 1px solid red;
             padding: 1.25rem 0;
             border-bottom: 1px solid rgba(17, 17, 17, 0.12);
             display: flex;

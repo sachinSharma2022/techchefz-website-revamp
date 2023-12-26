@@ -1,63 +1,68 @@
 @import "~/styles/partials/config";
 
 .whatWeDo {
-   padding:  spacing(section-primary-padding);
-   .weDoTitle {
-      color: color(text-primary);
-      text-transform: uppercase;
-      opacity: 0.8;
-      opacity: 0.8;
-      font-size: text(normal);
-      font-weight: 700;
-      line-height: 24px;
-      letter-spacing: 3.2px;
-   }
-   .weDoHeading {
-      font-size: text(larger);
-      margin-bottom: 2.75rem;
-   }
-   .workCardWrapper {
-      display: grid;
-      grid-template-columns: repeat(4 , 1fr);
-      .workCard {
-         width: 40vh;
-         height: 19.25rem;
-         border: 2px solid rgba(17, 17, 17, 0.12);
-         border-radius: 1.25rem;
-         padding: 2rem;
-         margin: 1rem 2rem 1rem 0rem;
-         position: relative;
-         cursor: pointer;
+  padding: spacing(section-primary-padding);
+  .weDoTitle {
+    color: color(text-primary);
+    text-transform: uppercase;
+    opacity: 0.8;
+    opacity: 0.8;
+    font-size: text(normal);
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 3.2px;
+  }
+  .weDoHeading {
+    font-size: text(larger);
+    margin-bottom: 2.75rem;
+  }
+  .workCardWrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+    .workCard {
+      width: 100%;
+      height: 19.25rem;
+      border: 2px solid rgba(17, 17, 17, 0.12);
+      border-radius: 1.25rem;
+      padding: 2rem;
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+      transition: all 0.5s;
+      padding:  spacing(section-primary-padding);
+      padding: 2rem;
 
-         &:hover {
-            border-color: color(heading-liner);
-
-            p {
-               display: block;
-               position: relative;
-               transform: translateY(-1rem);
-            }
-
-            .workCardIcon {
-               display: none;
-            }
-
-            h6 {
-               transform: translateY(-7rem);
-            }
-         }
-
-         h6 {
-            font-size: text(xl);
-            position: relative;
-            top: 40%;
-            width: 50%;
-         }
-
-         p {
-            font-size: text(normal);
-            display: none;
-         }
+      .workCardIcon {
+        transition: all 0.5s;
       }
-   }
+
+      &:hover {
+        border-color: color(heading-liner);
+
+        .workCardIcon {
+          margin-top: -100%;
+        }
+
+        h6 {
+          margin-top: -2rem;
+          padding-bottom: 1rem;
+        }
+      }
+
+      h6 {
+        font-size: text(xl);
+        position: relative;
+        width: 100%;
+        max-width: 9rem;
+        margin-top: 5.5rem;
+        padding-bottom: 2rem;
+        transition: all 0.5s;
+      }
+
+      p {
+        font-size: text(normal);
+      }
+    }
+  }
 }
