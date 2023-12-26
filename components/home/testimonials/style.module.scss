@@ -2,103 +2,100 @@
 
 .digitalStyle {
   padding: spacing(section-primary-padding);
+  background-color: color(primary-white);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8.938rem;
+
   @include mobile {
     padding: spacing(section-mob-padding);
+    padding: spacing(section-mob-padding);
+    grid-template-columns: repeat(1, 1fr);
+    padding: 20px;
+    margin-bottom: 2.75rem;
   }
-
-  .digitalMain {
-    background-color: color(primary-white);
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8.938rem;
-    @include mobile {
-      grid-template-columns: repeat(1, 1fr);
-      padding: 20px;
-      margin-bottom: 2.75rem;
-    }
-    @include mobile {
-      padding: 0;
-    }
-    .testimonialsLeft {
-      .ProjectHighlight {
-        font-size: text(normal);
-        font-weight: 700;
-        margin-bottom: text(lg);
-        opacity: 0.6;
-        text-transform: uppercase;
-        @include mobile {
-          margin-bottom: 0.75rem;
-        }
+  
+  .testimonialsLeft {
+    .ProjectHighlight {
+      font-size: text(normal);
+      font-weight: 700;
+      margin-bottom: text(lg);
+      opacity: 0.6;
+      text-transform: uppercase;
+      @include mobile {
+        margin-bottom: 0.75rem;
       }
-      .testimonialsHeading {
-        h3 {
-          font-size: 2.75rem;
-          font-weight: 500;
-          line-height: 3.375rem;
-          margin-bottom: 2rem;
-          font-family: font(primary);
-        }
-      }
-      .testimonialsHeading {
+    }
+    .testimonialsHeading {
+      h3 {
         font-size: 2.75rem;
         font-weight: 500;
         line-height: 3.375rem;
         margin-bottom: 2rem;
-        @include mobile {
-          font-size: text(xxxl);
-          line-height: 2.5rem;
-        }
-      }
-      .testimonialsText {
-        font-size: text(xl);
-        font-weight: 400;
-        opacity: 0.6;
-        line-height: 1.875rem;
-        @include mobile {
-          font-size: text(normal);
-          line-height: text(xl);
-        }
+        font-family: font(primary);
       }
     }
-
-    .testimonialCardBox {
-      padding: 2.5rem;
-      background-color: color(primary-background);
-      .commaImg {
-        margin-bottom: text(lg);
+    .testimonialsHeading {
+      font-size: 2.75rem;
+      font-weight: 500;
+      line-height: 3.375rem;
+      margin-bottom: 2rem;
+      @include mobile {
+        font-size: text(xxxl);
+        line-height: 2.5rem;
       }
-      .customerText {
+    }
+    .testimonialsText {
+      font-size: text(xl);
+      font-weight: 400;
+      opacity: 0.6;
+      line-height: 1.875rem;
+      @include mobile {
+        font-size: text(normal);
+        line-height: text(xl);
+      }
+    }
+  }
+
+  .testimonialCardBox {
+    padding: 2.5rem;
+    background-color: color(primary-background);
+    border: 1px solid rgba(color(text-primary), 0.12);
+    border-radius: 12px;
+    .commaImg {
+      margin-bottom: text(lg);
+    }
+    .customerText {
+      font-size: text(xl);
+      font-weight: 500;
+      line-height: 2.25rem;
+      margin-bottom: 2.5rem;
+      @include mobile {
+        font-size: text(xl);
+        margin-bottom: text(normal);
+      }
+    }
+    .customerProfile {
+      .customerImg {
+        margin-bottom: text(xl);
+        img {
+          border-radius: 16.25rem;
+        }
+      }
+      .customerName {
         font-size: text(xl);
         font-weight: 500;
-        line-height: 2.25rem;
-        margin-bottom: 2.5rem;
-        @include mobile {
-          font-size: text(xl);
-          margin-bottom: text(normal);
-        }
+        line-height: 2rem;
+        color: color(primary-blue);
+        font-family: font(primary);
+        margin-bottom: 0;
       }
-      .customerProfile {
-        .customerImg {
-          margin-bottom: text(xl);
-          img {
-            border-radius: 16.25rem;
-          }
-        }
-        .customerName {
-          font-size: text(xl);
-          font-weight: 500;
-          line-height: 2rem;
-          color: color(primary-blue);
-          font-family: font(primary);
-          margin-bottom: 0;
-        }
-        .customerRole {
-          font-size: text(normal);
-          font-weight: 400;
-          line-height: text(xl);
-          opacity: 0.8;
-          margin-bottom: 0;
-        }
+      .customerRole {
+        font-size: text(normal);
+        font-weight: 400;
+        line-height: text(xl);
+        opacity: 0.8;
+        margin-bottom: 0;
       }
     }
   }

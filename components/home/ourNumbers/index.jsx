@@ -1,13 +1,11 @@
 "use client";
 
-import React from "react";
+import { Icons } from "@/components/icons";
+import { Button } from "@/components/ui/button";
+import { ImageCustom } from "@/components/ui/imageCustom";
 import Slider from "react-slick";
 import styles from "./style.module.scss";
-import { Button } from "@/components/ui/button";
-import { Icons } from "@/components/icons";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { ImageCustom } from "@/components/ui/imageCustom";
+
 const OurNumbers = () => {
   const serviceCard = [
     {
@@ -105,8 +103,8 @@ const OurNumbers = () => {
             <p className={styles.ourNumbersText}>
               Empowering over 100 startups in the last four years, our
               results-driven approach has fueled their growth journeys. Our
-              commitment to success extends beyond services; it's a partnership
-              driving innovation and prosperity.
+              commitment to success extends beyond services; it&apos;s a
+              partnership driving innovation and prosperity.
             </p>
             <div
               className={`${styles.desktopCards} ${styles.ourNumberOption} `}
