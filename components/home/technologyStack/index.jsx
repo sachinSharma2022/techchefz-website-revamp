@@ -186,7 +186,9 @@ const TechnologyStack = () => {
             </div>
 
             <div className="col-md-12 col-12">
-              <h2 className={styles.techHeading}>Empowering Tomorrow, Today.</h2>
+              <h2 className={styles.techHeading}>
+                Empowering Tomorrow, Today.
+              </h2>
             </div>
             <div className="col-md-12 col-12">
               <p className={styles.techText}>
