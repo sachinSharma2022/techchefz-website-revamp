@@ -21,6 +21,10 @@ body {
   font-family: font(secondary);
 }
 
+a{
+  text-decoration: none;
+}
+
 .service-mobile-slider {
   @include desktop {
     display: none;
