@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
+  box-shadow: 0 0 0.125rem rgba(color(text-primary), 0.3);
 
   @include tablet {
     padding: 1rem 0.8rem;
