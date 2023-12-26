@@ -1,5 +1,6 @@
 import Footer from "@/components/layouts/footer";
 import Header from "@/components/layouts/header";
+import ScrollToTopButton from "@/components/ui/scrollToTopButton";
 import "bootstrap/dist/css/bootstrap.css";
 import { aeonik, helvetica } from "../lib/fonts";
 import { cn } from "../lib/utils";
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
         <Header />
         <main className="main-style">{children}</main>
         <Footer />
+        <ScrollToTopButton />
       </body>
     </html>
   );

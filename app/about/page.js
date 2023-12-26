@@ -16,9 +16,6 @@ const AboutPage = () => {
       <div>
          <AboutBanner />
          <OurVision />
-         <div className="d-flex justify-content-center m-5">
-         <VideoCustom src={"about.mp4"} width={1200} height={500} />
-         </div>
          <OurHistory />
          <WhatWeDo />
          <OurValues />

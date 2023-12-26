@@ -63,6 +63,8 @@
         border: none;
         font-weight: 400;
         font-size: text(normal);
+        height: 3.25rem;
+        min-height: 3.25rem;
 
         &::placeholder{
           color: rgba(color(primary-white), 0.50);
@@ -124,7 +126,7 @@
   }
 
   .footSocial {
-    margin-top: 4.2rem;
+    margin-top: 3.9rem;
     a {
       display: inline-flex;
       align-items: center;
