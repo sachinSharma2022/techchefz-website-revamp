@@ -15,8 +15,11 @@
    .ourTeamTitle {
       font-size: text(normal);
       opacity: 0.6;
-      letter-spacing: 3.2px;
+      letter-spacing: 0.2rem;
       text-transform: uppercase;
+      font-family: font(secondary);
+      font-weight: 700;
+line-height: 1.5rem;
    }
    .ourTeamHeading{
       font-size: text(larger);
@@ -75,7 +78,6 @@
             .cardHead {
                display: flex;
                justify-content: space-between;
-               // border: 1px solid red;
                padding: 1rem 0.8rem;
 
                h6 {

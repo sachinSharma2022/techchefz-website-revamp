@@ -3,7 +3,8 @@
 .aboutBanner {
    .bannerTitle {
       width: 100%;
-      padding:  spacing(section-primary-padding);
+      padding: spacing(section-primary-padding);
+      padding-bottom: 5rem;
       max-width: 80%;
       font-weight: 500;
       font-size: text(xl-larger);
@@ -15,6 +16,7 @@
 
    .bannerImg {
       background: url("../../../public/images/img/about-bg.png");
+      background-size: cover;
       background-repeat: no-repeat;
       height: 100vh;
       position: relative;
@@ -24,6 +26,8 @@
          bottom: 0;
          width: 100%;
          height: auto;
+         background: #1f1f1f;
+         background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.5));
       }
    }
 }
