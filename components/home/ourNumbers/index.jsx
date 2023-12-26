@@ -85,7 +85,7 @@ const OurNumbers = () => {
           </div>
           <div className={`${styles.careerBtn} col-md-4 col-12`}>
             <Button variant="outline" size="md">
-              Career Opportunities
+              Career Opportunities <Icons.ArrowRight size={18} />
             </Button>
           </div>
         </div>

@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: text(lg);
   line-height: 0.938;
   transition: color 0.2s, background-color 0.2s;
   cursor: pointer;
@@ -16,7 +16,7 @@
   background: none;
   color: color(foreground);
   text-decoration: none;
-  font-family: font(secondary);
+  font-family: font(primary);
 
   &:focus-visible {
     outline: none;
@@ -43,17 +43,6 @@
   }
 }
 
-.variant_defaultRed {
-  color: color(foreground);
-  border: 0.063rem solid color(border);
-  background-color: color(accent);
-
-  &:hover {
-    color: color(secondary-foreground);
-    background-color: color(secondary-background);
-  }
-}
-
 .variant_blueBtn {
   background-color: color(primary-blue);
   color: color(primary-white);
@@ -62,6 +51,16 @@
   &:hover {
     color: color(primary-blue);
     background-color: transparent;
+    svg{
+      path{
+        stroke: color(primary-blue);
+      }
+    }
+  }
+  svg{
+    display: inline-block;
+    margin-left: 0.4rem;
+    margin-top: 0.2rem;
   }
 }
 
@@ -73,6 +72,19 @@
   &:hover {
     color: color(primary-white);
     background-color: color(primary-blue);
+    svg{
+      path{
+        stroke: color(primary-white);
+      }
+    }
+  }
+  svg{
+    display: inline-block;
+    margin-left: 0.4rem;
+    margin-top: 0.2rem;
+    path{
+      stroke: color(primary-blue);
+    }
   }
 }
 
@@ -82,7 +94,7 @@
 }
 
 .size_sm {
-  height: 2.75rem;
+  height: 2.188rem;
   padding: 0.625rem 1.15rem;
   font-size: text(normal);
   border-radius: 0.3rem;
