@@ -4,24 +4,25 @@
    padding: spacing(section-primary-padding);
    background-color: color(bg-soft);
 
-   .ourValuesTitle {
-      color: color(text-primary);
-      text-transform: uppercase;
-      opacity: 0.8;
-      font-size: text(normal);
-      font-weight: 700;
-      line-height: 1.5rem;
-      letter-spacing: 0.2rem;
-      font-family: font(secondary);
-   }
-   .ourValuesHeading {
-      font-size: text(larger);
-      margin-bottom: 2.75rem;
+   .ourValuesHead {
+      margin-bottom: 5rem;
+      .ourValuesTitle {
+         color: color(text-primary);
+         text-transform: uppercase;
+         opacity: 0.8;
+         font-size: text(normal);
+         font-weight: 700;
+         line-height: 1.5rem;
+         letter-spacing: 0.2rem;
+         font-family: font(secondary);
+      }
+      .ourValuesHeading {
+         font-size: text(larger);
+         margin-bottom: 2.75rem;
+      }
    }
 
    .ourValuesContent {
-      margin-top: 5rem;
-
       .ourValuesText {
          font-size: text(lg);
          opacity: 0.6;

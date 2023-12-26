@@ -11,28 +11,34 @@ const OurValues = () => {
    const accordianData = [
       {
          title: "Innovation",
-         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+         content:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       },
       {
          title: "Obsession with Customer Success",
-         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+         content:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       },
       {
          title: "Exploration",
-         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+         content:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       },
       {
          title: "Excellence in Delivery",
-         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+         content:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       },
    ];
    return (
       <section className={styles.ourValues}>
          <div className="container">
-            <div className="row mb-3">
+            <div className="row">
                <div className="col-md-7 col-lg-8">
-                  <h6 className={styles.ourValuesTitle}>Our Values</h6>
-                  <h3 className={styles.ourValuesHeading}>Our values are part of everything we create at Instrument.</h3>
+                  <div className={styles.ourValuesHead}>
+                     <h6 className={styles.ourValuesTitle}>Our Values</h6>
+                     <h3 className={styles.ourValuesHeading}>Our values are part of everything we create at Instrument.</h3>
+                  </div>
                </div>
             </div>
 
@@ -48,15 +54,14 @@ const OurValues = () => {
                         next-generation software products with the help of accelerators.
                      </p>
                      <div className={styles.ourValuesAccordiaon}>
-                        {accordianData.map((data, index)=>(
-                            <Disclosure key={index}>
-                           <Disclosure.Button className={styles.accordiaonHead}>{data.title} <Icons.ArrowDown  /> </Disclosure.Button>
-                           <Disclosure.Panel className={styles.accordiaonBody}>
-                            {data.content}
-                           </Disclosure.Panel>
-                        </Disclosure>
+                        {accordianData.map((data, index) => (
+                           <Disclosure key={index}>
+                              <Disclosure.Button className={styles.accordiaonHead}>
+                                 {data.title} <Icons.ArrowDown />{" "}
+                              </Disclosure.Button>
+                              <Disclosure.Panel className={styles.accordiaonBody}>{data.content}</Disclosure.Panel>
+                           </Disclosure>
                         ))}
-                        
                      </div>
                   </div>
                </div>
