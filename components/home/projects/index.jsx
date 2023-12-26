@@ -1,7 +1,8 @@
 import React from "react";
-import styles from "./style.module.scss";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
+import { Icons } from "@/components/icons";
+import styles from "./style.module.scss";
 
 const Projects = () => {
   return (
@@ -25,7 +26,7 @@ const Projects = () => {
           </h3>
 
           <Button variant="outline" size="md">
-            Check Our Portfolio
+            Check Our Portfolio <Icons.ArrowRight size={18} />
           </Button>
         </div>
 

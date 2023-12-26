@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { ImageCustom } from "@/components/ui/imageCustom";
+import { Icons } from "@/components/icons";
 const DigitalTransformation = () => {
   const serviceCard = [
     {
@@ -87,7 +88,7 @@ const DigitalTransformation = () => {
           </div>
           <div className={`${styles.servicesBtn} col-md-4 col-12`}>
             <Button variant="outline" size="md">
-              Explore Services
+              Explore Services <Icons.ArrowRight size={18} />
             </Button>
           </div>
         </div>
