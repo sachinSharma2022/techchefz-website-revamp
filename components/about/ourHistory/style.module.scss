@@ -1,7 +1,7 @@
 @import "~/styles/partials/config";
 
 .ourHistory {
-   padding:  spacing(section-primary-padding);
+   padding: spacing(section-primary-padding);
 
    .ourHistoryTitle {
       color: color(text-primary);
@@ -9,8 +9,9 @@
       opacity: 0.8;
       font-size: text(normal);
       font-weight: 700;
-      line-height: 24px;
-      letter-spacing: 3.2px;
+      line-height: 1.5rem;
+      letter-spacing: 0.2rem;
+      font-family: font(secondary);
    }
    .ourHistoryHeading {
       font-size: text(larger);
@@ -20,14 +21,14 @@
    .subHeading {
       font-size: text(xxxl);
       font-weight: 500;
-      line-height: 40px;
+      line-height: 2.5rem;
       margin-bottom: 0.5rem;
    }
    .ourHistoryContent {
       opacity: 0.6;
       font-weight: 400;
       font-size: text(lg);
-      line-height: 30px;
+      line-height: 1.875rem;
    }
 
    .OurHistoryImage {

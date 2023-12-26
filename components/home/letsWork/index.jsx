@@ -14,7 +14,7 @@ const LetsWork = () => {
           <div className={styles.contactUsForm}>
             <h3 className={styles.formHeading}>
               Let’s work on your
-              <div className={styles.formTechHighlight}>new digital ideas.</div>
+              <span className={styles.formTechHighlight}>new digital ideas.</span>
             </h3>
             <p className={styles.formText}>
               Fill out some quick details about your project and we will get in

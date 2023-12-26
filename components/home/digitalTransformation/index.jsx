@@ -4,8 +4,6 @@ import React from "react";
 import Slider from "react-slick";
 import styles from "./style.module.scss";
 import { Button } from "@/components/ui/button";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { Icons } from "@/components/icons";
 const DigitalTransformation = () => {
@@ -73,18 +71,18 @@ const DigitalTransformation = () => {
       <div className={styles.serviceRow}>
         <div className="row">
           <div className="col-md-12 col-12">
-            <div className={styles.ProjectHighlight}>
+            <p className={styles.ProjectHighlight}>
               Digital Transformation
-            </div>
+            </p>
           </div>
 
           <div className="col-md-8 col-12">
-            <div className={styles.datingText}>
+            <h2 className={styles.datingText}>
               Remaining businesses by integrating
               <div className={styles.digitalTechText}>
                 digital technologies.
               </div>
-            </div>
+            </h2>
           </div>
           <div className={`${styles.servicesBtn} col-md-4 col-12`}>
             <Button variant="outline" size="md">

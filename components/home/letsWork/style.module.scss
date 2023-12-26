@@ -26,6 +26,8 @@
           font-weight: 500;
           margin-bottom: text(xxxl);
           line-height: 3.375rem;
+          display: flex;
+          flex-direction: column;
           @include mobile {
             margin-bottom: text(lg);
             line-height: 2.5rem;
@@ -108,7 +110,7 @@
         display: flex;
         justify-content: flex-end;
         img {
-          width: 38rem;
+          max-width: 38rem;
           height: 38.5rem;
           object-fit: cover;
           border-radius: 0.75rem;

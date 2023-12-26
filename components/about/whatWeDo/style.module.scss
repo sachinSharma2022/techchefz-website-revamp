@@ -30,6 +30,7 @@
       cursor: pointer;
       overflow: hidden;
       transition: all 0.5;
+      padding:  spacing(section-primary-padding);
 
       .workCardIcon {
         transition: all 0.5s;
