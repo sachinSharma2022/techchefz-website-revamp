@@ -2,8 +2,9 @@
 
 .aboutBanner {
    .bannerTitle {
-      margin: 5rem 4rem 3rem 5rem;
-      width: 70%;
+      width: 100%;
+      padding:  spacing(section-primary-padding);
+      max-width: 80%;
       font-weight: 500;
       font-size: text(xl-larger);
       span {
