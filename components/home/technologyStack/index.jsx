@@ -182,11 +182,11 @@ const TechnologyStack = () => {
         <div className={styles.careerRow}>
           <div className="row">
             <div className="col-md-12 col-12">
-              <div className={styles.ProjectHighlight}>Technology stack</div>
+              <p className={styles.ProjectHighlight}>Technology stack</p>
             </div>
 
             <div className="col-md-12 col-12">
-              <p className={styles.techHeading}>Empowering Tomorrow, Today.</p>
+              <h2 className={styles.techHeading}>Empowering Tomorrow, Today.</h2>
             </div>
             <div className="col-md-12 col-12">
               <p className={styles.techText}>
@@ -200,7 +200,7 @@ const TechnologyStack = () => {
               <div className={styles.partnerCounter}>
                 {countsCard.map((data, index) => (
                   <div key={index} className={styles.counterCard}>
-                    <h2 className={styles.counts}>{data.count}</h2>
+                    <h3 className={styles.counts}>{data.count}</h3>
                     <p className={styles.countsText}>{data.countText}</p>
                   </div>
                 ))}

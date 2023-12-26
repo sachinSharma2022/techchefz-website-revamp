@@ -1,14 +1,9 @@
 "use client";
 
-import React from "react";
 import Slider from "react-slick";
-
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-import styles from "./style.module.scss";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
+import styles from "./style.module.scss";
 
 const Service = () => {
   const serviceCard = [
@@ -112,8 +107,8 @@ const Service = () => {
           {serviceCard.map((data, index) => (
             <div key={index} className={styles.serviceBox}>
               <div className={styles.bgIcon}>{data.icon}</div>
-              <div className={styles.sbTitle}>{data.sbTitle}</div>
-              <div className={styles.sbText}>{data.sbText}</div>
+              <h4 className={styles.sbTitle}>{data.sbTitle}</h4>
+                <p className={styles.sbText}>{data.sbText}</p>
             </div>
           ))}
         </div>
@@ -125,8 +120,8 @@ const Service = () => {
             <div key={index}>
               <div key={index} className={styles.serviceBox}>
                 <div className={styles.bgIcon}>{data.icon}</div>
-                <div className={styles.sbTitle}>{data.sbTitle}</div>
-                <div className={styles.sbText}>{data.sbText}</div>
+                <h4 className={styles.sbTitle}>{data.sbTitle}</h4>
+                <p className={styles.sbText}>{data.sbText}</p>
               </div>
             </div>
           ))}
