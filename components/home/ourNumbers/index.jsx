@@ -79,9 +79,9 @@ const OurNumbers = () => {
           </div>
 
           <div className="col-md-8 col-12">
-            <p className={styles.datingText}>
+            <h2 className={styles.datingText}>
               Let the Numbers Tell the Success Story.
-            </p>
+            </h2>
           </div>
           <div className={`${styles.careerBtn} col-md-4 col-12`}>
             <Button variant="outline" size="md">

@@ -22,10 +22,10 @@ const WeAreFuture = () => {
         </div>
         <div className="row">
           <div className="col-md-6 col-12">
-            <p className={styles.datingText}>
+            <h3 className={styles.datingText}>
               With roots dating back to 2017, we started as a pocket size team
               of enthusiasts.
-            </p>
+            </h3>
           </div>
           <div className="col-md-6 col-12">
             <p className={styles.aboutText}>

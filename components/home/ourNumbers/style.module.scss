@@ -31,7 +31,7 @@
     font-size: 2.75rem;
     font-weight: 500;
     line-height: 3.375rem;
-    padding-right: 17.5rem;
+    max-width: 90%;
     font-family: font(primary);
     @include mobile {
       font-size: text(xxxl);

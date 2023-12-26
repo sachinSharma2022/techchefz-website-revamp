@@ -9,21 +9,21 @@ const Projects = () => {
     <section className={`${styles.projectsStyle}`}>
       <div className="row">
         <div className="col-md-12 col-12">
-          <div className={styles.ProjectHighlight}>Projects</div>
+          <p className={styles.ProjectHighlight}>Projects</p>
         </div>
 
         <div className="col-md-6 col-12">
-          <p className={styles.datingText}>
+          <h3 className={styles.datingText}>
             Unveiling Spotlight on Select Case Studies.
-          </p>
+          </h3>
         </div>
         <div className="col-md-6 col-12">
-          <h3 className={styles.aboutText}>
+          <p className={styles.aboutText}>
             Delve into our case studies to witness firsthand how we've tackled
             challenges, delivered solutions, and achieved measurable success.
             Each story is a testament to our commitment, expertise, and the
             transformative impact.
-          </h3>
+          </p>
 
           <Button variant="outline" size="md">
             Check Our Portfolio <Icons.ArrowRight size={18} />
@@ -40,9 +40,9 @@ const Projects = () => {
         </div>
 
         <div className="col-md-3 col-12">
-          <div className={styles.projectBrand}>
+          <h4 className={styles.projectBrand}>
             International Motorcycle Brand.
-          </div>
+          </h4>
         </div>
 
         <div className="col-md-4 col-12">
