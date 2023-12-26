@@ -29,8 +29,9 @@
       position: relative;
       cursor: pointer;
       overflow: hidden;
-      transition: all 0.5;
+      transition: all 0.5s;
       padding:  spacing(section-primary-padding);
+      padding: 2rem;
 
       .workCardIcon {
         transition: all 0.5s;
