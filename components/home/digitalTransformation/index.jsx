@@ -4,8 +4,6 @@ import React from "react";
 import Slider from "react-slick";
 import styles from "./style.module.scss";
 import { Button } from "@/components/ui/button";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { Icons } from "@/components/icons";
 const DigitalTransformation = () => {
