@@ -22,7 +22,8 @@
     font-size: 2.75rem;
     font-weight: 500;
     line-height: 3.375rem;
-    max-width: 50%;
+    max-width: 80%;
+
     color: color(primary-white);
     @include mobile {
       font-size: text(xxxl);
@@ -92,6 +93,16 @@
         background-color: color(primary-white);
         color: color(text-primary);
       }
+    }
+  }
+
+  .cardContentStyle {
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5rem;
+
+    .brandFromText {
+      max-width: 40%;
     }
   }
 }

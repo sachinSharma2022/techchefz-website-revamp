@@ -18,7 +18,7 @@
     }
   }
 
-  .ProjectHighlight {
+  .projectHighlight {
     font-size: text(normal);
     font-weight: 700;
     margin-bottom: text(lg);
@@ -33,16 +33,19 @@
     font-size: 2.75rem;
     font-weight: 500;
     line-height: 3.375rem;
+
     .digitalTechText {
       color: color(primary-blue);
       font-size: 2.75rem;
       font-weight: 500;
       line-height: 3.375rem;
+      
       @include mobile {
         padding-right: 0;
         font-size: 2rem;
       }
     }
+
     @include mobile {
       font-size: text(xxxl);
       line-height: 2.5rem;

@@ -71,9 +71,7 @@ const DigitalTransformation = () => {
       <div className={styles.serviceRow}>
         <div className="row">
           <div className="col-md-12 col-12">
-            <p className={styles.ProjectHighlight}>
-              Digital Transformation
-            </p>
+            <p className={styles.projectHighlight}>Digital Transformation</p>
           </div>
 
           <div className="col-md-8 col-12">
