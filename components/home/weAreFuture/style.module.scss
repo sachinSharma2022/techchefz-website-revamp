@@ -1,6 +1,6 @@
 @import "~/styles/partials/config";
 
-.futureSpacing{
+.futureSpacing {
   padding: spacing(section-primary-padding);
   @include mobile {
     padding: spacing(section-mob-padding);
@@ -36,7 +36,7 @@
       font-size: text(xl-larger);
       font-weight: 500;
       line-height: 5rem;
-  
+
       img {
         margin: 0 1rem;
         border-radius: 7.5rem;
@@ -56,6 +56,7 @@
       font-weight: 500;
       line-height: 5rem;
       text-align: center;
+      letter-spacing: 0;
       @include mobile {
         text-align: left;
       }
@@ -72,6 +73,7 @@
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+
         @include mobile {
           font-size: text(xxxl);
           line-height: 2.5rem;
@@ -94,7 +96,7 @@
       padding-right: 0;
     }
   }
-  
+
   .aboutText {
     font-size: text(lg);
     font-weight: 400;
@@ -108,4 +110,3 @@
     }
   }
 }
-
