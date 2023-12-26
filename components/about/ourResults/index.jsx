@@ -49,11 +49,11 @@ const OurResults = () => {
         <div className={styles.resultCardWrapper}>
           {resultCardData.map((data, index) => (
             <div key={index} className={styles.resultCard}>
-              <div className="d-flex justify-content-between align-items-center mb-5">
+              <div className="d-flex justify-content-between align-items-center">
                 <h6 className={styles.cardNum}>{data.number}</h6>
                 <div className={styles.cardNum}>{data.icon}</div>
               </div>
-              <p>{data.title}</p>
+              <p className={styles.cardText}>{data.title}</p>
             </div>
           ))}
         </div>

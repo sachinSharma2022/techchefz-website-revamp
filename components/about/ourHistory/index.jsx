@@ -103,14 +103,12 @@ const OurHistory = () => {
   return (
     <section className={styles.ourHistory}>
       <div className="container">
-        <div className="row">
           <div className={styles.ourHistoryTop}>
             <h6 className={styles.ourHistoryTitle}>Our History</h6>
             <h3 className={styles.ourHistoryHeading}>
               Tracing Innovation Through Time: Our IT Journey.
             </h3>
           </div>
-        </div>
 
         <div className="ourHistorySlider">
           <Slider {...settings}>
@@ -125,7 +123,7 @@ const OurHistory = () => {
                     <div className={styles.OurHistoryImage}>
                       <ImageCustom
                         src={data.imgSrc}
-                        width={540}
+                        width={530}
                         height={397}
                         alt="slider-img"
                       />

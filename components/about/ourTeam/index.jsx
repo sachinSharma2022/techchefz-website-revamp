@@ -43,7 +43,7 @@ const OurTeam = () => {
                       {({ selected }) => (
                         <span
                           className={
-                            selected ? styles.btnActive : styles.btnInactive
+                            selected ? styles.btnActive : styles.btnIn
                           }
                         >
                           Directors
