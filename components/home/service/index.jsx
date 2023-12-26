@@ -104,7 +104,7 @@ const Service = () => {
             Exclusive development leveraging top notch technologies
           </h3>
           <Button variant="outline" size="md">
-          Our Solutions
+            Our Solutions <Icons.ArrowRight size={18} />
           </Button>
         </div>
 
@@ -122,7 +122,7 @@ const Service = () => {
       <div className={`${styles.serviceOption} service-mobile-slider`}>
         <Slider {...settings}>
           {serviceCard.map((data, index) => (
-            <div>
+            <div key={index}>
               <div key={index} className={styles.serviceBox}>
                 <div className={styles.bgIcon}>{data.icon}</div>
                 <div className={styles.sbTitle}>{data.sbTitle}</div>

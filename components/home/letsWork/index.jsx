@@ -4,7 +4,7 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import { Button } from "@/components/ui/button";
 import CustomInput from "@/components/ui/inputCustom";
 import DropdownCustom from "@/components/ui/dropdownCustom";
-
+import { Icons } from "@/components/icons";
 
 const LetsWork = () => {
   return (
@@ -68,8 +68,8 @@ const LetsWork = () => {
                   </div>
                 </div>
                 <div className={`${styles.buttonGrid} col-md-6 col-12`}>
-                  <Button variant="default" size="md">
-                    Send a Message
+                  <Button variant="blueBtn" size="md">
+                    Send a Message <Icons.ArrowRight size={18} />
                   </Button>
                 </div>
               </div>
