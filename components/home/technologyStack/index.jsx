@@ -6,139 +6,152 @@ import { Button } from "@/components/ui/button";
 const TechnologyStack = () => {
   const serviceCard = [
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: <Icons.React width={72} height={72} />,
     },
     {
       icon: <Icons.Adobe width={72} height={72} />,
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: <Icons.Drupal width={120} height={120} />,
+    },
+
+    {
+      icon: <Icons.React width={72} height={72} />,
     },
     {
       icon: <Icons.Adobe width={72} height={72} />,
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: <Icons.Drupal width={120} height={120} />,
+    },
+
+    {
+      icon: <Icons.React width={72} height={72} />,
     },
     {
       icon: <Icons.Adobe width={72} height={72} />,
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: <Icons.Drupal width={120} height={120} />,
+    },
+
+    {
+      icon: <Icons.Drupal width={120} height={120} />,
     },
     {
       icon: <Icons.Adobe width={72} height={72} />,
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: <Icons.Drupal width={120} height={120} />,
+    },
+
+    {
+      icon: <Icons.React width={72} height={72} />,
     },
     {
       icon: <Icons.Adobe width={72} height={72} />,
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: <Icons.Drupal width={120} height={120} />,
+    },
+
+    {
+      icon: <Icons.React width={72} height={72} />,
     },
     {
       icon: <Icons.Adobe width={72} height={72} />,
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: <Icons.Drupal width={120} height={120} />,
+    },
+
+    {
+      icon: <Icons.React width={72} height={72} />,
     },
     {
       icon: <Icons.Adobe width={72} height={72} />,
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: <Icons.Drupal width={120} height={120} />,
+    },
+
+    {
+      icon: <Icons.React width={72} height={72} />,
     },
     {
       icon: <Icons.Adobe width={72} height={72} />,
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: <Icons.Drupal width={120} height={120} />,
+    },
+
+    {
+      icon: <Icons.React width={72} height={72} />,
     },
     {
       icon: <Icons.Adobe width={72} height={72} />,
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: <Icons.Drupal width={120} height={120} />,
+    },
+
+    {
+      icon: <Icons.React width={72} height={72} />,
     },
     {
       icon: <Icons.Adobe width={72} height={72} />,
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: <Icons.Drupal width={120} height={120} />,
+    },
+
+    {
+      icon: <Icons.React width={72} height={72} />,
     },
     {
       icon: <Icons.Adobe width={72} height={72} />,
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: <Icons.Drupal width={120} height={120} />,
+    },
+
+    {
+      icon: <Icons.React width={72} height={72} />,
     },
     {
       icon: <Icons.Adobe width={72} height={72} />,
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: <Icons.Drupal width={120} height={120} />,
+    },
+    {
+      icon: <Icons.React width={72} height={72} />,
     },
     {
       icon: <Icons.Adobe width={72} height={72} />,
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: <Icons.Drupal width={120} height={120} />,
+    },
+
+    {
+      icon: <Icons.React width={72} height={72} />,
     },
     {
       icon: <Icons.Adobe width={72} height={72} />,
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: <Icons.Drupal width={120} height={120} />,
+    },
+
+    {
+      icon: <Icons.React width={72} height={72} />,
     },
     {
       icon: <Icons.Adobe width={72} height={72} />,
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
-    },
-    {
-      icon: <Icons.Adobe width={72} height={72} />,
-    },
-    {
-      icon: <Icons.Adobe width={72} height={72} />,
-    },
-    {
-      icon: <Icons.Adobe width={72} height={72} />,
-    },
-    {
-      icon: <Icons.Adobe width={72} height={72} />,
-    },
-    {
-      icon: <Icons.Adobe width={72} height={72} />,
-    },
-    {
-      icon: <Icons.Adobe width={72} height={72} />,
-    },
-    {
-      icon: <Icons.Adobe width={72} height={72} />,
-    },
-    {
-      icon: <Icons.Adobe width={72} height={72} />,
-    },
-    {
-      icon: <Icons.Adobe width={72} height={72} />,
-    },
-    {
-      icon: <Icons.Adobe width={72} height={72} />,
-    },
-    {
-      icon: <Icons.Adobe width={72} height={72} />,
-    },
-    {
-      icon: <Icons.Adobe width={72} height={72} />,
-    },
-    {
-      icon: <Icons.Adobe width={72} height={72} />,
-    },
-    {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: <Icons.Drupal width={120} height={120} />,
     },
   ];
 

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import CustomInput from "@/components/ui/inputCustom";
 import DropdownCustom from "@/components/ui/dropdownCustom";
 
+
 const LetsWork = () => {
   return (
     <section className={`${styles.lestWorkStyle}`}>
@@ -36,9 +37,7 @@ const LetsWork = () => {
                   />
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                  <DropdownCustom
-                   
-                  />
+                  <DropdownCustom />
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
                   <CustomInput

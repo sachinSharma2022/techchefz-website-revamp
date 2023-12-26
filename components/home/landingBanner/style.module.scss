@@ -2,6 +2,34 @@
 
 .landingBannerStyle {
   padding: spacing(section-primary-padding);
+  position: relative;
+
+  &::before{
+    content: '';
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+    background-color: color(primary-orange);
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: blur(13rem);
+    opacity: 0.3;
+  }
+
+  &::after{
+    content: '';
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+    background-color: color(circle-blue);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    filter: blur(13rem);
+    opacity: 0.3;
+  }
+
   @include mobile {
     padding: spacing(section-mob-padding);
   }

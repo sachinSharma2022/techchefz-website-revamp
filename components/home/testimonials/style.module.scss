@@ -31,10 +31,13 @@
         }
       }
       .testimonialsHeading {
-        font-size: 2.75rem;
-        font-weight: 500;
-        line-height: 3.375rem;
-        margin-bottom: 2rem;
+        h3 {
+          font-size: 2.75rem;
+          font-weight: 500;
+          line-height: 3.375rem;
+          margin-bottom: 2rem;
+          font-family: font(primary);
+        }
       }
       .testimonialsHeading {
         font-size: 2.75rem;
@@ -86,6 +89,7 @@
           font-weight: 500;
           line-height: 2rem;
           color: color(primary-blue);
+          font-family: font(primary);
           margin-bottom: 0;
         }
         .customerRole {

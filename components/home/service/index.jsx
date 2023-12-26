@@ -19,37 +19,37 @@ const Service = () => {
         "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
     },
     {
-      icon: <Icons.Transform width={64} height={64} />,
+      icon: <Icons.CustomDevelopment width={64} height={64} />,
       sbTitle: "Product Engineering & Custom Development",
       sbText:
         "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
     },
     {
-      icon: <Icons.Transform width={64} height={64} />,
+      icon: <Icons.MarTech width={64} height={64} />,
       sbTitle: "Strategy & Digital Transformation",
       sbText:
         "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
     },
     {
-      icon: <Icons.Transform width={64} height={64} />,
+      icon: <Icons.Intelligence width={64} height={64} />,
       sbTitle: "Strategy & Digital Transformation",
       sbText:
         "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
     },
     {
-      icon: <Icons.Transform width={64} height={64} />,
+      icon: <Icons.Platforms width={64} height={64} />,
       sbTitle: "Strategy & Digital Transformation",
       sbText:
         "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
     },
     {
-      icon: <Icons.Transform width={64} height={64} />,
+      icon: <Icons.Cloud width={64} height={64} />,
       sbTitle: "Strategy & Digital Transformation",
       sbText:
         "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
     },
     {
-      icon: <Icons.Transform width={64} height={64} />,
+      icon: <Icons.DataIntelligence width={64} height={64} />,
       sbTitle: "Strategy & Digital Transformation",
       sbText:
         "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",

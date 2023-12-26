@@ -78,12 +78,12 @@ const DigitalTransformation = () => {
           </div>
 
           <div className="col-md-8 col-12">
-            <p className={styles.datingText}>
+            <div className={styles.datingText}>
               Remaining businesses by integrating
-              <span className={styles.digitalTechText}>
+              <div className={styles.digitalTechText}>
                 digital technologies.
-              </span>
-            </p>
+              </div>
+            </div>
           </div>
           <div className={`${styles.servicesBtn} col-md-4 col-12`}>
             <Button variant="outline" size="md">
