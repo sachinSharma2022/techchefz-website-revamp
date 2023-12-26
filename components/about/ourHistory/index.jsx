@@ -104,7 +104,7 @@ const OurHistory = () => {
     <section className={styles.ourHistory}>
       <div className="container">
         <div className="row">
-          <div className="col-md-6 col-md-7 mb-4">
+          <div className={styles.ourHistoryTop}>
             <h6 className={styles.ourHistoryTitle}>Our History</h6>
             <h3 className={styles.ourHistoryHeading}>
               Tracing Innovation Through Time: Our IT Journey.

@@ -2,6 +2,13 @@
 
 .ourHistory {
    padding: spacing(section-primary-padding);
+   padding-bottom: 5rem;
+
+   .ourHistoryTop{
+      margin-bottom: 5rem;
+      width: 100%;
+      max-width: 55%;
+   }
 
    .ourHistoryTitle {
       color: color(text-primary);
@@ -15,7 +22,7 @@
    }
    .ourHistoryHeading {
       font-size: text(larger);
-      margin-bottom: 2.75rem;
+      color: color(text-primary);
    }
 
    .subHeading {
