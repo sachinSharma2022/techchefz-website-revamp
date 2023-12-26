@@ -208,7 +208,7 @@ const TechnologyStack = () => {
             </div>
             <div className="col-md-12 col-12">
               <Button variant="outline" size="md">
-                Explore Technologies
+                Explore Technologies <Icons.ArrowRight size={18} />
               </Button>
             </div>
           </div>

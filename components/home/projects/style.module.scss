@@ -84,12 +84,13 @@
   .ProjectBtn {
     button {
       margin: 0 0.75rem 0.75rem 0;
-      border: 0.063rem solid rgba(255, 255, 255, 0.4);
       color: color(primary-white);
+      font-weight: 400;
+      border: 0.063rem solid color(primary-white);
 
-      &:hover {
+      &:hover{
         background-color: color(primary-white);
-        color: color(primary-black);
+        color: color(text-primary);
       }
     }
   }

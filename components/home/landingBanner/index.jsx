@@ -1,6 +1,7 @@
 import React from "react";
-import styles from "./style.module.scss";
 import { Button } from "../../ui/button";
+import { Icons } from "@/components/icons";
+import styles from "./style.module.scss";
 
 const LandingBanner = () => {
   return (
@@ -11,7 +12,7 @@ const LandingBanner = () => {
       </h1>
 
       <Button variant="blueBtn" size="md">
-        Let’s Work Together
+        Let’s Work Together <Icons.ArrowRight size={18} />
       </Button>
     </section>
   );
