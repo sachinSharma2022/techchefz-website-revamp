@@ -442,17 +442,21 @@ a {
 
     &::after{
       content: '';
-      width: 100%;
+      width: 96%;
       height: 1px;
       border: 2px dashed color(bg-gray);
       position: absolute;
-      left: 0;
-      bottom: 0.4rem;
+      left: 50%;
+      transform: translate(-50%);
+      bottom: 0.9rem;
     }
 
     li{
       width: 2.125rem;
       height: 2.125rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       margin: 0;
       z-index: 9;
 
