@@ -1,0 +1,102 @@
+@import "~/styles/partials/config";
+
+.innovationSpacing {
+  padding: spacing(section-primary-padding);
+  @include mobile {
+    padding: spacing(section-mob-padding);
+  }
+  .innovationMain {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 7.5rem;
+    letter-spacing: 0.2rem;
+    @include mobile {
+      justify-content: flex-start;
+      align-items: start;
+      margin-bottom: 2.5rem;
+    }
+    .text {
+      margin: 0;
+      margin-bottom: 2.5rem;
+      text-transform: uppercase;
+      font-size: text(normal);
+      font-weight: 700;
+      color: color(text-primary);
+      opacity: 0.6;
+      @include mobile {
+        margin-bottom: 0;
+      }
+    }
+    .title {
+      font-size: 2.75rem;
+      font-weight: 500;
+      line-height: 3.375rem;
+      text-align: center;
+      max-width: 55%;
+      @include mobile {
+        text-align: left;
+      }
+    }
+  }
+  .innovationCardsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .innovationBox {
+      text-align: center;
+      background: linear-gradient(
+        0deg,
+        color(bg-soft) 3.48%,
+        rgba(241, 241, 241, 0) 121.7%
+      );
+      padding: text(xxxl);
+      width: 373.333px;
+      min-height: 26.063rem;
+      border-radius: text(xl);
+      border: 0.125rem solid rgba(17, 17, 17, 0.12);
+
+      &:hover {
+        border: 0.125rem solid color(heading-liner);
+        cursor: pointer;
+      }
+
+      @include mobile {
+        margin-right: text(xl);
+        min-height: 18.5rem;
+        padding: text(lg);
+      }
+      .bgImage {
+        display: flex;
+        justify-content: center;
+      }
+
+      .sbTitle {
+        font-size: 2.75rem;
+        font-weight: 500;
+        line-height: text(xxxl);
+        margin-bottom: 0.75rem;
+        text-align: center;
+        color: color(primary-blue);
+        @include mobile {
+          font-size: text(lg);
+        }
+      }
+      .sbSubtitle {
+        font-weight: 700;
+        font-size: text(normal);
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+        opacity: 0.6;
+        text-align: center;
+        @include mobile {
+          font-size: text(normal);
+        }
+      }
+    }
+  }
+}
