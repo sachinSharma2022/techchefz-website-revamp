@@ -59,12 +59,12 @@
     margin-top: 3rem;
 
     .teamCardBg {
-      border: 1px solid #4cc3da;
+      border: 1px solid color(border-light-blue);
       background: linear-gradient(
         328deg,
-        #4cc3da 20.24%,
-        #3376d9 49.39%,
-        #2720a9 102.1%
+        color(border-light-blue) 20.24%,
+        color(medium-blue) 49.39%,
+        color(dark-blue) 102.1%
       );
       background-blend-mode: soft-light, normal;
       height: 26.063rem;
