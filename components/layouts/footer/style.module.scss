@@ -5,7 +5,7 @@
   padding: 3rem 7.5rem 0;
   color: color(primary-white);
 
-  @include tablet{
+  @include tablet {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
@@ -15,7 +15,7 @@
     color: rgba(color(primary-white), 0.8);
     font-weight: 500;
 
-    @include mobile{
+    @include mobile {
       font-size: text(lg);
     }
   }
@@ -25,9 +25,20 @@
     font-weight: 500;
     color: rgba(color(primary-white), 0.8);
     margin-bottom: 1.75rem;
+
+    @include mobile {
+      font-size: text(normal);
+      margin-bottom: 1rem;
+      color: color(primary-white);
+    }
+
     a {
       color: rgba(color(primary-white), 0.8);
       font-size: text(lg);
+
+      @include mobile {
+        font-size: text(normal);
+      }
     }
   }
 
@@ -52,10 +63,36 @@
     }
   }
 
+  .footerBox {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+
+    @include mobile {
+      flex-wrap: wrap;
+      flex-direction: column-reverse;
+    }
+
+    .footerCols {
+      @include mobile {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+
+      ul {
+        @include mobile {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    }
+  }
+
   .footLeftPanel {
     padding-right: 7rem;
 
-    @include tablet{
+    @include tablet {
       padding-right: 0;
     }
 
@@ -66,16 +103,16 @@
       margin: 1rem 0;
     }
 
-    .formFlex{
+    .formFlex {
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      @include mobile{
+      @include mobile {
         flex-wrap: wrap;
       }
 
-      input{
+      input {
         padding: 0.5rem 1rem;
         background-color: color(input-bg);
         color: color(primary-white);
@@ -85,23 +122,23 @@
         height: 3.25rem;
         min-height: 3.25rem;
 
-        &::placeholder{
-          color: rgba(color(primary-white), 0.50);
+        &::placeholder {
+          color: rgba(color(primary-white), 0.5);
         }
 
-        &:focus{
-          &::placeholder{
+        &:focus {
+          &::placeholder {
             opacity: 0;
           }
         }
       }
-      label{
+      label {
         display: none;
       }
 
-      button{
+      button {
         margin-left: 1rem;
-        @include mobile{
+        @include mobile {
           margin-left: 0;
           margin-top: 1rem;
         }
@@ -116,12 +153,15 @@
       border-radius: 1rem;
       margin: 3rem 0;
 
-      @include tablet{
+      @include tablet {
         margin: 2rem 0;
       }
 
       .partnerCols {
         padding: 0.5rem 1.5rem;
+        @include mobile {
+          padding: 0.5rem 1rem;
+        }
         a {
           color: color(primary-blue);
           font-size: text(lg);
@@ -130,6 +170,11 @@
           display: flex;
           align-items: center;
           white-space: nowrap;
+
+          @include mobile {
+            font-size: text(normal);
+          }
+
           svg {
             margin-left: 0.5rem;
             path {
@@ -142,6 +187,11 @@
           font-family: font(secondary);
           font-weight: 400;
           margin: 0;
+          @include mobile {
+            font-size: text(xxs);
+            font-weight: 300;
+            color: rgba(color(primary-white), 0.8);
+          }
         }
       }
       img {
@@ -155,7 +205,7 @@
   .footSocial {
     margin-top: 0.8rem;
 
-    @include mobile{
+    @include mobile {
       margin-top: 2.5rem;
     }
 
@@ -172,7 +222,7 @@
       margin-right: 0.8rem;
       transition: all 0.5s;
 
-      @include mobile{
+      @include mobile {
         padding: 0;
         width: 3rem;
         height: 3rem;
@@ -183,7 +233,7 @@
 
       svg {
         margin-right: 0.7rem;
-        @include mobile{
+        @include mobile {
           margin-right: 0;
         }
         path {
@@ -198,8 +248,8 @@
         }
       }
 
-      span{
-        @include mobile{
+      span {
+        @include mobile {
           display: none;
         }
       }
@@ -227,7 +277,7 @@
     padding: 1.5rem 0;
     border-top: 1px solid rgba(color(primary-white), 0.2);
 
-    @include mobile{
+    @include mobile {
       flex-wrap: wrap;
       margin-top: 2rem;
       flex-direction: column-reverse;
@@ -240,7 +290,7 @@
       font-size: text(xxs);
       opacity: 0.6;
 
-      @include mobile{
+      @include mobile {
         width: 100%;
         margin-top: 1rem;
         text-align: center;
@@ -251,7 +301,7 @@
       display: flex;
       list-style: none;
 
-      @include mobile{
+      @include mobile {
         flex-wrap: wrap;
         width: 100%;
       }
@@ -259,7 +309,7 @@
       li {
         list-style-type: none;
 
-        @include mobile{
+        @include mobile {
           width: 100%;
         }
 
@@ -270,7 +320,7 @@
           margin: 0 1rem;
           transition: all 0.5s;
 
-          @include mobile{
+          @include mobile {
             margin: 0;
           }
 
@@ -292,8 +342,7 @@
     }
   }
 
-
-  .footLogoFlex{
+  .footLogoFlex {
     display: flex;
     align-items: center;
     justify-content: space-between;
