@@ -29,8 +29,10 @@ const Goals = () => {
               violations, breach of confidentiality, or unauthorized access to
               the system.
             </p>
-            <div>
-              <Icons.bike width={27} height={16} />
+            <div className={styles.goalsTextWrapper}>
+              <div className={styles.goalsIcons}>
+              <Icons.bike className={styles.goalsIcon} width={27} height={16} />
+              </div>
               <p className={styles.goalsText}>
                 Create a user-friendly mobile application for storing and
                 monitoring test results, planning visits to medical specialists
@@ -39,8 +41,10 @@ const Goals = () => {
               </p>
             </div>
             <hr />
-            <div>
-              <Icons.bike width={27} height={16} />
+            <div className={styles.goalsTextWrapper}>
+            <div className={styles.goalsIcons}>
+              <Icons.bike className={styles.goalsIcon} width={27} height={16} />
+              </div>
               <p className={styles.goalsText}>
                 Create a user-friendly mobile application for storing and
                 monitoring test results, planning visits to medical specialists
@@ -49,11 +53,13 @@ const Goals = () => {
               </p>
             </div>
             <hr />
-            <div>
-              <Icons.bike width={27} height={16} />
+            <div className={styles.goalsTextWrapper}>
+            <div className={styles.goalsIcons}>
+              <Icons.bike className={styles.goalsIcon} width={27} height={16} />
+              </div>
               <p className={styles.goalsText}>
                 Optimize the first release of the project by launching the MVP
-                in the shortest possible time;
+                in the shortest possible time; 
               </p>
             </div>
           </div>
