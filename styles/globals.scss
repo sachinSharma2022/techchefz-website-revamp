@@ -409,3 +409,19 @@ a {
   }
 }
 
+.scroll-gallery-images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  grid-auto-flow: column;
+  gap: 10px;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    aspect-ratio: 1/1;
+  }
+
+}

@@ -505,7 +505,23 @@ export const Icons = {
          </defs>
       </svg>
    ),
-
+  ArrowLongRight: ({ size, ...props }) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height={size}
+      width={size}
+      viewBox="0 0 18 14"
+      fill="none"
+      {...props}
+    >
+      <path
+        d="M11.0715 0.930021L11.0008 0.85931L10.9301 0.930022L10.1377 1.7224L10.067 1.79311L10.1377 1.86382L14.6135 6.33961L1 6.33961L0.9 6.33961L0.9 6.43961L0.9 7.5602L0.9 7.6602L1 7.6602L14.6135 7.6602L10.1377 12.136L10.067 12.2067L10.1377 12.2774L10.9301 13.0698L11.0008 13.1405L11.0715 13.0698L17.0707 7.07062L17.1414 6.9999L17.0707 6.92919L11.0715 0.930021Z"
+        fill="#111111"
+        stroke="#111111"
+        stroke-width="0.2"
+      />
+    </svg>
+  ),
    React: ({ size, ...props }) => (
       <svg xmlns="http://www.w3.org/2000/svg" height={size} width={size} fill="none" {...props} viewBox="0 0 68 60">
          <g clip-path="url(#clip0_4_1229)">
