@@ -82,10 +82,10 @@ const Testimonials = () => {
 
             <div className={styles.sliderController}>
               <button ref={navigationPrevRef} className="btn btn-primary">
-                <Icons.ArrowLeft className="asset-white" />
+                <Icons.ArrowLeft size={20} className="asset-white" />
               </button>
               <button ref={navigationNextRef} className="btn btn-primary">
-                <Icons.ArrowRight />
+                <Icons.ArrowRight size={20} />
               </button>
             </div>
           </div>

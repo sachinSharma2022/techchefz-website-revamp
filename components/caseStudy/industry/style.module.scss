@@ -1,0 +1,61 @@
+@import "~/styles/partials/config";
+
+.industry {
+   padding: spacing(section-primary-padding);
+   padding-bottom: 0;
+
+   .industryLeft {
+      font-family: font(secondary);
+      h6 {
+         font-size: text(normal);
+         font-weight: 400;
+         line-height: 24px;
+         opacity: 0.6;
+         margin-bottom: 0.2rem;
+      }
+      h5 {
+         font-weight: 700;
+         line-height: 32px;
+         font-size: text(xl);
+      }
+
+      .serviceBtn {
+         button {
+            margin: 0 0.75rem 0.75rem 0;
+            color: color(text-primary);
+            font-size: text(normal);
+            font-weight: 400;
+            line-height: 30px;
+            border: 0.063rem solid rgba(17, 17, 17, 0.4);
+
+            &:hover {
+               background-color: color(primary-white);
+               color: color(text-primary);
+            }
+         }
+      }
+   }
+
+   .industryHeading {
+      font-weight: 500;
+      line-height: 54px;
+      opacity: 0.8;
+      font-size: text(larger);
+      color: color(text-primary);
+      margin-bottom: 2rem;
+   }
+
+   .industryText {
+      font-size: text(lg);
+      font-weight: 400;
+      line-height: 30px;
+      opacity: 0.6;
+   }
+
+   .industryImg {
+      padding: 5rem 0;
+      img {
+         width: 100%;
+      }
+   }
+}
