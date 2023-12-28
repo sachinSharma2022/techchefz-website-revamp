@@ -3,7 +3,7 @@
 .captionCardStyle {
   padding-inline: spacing(p-120);
   @include mobile {
-    padding: spacing(section-mob-padding);
+    padding: spacing(section-mob-padding-Left-Right);
   }
 
   .imageCard {

@@ -27,7 +27,7 @@
       opacity: 0.6;
       letter-spacing: 0.2rem;
       @include mobile {
-        margin-bottom: 0;
+        margin-bottom: 0.75rem;
         font-weight: 400;
       }
     }
@@ -41,6 +41,7 @@
         text-align: left;
         font-size: 2rem;
         line-height: 2.5rem;
+        min-width: 100%;
       }
     }
   }
@@ -63,15 +64,14 @@
       padding: 3.75rem 0 1.875rem 0;
       border-radius: text(xl);
       border: 0.125rem solid rgba(17, 17, 17, 0.12);
-   
+
       &:hover {
         border: 0.125rem solid color(heading-liner);
         cursor: pointer;
       }
-      @include mobile{
+      @include mobile {
         width: 100%;
       }
-
 
       .bgImage {
         display: flex;
@@ -86,35 +86,33 @@
           width: 100%;
         }
       }
-.textCardSpace{
-  margin-bottom: 2.75rem;
-  .sbTitle {
-    font-size: 2.75rem;
-    font-weight: 500;
-    line-height: text(xxxl);
-    margin-bottom: 0;
-    text-align: center;
-    color: color(primary-blue);
-    @include mobile {
-      font-size: 2rem;
-      color: color(text-primary);
-   
-    }
-  }
-  .sbSubtitle {
-    font-weight: 700;
-    font-size: text(normal);
-    letter-spacing: 0.2rem;
-    text-transform: uppercase;
-    opacity: 0.6;
-    text-align: center;
-    @include mobile {
-      font-size: text(normal);
-      margin-bottom: 0.25rem;
-    }
-  }
-}
-    
+      .textCardSpace {
+        margin-bottom: 2.75rem;
+        .sbTitle {
+          font-size: 2.75rem;
+          font-weight: 500;
+          line-height: text(xxxl);
+          margin-bottom: 0;
+          text-align: center;
+          color: color(primary-blue);
+          @include mobile {
+            font-size: 2rem;
+            color: color(text-primary);
+          }
+        }
+        .sbSubtitle {
+          font-weight: 700;
+          font-size: text(normal);
+          letter-spacing: 0.2rem;
+          text-transform: uppercase;
+          opacity: 0.6;
+          text-align: center;
+          @include mobile {
+            font-size: text(normal);
+            margin-bottom: 0.25rem;
+          }
+        }
+      }
     }
   }
 }
