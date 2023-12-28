@@ -45,7 +45,7 @@
     opacity: 0.8;
     max-width: 50%;
     @include mobile {
-      max-width: max-content;
+      max-width: 75%;
     }
   }
   .flexCol {

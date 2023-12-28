@@ -7,21 +7,19 @@ const Innovation = () => {
     {
       sbSubtitle: "Discover Perspectives",
       sbTitle: "Insights",
-      // imgSrc: "/images/innovation-printer.png",
-      width: "",
-      height: "",
+      imgSrc: "/images/innovation-printer.png",
     },
     {
       sbSubtitle: "Join Us",
       sbTitle: "Career",
-      // imgSrc: "/images/innovation-printer.png",
+      imgSrc: "/images/career-hand.png",
       width: "",
       height: "",
     },
     {
       sbSubtitle: "Lets's Work Together",
       sbTitle: "Contact Us",
-      // imgSrc: "/images/innovation-printer.png",
+      imgSrc: "/images/contact-us.png",
       width: "",
       height: "",
     },
@@ -39,13 +37,15 @@ const Innovation = () => {
         <div className={`${styles.innovationCardsGrid}`}>
           {innovationCardMap.map((data, index) => (
             <div key={index} className={styles.innovationBox}>
-              <p className={styles.sbSubtitle}>{data.sbSubtitle}</p>
-              <h4 className={styles.sbTitle}>{data.sbTitle}</h4>
+              <div className={styles.textCardSpace}>
+                <p className={styles.sbSubtitle}>{data.sbSubtitle}</p>
+                <h4 className={styles.sbTitle}>{data.sbTitle}</h4>
+              </div>
               <div className={styles.bgImage}>
                 <ImageCustom
                   src={data.imgSrc}
-                  width={data.width}
-                  height={data.height}
+                  width="500"
+                  height="500"
                   alt="Innovation"
                 />
               </div>
