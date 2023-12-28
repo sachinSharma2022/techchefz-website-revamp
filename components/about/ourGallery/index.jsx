@@ -1,7 +1,6 @@
-import { useEffect } from "react";
+"use client";
 
 import { ImageCustom } from "@/components/ui/imageCustom";
-import gsap from "gsap";
 import Marquee from "react-fast-marquee";
 import styles from "./style.module.scss";
 
@@ -17,7 +16,7 @@ const OurGallery = () => {
     },
     {
       imgSrc:
-        "https://images.unsplash.com/photo-1515169067868-5387ec356754?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG9mZmljZSUyMGV2ZW50fGVufDB8fDB8fHww",
+        "https://images.unsplash.com/photo-1590649917466-06e6e1c3e92d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fG9mZmljZSUyMGV2ZW50fGVufDB8fDB8fHww",
     },
     {
       imgSrc:
@@ -105,7 +104,7 @@ const OurGallery = () => {
         </div>
       </div>
 
-      <Marquee>
+      <Marquee delay={1}>
         <div className={`${styles.galleryImages} scroll-gallery-images`}>
           {galleryImages.map((data, index) => (
             <div key={index} className={`${styles.galleryImage} card-${index}`}>
