@@ -1,0 +1,22 @@
+@import "~/styles/partials/config";
+
+.relatedCase {
+   padding:8.75rem 0 2rem 7.5rem ;
+   overflow-x: hidden;
+   .relatedCaseTitle {
+      font-size: text(normal);
+      font-weight: 700;
+      line-height: 24px;
+      letter-spacing: 3.2px;
+      text-transform: uppercase;
+      opacity: 0.8;
+      font-family: font(secondary);
+      margin-bottom: 1rem;
+   }
+   .relatedCaseHeading{
+      font-size: text(larger);
+      font-weight: 500;
+      line-height: 54px;
+      margin-bottom: 5rem;
+   }
+}
