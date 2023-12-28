@@ -1,0 +1,45 @@
+@import "~/styles/partials/config";
+
+.challenges {
+   padding: 0 7.5rem;
+   .challengeTitle {
+      font-size: text(normal);
+      font-weight: 700;
+      line-height: 24px;
+      letter-spacing: 3.2px;
+      text-transform: uppercase;
+      opacity: 0.8;
+   }
+   .challengeHeading {
+      font-size: text(larger);
+      font-weight: 500;
+      line-height: 54px;
+   }
+
+   .challengesCards {
+      display: flex;
+      gap: 40px;
+      margin: 5rem 0;
+
+      .challengesCard {
+         border-radius: 20px;
+         border: 1px solid rgba(17, 17, 17, 0.12);
+         background: color(bg-soft);
+         width: 23.333rem;
+         height: auto;
+         padding: 2.5rem;
+
+         h5 {
+            font-size: text(xl);
+            font-weight: 500;
+            line-height: 32px;
+         }
+         p {
+            font-size: text(normal);
+            font-weight: 400;
+            line-height: 24px;
+            opacity: 0.8;
+         }
+      }
+   }
+}
