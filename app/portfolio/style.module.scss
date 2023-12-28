@@ -3,4 +3,7 @@
 .dropdownStyle {
     padding-inline: spacing(p-120);
     margin-bottom: 5rem;
+    @include mobile {
+        padding: spacing(section-mob-padding);
+      }
 }
