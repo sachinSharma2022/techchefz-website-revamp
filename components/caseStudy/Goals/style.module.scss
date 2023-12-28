@@ -1,40 +1,41 @@
 @import "~/styles/partials/config";
 
 .goals {
-   padding: 0 7.5rem;
-   .goalsTitle {
-      font-size: text(normal);
-      line-height: 24px;
-      letter-spacing: 3.2px;
-      text-transform: uppercase;
-      opacity: 0.8;
-   }
-   .goalsHeading {
-      font-weight: 500;
-      line-height: 54px;
-      font-size: text(larger);
-      margin-bottom: 2rem;
-   }
+  padding: 0 7.5rem;
+  .goalsTitle {
+    font-size: text(normal);
+    line-height: 24px;
+    letter-spacing: 3.2px;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+  .goalsHeading {
+    font-weight: 500;
+    line-height: 54px;
+    font-size: text(larger);
+    margin-bottom: 2rem;
+  }
 
-   .goalsContent {
-      font-size: text(lg);
-      font-weight: 400;
-      line-height: 30px;
-      opacity: 0.8;
-   }
-   .goalsText {
+  .goalsContent {
     font-size: text(lg);
-      font-weight: 400;
-      line-height: 30px;
-      opacity: 0.6;
-   }
+    font-weight: 400;
+    line-height: 30px;
+    opacity: 0.8;
+  }
+  .goalsText {
+    font-size: text(lg);
+    font-weight: 400;
+    line-height: 30px;
+    opacity: 0.6;
+  }
 
-   .goalsImgs{
+  .goalsImgs {
     margin: 5rem 0;
     img{
         margin: 1.25rem 0;
         width: 100%;
+        height: auto;
         border-radius: 0.75rem;
     }
-   }
+  }
 }
