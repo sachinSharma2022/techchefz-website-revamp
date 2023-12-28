@@ -126,7 +126,7 @@
   }
 
   .footSocial {
-    margin-top: 3.9rem;
+    margin-top: 0.8rem;
     a {
       display: inline-flex;
       align-items: center;
@@ -211,5 +211,12 @@
         list-style-type: none;
       }
     }
+  }
+
+
+  .footLogoFlex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
