@@ -254,12 +254,30 @@ a {
     }
   }
 
-  .swiper-button-disabled {
+  .swiper-slide-shadow-left {
+    background-color: white;
+    box-shadow: none;
+    background-image: none !important;
+  }
+
+  .swiper-slide-prev {
+    border: none !important;
+  }
+
+  .btn-back.swiper-button-disabled {
     background: transparent;
     border-color: color(primary-black);
 
     svg {
       filter: none;
+    }
+  }
+
+  .btn-move.swiper-button-disabled {
+    background: transparent;
+    border-color: color(primary-black);
+    svg {
+      filter: invert(1);
     }
   }
 }
@@ -399,7 +417,7 @@ a {
 
 .scroll-gallery-images {
   display: grid;
-  grid-template-columns: repeat(8, 205px 428px 205px 300px 210px 205px);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto auto;
   grid-auto-flow: column;
   gap: 10px;
@@ -413,7 +431,7 @@ a {
 
   .card-2 {
     grid-row: 1/3;
-    height: 100% !important;
+    height: 510px !important;
 
     div {
       height: 100% !important;

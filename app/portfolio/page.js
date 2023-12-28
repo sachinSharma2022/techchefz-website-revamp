@@ -10,13 +10,13 @@ const Portfolio = () => {
       <LandingBanner />
       <section className={`${styles.dropdownStyle}`}>
         <div className="row">
-          <div className="col-md-4">
+          <div className={`${styles.inputDropPadding} col-md-4`}>
             <PrimaryDropdown />
           </div>
-          <div className="col-md-4">
+          <div className={`${styles.inputDropPadding} col-md-4`}>
             <PrimaryDropdown />
           </div>
-          <div className="col-md-4">
+          <div className={`${styles.inputDropPadding} col-md-4`}>
             <PrimaryDropdown />
           </div>
         </div>

@@ -117,10 +117,14 @@
 
 .size_lg {
   height: 3.25rem;
-  padding: 0.625rem 1.15rem;
+  padding: 0.625rem 1.25rem;
   font-size: text(normal);
   border-radius: 0.5rem;
   font-weight: 500;
+
+  @include mobile{
+    height: 2.75rem;
+  }
 }
 
 .size_xs {
