@@ -121,6 +121,9 @@ const Footer = () => {
                 <li>
                   <Link href="/">Center of Excellence</Link>
                 </li>
+                <li>
+                  <Link href="/">Accelerators</Link>
+                </li>
               </ul>
             </div>
           </div>
