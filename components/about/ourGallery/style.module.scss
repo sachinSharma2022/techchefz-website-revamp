@@ -21,14 +21,11 @@
    .galleryImages {
       padding: 0 0.7rem;
       margin-top: 80px;
+      position: relative;
 
-      .galleryImage {
+       div {
+         height: 250px;
          width: 100%;
-         height: 100%;
-         cursor: pointer;
-         width: inherit;
-         position: relative;
-         aspect-ratio: 1/1;
       }
    }
 }
