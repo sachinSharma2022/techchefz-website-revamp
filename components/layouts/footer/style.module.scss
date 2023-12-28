@@ -5,10 +5,19 @@
   padding: 3rem 7.5rem 0;
   color: color(primary-white);
 
+  @include tablet{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
   h4 {
     font-size: text(xl);
     color: rgba(color(primary-white), 0.8);
     font-weight: 500;
+
+    @include mobile{
+      font-size: text(lg);
+    }
   }
 
   h5 {
@@ -45,6 +54,11 @@
 
   .footLeftPanel {
     padding-right: 7rem;
+
+    @include tablet{
+      padding-right: 0;
+    }
+
     p {
       font-size: text(normal);
       font-weight: 400;
@@ -56,6 +70,11 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+
+      @include mobile{
+        flex-wrap: wrap;
+      }
+
       input{
         padding: 0.5rem 1rem;
         background-color: color(input-bg);
@@ -82,6 +101,10 @@
 
       button{
         margin-left: 1rem;
+        @include mobile{
+          margin-left: 0;
+          margin-top: 1rem;
+        }
       }
     }
 
@@ -92,6 +115,10 @@
       border: 1px solid color(primary-blue);
       border-radius: 1rem;
       margin: 3rem 0;
+
+      @include tablet{
+        margin: 2rem 0;
+      }
 
       .partnerCols {
         padding: 0.5rem 1.5rem;
@@ -126,7 +153,12 @@
   }
 
   .footSocial {
-    margin-top: 3.9rem;
+    margin-top: 0.8rem;
+
+    @include mobile{
+      margin-top: 2.5rem;
+    }
+
     a {
       display: inline-flex;
       align-items: center;
@@ -139,8 +171,21 @@
       font-weight: 400;
       margin-right: 0.8rem;
       transition: all 0.5s;
+
+      @include mobile{
+        padding: 0;
+        width: 3rem;
+        height: 3rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
       svg {
         margin-right: 0.7rem;
+        @include mobile{
+          margin-right: 0;
+        }
         path {
           color: color(primary-blue);
         }
@@ -150,6 +195,12 @@
           path {
             color: color(primary-white);
           }
+        }
+      }
+
+      span{
+        @include mobile{
+          display: none;
         }
       }
 
@@ -176,24 +227,52 @@
     padding: 1.5rem 0;
     border-top: 1px solid rgba(color(primary-white), 0.2);
 
+    @include mobile{
+      flex-wrap: wrap;
+      margin-top: 2rem;
+      flex-direction: column-reverse;
+      justify-content: flex-start;
+    }
+
     p {
       margin: 0;
       font-weight: 500;
       font-size: text(xxs);
       opacity: 0.6;
+
+      @include mobile{
+        width: 100%;
+        margin-top: 1rem;
+        text-align: center;
+      }
     }
 
     ul {
       display: flex;
       list-style: none;
+
+      @include mobile{
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
       li {
         list-style-type: none;
+
+        @include mobile{
+          width: 100%;
+        }
+
         a {
           color: rgba(color(primary-white), 0.8);
           font-weight: 400;
           font-size: text(normal);
           margin: 0 1rem;
           transition: all 0.5s;
+
+          @include mobile{
+            margin: 0;
+          }
 
           &:hover {
             color: color(primary-blue);
@@ -211,5 +290,12 @@
         list-style-type: none;
       }
     }
+  }
+
+
+  .footLogoFlex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }

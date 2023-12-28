@@ -1,9 +1,9 @@
 @import "~/styles/partials/config";
 
 .scrollTop {
-  position: fixed;
-  bottom: 2.5rem;
-  right: 10rem;
+  position: relative;
+  bottom: 0;
+  right: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;

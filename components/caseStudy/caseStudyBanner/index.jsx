@@ -10,7 +10,7 @@ const CaseStudyBanner = () => {
             Introducing the world of <span>Automobiles.</span>
          </h1>
          <div className={styles.bannerImg}>
-            <ImageCustom src="/images/project-re.png" width={1360} height={600} alt="banner-img" />
+            <ImageCustom src="/images/project-re.png" width={1360} height={500} alt="banner-img" />
          </div>
       </section>
    );

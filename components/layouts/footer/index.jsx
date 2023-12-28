@@ -2,24 +2,28 @@ import React from "react";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import Link from "next/link";
 import { Icons } from "@/components/icons";
-import styles from "./style.module.scss";
 import { Button } from "@/components/ui/button";
 import InputCustom from "@/components/ui/inputCustom";
+import ScrollToTopButton from "@/components/ui/scrollToTopButton";
+import styles from "./style.module.scss";
 
 const Footer = () => {
   return (
     <footer className={styles.footerSection}>
+      <div className={styles.footLogoFlex}>
+        <div className={styles.footlogo}>
+          <ImageCustom
+            src="/images/logo-white.svg"
+            width={143}
+            height={48}
+            alt=""
+          />
+        </div>
+        <ScrollToTopButton />
+      </div>
       <div className="row">
-        <div className="col-md-6">
+        <div className="col-md-12 col-lg-6">
           <div className={styles.footLeftPanel}>
-            <div className={styles.footlogo}>
-              <ImageCustom
-                src="/images/logo-white.svg"
-                width={143}
-                height={48}
-                alt=""
-              />
-            </div>
             <p>
               Stay at the forefront of innovation, trends, and industry insights
               by subscribing to our newsletter.
@@ -47,28 +51,28 @@ const Footer = () => {
                 <div className="d-flex align-items-center">
                   <Button variant="ligthBlueBtn" size="lg">
                     Subscribe <Icons.ArrowRight size={20} className="ms-2" />
-                  </Button>                  
+                  </Button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="col-md-6">
+        <div className="col-md-12 col-lg-6">
           <div className={styles.footSocial}>
             <h4 className="mb-3">Follow Us on Social Media</h4>
             <Link href="/">
-              <Icons.facebook size={16} /> Linkedin
+              <Icons.facebook size={16} /> <span>Linkedin</span>
             </Link>
             <Link href="/">
-              <Icons.linkedin size={16} /> Facebook
+              <Icons.linkedin size={16} /> <span>Facebook</span>
             </Link>
             <Link href="/">
-              <Icons.twitter size={16} /> Twitter
+              <Icons.twitter size={16} /> <span>Twitter</span>
             </Link>
           </div>
 
           <div className="row mt-5">
-            <div className="col-md-4">
+            <div className="col-md-6 col-lg-4">
               <h5>
                 <Link href="/">About us</Link>
               </h5>
@@ -82,7 +86,7 @@ const Footer = () => {
                 <Link href="/">Contact Us</Link>
               </h5>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-6 col-lg-4">
               <h5>Technology</h5>
               <ul>
                 <li>
@@ -105,7 +109,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-6 col-lg-4">
               <h5>More</h5>
               <ul>
                 <li>

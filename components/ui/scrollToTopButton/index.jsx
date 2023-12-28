@@ -5,11 +5,11 @@ import styles from "./style.module.scss";
 import { Icons } from "@/components/icons";
 
 const ScrollToTopButton = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const toggleVisibility = () => {
-      window.scrollY > 500 ? setIsVisible(true) : setIsVisible(false);
+      window.scrollY > 0 ? setIsVisible(true) : setIsVisible(true);
     };
     window.addEventListener("scroll", toggleVisibility);
     return () => {
