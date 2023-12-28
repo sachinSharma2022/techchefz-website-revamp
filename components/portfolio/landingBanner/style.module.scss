@@ -17,6 +17,7 @@
       font-size: 2.75rem;
       line-height: 3.5rem;
       margin-bottom: text(xl);
+      word-break: break-word;
     }
 
     .titleHighlight {
@@ -45,7 +46,7 @@
     opacity: 0.8;
     max-width: 50%;
     @include mobile {
-      max-width: 75%;
+      max-width: 100%;
     }
   }
   .flexCol {
