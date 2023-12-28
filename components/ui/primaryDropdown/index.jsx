@@ -1,22 +1,27 @@
 import React from "react";
 import styles from "./style.module.scss";
 
-const PrimaryDropdown = () => {
+const PrimaryDropdown = ({ title, value, options, onChange }) => {
   return (
     <div className={styles.dropdownContainerStyle}>
       <div class="form-floating">
         <select
           className={`${styles.selectMain} form-select`}
           id="floatingSelect"
-          aria-label="Floating label select example"
+          value={value}
+          onChange={onChange}
         >
-          <option selected>Open this select menu</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+          <option disabled value="">
+            Select an option
+          </option>
+          {options.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option}
+            </option>
+          ))}
         </select>
         <label className={styles.customLabel} for="floatingSelect">
-          Works with selects
+          {title}
         </label>
       </div>
     </div>

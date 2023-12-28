@@ -9,15 +9,36 @@ const Portfolio = () => {
     <>
       <LandingBanner />
       <section className={`${styles.dropdownStyle}`}>
-        <div className="row">
-          <div className={`${styles.inputDropPadding} col-md-4`}>
-            <PrimaryDropdown />
+        <div className={styles.selectSection}>
+          <div className={`${styles.inputDropPadding}`}>
+            <PrimaryDropdown
+              title="Services"
+              options={[
+                "Data",
+                "It Development",
+                "Network Security",
+                "Cloud Service",
+              ]}
+            />
           </div>
-          <div className={`${styles.inputDropPadding} col-md-4`}>
-            <PrimaryDropdown />
+          <div className={`${styles.inputDropPadding}`}>
+            <PrimaryDropdown
+              title="Industry"
+              options={["Hardware", "Software", "Systems Integrator"]}
+            />
           </div>
-          <div className={`${styles.inputDropPadding} col-md-4`}>
-            <PrimaryDropdown />
+          <div className={`${styles.inputDropPadding}`}>
+            <PrimaryDropdown
+              title="Technology"
+              options={[
+                "Web Content",
+                "Frontend",
+                "Backend",
+                "Mobile Development",
+                "Artificial Intelligence",
+                "DevOps & Cloud",
+              ]}
+            />
           </div>
         </div>
       </section>
