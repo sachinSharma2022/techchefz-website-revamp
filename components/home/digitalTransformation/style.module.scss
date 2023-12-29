@@ -71,7 +71,7 @@
 
       @include mobile {
         grid-template-columns: repeat(1, 1fr);
-        padding: 20px;
+        padding: text(lg);
         margin-bottom: 2.75rem;
       }
       .digitalImg {
