@@ -4,6 +4,16 @@
   padding-inline: spacing(p-120);
   margin-bottom: 5rem;
 
+  .selectSection {
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5rem;
+  }
+
+  .inputDropPadding {
+    width: 100%;
+  }
+
   @include mobile {
     padding: spacing(section-mob-padding-Left-Right);
   }
