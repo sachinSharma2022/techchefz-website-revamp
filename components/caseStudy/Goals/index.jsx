@@ -54,9 +54,9 @@ const Goals = () => {
             </div>
             <hr />
             <div className={styles.goalsTextWrapper}>
-            <div className={styles.goalsIcons}>
+            <span className={styles.goalsIcons}>
               <Icons.bike className={styles.goalsIcon} width={27} height={16} />
-              </div>
+              </span>
               <p className={styles.goalsText}>
                 Optimize the first release of the project by launching the MVP
                 in the shortest possible time; 

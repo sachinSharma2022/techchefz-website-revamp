@@ -37,6 +37,12 @@
 
   @include mobile {
     padding: spacing(section-mob-padding);
+    &::before{
+      display: none;
+    }
+    &::after{
+      display: none;
+    }
   }
 
   .title {

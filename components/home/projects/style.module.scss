@@ -89,7 +89,7 @@
       font-weight: 400;
       border: 0.063rem solid color(primary-white);
 
-      &:hover{
+      &:hover {
         background-color: color(primary-white);
         color: color(text-primary);
       }
@@ -100,9 +100,15 @@
     display: flex;
     justify-content: space-between;
     gap: 2.5rem;
-
+    @include mobile {
+      flex-direction: column;
+      gap: 1.25rem;
+    }
     .brandFromText {
       max-width: 40%;
+      @include mobile {
+        max-width: 100%;
+      }
     }
   }
 }
