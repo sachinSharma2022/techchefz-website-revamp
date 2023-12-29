@@ -61,7 +61,7 @@ const LetsWork = () => {
                 <div className="col-md-6 col-12">
                   <div className={styles.policyText}>
                     By sending this form I confirm that I have read and accept
-                    the{" "}
+                    the
                     <span className={styles.policyHighlight}>
                       Privacy Policy
                     </span>
