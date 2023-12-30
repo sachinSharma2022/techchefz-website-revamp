@@ -6,14 +6,18 @@ import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import styles from "./style.module.scss";
 import { Icons } from "@/components/icons";
+import { MyContext } from "@/app/Context/Theme";
+import { useContext } from 'react';
 
 const Header = () => {
   const [isActive, setActive] = useState(false);
+  const { theme, setTheme } = useContext(MyContext);
   const toggleClass = () => {
     setActive(!isActive);
   };
 
   return (
+
     <header className={styles.headerMain}>
       <div className={styles.logo}>
         <Link href="/">
@@ -48,7 +52,7 @@ const Header = () => {
             </ul>
           </li>
           <li>
-            <Link href="/portfolio">Portfolio</Link>
+            <Link href="/">Portfolio</Link>
           </li>
           <li>
             <Link href="/">More</Link>
@@ -65,7 +69,10 @@ const Header = () => {
               id="flexSwitchCheckDefault"
             />
           </div> */}
-          <Button variant="default">
+          <Button variant="default" onClick={()=>{
+            if(theme==="light") setTheme("dark")
+            else setTheme("light")
+          }}>
             <Icons.moon size={15} />
           </Button>
         </div>
@@ -84,6 +91,8 @@ const Header = () => {
         </div>
       </div>
     </header>
+
+
   );
 };
 
