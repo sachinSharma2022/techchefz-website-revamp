@@ -67,42 +67,39 @@
         color(dark-blue) 102.1%
       );
       background-blend-mode: soft-light, normal;
-      height: 26.063rem;
+      height: 32.5rem;
       width: 100%;
       border-radius: 0.7rem;
       overflow: hidden;
       color: color(primary-white);
+      position: relative;
 
       .teamImg {
-        display: flex;
-        justify-content: flex-end;
+        position: absolute;
+        bottom: 0;
+        right: 0;
       }
 
-      .teamCardContent {
-        position: relative;
-        height: 100%;
+      .cardHead {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 0.8rem;
 
-        .cardHead {
-          display: flex;
-          justify-content: space-between;
-          padding: 1rem 0.8rem;
-
-          h6 {
-            font-size: text(xl);
-            font-style: normal;
-            font-weight: 500;
-          }
-          p {
-            font-size: text(lg);
-            font-weight: 400;
-            opacity: 0.6;
-          }
+        h6 {
+          font-size: text(xl);
+          font-style: normal;
+          font-weight: 500;
         }
-        .linkdinIcon {
-          position: absolute;
-          bottom: 2rem;
-          left: 1rem;
+        p {
+          font-size: text(lg);
+          font-weight: 400;
+          opacity: 0.6;
         }
+      }
+      .linkdinIcon {
+        position: absolute;
+        bottom: 2rem;
+        left: 1rem;
       }
     }
   }
