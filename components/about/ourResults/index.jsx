@@ -33,7 +33,9 @@ const OurResults = () => {
         <div className="row">
           <div className="col-md-7 col-lg-8">
             <h6 className={styles.ourResultsTitle}>Our Results</h6>
-            <h3 className={styles.ourResultsHeading}>Celebrating Achievements: A Data-Driven Overview</h3>
+            <h3 className={styles.ourResultsHeading}>
+              Celebrating Achievements: A Data-Driven Overview
+            </h3>
             <p className={styles.ourResultsText}>
               With years of remarkable growth, we&apos;ve secured a solid
               position in the fiercely competitive IT industry. Our impressive

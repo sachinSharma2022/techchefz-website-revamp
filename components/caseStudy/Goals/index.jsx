@@ -31,7 +31,11 @@ const Goals = () => {
             </p>
             <div className={styles.goalsTextWrapper}>
               <div className={styles.goalsIcons}>
-              <Icons.bike className={styles.goalsIcon} width={27} height={16} />
+                <Icons.bike
+                  className={styles.goalsIcon}
+                  width={27}
+                  height={16}
+                />
               </div>
               <p className={styles.goalsText}>
                 Create a user-friendly mobile application for storing and
@@ -42,8 +46,12 @@ const Goals = () => {
             </div>
             <hr />
             <div className={styles.goalsTextWrapper}>
-            <div className={styles.goalsIcons}>
-              <Icons.bike className={styles.goalsIcon} width={27} height={16} />
+              <div className={styles.goalsIcons}>
+                <Icons.bike
+                  className={styles.goalsIcon}
+                  width={27}
+                  height={16}
+                />
               </div>
               <p className={styles.goalsText}>
                 Create a user-friendly mobile application for storing and
@@ -54,12 +62,16 @@ const Goals = () => {
             </div>
             <hr />
             <div className={styles.goalsTextWrapper}>
-            <span className={styles.goalsIcons}>
-              <Icons.bike className={styles.goalsIcon} width={27} height={16} />
+              <span className={styles.goalsIcons}>
+                <Icons.bike
+                  className={styles.goalsIcon}
+                  width={27}
+                  height={16}
+                />
               </span>
               <p className={styles.goalsText}>
                 Optimize the first release of the project by launching the MVP
-                in the shortest possible time; 
+                in the shortest possible time;
               </p>
             </div>
           </div>

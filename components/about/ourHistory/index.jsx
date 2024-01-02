@@ -103,12 +103,12 @@ const OurHistory = () => {
   return (
     <section className={styles.ourHistory}>
       <div className="container">
-          <div className={styles.ourHistoryTop}>
-            <h6 className={styles.ourHistoryTitle}>Our History</h6>
-            <h3 className={styles.ourHistoryHeading}>
-              Tracing Innovation Through Time: Our IT Journey.
-            </h3>
-          </div>
+        <div className={styles.ourHistoryTop}>
+          <h6 className={styles.ourHistoryTitle}>Our History</h6>
+          <h3 className={styles.ourHistoryHeading}>
+            Tracing Innovation Through Time: Our IT Journey.
+          </h3>
+        </div>
 
         <div className="ourHistorySlider">
           <Slider {...settings}>

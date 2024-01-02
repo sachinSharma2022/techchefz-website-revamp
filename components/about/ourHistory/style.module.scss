@@ -1,46 +1,46 @@
 @import "~/styles/partials/config";
 
 .ourHistory {
-   padding: spacing(section-primary-padding);
-   padding-bottom: 5rem;
+  padding: spacing(section-primary-padding);
+  padding-bottom: 5rem;
 
-   .ourHistoryTop{
-      margin-bottom: 5rem;
-      width: 100%;
-      max-width: 55%;
-   }
+  .ourHistoryTop {
+    margin-bottom: 5rem;
+    width: 100%;
+    max-width: 55%;
+  }
 
-   .ourHistoryTitle {
-      color: color(text-primary);
-      text-transform: uppercase;
-      opacity: 0.8;
-      font-size: text(normal);
-      font-weight: 700;
-      line-height: 1.5rem;
-      letter-spacing: 0.2rem;
-      font-family: font(secondary);
-   }
-   .ourHistoryHeading {
-      font-size: text(larger);
-      color: color(text-primary);
-   }
+  .ourHistoryTitle {
+    color: color(text-primary);
+    text-transform: uppercase;
+    opacity: 0.8;
+    font-size: text(normal);
+    font-weight: 700;
+    line-height: 1.5rem;
+    letter-spacing: 0.2rem;
+    font-family: font(secondary);
+  }
+  .ourHistoryHeading {
+    font-size: text(larger);
+    color: color(text-primary);
+  }
 
-   .subHeading {
-      font-size: text(xxxl);
-      font-weight: 500;
-      line-height: 2.5rem;
-      margin-bottom: 0.5rem;
-   }
-   .ourHistoryContent {
-      opacity: 0.6;
-      font-weight: 400;
-      font-size: text(lg);
-      line-height: 1.875rem;
-   }
+  .subHeading {
+    font-size: text(xxxl);
+    font-weight: 500;
+    line-height: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .ourHistoryContent {
+    opacity: 0.6;
+    font-weight: 400;
+    font-size: text(lg);
+    line-height: 1.875rem;
+  }
 
-   .OurHistoryImage {
-      img {
-         border-radius: 0.5rem;
-      }
-   }
+  .OurHistoryImage {
+    img {
+      border-radius: 0.5rem;
+    }
+  }
 }

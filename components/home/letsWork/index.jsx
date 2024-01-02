@@ -14,7 +14,9 @@ const LetsWork = () => {
           <div className={styles.contactUsForm}>
             <h3 className={styles.formHeading}>
               Let’s work on your
-              <span className={styles.formTechHighlight}>new digital ideas.</span>
+              <span className={styles.formTechHighlight}>
+                new digital ideas.
+              </span>
             </h3>
             <p className={styles.formText}>
               Fill out some quick details about your project and we will get in
@@ -37,7 +39,7 @@ const LetsWork = () => {
                   />
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                 <CountryDropdown />
+                  <CountryDropdown />
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
                   <CustomInput

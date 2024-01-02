@@ -1,38 +1,38 @@
 @import "~/styles/partials/config";
 
 .ourVision {
-   padding: spacing(p-120);
-   padding-bottom: 0rem;
+  padding: spacing(p-120);
+  padding-bottom: 0rem;
 
-   .aboutHeading {
+  .aboutHeading {
+    font-size: text(larger);
+    font-weight: 500;
+    line-height: 3.375rem;
+
+    span {
       font-size: text(larger);
-      font-weight: 500;
-      line-height: 3.375rem;
+      color: color(heading-liner);
+    }
+  }
 
-      span {
-         font-size: text(larger);
-         color: color(heading-liner);
-      }
-   }
+  .aboutSubHeading {
+    font-size: text(xxxl);
+    font-weight: 500;
+    line-height: 40px;
+  }
 
-   .aboutSubHeading {
-      font-size: text(xxxl);
-      font-weight: 500;
-      line-height: 40px;
-   }
+  .aboutParagraph {
+    font-size: text(normal);
+    opacity: 0.6;
+    font-weight: 400;
+    line-height: 1.5rem;
+  }
 
-   .aboutParagraph {
-      font-size: text(normal);
-      opacity: 0.6;
-      font-weight: 400;
-      line-height: 1.5rem;
-   }
+  .videoWrapper {
+    margin-top: spacing(p-120);
 
-   .videoWrapper {
-      margin-top: spacing(p-120);
-
-      video {
-         border-radius: 0.5rem;
-      }
-   }
+    video {
+      border-radius: 0.5rem;
+    }
+  }
 }

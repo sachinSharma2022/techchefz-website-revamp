@@ -42,9 +42,7 @@ const OurTeam = () => {
                     <Tab>
                       {({ selected }) => (
                         <span
-                          className={
-                            selected ? styles.btnActive : styles.btnIn
-                          }
+                          className={selected ? styles.btnActive : styles.btnIn}
                         >
                           Directors
                         </span>
