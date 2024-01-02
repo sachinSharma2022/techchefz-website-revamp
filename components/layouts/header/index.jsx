@@ -29,7 +29,7 @@ const Header = () => {
             <Link href="/">Solutions</Link>
           </li>
           <li>
-            <Link href="/">
+            <Link href="/technology">
               Technology <div className={styles.arrow} />
             </Link>
             <ul className={styles.subMenu}>
