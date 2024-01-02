@@ -77,9 +77,9 @@ const DigitalTransformation = () => {
           <div className="col-md-8 col-12">
             <h2 className={styles.datingText}>
               Remaining businesses by integrating
-              <div className={styles.digitalTechText}>
+              <span className={styles.digitalTechText}>
                 digital technologies.
-              </div>
+              </span>
             </h2>
           </div>
           <div className={`${styles.servicesBtn} col-md-4 col-12`}>

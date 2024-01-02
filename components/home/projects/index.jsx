@@ -5,6 +5,13 @@ import { Icons } from "@/components/icons";
 import styles from "./style.module.scss";
 
 const Projects = () => {
+  const tagSection = [
+    "Web Design",
+    "Dashboard Design",
+    "UI",
+    "UX",
+    "Responsive",
+  ];
   return (
     <section className={`${styles.projectsStyle}`}>
       <div className="row">
@@ -40,11 +47,9 @@ const Projects = () => {
           </div>
 
           <div className={styles.cardContentStyle}>
-            <div>
-              <h4 className={styles.projectBrand}>
-                International Motorcycle Brand.
-              </h4>
-            </div>
+            <h4 className={styles.projectBrand}>
+              International Motorcycle Brand.
+            </h4>
 
             <p className={styles.brandFromText}>
               Royal Enfield is a global brand since 1901, has a geographical
@@ -53,21 +58,11 @@ const Projects = () => {
               diversifying into countries, and continents.
             </p>
             <div className={styles.ProjectBtn}>
-              <Button variant="outline" size="xs">
-                Web Design
-              </Button>
-              <Button variant="outline" size="xs">
-                Dashboard Design
-              </Button>
-              <Button variant="outline" size="xs">
-                UI
-              </Button>
-              <Button variant="outline" size="xs">
-                UX
-              </Button>
-              <Button variant="outline" size="xs">
-                Responsive
-              </Button>
+              {tagSection.map((item, index) => (
+                <Button key={index} variant="outline" size="xs">
+                  {item}
+                </Button>
+              ))}
             </div>
           </div>
         </div>

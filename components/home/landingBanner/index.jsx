@@ -8,7 +8,7 @@ const LandingBanner = () => {
     <section className={`${styles.landingBannerStyle}`}>
       <h1 className={styles.title}>
         Humanizing <div /> Digital Experience <div />
-        <div className={styles.titleHighlight}>Through Data.</div>
+        <span className={styles.titleHighlight}>Through Data.</span>
       </h1>
 
       <Button variant="blueBtn" size="md">
