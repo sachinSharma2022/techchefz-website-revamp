@@ -68,7 +68,9 @@ const Testimonials = () => {
   return (
     <section
       className={`${styles.testimonialsStyle} ${
-        theme === "dark" ? styles.testimonialsStyleDark : ""
+        theme === "dark"
+          ? `${styles.testimonialsStyleDark} dark-sliderTestimonial`
+          : ""
       } testimonial-style`}
     >
       <div className="row">

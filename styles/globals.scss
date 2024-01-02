@@ -262,12 +262,9 @@ a {
         rgba(color(text-primary), 90%)
       ) !important;
     }
-  }
-
-  .swiper-slide-shadow-left {
-    background-color: white;
-    box-shadow: none;
-    background-image: none !important;
+    .swiper-slide-shadow-left {
+      display: none;
+    }
   }
 
   .swiper-slide-prev {
