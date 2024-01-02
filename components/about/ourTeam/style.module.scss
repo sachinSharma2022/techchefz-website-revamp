@@ -13,7 +13,7 @@
 
     .ourTeamTitle {
       font-size: text(normal);
-      opacity: 0.6;
+      opacity: 0.8;
       letter-spacing: 0.2rem;
       text-transform: uppercase;
       font-family: font(secondary);
@@ -55,7 +55,7 @@
   }
   .teamCards {
     display: flex;
-    gap: 40px;
+    gap: 2.5rem;
     margin-top: 3rem;
 
     .teamCardBg {

@@ -24,10 +24,19 @@
       line-height: 1.875rem;
       opacity: 0.8;
    }
+   .goalsList{
+      margin-top: 1.75rem;
+   }
    .goalsTextWrapper {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
+      border-bottom: 1px solid rgba(17, 17, 17, 0.12);;
+      padding: 1rem 0;
+
+      &:last-child{
+       border-bottom: none;
+      }
 
       .goalsIcons {
          position: relative;
@@ -61,6 +70,12 @@
          width: 100%;
          height: auto;
          border-radius: 0.75rem;
+      }
+
+      .goalsBottomImg{
+         display: grid;
+         grid-template-columns: repeat(2,1fr);
+         gap: 2.5rem;
       }
    }
 }

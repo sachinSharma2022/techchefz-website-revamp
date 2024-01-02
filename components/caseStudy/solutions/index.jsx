@@ -36,8 +36,8 @@ function Solutions() {
               />
             </div>
           </div>
-          <div className="row">
-            <div className="col-md-6 col-md-6">
+          <div className={styles.solutionBottomImgs}>
+            <div >
               <ImageCustom
                 src="/images/solution2.png"
                 width={500}
@@ -45,7 +45,7 @@ function Solutions() {
                 alt="content-img"
               />
             </div>
-            <div className="col-md-6 col-md-6">
+            <div >
               <ImageCustom
                 src="/images/solution3.png"
                 width={500}

@@ -9,8 +9,9 @@
     opacity: 0.8;
     font-size: text(normal);
     font-weight: 700;
-    line-height: 24px;
-    letter-spacing: 3.2px;
+    line-height: 1.5rem;
+    letter-spacing: 0.2rem;
+    font-family: font(secondary);
   }
   .weDoHeading {
     font-size: text(larger);
@@ -20,8 +21,9 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2.5rem;
+
     .workCard {
-      width: 100%;
+      min-width: 16.875rem;
       height: 19.25rem;
       border: 2px solid rgba(17, 17, 17, 0.12);
       border-radius: 1.25rem;
