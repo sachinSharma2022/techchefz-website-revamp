@@ -25,35 +25,6 @@ const OurHistory = () => {
         <Icons.sliderArrow />
       </div>
     ),
-
-    // responsive: [
-    //    {
-    //       breakpoint: 1199,
-    //       settings: {
-    //          slidesToShow: 2,
-    //          slidesToScroll: 1,
-    //          centerMode: false,
-    //          arrows: true,
-    //       },
-    //    },
-    //    {
-    //       breakpoint: 600,
-    //       settings: {
-    //          slidesToShow: 1,
-    //          slidesToScroll: 1,
-    //          arrows: true,
-    //       },
-    //    },
-    //    {
-    //       breakpoint: 480,
-    //       settings: {
-    //          slidesToShow: 1,
-    //          slidesToScroll: 1,
-    //          arrows: true,
-    //          centerPadding: "15px",
-    //       },
-    //    },
-    // ],
   };
 
   const sliderData = [
@@ -102,38 +73,32 @@ const OurHistory = () => {
   ];
   return (
     <section className={styles.ourHistory}>
-      <div className="container">
-        <div className={styles.ourHistoryTop}>
-          <h6 className={styles.ourHistoryTitle}>Our History</h6>
-          <h3 className={styles.ourHistoryHeading}>
-            Tracing Innovation Through Time: Our IT Journey.
-          </h3>
-        </div>
+      <div className={styles.ourHistoryTop}>
+        <h6 className={styles.ourHistoryTitle}>Our History</h6>
+        <h3 className={styles.ourHistoryHeading}>
+          Tracing Innovation Through Time: Our IT Journey.
+        </h3>
+      </div>
 
-        <div className="ourHistorySlider">
-          <Slider {...settings}>
-            {sliderData.map((data, index) => (
-              <div key={index}>
-                <div className="row justify-content-between">
-                  <div className="col-md-6 col-lg-5">
-                    <h4 className={styles.subHeading}>{data.title}</h4>
-                    <p className={styles.ourHistoryContent}>{data.content}</p>
-                  </div>
-                  <div className="col-md-6 col-lg-6">
-                    <div className={styles.OurHistoryImage}>
-                      <ImageCustom
-                        src={data.imgSrc}
-                        width={530}
-                        height={397}
-                        alt="slider-img"
-                      />
-                    </div>
-                  </div>
-                </div>
+      <div className="ourHistorySlider">
+        <Slider {...settings}>
+          {sliderData.map((data, index) => (
+            <div key={index} className={styles.cardStyle}>
+              <div className={styles.infoStyle}>
+                <h4 className={styles.subHeading}>{data.title}</h4>
+                <p className={styles.ourHistoryContent}>{data.content}</p>
               </div>
-            ))}
-          </Slider>
-        </div>
+              <div className={styles.OurHistoryImage}>
+                <ImageCustom
+                  src={data.imgSrc}
+                  width={530}
+                  height={397}
+                  alt="slider-img"
+                />
+              </div>
+            </div>
+          ))}
+        </Slider>
       </div>
     </section>
   );

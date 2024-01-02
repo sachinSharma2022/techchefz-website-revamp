@@ -24,6 +24,33 @@ const OurTeam = () => {
       image: "/images/img/team/team3.png",
     },
   ];
+  const teamData2 = [
+    {
+      mebName: "Mayank Maggon",
+      role: "CEO & CTO",
+      image: "/images/img/team/team1.png",
+    },
+    {
+      mebName: "Akshit Maggon",
+      role: "Director",
+      image: "/images/img/team/team2.png",
+    },
+    {
+      mebName: "Anita Ahlawat",
+      role: "Co-Founder",
+      image: "/images/img/team/team3.png",
+    },
+    {
+      mebName: "Akshit Maggon",
+      role: "Director",
+      image: "/images/img/team/team2.png",
+    },
+    {
+      mebName: "Anita Ahlawat",
+      role: "Co-Founder",
+      image: "/images/img/team/team3.png",
+    },
+  ];
   return (
     <section className={styles.ourTeam}>
       <div className="container">
@@ -96,7 +123,7 @@ const OurTeam = () => {
                   <Tab.Panel>
                     <div className="row">
                       <div className={styles.teamCards}>
-                        {teamData.map((data, index) => (
+                        {teamData2.map((data, index) => (
                           <div key={index} className={styles.teamCardBg}>
                             <div className={styles.cardHead}>
                               <div>

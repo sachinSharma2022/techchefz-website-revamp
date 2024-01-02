@@ -32,15 +32,30 @@
     margin-bottom: 0.5rem;
   }
   .ourHistoryContent {
-    opacity: 0.6;
     font-weight: 400;
     font-size: text(lg);
     line-height: 1.875rem;
+    color: rgba(color(text-primary), 0.6);
+    margin-top: 1rem;
+  }
+
+  .infoStyle {
+    max-width: 75%;
+
+    @include mobile {
+      max-width: 100%;
+    }
   }
 
   .OurHistoryImage {
     img {
       border-radius: 0.5rem;
     }
+  }
+
+  .cardStyle {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
 }
