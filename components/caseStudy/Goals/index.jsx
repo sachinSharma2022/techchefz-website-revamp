@@ -7,17 +7,14 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 const Goals = () => {
    const listData = [
       {
-         icon: "",
          content:
             "Create a user-friendly mobile application for storing and monitoring test results, planning visits to medical specialists on the calendar, as well as saving recommendations and doctor’s prescriptions;",
       },
       {
-         icon: "",
          content:
             "Create a user-friendly mobile application for storing and monitoring test results, planning visits to medical specialists on the calendar, as well as saving recommendations and doctor’s prescriptions;",
       },
       {
-         icon: "",
          content: "Optimize the first release of the project by launching the MVP in the shortest possible time;",
       },
    ];
