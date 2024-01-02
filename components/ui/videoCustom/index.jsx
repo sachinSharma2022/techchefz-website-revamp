@@ -1,17 +1,25 @@
+import React, { useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./style.module.scss";
 
-const VideoCustom = (props) => {
+const VideoCustom = ({ src }) => {
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from(`.${styles.videoContainer}`, {
+      scale: 1/3,
+      scrollTrigger: {
+        trigger: `.${styles.videoContainer}`,
+        scrub: 3,
+      },
+    });
+  }, []);
   return (
-    <div className={styles.videoCustom}>
-      <video
-        className={styles.video}
-        id="my-video"
-        width={props.width}
-        height={props.height}
-        autoplay
-        playsinline
-      >
-        <source src={props.src} type="video/mp4" />
+    <div className={styles.videoContainer}>
+      <video className={styles.video} autoPlay loop muted data-speed="auto">
+        <source src={src} type="video/mp4" />
       </video>
     </div>
   );

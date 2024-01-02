@@ -22,6 +22,7 @@
     "react-fast-marquee": "^1.6.2",
     "react-redux": "^9.0.4",
     "react-slick": "^0.29.0",
+    "react-spring": "^9.7.3",
     "sass": "^1.69.5",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.0.5"

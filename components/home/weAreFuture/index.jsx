@@ -4,7 +4,7 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import { Button } from "@/components/ui/button";
 import { Icons } from "@/components/icons";
 
-const WeAreFuture = () => {
+const WeAreFuture = (thirdComponentRef) => {
   return (
     <>
       <div className={styles.futureSpacing}>
