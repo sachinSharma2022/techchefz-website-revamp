@@ -9,6 +9,12 @@
     text-transform: uppercase;
     opacity: 0.8;
   }
+
+  .contentSection{
+    padding: spacing(section-primary-padding);
+    padding-block: 0;
+  }
+
   .ourGalleryHeading {
     font-size: text(larger);
   }
