@@ -95,27 +95,25 @@ const OurTeam = () => {
                       <div className={styles.teamCards}>
                         {teamData.map((data, index) => (
                           <div key={index} className={styles.teamCardBg}>
-                            <div className={styles.teamCardContent}>
-                              <div className={styles.cardHead}>
-                                <div>
-                                  <h6>{data.mebName} </h6>
-                                  <p>{data.role}</p>
-                                </div>
-                                <Icons.ArrowRight width={26} height={24} />
+                            <div className={styles.cardHead}>
+                              <div>
+                                <h6>{data.mebName} </h6>
+                                <p>{data.role}</p>
                               </div>
-                              <Icons.Linkdin
-                                width={34}
-                                height={34}
-                                className={styles.linkdinIcon}
+                              <Icons.ArrowRight width={26} height={24} />
+                            </div>
+                            <Icons.Linkdin
+                              width={34}
+                              height={34}
+                              className={styles.linkdinIcon}
+                            />
+                            <div className={styles.teamImg}>
+                              <ImageCustom
+                                src={data.image}
+                                width={240}
+                                height={320}
+                                alt="team-member"
                               />
-                              <div className={styles.teamImg}>
-                                <ImageCustom
-                                  src={data.image}
-                                  width={240}
-                                  height={320}
-                                  alt="team-member"
-                                />
-                              </div>
                             </div>
                           </div>
                         ))}
@@ -127,27 +125,25 @@ const OurTeam = () => {
                       <div className={styles.teamCards}>
                         {teamData2.map((data, index) => (
                           <div key={index} className={styles.teamCardBg}>
-                            <div className={styles.teamCardContent}>
-                              <div className={styles.cardHead}>
-                                <div>
-                                  <h6>{data.mebName} </h6>
-                                  <p>{data.role}</p>
-                                </div>
-                                <Icons.ArrowRight width={26} height={24} />
+                            <div className={styles.cardHead}>
+                              <div>
+                                <h6>{data.mebName} </h6>
+                                <p>{data.role}</p>
                               </div>
-                              <Icons.Linkdin
-                                width={34}
-                                height={34}
-                                className={styles.linkdinIcon}
+                              <Icons.ArrowRight width={26} height={24} />
+                            </div>
+                            <Icons.Linkdin
+                              width={34}
+                              height={34}
+                              className={styles.linkdinIcon}
+                            />
+                            <div className={styles.teamImg}>
+                              <ImageCustom
+                                src={data.image}
+                                width={240}
+                                height={320}
+                                alt="team-member"
                               />
-                              <div className={styles.teamImg}>
-                                <ImageCustom
-                                  src={data.image}
-                                  width={240}
-                                  height={320}
-                                  alt="team-member"
-                                />
-                              </div>
                             </div>
                           </div>
                         ))}
