@@ -368,7 +368,7 @@ a {
 
     &::after {
       content: "";
-      width: 96%;
+      width: 100vw;
       height: 0.063rem;
       border: 2px dashed color(bg-gray);
       position: absolute;
@@ -410,6 +410,8 @@ a {
       }
     }
   }
+
+
 }
 
 .scroll-gallery-images {
