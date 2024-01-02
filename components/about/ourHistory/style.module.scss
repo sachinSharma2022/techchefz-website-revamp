@@ -2,12 +2,10 @@
 
 .ourHistory {
   padding: spacing(section-primary-padding);
-  padding-bottom: 5rem;
 
   .ourHistoryTop {
-    margin-bottom: 5rem;
     width: 100%;
-    max-width: 55%;
+    margin-bottom: 5rem;
   }
 
   .ourHistoryTitle {
@@ -23,7 +21,7 @@
   .ourHistoryHeading {
     font-size: text(larger);
     color: color(text-primary);
-    margin-bottom: 0;
+    max-width: 55%;
   }
 
   .subHeading {
@@ -41,7 +39,7 @@
   }
 
   .infoStyle {
-    max-width: 75%;
+    max-width: 85%;
 
     @include mobile {
       max-width: 100%;
@@ -49,8 +47,13 @@
   }
 
   .OurHistoryImage {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+
     img {
       border-radius: 0.5rem;
+      object-fit: cover;
     }
   }
 
@@ -58,5 +61,6 @@
     display: grid !important;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    padding: 0 0.2rem;
   }
 }

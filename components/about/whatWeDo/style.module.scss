@@ -22,48 +22,68 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 2.5rem;
 
-    .workCard {
-      min-width: 16.875rem;
+    .workCardMain {
       height: 19.25rem;
-      border: 2px solid rgba(17, 17, 17, 0.12);
-      border-radius: 1.25rem;
-      padding: 2rem;
-      position: relative;
-      cursor: pointer;
-      overflow: hidden;
-      transition: all 0.5s;
-      padding: spacing(section-primary-padding);
-      padding: 2rem;
-
-      .workCardIcon {
-        transition: all 0.5s;
-      }
-
       &:hover {
-        border-color: color(heading-liner);
+        .workCard {
+          transform: rotateY(180deg);
+          transition: transform 0.5s;
+        }
+      }
+      .workCard {
+        transition: transform 1s;
+        transform-style: preserve-3d;
+
+        .workCols {
+          min-width: 16.875rem;
+          height: 19.25rem;
+          border: 2px solid rgba(17, 17, 17, 0.12);
+          border-radius: 1.25rem;
+          padding: 2rem;
+          position: relative;
+          cursor: pointer;
+          overflow: hidden;
+          transition: all 0.5s;
+          padding: spacing(section-primary-padding);
+          padding: 2rem;
+        }
+
+        .frontCard,
+        .backCard {
+          position: absolute;
+          width: 100%;
+          backface-visibility: hidden;
+        }
+
+        .backCard {
+          transform: rotateY(180deg);
+          h6{
+            margin-top: 0;
+            padding-bottom: 0.5rem;
+          }
+        }
 
         .workCardIcon {
-          margin-top: -100%;
+          transition: all 0.5s;
+        }
+
+        &:hover {
+          border-color: color(heading-liner);
         }
 
         h6 {
-          margin-top: -2rem;
-          padding-bottom: 1rem;
+          font-size: text(xl);
+          position: relative;
+          width: 100%;
+          max-width: 9rem;
+          margin-top: 5.5rem;
+          padding-bottom: 2rem;
+          transition: all 0.5s;
         }
-      }
 
-      h6 {
-        font-size: text(xl);
-        position: relative;
-        width: 100%;
-        max-width: 9rem;
-        margin-top: 5.5rem;
-        padding-bottom: 2rem;
-        transition: all 0.5s;
-      }
-
-      p {
-        font-size: text(normal);
+        p {
+          font-size: text(normal);
+        }
       }
     }
   }

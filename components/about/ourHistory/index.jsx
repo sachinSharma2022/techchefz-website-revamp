@@ -10,6 +10,14 @@ import styles from "./style.module.scss";
 
 const OurHistory = () => {
   const settings = {
+    customPaging: function(i) {
+      return (
+        <div>
+        <span className="yearCount">201{i + 1}</span>
+        <button />
+        </div>
+      );
+    },
     dots: true,
     infinite: false,
     speed: 500,

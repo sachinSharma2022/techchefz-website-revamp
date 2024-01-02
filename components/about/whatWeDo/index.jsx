@@ -104,10 +104,17 @@ const WhatWeDo = () => {
 
         <div className={styles.workCardWrapper}>
           {cardData.map((data, index) => (
-            <div key={index} className={styles.workCard}>
-              {data.icon}
-              <h6>{data.title} </h6>
-              <p>{data.content} </p>
+            <div key={index} className={styles.workCardMain}>
+              <div className={styles.workCard}>
+                <div className={`${styles.frontCard} ${styles.workCols}`}>
+                  {data.icon}
+                  <h6>{data.title} </h6>
+                </div>
+                <div className={`${styles.backCard}  ${styles.workCols}`}>
+                  <h6>{data.title} </h6>
+                  <p>{data.content} </p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
