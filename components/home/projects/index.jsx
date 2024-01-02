@@ -1,15 +1,23 @@
+"use client";
 import React from "react";
+import { useContext } from "react";
+import { MyContext } from "@/app/Context/Theme";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { Icons } from "@/components/icons";
 import styles from "./style.module.scss";
 
 const Projects = () => {
+  const { theme, setTheme } = useContext(MyContext);
   return (
-    <section className={`${styles.projectsStyle}`}>
+    <section
+      className={`${styles.projectsStyle} ${
+        theme === "dark" ? styles.projectsStyleDark : ""
+      }`}
+    >
       <div className="row">
         <div className="col-md-12 col-12">
-          <p className={styles.ProjectHighlight}>Projects</p>
+          <p className={styles.projectHighlight}>Projects</p>
         </div>
         <div className="col-md-5 col-12">
           <h3 className={styles.datingText}>
@@ -52,7 +60,7 @@ const Projects = () => {
               omnichannel customer experiences, achieves scalability,
               diversifying into countries, and continents.
             </p>
-            <div className={styles.ProjectBtn}>
+            <div className={styles.projectBtn}>
               <Button variant="outline" size="xs">
                 Web Design
               </Button>

@@ -1,8 +1,16 @@
+"use client";
+import { useContext } from "react";
+import { MyContext } from "@/app/Context/Theme";
 import styles from "./style.module.scss";
 
 const VideoCustom = (props) => {
+  const { theme, setTheme } = useContext(MyContext);
   return (
-    <div className={styles.videoCustom}>
+    <div
+      className={`${styles.videoCustom} ${
+        theme === "dark" ? styles.videoCustomDark : ""
+      }`}
+    >
       <video
         className={styles.video}
         id="my-video"

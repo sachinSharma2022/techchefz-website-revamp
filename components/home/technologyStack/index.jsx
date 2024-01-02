@@ -1,9 +1,14 @@
+"use client";
+
 import React from "react";
+import { useContext } from "react";
+import { MyContext } from "@/app/Context/Theme";
 import styles from "./style.module.scss";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 
 const TechnologyStack = () => {
+  const { theme, setTheme } = useContext(MyContext);
   const serviceCard = [
     {
       icon: <Icons.React width={72} height={72} />,
@@ -170,7 +175,11 @@ const TechnologyStack = () => {
     },
   ];
   return (
-    <section className={`${styles.technologyStyle}`}>
+    <section
+      className={`${styles.technologyStyle} ${
+        theme === "dark" ? styles.technologyStyleDark : ""
+      }`}
+    >
       <div className={styles.gridContainer}>
         {serviceCard.map((data, index) => (
           <div key={index} className={styles.techCardLogo}>

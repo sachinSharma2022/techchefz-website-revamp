@@ -1,13 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
+import { MyContext } from "@/app/Context/Theme";
+import { useContext } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import styles from "./style.module.scss";
 import { Icons } from "@/components/icons";
-import { MyContext } from "@/app/Context/Theme";
-import { useContext } from 'react';
+
+import styles from "./style.module.scss";
 
 const Header = () => {
   const [isActive, setActive] = useState(false);
@@ -17,11 +18,22 @@ const Header = () => {
   };
 
   return (
-
-    <header className={styles.headerMain}>
+    <header
+      className={`${styles.headerMain} ${
+        theme === "dark" ? styles.headerDarkStyle : ""
+      }`}
+    >
       <div className={styles.logo}>
-        <Link href="/">
+        <Link href="/" className={styles.lightlogo}>
           <ImageCustom src="/images/logo.svg" width={153} height={40} alt="" />
+        </Link>
+        <Link href="/" className={styles.darklogo}>
+          <ImageCustom
+            src="/images/white-logo.svg"
+            width={153}
+            height={40}
+            alt=""
+          />
         </Link>
       </div>
       <nav className={isActive ? styles.showNav : null}>
@@ -69,10 +81,13 @@ const Header = () => {
               id="flexSwitchCheckDefault"
             />
           </div> */}
-          <Button variant="default" onClick={()=>{
-            if(theme==="light") setTheme("dark")
-            else setTheme("light")
-          }}>
+          <Button
+            variant="default"
+            onClick={() => {
+              if (theme === "light") setTheme("dark");
+              else setTheme("light");
+            }}
+          >
             <Icons.moon size={15} />
           </Button>
         </div>
@@ -91,8 +106,6 @@ const Header = () => {
         </div>
       </div>
     </header>
-
-
   );
 };
 

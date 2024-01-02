@@ -6,10 +6,20 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
+  z-index: 2;
   box-shadow: 0 0 0.125rem rgba(color(text-primary), 0.3);
 
   @include tablet {
     padding: 1rem 0.8rem;
+  }
+
+  .logo {
+    .lighlogo {
+      display: block;
+    }
+    .darklogo {
+      display: none;
+    }
   }
 
   nav {
@@ -218,7 +228,7 @@
 
     .modeBtn {
       margin: 0 1rem;
-      button{
+      button {
         width: 2rem;
         height: 2rem;
         border: 1px solid rgba(color(text-primary), 0.3);
@@ -231,6 +241,49 @@
     .headerBtn {
       @include tablet {
         display: none;
+      }
+    }
+  }
+
+  &.headerDarkStyle {
+    background-color: color(input-bg);
+    border-bottom: 1px solid rgba(color(primary-white), 0.12);
+    .logo {
+      a {
+        display: none;
+      }
+      .darklogo {
+        display: block;
+      }
+    }
+
+    nav {
+      ul {
+        li {
+          a {
+            color: color(primary-white);
+          }
+        }
+        .subMenu {
+          border: none;
+          background-color: color(input-bg);
+          li {
+            a {
+              background-color: color(input-bg);
+              color: color(primary-white);
+            }
+          }
+        }
+      }
+    }
+    .arrow {
+      border-color: color(primary-white);
+    }
+    .headerRight {
+      .modeBtn {
+        button {
+          border: 1px solid rgba(color(primary-white), 0.12);
+        }
       }
     }
   }

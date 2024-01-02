@@ -2,6 +2,16 @@
 
 .lestWorkStyle {
   padding: spacing(section-primary-padding);
+
+  &.lestWorkStyleDark{
+    background-color: color(dark-gray);
+
+    .workArea{
+      background-color: color(text-primary);
+      color: color(primary-white);
+    }
+  }
+
   @include mobile {
     padding: spacing(section-mob-padding);
   }

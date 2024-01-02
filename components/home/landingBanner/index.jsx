@@ -2,17 +2,16 @@
 import React from "react";
 import { Button } from "../../ui/button";
 import { Icons } from "@/components/icons";
-import styles from "./style.module.scss";
 import { MyContext } from "@/app/Context/Theme";
 import { useContext } from "react";
 
-
+import styles from "./style.module.scss";
 
 const LandingBanner = () => {
   const { theme, setTheme } = useContext(MyContext);
   return (
 
-    <section className={theme==="light"?`${styles.landingBannerStyle}`:`${styles.landingBannerDarkStyle}`}>
+    <section className={`${styles.landingBannerStyle} ${theme==="dark" ? styles.landingBannerDark : ''}`}>
       <h1 className={styles.title}>
         Humanizing <div /> Digital Experience <div />
         <div className={styles.titleHighlight}>Through Data.</div>

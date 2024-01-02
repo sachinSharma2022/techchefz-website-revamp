@@ -254,6 +254,16 @@ a {
     }
   }
 
+  &.dark-sliderTestimonial{
+    .swiper-slide-shadow-right {
+      background-image: linear-gradient(
+        to right,
+        rgba(color(text-primary), 90%),
+        rgba(color(text-primary), 90%)
+      ) !important;
+    }
+  }
+
   .swiper-slide-shadow-left {
     background-color: white;
     box-shadow: none;

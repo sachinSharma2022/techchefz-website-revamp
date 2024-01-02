@@ -1,13 +1,22 @@
+"use client";
 import React from "react";
-import styles from "./style.module.scss";
+import { useContext } from "react";
+import { MyContext } from "@/app/Context/Theme";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { Button } from "@/components/ui/button";
 import { Icons } from "@/components/icons";
 
+import styles from "./style.module.scss";
+
 const WeAreFuture = () => {
+  const { theme, setTheme } = useContext(MyContext);
   return (
     <>
-      <div className={styles.futureSpacing}>
+      <div
+        className={`${styles.futureSpacing} ${
+          theme === "dark" ? styles.futureSpacingDark : ""
+        }`}
+      >
         <div className={styles.futureTitle}>
           <p className={styles.text}>We are a</p>
           <h2 className={styles.title}>

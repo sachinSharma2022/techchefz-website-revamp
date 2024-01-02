@@ -3,10 +3,44 @@
 .projectsStyle {
   padding: spacing(section-primary-padding);
   background: color(dark-gray);
+
   @include mobile {
     padding: spacing(section-mob-padding);
   }
-  .ProjectHighlight {
+
+  &.projectsStyleDark {
+    background-color: color(primary-white);
+    color: color(text-primary);
+
+    .projectHighlight {
+      color: color(text-primary);
+      opacity: 0.8;
+    }
+    .datingText {
+      color: color(text-primary);
+    }
+    .aboutText {
+      color: color(text-primary);
+      opacity: 0.8;
+    }
+    .cardContentStyle {
+      .projectBrand {
+        color: color(text-primary);
+      }
+      .brandFromText {
+        color: color(text-primary);
+        opacity: 0.8;
+      }
+      .projectBtn {
+        button {
+          color: color(text-primary);
+          border: 1px solid rgba(color(text-primary), 0.17);
+        }
+      }
+    }
+  }
+
+  .projectHighlight {
     font-size: text(normal);
     font-weight: 400;
     margin-bottom: text(lg);
@@ -82,7 +116,7 @@
       margin-bottom: text(xxxl);
     }
   }
-  .ProjectBtn {
+  .projectBtn {
     button {
       margin: 0 0.75rem 0.75rem 0;
       color: color(primary-white);

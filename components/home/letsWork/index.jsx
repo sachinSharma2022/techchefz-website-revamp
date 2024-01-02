@@ -1,20 +1,31 @@
+"use client";
 import React from "react";
-import styles from "./style.module.scss";
+import { useContext } from "react";
+import { MyContext } from "@/app/Context/Theme";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { Button } from "@/components/ui/button";
 import CustomInput from "@/components/ui/inputCustom";
 import { Icons } from "@/components/icons";
 import CountryDropdown from "@/components/ui/countryDropdown";
 
+import styles from "./style.module.scss";
+
 const LetsWork = () => {
+  const { theme, setTheme } = useContext(MyContext);
   return (
-    <section className={`${styles.lestWorkStyle}`}>
+    <section
+      className={`${styles.lestWorkStyle} ${
+        theme === "dark" ? styles.lestWorkStyleDark : ""
+      }`}
+    >
       <div className={styles.workArea}>
         <div className={styles.workGrid}>
           <div className={styles.contactUsForm}>
             <h3 className={styles.formHeading}>
               Let’s work on your
-              <span className={styles.formTechHighlight}>new digital ideas.</span>
+              <span className={styles.formTechHighlight}>
+                new digital ideas.
+              </span>
             </h3>
             <p className={styles.formText}>
               Fill out some quick details about your project and we will get in
@@ -37,7 +48,7 @@ const LetsWork = () => {
                   />
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                 <CountryDropdown />
+                  <CountryDropdown />
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
                   <CustomInput
