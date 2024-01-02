@@ -4,7 +4,7 @@
   .ourGalleryTitle {
     font-size: text(normal);
     font-weight: 700;
-    line-height: 24px;
+    line-height: 1.5rem;
     letter-spacing: 0.2rem;
     text-transform: uppercase;
     opacity: 0.8;
@@ -20,11 +20,11 @@
   }
   .galleryImages {
     padding: 0 0.7rem;
-    margin-top: 80px;
+    margin-top: 5rem;
     position: relative;
 
     div {
-      height: 250px;
+      height:15.625rem;
       width: 100%;
     }
   }

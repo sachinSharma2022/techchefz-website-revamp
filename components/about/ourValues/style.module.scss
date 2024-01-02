@@ -23,6 +23,12 @@
    }
 
    .ourValuesContent {
+      .ourValueImg{
+         img{
+            width: 100%;
+            height: auto;
+         }
+      }
       .ourValuesText {
          font-size: text(lg);
          opacity: 0.6;
