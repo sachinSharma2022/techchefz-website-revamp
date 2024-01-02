@@ -366,15 +366,22 @@ a {
     display: flex !important;
     justify-content: space-between;
 
+    .yearCount{
+      color: color(bg-gray);
+      position: absolute;
+      top: -1.875rem;
+      left: 0;
+    }
+
     &::after {
       content: "";
       width: 100vw;
       height: 0.063rem;
-      border: 2px dashed color(bg-gray);
+      border: 1px dashed color(bg-gray);
       position: absolute;
       left: 50%;
       transform: translate(-50%);
-      bottom: 0.9rem;
+      bottom: 1rem;
     }
 
     li {
@@ -385,6 +392,7 @@ a {
       justify-content: center;
       margin: 0;
       z-index: 9;
+      border: 1px solid transparent;
 
       button {
         padding: 0;
@@ -407,6 +415,10 @@ a {
       align-items: center;
       button {
         background-color: color(info-blue);
+      }
+      .yearCount{
+        color: color(info-blue);
+        top: -1.875rem;
       }
     }
   }
