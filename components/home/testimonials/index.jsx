@@ -1,7 +1,7 @@
 "use client";
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import React, { useEffect } from "react";
+import React from "react";
 // import required modules
 import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
 

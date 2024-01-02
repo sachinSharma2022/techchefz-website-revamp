@@ -3,9 +3,13 @@
 .landingBannerStyle {
   padding-inline: spacing(p-120);
   padding-block: 5rem 8.75rem;
+  display: flex;
+  gap: 8.938rem;
 
   @include mobile {
     padding: spacing(section-mob-padding);
+    flex-direction: column;
+    gap: 0;
   }
 
   .title {
@@ -51,15 +55,5 @@
   .flexCol {
     display: flex;
     justify-content: flex-end;
-  }
-
-  .gridCol {
-    display: flex;
-    gap: 8.938rem;
-
-    @include mobile {
-      flex-direction: column;
-      gap: 0;
-    }
   }
 }
