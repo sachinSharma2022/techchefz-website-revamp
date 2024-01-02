@@ -52,7 +52,7 @@
   .testimonialCardBox {
     padding: 2.5rem;
     background-color: color(primary-background);
-    min-width: 478px;
+    min-width: 29.875rem;
 
     .commaImg {
       margin-bottom: text(lg);
@@ -94,11 +94,11 @@
 
   .sliderController {
     display: flex;
-    gap: 24px;
+    gap: 1.5rem;
 
     button {
-      width: 60px;
-      height: 60px;
+      width: 3.75rem;
+      height: 3.75rem;
     }
   }
 }

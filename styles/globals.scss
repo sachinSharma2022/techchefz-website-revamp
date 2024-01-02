@@ -14,7 +14,7 @@
 html,
 body {
   font-family: font(secondary);
-  font-size: 16px;
+  font-size: 1rem;
   color: color(text-primary);
 }
 
@@ -189,7 +189,7 @@ a {
       pointer-events: none;
     }
     .slick-dots {
-      bottom: 0px;
+      bottom: 0;
       li {
         width: 0.75rem;
         height: 0.75rem;
@@ -213,20 +213,16 @@ a {
       @include mobile {
         position: relative;
         top: 0;
-        padding-bottom: 20px;
+        padding-bottom: 1.25rem;
       }
       .slick-active {
         button {
           background-color: #adadad;
-          width: 20px;
-          height: 20px;
+          width: 1.25rem;
+          height: 1.25rem;
         }
       }
     }
-
-    // .slick-list {
-    //   padding-left: 7.5rem;
-    // }
   }
 
   .slider {
@@ -242,7 +238,7 @@ a {
 
     .swiper-slide {
       border: 1px solid rgba(color(text-primary), 0.12);
-      border-radius: 12px;
+      border-radius: 0.75rem;
       overflow: hidden;
     }
 
@@ -373,7 +369,7 @@ a {
     &::after {
       content: "";
       width: 96%;
-      height: 1px;
+      height: 0.063rem;
       border: 2px dashed color(bg-gray);
       position: absolute;
       left: 50%;
@@ -421,18 +417,18 @@ a {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto auto;
   grid-auto-flow: column;
-  gap: 10px;
+  gap:0.625rem;
 
   img {
     object-fit: cover;
     width: 100%;
     height: 100%;
-    border-radius: 12px;
+    border-radius: 0.75rem;
   }
 
   .card-2 {
     grid-row: 1/3;
-    height: 510px !important;
+    height: 31.875rem !important;
 
     div {
       height: 100% !important;
