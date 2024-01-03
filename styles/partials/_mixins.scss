@@ -121,6 +121,13 @@ $desktop-width-hd: 1600px;
   }
 }
 
+// Large Desktops
+@mixin desktop-md {
+  @media (max-width: #{$desktop-width-lg}) {
+    @content;
+  }
+}
+
 // Large HD Desktops
 @mixin desktop-hd {
   @media (min-width: #{$desktop-width-hd}) {
