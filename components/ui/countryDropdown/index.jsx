@@ -2,7 +2,8 @@
 
 import { Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
-
+import { MyContext } from "@/app/Context/Theme";
+import { useContext } from "react";
 import styles from "./style.module.scss";
 import InputCustom from "../inputCustom";
 import { ImageCustom } from "../imageCustom";
@@ -35,9 +36,14 @@ const people = [
 ];
 
 const CountryDropdown = () => {
+  const { theme, setTheme } = useContext(MyContext);
   const [selected, setSelected] = useState(people[0]);
   return (
-    <div className={styles.dropdownContainerStyle}>
+    <div
+      className={`${styles.dropdownContainerStyle} ${
+        theme === "dark" ? styles.dropdownContainerStyleDark : ""
+      }`}
+    >
       {/* <div className="form-floating">
         <div class="input-group">
           <div class="input-group-prepend">

@@ -9,6 +9,7 @@ import { Icons } from "@/components/icons";
 import CountryDropdown from "@/components/ui/countryDropdown";
 
 import styles from "./style.module.scss";
+import Link from "next/link";
 
 const LetsWork = () => {
   const { theme, setTheme } = useContext(MyContext);
@@ -73,9 +74,9 @@ const LetsWork = () => {
                   <div className={styles.policyText}>
                     By sending this form I confirm that I have read and accept
                     the
-                    <span className={styles.policyHighlight}>
+                    <Link href="/" className={styles.policyHighlight}>
                       Privacy Policy
-                    </span>
+                    </Link>
                   </div>
                 </div>
                 <div className={`${styles.buttonGrid} col-md-6 col-12`}>

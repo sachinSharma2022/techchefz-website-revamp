@@ -254,16 +254,41 @@ a {
     }
   }
 
-  &.dark-sliderTestimonial{
+  &.dark-sliderTestimonial {
     .swiper-slide-shadow-right {
       background-image: linear-gradient(
         to right,
-        rgba(color(text-primary), 90%),
+        rgba(color(text-primary), 30%),
         rgba(color(text-primary), 90%)
       ) !important;
     }
     .swiper-slide-shadow-left {
       display: none;
+    }
+
+    .swiper-slide-prev {
+      opacity: 0.2;
+    }
+    .swiper-slide-next {
+      opacity: 0.6;
+    }
+
+    .btn-back.swiper-button-disabled {
+      border-color: rgba(color(primary-white), 0.2);
+      svg {
+        path {
+          stroke: rgba(color(primary-white), 0.6);
+        }
+      }
+    }
+    .btn-move.swiper-button-disabled {
+      border-color: rgba(color(primary-white), 0.2);
+      svg {
+        filter: none;
+        path {
+          stroke: rgba(color(primary-white), 0.6);
+        }
+      }
     }
   }
 
@@ -474,7 +499,7 @@ a {
   }
 }
 
-.relatedCaseSlider{
+.relatedCaseSlider {
   .slick-arrow {
     background-color: color(primary-blue);
     padding: 0;

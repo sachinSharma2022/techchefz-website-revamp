@@ -3,12 +3,23 @@
 .lestWorkStyle {
   padding: spacing(section-primary-padding);
 
-  &.lestWorkStyleDark{
+  &.lestWorkStyleDark {
     background-color: color(dark-gray);
 
-    .workArea{
+    .workArea {
       background-color: color(text-primary);
       color: color(primary-white);
+      .workGrid {
+        .contactUsForm {
+          .policyArea {
+            .policyText {
+              .policyHighlight {
+                color: color(heading-liner);
+              }
+            }
+          }
+        }
+      }
     }
   }
 
@@ -104,6 +115,8 @@
             .policyHighlight {
               color: color(primary-blue);
               font-size: text(xxs);
+              display: inline-block;
+              margin-left: 0.3rem;
             }
           }
 

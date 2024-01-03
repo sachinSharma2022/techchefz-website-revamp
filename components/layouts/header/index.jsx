@@ -89,6 +89,7 @@ const Header = () => {
             }}
           >
             <Icons.moon size={15} />
+            {/* <Icons.darkmode size={30} /> */}
           </Button>
         </div>
         <Button variant="blueBtn" className={styles.headerBtn} size="sm">

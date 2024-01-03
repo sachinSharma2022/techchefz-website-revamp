@@ -3,6 +3,28 @@
 .dropdownContainerStyle {
   width: 100%;
 
+  &.dropdownContainerStyleDark {
+    .countryDropdown {
+      .floatDropdown {
+        button {
+          color: rgba(color(primary-white), 0.9);
+          .countryValue {
+            .arrow {
+              border-color: rgba(color(primary-white), 0.9);
+            }
+          }
+        }
+
+        .countryList {
+          background-color: color(text-primary);
+          li {
+            color: rgba(color(primary-white), 0.9);
+          }
+        }
+      }
+    }
+  }
+
   .countryDropdown {
     display: flex;
     align-items: center;
