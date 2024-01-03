@@ -40,10 +40,11 @@
 
     &:after,
     &::before {
-      display: none;
+      z-index: 9;
+      opacity: 0.18;
     }
 
-    .title{
+    .title {
       color: color(primary-white);
     }
   }

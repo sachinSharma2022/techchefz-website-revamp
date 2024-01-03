@@ -6,15 +6,18 @@
   position: relative;
   overflow: hidden;
 
-  &.technologyStyleDark{
+  &.technologyStyleDark {
     background-color: color(dark-bg);
 
-    .gridContainer{
-      .techCardLogo{
+    .gridContainer {
+      .techCardLogo {
         background-color: color(dark-icon);
+        img {
+          filter: invert(1);
+        }
       }
     }
-    .technologyStackBox{
+    .technologyStackBox {
       background-color: color(text-primary);
       color: color(primary-white);
       border: 1px solid rgba(color(primary-white), 0.12);
@@ -65,6 +68,9 @@
       min-height: 7.5rem;
       border-radius: text(normal);
       background-color: rgba(238, 238, 238, 1);
+      img {
+        opacity: 0.4;
+      }
     }
   }
 
