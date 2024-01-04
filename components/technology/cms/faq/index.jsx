@@ -32,6 +32,12 @@ const Faq = () => {
     },
     {
       faqNumber: "02",
+      title: "Who will be working on the project?",
+      content:
+        "Determining the cost of our services is best achieved through a 15-30 minute discovery call, where we can understand your unique requirements. Following that, we will provide a transparent and detailed price within 24-48 hours tailored specifically to your needs.",
+    },
+    {
+      faqNumber: "03",
       title: "How do I figure out how much your services will cost?",
       content:
         "Determining the cost of our services is best achieved through a 15-30 minute discovery call, where we can understand your unique requirements. Following that, we will provide a transparent and detailed price within 24-48 hours tailored specifically to your needs.",

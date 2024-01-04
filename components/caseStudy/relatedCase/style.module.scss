@@ -3,6 +3,9 @@
 .relatedCase {
   padding: 8.75rem 8.75rem 7.5rem;
   overflow-x: hidden;
+  @include mobile {
+    padding: spacing(section-mob-padding);
+  }
   .relatedCaseTitle {
     font-size: text(normal);
     font-weight: 700;

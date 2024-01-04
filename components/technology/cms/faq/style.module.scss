@@ -3,6 +3,9 @@
 .cmsFaqSection {
   padding: spacing(section-primary-padding);
   background-color: color(bg-soft);
+  @include mobile {
+    padding: spacing(section-mob-padding);
+  }
 
   .faqHead {
     margin-bottom: 5rem;
@@ -38,11 +41,17 @@
       .faqNumber {
         font-weight: 700;
         margin-bottom: 0;
+        font-size: text(xl);
+        @include mobile{
+          font-weight: 500;
+          font-size: text(lg);
+        }
       }
     }
-.faqSecMain{
-  display: flex;
-}
+    .faqSecMain {
+      display: flex;
+      border-top: 0.063rem solid rgba(17, 17, 17, 0.12);
+    }
     .faqAccordion {
       background-color: color(primary-white);
       border-bottom: 0.063rem solid rgba(17, 17, 17, 0.12);
@@ -56,6 +65,9 @@
         align-items: center;
         font-size: text(xl);
         font-weight: 700;
+        @include mobile {
+          font-size: text(lg);
+        }
       }
       .accordionBody {
         padding: 0 1.5rem 1.5rem 1.5rem;
