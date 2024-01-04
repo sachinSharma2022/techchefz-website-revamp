@@ -75,12 +75,12 @@
         }
 
         .contactFormArea {
-        .inputSpace{
+          .inputSpace {
             margin-bottom: 2.25rem;
-            @include mobile{
+            @include mobile {
               margin-bottom: text(lg);
             }
-        }
+          }
         }
 
         .policyArea {

@@ -12,9 +12,12 @@
     @include mobile {
       margin-bottom: 2.5rem;
     }
-    .servicesBtn{
+    .servicesBtn {
       display: flex;
       justify-content: flex-end;
+      @include mobile{
+        justify-content: flex-start;
+      }
     }
   }
 
@@ -39,7 +42,7 @@
       font-size: 2.75rem;
       font-weight: 500;
       line-height: 3.375rem;
-      
+
       @include mobile {
         padding-right: 0;
         font-size: 2rem;
@@ -71,7 +74,7 @@
 
       @include mobile {
         grid-template-columns: repeat(1, 1fr);
-        padding: 20px;
+        padding: text(lg);
         margin-bottom: 2.75rem;
       }
       .digitalImg {

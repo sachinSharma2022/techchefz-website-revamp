@@ -308,7 +308,10 @@ $shadowSecondary: 0px 0px 1px rgba(12, 26, 75, 0.1),
   align-items: $ai;
 }
 
-// font family
+@mixin textGradient {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
 
-$font-guardian: "Guardian Sans", sans-serif;
-$font-montserrat: "montserrat", sans-serif;

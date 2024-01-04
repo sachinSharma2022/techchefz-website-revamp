@@ -3,8 +3,8 @@ import styles from "./style.module.scss";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { Button } from "@/components/ui/button";
 import CustomInput from "@/components/ui/inputCustom";
-import DropdownCustom from "@/components/ui/dropdownCustom";
 import { Icons } from "@/components/icons";
+import CountryDropdown from "@/components/ui/countryDropdown";
 
 const LetsWork = () => {
   return (
@@ -37,7 +37,7 @@ const LetsWork = () => {
                   />
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                  <DropdownCustom />
+                 <CountryDropdown />
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
                   <CustomInput
@@ -61,7 +61,7 @@ const LetsWork = () => {
                 <div className="col-md-6 col-12">
                   <div className={styles.policyText}>
                     By sending this form I confirm that I have read and accept
-                    the{" "}
+                    the
                     <span className={styles.policyHighlight}>
                       Privacy Policy
                     </span>

@@ -1,7 +1,7 @@
 "use client";
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import React from "react";
+import React, { useEffect } from "react";
 // import required modules
 import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
 
@@ -81,10 +81,16 @@ const Testimonials = () => {
             </div>
 
             <div className={styles.sliderController}>
-              <button ref={navigationPrevRef} className="btn btn-primary">
+              <button
+                ref={navigationPrevRef}
+                className="btn btn-primary btn-back"
+              >
                 <Icons.ArrowLeft size={20} className="asset-white" />
               </button>
-              <button ref={navigationNextRef} className="btn btn-primary">
+              <button
+                ref={navigationNextRef}
+                className="btn btn-primary btn-move"
+              >
                 <Icons.ArrowRight size={20} />
               </button>
             </div>
