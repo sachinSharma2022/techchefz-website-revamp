@@ -3,7 +3,6 @@ import React from "react";
 import Slider from "react-slick";
 import CaptionCard from "@/components/ui/captionCard";
 import { Icons } from "@/components/icons";
-
 import styles from "./style.module.scss";
 
 const RelatedCase = () => {
@@ -55,15 +54,15 @@ const RelatedCase = () => {
   const captionCard = [
     {
       imgSrc: "/images/case1.png",
-      title: "Nike’s Expansion and Global Outlook",
+      title: "Revolutionizing Retail: A Digital Transition for Royal Enfield",
     },
     {
       imgSrc: "/images/case2.png",
-      title: "Nike’s Expansion and Global Outlook",
+      title: "Fitbit OS: A Digital Transforming Fitness Tracking",
     },
     {
       imgSrc: "/images/case1.png",
-      title: "Nike’s Expansion and Global Outlook",
+      title: "Revolutionizing Retail: A Digital Transition for Royal Enfield",
     },
     {
       imgSrc: "/images/case2.png",

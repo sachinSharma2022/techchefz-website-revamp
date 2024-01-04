@@ -34,7 +34,7 @@ const Header = () => {
             </Link>
             <ul className={styles.subMenu}>
               <li>
-                <Link href="/">Technology 1</Link>
+                <Link href="/technology/cms">CMS</Link>
               </li>
               <li>
                 <Link href="/">Technology 2</Link>
