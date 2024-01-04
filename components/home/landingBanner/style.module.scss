@@ -108,27 +108,6 @@ $border-radius: 5px;
         line-height: 3.5rem;
       }
     }
-    @keyframes scroll {
-      0% {
-        transform: translate3d(0, 0, 0);
-      }
-
-      25% {
-        transform: translate3d(0, -25%, 0);
-      }
-
-      50% {
-        transform: translate3d(0, -50%, 0);
-      }
-
-      75% {
-        transform: translate3d(0, -25%, 0);
-      }
-
-      100% {
-        transform: translate3d(0, 0, 0);
-      }
-    }
   }
   .buttonContent {
     $btn-hover-color: #26a0f8;

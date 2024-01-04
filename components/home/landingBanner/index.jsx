@@ -13,7 +13,7 @@ const LandingBanner = () => {
             <div className={styles.rollingTitle}>Through Data</div>
           </div>
           <div>
-            <div className={styles.rollingTitle}>Through Creativity</div>
+            <div className={styles.rollingTitle}>abcdfds</div>
           </div>
           <div>
             <div className={styles.rollingTitle}>Through Technology</div>
