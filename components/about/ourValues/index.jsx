@@ -99,7 +99,7 @@ const OurValues = () => {
                               togglePanels({ ...panel, key: index });
                             }}
                           >
-                            {data.title}{" "}
+                            {data.title}
                             {!open ? <Icons.ArrowDown /> : <Icons.ArrowUp />}
                           </Disclosure.Button>
                           <Disclosure.Panel className={styles.accordiaonBody}>
