@@ -2212,4 +2212,25 @@ export const Icons = {
       </defs>
     </svg>
   ),
+  Moredot: ({ size, ...props }) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 4 14"
+      fill="none"
+      {...props}
+    >
+      <rect x="0.0219727" width="3" height="3" rx="1.5" fill="#111111" />
+      <rect
+        x="0.0219727"
+        y="5.5"
+        width="3"
+        height="3"
+        rx="1.5"
+        fill="#111111"
+      />
+      <rect x="0.0219727" y="11" width="3" height="3" rx="1.5" fill="#111111" />
+    </svg>
+  ),
 };
