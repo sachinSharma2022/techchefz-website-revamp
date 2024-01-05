@@ -18,6 +18,21 @@ const Discover = () => {
                </Button>
             </div>
          </div>
+         <div className="row">
+           <div className="col-md-3 col-lg-3">
+            <h5>Web Platforms</h5>
+            <p>We specialize in comprehensive website audits that provide valuable insights</p>
+            <h5>Commerce</h5>
+            <h5>Analytics & Marketing</h5>
+            <h5>DevSecOps</h5>
+           </div>
+           <div className="col-md-7 col-lg-7">
+            <h6>Frontend</h6>
+            <div className={styles.platformsBtn}>
+              
+            </div>
+           </div>
+         </div>
       </section>
    );
 };
