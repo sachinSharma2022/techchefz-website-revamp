@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
-import ReactTextTransition from "react-text-transition";
 // import { Button } from "../../ui/button";
 import { Icons } from "@/components/icons";
 import styles from "./style.module.scss";
