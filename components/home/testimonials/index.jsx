@@ -101,7 +101,7 @@ const Testimonials = () => {
           <div className="testimonials-slider">
             <Swiper
               effect={"coverflow"}
-              spaceBetween={20}
+              spaceBetween={5}
               slidesPerView={2}
               navigation={{
                 prevEl: navigationPrevRef.current,
@@ -114,6 +114,7 @@ const Testimonials = () => {
                 depth: 160,
                 modifier: 1,
                 slideShadows: true,
+                scale: 1.02,
               }}
               pagination={false}
               modules={[EffectCoverflow, Pagination, Navigation]}
