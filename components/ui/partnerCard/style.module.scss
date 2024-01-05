@@ -1,0 +1,28 @@
+@import "~/styles/partials/config";
+
+.partnerCard {
+   background-color: color(bg-soft);
+//    width: 23.333rem;
+width: 100%;
+   // height: auto;
+   padding: 2.5rem;
+   border: 1px solid rgba(17, 17, 17, 0.12);
+   border-radius: 1.25rem;
+
+   .cardImg {
+      margin-bottom: 2.5rem;
+   }
+
+   .cardTitle {
+      font-size: text(xl);
+      font-weight: 500;
+      line-height: 32px;
+      margin-bottom: 0.75rem;
+   }
+
+   .cardContent {
+      font-size: text(normal);
+      line-height: 1.5rem;
+      opacity: 0.8;
+   }
+}
