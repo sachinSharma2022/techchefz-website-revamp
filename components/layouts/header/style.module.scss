@@ -1,11 +1,12 @@
 @import "~/styles/partials/config";
 
 .headerMain {
-  padding: 1rem 7.5rem;
+  padding: 1.11rem 7.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
+  z-index: 9;
   box-shadow: 0 0 0.125rem rgba(color(text-primary), 0.3);
 
   @include tablet {
@@ -15,8 +16,8 @@
   nav {
     position: absolute;
     left: 50%;
-    top: 0;
-    transform: translate(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
 
     @include tablet {
       position: fixed;
@@ -41,15 +42,20 @@
       list-style: none;
       padding: 0;
       margin: 0;
+
       @include tablet {
         flex-wrap: wrap;
         padding: 0;
         padding-top: 2rem;
       }
+
       li {
         list-style-type: none;
         position: relative;
-        padding: 1.5rem 0;
+        padding: 0.4rem 0.7rem;
+        border-radius: 0.5rem;
+        margin: 0 0.5rem;
+
         @include tablet {
           width: 100%;
           padding: 0.5rem 0;
@@ -76,9 +82,51 @@
           font-size: text(normal);
           color: color(text-primary);
           font-weight: 600;
-          margin: 0 1.2rem;
           display: inline-flex;
           align-items: center;
+          position: relative;
+
+          &::after {
+            content: "";
+            width: 0.4rem;
+            height: 0.4rem;
+            border-radius: 50%;
+            background-color: color(text-primary);
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%) scale(0);
+            bottom: -0.8rem;
+            transition: all 0.2s;
+          }
+
+          &.active {
+            color: color(primary-blue);
+            &::before {
+              content: "";
+              width: 0px;
+              height: 0px;
+              border-style: solid;
+              border-width: 0 10px 10px 10px;
+              border-color: transparent transparent color(primary-blue)
+                transparent;
+              transform: rotate(0deg);
+              position: absolute;
+              top: 2.6rem;
+              left: 50%;
+              transform: translate(-50%);
+            }
+            &:hover {
+              &::after {
+                display: none;
+              }
+            }
+          }
+
+          &:hover {
+            &::after {
+              transform: translate(-50%) scale(1);
+            }
+          }
 
           .arrow {
             box-sizing: border-box;
@@ -102,15 +150,16 @@
           display: none;
           position: absolute;
           left: 50%;
-          top: 4rem;
+          top: calc(100% + 0.2rem);
           transform: translate(-50%);
           background-color: color(primary-white);
           width: 100%;
-          min-width: fit-content;
+          min-width: 9rem;
           z-index: 2;
-          padding: 0;
+          padding: 0.5rem 0;
           margin: 0;
           border: 0.063rem solid rgba(color(text-primary), 0.2);
+          border-radius: 0.5rem;
 
           @include tablet {
             left: 0;
@@ -120,14 +169,41 @@
           li {
             line-height: normal;
             padding: 0;
+            margin: 0;
             a {
               display: block;
-              padding: 0.7rem 1.5rem;
-              border-bottom: 0.063rem solid rgba(color(text-primary), 0.2);
+              padding: 0.4rem 0.7rem;
+              border-bottom: none;
               font-weight: 500;
+              font-size: text(normal);
               color: color(text-primary);
               margin: 0;
               white-space: nowrap;
+              transition: all 0.3s;
+
+              &:hover {
+                margin-left: 0.7rem;
+                &::before {
+                  opacity: 1;
+                }
+              }
+
+              &::after {
+                display: none;
+              }
+
+              &::before {
+                content: "";
+                width: 0.4rem;
+                height: 0.4rem;
+                border-radius: 50%;
+                background-color: color(text-primary);
+                position: absolute;
+                opacity: 0;
+                left: 0;
+                top: 0.9rem;
+                transition: all 0.2s;
+              }
             }
 
             &:last-child {
@@ -135,6 +211,20 @@
                 border-bottom: none;
               }
             }
+          }
+        }
+      }
+
+      .dropDown {
+        svg{
+          margin-right: 0.5rem;
+        }
+        &:hover {
+          background-color: rgba(color(text-primary), 0.06);
+        }
+        a {
+          &::after {
+            display: none;
           }
         }
       }
