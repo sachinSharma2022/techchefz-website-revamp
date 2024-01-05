@@ -1,8 +1,9 @@
 "use client";
+
+import { Icons } from "@/components/icons";
 import { Disclosure } from "@headlessui/react";
 import { useState } from "react";
 import styles from "./style.module.scss";
-import { Icons } from "@/components/icons";
 
 const Faq = () => {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
@@ -78,7 +79,7 @@ const Faq = () => {
                           }}
                         >
                           {data.title}{" "}
-                          {!open ? <Icons.FaqPlus /> : <Icons.FaqPlus />}
+                          {!open ? <Icons.IconPlus /> : <Icons.IconMinus />}
                         </Disclosure.Button>
                         <Disclosure.Panel className={styles.accordionBody}>
                           {data.content}
