@@ -38,57 +38,61 @@
     }
   }
 
-  .ourNumberMain {
-    .cmsGridCards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2.5rem;
-      @include mobile {
-        grid-template-columns: repeat(1, 1fr);
+  .cmsGridCards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .serviceCmsBox {
+      text-align: center;
+      background-color: color(bg-soft);
+      padding: 2.5rem;
+      border-radius: text(xl);
+      border: 0.125rem solid rgba(color(text-primary), 0.12);
+      transition: all 0.5s ease-in-out;
+
+      &:hover {
+        border: 0.125rem solid color(heading-liner);
+        cursor: pointer;
       }
 
-      .serviceCmsBox {
-        text-align: center;
-        background-color: color(bg-soft);
-        padding: 2.5rem;
-        border-radius: text(xl);
-        border: 0.125rem solid rgba(17, 17, 17, 0.12);
+      @include mobile {
+        padding: text(xl);
+      }
+      .numberCardFlex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.28rem;
 
-        &:hover {
-          border: 0.125rem solid color(heading-liner);
-          cursor: pointer;
+        img {
+          object-fit: contain;
+          object-position: left;
         }
-
+      }
+      .sbTitle {
+        font-size: text(xl);
+        font-weight: 500;
+        margin-bottom: 0.75rem;
+        line-height: 2.5rem;
+        text-align: left;
         @include mobile {
-          padding: text(xl);
+          font-size: text(lg);
         }
-        .numberCardFlex {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-bottom: 1.28rem;
-        }
-        .sbTitle {
-          font-size: text(xl);
-          font-weight: 500;
-          margin-bottom: 0.75rem;
-          line-height: 2.5rem;
-          text-align: left;
-          @include mobile {
-            font-size: text(lg);
-          }
-        }
+      }
 
-        .sbText {
-          font-weight: 400;
+      .sbText {
+        font-weight: 400;
+        font-size: text(normal);
+        line-height: text(xl);
+        opacity: 0.8;
+        text-align: left;
+        margin-bottom: 0;
+        @include mobile {
           font-size: text(normal);
-          line-height: text(xl);
-          opacity: 0.8;
-          text-align: left;
-          margin-bottom: 0;
-          @include mobile {
-            font-size: text(normal);
-          }
         }
       }
     }

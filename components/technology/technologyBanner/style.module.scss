@@ -26,7 +26,6 @@
     .titleHighlight {
       font-size: text(xl-larger);
       font-weight: 500;
-      margin: 0.5rem;
       color: color(heading-liner);
       background: linear-gradient(
         118deg,
@@ -41,10 +40,9 @@
       }
     }
   }
+
   .leadText {
     font-size: text(lg);
-    font-weight: 400;
-    // max-width: 85%;
     color: rgba(color(text-primary), 0.8);
     @include mobile {
       max-width: 100%;
@@ -54,5 +52,8 @@
   .flexCol {
     display: flex;
     justify-content: flex-end;
+  }
+  .headerBtn {
+    margin-top: 64px;
   }
 }
