@@ -1,6 +1,7 @@
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import styles from "./style.module.scss";
+import PartnerCard from "@/components/ui/partnerCard";
 
 const CmsType = () => {
   const typeCard = [
@@ -59,19 +60,20 @@ const CmsType = () => {
 
       <div className={`${styles.cmsGridCards} `}>
         {typeCard.map((data, index) => (
-          <div key={index} className={styles.serviceCmsBox}>
-            <div className={styles.numberCardFlex}>
-              <ImageCustom
-                src={data.imgUrl}
-                width={140}
-                height={40}
-                alt="shopify"
-              />
-              <Icons.ArrowUpRight width={22} height={22} />
-            </div>
-            <h2 className={styles.sbTitle}>{data.sbTitle}</h2>
-            <p className={styles.sbText}>{data.sbText}</p>
-          </div>
+          <PartnerCard  key={index} imgSrc={data.imgUrl} cardTitle={data.sbTitle} cardContent={data.sbText} arrowUp />
+          // <div key={index} className={styles.serviceCmsBox}>
+          //   <div className={styles.numberCardFlex}>
+          //     <ImageCustom
+          //       src={data.imgUrl}
+          //       width={140}
+          //       height={40}
+          //       alt="shopify"
+          //     />
+          //     <Icons.ArrowUpRight width={22} height={22} />
+          //   </div>
+          //   <h2 className={styles.sbTitle}>{data.sbTitle}</h2>
+          //   <p className={styles.sbText}>{data.sbText}</p>
+          // </div>
         ))}
       </div>
     </section>
