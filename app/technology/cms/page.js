@@ -1,3 +1,4 @@
+import OurValues from "@/components/about/ourValues";
 import RelatedCase from "@/components/caseStudy/relatedCase";
 import LetsWork from "@/components/home/letsWork";
 import CmsBanner from "@/components/technology/cms/cmsBanner";
@@ -12,6 +13,7 @@ const Cms = () => {
     <div>
       <CmsBanner />
       <CmsPlayer />
+      <OurValues />
       <CmsType />
       <CmsDifference />
       <CmsOurValue />

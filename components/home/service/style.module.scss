@@ -51,6 +51,9 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1rem 2.5rem;
+      @include mobile{
+        grid-template-columns: repeat(1, 1fr);
+      }
     }
   }
 
@@ -72,12 +75,16 @@
       &:nth-child(even) {
         position: relative;
         top: 6.25rem;
+        @include mobile{
+          top: 0;
+        }
       }
 
       @include mobile {
         margin-right: text(xl);
         min-height: 18.5rem;
         padding: text(lg);
+        min-width: 100%;
       }
       .bgIcon {
         margin-bottom: 2rem;
