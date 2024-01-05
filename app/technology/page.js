@@ -3,6 +3,7 @@ import OurNumbers from '@/components/home/ourNumbers'
 import Consistent from '@/components/technology/consistent'
 import Discover from '@/components/technology/discover'
 import Partners from '@/components/technology/partners'
+import Streamline from '@/components/technology/streamline'
 import TechnologyBanner from '@/components/technology/technologyBanner'
 import TechnologyCase from '@/components/technology/technologyCase'
 import TechnologyValues from '@/components/technology/technologyValues'
@@ -12,6 +13,7 @@ const Technology = () => {
   return (
     <div>
         <TechnologyBanner/>
+        <Streamline />
         <Partners/>
         <Consistent/>
         <TechnologyValues/>

@@ -57,7 +57,7 @@ const Projects = () => {
               omnichannel customer experiences, achieves scalability,
               diversifying into countries, and continents.
             </p>
-            <div className={styles.ProjectBtn}>
+            <div className={styles.projectButton}>
               {tagSection.map((item, index) => (
                 <Button key={index} variant="outline" size="xs">
                   {item}
