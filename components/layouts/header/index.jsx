@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
@@ -9,6 +10,7 @@ import { Icons } from "@/components/icons";
 import styles from "./style.module.scss";
 
 const Header = () => {
+  const pathname = usePathname();
   const [isActive, setActive] = useState(false);
   const toggleClass = () => {
     setActive(!isActive);
@@ -24,15 +26,26 @@ const Header = () => {
       <nav className={isActive ? styles.showNav : null}>
         <ul>
           <li>
-            <Link href="/about" className={styles.active}>
+            <Link
+              href="/about"
+              className={pathname == "/about" ? styles.active : ""}
+            >
               About Us
             </Link>
           </li>
           <li>
-            <Link href="/">Solutions</Link>
+            <Link
+              href="/solutions"
+              className={pathname == "/solutions" ? styles.active : ""}
+            >
+              Solutions
+            </Link>
           </li>
           <li className={styles.dropDown}>
-            <Link href="/technology">
+            <Link
+              href="/technology"
+              className={pathname == "/technology" ? styles.active : ""}
+            >
               Technology <div className={styles.arrow} />
             </Link>
             <ul className={styles.subMenu}>
@@ -51,11 +64,16 @@ const Header = () => {
             </ul>
           </li>
           <li>
-            <Link href="/portfolio">Portfolio</Link>
+            <Link
+              href="/portfolio"
+              className={pathname == "/portfolio" ? styles.active : ""}
+            >
+              Portfolio
+            </Link>
           </li>
           <li className={styles.dropDown}>
             <Link href="/">
-              <Icons.moredot width={4} height={14} /> More
+              <Icons.Moredot width={4} height={14} /> More
             </Link>
             <ul className={styles.subMenu}>
               <li>

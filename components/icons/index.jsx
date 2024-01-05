@@ -976,6 +976,110 @@ export const Icons = {
       />
     </svg>
   ),
+  ArrowUpRight: ({ size, ...props }) => (
+    <svg
+      width="19"
+      height="19"
+      viewBox="0 0 19 19"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M2.46983 0.367085L18.5857 0.514681L18.7333 16.6305L16.6047 16.611L16.4904 4.12894L2.3746 18.2447L0.855656 16.7258L14.9714 2.60999L2.48933 2.49569L2.46983 0.367085Z"
+        fill="#111111"
+      />
+      <path
+        d="M2.46983 0.367085L18.5857 0.514681L18.7333 16.6305L16.6047 16.611L16.4904 4.12894L2.3746 18.2447L0.855656 16.7258L14.9714 2.60999L2.48933 2.49569L2.46983 0.367085Z"
+        stroke="black"
+      />
+    </svg>
+  ),
+  IconMinus: ({ size, ...props }) => (
+    <svg
+      width="16"
+      height="2"
+      viewBox="0 0 16 2"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M1 1H15"
+        stroke="url(#paint0_linear_1142_2179)"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <defs>
+        <linearGradient
+          id="paint0_linear_1142_2179"
+          x1="1.16333"
+          y1="1.31"
+          x2="1.33126"
+          y2="2.55558"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#1E8AF2" />
+          <stop offset="1" stop-color="#05BED7" />
+        </linearGradient>
+      </defs>
+    </svg>
+  ),
+  IconPlus: ({ size, ...props }) => (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <g clip-path="url(#clip0_1142_2166)">
+        <path
+          d="M12 5V19"
+          stroke="url(#paint0_linear_1142_2166)"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M5 12H19"
+          stroke="url(#paint1_linear_1142_2166)"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </g>
+      <defs>
+        <linearGradient
+          id="paint0_linear_1142_2166"
+          x1="12.0117"
+          y1="9.34"
+          x2="12.6826"
+          y2="9.36539"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#1E8AF2" />
+          <stop offset="1" stop-color="#05BED7" />
+        </linearGradient>
+        <linearGradient
+          id="paint1_linear_1142_2166"
+          x1="5.16333"
+          y1="12.31"
+          x2="5.33126"
+          y2="13.5556"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#1E8AF2" />
+          <stop offset="1" stop-color="#05BED7" />
+        </linearGradient>
+        <clipPath id="clip0_1142_2166">
+          <rect width="24" height="24" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  ),
   React: ({ size, ...props }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -2108,7 +2212,7 @@ export const Icons = {
       </defs>
     </svg>
   ),
-  moredot: ({ size, ...props }) => (
+  Moredot: ({ size, ...props }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={size}
