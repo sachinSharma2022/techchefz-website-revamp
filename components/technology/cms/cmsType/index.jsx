@@ -60,7 +60,7 @@ const CmsType = () => {
 
       <div className={`${styles.cmsGridCards} `}>
         {typeCard.map((data, index) => (
-          <PartnerCard  key={index}  />
+          <PartnerCard  key={index} imgSrc={data.imgUrl} cardTitle={data.sbTitle} cardContent={data.sbText} arrowUp />
           // <div key={index} className={styles.serviceCmsBox}>
           //   <div className={styles.numberCardFlex}>
           //     <ImageCustom
