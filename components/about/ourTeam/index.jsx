@@ -84,7 +84,7 @@ const OurTeam = () => {
                               <div className="row">
                                  <div className={styles.teamCards}>
                                     {teamData.map((data, index) => (
-                                       <div onClick={openModal} key={index} className={styles.teamCardBg}>
+                                       <div  key={index} className={styles.teamCardBg}>
                                           <div className={styles.cardHead}>
                                              <div>
                                                 <h6>{data.mebName} </h6>

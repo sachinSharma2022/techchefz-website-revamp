@@ -1,8 +1,8 @@
 import LetsWork from '@/components/home/letsWork'
 import OurNumbers from '@/components/home/ourNumbers'
-import CmsType from '@/components/technology/cms/cmsType'
 import Consistent from '@/components/technology/consistent'
 import Discover from '@/components/technology/discover'
+import Partners from '@/components/technology/partners'
 import TechnologyBanner from '@/components/technology/technologyBanner'
 import TechnologyCase from '@/components/technology/technologyCase'
 import TechnologyValues from '@/components/technology/technologyValues'
@@ -12,7 +12,7 @@ const Technology = () => {
   return (
     <div>
         <TechnologyBanner/>
-        {/* <CmsType/> */}
+        <Partners/>
         <Consistent/>
         <TechnologyValues/>
         <OurNumbers/>
