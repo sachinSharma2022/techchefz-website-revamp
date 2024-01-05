@@ -22,8 +22,8 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 2.5rem;
 
-    @include desktop-md {
-      grid-template-columns: repeat(3, 1fr);
+    @include desktop-hd {
+      grid-template-columns: repeat(5, 1fr);
     }
 
     @include mobile-tablet-p {
@@ -36,12 +36,7 @@
 
     .workCardMain {
       height: 19.25rem;
-      &:hover {
-        .workCard {
-          transform: rotateY(180deg);
-          transition: transform 0.5s;
-        }
-      }
+
       .workCard {
         transition: transform 1s;
         transform-style: preserve-3d;
@@ -49,7 +44,7 @@
         .workCols {
           min-width: 16.875rem;
           height: 19.25rem;
-          border: 2px solid rgba(color(text-primary), 0.12);
+          border: 1px solid rgba(color(text-primary), 0.12);
           border-radius: 1.25rem;
           position: relative;
           cursor: pointer;
@@ -93,6 +88,18 @@
 
         p {
           font-size: text(normal);
+          opacity: 0.8;
+        }
+      }
+
+      &:hover {
+        .workCard {
+          transform: rotateY(180deg);
+          transition: transform 0.5s;
+        }
+
+        .workCols {
+          border: 1px solid color(heading-liner);
         }
       }
     }

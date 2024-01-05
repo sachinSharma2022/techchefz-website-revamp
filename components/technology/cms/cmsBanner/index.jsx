@@ -5,12 +5,12 @@ const CmsBanner = () => {
   return (
     <section className={`${styles.cmsBannerStyle}`}>
       <h1 className={styles.title}>
-        Unleashing Potential with Cutting-Edge
+        Unleashing Potential <br /> with Cutting-Edge <br />
         <span className={styles.titleHighlight}>CMS Solutions.</span>
       </h1>
 
       <p className={styles.leadText}>
-        We're a worldwide presence, serving clients on four continents. Our
+        We&apos;re a worldwide presence, serving clients on four continents. Our
         international expertise ensures innovative solutions tailored to diverse
         global needs.
       </p>

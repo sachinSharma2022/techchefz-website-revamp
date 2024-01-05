@@ -78,13 +78,14 @@ const LetsWork = () => {
                   </div>
                 </div>
                 <div className={`${styles.buttonGrid} col-md-6 col-12`}>
-                  <Button variant="blueBtn" size="md">
+                  <Button variant="blueBtn" size="sm">
                     Send a Message <Icons.ArrowRight size={18} />
                   </Button>
                 </div>
               </div>
             </div>
           </div>
+
           <div className={styles.contactImg}>
             <ImageCustom
               src="/images/contact.png"

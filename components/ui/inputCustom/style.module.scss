@@ -1,27 +1,27 @@
 @import "~/styles/partials/config";
 
 .inputContainerStyle {
-    width: 100%;
-    .floatInput{
-        padding: 1.125rem 0.8rem;
-        font-size: text(normal);
-        border-radius: 0.75rem;
-        font-weight: 500;
-        &:focus{
-            box-shadow: none;
-            border: none;
-            border-color: transparent;
-        }
+  width: 100%;
+
+  .floatInput {
+    padding: 1.125rem;
+    font-size: text(normal);
+    border-radius: 0.75rem;
+    font-weight: 500;
+
+    &:focus {
+      box-shadow: none;
+      border: none;
+      border-color: transparent;
     }
-    .labelCustom{
-        font-size: text(normal);
-        opacity: 0.8;
-        line-height: text(xl);
-        font-weight: 400;
-    }
-  
   }
 
-
-
-
+  .labelCustom {
+    font-size: text(normal);
+    color: rgba(color(text-primary), 0.5);
+    line-height: text(xl);
+    font-weight: 400;
+    font-family: font(primary);
+    padding-inline: 1.125rem;
+  }
+}

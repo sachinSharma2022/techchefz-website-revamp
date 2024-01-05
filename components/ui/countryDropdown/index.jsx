@@ -37,31 +37,7 @@ const people = [
 const CountryDropdown = () => {
   const [selected, setSelected] = useState(people[0]);
   return (
-    <div className={styles.dropdownContainerStyle}>
-      {/* <div className="form-floating">
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <select
-              className={`${styles.formSelect} form-select`}
-              id="floatingSelectGrid"
-              aria-label="Floating label select example"
-            >
-              <option selected>IN</option>
-              <option value="1">EN</option>
-              <option value="2">EU</option>
-            </select>
-          </div>
-
-          <input
-            type="text"
-            className={`${styles.floatInput} form-control`}
-            id="username"
-            placeholder="Phone Number*"
-            required=""
-          />
-        </div>
-      </div> */}
-
+    <div className={`${styles.dropdownContainerStyle} country-dropdown-style`}>
       <div className={styles.countryDropdown}>
         <Listbox value={selected} onChange={setSelected}>
           <div className={styles.floatDropdown}>
@@ -81,10 +57,10 @@ const CountryDropdown = () => {
                     }
                     value={person}
                   >
-                    <>
+                    <div className={styles.inputValueStyle}>
                       <span>{person.flag}</span>
                       {person.name}
-                    </>
+                    </div>
                   </Listbox.Option>
                 ))}
               </Listbox.Options>

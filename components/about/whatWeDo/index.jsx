@@ -15,7 +15,7 @@ const WhatWeDo = () => {
       ),
       title: "Digital Strategy",
       content:
-        "TechChefz employs a digital strategy blending advanced technology and customer focus to drive innovation and operational efficiency in IT. The Digital strategy integrates cutting-edge technology.",
+        "TechChefz employs a digital strategy blending advanced technology and customer focus to drive innovation and operational efficiency in IT.",
     },
     {
       icon: (
@@ -27,7 +27,7 @@ const WhatWeDo = () => {
       ),
       title: "Platform Selection",
       content:
-        "TechChefz employs a digital strategy blending advanced technology and customer focus to drive innovation and operational efficiency in IT. The Digital strategy integrates cutting-edge technology.",
+        "TechChefz employs a digital strategy blending advanced technology and customer focus to drive innovation and operational efficiency in IT.",
     },
     {
       icon: (
@@ -39,7 +39,7 @@ const WhatWeDo = () => {
       ),
       title: "Platform Builds",
       content:
-        "TechChefz employs a digital strategy blending advanced technology and customer focus to drive innovation and operational efficiency in IT. The Digital strategy integrates cutting-edge technology.",
+        "TechChefz employs a digital strategy blending advanced technology and customer focus to drive innovation and operational efficiency in IT.",
     },
     {
       icon: (
@@ -51,7 +51,7 @@ const WhatWeDo = () => {
       ),
       title: "Product Builds",
       content:
-        "TechChefz employs a digital strategy blending advanced technology and customer focus to drive innovation and operational efficiency in IT. The Digital strategy integrates cutting-edge technology.",
+        "TechChefz employs a digital strategy blending advanced technology and customer focus to drive innovation and operational efficiency in IT.",
     },
     {
       icon: (
@@ -63,7 +63,7 @@ const WhatWeDo = () => {
       ),
       title: "Multiple Infrastructure",
       content:
-        "TechChefz employs a digital strategy blending advanced technology and customer focus to drive innovation and operational efficiency in IT. The Digital strategy integrates cutting-edge technology.",
+        "TechChefz employs a digital strategy blending advanced technology and customer focus to drive innovation and operational efficiency in IT.",
     },
     {
       icon: (
@@ -75,7 +75,7 @@ const WhatWeDo = () => {
       ),
       title: "Managed Services",
       content:
-        "TechChefz employs a digital strategy blending advanced technology and customer focus to drive innovation and operational efficiency in IT. The Digital strategy integrates cutting-edge technology.",
+        "TechChefz employs a digital strategy blending advanced technology and customer focus to drive innovation and operational efficiency in IT.",
     },
     {
       icon: (
@@ -87,7 +87,7 @@ const WhatWeDo = () => {
       ),
       title: "Team Augmentation",
       content:
-        "TechChefz employs a digital strategy blending advanced technology and customer focus to drive innovation and operational efficiency in IT. The Digital strategy integrates cutting-edge technology.",
+        "TechChefz employs a digital strategy blending advanced technology and customer focus to drive innovation and operational efficiency in IT.",
     },
   ];
   return (

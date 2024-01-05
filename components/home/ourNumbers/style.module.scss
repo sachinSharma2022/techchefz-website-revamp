@@ -3,9 +3,11 @@
 .numberStyle {
   padding: spacing(section-primary-padding);
   background: color(primary-background);
+
   @include mobile {
     padding: spacing(section-mob-padding);
   }
+  
   .careerRow {
     margin-bottom: 5rem;
     @include mobile {

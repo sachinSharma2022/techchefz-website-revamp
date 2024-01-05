@@ -1,0 +1,77 @@
+@import "~/styles/partials/config";
+
+.whyCmsStyle {
+  padding: spacing(section-primary-padding);
+
+  .ourValuesHead {
+    margin-bottom: 5rem;
+
+    .ourValuesTitle {
+      color: color(text-primary);
+      text-transform: uppercase;
+      opacity: 0.8;
+      font-size: text(normal);
+      font-weight: 700;
+      line-height: 1.5rem;
+      letter-spacing: 0.2rem;
+      font-family: font(secondary);
+    }
+
+    .ourValuesHeading {
+      font-size: text(larger);
+      margin-bottom: 2.75rem;
+
+      span {
+        font-size: text(larger);
+        color: color(heading-liner);
+        background: linear-gradient(
+          118deg,
+          color(primary-blue) 11.5%,
+          color(heading-liner) 55.42%
+        );
+        @include textGradient;
+      }
+    }
+  }
+
+  .ourValuesContent {
+    .ourValueImg {
+      border-radius: 0.75rem;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+    .ourValuesText {
+      font-size: text(lg);
+      opacity: 0.6;
+    }
+
+    .ourValuesAccordion {
+      .accordionHead {
+        width: 100%;
+        text-align: left;
+        font-size: text(xl);
+        padding: 1.25rem 0;
+        border-bottom: 1px solid rgba(color(text-primary), 0.12);
+        display: flex;
+        justify-content: space-between;
+      }
+      .accordionBody {
+        padding: 1.25rem 0;
+      }
+    }
+  }
+
+  .iconBox {
+    width: 36px;
+    height: 36px;
+    background: color(bg-soft);
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

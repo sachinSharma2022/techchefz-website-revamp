@@ -1,12 +1,13 @@
 "use client";
 import { Disclosure } from "@headlessui/react";
 import { useState } from "react";
+// import { ChevronRightIcon } from '@heroicons/react/20/solid'
 
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import styles from "./style.module.scss";
 
-const OurValues = () => {
+const WhyCms = () => {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
 
   function togglePanels(newPanel) {
@@ -25,7 +26,7 @@ const OurValues = () => {
     });
   }
 
-  const accordionData = [
+  const accordianData = [
     {
       title: "Innovation",
       content:
@@ -48,13 +49,13 @@ const OurValues = () => {
     },
   ];
   return (
-    <section className={styles.ourValues}>
+    <section className={styles.whyCmsStyle}>
       <div className="row">
         <div className="col-md-7 col-lg-8">
           <div className={styles.ourValuesHead}>
-            <h6 className={styles.ourValuesTitle}>Our Values</h6>
+            <h6 className={styles.ourValuesTitle}>Why CMS</h6>
             <h3 className={styles.ourValuesHeading}>
-              Our values are part of everything we create at Instrument.
+              Why do we need a <span>CMS</span>
             </h3>
           </div>
         </div>
@@ -81,7 +82,7 @@ const OurValues = () => {
               software products with the help of accelerators.
             </p>
             <div className={styles.ourValuesAccordion}>
-              {accordionData.map((data, index) => (
+              {accordianData.map((data, index) => (
                 <Disclosure key={index}>
                   {(panel) => {
                     const { open, close } = panel;
@@ -117,4 +118,4 @@ const OurValues = () => {
   );
 };
 
-export default OurValues;
+export default WhyCms;

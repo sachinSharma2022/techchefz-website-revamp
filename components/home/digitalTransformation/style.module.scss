@@ -107,7 +107,7 @@
         .digitalText {
           font-size: text(normal);
           font-weight: 400;
-          opacity: 0.6;
+          color: rgba(color(text-primary), 0.6);
           line-height: text(xl);
         }
 
