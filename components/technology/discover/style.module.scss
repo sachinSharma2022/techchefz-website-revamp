@@ -2,6 +2,9 @@
 
 .discover {
    padding: spacing(section-primary-padding);
+   @include mobile{
+      padding: 1.5rem;
+   }
    .discoverTitle {
       font-size: text(normal);
       font-weight: 700;
@@ -15,7 +18,12 @@
    .discoverHeading {
       font-size: text(larger);
       font-weight: 500;
-      line-height: 54px;
+      line-height: 3.375rem;
       margin-bottom: 5rem;
+      @include mobile{
+         font-size: 1.7rem;
+         line-height: 2.375rem;
+         margin-bottom: 3rem;
+      }
    }
 }
