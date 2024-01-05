@@ -6,44 +6,32 @@ import styles from "./style.module.scss";
 const Partners = () => {
    const partnerCardData = [
       {
-         imgSrc: "/images/partners/partner1.png",
-         imgWidth: 80,
-         imgHeight: 45,
+         imgSrc: "/images/partners/partner1.png",       
          cardTitle: "AWS",
          cardContent: "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
       },
       {
          imgSrc: "/images/partners/partner2.png",
-         imgWidth: 140,
-         imgHeight: 45,
          cardTitle: "Adobe",
          cardContent: "We Believe In Superior Frontend Development With The Combination Of JavaScript, HTML And CSS.",
       },
       {
          imgSrc: "/images/Shopify.svg",
-         imgWidth: 100,
-         imgHeight: 45,
          cardTitle: "Shopify",
          cardContent: "At TechChefz We Provide First-Class Artificial Intelligence And Machine Learning with Expertise.",
       },
       {
          imgSrc: "/images/partners/partner3.png",
-         imgWidth: 130,
-         imgHeight: 45,
          cardTitle: "Twilio",
          cardContent: "We Facilitate Easy Cloud Migration And Deliver DevOps Automation And 24*7 Incident Management Services.",
       },
       {
         imgSrc: "/images/Shopify.svg",
-        imgWidth: 100,
-        imgHeight: 45,
         cardTitle: "Shopify",
         cardContent: "At TechChefz We Provide First-Class Artificial Intelligence And Machine Learning with Expertise.",
      },
       {
         imgSrc: "/images/partners/partner1.png",
-        imgWidth: 80,
-        imgHeight: 45,
         cardTitle: "AWS",
         cardContent: "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
      },
@@ -63,8 +51,6 @@ const Partners = () => {
                <PartnerCard
                   key={index}
                   imgSrc={data.imgSrc}
-                  imgWidth={data.imgWidth}
-                  imgHeight={data.imgHeight}
                   cardTitle={data.cardTitle}
                   cardContent={data.cardContent}
                />
