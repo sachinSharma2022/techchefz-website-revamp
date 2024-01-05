@@ -10,7 +10,7 @@ import CmsOurValue from "@/components/technology/cms/cmsOurValue";
 
 const Cms = () => {
   return (
-    <>
+    <div>
       <CmsBanner />
       <CmsPlayer />
       <CmsType />
@@ -19,7 +19,7 @@ const Cms = () => {
       <RelatedCase />
       <Faq />
       <LetsWork />
-    </>
+    </div>
   );
 };
 

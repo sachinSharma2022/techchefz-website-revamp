@@ -58,6 +58,14 @@ const LetsWork = () => {
                 </div>
               </div>
             </div>
+            <div className={styles.captchaImg}>
+              <ImageCustom
+                src="/images/captcha.png"
+                width={219}
+                height={49}
+                alt="captcha"
+              />
+            </div>
             <div className={styles.policyArea}>
               <div className="row d-flex align-items-center">
                 <div className="col-md-6 col-12">
