@@ -2,6 +2,10 @@
 
 .values {
    padding: spacing(section-primary-padding);
+
+   @include mobile{
+      padding: 1.5rem;
+   }
    .valuesTitle {
       font-size: text(normal);
       font-family: font(secondary);

@@ -6,6 +6,10 @@
     border: 0.125rem solid rgba(17, 17, 17, 0.12);
     background: color(bg-soft);
     margin-right: 2.5rem;
+
+    @include mobile{
+      margin-right: 0;
+    }
     .cardImg {
       img {
         border-radius: text(lg);

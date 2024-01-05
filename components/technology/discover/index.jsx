@@ -7,7 +7,7 @@ import styles from "./style.module.scss";
 const Discover = () => {
    return (
       <section className={styles.discover}>
-         <div className="row justify-content-between align-items-end">
+         <div className="row justify-content-between ">
             <div className="col-md-4 col-lg-4">
                <h6 className={styles.discoverTitle}>Dicover</h6>
                <h3 className={styles.discoverHeading}>Technology Stack</h3>
