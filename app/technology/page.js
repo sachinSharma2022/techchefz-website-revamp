@@ -20,7 +20,7 @@ const Technology = () => {
         <TechnologyCase />
         <LetsWork />
     </div>
-  )
-}
+  );
+};
 
-export default Technology
+export default Technology;

@@ -2,6 +2,7 @@
 
 .lestWorkStyle {
   padding: spacing(section-primary-padding);
+
   @include mobile {
     padding: spacing(section-mob-padding);
   }
@@ -9,6 +10,7 @@
     background-color: color(primary-background);
     padding: 2.5rem;
     border-radius: text(lg);
+
     @include mobile {
       padding: text(lg);
     }
@@ -16,11 +18,13 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 3.75rem;
+
       @include mobile {
         grid-template-columns: repeat(1, 1fr);
         gap: 0;
       }
       .contactUsForm {
+
         .formHeading {
           font-size: 2.75rem;
           font-weight: 500;
@@ -28,10 +32,12 @@
           line-height: 3.375rem;
           display: flex;
           flex-direction: column;
+
           @include mobile {
             margin-bottom: text(lg);
             line-height: 2.5rem;
           }
+
           .formTechHighlight {
             color: color(primary-blue);
             background: linear-gradient(
@@ -66,6 +72,7 @@
           padding-right: 12rem;
           margin-bottom: 3.75rem;
           line-height: 1.875rem;
+
           @include mobile {
             padding: 0;
             font-size: text(normal);
@@ -88,18 +95,22 @@
             font-size: text(xxs);
             font-weight: 400;
             line-height: text(lg);
+
             @include mobile {
               margin-bottom: text(lg);
             }
+
             .policyHighlight {
               color: color(primary-blue);
               font-size: text(xxs);
+              margin-left: 3px;
             }
           }
 
           .buttonGrid {
             display: flex;
             justify-content: flex-end;
+
             @include mobile {
               justify-content: flex-start;
             }
@@ -109,11 +120,13 @@
       .contactImg {
         display: flex;
         justify-content: flex-end;
+
         img {
           max-width: 38rem;
           height: 38.5rem;
           object-fit: cover;
           border-radius: 0.75rem;
+
           @include mobile {
             display: none;
           }
