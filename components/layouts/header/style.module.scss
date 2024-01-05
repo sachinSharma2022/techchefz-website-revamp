@@ -81,7 +81,7 @@
         a {
           font-size: text(normal);
           color: color(text-primary);
-          font-weight: 600;
+          font-weight: 500;
           display: inline-flex;
           align-items: center;
           position: relative;
@@ -134,7 +134,7 @@
             width: 0.4rem;
             border-style: solid;
             border-color: color(text-primary);
-            border-width: 0rem 0.155rem 0.155rem 0rem;
+            border-width: 0rem 0.1rem 0.1rem 0rem;
             transform: rotate(45deg);
             transition: border-width 150ms ease-in-out;
             margin-left: 0.5rem;
@@ -216,7 +216,7 @@
       }
 
       .dropDown {
-        svg{
+        svg {
           margin-right: 0.5rem;
         }
         &:hover {
