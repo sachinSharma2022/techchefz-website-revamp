@@ -88,7 +88,8 @@ const Header = () => {
               else setTheme("light");
             }}
           >
-            <Icons.moon size={15} />
+            
+            {theme==="light"?<Icons.moon size={15} />:<Icons.darkmode size={30} /> }
             {/* <Icons.darkmode size={30} /> */}
           </Button>
         </div>
