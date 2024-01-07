@@ -12,7 +12,7 @@ const WeAreFuture = () => {
           <p className={styles.text}>We are a</p>
           <h2 className={styles.title}>
             Pioneering
-            <span className={styles.globalText}>
+            <span className={styles.globalText} id="globalimg">
               Future
               <ImageCustom src="/global.png" width="60" height="60" alt="" />
               Global
