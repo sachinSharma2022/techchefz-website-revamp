@@ -2231,4 +2231,35 @@ export const Icons = {
       <rect x="0.0219727" y="11" width="3" height="3" rx="1.5" fill="#111111" />
     </svg>
   ),
+  CheckIcon: ({ size, ...props }) => (
+    <svg
+      width="17"
+      height="12"
+      viewBox="0 0 17 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M1 6L6 11L16 1"
+        stroke="url(#paint0_linear_1035_25565)"
+        stroke-width="1.6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <defs>
+        <linearGradient
+          id="paint0_linear_1035_25565"
+          x1="1.175"
+          y1="4.1"
+          x2="7.35232"
+          y2="9.00918"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#1E8AF2" />
+          <stop offset="1" stop-color="#05BED7" />
+        </linearGradient>
+      </defs>
+    </svg>
+  ),
 };
