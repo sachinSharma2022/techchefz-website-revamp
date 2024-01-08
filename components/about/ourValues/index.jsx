@@ -1,13 +1,12 @@
 "use client";
 
-import React from "react";
+import { useState } from "react";
 import { MyContext } from "@/app/context/theme";
 import { useContext } from "react";
 import { Disclosure } from "@headlessui/react";
-import { useState } from "react";
-
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
+
 import styles from "./style.module.scss";
 
 const OurValues = () => {
