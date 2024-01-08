@@ -52,16 +52,18 @@ const CmsDifference = () => {
       <div className={styles.gridNumberMain}>
         <div className={`${styles.differenceGridCards} `}>
           {differenceCard.map((data, index) => (
-            <div key={index} className={styles.differenceCmsBox}>
-              <h2 className={styles.sbTitle}>{data.sbTitle}</h2>
-              <p className={styles.sbText}>{data.sbText}</p>
-              <div className={styles.backgroundImg}>
-                <ImageCustom
-                  src={data.brandImg}
-                  width={330}
-                  height={162}
-                  alt="image"
-                />
+            <div key={index} className={styles.cardStyle}>
+              <div className={styles.differenceCmsBox}>
+                <h2 className={styles.sbTitle}>{data.sbTitle}</h2>
+                <p className={styles.sbText}>{data.sbText}</p>
+                <div className={styles.backgroundImg}>
+                  <ImageCustom
+                    src={data.brandImg}
+                    width={330}
+                    height={162}
+                    alt="image"
+                  />
+                </div>
               </div>
             </div>
           ))}

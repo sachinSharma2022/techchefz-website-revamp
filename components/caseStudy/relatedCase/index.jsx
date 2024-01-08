@@ -10,7 +10,7 @@ const RelatedCase = () => {
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 2.1,
+    slidesToShow: 2.2,
     slidesToScroll: 1,
     initialSlide: 0,
     nextArrow: (
@@ -86,11 +86,16 @@ const RelatedCase = () => {
         </h3>
       </div>
 
-      <div className={`${styles.relatedCaseSlider} relatedCaseSlider`}>
+      <div className={`${styles.relatedCaseSlider} related-case-slider`}>
         <Slider {...settings}>
           {captionCard.map((data, index) => (
             <div key={index}>
-              <CaptionCard imgSrc={data.imgSrc} title={data.title} />
+              <CaptionCard
+                className={styles.cardStyle}
+                imgSrc={data.imgSrc}
+                title={data.title}
+                textStyle={styles.textStyle}
+              />
             </div>
           ))}
         </Slider>

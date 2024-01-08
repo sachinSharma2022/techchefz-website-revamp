@@ -2,10 +2,12 @@
 
 .technologyCase {
    padding: spacing(section-primary-padding);
-   padding-block: 0;
+   padding-top: 0;
+
    @include mobile {
       padding: 1.5rem;
    }
+   
    .caseTop{
       margin-bottom: 5rem;
       @include mobile {

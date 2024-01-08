@@ -1,14 +1,9 @@
 @import "~/styles/partials/config";
 
 .relatedCase {
-  padding-block: spacing(section-primary-padding);
   
   .headSection {
-    padding-inline: spacing(section-primary-padding);
-  }
-
-  .relatedCaseSlider {
-    padding-left: 120px;
+    padding-inline: spacing(p-120);
   }
 
   .relatedCaseTitle {
@@ -21,10 +16,23 @@
     font-family: font(secondary);
     margin-bottom: 1rem;
   }
+
   .relatedCaseHeading {
     font-size: text(larger);
     font-weight: 500;
     line-height: 3.375rem;
     margin-bottom: 5rem;
+  }
+
+  .relatedCaseSlider {
+    padding-left: 120px;
+    margin-bottom: 8.75rem;
+  }
+
+  .cardStyle {
+    width: auto;
+  }
+  .textStyle {
+    max-width: 70%;
   }
 }

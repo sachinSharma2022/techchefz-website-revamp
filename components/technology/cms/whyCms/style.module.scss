@@ -2,6 +2,7 @@
 
 .whyCmsStyle {
   padding: spacing(section-primary-padding);
+  padding-bottom: 0;
 
   .ourValuesHead {
     margin-bottom: 5rem;
@@ -35,12 +36,20 @@
   }
 
   .ourValuesContent {
-    .ourValueImg {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8.75rem;
+
+    .ourValueImg div {
       border-radius: 0.75rem;
       overflow: hidden;
+      height: 520px;
+      width: 100%;
+      position: relative;
+
       img {
         width: 100%;
-        height: auto;
+        height: 100%;
         object-fit: cover;
       }
     }
