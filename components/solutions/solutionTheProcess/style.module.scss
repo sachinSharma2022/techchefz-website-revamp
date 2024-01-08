@@ -1,0 +1,66 @@
+@import "~/styles/partials/config";
+
+.theProcessStyle {
+  padding: spacing(section-primary-padding);
+  padding-top: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 143px;
+
+  .headSection {
+    margin-bottom: 5rem;
+
+    .heading {
+      color: color(text-primary);
+      text-transform: uppercase;
+      opacity: 0.8;
+      font-size: text(normal);
+      font-weight: 700;
+      line-height: 1.5rem;
+      letter-spacing: 0.2rem;
+      font-family: font(secondary);
+    }
+
+    .subHeading {
+      font-size: text(larger);
+      margin-bottom: 2.75rem;
+
+      span {
+        font-size: text(larger);
+        color: color(heading-liner);
+        background: linear-gradient(
+          118deg,
+          color(primary-blue) 11.5%,
+          color(heading-liner) 55.42%
+        );
+        @include textGradient;
+      }
+    }
+  }
+
+  .processCardSection {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+
+    .processCard {
+      background: color(bg-soft);
+      padding: 2.5rem;
+      border-radius: 1.25rem;
+      border: 1px solid rgba(color(text-primary), 0.12);
+      max-width: 587px;
+      opacity: 0.6;
+
+      &.active {
+        opacity: 1;
+      }
+    }
+
+    .textGradient {
+      font-size: text(xxxl);
+      background: linear-gradient(117.91deg, #1E8AF2 11.5%, #05BED7 55.42%);
+      @include textGradient;
+      margin-bottom: 20px;
+    }
+  }
+}

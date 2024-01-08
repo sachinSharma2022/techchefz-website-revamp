@@ -1,11 +1,16 @@
 @import "~/styles/partials/config";
 
 .relatedCase {
-  padding: 8.75rem 8.75rem 7.5rem;
-  overflow-x: hidden;
-  @include mobile {
-    padding: spacing(section-mob-padding);
+  padding-block: spacing(section-primary-padding);
+  
+  .headSection {
+    padding-inline: spacing(section-primary-padding);
   }
+
+  .relatedCaseSlider {
+    padding-left: 120px;
+  }
+
   .relatedCaseTitle {
     font-size: text(normal);
     font-weight: 700;

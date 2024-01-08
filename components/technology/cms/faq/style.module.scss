@@ -59,16 +59,28 @@
       .accordionHead {
         width: 100%;
         text-align: left;
-        padding: text(xl);
         display: flex;
         justify-content: space-between;
         align-items: center;
         font-size: text(xl);
-        font-weight: 500;
+        font-weight: 700;
+        color: color(text-primary);
+        padding: text(xl);
+
         @include mobile {
           font-size: text(lg);
         }
       }
+
+      [aria-expanded="true"] {
+
+        &.accordionHead {
+          background: linear-gradient(117.91deg, #1E8AF2 11.5%, #05BED7 55.42%);
+          @include textGradient;
+        }
+
+      }
+
       .accordionBody {
         padding: 0 1.5rem 1.5rem 1.5rem;
       }
