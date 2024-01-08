@@ -3,9 +3,33 @@
 .serviceDetailsMain {
   padding: spacing(section-primary-padding);
   background: color(primary-background);
+
   @include mobile {
     padding: spacing(section-mob-padding);
   }
+
+  &.serviceDetailsMainDark {
+    background-color: color(dark-bg);
+    color: color(primary-white);
+
+    .serviceGrid {
+      .serviceHeading {
+        .serviceText {
+          opacity: 0.8;
+        }
+        .serviceTitle {
+          color: rgba(color(primary-white), 0.87);
+        }
+      }
+    }
+    .serviceOption {
+      .serviceBox {
+        background-color: color(dark-bg);
+        border: 2px solid rgba(color(primary-white), 0.12);
+      }
+    }
+  }
+
   .serviceGrid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -51,7 +75,7 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1rem 2.5rem;
-      @include mobile{
+      @include mobile {
         grid-template-columns: repeat(1, 1fr);
       }
     }
@@ -75,7 +99,7 @@
       &:nth-child(even) {
         position: relative;
         top: 6.25rem;
-        @include mobile{
+        @include mobile {
           top: 0;
         }
       }

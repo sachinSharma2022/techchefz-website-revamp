@@ -110,7 +110,7 @@ const Header = () => {
       <div className={styles.headerRight}>
         <div className={styles.modeBtn}>
           <Button variant="default" onClick={() => setTheme(!theme)}>
-            {theme ? <Icons.moon size={15} /> : <Icons.darkmode size={30} />}
+            {theme ? <Icons.darkmode size={30} /> : <Icons.moon size={15} />}
           </Button>
         </div>
         <Button variant="blueBtn" className={styles.headerBtn} size="sm">

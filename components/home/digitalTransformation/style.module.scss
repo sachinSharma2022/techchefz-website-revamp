@@ -7,6 +7,27 @@
     padding: spacing(section-mob-padding);
   }
 
+  &.digitalStyleDark {
+    background-color: color(dark-bg);
+    color: color(primary-white);
+
+    .digitalMain {
+      background-color: color(text-primary);
+      color: color(primary-white);
+      border: 1px solid rgba(color(primary-white), 0.12);
+    }
+
+    .digitalMain {
+      .digitalGrid {
+        .experienceCardBox {
+          .CustomerHeading {
+            color: color(primary-white);
+          }
+        }
+      }
+    }
+  }
+
   .serviceRow {
     margin-bottom: 5rem;
     @include mobile {
@@ -15,7 +36,7 @@
     .servicesBtn {
       display: flex;
       justify-content: flex-end;
-      @include mobile{
+      @include mobile {
         justify-content: flex-start;
       }
     }

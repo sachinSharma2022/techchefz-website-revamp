@@ -1,10 +1,16 @@
+"use client";
+
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { useContext } from "react";
+import { MyContext } from "@/app/context/theme";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { Icons } from "@/components/icons";
 import styles from "./style.module.scss";
 
 const Projects = () => {
+  const { theme, setTheme } = useContext(MyContext);
+
   const tagSection = [
     "Web Design",
     "Dashboard Design",
@@ -13,10 +19,14 @@ const Projects = () => {
     "Responsive",
   ];
   return (
-    <section className={`${styles.projectsStyle}`}>
+    <section
+      className={`${styles.projectsStyle} ${
+        theme ? styles.projectsStyleDark : ""
+      }`}
+    >
       <div className="row">
         <div className="col-md-12 col-12">
-          <p className={styles.ProjectHighlight}>Projects</p>
+          <p className={styles.projectHighlight}>Projects</p>
         </div>
         <div className="col-md-5 col-12">
           <h3 className={styles.datingText}>

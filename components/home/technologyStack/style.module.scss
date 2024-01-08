@@ -5,6 +5,25 @@
   padding: 1.25rem;
   position: relative;
   overflow: hidden;
+
+  &.technologyStyleDark {
+    background-color: color(dark-bg);
+
+    .gridContainer {
+      .techCardLogo {
+        background-color: color(dark-icon);
+        img {
+          filter: invert(1);
+        }
+      }
+    }
+    .technologyStackBox {
+      background-color: color(text-primary);
+      color: color(primary-white);
+      border: 1px solid rgba(color(primary-white), 0.12);
+    }
+  }
+
   &::before {
     content: "";
     width: 30rem;
