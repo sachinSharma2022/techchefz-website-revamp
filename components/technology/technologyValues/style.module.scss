@@ -1,11 +1,12 @@
 @import "~/styles/partials/config";
 
-.values {
+.technologyValues {
    padding: spacing(section-primary-padding);
+
    @include mobile{
       padding: 1.5rem;
    }
-   
+
    .valuesTitle {
       font-size: text(normal);
       font-family: font(secondary);
@@ -28,11 +29,15 @@
       opacity: 0.6;
    }
    .valuesImg {
-      margin: 5rem 0;
+      margin: 4.813rem 0;
+      height: 487px;
+      border-radius: 0.6rem;
+      overflow: hidden;
+
       img {
          width: 100%;
-         height: auto;
-         border-radius: 0.6rem;
+         height: 100%;
+         object-fit: cover;
       }
    }
    .icons{

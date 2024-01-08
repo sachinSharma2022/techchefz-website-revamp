@@ -523,3 +523,12 @@ a {
     }
   }
 }
+
+// Technology Values
+.technology-value {
+
+  .swiper-horizontal > .swiper-pagination-progressbar, .swiper-pagination-progressbar.swiper-pagination-horizontal {
+    top: auto;
+    bottom: 0;
+  }
+}

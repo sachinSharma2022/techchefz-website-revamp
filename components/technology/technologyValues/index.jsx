@@ -5,7 +5,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 // import required modules
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 import { Icons } from "@/components/icons";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -16,24 +16,29 @@ const TechnologyValues = () => {
     {
       icon: <Icons.Market width={56} height={56} />,
       title: "Innovation",
+      imgUrl:
+        "https://images.unsplash.com/photo-1494389945381-0fe114b8ea4b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fElubm92YXRpb258ZW58MHx8MHx8fDA%3D",
       content:
         "We believe in a customer-centric ethic without and people-centric paradigm within.",
     },
     {
       icon: <Icons.Rates width={56} height={56} />,
       title: "Customer Success",
+      imgUrl:
+        "https://images.unsplash.com/photo-1457131760772-7017c6180f05?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fEN1c3RvbWVyJTIwU3VjY2Vzc3xlbnwwfHwwfHx8MA%3D%3D",
       content:
         "We believe in a customer-centric ethic without and people-centric paradigm within.",
     },
     {
       icon: <Icons.Performance width={56} height={56} />,
       title: "Excellence in Delivery",
+      imgUrl: "/images/innovation.png",
       content:
         "We believe in a customer-centric ethic without and people-centric paradigm within.",
     },
   ];
   return (
-    <section className={styles.values}>
+    <section className={`${styles.technologyValues} technology-value`}>
       <div className="row">
         <div className="col-md-7 col-lg-7">
           <h6 className={styles.valuesTitle}>Our Values</h6>
@@ -54,21 +59,22 @@ const TechnologyValues = () => {
           pagination={{
             type: "progressbar",
           }}
-          autoplay={2000}
-          navigation={true}
-          modules={[Pagination, Navigation]}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+          navigation={false}
+          modules={[Pagination, Navigation, Autoplay]}
           className={styles.slideGrid}
         >
           {valueData.map((data, index) => (
-            <SwiperSlide key={index}>
-              <div className={styles.valuesImg}>
-                <ImageCustom
-                  src={"/images/innovation.png"}
-                  width={1000}
-                  height={500}
-                  alt="img"
-                />
-              </div>
+            <SwiperSlide key={index} className={styles.valuesImg}>
+              <ImageCustom
+                src={data.imgUrl}
+                width={1000}
+                height={1000}
+                alt="img"
+              />
             </SwiperSlide>
           ))}
         </Swiper>
