@@ -109,7 +109,7 @@ const Header = () => {
         </ul>
       </nav>
       <div className={styles.headerRight}>
-        <div className={`${styles.modeBtn} modeBtn`}>
+        <div className={styles.modeBtn}>
           <Button
             variant="default"
             onClick={() => {
