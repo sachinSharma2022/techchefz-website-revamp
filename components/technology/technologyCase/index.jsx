@@ -22,7 +22,8 @@ const TechnologyCase = () => {
     ]
    return (
       <section className={styles.technologyCase}>
-         <div className="row justify-content-between">
+            <div className={styles.caseTop}>
+         <div className="row justify-content-between align-items-end">
             <div className="col-md-7 col-lg-7">
                <h6 className={styles.caseTitle}>Case Study</h6>
                <h3 className={styles.caseHeading}>Together in every code. Discover the strength of our partnership.</h3>
@@ -32,6 +33,8 @@ const TechnologyCase = () => {
                   Explore Now <Icons.ArrowRight size={18} />
                </Button>
             </div>
+            </div>
+            
          </div>
         
          <div className={styles.technologyCaseCards}>

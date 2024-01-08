@@ -2,8 +2,15 @@
 
 .discover {
    padding: spacing(section-primary-padding);
-   @include mobile{
+   @include mobile {
       padding: 1.5rem;
+   }
+
+   .discoverTop{
+      margin-bottom: 5rem;
+      @include mobile {
+         margin-bottom: 3rem;
+      }
    }
    .discoverTitle {
       font-size: text(normal);
@@ -19,11 +26,69 @@
       font-size: text(larger);
       font-weight: 500;
       line-height: 3.375rem;
-      margin-bottom: 5rem;
-      @include mobile{
+      @include mobile {
          font-size: 1.7rem;
          line-height: 2.375rem;
-         margin-bottom: 3rem;
+      }
+   }
+   .discoverLeft {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+   }
+   .subHeading {
+      font-size: text(xxxl);
+      font-weight: 500;
+      line-height: 2.5rem;
+      opacity: 0.6;
+   }
+   .subHeadingActive {
+      background: var(--Gradient, linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%));
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+   }
+   .subContent {
+      font-size: text(lg);
+      font-weight: 400;
+      line-height: 1.875rem;
+      opacity: 0.6;
+   }
+   .subTitle {
+      font-size: text(xl);
+      font-weight: 500;
+      line-height: 2rem;
+      margin-bottom: 1.5rem;
+   }
+
+   .frontend {
+      margin-bottom: 3.75rem;
+   }
+
+   .platformsBtns {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+      .platformsBtn {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         border-radius: 12px;
+         background-color: color(bg-soft);
+         padding: 1.25rem;
+         width: 100%;
+         height: auto;
+         .reactPlatform {
+            padding-right: 0.75rem;
+            border-right: 1px solid rgba(17, 17, 17, 0.2);
+         }
+         p {
+            padding-left: 0.75rem;
+            margin: 0;
+            font-size: text(lg);
+            font-weight: 400;
+            line-height: 1.875rem;
+         }
       }
    }
 }

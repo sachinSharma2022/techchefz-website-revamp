@@ -1,0 +1,29 @@
+@import "~/styles/partials/config";
+
+.streamline {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background-color: color(bg-soft);
+   width: 100%;
+   height: 100vh;
+   text-align: center;
+
+   .streamlineTitle {
+      font-size: text(xxxl);
+      font-weight: 500;
+      max-width: 30%;
+      line-height: 2.5rem;
+
+      span {
+         font-size: text(xxxl);
+         color: color(heading-liner);
+      }
+   }
+
+   .streamlineContent {
+      font-size: text(normal);
+      max-width: 33%;
+   }
+}
