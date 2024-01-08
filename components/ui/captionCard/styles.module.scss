@@ -6,28 +6,39 @@
     border: 0.125rem solid rgba(17, 17, 17, 0.12);
     background: color(bg-soft);
     margin-right: 2.5rem;
+    width: 100%;
 
     @include mobile{
       margin-right: 0;
     }
-    .cardImg {
+    
+    .cardImg div {
+      height: 240px;
+      width: 100%;
+      position: relative;
+      border-radius: text(lg);
+      margin-bottom: text(lg);
+      overflow: hidden;
+      
       img {
-        border-radius: text(lg);
-        margin-bottom: text(lg);
         object-fit: cover;
         width: 100%;
-        height: auto;
+        height: 100%;
       }
     }
+
     .cardBody {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 5px;
+
       .cardText {
         font-size: text(xl);
         font-weight: 500;
         margin-bottom: 0;
       }
+
       svg {
         cursor: pointer;
       }

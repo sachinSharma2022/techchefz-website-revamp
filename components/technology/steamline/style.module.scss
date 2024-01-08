@@ -1,14 +1,18 @@
 @import "~/styles/partials/config";
 
-.streamline {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   background-color: color(bg-soft);
-   width: 100%;
-   height: 100vh;
+.streamlineWrapper {
    text-align: center;
+
+   .streamlineSection {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
+      background: color(bg-soft) url('../../../public/images/pattern.png') no-repeat;
+      background-size: cover;
+   }
 
    .streamlineTitle {
       font-size: text(xxxl);
@@ -23,7 +27,7 @@
    }
 
    .streamlineContent {
-      font-size: text(normal);
-      max-width: 33%;
+      font-size: text(lg);
+      max-width: 38%;
    }
 }
