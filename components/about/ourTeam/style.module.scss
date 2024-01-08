@@ -1,187 +1,206 @@
 @import "~/styles/partials/config";
 
 .ourTeam {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   padding: spacing(section-primary-padding);
-   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: spacing(section-primary-padding);
+  position: relative;
 
-   .ourTeamHead {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+  &.ourTeamDark {
+    background-color: color(input-bg);
+    color: color(primary-white);
 
-      .ourTeamTitle {
-         font-size: text(normal);
-         opacity: 0.8;
-         letter-spacing: 0.2rem;
-         text-transform: uppercase;
-         font-family: font(secondary);
-         font-weight: 700;
-         line-height: 1.5rem;
+    .ourTeamHead {
+      .tabWrapper {
+        background-color: color(dark-tab);
+        button {
+          color: rgba(color(primary-white), 0.8);
+        }
       }
-      .ourTeamHeading {
-         font-size: text(larger);
-      }
-   }
-   .titleWrapper {
-      width: 40%;
-   }
-   .tabWrapper {
-      border: 2px solid color(heading-liner);
-      padding: 0.5rem;
-      border-radius: 0.5rem;
-      width: fit-content;
-      display: flex;
+    }
+  }
 
-      button {
-         white-space: nowrap;
-         span {
-            padding: 0 2rem;
-            height: 2.375rem;
-            align-items: center;
-            border-radius: 0.5rem;
-            display: inline-flex;
+  .ourTeamHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-            &.btnActive {
-               background-color: color(primary-blue);
-               color: color(primary-white);
-            }
-         }
+    .ourTeamTitle {
+      font-size: text(normal);
+      opacity: 0.8;
+      letter-spacing: 0.2rem;
+      text-transform: uppercase;
+      font-family: font(secondary);
+      font-weight: 700;
+      line-height: 1.5rem;
+    }
+    .ourTeamHeading {
+      font-size: text(larger);
+    }
+  }
+  .titleWrapper {
+    width: 40%;
+  }
+  .tabWrapper {
+    border: 2px solid color(heading-liner);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    width: fit-content;
+    display: flex;
+
+    button {
+      white-space: nowrap;
+      span {
+        padding: 0 2rem;
+        height: 2.375rem;
+        align-items: center;
+        border-radius: 0.5rem;
+        display: inline-flex;
+
+        &.btnActive {
+          background-color: color(primary-blue);
+          color: color(primary-white);
+        }
       }
-   }
-   .contentWrapper {
+    }
+  }
+  .contentWrapper {
+    position: relative;
+  }
+  .teamCards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-top: 3rem;
+
+    .teamCardBg {
+      border: 1px solid color(border-light-blue);
+      background: linear-gradient(
+        328deg,
+        color(border-light-blue) 20.24%,
+        color(medium-blue) 49.39%,
+        color(dark-blue) 102.1%
+      );
+      background-blend-mode: soft-light, normal;
+      height: 32.5rem;
+      width: 100%;
+      border-radius: 0.7rem;
+      overflow: hidden;
+      color: color(primary-white);
       position: relative;
-   }
-   .teamCards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2.5rem;
-      margin-top: 3rem;
 
-      .teamCardBg {
-         border: 1px solid color(border-light-blue);
-         background: linear-gradient(328deg, color(border-light-blue) 20.24%, color(medium-blue) 49.39%, color(dark-blue) 102.1%);
-         background-blend-mode: soft-light, normal;
-         height: 32.5rem;
-         width: 100%;
-         border-radius: 0.7rem;
-         overflow: hidden;
-         color: color(primary-white);
-         position: relative;
-
-         .teamImg {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-         }
-
-         .cardHead {
-            display: flex;
-            justify-content: space-between;
-            padding: 1.25rem;
-
-            h6 {
-               font-size: text(xl);
-               font-style: normal;
-               font-weight: 500;
-            }
-            p {
-               font-size: text(lg);
-               font-weight: 400;
-               opacity: 0.6;
-            }
-         }
-         .linkdinIcon {
-            position: absolute;
-            bottom: 1rem;
-            left: 1rem;
-         }
+      .teamImg {
+        position: absolute;
+        bottom: 0;
+        right: 0;
       }
-   }
+
+      .cardHead {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.25rem;
+
+        h6 {
+          font-size: text(xl);
+          font-style: normal;
+          font-weight: 500;
+        }
+        p {
+          font-size: text(lg);
+          font-weight: 400;
+          opacity: 0.6;
+        }
+      }
+      .linkdinIcon {
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+      }
+    }
+  }
 }
 
 .teamModal {
-   background-color: color(dark-gray);
-   color: color(primary-white);
-   width: 400px;
-   height: auto;
-   border: 1px solid black;
-   display: none;
+  background-color: color(dark-gray);
+  color: color(primary-white);
+  width: 400px;
+  height: auto;
+  border: 1px solid black;
+  display: none;
 
-   .modalTop {
-      background-color: color(primary-white);
-      color: color(text-primary);
-      padding: 1.5rem;
+  .modalTop {
+    background-color: color(primary-white);
+    color: color(text-primary);
+    padding: 1.5rem;
 
-      .modalTitle {
-         display: flex;
-         justify-content: space-between;
-         margin-bottom: 1.5rem;
+    .modalTitle {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
 
-         .title {
-            font-size: text(xl);
-            font-weight: 500;
-            line-height: 2rem;
-         }
-
-         svg {
-            cursor: pointer;
-         }
+      .title {
+        font-size: text(xl);
+        font-weight: 500;
+        line-height: 2rem;
       }
 
-      .modalImg {
-         margin-bottom: 2rem;
-         img {
-            border-radius: 1rem;
-         }
+      svg {
+        cursor: pointer;
       }
-      .teamName {
-         font-size: text(xl);
-         font-weight: 500;
-         line-height: 2rem;
-      }
-      .teamRole {
-         font-size: text(normal);
-         font-weight: 400;
-         line-height: 1.5rem;
-         opacity: 0.6;
-      }
-   }
-   .modalBottom {
-      padding: 1.5rem;
+    }
 
-      .madalContent {
-         font-size: text(lg);
-         font-weight: 400;
-         line-height: 1.875rem;
-         opacity: 0.6;
+    .modalImg {
+      margin-bottom: 2rem;
+      img {
+        border-radius: 1rem;
       }
-      .teamMail {
-         color: color(primary-white);
-         font-weight: 400;
-         line-height: 1.875rem;
-         font-size: text(lg);
-         margin-bottom: 2.5rem;
-      }
+    }
+    .teamName {
+      font-size: text(xl);
+      font-weight: 500;
+      line-height: 2rem;
+    }
+    .teamRole {
+      font-size: text(normal);
+      font-weight: 400;
+      line-height: 1.5rem;
+      opacity: 0.6;
+    }
+  }
+  .modalBottom {
+    padding: 1.5rem;
 
-      h6 {
-        font-size: text(lg);
-         font-weight: 500;
-         line-height: 1.75rem;
-         margin-bottom: 1.5rem;
-      }
+    .madalContent {
+      font-size: text(lg);
+      font-weight: 400;
+      line-height: 1.875rem;
+      opacity: 0.6;
+    }
+    .teamMail {
+      color: color(primary-white);
+      font-weight: 400;
+      line-height: 1.875rem;
+      font-size: text(lg);
+      margin-bottom: 2.5rem;
+    }
 
-      .modalIcons {
-         .linkdinIcon {
-            margin-right: 1.25rem;
-         }
-         .twitter {
-            background-color: color(primary-black);
-            padding: 0.5rem;
-            border-radius: 0.2rem;
-         }
+    h6 {
+      font-size: text(lg);
+      font-weight: 500;
+      line-height: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .modalIcons {
+      .linkdinIcon {
+        margin-right: 1.25rem;
       }
-   }
+      .twitter {
+        background-color: color(primary-black);
+        padding: 0.5rem;
+        border-radius: 0.2rem;
+      }
+    }
+  }
 }

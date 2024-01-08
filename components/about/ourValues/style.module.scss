@@ -1,63 +1,82 @@
 @import "~/styles/partials/config";
 
 .ourValues {
-   padding: spacing(section-primary-padding);
-   background-color: color(bg-soft);
+  padding: spacing(section-primary-padding);
+  background-color: color(bg-soft);
 
-   .ourValuesHead {
-      margin-bottom: 5rem;
+  &.ourValuesDark {
+    background-color: color(dark-bg);
+    color: color(primary-white);
+
+    .ourValuesHead {
       .ourValuesTitle {
-         color: color(text-primary);
-         text-transform: uppercase;
-         opacity: 0.8;
-         font-size: text(normal);
-         font-weight: 700;
-         line-height: 1.5rem;
-         letter-spacing: 0.2rem;
-         font-family: font(secondary);
+        color: color(primary-white);
       }
-      .ourValuesHeading {
-         font-size: text(larger);
-         margin-bottom: 2.75rem;
-      }
-   }
-
-   .ourValuesContent {
-      .ourValueImg{
-         img{
-            width: 100%;
-            height: auto;
-         }
-      }
-      .ourValuesText {
-         font-size: text(lg);
-         opacity: 0.6;
-      }
-
-      .ourValuesAccordion {
-         .accordionHead {
-            width: 100%;
-            text-align: left;
-            font-size: text(xl);
-            font-weight: 500;
-            padding: 1.25rem 0;
-            border-bottom: 1px solid rgba(17, 17, 17, 0.12);
-            display: flex;
-            justify-content: space-between;
-         }
-         .accordionBody {
-            padding: 1.25rem 0;
-         }
-      }
-   }
-
-   .iconBox {
-      width: 36px;
-      height: 36px;
-      background: color(primary-white);
-      border-radius: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
+    .ourValuesContent {
+      .ourValuesAccordion {
+        .accordionHead {
+          color: color(primary-white);
+          border-bottom: 1px solid rgba(color(primary-white), 0.12);
+        }
+      }
+    }
+  }
+
+  .ourValuesHead {
+    margin-bottom: 5rem;
+    .ourValuesTitle {
+      color: color(text-primary);
+      text-transform: uppercase;
+      opacity: 0.8;
+      font-size: text(normal);
+      font-weight: 700;
+      line-height: 1.5rem;
+      letter-spacing: 0.2rem;
+      font-family: font(secondary);
+    }
+    .ourValuesHeading {
+      font-size: text(larger);
+      margin-bottom: 2.75rem;
+    }
+  }
+
+  .ourValuesContent {
+    .ourValueImg {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .ourValuesText {
+      font-size: text(lg);
+      opacity: 0.6;
+    }
+
+    .ourValuesAccordion {
+      .accordionHead {
+        width: 100%;
+        text-align: left;
+        font-size: text(xl);
+        font-weight: 500;
+        padding: 1.25rem 0;
+        border-bottom: 1px solid rgba(17, 17, 17, 0.12);
+        display: flex;
+        justify-content: space-between;
+      }
+      .accordionBody {
+        padding: 1.25rem 0;
+      }
+    }
+  }
+
+  .iconBox {
+    width: 36px;
+    height: 36px;
+    background: color(primary-white);
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

@@ -1,12 +1,16 @@
 "use client";
-import { Disclosure } from "@headlessui/react";
-import { useState } from "react";
 
+import { useState } from "react";
+import { MyContext } from "@/app/context/theme";
+import { useContext } from "react";
+import { Disclosure } from "@headlessui/react";
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
+
 import styles from "./style.module.scss";
 
 const OurValues = () => {
+  const { theme, setTheme } = useContext(MyContext);
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
 
   function togglePanels(newPanel) {
@@ -48,7 +52,9 @@ const OurValues = () => {
     },
   ];
   return (
-    <section className={styles.ourValues}>
+    <section
+      className={`${styles.ourValues} ${theme ? styles.ourValuesDark : ""}`}
+    >
       <div className="row">
         <div className="col-md-7 col-lg-8">
           <div className={styles.ourValuesHead}>

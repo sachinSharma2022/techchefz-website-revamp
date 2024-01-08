@@ -1,11 +1,17 @@
-import React from "react";
+"use client";
 
+import React from "react";
+import { MyContext } from "@/app/context/theme";
+import { useContext } from "react";
 import styles from "./style.module.scss";
 import VideoCustom from "@/components/ui/videoCustom";
 
 const OurVision = () => {
+  const { theme, setTheme } = useContext(MyContext);
   return (
-    <section className={styles.ourVision}>
+    <section
+      className={`${styles.ourVision} ${theme ? styles.ourVisionDark : ""}`}
+    >
       <div className="container">
         <div className="row justify-content-between">
           <div className="col-md-3 col-lg-6 col-5 ">

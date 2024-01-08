@@ -1,25 +1,37 @@
 @import "~/styles/partials/config";
 
 .aboutBanner {
-   .bannerTitle {
-      width: 100%;
-      padding: spacing(section-primary-padding);
-      padding-top: 6.25rem;
-      padding-bottom: 5rem;
-      margin-bottom: 0;
-      max-width: 80%;
-      font-weight: 500;
-      font-size: text(xl-larger);
-      span {
-         color: color(heading-liner);
-         font-size: text(xl-larger);
-      }
-   }
+  &.aboutBannerDark {
+   background-color: color(input-bg);
 
-   .bannerImg {
-      img {
-         width: 100%;
-         height: auto;
+   .bannerTitle{
+      color: color(primary-white);
+
+      .bannerImg {
+         background-color: color(input-bg);
       }
    }
+  }
+
+  .bannerTitle {
+    width: 100%;
+    padding: spacing(section-primary-padding);
+    padding-top: 6.25rem;
+    padding-bottom: 5rem;
+    margin-bottom: 0;
+    max-width: 80%;
+    font-weight: 500;
+    font-size: text(xl-larger);
+    span {
+      color: color(heading-liner);
+      font-size: text(xl-larger);
+    }
+  }
+
+  .bannerImg {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 }

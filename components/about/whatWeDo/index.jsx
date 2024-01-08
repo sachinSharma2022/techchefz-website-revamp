@@ -1,9 +1,14 @@
-import React from "react";
+"use client";
 
+import React from "react";
+import { MyContext } from "@/app/context/theme";
+import { useContext } from "react";
 import styles from "./style.module.scss";
 import { Icons } from "@/components/icons";
 
 const WhatWeDo = () => {
+  const { theme, setTheme } = useContext(MyContext);
+
   const cardData = [
     {
       icon: (
@@ -91,7 +96,9 @@ const WhatWeDo = () => {
     },
   ];
   return (
-    <section className={styles.whatWeDo}>
+    <section
+      className={`${styles.whatWeDo} ${theme ? styles.whatWeDoDark : ""}`}
+    >
       <div className="container">
         <div className="row">
           <div className="col-md-6 col-lg-7 mb-4">
