@@ -35,12 +35,26 @@
     opacity: 0.3;
   }
 
+  &.landingBannerDark {
+    background-color: color(input-bg);
+
+    &:after,
+    &::before {
+      z-index: 9;
+      opacity: 0.18;
+    }
+
+    .title {
+      color: color(primary-white);
+    }
+  }
+
   @include mobile {
     padding: spacing(section-mob-padding);
-    &::before{
+    &::before {
       display: none;
     }
-    &::after{
+    &::after {
       display: none;
     }
   }
