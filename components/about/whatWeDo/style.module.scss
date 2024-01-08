@@ -2,6 +2,17 @@
 
 .whatWeDo {
   padding: spacing(section-primary-padding);
+
+  &.whatWeDoDark{
+    background-color: color(input-bg);
+    color: color(primary-white);
+
+    .weDoTitle{
+      color: color(primary-white);
+    }
+  }
+
+  
   .weDoTitle {
     color: color(text-primary);
     text-transform: uppercase;
