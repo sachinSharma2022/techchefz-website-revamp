@@ -11,11 +11,11 @@ import { Icons } from "@/components/icons";
 
 import styles from "./style.module.scss";
 
-const HeaderMain = () => {
+const Header = () => {
   const { theme, setTheme } = useContext(MyContext);
 
   const pathname = usePathname();
-  
+
   const [isActive, setActive] = useState(false);
   const toggleClass = () => {
     setActive(!isActive);
@@ -24,7 +24,7 @@ const HeaderMain = () => {
   return (
     <header
       className={`${styles.headerMain} ${
-        theme === "dark" ? styles.headerDarkStyle : ""
+        theme ? styles.headerDarkStyle : ''
       }`}
     >
       <div className={styles.logo}>
@@ -111,14 +111,8 @@ const HeaderMain = () => {
       </nav>
       <div className={styles.headerRight}>
         <div className={styles.modeBtn}>
-          <Button
-            variant="default"
-            onClick={() => {
-              if (theme === "light") setTheme("dark");
-              else setTheme("light");
-            }}
-          >
-            {theme === "light" ? (
+          <Button variant="default" onClick={() => setTheme(!theme)}>
+            {theme ? (
               <Icons.moon size={15} />
             ) : (
               <Icons.darkmode size={30} />
@@ -143,4 +137,4 @@ const HeaderMain = () => {
   );
 };
 
-export default HeaderMain;
+export default Header;
