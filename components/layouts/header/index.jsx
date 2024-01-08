@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { MyContext } from "@/app/Context/Theme";
 import { useContext } from "react";
-
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { Icons } from "@/components/icons";
@@ -16,6 +15,7 @@ const Header = () => {
   const { theme, setTheme } = useContext(MyContext);
 
   const pathname = usePathname();
+  
   const [isActive, setActive] = useState(false);
   const toggleClass = () => {
     setActive(!isActive);
