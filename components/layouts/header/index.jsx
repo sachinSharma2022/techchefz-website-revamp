@@ -3,24 +3,41 @@
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { MyContext } from "@/app/context/theme";
+import { useContext } from "react";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { Icons } from "@/components/icons";
 
 import styles from "./style.module.scss";
 
-const Header = () => {
+const HeaderMain = () => {
+  const { theme, setTheme } = useContext(MyContext);
+
   const pathname = usePathname();
+  
   const [isActive, setActive] = useState(false);
   const toggleClass = () => {
     setActive(!isActive);
   };
 
   return (
-    <header className={styles.headerMain}>
+    <header
+      className={`${styles.headerMain} ${
+        theme === "dark" ? styles.headerDarkStyle : ""
+      }`}
+    >
       <div className={styles.logo}>
-        <Link href="/">
+        <Link href="/" className={styles.lightlogo}>
           <ImageCustom src="/images/logo.svg" width={153} height={40} alt="" />
+        </Link>
+        <Link href="/" className={styles.darklogo}>
+          <ImageCustom
+            src="/images/white-logo.svg"
+            width={153}
+            height={40}
+            alt=""
+          />
         </Link>
       </div>
       <nav className={isActive ? styles.showNav : null}>
@@ -93,9 +110,19 @@ const Header = () => {
         </ul>
       </nav>
       <div className={styles.headerRight}>
-        <div className={`${styles.modeBtn} modeBtn`}>
-          <Button variant="default">
-            <Icons.moon size={15} />
+        <div className={styles.modeBtn}>
+          <Button
+            variant="default"
+            onClick={() => {
+              if (theme === "light") setTheme("dark");
+              else setTheme("light");
+            }}
+          >
+            {theme === "light" ? (
+              <Icons.moon size={15} />
+            ) : (
+              <Icons.darkmode size={30} />
+            )}
           </Button>
         </div>
         <Button variant="blueBtn" className={styles.headerBtn} size="sm">
@@ -116,4 +143,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderMain;
