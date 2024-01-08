@@ -79,25 +79,21 @@ const RelatedCase = () => {
   ];
   return (
     <section className={styles.relatedCase}>
-      <div className="row">
-        <div className="col-md-7 col-lg-8">
-          <h6 className={styles.relatedCaseTitle}>Related Case Study</h6>
-          <h3 className={styles.relatedCaseHeading}>
-            Unravel More of Our Success Stories
-          </h3>
-        </div>
+      <div className={styles.headSection}>
+        <h6 className={styles.relatedCaseTitle}>Related Case Study</h6>
+        <h3 className={styles.relatedCaseHeading}>
+          Unravel More of Our Success Stories
+        </h3>
       </div>
 
-      <div className="relatedCaseSlider">
-        <div className={styles.RelatedCaseSlider}>
-          <Slider {...settings}>
-            {captionCard.map((data, index) => (
-              <div key={index}>
-                <CaptionCard imgSrc={data.imgSrc} title={data.title} />
-              </div>
-            ))}
-          </Slider>
-        </div>
+      <div className={`${styles.relatedCaseSlider} relatedCaseSlider`}>
+        <Slider {...settings}>
+          {captionCard.map((data, index) => (
+            <div key={index}>
+              <CaptionCard imgSrc={data.imgSrc} title={data.title} />
+            </div>
+          ))}
+        </Slider>
       </div>
     </section>
   );

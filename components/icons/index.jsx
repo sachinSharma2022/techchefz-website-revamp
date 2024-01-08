@@ -2104,7 +2104,7 @@ export const Icons = {
       <rect x="0.0219727" y="11" width="3" height="3" rx="1.5" fill="#111111" />
     </svg>
   ),
-  darkmode: ({ size, ...props }) => (
+  Darkmode: ({ size, ...props }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={size}

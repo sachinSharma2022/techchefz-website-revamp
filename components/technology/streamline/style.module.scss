@@ -1,27 +1,37 @@
 @import "~/styles/partials/config";
 
-.streamline{
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
-     background-color: color(bg-soft);
-     width: 100%;
-     height: 100vh;
-     text-align: center;
+.streamlineWrapper {
+  background-color: color(bg-soft);
+  text-align: center;
 
-     .streamlineTitle{
-        font-size: 3rem;
-        max-width: 45%;
+  section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-        span{
-            font-size: 3rem;
-            color: color(heading-liner);
-        }
-     }
+  .streamlineSection {
+    background: url("../../../public/images/pattern.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
 
-     .streamlineContent{
-        font-size: text(normal);
-        max-width: 33%;
-     }
+  .streamlineTitle {
+    font-size: 3rem;
+    max-width: 45%;
+
+    span {
+      font-size: 3rem;
+      color: color(heading-liner);
+    }
+  }
+
+  .streamlineContent {
+    font-size: text(lg);
+    max-width: 38%;
+    color: rgba(color(text-primary), 0.8);
+  }
 }

@@ -2,15 +2,11 @@
 
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
-import { useContext } from "react";
-import { MyContext } from "@/app/context/theme";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import Slider from "react-slick";
 import styles from "./style.module.scss";
 
-const OurNumbers = () => {
-  const { theme, setTheme } = useContext(MyContext);
-
+const SolutionTechnologies = () => {
   const serviceCard = [
     {
       icon: <Icons.Market width={56} height={56} />,
@@ -73,21 +69,21 @@ const OurNumbers = () => {
     ],
   };
   return (
-    <section
-      className={`${styles.numberStyle} ${theme ? styles.numberStyleDark : ""}`}
-    >
+    <section className={`${styles.solutionTechnologiesStyle}`}>
       <div className={styles.careerRow}>
-        <div className="row justify-content-between align-items-end">
-          <div className="col-md-8 col-lg-8 col-12">
-            <p className={styles.ProjectHighlight}>our numbers</p>
+        <div className="row">
+          <div className="col-md-12 col-12">
+            <p className={styles.ProjectHighlight}>Technologies</p>
+          </div>
+
+          <div className="col-md-8 col-12">
             <h2 className={styles.datingText}>
-              Let the Numbers Tell the Success Story.
+              Driving Technological Advancements for the Future
             </h2>
-          </div>      
-           
-          <div className="col-md-4 col-lg-4 col-12 text-end" >
+          </div>
+          <div className={`${styles.careerBtn} col-md-4 col-12`}>
             <Button variant="outline" size="md">
-              Career Opportunities <Icons.ArrowRight size={18} />
+              Explore Technology <Icons.ArrowRight size={18} />
             </Button>
           </div>
         </div>
@@ -95,20 +91,11 @@ const OurNumbers = () => {
 
       <div className={styles.ourNumberMain}>
         <div className={styles.ourNumberGrid}>
-          <div className={styles.ourNumbersImg}>
-            <ImageCustom
-              src="/images/our-number.jpg"
-              width={1000}
-              height={100}
-              alt="bannerImg"
-            />
-          </div>
           <div>
             <p className={styles.ourNumbersText}>
-              Empowering over 100 startups in the last four years, our
-              results-driven approach has fueled their growth journeys. Our
-              commitment to success extends beyond services; it&apos;s a
-              partnership driving innovation and prosperity.
+              In a world where technology evolves at the blink of an eye,
+              Techchefz stands at the helm, steering the course towards a
+              brighter, more connected future.
             </p>
             <div
               className={`${styles.desktopCards} ${styles.ourNumberOption} `}
@@ -124,6 +111,14 @@ const OurNumbers = () => {
                 </div>
               ))}
             </div>
+          </div>
+          <div className={styles.ourNumbersImg}>
+            <ImageCustom
+              src="/images/our-number.jpg"
+              width={1000}
+              height={100}
+              alt="bannerImg"
+            />
           </div>
         </div>
 
@@ -146,4 +141,4 @@ const OurNumbers = () => {
   );
 };
 
-export default OurNumbers;
+export default SolutionTechnologies;
