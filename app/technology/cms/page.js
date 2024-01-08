@@ -1,4 +1,3 @@
-import OurValues from "@/components/about/ourValues";
 import RelatedCase from "@/components/caseStudy/relatedCase";
 import LetsWork from "@/components/home/letsWork";
 import CmsBanner from "@/components/technology/cms/cmsBanner";
@@ -7,13 +6,14 @@ import CmsOurValue from "@/components/technology/cms/cmsOurValue";
 import CmsPlayer from "@/components/technology/cms/cmsPlayer";
 import CmsType from "@/components/technology/cms/cmsType";
 import Faq from "@/components/technology/cms/faq";
+import WhyCms from "@/components/technology/cms/whyCms";
 
 const Cms = () => {
   return (
     <div>
       <CmsBanner />
       <CmsPlayer />
-      <OurValues />
+      <WhyCms />
       <CmsType />
       <CmsDifference />
       <CmsOurValue />

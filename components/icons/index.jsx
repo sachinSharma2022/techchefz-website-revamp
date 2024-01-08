@@ -1235,80 +1235,73 @@ export const Icons = {
 
   ArrowDown: ({ size, ...props }) => (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="36"
-      height="36"
-      viewBox="0 0 36 36"
+      width="14"
+      height="16"
+      viewBox="0 0 14 16"
       fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <circle
-        cx="18"
-        cy="18"
-        r="18"
-        transform="matrix(1 0 0 -1 0 36)"
-        fill="white"
-      />
-      <path d="M23.6 18.4668L18 24.0668L23.6 18.4668Z" fill="white" />
+      <path d="M12.6 8.4668L7 14.0668L12.6 8.4668Z" fill="#F1F1F1" />
       <path
-        d="M23.6 18.4668L18 24.0668"
-        stroke="url(#paint0_linear_146_690)"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        d="M12.6 8.4668L7 14.0668"
+        stroke="url(#paint0_linear_924_45579)"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
       />
       <path
-        d="M12.4004 18.4668L18.0004 24.0668L12.4004 18.4668Z"
-        fill="white"
+        d="M1.40039 8.4668L7.00039 14.0668L1.40039 8.4668Z"
+        fill="#F1F1F1"
       />
       <path
-        d="M12.4004 18.4668L18.0004 24.0668"
-        stroke="url(#paint1_linear_146_690)"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        d="M1.40039 8.4668L7.00039 14.0668"
+        stroke="url(#paint1_linear_924_45579)"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
       />
-      <path d="M18 11V24.0667V11Z" fill="white" />
+      <path d="M7 1V14.0667V1Z" fill="#F1F1F1" />
       <path
-        d="M18 11V24.0667"
-        stroke="url(#paint2_linear_146_690)"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        d="M7 1V14.0667"
+        stroke="url(#paint2_linear_924_45579)"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
       />
       <defs>
         <linearGradient
-          id="paint0_linear_146_690"
-          x1="18.0653"
-          y1="20.2028"
-          x2="21.0034"
-          y2="21.7594"
+          id="paint0_linear_924_45579"
+          x1="7.06533"
+          y1="10.2028"
+          x2="10.0034"
+          y2="11.7594"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#1E8AF2" />
-          <stop offset="1" stopColor="#05BED7" />
+          <stop stop-color="#1E8AF2" />
+          <stop offset="1" stop-color="#05BED7" />
         </linearGradient>
         <linearGradient
-          id="paint1_linear_146_690"
-          x1="12.4657"
-          y1="20.2028"
-          x2="15.4037"
-          y2="21.7594"
+          id="paint1_linear_924_45579"
+          x1="1.46572"
+          y1="10.2028"
+          x2="4.40375"
+          y2="11.7594"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#1E8AF2" />
-          <stop offset="1" stopColor="#05BED7" />
+          <stop stop-color="#1E8AF2" />
+          <stop offset="1" stop-color="#05BED7" />
         </linearGradient>
         <linearGradient
-          id="paint2_linear_146_690"
-          x1="18.0117"
-          y1="15.0507"
-          x2="18.6825"
-          y2="15.0779"
+          id="paint2_linear_924_45579"
+          x1="7.01167"
+          y1="5.05067"
+          x2="7.68248"
+          y2="5.07787"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#1E8AF2" />
-          <stop offset="1" stopColor="#05BED7" />
+          <stop stop-color="#1E8AF2" />
+          <stop offset="1" stop-color="#05BED7" />
         </linearGradient>
       </defs>
     </svg>
@@ -1316,76 +1309,66 @@ export const Icons = {
 
   ArrowUp: ({ size, ...props }) => (
     <svg
-      width="36"
-      height="36"
-      viewBox="0 0 36 36"
+      width="14"
+      height="16"
+      viewBox="0 0 14 16"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <circle
-        cx="18"
-        cy="18"
-        r="18"
-        transform="matrix(-1 -8.74228e-08 -8.74228e-08 1 36 3.8147e-06)"
-        fill="white"
-      />
-      <path d="M12.4 17.5332L18 11.9332L12.4 17.5332Z" fill="white" />
+      <path d="M12.6 7.5332L7 1.9332L12.6 7.5332Z" fill="white" />
       <path
-        d="M12.4 17.5332L18 11.9332"
-        stroke="url(#paint0_linear_146_706)"
+        d="M12.6 7.5332L7 1.9332"
+        stroke="url(#paint0_linear_1035_26163)"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
+      <path d="M1.40039 7.5332L7.00039 1.9332L1.40039 7.5332Z" fill="white" />
       <path
-        d="M23.5996 17.5332L17.9996 11.9332L23.5996 17.5332Z"
-        fill="white"
-      />
-      <path
-        d="M23.5996 17.5332L17.9996 11.9332"
-        stroke="url(#paint1_linear_146_706)"
+        d="M1.40039 7.5332L7.00039 1.9332"
+        stroke="url(#paint1_linear_1035_26163)"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
-      <path d="M18 25L18 11.9333L18 25Z" fill="white" />
+      <path d="M7 15V1.93333V15Z" fill="white" />
       <path
-        d="M18 25L18 11.9333"
-        stroke="url(#paint2_linear_146_706)"
+        d="M7 15V1.93333"
+        stroke="url(#paint2_linear_1035_26163)"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <defs>
         <linearGradient
-          id="paint0_linear_146_706"
-          x1="17.9347"
-          y1="15.7972"
-          x2="14.9966"
-          y2="14.2406"
+          id="paint0_linear_1035_26163"
+          x1="7.06533"
+          y1="5.7972"
+          x2="10.0034"
+          y2="4.24062"
           gradientUnits="userSpaceOnUse"
         >
           <stop stop-color="#1E8AF2" />
           <stop offset="1" stop-color="#05BED7" />
         </linearGradient>
         <linearGradient
-          id="paint1_linear_146_706"
-          x1="23.5343"
-          y1="15.7972"
-          x2="20.5963"
-          y2="14.2406"
+          id="paint1_linear_1035_26163"
+          x1="1.46572"
+          y1="5.7972"
+          x2="4.40375"
+          y2="4.24062"
           gradientUnits="userSpaceOnUse"
         >
           <stop stop-color="#1E8AF2" />
           <stop offset="1" stop-color="#05BED7" />
         </linearGradient>
         <linearGradient
-          id="paint2_linear_146_706"
-          x1="17.9883"
-          y1="20.9493"
-          x2="17.3175"
-          y2="20.9221"
+          id="paint2_linear_1035_26163"
+          x1="7.01167"
+          y1="10.9493"
+          x2="7.68248"
+          y2="10.9221"
           gradientUnits="userSpaceOnUse"
         >
           <stop stop-color="#1E8AF2" />

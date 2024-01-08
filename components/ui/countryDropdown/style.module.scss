@@ -19,12 +19,15 @@
         align-items: center;
         font-size: text(normal);
         font-weight: 500;
+        font-family: font(primary);
+        color: rgba(color(text-primary), 0.9)
       }
 
       .countryValue {
-        margin-right: 2rem;
+        margin-right: 1.8rem;
         display: flex;
         align-items: center;
+        position: relative;
       }
 
       .arrow {
@@ -38,7 +41,7 @@
         transition: border-width 150ms ease-in-out;
         transition: all 0.5s;
         position: absolute;
-        right: 2.5rem;
+        right: -15px;
       }
     }
 
@@ -53,7 +56,6 @@
         padding-left: 7rem;
       }
     }
-
     .countryList {
       background-color: color(primary-white);
       padding: 0;

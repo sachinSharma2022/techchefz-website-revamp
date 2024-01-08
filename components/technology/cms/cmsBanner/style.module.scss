@@ -17,7 +17,6 @@
     font-size: 4rem;
     font-weight: 500;
     line-height: 5rem;
-    max-width: 42%;
 
     @include mobile {
       font-size: 2.75rem;
@@ -47,8 +46,9 @@
   .leadText {
     font-size: text(lg);
     font-weight: 400;
-    max-width: 25%;
+    max-width: 23.375rem;
     color: rgba(color(text-primary), 0.8);
+    
     @include mobile {
       max-width: 100%;
     }
