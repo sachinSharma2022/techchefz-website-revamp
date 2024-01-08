@@ -3,7 +3,7 @@
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { useContext } from "react";
-import { MyContext } from "@/app/context/theme";
+import { MyContext } from "@/context/theme";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import Slider from "react-slick";
 import styles from "./style.module.scss";
@@ -83,9 +83,9 @@ const OurNumbers = () => {
             <h2 className={styles.datingText}>
               Let the Numbers Tell the Success Story.
             </h2>
-          </div>      
-           
-          <div className="col-md-4 col-lg-4 col-12 text-end" >
+          </div>
+
+          <div className="col-md-4 col-lg-4 col-12 text-end">
             <Button variant="outline" size="md">
               Career Opportunities <Icons.ArrowRight size={18} />
             </Button>

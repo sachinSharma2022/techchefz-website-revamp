@@ -2,7 +2,7 @@
 
 import Slider from "react-slick";
 import { useContext } from "react";
-import { MyContext } from "@/app/context/theme";
+import { MyContext } from "@/context/theme";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import styles from "./style.module.scss";

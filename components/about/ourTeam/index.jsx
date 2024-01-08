@@ -2,7 +2,7 @@
 
 import React, { Fragment, useState, useEffect } from "react";
 import { Dialog, Tab, Transition } from "@headlessui/react";
-import { MyContext } from "@/app/context/theme";
+import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { Icons } from "@/components/icons";
@@ -67,9 +67,7 @@ const OurTeam = () => {
     },
   ];
   return (
-    <section
-      className={`${styles.ourTeam} ${theme ? styles.ourTeamDark : ""}`}
-    >
+    <section className={`${styles.ourTeam} ${theme ? styles.ourTeamDark : ""}`}>
       <div className="container">
         <div className="row justify-content-between">
           <div className="col-lg-12">

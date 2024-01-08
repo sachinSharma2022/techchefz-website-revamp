@@ -1,10 +1,10 @@
 import Footer from "@/components/layouts/footer";
+import ThemeProvider from "@/context/theme";
 import "bootstrap/dist/css/bootstrap.css";
+import Header from "../components/layouts/header";
 import { aeonik, helvetica } from "../lib/fonts";
 import { cn } from "../lib/utils";
 import "../styles/globals.scss";
-import ThemeProvider from "./context/theme";
-import Header from "../components/layouts/header";
 
 export const metadata = {
   title: "Create Next App",

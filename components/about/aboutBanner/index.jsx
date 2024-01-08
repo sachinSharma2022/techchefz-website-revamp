@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { MyContext } from "@/app/context/theme";
+import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 import { ImageCustom } from "@/components/ui/imageCustom";
 

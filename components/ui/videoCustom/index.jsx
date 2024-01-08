@@ -1,7 +1,7 @@
 "use client";
 
 import { useContext } from "react";
-import { MyContext } from "@/app/context/theme";
+import { MyContext } from "@/context/theme";
 
 import styles from "./style.module.scss";
 

@@ -1,7 +1,7 @@
 "use client";
 import { Icons } from "@/components/icons";
 import { useContext } from "react";
-import { MyContext } from "@/app/context/theme";
+import { MyContext } from "@/context/theme";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import React from "react";
 // import required modules

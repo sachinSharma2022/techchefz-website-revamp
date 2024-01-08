@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useContext } from "react";
-import { MyContext } from "@/app/context/theme";
+import { MyContext } from "@/context/theme";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { Button } from "@/components/ui/button";
 import CustomInput from "@/components/ui/inputCustom";

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MyContext } from "@/app/context/theme";
+import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 import { Disclosure } from "@headlessui/react";
 import { Icons } from "@/components/icons";
