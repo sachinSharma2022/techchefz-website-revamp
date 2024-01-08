@@ -1,6 +1,12 @@
 @import "~/styles/partials/config";
 
 .ourGallery {
+  
+  &.ourGalleryDark {
+    background-color: color(input-bg);
+    color: color(primary-white);
+  }
+
   .ourGalleryTitle {
     font-size: text(normal);
     font-weight: 700;
