@@ -1,7 +1,7 @@
 import ImageCaptionCard from "@/components/portfolio/imageCaptionCard";
 import Innovation from "@/components/portfolio/innovation";
 import LandingBanner from "@/components/portfolio/landingBanner";
-import PrimaryDropdown from "@/components/ui/Primarydropdown";
+import CustomDropdown from "@/components/ui/customDropdown";
 import styles from "./style.module.scss";
 
 const Portfolio = () => {
@@ -12,7 +12,7 @@ const Portfolio = () => {
       {/* Dropdown Section */}
       <section className={`${styles.dropdownStyle}`}>
         <div className={`${styles.inputDropPadding}`}>
-          <PrimaryDropdown
+          <CustomDropdown
             title="Services"
             options={[
               "Data",
@@ -23,13 +23,13 @@ const Portfolio = () => {
           />
         </div>
         <div className={`${styles.inputDropPadding}`}>
-          <PrimaryDropdown
+          <CustomDropdown
             title="Industry"
             options={["Hardware", "Software", "Systems Integrator"]}
           />
         </div>
         <div className={`${styles.inputDropPadding}`}>
-          <PrimaryDropdown
+          <CustomDropdown
             title="Technology"
             options={[
               "Web Content",
