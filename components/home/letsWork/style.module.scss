@@ -3,6 +3,26 @@
 .lestWorkStyle {
   padding: spacing(section-primary-padding);
 
+  &.lestWorkStyleDark {
+    background-color: color(dark-gray);
+
+    .workArea {
+      background-color: color(text-primary);
+      color: color(primary-white);
+      .workGrid {
+        .contactUsForm {
+          .policyArea {
+            .policyText {
+              .policyHighlight {
+                color: color(heading-liner);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   @include mobile {
     padding: spacing(section-mob-padding);
   }
@@ -24,7 +44,6 @@
         gap: 0;
       }
       .contactUsForm {
-
         .formHeading {
           font-size: 2.75rem;
           font-weight: 500;
@@ -65,7 +84,7 @@
             margin-bottom: text(lg);
           }
         }
-        
+
         .formText {
           font-size: text(lg);
           font-weight: 400;

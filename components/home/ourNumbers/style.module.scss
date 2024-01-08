@@ -7,19 +7,33 @@
   @include mobile {
     padding: spacing(section-mob-padding);
   }
-  
+
+  &.numberStyleDark {
+    background-color: color(dark-bg);
+    color: color(primary-white);
+
+    .ourNumberGrid {
+      .desktopCards {
+        .serviceBox {
+          background-color: color(dark-bg);
+          border: 2px solid rgba(color(primary-white), 0.12);
+        }
+      }
+    }
+  }
+
   .careerRow {
     margin-bottom: 5rem;
     @include mobile {
       margin-bottom: 2.5rem;
     }
-    // .careerBtn {
-    //   display: flex;
-    //   justify-content: flex-end;
-    //   @include mobile{
-    //     justify-content: flex-start;
-    //   }
-    // }
+    .careerBtn {
+      display: flex;
+      justify-content: flex-end;
+      @include mobile {
+        justify-content: flex-start;
+      }
+    }
   }
 
   .ProjectHighlight {

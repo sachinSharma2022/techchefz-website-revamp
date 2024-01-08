@@ -5,8 +5,8 @@ import { useState } from "react";
 
 export const MyContext = createContext(null);
 
-export default function ThemeProviderWrapper({ children }) {
-  const [theme, setTheme] = useState("light");
+export default function ThemeProvider({ children }) {
+  const [theme, setTheme] = useState(true);
   return (
     <MyContext.Provider value={{ theme, setTheme }}>
       {children}

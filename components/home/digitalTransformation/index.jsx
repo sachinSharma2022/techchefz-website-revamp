@@ -2,11 +2,15 @@
 
 import React from "react";
 import Slider from "react-slick";
+import { useContext } from "react";
+import { MyContext } from "@/app/context/theme";
 import styles from "./style.module.scss";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { Icons } from "@/components/icons";
+
 const DigitalTransformation = () => {
+  const { theme, setTheme } = useContext(MyContext);
   const serviceCard = [
     {
       img: "/images/digital-trans.png",
@@ -73,7 +77,11 @@ const DigitalTransformation = () => {
     ],
   };
   return (
-    <section className={`${styles.digitalStyle}`}>
+    <section
+      className={`${styles.digitalStyle} ${
+        theme ? styles.digitalStyleDark : ""
+      }`}
+    >
       <div className={styles.serviceRow}>
         <div className="row">
           <div className="col-md-12 col-12">

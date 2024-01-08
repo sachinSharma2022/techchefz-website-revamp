@@ -1,11 +1,15 @@
 "use client";
 
 import Slider from "react-slick";
+import { useContext } from "react";
+import { MyContext } from "@/app/context/theme";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import styles from "./style.module.scss";
 
 const Service = () => {
+  const { theme, setTheme } = useContext(MyContext);
+
   const serviceCard = [
     {
       icon: <Icons.Transform width={64} height={64} />,
@@ -91,7 +95,11 @@ const Service = () => {
   };
 
   return (
-    <section className={styles.serviceDetailsMain}>
+    <section
+      className={`${styles.serviceDetailsMain} ${
+        theme ? styles.serviceDetailsMainDark : ""
+      }`}
+    >
       <div className={styles.serviceGrid}>
         <div className={styles.serviceHeading}>
           <p className={styles.serviceText}>Service</p>

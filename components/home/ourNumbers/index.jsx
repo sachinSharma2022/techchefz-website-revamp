@@ -2,11 +2,15 @@
 
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
+import { useContext } from "react";
+import { MyContext } from "@/app/context/theme";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import Slider from "react-slick";
 import styles from "./style.module.scss";
 
 const OurNumbers = () => {
+  const { theme, setTheme } = useContext(MyContext);
+
   const serviceCard = [
     {
       icon: <Icons.Market width={56} height={56} />,
@@ -69,7 +73,9 @@ const OurNumbers = () => {
     ],
   };
   return (
-    <section className={`${styles.numberStyle}`}>
+    <section
+      className={`${styles.numberStyle} ${theme ? styles.numberStyleDark : ""}`}
+    >
       <div className={styles.careerRow}>
         <div className="row justify-content-between align-items-end">
           <div className="col-md-8 col-lg-8 col-12">

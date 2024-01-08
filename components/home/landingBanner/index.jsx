@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React from "react";
 import { Button } from "../../ui/button";
@@ -9,10 +9,11 @@ import styles from "./style.module.scss";
 
 const LandingBanner = () => {
   const { theme, setTheme } = useContext(MyContext);
+
   return (
     <section
       className={`${styles.landingBannerStyle} ${
-        theme === "dark" ? styles.landingBannerDark : ""
+        theme ? styles.landingBannerDark : ""
       }`}
     >
       <h1 className={styles.title}>
