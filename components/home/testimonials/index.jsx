@@ -1,5 +1,7 @@
 "use client";
 import { Icons } from "@/components/icons";
+import { useContext } from "react";
+import { MyContext } from "@/app/context/theme";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import React from "react";
 // import required modules
@@ -14,6 +16,7 @@ import "swiper/css/navigation";
 import styles from "./style.module.scss";
 
 const Testimonials = () => {
+  const { theme, setTheme } = useContext(MyContext);
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
 
@@ -63,12 +66,16 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className={`${styles.testimonialsStyle} testimonial-style`}>
+    <section
+      className={`${styles.testimonialsStyle} ${
+        theme ? `${styles.testimonialsStyleDark} dark-sliderTestimonial` : ""
+      } testimonial-style`}
+    >
       <div className="row">
         <div className="col-sm-3">
           <div className={styles.infoSection}>
             <div className={styles.testimonialsLeft}>
-              <p className={styles.ProjectHighlight}>Testimonials</p>
+              <p className={styles.projectHighlight}>Testimonials</p>
               <div className={styles.testimonialsHeading}>
                 <h3>Voices of Delightful Experiences.</h3>
               </div>

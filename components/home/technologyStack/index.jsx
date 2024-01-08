@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useContext } from "react";
+import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/app/context/theme";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
@@ -13,152 +14,229 @@ const TechnologyStack = () => {
 
   const serviceCard = [
     {
-      icon: <Icons.React width={72} height={72} />,
+      icon: (
+        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
+      ),
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: (
+        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
+      ),
     },
     {
-      icon: <Icons.Drupal width={120} height={120} />,
-    },
-
-    {
-      icon: <Icons.React width={72} height={72} />,
+      icon: (
+        <ImageCustom src="/images/adobe.png" width={62} height={62} alt="" />
+      ),
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: (
+        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
+      ),
     },
     {
-      icon: <Icons.Drupal width={120} height={120} />,
-    },
-
-    {
-      icon: <Icons.React width={72} height={72} />,
+      icon: (
+        <ImageCustom src="/images/react.png" width={66} height={62} alt="" />
+      ),
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: (
+        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
+      ),
     },
     {
-      icon: <Icons.Drupal width={120} height={120} />,
-    },
-
-    {
-      icon: <Icons.Drupal width={120} height={120} />,
+      icon: (
+        <ImageCustom src="/images/drupal.png" width={97} height={24} alt="" />
+      ),
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: (
+        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
+      ),
     },
     {
-      icon: <Icons.Drupal width={120} height={120} />,
-    },
-
-    {
-      icon: <Icons.React width={72} height={72} />,
+      icon: (
+        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
+      ),
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: (
+        <ImageCustom src="/images/react.png" width={66} height={62} alt="" />
+      ),
     },
     {
-      icon: <Icons.Drupal width={120} height={120} />,
-    },
-
-    {
-      icon: <Icons.React width={72} height={72} />,
+      icon: (
+        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
+      ),
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: (
+        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
+      ),
     },
     {
-      icon: <Icons.Drupal width={120} height={120} />,
-    },
-
-    {
-      icon: <Icons.React width={72} height={72} />,
+      icon: (
+        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
+      ),
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: (
+        <ImageCustom src="/images/adobe.png" width={62} height={62} alt="" />
+      ),
     },
     {
-      icon: <Icons.Drupal width={120} height={120} />,
-    },
-
-    {
-      icon: <Icons.React width={72} height={72} />,
+      icon: (
+        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
+      ),
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: (
+        <ImageCustom src="/images/react.png" width={66} height={62} alt="" />
+      ),
     },
     {
-      icon: <Icons.Drupal width={120} height={120} />,
-    },
-
-    {
-      icon: <Icons.React width={72} height={72} />,
+      icon: (
+        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
+      ),
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: (
+        <ImageCustom src="/images/drupal.png" width={97} height={24} alt="" />
+      ),
     },
     {
-      icon: <Icons.Drupal width={120} height={120} />,
-    },
-
-    {
-      icon: <Icons.React width={72} height={72} />,
+      icon: (
+        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
+      ),
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: (
+        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
+      ),
     },
     {
-      icon: <Icons.Drupal width={120} height={120} />,
-    },
-
-    {
-      icon: <Icons.React width={72} height={72} />,
+      icon: (
+        <ImageCustom src="/images/react.png" width={66} height={62} alt="" />
+      ),
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: (
+        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
+      ),
     },
     {
-      icon: <Icons.Drupal width={120} height={120} />,
-    },
-
-    {
-      icon: <Icons.React width={72} height={72} />,
+      icon: (
+        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
+      ),
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: (
+        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
+      ),
     },
     {
-      icon: <Icons.Drupal width={120} height={120} />,
+      icon: (
+        <ImageCustom src="/images/adobe.png" width={62} height={62} alt="" />
+      ),
     },
     {
-      icon: <Icons.React width={72} height={72} />,
+      icon: (
+        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
+      ),
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: (
+        <ImageCustom src="/images/react.png" width={66} height={62} alt="" />
+      ),
     },
     {
-      icon: <Icons.Drupal width={120} height={120} />,
-    },
-
-    {
-      icon: <Icons.React width={72} height={72} />,
+      icon: (
+        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
+      ),
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: (
+        <ImageCustom src="/images/drupal.png" width={97} height={24} alt="" />
+      ),
     },
     {
-      icon: <Icons.Drupal width={120} height={120} />,
-    },
-
-    {
-      icon: <Icons.React width={72} height={72} />,
+      icon: (
+        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
+      ),
     },
     {
-      icon: <Icons.Adobe width={72} height={72} />,
+      icon: (
+        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
+      ),
     },
     {
-      icon: <Icons.Drupal width={120} height={120} />,
+      icon: (
+        <ImageCustom src="/images/react.png" width={66} height={62} alt="" />
+      ),
+    },
+    {
+      icon: (
+        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
+      ),
+    },
+    {
+      icon: (
+        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
+      ),
+    },
+    {
+      icon: (
+        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
+      ),
+    },
+    {
+      icon: (
+        <ImageCustom src="/images/adobe.png" width={62} height={62} alt="" />
+      ),
+    },
+    {
+      icon: (
+        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
+      ),
+    },
+    {
+      icon: (
+        <ImageCustom src="/images/react.png" width={66} height={62} alt="" />
+      ),
+    },
+    {
+      icon: (
+        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
+      ),
+    },
+    {
+      icon: (
+        <ImageCustom src="/images/drupal.png" width={97} height={24} alt="" />
+      ),
+    },
+    {
+      icon: (
+        <ImageCustom src="/images/react.png" width={66} height={62} alt="" />
+      ),
+    },
+    {
+      icon: (
+        <ImageCustom src="/images/adobe.png" width={62} height={62} alt="" />
+      ),
+    },
+    {
+      icon: (
+        <ImageCustom src="/images/react.png" width={66} height={62} alt="" />
+      ),
+    },
+    {
+      icon: (
+        <ImageCustom src="/images/drupal.png" width={97} height={24} alt="" />
+      ),
+    },
+    {
+      icon: (
+        <ImageCustom src="/images/react.png" width={66} height={62} alt="" />
+      ),
     },
   ];
 

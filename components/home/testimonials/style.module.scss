@@ -7,6 +7,24 @@
   background-color: color(primary-white);
   overflow-x: hidden;
 
+  &.testimonialsStyleDark {
+    background-color: color(dark-gray);
+    color: color(primary-white);
+
+    .infoSection {
+      .testimonialsLeft {
+        .projectHighlight {
+          color: color(primary-white);
+          opacity: 0.8;
+        }
+      }
+    }
+
+    .testimonialCardBox {
+      background-color: color(text-primary);
+    }
+  }
+
   .infoSection {
     display: flex;
     flex-direction: column;

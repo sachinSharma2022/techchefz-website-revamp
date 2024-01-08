@@ -1,14 +1,24 @@
+"use client";
+
 import React from "react";
-import styles from "./style.module.scss";
+import { useContext } from "react";
+import { MyContext } from "@/app/context/theme";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { Button } from "@/components/ui/button";
 import CustomInput from "@/components/ui/inputCustom";
 import { Icons } from "@/components/icons";
 import CountryDropdown from "@/components/ui/countryDropdown";
 
+import styles from "./style.module.scss";
+
 const LetsWork = () => {
+  const { theme, setTheme } = useContext(MyContext);
   return (
-    <section className={`${styles.lestWorkStyle}`}>
+    <section
+      className={`${styles.lestWorkStyle} ${
+        theme ? styles.lestWorkStyleDark : ""
+      }`}
+    >
       <div className={styles.workArea}>
         <div className={styles.workGrid}>
           <div className={styles.contactUsForm}>

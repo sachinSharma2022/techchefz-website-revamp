@@ -1,9 +1,26 @@
+"use client";
+
 import React from "react";
+import { MyContext } from "@/app/context/theme";
+import { useContext } from "react";
 import styles from "./style.module.scss";
 
-const InputCustom = ({ label, type, placeholder, disabled, as, rows, isLabelShow }) => {
+const InputCustom = ({
+  label,
+  type,
+  placeholder,
+  disabled,
+  as,
+  rows,
+  isLabelShow,
+}) => {
+  const { theme, setTheme } = useContext(MyContext);
   return (
-    <div className={styles.inputContainerStyle}>
+    <div
+      className={`${styles.inputContainerStyle} ${
+        theme ? styles.inputContainerStyleDark : ""
+      }`}
+    >
       <div className="form-floating">
         <input
           type={type}
@@ -14,7 +31,9 @@ const InputCustom = ({ label, type, placeholder, disabled, as, rows, isLabelShow
           as={as}
           rows={rows}
         />
-          <label className={styles.labelCustom} for="floatingInput">{label}</label>
+        <label className={styles.labelCustom} for="floatingInput">
+          {label}
+        </label>
       </div>
     </div>
   );
