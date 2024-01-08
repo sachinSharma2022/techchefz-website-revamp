@@ -531,4 +531,53 @@ a {
     top: auto;
     bottom: 0;
   }
+
+  .slide-thumb-grid {
+    cursor: pointer;
+
+    .swiper-wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .progress-bar-animation {
+      position: relative;
+      width: 100%;
+      height: 2px;
+      background: rgba(color(text-primary), 0.2);
+      margin-bottom: 10px;
+    }
+
+    .swiper-slide-thumb-active {
+      position: relative;
+
+      .progress-bar-animation {
+        &::before {
+          position: absolute;
+          content: '';
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          transition-property: width;
+          animation: progress 5s alternate;
+          background: color(info-blue);
+          z-index: 1;
+        }
+      }
+
+    }
+    
+    @keyframes progress {
+      0% {
+        width: 0%;
+      }
+    
+      100% {
+        width: 100%;
+      }
+    }
+    
+  }
 }
