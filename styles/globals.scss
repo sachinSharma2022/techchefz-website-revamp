@@ -463,6 +463,20 @@ a {
   }
 }
 
+.dark-ourHistory {
+  .ourHistorySlider {
+    .slick-disabled {
+      background-color: transparent;
+      border-color: rgba(color(primary-white), 0.2);
+      svg {
+        path {
+          stroke: rgba(color(primary-white), 0.5);
+        }
+      }
+    }
+  }
+}
+
 .scroll-gallery-images {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
