@@ -84,7 +84,9 @@ const OurHistory = () => {
   ];
   return (
     <section
-      className={`${styles.ourHistory} ${theme ? styles.ourHistoryDark : ""}`}
+      className={`${styles.ourHistory} ${
+        theme ? `${styles.ourHistoryDark} dark-ourHistory` : ""
+      }`}
     >
       <div className={styles.ourHistoryTop}>
         <h6 className={styles.ourHistoryTitle}>Our History</h6>
