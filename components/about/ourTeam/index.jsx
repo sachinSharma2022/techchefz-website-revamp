@@ -1,3 +1,5 @@
+"use client";
+
 import React, { Fragment, useState, useEffect } from "react";
 import { Dialog, Tab, Transition } from "@headlessui/react";
 import { MyContext } from "@/app/context/theme";

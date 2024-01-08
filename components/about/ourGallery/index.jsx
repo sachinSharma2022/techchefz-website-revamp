@@ -1,10 +1,13 @@
 "use client";
-
+import { MyContext } from "@/app/context/theme";
+import { useContext } from "react";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import Marquee from "react-fast-marquee";
 import styles from "./style.module.scss";
 
 const OurGallery = () => {
+  const { theme, setTheme } = useContext(MyContext);
+  
   const galleryImages = [
     {
       imgSrc:
@@ -89,7 +92,9 @@ const OurGallery = () => {
   ];
 
   return (
-    <section className={styles.ourGallery}>
+    <section
+      className={`${styles.ourGallery} ${theme ? styles.ourGalleryDark : ""}`}
+    >
       <div className={styles.contentSection}>
         <div className="container">
           <div className="row">
