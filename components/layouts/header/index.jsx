@@ -23,9 +23,7 @@ const Header = () => {
 
   return (
     <header
-      className={`${styles.headerMain} ${
-        theme ? styles.headerDarkStyle : ''
-      }`}
+      className={`${styles.headerMain} ${theme ? styles.headerDarkStyle : ""}`}
     >
       <div className={styles.logo}>
         <Link href="/" className={styles.lightlogo}>
@@ -112,11 +110,7 @@ const Header = () => {
       <div className={styles.headerRight}>
         <div className={styles.modeBtn}>
           <Button variant="default" onClick={() => setTheme(!theme)}>
-            {theme ? (
-              <Icons.moon size={15} />
-            ) : (
-              <Icons.darkmode size={30} />
-            )}
+            {theme ? <Icons.moon size={15} /> : <Icons.darkmode size={30} />}
           </Button>
         </div>
         <Button variant="blueBtn" className={styles.headerBtn} size="sm">
