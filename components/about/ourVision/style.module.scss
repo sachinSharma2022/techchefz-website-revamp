@@ -4,6 +4,11 @@
   padding: spacing(p-120);
   padding-bottom: 0rem;
 
+  &.ourVisionDark{
+    background-color: color(input-bg);
+    color: color(primary-white);
+  }
+
   .aboutHeading {
     font-size: text(larger);
     font-weight: 500;

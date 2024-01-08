@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 import Slider from "react-slick";
+import { MyContext } from "@/app/context/theme";
+import { useContext } from "react";
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
 import { ImageCustom } from "@/components/ui/imageCustom";
@@ -9,12 +11,13 @@ import { Icons } from "@/components/icons";
 import styles from "./style.module.scss";
 
 const OurHistory = () => {
+  const { theme, setTheme } = useContext(MyContext);
   const settings = {
-    customPaging: function(i) {
+    customPaging: function (i) {
       return (
         <div>
-        <span className="yearCount">201{i + 1}</span>
-        <button />
+          <span className="yearCount">201{i + 1}</span>
+          <button />
         </div>
       );
     },
@@ -80,7 +83,9 @@ const OurHistory = () => {
     },
   ];
   return (
-    <section className={styles.ourHistory}>
+    <section
+      className={`${styles.ourHistory} ${theme ? styles.ourHistoryDark : ""}`}
+    >
       <div className={styles.ourHistoryTop}>
         <h6 className={styles.ourHistoryTitle}>Our History</h6>
         <h3 className={styles.ourHistoryHeading}>

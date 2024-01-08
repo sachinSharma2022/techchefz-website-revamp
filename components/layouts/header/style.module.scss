@@ -351,6 +351,10 @@
         li {
           a {
             color: color(primary-white);
+
+            &.active{
+              color: color(info-blue);
+            }
           }
         }
         .subMenu {
