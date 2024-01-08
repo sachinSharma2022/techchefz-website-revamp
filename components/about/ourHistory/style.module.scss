@@ -4,15 +4,15 @@
   padding: spacing(section-primary-padding);
   overflow-x: hidden;
 
-  &.ourHistoryDark{
+  &.ourHistoryDark {
     background-color: color(input-bg);
     color: color(primary-white);
 
-    .ourHistoryTop{
-      .ourHistoryTitle{
+    .ourHistoryTop {
+      .ourHistoryTitle {
         color: color(primary-white);
       }
-      .ourHistoryHeading{
+      .ourHistoryHeading {
         color: color(primary-white);
       }
     }
