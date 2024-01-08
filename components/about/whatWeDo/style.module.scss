@@ -3,16 +3,33 @@
 .whatWeDo {
   padding: spacing(section-primary-padding);
 
-  &.whatWeDoDark{
+  &.whatWeDoDark {
     background-color: color(input-bg);
     color: color(primary-white);
 
-    .weDoTitle{
+    .weDoTitle {
       color: color(primary-white);
+    }
+
+    .workCardWrapper {
+      .workCardMain {
+        &:hover {
+          .workCard {
+            .workCols {
+              border: 1px solid color(info-blue);
+            }
+          }
+        }
+        .workCard {
+          .workCols {
+            background-color: color(text-primary);
+            border: 1px solid rgba(color(primary-white), 0.12);
+          }
+        }
+      }
     }
   }
 
-  
   .weDoTitle {
     color: color(text-primary);
     text-transform: uppercase;
