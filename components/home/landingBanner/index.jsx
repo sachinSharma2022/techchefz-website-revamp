@@ -3,7 +3,7 @@
 import React from "react";
 import { Button } from "../../ui/button";
 import { Icons } from "@/components/icons";
-import { MyContext } from "@/app/Context/Theme";
+import { MyContext } from "@/app/context/theme";
 import { useContext } from "react";
 import styles from "./style.module.scss";
 

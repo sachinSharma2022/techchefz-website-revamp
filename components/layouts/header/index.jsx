@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { MyContext } from "@/app/Context/Theme";
+import { MyContext } from "@/app/context/theme";
 import { useContext } from "react";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
@@ -11,7 +11,7 @@ import { Icons } from "@/components/icons";
 
 import styles from "./style.module.scss";
 
-const Header = () => {
+const HeaderMain = () => {
   const { theme, setTheme } = useContext(MyContext);
 
   const pathname = usePathname();
@@ -143,4 +143,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderMain;

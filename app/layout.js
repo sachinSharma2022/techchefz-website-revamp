@@ -1,10 +1,10 @@
 import Footer from "@/components/layouts/footer";
-import Header from "@/components/layouts/header";
 import "bootstrap/dist/css/bootstrap.css";
 import { aeonik, helvetica } from "../lib/fonts";
 import { cn } from "../lib/utils";
 import "../styles/globals.scss";
-import ThemeProvider from "./Context/Theme";
+import ThemeProviderWrapper from "./context/theme";
+import HeaderMain from "../components/layouts/header";
 
 export const metadata = {
   title: "Create Next App",
@@ -15,11 +15,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={cn(aeonik.variable, helvetica.variable)}>
-        <ThemeProvider>
-          <Header />
+        <ThemeProviderWrapper>
+          <HeaderMain />
           <main className="main-style">{children}</main>
           <Footer />
-        </ThemeProvider>
+        </ThemeProviderWrapper>
       </body>
     </html>
   );
