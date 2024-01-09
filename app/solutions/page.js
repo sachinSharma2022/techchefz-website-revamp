@@ -1,4 +1,4 @@
-import RelatedCase from "@/components/caseStudy/relatedCase";
+import RelatedCase from "@/components/relatedCase";
 import SolutionHeroBanner from "@/components/solutions/solutionHeroBanner";
 import SolutionOurValues from "@/components/solutions/solutionOurValues";
 import SolutionTechnologies from "@/components/solutions/solutionTechnologies";
@@ -14,7 +14,9 @@ const Solutions = () => {
       <SolutionOurValues />
       <SolutionTheProcess />
       <SolutionTechnologies />
-      <RelatedCase />
+      <div className="mt-120">
+        <RelatedCase />
+      </div>
       <Faq />
     </div>
   );

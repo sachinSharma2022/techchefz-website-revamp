@@ -1,4 +1,4 @@
-import RelatedCase from "@/components/caseStudy/relatedCase";
+import RelatedCase from "@/components/relatedCase";
 import LetsWork from "@/components/home/letsWork";
 import CmsBanner from "@/components/technology/cms/cmsBanner";
 import CmsDifference from "@/components/technology/cms/cmsDifference";

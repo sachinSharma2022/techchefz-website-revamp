@@ -7,6 +7,12 @@
     background: color(bg-soft);
     margin-right: 2.5rem;
     width: 100%;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      border-color: color(heading-liner);
+    }
 
     @include mobile{
       margin-right: 0;

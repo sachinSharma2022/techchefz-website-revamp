@@ -1,13 +1,18 @@
 @import "~/styles/partials/config";
 
-.discover {
+.discoverSection {
   padding: spacing(section-primary-padding);
+
   @include mobile {
     padding: 1.5rem;
   }
 
   .discoverTop {
     margin-bottom: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    
     @include mobile {
       margin-bottom: 3rem;
     }
@@ -20,12 +25,13 @@
     text-transform: uppercase;
     opacity: 0.8;
     font-family: font(secondary);
-    margin-bottom: 1rem;
   }
+
   .discoverHeading {
     font-size: text(larger);
     font-weight: 500;
     line-height: 3.375rem;
+    margin: 0;
 
     @include mobile {
       font-size: 1.7rem;

@@ -68,19 +68,16 @@ const Discover = () => {
     },
   ];
   return (
-    <section className={styles.discover}>
+    <section className={styles.discoverSection}>
       <div className={styles.discoverTop}>
-        <div className="row justify-content-between align-items-end">
-          <div className="col-md-4 col-lg-4">
-            <h6 className={styles.discoverTitle}>Discover</h6>
-            <h3 className={styles.discoverHeading}>Technology Stack</h3>
-          </div>
-          <div className="col-md-2 col-lg-2">
-            <Button variant="outline" size="sm">
-              Explore Now <Icons.ArrowRight size={18} />
-            </Button>
-          </div>
+        <div>
+          <h6 className={styles.discoverTitle}>Discover</h6>
+          <h3 className={styles.discoverHeading}>Technology Stack</h3>
         </div>
+
+        <Button variant="outline" size="sm">
+          Explore Now <Icons.ArrowRight size={18} />
+        </Button>
       </div>
 
       <div className={styles.discoverTabSection}>

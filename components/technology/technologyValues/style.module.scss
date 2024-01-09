@@ -7,6 +7,10 @@
       padding: 1.5rem;
    }
 
+   .headSection {
+
+   }
+
    .valuesTitle {
       font-size: text(normal);
       font-family: font(secondary);
@@ -16,18 +20,22 @@
       text-transform: uppercase;
       opacity: 0.8;
    }
+   
    .valuesHeading {
       font-size: text(larger);
       font-weight: 500;
       line-height: 3.375rem;
       margin: 1rem 0 2rem 0;
    }
+
    .valuesText {
       font-size: text(lg);
       font-weight: 400;
       line-height: 1.875rem;
       opacity: 0.6;
+      max-width: 65%;
    }
+
    .valuesImg {
       margin: 5rem 0;
       height: 487px;
