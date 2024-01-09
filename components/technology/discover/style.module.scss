@@ -1,147 +1,144 @@
 @import "~/styles/partials/config";
 
 .discover {
-   padding: spacing(section-primary-padding);
-   @include mobile {
-      padding: 1.5rem;
-   }
+  padding: spacing(section-primary-padding);
+  @include mobile {
+    padding: 1.5rem;
+  }
 
-   .discoverTop{
-      margin-bottom: 5rem;
-      @include mobile {
-         margin-bottom: 3rem;
-      }
-   }
-   .discoverTitle {
-      font-size: text(normal);
-      font-weight: 700;
-      line-height: 1.5rem;
-      letter-spacing: 0.2rem;
-      text-transform: uppercase;
-      opacity: 0.8;
-      font-family: font(secondary);
-      margin-bottom: 1rem;
-   }
-   .discoverHeading {
-      font-size: text(larger);
-      font-weight: 500;
-      line-height: 3.375rem;
-      
-      @include mobile {
-         font-size: 1.7rem;
-         line-height: 2.375rem;
-      }
-   }
+  .discoverTop {
+    margin-bottom: 5rem;
+    @include mobile {
+      margin-bottom: 3rem;
+    }
+  }
+  .discoverTitle {
+    font-size: text(normal);
+    font-weight: 700;
+    line-height: 1.5rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    opacity: 0.8;
+    font-family: font(secondary);
+    margin-bottom: 1rem;
+  }
+  .discoverHeading {
+    font-size: text(larger);
+    font-weight: 500;
+    line-height: 3.375rem;
 
-   .subHeading {
-      font-size: text(xl);
-      font-weight: 500;
-      line-height: 2.5rem;
-      opacity: 0.6;
-      margin: 0;
-   }
+    @include mobile {
+      font-size: 1.7rem;
+      line-height: 2.375rem;
+    }
+  }
 
-   .subContent {
-      font-size: text(normal);
-      font-weight: 400;
-      line-height: 1.875rem;
-      opacity: 0.6;
-      display: none;
-   }
+  .subHeading {
+    font-size: text(xl);
+    font-weight: 500;
+    line-height: 2.5rem;
+    margin: 0;
+  }
 
-   .subTitle {
-      font-size: text(xl);
-      font-weight: 500;
-      line-height: 2rem;
-      margin-bottom: 1.5rem;
-   }
+  .subContent {
+    font-size: text(normal);
+    font-weight: 400;
+    line-height: 1.5rem;
+    opacity: 0.6;
+    display: none;
+  }
 
-   .platformsButtons {
-      display: flex;
-      flex-direction: column;
-      gap: 3.75rem;
-      width: 100%;
-      border-left: 1px solid rgba(color(text-primary), 0.12);
-      padding-left: 2.5rem;
+  .subTitle {
+    font-size: text(xl);
+    font-weight: 500;
+    line-height: 2rem;
+    margin-bottom: 1.5rem;
+  }
 
-      .platformsBtn {
-         display: flex;
-         justify-content: space-between;
-         align-items: center;
-         border-radius: 12px;
-         background-color: color(bg-soft);
-         padding: 1.25rem;
-         width: 100%;
-         height: auto;
+  .platformsButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 3.75rem;
+    width: 100%;
+    border-left: 1px solid rgba(color(text-primary), 0.12);
+    padding-left: 2.5rem;
 
-         .reactPlatform {
-            padding-right: 0.75rem;
-            border-right: 1px solid rgba(17, 17, 17, 0.2);
-         }
-
-         svg {
-            width: 16px;
-            height: 16px;
-         }
-
-         .iconImg {
-            border-right:1px solid rgba(color(text-primary), 0.2);
-            padding-right: 0.75rem;
-         }
-
-         p {
-            padding-left: 0.75rem;
-            margin: 0;
-            font-size: text(lg);
-            font-weight: 400;
-            line-height: 1.875rem;
-         }
-      }
-   }
-
-   .buttonSection {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:1.25rem 2.5rem;
-   }
-
-   .discoverTabSection {
+    .platformsBtn {
       display: flex;
       justify-content: space-between;
-      gap: 2.5rem;
+      align-items: center;
+      border-radius: 12px;
+      background-color: color(bg-soft);
+      padding: 1.25rem;
+      width: 100%;
+      height: auto;
 
-      .discoverLeft {
-         display: flex;
-         flex-direction: column;
-         align-items: flex-start;
-         justify-content: flex-start;
-         gap: 2rem;
-         max-width: 270px;
+      .reactPlatform {
+        padding-right: 0.75rem;
+        border-right: 1px solid rgba(17, 17, 17, 0.2);
       }
 
-      .discoverHead {
-         text-align: left;
+      svg {
+        width: 16px;
+        height: 16px;
       }
 
-      .dataSection {
-         margin-bottom: 3.75rem;
-
-         &:last-child {
-            margin-bottom: 0;
-         }
+      .iconImg {
+        border-right: 1px solid rgba(color(text-primary), 0.2);
+        padding-right: 0.75rem;
       }
 
-      button[aria-selected="true"] {
-
-         .subContent {
-            display: block;
-         }
-
-         .subHeading {
-            background: var(--Gradient, linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%));
-            @include textGradient;
-         }
-            
+      p {
+        padding-left: 0.75rem;
+        margin: 0;
+        font-size: text(lg);
+        font-weight: 400;
+        line-height: 1.875rem;
       }
-   }
+    }
+  }
+
+  .buttonSection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem 2.5rem;
+  }
+
+  .discoverTabSection {
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5rem;
+
+    .discoverLeft {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 2rem;
+      max-width: 270px;
+    }
+
+    .discoverHead {
+      text-align: left;
+    }
+
+    .dataSection {
+      margin-bottom: 3.75rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    button[aria-selected="true"] {
+      .subContent {
+        display: block;
+      }
+
+      .subHeading {
+        background: linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%);
+        @include textGradient;
+      }
+    }
+  }
 }

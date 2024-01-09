@@ -62,10 +62,10 @@ const TechnologyValues = () => {
           </p>
         </div>
       </div>
-      <div className="row justify-content-between">
+      <div className={styles.sliderSection}>
         <Swiper
           autoplay={{
-            delay: 5000,
+            delay: 8000,
             disableOnInteraction: false,
           }}
           navigation={false}
