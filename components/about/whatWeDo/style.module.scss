@@ -51,7 +51,11 @@
     gap: 2.5rem;
 
     @include desktop-hd {
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include desktop-md{
+      grid-template-columns: repeat(3, 1fr);
     }
 
     @include mobile-tablet-p {
