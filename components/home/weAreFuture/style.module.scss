@@ -5,6 +5,21 @@
   @include mobile {
     padding: spacing(section-mob-padding);
   }
+
+  &.futureSpacingDark {
+    background-color: color(input-bg);
+    color: color(primary-white);
+
+    .futureTitle {
+      .text {
+        color: color(primary-white);
+      }
+    }
+    .aboutText {
+      color: color(primary-white);
+    }
+  }
+
   .futureTitle {
     display: flex;
     justify-content: center;

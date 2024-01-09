@@ -2,6 +2,8 @@
 import React, { useEffect, useState, useRef } from "react";
 // import { Button } from "../../ui/button";
 import { Icons } from "@/components/icons";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import styles from "./style.module.scss";
 import styled, { keyframes } from "styled-components";
 
@@ -86,6 +88,7 @@ export const ButtonTextContainer = styled.span`
 `;
 const LandingBanner = () => {
   const [textIndex, setTextIndex] = useState(0);
+  const { theme, setTheme } = useContext(MyContext);
 
   useEffect(() => {
     let interval = setInterval(() => {
@@ -115,7 +118,9 @@ const LandingBanner = () => {
     setCirclePosition({ left: relX, top: relY });
   };
   return (
-    <section className={`${styles.landingBannerStyle}`}>
+    <section className={`${styles.landingBannerStyle} ${
+      theme ? styles.landingBannerDark : ""
+    }`}>
       <div>
         <h1 className={styles.title}>
           Humanizing <div /> Digital Experience <div />

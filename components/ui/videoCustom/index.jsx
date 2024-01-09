@@ -1,4 +1,8 @@
-'use client'
+"use client";
+
+import { useContext } from "react";
+import { MyContext } from "@/context/theme";
+
 import styles from "./style.module.scss";
 import { gsap } from 'gsap';
 import {useEffect} from 'react';
@@ -6,6 +10,8 @@ import { TextPlugin } from 'gsap/TextPlugin'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const VideoCustom = (props) => {
+  const { theme, setTheme } = useContext(MyContext);
+
   useEffect(() => {
     gsap.registerPlugin(TextPlugin, ScrollTrigger)
     const tl=gsap.timeline(
@@ -15,7 +21,9 @@ const VideoCustom = (props) => {
     
   }, []);
   return (
-    <div className={styles.videoCustom}>
+    <div
+      className={`${styles.videoCustom} ${theme ? styles.videoCustomDark : ""}`}
+    >
       <video
         className={styles.video}
         id="my-video"

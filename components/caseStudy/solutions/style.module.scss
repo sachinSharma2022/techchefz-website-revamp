@@ -31,5 +31,11 @@
          height: auto;
          border-radius: 0.75rem;
       }
+
+      .solutionBottomImgs{
+         display: grid;
+         grid-template-columns: repeat(2,1fr);
+         gap: 2.5rem;
+      }
    }
 }

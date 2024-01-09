@@ -1,14 +1,26 @@
 @import "~/styles/partials/config";
 
 .ourGallery {
+  
+  &.ourGalleryDark {
+    background-color: color(input-bg);
+    color: color(primary-white);
+  }
+
   .ourGalleryTitle {
     font-size: text(normal);
     font-weight: 700;
-    line-height: 24px;
+    line-height: 1.5rem;
     letter-spacing: 0.2rem;
     text-transform: uppercase;
     opacity: 0.8;
   }
+
+  .contentSection{
+    padding: spacing(section-primary-padding);
+    padding-block: 0;
+  }
+
   .ourGalleryHeading {
     font-size: text(larger);
   }
@@ -20,11 +32,11 @@
   }
   .galleryImages {
     padding: 0 0.7rem;
-    margin-top: 80px;
+    margin-top: 5rem;
     position: relative;
 
     div {
-      height: 250px;
+      height:15.625rem;
       width: 100%;
     }
   }

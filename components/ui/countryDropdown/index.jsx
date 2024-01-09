@@ -2,10 +2,12 @@
 
 import { Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
-
-import styles from "./style.module.scss";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import InputCustom from "../inputCustom";
 import { ImageCustom } from "../imageCustom";
+
+import styles from "./style.module.scss";
 
 const people = [
   {
@@ -35,33 +37,14 @@ const people = [
 ];
 
 const CountryDropdown = () => {
+  const { theme, setTheme } = useContext(MyContext);
   const [selected, setSelected] = useState(people[0]);
   return (
-    <div className={styles.dropdownContainerStyle}>
-      {/* <div className="form-floating">
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <select
-              className={`${styles.formSelect} form-select`}
-              id="floatingSelectGrid"
-              aria-label="Floating label select example"
-            >
-              <option selected>IN</option>
-              <option value="1">EN</option>
-              <option value="2">EU</option>
-            </select>
-          </div>
-
-          <input
-            type="text"
-            className={`${styles.floatInput} form-control`}
-            id="username"
-            placeholder="Phone Number*"
-            required=""
-          />
-        </div>
-      </div> */}
-
+    <div
+      className={`${styles.dropdownContainerStyle} ${
+        theme ? styles.dropdownContainerStyleDark : ""
+      }`}
+    >
       <div className={styles.countryDropdown}>
         <Listbox value={selected} onChange={setSelected}>
           <div className={styles.floatDropdown}>
@@ -81,10 +64,10 @@ const CountryDropdown = () => {
                     }
                     value={person}
                   >
-                    <>
+                    <div className={styles.inputValueStyle}>
                       <span>{person.flag}</span>
                       {person.name}
-                    </>
+                    </div>
                   </Listbox.Option>
                 ))}
               </Listbox.Options>

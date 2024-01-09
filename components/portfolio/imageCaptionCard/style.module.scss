@@ -2,9 +2,14 @@
 
 .captionCardStyle {
   padding-inline: spacing(p-120);
+  display: grid;
+  grid-gap: 2.5rem;
+  grid-template-columns: repeat(2, 1fr);
 
   @include mobile {
     padding: spacing(section-mob-padding-Left-Right);
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2.7rem;
   }
 
   .imageCard {
@@ -63,16 +68,6 @@
       svg {
         cursor: pointer;
       }
-    }
-  }
-
-  .wrapper {
-    display: grid;
-    grid-gap: 2.5rem;
-    grid-template-columns: repeat(2, 1fr);
-    @include mobile {
-      grid-template-columns: repeat(1, 1fr);
-      gap: 2.7rem;
     }
   }
 }

@@ -2,12 +2,22 @@
 
 import React from "react";
 import Slider from "react-slick";
+import { useContext } from "react";
+import { MyContext } from "@/context/theme";
 import styles from "./style.module.scss";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { Icons } from "@/components/icons";
+
 const DigitalTransformation = () => {
+  const { theme, setTheme } = useContext(MyContext);
   const serviceCard = [
+    {
+      img: "/images/digital-trans.png",
+      digitalHeading: "Customer Experience (CX).",
+      digitalText:
+        "We help our clients to attract the relevant audience for their business with our advanced technology for a higher conversion rate. We perform advance digital operations like -",
+    },
     {
       img: "/images/digital-trans.png",
       digitalHeading: "Customer Experience (CX).",
@@ -67,7 +77,11 @@ const DigitalTransformation = () => {
     ],
   };
   return (
-    <section className={`${styles.digitalStyle}`}>
+    <section
+      className={`${styles.digitalStyle} ${
+        theme ? styles.digitalStyleDark : ""
+      }`}
+    >
       <div className={styles.serviceRow}>
         <div className="row">
           <div className="col-md-12 col-12">
@@ -77,9 +91,9 @@ const DigitalTransformation = () => {
           <div className="col-md-8 col-12">
             <h2 className={styles.datingText}>
               Remaining businesses by integrating
-              <div className={styles.digitalTechText}>
+              <span className={styles.digitalTechText}>
                 digital technologies.
-              </div>
+              </span>
             </h2>
           </div>
           <div className={`${styles.servicesBtn} col-md-4 col-12`}>

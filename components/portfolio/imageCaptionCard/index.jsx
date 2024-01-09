@@ -58,35 +58,33 @@ const ImageCaptionCard = () => {
   ];
   return (
     <section className={`${styles.captionCardStyle} captionCardSection`}>
-      <div className={styles.wrapper}>
-        {imageCaptionData.map((data, index) => (
-          <div key={index} className={`grid-${index}`}>
-            <div className={`${styles.imageCard} card`}>
-              <div className={styles.cardImg}>
-                <ImageCustom
-                  src={data.imgSrc}
-                  width={1360}
-                  height={450}
-                  alt="captionImg"
-                />
+      {imageCaptionData.map((data, index) => (
+        <div key={index} className={`grid-${index}`}>
+          <div className={`${styles.imageCard} card`}>
+            <div className={styles.cardImg}>
+              <ImageCustom
+                src={data.imgSrc}
+                width={1360}
+                height={450}
+                alt="captionImg"
+              />
 
-                <div className={styles.cardBadges}>
-                  {data.badgeList.map((badgeItem) => (
-                    <div key={badgeItem} className={styles.badges}>
-                      {badgeItem}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className={styles.cardBody}>
-                <h2 className={styles.cardText}>{data.description}</h2>
-                <Icons.ArrowLongRight size={18} />
+              <div className={styles.cardBadges}>
+                {data.badgeList.map((badgeItem) => (
+                  <div key={badgeItem} className={styles.badges}>
+                    {badgeItem}
+                  </div>
+                ))}
               </div>
             </div>
+
+            <div className={styles.cardBody}>
+              <h2 className={styles.cardText}>{data.description}</h2>
+              <Icons.ArrowLongRight size={18} />
+            </div>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </section>
   );
 };

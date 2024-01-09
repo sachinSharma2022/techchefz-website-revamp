@@ -1,0 +1,117 @@
+@import "~/styles/partials/config";
+
+.solutionOurValuesStyle {
+  padding: spacing(section-primary-padding);
+  display: flex;
+  justify-content: space-between;
+  gap: 143px;
+
+  .ourValuesHead {
+    margin-bottom: 5rem;
+    max-width: 373px;
+
+    .ourValuesTitle {
+      color: color(text-primary);
+      text-transform: uppercase;
+      opacity: 0.8;
+      font-size: text(normal);
+      font-weight: 700;
+      line-height: 1.5rem;
+      letter-spacing: 0.2rem;
+      font-family: font(secondary);
+    }
+
+    .ourValuesHeading {
+      font-size: text(larger);
+      margin-bottom: 2.75rem;
+
+      span {
+        font-size: text(larger);
+        color: color(heading-liner);
+        background: linear-gradient(
+          118deg,
+          color(primary-blue) 11.5%,
+          color(heading-liner) 55.42%
+        );
+        @include textGradient;
+      }
+    }
+  }
+
+  .ourValuesAccordion {
+    width: 100%;
+
+    .accordionHead {
+      width: 100%;
+      font-size: text(xl);
+      padding: 1.25rem 0;
+      border-bottom: 1px solid rgba(color(text-primary), 0.12);
+      display: flex;
+      justify-content: flex-start;
+    }
+  }
+
+  .accordionBody {
+    padding: 1.25rem 0;
+    display: flex;
+    gap: 40px;
+  }
+
+  .iconBox {
+    width: 36px;
+    height: 36px;
+    background: color(primary-white);
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+  }
+
+  .imgBox div {
+    max-height: 164px;
+    min-width: 164px;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 100%; 
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .title {
+    margin-left: 20px;
+    font-size: text(xl);
+    font-weight: 500;
+  }
+
+  .accordionBodyContent {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: rgba(color(text-primary), 0.8);
+  }
+
+  .listStyle {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+
+      svg {
+        position: relative;
+        top: 8px;
+        min-width: 15px;
+        height: 10px;
+      }
+    }
+  }
+}

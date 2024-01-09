@@ -3,9 +3,25 @@
 .numberStyle {
   padding: spacing(section-primary-padding);
   background: color(primary-background);
+
   @include mobile {
     padding: spacing(section-mob-padding);
   }
+
+  &.numberStyleDark {
+    background-color: color(dark-bg);
+    color: color(primary-white);
+
+    .ourNumberGrid {
+      .desktopCards {
+        .serviceBox {
+          background-color: color(dark-bg);
+          border: 2px solid rgba(color(primary-white), 0.12);
+        }
+      }
+    }
+  }
+
   .careerRow {
     margin-bottom: 5rem;
     @include mobile {
@@ -14,7 +30,7 @@
     .careerBtn {
       display: flex;
       justify-content: flex-end;
-      @include mobile{
+      @include mobile {
         justify-content: flex-start;
       }
     }
@@ -35,7 +51,8 @@
     font-size: 2.75rem;
     font-weight: 500;
     line-height: 3.375rem;
-    max-width: 85%;
+    // max-width: 85%;
+    margin-bottom: 0;
 
     @include mobile {
       font-size: text(xxxl);

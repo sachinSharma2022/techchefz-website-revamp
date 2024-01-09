@@ -1,15 +1,32 @@
+"use client";
+
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { useContext } from "react";
+import { MyContext } from "@/context/theme";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { Icons } from "@/components/icons";
 import styles from "./style.module.scss";
 
 const Projects = () => {
+  const { theme, setTheme } = useContext(MyContext);
+
+  const tagSection = [
+    "Web Design",
+    "Dashboard Design",
+    "UI",
+    "UX",
+    "Responsive",
+  ];
   return (
-    <section className={`${styles.projectsStyle}`}>
+    <section
+      className={`${styles.projectsStyle} ${
+        theme ? styles.projectsStyleDark : ""
+      }`}
+    >
       <div className="row">
         <div className="col-md-12 col-12">
-          <p className={styles.ProjectHighlight}>Projects</p>
+          <p className={styles.projectHighlight}>Projects</p>
         </div>
         <div className="col-md-5 col-12">
           <h3 className={styles.datingText}>
@@ -40,11 +57,9 @@ const Projects = () => {
           </div>
 
           <div className={styles.cardContentStyle}>
-            <div>
-              <h4 className={styles.projectBrand}>
-                International Motorcycle Brand.
-              </h4>
-            </div>
+            <h4 className={styles.projectBrand}>
+              International Motorcycle Brand.
+            </h4>
 
             <p className={styles.brandFromText}>
               Royal Enfield is a global brand since 1901, has a geographical
@@ -52,22 +67,12 @@ const Projects = () => {
               omnichannel customer experiences, achieves scalability,
               diversifying into countries, and continents.
             </p>
-            <div className={styles.ProjectBtn}>
-              <Button variant="outline" size="xs">
-                Web Design
-              </Button>
-              <Button variant="outline" size="xs">
-                Dashboard Design
-              </Button>
-              <Button variant="outline" size="xs">
-                UI
-              </Button>
-              <Button variant="outline" size="xs">
-                UX
-              </Button>
-              <Button variant="outline" size="xs">
-                Responsive
-              </Button>
+            <div className={styles.projectButton}>
+              {tagSection.map((item, index) => (
+                <Button key={index} variant="outline" size="xs">
+                  {item}
+                </Button>
+              ))}
             </div>
           </div>
         </div>

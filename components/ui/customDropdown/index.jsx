@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./style.module.scss";
 
-const PrimaryDropdown = ({ title, value, options, onChange }) => {
+const CustomDropdown = ({ title, value, options, onChange }) => {
   return (
     <div className={styles.dropdownContainerStyle}>
       <div class="form-floating">
@@ -28,4 +28,4 @@ const PrimaryDropdown = ({ title, value, options, onChange }) => {
   );
 };
 
-export default PrimaryDropdown;
+export default CustomDropdown;

@@ -25,35 +25,33 @@ const Innovation = () => {
     },
   ];
   return (
-    <>
-      <div className={styles.innovationSpacing}>
-        <div className={styles.innovationMain}>
-          <p className={styles.text}>Innovation</p>
-          <h2 className={styles.title}>
-            Driving Technological Advancements for the Future
-          </h2>
-        </div>
-
-        <div className={`${styles.innovationCardsGrid}`}>
-          {innovationCardMap.map((data, index) => (
-            <div key={index} className={styles.innovationBox}>
-              <div className={styles.textCardSpace}>
-                <p className={styles.sbSubtitle}>{data.sbSubtitle}</p>
-                <h4 className={styles.sbTitle}>{data.sbTitle}</h4>
-              </div>
-              <div className={styles.bgImage}>
-                <ImageCustom
-                  src={data.imgSrc}
-                  width="500"
-                  height="500"
-                  alt="Innovation"
-                />
-              </div>
-            </div>
-          ))}
-        </div>
+    <section className={styles.innovationSpacing}>
+      <div className={styles.innovationMain}>
+        <p className={styles.text}>Innovation</p>
+        <h2 className={styles.title}>
+          Driving Technological Advancements for the Future
+        </h2>
       </div>
-    </>
+
+      <div className={`${styles.innovationCardsGrid}`}>
+        {innovationCardMap.map((data, index) => (
+          <div key={index} className={styles.innovationBox}>
+            <div className={styles.textCardSpace}>
+              <p className={styles.sbSubtitle}>{data.sbSubtitle}</p>
+              <h4 className={styles.sbTitle}>{data.sbTitle}</h4>
+            </div>
+            <div className={styles.bgImage}>
+              <ImageCustom
+                src={data.imgSrc}
+                width="500"
+                height="500"
+                alt="Innovation"
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 

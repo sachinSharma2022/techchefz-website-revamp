@@ -1,10 +1,13 @@
 "use client";
-
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import Marquee from "react-fast-marquee";
 import styles from "./style.module.scss";
 
 const OurGallery = () => {
+  const { theme, setTheme } = useContext(MyContext);
+
   const galleryImages = [
     {
       imgSrc:
@@ -89,17 +92,23 @@ const OurGallery = () => {
   ];
 
   return (
-    <section className={styles.ourGallery}>
-      <div className="container">
-        <div className="row">
-          <div className="col-md-6 col-lg-6">
-            <h6 className={styles.ourGalleryTitle}>Our Gallery</h6>
-            <h3 className={styles.ourGalleryHeading}>From Vision to Reality</h3>
-            <p className={styles.ourGalleryText}>
-              Our workspace reflects our philosophy: open, collaborative, and
-              vibrant. Take a virtual tour of where the magic happens, from
-              state-of-the-art labs to cozy brainstorming nooks.
-            </p>
+    <section
+      className={`${styles.ourGallery} ${theme ? styles.ourGalleryDark : ""}`}
+    >
+      <div className={styles.contentSection}>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6 col-lg-6">
+              <h6 className={styles.ourGalleryTitle}>Our Gallery</h6>
+              <h3 className={styles.ourGalleryHeading}>
+                From Vision to Reality
+              </h3>
+              <p className={styles.ourGalleryText}>
+                Our workspace reflects our philosophy: open, collaborative, and
+                vibrant. Take a virtual tour of where the magic happens, from
+                state-of-the-art labs to cozy brainstorming nooks.
+              </p>
+            </div>
           </div>
         </div>
       </div>

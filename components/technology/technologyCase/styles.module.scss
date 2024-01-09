@@ -1,0 +1,53 @@
+@import "~/styles/partials/config";
+
+.technologyCase {
+   padding: spacing(section-primary-padding);
+   padding-top: 0;
+
+   @include mobile {
+      padding: 1.5rem;
+   }
+   
+   .caseTop{
+      margin-bottom: 5rem;
+      @include mobile {
+         margin-bottom: 3rem;
+      }
+   }
+   .caseTitle {
+      font-size: text(normal);
+      font-family: font(secondary);
+      font-weight: 700;
+      line-height: 1.5rem;
+      letter-spacing: 0.2rem;
+      text-transform: uppercase;
+      opacity: 0.8;
+      margin-bottom: 1rem;
+   }
+   .caseHeading {
+      font-size: text(larger);
+      font-weight: 500;
+      line-height: 3.375rem;
+      
+
+      @include mobile {
+         font-size: 1.7rem;
+         line-height: 2.375rem;
+      }
+   }
+
+   .technologyCaseCards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+
+      @include mobile {
+         grid-template-columns: repeat(1, 1fr);
+         margin-top: 1rem;
+      }
+
+      svg {
+         width: 2rem;
+      }
+   }
+}

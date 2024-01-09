@@ -2,6 +2,27 @@
 
 .lestWorkStyle {
   padding: spacing(section-primary-padding);
+
+  &.lestWorkStyleDark {
+    background-color: color(dark-gray);
+
+    .workArea {
+      background-color: color(text-primary);
+      color: color(primary-white);
+      .workGrid {
+        .contactUsForm {
+          .policyArea {
+            .policyText {
+              .policyHighlight {
+                color: color(heading-liner);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   @include mobile {
     padding: spacing(section-mob-padding);
   }
@@ -9,13 +30,15 @@
     background-color: color(primary-background);
     padding: 2.5rem;
     border-radius: text(lg);
+
     @include mobile {
       padding: text(lg);
     }
     .workGrid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 3.75rem;
+      gap: 2rem;
+
       @include mobile {
         grid-template-columns: repeat(1, 1fr);
         gap: 0;
@@ -28,10 +51,12 @@
           line-height: 3.375rem;
           display: flex;
           flex-direction: column;
+
           @include mobile {
             margin-bottom: text(lg);
             line-height: 2.5rem;
           }
+
           .formTechHighlight {
             color: color(primary-blue);
             background: linear-gradient(
@@ -59,13 +84,15 @@
             margin-bottom: text(lg);
           }
         }
+
         .formText {
           font-size: text(lg);
           font-weight: 400;
           opacity: 0.6;
-          padding-right: 12rem;
           margin-bottom: 3.75rem;
           line-height: 1.875rem;
+          max-width: 85%;
+
           @include mobile {
             padding: 0;
             font-size: text(normal);
@@ -77,29 +104,43 @@
         .contactFormArea {
           .inputSpace {
             margin-bottom: 2.25rem;
+            &:last-child {
+              margin-bottom: 0;
+            }
             @include mobile {
               margin-bottom: text(lg);
             }
           }
         }
-
+        .captchaImg {
+          margin: 2.5rem 0 2.5rem 0;
+          img {
+            border-radius: 0.5rem;
+            box-shadow: 0 0 0.25rem 0 rgba(0, 0, 0, 0.12);
+            cursor: pointer;
+          }
+        }
         .policyArea {
           .policyText {
             font-size: text(xxs);
             font-weight: 400;
             line-height: text(lg);
+
             @include mobile {
               margin-bottom: text(lg);
             }
+
             .policyHighlight {
               color: color(primary-blue);
               font-size: text(xxs);
+              margin-left: 3px;
             }
           }
 
           .buttonGrid {
             display: flex;
             justify-content: flex-end;
+
             @include mobile {
               justify-content: flex-start;
             }
@@ -109,11 +150,14 @@
       .contactImg {
         display: flex;
         justify-content: flex-end;
+        height: 100%;
+
         img {
           max-width: 38rem;
-          height: 38.5rem;
+          height: 100%;
           object-fit: cover;
           border-radius: 0.75rem;
+
           @include mobile {
             display: none;
           }
