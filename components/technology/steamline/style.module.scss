@@ -10,7 +10,7 @@
       align-items: center;
       width: 100%;
       height: 100vh;
-      background: color(bg-soft) url('../../../public/images/pattern.png') no-repeat;
+      background: color(bg-soft) url("../../../public/images/pattern.png") no-repeat;
       background-size: cover;
    }
 
@@ -29,5 +29,40 @@
    .streamlineContent {
       font-size: text(lg);
       max-width: 38%;
+   }
+
+   .streamlineCards {
+      display: flex;
+      flex-wrap: wrap;
+      .streamlineCard {
+         width: 31.25rem;
+         height: 36.375rem;
+         border-radius: var(--spacing_20, 20px);
+         border: 1px solid rgba(17, 17, 17, 0.12);
+         background: #fff;
+         text-align: left;
+         padding: 2.5rem;
+         margin:1rem;
+
+         .cardIcon {
+            margin-bottom: 3.75rem;
+         }
+         .cardTitle {
+            font-size: text(xxxl);
+            font-weight: 500;
+            line-height: 2.5rem;
+            margin-bottom: 1.25rem;
+         }
+         .cardContent {
+            font-size: text(lg);
+            font-weight: 400;
+            line-height: 1.875rem;
+            opacity: 0.8;
+         }
+
+         button {
+            margin-top: 2rem;
+         }
+      }
    }
 }
