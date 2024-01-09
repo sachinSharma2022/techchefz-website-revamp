@@ -21,6 +21,22 @@ const Header = () => {
     setActive(!isActive);
   };
 
+  const renderTechnologyMenu = () => {
+    return (
+      <>
+        <section className={styles.subsection}>
+          <div className={styles.latestTech}>
+            <h1>Latest from technology</h1>
+            <div className={styles.imageTech}>
+              <img src="/images/img/nav-img.png" alt="nav-image" />
+            </div>
+          </div>
+          <div className={styles.overviewTech}>ffsfsdfsd</div>
+        </section>
+      </>
+    );
+  };
+
   return (
     <header
       className={`${styles.headerMain} ${theme ? styles.headerDarkStyle : ""}`}
@@ -63,20 +79,7 @@ const Header = () => {
             >
               Technology <div className={styles.arrow} />
             </Link>
-            <ul className={styles.subMenu}>
-              <li>
-                <Link href="/technology/cms">CMS</Link>
-              </li>
-              <li>
-                <Link href="/">Technology 2</Link>
-              </li>
-              <li>
-                <Link href="/">Technology 3</Link>
-              </li>
-              <li>
-                <Link href="/">Technology 4</Link>
-              </li>
-            </ul>
+            <ul className={styles.subMenu}>{renderTechnologyMenu()}</ul>
           </li>
           <li>
             <Link
