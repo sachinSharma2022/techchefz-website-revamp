@@ -40,18 +40,20 @@
     }
   }
 
-  .ProjectHighlight {
+  .projectHighlight {
     font-size: text(normal);
-    font-weight: 400;
+    font-weight: 700;
     margin-bottom: text(lg);
     opacity: 0.6;
     color: color(primary-white);
     text-transform: uppercase;
     letter-spacing: 0.2rem;
+
     @include mobile {
       margin-bottom: 0.75rem;
     }
   }
+
   .datingText {
     font-size: 2.75rem;
     font-weight: 500;
