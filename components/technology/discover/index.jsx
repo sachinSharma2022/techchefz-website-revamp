@@ -2,10 +2,9 @@
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { Tab } from "@headlessui/react";
+import { ImageCustom } from "@/components/ui/imageCustom";
 
 import styles from "./style.module.scss";
-import { ImageCustom } from "@/components/ui/imageCustom";
-import { cn } from "@/lib/utils";
 
 const Discover = () => {
   const technologyData = [

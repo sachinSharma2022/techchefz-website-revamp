@@ -34,14 +34,15 @@
    }
 
    .subHeading {
-      font-size: text(xxxl);
+      font-size: text(xl);
       font-weight: 500;
       line-height: 2.5rem;
       opacity: 0.6;
+      margin: 0;
    }
 
    .subContent {
-      font-size: text(lg);
+      font-size: text(normal);
       font-weight: 400;
       line-height: 1.875rem;
       opacity: 0.6;
@@ -60,6 +61,8 @@
       flex-direction: column;
       gap: 3.75rem;
       width: 100%;
+      border-left: 1px solid rgba(color(text-primary), 0.12);
+      padding-left: 2.5rem;
 
       .platformsBtn {
          display: flex;
