@@ -12,7 +12,7 @@ import LetsWork from "@/components/home/letsWork";
 
 const AboutPage = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <AboutBanner />
       <OurVision />
       <OurHistory />

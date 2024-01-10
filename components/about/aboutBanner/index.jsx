@@ -20,7 +20,7 @@ const AboutBanner = () => {
 
       <div className={styles.bannerImg}>
         <ImageCustom
-          src="/images/img/about-bg2.png"
+          src="/images/img/about-image.png"
           width={1360}
           height={450}
           alt="bannerImg"

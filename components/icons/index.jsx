@@ -2130,4 +2130,36 @@ export const Icons = {
       />
     </svg>
   ),
+
+  CheckIcon: ({ size, ...props }) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 17 12"
+      fill="none"
+      {...props}
+    >
+      <path
+        d="M1 6L6 11L16 1"
+        stroke="url(#paint0_linear_1035_25565)"
+        stroke-width="1.6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <defs>
+        <linearGradient
+          id="paint0_linear_1035_25565"
+          x1="1.175"
+          y1="4.1"
+          x2="7.35232"
+          y2="9.00918"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#1E8AF2" />
+          <stop offset="1" stop-color="#05BED7" />
+        </linearGradient>
+      </defs>
+    </svg>
+  ),
 };

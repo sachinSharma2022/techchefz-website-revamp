@@ -86,7 +86,7 @@ const OurTeam = () => {
                         <span
                           className={selected ? styles.btnActive : styles.btnIn}
                         >
-                          Directors
+                          Board of Directors
                         </span>
                       )}
                     </Tab>
