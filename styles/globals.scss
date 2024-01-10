@@ -637,3 +637,57 @@ a {
     
   }
 }
+
+.tczLifeSlider{
+  .slick-arrow {
+    background-color: color(primary-blue);
+    padding: 0;
+    border-radius: 0.5rem;
+    padding: 0.9rem;
+    width: 3rem;
+    height: 3rem;
+
+    &:hover {
+      background-color: color(primary-blue);
+    }
+
+    svg {
+      width: 1.2rem;
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .slick-prev {
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    top: inherit;
+    svg {
+      transform: rotate(-180deg);
+    }
+  }
+
+  .slick-next {
+    right: inherit;
+    left: 4.3rem;
+    bottom: 0;
+    z-index: 999;
+    top: inherit;
+  }
+
+  .slick-disabled {
+    background-color: color(primary-white);
+    border: 1px solid rgba(color(text-primary), 0.5);
+    &:hover {
+      background-color: color(primary-white);
+    }
+    svg {
+      path {
+        stroke: rgba(color(text-primary), 0.5);
+      }
+    }
+  }
+}
