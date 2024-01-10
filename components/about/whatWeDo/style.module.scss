@@ -54,10 +54,6 @@
       grid-template-columns: repeat(4, 1fr);
     }
 
-    @include desktop-md{
-      grid-template-columns: repeat(3, 1fr);
-    }
-
     @include mobile-tablet-p {
       grid-template-columns: repeat(2, 1fr);
     }

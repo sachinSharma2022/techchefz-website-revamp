@@ -2,6 +2,10 @@
 .partner {
    padding: spacing(section-primary-padding);
 
+   .headSection {
+      max-width: 70%;
+   }
+
    .partnerTitle {
       font-size: text(normal);
       font-weight: 700;

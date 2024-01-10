@@ -45,7 +45,7 @@ const TechnologyStack = () => {
     },
     {
       icon: (
-        <ImageCustom src="/images/drupal.png" width={97} height={24} alt="" />
+        <ImageCustom src="/images/drupal-2.png" width={97} height={22} alt="" />
       ),
     },
     {
@@ -100,7 +100,7 @@ const TechnologyStack = () => {
     },
     {
       icon: (
-        <ImageCustom src="/images/drupal.png" width={97} height={24} alt="" />
+        <ImageCustom src="/images/drupal-2.png" width={97} height={22} alt="" />
       ),
     },
     {
@@ -155,7 +155,7 @@ const TechnologyStack = () => {
     },
     {
       icon: (
-        <ImageCustom src="/images/drupal.png" width={97} height={24} alt="" />
+        <ImageCustom src="/images/drupal-2.png" width={97} height={22} alt="" />
       ),
     },
     {
@@ -210,7 +210,7 @@ const TechnologyStack = () => {
     },
     {
       icon: (
-        <ImageCustom src="/images/drupal.png" width={97} height={24} alt="" />
+        <ImageCustom src="/images/drupal-2.png" width={97} height={22} alt="" />
       ),
     },
     {
@@ -230,7 +230,7 @@ const TechnologyStack = () => {
     },
     {
       icon: (
-        <ImageCustom src="/images/drupal.png" width={97} height={24} alt="" />
+        <ImageCustom src="/images/drupal-2.png" width={97} height={22} alt="" />
       ),
     },
     {

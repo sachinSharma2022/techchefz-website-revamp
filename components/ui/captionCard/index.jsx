@@ -3,10 +3,11 @@ import React from "react";
 import styles from "./styles.module.scss";
 import { ImageCustom } from "../imageCustom";
 import { Icons } from "@/components/icons";
+import Link from "next/link";
 
 const CaptionCard = (props) => {
   return (
-    <div className={`${styles.captionCard} ${props.className} card`}>
+    <Link href="/" className={`${styles.captionCard} ${props.className} card`}>
       <div className={styles.cardImg}>
         <ImageCustom
           src={props.imgSrc}
@@ -22,7 +23,7 @@ const CaptionCard = (props) => {
         </h2>
         <Icons.ArrowLongRight size={18} />
       </div>
-    </div>
+    </Link>
   );
 };
 

@@ -45,6 +45,7 @@
       display: flex;
       justify-content: center;
       gap: 2.5rem;
+
       .resultCard {
          border: 2px solid rgba(color(text-primary), 12%);
          width: 100%;
@@ -52,6 +53,7 @@
          padding: 2rem;
          background-color: color(bg-soft);
          border-radius: 1.25rem;
+         
          &:hover {
             border-color: color(heading-liner);
          }

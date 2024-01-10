@@ -47,25 +47,24 @@ const TechnologyValues = () => {
   ];
   return (
     <section className={`${styles.technologyValues} technology-value`}>
-      <div className="row">
-        <div className="col-md-7 col-lg-7">
-          <h6 className={styles.valuesTitle}>Our Values</h6>
-          <h3 className={styles.valuesHeading}>
-            Innovative IT Solutions for Future
-          </h3>
-          <p className={styles.valuesText}>
-            We believe in a customer-centric ethic without and people-centric
-            paradigm within. With a strong sense of community, ownership, and
-            collaboration our people work in a spirit of co-creation,
-            co-innovation, and co-development to engineer next-generation
-            software products with the help of accelerators.
-          </p>
-        </div>
+      <div className={styles.headSection}>
+        <h6 className={styles.valuesTitle}>Our Values</h6>
+        <h3 className={styles.valuesHeading}>
+          Innovative IT Solutions for Future
+        </h3>
+        <p className={styles.valuesText}>
+          We believe in a customer-centric ethic without and people-centric
+          paradigm within. With a strong sense of community, ownership, and
+          collaboration our people work in a spirit of co-creation,
+          co-innovation, and co-development to engineer next-generation software
+          products with the help of accelerators.
+        </p>
       </div>
-      <div className="row justify-content-between">
+
+      <div className={styles.sliderSection}>
         <Swiper
           autoplay={{
-            delay: 5000,
+            delay: 8000,
             disableOnInteraction: false,
           }}
           navigation={false}

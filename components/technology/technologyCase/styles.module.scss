@@ -7,13 +7,25 @@
    @include mobile {
       padding: 1.5rem;
    }
-   
-   .caseTop{
+
+   .headSection {
+      display: flex;
+      align-items: flex-end;
       margin-bottom: 5rem;
+
       @include mobile {
          margin-bottom: 3rem;
       }
    }
+
+   .btnSection {
+      display: flex;
+   
+      button {
+         white-space: nowrap;
+      }
+   }
+
    .caseTitle {
       font-size: text(normal);
       font-family: font(secondary);
@@ -24,10 +36,13 @@
       opacity: 0.8;
       margin-bottom: 1rem;
    }
+
    .caseHeading {
       font-size: text(larger);
       font-weight: 500;
       line-height: 3.375rem;
+      max-width: 75%;
+      margin-bottom: 0;
       
 
       @include mobile {

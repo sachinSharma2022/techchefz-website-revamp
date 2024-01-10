@@ -1,48 +1,58 @@
 @import "~/styles/partials/config";
 
 .consistent {
-   background-color: color(bg-soft);
-   padding: spacing(section-primary-padding);
+  background-color: color(bg-soft);
+  padding: spacing(section-primary-padding);
 
-   @include mobile{
-      padding: 1.5rem;
-   }
+  @include mobile {
+    padding: 1.5rem;
+  }
 
-   .consistentImg {
-      margin-bottom: 5rem;
-      img {
-         width: 100%;
-         height: auto;
-      }
-   }
+  .consistentImg {
+    margin-bottom: 5rem;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 
-   .consistentTitle {
+  .contentSec {
+    display: flex;
+    gap: 8.938rem;
+  }
+
+  .consistentTitle {
+    font-size: text(larger);
+    font-weight: 500;
+    line-height: 3.375rem;
+
+    span {
       font-size: text(larger);
       font-weight: 500;
-      line-height: 3.375rem;
+      color: color(heading-liner);
+      background: linear-gradient(
+        118deg,
+        color(primary-blue) 11.5%,
+        color(heading-liner) 55.42%
+      );
+      @include textGradient;
 
-      span {
-         font-size: text(larger);
-         font-weight: 500;
-         color: color(heading-liner);
-         background: linear-gradient(118deg, color(primary-blue) 11.5%, color(heading-liner) 55.42%);
-         @include textGradient;
-
-         @include mobile{
-            font-size: 1.7rem;
-         }
+      @include mobile {
+        font-size: 1.7rem;
       }
+    }
 
-      @include mobile{
-         font-size: 1.7rem;
-         line-height: 2.375rem;
-      }
-   }
+    @include mobile {
+      font-size: 1.7rem;
+      line-height: 2.375rem;
+    }
+  }
 
-   .consistentText {
-      font-size: text(lg);
-      font-weight: 400;
-      line-height: 1.875rem;
-      opacity: 0.6;
-   }
+  .consistentText {
+    font-size: text(lg);
+    font-weight: 400;
+    line-height: 1.875rem;
+    opacity: 0.6;
+    margin-bottom: 2.5rem;
+  }
 }
