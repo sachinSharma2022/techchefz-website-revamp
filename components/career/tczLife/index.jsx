@@ -5,6 +5,7 @@ import { Icons } from "@/components/icons";
 import Slider from "react-slick";
 
 import styles from "./style.module.scss";
+import { ImageCustom } from "@/components/ui/imageCustom";
 
 const TczLife = () => {
    const settings = {
@@ -27,25 +28,26 @@ const TczLife = () => {
    return (
       <section className={styles.tczLife}>
          <div className={styles.tczLifeTop}>
-            <div className="row justify-content-between">
+            <div className="row justify-content-between m-0" >
                <div className="col-md-4 col-lg-4">
                   <h6 className={styles.tczLifeTitle}>Life at techchefz</h6>
                   <h3 className={styles.tczLifeHeading}>
                      Make an Impact from <span>Day One.</span>
                   </h3>
                </div>
-               <div className="col-md-5 col-lg-5">
+               <div className="col-md-6 col-lg-6 pe-0" >
                   <div className="tczLifeSlider">
                      <Slider {...settings}>
                         <div className={styles.videoWapper}>
-                           <VideoCustom src={"about.mp4"} width={50} height={50} />
+                           <ImageCustom  src={"/images/videoImage.png"} width={100} height={100} />
                         </div>
                         <div className={styles.videoWapper}>
-                           <VideoCustom src={"about.mp4"} width={50} height={50} />
+                           <ImageCustom  src={"/images/videoImage.png"} width={100} height={100} />
                         </div>
                         <div className={styles.videoWapper}>
-                           <VideoCustom src={"about.mp4"} width={50} height={50} />
+                           <ImageCustom  src={"/images/videoImage.png"} width={100} height={100} />
                         </div>
+                        
                      </Slider>
                   </div>
                </div>

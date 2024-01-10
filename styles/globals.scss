@@ -676,10 +676,10 @@ a {
   }
 
   .slick-prev {
-    left: 0;
+    left: -104%;
     bottom: 0;
     z-index: 999;
-    top: inherit;
+    top: 100%;
     svg {
       transform: rotate(-180deg);
     }
@@ -687,14 +687,14 @@ a {
 
   .slick-next {
     right: inherit;
-    left: 4.3rem;
+    left: -90%;
     bottom: 0;
     z-index: 999;
-    top: inherit;
+    top: 100%;
   }
 
   .slick-disabled {
-    background-color: color(primary-white);
+    background-color: color(bg-soft);
     border: 1px solid rgba(color(text-primary), 0.5);
     &:hover {
       background-color: color(primary-white);

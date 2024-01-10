@@ -3,6 +3,10 @@
 .openPosition {
    padding: spacing(section-primary-padding);
 
+   @include mobile {
+      padding: 2rem;
+   }
+
    .openPositionHeader {
       margin-bottom: 5rem;
 
@@ -45,11 +49,15 @@
       padding: 2.5rem;
       border-radius: 1.25rem;
       margin-bottom: 2.5rem;
+      
+      @include mobile{
+      padding: 1.5rem;
+      }
 
       .openPositionAccordian {
-        .accordianBody{
+         .accordianBody {
             margin-bottom: 2.5rem;
-        }
+         }
          .accordianButton {
             width: 100%;
             border-radius: 0.75rem;
@@ -58,6 +66,10 @@
             text-align: left;
             display: flex;
             justify-content: space-between;
+
+            @include mobile {
+               padding: 1rem;
+            }
 
             .buttonTitle {
                h6 {
@@ -86,11 +98,13 @@
          .accordianPanel {
             background: color(primary-white);
             padding: 2rem;
-            // padding-top: 0;
             text-align: left;
             border-radius: 0.75rem;
             position: relative;
             top: -2rem;
+            @include mobile {
+               top: -1rem;
+            }
 
             .accordianContent {
                h6 {
