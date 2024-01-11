@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 
 import styles from "./style.module.scss";
 import { Icons } from "@/components/icons";
+import SearchInput from "@/components/ui/searchInput";
 
 const OpenPosition = () => {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
@@ -178,8 +179,9 @@ const OpenPosition = () => {
     <section className={styles.openPosition}>
       <div className={styles.openPositionHeader}>
         <h4 className={styles.openPositionHeading}>
-          <span>21 </span> Open Positions
+          <span>21</span> Open Positions
         </h4>
+        <SearchInput />
       </div>
 
       <div className={styles.serviceBtn}>

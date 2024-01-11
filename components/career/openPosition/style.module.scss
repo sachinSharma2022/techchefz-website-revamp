@@ -9,6 +9,8 @@
 
   .openPositionHeader {
     margin-bottom: 5rem;
+    display: flex;
+    justify-content: space-between;
 
     .openPositionHeading {
       font-size: text(larger);
