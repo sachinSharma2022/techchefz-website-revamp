@@ -5,7 +5,13 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 // import required modules
-import { Autoplay, Navigation, Pagination, Thumbs, FreeMode } from "swiper/modules";
+import {
+  Autoplay,
+  Navigation,
+  Pagination,
+  Thumbs,
+  FreeMode,
+} from "swiper/modules";
 
 import { Icons } from "@/components/icons";
 import { useState } from "react";
@@ -78,29 +84,29 @@ const TechnologyValues = () => {
           ))}
         </Swiper>
 
-            <Swiper
-               onSwiper={setThumbsSwiper}
-               spaceBetween={10}
-               slidesPerView={3}
-               freeMode={true}
-               watchSlidesProgress={true}
-               modules={[FreeMode, Navigation, Thumbs]}
-               className="slide-thumb-grid"
-            >
-               {valueData.map((data, index) => (
-                  <SwiperSlide key={index}>
-                     <div className="progress-bar-animation" />
-                     <div className={styles.infoSec}>
-                        <div className={styles.icons}>{data.icon}</div>
-                        <h6 className={styles.subTitle}>{data.title}</h6>
-                        <p className={styles.content}>{data.content} </p>
-                     </div>
-                  </SwiperSlide>
-               ))}
-            </Swiper>
-         </div>
-      </section>
-   );
+        <Swiper
+          onSwiper={setThumbsSwiper}
+          spaceBetween={10}
+          slidesPerView={3}
+          freeMode={true}
+          watchSlidesProgress={true}
+          modules={[FreeMode, Navigation, Thumbs]}
+          className="slide-thumb-grid"
+        >
+          {valueData.map((data, index) => (
+            <SwiperSlide key={index}>
+              <div className="progress-bar-animation" />
+              <div className={styles.infoSec}>
+                <div className={styles.icons}>{data.icon}</div>
+                <h6 className={styles.subTitle}>{data.title}</h6>
+                <p className={styles.content}>{data.content} </p>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </section>
+  );
 };
 
 export default TechnologyValues;
