@@ -10,7 +10,7 @@ import Marquee from "react-fast-marquee";
 import styles from "./style.module.scss";
 
 const CareerBanner = () => {
-   const { theme, setTheme } = useContext(MyContext);
+  const { theme, setTheme } = useContext(MyContext);
 
    const galleryImages = [
       {
@@ -110,17 +110,22 @@ const CareerBanner = () => {
                </div>
          </div>
 
-         <Marquee delay={1}>
-            <div className={`${styles.galleryImages} scroll-gallery-images`}>
-               {galleryImages.map((data, index) => (
-                  <div key={index} className={`${styles.galleryImage} card-${index}`}>
-                     <ImageCustom src={data.imgSrc} width={300} height={300} alt="gallery-img" />
-                  </div>
-               ))}
+      <Marquee delay={1}>
+        <div className={`${styles.galleryImages} scroll-gallery-images`}>
+          {galleryImages.map((data, index) => (
+            <div key={index} className={`${styles.galleryImage} card-${index}`}>
+              <ImageCustom
+                src={data.imgSrc}
+                width={300}
+                height={300}
+                alt="gallery-img"
+              />
             </div>
-         </Marquee>
-      </section>
-   );
+          ))}
+        </div>
+      </Marquee>
+    </section>
+  );
 };
 
 export default CareerBanner;
