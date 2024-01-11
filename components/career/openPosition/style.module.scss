@@ -54,11 +54,11 @@
       padding: 1.5rem;
       }
 
-      .openPositionAccordian {
-         .accordianBody {
+      .openPositionAccordion {
+         .accordionBody {
             margin-bottom: 2.5rem;
          }
-         .accordianButton {
+         .accordionButton {
             width: 100%;
             border-radius: 0.75rem;
             background: color(primary-white);
@@ -95,7 +95,7 @@
                justify-content: center;
             }
          }
-         .accordianPanel {
+         .accordionPanel {
             background: color(primary-white);
             padding: 2rem;
             text-align: left;
@@ -106,7 +106,7 @@
                top: -1rem;
             }
 
-            .accordianContent {
+            .accordionContent {
                h6 {
                   font-size: text(xl);
                   font-weight: 500;
