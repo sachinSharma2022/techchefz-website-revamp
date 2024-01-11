@@ -4,6 +4,8 @@
    .contentSection {
       padding-inline: spacing(p-120);
       padding-block: 5rem 8.75rem;
+      display: flex;
+      gap: 8rem;
       @include mobile {
          padding: spacing(section-mob-padding);
          flex-direction: column;
@@ -14,7 +16,6 @@
       font-size: text(xl-larger);
       font-weight: 500;
       line-height: 5rem;
-      max-width: 80%;
 
       @include mobile {
          font-size: 2.75rem;

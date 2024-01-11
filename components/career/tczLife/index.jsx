@@ -1,11 +1,10 @@
 "use client";
 import React from "react";
-import VideoCustom from "@/components/ui/videoCustom";
 import { Icons } from "@/components/icons";
 import Slider from "react-slick";
+import { ImageCustom } from "@/components/ui/imageCustom";
 
 import styles from "./style.module.scss";
-import { ImageCustom } from "@/components/ui/imageCustom";
 
 const TczLife = () => {
    const settings = {
@@ -25,6 +24,21 @@ const TczLife = () => {
          </div>
       ),
    };
+
+   const sliderVideo = [
+      {
+         video :"/images/videoImage.png"
+      },
+      {
+         video :"/images/videoImage.png"
+      },
+      {
+         video :"/images/videoImage.png"
+      },
+      {
+         video :"/images/videoImage.png"
+      },
+   ]
    return (
       <section className={styles.tczLife}>
          <div className={styles.tczLifeTop}>
@@ -38,15 +52,13 @@ const TczLife = () => {
                <div className="col-md-6 col-lg-6 pe-0" >
                   <div className="tczLifeSlider">
                      <Slider {...settings}>
-                        <div className={styles.videoWapper}>
-                           <ImageCustom  src={"/images/videoImage.png"} width={100} height={100} />
+                        {sliderVideo.map((data,index)=>(
+                           <div key={index} className={styles.videoWapper}>
+                           <ImageCustom  src={data.video} width={500} height={500} />
                         </div>
-                        <div className={styles.videoWapper}>
-                           <ImageCustom  src={"/images/videoImage.png"} width={100} height={100} />
-                        </div>
-                        <div className={styles.videoWapper}>
-                           <ImageCustom  src={"/images/videoImage.png"} width={100} height={100} />
-                        </div>
+                        ))}
+                        
+                      
                         
                      </Slider>
                   </div>
@@ -59,7 +71,7 @@ const TczLife = () => {
                Techchefz Digital demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their
                simplicity. They’re very well thought out and have an excellent response to feedback. All of these qualities are why they’re our go-to
                user experience experts. We demonstrate an excellent understanding of user needs and all of their designs are creative and elegant in
-               their simplicity. They’re very well thought out and have an excellent response to feedback.{" "}
+               their simplicity. They’re very well thought out and have an excellent response to feedback.
             </p>
          </div>
       </section>

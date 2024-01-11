@@ -97,21 +97,17 @@ const CareerBanner = () => {
    return (
       <section className={`${styles.landingBannerStyle}`}>
          <div className={styles.contentSection}>
-            <div className="row justify-content-between">
-               <div className="col-md-8 col-lg-8">
                   <h1 className={styles.title}>
                      Join one of the most <span className={styles.titleHighlight}> resourceful </span>tech teams in India.
                   </h1>
-               </div>
-               <div className="col-md-4 col-lg-4">
+               <div >
                   <p className={styles.leadText}>
                      Discover your future with us. Explore opportunities, values, and culture. Join a dynamic and innovative team at Techchefz.
                   </p>
-                  <Button variant="blueBtn" className={styles.headerBtn} size="sm">
+                  <Button variant="blueBtn" className={styles.headerBtn} size="md">
                      View Openings <Icons.ArrowRight size={20} className="ms-2" />
                   </Button>
                </div>
-            </div>
          </div>
 
          <Marquee delay={1}>
