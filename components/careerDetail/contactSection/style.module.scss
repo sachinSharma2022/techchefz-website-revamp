@@ -1,0 +1,267 @@
+@import "~/styles/partials/config";
+
+.lestWorkStyle {
+  padding: spacing(section-primary-padding);
+  background-color: color(primary-background);
+
+  @include mobile-tablet-p {
+    padding: 4.75rem 0.5rem;
+  }
+
+  &.lestWorkStyleDark {
+    background-color: color(text-primary);
+    border-radius: 0;
+    margin: 0;
+
+    .workArea {
+      background-color: color(text-primary);
+      color: color(primary-white);
+      .workGrid {
+        .contactUsForm {
+          .textArea {
+            background-color: color(dark-gray);
+            border: 1px solid rgba(color(primary-white), 0.12);
+            color: rgba(color(primary-white), 0.9);
+          }
+          .labelCustom {
+            color: rgba(color(primary-white), 0.5) !important;
+            &::after {
+              display: none;
+            }
+          }
+          .policyArea {
+            .policyText {
+              .policyHighlight {
+                color: color(heading-liner);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    padding: 1rem 1.25rem;
+    border-radius: 1.6rem;
+    margin: 0 1.5rem;
+  }
+  .workArea {
+    background-color: color(primary-background);
+    padding: 2.5rem;
+
+    @include mobile {
+      padding: text(lg);
+    }
+    .workGrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+
+      @include mobile-tablet-p {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0;
+      }
+      @include mobile {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0;
+      }
+      .contactUsForm {
+        .formHeading {
+          font-size: 2.75rem;
+          font-weight: 500;
+          margin-bottom: text(xxxl);
+          line-height: 3.375rem;
+          display: flex;
+          flex-direction: column;
+
+          @include mobile {
+            margin-bottom: text(lg);
+            line-height: 2.5rem;
+          }
+
+          .formTechHighlight {
+            color: color(primary-blue);
+            background: linear-gradient(
+              118deg,
+              color(primary-blue) 11.5%,
+              color(heading-liner) 55.42%
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.75rem;
+            font-weight: 500;
+            line-height: 3.375rem;
+
+            @include mobile {
+              padding-right: 0;
+              font-size: 2rem;
+              line-height: 2.5rem;
+            }
+          }
+          @include mobile {
+            font-size: text(xxxl);
+            line-height: 2.5rem;
+            padding-right: 0;
+            margin-bottom: text(lg);
+          }
+        }
+
+        .formText {
+          font-size: text(lg);
+          font-weight: 400;
+          opacity: 0.6;
+          margin-bottom: 3.75rem;
+          line-height: 1.875rem;
+          max-width: 85%;
+
+          @include mobile-tablet-p {
+            padding-top: 2rem;
+          }
+          @include mobile {
+            padding: 0;
+            font-size: text(normal);
+            margin-bottom: 2.5rem;
+            line-height: text(xl);
+          }
+        }
+
+        .contactFormArea {
+          .inputSpace {
+            margin-bottom: 2.25rem;
+            &:last-child {
+              margin-bottom: 0;
+            }
+            @include mobile {
+              margin-bottom: text(lg);
+            }
+          }
+          .textArea {
+            padding-left: 1rem;
+            font-size: text(normal);
+            border-radius: 0.75rem;
+            font-weight: 500;
+            height: 100%;
+            min-height: 7rem;
+            &:focus {
+              box-shadow: none;
+              border: none;
+              border-color: transparent;
+            }
+          }
+          .labelCustom {
+            font-size: text(normal);
+            color: rgba(color(text-primary), 0.5);
+            line-height: text(xl);
+            font-weight: 400;
+            font-family: font(primary);
+            padding-inline: 1rem;
+          }
+        }
+        .captchaImg {
+          margin: 2.5rem 0 2.5rem 0;
+          img {
+            border-radius: 0.5rem;
+            box-shadow: 0 0 0.25rem 0 rgba(0, 0, 0, 0.12);
+            cursor: pointer;
+          }
+        }
+        .policyArea {
+          .policyText {
+            font-size: text(xxs);
+            font-weight: 400;
+            line-height: text(lg);
+
+            @include mobile {
+              margin-bottom: text(lg);
+            }
+
+            .policyHighlight {
+              color: color(primary-blue);
+              font-size: text(xxs);
+              margin-left: 3px;
+            }
+          }
+
+          .buttonGrid {
+            display: flex;
+            justify-content: flex-end;
+
+            @include mobile {
+              justify-content: flex-start;
+            }
+          }
+        }
+      }
+      .contactImg {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+        max-width: 60%;
+
+        @include mobile {
+          max-width: 100%;
+        }
+        h1 {
+          font-weight: 500;
+          font-size: text(larger);
+          line-height: 3.3rem;
+
+          @include mobile {
+            font-size: text(xxxl);
+          }
+        }
+        .titlegradient {
+          font-weight: 500;
+          font-size: text(larger);
+          line-height: 3.3rem;
+          background: linear-gradient(
+            118deg,
+            color(primary-blue) 11.5%,
+            color(heading-liner) 55.42%
+          );
+          @include textGradient;
+
+          @include mobile {
+            font-size: text(xxxl);
+          }
+        }
+        p {
+          font-weight: 400;
+          font-size: text(lg);
+          line-height: 1.8rem;
+          opacity: 0.6;
+          padding-top: 1rem;
+
+          @include mobile {
+            font-size: text(normal);
+          }
+        }
+        h3 {
+          font-weight: 700;
+          font-size: text(lg);
+          line-height: 1.8rem;
+          opacity: 0.6;
+          padding-top: 1rem;
+          @include mobile {
+            font-size: text(normal);
+          }
+        }
+        ul {
+          list-style-type: disc;
+        }
+        li {
+          font-weight: 400;
+          font-size: text(lg);
+          line-height: 1.8rem;
+          opacity: 0.6;
+          @include mobile {
+            font-size: text(normal);
+          }
+        }
+      }
+    }
+  }
+}

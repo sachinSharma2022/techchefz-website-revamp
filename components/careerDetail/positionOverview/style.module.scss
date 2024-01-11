@@ -1,0 +1,106 @@
+@import "~/styles/partials/config";
+
+@mixin jobPostDetailStyles() {
+  padding-inline: spacing(p-120);
+  padding-block: 4rem 4.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: color(text-primary);
+
+  @include mobile-tablet-p {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  @include mobile{
+    padding-inline: 1.5rem;
+    padding-block: 3rem 3.75rem;
+  }
+
+  .jobInfo {
+    h2 {
+      font-weight: 500;
+      font-size: text(larger);
+      color: color(primary-white);
+      padding-bottom: 1rem;
+
+      @include mobile {
+        font-size: text(xxxl);
+        font-weight: 500;
+      }
+    }
+
+    .jobDetails {
+      display: flex;
+      gap: 2rem;
+
+      @include mobile {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .detail {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        span {
+          font-weight: 400;
+          font-size: text(lg);
+          color: color(primary-white);
+          opacity: 0.6;
+
+          @include mobile {
+            font-size: text(normal);
+            font-weight: 500;
+          }
+        }
+
+        .icon {
+          display: flex;
+          align-items: center;
+          margin-bottom: 5px;
+
+          &:before {
+            content: "\2022";
+            margin-right: 5px;
+            font-size: 12px;
+            color: #333;
+          }
+        }
+      }
+    }
+  }
+
+  .applyButtons {
+    display: flex;
+    margin-top: 2rem;
+    gap: 2rem;
+
+    @include mobile {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+}
+
+.jobPostDetail {
+  @include jobPostDetailStyles();
+}
+
+.lightMode {
+  @include jobPostDetailStyles();
+  background-color: color(primary-background);
+  .jobInfo {
+    h2 {
+      color: color(text-primary);
+    }
+    .jobDetails {
+      .detail {
+    span {
+      color: color(text-primary);
+    }
+  }
+}
+  }
+}
