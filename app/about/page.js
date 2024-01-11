@@ -1,5 +1,4 @@
 "use client";
-
 import AboutBanner from "@/components/about/aboutBanner";
 import OurGallery from "@/components/about/ourGallery";
 import OurHistory from "@/components/about/ourHistory";
