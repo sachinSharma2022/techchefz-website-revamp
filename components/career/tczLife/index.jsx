@@ -56,11 +56,8 @@ const TczLife = () => {
                            <div key={index} className={styles.videoWapper}>
                            <ImageCustom  src={data.video} width={500} height={500} />
                         </div>
-                        ))}
-                        
-                      
-                        
-                     </Slider>
+                        ))}                  
+                      </Slider>
                   </div>
                </div>
             </div>
