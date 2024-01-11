@@ -1,0 +1,26 @@
+@import "~/styles/partials/config";
+.search  {
+    width: 40%;
+    position: relative;
+
+    @include mobile{
+        width: 100%;
+    }
+
+    input{
+        padding: 10px;
+        font-size: text(normal);
+        opacity: 0.8;
+        line-height: 1.5rem;
+        width: 100%;
+        background:color(bg-soft);
+        border-radius: 12px;
+        border: 1px solid rgba(17, 17, 17, 0.12);
+    }
+   
+    button{
+        position: absolute;
+        right: 1.5rem;
+        top: 0.5rem;
+    }
+}

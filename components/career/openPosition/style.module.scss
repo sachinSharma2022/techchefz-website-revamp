@@ -9,6 +9,15 @@
 
    .openPositionHeader {
       margin-bottom: 5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15.375rem;
+
+      @include mobile{
+         flex-direction: column;
+         gap: 2.5rem;
+      }
 
       .openPositionHeading {
          font-size: text(larger);

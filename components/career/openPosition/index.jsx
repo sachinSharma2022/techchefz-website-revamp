@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 
 import styles from "./style.module.scss";
 import { Icons } from "@/components/icons";
+import SearchInput from "@/components/ui/searchInput";
 
 const OpenPosition = () => {
    const openPositionData = [
@@ -197,6 +198,8 @@ const OpenPosition = () => {
             <h4 className={styles.openPositionHeading}>
                <span>21 </span> Open Positions
             </h4>
+
+            <SearchInput />
          </div>
          <div className={styles.serviceBtn}>
             {buttonVariants.map((buttonItem) => (
