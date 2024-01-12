@@ -88,7 +88,7 @@ const Header = () => {
           </li>
           <li className={styles.dropDown}>
             <Link href="/">
-              <Icons.Moredot width={4} height={14} /> More
+              <Icons.MoreDotIcon width={4} height={14} /> More
             </Link>
             <ul className={styles.subMenu}>
               <li>
@@ -110,7 +110,11 @@ const Header = () => {
       <div className={styles.headerRight}>
         <div className={styles.modeBtn}>
           <Button variant="default" onClick={() => setTheme(!theme)}>
-            {theme ? <Icons.Darkmode size={30} /> : <Icons.moon size={15} />}
+            {theme ? (
+              <Icons.DarkThemeIcon size={30} />
+            ) : (
+              <Icons.Moon size={15} />
+            )}
           </Button>
         </div>
         <Button variant="blueBtn" className={styles.headerBtn} size="sm">

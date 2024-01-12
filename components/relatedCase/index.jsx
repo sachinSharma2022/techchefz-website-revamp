@@ -15,12 +15,12 @@ const RelatedCase = () => {
     initialSlide: 0,
     nextArrow: (
       <div>
-        <Icons.sliderArrow />
+        <Icons.SliderArrow />
       </div>
     ),
     prevArrow: (
       <div>
-        <Icons.sliderArrow />
+        <Icons.SliderArrow />
       </div>
     ),
     responsive: [

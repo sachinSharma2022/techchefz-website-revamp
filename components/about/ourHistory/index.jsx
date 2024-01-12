@@ -28,12 +28,12 @@ const OurHistory = () => {
     slidesToScroll: 1,
     nextArrow: (
       <div>
-        <Icons.sliderArrow />
+        <Icons.SliderArrow />
       </div>
     ),
     prevArrow: (
       <div>
-        <Icons.sliderArrow />
+        <Icons.SliderArrow />
       </div>
     ),
   };

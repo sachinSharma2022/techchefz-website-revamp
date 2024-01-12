@@ -117,7 +117,7 @@ const OurTeam = () => {
                               </div>
                               <Icons.ArrowRight width={26} height={24} />
                             </div>
-                            <Icons.Linkdin
+                            <Icons.Linkedin
                               width={34}
                               height={34}
                               className={styles.linkdinIcon}
@@ -147,7 +147,7 @@ const OurTeam = () => {
                               </div>
                               <Icons.ArrowRight width={26} height={24} />
                             </div>
-                            <Icons.Linkdin
+                            <Icons.Linkedin
                               width={34}
                               height={34}
                               className={styles.linkdinIcon}
@@ -173,7 +173,7 @@ const OurTeam = () => {
               <div className={styles.modalTop}>
                 <div className={styles.modalTitle}>
                   <h5 className={styles.title}>About</h5>
-                  <Icons.modalCross width={32} height={32} />
+                  <Icons.ModalCross width={32} height={32} />
                 </div>
                 <div className={styles.modalImg}>
                   <ImageCustom
@@ -199,13 +199,13 @@ const OurTeam = () => {
                   industry advancements.
                 </p>
                 <p className={styles.teamMail}>
-                  <Icons.mail width={24} height={24} className="me-2" />{" "}
+                  <Icons.MailIcon width={24} height={24} className="me-2" />{" "}
                   mayankmaggon@techchefz.com
                 </p>
 
                 <h6>Let’s Get Connect</h6>
                 <div className={styles.modalIcons}>
-                  <Icons.Linkdin
+                  <Icons.Linkedin
                     className={styles.linkdinIcon}
                     width={34}
                     height={34}

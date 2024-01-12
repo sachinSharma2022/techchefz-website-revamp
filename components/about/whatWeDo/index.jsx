@@ -72,7 +72,7 @@ const WhatWeDo = () => {
     },
     {
       icon: (
-        <Icons.ManengedServices
+        <Icons.ManagedServices
           className={styles.workCardIcon}
           width={100}
           height={100}
@@ -84,7 +84,7 @@ const WhatWeDo = () => {
     },
     {
       icon: (
-        <Icons.TeamAugmention
+        <Icons.TeamAugmentation
           className={styles.workCardIcon}
           width={100}
           height={100}
