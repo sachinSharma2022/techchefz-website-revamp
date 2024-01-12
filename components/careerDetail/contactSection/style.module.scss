@@ -23,6 +23,9 @@
             border: 1px solid rgba(color(primary-white), 0.12);
             color: rgba(color(primary-white), 0.9);
           }
+          .uploader {
+            @extend .textArea;
+          }
           .labelCustom {
             color: rgba(color(primary-white), 0.5) !important;
             &::after {
@@ -48,7 +51,6 @@
   }
   .workArea {
     background-color: color(primary-background);
-    padding: 2.5rem;
 
     @include mobile {
       padding: text(lg);
@@ -150,6 +152,22 @@
               border-color: transparent;
             }
           }
+          .uploader{
+            @extend .textArea;
+            min-height: 0;
+            padding: 1.1rem 0;
+            padding-left: 1rem;
+          }
+          .uploadIcon{
+            display: flex;
+            align-items: center;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #555; 
+            cursor: pointer;
+          }
           .labelCustom {
             font-size: text(normal);
             color: rgba(color(text-primary), 0.5);
@@ -157,6 +175,9 @@
             font-weight: 400;
             font-family: font(primary);
             padding-inline: 1rem;
+          }
+          .uploadIcon svg path{
+            fill: color(text-primary);
           }
         }
         .captchaImg {

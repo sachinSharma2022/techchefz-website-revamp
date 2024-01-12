@@ -71,11 +71,22 @@ const ContactSection = () => {
                   <CountryDropdown />
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                  <CustomInput
-                    label="Upload CV* (pdf/doc upto 5mb)"
-                    placeholder="Upload CV* (pdf/doc upto 5mb)"
-                    type="email"
-                  />
+                  <div className="form-floating">
+                    <input
+                      label="Upload CV* (pdf/doc upto 5mb)"
+                      placeholder="Upload CV* (pdf/doc upto 5mb)"
+                      className={`${styles.uploader} form-control`}
+                      id="floatingInput"
+                      // type="file"
+                      // onChange={handleCvFileSelect}
+                    />
+                    <label className={styles.labelCustom} for="floatingInput">
+                      Upload CV* (pdf/doc upto 5mb)
+                    </label>
+                    <div className={styles.uploadIcon}>
+                    <Icons.uploader />
+                  </div>
+                  </div>
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
                   <CustomInput
@@ -95,7 +106,7 @@ const ContactSection = () => {
                       rows="5"
                     />
                     <label className={styles.labelCustom} for="floatingInput">
-                    Cover Letter*
+                      Cover Letter*
                     </label>
                   </div>
                 </div>

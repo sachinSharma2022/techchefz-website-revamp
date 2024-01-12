@@ -1,0 +1,52 @@
+@import "~/styles/partials/config";
+
+.dropdownDiv {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+
+  .dropdownContent {
+    position: absolute;
+    top: 3.9rem;
+    background-color: color(primary-white);
+    border-radius: 0.75rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    opacity: 0; 
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    width: 100%;
+ 
+    a {
+      font-weight: 400;
+      font-size: text(normal);
+      color: color(text-primary);
+      padding: 0.93rem 1rem;
+      text-decoration: none;
+      display: block;
+
+      .contentFlex{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+      }
+      .innerIconFlex{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+    }
+
+    a:hover {
+      background-color: color(primary-background);
+      border-radius: 0.62rem;
+    }
+  }
+
+  
+  &:hover .dropdownContent {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

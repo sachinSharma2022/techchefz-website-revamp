@@ -64,7 +64,7 @@ const MoreJobs = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          dots: true,
+          dots: false,
           infinite: false,
           speed: 500,
         },
@@ -74,7 +74,7 @@ const MoreJobs = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          dots: true,
+          dots: false,
           infinite: false,
           speed: 500,
         },
@@ -84,13 +84,13 @@ const MoreJobs = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          dots: true,
+          dots: false,
           infinite: false,
           speed: 500,
         },
       },
     ],
-    dots: true,
+    dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 3,
