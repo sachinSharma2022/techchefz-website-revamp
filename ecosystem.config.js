@@ -1,16 +1,11 @@
 module.exports = {
   apps: [
     {
-      name: "next-app",
+      name: "techchefz-website-revamp",
+      cwd: "/techchefz-website-revamp",
       script: "npm",
       args: "start",
       watch: true,
-      env: {
-        NODE_ENV: "development",
-      },
-      env_production: {
-        NODE_ENV: "production",
-      },
     },
   ],
 };
