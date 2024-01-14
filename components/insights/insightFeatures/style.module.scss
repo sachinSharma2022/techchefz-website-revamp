@@ -1,0 +1,55 @@
+@import "~/styles/partials/config";
+.insightFeatures {
+   padding: 5rem 7.5rem;
+   // text-align: center;
+   .insightHeader {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(color(text-primary), 0.12);
+      padding-bottom: 2.5rem;
+      text-align: left;
+
+      .serviceBtn {
+         display: flex;
+         gap: 1.25rem;
+
+         button {
+            color: color(text-primary);
+            font-size: text(normal);
+            font-weight: 400;
+            line-height: 1.875rem;
+            border: 0.063rem solid rgba(17, 17, 17, 0.4);
+            font-family: font(secondary);
+
+            &:hover {
+               background-color: color(primary-white);
+               color: color(text-primary);
+               border: 1px solid var(--Gradient, #1e8af2);
+            }
+         }
+      }
+   }
+
+   .allInsight {
+      margin-top: 2.5rem;
+
+      .insightSubHeading {
+         font-size: text(xxxl);
+         font-weight: 500;
+         line-height: 2.5rem;
+         margin-bottom: 2.5rem;
+      }
+
+      .allInsightCards {
+         display: grid;
+         grid-template-columns: repeat(3, 1fr);
+         gap: 2.5rem;
+         margin: 2.5rem 0;
+      }
+
+      .insightButton{
+         margin-top: 5rem;
+         text-align: center;
+      }
+   }
+}
