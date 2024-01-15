@@ -1,0 +1,136 @@
+@import "~/styles/partials/config";
+
+.distinctLocationsStyle {
+  padding-inline: spacing(p-120);
+  padding-block: 8.75rem 8.75rem;
+  @include mobile {
+    padding: spacing(section-mob-padding);
+  }
+  .careerRow {
+    margin-bottom: 3.75rem;
+
+    @include mobile {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  .ProjectHighlight {
+    font-size: text(normal);
+    font-weight: 700;
+    margin-bottom: text(lg);
+    opacity: 0.6;
+    color: color(text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+
+    @include mobile {
+      margin-bottom: 0.75rem;
+    }
+  }
+  .datingText {
+    font-size: 2.75rem;
+    font-weight: 500;
+    line-height: 3.375rem;
+    margin-bottom: text(lg);
+
+    @include mobile {
+      font-size: text(xxxl);
+      line-height: 2.5rem;
+      padding-right: 0;
+      margin-bottom: text(lg);
+    }
+  }
+  .descriptionText {
+    font-size: text(lg);
+    font-weight: 400;
+    line-height: 1.875rem;
+    margin-bottom: 0;
+    max-width: 50%;
+    @include mobile {
+      max-width: 100%;
+    }
+  }
+
+  .gridNumberMain {
+    .locationGridCards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+
+      @include mobile {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .locationBox {
+        background-color: color(bg-soft);
+        padding: text(lg);
+        border-radius: text(xl);
+        border: 2px solid rgba(17, 17, 17, 0.12);
+        cursor: pointer;
+
+        @include mobile {
+          padding: text(xl);
+        }
+        .backgroundImg {
+          margin-bottom: text(lg);
+          img {
+            object-fit: cover;
+            width: 100%;
+            height: 13.563rem;
+            border-radius: 1.25rem;
+          }
+        }
+        .countryFlag {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 0.5rem;
+          .flag {
+            img {
+              width: 36.023px;
+              height: auto;
+              border-radius: 0.125rem;
+            }
+          }
+        }
+        .addressArea {
+          display: flex;
+          gap: 12px;
+          margin-bottom: text(lg);
+          &:last-child {
+            margin-bottom: 0;
+          }
+          .addressText {
+            font-size: text(normal);
+            font-weight: 400;
+            line-height: text(xl);
+            margin-bottom: 0;
+          }
+        }
+        .sbTitle {
+          font-size: text(xl);
+          font-weight: 500;
+          text-align: left;
+          margin-bottom: 0;
+          line-height: 2rem;
+
+          @include mobile {
+            font-size: text(lg);
+          }
+        }
+
+        .sbText {
+          font-weight: 400;
+          font-size: text(normal);
+          line-height: text(xl);
+          opacity: 0.8;
+          text-align: left;
+          margin-bottom: text(lg);
+          @include mobile {
+            font-size: text(normal);
+          }
+        }
+      }
+    }
+  }
+}
