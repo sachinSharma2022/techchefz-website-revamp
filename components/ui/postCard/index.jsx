@@ -6,7 +6,7 @@ import styles from "./style.module.scss";
 
 const PostCard = (props) => {
    return (
-      <div className={styles.postCard}>
+      <div className={`${styles.postCard}  ${props.className}`}>
          <div className={styles.cardImg}>
             <ImageCustom src={props.imgSrc} width={1360} height={500} alt="captionImg" />
          </div>
