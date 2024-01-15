@@ -20,7 +20,7 @@ const Header = () => {
   };
 
   const renderTechnologyMenu = () => {
-    const multiredirection = [
+    const multiRedirection = [
       {
         title: "CMS",
         href: "#",
@@ -149,7 +149,7 @@ const Header = () => {
               }
             >
               {dropChoice === "technology" &&
-                multiredirection.map((key) => {
+                multiRedirection.map((key) => {
                   return (
                     <>
                       <div className={styles.hrefsFlex}>
@@ -189,10 +189,10 @@ const Header = () => {
       className={`${styles.headerMain} ${theme ? styles.headerDarkStyle : ""}`}
     >
       <div className={styles.logo}>
-        <Link href="/" className={styles.lightlogo}>
+        <Link href="/" className={styles.lightLogo}>
           <ImageCustom src="/images/logo.svg" width={153} height={40} alt="" />
         </Link>
-        <Link href="/" className={styles.darklogo}>
+        <Link href="/" className={styles.darkLogo}>
           <ImageCustom
             src="/images/white-logo.svg"
             width={153}
