@@ -20,129 +20,115 @@
   .insightDetailFlex {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    gap: 8rem;
+    margin-top: 5rem;
 
-    .socialMediaFlex{
+    .socialMediaFlex {
       display: flex;
       flex-direction: column;
       gap: 2rem;
 
-      .iconDiv{
+      .iconDiv {
         display: flex;
-        
+        justify-content: center;
+        align-items: center;
+        border-radius: 1.8rem;
+        border: 0.06rem solid rgba(255, 255, 255, 0.4);
+        padding: 1rem;
       }
     }
-    h2 {
-      font-weight: 500;
-      font-size: text(larger);
-      color: color(primary-white);
-      line-height: 3.7rem;
-      padding-bottom: 3rem;
 
-      @include mobile {
-        font-size: text(xxxl);
+    .insightDetailPara {
+      width: 100%;
+      padding-right: 26%;
+      h2 {
         font-weight: 500;
-      }
-    }
-
-    .publishDiv {
-      display: flex;
-      align-items: flex-start;
-      gap: 4rem;
-
-      @include mobile {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .publishFlex {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-
-        p {
-          font-weight: 400;
-          font-size: text(lg);
-          color: color(primary-white);
-          opacity: 0.6;
-          margin: 0;
-
-          @include mobile {
-            font-size: text(normal);
-            font-weight: 500;
-          }
-        }
-
-        h2 {
-          font-weight: 700;
-          font-size: text(xl);
-          color: color(primary-white);
-          line-height: 2rem;
-          margin: 0;
-          padding-bottom: 2rem;
-
-          @include mobile {
-            font-size: text(normal);
-            font-weight: 500;
-          }
-        }
-      }
-    }
-
-    .serviceDiv {
-      p {
-        font-weight: 400;
-        font-size: text(lg);
+        font-size: text(xxxl);
         color: color(primary-white);
-        opacity: 0.6;
+        line-height: 2.5rem;
+        padding-bottom: 2rem;
 
         @include mobile {
-          font-size: text(normal);
+          font-size: text(xxxl);
           font-weight: 500;
         }
       }
 
-      .techStackDiv {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(120px, 0.2fr));
-        gap: 0.5rem;
+      p {
+        font-weight: 400;
+        font-size: text(lg);
+        color: color(primary-white);
+        line-height: 1.8rem;
+        opacity: 0.8;
 
-        .techBtn {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          width: 100%;
-          max-width: 111px;
-          padding: 0.5rem;
-          border-radius: 0.6rem;
-          border: 0.06rem solid rgba(255, 255, 255, 0.4);
+        @include mobile {
+          font-size: text(xxxl);
           font-weight: 400;
-          font-size: text(normal);
-          color: color(primary-white);
-          line-height: 1.8rem;
         }
       }
-    }
-  }
 
-  .imageContainer {
-    position: absolute;
-    right: 0;
-    top: 15rem;
-
-    .imageDiv {
-      width: 100%;
-      height: 100%;
-
-      img {
-        border-radius: 0.6rem;
+      .insightImageDiv {
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+        img {
+          border-radius: 0.6rem;
+          width: 100%;
+          height: 100%;
+        }
       }
-    }
 
-    @include mobile {
-      flex-direction: column;
-      width: 100%;
+      .insightSection {
+        h2 {
+          font-weight: 500;
+          font-size: text(xl);
+          color: color(primary-white);
+          line-height: 2rem;
+          padding-bottom: 1rem;
+          padding-top: 1rem;
+
+          @include mobile {
+            font-size: text(xxxl);
+            font-weight: 500;
+          }
+        }
+        p {
+          font-weight: 400;
+          font-size: text(lg);
+          color: color(primary-white);
+          line-height: 1.8rem;
+          opacity: 0.8;
+          padding-bottom: 1rem;
+          margin: 0;
+
+          @include mobile {
+            font-size: text(xxxl);
+            font-weight: 400;
+          }
+        }
+        
+        img {
+          border-radius: 0.6rem;
+          width: 100%;
+          height: 100%;
+        }
+        ul {
+          list-style-type: square;
+        }
+        li {
+          font-weight: 400;
+          font-size: text(lg);
+          color: color(primary-white);
+          line-height: 1.8rem;
+          opacity: 0.8;
+          padding-bottom: 0.2rem;
+          margin: 0;
+
+          @include mobile {
+            font-size: text(xxxl);
+            font-weight: 400;
+          }
+        }
+      }
     }
   }
 }
@@ -154,36 +140,36 @@
 //light Mode
 .lightMode {
   @include insightDetailStyles();
-  background-color: color(primary-background);
+  background-color: color(primary-white);
 
-  .textContainer {
-    h2 {
-      color: color(text-primary);
+  .insightDetailFlex {
+    .socialMediaFlex {
+      .iconDiv {
+        border: 0.06rem solid rgba(17, 17, 17, 0.40);
+      }
     }
 
-    .publishDiv {
-      .publishFlex {
-        p {
-          color: color(text-primary);
-          opacity: 0.6;
-        }
+    .insightDetailPara {
+      h2 {
+        color: color(text-primary);
+      }
 
+      p {
+        color: color(text-primary);
+        opacity: 0.8;
+      }
+
+      .insightSection {
         h2 {
           color: color(text-primary);
         }
-      }
-    }
-
-    .serviceDiv {
-      p {
-        color: color(text-primary);
-        opacity: 0.6;
-      }
-
-      .techStackDiv {
-        .techBtn {
-          border: 0.06rem solid rgba(17, 17, 17, 0.4);
+        p {
           color: color(text-primary);
+          opacity: 0.8;
+        }
+        li {
+          color: color(text-primary);
+          opacity: 0.8;
         }
       }
     }
