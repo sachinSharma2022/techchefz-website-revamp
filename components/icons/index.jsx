@@ -1284,6 +1284,23 @@ export const Icons = {
       />
     </svg>
   ),
+  ArrowForward: ({ size, ...props }) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="9"
+      height="14"
+      viewBox="0 0 9 14"
+      fill="none"
+      {...props}
+    >
+      <path
+        d="M8.07027 7.06988L8.14098 6.99917L8.07027 6.92846L2.07109 0.929289L2.00038 0.858578L1.92967 0.92929L1.1373 1.72167L1.06601 1.79296L1.13787 1.86366L6.35742 6.99917L1.13787 12.1347L1.06601 12.2054L1.1373 12.2767L1.92967 13.0691L2.00038 13.1398L2.07109 13.0691L8.07027 7.06988Z"
+        fill="white"
+        stroke="white"
+        stroke-width="0.2"
+      />
+    </svg>
+  ),
   Linkedin: ({ size, ...props }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
