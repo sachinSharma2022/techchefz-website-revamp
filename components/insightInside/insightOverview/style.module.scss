@@ -1,0 +1,178 @@
+@import "~/styles/partials/config";
+
+@mixin insightOverviewStyles() {
+  padding: spacing(section-primary-padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: color(text-primary);
+
+  @include mobile-tablet-p {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  @include mobile {
+    padding-inline: 1.5rem;
+    padding-block: 3rem 3.75rem;
+  }
+
+  .textContainer {
+    max-width: 50%;
+    h2 {
+      font-weight: 500;
+      font-size: text(larger);
+      color: color(primary-white);
+      line-height: 3.7rem;
+      padding-bottom: 3rem;
+
+      @include mobile {
+        font-size: text(xxxl);
+        font-weight: 500;
+      }
+    }
+
+    .publishDiv {
+      display: flex;
+      align-items: flex-start;
+      gap: 4rem;
+
+      @include mobile {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .publishFlex {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        p {
+          font-weight: 400;
+          font-size: text(lg);
+          color: color(primary-white);
+          opacity: 0.6;
+          margin: 0;
+
+          @include mobile {
+            font-size: text(normal);
+            font-weight: 500;
+          }
+        }
+
+        h2 {
+          font-weight: 700;
+          font-size: text(xl);
+          color: color(primary-white);
+          line-height: 2rem;
+          margin: 0;
+          padding-bottom: 2rem;
+
+          @include mobile {
+            font-size: text(normal);
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    .serviceDiv {
+      p {
+        font-weight: 400;
+        font-size: text(lg);
+        color: color(primary-white);
+        opacity: 0.6;
+
+        @include mobile {
+          font-size: text(normal);
+          font-weight: 500;
+        }
+      }
+
+      .techStackDiv {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 0.2fr));
+        gap: 0.5rem;
+
+        .techBtn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          width: 100%;
+          max-width: 111px;
+          padding: 0.5rem;
+          border-radius: 0.6rem;
+          border: 0.06rem solid rgba(255, 255, 255, 0.4);
+          font-weight: 400;
+          font-size: text(normal);
+          color: color(primary-white);
+          line-height: 1.8rem;
+        }
+      }
+    }
+  }
+
+  .imageContainer {
+    position: absolute;
+    right: 0;
+    top: 15rem;
+
+    .imageDiv {
+      width: 100%;
+      height: 100%;
+
+      img {
+        border-radius: 0.6rem;
+      }
+    }
+
+    @include mobile {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+}
+
+.insightOverviewContainer {
+  @include insightOverviewStyles();
+}
+
+//light Mode
+.lightMode {
+  @include insightOverviewStyles();
+  background-color: color(primary-background);
+
+  .textContainer {
+    h2 {
+      color: color(text-primary);
+    }
+
+    .publishDiv {
+      .publishFlex {
+        p {
+          color: color(text-primary);
+          opacity: 0.6;
+        }
+
+        h2 {
+          color: color(text-primary);
+        }
+      }
+    }
+
+    .serviceDiv {
+      p {
+        color: color(text-primary);
+        opacity: 0.6;
+      }
+
+      .techStackDiv {
+        .techBtn {
+          border: 0.06rem solid rgba(17, 17, 17, 0.4);
+          color: color(text-primary);
+        }
+      }
+    }
+  }
+}
