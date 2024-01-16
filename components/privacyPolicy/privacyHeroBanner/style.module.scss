@@ -1,0 +1,52 @@
+@import "~/styles/partials/config";
+
+.privacyHeroBannerStyle {
+  padding-inline: spacing(p-120);
+  padding-block: 6.25rem 5rem;
+
+  @include mobile {
+    padding: spacing(section-mob-padding);
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 4rem;
+    font-weight: 500;
+    line-height: 5rem;
+    margin-bottom: 0.75rem;
+
+    @include mobile {
+      font-size: 2.75rem;
+      line-height: 3.5rem;
+      margin-bottom: text(xl);
+    }
+
+    .titleHighlight {
+      margin-left: 1rem;
+      font-size: 4rem;
+      font-weight: 500;
+      color: color(heading-liner);
+      background: linear-gradient(
+        118deg,
+        color(primary-blue) 11.5%,
+        color(heading-liner) 55.42%
+      );
+      @include textGradient;
+
+      @include mobile {
+        margin-left: 0;
+        font-size: 2.75rem;
+        line-height: 3.5rem;
+        display: flex;
+      }
+    }
+  }
+  .leadText {
+    font-size: text(lg);
+    line-height: 1.875rem;
+    font-weight: 400;
+    color: rgba(color(text-primary), 0.8);
+    margin-bottom: 0;
+  }
+
+}

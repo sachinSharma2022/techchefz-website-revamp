@@ -1,0 +1,67 @@
+@import "~/styles/partials/config";
+
+.PrivacyPolicyData {
+  padding-inline: spacing(p-120);
+  padding-block: 5rem 5rem;
+  background-color: color(bg-soft);
+
+  @include mobile {
+    padding: spacing(section-mob-padding);
+  }
+  .policyDivide {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 3.75rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .customerList {
+      padding-left: 0;
+      .list {
+        list-style: square;
+        font-size: text(lg);
+        line-height: 1.875rem;
+        font-weight: 400;
+        color: rgba(color(text-primary), 0.8);
+        list-style-position: outside;
+        margin-left: 3rem;
+        margin-bottom: 0;
+        max-width: 80%;
+        @include mobile {
+          max-width: 100%;
+        }
+      }
+    }
+    .title {
+      font-size: text(normal);
+      font-weight: 700;
+      line-height: text(xl);
+      letter-spacing: 0.2rem;
+      text-transform: uppercase;
+
+      @include mobile {
+        font-size: text(normal);
+        line-height: 2.5rem;
+      }
+    }
+
+    .leadText {
+      font-size: text(lg);
+      line-height: 1.875rem;
+      font-weight: 400;
+      color: rgba(color(text-primary), 0.8);
+      margin-bottom: 0;
+      max-width: 80%;
+      @include mobile {
+        max-width: 100%;
+      }
+    }
+    .textSpace {
+      margin-bottom: text(normal);
+    }
+  }
+}
