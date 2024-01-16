@@ -2,6 +2,7 @@
 
 .openPosition {
   padding: spacing(section-primary-padding);
+  padding-bottom: 0;
 
   @include mobile {
     padding: 2rem;

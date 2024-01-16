@@ -640,6 +640,18 @@ input:-webkit-autofill {
          }
       }
    }
+
+   .slide-thumb-grid-4 {
+      .swiper-wrapper {
+         display: grid;
+         grid-template-columns: repeat(4, 1fr);
+         gap: 40px;
+   
+         @include mobile {
+            grid-template-columns: repeat(2, 1fr);
+         }
+      }
+   }   
 }
 
 .tczLifeSlider {
