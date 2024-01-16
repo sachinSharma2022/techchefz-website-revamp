@@ -1,26 +1,19 @@
 "use client";
 
-import React, { Fragment, useState, useEffect } from "react";
-import { Dialog, Tab, Transition } from "@headlessui/react";
+import React, { useState } from "react";
+import { Tab } from "@headlessui/react";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { Icons } from "@/components/icons";
 
 import styles from "./style.module.scss";
+import { Button } from "@/components/ui/button";
 
 const OurTeam = () => {
   const { theme, setTheme } = useContext(MyContext);
   // const [selected, setSelected] = useState();
-  let [isOpen, setIsOpen] = useState(true);
-
-  function closeModal() {
-    setIsOpen(false);
-  }
-
-  function openModal() {
-    setIsOpen(true);
-  }
+  let [isOpen, setIsOpen] = useState(false);
 
   const teamData = [
     {
@@ -115,7 +108,13 @@ const OurTeam = () => {
                                 <h6>{data.mebName} </h6>
                                 <p>{data.role}</p>
                               </div>
-                              <Icons.ArrowRight width={26} height={24} />
+                              <Button
+                                variant="default"
+                                size="default"
+                                onClick={() => setIsOpen(!isOpen)}
+                              >
+                                <Icons.ArrowRight width={26} height={24} />
+                              </Button>
                             </div>
                             <Icons.Linkedin
                               width={34}
@@ -168,12 +167,17 @@ const OurTeam = () => {
                 </Tab.Panels>
               </Tab.Group>
             </div>
-
-            <div className={styles.teamModal}>
+            <div
+              className={`${styles.teamModal} ${
+                isOpen ? styles.teamModalOpen : ""
+              }`}
+            >
               <div className={styles.modalTop}>
                 <div className={styles.modalTitle}>
                   <h5 className={styles.title}>About</h5>
-                  <Icons.ModalCross width={32} height={32} />
+                  <Button variant="default" onClick={() => setIsOpen(!isOpen)}>
+                    <Icons.ModalCross width={32} height={32} />
+                  </Button>
                 </div>
                 <div className={styles.modalImg}>
                   <ImageCustom

@@ -104,6 +104,7 @@
       .cardHead {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         padding: 1.25rem;
 
         h6 {
@@ -132,7 +133,14 @@
   width: 400px;
   height: auto;
   border: 1px solid black;
-  display: none;
+  position: absolute;
+  top: 0;
+  right: -100%;
+  transition: all 0.5s;
+
+  &.teamModalOpen{
+    right: 0;
+  }
 
   .modalTop {
     background-color: color(primary-white);
