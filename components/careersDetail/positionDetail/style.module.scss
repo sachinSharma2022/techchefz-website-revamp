@@ -10,6 +10,11 @@
   @include mobile {
     padding-inline: 1.5rem;
   }
+
+  @include desktop-hd {
+    padding-inline: 0;
+  }
+
   h2 {
     font-weight: 500;
     font-size: text(lg);

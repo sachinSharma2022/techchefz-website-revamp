@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import styles from "./style.module.scss";
+import { cn } from "@/lib/utils";
 
 const WhyCms = () => {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
@@ -50,59 +51,61 @@ const WhyCms = () => {
   ];
   return (
     <section className={styles.whyCmsStyle}>
-      <div className={styles.ourValuesHead}>
-        <h6 className={styles.ourValuesTitle}>Why CMS</h6>
-        <h3 className={styles.ourValuesHeading}>
-          Why do we need a <span>CMS</span>
-        </h3>
-      </div>
-
-      <div className={styles.ourValuesContent}>
-        <div className={styles.ourValueImg}>
-          <ImageCustom
-            src={"/images/img/ourValues.png"}
-            width={600}
-            height={650}
-            alt="content-img"
-          />
+      <div className={cn("primary-container")}>
+        <div className={styles.ourValuesHead}>
+          <h6 className={styles.ourValuesTitle}>Why CMS</h6>
+          <h3 className={styles.ourValuesHeading}>
+            Why do we need a <span>CMS</span>
+          </h3>
         </div>
-        <div>
-          <p className={styles.ourValuesText}>
-            We believe in a customer-centric ethic without and people-centric
-            paradigm within. With a strong sense of community, ownership, and
-            collaboration our people work in a spirit of co-creation,
-            co-innovation, and co-development to engineer next-generation
-            software products with the help of accelerators.
-          </p>
-          <div className={styles.ourValuesAccordion}>
-            {accordionData.map((data, index) => (
-              <Disclosure key={index}>
-                {(panel) => {
-                  const { open, close } = panel;
-                  return (
-                    <>
-                      <Disclosure.Button
-                        className={styles.accordionHead}
-                        onClick={() => {
-                          if (!open) {
-                            close();
-                          }
-                          togglePanels({ ...panel, key: index });
-                        }}
-                      >
-                        {data.title}
-                        <div className={styles.iconBox}>
-                          {!open ? <Icons.ArrowDown /> : <Icons.ArrowUp />}
-                        </div>
-                      </Disclosure.Button>
-                      <Disclosure.Panel className={styles.accordionBody}>
-                        {data.content}
-                      </Disclosure.Panel>
-                    </>
-                  );
-                }}
-              </Disclosure>
-            ))}
+
+        <div className={styles.ourValuesContent}>
+          <div className={styles.ourValueImg}>
+            <ImageCustom
+              src={"/images/img/ourValues.png"}
+              width={600}
+              height={650}
+              alt="content-img"
+            />
+          </div>
+          <div>
+            <p className={styles.ourValuesText}>
+              We believe in a customer-centric ethic without and people-centric
+              paradigm within. With a strong sense of community, ownership, and
+              collaboration our people work in a spirit of co-creation,
+              co-innovation, and co-development to engineer next-generation
+              software products with the help of accelerators.
+            </p>
+            <div className={styles.ourValuesAccordion}>
+              {accordionData.map((data, index) => (
+                <Disclosure key={index}>
+                  {(panel) => {
+                    const { open, close } = panel;
+                    return (
+                      <>
+                        <Disclosure.Button
+                          className={styles.accordionHead}
+                          onClick={() => {
+                            if (!open) {
+                              close();
+                            }
+                            togglePanels({ ...panel, key: index });
+                          }}
+                        >
+                          {data.title}
+                          <div className={styles.iconBox}>
+                            {!open ? <Icons.ArrowDown /> : <Icons.ArrowUp />}
+                          </div>
+                        </Disclosure.Button>
+                        <Disclosure.Panel className={styles.accordionBody}>
+                          {data.content}
+                        </Disclosure.Panel>
+                      </>
+                    );
+                  }}
+                </Disclosure>
+              ))}
+            </div>
           </div>
         </div>
       </div>

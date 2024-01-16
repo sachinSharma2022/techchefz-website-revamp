@@ -1,7 +1,6 @@
-import { Icons } from "@/components/icons";
-import { ImageCustom } from "@/components/ui/imageCustom";
-import styles from "./style.module.scss";
 import PartnerCard from "@/components/ui/partnerCard";
+import { cn } from "@/lib/utils";
+import styles from "./style.module.scss";
 
 const CmsType = () => {
   const typeCard = [
@@ -45,29 +44,32 @@ const CmsType = () => {
 
   return (
     <section className={`${styles.cmsTypeStyle}`}>
-      <div className={styles.careerRow}>
-        <div className="row">
-          <div className="col-md-12 col-12">
-            <p className={styles.ProjectHighlight}>Types of CMS</p>
-          </div>
-          <div className="col-md-8 col-12">
-            <h2 className={styles.datingText}>
-              Together in every code. Discover the strength of our partnership.
-            </h2>
+      <div className={cn("primary-container")}>
+        <div className={styles.careerRow}>
+          <div className="row">
+            <div className="col-md-12 col-12">
+              <p className={styles.ProjectHighlight}>Types of CMS</p>
+            </div>
+            <div className="col-md-8 col-12">
+              <h2 className={styles.datingText}>
+                Together in every code. Discover the strength of our
+                partnership.
+              </h2>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className={`${styles.cmsGridCards} `}>
-        {typeCard.map((data, index) => (
-          <PartnerCard
-            key={index}
-            imgSrc={data.imgUrl}
-            cardTitle={data.sbTitle}
-            cardContent={data.sbText}
-            arrowUp
-          />
-        ))}
+        <div className={`${styles.cmsGridCards} `}>
+          {typeCard.map((data, index) => (
+            <PartnerCard
+              key={index}
+              imgSrc={data.imgUrl}
+              cardTitle={data.sbTitle}
+              cardContent={data.sbText}
+              arrowUp
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

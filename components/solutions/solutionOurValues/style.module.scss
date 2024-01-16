@@ -2,9 +2,12 @@
 
 .solutionOurValuesStyle {
   padding: spacing(section-primary-padding);
-  display: flex;
-  justify-content: space-between;
-  gap: 143px;
+
+  .flexContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 143px;
+  }
 
   .ourValuesHead {
     margin-bottom: 5rem;

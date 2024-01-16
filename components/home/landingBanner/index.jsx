@@ -16,14 +16,16 @@ const LandingBanner = () => {
         theme ? styles.landingBannerDark : ""
       }`}
     >
-      <h1 className={styles.title}>
-        Humanizing <div /> Digital Experience <div />
-        <span className={styles.titleHighlight}>Through Data.</span>
-      </h1>
+      <div className="primary-container">
+        <h1 className={styles.title}>
+          Humanizing <div /> Digital Experience <div />
+          <span className={styles.titleHighlight}>Through Data.</span>
+        </h1>
 
-      <Button variant="blueBtn" size="md">
-        Let’s Work Together <Icons.ArrowRight size={18} />
-      </Button>
+        <Button variant="blueBtn" size="md">
+          Let’s Work Together <Icons.ArrowRight size={18} />
+        </Button>
+      </div>
     </section>
   );
 };

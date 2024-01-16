@@ -2,16 +2,20 @@
 
 .streamlineWrapper {
    text-align: center;
+   background: color(bg-soft);
 
    .streamlineSection {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       width: 100%;
-      height: 100vh;
-      background: color(bg-soft) url("../../../public/images/pattern.png") no-repeat;
+      background: url("../../../public/images/pattern.png") no-repeat;
       background-size: cover;
+
+      .flexContainer {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         height: 100vh;
+      }
    }
 
    .streamlineTitle {
