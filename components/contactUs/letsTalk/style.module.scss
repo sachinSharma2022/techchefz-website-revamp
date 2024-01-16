@@ -28,11 +28,14 @@
   }
   .workArea {
     background-color: color(primary-background);
-    padding: 2.5rem;
+    padding: 3.75rem;
     border-radius: text(lg);
+    margin-top: -15rem;
+    position: relative;
 
     @include mobile {
       padding: text(lg);
+      margin-top: 0;
     }
 
     .headingMain {
@@ -43,6 +46,7 @@
       @include mobile {
         display: inline;
       }
+
       .formHeading {
         font-size: 2.75rem;
         font-weight: 500;
@@ -82,9 +86,12 @@
           margin-bottom: text(lg);
         }
       }
+
       .headingText {
         font-size: text(lg);
         font-weight: 400;
+        margin-bottom: 0;
+        opacity: 0.8;
         @include mobile {
           width: 100%;
         }
@@ -99,6 +106,7 @@
         grid-template-columns: repeat(1, 1fr);
         gap: 0;
       }
+
       .contactUsForm {
         .formText {
           font-size: text(lg);
@@ -127,6 +135,7 @@
             }
           }
         }
+
         .captchaImg {
           margin: 2.5rem 0 2.5rem 0;
           img {
@@ -135,6 +144,7 @@
             cursor: pointer;
           }
         }
+
         .policyArea {
           .policyText {
             font-size: text(xxs);
@@ -162,17 +172,34 @@
           }
         }
       }
-      .contactImg {
-        height: 100%;
-
-        img {
-          max-width: 38rem;
-          height: 100%;
-          object-fit: cover;
+      .contactTabWrap {
+        .contactTabFlex {
+          display: flex;
+          margin-bottom: text(lg);
+          align-items: center;
+          padding: text(lg);
+          height: 5rem;
           border-radius: 0.75rem;
-
-          @include mobile {
-            display: none;
+          width: 100%;
+          max-width: 15.938rem;
+          background-color: color(primary-white);
+          cursor: pointer;
+        }
+        .contactInnerFlex {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          .highlightIcon {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            h1 {
+              font-size: text(lg);
+              font-weight: 500;
+              line-height: 1.875rem;
+              margin-bottom: 0;
+            }
           }
         }
       }

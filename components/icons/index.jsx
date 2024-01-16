@@ -2440,4 +2440,72 @@ export const Icons = {
       </defs>
     </svg>
   ),
+
+  GradientArrowForward: ({ size, ...props }) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      {...props}
+    >
+      <path
+        d="M12.4648 17.1996L18.0648 11.5996"
+        stroke="url(#paint0_linear_3491_10291)"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M12.4688 6L18.0687 11.6"
+        stroke="url(#paint1_linear_3491_10291)"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M5 11.5996L18.0667 11.5996"
+        stroke="url(#paint2_linear_3491_10291)"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <defs>
+        <linearGradient
+          id="paint0_linear_3491_10291"
+          x1="14.2008"
+          y1="11.6649"
+          x2="15.7574"
+          y2="14.603"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#1E8AF2" />
+          <stop offset="1" stop-color="#05BED7" />
+        </linearGradient>
+        <linearGradient
+          id="paint1_linear_3491_10291"
+          x1="14.2048"
+          y1="6.06533"
+          x2="15.7613"
+          y2="9.00336"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#1E8AF2" />
+          <stop offset="1" stop-color="#05BED7" />
+        </linearGradient>
+        <linearGradient
+          id="paint2_linear_3491_10291"
+          x1="9.05067"
+          y1="11.6113"
+          x2="9.07787"
+          y2="12.2821"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#1E8AF2" />
+          <stop offset="1" stop-color="#05BED7" />
+        </linearGradient>
+      </defs>
+    </svg>
+  ),
 };
