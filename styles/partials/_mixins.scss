@@ -322,3 +322,10 @@ $shadowSecondary: 0px 0px 1px rgba(12, 26, 75, 0.1),
   text-fill-color: transparent;
 }
 
+
+@mixin truncate($line) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

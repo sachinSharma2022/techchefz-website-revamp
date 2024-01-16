@@ -3,20 +3,25 @@
 @mixin jobPostDetailStyles() {
   padding-inline: spacing(p-120);
   padding-block: 4rem 4.75rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
   background-color: color(text-primary);
 
-  @include mobile-tablet-p {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
   @include mobile {
     padding-inline: 1.5rem;
     padding-block: 3rem 3.75rem;
   }
+
+  .flexContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    @include mobile-tablet-p {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
 
   .jobInfo {
     h2 {

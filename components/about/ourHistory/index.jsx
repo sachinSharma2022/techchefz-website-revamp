@@ -1,13 +1,13 @@
 "use client";
-import React from "react";
-import Slider from "react-slick";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
+import Slider from "react-slick";
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
-import { ImageCustom } from "@/components/ui/imageCustom";
 import { Icons } from "@/components/icons";
+import { ImageCustom } from "@/components/ui/imageCustom";
 
+import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 
 const OurHistory = () => {
@@ -88,32 +88,34 @@ const OurHistory = () => {
         theme ? `${styles.ourHistoryDark} dark-ourHistory` : ""
       }`}
     >
-      <div className={styles.ourHistoryTop}>
-        <h6 className={styles.ourHistoryTitle}>Our History</h6>
-        <h3 className={styles.ourHistoryHeading}>
-          Tracing Innovation Through Time: Our IT Journey.
-        </h3>
-      </div>
+      <div className={cn("primary-container")}>
+        <div className={styles.ourHistoryTop}>
+          <h6 className={styles.ourHistoryTitle}>Our History</h6>
+          <h3 className={styles.ourHistoryHeading}>
+            Tracing Innovation Through Time: Our IT Journey.
+          </h3>
+        </div>
 
-      <div className="ourHistorySlider">
-        <Slider {...settings}>
-          {sliderData.map((data, index) => (
-            <div key={index} className={styles.cardStyle}>
-              <div className={styles.infoStyle}>
-                <h4 className={styles.subHeading}>{data.title}</h4>
-                <p className={styles.ourHistoryContent}>{data.content}</p>
+        <div className="ourHistorySlider">
+          <Slider {...settings}>
+            {sliderData.map((data, index) => (
+              <div key={index} className={styles.cardStyle}>
+                <div className={styles.infoStyle}>
+                  <h4 className={styles.subHeading}>{data.title}</h4>
+                  <p className={styles.ourHistoryContent}>{data.content}</p>
+                </div>
+                <div className={styles.OurHistoryImage}>
+                  <ImageCustom
+                    src={data.imgSrc}
+                    width={530}
+                    height={397}
+                    alt="slider-img"
+                  />
+                </div>
               </div>
-              <div className={styles.OurHistoryImage}>
-                <ImageCustom
-                  src={data.imgSrc}
-                  width={530}
-                  height={397}
-                  alt="slider-img"
-                />
-              </div>
-            </div>
-          ))}
-        </Slider>
+            ))}
+          </Slider>
+        </div>
       </div>
     </section>
   );

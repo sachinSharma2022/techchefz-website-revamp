@@ -1,7 +1,8 @@
-import React from "react";
-import styles from "./style.module.scss";
-import { ImageCustom } from "@/components/ui/imageCustom";
 import { Icons } from "@/components/icons";
+import CustomDropdown from "@/components/ui/customDropdown";
+import { ImageCustom } from "@/components/ui/imageCustom";
+import { cn } from "@/lib/utils";
+import styles from "./style.module.scss";
 
 const ImageCaptionCard = () => {
   const imageCaptionData = [
@@ -57,34 +58,70 @@ const ImageCaptionCard = () => {
     },
   ];
   return (
-    <section className={`${styles.captionCardStyle} captionCardSection`}>
-      {imageCaptionData.map((data, index) => (
-        <div key={index} className={`grid-${index}`}>
-          <div className={`${styles.imageCard} card`}>
-            <div className={styles.cardImg}>
-              <ImageCustom
-                src={data.imgSrc}
-                width={1360}
-                height={450}
-                alt="captionImg"
-              />
+    <section className="primary-container">
+      {/* Dropdown Section */}
+      <div className={`${styles.dropdownStyle}`}>
+        <div className={`${styles.inputDropPadding}`}>
+          <CustomDropdown
+            title="Services"
+            options={[
+              "Data",
+              "It Development",
+              "Network Security",
+              "Cloud Service",
+            ]}
+          />
+        </div>
+        <div className={`${styles.inputDropPadding}`}>
+          <CustomDropdown
+            title="Industry"
+            options={["Hardware", "Software", "Systems Integrator"]}
+          />
+        </div>
+        <div className={`${styles.inputDropPadding}`}>
+          <CustomDropdown
+            title="Technology"
+            options={[
+              "Web Content",
+              "Frontend",
+              "Backend",
+              "Mobile Development",
+              "Artificial Intelligence",
+              "DevOps & Cloud",
+            ]}
+          />
+        </div>
+      </div>
 
-              <div className={styles.cardBadges}>
-                {data.badgeList.map((badgeItem) => (
-                  <div key={badgeItem} className={styles.badges}>
-                    {badgeItem}
-                  </div>
-                ))}
+      <div className={cn(styles.captionCardStyle, "captionCardSection")}>
+        {imageCaptionData.map((data, index) => (
+          <div key={index} className={`grid-${index}`}>
+            <div className={`${styles.imageCard} card`}>
+              <div className={styles.cardImg}>
+                <ImageCustom
+                  src={data.imgSrc}
+                  width={1360}
+                  height={450}
+                  alt="captionImg"
+                />
+
+                <div className={styles.cardBadges}>
+                  {data.badgeList.map((badgeItem) => (
+                    <div key={badgeItem} className={styles.badges}>
+                      {badgeItem}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className={styles.cardBody}>
+                <h2 className={styles.cardText}>{data.description}</h2>
+                <Icons.ArrowLongRight size={18} />
               </div>
             </div>
-
-            <div className={styles.cardBody}>
-              <h2 className={styles.cardText}>{data.description}</h2>
-              <Icons.ArrowLongRight size={18} />
-            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </section>
   );
 };

@@ -2,13 +2,20 @@
 
 .tczLife {
    background-color: color(bg-soft);
-   .tczLifeTop {
-      padding: 8.75rem 0 5rem 7.5rem;
+   padding-block: spacing(section-primary-padding);
+   padding-left: spacing(p-120);
 
-      @include mobile{
-         padding: 1.75rem 0 2rem 0.5rem;
+   @include desktop-hd {
+    padding-inline: 0;
+   }
+
+
+   .tczLifeTop {
+
+      @include desktop-hd {
+         max-width: 1440px;
+         margin-inline: auto;
       }
- 
 
       .tczLifeTitle {
          font-size: text(normal);
@@ -19,6 +26,7 @@
          opacity: 0.8;
          margin-bottom: 1rem;
       }
+
       .tczLifeHeading {
          font-size: text(larger);
          font-weight: 500;
@@ -32,28 +40,29 @@
             -webkit-text-fill-color: transparent;
          }
       }
+
    }
 
-   .videoWapper {
-      // border-radius: 0.5rem;
-      max-width: 90%;
+   .videoWapper > div {
+      max-width: 92%;
+      height: 264px;
+      border-radius: 0.5rem;
+      overflow: hidden;
 
       img{
          width: 100%;
-         height: auto;
+         height: 100%;
          object-fit: cover;
-      }
-
-      source{
-         border-radius: 0.5rem;
       }
    }
 
    .tczLifeContent {
-      padding: 0 7.5rem 8.75rem 7.5rem;
+      margin-top: 5rem;
+      max-width: 85vw;
 
-      @include mobile{
-         padding: 0 1.5rem 0.75rem 1.5rem
+      @include desktop-hd {
+         max-width: 1440px;
+         margin-inline: auto;
       }
 
       p {

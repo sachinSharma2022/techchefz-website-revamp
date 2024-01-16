@@ -7,6 +7,12 @@
   background-color: color(primary-white);
   overflow-x: hidden;
 
+  .testimonialContainer {
+    @include desktop-hd {
+      padding-left: 7vw;
+    }
+  }
+
   &.testimonialsStyleDark {
     background-color: color(dark-gray);
     color: color(primary-white);
@@ -70,7 +76,6 @@
   .testimonialCardBox {
     padding: 2.5rem;
     background-color: color(primary-background);
-    min-width: 29.875rem;
 
     .commaImg {
       margin-bottom: text(lg);

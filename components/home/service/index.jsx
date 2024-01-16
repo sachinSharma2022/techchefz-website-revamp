@@ -6,6 +6,7 @@ import { MyContext } from "@/context/theme";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import styles from "./style.module.scss";
+import { cn } from "@/lib/utils";
 
 const Service = () => {
   const { theme, setTheme } = useContext(MyContext);
@@ -100,40 +101,42 @@ const Service = () => {
         theme ? styles.serviceDetailsMainDark : ""
       }`}
     >
-      <div className={styles.serviceGrid}>
-        <div className={styles.serviceHeading}>
-          <p className={styles.serviceText}>Service</p>
-          <h3 className={styles.serviceTitle}>
-            Exclusive development leveraging top notch technologies
-          </h3>
-          <Button variant="outline" size="md">
-            Our Solutions <Icons.ArrowRight size={18} />
-          </Button>
-        </div>
+      <div className={cn("primary-container")}>
+        <div className={styles.serviceGrid}>
+          <div className={styles.serviceHeading}>
+            <p className={styles.serviceText}>Service</p>
+            <h3 className={styles.serviceTitle}>
+              Exclusive development leveraging top notch technologies
+            </h3>
+            <Button variant="outline" size="md">
+              Our Solutions <Icons.ArrowRight size={18} />
+            </Button>
+          </div>
 
-        <div className={`${styles.desktopCards} ${styles.serviceOption} `}>
-          {serviceCard.map((data, index) => (
-            <div key={index} className={styles.serviceBox}>
-              <div className={styles.bgIcon}>{data.icon}</div>
-              <h4 className={styles.sbTitle}>{data.sbTitle}</h4>
-              <p className={styles.sbText}>{data.sbText}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className={`${styles.serviceOption} service-mobile-slider`}>
-        <Slider {...settings}>
-          {serviceCard.map((data, index) => (
-            <div key={index}>
+          <div className={`${styles.desktopCards} ${styles.serviceOption} `}>
+            {serviceCard.map((data, index) => (
               <div key={index} className={styles.serviceBox}>
                 <div className={styles.bgIcon}>{data.icon}</div>
                 <h4 className={styles.sbTitle}>{data.sbTitle}</h4>
                 <p className={styles.sbText}>{data.sbText}</p>
               </div>
-            </div>
-          ))}
-        </Slider>
+            ))}
+          </div>
+        </div>
+
+        <div className={`${styles.serviceOption} service-mobile-slider`}>
+          <Slider {...settings}>
+            {serviceCard.map((data, index) => (
+              <div key={index}>
+                <div key={index} className={styles.serviceBox}>
+                  <div className={styles.bgIcon}>{data.icon}</div>
+                  <h4 className={styles.sbTitle}>{data.sbTitle}</h4>
+                  <p className={styles.sbText}>{data.sbText}</p>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
       </div>
     </section>
   );

@@ -1,10 +1,10 @@
 "use client";
 
-import React from "react";
+import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
-import { ImageCustom } from "@/components/ui/imageCustom";
 
+import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 
 const AboutBanner = () => {
@@ -14,9 +14,11 @@ const AboutBanner = () => {
     <section
       className={`${styles.aboutBanner} ${theme ? styles.aboutBannerDark : ""}`}
     >
-      <h1 className={styles.bannerTitle}>
-        Pioneering Technologies that can <span>Reshape the World</span>
-      </h1>
+      <div className={cn("primary-container")}>
+        <h1 className={styles.bannerTitle}>
+          Pioneering Technologies that can <span>Reshape the World</span>
+        </h1>
+      </div>
 
       <div className={styles.bannerImg}>
         <ImageCustom

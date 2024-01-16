@@ -13,9 +13,14 @@
 
   .contentSection {
     display: flex;
+    justify-content: space-between;
     padding-inline: spacing(p-120);
     padding-block: 5rem 5rem;
     gap: 8.938rem;
+
+    @include desktop-hd {
+      padding-inline: 0;
+    }
   }
 
   .landingPlayerStyle {

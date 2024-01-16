@@ -1,6 +1,6 @@
-import React from "react";
-import styles from "./style.module.scss";
 import { ImageCustom } from "@/components/ui/imageCustom";
+import { cn } from "@/lib/utils";
+import styles from "./style.module.scss";
 
 const Innovation = () => {
   const innovationCardMap = [
@@ -26,30 +26,32 @@ const Innovation = () => {
   ];
   return (
     <section className={styles.innovationSpacing}>
-      <div className={styles.innovationMain}>
-        <p className={styles.text}>Innovation</p>
-        <h2 className={styles.title}>
-          Driving Technological Advancements for the Future
-        </h2>
-      </div>
+      <div className={cn("primary-container")}>
+        <div className={styles.innovationMain}>
+          <p className={styles.text}>Innovation</p>
+          <h2 className={styles.title}>
+            Driving Technological Advancements for the Future
+          </h2>
+        </div>
 
-      <div className={`${styles.innovationCardsGrid}`}>
-        {innovationCardMap.map((data, index) => (
-          <div key={index} className={styles.innovationBox}>
-            <div className={styles.textCardSpace}>
-              <p className={styles.sbSubtitle}>{data.sbSubtitle}</p>
-              <h4 className={styles.sbTitle}>{data.sbTitle}</h4>
+        <div className={`${styles.innovationCardsGrid}`}>
+          {innovationCardMap.map((data, index) => (
+            <div key={index} className={styles.innovationBox}>
+              <div className={styles.textCardSpace}>
+                <p className={styles.sbSubtitle}>{data.sbSubtitle}</p>
+                <h4 className={styles.sbTitle}>{data.sbTitle}</h4>
+              </div>
+              <div className={styles.bgImage}>
+                <ImageCustom
+                  src={data.imgSrc}
+                  width="500"
+                  height="500"
+                  alt="Innovation"
+                />
+              </div>
             </div>
-            <div className={styles.bgImage}>
-              <ImageCustom
-                src={data.imgSrc}
-                width="500"
-                height="500"
-                alt="Innovation"
-              />
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
