@@ -11,12 +11,13 @@ const InsightBanner = () => {
             <h1 className={styles.title}>
                Check out our latest news,announcements, and <span className={styles.titleHighlight}> featured </span>articles.
             </h1>
-            <div>
+            <div className={styles.contentRight}>
                <p className={styles.leadText}>
-               We’re a worldwide presence, serving clients on four continents. Our international expertise ensures innovative solutions tailored to diverse global needs.
+                  We’re a worldwide presence, serving clients on four continents. Our international expertise ensures innovative solutions tailored to
+                  diverse global needs.
                </p>
                <Button variant="blueBtn" className={styles.headerBtn} size="md">
-               Let’s Work Together <Icons.ArrowRight size={20} className="ms-2" />
+                  Let’s Work Together <Icons.ArrowRight size={20} className="ms-2" />
                </Button>
             </div>
          </div>
