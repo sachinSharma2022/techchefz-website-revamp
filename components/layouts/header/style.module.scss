@@ -253,7 +253,6 @@
 
   .activeHumburger {
     button {
-
       span {
         background: 0;
         &::before {
@@ -338,6 +337,11 @@
         display: inline-flex;
         justify-content: center;
         align-items: center;
+        transition: all 0.5s;
+
+        &:hover {
+          background-color: rgba(color(text-primary), 0.12);
+        }
       }
     }
     .headerBtn {
@@ -357,6 +361,16 @@
       }
       .darklogo {
         display: block;
+      }
+    }
+
+    .headerRight {
+      .modeBtn {
+        button {
+          &:hover {
+            background-color: rgba(color(primary-white), 0.2);
+          }
+        }
       }
     }
 
@@ -398,7 +412,6 @@
     }
   }
   .subMenu {
-
     .subsection {
       width: 100%;
       display: flex;
@@ -510,7 +523,7 @@
             margin-bottom: 0;
             color: #e3e3e3;
           }
-          
+
           .overviewBtn {
             margin-top: 2rem;
           }
