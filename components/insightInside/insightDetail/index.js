@@ -10,10 +10,10 @@ const InsightDetail = () => {
   const { theme, setTheme } = useContext(MyContext);
 
   const iconMediakData = [
-    { iconPath: <Icons.Linkedin /> },
+    { iconPath: <Icons.Linkedin size={25}/> },
     { iconPath: <Icons.facebookInsight /> },
-    { iconPath: <Icons.twitter color="#000000" /> },
-    { iconPath: <Icons.MailIcon /> },
+    { iconPath: <Icons.twitter color="#000000" size={25}/> },
+    { iconPath: <Icons.MailIcon size={25}/> },
     { iconPath: <Icons.chat /> },
   ];
   const insightDetailData = [
@@ -47,13 +47,17 @@ const InsightDetail = () => {
     <>
       <div className={theme ? styles.insightDetailContainer : styles.lightMode}>
         <div className={styles.insightDetailFlex}>
+
           <div className={styles.socialMediaFlex}>
             {iconMediakData.map((key) => (
               <>
-                <div className={styles.iconDiv}>{key.iconPath}</div>
+                <div className={styles.iconDiv}>
+                <div>{key.iconPath}</div>
+                </div>
               </>
             ))}
           </div>
+       
 
           <div className={styles.insightDetailPara}>
             <h2>

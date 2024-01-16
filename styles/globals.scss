@@ -795,23 +795,28 @@ input:-webkit-autofill {
    .slick-prev {
      left: auto;
      right: 150px;
-     top: -14vh;
+     top: -7vh;
      svg {
        transform: rotate(-180deg);
      }
      @include mobile-tablet-p {
        top: 16vh;
-       
      }
+     @include mobile {
+      top: 11vh;
+    }
    }
  
    .slick-next {
      right: 65px;
      left: auto;
-     top: -14vh;
+     top: -7vh;
      @include mobile-tablet-p {
        top: 16vh;
      }
+     @include mobile {
+      top: 11vh;
+    }
    }
  
    .slick-disabled {
