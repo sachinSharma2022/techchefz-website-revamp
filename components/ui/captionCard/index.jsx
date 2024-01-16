@@ -16,7 +16,6 @@ const CaptionCard = (props) => {
           alt="captionImg"
         />
       </div>
-
       <div className={styles.cardBody}>
         <h2 className={`${styles.cardText} ${props.textStyle}`}>
           {props.title}{" "}

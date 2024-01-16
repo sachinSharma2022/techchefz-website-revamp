@@ -1,9 +1,9 @@
-import React from "react";
-import { Button } from "@/components/ui/button";
 import { Icons } from "@/components/icons";
+import { Button } from "@/components/ui/button";
 
-import styles from "./styles.module.scss";
 import CaptionCard from "@/components/ui/captionCard";
+import { cn } from "@/lib/utils";
+import styles from "./styles.module.scss";
 
 const TechnologyCase = () => {
   const caseCardData = [
@@ -25,23 +25,25 @@ const TechnologyCase = () => {
   ];
   return (
     <section className={styles.technologyCase}>
-      <div className={styles.headSection}>
-        <div className={styles.caseTop}>
-          <h4 className={styles.caseTitle}>Case Study</h4>
-          <h3 className={styles.caseHeading}>
-            Together in every code. Discover the strength of our partnership.
-          </h3>
+      <div className={cn("primary-container")}>
+        <div className={styles.headSection}>
+          <div className={styles.caseTop}>
+            <h4 className={styles.caseTitle}>Case Study</h4>
+            <h3 className={styles.caseHeading}>
+              Together in every code. Discover the strength of our partnership.
+            </h3>
+          </div>
+          <div className={styles.btnSection}>
+            <Button variant="outline" size="sm">
+              Explore Now <Icons.ArrowRight size={18} />
+            </Button>
+          </div>
         </div>
-        <div className={styles.btnSection}>
-          <Button variant="outline" size="sm">
-            Explore Now <Icons.ArrowRight size={18} />
-          </Button>
+        <div className={styles.technologyCaseCards}>
+          {caseCardData.map((data, index) => (
+            <CaptionCard key={index} imgSrc={data.imgSrc} title={data.title} />
+          ))}
         </div>
-      </div>
-      <div className={styles.technologyCaseCards}>
-        {caseCardData.map((data, index) => (
-          <CaptionCard key={index} imgSrc={data.imgSrc} title={data.title} />
-        ))}
       </div>
     </section>
   );

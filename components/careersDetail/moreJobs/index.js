@@ -6,6 +6,7 @@ import { MyContext } from "@/context/theme";
 import Slider from "react-slick";
 import { Button } from "@/components/ui/button";
 import { Icons } from "@/components/icons";
+import { cn } from "@/lib/utils";
 
 const sliderData = [
   {
@@ -105,40 +106,42 @@ const MoreJobs = () => {
   return (
     <>
       <div className={theme ? styles.jobDetailContainer : styles.lightMode}>
-        <div className={styles.titleSection}>
-          <h3>SIMILAR VACANCIES</h3>
-          <h1>More jobs at TechChefz</h1>
-        </div>
+        <div className={cn("primary-container")}>
+          <div className={styles.titleSection}>
+            <h3>SIMILAR VACANCIES</h3>
+            <h1>More jobs at TechChefz</h1>
+          </div>
 
-        <div className="job-detail-slider">
-          <Slider {...settings}>
-            {sliderData.map((value, index) => (
-              <>
-                <div className={styles.cardContainer} key={index}>
-                  <div className={styles.cardDiv}>
-                    <h1>{value.title}</h1>
-                    <p>{value.content}</p>
-                    <div className={styles.spanDiv}>
-                      <div className={styles.spanDetail}>
-                        <Icons.TimerIcon size={16} />
-                        <span>{value.exp}</span>
+          <div className="job-detail-slider">
+            <Slider {...settings}>
+              {sliderData.map((value, index) => (
+                <>
+                  <div className={styles.cardContainer} key={index}>
+                    <div className={styles.cardDiv}>
+                      <h1>{value.title}</h1>
+                      <p>{value.content}</p>
+                      <div className={styles.spanDiv}>
+                        <div className={styles.spanDetail}>
+                          <Icons.TimerIcon size={16} />
+                          <span>{value.exp}</span>
+                        </div>
+                        <div className={styles.spanDetail}>
+                          <Icons.LocationIcon size={16} />
+                          <span>{value.location}</span>
+                        </div>
                       </div>
-                      <div className={styles.spanDetail}>
-                        <Icons.LocationIcon size={16} />
-                        <span>{value.location}</span>
-                      </div>
+                      <Button
+                        variant={theme ? "ligthBlueBtn" : "blueBtn"}
+                        size="md"
+                      >
+                        Apply
+                      </Button>
                     </div>
-                    <Button
-                      variant={theme ? "ligthBlueBtn" : "blueBtn"}
-                      size="md"
-                    >
-                      Apply
-                    </Button>
                   </div>
-                </div>
-              </>
-            ))}
-          </Slider>
+                </>
+              ))}
+            </Slider>
+          </div>
         </div>
       </div>
     </>

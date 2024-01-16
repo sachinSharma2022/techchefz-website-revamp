@@ -13,6 +13,10 @@
          flex-direction: column;
          gap: 0;
       }
+
+      @include desktop-hd {
+         padding-inline: 0;
+      }
    }
    .title {
       font-size: text(xl-larger);
