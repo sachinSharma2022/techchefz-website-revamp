@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { Icons } from "@/components/icons";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const DigitalTransformation = () => {
   const { theme, setTheme } = useContext(MyContext);
@@ -99,9 +100,11 @@ const DigitalTransformation = () => {
               </h2>
             </div>
             <div className={`${styles.servicesBtn} col-md-4 col-12`}>
-              <Button variant="outline" size="md">
-                Explore Services <Icons.ArrowRight size={18} />
-              </Button>
+              <Link href="/solutions">
+                <Button variant="outline" size="md">
+                  Explore Services <Icons.ArrowRight size={18} />
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

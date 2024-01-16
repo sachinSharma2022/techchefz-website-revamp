@@ -1,15 +1,18 @@
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
+import Link from "next/link";
 
 const Innovation = () => {
   const innovationCardMap = [
     {
+      link: "/insights",
       sbSubtitle: "Discover Perspectives",
       sbTitle: "Insights",
       imgSrc: "/images/innovation-printer.png",
     },
     {
+      link: "/careers",
       sbSubtitle: "Join Us",
       sbTitle: "Career",
       imgSrc: "/images/career-hand.png",
@@ -17,6 +20,7 @@ const Innovation = () => {
       height: "",
     },
     {
+      link: "/contact-us",
       sbSubtitle: "Lets's Work Together",
       sbTitle: "Contact Us",
       imgSrc: "/images/contact-us.png",
@@ -36,7 +40,7 @@ const Innovation = () => {
 
         <div className={`${styles.innovationCardsGrid}`}>
           {innovationCardMap.map((data, index) => (
-            <div key={index} className={styles.innovationBox}>
+            <Link key={index} href={data.link} className={styles.innovationBox}>
               <div className={styles.textCardSpace}>
                 <p className={styles.sbSubtitle}>{data.sbSubtitle}</p>
                 <h4 className={styles.sbTitle}>{data.sbTitle}</h4>
@@ -49,7 +53,7 @@ const Innovation = () => {
                   alt="Innovation"
                 />
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

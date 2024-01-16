@@ -8,6 +8,7 @@ import { useContext } from "react";
 
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
+import Link from "next/link";
 
 const TechnologyStack = () => {
   const { theme, setTheme } = useContext(MyContext);
@@ -299,9 +300,11 @@ const TechnologyStack = () => {
                 </div>
               </div>
               <div className="col-md-12 col-12">
-                <Button variant="outline" size="md">
-                  Explore Technologies <Icons.ArrowRight size={18} />
-                </Button>
+                <Link href="/technology">
+                  <Button variant="outline" size="md">
+                    Explore Technologies <Icons.ArrowRight size={18} />
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

@@ -3,6 +3,7 @@ import CustomDropdown from "@/components/ui/customDropdown";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
+import Link from "next/link";
 
 const ImageCaptionCard = () => {
   const imageCaptionData = [
@@ -95,7 +96,7 @@ const ImageCaptionCard = () => {
 
       <div className={cn(styles.captionCardStyle, "captionCardSection")}>
         {imageCaptionData.map((data, index) => (
-          <div key={index} className={`grid-${index}`}>
+          <Link href="/case-study" key={index} className={`grid-${index}`}>
             <div className={`${styles.imageCard} card`}>
               <div className={styles.cardImg}>
                 <ImageCustom
@@ -119,7 +120,7 @@ const ImageCaptionCard = () => {
                 <Icons.ArrowLongRight size={18} />
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

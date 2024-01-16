@@ -285,7 +285,7 @@ const Header = () => {
 
           <div className={isActive ? styles.activeHumburger : null}>
             <Button
-              variant="defualt"
+              variant="default"
               className={styles.navHamburger}
               onClick={toggleClass}
             >

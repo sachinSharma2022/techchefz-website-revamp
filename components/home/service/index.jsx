@@ -7,6 +7,7 @@ import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const Service = () => {
   const { theme, setTheme } = useContext(MyContext);
@@ -108,9 +109,11 @@ const Service = () => {
             <h3 className={styles.serviceTitle}>
               Exclusive development leveraging top notch technologies
             </h3>
-            <Button variant="outline" size="md">
-              Our Solutions <Icons.ArrowRight size={18} />
-            </Button>
+            <Link href="/solutions">
+              <Button variant="outline" size="md">
+                Our Solutions <Icons.ArrowRight size={18} />
+              </Button>
+            </Link>
           </div>
 
           <div className={`${styles.desktopCards} ${styles.serviceOption} `}>

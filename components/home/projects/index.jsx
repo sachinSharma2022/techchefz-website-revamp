@@ -7,6 +7,7 @@ import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import { useContext } from "react";
 import styles from "./style.module.scss";
+import Link from "next/link";
 
 const Projects = () => {
   const { theme, setTheme } = useContext(MyContext);
@@ -42,9 +43,11 @@ const Projects = () => {
               and the transformative impact.
             </p>
 
-            <Button variant="outline" size="md">
-              Check Our Portfolio <Icons.ArrowRight size={18} />
-            </Button>
+            <Link href="/portfolio">
+              <Button variant="outline" size="md">
+                Check Our Portfolio <Icons.ArrowRight size={18} />
+              </Button>
+            </Link>
           </div>
 
           <div className={styles.cardSec}>

@@ -6,6 +6,7 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const Discover = () => {
   const technologyData = [
@@ -77,9 +78,11 @@ const Discover = () => {
             <h3 className={styles.discoverHeading}>Technology Stack</h3>
           </div>
 
-          <Button variant="outline" size="sm">
-            Explore Now <Icons.ArrowRight size={18} />
-          </Button>
+          <Link href="/technology/cms">
+            <Button variant="outline" size="sm">
+              Explore Now <Icons.ArrowRight size={18} />
+            </Button>
+          </Link>
         </div>
 
         <div className={styles.discoverTabSection}>

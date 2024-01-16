@@ -6,6 +6,7 @@ import Marquee from "react-fast-marquee";
 
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const CareerBanner = () => {
   const galleryImages = [
@@ -104,9 +105,11 @@ const CareerBanner = () => {
               Discover your future with us. Explore opportunities, values, and
               culture. Join a dynamic and innovative team at Techchefz.
             </p>
-            <Button variant="blueBtn" className={styles.headerBtn} size="md">
-              View Openings <Icons.ArrowRight size={20} className="ms-2" />
-            </Button>
+            <Link href="/careers-detail">
+              <Button variant="blueBtn" className={styles.headerBtn} size="md">
+                View Openings <Icons.ArrowRight size={20} className="ms-2" />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

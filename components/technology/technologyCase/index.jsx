@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import CaptionCard from "@/components/ui/captionCard";
 import { cn } from "@/lib/utils";
 import styles from "./styles.module.scss";
+import Link from "next/link";
 
 const TechnologyCase = () => {
   const caseCardData = [
@@ -34,9 +35,11 @@ const TechnologyCase = () => {
             </h3>
           </div>
           <div className={styles.btnSection}>
-            <Button variant="outline" size="sm">
-              Explore Now <Icons.ArrowRight size={18} />
-            </Button>
+            <Link href="/case-study">
+              <Button variant="outline" size="sm">
+                Explore Now <Icons.ArrowRight size={18} />
+              </Button>
+            </Link>
           </div>
         </div>
         <div className={styles.technologyCaseCards}>

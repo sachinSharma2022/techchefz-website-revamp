@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 import { useContext } from "react";
 import styles from "./style.module.scss";
 
@@ -44,9 +45,11 @@ const WeAreFuture = () => {
               into AR/VR.
             </p>
 
-            <Button variant="outline" size="md">
-              About the Company <Icons.ArrowRight size={18} />
-            </Button>
+            <Link href="/about">
+              <Button variant="outline" size="md">
+                About the Company <Icons.ArrowRight size={18} />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
