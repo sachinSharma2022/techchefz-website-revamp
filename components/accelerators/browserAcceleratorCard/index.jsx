@@ -10,7 +10,6 @@ const BrowserAcceleratorCard = (props) => {
          <div className={styles.cardHeader}>
             <div className={styles.cardSubTitle}>
                <span>{props.cardIcon} </span>
-               {/* <Icons.CustomDevelopment width={36} height={36} /> */}
                <p>{props.subHeading} </p>
             </div>
             <Icons.ArrowUpRight width={24} height={24} />
