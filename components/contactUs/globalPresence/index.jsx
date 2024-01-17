@@ -22,6 +22,18 @@ const GlobalPresence = () => {
             alt=""
           />
         </div>
+        {/* <div className={styles.locationPopoverCard}>
+        <div className={styles.popoverMapIcon}>
+          <ImageCustom
+            src="/images/united-state-flag.png"
+            width={40}
+            height={26}
+            alt=""
+          />
+        </div>
+          <h1 className={styles.locationHeading}>United States</h1>
+          <p className={styles.locationAreaText}>100 Smith Street Collingwood VIC 3066 AU</p>
+        </div> */}
       </div>
     </section>
   );
