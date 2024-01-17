@@ -1,19 +1,20 @@
 "use client";
 
-import React, { useContext } from "react";
-import styles from "./style.module.scss";
-import { MyContext } from "@/context/theme";
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
+import { MyContext } from "@/context/theme";
+import { cn } from "@/lib/utils";
+import { useContext } from "react";
+import styles from "./style.module.scss";
 
 const InsightDetail = () => {
   const { theme, setTheme } = useContext(MyContext);
 
-  const iconMediakData = [
-    { iconPath: <Icons.Linkedin size={25}/> },
+  const iconMediaData = [
+    { iconPath: <Icons.Linkedin size={25} /> },
     { iconPath: <Icons.facebookInsight /> },
-    { iconPath: <Icons.twitter color="#000000" size={25}/> },
-    { iconPath: <Icons.MailIcon size={25}/> },
+    { iconPath: <Icons.twitter color="#000000" size={25} /> },
+    { iconPath: <Icons.MailIcon size={25} /> },
     { iconPath: <Icons.chat /> },
   ];
   const insightDetailData = [
@@ -44,20 +45,16 @@ const InsightDetail = () => {
     },
   ];
   return (
-    <>
-      <div className={theme ? styles.insightDetailContainer : styles.lightMode}>
+    <div className={theme ? styles.insightDetailContainer : styles.lightMode}>
+      <div className={cn("primary-container", styles.flexContainer)}>
         <div className={styles.insightDetailFlex}>
-
           <div className={styles.socialMediaFlex}>
-            {iconMediakData.map((key) => (
-              <>
-                <div className={styles.iconDiv}>
+            {iconMediaData.map((key) => (
+              <div key={key} className={styles.iconDiv}>
                 <div>{key.iconPath}</div>
-                </div>
-              </>
+              </div>
             ))}
           </div>
-       
 
           <div className={styles.insightDetailPara}>
             <h2>
@@ -86,33 +83,26 @@ const InsightDetail = () => {
             </div>
 
             {insightDetailData.map((value, index) => (
-              <>
-                <div className={styles.insightSection} key={index}>
-                  <h2>{value.title}</h2>
-                  <p>{value.para}</p>
-               
-                  {value.img && (
-                    <div className={styles.insightImageDiv}>
-                    <ImageCustom
-                      src={value.img}
-                      width={690}
-                      height={480}
-                    />
-                    </div>
-                  )}
-              
-                  <ul>
-                    {value.bullet.map((point, idx) => (
-                      <li key={idx}>{point}</li>
-                    ))}
-                  </ul>
-                </div>
-              </>
+              <div className={styles.insightSection} key={index}>
+                <h2>{value.title}</h2>
+                <p>{value.para}</p>
+                {value.img && (
+                  <div className={styles.insightImageDiv}>
+                    <ImageCustom src={value.img} width={690} height={480} />
+                  </div>
+                )}
+
+                <ul>
+                  {value.bullet.map((point, idx) => (
+                    <li key={idx}>{point}</li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
