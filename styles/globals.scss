@@ -794,3 +794,66 @@ input:-webkit-autofill {
     }
   }
 }
+
+.insight-explore-slider {
+   .slick-arrow {
+     background-color: color(primary-blue);
+     padding: 0;
+     border-radius: 0.5rem;
+     padding: 0.9rem;
+     width: 3rem;
+     height: 3rem;
+ 
+     &:hover {
+       background-color: color(primary-blue);
+     }
+ 
+     svg {
+       width: 1.2rem;
+     }
+ 
+     &::before {
+       display: none;
+     }
+   }
+ 
+   .slick-prev {
+     left: auto;
+     right: 150px;
+     top: -7vh;
+     svg {
+       transform: rotate(-180deg);
+     }
+     @include mobile-tablet-p {
+       top: 16vh;
+     }
+     @include mobile {
+      top: 11vh;
+    }
+   }
+ 
+   .slick-next {
+     right: 65px;
+     left: auto;
+     top: -7vh;
+     @include mobile-tablet-p {
+       top: 16vh;
+     }
+     @include mobile {
+      top: 11vh;
+    }
+   }
+ 
+   .slick-disabled {
+     background-color: color(primary-white);
+     border: 1px solid rgba(color(text-primary), 0.5);
+     &:hover {
+       background-color: color(primary-white);
+     }
+     svg {
+       path {
+         stroke: rgba(color(text-primary), 0.5);
+       }
+     }
+   }
+ }

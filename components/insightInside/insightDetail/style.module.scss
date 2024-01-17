@@ -1,0 +1,198 @@
+@import "~/styles/partials/config";
+
+@mixin insightDetailStyles() {
+  padding: spacing(section-primary-padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: color(input-bg);
+
+  @include mobile-tablet-p {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4.75rem 2.5rem;
+  }
+  @include mobile {
+    padding-inline: 1.5rem;
+    padding-block: 3rem 3.75rem;
+  }
+
+  .insightDetailFlex {
+    display: flex;
+    justify-content: space-between;
+    gap: 8rem;
+    margin-top: 5rem;
+
+    @include mobile-tablet-p {
+      flex-direction: column;
+      margin-top: 0;
+    }
+    @include mobile {
+      flex-direction: column;
+      margin-top: 0;
+    }
+
+    .socialMediaFlex {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      @include mobile-tablet-p {
+        flex-direction: row;
+      }
+      @include mobile {
+        gap: 1rem;
+      }
+
+      .iconDiv {
+        cursor: pointer;
+        border-radius: 1.8rem;
+        border: 0.06rem solid rgba(255, 255, 255, 0.4);
+        padding: 1rem;
+
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .insightDetailPara {
+      width: 100%;
+      padding-right: 26%;
+
+      @include mobile-tablet-p {
+        padding: 0;
+      }
+
+      h2 {
+        font-weight: 500;
+        font-size: text(xxxl);
+        color: color(primary-white);
+        line-height: 2.5rem;
+        padding-bottom: 2rem;
+
+        @include mobile {
+          font-size: text(lg);
+        }
+      }
+
+      p {
+        font-weight: 400;
+        font-size: text(lg);
+        color: color(primary-white);
+        line-height: 1.8rem;
+        opacity: 0.8;
+
+        @include mobile {
+          font-size: text(normal);
+        }
+      }
+
+      .insightImageDiv {
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+        img {
+          border-radius: 0.6rem;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .insightSection {
+        h2 {
+          font-weight: 500;
+          font-size: text(xl);
+          color: color(primary-white);
+          line-height: 2rem;
+          padding-bottom: 1rem;
+          padding-top: 1rem;
+
+          @include mobile {
+            font-size: text(lg);
+          }
+        }
+        p {
+          font-weight: 400;
+          font-size: text(lg);
+          color: color(primary-white);
+          line-height: 1.8rem;
+          opacity: 0.8;
+          padding-bottom: 1rem;
+          margin: 0;
+
+          @include mobile {
+            font-size: text(normal);
+            font-weight: 400;
+          }
+        }
+        
+        img {
+          border-radius: 0.6rem;
+          width: 100%;
+          height: 100%;
+        }
+        ul {
+          list-style-type: square;
+        }
+        li {
+          font-weight: 400;
+          font-size: text(lg);
+          color: color(primary-white);
+          line-height: 1.8rem;
+          opacity: 0.8;
+          padding-bottom: 0.2rem;
+          margin: 0;
+
+          @include mobile {
+            font-size: text(normal);
+          }
+        }
+      }
+    }
+  }
+}
+
+.insightDetailContainer {
+  @include insightDetailStyles();
+}
+
+//light Mode
+.lightMode {
+  @include insightDetailStyles();
+  background-color: color(primary-white);
+
+  .insightDetailFlex {
+    .socialMediaFlex {
+      .iconDiv {
+        border: 0.06rem solid rgba(17, 17, 17, 0.40);
+      }
+    }
+
+    .insightDetailPara {
+      h2 {
+        color: color(text-primary);
+      }
+
+      p {
+        color: color(text-primary);
+        opacity: 0.8;
+      }
+
+      .insightSection {
+        h2 {
+          color: color(text-primary);
+        }
+        p {
+          color: color(text-primary);
+          opacity: 0.8;
+        }
+        li {
+          color: color(text-primary);
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
