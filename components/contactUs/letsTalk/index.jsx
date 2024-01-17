@@ -33,14 +33,43 @@ const LetsTalk = () => {
         </div>
 
         <div className={styles.workGrid}>
-          <div className={styles.contactImg}>
-            <ImageCustom
-              src="/images/contact.png"
-              width={480}
-              height={616}
-              alt="contactImg"
-            />
+          <div className={styles.contactTabWrap}>
+            <div className={styles.contactTabFlex}>
+              <div className={styles.contactInnerFlex}>
+                <div className={styles.highlightIcon}>
+                  <Icons.CustomDevelopment size={40} />
+                  <h1>Projects</h1>
+                </div>
+
+                <Icons.GradientArrowForward size={24} />
+              </div>
+            </div>
+            <div className={styles.contactTabFlex}>
+              <div className={styles.contactInnerFlex}>
+                <div className={styles.highlightIcon}>
+                  <Icons.Intelligence size={40} />
+                  <h1>Services</h1>
+                </div>
+              </div>
+            </div>
+            <div className={styles.contactTabFlex}>
+              <div className={styles.contactInnerFlex}>
+                <div className={styles.highlightIcon}>
+                  <Icons.Platforms size={40} />
+                  <h1>Jobs</h1>
+                </div>
+              </div>
+            </div>
+            <div className={styles.contactTabFlex}>
+              <div className={styles.contactInnerFlex}>
+                <div className={styles.highlightIcon}>
+                  <Icons.Market size={40} />
+                  <h1>Vendors</h1>
+                </div>
+              </div>
+            </div>
           </div>
+
           <div className={styles.contactUsForm}>
             <p className={styles.formText}>
               Fill up few details to contact you for a discussion about your
