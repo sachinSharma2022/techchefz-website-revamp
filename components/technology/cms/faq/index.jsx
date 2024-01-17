@@ -4,6 +4,7 @@ import { Icons } from "@/components/icons";
 import { Disclosure } from "@headlessui/react";
 import { useState } from "react";
 import styles from "./style.module.scss";
+import { cn } from "@/lib/utils";
 
 const Faq = () => {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
@@ -46,17 +47,13 @@ const Faq = () => {
   ];
   return (
     <section className={styles.cmsFaqSection}>
-      <div className="row">
-        <div className="col-md-7 col-lg-8">
-          <div className={styles.faqHead}>
-            <p className={styles.projectHighlight}>FAQ’s</p>
-            <h4 className={styles.title}>Our commitment to transparency</h4>
-          </div>
+      <div className={cn("primary-container")}>
+        <div className={styles.faqHead}>
+          <p className={styles.projectHighlight}>FAQ’s</p>
+          <h4 className={styles.title}>Our commitment to transparency</h4>
         </div>
-      </div>
 
-      <div className={styles.faqValuesContent}>
-        <div className="col-md-12 col-lg-12">
+        <div className={styles.faqValuesContent}>
           <div className={styles.faqAccordion}>
             {faqAccordionData.map((data, index) => (
               <Disclosure key={index}>

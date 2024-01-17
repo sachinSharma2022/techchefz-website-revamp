@@ -43,6 +43,11 @@
         font-size: text(xl);
         font-weight: 500;
         margin-bottom: 0;
+        @include truncate(2);
+
+        @include desktop-hd {
+          font-size: text(lg);
+        }
       }
 
       svg {

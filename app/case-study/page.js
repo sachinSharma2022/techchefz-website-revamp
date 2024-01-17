@@ -17,7 +17,7 @@ function CaseStudy() {
       <Challenges />
       <Solutions />
       <Results />
-      <RelatedCase />
+      <RelatedCase sliderClassName="mb-0" />
       <LetsWork />
     </div>
   );

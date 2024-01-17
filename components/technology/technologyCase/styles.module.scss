@@ -1,8 +1,7 @@
 @import "~/styles/partials/config";
 
 .technologyCase {
-   padding: spacing(section-primary-padding);
-   padding-top: 0;
+   padding-inline: spacing(section-primary-padding);
 
    @include mobile {
       padding: 1.5rem;

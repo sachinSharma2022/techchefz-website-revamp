@@ -16,10 +16,9 @@ const CaptionCard = (props) => {
           alt="captionImg"
         />
       </div>
-
       <div className={styles.cardBody}>
         <h2 className={`${styles.cardText} ${props.textStyle}`}>
-          {props.title}{" "}
+          {props.title}
         </h2>
         <Icons.ArrowLongRight size={18} />
       </div>

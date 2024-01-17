@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useContext } from "react";
-import styles from "./style.module.scss";
 import { MyContext } from "@/context/theme";
+import { cn } from "@/lib/utils";
+import { useContext } from "react";
+import styles from "./style.module.scss";
 
 const DescriptionData = [
   {
@@ -42,26 +43,29 @@ const PositionDescription = () => {
   const { theme, setTheme } = useContext(MyContext);
 
   return (
-    <>
-      {DescriptionData.map((value,index) => (
-        <div className={theme ? styles.jobDetailContainer : styles.lightMode} key={index}>
+    <div className={cn("primary-container")}>
+      {DescriptionData.map((value, index) => (
+        <div
+          className={theme ? styles.jobDetailContainer : styles.lightMode}
+          key={index}
+        >
           <h2>About the Job</h2>
           <p>{value.about.bullet}</p>
           <div className={styles.section}>
             <h2>Responsibilities</h2>
             <ul>
-            {value.responsibility.bullet.map((point, idx) => (
-              <li key={idx}>{point}</li>
-            ))}
-          </ul>
+              {value.responsibility.bullet.map((point, idx) => (
+                <li key={idx}>{point}</li>
+              ))}
+            </ul>
           </div>
           <div className={styles.section}>
             <h2>Requirements</h2>
             <ul>
-            {value.requirements.bullet.map((point, idx) => (
-              <li key={idx}>{point}</li>
-            ))}
-          </ul>
+              {value.requirements.bullet.map((point, idx) => (
+                <li key={idx}>{point}</li>
+              ))}
+            </ul>
           </div>
 
           <div className={styles.section}>
@@ -72,7 +76,7 @@ const PositionDescription = () => {
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 

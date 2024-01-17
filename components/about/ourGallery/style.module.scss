@@ -17,8 +17,13 @@
   }
 
   .contentSection{
-    padding: spacing(section-primary-padding);
-    padding-block: 0;
+    padding-inline: 7.4rem;
+    width: 100%;
+    max-width: 52rem;
+  
+    @include desktop-hd {
+      padding-left: 0;
+    }
   }
 
   .ourGalleryHeading {

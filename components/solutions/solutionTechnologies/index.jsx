@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import Slider from "react-slick";
 import styles from "./style.module.scss";
+import { cn } from "@/lib/utils";
 
 const SolutionTechnologies = () => {
   const serviceCard = [
@@ -70,36 +71,61 @@ const SolutionTechnologies = () => {
   };
   return (
     <section className={`${styles.solutionTechnologiesStyle}`}>
-      <div className={styles.careerRow}>
-        <div className="row">
-          <div className="col-md-12 col-12">
-            <p className={styles.ProjectHighlight}>Technologies</p>
-          </div>
+      <div className={cn("primary-container")}>
+        <div className={styles.careerRow}>
+          <div className="row">
+            <div className="col-md-12 col-12">
+              <p className={styles.ProjectHighlight}>Technologies</p>
+            </div>
 
-          <div className="col-md-8 col-12">
-            <h2 className={styles.datingText}>
-              Driving Technological Advancements for the Future
-            </h2>
-          </div>
-          <div className={`${styles.careerBtn} col-md-4 col-12`}>
-            <Button variant="outline" size="md">
-              Explore Technology <Icons.ArrowRight size={18} />
-            </Button>
+            <div className="col-md-8 col-12">
+              <h2 className={styles.datingText}>
+                Driving Technological Advancements for the Future
+              </h2>
+            </div>
+            <div className={`${styles.careerBtn} col-md-4 col-12`}>
+              <Button variant="outline" size="md">
+                Explore Technology <Icons.ArrowRight size={18} />
+              </Button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className={styles.ourNumberMain}>
-        <div className={styles.ourNumberGrid}>
-          <div>
-            <p className={styles.ourNumbersText}>
-              In a world where technology evolves at the blink of an eye,
-              Techchefz stands at the helm, steering the course towards a
-              brighter, more connected future.
-            </p>
-            <div
-              className={`${styles.desktopCards} ${styles.ourNumberOption} `}
-            >
+        <div className={styles.ourNumberMain}>
+          <div className={styles.ourNumberGrid}>
+            <div>
+              <p className={styles.ourNumbersText}>
+                In a world where technology evolves at the blink of an eye,
+                Techchefz stands at the helm, steering the course towards a
+                brighter, more connected future.
+              </p>
+              <div
+                className={`${styles.desktopCards} ${styles.ourNumberOption} `}
+              >
+                {serviceCard.map((data, index) => (
+                  <div key={index} className={styles.serviceBox}>
+                    <div className={styles.numberCardFlex}>
+                      <h2 className={styles.sbTitle}>{data.sbTitle}</h2>
+                      <div className={styles.bgIcon}>{data.icon}</div>
+                    </div>
+
+                    <p className={styles.sbText}>{data.sbText}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className={styles.ourNumbersImg}>
+              <ImageCustom
+                src="/images/our-number.jpg"
+                width={1000}
+                height={100}
+                alt="bannerImg"
+              />
+            </div>
+          </div>
+
+          <div className={`${styles.ourNumberOption} service-mobile-slider`}>
+            <Slider {...settings}>
               {serviceCard.map((data, index) => (
                 <div key={index} className={styles.serviceBox}>
                   <div className={styles.numberCardFlex}>
@@ -110,31 +136,8 @@ const SolutionTechnologies = () => {
                   <p className={styles.sbText}>{data.sbText}</p>
                 </div>
               ))}
-            </div>
+            </Slider>
           </div>
-          <div className={styles.ourNumbersImg}>
-            <ImageCustom
-              src="/images/our-number.jpg"
-              width={1000}
-              height={100}
-              alt="bannerImg"
-            />
-          </div>
-        </div>
-
-        <div className={`${styles.ourNumberOption} service-mobile-slider`}>
-          <Slider {...settings}>
-            {serviceCard.map((data, index) => (
-              <div key={index} className={styles.serviceBox}>
-                <div className={styles.numberCardFlex}>
-                  <h2 className={styles.sbTitle}>{data.sbTitle}</h2>
-                  <div className={styles.bgIcon}>{data.icon}</div>
-                </div>
-
-                <p className={styles.sbText}>{data.sbText}</p>
-              </div>
-            ))}
-          </Slider>
         </div>
       </div>
     </section>

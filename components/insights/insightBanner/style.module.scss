@@ -1,0 +1,73 @@
+@import "~/styles/partials/config";
+
+.landingBannerStyle {
+
+   .contentSection {
+      padding: 5rem 7.5rem;
+      display: flex;
+      gap: 8rem;
+
+      @include mobile {
+         padding: spacing(section-mob-padding);
+         flex-direction: column;
+         gap: 0;
+      }
+
+      @include desktop-hd {
+         padding-inline: 0;
+      }
+   }
+   .title {
+      font-size: text(xl-larger);
+      font-weight: 500;
+      line-height: 5rem;
+      margin-bottom: 0;
+
+      @include mobile {
+         font-size: 2.75rem;
+         line-height: 3.5rem;
+         margin-bottom: text(xl);
+         word-break: break-word;
+      }
+
+      .titleHighlight {
+         font-size: text(xl-larger);
+         font-weight: 500;
+         //  color: color(heading-liner);
+         background: var(--Gradient, linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%));
+         background-clip: text;
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;
+
+         @include mobile {
+            font-size: 2.75rem;
+            line-height: 3.5rem;
+         }
+      }
+   }
+   .contentRight {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2.75rem;
+      align-self: stretch;
+   }
+
+   .leadText {
+      font-size: text(lg);
+      color: rgba(color(text-primary), 0.8);
+      line-height: 1.875rem;
+      opacity: 0.8;
+      margin-bottom: 0;
+      @include mobile {
+         max-width: 100%;
+      }
+   }
+
+   .flexCol {
+      display: flex;
+      justify-content: flex-end;
+   }
+ 
+}

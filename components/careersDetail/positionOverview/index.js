@@ -6,6 +6,7 @@ import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { MyContext } from "@/context/theme";
 import SmoothDropdown from "@/components/ui/smoothDropdownButton";
+import { cn } from "@/lib/utils";
 
 const CareerPositionOverview = () => {
   const { theme, setTheme } = useContext(MyContext);
@@ -29,33 +30,35 @@ const CareerPositionOverview = () => {
   ];
   return (
     <div className={theme ? styles.jobPostDetail : styles.lightMode}>
-      <div className={styles.jobInfo}>
-        <h2>Mern Developer</h2>
-        <div className={styles.jobDetails}>
-          <div className={styles.detail}>
-            <Icons.TimerIcon size={24} />
-            <span>4-6 Years</span>
-          </div>
-          <div className={styles.detail}>
-            <Icons.LocationIcon size={24} />
-            <span>Work from Home</span>
-          </div>
-          <div className={styles.detail}>
-            <Icons.Specialization size={24} />
-            <span>Backend</span>
+      <div className={cn("primary-container", styles.flexContainer)}>
+        <div className={styles.jobInfo}>
+          <h2>Mern Developer</h2>
+          <div className={styles.jobDetails}>
+            <div className={styles.detail}>
+              <Icons.TimerIcon size={24} />
+              <span>4-6 Years</span>
+            </div>
+            <div className={styles.detail}>
+              <Icons.LocationIcon size={24} />
+              <span>Work from Home</span>
+            </div>
+            <div className={styles.detail}>
+              <Icons.Specialization size={24} />
+              <span>Backend</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div className={styles.applyButtons}>
-        <Button variant={theme ? "ligthBlueBtn" : "blueBtn"} size="md">
-          Apply
-        </Button>
-        <SmoothDropdown
-          options={options}
-          buttonLabel="Apply through"
-          variant="outline"
-          size="md"
-        />
+        <div className={styles.applyButtons}>
+          <Button variant={theme ? "ligthBlueBtn" : "blueBtn"} size="md">
+            Apply
+          </Button>
+          <SmoothDropdown
+            options={options}
+            buttonLabel="Apply through"
+            variant="outline"
+            size="md"
+          />
+        </div>
       </div>
     </div>
   );
