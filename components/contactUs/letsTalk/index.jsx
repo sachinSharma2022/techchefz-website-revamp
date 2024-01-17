@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { useContext } from "react";
 import { MyContext } from "@/context/theme";
 import { ImageCustom } from "@/components/ui/imageCustom";
@@ -16,6 +16,8 @@ import { cn } from "@/lib/utils";
 
 const LetsTalk = () => {
   const { theme, setTheme } = useContext(MyContext);
+  let [isOpen, setIsOpen] = useState(false);
+
   return (
     <section className={cn("primary-container")}>
       <section
@@ -39,38 +41,68 @@ const LetsTalk = () => {
             <Tab.Group vertical>
               <Tab.List>
                 <Tab>
-                  <div className={styles.contactInnerFlex}>
-                    <div className={styles.highlightIcon}>
-                      <Icons.CustomDevelopment size={40} />
-                      <h1>Projects</h1>
-                    </div>
+                  {({ selected }) => (
+                    <div className={styles.contactInnerFlex}>
+                      <div className={styles.highlightIcon}>
+                        <Icons.CustomDevelopment size={40} />
+                        <h1>Projects</h1>
+                      </div>
 
-                    <Icons.GradientArrowForward size={24} />
-                  </div>
+                      {selected && (
+                        <div className={styles.icon}>
+                          <Icons.GradientArrowForward size={24} />
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </Tab>
                 <Tab>
-                  <div className={styles.contactInnerFlex}>
-                    <div className={styles.highlightIcon}>
-                      <Icons.Intelligence size={40} />
-                      <h1>Services</h1>
+                  {({ selected }) => (
+                    <div className={styles.contactInnerFlex}>
+                      <div className={styles.highlightIcon}>
+                        <Icons.Intelligence size={40} />
+                        <h1>Services</h1>
+                      </div>
+
+                      {selected && (
+                        <div className={styles.icon}>
+                          <Icons.GradientArrowForward size={24} />
+                        </div>
+                      )}
                     </div>
-                  </div>
+                  )}
                 </Tab>
                 <Tab>
-                  <div className={styles.contactInnerFlex}>
-                    <div className={styles.highlightIcon}>
-                      <Icons.Platforms size={40} />
-                      <h1>Jobs</h1>
+                  {({ selected }) => (
+                    <div className={styles.contactInnerFlex}>
+                      <div className={styles.highlightIcon}>
+                        <Icons.Platforms size={40} />
+                        <h1>Jobs</h1>
+                      </div>
+
+                      {selected && (
+                        <div className={styles.icon}>
+                          <Icons.GradientArrowForward size={24} />
+                        </div>
+                      )}
                     </div>
-                  </div>
+                  )}
                 </Tab>
                 <Tab>
-                  <div className={styles.contactInnerFlex}>
-                    <div className={styles.highlightIcon}>
-                      <Icons.Market size={40} />
-                      <h1>Vendors</h1>
+                  {({ selected }) => (
+                    <div className={styles.contactInnerFlex}>
+                      <div className={styles.highlightIcon}>
+                        <Icons.Market size={40} />
+                        <h1>Vendors</h1>
+                      </div>
+
+                      {selected && (
+                        <div className={styles.icon}>
+                          <Icons.GradientArrowForward size={24} />
+                        </div>
+                      )}
                     </div>
-                  </div>
+                  )}
                 </Tab>
               </Tab.List>
               <Tab.Panels>

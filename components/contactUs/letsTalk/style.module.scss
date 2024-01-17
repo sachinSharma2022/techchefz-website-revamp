@@ -162,6 +162,15 @@
       border-radius: 12px;
       padding: 20px;
 
+      .icon {
+          animation: slide-in 0.5s forwards;
+        }
+
+      @keyframes slide-in {
+        0% { transform: translateX(-100%); opacity: 0; }
+        100% { transform: translateX(0%); opacity: 1;}
+      }
+
       .highlightIcon {
         display: flex;
         align-items: center;
