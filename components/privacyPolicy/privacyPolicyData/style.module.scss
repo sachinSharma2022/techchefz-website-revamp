@@ -10,27 +10,30 @@
   }
   .policyDivide {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: auto 60%;
     margin-bottom: 3.75rem;
-    &:last-child {
-      margin-bottom: 0;
-    }
+    gap: 9rem;
+
     @include mobile {
       grid-template-columns: repeat(1, 1fr);
     }
 
+    &:last-child {
+      margin-bottom: 0;
+    }
+
     .customerList {
       padding-left: 0;
+
       .list {
         list-style: square;
         font-size: text(lg);
         line-height: 1.875rem;
         font-weight: 400;
         color: rgba(color(text-primary), 0.8);
-        list-style-position: outside;
         margin-left: 3rem;
         margin-bottom: 0;
-        max-width: 80%;
+
         @include mobile {
           max-width: 100%;
         }
@@ -55,7 +58,7 @@
       font-weight: 400;
       color: rgba(color(text-primary), 0.8);
       margin-bottom: 0;
-      max-width: 80%;
+
       @include mobile {
         max-width: 100%;
       }

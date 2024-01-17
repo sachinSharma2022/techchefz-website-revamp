@@ -9,7 +9,7 @@
   font-weight: 500;
   font-size: text(lg);
   line-height: 0.938;
-  transition: color 0.2s, background-color 0.2s;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
   position: relative;
   column-gap: 0.375rem;
@@ -40,7 +40,7 @@
 .variant_blueBtn {
   background-color: color(primary-blue);
   color: color(primary-white);
-  border: 0.063rem solid color(primary-blue);
+  border: 0.14rem solid color(primary-blue);
 
   &:hover {
     color: color(primary-blue);
@@ -58,17 +58,17 @@
   }
 }
 
-.variant_ligthBlueBtn {
+.variant_lightBlueBtn {
   background-color: color(info-blue);
   color: color(primary-white);
-  border: 0.063rem solid color(primary-blue);
+  border: 0.14rem solid color(info-blue);
 
   &:hover {
-    color: color(primary-blue);
+    color: color(info-blue);
     background-color: transparent;
     svg{
       path{
-        stroke: color(primary-blue);
+        stroke: color(info-blue);
       }
     }
   }
@@ -82,7 +82,7 @@
 .variant_outline {
   background-color: transparent;
   color: color(primary-blue);
-  border: 0.063rem solid color(primary-blue);
+  border: 0.14rem solid color(primary-blue);
 
   &:hover {
     color: color(primary-white);

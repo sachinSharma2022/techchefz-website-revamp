@@ -1,7 +1,7 @@
 @import "~/styles/partials/config";
 
 .technologyCase {
-   padding-inline: spacing(section-primary-padding);
+   padding-inline: spacing(p-120);
 
    @include mobile {
       padding: 1.5rem;
@@ -27,7 +27,6 @@
 
    .caseTitle {
       font-size: text(normal);
-      font-family: font(secondary);
       font-weight: 700;
       line-height: 1.5rem;
       letter-spacing: 0.2rem;
