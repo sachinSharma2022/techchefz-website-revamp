@@ -2,7 +2,6 @@
 
 import { createContext } from "react";
 import { useState } from "react";
-
 export const MyContext = createContext(null);
 
 export default function ThemeProvider({ children }) {

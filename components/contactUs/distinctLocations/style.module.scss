@@ -8,6 +8,7 @@
   }
   .careerRow {
     margin-bottom: 3.75rem;
+    max-width: 49.188rem;
 
     @include mobile {
       margin-bottom: 2.5rem;
@@ -44,8 +45,9 @@
     font-size: text(lg);
     font-weight: 400;
     line-height: 1.875rem;
+    opacity: 0.6;
     margin-bottom: 0;
-    max-width: 50%;
+
     @include mobile {
       max-width: 100%;
     }
@@ -96,7 +98,9 @@
         .addressArea {
           display: flex;
           gap: 12px;
+          align-items: flex-start;
           margin-bottom: text(lg);
+
           &:last-child {
             margin-bottom: 0;
           }
@@ -107,6 +111,7 @@
             margin-bottom: 0;
           }
         }
+        
         .sbTitle {
           font-size: text(xl);
           font-weight: 500;

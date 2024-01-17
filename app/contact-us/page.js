@@ -3,7 +3,6 @@ import DistinctLocations from "@/components/contactUs/distinctLocations";
 import GlobalPresence from "@/components/contactUs/globalPresence";
 import LetsTalk from "@/components/contactUs/letsTalk";
 
-
 const ContactUs = () => {
   return (
     <div>
