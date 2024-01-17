@@ -2,12 +2,16 @@
 
 .browserAcceleratorCard {
    background-color: color(bg-soft);
-   width: 373px;
-   height: 314px;
+   width: 100%;
+   height: auto;
    padding: 1.875rem;
    border-radius: 1.25rem;
    border: 2px solid rgba(17, 17, 17, 0.12);
    cursor: pointer;
+
+   &:hover{
+      border: 2px solid var(--Gradient, #1E8AF2);
+   }
 
    .cardHeader {
       display: flex;
