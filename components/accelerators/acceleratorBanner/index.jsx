@@ -1,8 +1,8 @@
 import React from "react";
-
-import styles from "./style.module.scss";
 import { Button } from "@/components/ui/button";
 import { Icons } from "@/components/icons";
+
+import styles from "./style.module.scss";
 
 const AcceleratorBanner = () => {
    return (
