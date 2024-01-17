@@ -1,8 +1,9 @@
 import React from "react";
 
 import styles from "./styles.module.scss";
+import { cn } from "@/lib/utils";
 
-const Challenges = () => {
+const Challenges = (props) => {
   const cardData = [
     {
       title: "Navigating Cloud Integration Complexities",
@@ -21,7 +22,7 @@ const Challenges = () => {
     },
   ];
   return (
-    <section className={styles.challenges}>
+    <section className={cn(styles.challenges , props.className)}>
       <div className="row">
         <div className="col-md-6 col-lg-6">
           <h6 className={styles.challengeTitle}>Challenges</h6>
