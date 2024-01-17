@@ -36,6 +36,10 @@
       color: rgba(color(primary-white), 0.8);
       font-size: text(lg);
 
+      &:hover{
+        color: color(info-blue);
+      }
+
       @include mobile {
         font-size: text(normal);
       }

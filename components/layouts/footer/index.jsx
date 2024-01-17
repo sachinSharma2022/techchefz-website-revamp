@@ -91,7 +91,7 @@ const Footer = () => {
                 </ul>
               </div>
               <div className={styles.footerCols}>
-                <h5>Technology</h5>
+                <h5><Link href="/">Technology</Link></h5>
                 <ul>
                   <li>
                     <Link href="/">CMS</Link>
@@ -114,7 +114,7 @@ const Footer = () => {
                 </ul>
               </div>
               <div className={styles.footerCols}>
-                <h5>More</h5>
+                <h5><Link href="/">More</Link></h5>
                 <ul>
                   <li>
                     <Link href="/careers">Careers</Link>
