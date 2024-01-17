@@ -167,6 +167,8 @@ const OurTeam = () => {
                 </Tab.Panels>
               </Tab.Group>
             </div>
+
+            
             <div
               className={`${styles.teamModal} ${
                 isOpen ? styles.teamModalOpen : ""
