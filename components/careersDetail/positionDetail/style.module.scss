@@ -1,0 +1,88 @@
+@import "~/styles/partials/config";
+
+@mixin jobDetailContainer() {
+  padding: spacing(section-primary-padding);
+  background-color: color(input-bg);
+
+  @include mobile-tablet-p {
+    padding-inline: 2.5rem;
+  }
+  @include mobile {
+    padding-inline: 1.5rem;
+  }
+
+  @include desktop-hd {
+    padding-inline: 0;
+  }
+
+  h2 {
+    font-weight: 500;
+    font-size: text(lg);
+    color: color(primary-white);
+    line-height: 2rem;
+    padding-bottom: 1rem;
+  }
+  p {
+    font-weight: 400;
+    font-size: text(lg);
+    color: color(primary-white);
+    line-height: 1.8rem;
+    opacity: 0.6;
+    padding-bottom: 1rem;
+    margin: 0;
+
+    @include mobile {
+      font-size: text(normal);
+    }
+  }
+  ul {
+    list-style-type: square;
+  }
+  li {
+    font-weight: 400;
+    font-size: text(lg);
+    color: color(primary-white);
+    line-height: 1.8rem;
+    opacity: 0.6;
+
+    @include mobile {
+      font-size: text(normal);
+    }
+  }
+  .gradientHead {
+    font-weight: 500;
+    font-size: text(xl);
+    line-height: 2rem;
+    padding-top: 1rem;
+    color: color(heading-liner);
+    background: linear-gradient(
+      118deg,
+      color(primary-blue) 11.5%,
+      color(heading-liner) 55.42%
+    );
+    @include textGradient;
+    @include mobile {
+      font-size: text(lg);
+    }
+  }
+}
+
+.jobDetailContainer {
+  @include jobDetailContainer();
+}
+
+//light mode
+.lightMode {
+  @include jobDetailContainer();
+  background-color: color(primary-white);
+
+  h2 {
+    color: color(text-primary);
+  }
+  p {
+    color: color(text-primary);
+  }
+  li {
+    color: color(text-primary);
+  }
+}

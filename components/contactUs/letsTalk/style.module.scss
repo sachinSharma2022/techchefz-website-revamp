@@ -1,0 +1,181 @@
+@import "~/styles/partials/config";
+
+.lestWorkStyle {
+  padding: spacing(section-primary-padding);
+
+  &.lestWorkStyleDark {
+    background-color: color(dark-gray);
+
+    .workArea {
+      background-color: color(text-primary);
+      color: color(primary-white);
+      .workGrid {
+        .contactUsForm {
+          .policyArea {
+            .policyText {
+              .policyHighlight {
+                color: color(heading-liner);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    padding: spacing(section-mob-padding);
+  }
+  .workArea {
+    background-color: color(primary-background);
+    padding: 2.5rem;
+    border-radius: text(lg);
+
+    @include mobile {
+      padding: text(lg);
+    }
+
+    .headingMain {
+      margin-bottom: 5rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      @include mobile {
+        display: inline;
+      }
+      .formHeading {
+        font-size: 2.75rem;
+        font-weight: 500;
+        line-height: 3.375rem;
+        display: flex;
+        flex-direction: column;
+
+        @include mobile {
+          margin-bottom: text(lg);
+          line-height: 2.5rem;
+        }
+
+        .formTechHighlight {
+          color: color(primary-blue);
+          background: linear-gradient(
+            118deg,
+            color(primary-blue) 11.5%,
+            color(heading-liner) 55.42%
+          );
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-size: 2.75rem;
+          font-weight: 500;
+          line-height: 3.375rem;
+
+          @include mobile {
+            padding-right: 0;
+            font-size: 2rem;
+            line-height: 2.5rem;
+          }
+        }
+        @include mobile {
+          font-size: text(xxxl);
+          line-height: 2.5rem;
+          padding-right: 0;
+          margin-bottom: text(lg);
+        }
+      }
+      .headingText {
+        font-size: text(lg);
+        font-weight: 400;
+        @include mobile {
+          width: 100%;
+        }
+      }
+    }
+    .workGrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+
+      @include mobile {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0;
+      }
+      .contactUsForm {
+        .formText {
+          font-size: text(lg);
+          font-weight: 400;
+          opacity: 0.8;
+          margin-bottom: text(xl);
+          line-height: 1.875rem;
+          max-width: 85%;
+
+          @include mobile {
+            padding: 0;
+            font-size: text(normal);
+            margin-bottom: 2.5rem;
+            line-height: text(xl);
+          }
+        }
+
+        .contactFormArea {
+          .inputSpace {
+            margin-bottom: 2.25rem;
+            &:last-child {
+              margin-bottom: 0;
+            }
+            @include mobile {
+              margin-bottom: text(lg);
+            }
+          }
+        }
+        .captchaImg {
+          margin: 2.5rem 0 2.5rem 0;
+          img {
+            border-radius: 0.5rem;
+            box-shadow: 0 0 0.25rem 0 rgba(0, 0, 0, 0.12);
+            cursor: pointer;
+          }
+        }
+        .policyArea {
+          .policyText {
+            font-size: text(xxs);
+            font-weight: 400;
+            line-height: text(lg);
+
+            @include mobile {
+              margin-bottom: text(lg);
+            }
+
+            .policyHighlight {
+              color: color(primary-blue);
+              font-size: text(xxs);
+              margin-left: 3px;
+            }
+          }
+
+          .buttonGrid {
+            display: flex;
+            justify-content: flex-end;
+
+            @include mobile {
+              justify-content: flex-start;
+            }
+          }
+        }
+      }
+      .contactImg {
+        height: 100%;
+
+        img {
+          max-width: 38rem;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 0.75rem;
+
+          @include mobile {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

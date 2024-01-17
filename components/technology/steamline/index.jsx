@@ -3,6 +3,7 @@ import React from "react";
 import styles from "./style.module.scss";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const Streamline = () => {
   const streamlineCard = [
@@ -66,14 +67,16 @@ const Streamline = () => {
   return (
     <div className={styles.streamlineWrapper}>
       <section className={styles.streamlineSection}>
-        <h3 className={styles.streamlineTitle}>
-          Streamline your Business with our <span>Extensive Solution.</span>
-        </h3>
-        <p className={styles.streamlineContent}>
-          We&apos;re a wouldwide presence, serving client on four continents.
-          Our internation expertise ensures innovaive solutions tailored to
-          diverse global needs
-        </p>
+        <div className={cn("primary-container", styles.flexContainer)}>
+          <h3 className={styles.streamlineTitle}>
+            Streamline your Business with our <span>Extensive Solution.</span>
+          </h3>
+          <p className={styles.streamlineContent}>
+            We&apos;re a wouldwide presence, serving client on four continents.
+            Our internation expertise ensures innovaive solutions tailored to
+            diverse global needs
+          </p>
+        </div>
       </section>
       <section>
         {/* <div className={styles.streamlineCards}>

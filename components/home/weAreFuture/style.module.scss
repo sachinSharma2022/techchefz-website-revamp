@@ -2,6 +2,7 @@
 
 .futureSpacing {
   padding: spacing(section-primary-padding);
+  
   @include mobile {
     padding: spacing(section-mob-padding);
   }

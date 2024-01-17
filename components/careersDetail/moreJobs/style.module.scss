@@ -1,0 +1,136 @@
+@import "~/styles/partials/config";
+
+@mixin jobDetailContainer() {
+  padding: spacing(section-primary-padding);
+  background-color: color(input-bg);
+
+  @include mobile-tablet-p {
+    padding: 8.75rem 2.5rem;
+  }
+  @include mobile {
+    padding: 4.75rem 1.5rem;
+  }
+  .titleSection {
+    h3 {
+      font-weight: 700;
+      font-size: text(normal);
+      color: color(primary-white);
+      line-height: 1.5rem;
+      letter-spacing: 0.2rem;
+      opacity: 0.8;
+    }
+    h1 {
+      font-weight: 500;
+      font-size: text(xxxl);
+      color: color(primary-white);
+      line-height: 3.3rem;
+    }
+  }
+  .cardContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    padding-top: 3.5rem;
+
+    @include mobile {
+      justify-content: center;
+      padding-top: 9.5rem;
+    }
+    .cardDiv {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1 0 0;
+      width: 100%;
+      max-width: 90%;
+      border-radius: 1rem;
+      background-color: color(text-primary);
+      border: 0.125rem solid color(text-primary);
+      &:hover {
+        border: 0.125rem solid color(heading-liner);
+        cursor: pointer;
+      }
+      h1 {
+        font-weight: 500;
+        font-size: text(xl);
+        color: color(primary-white);
+        line-height: 2rem;
+        padding-bottom: 0.5rem;
+      }
+      p {
+        font-weight: 400;
+        font-size: text(normal);
+        color: color(primary-white);
+        line-height: 1.5rem;
+        opacity: 0.8;
+        letter-spacing: 0.1rem;
+        padding-bottom: 1rem;
+      }
+      .spanDiv {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding-bottom: 2rem;
+        .spanDetail {
+          display: flex;
+          gap: 0.5rem;
+          align-items: center;
+          span {
+            font-weight: 400;
+            font-size: text(normal);
+            color: color(primary-white);
+            line-height: 1.5rem;
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+}
+
+.jobDetailContainer {
+  @include jobDetailContainer();
+}
+
+//light mode
+.lightMode {
+  @include jobDetailContainer();
+  background-color: color(primary-white);
+
+  .titleSection {
+    h3 {
+      color: color(text-primary);
+    }
+    h1 {
+      color: color(text-primary);
+    }
+  }
+  .cardContainer {
+    .cardDiv {
+      background-color: color(primary-background);
+      border: 0.125rem solid color(primary-white);
+      &:hover {
+        border: 0.125rem solid color(heading-liner);
+        cursor: pointer;
+      }
+      h1 {
+        color: color(text-primary);
+      }
+      p {
+        color: color(text-primary);
+      }
+
+      .spanDiv {
+        .spanDetail {
+          span {
+            color: color(text-primary);
+          }
+        }
+        .spanDetail svg path{
+          fill: color(text-primary)
+        }
+      }
+    }
+  }
+}

@@ -5,6 +5,8 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import Marquee from "react-fast-marquee";
 
 import styles from "./style.module.scss";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const CareerBanner = () => {
   const galleryImages = [
@@ -91,20 +93,24 @@ const CareerBanner = () => {
   ];
   return (
     <section className={`${styles.landingBannerStyle}`}>
-      <div className={styles.contentSection}>
-        <h1 className={styles.title}>
-          Join one of the most
-          <span className={styles.titleHighlight}> resourceful </span>tech teams
-          in India.
-        </h1>
-        <div>
-          <p className={styles.leadText}>
-            Discover your future with us. Explore opportunities, values, and
-            culture. Join a dynamic and innovative team at Techchefz.
-          </p>
-          <Button variant="blueBtn" className={styles.headerBtn} size="md">
-            View Openings <Icons.ArrowRight size={20} className="ms-2" />
-          </Button>
+      <div className={cn("primary-container")}>
+        <div className={styles.contentSection}>
+          <h1 className={styles.title}>
+            Join one of the most
+            <span className={styles.titleHighlight}> resourceful </span>tech
+            teams in India.
+          </h1>
+          <div>
+            <p className={styles.leadText}>
+              Discover your future with us. Explore opportunities, values, and
+              culture. Join a dynamic and innovative team at Techchefz.
+            </p>
+            <Link href="/careers-detail">
+              <Button variant="blueBtn" className={styles.headerBtn} size="md">
+                View Openings <Icons.ArrowRight size={20} className="ms-2" />
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
 

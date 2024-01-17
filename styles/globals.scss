@@ -39,6 +39,15 @@ a {
 // Space End
 
 
+// Primary Container
+.primary-container {
+   max-width: 1440px;
+   width: 100%;
+   margin-right: auto;
+   margin-left: auto;
+}
+
+
 /* Change the white to any color */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -250,6 +259,8 @@ input:-webkit-autofill {
          border: 1px solid rgba(color(text-primary), 0.12);
          border-radius: 0.75rem;
          overflow: hidden;
+         width: 29.875rem;
+         max-width: 29.875rem;
       }
 
       .swiper-slide-shadow-right {
@@ -640,6 +651,18 @@ input:-webkit-autofill {
          }
       }
    }
+
+   .slide-thumb-grid-4 {
+      .swiper-wrapper {
+         display: grid;
+         grid-template-columns: repeat(4, 1fr);
+         gap: 40px;
+   
+         @include mobile {
+            grid-template-columns: repeat(2, 1fr);
+         }
+      }
+   }   
 }
 
 .tczLifeSlider {
@@ -665,7 +688,7 @@ input:-webkit-autofill {
    }
 
    .slick-prev {
-      left: -102%;
+      left: -100%;
       bottom: 0;
       z-index: 999;
       top: 100%;
@@ -710,4 +733,64 @@ input:-webkit-autofill {
          }
       }
    }
+}
+
+.job-detail-slider {
+  .slick-arrow {
+    background-color: color(primary-blue);
+    padding: 0;
+    border-radius: 0.5rem;
+    padding: 0.9rem;
+    width: 3rem;
+    height: 3rem;
+
+    &:hover {
+      background-color: color(primary-blue);
+    }
+
+    svg {
+      width: 1.2rem;
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .slick-prev {
+    left: auto;
+    right: 150px;
+    top: -8vh;
+
+    svg {
+      transform: rotate(-180deg);
+    }
+
+    @include mobile-tablet-p {
+      top: 16vh;
+      
+    }
+  }
+
+  .slick-next {
+    right: 65px;
+    left: auto;
+    top: -8vh;
+    @include mobile-tablet-p {
+      top: 16vh;
+    }
+  }
+
+  .slick-disabled {
+    background-color: color(primary-white);
+    border: 1px solid rgba(color(text-primary), 0.5);
+    &:hover {
+      background-color: color(primary-white);
+    }
+    svg {
+      path {
+        stroke: rgba(color(text-primary), 0.5);
+      }
+    }
+  }
 }

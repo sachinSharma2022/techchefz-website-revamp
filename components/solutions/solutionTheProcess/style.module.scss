@@ -3,9 +3,13 @@
 .theProcessStyle {
   padding: spacing(section-primary-padding);
   padding-top: 0;
-  display: flex;
-  justify-content: space-between;
-  gap: 143px;
+
+
+  .flexContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 143px;
+  }
 
   .headSection {
     margin-bottom: 5rem;

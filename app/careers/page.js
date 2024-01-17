@@ -1,10 +1,9 @@
-import CareerBanner from "@/components/career/careerBanner";
-import OpenPosition from "@/components/career/openPosition";
-import TczLife from "@/components/career/tczLife";
+import CareerBanner from "@/components/careers/careerBanner";
+import EmployeeEngagement from "@/components/careers/employeeEngagement";
+import OpenPosition from "@/components/careers/openPosition";
+import TczLife from "@/components/careers/tczLife";
 import Testimonials from "@/components/home/testimonials";
 import Innovation from "@/components/portfolio/innovation";
-import TechnologyValues from "@/components/technology/technologyValues";
-import React from "react";
 
 const Career = () => {
   return (
@@ -13,7 +12,7 @@ const Career = () => {
       <TczLife />
       <OpenPosition />
       <Testimonials />
-      <TechnologyValues />
+      <EmployeeEngagement />
       <Innovation />
     </div>
   );

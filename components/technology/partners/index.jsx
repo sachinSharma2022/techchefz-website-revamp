@@ -1,6 +1,6 @@
 import PartnerCard from "@/components/ui/partnerCard";
-import React from "react";
 
+import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 
 const Partners = () => {
@@ -44,22 +44,24 @@ const Partners = () => {
   ];
   return (
     <section className={styles.partner}>
-      <div className={styles.headSection}>
-        <h6 className={styles.partnerTitle}>Partners</h6>
-        <h3 className={styles.partnerHeading}>
-          Together in every code. Discover the strength of our partnership.
-        </h3>
-      </div>
+      <div className={cn("primary-container", styles.flexContainer)}>
+        <div className={styles.headSection}>
+          <h6 className={styles.partnerTitle}>Partners</h6>
+          <h3 className={styles.partnerHeading}>
+            Together in every code. Discover the strength of our partnership.
+          </h3>
+        </div>
 
-      <div className={styles.partnerCards}>
-        {partnerCardData.map((data, index) => (
-          <PartnerCard
-            key={index}
-            imgSrc={data.imgSrc}
-            cardTitle={data.cardTitle}
-            cardContent={data.cardContent}
-          />
-        ))}
+        <div className={styles.partnerCards}>
+          {partnerCardData.map((data, index) => (
+            <PartnerCard
+              key={index}
+              imgSrc={data.imgSrc}
+              cardTitle={data.cardTitle}
+              cardContent={data.cardContent}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
