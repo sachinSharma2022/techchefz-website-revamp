@@ -4,6 +4,10 @@
   
   .headSection {
     padding-inline: spacing(p-120);
+
+    @include desktop-hd {
+      padding: 0;
+    }
   }
 
   .relatedCaseTitle {
@@ -25,8 +29,12 @@
   }
 
   .relatedCaseSlider {
-    padding-left: 120px;
+    padding-left: spacing(p-120);
     margin-bottom: 8.75rem;
+
+    @include desktop-hd {
+      padding-left: 13vw;
+    }
   }
 
   .cardStyle {

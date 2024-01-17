@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { Icons } from "@/components/icons";
 import styles from "./style.module.scss";
+import { cn } from "@/lib/utils";
 
 const Header = () => {
   const { theme, setTheme } = useContext(MyContext);
@@ -188,102 +189,109 @@ const Header = () => {
     <header
       className={`${styles.headerMain} ${theme ? styles.headerDarkStyle : ""}`}
     >
-      <div className={styles.logo}>
-        <Link href="/" className={styles.lightLogo}>
-          <ImageCustom src="/images/logo.svg" width={153} height={40} alt="" />
-        </Link>
-        <Link href="/" className={styles.darkLogo}>
-          <ImageCustom
-            src="/images/white-logo.svg"
-            width={153}
-            height={40}
-            alt=""
-          />
-        </Link>
-      </div>
-      <nav className={isActive ? styles.showNav : null}>
-        <ul>
-          <li>
-            <Link
-              href="/about"
-              className={pathname == "/about" ? styles.active : ""}
-            >
-              About Us
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/solutions"
-              className={pathname == "/solutions" ? styles.active : ""}
-            >
-              Solutions
-            </Link>
-          </li>
-          <li
-            className={styles.dropDown}
-            onMouseEnter={() => {
-              setDropChoice("technology");
-            }}
-          >
-            <Link
-              href="/technology"
-              className={pathname == "/technology" ? styles.active : ""}
-            >
-              Technology <div className={styles.arrow} />
-            </Link>
-            <ul className={styles.subMenu}>{renderTechnologyMenu()}</ul>
-          </li>
-          <li>
-            <Link
-              href="/portfolio"
-              className={pathname == "/portfolio" ? styles.active : ""}
-            >
-              Portfolio
-            </Link>
-          </li>
-          <li
-            className={styles.dropDown}
-            onMouseEnter={() => {
-              setDropChoice("MoreOptions");
-            }}
-          >
-            <Link href="/">
-              <Icons.MoreDotIcon width={4} height={14} /> More
-            </Link>
-            <ul
-              className={
-                dropChoice === "MoreOptions"
-                  ? `${styles.subMenuMore}`
-                  : `${styles.subMenu}`
-              }
-            >
-              {renderTechnologyMenu()}
-            </ul>
-          </li>
-        </ul>
-      </nav>
-      <div className={styles.headerRight}>
-        <div className={styles.modeBtn}>
-          <Button variant="default" onClick={() => setTheme(!theme)}>
-            {theme ? (
-              <Icons.DarkThemeIcon size={30} />
-            ) : (
-              <Icons.Moon size={15} />
-            )}
-          </Button>
+      <div className={cn(styles.headerContainer, "primary-container")}>
+        <div className={styles.logo}>
+          <Link href="/" className={styles.lightLogo}>
+            <ImageCustom
+              src="/images/logo.svg"
+              width={153}
+              height={40}
+              alt=""
+            />
+          </Link>
+          <Link href="/" className={styles.darkLogo}>
+            <ImageCustom
+              src="/images/white-logo.svg"
+              width={153}
+              height={40}
+              alt=""
+            />
+          </Link>
         </div>
-        <Button variant="blueBtn" className={styles.headerBtn} size="sm">
-          Estimate Project
-        </Button>
-
-        <div className={isActive ? styles.activeHumburger : null}>
-          <Button
-            variant="defualt"
-            className={styles.navHamburger}
-            onClick={toggleClass}
-          >
-            <span></span>
+        <nav className={isActive ? styles.showNav : null}>
+          <ul>
+            <li>
+              <Link
+                href="/about"
+                className={pathname == "/about" ? styles.active : ""}
+              >
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/solutions"
+                className={pathname == "/solutions" ? styles.active : ""}
+              >
+                Solutions
+              </Link>
+            </li>
+            <li
+              className={styles.dropDown}
+              onMouseEnter={() => {
+                setDropChoice("technology");
+              }}
+            >
+              <Link
+                href="/technology"
+                className={pathname == "/technology" ? styles.active : ""}
+              >
+                Technology <div className={styles.arrow} />
+              </Link>
+              <ul className={styles.subMenu}>{renderTechnologyMenu()}</ul>
+            </li>
+            <li>
+              <Link
+                href="/portfolio"
+                className={pathname == "/portfolio" ? styles.active : ""}
+              >
+                Portfolio
+              </Link>
+            </li>
+            <li
+              className={styles.dropDown}
+              onMouseEnter={() => {
+                setDropChoice("MoreOptions");
+              }}
+            >
+              <Link href="/">
+                <Icons.MoreDotIcon width={4} height={14} /> More
+              </Link>
+              <ul
+                className={
+                  dropChoice === "MoreOptions"
+                    ? `${styles.subMenuMore}`
+                    : `${styles.subMenu}`
+                }
+              >
+                {renderTechnologyMenu()}
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div className={styles.headerRight}>
+          <div className={styles.modeBtn}>
+            <Button variant="default" onClick={() => setTheme(!theme)}>
+              {theme ? (
+                <Icons.DarkThemeIcon size={30} />
+              ) : (
+                <Icons.Moon size={15} />
+              )}
+            </Button>
+          </div>
+          <Button variant="blueBtn" className={styles.headerBtn} size="sm">
+            Estimate Project
           </Button>
+
+          <div className={isActive ? styles.activeHumburger : null}>
+            <Button
+              variant="default"
+              className={styles.navHamburger}
+              onClick={toggleClass}
+            >
+              <span></span>
+            </Button>
+          </div>
         </div>
       </div>
     </header>

@@ -2,9 +2,6 @@
 
 .headerMain {
   padding: 1.11rem 7.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   position: relative;
   z-index: 9;
   box-shadow: 0 0 0.125rem rgba(color(text-primary), 0.3);
@@ -12,6 +9,13 @@
   @include tablet {
     padding: 1rem 0.8rem;
   }
+
+  .headerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
 
   .logo {
     .lightLogo {

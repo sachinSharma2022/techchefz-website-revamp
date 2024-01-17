@@ -1,8 +1,7 @@
 "use client";
-import React from "react";
 import { Icons } from "@/components/icons";
-import Slider from "react-slick";
 import { ImageCustom } from "@/components/ui/imageCustom";
+import Slider from "react-slick";
 
 import styles from "./style.module.scss";
 
@@ -11,8 +10,8 @@ const TczLife = () => {
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 1.5,
-    slidesToScroll: 1,
+    slidesToShow: 2,
+    slidesToScroll: 2,
     nextArrow: (
       <div>
         <Icons.SliderArrow />
@@ -23,6 +22,25 @@ const TczLife = () => {
         <Icons.SliderArrow />
       </div>
     ),
+    responsive: [
+      {
+        breakpoint: 1500,
+        settings: {
+          slidesToShow: 1.5,
+          slidesToScroll: 1,
+          centerMode: false,
+          arrows: true,
+        },
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: true,
+        },
+      },
+    ],
   };
 
   const sliderVideo = [
@@ -43,13 +61,13 @@ const TczLife = () => {
     <section className={styles.tczLife}>
       <div className={styles.tczLifeTop}>
         <div className="row justify-content-between m-0">
-          <div className="col-md-4 col-lg-4">
+          <div className="col-md-4 col-lg-4 p-0">
             <h6 className={styles.tczLifeTitle}>Life at techchefz</h6>
             <h3 className={styles.tczLifeHeading}>
               Make an Impact from <span>Day One.</span>
             </h3>
           </div>
-          <div className="col-md-6 col-lg-6 pe-0">
+          <div className="col-md-6 col-lg-6 p-0">
             <div className="tczLifeSlider">
               <Slider {...settings}>
                 {sliderVideo.map((data, index) => (

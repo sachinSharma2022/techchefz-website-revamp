@@ -8,6 +8,8 @@ import styles from "./style.module.scss";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { Icons } from "@/components/icons";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const DigitalTransformation = () => {
   const { theme, setTheme } = useContext(MyContext);
@@ -82,60 +84,64 @@ const DigitalTransformation = () => {
         theme ? styles.digitalStyleDark : ""
       }`}
     >
-      <div className={styles.serviceRow}>
-        <div className="row">
-          <div className="col-md-12 col-12">
-            <p className={styles.projectHighlight}>Digital Transformation</p>
-          </div>
+      <div className={cn("primary-container")}>
+        <div className={styles.serviceRow}>
+          <div className="row">
+            <div className="col-md-12 col-12">
+              <p className={styles.projectHighlight}>Digital Transformation</p>
+            </div>
 
-          <div className="col-md-8 col-12">
-            <h2 className={styles.datingText}>
-              Remaining businesses by integrating
-              <span className={styles.digitalTechText}>
-                digital technologies.
-              </span>
-            </h2>
-          </div>
-          <div className={`${styles.servicesBtn} col-md-4 col-12`}>
-            <Button variant="outline" size="md">
-              Explore Services <Icons.ArrowRight size={18} />
-            </Button>
+            <div className="col-md-8 col-12">
+              <h2 className={styles.datingText}>
+                Remaining businesses by integrating
+                <span className={styles.digitalTechText}>
+                  digital technologies.
+                </span>
+              </h2>
+            </div>
+            <div className={`${styles.servicesBtn} col-md-4 col-12`}>
+              <Link href="/solutions">
+                <Button variant="outline" size="md">
+                  Explore Services <Icons.ArrowRight size={18} />
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className={`${styles.digitalMain} digital-transformation`}>
-        <Slider {...settings}>
-          {serviceCard.map((data, index) => (
-            <div key={index}>
-              <div className={styles.digitalGrid}>
-                <div className={styles.digitalImg}>
-                  <ImageCustom
-                    src={data.img}
-                    width={421}
-                    height={318}
-                    alt="bannerImg"
-                  />
-                </div>
+        <div className={`${styles.digitalMain} digital-transformation`}>
+          <Slider {...settings}>
+            {serviceCard.map((data, index) => (
+              <div key={index}>
+                <div className={styles.digitalGrid}>
+                  <div className={styles.digitalImg}>
+                    <ImageCustom
+                      src={data.img}
+                      width={421}
+                      height={318}
+                      alt="bannerImg"
+                    />
+                  </div>
 
-                <div className={styles.experienceCardBox}>
-                  <h4 className={styles.CustomerHeading}>
-                    {data.digitalHeading}
-                  </h4>
-                  <p className={styles.digitalText}>{data.digitalText}</p>
+                  <div className={styles.experienceCardBox}>
+                    <h4 className={styles.CustomerHeading}>
+                      {data.digitalHeading}
+                    </h4>
+                    <p className={styles.digitalText}>{data.digitalText}</p>
 
-                  <ul className={styles.customerList}>
-                    <li className={styles.list}>
-                      Attract & Engage more users/customers
-                    </li>
-                    <li className={styles.list}>Increase Conversions</li>
-                    <li className={styles.list}>Automate Marketing Tasks</li>
-                  </ul>
+                    <ul className={styles.customerList}>
+                      <li className={styles.list}>
+                        Attract & Engage more users/customers
+                      </li>
+                      <li className={styles.list}>Increase Conversions</li>
+                      <li className={styles.list}>Automate Marketing Tasks</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </Slider>
+            ))}
+          </Slider>
+        </div>
       </div>
     </section>
   );

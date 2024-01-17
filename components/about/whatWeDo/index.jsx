@@ -5,6 +5,7 @@ import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 import styles from "./style.module.scss";
 import { Icons } from "@/components/icons";
+import { cn } from "@/lib/utils";
 
 const WhatWeDo = () => {
   const { theme, setTheme } = useContext(MyContext);
@@ -99,14 +100,12 @@ const WhatWeDo = () => {
     <section
       className={`${styles.whatWeDo} ${theme ? styles.whatWeDoDark : ""}`}
     >
-      <div className="container">
-        <div className="row">
-          <div className="col-md-6 col-lg-7 mb-4">
-            <h6 className={styles.weDoTitle}>What we do</h6>
-            <h3 className={styles.weDoHeading}>
-              Empowering Innovation: Our Role in the Tech Industry.
-            </h3>
-          </div>
+      <div className={cn("primary-container")}>
+        <div className={cn(styles.flexContainer)}>
+          <h6 className={styles.weDoTitle}>What we do</h6>
+          <h3 className={styles.weDoHeading}>
+            Empowering Innovation: Our Role in the Tech Industry.
+          </h3>
         </div>
 
         <div className={styles.workCardWrapper}>
