@@ -1,5 +1,9 @@
+"use client";
+
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import styles from "./style.module.scss";
 
 const DistinctLocations = () => {
@@ -35,9 +39,13 @@ const DistinctLocations = () => {
       phoneNumber: "+91 9824349812",
     },
   ];
-
+  const { theme, setTheme } = useContext(MyContext);
   return (
-    <section className={`${styles.distinctLocationsStyle}`}>
+    <section
+      className={`${styles.distinctLocationsStyle} ${
+        theme ? styles.distinctLocationsBannerDark : ""
+      }`}
+    >
       <div className={styles.careerRow}>
         <p className={styles.ProjectHighlight}>Presence</p>
         <h2 className={styles.datingText}>Our Distinct Locations</h2>

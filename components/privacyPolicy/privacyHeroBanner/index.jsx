@@ -1,9 +1,18 @@
+"use client";
+
 import { cn } from "@/lib/utils";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import styles from "./style.module.scss";
 
 const PrivacyHeroBanner = () => {
+  const { theme, setTheme } = useContext(MyContext);
   return (
-    <section className={`${styles.privacyHeroBannerStyle}`}>
+    <section
+      className={`${styles.privacyHeroBannerStyle} ${
+        theme ? styles.privacyHeroBannerDark : ""
+      }`}
+    >
       <div className={cn("primary-container")}>
         <h1 className={styles.title}>
           Techchefz’s

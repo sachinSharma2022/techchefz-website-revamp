@@ -3,6 +3,17 @@
 .globalPresenceStyle {
   background-color: color(bg-soft);
   padding-block: 8.75rem 8.75rem;
+  &.globalPresenceBannerDark {
+    background-color: color(dark-bg);
+    color: color(primary-white);
+
+    .globalStackBox {
+      .locationPopoverCard {
+        background-color: color(input-bg);
+        color: color(primary-white);
+      }
+    }
+  }
 
   .globalStackBox {
     .globalRow {

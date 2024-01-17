@@ -18,6 +18,12 @@
           color: color(heading-liner);
         }
       }
+      .contactTabWrap {
+        .contactInnerFlex {
+          background-color: color(dark-gray);
+          color: color(primary-white);
+        }
+      }
     }
   }
 
@@ -163,12 +169,18 @@
       padding: 20px;
 
       .icon {
-          animation: slide-in 0.5s forwards;
-        }
+        animation: slide-in 0.5s forwards;
+      }
 
       @keyframes slide-in {
-        0% { transform: translateX(-100%); opacity: 0; }
-        100% { transform: translateX(0%); opacity: 1;}
+        0% {
+          transform: translateX(-100%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0%);
+          opacity: 1;
+        }
       }
 
       .highlightIcon {

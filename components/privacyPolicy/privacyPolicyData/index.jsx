@@ -1,9 +1,14 @@
+"use client";
+
 import { cn } from "@/lib/utils";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import styles from "./style.module.scss";
 
 const PrivacyPolicyData = () => {
+  const { theme, setTheme } = useContext(MyContext);
   return (
-    <section className={`${styles.PrivacyPolicyData}`}>
+      <section className={`${styles.privacyPolicyData} ${theme ? styles.privacyPolicyDataBannerDark : ""}`}>
       <div className={cn("primary-container")}>
         <div className={styles.policyDivide}>
           <span className={styles.title}>Personal Information</span>

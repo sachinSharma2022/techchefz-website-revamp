@@ -6,6 +6,21 @@
   @include mobile {
     padding: spacing(section-mob-padding);
   }
+  &.distinctLocationsBannerDark {
+    background-color: color(input-bg);
+    color: color(primary-white);
+    .gridNumberMain {
+      .locationGridCards {
+        .locationBox {
+          background-color: color(dark-bg);
+          color: color(primary-white);
+        }
+      }
+    }
+    .ProjectHighlight {
+      color: color(primary-white);
+    }
+  }
   .careerRow {
     margin-bottom: 3.75rem;
     max-width: 49.188rem;
@@ -111,7 +126,7 @@
             margin-bottom: 0;
           }
         }
-        
+
         .sbTitle {
           font-size: text(xl);
           font-weight: 500;

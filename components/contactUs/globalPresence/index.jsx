@@ -2,13 +2,20 @@
 
 import React from "react";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import { Popover } from "@headlessui/react";
+import styles from "./style.module.scss";
 
 const GlobalPresence = () => {
+  const { theme, setTheme } = useContext(MyContext);
   return (
-    <section className={styles.globalPresenceStyle}>
+    <section
+      className={`${styles.globalPresenceStyle} ${
+        theme ? styles.globalPresenceBannerDark : ""
+      }`}
+    >
       <div className={styles.globalStackBox}>
         <div className={cn("primary-container", styles.globalRow)}>
           <h2 className={styles.globalHeading}>Global Presence</h2>
