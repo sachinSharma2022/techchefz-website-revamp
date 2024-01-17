@@ -6,7 +6,7 @@ const DistinctLocations = () => {
   const differenceCard = [
     {
       brandImg:
-        "https://images.unsplash.com/photo-1644777824525-9ac417a0674e?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1548013146-72479768bada?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW5kaWF8ZW58MHx8MHx8fDA%3D",
       sbTitle: "India",
       countryFlagImg: "/images/country-contact-flag.png",
       sbText: "New Delhi",
@@ -16,7 +16,7 @@ const DistinctLocations = () => {
     },
     {
       brandImg:
-        "https://images.unsplash.com/photo-1515112102038-7899a6b9db83?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://plus.unsplash.com/premium_photo-1675118548262-60f7e4e77483?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8VW5pdGVkJTIwU3RhdGVzfGVufDB8fDB8fHww",
       sbTitle: "United States",
       countryFlagImg: "/images/united-state-flag.png",
       sbText: "San Francisco",
@@ -26,7 +26,7 @@ const DistinctLocations = () => {
     },
     {
       brandImg:
-        "https://plus.unsplash.com/premium_photo-1680836316227-ef17dbbcfb27?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1665649968710-2917b5128171?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmV3JTIweW91ciUyMGNpdHl8ZW58MHx8MHx8fDA%3D",
       sbTitle: "United States",
       countryFlagImg: "/images/united-state-flag.png",
       sbText: "New York",
@@ -39,24 +39,14 @@ const DistinctLocations = () => {
   return (
     <section className={`${styles.distinctLocationsStyle}`}>
       <div className={styles.careerRow}>
-        <div className="row">
-          <div className="col-md-12 col-12">
-            <p className={styles.ProjectHighlight}>Presence</p>
-          </div>
-
-          <div className="col-md-12 col-12">
-            <h2 className={styles.datingText}>Our Distinct Locations</h2>
-          </div>
-
-          <div className="col-md-12 col-12">
-            <p className={styles.descriptionText}>
-              Our 50+ team members, from account executives, strategists,
-              project managers/delivery leads, product designers, and
-              developers, are ready to find the best solution to any challenges
-              you face. Let's start collaborating!
-            </p>
-          </div>
-        </div>
+        <p className={styles.ProjectHighlight}>Presence</p>
+        <h2 className={styles.datingText}>Our Distinct Locations</h2>
+        <p className={styles.descriptionText}>
+          Our 50+ team members, from account executives, strategists, project
+          managers/delivery leads, product designers, and developers, are ready
+          to find the best solution to any challenges you face. Let&apos;s start
+          collaborating!
+        </p>
       </div>
 
       <div className={styles.gridNumberMain}>
@@ -83,11 +73,9 @@ const DistinctLocations = () => {
                     />
                   </div>
                 </div>
-
                 <p className={styles.sbText}>{data.sbText}</p>
-
                 <div className={styles.addressArea}>
-                  <Icons.ContactLocation width={25} height={25} />
+                  <Icons.ContactLocation width={40} height={40} />
                   <p className={styles.addressText}>{data.address}</p>
                 </div>
 

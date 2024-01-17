@@ -51,7 +51,7 @@ const Footer = () => {
                 <div className={styles.formFlex}>
                   <InputCustom placeholder="Business Email Address" />
                   <div className="d-flex align-items-center">
-                    <Button variant="ligthBlueBtn" size="lg">
+                    <Button variant="lightBlueBtn" size="lg">
                       Subscribe <Icons.ArrowRight size={20} className="ms-2" />
                     </Button>
                   </div>
@@ -77,13 +77,13 @@ const Footer = () => {
               <div className={styles.footerCols}>
                 <ul>
                   <h5>
-                    <Link href="/">About us</Link>
+                    <Link href="/about">About us</Link>
                   </h5>
                   <h5>
-                    <Link href="/">Solutions</Link>
+                    <Link href="/solutions">Solutions</Link>
                   </h5>
                   <h5>
-                    <Link href="/">Portfolio</Link>
+                    <Link href="/portfolio">Portfolio</Link>
                   </h5>
                   <h5>
                     <Link href="/">Contact Us</Link>
@@ -91,10 +91,12 @@ const Footer = () => {
                 </ul>
               </div>
               <div className={styles.footerCols}>
-                <h5><Link href="/">Technology</Link></h5>
+                <h5>
+                  <Link href="/technology">Technology</Link>
+                </h5>
                 <ul>
                   <li>
-                    <Link href="/">CMS</Link>
+                    <Link href="/technology/cms">CMS</Link>
                   </li>
                   <li>
                     <Link href="/">Commerce</Link>
@@ -114,7 +116,9 @@ const Footer = () => {
                 </ul>
               </div>
               <div className={styles.footerCols}>
-                <h5><Link href="/">More</Link></h5>
+                <h5>
+                  <Link href="/">More</Link>
+                </h5>
                 <ul>
                   <li>
                     <Link href="/careers">Careers</Link>
@@ -145,7 +149,7 @@ const Footer = () => {
               <Link href="/">Security</Link>
             </li>
             <li>
-              <Link href="/">Privacy Policy</Link>
+              <Link href="/privacy-policy">Privacy Policy</Link>
             </li>
           </ul>
         </div>

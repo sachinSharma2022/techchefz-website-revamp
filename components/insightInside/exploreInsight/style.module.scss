@@ -2,7 +2,7 @@
 
 @mixin exploreInsightsContainer() {
   background-color: color(input-bg);
-  padding-block: spacing(section-primary-padding);
+  padding-block: spacing(p-120);
 
   @include mobile-tablet-p {
     padding: 8.75rem 2.5rem;
@@ -12,7 +12,7 @@
   }
 
   .flexContainer {
-    padding-inline: spacing(section-primary-padding);
+    padding-inline: spacing(p-120);
   }
 
   .gridSection {

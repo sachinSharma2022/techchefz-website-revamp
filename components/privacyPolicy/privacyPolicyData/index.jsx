@@ -89,8 +89,8 @@ const PrivacyPolicyData = () => {
             <li className={styles.list}>
               You do this through your browser (e.g. Chrome or Internet
               Explorer) settings. Each browser is a little different, so refer
-              to your browser's Help menu to learn the correct way to modify
-              your cookies.
+              to your browser&apos;s Help menu to learn the correct way to
+              modify your cookies.
             </li>
             <li className={styles.list}>
               If you turn cookies off, some features will be that make the site

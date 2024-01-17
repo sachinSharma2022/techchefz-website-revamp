@@ -10,7 +10,6 @@
     letter-spacing: 0.2rem;
     text-transform: uppercase;
     opacity: 0.8;
-    font-family: font(secondary);
   }
   .resultHeading {
     font-size: text(larger);
@@ -28,7 +27,7 @@
   }
   .resultCards {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
     .resultCard {
       width: 100%;
@@ -47,9 +46,7 @@
           color(primary-blue) 11.5%,
           color(heading-liner) 55.42%
         );
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        @include textGradient;
         margin-bottom: 2rem;
       }
       h4 {
@@ -57,7 +54,6 @@
         font-weight: 400;
         line-height: 1.875rem;
         opacity: 0.8;
-        font-family: font(secondary);
       }
     }
   }

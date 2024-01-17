@@ -2,9 +2,12 @@
 
 .headerMain {
   padding: 1.11rem 7.5rem;
-  position: relative;
-  z-index: 9;
+  position: sticky;
+  top: 0;
+  z-index: 999;
   box-shadow: 0 0 0.125rem rgba(color(text-primary), 0.3);
+  background: transparent;
+  backdrop-filter: blur(10px);
 
   @include tablet {
     padding: 1rem 0.8rem;
@@ -174,7 +177,7 @@
           z-index: 2;
           padding: 0.5rem 0;
           margin: 0;
-          border: 0.063rem solid rgba(color(text-primary), 0.2);
+          border: 0.14rem solid rgba(color(text-primary), 0.2);
           border-radius: 0.5rem;
 
           @include tablet {

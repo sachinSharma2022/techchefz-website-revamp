@@ -16,7 +16,7 @@ const AboutBanner = () => {
     >
       <div className={cn("primary-container")}>
         <h1 className={styles.bannerTitle}>
-          Pioneering Technologies that can <span>Reshape the World</span>
+          Pioneering Technologies that <br /> can <span>Reshape the World</span>
         </h1>
       </div>
 
