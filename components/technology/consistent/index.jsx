@@ -1,13 +1,18 @@
+"use client"
+import React from "react";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
-
 import { cn } from "@/lib/utils";
+
 import styles from "./style.module.scss";
 
 const Consistent = () => {
+  const { theme, setTheme } = useContext(MyContext);
   return (
-    <section className={styles.consistent}>
+    <section className={`${styles.consistent}  ${theme ? styles.consistentDark : ""}`}>
       <div className={cn("primary-container")}>
         <div className={styles.consistentImg}>
           <ImageCustom

@@ -1,14 +1,17 @@
+"use client"
 import React from "react";
-
-import styles from "./style.module.scss";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { Button } from "@/components/ui/button";
 import { Icons } from "@/components/icons";
 
+import styles from "./style.module.scss";
+
 const Impact = () => {
+   const { theme, setTheme } = useContext(MyContext);
    return (
-      <section className={styles.impact}>
-         {/* <div className='primary-container'> */}
+      <section className={`${styles.impact} ${theme ? styles.impactDark : ""}`}>
          <div className="text-center">
             <h6 className={styles.subHeading}>Impact</h6>
             <h3 className={styles.impactHeading}>Confronting Out of Stock (OOS) Challenges</h3>
@@ -59,7 +62,6 @@ const Impact = () => {
                </Button>
             </div>
          </div>
-         {/* </div> */}
       </section>
    );
 };

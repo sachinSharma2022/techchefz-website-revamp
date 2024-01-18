@@ -1,45 +1,57 @@
 @import "~/styles/partials/config";
 
 .challenges {
-  padding: 0 7.5rem;
-  .challengeTitle {
-    font-size: text(normal);
-    font-weight: 700;
-    line-height: 1.5rem;
-    letter-spacing: 0.2rem;
-    text-transform: uppercase;
-    opacity: 0.8;
-  }
-  .challengeHeading {
-    font-size: text(larger);
-    font-weight: 500;
-    line-height: 3.375rem;
-  }
+   padding: 0 7.5rem;
 
-  .challengesCards {
-    display: flex;
-    gap: 2.5rem;
-    margin: 5rem 0;
+   &.challengesDark {
+      background-color: color(input-bg);
+      color: #fff;
 
-    .challengesCard {
-      border-radius: 1.25rem;
-      border: 1px solid rgba(17, 17, 17, 0.12);
-      background: color(bg-soft);
-      width: 100%;
-      height: auto;
-      padding: 2.5rem;
-
-      h5 {
-        font-size: text(xl);
-        font-weight: 500;
-        line-height: 2.125rem;
+      .challengesCards{
+        .challengesCard{
+          background: color(text-primary);
+        }
       }
-      p {
-        font-size: text(normal);
-        font-weight: 400;
-        line-height: 1.5rem;
-        opacity: 0.8;
+    
+   }
+   .challengeTitle {
+      font-size: text(normal);
+      font-weight: 700;
+      line-height: 1.5rem;
+      letter-spacing: 0.2rem;
+      text-transform: uppercase;
+      opacity: 0.8;
+   }
+   .challengeHeading {
+      font-size: text(larger);
+      font-weight: 500;
+      line-height: 3.375rem;
+   }
+
+   .challengesCards {
+      display: flex;
+      gap: 2.5rem;
+      padding: 5rem 0;
+
+      .challengesCard {
+         border-radius: 1.25rem;
+         border: 1px solid rgba(17, 17, 17, 0.12);
+         background: color(bg-soft);
+         width: 100%;
+         height: auto;
+         padding: 2.5rem;
+
+         h5 {
+            font-size: text(xl);
+            font-weight: 500;
+            line-height: 2.125rem;
+         }
+         p {
+            font-size: text(normal);
+            font-weight: 400;
+            line-height: 1.5rem;
+            opacity: 0.8;
+         }
       }
-    }
-  }
+   }
 }

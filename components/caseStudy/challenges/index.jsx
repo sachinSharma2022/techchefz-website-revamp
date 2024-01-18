@@ -1,9 +1,13 @@
+"use client"
 import React from "react";
-
-import styles from "./styles.module.scss";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import { cn } from "@/lib/utils";
 
+import styles from "./styles.module.scss";
+
 const Challenges = (props) => {
+  const { theme, setTheme } = useContext(MyContext);
   const cardData = [
     {
       title: "Navigating Cloud Integration Complexities",
@@ -22,7 +26,7 @@ const Challenges = (props) => {
     },
   ];
   return (
-    <section className={cn(styles.challenges , props.className)}>
+    <section className={cn(styles.challenges , props.className ,theme ? styles.challengesDark : "") }>
       <div className="row">
         <div className="col-md-6 col-lg-6">
           <h6 className={styles.challengeTitle}>Challenges</h6>
