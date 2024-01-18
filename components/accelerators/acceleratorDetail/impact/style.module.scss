@@ -1,0 +1,77 @@
+@import "~/styles/partials/config";
+
+.impact {
+   padding: spacing(section-primary-padding);
+   background-color: color(bg-soft);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 5rem;
+
+   .subHeading {
+      font-size: text(normal);
+      font-family: font(secondary);
+      font-weight: 700;
+      line-height: 1.5rem;
+      letter-spacing: 0.2rem;
+      text-transform: uppercase;
+      opacity: 0.8;
+      margin-bottom: 1rem;
+   }
+   .impactHeading {
+    font-size: text(larger);
+      font-weight: 500;
+      line-height: 3.375rem;
+   }
+
+   .impactTopSection {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8.938rem;
+      padding: 2.5rem 0;
+
+      .impactImage {
+        width: 50%;
+         img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+         }
+      }
+
+      .topSectionRight {
+        width: 50%;
+         h4 {
+            font-size: text(xxxl);
+            font-weight: 500;
+            line-height: 2.5rem;
+            max-width: 90%;
+            margin-bottom: 0.75rem;
+         }
+
+         ul {
+            list-style: square;
+
+            li {
+               font-size: text(lg);
+               font-weight: 400;
+               line-height: 1.875rem;
+               opacity: 0.6;
+            }
+         }
+
+         p{
+            font-size: text(lg);
+            font-weight: 400;
+            line-height: 1.875rem;
+            opacity: 0.6;
+         }
+
+         button {
+            margin-top: 2.5rem;
+         }
+      }
+   }
+}

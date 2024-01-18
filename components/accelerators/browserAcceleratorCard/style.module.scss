@@ -1,0 +1,65 @@
+@import "~/styles/partials/config";
+
+.browserAcceleratorCard {
+   background-color: color(bg-soft);
+   width: 100%;
+   height: auto;
+   padding: 1.875rem;
+   border-radius: 1.25rem;
+   border: 2px solid rgba(color(text-primary), 0.12);
+   cursor: pointer;
+   transition: all 0.5s ease-in-out;
+   color: color(text-primary);
+
+   &:hover{
+      border: 2px solid color(heading-liner);
+   }
+
+   .cardHeader {
+      display: flex;
+      justify-content: space-between;
+      gap: 2.5rem;
+      align-items: center;
+      margin-bottom: 1.25rem;
+
+      .cardSubTitle {
+         display: flex;
+         gap: 1.25rem;
+         align-items: center;
+      }
+
+      p {
+         margin-bottom: 0;
+      }
+   }
+
+   .cardTitle {
+      font-size: text(xl);
+      font-weight: 500;
+      line-height: 32px;
+      margin-bottom: 0.75rem;
+   }
+   .cardContent {
+      font-size: text(normal);
+      line-height: 1.5rem;
+      opacity: 0.8;
+      margin-bottom: 1.25rem;
+      @include truncate(3);
+   }
+
+   .cardsTags {
+      display: flex;
+      gap: 0.625rem;
+
+      button {
+         color: color(text-primary);
+         border-radius: 0.5rem;
+         background-color: color(primary-white);
+         border: 1px solid rgba(color(text-primary), 0.17);
+         font-weight: 400;
+         height: 30px;
+         line-height: 30px;
+         font-size: text(xxs);
+      }
+   }
+}
