@@ -8,6 +8,10 @@
       font-size: text(xl-larger);
       max-width: 80%;
 
+      @include desktop-hd {
+         padding-inline: 0;
+      }
+
       span{
         font-size: text(xl-larger);
         color: color(info-blue);

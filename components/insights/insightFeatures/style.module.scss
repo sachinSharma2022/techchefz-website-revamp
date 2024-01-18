@@ -6,7 +6,7 @@
   .insightHeader {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid rgba(color(text-primary), 0.12);
+    border-bottom: 0.14rem solid rgba(color(text-primary), 0.12);
     padding-bottom: 2.5rem;
     text-align: left;
 
@@ -24,7 +24,7 @@
         &:hover {
           background-color: color(primary-white);
           color: color(text-primary);
-          border: 1px solid var(--Gradient, #1e8af2);
+          border: 0.14rem solid var(--Gradient, #1e8af2);
         }
       }
     }

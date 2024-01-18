@@ -29,7 +29,7 @@ const Streamline = () => {
     },
     {
       icons: (
-        <Icons.Performance
+        <Icons.PerformanceIcon
           className={styles.cardIcon}
           width={140}
           height={140}
