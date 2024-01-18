@@ -1,12 +1,16 @@
+"use client";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
-
 import CaptionCard from "@/components/ui/captionCard";
 import { cn } from "@/lib/utils";
-import styles from "./styles.module.scss";
 import Link from "next/link";
 
+import styles from "./styles.module.scss";
+
 const TechnologyCase = () => {
+  const { theme, setTheme } = useContext(MyContext);
   const caseCardData = [
     {
       imgSrc:
@@ -25,7 +29,7 @@ const TechnologyCase = () => {
     },
   ];
   return (
-    <section className={styles.technologyCase}>
+    <section className={`${styles.technologyCase} ${theme ? styles.technologyCaseDark : ""}`}>
       <div className={cn("primary-container")}>
         <div className={styles.headSection}>
           <div className={styles.caseTop}>

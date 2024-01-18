@@ -1,4 +1,6 @@
 "use client";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -21,6 +23,7 @@ import styles from "./style.module.scss";
 
 const TechnologyValues = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const { theme, setTheme } = useContext(MyContext);
   const valueData = [
     {
       icon: <Icons.Market width={56} height={56} />,
@@ -47,7 +50,7 @@ const TechnologyValues = () => {
     },
   ];
   return (
-    <section className={`${styles.technologyValues} technology-value`}>
+    <section className={`${styles.technologyValues} ${theme ? styles.technologyValuesDark : ""} technology-value`}>
       <div className={cn("primary-container")}>
         <div className={styles.headSection}>
           <h6 className={styles.valuesTitle}>Our Values</h6>

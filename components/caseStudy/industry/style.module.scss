@@ -1,62 +1,70 @@
 @import "~/styles/partials/config";
 
 .industry {
-  padding: spacing(section-primary-padding);
-  padding-bottom: 0;
+   padding: spacing(section-primary-padding);
+   padding-bottom: 0;
 
-  .industryLeft {
-    h6 {
-      font-size: text(normal);
-      font-weight: 400;
-      line-height: 1.5rem;
-      opacity: 0.6;
-      margin-bottom: 0.2rem;
-    }
-    h5 {
-      font-weight: 700;
-      line-height: 2rem;
-      font-size: text(xl);
-    }
+   &.industryDark {
+      background-color: color(text-primary);
+      color: color(primary-white);
 
-    .serviceBtn {
-      button {
-        margin: 0 0.75rem 0.75rem 0;
-        color: color(text-primary);
-        font-size: text(normal);
-        font-weight: 400;
-        line-height: 1.875rem;
-        border: 0.14rem solid rgba(17, 17, 17, 0.4);
-
-
-        &:hover {
-          background-color: color(primary-white);
-          color: color(text-primary);
-        }
+      .industryHeading{
+        color: color(primary-white);
       }
-    }
-  }
+   }
 
-  .industryHeading {
-    font-weight: 500;
-    line-height: 3.375rem;
-    opacity: 0.8;
-    font-size: text(larger);
-    color: color(text-primary);
-    margin-bottom: 2rem;
-  }
+   .industryLeft {
+      h6 {
+         font-size: text(normal);
+         font-weight: 400;
+         line-height: 1.5rem;
+         opacity: 0.6;
+         margin-bottom: 0.2rem;
+      }
+      h5 {
+         font-weight: 700;
+         line-height: 2rem;
+         font-size: text(xl);
+      }
 
-  .industryText {
-    font-size: text(lg);
-    font-weight: 400;
-    line-height: 1.875rem;
-    opacity: 0.6;
-  }
+      .serviceBtn {
+         button {
+            margin: 0 0.75rem 0.75rem 0;
+            color: color(text-primary);
+            font-size: text(normal);
+            font-weight: 400;
+            line-height: 1.875rem;
+            border: 0.14rem solid rgba(17, 17, 17, 0.4);
 
-  .industryImg {
-    padding: 5rem 0;
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
+            &:hover {
+               background-color: color(primary-white);
+               color: color(text-primary);
+            }
+         }
+      }
+   }
+
+   .industryHeading {
+      font-weight: 500;
+      line-height: 3.375rem;
+      opacity: 0.8;
+      font-size: text(larger);
+      color: color(text-primary);
+      margin-bottom: 2rem;
+   }
+
+   .industryText {
+      font-size: text(lg);
+      font-weight: 400;
+      line-height: 1.875rem;
+      opacity: 0.6;
+   }
+
+   .industryImg {
+      padding: 5rem 0;
+      img {
+         width: 100%;
+         height: auto;
+      }
+   }
 }

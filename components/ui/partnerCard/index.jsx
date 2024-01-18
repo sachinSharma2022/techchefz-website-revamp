@@ -1,12 +1,16 @@
+"use client";
 import React from "react";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import { ImageCustom } from "../imageCustom";
 import { Icons } from "@/components/icons";
 
 import styles from "./style.module.scss";
 
 const PartnerCard = (props) => {
+  const { theme, setTheme } = useContext(MyContext);
   return (
-    <div className={styles.partnerCard}>
+    <div className={`${styles.partnerCard} ${theme ? styles.partnerCardDark : ""}`}>
       <div className={styles.cardImg}>
         <ImageCustom
           src={props.imgSrc}

@@ -1,9 +1,12 @@
+"use client";
 import PartnerCard from "@/components/ui/partnerCard";
-
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 
 const Partners = () => {
+  const { theme, setTheme } = useContext(MyContext);
   const partnerCardData = [
     {
       imgSrc: "/images/partners/partner1.png",
@@ -43,7 +46,7 @@ const Partners = () => {
     },
   ];
   return (
-    <section className={styles.partner}>
+    <section className={`${styles.partner} ${theme ? styles.partnerDark : ""}`}>
       <div className={cn("primary-container", styles.flexContainer)}>
         <div className={styles.headSection}>
           <h6 className={styles.partnerTitle}>Partners</h6>

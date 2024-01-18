@@ -1,10 +1,14 @@
+"use client";
 import React from "react";
-
-import styles from "./style.module.scss";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
 
+import styles from "./style.module.scss";
+
 const Goals = () => {
+  const { theme, setTheme } = useContext(MyContext);
   const listData = [
     {
       content:
@@ -20,7 +24,7 @@ const Goals = () => {
     },
   ];
   return (
-    <section className={styles.goals}>
+    <section className={`${styles.goals} ${theme ? styles.goalsDark : ""}`}>
       <div className="container">
         <div className="row justify-content-between">
           <div className="col-md-3 col-lg-3">

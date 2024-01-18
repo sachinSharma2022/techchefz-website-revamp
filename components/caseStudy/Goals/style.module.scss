@@ -2,6 +2,12 @@
 
 .goals {
    padding: 0 7.5rem;
+
+   &.goalsDark{
+      background-color: color(text-primary);
+      color: color(primary-white);
+
+   }
    .goalsTitle {
       font-size: text(normal);
       line-height: 1.5rem;

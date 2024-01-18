@@ -2,6 +2,11 @@
 
 .solutions {
    padding: 0 7.5rem;
+
+   &.solutionsDark{
+      background-color: color(text-primary);
+      color: color(primary-white);
+   }
    .solutionTitle {
       font-size: text(normal);
       font-weight: 700;
