@@ -1,11 +1,16 @@
 "use client";
+import React from "react";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import { Icons } from "@/components/icons";
 import CaptionCard from "@/components/ui/captionCard";
 import { cn } from "@/lib/utils";
 import Slider from "react-slick";
+
 import styles from "./style.module.scss";
 
 const RelatedCase = (props) => {
+  const { theme, setTheme } = useContext(MyContext);
   var settings = {
     dots: false,
     infinite: false,
@@ -84,7 +89,7 @@ const RelatedCase = (props) => {
     },
   ];
   return (
-    <section className={cn(styles.relatedCase, props.className)}>
+    <section className={cn(styles.relatedCase, props.className, theme ? styles.relatedCaseDark : "")}>
       <div className={cn("primary-container")}>
         <div className={styles.headSection}>
           <h6 className={styles.relatedCaseTitle}>Related Case Study</h6>

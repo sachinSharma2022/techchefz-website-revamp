@@ -4,13 +4,13 @@
    padding: 0 7.5rem 7.5rem;
 
    &.resultsDark {
-    background-color: color(input-bg);
+      background-color: color(input-bg);
       color: color(primary-white);
 
-      .resultCards{
-        .resultCard{
-          background-color: color(text-primary);
-        }
+      .resultCards {
+         .resultCard {
+            background-color: color(text-primary);
+         }
       }
    }
 

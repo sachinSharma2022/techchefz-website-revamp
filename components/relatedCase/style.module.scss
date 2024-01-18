@@ -1,7 +1,11 @@
 @import "~/styles/partials/config";
 
 .relatedCase {
-  
+  &.relatedCaseDark{
+    background-color: color(input-bg);
+    color: color(primary-white);
+  }
+ 
   .headSection {
     padding-inline: spacing(p-120);
 
