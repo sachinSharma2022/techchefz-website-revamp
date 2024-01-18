@@ -540,13 +540,10 @@
         .multiHrefs {
           margin-top: 2rem;
           position: relative;
+          gap: 16px 0;
 
           .hrefsFlex {
-            height: 60px;
-            width: 46%;
-            float:left;
             position: relative;
-            margin: 8px;
           }
 
 

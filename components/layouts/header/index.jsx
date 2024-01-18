@@ -157,32 +157,31 @@ const Header = () => {
               </div>
             )}
             <div
-              className={
+              className={cn(
+                "row",
                 dropChoice === "technology"
-                  ? `${styles.multiHrefs}`
-                  : `${styles.multiMoreHrefs}`
-              }
+                  ? styles.multiHrefs
+                  : styles.multiMoreHrefs
+              )}
             >
               {dropChoice === "technology" &&
                 multiRedirection.map((value, index) => {
                   return (
-                    <>
-                      <div
-                        className={styles.hrefsFlex}
-                        onMouseOver={() => setViewDescription(index)}
-                        onMouseOut={() => setViewDescription(null)}
-                        key={value.id}
-                      >
-                        <div className={styles.hrefInnerFlex}>
-                          <div className={styles.head}>
-                            <h1>{value.title}</h1>
-                            <Icons.ArrowForward />
-                          </div>
-
-                          <p className={styles.excepPara}>{value.para}</p>
+                    <div
+                      className={cn(styles.hrefsFlex, "col-sm-6")}
+                      onMouseOver={() => setViewDescription(index)}
+                      onMouseOut={() => setViewDescription(null)}
+                      key={value.id}
+                    >
+                      <div className={styles.hrefInnerFlex}>
+                        <div className={styles.head}>
+                          <h1>{value.title}</h1>
+                          <Icons.ArrowForward />
                         </div>
+
+                        <p className={styles.excepPara}>{value.para}</p>
                       </div>
-                    </>
+                    </div>
                   );
                 })}
               {dropChoice === "MoreOptions" &&
