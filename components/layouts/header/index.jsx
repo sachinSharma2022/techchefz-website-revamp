@@ -15,6 +15,7 @@ const Header = () => {
   const { theme, setTheme } = useContext(MyContext);
   const pathname = usePathname();
   const [dropChoice, setDropChoice] = useState("technology");
+  const [viewDescription, setViewDescription] = useState(null);
   const [isActive, setActive] = useState(false);
   const toggleClass = () => {
     setActive(!isActive);
@@ -23,30 +24,43 @@ const Header = () => {
   const renderTechnologyMenu = () => {
     const multiRedirection = [
       {
+        id:"1",
         title: "CMS",
         href: "#",
+        para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
       },
       {
+        id:"2",
         title: "Commerce",
         href: "#",
+        para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
       },
       {
+        id:"3",
         title: "Microservices",
         href: "#",
+        para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
       },
       {
+        id:"4",
         title: "Cloud & DevSecOps",
         href: "#",
+        para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
       },
       {
+        id:"5",
         title: "Data Intelligence",
         href: "#",
+        para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
       },
       {
+        id:"6",
         title: "Custom Development",
         href: "#",
+        para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
       },
       {
+        id:"7",
         title: "Analytics Automation",
         href: "",
         para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
@@ -150,16 +164,23 @@ const Header = () => {
               }
             >
               {dropChoice === "technology" &&
-                multiRedirection.map((key) => {
+                multiRedirection.map((value, index) => {
                   return (
                     <>
-                      <div className={styles.hrefsFlex}>
+                      <div
+                        className={styles.hrefsFlex}
+                        onMouseOver={() => setViewDescription(index)}
+                        onMouseOut={() => setViewDescription(null)}
+                        key={value.id}
+                      >
                         <div className={styles.hrefInnerFlex}>
-                          <h1>{key.title}</h1>
+                          <h1>{value.title}</h1>
                           <Icons.ArrowForward />
                         </div>
-                        {key.para && (
-                          <p className={styles.excepPara}>{key.para}</p>
+                        {viewDescription === index && value.para && (
+                
+                          <p className={styles.excepPara}>{value.para}</p>
+        
                         )}
                       </div>
                     </>
