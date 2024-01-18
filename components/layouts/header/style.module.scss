@@ -172,7 +172,7 @@
       }
 
       a {
-        background-color: rgba(color(text-primary), 0.06);
+        background-color: transparent;
       }
     }
 
@@ -181,9 +181,6 @@
     }
 
     a {
-      &:hover {
-        background-color: rgba(color(text-primary), 0.06);
-      }
       &::after {
         display: none;
       }
