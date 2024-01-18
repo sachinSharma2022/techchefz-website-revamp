@@ -37,6 +37,17 @@ const LetsTalk = () => {
             </p>
           </div>
 
+          <div className={`${styles.tabDropdownMob} col-md-6 col-12`}>
+          <h3 className={styles.tabDropLabel}>Choose Purpose</h3>
+            <CustomDropdown
+              title="Projects"
+              options={[
+                "Contact us for project ideas.",
+                "Contact us for project.",
+              ]}
+            />
+          </div>
+
           <div className={styles.contactTabWrap}>
             <Tab.Group vertical>
               <Tab.List>

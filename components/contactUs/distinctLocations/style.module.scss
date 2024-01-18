@@ -3,9 +3,11 @@
 .distinctLocationsStyle {
   padding-inline: spacing(p-120);
   padding-block: 8.75rem 8.75rem;
-  @include mobile {
+  @include mobile-tablet-p {
     padding: spacing(section-mob-padding);
+    padding-block: 3.75rem 3.75rem;
   }
+
   &.distinctLocationsBannerDark {
     background-color: color(input-bg);
     color: color(primary-white);
@@ -64,6 +66,7 @@
     margin-bottom: 0;
 
     @include mobile {
+      font-size: text(normal);
       max-width: 100%;
     }
   }
@@ -73,7 +76,9 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2.5rem;
-
+      @include mobile-tablet-p {
+        grid-template-columns: repeat(2, 1fr);
+      }
       @include mobile {
         grid-template-columns: repeat(1, 1fr);
       }

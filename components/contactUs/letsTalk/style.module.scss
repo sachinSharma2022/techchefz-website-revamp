@@ -13,6 +13,9 @@
     .workArea {
       background-color: color(text-primary);
       color: color(primary-white);
+      .tabDropdownMob {
+        background-color: color(dark-gray);
+      }
       .workGrid {
         .policyHighlight {
           color: color(heading-liner);
@@ -27,8 +30,9 @@
     }
   }
 
-  @include mobile {
+  @include mobile-tablet-p {
     padding: spacing(section-mob-padding);
+    padding-block: 3.75rem 3.75rem;
   }
 
   .workArea {
@@ -38,9 +42,47 @@
     margin-top: -15rem;
     position: relative;
 
-    @include mobile {
+    @include mobile-tablet-p {
       padding: text(lg);
       margin-top: 0;
+    }
+
+    .tabDropdownMob {
+      .tabDropLabel {
+        font-size: 0.875rem;
+        font-weight: 400;
+        line-height: text(xl);
+        margin-bottom: text(normal);
+        opacity: 0.6;
+      }
+      select {
+        padding: 0;
+        border: none;
+        font-size: 0.875rem;
+
+        &:focus {
+          border: none;
+        }
+      }
+      label {
+        padding: 0;
+        height: auto;
+        font-size: 1.125rem;
+        font-weight: 500;
+        font-family: font(primary);
+        color: color(text-primary);
+        left: -3px;
+      }
+      border: 1px solid rgba(17, 17, 17, 0.12);
+      background-color: color(primary-white);
+      padding: text(lg);
+      padding-bottom: 0;
+      margin-bottom: text(lg);
+      border-radius: 0.75rem;
+
+      @include tablet-desktop-full {
+        display: none;
+      }
     }
 
     .headingMain {
@@ -49,7 +91,7 @@
       justify-content: space-between;
       gap: 7.063rem;
 
-      @include mobile {
+      @include mobile-tablet-p {
         display: inline;
       }
 
@@ -65,7 +107,7 @@
           line-height: 2.5rem;
         }
 
-        @include mobile {
+        @include mobile-tablet-p {
           font-size: text(xxxl);
           line-height: 2.5rem;
           padding-right: 0;
@@ -84,7 +126,7 @@
           font-weight: 500;
           line-height: 3.375rem;
 
-          @include mobile {
+          @include mobile-tablet-p {
             padding-right: 0;
             font-size: 2rem;
             line-height: 2.5rem;
@@ -99,8 +141,10 @@
         opacity: 0.8;
         max-width: 65%;
 
-        @include mobile {
-          width: 100%;
+        @include mobile-tablet-p {
+          max-width: 100%;
+          font-size: text(normal);
+          margin-bottom: 2.5rem;
         }
       }
     }
@@ -114,11 +158,13 @@
       line-height: 1.875rem;
       max-width: 85%;
 
-      @include mobile {
+      @include mobile-tablet-p {
+        display: none;
         padding: 0;
         font-size: text(normal);
         margin-bottom: 2.5rem;
         line-height: text(xl);
+        max-width: 100%;
       }
     }
 
@@ -148,9 +194,15 @@
   .contactTabWrap {
     display: flex;
     gap: 7.063rem;
+    @include mobile-tablet-p {
+      flex-direction: column;
+    }
 
     [aria-orientation="vertical"] {
       max-width: 255px;
+      @include mobile-tablet-p {
+        display: none;
+      }
     }
 
     button,
@@ -202,7 +254,10 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-
+    @include mobile-tablet-p {
+      flex-direction: column;
+      align-items: flex-start;
+    }
     .policyText {
       font-size: text(xxs);
       font-weight: 400;
@@ -210,8 +265,9 @@
       max-width: 344px;
       margin-bottom: 0;
 
-      @include mobile {
+      @include mobile-tablet-p {
         margin-bottom: text(lg);
+        max-width: 100%;
       }
 
       .policyHighlight {

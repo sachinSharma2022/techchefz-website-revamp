@@ -3,6 +3,10 @@
 .globalPresenceStyle {
   background-color: color(bg-soft);
   padding-block: 8.75rem 8.75rem;
+  @include mobile-tablet-p {
+    padding: spacing(section-mob-padding);
+    padding-block: 3.75rem 3.75rem;
+  }
   &.globalPresenceBannerDark {
     background-color: color(dark-bg);
     color: color(primary-white);
@@ -70,6 +74,9 @@
       text-align: center;
       max-width: 16rem;
       border-radius: text(lg);
+      @include mobile-tablet-p {
+        max-width: 100%;
+      }
       .popoverMapIcon {
         margin-bottom: 0.5rem;
         display: flex;

@@ -1,18 +1,37 @@
 @import "~/styles/partials/config";
 
 .dropdownContainerStyle {
-  .selectMain {
-    border-radius: 0.75rem;
-  
-    &:focus {
-      box-shadow: none;
-      border: 0.14rem solid rgba(17, 17, 17, 0.12);
+  &.dropdownContainerStyleDark {
+    .floatingDarkForm {
+      border-radius: 0.75rem;
+      .customLabel {
+        color: rgba(255, 255, 255, 0.6);
+        &::after {
+          background-color: color(dark-gray);
+          color: rgba(color(primary-white), 0.9);
+        }
+      }
+      select {
+        background-color: color(dark-gray);
+        border: 1px solid rgba(color(primary-white), 0.12);
+        color: rgba(255, 255, 255, 0.6);
+      }
     }
-    .customLabel {
-      font-family: font(primary);
-      font-size: 0.875rem;
-      font-weight: 700;
-      opacity: 0.6;
+  }
+  .floatingDarkForm {
+    .selectMain {
+      border-radius: 0.75rem;
+
+      &:focus {
+        box-shadow: none;
+        border: 0.14rem solid rgba(17, 17, 17, 0.12);
+      }
+      .customLabel {
+        font-family: font(primary);
+        font-size: 0.875rem;
+        font-weight: 400;
+        opacity: 0.6;
+      }
     }
   }
 }

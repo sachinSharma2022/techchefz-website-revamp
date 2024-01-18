@@ -11,9 +11,9 @@
     display: flex;
     padding-inline: spacing(p-120);
     padding-block: 3.75rem 5.25rem;
-
-    @include mobile {
+    @include mobile-tablet-p {
       padding: spacing(section-mob-padding);
+      padding-block: 3.75rem 3.75rem;
       flex-direction: column;
     }
   }
@@ -31,11 +31,11 @@
     font-size: 4rem;
     font-weight: 500;
     line-height: 5rem;
+    margin-bottom: 0;
 
     @include mobile {
       font-size: 2.75rem;
       line-height: 3.5rem;
-      margin-bottom: text(xl);
     }
 
     .titleHighlight {
