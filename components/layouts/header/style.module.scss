@@ -169,6 +169,12 @@
     &:hover {
       .subMenu {
         display: block;
+        animation: slide-down .5s ease-in-out;
+
+        @keyframes slide-down {
+            0% { opacity: 0; top: 90%; }   
+          100% { opacity: 1; top: 100%; }
+      }
       }
 
       a {
