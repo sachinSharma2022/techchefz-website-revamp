@@ -14,176 +14,134 @@ import { cn } from "@/lib/utils";
 const Header = () => {
   const { theme, setTheme } = useContext(MyContext);
   const pathname = usePathname();
-  const [dropChoice, setDropChoice] = useState("technology");
   const [isActive, setActive] = useState(false);
   const toggleClass = () => {
     setActive(!isActive);
   };
 
-  const renderTechnologyMenu = () => {
-    const multiRedirection = [
-      {
-        title: "CMS",
-        href: "#",
-      },
-      {
-        title: "Commerce",
-        href: "#",
-      },
-      {
-        title: "Microservices",
-        href: "#",
-      },
-      {
-        title: "Cloud & DevSecOps",
-        href: "#",
-      },
-      {
-        title: "Data Intelligence",
-        href: "#",
-      },
-      {
-        title: "Custom Development",
-        href: "#",
-      },
-      {
-        title: "Analytics Automation",
-        href: "",
-        para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
-      },
-    ];
-    const multiMoreRedirection = [
-      {
-        title: "Careers",
-        href: "#",
-      },
-      {
-        title: "Insights",
-        href: "#",
-      },
-      {
-        title: "Center of Excellence",
-        href: "#",
-      },
-      {
-        title: "Accelerators",
-        href: "#",
-      },
-    ];
-    return (
-      <>
-        <section className={styles.subsection}>
-          <div
-            className={
-              dropChoice === "technology"
-                ? `${styles.latestTech}`
-                : `${styles.latestTechMore}`
-            }
-          >
-            <h1>Latest from technology</h1>
-            <div className={styles.imageTech}>
-              <div className={styles.imgBox}>
-                <ImageCustom
-                  src="/images/img/nav-img.png"
-                  width={300}
-                  height={300}
-                  alt="nav-image"
-                />
-              </div>
-              <div className={styles.updateDiv}>
-                <div>
-                  <p className={styles.updatePara}>
-                    Learn more about the latest Drupal Updates
-                  </p>
-                </div>
-                <div>
-                  <Icons.ArrowRight size={18} />
-                </div>
-              </div>
-            </div>
-            <div className={styles.nextHref}>
-              <div>
-                <p className={styles.updatePara1}>
-                  CMS has been the game changer of 2023 website trends
-                </p>
-              </div>
-              <div>
-                <Icons.ArrowRight size={18} />
-              </div>
-            </div>
-          </div>
+  const multiRedirection = [
+    {
+      id: "1",
+      title: "CMS",
+      href: "#",
+      para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
+    },
+    {
+      id: "2",
+      title: "Commerce",
+      href: "#",
+      para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
+    },
+    {
+      id: "3",
+      title: "Microservices",
+      href: "#",
+      para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
+    },
+    {
+      id: "4",
+      title: "Cloud & DevSecOps",
+      href: "#",
+      para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
+    },
+    {
+      id: "5",
+      title: "Data Intelligence",
+      href: "#",
+      para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
+    },
+    {
+      id: "6",
+      title: "Custom Development",
+      href: "#",
+      para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
+    },
+    {
+      id: "7",
+      title: "Analytics Automation",
+      href: "",
+      para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
+    },
+  ];
 
-          <div
-            className={
-              dropChoice === "technology"
-                ? `${styles.overviewTech}`
-                : `${styles.overviewTechMore}`
-            }
-          >
-            {dropChoice === "technology" && (
-              <div className={styles.overviewFlex}>
-                <div className={styles.overviewSubFlex}>
-                  <div>
-                    <Icons.Performance width={56} height={56} />
-                  </div>
-                  <div className={styles.overviewTitle}>
-                    <h1>Technology Overview</h1>
-                    <p>
-                      Be a partner for industry verticals on the inevitable
-                      <br />
-                      journey towards enterprise.
-                    </p>
-                  </div>
-                </div>
-                <div className={styles.overviewBtn}>
-                  <Button variant="outline" size="sm">
-                    Overview <Icons.ArrowRight size={18} />
-                  </Button>
-                </div>
-              </div>
-            )}
-            <div
-              className={
-                dropChoice === "technology"
-                  ? `${styles.multiHrefs}`
-                  : `${styles.multiMoreHrefs}`
-              }
-            >
-              {dropChoice === "technology" &&
-                multiRedirection.map((key) => {
-                  return (
-                    <>
-                      <div className={styles.hrefsFlex}>
-                        <div className={styles.hrefInnerFlex}>
-                          <h1>{key.title}</h1>
-                          <Icons.ArrowForward />
-                        </div>
-                        {key.para && (
-                          <p className={styles.excepPara}>{key.para}</p>
-                        )}
-                      </div>
-                    </>
-                  );
-                })}
-              {dropChoice === "MoreOptions" &&
-                multiMoreRedirection.map((key) => {
-                  return (
-                    <>
-                      <div className={styles.hrefsFlex}>
-                        <div className={styles.hrefInnerFlex}>
-                          <h1>{key.title}</h1>
-                          <Icons.ArrowForward />
-                        </div>
-                      </div>
-                    </>
-                  );
-                })}
-            </div>
+  // const renderTechnologyMenu = () => {
+
+  //   const multiMoreRedirection = [
+  //     {
+  //       title: "Careers",
+  //       href: "#",
+  //     },
+  //     {
+  //       title: "Insights",
+  //       href: "#",
+  //     },
+  //     {
+  //       title: "Center of Excellence",
+  //       href: "#",
+  //     },
+  //     {
+  //       title: "Accelerators",
+  //       href: "#",
+  //     },
+  //   ];
+  // };
+
+  function LatestTech() {
+    return (
+      <div className={cn(styles.latestTech)}>
+        <h1>Latest from technology</h1>
+        <div className={styles.imageTech}>
+          <div className={styles.imgBox}>
+            <ImageCustom
+              src="/images/img/nav-img.png"
+              width={300}
+              height={300}
+              alt="nav-image"
+            />
           </div>
-        </section>
-      </>
+          <div className={styles.infoBox}>
+            <p className={styles.description}>
+              Learn more about the latest Drupal Updates
+            </p>
+            <Icons.ArrowRight size={18} />
+          </div>
+        </div>
+        <div className={styles.imageTech}>
+          <div className={styles.infoBox}>
+            <p className={styles.description}>
+              CMS has been the game changer of 2023 website trends
+            </p>
+            <Icons.ArrowRight size={18} />
+          </div>
+        </div>
+      </div>
     );
-  };
+  }
+
+  function OverTech() {
+    return (
+      <div className={styles.overviewFlex}>
+        <div className={styles.overviewSubFlex}>
+          <div>
+            <Icons.Performance width={56} height={56} />
+          </div>
+          <div className={styles.overviewTitle}>
+            <h1>Technology Overview</h1>
+            <p>
+              Be a partner for industry verticals on the inevitable
+              <br />
+              journey towards enterprise.
+            </p>
+          </div>
+        </div>
+        <div className={styles.overviewBtn}>
+          <Button variant="outline" size="sm">
+            Overview <Icons.ArrowRight size={18} />
+          </Button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <header
@@ -210,7 +168,7 @@ const Header = () => {
         </div>
         <nav className={isActive ? styles.showNav : null}>
           <ul>
-            <li>
+            <li className={styles.menuItem}>
               <Link
                 href="/about"
                 className={pathname == "/about" ? styles.active : ""}
@@ -218,7 +176,7 @@ const Header = () => {
                 About Us
               </Link>
             </li>
-            <li>
+            <li className={styles.menuItem}>
               <Link
                 href="/solutions"
                 className={pathname == "/solutions" ? styles.active : ""}
@@ -226,21 +184,116 @@ const Header = () => {
                 Solutions
               </Link>
             </li>
-            <li
-              className={styles.dropDown}
-              onMouseEnter={() => {
-                setDropChoice("technology");
-              }}
-            >
+            <li className={styles.dropDown}>
               <Link
                 href="/technology"
                 className={pathname == "/technology" ? styles.active : ""}
               >
                 Technology <div className={styles.arrow} />
               </Link>
-              <ul className={styles.subMenu}>{renderTechnologyMenu()}</ul>
+              <ul className={cn(styles.subMenu)}>
+                <section className={styles.subsection}>
+                  {LatestTech()}
+
+                  <div className={cn(styles.overviewTech)}>
+                    {OverTech()}
+                    <div className={cn(styles.multiHrefs)}>
+                      <div className="row">
+                        <div className="col-sm-6">
+                          <Link
+                            href="/technology/cms"
+                            className={cn(styles.hrefInnerFlex)}
+                          >
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>CMS</h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              Be a partner for industry verticals on the
+                              inevitable journey towards enterprise.
+                            </p>
+                          </Link>
+                          <Link href="/" className={cn(styles.hrefInnerFlex)}>
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>Commerce</h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              Be a partner for industry verticals on the
+                              inevitable journey towards enterprise.
+                            </p>
+                          </Link>
+                          <Link href="/" className={cn(styles.hrefInnerFlex)}>
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>
+                                Microservices
+                              </h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              Be a partner for industry verticals on the
+                              inevitable journey towards enterprise.
+                            </p>
+                          </Link>
+                          <Link href="/" className={cn(styles.hrefInnerFlex)}>
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>
+                                Cloud & DevSecOps
+                              </h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              Be a partner for industry verticals on the
+                              inevitable journey towards enterprise.
+                            </p>
+                          </Link>
+                        </div>
+
+                        <div className="col-sm-6">
+                          <Link href="/" className={cn(styles.hrefInnerFlex)}>
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>
+                                Data Intelligence
+                              </h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              Be a partner for industry verticals on the
+                              inevitable journey towards enterprise.
+                            </p>
+                          </Link>
+                          <Link href="/" className={cn(styles.hrefInnerFlex)}>
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>
+                                Custom Development
+                              </h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              Be a partner for industry verticals on the
+                              inevitable journey towards enterprise.
+                            </p>
+                          </Link>
+                          <Link href="/" className={cn(styles.hrefInnerFlex)}>
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>
+                                Analytics Automation
+                              </h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              Be a partner for industry verticals on the
+                              inevitable journey towards enterprise.
+                            </p>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </ul>
             </li>
-            <li>
+            <li className={styles.menuItem}>
               <Link
                 href="/portfolio"
                 className={pathname == "/portfolio" ? styles.active : ""}
@@ -248,23 +301,86 @@ const Header = () => {
                 Portfolio
               </Link>
             </li>
-            <li
-              className={styles.dropDown}
-              onMouseEnter={() => {
-                setDropChoice("MoreOptions");
-              }}
-            >
+            <li className={styles.dropDown}>
               <Link href="/">
                 <Icons.MoreDotIcon width={4} height={14} /> More
               </Link>
-              <ul
-                className={
-                  dropChoice === "MoreOptions"
-                    ? `${styles.subMenuMore}`
-                    : `${styles.subMenu}`
-                }
-              >
-                {renderTechnologyMenu()}
+              <ul className={cn(styles.subMenu, styles.singleLayout)}>
+                <div className={styles.subsection}>
+                  {LatestTech()}
+                  <div className={cn(styles.overviewTech)}>
+                    <div className={cn(styles.multiHrefs)}>
+                      <div className="row">
+                        <div className="col-sm-12">
+                          <Link
+                            href="/careers"
+                            className={cn(styles.hrefInnerFlex)}
+                          >
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>Careers</h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              Be a partner for industry verticals on the
+                              inevitable journey towards enterprise.
+                            </p>
+                          </Link>
+                          <Link
+                            href="/insights"
+                            className={cn(styles.hrefInnerFlex)}
+                          >
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>Insights</h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              Be a partner for industry verticals on the
+                              inevitable journey towards enterprise.
+                            </p>
+                          </Link>
+                          <Link
+                            href="/coe"
+                            className={cn(styles.hrefInnerFlex)}
+                          >
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>
+                                Centre of Excellence
+                              </h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              Be a partner for industry verticals on the
+                              inevitable journey towards enterprise.
+                            </p>
+                          </Link>
+                          <Link href="/" className={cn(styles.hrefInnerFlex)}>
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>Accelerators</h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              Be a partner for industry verticals on the
+                              inevitable journey towards enterprise.
+                            </p>
+                          </Link>
+                          <Link
+                            href="/contact-us"
+                            className={cn(styles.hrefInnerFlex)}
+                          >
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>Contact us</h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              Be a partner for industry verticals on the
+                              inevitable journey towards enterprise.
+                            </p>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </ul>
             </li>
           </ul>
