@@ -4,8 +4,16 @@
    padding: 0 7.5rem;
 
    &.goalsDark{
-      background-color: color(text-primary);
+      background-color: color(input-bg);
       color: color(primary-white);
+
+      .goalsIcons{
+         svg > path{
+            fill: color(primary-white);
+           }
+        
+      }
+     
 
    }
    .goalsTitle {
@@ -69,7 +77,7 @@
    }
 
    .goalsImgs {
-      margin: 5rem 0;
+      padding: 5rem 0;
       img {
          margin: 1.25rem 0;
          width: 100%;
