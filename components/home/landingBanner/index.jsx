@@ -10,7 +10,7 @@ import Link from "next/link";
 
 const LandingBanner = () => {
   const { theme, setTheme } = useContext(MyContext);
-
+  console.log(theme?"blueBtnDark":"blueBtn")
   return (
     <section
       className={`${styles.landingBannerStyle} ${
@@ -30,7 +30,7 @@ const LandingBanner = () => {
       </h1>
 
         <Link href="/contact-us">
-          <Button variant="blueBtn" size="md">
+          <Button variant={theme?"blueBtnDark":"blueBtn"} size="md">
             Let’s Work Together <Icons.ArrowRight size={18} />
           </Button>
         </Link>

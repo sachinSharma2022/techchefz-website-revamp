@@ -84,6 +84,53 @@
   }
 }
 
+.variant_blueBtndark {
+  border-radius: 3em;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 15px 60px 15px 60px;
+  background-color:#26A0F8;
+  color: color(primary-white);
+  //border: 0.14rem solid color(primary-blue);
+
+  .btnText{
+
+    position: relative;
+    z-index: 1;
+    transition: color 0.4s linear;
+    color: white;
+    margin-bottom: 0px;
+  }
+  .circle{
+
+    width: 100%;
+    height: 150%;
+    position: absolute;
+    border-radius: 50%;
+    top: 100%;
+    background-color: color(primary-blue);;
+}
+
+  // &:hover {
+  //   color: color(primary-blue);
+  //   background-color: transparent;
+  //   svg{
+  //     path{
+  //       stroke: color(primary-blue);
+  //     }
+  //   }
+  // }
+  svg{
+    display: inline-block;
+    margin-left: 0.4rem;
+    margin-top: 0.2rem;
+  }
+}
+
 .variant_lightBlueBtn {
   background-color: color(info-blue);
   color: color(primary-white);

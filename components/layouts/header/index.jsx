@@ -393,7 +393,7 @@ const Header = () => {
               )}
             </Button>
           </div>
-          <Button variant="blueBtn" className={styles.headerBtn} size="sm">
+          <Button variant={theme?"blueBtnDark":"blueBtn"} className={styles.headerBtn} size="sm">
             Estimate Project
           </Button>
 
