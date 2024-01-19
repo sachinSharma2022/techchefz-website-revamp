@@ -16,6 +16,10 @@ body {
   font-family: font(secondary);
   font-size: 1rem;
   color: color(text-primary);
+
+  .dark {
+    background-color: color(dark-gray);
+  }
 }
 
 // Heading Style
@@ -636,6 +640,7 @@ input:-webkit-autofill {
 
 // Technology Values
 .technology-value {
+
   .swiper-horizontal > .swiper-pagination-progressbar,
   .swiper-pagination-progressbar.swiper-pagination-horizontal {
     top: auto;
@@ -704,6 +709,10 @@ input:-webkit-autofill {
       }
     }
   }
+}
+
+.dark .technology-value .progress-bar-animation {
+  background: rgba(color(primary-white), 0.2);
 }
 
 .tczLifeSlider {
@@ -902,5 +911,16 @@ input:-webkit-autofill {
   .slick-track {
    display: flex;
    gap: 30px;
+  }
+}
+
+
+
+// All Global Dark Theme Style
+.dark {
+  .header-white {
+    background: color(primary-black);
+    transition: all 0.5s ease-in-out;
+    border-bottom: 0.14rem solid rgba(color(primary-white), 0.12);
   }
 }
