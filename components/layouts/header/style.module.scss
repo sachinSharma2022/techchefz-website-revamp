@@ -308,10 +308,10 @@
     width: auto;
     min-width: 70rem;
     z-index: 2;
-    padding: 0.5rem 0;
     margin: 0;
     border: 0.063rem solid rgba(color(text-primary), 0.2);
     border-radius: 0.5rem;
+    box-shadow: 0 5px 32px rgba(color(text-primary), 0.2);
 
     &.singleLayout {
       max-width: 50vw;
@@ -578,6 +578,12 @@
     }
     .darkLogo {
       display: block;
+    }
+  }
+
+  .dropDown {
+    svg > rect {
+      fill: color(primary-white);
     }
   }
 
