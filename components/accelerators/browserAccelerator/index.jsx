@@ -141,7 +141,7 @@ const BrowserAccelerator = () => {
               subHeading={item.subHeading}
               heading={item.heading}
               description={item.description}
-              href="/accelerators-details"
+              href="/accelerators/accelerators-details"
               options={["Automobile", "Trending", "New"]}
             />
           ))}
