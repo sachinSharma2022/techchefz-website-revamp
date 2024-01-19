@@ -1,8 +1,7 @@
 @import "~/styles/partials/config";
-.insightFeatures {
+@mixin insightFeatures() {
   padding: 5rem 7.5rem 0;
 
-  
   .insightHeader {
     display: flex;
     justify-content: space-between;
@@ -73,6 +72,54 @@
         }
       }
     }
+  }
+
+  .allInsight {
+    margin-top: 3.75rem;
+
+    .allInsightCards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+      margin: 2.5rem 0;
+    }
+
+    .insightButton {
+      margin-top: 5rem;
+      text-align: center;
+    }
+  }
+}
+.insightFeatures{
+  @include insightFeatures();
+}
+
+//darkMode
+
+.darkMode {
+  @include insightFeatures();
+  background-color: color(input-bg);
+
+  .insightHeader {
+    border-bottom: 0.14rem solid rgba(color(primary-white), 0.12);
+
+    .serviceBtn {
+      button {
+        color: color(primary-white);
+        border: 0.14rem solid rgba(255, 255, 255, 0.40);
+        background-color: color(text-primary);
+        
+        &:hover {
+          background-color: color(text-primary);
+          color: color(primary-white);
+          border: 0.14rem solid var(--Gradient, #1e8af2);
+        }
+      }
+    }
+  }
+
+  .insightSubHeading {
+    color: color(primary-white)
   }
 
   .allInsight {

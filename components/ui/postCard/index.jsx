@@ -6,7 +6,7 @@ import styles from "./style.module.scss";
 
 const PostCard = (props) => {
   return (
-    <div className={cn(styles.postCard, props.className)}>
+    <div className={!props.theme ? cn(styles.postCard, props.className) : cn(styles.darkMode, props.className)}>
       <div className={cn(styles.cardImg, props.cardStyle)}>
         <ImageCustom
           src={props.imgSrc}
@@ -19,7 +19,9 @@ const PostCard = (props) => {
         <h5 className={styles.cardTitle}>{props.title}</h5>
         <div className="d-flex justify-content-between align-items-center">
           <p className={styles.cardDate}>{props.date} </p>
+          <div className={styles.arrowIcon}>
           <Icons.ArrowLongRight size={18} />
+          </div>
         </div>
       </div>
     </div>
