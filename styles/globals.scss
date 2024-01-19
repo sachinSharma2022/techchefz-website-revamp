@@ -43,6 +43,11 @@ a {
   filter: contrast(0) brightness(100);
 }
 
+.header-white {
+  background: color(primary-white);
+  transition: all 0.5s ease-in-out;
+}
+
 // space
 
 .mt-120 {
@@ -283,7 +288,7 @@ input:-webkit-autofill {
     position: relative;
 
     .swiper-slide {
-      border: 1px solid rgba(color(text-primary), 0.12);
+      border: 0.14rem solid rgba(color(text-primary), 0.12);
       border-radius: 0.75rem;
       overflow: hidden;
       width: 29.875rem;
@@ -436,7 +441,7 @@ input:-webkit-autofill {
 
   .slick-disabled {
     background-color: color(primary-white);
-    border: 1px solid rgba(color(text-primary), 0.5);
+    border: 0.14rem solid rgba(color(text-primary), 0.5);
     &:hover {
       background-color: color(primary-white);
     }
@@ -464,7 +469,7 @@ input:-webkit-autofill {
       content: "";
       width: 100vw;
       height: 0.063rem;
-      border: 1px dashed color(bg-gray);
+      border: 0.14rem dashed color(bg-gray);
       position: absolute;
       left: 50%;
       transform: translate(-50%);
@@ -479,7 +484,7 @@ input:-webkit-autofill {
       justify-content: center;
       margin: 0;
       z-index: 9;
-      border: 1px solid transparent;
+      border: 0.14rem solid transparent;
 
       button {
         padding: 0;
@@ -495,7 +500,7 @@ input:-webkit-autofill {
     }
 
     .slick-active {
-      border: 1px solid color(info-blue);
+      border: 0.14rem solid color(info-blue);
       border-radius: 50%;
       display: inline-flex;
       justify-content: center;
@@ -617,7 +622,7 @@ input:-webkit-autofill {
 
   .slick-disabled {
     background-color: color(primary-white);
-    border: 1px solid rgba(color(text-primary), 0.5);
+    border: 0.14rem solid rgba(color(text-primary), 0.5);
     &:hover {
       background-color: color(primary-white);
     }
@@ -759,7 +764,7 @@ input:-webkit-autofill {
 
   .slick-disabled {
     background-color: color(bg-soft);
-    border: 1px solid rgba(color(text-primary), 0.5);
+    border: 0.14rem solid rgba(color(text-primary), 0.5);
     &:hover {
       background-color: color(primary-white);
     }
@@ -818,7 +823,7 @@ input:-webkit-autofill {
 
   .slick-disabled {
     background-color: color(primary-white);
-    border: 1px solid rgba(color(text-primary), 0.5);
+    border: 0.14rem solid rgba(color(text-primary), 0.5);
     &:hover {
       background-color: color(primary-white);
     }
@@ -881,7 +886,7 @@ input:-webkit-autofill {
 
   .slick-disabled {
     background-color: color(primary-white);
-    border: 1px solid rgba(color(text-primary), 0.5);
+    border: 0.14rem solid rgba(color(text-primary), 0.5);
 
     &:hover {
       background-color: color(primary-white);

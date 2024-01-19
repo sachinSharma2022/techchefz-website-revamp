@@ -33,12 +33,13 @@
       line-height: 1.875rem;
       opacity: 0.6;
       max-width: 65%;
+      
       @include mobile{
          max-width: 100%;
       }
    }
 
-   .valuesImg {
+   .valuesImg div {
       margin: 5rem 0;
       height: 487px;
       border-radius: 0.6rem;

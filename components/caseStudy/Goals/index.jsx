@@ -4,6 +4,7 @@ import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
+import { cn } from "@/lib/utils";
 
 import styles from "./style.module.scss";
 
@@ -25,7 +26,7 @@ const Goals = () => {
   ];
   return (
     <section className={`${styles.goals} ${theme ? styles.goalsDark : ""}`}>
-      <div className="container">
+      <div className={cn("primary-container")}>
         <div className="row justify-content-between">
           <div className="col-md-3 col-lg-3">
             <h5 className={styles.goalsTitle}>Goals & Objectives</h5>

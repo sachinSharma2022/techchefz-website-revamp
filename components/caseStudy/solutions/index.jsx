@@ -5,12 +5,13 @@ import { useContext } from "react";
 import { ImageCustom } from "@/components/ui/imageCustom";
 
 import styles from "./style.module.scss";
+import { cn } from "@/lib/utils";
 
 function Solutions() {
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section className={`${styles.solutions} ${theme ? styles.solutionsDark : ""}`}>
-      <div className="container">
+      <div className={cn("primary-container")}>
         <div className="row justify-content-between">
           <div className="col-md-3 col-lg-3">
             <h6 className={styles.solutionTitle}>Solutions</h6>
@@ -41,7 +42,7 @@ function Solutions() {
             </div>
           </div>
           <div className={styles.solutionBottomImgs}>
-            <div >
+            <div>
               <ImageCustom
                 src="/images/solution2.png"
                 width={500}
@@ -49,7 +50,7 @@ function Solutions() {
                 alt="content-img"
               />
             </div>
-            <div >
+            <div>
               <ImageCustom
                 src="/images/solution3.png"
                 width={500}

@@ -29,7 +29,7 @@ const OurNumbers = () => {
       sbText: "Elevated Conversion Rates.",
     },
     {
-      icon: <Icons.Performance width={56} height={56} />,
+      icon: <Icons.PerformanceIcon width={56} height={56} />,
       sbTitle: "120%",
       sbText: "Enhanced SaaS CRO Performance.",
     },

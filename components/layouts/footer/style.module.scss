@@ -153,7 +153,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border: 1px solid color(primary-blue);
+      border: 0.14rem solid color(primary-blue);
       border-radius: 1rem;
       margin: 3rem 0;
 
@@ -216,7 +216,7 @@
       display: inline-flex;
       align-items: center;
       padding: 0.5rem 1.5rem;
-      border: 1px solid rgba(color(primary-white), 0.2);
+      border: 0.14rem solid rgba(color(primary-white), 0.2);
       border-radius: 0.5rem;
       font-size: text(normal);
       color: rgba(color(primary-white), 0.8);
@@ -277,7 +277,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 1.5rem 0;
-    border-top: 1px solid rgba(color(primary-white), 0.2);
+    border-top: 0.14rem solid rgba(color(primary-white), 0.2);
 
     @include mobile {
       flex-wrap: wrap;

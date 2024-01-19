@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { MyContext } from "@/context/theme";
@@ -19,78 +19,72 @@ const Header = () => {
     setActive(!isActive);
   };
 
-  const multiRedirection = [
-    {
-      id: "1",
-      title: "CMS",
-      href: "#",
-      para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
-    },
-    {
-      id: "2",
-      title: "Commerce",
-      href: "#",
-      para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
-    },
-    {
-      id: "3",
-      title: "Microservices",
-      href: "#",
-      para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
-    },
-    {
-      id: "4",
-      title: "Cloud & DevSecOps",
-      href: "#",
-      para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
-    },
-    {
-      id: "5",
-      title: "Data Intelligence",
-      href: "#",
-      para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
-    },
-    {
-      id: "6",
-      title: "Custom Development",
-      href: "#",
-      para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
-    },
-    {
-      id: "7",
-      title: "Analytics Automation",
-      href: "",
-      para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
-    },
-  ];
+  const [header, setHeader] = useState("header");
 
-  // const renderTechnologyMenu = () => {
+  const listenScrollEvent = (event) => {
+    if (window.scrollY < 73) {
+      return setHeader("header-transparent");
+    } else if (window.scrollY > 70) {
+      return setHeader("header-white");
+    }
+  };
 
-  //   const multiMoreRedirection = [
-  //     {
-  //       title: "Careers",
-  //       href: "#",
-  //     },
-  //     {
-  //       title: "Insights",
-  //       href: "#",
-  //     },
-  //     {
-  //       title: "Center of Excellence",
-  //       href: "#",
-  //     },
-  //     {
-  //       title: "Accelerators",
-  //       href: "#",
-  //     },
-  //   ];
-  // };
+  useEffect(() => {
+    window.addEventListener("scroll", listenScrollEvent);
+
+    return () => window.removeEventListener("scroll", listenScrollEvent);
+  }, []);
+
+  // const multiRedirection = [
+  //   {
+  //     id: "1",
+  //     title: "CMS",
+  //     href: "#",
+  //     para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
+  //   },
+  //   {
+  //     id: "2",
+  //     title: "Commerce",
+  //     href: "#",
+  //     para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
+  //   },
+  //   {
+  //     id: "3",
+  //     title: "Microservices",
+  //     href: "#",
+  //     para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
+  //   },
+  //   {
+  //     id: "4",
+  //     title: "Cloud & DevSecOps",
+  //     href: "#",
+  //     para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
+  //   },
+  //   {
+  //     id: "5",
+  //     title: "Data Intelligence",
+  //     href: "#",
+  //     para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
+  //   },
+  //   {
+  //     id: "6",
+  //     title: "Custom Development",
+  //     href: "#",
+  //     para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
+  //   },
+  //   {
+  //     id: "7",
+  //     title: "Analytics Automation",
+  //     href: "",
+  //     para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
+  //   },
+  // ];
 
   function LatestTech() {
     return (
       <div className={cn(styles.latestTech)}>
         <h1>Latest from technology</h1>
-        <div className={styles.imageTech}>
+        <Link href="/" className={styles.imageTech}>
           <div className={styles.imgBox}>
             <ImageCustom
               src="/images/img/nav-img.png"
@@ -103,15 +97,15 @@ const Header = () => {
             <p className={styles.description}>
               Learn more about the latest Drupal Updates
             </p>
-            <Icons.ArrowRight size={18} />
+            <Icons.ArrowRight size={16} />
           </div>
-        </div>
+        </Link>
         <div className={styles.imageTech}>
           <div className={styles.infoBox}>
             <p className={styles.description}>
               CMS has been the game changer of 2023 website trends
             </p>
-            <Icons.ArrowRight size={18} />
+            <Icons.ArrowRight size={16} />
           </div>
         </div>
       </div>
@@ -123,7 +117,7 @@ const Header = () => {
       <div className={styles.overviewFlex}>
         <div className={styles.overviewSubFlex}>
           <div>
-            <Icons.Performance width={56} height={56} />
+            <Icons.PerformanceIcon width={56} height={56} />
           </div>
           <div className={styles.overviewTitle}>
             <h1>Technology Overview</h1>
@@ -145,7 +139,11 @@ const Header = () => {
 
   return (
     <header
-      className={`${styles.headerMain} ${theme ? styles.headerDarkStyle : ""}`}
+      className={cn(
+        styles.headerMain,
+        theme ? styles.headerDarkStyle : "",
+        header
+      )}
     >
       <div className={cn(styles.headerContainer, "primary-container")}>
         <div className={styles.logo}>

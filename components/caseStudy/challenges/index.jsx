@@ -22,22 +22,24 @@ const Challenges = (props) => {
     },
   ];
   return (
-    <section className={cn(styles.challenges , props.className)}>
-      <div className="row">
-        <div className="col-md-6 col-lg-6">
-          <h6 className={styles.challengeTitle}>Challenges</h6>
-          <h3 className={styles.challengeHeading}>
-            Overcoming IT Hurdles: Key Challenges
-          </h3>
-        </div>
-      </div>
-      <div className={styles.challengesCards}>
-        {cardData.map((data, index) => (
-          <div key={index} className={styles.challengesCard}>
-            <h5>{data.title} </h5>
-            <p>{data.content}</p>
+    <section className={cn(styles.challenges, props.className)}>
+      <div className={cn("primary-container")}>
+        <div className="row">
+          <div className="col-md-6 col-lg-6">
+            <h6 className={styles.challengeTitle}>Challenges</h6>
+            <h3 className={styles.challengeHeading}>
+              Overcoming IT Hurdles: Key Challenges
+            </h3>
           </div>
-        ))}
+        </div>
+        <div className={styles.challengesCards}>
+          {cardData.map((data, index) => (
+            <div key={index} className={styles.challengesCard}>
+              <h5>{data.title} </h5>
+              <p>{data.content}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

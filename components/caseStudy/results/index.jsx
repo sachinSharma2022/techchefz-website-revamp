@@ -4,6 +4,7 @@ import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 
 import styles from "./style.module.scss";
+import { cn } from "@/lib/utils";
 
 const Results = () => {
   const { theme, setTheme } = useContext(MyContext);
@@ -23,7 +24,7 @@ const Results = () => {
   ];
   return (
     <section className={`${styles.results} ${theme ? styles.resultsDark : ""}`}>
-      <div className="container">
+      <div className={cn("primary-container")}>
         <div className="row justify-content-between">
           <div className="col-md-3 col-lg-3">
             <h6 className={styles.resultTitle}>Results</h6>
@@ -41,7 +42,7 @@ const Results = () => {
             <div className={styles.resultCards}>
               {resultCard.map((data, index) => (
                 <div key={index} className={styles.resultCard}>
-                  <h2>{data.number} </h2>
+                  <h3>{data.number} </h3>
                   <h4>{data.title} </h4>
                 </div>
               ))}

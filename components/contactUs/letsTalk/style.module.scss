@@ -47,7 +47,7 @@
       margin-bottom: 5rem;
       display: flex;
       justify-content: space-between;
-      gap: 7.063rem;
+      gap: 9rem;
 
       @include mobile {
         display: inline;
@@ -59,6 +59,8 @@
         line-height: 3.375rem;
         display: flex;
         flex-direction: column;
+        min-width: 300px;
+        max-width: 300px;
 
         @include mobile {
           margin-bottom: text(lg);
@@ -112,7 +114,6 @@
       opacity: 0.8;
       margin-bottom: text(xl);
       line-height: 1.875rem;
-      max-width: 85%;
 
       @include mobile {
         padding: 0;
@@ -147,10 +148,11 @@
   }
   .contactTabWrap {
     display: flex;
-    gap: 7.063rem;
+    gap: 9rem;
 
     [aria-orientation="vertical"] {
-      max-width: 255px;
+      min-width: 300px;
+      max-width: 300px;
     }
 
     button,

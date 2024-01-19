@@ -1,17 +1,27 @@
+<<<<<<< HEAD
 "use client";
 import React from "react";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
+=======
+>>>>>>> 62f9dca302f941de80ea6ca3b47ab2d1bffc4e92
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
+import { cn } from "@/lib/utils";
+import styles from "./style.module.scss";
 
 import styles from "./style.module.scss";
 
 const Industry = () => {
   const { theme, setTheme } = useContext(MyContext);
   return (
+<<<<<<< HEAD
     <section className={`${styles.industry} ${theme ? styles.industryDark : ""}`}>
       <div className="container">
+=======
+    <section className={styles.industry}>
+      <div className={cn("primary-container")}>
+>>>>>>> 62f9dca302f941de80ea6ca3b47ab2d1bffc4e92
         <div className="row justify-content-between">
           <div className="col-md-4 col-lg-4">
             <div className={styles.industryLeft}>

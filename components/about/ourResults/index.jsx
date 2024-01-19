@@ -27,7 +27,7 @@ const OurResults = () => {
     },
     {
       number: "120%",
-      icon: <Icons.Performance width={36} height={36} />,
+      icon: <Icons.PerformanceIcon width={36} height={36} />,
       title: "Years of Experience in Market.",
     },
   ];

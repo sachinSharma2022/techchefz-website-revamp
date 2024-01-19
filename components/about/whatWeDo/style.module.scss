@@ -16,14 +16,14 @@
         &:hover {
           .workCard {
             .workCols {
-              border: 1px solid color(info-blue);
+              border: 0.14rem solid color(info-blue);
             }
           }
         }
         .workCard {
           .workCols {
             background-color: color(text-primary);
-            border: 1px solid rgba(color(primary-white), 0.12);
+            border: 0.14rem solid rgba(color(primary-white), 0.12);
           }
         }
       }
@@ -75,7 +75,7 @@
         .workCols {
           min-width: 16.875rem;
           height: 19.25rem;
-          border: 1px solid rgba(color(text-primary), 0.12);
+          border: 0.14rem solid rgba(color(text-primary), 0.12);
           border-radius: 1.25rem;
           position: relative;
           cursor: pointer;
@@ -130,7 +130,7 @@
         }
 
         .workCols {
-          border: 1px solid color(heading-liner);
+          border: 0.14rem solid color(heading-liner);
         }
       }
     }
