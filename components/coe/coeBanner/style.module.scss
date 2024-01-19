@@ -1,18 +1,24 @@
 @import "~/styles/partials/config";
 
 .banner {
-  padding: 4rem 7.5rem;
-
+  &.bannerDark {
+    background-color: color(input-bg);
+    color: color(primary-white);
+  }
   .bannerContent {
     display: flex;
-    align-items: center;
-		justify-content: space-between;
-    gap: 8rem;
+    justify-content: space-between;
+    padding: 5rem 7.5rem;
+
+    @include desktop-hd {
+      padding-inline: 0;
+    }
 
     .bannerTitle {
       font-size: text(xl-larger);
       font-weight: 500;
       line-height: 5rem;
+      max-width: 580px;
 
       span {
         font-size: text(xl-larger);
@@ -27,12 +33,25 @@
       justify-content: center;
       align-items: flex-start;
       gap: 4rem;
-
+      max-width: 447px;
       p {
         font-size: text(lg);
         line-height: 1.875rem;
         opacity: 0.8;
       }
+    }
+  }
+
+  .imgBox div {
+    height: 31.25rem;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 }

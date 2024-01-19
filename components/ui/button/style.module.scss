@@ -152,6 +152,32 @@
   }
 }
 
+.variant_lightBlueOutline {
+  background-color: transparent;
+  color: color(info-blue);
+  border: 0.14rem solid color(info-blue);
+
+  svg{
+    display: inline-block;
+    margin-left: 0.4rem;
+    margin-top: 0.2rem;
+
+    path {
+      stroke: color(info-blue);
+    }
+  }
+
+  &:hover {
+    color: color(primary-white);
+    background-color: color(info-blue);
+    svg{
+      path{
+        stroke: color(primary-white);
+      }
+    }
+  }
+}
+
 .variant_outline {
   background-color: transparent;
   color: color(primary-blue);

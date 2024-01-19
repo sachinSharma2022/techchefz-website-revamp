@@ -1,16 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
-import { Tab } from "@headlessui/react";
-import { MyContext } from "@/context/theme";
-import { useContext } from "react";
-import { ImageCustom } from "@/components/ui/imageCustom";
 import { Icons } from "@/components/icons";
-import { Dialog } from "@headlessui/react";
+import { ImageCustom } from "@/components/ui/imageCustom";
+import { MyContext } from "@/context/theme";
+import { Tab } from "@headlessui/react";
+import { useContext, useState } from "react";
 
-import styles from "./style.module.scss";
+import LeftDrawer from "@/components/common/leftDrawer";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import styles from "./style.module.scss";
+import Link from "next/link";
 
 const OurTeam = () => {
   const { theme } = useContext(MyContext);
@@ -102,25 +102,27 @@ const OurTeam = () => {
                   <div className="row">
                     <div className={styles.teamCards}>
                       {teamData.map((data, index) => (
-                        <div key={index} className={styles.teamCardBg}>
+                        <div
+                          role="button"
+                          onClick={() => setIsOpen(true)}
+                          key={index}
+                          className={styles.teamCardBg}
+                        >
                           <div className={styles.cardHead}>
                             <div>
                               <h6>{data.mebName} </h6>
                               <p>{data.role}</p>
                             </div>
-                            <Button
-                              variant="default"
-                              size="default"
-                              onClick={() => setIsOpen(true)}
-                            >
+                            <Button variant="default" size="default">
                               <Icons.ArrowRight width={26} height={24} />
                             </Button>
                           </div>
-                          <Icons.Linkedin
-                            width={34}
-                            height={34}
-                            className={styles.linkdinIcon}
-                          />
+                          <Link
+                            className={styles.linkedInIcon}
+                            href="https://www.linkedin.com/"
+                          >
+                            <Icons.Linkedin width={34} height={34} />
+                          </Link>
                           <div className={styles.teamImg}>
                             <ImageCustom
                               src={data.image}
@@ -146,11 +148,13 @@ const OurTeam = () => {
                             </div>
                             <Icons.ArrowRight width={26} height={24} />
                           </div>
-                          <Icons.Linkedin
-                            width={34}
-                            height={34}
-                            className={styles.linkdinIcon}
-                          />
+                          <Link
+                            className={styles.linkedInIcon}
+                            href="https://www.linkedin.com/"
+                            target="_blank"
+                          >
+                            <Icons.Linkedin width={34} height={34} />
+                          </Link>
                           <div className={styles.teamImg}>
                             <ImageCustom
                               src={data.image}
@@ -168,29 +172,31 @@ const OurTeam = () => {
             </Tab.Group>
           </div>
 
-          <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
-            <div className={styles.overlayStyle} />
-            <Dialog.Panel className={`${styles.teamModal}`}>
-              <div className={styles.modalTop}>
-                <div className={styles.modalTitle}>
-                  <h5 className={styles.title}>About</h5>
-                  <Button variant="default" onClick={() => setIsOpen(!isOpen)}>
-                    <Icons.ModalCross width={32} height={32} />
-                  </Button>
-                </div>
+          <LeftDrawer
+            title="About"
+            open={isOpen}
+            onClose={() => setIsOpen(false)}
+          >
+            <div
+              className={cn(
+                styles.modalBody,
+                theme ? styles.darkThemeStyle : ""
+              )}
+            >
+              <div className={styles.modalInfo}>
                 <div className={styles.modalImg}>
                   <ImageCustom
-                    src={"/images/img/team/profile1.png"}
-                    width={200}
-                    height={230}
+                    src="/images/img/team/profile1.png"
+                    width={500}
+                    height={530}
                     alt="profile"
                   />
                 </div>
-
-                <h6 className={styles.teamName}>Mayank Moggon</h6>
-                <p className={styles.teamRole}>CEO & CTO </p>
+                <h4 className={styles.teamName}>Mayank Moggon</h4>
+                <p className={styles.teamRole}>CEO & CTO</p>
               </div>
-              <div className={styles.modalBottom}>
+
+              <div className={styles.infoSec}>
                 <p className={styles.modalContent}>
                   Our visionary CEO, brings dynamic leadership to Techchefz.
                   With a profound understanding of industry trends and
@@ -206,22 +212,24 @@ const OurTeam = () => {
                   mayankmaggon@techchefz.com
                 </p>
 
-                <h6>Let’s Get Connect</h6>
-                <div className={styles.modalIcons}>
-                  <Icons.Linkedin
-                    className={styles.linkdinIcon}
-                    width={34}
-                    height={34}
-                  />
-                  <Icons.twitter
-                    className={styles.twitter}
-                    width={34}
-                    height={34}
-                  />
+                <div className={styles.socialSection}>
+                  <h6>Let’s Get Connect</h6>
+                  <div className={styles.modalIcons}>
+                    <Icons.Linkedin
+                      className={styles.linkdinIcon}
+                      width={34}
+                      height={34}
+                    />
+                    <Icons.twitter
+                      className={styles.twitter}
+                      width={34}
+                      height={34}
+                    />
+                  </div>
                 </div>
               </div>
-            </Dialog.Panel>
-          </Dialog>
+            </div>
+          </LeftDrawer>
         </div>
       </div>
     </section>

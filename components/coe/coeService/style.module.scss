@@ -1,23 +1,30 @@
 @import "~/styles/partials/config";
 
-.consistent {
+.coeService {
   background-color: color(bg-soft);
   padding: spacing(section-primary-padding);
+  margin-top: 8.75rem;
 
   @include mobile {
     padding: 1.5rem;
   }
 
-  &.consistentDark{
+  &.coeServiceDark{
     background-color: color(dark-bg);
     color: #fff;
   }
 
-  .consistentImg {
+  .coeServiceImg div {
     margin-bottom: 5rem;
+    height: 31.4375rem;
+    width: 100%;
+    border-radius: .75rem;
+    overflow: hidden;
+
     img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
     }
   }
 
@@ -26,7 +33,7 @@
     gap: 8.938rem;
   }
 
-  .consistentTitle {
+  .coeServiceTitle {
     font-size: text(larger);
     font-weight: 500;
     line-height: 3.375rem;
@@ -53,7 +60,7 @@
     }
   }
 
-  .consistentText {
+  .coeServiceText {
     font-size: text(lg);
     font-weight: 400;
     line-height: 1.875rem;

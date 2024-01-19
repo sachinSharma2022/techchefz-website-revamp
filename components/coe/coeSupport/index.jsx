@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import styles from "./styles.module.scss";
 import TitleCard from "@/components/common/titleCard";
 
-const Challenges = (props) => {
+const CoeSupport = (props) => {
   const { theme, setTheme } = useContext(MyContext);
   const cardData = [
     {
@@ -29,19 +29,19 @@ const Challenges = (props) => {
   return (
     <section
       className={cn(
-        styles.challenges,
+        styles.coeSupport,
         props.className,
-        theme ? styles.challengesDark : ""
+        theme ? styles.coeSupportDark : ""
       )}
     >
       <div className={cn("primary-container")}>
         <div className={styles.headSec}>
-          <h6 className={styles.challengeTitle}>Challenges</h6>
-          <h3 className={styles.challengeHeading}>
-            Overcoming IT Hurdles: Key Challenges
+          <h6 className={styles.coeSupportTitle}>SUPPORT</h6>
+          <h3 className={styles.coeSupportHeading}>
+            The CoE supports our global operations in the following areas
           </h3>
         </div>
-        <div className={styles.challengesCards}>
+        <div className={styles.coeSupportCards}>
           {cardData.map((data, index) => (
             <TitleCard key={index} title={data.title} content={data.content} />
           ))}
@@ -51,4 +51,4 @@ const Challenges = (props) => {
   );
 };
 
-export default Challenges;
+export default CoeSupport;

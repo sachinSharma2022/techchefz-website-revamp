@@ -168,12 +168,18 @@
     &:hover {
       .subMenu {
         display: block;
-        animation: slide-down .5s ease-in-out;
+        animation: slide-down 0.5s ease-in-out;
 
         @keyframes slide-down {
-            0% { opacity: 0; top: 90%; }   
-          100% { opacity: 1; top: 100%; }
-      }
+          0% {
+            opacity: 0;
+            top: 90%;
+          }
+          100% {
+            opacity: 1;
+            top: 100%;
+          }
+        }
       }
 
       a {
@@ -283,72 +289,15 @@
         &:hover {
           background-color: rgba(color(text-primary), 0.12);
         }
+
+        svg path {
+          fill: none;
+        }
       }
     }
     .headerBtn {
       @include tablet {
         display: none;
-      }
-    }
-  }
-
-  &.headerDarkStyle {
-    background-color: color(input-bg);
-    border-bottom: 0.14rem solid rgba(color(primary-white), 0.12);
-
-    .logo {
-      a {
-        display: none;
-      }
-      .darkLogo {
-        display: block;
-      }
-    }
-
-    .headerRight {
-      .modeBtn {
-        button {
-          &:hover {
-            background-color: rgba(color(primary-white), 0.2);
-          }
-        }
-      }
-    }
-
-    nav {
-      ul {
-        li {
-          &.dropDown {
-            > a {
-              &.active {
-                .arrow {
-                  border-color: color(info-blue);
-                }
-              }
-            }
-          }
-          a {
-            color: color(primary-white);
-
-            &::after {
-              background-color: color(primary-white);
-            }
-
-            &.active {
-              color: color(info-blue);
-            }
-          }
-        }
-      }
-    }
-    .arrow {
-      border-color: color(primary-white);
-    }
-    .headerRight {
-      .modeBtn {
-        button {
-          border: 0.14rem solid rgba(color(primary-white), 0.12);
-        }
       }
     }
   }
@@ -363,10 +312,10 @@
     width: auto;
     min-width: 70rem;
     z-index: 2;
-    padding: 0.5rem 0;
     margin: 0;
     border: 0.063rem solid rgba(color(text-primary), 0.2);
     border-radius: 0.5rem;
+    box-shadow: 0 5px 32px rgba(color(text-primary), 0.2);
 
     &.singleLayout {
       max-width: 50vw;
@@ -490,7 +439,7 @@
 
             svg {
               min-width: 16px;
-              height: 16px
+              height: 16px;
             }
           }
         }
@@ -622,4 +571,72 @@
     @extend .subMenu;
     min-width: 50rem;
   }
+
+  // Dark Style here
+&.headerDarkStyle {
+  background-color: transparent;
+
+  .logo {
+    a {
+      display: none;
+    }
+    .darkLogo {
+      display: block;
+    }
+  }
+
+  .dropDown {
+    svg > rect {
+      fill: color(primary-white);
+    }
+  }
+
+  .headerRight {
+    .modeBtn {
+      button {
+        &:hover {
+          background-color: rgba(color(primary-white), 0.2);
+        }
+      }
+    }
+  }
+
+  nav {
+    ul {
+      li {
+        &.dropDown {
+          > a {
+            &.active {
+              .arrow {
+                border-color: color(info-blue);
+              }
+            }
+          }
+        }
+        a {
+          color: color(primary-white);
+
+          &::after {
+            background-color: color(primary-white);
+          }
+
+          &.active {
+            color: color(info-blue);
+          }
+        }
+      }
+    }
+  }
+  .arrow {
+    border-color: color(primary-white);
+  }
+  .headerRight {
+    .modeBtn {
+      button {
+        border: 0.14rem solid rgba(color(primary-white), 0.12);
+      }
+    }
+  }
 }
+}
+

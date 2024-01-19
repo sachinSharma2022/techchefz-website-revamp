@@ -1,11 +1,14 @@
+"use client"
 import React from "react";
-
-import styles from "./style.module.scss";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import { Icons } from "@/components/icons";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
+import styles from "./style.module.scss";
+
 const Streamline = () => {
+  const { theme, setTheme } = useContext(MyContext);
   const streamlineCard = [
     {
       icons: (
@@ -65,7 +68,7 @@ const Streamline = () => {
     },
   ];
   return (
-    <div className={styles.streamlineWrapper}>
+    <div className={`${styles.streamlineWrapper} ${theme ? styles.streamlineDark : ""}`}>
       <section className={styles.streamlineSection}>
         <div className={cn("primary-container", styles.flexContainer)}>
           <h3 className={styles.streamlineTitle}>
