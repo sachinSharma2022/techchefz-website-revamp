@@ -31,54 +31,8 @@ const Header = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", listenScrollEvent);
-
     return () => window.removeEventListener("scroll", listenScrollEvent);
   }, []);
-
-  // const multiRedirection = [
-  //   {
-  //     id: "1",
-  //     title: "CMS",
-  //     href: "#",
-  //     para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
-  //   },
-  //   {
-  //     id: "2",
-  //     title: "Commerce",
-  //     href: "#",
-  //     para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
-  //   },
-  //   {
-  //     id: "3",
-  //     title: "Microservices",
-  //     href: "#",
-  //     para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
-  //   },
-  //   {
-  //     id: "4",
-  //     title: "Cloud & DevSecOps",
-  //     href: "#",
-  //     para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
-  //   },
-  //   {
-  //     id: "5",
-  //     title: "Data Intelligence",
-  //     href: "#",
-  //     para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
-  //   },
-  //   {
-  //     id: "6",
-  //     title: "Custom Development",
-  //     href: "#",
-  //     para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
-  //   },
-  //   {
-  //     id: "7",
-  //     title: "Analytics Automation",
-  //     href: "",
-  //     para: "Be a partner for industry verticals on the inevitable journey towards enterprise.",
-  //   },
-  // ];
 
   function LatestTech() {
     return (

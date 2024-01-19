@@ -9,6 +9,11 @@
    align-items: center;
    gap: 5rem;
 
+   &.impactDark{
+      background-color: color(text-primary);
+      color: #fff;
+   }
+
    .subHeading {
       font-size: text(normal);
       font-family: font(secondary);

@@ -9,31 +9,31 @@ import { cn } from "@/lib/utils";
 
 import styles from "./style.module.scss";
 
-const Consistent = () => {
+const CoeService = () => {
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section
-      className={`${styles.consistent}  ${theme ? styles.consistentDark : ""}`}
+      className={`${styles.coeService}  ${theme ? styles.coeServiceDark : ""}`}
     >
       <div className={cn("primary-container")}>
-        <div className={styles.consistentImg}>
+        <div className={styles.coeServiceImg}>
           <ImageCustom
-            src={"/images/consistent-img.png"}
+            src="https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             width={1000}
             height={600}
             alt="img"
           />
         </div>
         <div className={styles.contentSec}>
-          <h3 className={styles.consistentTitle}>
-            <span>7+ years</span> of consistent excellence, meeting deadlines
-            and budgets with precision.
+          <h3 className={styles.coeServiceTitle}>
+            Speed Your Journey from Idea to Impact with our{" "}
+            <span>Accelerators.</span>
           </h3>
           <div>
-            <p className={styles.consistentText}>
-              For over seven years, Techchefz has been at the forefront of
-              technological innovation. But what truly sets us apart is our
-              unwavering commitment to excellence consistently, year after year.
+            <p className={styles.coeServiceText}>
+              Streamline Your Tech Projects with Techchefz Solution
+              Accelerators. Our tailor-made toolkits designed to fast-track your
+              most critical and impactful projects.
             </p>
             <Button variant="outline" size="sm">
               Learn More <Icons.ArrowRight size={18} />
@@ -45,4 +45,4 @@ const Consistent = () => {
   );
 };
 
-export default Consistent;
+export default CoeService;
