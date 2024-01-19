@@ -287,10 +287,10 @@ const OpenPosition = () => {
                                 className="me-4"
                                 size="md"
                               >
-                                Apply
+                                More Info
                               </Button>
                               <Button variant="outline" size="md">
-                                Apply Through <Icons.ArrowRight size={18} />
+                                Apply Through <Icons.ArrowDown size={18} />
                               </Button>
                             </div>
                           </div>

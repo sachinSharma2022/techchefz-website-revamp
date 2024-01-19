@@ -1,18 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
-import { useContext } from "react";
-import { MyContext } from "@/context/theme";
-import { ImageCustom } from "@/components/ui/imageCustom";
-import { Button } from "@/components/ui/button";
-import CustomInput from "@/components/ui/inputCustom";
 import { Icons } from "@/components/icons";
+import { Button } from "@/components/ui/button";
 import CountryDropdown from "@/components/ui/countryDropdown";
+import { ImageCustom } from "@/components/ui/imageCustom";
+import CustomInput from "@/components/ui/inputCustom";
+import { MyContext } from "@/context/theme";
 import { Tab } from "@headlessui/react";
+import { useContext, useState } from "react";
 
-import styles from "./style.module.scss";
 import CustomDropdown from "@/components/ui/customDropdown";
 import { cn } from "@/lib/utils";
+import styles from "./style.module.scss";
 
 const LetsTalk = () => {
   const { theme, setTheme } = useContext(MyContext);

@@ -76,7 +76,7 @@ const BrowserAccelerator = () => {
       text: "Enhance your machine learning models by leveraging Cleanlab Studio for improved data quality, leading to more accurate & reliable insights.",
     },
     {
-      cardIcon: <Icons.Performance width={36} height={36} />,
+      cardIcon: <Icons.PerformanceIcon width={36} height={36} />,
       subHeading: "Financial Services",
       heading: "Fine-Grained Demand Forecasting",
       text: "Refine your demand forecasting strategies, gaining precision in predicting market needs at a granular level for effective inventory planning and management.",

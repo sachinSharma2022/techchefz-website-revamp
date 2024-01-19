@@ -3,12 +3,16 @@
 .banner {
   &.bannerDark {
     background-color: color(input-bg);
-    color: #fff;
+    color: color(primary-white);
   }
   .bannerContent {
     display: flex;
     justify-content: space-between;
     padding: 5rem 7.5rem;
+
+    @include desktop-hd {
+      padding-inline: 0;
+    }
 
     .bannerTitle {
       font-size: text(xl-larger);
@@ -18,13 +22,8 @@
 
       span {
         font-size: text(xl-larger);
-        background: var(
-          --Gradient,
-          linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%)
-        );
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        background: linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%);
+       @include textGradient;
       }
     }
 
@@ -46,8 +45,8 @@
   .imgBox div {
     height: 31.25rem;
     width: 100%;
-		overflow: hidden;
-		position: relative;
+    overflow: hidden;
+    position: relative;
 
     img {
       width: 100%;

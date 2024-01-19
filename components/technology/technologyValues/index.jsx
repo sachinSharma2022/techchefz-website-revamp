@@ -39,7 +39,7 @@ const TechnologyValues = () => {
         "We believe in a customer-centric ethic without and people-centric paradigm within.",
     },
     {
-      icon: <Icons.Performance width={56} height={56} />,
+      icon: <Icons.PerformanceIcon width={56} height={56} />,
       title: "Excellence in Delivery",
       imgUrl: "/images/innovation.png",
       content:

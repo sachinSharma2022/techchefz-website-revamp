@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
@@ -12,7 +12,9 @@ import styles from "./style.module.scss";
 const Consistent = () => {
   const { theme, setTheme } = useContext(MyContext);
   return (
-    <section className={`${styles.consistent}  ${theme ? styles.consistentDark : ""}`}>
+    <section
+      className={`${styles.consistent}  ${theme ? styles.consistentDark : ""}`}
+    >
       <div className={cn("primary-container")}>
         <div className={styles.consistentImg}>
           <ImageCustom

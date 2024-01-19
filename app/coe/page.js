@@ -1,19 +1,18 @@
 import OurValues from "@/components/about/ourValues";
-import Impact from "@/components/accelerators/acceleratorDetail/impact";
-import Challenges from "@/components/caseStudy/challenges";
 import CoeBanner from "@/components/coe/coeBanner";
+import CoeImpact from "@/components/coe/coeImpact";
+import CoeService from "@/components/coe/coeService";
+import CoeSupport from "@/components/coe/coeSupport";
 import LetsWork from "@/components/home/letsWork";
-import Consistent from "@/components/technology/consistent";
-import React from "react";
 
 const Coe = () => {
   return (
     <div>
       <CoeBanner />
       <OurValues />
-      <Challenges className="pt-5" />
-      <Impact />
-      <Consistent />
+      <CoeSupport />
+      <CoeImpact />
+      <CoeService />
       <LetsWork />
     </div>
   );
