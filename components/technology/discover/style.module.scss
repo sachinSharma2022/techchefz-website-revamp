@@ -1,31 +1,31 @@
 @import "~/styles/partials/config";
 
 .discoverSection {
-   padding: spacing(section-primary-padding);
+  padding: spacing(section-primary-padding);
 
-   @include mobile {
-      padding: 1.5rem;
-   }
+  @include mobile {
+    padding: 1.5rem;
+  }
 
-   &.discoverSectionDark {
-      background-color: color(input-bg);
-      color: color(primary-white);
-
-      .platformsButtons{
-        .platformsBtn{
-          background-color: color(text-primary);
-        }
-      }
+  .discoverTop {
+    margin-bottom: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
     
-      .discoverHead{
-        color: color(primary-white);
-      }
-   }
+    @include mobile {
+      margin-bottom: 3rem;
+    }
+  }
+  .discoverTitle {
+    font-size: text(normal);
+    font-weight: 700;
+    line-height: 1.5rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
 
-<<<<<<< HEAD
-   .discoverTop {
-      margin-bottom: 5rem;
-=======
   .discoverHeading {
     font-size: text(larger);
     font-weight: 500;
@@ -69,156 +69,107 @@
     padding-left: 2.5rem;
 
     .platformsBtn {
->>>>>>> 62f9dca302f941de80ea6ca3b47ab2d1bffc4e92
       display: flex;
       justify-content: space-between;
-      align-items: flex-end;
+      align-items: center;
+      border-radius: 12px;
+      background-color: color(bg-soft);
+      padding: 1.25rem;
+      width: 100%;
+      height: auto;
 
-<<<<<<< HEAD
-      @include mobile {
-         margin-bottom: 3rem;
-=======
       .reactPlatform {
         padding-right: 0.75rem;
         border-right: 0.14rem solid rgba(17, 17, 17, 0.2);
->>>>>>> 62f9dca302f941de80ea6ca3b47ab2d1bffc4e92
       }
-   }
-   .discoverTitle {
-      font-size: text(normal);
-      font-weight: 700;
-      line-height: 1.5rem;
-      letter-spacing: 0.2rem;
-      text-transform: uppercase;
-      opacity: 0.8;
-   }
 
-   .discoverHeading {
-      font-size: text(larger);
-      font-weight: 500;
-      line-height: 3.375rem;
-      margin: 0;
-
-      @include mobile {
-         font-size: 1.7rem;
-         line-height: 2.375rem;
+      svg {
+        width: 16px;
+        height: 16px;
       }
-   }
 
-<<<<<<< HEAD
-   .subHeading {
-      font-size: text(xl);
-      font-weight: 500;
-      line-height: 2.5rem;
-      margin: 0;
-   }
-=======
       .iconImg {
         border-right: 0.14rem solid rgba(color(text-primary), 0.2);
         padding-right: 0.75rem;
       }
->>>>>>> 62f9dca302f941de80ea6ca3b47ab2d1bffc4e92
 
-   .subContent {
-      font-size: text(normal);
-      font-weight: 400;
-      line-height: 1.5rem;
-      opacity: 0.6;
-      display: none;
-   }
+      p {
+        padding-left: 0.75rem;
+        margin: 0;
+        font-size: text(lg);
+        font-weight: 400;
+        line-height: 1.875rem;
+      }
+    }
+  }
 
-   .subTitle {
-      font-size: text(xl);
-      font-weight: 500;
-      line-height: 2rem;
-      margin-bottom: 1.5rem;
-   }
+  .buttonSection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem 2.5rem;
+  }
 
-   .platformsButtons {
+  .discoverTabSection {
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5rem;
+
+    .discoverLeft {
       display: flex;
       flex-direction: column;
-      gap: 3.75rem;
-      width: 100%;
-      border-left: 1px solid rgba(color(text-primary), 0.12);
-      padding-left: 2.5rem;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 2rem;
+      max-width: 270px;
+    }
 
-      .platformsBtn {
-         display: flex;
-         justify-content: space-between;
-         align-items: center;
-         border-radius: 12px;
-         background-color: color(bg-soft);
-         padding: 1.25rem;
-         width: 100%;
-         height: auto;
+    .discoverHead {
+      text-align: left;
+    }
 
-         .reactPlatform {
-            padding-right: 0.75rem;
-            border-right: 1px solid rgba(17, 17, 17, 0.2);
-         }
+    .dataSection {
+      margin-bottom: 3.75rem;
 
-         svg {
-            width: 16px;
-            height: 16px;
-         }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
 
-         .iconImg {
-            border-right: 1px solid rgba(color(text-primary), 0.2);
-            padding-right: 0.75rem;
-         }
+    button[aria-selected="true"] {
+      .subContent {
+        display: block;
+      }
 
-         p {
-            padding-left: 0.75rem;
-            margin: 0;
-            font-size: text(lg);
-            font-weight: 400;
-            line-height: 1.875rem;
-         }
+      .subHeading {
+        background: linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%);
+        @include textGradient;
+      }
+    }
+  }
+
+
+
+  //dark mode style
+
+  &.discoverSectionDark {
+   background-color: color(input-bg);
+   color: color(primary-white);
+
+   .platformsButtons{
+     .platformsBtn{
+       background-color: color(text-primary);
+     }
+   }
+ 
+   .discoverHead{
+     color: color(primary-white);
+   }
+   
+   .platformsBtn{
+      svg > path{
+     fill: white;
       }
    }
 
-   .buttonSection {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem 2.5rem;
-   }
-
-   .discoverTabSection {
-      display: flex;
-      justify-content: space-between;
-      gap: 2.5rem;
-      
-
-      .discoverLeft {
-         display: flex;
-         flex-direction: column;
-         align-items: flex-start;
-         justify-content: flex-start;
-         gap: 2rem;
-         max-width: 270px;
-      }
-
-      .discoverHead {
-         text-align: left;
-      }
-
-      .dataSection {
-         margin-bottom: 3.75rem;
-
-         &:last-child {
-            margin-bottom: 0;
-         }
-      }
-
-      button[aria-selected="true"] {
-         .subContent {
-            display: block;
-         }
-
-         .subHeading {
-            background: linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%);
-            @include textGradient;
-         }
-      }
-   }
+}
 }

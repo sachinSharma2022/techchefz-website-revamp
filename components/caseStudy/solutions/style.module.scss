@@ -4,7 +4,7 @@
    padding: 0 7.5rem;
 
    &.solutionsDark{
-      background-color: color(text-primary);
+      background-color: color(input-bg);
       color: color(primary-white);
    }
    .solutionTitle {
@@ -28,7 +28,7 @@
       opacity: 0.8;
    }
    .solutionImgs {
-      margin: 5rem 0;
+      padding: 5rem 0 ;
       img {
          margin: 1.25rem 0;
          width: 100%;

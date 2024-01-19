@@ -5,12 +5,22 @@
    padding-bottom: 0;
 
    &.industryDark {
-      background-color: color(text-primary);
+      background-color: color(input-bg);
       color: color(primary-white);
 
       .industryHeading{
         color: color(primary-white);
       }
+
+      .industryLeft{
+         .serviceBtn{
+            button{
+               color: color(primary-white) ;
+               border: 1px solid rgba(255, 255, 255, 0.40);
+            }
+         }
+      }
+   
    }
 
    .industryLeft {
