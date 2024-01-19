@@ -1,15 +1,14 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
-import { MyContext } from "@/context/theme";
-import { useContext } from "react";
+import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import { Icons } from "@/components/icons";
-import styles from "./style.module.scss";
+import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useContext, useEffect, useState } from "react";
+import styles from "./style.module.scss";
 
 const Header = () => {
   const { theme, setTheme } = useContext(MyContext);
@@ -33,6 +32,15 @@ const Header = () => {
     window.addEventListener("scroll", listenScrollEvent);
     return () => window.removeEventListener("scroll", listenScrollEvent);
   }, []);
+
+  useEffect(() => {
+    document.body.classList.add("font-light");
+    document.body.classList.add("text-gray-700");
+  });
+
+  const classToggle = (e) => {
+    document.querySelector("body").classList.toggle("dark");
+  };
 
   function LatestTech() {
     return (
@@ -338,7 +346,7 @@ const Header = () => {
           </ul>
         </nav>
         <div className={styles.headerRight}>
-          <div className={styles.modeBtn}>
+          <div onClick={classToggle} className={styles.modeBtn}>
             <Button variant="default" onClick={() => setTheme(!theme)}>
               {theme ? (
                 <Icons.DarkThemeIcon size={30} />

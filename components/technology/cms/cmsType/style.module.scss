@@ -7,14 +7,15 @@
   }
   .careerRow {
     margin-bottom: 5rem;
+    max-width: 49.1875rem;
     @include mobile {
       margin-bottom: 2.5rem;
     }
   }
 
-  .ProjectHighlight {
+  .projectHighlight {
     font-size: text(normal);
-    font-weight: 700;
+    font-weight: 500;
     margin-bottom: text(lg);
     opacity: 0.6;
     color: color(text-primary);
@@ -95,6 +96,58 @@
           font-size: text(normal);
         }
       }
+    }
+  }
+}
+
+
+// Modal Body Content section
+.modalBody {
+  padding: 1.5rem;
+
+  .modalContent {
+    font-size: text(lg);
+    font-weight: 400;
+    line-height: 1.875rem;
+    opacity: 0.6;
+  }
+  .teamMail {
+    color: color(primary-white);
+    font-weight: 400;
+    line-height: 1.875rem;
+    font-size: text(lg);
+    margin-bottom: 2.5rem;
+  }
+
+  h6 {
+    font-size: text(lg);
+    font-weight: 500;
+    line-height: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .socialSection {
+    margin-top: 2.5rem;
+
+    .modalIcons {
+      display: flex;
+      gap: 0 1.25rem;
+      .linkedinIcon {
+        margin-right: 1.25rem;
+      }
+      .twitter {
+        background-color: color(primary-black);
+        padding: 0.5rem;
+        border-radius: 0.2rem;
+      }
+    }
+  }
+
+  &.darkThemeStyle {
+    color: color(text-primary);
+
+    .teamMail {
+      color: color(text-primary);
     }
   }
 }
