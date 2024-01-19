@@ -313,7 +313,10 @@ const Header = () => {
                               inevitable journey towards enterprise.
                             </p>
                           </Link>
-                          <Link href="/" className={cn(styles.hrefInnerFlex)}>
+                          <Link
+                            href="/accelerators"
+                            className={cn(styles.hrefInnerFlex)}
+                          >
                             <div className={styles.head}>
                               <h4 className={styles.linkTitle}>Accelerators</h4>
                               <Icons.ArrowForward />
