@@ -31,6 +31,7 @@ const Card = ({ ...props }) => {
         />
       </div>
 
+<<<<<<< HEAD
       <div className={styles.cardContentStyle}>
         <div>
           <motion.h4
@@ -41,6 +42,19 @@ const Card = ({ ...props }) => {
             International Motorcycle Brand.
           </motion.h4>
         </div>
+=======
+          <div className={styles.cardContentStyle}>
+            <h2 className={styles.projectBrand}>
+            {
+               props.title.split(" ").map( (word, index) => {
+
+                         return <span className={styles.mask}><motion.span variants={slideUp} custom={index} animate={isInView ? "open" : "closed"} key={index}>{word}</motion.span></span>
+
+                                })
+
+              }
+            </h2>
+>>>>>>> bba3285 (project section  animation done)
 
         <p ref={description} className={styles.brandFromText}>
           {props.summary.split(" ").map((word, index) => {
@@ -89,6 +103,7 @@ const Projects = () => {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
+<<<<<<< HEAD
     offset: ["start start", "end end"],
   });
   const projects = [
@@ -108,6 +123,11 @@ const Projects = () => {
         "Royal Enfield is a global brand since 1901, has a geographical presence in over 70 countries. The brand delivers consistent, omnichannel customer experiences, achieves scalability, diversifying into countries, and continents.",
     },
   ];
+=======
+    offset: ['start start', 'end end']
+  })
+  const projects=[{src:"/images/ICICI.png",summary:"Royal Enfield is a global brand since 1901, has a geographical presence in over 70 countries. The brand delivers consistent, omnichannel customer experiences, achieves scalability, diversifying into countries, and continents.",title:"International Motorcycle Brand."},{src:"/images/project-re.png",summary:"Royal Enfield is a global brand since 1901, has a geographical presence in over 70 countries. The brand delivers consistent, omnichannel customer experiences, achieves scalability, diversifying into countries, and continents.",title:"International Motorcycle Brand."},{src:"/images/Manipal.png",summary:"Royal Enfield is a global brand since 1901, has a geographical presence in over 70 countries. The brand delivers consistent, omnichannel customer experiences, achieves scalability, diversifying into countries, and continents.",title:"International Motorcycle Brand."}]
+>>>>>>> bba3285 (project section  animation done)
 
   const tagSection = [
     "Web Design",
