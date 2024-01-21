@@ -40,4 +40,10 @@
     width: 100%;
     height: auto;
    }
+
+   //dark mode style
+   &.bannerDark{
+      background-color: color(input-bg);
+      color: color(primary-white);
+   }
 }

@@ -1,65 +1,82 @@
 @import "~/styles/partials/config";
 
 .industry {
-  padding: spacing(section-primary-padding);
-  padding-bottom: 0;
+   padding: spacing(section-primary-padding);
+   padding-bottom: 0;
 
-  .industryLeft {
-    h6 {
-      font-size: text(normal);
-      font-weight: 400;
-      line-height: 1.5rem;
-      opacity: 0.6;
-      margin-bottom: 0.2rem;
-      font-family: font(secondary);
-    }
-    h5 {
-      font-weight: 700;
-      line-height: 2rem;
-      font-size: text(xl);
-      font-family: font(secondary);
-    }
-
-    .serviceBtn {
-      button {
-        margin: 0 0.75rem 0.75rem 0;
-        color: color(text-primary);
-        font-size: text(normal);
-        font-weight: 400;
-        line-height: 1.875rem;
-        border: 0.063rem solid rgba(17, 17, 17, 0.4);
-        font-family: font(secondary);
-
-        &:hover {
-          background-color: color(primary-white);
-          color: color(text-primary);
-        }
+   .industryLeft {
+      h6 {
+         font-size: text(normal);
+         font-weight: 400;
+         line-height: 1.5rem;
+         opacity: 0.6;
+         margin-bottom: 0.2rem;
+         font-family: font(secondary);
       }
-    }
-  }
-  
-  .industryHeading {
-    font-weight: 500;
-    line-height: 3.375rem;
-    opacity: 0.8;
-    font-size: text(larger);
-    color: color(text-primary);
-    margin-bottom: 2rem;
-  }
+      h5 {
+         font-weight: 700;
+         line-height: 2rem;
+         font-size: text(xl);
+         font-family: font(secondary);
+      }
 
-  .industryText {
-    font-size: text(lg);
-    font-weight: 400;
-    line-height: 1.875rem;
-    opacity: 0.6;
-  }
+      .serviceBtn {
+         button {
+            margin: 0 0.75rem 0.75rem 0;
+            color: color(text-primary);
+            font-size: text(normal);
+            font-weight: 400;
+            line-height: 1.875rem;
+            border: 0.063rem solid rgba(17, 17, 17, 0.4);
+            font-family: font(secondary);
 
-  .industryImg {
-    padding: 5rem 0;
-    img {
-      width: 100%;
-      height: auto;
-      border-radius: 0.5rem;
-    }
-  }
+            &:hover {
+               background-color: color(primary-white);
+               color: color(text-primary);
+            }
+         }
+      }
+   }
+
+   .industryHeading {
+      font-weight: 500;
+      line-height: 3.375rem;
+      opacity: 0.8;
+      font-size: text(larger);
+      color: color(text-primary);
+      margin-bottom: 2rem;
+   }
+
+   .industryText {
+      font-size: text(lg);
+      font-weight: 400;
+      line-height: 1.875rem;
+      opacity: 0.6;
+   }
+
+   .industryImg {
+      padding: 5rem 0;
+      img {
+         width: 100%;
+         height: auto;
+         border-radius: 0.5rem;
+      }
+   }
+
+   //Dark mode style
+   &.industryDark {
+      background-color: color(input-bg);
+      color: color(primary-white);
+
+      .industryHeading {
+         color: color(primary-white);
+      }
+
+      .serviceBtn {
+         button {
+            color: color(primary-white);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+         }
+      }
+   }
 }

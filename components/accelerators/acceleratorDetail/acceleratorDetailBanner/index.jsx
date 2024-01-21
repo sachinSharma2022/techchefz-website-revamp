@@ -1,4 +1,7 @@
+"use client";
 import React from "react";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
@@ -6,8 +9,9 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import styles from "./style.module.scss";
 
 const DetailBanner = () => {
+   const { theme, setTheme } = useContext(MyContext);
    return (
-      <section className={styles.banner}>
+      <section className={`${styles.banner} ${theme ? styles.bannerDark : ""}`}>
          <div className="primary-container">
             <div className={styles.bannerContent}>
                <h1 className={styles.bannerTitle}>

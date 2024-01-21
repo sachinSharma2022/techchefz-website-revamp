@@ -1,11 +1,11 @@
 import React from "react";
 import SearchInput from "@/components/ui/searchInput";
 import CustomDropdown from "@/components/ui/customDropdown";
-
-import styles from "./style.module.scss";
 import BrowserAcceleratorCard from "../browserAcceleratorCard";
 import { Icons } from "@/components/icons";
 import { cn } from "@/lib/utils";
+
+import styles from "./style.module.scss";
 
 const BrowserAccelerator = () => {
   const browserCardData = [

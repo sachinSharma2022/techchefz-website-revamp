@@ -3,6 +3,8 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 
 // import required modules
 import {
@@ -16,11 +18,13 @@ import {
 import { Icons } from "@/components/icons";
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
+
+import styles from "./style.module.scss";
 
 const EmployeeEngagement = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const { theme, setTheme } = useContext(MyContext);
   const valueData = [
     {
       icon: <Icons.Market width={56} height={56} />,
@@ -47,7 +51,7 @@ const EmployeeEngagement = () => {
     },
   ];
   return (
-    <section className={`${styles.employeeEngagement} technology-value`}>
+    <section className={`${styles.employeeEngagement} ${theme ? styles.employeeEngagementDark : ""} technology-value`}>
       <div className={cn("primary-container")}>
         <div className={styles.headSection}>
           <h6 className={styles.valuesTitle}>Employee Engagement</h6>

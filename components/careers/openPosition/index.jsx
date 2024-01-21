@@ -2,14 +2,17 @@
 import React, { useState } from "react";
 import { Disclosure } from "@headlessui/react";
 import { Button } from "@/components/ui/button";
-
-import styles from "./style.module.scss";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import { Icons } from "@/components/icons";
 import SearchInput from "@/components/ui/searchInput";
 import { cn } from "@/lib/utils";
 
+import styles from "./style.module.scss";
+
 const OpenPosition = () => {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
+  const { theme, setTheme } = useContext(MyContext);
 
   function togglePanels(newPanel) {
     if (activeDisclosurePanel) {
@@ -177,7 +180,7 @@ const OpenPosition = () => {
   ];
 
   return (
-    <section className={styles.openPosition}>
+    <section className={`${styles.openPosition} ${theme ? styles.openPositionDark : ""}`}>
       <div className={cn("primary-container")}>
         <div className={styles.openPositionHeader}>
           <h4 className={styles.openPositionHeading}>

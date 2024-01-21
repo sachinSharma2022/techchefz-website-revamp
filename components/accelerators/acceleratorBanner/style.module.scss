@@ -35,4 +35,10 @@
          }
       }
    }
+
+    //dark mode style
+    &.bannerDark{
+      background-color: color(input-bg);
+      color: color(primary-white);
+   }
 }

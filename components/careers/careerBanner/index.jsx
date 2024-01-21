@@ -3,12 +3,15 @@ import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import Marquee from "react-fast-marquee";
-
-import styles from "./style.module.scss";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
+import styles from "./style.module.scss";
+
 const CareerBanner = () => {
+  const { theme, setTheme } = useContext(MyContext);
   const galleryImages = [
     {
       imgSrc:
@@ -92,7 +95,7 @@ const CareerBanner = () => {
     },
   ];
   return (
-    <section className={`${styles.landingBannerStyle}`}>
+    <section className={`${styles.landingBannerStyle} ${theme ? styles.landingBannerDark : ""}`}>
       <div className={cn("primary-container")}>
         <div className={styles.contentSection}>
           <h1 className={styles.title}>

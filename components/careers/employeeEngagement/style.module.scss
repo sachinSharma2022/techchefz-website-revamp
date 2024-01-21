@@ -84,4 +84,11 @@
    .infoSec {
       margin-top: 24px;
    }
+
+
+   //Dark mode style
+   &.employeeEngagementDark{
+      background-color: color(dark-bg);
+      color: color(primary-white);
+   }
 }

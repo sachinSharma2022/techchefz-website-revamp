@@ -1,13 +1,17 @@
+"use client";
 import React from "react";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
-
-import styles from "./style.module.scss";
 import { Icons } from "@/components/icons";
 
+import styles from "./style.module.scss";
+
 const AcceleratorIndustry = () => {
+   const { theme, setTheme } = useContext(MyContext);
    return (
-      <section className={styles.industry}>
+      <section className={`${styles.industry} ${theme ? styles.industryDark : ""} `}>
          <div className="container">
             <div className="row justify-content-between">
                <div className="col-md-4 col-lg-4">
