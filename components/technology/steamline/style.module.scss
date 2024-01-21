@@ -5,8 +5,8 @@
    background: color(bg-soft);
 
    &.streamlineDark {
-      background-color: color(input-bg);
-      color: #fff;
+      background-color: color(dark-bg);
+      color: color(primary-white);
     
       .streamlineContent{
          opacity: 0.8;
@@ -47,10 +47,11 @@
    .streamlineCards {
       display: flex;
       flex-wrap: wrap;
+
       .streamlineCard {
          width: 31.25rem;
          height: 36.375rem;
-         border-radius: var(--spacing_20, 20px);
+         border-radius: 1.25rem;
          border: 0.14rem solid rgba(17, 17, 17, 0.12);
          background: #fff;
          text-align: left;

@@ -1,11 +1,11 @@
-import React from "react";
-import SearchInput from "@/components/ui/searchInput";
 import CustomDropdown from "@/components/ui/customDropdown";
-import BrowserAcceleratorCard from "../browserAcceleratorCard";
+import SearchInput from "@/components/ui/searchInput";
+
+import BadgeInfoCard from "@/components/common/badgeInfoCard";
 import { Icons } from "@/components/icons";
 import { cn } from "@/lib/utils";
-
 import styles from "./style.module.scss";
+
 
 const BrowserAccelerator = () => {
   const browserCardData = [
@@ -13,73 +13,85 @@ const BrowserAccelerator = () => {
       cardIcon: <Icons.CustomDevelopment width={36} height={36} />,
       subHeading: "Retail and Consumer Goods",
       heading: "Improve On-Shelf Availability",
-      text: "Elevate your product accessibility with strategic inventory management & optimization, ensuring consistently meetin...",
+      description:
+        "Elevate your product accessibility with strategic inventory management & optimization, ensuring consistently meetin...",
     },
     {
       cardIcon: <Icons.Intelligence width={36} height={36} />,
       subHeading: "Manufacturing",
       heading: "Better LLMs With Better Data Using Cleanlab Studio",
-      text: "Enhance your machine learning models by leveraging Cleanlab Studio for improved data quality, leading to more accurate & reliable insights.",
-    },
-    {
-      cardIcon: <Icons.Service width={36} height={36} />,
-      subHeading: "Financial Services",
-      heading: "Fine-Grained Demand Forecasting",
-      text: "Refine your demand forecasting strategies, gaining precision in predicting market needs at a granular level for effective inventory planning and management.",
-    },
-    {
-      cardIcon: <Icons.CustomDevelopment width={36} height={36} />,
-      subHeading: "Healthcare and Life Sciences",
-      heading: "Cohort Building with Knowledge Graphs",
-      text: "Utilize knowledge graphs to build insightful cohorts, enabling a deeper understanding of user behavior and preferences for targeted and personalized strategies.",
-    },
-    {
-      cardIcon: <Icons.DataIntelligence width={36} height={36} />,
-      subHeading: "Media & Entertainment",
-      heading: "Biomedical Literature Q&A with LLMs",
-      text: "Access advanced question-answering capabilities of large language models to extract valuable insights from biomedical literature, accelerating research and knowledge discovery.",
-    },
-    {
-      cardIcon: <Icons.Cloud width={36} height={36} />,
-      subHeading: "Technology and Software",
-      heading: "Abstracting Real-World Data for Oncology",
-      text: "Transform real-world data into abstracted insights, particularly focusing on oncology, to facilitate data-driven decision-making and advancements in the field.",
-    },
-    {
-      cardIcon: <Icons.CustomDevelopment width={36} height={36} />,
-      subHeading: "Technology and Software",
-      heading: "Abstracting Real-World Data for Oncology",
-      text: "Elevate your product accessibility with strategic inventory management & optimization, ensuring consistently meetin...",
-    },
-    {
-      cardIcon: <Icons.CustomDevelopment width={36} height={36} />,
-      subHeading: "Technology and Software",
-      heading: "Abstracting Real-World Data for Oncology",
-      text: "Elevate your product accessibility with strategic inventory management & optimization, ensuring consistently meetin...",
-    },
-    {
-      cardIcon: <Icons.CustomDevelopment width={36} height={36} />,
-      subHeading: "Technology and Software",
-      heading: "Abstracting Real-World Data for Oncology",
-      text: "Elevate your product accessibility with strategic inventory management & optimization, ensuring consistently meetin...",
-    },
-    {
-      cardIcon: <Icons.CustomDevelopment width={36} height={36} />,
-      subHeading: "Retail and Consumer Goods",
-      heading: "Improve On-Shelf Availability",
-      text: "Elevate your product accessibility with strategic inventory management & optimization, ensuring consistently meetin...",
-    },
-    {
-      cardIcon: <Icons.Intelligence width={36} height={36} />,
-      subHeading: "Manufacturing",
-      heading: "Better LLMs With Better Data Using Cleanlab Studio",
-      text: "Enhance your machine learning models by leveraging Cleanlab Studio for improved data quality, leading to more accurate & reliable insights.",
+      description:
+        "Enhance your machine learning models by leveraging Cleanlab Studio for improved data quality, leading to more accurate & reliable insights.",
     },
     {
       cardIcon: <Icons.PerformanceIcon width={36} height={36} />,
       subHeading: "Financial Services",
       heading: "Fine-Grained Demand Forecasting",
-      text: "Refine your demand forecasting strategies, gaining precision in predicting market needs at a granular level for effective inventory planning and management.",
+      description:
+        "Refine your demand forecasting strategies, gaining precision in predicting market needs at a granular level for effective inventory planning and management.",
+    },
+    {
+      cardIcon: <Icons.CustomDevelopment width={36} height={36} />,
+      subHeading: "Healthcare and Life Sciences",
+      heading: "Cohort Building with Knowledge Graphs",
+      description:
+        "Utilize knowledge graphs to build insightful cohorts, enabling a deeper understanding of user behavior and preferences for targeted and personalized strategies.",
+    },
+    {
+      cardIcon: <Icons.DataIntelligence width={36} height={36} />,
+      subHeading: "Media & Entertainment",
+      heading: "Biomedical Literature Q&A with LLMs",
+      description:
+        "Access advanced question-answering capabilities of large language models to extract valuable insights from biomedical literature, accelerating research and knowledge discovery.",
+    },
+    {
+      cardIcon: <Icons.Cloud width={36} height={36} />,
+      subHeading: "Technology and Software",
+      heading: "Abstracting Real-World Data for Oncology",
+      description:
+        "Transform real-world data into abstracted insights, particularly focusing on oncology, to facilitate data-driven decision-making and advancements in the field.",
+    },
+    {
+      cardIcon: <Icons.CustomDevelopment width={36} height={36} />,
+      subHeading: "Technology and Software",
+      heading: "Abstracting Real-World Data for Oncology",
+      description:
+        "Elevate your product accessibility with strategic inventory management & optimization, ensuring consistently meetin...",
+    },
+    {
+      cardIcon: <Icons.CustomDevelopment width={36} height={36} />,
+      subHeading: "Technology and Software",
+      heading: "Abstracting Real-World Data for Oncology",
+      description:
+        "Elevate your product accessibility with strategic inventory management & optimization, ensuring consistently meetin...",
+    },
+    {
+      cardIcon: <Icons.CustomDevelopment width={36} height={36} />,
+      subHeading: "Technology and Software",
+      heading: "Abstracting Real-World Data for Oncology",
+      description:
+        "Elevate your product accessibility with strategic inventory management & optimization, ensuring consistently meetin...",
+    },
+    {
+      cardIcon: <Icons.CustomDevelopment width={36} height={36} />,
+      subHeading: "Retail and Consumer Goods",
+      heading: "Improve On-Shelf Availability",
+      description:
+        "Elevate your product accessibility with strategic inventory management & optimization, ensuring consistently meetin...",
+    },
+    {
+      cardIcon: <Icons.Intelligence width={36} height={36} />,
+      subHeading: "Manufacturing",
+      heading: "Better LLMs With Better Data Using Cleanlab Studio",
+      description:
+        "Enhance your machine learning models by leveraging Cleanlab Studio for improved data quality, leading to more accurate & reliable insights.",
+    },
+    {
+      cardIcon: <Icons.PerformanceIcon width={36} height={36} />,
+      subHeading: "Financial Services",
+      heading: "Fine-Grained Demand Forecasting",
+      description:
+        "Refine your demand forecasting strategies, gaining precision in predicting market needs at a granular level for effective inventory planning and management.",
     },
   ];
   return (
@@ -95,6 +107,7 @@ const BrowserAccelerator = () => {
               "Network Security",
               "Cloud Service",
             ]}
+            className={styles.grayInput}
           />
           <CustomDropdown
             title="Technology"
@@ -104,6 +117,7 @@ const BrowserAccelerator = () => {
               "Network Security",
               "Cloud Service",
             ]}
+            className={styles.grayInput}
           />
           <CustomDropdown
             title="Sort By"
@@ -113,6 +127,7 @@ const BrowserAccelerator = () => {
               "Network Security",
               "Cloud Service",
             ]}
+            className={styles.grayInput}
           />
         </div>
         <hr className={styles.breakLine} />
@@ -120,14 +135,15 @@ const BrowserAccelerator = () => {
           Browser Accelerator
         </h5>
         <div className={styles.browserAcceleratorCards}>
-          {browserCardData.map((data, index) => (
-            <BrowserAcceleratorCard
+          {browserCardData.map((item, index) => (
+            <BadgeInfoCard
               key={index}
-              cardIcon={data.cardIcon}
-              subHeading={data.subHeading}
-              heading={data.heading}
-              text={data.text}
-              href="/accelerators-details"
+              icons={item.cardIcon}
+              subHeading={item.subHeading}
+              heading={item.heading}
+              description={item.description}
+              href="/accelerators/accelerators-details"
+              options={["Automobile", "Trending", "New"]}
             />
           ))}
         </div>

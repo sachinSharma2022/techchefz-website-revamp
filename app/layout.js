@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import Header from "../components/layouts/header";
 import { aeonik, helvetica } from "../lib/fonts";
 import { cn } from "../lib/utils";
+
 import "../styles/globals.scss";
 
 export const metadata = {
@@ -18,7 +19,7 @@ export default function RootLayout({ children }) {
       <body className={cn(aeonik.variable, helvetica.variable)}>
         <ThemeProvider>
           <Header />
-          <main className="main-style">{children}</main>
+          <main className={cn("main-style")}>{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

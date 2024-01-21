@@ -4,17 +4,14 @@
   background-color: color(bg-soft);
   width: 100%;
   padding: 2.5rem;
-  border: 0.14rem solid rgba(17, 17, 17, 0.12);
+  border: 0.14rem solid rgba(color(text-primary), 0.12);
   border-radius: 1.25rem;
-
-  &.partnerCardDark{
-    background-color: color(text-primary);
-  }
+  text-align: left;
 
   .cardImg {
-   display: flex;
-   justify-content: space-between;
-   margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
 
     .imgStyle {
       position: relative;
@@ -29,8 +26,8 @@
     }
 
     svg {
-      width: 20px;
-      height: 20px;
+      width: 15px;
+      height: 15px;
     }
   }
 
@@ -45,5 +42,20 @@
     font-size: text(normal);
     line-height: 1.5rem;
     opacity: 0.8;
+  }
+
+  &.partnerCardDark {
+    background-color: color(text-primary);
+    color: color(primary-white);
+
+    .cardTitle {
+      color: color(primary-white);
+    }
+
+    .cardImg {
+      svg > rect {
+        stroke: color(primary-white);
+      }
+    }
   }
 }

@@ -1,25 +1,37 @@
 @import "~/styles/partials/config";
 
 .banner {
-   padding: 4rem 7.5rem;
+  padding: 4rem 7.5rem;
 
-   .bannerContent {
+  .bannerContent {
+    display: flex;
+    align-items: center;
+		justify-content: space-between;
+    gap: 8rem;
+
+    .bannerTitle {
+      font-size: text(xl-larger);
+      font-weight: 500;
+      line-height: 5rem;
+
+      span {
+        font-size: text(xl-larger);
+        background: linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%);
+       @include textGradient;
+      }
+    }
+
+    .bannerRight {
       display: flex;
-      align-items: center;
-      gap: 8rem;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 4rem;
 
-      .bannerTitle {
-         font-size: text(xl-larger);
-         font-weight: 500;
-         line-height: 5rem;
-
-         span {
-            font-size: text(xl-larger);
-            background: var(--Gradient, linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%));
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-         }
+      p {
+        font-size: text(lg);
+        line-height: 1.875rem;
+        opacity: 0.8;
       }
 
       .bannerRight {
@@ -41,4 +53,5 @@
       background-color: color(input-bg);
       color: color(primary-white);
    }
+}
 }
