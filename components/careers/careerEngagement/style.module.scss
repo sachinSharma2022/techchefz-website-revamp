@@ -60,6 +60,8 @@
       font-size: text(xl);
       font-weight: 500;
       line-height: 2rem;
+      @include truncate(2);
+      max-width: 80%;
    }
    .content {
       font-weight: 400;
