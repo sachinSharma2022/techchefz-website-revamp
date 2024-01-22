@@ -9,11 +9,13 @@ import LetsWork from "@/components/home/letsWork";
 import Testimonials from "@/components/home/testimonials";
 import TechnologyStack from "@/components/home/technologyStack";
 import VideoCustom from "@/components/ui/videoCustom";
+import Curve from "@/components/ui/pageTransition";
 
 const HomePage = () => {
   return (
     <>
-      <LandingBanner />
+     <Curve>
+     <LandingBanner />
       <VideoCustom src="global.mp4" />
       <WeAreFuture />
       <Service />
@@ -23,6 +25,8 @@ const HomePage = () => {
       <DigitalTransformation />
       <Testimonials />
       <LetsWork />
+     </Curve>
+      
     </>
   );
 };
