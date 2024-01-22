@@ -41,4 +41,23 @@
     }
     
   }
+
+  //Dark mode style
+  &.browserAcceleratorDark{
+    background-color: color(input-bg);
+    color: color(primary-white);
+
+    .grayInput{
+      label{
+        color: color(primary-white);
+      }
+      select{
+        background-color: color(input-bg);
+        color: color(primary-white);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+     
+    }
+  }
 }

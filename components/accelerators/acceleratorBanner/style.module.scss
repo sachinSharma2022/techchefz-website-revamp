@@ -1,37 +1,24 @@
 @import "~/styles/partials/config";
 
 .banner {
-  padding: 4rem 7.5rem;
+   padding: 4rem 7.5rem;
 
-  .bannerContent {
-    display: flex;
-    align-items: center;
-		justify-content: space-between;
-    gap: 8rem;
-
-    .bannerTitle {
-      font-size: text(xl-larger);
-      font-weight: 500;
-      line-height: 5rem;
-
-      span {
-        font-size: text(xl-larger);
-        background: linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%);
-       @include textGradient;
-      }
-    }
-
-    .bannerRight {
+   .bannerContent {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 4rem;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8rem;
 
-      p {
-        font-size: text(lg);
-        line-height: 1.875rem;
-        opacity: 0.8;
+      .bannerTitle {
+         font-size: text(xl-larger);
+         font-weight: 500;
+         line-height: 5rem;
+
+         span {
+            font-size: text(xl-larger);
+            background: linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%);
+            @include textGradient;
+         }
       }
 
       .bannerRight {
@@ -40,18 +27,31 @@
          justify-content: center;
          align-items: flex-start;
          gap: 4rem;
+
          p {
             font-size: text(lg);
             line-height: 1.875rem;
             opacity: 0.8;
          }
+
+         .bannerRight {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 4rem;
+            p {
+               font-size: text(lg);
+               line-height: 1.875rem;
+               opacity: 0.8;
+            }
+         }
       }
    }
 
-    //dark mode style
-    &.bannerDark{
+   //dark mode style
+   &.bannerDark {
       background-color: color(input-bg);
       color: color(primary-white);
    }
-}
 }
