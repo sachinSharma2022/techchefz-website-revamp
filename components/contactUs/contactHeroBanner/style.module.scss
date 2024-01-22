@@ -12,6 +12,10 @@
     padding-inline: spacing(p-120);
     padding-block: 3.75rem 5.25rem;
 
+    @include desktop-hd {
+      padding-inline: 0;
+    }
+
     @include mobile {
       padding: spacing(section-mob-padding);
       flex-direction: column;
