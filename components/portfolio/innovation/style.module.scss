@@ -64,10 +64,10 @@
         color(bg-soft) 3.48%,
         rgba(241, 241, 241, 0) 121.7%
       );
-
       padding: 3.75rem 0 1.875rem 0;
       border-radius: text(xl);
-      border: 0.125rem solid rgba(17, 17, 17, 0.12);
+      border: 0.125rem solid rgba(color(text-primary), 0.12);
+      @include transition(0.5s);
 
       @include mobile {
         width: 100%;

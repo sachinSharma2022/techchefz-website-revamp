@@ -3,6 +3,7 @@ import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
 import React, { useContext } from "react";
+
 // import required modules
 import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
 
@@ -15,7 +16,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import styles from "./style.module.scss";
 
-const Testimonials = () => {
+const Testimonials = (props) => {
   const { theme, setTheme } = useContext(MyContext);
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
@@ -67,9 +68,13 @@ const Testimonials = () => {
 
   return (
     <section
-      className={`${styles.testimonialsStyle} ${
-        theme ? `${styles.testimonialsStyleDark} dark-sliderTestimonial` : ""
-      } testimonial-style`}
+      className={cn(
+        styles.testimonialsStyle,
+        theme
+          ? styles.testimonialsStyleDark
+          : `${styles.testimonialsStyleDark}, "dark-sliderTestimonial"`,
+        "testimonial-style"
+      )}
     >
       <div className={cn(styles.testimonialContainer)}>
         <div className="row">
@@ -78,14 +83,9 @@ const Testimonials = () => {
               <div className={styles.testimonialsLeft}>
                 <p className={styles.projectHighlight}>Testimonials</p>
                 <div className={styles.testimonialsHeading}>
-                  <h3>Voices of Delightful Experiences.</h3>
+                  <h3>{props.title}</h3>
                 </div>
-                <p className={styles.testimonialsText}>
-                  Delve into our case studies to witness firsthand how
-                  we&apos;ve tackled challenges, delivered solutions, and
-                  achieved measurable success. Each story is a testament to our
-                  commitment, expertise, and the transformative impact.
-                </p>
+                <p className={styles.testimonialsText}>{props.description}</p>
               </div>
 
               <div className={styles.sliderController}>

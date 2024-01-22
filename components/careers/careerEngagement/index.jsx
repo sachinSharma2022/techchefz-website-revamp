@@ -19,7 +19,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 
-const EmployeeEngagement = () => {
+const CareerEngagement = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const valueData = [
     {
@@ -45,9 +45,16 @@ const EmployeeEngagement = () => {
       content:
         "We believe in a customer-centric ethic without and people-centric paradigm within.",
     },
+    {
+      icon: <Icons.PerformanceIcon width={56} height={56} />,
+      title: "Excellence in Delivery",
+      imgUrl: "/images/innovation.png",
+      content:
+        "We believe in a customer-centric ethic without and people-centric paradigm within.",
+    },
   ];
   return (
-    <section className={`${styles.employeeEngagement} technology-value`}>
+    <section className={`${styles.careerEngagement} technology-value`}>
       <div className={cn("primary-container")}>
         <div className={styles.headSection}>
           <h6 className={styles.valuesTitle}>Employee Engagement</h6>
@@ -85,11 +92,11 @@ const EmployeeEngagement = () => {
           <Swiper
             onSwiper={setThumbsSwiper}
             spaceBetween={10}
-            slidesPerView={3}
+            slidesPerView={4}
             freeMode={true}
             watchSlidesProgress={true}
             modules={[FreeMode, Navigation, Thumbs]}
-            className="slide-thumb-grid slide-thumb-grid-4"
+            className="slide-thumb-grid"
           >
             {valueData.map((data, index) => (
               <SwiperSlide key={index}>
@@ -108,4 +115,4 @@ const EmployeeEngagement = () => {
   );
 };
 
-export default EmployeeEngagement;
+export default CareerEngagement;

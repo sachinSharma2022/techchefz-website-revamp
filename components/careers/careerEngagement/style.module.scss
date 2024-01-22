@@ -1,14 +1,11 @@
 @import "~/styles/partials/config";
 
-.employeeEngagement {
+.careerEngagement {
    padding: spacing(section-primary-padding);
+   background: color(bg-soft);
 
    @include mobile{
       padding: 1.5rem;
-   }
-
-   .headSection {
-
    }
 
    .valuesTitle {

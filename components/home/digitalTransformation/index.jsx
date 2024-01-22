@@ -32,12 +32,6 @@ const DigitalTransformation = () => {
       digitalText:
         "We help our clients to attract the relevant audience for their business with our advanced technology for a higher conversion rate. We perform advance digital operations like -",
     },
-    {
-      img: "/images/digital-trans.png",
-      digitalHeading: "Customer Experience (CX).",
-      digitalText:
-        "We help our clients to attract the relevant audience for their business with our advanced technology for a higher conversion rate. We perform advance digital operations like -",
-    },
   ];
   const settings = {
     className: "center",
