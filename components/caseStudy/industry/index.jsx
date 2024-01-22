@@ -1,12 +1,12 @@
-import React from "react";
-import styles from "./style.module.scss";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
+import { cn } from "@/lib/utils";
+import styles from "./style.module.scss";
 
 const Industry = () => {
   return (
     <section className={styles.industry}>
-      <div className="container">
+      <div className={cn("primary-container")}>
         <div className="row justify-content-between">
           <div className="col-md-4 col-lg-4">
             <div className={styles.industryLeft}>

@@ -1,0 +1,64 @@
+@import "~/styles/partials/config";
+
+.leftDrawerModal {
+  background-color: color(dark-gray);
+  color: color(primary-white);
+  width: 500px;
+  border: 0.14rem solid color(primary-black);
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100dvh;
+  overflow-y: auto;
+  z-index: 9999;
+  animation: 0.3s slide-right;
+
+  @keyframes slide-right {
+    from {
+      right: -100%;
+    }
+    to {
+      right: 0%;
+    }
+  }
+
+  .modalTitle {
+    display: flex;
+    justify-content: space-between;
+    background-color: color(primary-white);
+    color: color(text-primary);
+    padding: 1.5rem;
+
+    .title {
+      font-size: text(xl);
+      font-weight: 500;
+      line-height: 2rem;
+    }
+
+    svg {
+      cursor: pointer;
+    }
+  }
+}
+
+.darkThemeStyle {
+  background-color: color(primary-white);
+
+  .modalTitle {
+    background-color: color(primary-black);
+    color: color(primary-white);
+  }
+
+  .modalTop {
+    background-color: color(primary-black);
+    color: color(primary-white);
+  }
+}
+
+// Overlay Style
+.overlayStyle {
+  background: rgba(color(primary-black), 0.6);
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+}

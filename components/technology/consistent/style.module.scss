@@ -8,6 +8,11 @@
     padding: 1.5rem;
   }
 
+  &.consistentDark{
+    background-color: color(dark-bg);
+    color: #fff;
+  }
+
   .consistentImg {
     margin-bottom: 5rem;
     img {

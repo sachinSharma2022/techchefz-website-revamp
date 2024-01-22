@@ -1,9 +1,14 @@
+"use client";
 import React from "react";
-
-import styles from "./styles.module.scss";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import { cn } from "@/lib/utils";
 
+import styles from "./styles.module.scss";
+import TitleCard from "@/components/common/titleCard";
+
 const Challenges = (props) => {
+  const { theme, setTheme } = useContext(MyContext);
   const cardData = [
     {
       title: "Navigating Cloud Integration Complexities",
@@ -22,22 +27,25 @@ const Challenges = (props) => {
     },
   ];
   return (
-    <section className={cn(styles.challenges , props.className)}>
-      <div className="row">
-        <div className="col-md-6 col-lg-6">
+    <section
+      className={cn(
+        styles.challenges,
+        props.className,
+        theme ? styles.challengesDark : ""
+      )}
+    >
+      <div className={cn("primary-container")}>
+        <div className={styles.headSec}>
           <h6 className={styles.challengeTitle}>Challenges</h6>
           <h3 className={styles.challengeHeading}>
             Overcoming IT Hurdles: Key Challenges
           </h3>
         </div>
-      </div>
-      <div className={styles.challengesCards}>
-        {cardData.map((data, index) => (
-          <div key={index} className={styles.challengesCard}>
-            <h5>{data.title} </h5>
-            <p>{data.content}</p>
-          </div>
-        ))}
+        <div className={styles.challengesCards}>
+          {cardData.map((data, index) => (
+            <TitleCard key={index} title={data.title} content={data.content} />
+          ))}
+        </div>
       </div>
     </section>
   );

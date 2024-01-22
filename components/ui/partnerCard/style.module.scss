@@ -4,8 +4,9 @@
   background-color: color(bg-soft);
   width: 100%;
   padding: 2.5rem;
-  border: 1px solid rgba(17, 17, 17, 0.12);
+  border: 0.14rem solid rgba(color(text-primary), 0.12);
   border-radius: 1.25rem;
+  text-align: left;
 
   .cardImg {
    display: flex;
@@ -25,8 +26,8 @@
     }
 
     svg {
-      width: 20px;
-      height: 20px;
+      width: 15px;
+      height: 15px;
     }
   }
 

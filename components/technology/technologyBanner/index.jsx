@@ -1,12 +1,17 @@
+"use client"
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
-import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
+
+import styles from "./style.module.scss";
 
 const TechnologyBanner = () => {
+  const { theme, setTheme } = useContext(MyContext);
   return (
-    <section className={`${styles.landingBannerStyle}`}>
+    <section className={`${styles.landingBannerStyle} ${theme ? styles.landingBannerDark : ""}`}>
       <div className={cn("primary-container", styles.flexContainer)}>
         <h1 className={styles.title}>
           Innovating
@@ -23,7 +28,7 @@ const TechnologyBanner = () => {
           </p>
           <Link href="/contact-us">
             <Button variant="blueBtn" className={styles.headerBtn} size="md">
-              Let’s Work Together{" "}
+              Let’s Work Together
               <Icons.ArrowRight size={20} className="ms-2" />
             </Button>
           </Link>

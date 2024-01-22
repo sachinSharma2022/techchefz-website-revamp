@@ -4,6 +4,7 @@ import React from "react";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 import styles from "./style.module.scss";
+import { cn } from "@/lib/utils";
 
 const CustomDropdown = ({ title, value, options, onChange }) => {
   const { theme, setTheme } = useContext(MyContext);

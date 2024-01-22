@@ -3,6 +3,7 @@ import React from "react";
 import styles from "./style.module.scss";
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
+import { cn } from "@/lib/utils";
 
 const Goals = () => {
   const listData = [
@@ -21,7 +22,7 @@ const Goals = () => {
   ];
   return (
     <section className={styles.goals}>
-      <div className="container">
+      <div className={cn("primary-container")}>
         <div className="row justify-content-between">
           <div className="col-md-3 col-lg-3">
             <h5 className={styles.goalsTitle}>Goals & Objectives</h5>

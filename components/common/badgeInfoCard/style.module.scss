@@ -12,7 +12,7 @@
    color: color(text-primary);
 
    &:hover{
-      border: 2px solid color(heading-liner);
+      border-color: color(heading-liner);
    }
 
    .cardHeader {
@@ -55,7 +55,7 @@
          color: color(text-primary);
          border-radius: 0.5rem;
          background-color: color(primary-white);
-         border: 1px solid rgba(color(text-primary), 0.17);
+         border: 0.14rem solid rgba(color(text-primary), 0.17);
          font-weight: 400;
          height: 30px;
          line-height: 30px;

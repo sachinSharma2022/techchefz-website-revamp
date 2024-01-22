@@ -7,21 +7,6 @@
   padding: spacing(section-primary-padding);
   position: relative;
 
-  &.ourTeamDark {
-    background-color: color(input-bg);
-    color: color(primary-white);
-
-    .ourTeamHead {
-      .tabWrapper {
-        background-color: color(dark-tab);
-         min-width: 380px;
-        button {
-          color: rgba(color(primary-white), 0.8);
-        }
-      }
-    }
-  }
-
   .ourTeamHead {
     display: flex;
     justify-content: space-between;
@@ -52,7 +37,7 @@
     button {
       white-space: nowrap;
       width: 100%;
-      
+
       span {
         padding: 0 2rem;
         height: 2.375rem;
@@ -79,9 +64,13 @@
     margin-top: 3rem;
 
     .teamCardBg {
-      border: 1px solid transparent;
-      background: linear-gradient(322deg, #4CC3DA 20.24%, #3376D9 49.39%, #2720A9 102.1%);
-      background-blend-mode: soft-light, normal;
+      border: 0.14rem solid color(primary-white);
+      background: linear-gradient(
+        322deg,
+        #4cc3da 20.24%,
+        #3376d9 49.39%,
+        #2720a9 102.1%
+      );
       height: 32.5rem;
       width: 100%;
       border-radius: 0.7rem;
@@ -96,13 +85,13 @@
         left: 0;
         width: 100%;
         height: 100%;
-        content: '';
-        background: url('../../../public/images/noise-bg.svg');
+        content: "";
+        background: url("../../../public/images/noise-bg.svg");
         background-size: cover;
       }
 
       &:hover {
-        border-color:  color(border-light-blue);
+        border-color: color(border-light-blue);
       }
 
       .teamImg {
@@ -128,103 +117,71 @@
           opacity: 0.6;
         }
       }
-      .linkdinIcon {
+      .linkedInIcon {
         position: absolute;
         bottom: 1rem;
         left: 1rem;
+        z-index: 1;
       }
+    }
+  }
+
+  // Dark theme style
+  &.ourTeamDark {
+    background-color: color(input-bg);
+    color: color(primary-white);
+
+    .ourTeamHead {
+      .tabWrapper {
+        background-color: color(dark-tab);
+        min-width: 380px;
+        button {
+          color: rgba(color(primary-white), 0.8);
+        }
+      }
+    }
+
+    .teamCardBg {
+      border: 0.14rem solid color(input-bg);
     }
   }
 }
 
-.teamModal {
-  background-color: color(dark-gray);
-  color: color(primary-white);
-  width: 500px;
-  border: 1px solid color(primary-black);
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100dvh;
-  overflow-y: auto;
-  z-index: 9999;
-  animation: 0.3s slide-right;
+// Modal Body Content section
+.modalBody {
 
-  @keyframes slide-right {
-    from {
-      right: -100%;
-    }
-    to {
-      right: 0%;
-    }
-  }
-  
-
-  .modalTop {
-    background-color: color(primary-white);
-    color: color(text-primary);
+  .infoSec {
     padding: 1.5rem;
-
-    .modalTitle {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 1.5rem;
-
-      .title {
-        font-size: text(xl);
-        font-weight: 500;
-        line-height: 2rem;
-      }
-
-      svg {
-        cursor: pointer;
-      }
-    }
-
-    .modalImg {
-      margin-bottom: 2rem;
-      img {
-        border-radius: 1rem;
-      }
-    }
-    .teamName {
-      font-size: text(xl);
-      font-weight: 500;
-      line-height: 2rem;
-    }
-    .teamRole {
-      font-size: text(normal);
-      font-weight: 400;
-      line-height: 1.5rem;
-      opacity: 0.6;
-    }
   }
-  .modalBottom {
-    padding: 1.5rem;
 
-    .modalContent {
-      font-size: text(lg);
-      font-weight: 400;
-      line-height: 1.875rem;
-      opacity: 0.6;
-    }
-    .teamMail {
-      color: color(primary-white);
-      font-weight: 400;
-      line-height: 1.875rem;
-      font-size: text(lg);
-      margin-bottom: 2.5rem;
-    }
+  .modalContent {
+    font-size: text(lg);
+    font-weight: 400;
+    line-height: 1.875rem;
+    opacity: 0.6;
+  }
+  .teamMail {
+    color: color(primary-white);
+    font-weight: 400;
+    line-height: 1.875rem;
+    font-size: text(lg);
+    margin-bottom: 2.5rem;
+  }
 
-    h6 {
-      font-size: text(lg);
-      font-weight: 500;
-      line-height: 1.75rem;
-      margin-bottom: 1.5rem;
-    }
+  h6 {
+    font-size: text(lg);
+    font-weight: 500;
+    line-height: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .socialSection {
+    margin-top: 2.5rem;
 
     .modalIcons {
-      .linkdinIcon {
+      display: flex;
+      gap: 0 1.25rem;
+      .linkedinIcon {
         margin-right: 1.25rem;
       }
       .twitter {
@@ -234,11 +191,69 @@
       }
     }
   }
+
+  .modalInfo {
+    background-color: color(primary-white);
+    padding: 1.5rem;
+    color: color(text-primary);
+    
+    .teamName {
+      font-size: text(xl);
+      font-weight: 500;
+      line-height: 2rem;
+    }
+
+    .teamRole {
+      font-size: text(normal);
+      font-weight: 400;
+      line-height: 1.5rem;
+      opacity: 0.6;
+    }
+  
+    .modalTitle {
+      display: flex;
+      justify-content: space-between;
+      background-color: color(primary-white);
+      color: color(text-primary);
+      padding: 1.5rem;
+  
+      .title {
+        font-size: text(xl);
+        font-weight: 500;
+        line-height: 2rem;
+      }
+  
+      svg {
+        cursor: pointer;
+      }
+    }
+  
+    .modalImg > div {
+      margin-bottom: 2rem;
+      height: 250px;
+      width: 208px;
+      border-radius: 1rem;
+      overflow: hidden;
+  
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &.darkThemeStyle {
+    color: color(text-primary);
+
+    .teamMail {
+      color: color(text-primary);
+    }
+
+    .modalInfo {
+      background-color: color(primary-black);
+      color: color(primary-white);
+    }
+  }
 }
 
-
-.overlayStyle {
-  background: rgba(color(primary-black), 0.6);
-  position: fixed;
-  inset: 0;
-}

@@ -28,7 +28,7 @@
   }
 
   .serviceBtn {
-    border-bottom: 1px solid rgba(color(text-primary), 0.12);
+    border-bottom: 0.14rem solid rgba(color(text-primary), 0.12);
     padding-bottom: 2.5rem;
     margin-bottom: 2.5rem;
     display: flex;
@@ -44,7 +44,7 @@
       &:hover {
         background-color: color(primary-white);
         color: color(text-primary);
-        border: 1px solid var(--Gradient, #1e8af2);
+        border: 0.14rem solid var(--Gradient, #1e8af2);
       }
     }
   }
@@ -94,7 +94,7 @@
         border-radius: 0.75rem;
         background: color(primary-white);
         padding: 2rem;
-        border: 1px solid transparent;
+        border: 0.14rem solid transparent;
 
         &.accordionShow {
           border-color: color(heading-liner);
@@ -135,7 +135,7 @@
         }
       }
       .accordionPanel {
-        border-top: 1px solid rgba(color(text-primary), 0.12);
+        border-top: 0.14rem solid rgba(color(text-primary), 0.12);
         padding-top: 2.5rem;
         margin-top: 2.5rem;
       }
@@ -166,7 +166,7 @@
       }
 
       .btnSection {
-        border-top: 1px solid rgba(color(text-primary), 0.12);
+        border-top: 0.14rem solid rgba(color(text-primary), 0.12);
         padding-top: 2.5rem;
         margin-top: 2.5rem;
       }
