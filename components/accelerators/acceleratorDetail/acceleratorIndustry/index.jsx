@@ -9,6 +9,7 @@ import { Icons } from "@/components/icons";
 import styles from "./style.module.scss";
 
 const AcceleratorIndustry = () => {
+  const { theme, setTheme } = useContext(MyContext);
   return (
     <section className={`${styles.industry} ${theme ? styles.industryDark : ""} `}>
       <div className="primary-container">
