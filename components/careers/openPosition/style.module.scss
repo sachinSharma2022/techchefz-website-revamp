@@ -169,6 +169,15 @@
             border-top: 0.14rem solid rgba(color(text-primary), 0.12);
             padding-top: 2.5rem;
             margin-top: 2.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+
+            button {
+               &:first-child {
+                  white-space: nowrap;
+               }
+            }
          }
       }
    }

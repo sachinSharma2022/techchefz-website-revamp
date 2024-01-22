@@ -8,11 +8,14 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import styles from "./style.module.scss";
 
-
 const CareerBanner = () => {
   const { theme, setTheme } = useContext(MyContext);
   return (
-    <section className={`${styles.landingBannerStyle} ${theme ? styles.landingBannerDark : ""}`}>
+    <section
+      className={`${styles.landingBannerStyle} ${
+        theme ? styles.landingBannerDark : ""
+      }`}
+    >
       <div className={cn("primary-container")}>
         <div className={styles.contentSection}>
           <h1 className={styles.title}>

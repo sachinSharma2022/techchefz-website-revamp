@@ -9,6 +9,7 @@ import SearchInput from "@/components/ui/searchInput";
 import { cn } from "@/lib/utils";
 
 import styles from "./style.module.scss";
+import SmoothDropdown from "@/components/ui/smoothDropdownButton";
 
 const OpenPosition = () => {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
@@ -179,8 +180,30 @@ const OpenPosition = () => {
     },
   ];
 
+  const options = [
+    {
+      label: "Linkedin",
+      link: "https://in.linkedin.com/",
+      icon: "/images/icons/linkedin.png",
+    },
+    {
+      label: "Indeed",
+      link: "https://in.indeed.com/",
+      icon: "/images/icons/indeed.png",
+    },
+    {
+      label: "Naukri",
+      link: "https://www.naukri.com/",
+      icon: "/images/icons/naukri.png",
+    },
+  ];
+
   return (
-    <section className={`${styles.openPosition} ${theme ? styles.openPositionDark : ""}`}>
+    <section
+      className={`${styles.openPosition} ${
+        theme ? styles.openPositionDark : ""
+      }`}
+    >
       <div className={cn("primary-container")}>
         <div className={styles.openPositionHeader}>
           <h4 className={styles.openPositionHeading}>
@@ -285,16 +308,15 @@ const OpenPosition = () => {
                             </ul>
 
                             <div className={styles.btnSection}>
-                              <Button
-                                variant="blueBtn"
-                                className="me-4"
-                                size="md"
-                              >
+                              <Button variant="blueBtn" size="md">
                                 More Info
                               </Button>
-                              <Button variant="outline" size="md">
-                                Apply Through <Icons.ArrowDown size={18} />
-                              </Button>
+                              <SmoothDropdown
+                                options={options}
+                                buttonLabel="Apply through"
+                                variant="outline"
+                                size="md"
+                              />
                             </div>
                           </div>
                         </Disclosure.Panel>

@@ -3,19 +3,30 @@
 .dropdownDiv {
   position: relative;
   display: inline-block;
-  width: 100%;
 
   .dropdownContent {
     position: absolute;
-    top: 3.9rem;
+    top: calc(100% + 0rem);
     background-color: color(primary-white);
     border-radius: 0.75rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.5rem 1rem rgba(color(primary-black), 0.2);
     z-index: 1;
-    opacity: 0; 
+    opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease;
     width: 100%;
+    z-index: 99;
+    animation: slide-down 0.5s ease-in-out;
+
+    @keyframes slide-down {
+      0% {
+        opacity: 0;
+        top: 90%;
+      }
+      100% {
+        opacity: 1;
+        top: 100%;
+      }
+    }
  
     a {
       font-weight: 400;
