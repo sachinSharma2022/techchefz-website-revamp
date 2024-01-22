@@ -2,13 +2,15 @@
 
 .cmsTypeStyle {
   padding: spacing(section-primary-padding);
-  @include mobile {
+  @include mobile-tablet-p {
     padding: spacing(section-mob-padding);
+    padding-block: 3.75rem 3.75rem;
+    padding-top: 0;
   }
   .careerRow {
     margin-bottom: 5rem;
     max-width: 49.1875rem;
-    @include mobile {
+    @include mobile-tablet-p {
       margin-bottom: 2.5rem;
     }
   }
@@ -21,7 +23,7 @@
     color: color(text-primary);
     text-transform: uppercase;
     letter-spacing: 0.2rem;
-    @include mobile {
+    @include mobile-tablet-p {
       margin-bottom: 0.75rem;
     }
   }
@@ -31,11 +33,12 @@
     line-height: 3.375rem;
     max-width: 85%;
 
-    @include mobile {
-      font-size: text(xxxl);
+    @include mobile-tablet-p {
+      font-size: 2rem;
       line-height: 2.5rem;
       padding-right: 0;
-      margin-bottom: text(lg);
+      margin-bottom: 0;
+      max-width: 100%;
     }
   }
 
@@ -43,6 +46,9 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
     @include mobile {
       grid-template-columns: repeat(1, 1fr);
     }
@@ -100,7 +106,6 @@
   }
 }
 
-
 // Modal Body Content section
 .modalBody {
   padding: 1.5rem;
@@ -118,7 +123,6 @@
       width: 100%;
       object-fit: contain;
     }
-  
   }
 
   .modalContent {
@@ -127,7 +131,7 @@
     line-height: 1.875rem;
     opacity: 0.6;
     color: color(text-primary);
-    border-top: 0.14rem solid rgba(color(text-primary),0.12);
+    border-top: 0.14rem solid rgba(color(text-primary), 0.12);
     padding-top: 24px;
   }
   .teamMail {
@@ -174,7 +178,7 @@
 
     .modalContent {
       color: color(primary-white);
-      border-color: rgba(color(primary-white),0.12);
+      border-color: rgba(color(primary-white), 0.12);
     }
 
     .teamMail {
