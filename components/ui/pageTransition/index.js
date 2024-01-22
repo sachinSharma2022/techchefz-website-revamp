@@ -5,12 +5,6 @@ import { text, curve, translate } from "./anim";
 import styles from "./style.module.scss";
 import { ImageCustom } from "../imageCustom";
 
-const routes = {
-  "/": "Home",
-  "/about": "About",
-  "/contact": "Contact",
-};
-
 const anim = (variants) => {
   return {
     variants,
@@ -77,7 +71,7 @@ const SVG = ({ height, width }) => {
     `;
 
   return (
-    <motion.svg className={styles.customsvg} {...anim(translate)}>
+    <motion.svg className={styles.customSvg} {...anim(translate)}>
       <motion.path {...anim(curve(initialPath, targetPath))} />
     </motion.svg>
   );

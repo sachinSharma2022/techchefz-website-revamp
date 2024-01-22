@@ -1,28 +1,27 @@
 @import "../../../styles/partials/config";
-.curve{
-    .customsvg, .background{
-        position: fixed;
-        height: calc(100vh + 600px);
-        width: 100vw;
-        pointer-events: none;
-        left: 0;
-        top: 0;
-        z-index: 99999;
-       
-    }
-    .background{
-        background-color: black;
-        transition: opacity 0s linear 0.1s;
-        
-    }
-    .route{
-        z-index: 999999;
-        position: absolute;
-        left: 50%;
-        top: 40%;
-        color: white;
-        font-size: 46px;
-        transform: translateX(-50%);
-        text-align: center;
-    }
+.curve {
+  .customSvg,
+  .background {
+    position: fixed;
+    height: calc(100vh + 600px);
+    width: 100vw;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    z-index: 99999;
+  }
+  .background {
+    background-color: black;
+    transition: opacity 0s linear 0.1s;
+  }
+  .route {
+    z-index: 999999;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    color: white;
+    font-size: 46px;
+    transform: translateX(-50%);
+    text-align: center;
+  }
 }
