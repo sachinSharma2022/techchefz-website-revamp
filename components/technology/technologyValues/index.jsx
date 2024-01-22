@@ -29,7 +29,7 @@ const TechnologyValues = () => {
       icon: <Icons.Market width={56} height={56} />,
       title: "Innovation",
       imgUrl:
-        "https://images.unsplash.com/photo-1494389945381-0fe114b8ea4b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fElubm92YXRpb258ZW58MHx8MHx8fDA%3D",
+        "https://images.unsplash.com/photo-1622675363311-3e1904dc1885?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       content:
         "We believe in a customer-centric ethic without and people-centric paradigm within.",
     },
@@ -37,14 +37,15 @@ const TechnologyValues = () => {
       icon: <Icons.Rates width={56} height={56} />,
       title: "Customer Success",
       imgUrl:
-        "https://images.unsplash.com/photo-1457131760772-7017c6180f05?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fEN1c3RvbWVyJTIwU3VjY2Vzc3xlbnwwfHwwfHx8MA%3D%3D",
+        "https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       content:
         "We believe in a customer-centric ethic without and people-centric paradigm within.",
     },
     {
       icon: <Icons.PerformanceIcon width={56} height={56} />,
       title: "Excellence in Delivery",
-      imgUrl: "/images/innovation.png",
+      imgUrl:
+        "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       content:
         "We believe in a customer-centric ethic without and people-centric paradigm within.",
     },
