@@ -7,7 +7,8 @@
         pointer-events: none;
         left: 0;
         top: 0;
-        z-index: 1;
+        z-index: 99999;
+       
     }
     .background{
         background-color: black;
@@ -15,12 +16,12 @@
         
     }
     .route{
+        z-index: 999999;
         position: absolute;
         left: 50%;
         top: 40%;
         color: white;
         font-size: 46px;
-        z-index: 3;
         transform: translateX(-50%);
         text-align: center;
     }
