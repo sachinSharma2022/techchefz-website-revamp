@@ -19,30 +19,18 @@ const Card = ({ ...props }) => {
     1,
     props.targetScale,
   ]);
-  console.log(scale);
-  return (
-    <motion.div className={styles.cardSec} style={{ scale }}>
-      <div className={styles.projectImg}>
-        <ImageCustom
-          src={props.src}
-          width={1360}
-          height={300}
-          alt="projectImg"
-        />
-      </div>
+console.log(scale);
+return (
+  <motion.div className={styles.cardSec} style={{ scale }}>
+          <div className={styles.projectImg}>
+            <ImageCustom
+              src={props.src}
+              width={1360}
+              height={300}
+              alt="projectImg"
+            />
+          </div>
 
-<<<<<<< HEAD
-      <div className={styles.cardContentStyle}>
-        <div>
-          <motion.h4
-            variants={opacity}
-            animate={isInView ? "open" : "closed"}
-            className={styles.projectBrand}
-          >
-            International Motorcycle Brand.
-          </motion.h4>
-        </div>
-=======
           <div className={styles.cardContentStyle}>
             <h2 className={styles.projectBrand}>
             {
@@ -54,11 +42,10 @@ const Card = ({ ...props }) => {
 
               }
             </h2>
->>>>>>> bba3285 (project section  animation done)
 
-        <p ref={description} className={styles.brandFromText}>
-          {props.summary.split(" ").map((word, index) => {
-            return (
+            <p ref={description} className={styles.brandFromText}>
+            {props.summary.split(" ").map((word, index) => {
+                         return (
               <span key={index} className={styles.mask}>
                 <motion.span
                   variants={slideUp}
@@ -69,33 +56,33 @@ const Card = ({ ...props }) => {
                   {word}
                 </motion.span>
               </span>
-            );
-          })}
-        </p>
-        <motion.div
+);
+                                })}
+            </p>
+            <motion.div
           variants={opacity}
           animate={isInView ? "open" : "closed"}
           className={styles.projectBtn}
         >
-          <Link href="/portfolio" className={styles.badgeStyle}>
-            Web Design
-          </Link>
-          <Link href="/portfolio" className={styles.badgeStyle}>
-            Dashboard Design
-          </Link>
-          <Link href="/portfolio" className={styles.badgeStyle}>
-            UI
-          </Link>
-          <Link href="/portfolio" className={styles.badgeStyle}>
-            UX
-          </Link>
-          <Link href="/portfolio" className={styles.badgeStyle}>
-            Responsive
-          </Link>
+              <Link href="/portfolio" className={styles.badgeStyle}>
+                Web Design
+              </Link>
+              <Link href="/portfolio" className={styles.badgeStyle}>
+                Dashboard Design
+              </Link>
+              <Link href="/portfolio" className={styles.badgeStyle}>
+                UI
+              </Link>
+              <Link href="/portfolio" className={styles.badgeStyle}>
+                UX
+              </Link>
+              <Link href="/portfolio" className={styles.badgeStyle}>
+                Responsive
+              </Link>
+            </motion.div>
+          </div>
         </motion.div>
-      </div>
-    </motion.div>
-  );
+);
 };
 
 const Projects = () => {
@@ -103,31 +90,9 @@ const Projects = () => {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
-<<<<<<< HEAD
-    offset: ["start start", "end end"],
-  });
-  const projects = [
-    {
-      src: "/images/ICICI.png",
-      summary:
-        "Royal Enfield is a global brand since 1901, has a geographical presence in over 70 countries. The brand delivers consistent, omnichannel customer experiences, achieves scalability, diversifying into countries, and continents.",
-    },
-    {
-      src: "/images/project-re.png",
-      summary:
-        "Royal Enfield is a global brand since 1901, has a geographical presence in over 70 countries. The brand delivers consistent, omnichannel customer experiences, achieves scalability, diversifying into countries, and continents.",
-    },
-    {
-      src: "/images/Manipal.png",
-      summary:
-        "Royal Enfield is a global brand since 1901, has a geographical presence in over 70 countries. The brand delivers consistent, omnichannel customer experiences, achieves scalability, diversifying into countries, and continents.",
-    },
-  ];
-=======
     offset: ['start start', 'end end']
   })
   const projects=[{src:"/images/ICICI.png",summary:"Royal Enfield is a global brand since 1901, has a geographical presence in over 70 countries. The brand delivers consistent, omnichannel customer experiences, achieves scalability, diversifying into countries, and continents.",title:"International Motorcycle Brand."},{src:"/images/project-re.png",summary:"Royal Enfield is a global brand since 1901, has a geographical presence in over 70 countries. The brand delivers consistent, omnichannel customer experiences, achieves scalability, diversifying into countries, and continents.",title:"International Motorcycle Brand."},{src:"/images/Manipal.png",summary:"Royal Enfield is a global brand since 1901, has a geographical presence in over 70 countries. The brand delivers consistent, omnichannel customer experiences, achieves scalability, diversifying into countries, and continents.",title:"International Motorcycle Brand."}]
->>>>>>> bba3285 (project section  animation done)
 
   const tagSection = [
     "Web Design",
@@ -168,9 +133,9 @@ const Projects = () => {
           </div>
         </div>
         <div ref={container} className={styles.cards}>
-          {projects.map((project, i) => {
-            const targetScale = 1 - (projects.length - i) * 0.05;
-            return (
+      {projects.map((project, i) => {
+          const targetScale = 1 - (projects.length - i) * 0.05;
+          return (
               <Card
                 key={`p_${i}`}
                 i={i}
@@ -180,7 +145,7 @@ const Projects = () => {
                 targetScale={targetScale}
               />
             );
-          })}
+        })}
         </div>
       </div>
     </section>
