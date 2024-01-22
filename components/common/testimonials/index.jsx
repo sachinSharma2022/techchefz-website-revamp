@@ -73,7 +73,8 @@ const Testimonials = (props) => {
         theme
           ? styles.testimonialsStyleDark
           : `${styles.testimonialsStyleDark}, "dark-sliderTestimonial"`,
-        "testimonial-style"
+        "testimonial-style",
+        props.className
       )}
     >
       <div className={cn(styles.testimonialContainer)}>

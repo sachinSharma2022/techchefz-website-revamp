@@ -26,7 +26,7 @@ const Footer = () => {
         <div className="row">
           <div className="col-md-12 col-lg-6">
             <div className={styles.footLeftPanel}>
-              <p>
+              <p className={styles.description}>
                 Stay at the forefront of innovation, trends, and industry
                 insights by subscribing to our newsletter.
               </p>
