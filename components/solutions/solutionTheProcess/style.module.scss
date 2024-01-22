@@ -66,4 +66,17 @@
       margin-bottom: 20px;
     }
   }
+
+  //Dark mode style
+  &.theProcessDark{
+    color: color(primary-white);
+
+    .heading{
+      color: color(primary-white);
+    }
+
+    .processCard{
+      background-color: color(text-primary);
+    }
+  }
 }

@@ -1,10 +1,12 @@
 "use client";
-
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 
 const SolutionTheProcess = () => {
+  const { theme, setTheme } = useContext(MyContext);
   const accordionData = [
     {
       title: "Navigating Cloud Integration Complexities",
@@ -24,7 +26,7 @@ const SolutionTheProcess = () => {
     },
   ];
   return (
-    <section className={styles.theProcessStyle}>
+    <section className={`${styles.theProcessStyle} ${theme ? styles.theProcessDark : ""}`}>
       <div className={cn("primary-container", styles.flexContainer)}>
         <div className={styles.headSection}>
           <div>
