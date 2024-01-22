@@ -289,6 +289,10 @@
         &:hover {
           background-color: rgba(color(text-primary), 0.12);
         }
+
+        svg path {
+          fill: none;
+        }
       }
     }
     .headerBtn {

@@ -8,11 +8,13 @@ import Service from "@/components/home/service";
 import TechnologyStack from "@/components/home/technologyStack";
 import WeAreFuture from "@/components/home/weAreFuture";
 import VideoCustom from "@/components/ui/videoCustom";
+import Curve from "@/components/ui/pageTransition";
 
 const HomePage = () => {
   return (
     <>
-      <LandingBanner />
+     <Curve>
+     <LandingBanner />
       <VideoCustom src="global.mp4" />
       <WeAreFuture />
       <Service />
@@ -22,6 +24,8 @@ const HomePage = () => {
       <DigitalTransformation />
       <HomeTestimonials />
       <LetsWork />
+     </Curve>
+      
     </>
   );
 };
