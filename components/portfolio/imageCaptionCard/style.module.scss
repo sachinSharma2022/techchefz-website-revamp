@@ -100,4 +100,13 @@
       }
     }
   }
+
+
+  //Dark mode style
+  &.captionCardDark{
+    .imageCard{
+      background-color: color(text-primary);
+      color: color(primary-white);
+    }
+  }
 }

@@ -1,4 +1,7 @@
+"use client"
 import { Icons } from "@/components/icons";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import CustomDropdown from "@/components/ui/customDropdown";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { cn } from "@/lib/utils";
@@ -6,6 +9,7 @@ import styles from "./style.module.scss";
 import Link from "next/link";
 
 const ImageCaptionCard = () => {
+  const { theme, setTheme } = useContext(MyContext);
   const imageCaptionData = [
     {
       description: " Nike’s Expansion and Global Outlook",
@@ -61,7 +65,7 @@ const ImageCaptionCard = () => {
   return (
     <section className="primary-container">
       {/* Dropdown Section */}
-      <div className={`${styles.dropdownStyle}`}>
+      <div className={`${styles.dropdownStyle} ${theme ? styles.dropdownDark : ""}`}>
         <div className={`${styles.inputDropPadding}`}>
           <CustomDropdown
             title="Services"
@@ -94,7 +98,7 @@ const ImageCaptionCard = () => {
         </div>
       </div>
 
-      <div className={cn(styles.captionCardStyle, "captionCardSection")}>
+      <div className={cn(styles.captionCardStyle,theme ? styles.captionCardDark : "" ,"captionCardSection")}>
         {imageCaptionData.map((data, index) => (
           <Link href="/case-study" key={index} className={`grid-${index}`}>
             <div className={`${styles.imageCard} card`}>
