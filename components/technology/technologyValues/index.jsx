@@ -50,7 +50,11 @@ const TechnologyValues = () => {
     },
   ];
   return (
-    <section className={`${styles.technologyValues} ${theme ? styles.technologyValuesDark : ""} technology-value`}>
+    <section
+      className={`${styles.technologyValues} ${
+        theme ? styles.technologyValuesDark : ""
+      } technology-value`}
+    >
       <div className={cn("primary-container")}>
         <div className={styles.headSection}>
           <h6 className={styles.valuesTitle}>Our Values</h6>

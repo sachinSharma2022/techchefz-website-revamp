@@ -20,9 +20,7 @@ import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { cn } from "@/lib/utils";
 
-import styles from "./style.module.scss";
-
-const EmployeeEngagement = () => {
+const CareerEngagement = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const { theme, setTheme } = useContext(MyContext);
   const valueData = [
@@ -39,6 +37,13 @@ const EmployeeEngagement = () => {
       title: "Customer Success",
       imgUrl:
         "https://images.unsplash.com/photo-1457131760772-7017c6180f05?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fEN1c3RvbWVyJTIwU3VjY2Vzc3xlbnwwfHwwfHx8MA%3D%3D",
+      content:
+        "We believe in a customer-centric ethic without and people-centric paradigm within.",
+    },
+    {
+      icon: <Icons.PerformanceIcon width={56} height={56} />,
+      title: "Excellence in Delivery",
+      imgUrl: "/images/innovation.png",
       content:
         "We believe in a customer-centric ethic without and people-centric paradigm within.",
     },
@@ -89,11 +94,11 @@ const EmployeeEngagement = () => {
           <Swiper
             onSwiper={setThumbsSwiper}
             spaceBetween={10}
-            slidesPerView={3}
+            slidesPerView={4}
             freeMode={true}
             watchSlidesProgress={true}
             modules={[FreeMode, Navigation, Thumbs]}
-            className="slide-thumb-grid slide-thumb-grid-4"
+            className="slide-thumb-grid"
           >
             {valueData.map((data, index) => (
               <SwiperSlide key={index}>
@@ -112,4 +117,4 @@ const EmployeeEngagement = () => {
   );
 };
 
-export default EmployeeEngagement;
+export default CareerEngagement;
