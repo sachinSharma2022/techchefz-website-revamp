@@ -19,6 +19,7 @@ import { Icons } from "@/components/icons";
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { cn } from "@/lib/utils";
+import styles from "./style.module.scss"
 
 const CareerEngagement = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
