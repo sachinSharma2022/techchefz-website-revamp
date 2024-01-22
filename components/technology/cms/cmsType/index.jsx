@@ -11,7 +11,7 @@ import Link from "next/link";
 import { ImageCustom } from "@/components/ui/imageCustom";
 
 const CmsType = () => {
-  const { theme } = useContext(MyContext);
+  const { theme , setTheme} = useContext(MyContext);
   let [isOpen, setIsOpen] = useState(false);
 
   const typeCard = [
@@ -54,7 +54,7 @@ const CmsType = () => {
   ];
 
   return (
-    <section className={`${styles.cmsTypeStyle}`}>
+    <section className={`${styles.cmsTypeStyle} ${theme ? styles.cmsTypeDark : ""}`}>
       <div className={cn("primary-container")}>
         <div className={styles.careerRow}>
           <p className={styles.projectHighlight}>Types of CMS</p>

@@ -1,68 +1,73 @@
 @import "~/styles/partials/config";
 
 .cmsBannerStyle {
-  padding-inline: spacing(p-120);
-  padding-block: 5rem 5rem;
+   padding-inline: spacing(p-120);
+   padding-block: 5rem 5rem;
 
-  @include mobile {
-    padding: spacing(section-mob-padding);
-  }
+   @include mobile {
+      padding: spacing(section-mob-padding);
+   }
 
-  .flexContainer {
-    display: flex;
-    justify-content: space-between;
-    gap: 8.938rem;
-
-    @include mobile {
-      flex-direction: column;
-      gap: 0;
-    }
- }
-
-  .title {
-    font-size: 4rem;
-    font-weight: 500;
-    line-height: 5rem;
-
-    @include mobile {
-      font-size: 2.75rem;
-      line-height: 3.5rem;
-      margin-bottom: text(xl);
-      word-break: break-word;
-    }
-
-    .titleHighlight {
-      font-size: 4rem;
-      font-weight: 500;
+   .flexContainer {
       display: flex;
-      color: color(heading-liner);
-      background: linear-gradient(
-        118deg,
-        color(primary-blue) 11.5%,
-        color(heading-liner) 55.42%
-      );
-      @include textGradient;
+      justify-content: space-between;
+      gap: 8.938rem;
 
       @include mobile {
-        font-size: 2.75rem;
-        line-height: 3.5rem;
+         flex-direction: column;
+         gap: 0;
       }
-    }
-  }
-  .leadText {
-    font-size: text(lg);
-    font-weight: 400;
-    max-width: 23.375rem;
-    color: rgba(color(text-primary), 0.8);
-    padding-top: 10px;
-    
-    @include mobile {
-      max-width: 100%;
-    }
-  }
+   }
 
-  .flexCol {
-    display: flex;
-    justify-content: flex-end;
-  }
+   .title {
+      font-size: 4rem;
+      font-weight: 500;
+      line-height: 5rem;
+
+      @include mobile {
+         font-size: 2.75rem;
+         line-height: 3.5rem;
+         margin-bottom: text(xl);
+         word-break: break-word;
+      }
+
+      .titleHighlight {
+         font-size: 4rem;
+         font-weight: 500;
+         display: flex;
+         color: color(heading-liner);
+         background: linear-gradient(118deg, color(primary-blue) 11.5%, color(heading-liner) 55.42%);
+         @include textGradient;
+
+         @include mobile {
+            font-size: 2.75rem;
+            line-height: 3.5rem;
+         }
+      }
+   }
+   .leadText {
+      font-size: text(lg);
+      font-weight: 400;
+      max-width: 23.375rem;
+      color: rgba(color(text-primary), 0.8);
+      padding-top: 10px;
+
+      @include mobile {
+         max-width: 100%;
+      }
+   }
+
+   .flexCol {
+      display: flex;
+      justify-content: flex-end;
+   }
+
+   //Dark mode style
+   &.cmsBannerDark {
+      color: color(primary-white);
+
+      .leadText{
+        color: color(primary-white);
+      }
+   }
 }

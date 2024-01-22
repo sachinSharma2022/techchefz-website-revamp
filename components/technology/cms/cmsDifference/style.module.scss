@@ -132,4 +132,21 @@
       }
     }
   }
+
+  &.cmsDifferenceDark{
+    background-color: color(dark-bg);
+    color: color(primary-white);
+
+    .ProjectHighlight{
+      color: color(primary-white);
+    }
+
+    .differenceGridCards{
+      .differenceCmsBox{
+        background-color: color(text-primary);
+        border-color: color(text-primary);
+      }
+    }
+   
+  }
 }

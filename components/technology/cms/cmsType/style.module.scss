@@ -98,6 +98,16 @@
       }
     }
   }
+
+
+  //Dark mode style
+  &.cmsTypeDark{
+    color: color(primary-white);
+
+    .projectHighlight{
+      color: color(primary-white);
+    }
+  }
 }
 
 
