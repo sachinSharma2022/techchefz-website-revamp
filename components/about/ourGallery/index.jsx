@@ -5,31 +5,12 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import Marquee from "react-fast-marquee";
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
+import GridMarqueeGallery from "@/components/common/gridMarqueeGallery";
 
 const OurGallery = () => {
   const { theme, setTheme } = useContext(MyContext);
 
   const galleryImages = [
-    {
-      imgSrc:
-        "https://images.unsplash.com/photo-1590650046871-92c887180603?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8b2ZmaWNlJTIwZXZlbnR8ZW58MHx8MHx8fDA%3D",
-    },
-    {
-      imgSrc:
-        "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8b2ZmaWNlJTIwZXZlbnR8ZW58MHx8MHx8fDA%3D",
-    },
-    {
-      imgSrc:
-        "https://images.unsplash.com/photo-1590649917466-06e6e1c3e92d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fG9mZmljZSUyMGV2ZW50fGVufDB8fDB8fHww",
-    },
-    {
-      imgSrc:
-        "https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fG9mZmljZSUyMGV2ZW50fGVufDB8fDB8fHww",
-    },
-    {
-      imgSrc:
-        "https://images.unsplash.com/photo-1523908511403-7fc7b25592f4?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG9mZmljZSUyMGV2ZW50fGVufDB8fDB8fHww",
-    },
     {
       imgSrc:
         "https://plus.unsplash.com/premium_photo-1664474566083-a9e64eb4c080?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fG9mZmljZSUyMHBhcnR5JTIwZXZlbnR8ZW58MHx8MHx8fDA%3D",
@@ -75,8 +56,7 @@ const OurGallery = () => {
         "https://images.unsplash.com/photo-1577046848358-4623c0859b8a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bmV3JTIweWVhcnxlbnwwfHwwfHx8MA%3D%3D",
     },
     {
-      imgSrc:
-        "https://images.unsplash.com/photo-1608755728617-aefab37d2edd?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGdpZnR8ZW58MHx8MHx8fDA%3D",
+      imgSrc: "",
     },
     {
       imgSrc:
@@ -108,20 +88,7 @@ const OurGallery = () => {
         </div>
       </div>
 
-      <Marquee delay={1}>
-        <div className={`${styles.galleryImages} scroll-gallery-images`}>
-          {galleryImages.map((data, index) => (
-            <div key={index} className={`${styles.galleryImage} card-${index}`}>
-              <ImageCustom
-                src={data.imgSrc}
-                width={300}
-                height={300}
-                alt="gallery-img"
-              />
-            </div>
-          ))}
-        </div>
-      </Marquee>
+      <GridMarqueeGallery />
     </section>
   );
 };
