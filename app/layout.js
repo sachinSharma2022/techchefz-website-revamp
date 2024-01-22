@@ -6,8 +6,6 @@ import { aeonik, helvetica } from "../lib/fonts";
 import { cn } from "../lib/utils";
 
 import "../styles/globals.scss";
-import { AnimatePresence } from 'framer-motion'
-
 
 export const metadata = {
   title: "Home || Techchefz",

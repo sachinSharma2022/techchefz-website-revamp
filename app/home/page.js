@@ -13,19 +13,18 @@ import Curve from "@/components/ui/pageTransition";
 const HomePage = () => {
   return (
     <>
-     <Curve>
-     <LandingBanner />
-      <VideoCustom src="global.mp4" />
-      <WeAreFuture />
-      <Service />
-      <Projects />
-      <OurNumbers />
-      <TechnologyStack />
-      <DigitalTransformation />
-      <HomeTestimonials />
-      <LetsWork />
-     </Curve>
-      
+      <Curve>
+        <LandingBanner />
+        <VideoCustom src="global.mp4" />
+        <WeAreFuture />
+        <Service />
+        <Projects />
+        <OurNumbers />
+        <TechnologyStack />
+        <DigitalTransformation />
+        <HomeTestimonials />
+        <LetsWork />
+      </Curve>
     </>
   );
 };
