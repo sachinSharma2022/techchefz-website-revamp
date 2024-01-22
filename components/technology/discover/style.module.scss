@@ -146,4 +146,30 @@
       }
     }
   }
+
+
+
+  //dark mode style
+
+  &.discoverSectionDark {
+   background-color: color(input-bg);
+   color: color(primary-white);
+
+   .platformsButtons{
+     .platformsBtn{
+       background-color: color(text-primary);
+     }
+   }
+ 
+   .discoverHead{
+     color: color(primary-white);
+   }
+   
+   .platformsBtn{
+      svg > path{
+     fill: white;
+      }
+   }
+
+}
 }

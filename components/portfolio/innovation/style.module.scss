@@ -1,6 +1,6 @@
 @import "~/styles/partials/config";
 
-.innovationSpacing {
+@mixin innovationSpacingStyle {
   padding: spacing(section-primary-padding);
 
   @include mobile {
@@ -113,6 +113,7 @@
         .sbSubtitle {
           font-weight: 700;
           font-size: text(normal);
+          color: rgba(17, 17, 17, 0.80);
           letter-spacing: 0.2rem;
           text-transform: uppercase;
           opacity: 0.6;
@@ -124,5 +125,49 @@
         }
       }
     }
+  }
+}
+
+.innovationSpacing {
+  @include innovationSpacingStyle();
+}
+
+//dark Mode 
+
+.darkMode {
+@include innovationSpacingStyle();
+background-color: color(input-bg);
+
+  .innovationMain {
+    .text {
+      color: color(primary-white);
+    }
+    .title {
+      color: color(primary-white);
+    }
+  }
+  .innovationCardsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2.7rem;
+    }
+
+    .innovationBox {
+      background: linear-gradient(0deg, #111 3.48%, rgba(17, 17, 17, 0.00) 121.7%);
+      border: 0.125rem solid rgba(255, 255, 255, 0.12);
+
+      .textCardSpace {
+        .sbTitle {
+          color: color(info-blue);
+        }
+        .sbSubtitle {
+          color: rgba(color(primary-white), 0.6);
+      }
+    }
+  }
   }
 }

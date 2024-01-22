@@ -1,9 +1,13 @@
+"use client";
 import React from "react";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 
 const Results = () => {
+  const { theme, setTheme } = useContext(MyContext);
   const resultCard = [
     {
       number: "500+",
@@ -19,7 +23,7 @@ const Results = () => {
     },
   ];
   return (
-    <section className={styles.results}>
+    <section className={`${styles.results} ${theme ? styles.resultsDark : ""}`}>
       <div className={cn("primary-container")}>
         <div className="row justify-content-between">
           <div className="col-md-3 col-lg-3">

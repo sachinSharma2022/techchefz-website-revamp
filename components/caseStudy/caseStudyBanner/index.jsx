@@ -1,12 +1,16 @@
+"use client";
 import React from "react";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import { ImageCustom } from "@/components/ui/imageCustom";
-
-import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 
+import styles from "./style.module.scss";
+
 const CaseStudyBanner = () => {
+  const { theme, setTheme } = useContext(MyContext);
   return (
-    <section className={styles.caseStudyBanner}>
+    <section className={`${styles.caseStudyBanner} ${theme ? styles.caseStudyDark : ""}`}>
       <div className={cn("primary-container")}>
         <h1 className={styles.bannerTitle}>
           Introducing the world of <br /> <span>Automobiles.</span>

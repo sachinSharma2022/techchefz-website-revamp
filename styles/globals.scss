@@ -640,6 +640,7 @@ input:-webkit-autofill {
 
 // Technology Values
 .technology-value {
+
   .swiper-horizontal > .swiper-pagination-progressbar,
   .swiper-pagination-progressbar.swiper-pagination-horizontal {
     top: auto;
@@ -708,6 +709,10 @@ input:-webkit-autofill {
       }
     }
   }
+}
+
+.dark .technology-value .progress-bar-animation {
+  background: rgba(color(primary-white), 0.2);
 }
 
 .tczLifeSlider {

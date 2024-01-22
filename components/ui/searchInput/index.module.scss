@@ -1,5 +1,6 @@
 @import "~/styles/partials/config";
-.search {
+
+@mixin searchStyles() {
   width: 100%;
   max-width: 580px;
   position: relative;
@@ -9,8 +10,8 @@
   color: rgba(color(text-primary), 0.8);
   overflow: hidden;
   background: color(bg-soft);
-	display: flex;
-	padding: 0 20px;
+  display: flex;
+  padding: 0 20px;
 
   @include mobile {
     width: 100%;
@@ -23,7 +24,7 @@
     background-color: transparent;
     height: 100%;
     border: none;
-		padding-right: 10px;
+    padding-right: 10px;
   }
 
   button {
@@ -31,4 +32,23 @@
     right: 0;
     top: 0;
   }
+}
+
+.search {
+  @include searchStyles();
+}
+
+//
+.darkMode {
+  @include searchStyles();
+  background: color(text-primary);
+  border: 0.14rem solid rgba(color(primary-white), 0.12);
+
+  input {
+    color: rgba(color(primary-white), 0.8) !important;
+  }
+
+  // svg path {
+  //   fill: color(primary-white) !important;
+  // }
 }

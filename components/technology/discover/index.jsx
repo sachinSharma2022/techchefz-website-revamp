@@ -1,4 +1,6 @@
 "use client";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { Tab } from "@headlessui/react";
@@ -9,6 +11,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 const Discover = () => {
+  const { theme, setTheme } = useContext(MyContext);
   const technologyData = [
     {
       title: "Frontend",
@@ -70,7 +73,7 @@ const Discover = () => {
     },
   ];
   return (
-    <section className={styles.discoverSection}>
+    <section className={`${styles.discoverSection} ${theme ? styles.discoverSectionDark : ""}`}>
       <div className={cn("primary-container")}>
         <div className={styles.discoverTop}>
           <div>

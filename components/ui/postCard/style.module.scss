@@ -1,6 +1,6 @@
 @import "~/styles/partials/config";
 
-.postCard {
+@mixin postCardStyles {
    padding: text(lg);
    border-radius: 20px;
    border: 0.125rem solid rgba(17, 17, 17, 0.12);
@@ -49,6 +49,37 @@
          opacity: 0.6;
          margin-bottom: 0;
          max-width: 60%;
+      }
+   }
+}
+
+.postCard{
+   @include postCardStyles();
+}
+
+//dark Mode 
+
+.darkMode {
+   @include postCardStyles();
+
+   background: color(text-primary);
+   border: 0.125rem solid rgba(255, 255, 255, 0.12);
+
+   &:hover {
+      border-color: color(heading-liner);
+    }
+
+    .cardBody {
+      .cardTitle {
+         color:color(primary-white)
+      }
+
+      .cardDate {
+         color: rgba(color(primary-white), 0.6);
+      }
+
+      .arrowIcon svg path{
+         fill: color(primary-white) !important;
       }
    }
 }

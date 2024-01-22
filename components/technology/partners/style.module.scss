@@ -2,6 +2,11 @@
 .partner {
    padding: spacing(section-primary-padding);
 
+   &.partnerDark {
+      background-color: color(input-bg);
+      color: color(primary-white);
+   }
+
    .headSection {
       max-width: 70%;
    }
@@ -17,9 +22,9 @@
    }
 
    .partnerHeading {
-    font-size: text(larger);
+      font-size: text(larger);
       font-weight: 500;
-      line-height:3.375rem;
+      line-height: 3.375rem;
       margin-bottom: 5rem;
    }
 

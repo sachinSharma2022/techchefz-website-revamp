@@ -9,9 +9,9 @@
   text-align: left;
 
   .cardImg {
-   display: flex;
-   justify-content: space-between;
-   margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
 
     .imgStyle {
       position: relative;
@@ -42,5 +42,20 @@
     font-size: text(normal);
     line-height: 1.5rem;
     opacity: 0.8;
+  }
+
+  &.partnerCardDark {
+    background-color: color(text-primary);
+    color: color(primary-white);
+
+    .cardTitle {
+      color: color(primary-white);
+    }
+
+    .cardImg {
+      svg > rect {
+        stroke: color(primary-white);
+      }
+    }
   }
 }

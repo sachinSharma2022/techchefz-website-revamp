@@ -1,12 +1,16 @@
+"use client";
 import React from "react";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import { ImageCustom } from "@/components/ui/imageCustom";
 
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 
 function Solutions() {
+  const { theme, setTheme } = useContext(MyContext);
   return (
-    <section className={styles.solutions}>
+    <section className={`${styles.solutions} ${theme ? styles.solutionsDark : ""}`}>
       <div className={cn("primary-container")}>
         <div className="row justify-content-between">
           <div className="col-md-3 col-lg-3">

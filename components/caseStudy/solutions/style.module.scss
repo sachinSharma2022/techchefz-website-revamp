@@ -2,6 +2,11 @@
 
 .solutions {
    padding: 0 7.5rem;
+
+   &.solutionsDark{
+      background-color: color(input-bg);
+      color: color(primary-white);
+   }
    .solutionTitle {
       font-size: text(normal);
       font-weight: 700;
@@ -23,7 +28,7 @@
       opacity: 0.8;
    }
    .solutionImgs {
-      margin: 5rem 0;
+      padding: 5rem 0 ;
       img {
          margin: 1.25rem 0;
          width: 100%;

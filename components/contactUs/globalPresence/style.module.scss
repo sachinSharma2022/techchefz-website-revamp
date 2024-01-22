@@ -3,10 +3,12 @@
 .globalPresenceStyle {
   background-color: color(bg-soft);
   padding-block: 8.75rem 8.75rem;
+  
   @include mobile-tablet-p {
     padding: spacing(section-mob-padding);
     padding-block: 3.75rem 3.75rem;
   }
+  
   &.globalPresenceBannerDark {
     background-color: color(dark-bg);
     color: color(primary-white);
@@ -17,6 +19,14 @@
         color: color(primary-white);
       }
     }
+
+    .contactMap > div {
+
+      img {
+       filter: contrast(0) brightness(100);
+      }
+    }
+
   }
 
   .globalStackBox {

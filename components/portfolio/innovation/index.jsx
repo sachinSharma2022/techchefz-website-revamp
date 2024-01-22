@@ -1,9 +1,15 @@
+"use client";
+
+import React, { useContext } from "react";
 import { ImageCustom } from "@/components/ui/imageCustom";
+import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 import Link from "next/link";
 
 const Innovation = () => {
+  const { theme, setTheme } = useContext(MyContext);
+
   const innovationCardMap = [
     {
       link: "/insights",
@@ -29,7 +35,7 @@ const Innovation = () => {
     },
   ];
   return (
-    <section className={styles.innovationSpacing}>
+    <section className={!theme ? styles.innovationSpacing : styles.darkMode}>
       <div className={cn("primary-container")}>
         <div className={styles.innovationMain}>
           <p className={styles.text}>Innovation</p>

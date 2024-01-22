@@ -7,9 +7,12 @@
       padding: 1.5rem;
    }
 
-   .headSection {
-
+   &.technologyValuesDark{
+      background-color: color(input-bg);
+      color: color(primary-white);
    }
+
+   
 
    .valuesTitle {
       font-size: text(normal);

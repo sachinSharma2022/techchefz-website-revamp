@@ -1,6 +1,6 @@
 @import "~/styles/partials/config";
 
-.landingBannerStyle {
+@mixin landingBannerStyle() {
 
    .contentSection {
       padding: 5rem 7.5rem;
@@ -69,5 +69,23 @@
       display: flex;
       justify-content: flex-end;
    }
- 
 }
+
+.landingBannerStyle{
+   @include landingBannerStyle()
+}
+
+//light Mode
+
+.darkMode {
+   @include landingBannerStyle();
+   background-color: color(input-bg);
+
+   .title {
+      color: color(primary-white);
+   }
+   .leadText {
+      color: rgba(color(primary-white), 0.8);
+   }
+ }
+ 

@@ -1,11 +1,17 @@
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "../imageCustom";
 
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import styles from "./style.module.scss";
 
 const PartnerCard = (props) => {
+  const { theme, setTheme } = useContext(MyContext);
   return (
-    <button className={styles.partnerCard} onClick={props.onClick}>
+    <button
+      className={`${styles.partnerCard} ${theme ? styles.partnerCardDark : ""}`}
+      onClick={props.onClick}
+    >
       <div className={styles.cardImg}>
         <ImageCustom
           src={props.imgSrc}

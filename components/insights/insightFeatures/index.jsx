@@ -1,10 +1,15 @@
-import { Button } from "@/components/ui/button";
-import SearchInput from "@/components/ui/searchInput";
+"use client";
 
+import React, { useContext } from "react";
+import { Button } from "@/components/ui/button";
+import { MyContext } from "@/context/theme";
+import SearchInput from "@/components/ui/searchInput";
 import PostCard from "@/components/ui/postCard";
 import styles from "./style.module.scss";
 
 const InsightFeatures = () => {
+  const { theme, setTheme } = useContext(MyContext);
+
   const buttonVariants = [
     {
       buttonTitle: "All",
@@ -110,9 +115,9 @@ const InsightFeatures = () => {
     },
   ];
   return (
-    <section className={styles.insightFeatures}>
+    <section className={!theme ? styles.insightFeatures : styles.darkMode}>
       <div className={styles.insightHeader}>
-        <SearchInput />
+        <SearchInput theme={theme}/>
         <div className={styles.serviceBtn}>
           {buttonVariants.map((buttonItem) => (
             <Button
@@ -137,6 +142,7 @@ const InsightFeatures = () => {
               title={data.title}
               date={data.date}
               cardStyle={styles.featureImgBox}
+              theme={theme}
             />
           ))}
         </div>
@@ -150,6 +156,7 @@ const InsightFeatures = () => {
               imgSrc={data.imgSrc}
               title={data.title}
               date={data.date}
+              theme={theme}
             />
           ))}
         </div>

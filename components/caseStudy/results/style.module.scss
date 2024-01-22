@@ -1,7 +1,17 @@
 @import "~/styles/partials/config";
 
 .results {
-  padding: 0 7.5rem 7.5rem;
+   padding: 0 7.5rem 7.5rem;
+   &.resultsDark {
+    background-color: color(input-bg);
+    color: color(primary-white);
+
+    .resultCards {
+       .resultCard {
+          background-color: color(text-primary);
+       }
+    }
+ }
 
   .resultTitle {
     font-size: text(normal);
@@ -62,6 +72,6 @@
           max-width: 70%;
         }
       }
-    }
-  }
+   }
+}
 }

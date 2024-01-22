@@ -7,6 +7,11 @@
       padding: 1.5rem;
    }
 
+   &.technologyCaseDark{
+      background-color: color(input-bg);
+      color: color(primary-white);
+   }
+
    .headSection {
       display: flex;
       align-items: flex-end;

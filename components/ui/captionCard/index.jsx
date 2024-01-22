@@ -1,13 +1,17 @@
+"use client";
 import React from "react";
-
-import styles from "./styles.module.scss";
 import { ImageCustom } from "../imageCustom";
 import { Icons } from "@/components/icons";
 import Link from "next/link";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
+
+import styles from "./styles.module.scss";
 
 const CaptionCard = (props) => {
+  const { theme, setTheme } = useContext(MyContext);
   return (
-    <Link href="/" className={`${styles.captionCard} ${props.className} card`}>
+    <Link href="/" className={`${styles.captionCard} ${props.className} ${theme ? styles.captionCardDark : ""} card`}>
       <div className={styles.cardImg}>
         <ImageCustom
           src={props.imgSrc}

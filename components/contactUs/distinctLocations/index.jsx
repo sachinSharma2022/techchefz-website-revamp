@@ -5,8 +5,10 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 import styles from "./style.module.scss";
+import { cn } from "@/lib/utils";
 
 const DistinctLocations = () => {
+  const { theme, setTheme } = useContext(MyContext);
   const differenceCard = [
     {
       brandImg:
@@ -39,61 +41,62 @@ const DistinctLocations = () => {
       phoneNumber: "+91 9824349812",
     },
   ];
-  const { theme, setTheme } = useContext(MyContext);
   return (
     <section
       className={`${styles.distinctLocationsStyle} ${
         theme ? styles.distinctLocationsBannerDark : ""
       }`}
     >
-      <div className={styles.careerRow}>
-        <p className={styles.ProjectHighlight}>Presence</p>
-        <h2 className={styles.datingText}>Our Distinct Locations</h2>
-        <p className={styles.descriptionText}>
-          Our 50+ team members, from account executives, strategists, project
-          managers/delivery leads, product designers, and developers, are ready
-          to find the best solution to any challenges you face. Let&apos;s start
-          collaborating!
-        </p>
-      </div>
+      <div className={cn("primary-container")}>
+        <div className={styles.careerRow}>
+          <p className={styles.ProjectHighlight}>Presence</p>
+          <h2 className={styles.datingText}>Our Distinct Locations</h2>
+          <p className={styles.descriptionText}>
+            Our 50+ team members, from account executives, strategists, project
+            managers/delivery leads, product designers, and developers, are
+            ready to find the best solution to any challenges you face.
+            Let&apos;s start collaborating!
+          </p>
+        </div>
 
-      <div className={styles.gridNumberMain}>
-        <div className={`${styles.locationGridCards} `}>
-          {differenceCard.map((data, index) => (
-            <div key={index} className={styles.cardStyle}>
-              <div className={styles.locationBox}>
-                <div className={styles.backgroundImg}>
-                  <ImageCustom
-                    src={data.brandImg}
-                    width={330}
-                    height={162}
-                    alt="image"
-                  />
-                </div>
-                <div className={styles.countryFlag}>
-                  <h2 className={styles.sbTitle}>{data.sbTitle}</h2>
-                  <div className={styles.flag}>
+        <div className={styles.gridNumberMain}>
+          <div className={`${styles.locationGridCards} `}>
+            {differenceCard.map((data, index) => (
+              <div key={index} className={styles.cardStyle}>
+                <div className={styles.locationBox}>
+                  <div className={styles.backgroundImg}>
                     <ImageCustom
-                      src={data.countryFlagImg}
-                      width={100}
-                      height={24}
-                      alt="flag"
+                      src={data.brandImg}
+                      width={330}
+                      height={162}
+                      alt="image"
                     />
                   </div>
-                </div>
-                <p className={styles.sbText}>{data.sbText}</p>
-                <div className={styles.addressArea}>
-                  <Icons.ContactLocation width={40} height={40} />
-                  <p className={styles.addressText}>{data.address}</p>
-                </div>
+                  <div className={styles.countryFlag}>
+                    <h2 className={styles.sbTitle}>{data.sbTitle}</h2>
+                    <div className={styles.flag}>
+                      <ImageCustom
+                        src={data.countryFlagImg}
+                        width={100}
+                        height={24}
+                        alt="flag"
+                      />
+                    </div>
+                  </div>
+                  <p className={styles.sbText}>{data.sbText}</p>
+                  <div className={styles.addressArea}>
+                    <Icons.ContactLocation width={40} height={40} />
+                    <p className={styles.addressText}>{data.address}</p>
+                  </div>
 
-                <div className={styles.addressArea}>
-                  <Icons.ContactPhone width={20} height={20} />
-                  <p className={styles.addressText}>{data.phoneNumber}</p>
+                  <div className={styles.addressArea}>
+                    <Icons.ContactPhone width={20} height={20} />
+                    <p className={styles.addressText}>{data.phoneNumber}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
