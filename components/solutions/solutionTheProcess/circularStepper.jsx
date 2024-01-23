@@ -1,14 +1,60 @@
 import React from "react";
 import { ImageCustom } from "@/components/ui/imageCustom";
 
-const CircularStepper = ({ className }) => {
+const CircularStepper = ({ percentage, circleWidth }) => {
+  const radius = 195;
+  const dashArray = radius * Math.PI * 2;
+  const dashOffset = dashArray - (dashArray * percentage) / 100;
   return (
-    <div className="circularStepper">
+    <div className="circularStepper" >
+      <svg
+        width={circleWidth}
+        height={circleWidth}
+        viewBox={`0 0 ${circleWidth} ${circleWidth}`}
+      >
+        <defs>
+          <linearGradient
+            id="progressGradient"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="0%"
+          >
+            <stop offset="0%" style={{ stopColor: "#1E8AF2" }} />
+            <stop offset="100%" style={{ stopColor: "#05BED7" }} />
+          </linearGradient>
+          
+        </defs>
+        
+        <circle
+          cx={circleWidth / 2}
+          cy={circleWidth / 2}
+          strokeWidth="10px"
+          r={radius}
+          className="circle-background"
+          filter="url(#inset-shadow)"
+        />
+        <circle
+          cx={circleWidth / 2}
+          cy={circleWidth / 2}
+          strokeWidth="10px"
+          r={radius}
+          className="circle-progress"
+          style={{
+            stroke: "url(#progressGradient)",
+            strokeDasharray: dashArray,
+            strokeDashoffset: dashOffset,
+          }}
+          transform={`rotate(-90 ${circleWidth / 2} ${circleWidth / 2})`}
+        />
+        
+      </svg>
+
       <div className="stepperImg">
         <ImageCustom
           src="/images/shield.png"
-          width={213}
-          height={219}
+          width={200}
+          height={200}
           alt="bannerImg"
         />
       </div>
