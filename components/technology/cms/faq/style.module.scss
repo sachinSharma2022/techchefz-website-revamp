@@ -3,9 +3,11 @@
 .cmsFaqSection {
    padding: spacing(section-primary-padding);
    background-color: color(bg-soft);
-   @include mobile {
-      padding: spacing(section-mob-padding);
-   }
+
+   @include mobile-tablet-p {
+    padding: spacing(section-mob-padding);
+    padding-block: 3.75rem 3.75rem;
+  }
 
    .faqHead {
       margin-bottom: 5rem;

@@ -29,7 +29,7 @@
       opacity: 0.6;
       letter-spacing: 0.2rem;
 
-      @include mobile {
+      @include mobile-tablet-p {
         margin-bottom: 0.75rem;
         font-weight: 400;
       }
@@ -43,7 +43,7 @@
       @include mobile-tablet-p {
         text-align: left;
         font-size: 2rem;
-        line-height: 3.75rem;
+        line-height: 2.5rem;
         min-width: 100%;
         margin-bottom: 0;
       }

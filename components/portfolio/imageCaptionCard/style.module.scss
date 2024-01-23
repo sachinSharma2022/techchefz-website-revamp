@@ -6,7 +6,7 @@
   justify-content: space-between;
   gap: 2.5rem;
 
-  @include mobile-tablet-p{
+  @include mobile-tablet-p {
     flex-direction: column;
     gap: text(xl);
     margin-bottom: 3.75rem;
@@ -36,8 +36,12 @@
   @include desktop-hd {
     padding-inline: 0;
   }
-
   @include mobile-tablet-p {
+    padding: spacing(section-mob-padding-Left-Right);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.7rem;
+  }
+  @include mobile {
     padding: spacing(section-mob-padding-Left-Right);
     grid-template-columns: repeat(1, 1fr);
     gap: 2.7rem;
@@ -71,7 +75,7 @@
           align-items: center;
           justify-content: center;
 
-          @include mobile {
+          @include mobile-tablet-p {
             padding: 0.5rem 0.75rem;
             font-size: 0.75rem;
           }
@@ -102,10 +106,9 @@
     }
   }
 
-
   //Dark mode style
-  &.captionCardDark{
-    .imageCard{
+  &.captionCardDark {
+    .imageCard {
       background-color: color(text-primary);
       color: color(primary-white);
     }
