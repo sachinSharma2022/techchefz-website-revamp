@@ -45,8 +45,9 @@
   .imageCard {
     padding: text(lg);
     border-radius: text(lg);
-    border: 0.125rem solid rgba(17, 17, 17, 0.12);
+    border: 0.125rem solid rgba(color(text-primary), 0.12);
     background: color(bg-soft);
+
     .cardImg {
       position: relative;
 
@@ -60,7 +61,7 @@
         .badges {
           height: 2.188rem;
           padding-inline: 0.75rem;
-          background: rgba(17, 17, 17, 0.8);
+          background: rgba(color(text-primary), 0.8);
           border: 0.14rem solid rgba(255, 255, 255, 0.4);
           color: color(primary-white);
           border-radius: 0.5rem;
@@ -107,6 +108,7 @@
     .imageCard{
       background-color: color(text-primary);
       color: color(primary-white);
+      border-color: rgba(color(primary-white), 0.12);
     }
   }
 }

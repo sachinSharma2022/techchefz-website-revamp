@@ -42,22 +42,8 @@
       border: 1px solid rgba(255, 255, 255, 0.12);
       .searchIcon {
          svg > path {
-            fill: color(primary-white);
+            stroke: color(primary-white);
          }
       }
    }
 }
-
-// .darkMode {
-//    @include searchStyles();
-//    background: color(text-primary);
-//    border: 0.14rem solid rgba(color(primary-white), 0.12);
-
-//    input {
-//       color: rgba(color(primary-white), 0.8) !important;
-//    }
-
-//    // svg path {
-//    //   fill: color(primary-white) !important;
-//    // }
-// }

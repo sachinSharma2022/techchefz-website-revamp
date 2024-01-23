@@ -48,7 +48,12 @@ const Faq = () => {
     },
   ];
   return (
-    <section className={`${styles.cmsFaqSection}  ${theme ? styles.cmsFaqSectionDark : ""}`}>
+    <section
+      className={cn(
+        styles.cmsFaqSection,
+        theme ? styles.cmsFaqSectionDark : ""
+      )}
+    >
       <div className={cn("primary-container")}>
         <div className={styles.faqHead}>
           <p className={styles.projectHighlight}>FAQ’s</p>

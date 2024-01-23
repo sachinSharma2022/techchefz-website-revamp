@@ -62,7 +62,7 @@
         font-size: text(xl);
         font-weight: 500;
         padding: 1.25rem 0;
-        border-bottom: 0.14rem solid rgba(17, 17, 17, 0.12);
+        border-bottom: 0.14rem solid rgba(color(text-primary), 0.12);
         display: flex;
         justify-content: space-between;
       }

@@ -455,6 +455,7 @@
         padding: 3rem;
         min-height: 75vh;
         max-height: 75vh;
+        overflow-y: auto;
 
         @include desktop-hd {
           min-height: 60vh;

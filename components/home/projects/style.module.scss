@@ -8,38 +8,6 @@
     padding: spacing(section-mob-padding);
   }
 
-  &.projectsStyleDark {
-    background-color: color(primary-white);
-    color: color(text-primary);
-
-    .projectHighlight {
-      color: color(text-primary);
-      opacity: 0.8;
-    }
-    .datingText {
-      color: color(text-primary);
-    }
-    .aboutText {
-      color: color(text-primary);
-      opacity: 0.8;
-    }
-    .cardContentStyle {
-      .projectBrand {
-        color: color(text-primary);
-      }
-      .brandFromText {
-        color: color(text-primary);
-        opacity: 0.8;
-      }
-      .projectButton {
-        button {
-          color: color(text-primary);
-          border: 0.14rem solid rgba(color(text-primary), 0.17);
-        }
-      }
-    }
-  }
-
   .projectHighlight {
     font-size: text(normal);
     font-weight: 700;
@@ -56,7 +24,7 @@
 
   .projectBtn {
     display: flex;
-    gap: .75rem;
+    gap: 0.75rem;
     flex-wrap: wrap;
 
     .badgeStyle {
@@ -69,15 +37,13 @@
       border: 1px solid rgba(color(primary-white), 0.4);
       color: color(primary-white);
       transition: all 0.5s ease-in-out;
-  
+
       &:hover {
         background-color: color(primary-white);
         color: color(text-primary);
       }
     }
   }
-
-
 
   .datingText {
     font-size: 2.75rem;
@@ -108,16 +74,6 @@
     }
   }
 
-  .cards {
-    //overflow: hidden;
-    //height: 100vh;
-    // top:0px;
-    // position: sticky;
-    padding: 5rem 0 2.5rem 0;
-    @include mobile {
-      padding: 3.75rem 0 2.75rem 0;
-    }
-  }
   .cardSec {
     background: color(dark-gray);
     top: 7rem;
@@ -152,45 +108,38 @@
     font-weight: 500;
     color: color(primary-white);
     margin-bottom: text(lg);
-    &:nth-of-type(1){
+    &:nth-of-type(1) {
+      gap: 8px;
 
-        gap: 8px;
+      line-height: 40px;
 
-        line-height: 40px;;
+      span {
+        margin-right: 3px;
+        font-size: 32px;
+      }
 
-        span{
+      .mask {
+        position: relative;
 
-            margin-right: 3px;
-            font-size:32px;
+        overflow: hidden;
 
-        }
-
-        .mask{
-
-            position: relative;
-
-            overflow: hidden;
-
-            display: inline-flex;
-
-        }
-
+        display: inline-flex;
+      }
     }
 
-    &:nth-of-type(2){
+    &:nth-of-type(2) {
+      // font-size: 2rem;
 
-        // font-size: 2rem;
+      // width: 80%;
 
-        // width: 80%;
-
-        // font-weight: 300;
-
+      // font-weight: 300;
     }
     @include mobile {
       font-size: text(xl);
       margin-bottom: text(lg);
     }
   }
+
   .brandFromText {
     font-size: text(normal);
     font-weight: 400;
@@ -231,7 +180,6 @@
       margin-bottom: text(xxxl);
     }
   }
-
   .cardContentStyle {
     display: flex;
     justify-content: space-between;
@@ -245,6 +193,50 @@
       @include mobile {
         max-width: 100%;
       }
+    }
+  }
+
+  .rowSection {
+    margin-bottom: 5rem;
+  }
+
+  &.projectsStyleDark {
+    background-color: color(primary-white);
+    color: color(text-primary);
+
+    .projectHighlight {
+      color: color(text-primary);
+      opacity: 0.8;
+    }
+    .datingText {
+      color: color(text-primary);
+    }
+    .aboutText {
+      color: color(text-primary);
+      opacity: 0.8;
+    }
+    .cardSec {
+      background-color: color(primary-white);
+    }
+    .cardContentStyle {
+      .projectBrand {
+        color: color(text-primary);
+      }
+      .brandFromText {
+        color: color(text-primary);
+        opacity: 0.8;
+      }
+      .projectButton {
+        button {
+          color: color(text-primary);
+          border: 0.14rem solid rgba(color(text-primary), 0.17);
+        }
+      }
+    }
+
+    .badgeStyle {
+      color: color(text-primary);
+      border-color: rgba(color(text-primary), 0.17);
     }
   }
 }

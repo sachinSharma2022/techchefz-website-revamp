@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Icons } from "@/components/icons";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
@@ -62,43 +62,52 @@ const ImageCaptionCard = () => {
       badgeList: ["Web Design", "E-Commerce", "Retail"],
     },
   ];
+
+  const dataServices = [
+    { value: "Data", label: "Data" },
+    { value: "It Development", label: "It Development" },
+    { value: "Network Security", label: "Network Security" },
+    { value: "Cloud Service", label: "Cloud Service" },
+  ];
+  const dataIndustry = [
+    { value: "Hardware", label: "Hardware" },
+    { value: "Software", label: "Software" },
+    { value: "Systems Integrator", label: "Systems Integrator" },
+  ];
+  const dataTechnology = [
+    { value: "Web Content", label: "Web Content" },
+    { value: "Frontend", label: "Frontend" },
+    { value: "Backend", label: "Backend" },
+    { value: "Mobile Development", label: "Mobile Development" },
+    { value: "Artificial Intelligence", label: "Artificial Intelligence" },
+    { value: "DevOps & Cloud", label: "DevOps & Cloud" },
+  ];
+
   return (
     <section className="primary-container">
-      {/* Dropdown Section */}
-      <div className={`${styles.dropdownStyle} ${theme ? styles.dropdownDark : ""}`}>
+      <div
+        className={`${styles.dropdownStyle} ${
+          theme ? styles.dropdownDark : ""
+        }`}
+      >
         <div className={`${styles.inputDropPadding}`}>
-          <CustomDropdown
-            title="Services"
-            options={[
-              "Data",
-              "It Development",
-              "Network Security",
-              "Cloud Service",
-            ]}
-          />
+          <CustomDropdown title="Services" options={dataServices} />
         </div>
         <div className={`${styles.inputDropPadding}`}>
-          <CustomDropdown
-            title="Industry"
-            options={["Hardware", "Software", "Systems Integrator"]}
-          />
+          <CustomDropdown title="Industry" options={dataIndustry} />
         </div>
         <div className={`${styles.inputDropPadding}`}>
-          <CustomDropdown
-            title="Technology"
-            options={[
-              "Web Content",
-              "Frontend",
-              "Backend",
-              "Mobile Development",
-              "Artificial Intelligence",
-              "DevOps & Cloud",
-            ]}
-          />
+          <CustomDropdown title="Technology" options={dataTechnology} />
         </div>
       </div>
 
-      <div className={cn(styles.captionCardStyle,theme ? styles.captionCardDark : "" ,"captionCardSection")}>
+      <div
+        className={cn(
+          styles.captionCardStyle,
+          theme ? styles.captionCardDark : "",
+          "captionCardSection"
+        )}
+      >
         {imageCaptionData.map((data, index) => (
           <Link href="/case-study" key={index} className={`grid-${index}`}>
             <div className={`${styles.imageCard} card`}>

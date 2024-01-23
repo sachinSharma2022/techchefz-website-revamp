@@ -82,7 +82,7 @@
         background-color: color(bg-soft);
         padding: text(lg);
         border-radius: text(xl);
-        border: 2px solid rgba(17, 17, 17, 0.12);
+        border: 2px solid rgba(color(text-primary), 0.12);
         cursor: pointer;
 
         @include mobile {

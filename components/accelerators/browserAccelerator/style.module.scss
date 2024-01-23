@@ -2,7 +2,7 @@
 
 .browserAccelerator {
   padding: 4rem 7.5rem 8.75rem;
-	
+
   .topSection {
     display: flex;
     justify-content: space-between;
@@ -27,37 +27,30 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .grayInput {
-    select {
-      font-weight: 500;
-      background-color: color(bg-soft);
-      border: 0.14rem solid rgba(17, 17, 17, 0.12);
-    }
+  .inputSection {
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: repeat(3, 1fr);
 
-    label {
-      &::after {
-        display: none;
-      }
+    .grayInput {
+      min-width: 10.4375rem;
     }
-    
   }
 
   //Dark mode style
-  &.browserAcceleratorDark{
+  &.browserAcceleratorDark {
     background-color: color(input-bg);
     color: color(primary-white);
 
-    .grayInput{
-      label{
+    .grayInput {
+      label {
         color: color(primary-white);
       }
-      select{
+      select {
         background-color: color(input-bg);
         color: color(primary-white);
         border: 1px solid rgba(255, 255, 255, 0.12);
       }
-
-     
     }
   }
 }

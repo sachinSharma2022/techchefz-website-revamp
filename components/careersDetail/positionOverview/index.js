@@ -49,7 +49,7 @@ const CareerPositionOverview = () => {
           </div>
         </div>
         <div className={styles.applyButtons}>
-          <Button variant={theme ? "lightBlueBtn" : "blueBtn"} size="md">
+          <Button variant="blueBtn" size="md">
             Apply
           </Button>
           <SmoothDropdown

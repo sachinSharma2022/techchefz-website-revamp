@@ -5,47 +5,60 @@ import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
-import { useContext } from "react";
-import styles from "./style.module.scss";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
-import { useRef } from "react";
-import { useTransform, motion, useScroll, useInView } from "framer-motion";
-import { slideUp, opacity } from "./animation";
+import { useContext, useRef } from "react";
+import { opacity, slideUp } from "./animation";
+import styles from "./style.module.scss";
 
 const Card = ({ ...props }) => {
   const description = useRef(null);
   const isInView = useInView(description);
+  const tagSection = [
+    "Web Design",
+    "Dashboard Design",
+    "UI",
+    "UX",
+    "Responsive",
+  ];
+
   const scale = useTransform(props.progress, props.range, [
     1,
     props.targetScale,
   ]);
-console.log(scale);
-return (
-  <motion.div className={styles.cardSec} style={{ scale }}>
-          <div className={styles.projectImg}>
-            <ImageCustom
-              src={props.src}
-              width={1360}
-              height={300}
-              alt="projectImg"
-            />
-          </div>
+  console.log(scale);
+  return (
+    <motion.div className={styles.cardSec} style={{ scale }}>
+      <div className={styles.projectImg}>
+        <ImageCustom
+          src={props.src}
+          width={1360}
+          height={300}
+          alt="projectImg"
+        />
+      </div>
 
-          <div className={styles.cardContentStyle}>
-            <h2 className={styles.projectBrand}>
-            {
-               props.title.split(" ").map( (word, index) => {
+      <div className={styles.cardContentStyle}>
+        <h2 className={styles.projectBrand}>
+          {props.title.split(" ").map((word, index) => {
+            return (
+              <div key={index} className={styles.mask}>
+                <motion.span
+                  variants={slideUp}
+                  custom={index}
+                  animate={isInView ? "open" : "closed"}
+                  key={index}
+                >
+                  {word}
+                </motion.span>
+              </div>
+            );
+          })}
+        </h2>
 
-                         return <span className={styles.mask}><motion.span variants={slideUp} custom={index} animate={isInView ? "open" : "closed"} key={index}>{word}</motion.span></span>
-
-                                })
-
-              }
-            </h2>
-
-            <p ref={description} className={styles.brandFromText}>
-            {props.summary.split(" ").map((word, index) => {
-                         return (
+        <p ref={description} className={styles.brandFromText}>
+          {props.summary.split(" ").map((word, index) => {
+            return (
               <span key={index} className={styles.mask}>
                 <motion.span
                   variants={slideUp}
@@ -56,33 +69,23 @@ return (
                   {word}
                 </motion.span>
               </span>
-);
-                                })}
-            </p>
-            <motion.div
+            );
+          })}
+        </p>
+        <motion.div
           variants={opacity}
           animate={isInView ? "open" : "closed"}
           className={styles.projectBtn}
         >
-              <Link href="/portfolio" className={styles.badgeStyle}>
-                Web Design
-              </Link>
-              <Link href="/portfolio" className={styles.badgeStyle}>
-                Dashboard Design
-              </Link>
-              <Link href="/portfolio" className={styles.badgeStyle}>
-                UI
-              </Link>
-              <Link href="/portfolio" className={styles.badgeStyle}>
-                UX
-              </Link>
-              <Link href="/portfolio" className={styles.badgeStyle}>
-                Responsive
-              </Link>
-            </motion.div>
-          </div>
+          {tagSection.map((tagItem) => (
+            <Link key={tagItem} href="/portfolio" className={styles.badgeStyle}>
+              {tagItem}
+            </Link>
+          ))}
         </motion.div>
-);
+      </div>
+    </motion.div>
+  );
 };
 
 const Projects = () => {
@@ -90,17 +93,29 @@ const Projects = () => {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ['start start', 'end end']
-  })
-  const projects=[{src:"/images/ICICI.png",summary:"Royal Enfield is a global brand since 1901, has a geographical presence in over 70 countries. The brand delivers consistent, omnichannel customer experiences, achieves scalability, diversifying into countries, and continents.",title:"International Motorcycle Brand."},{src:"/images/project-re.png",summary:"Royal Enfield is a global brand since 1901, has a geographical presence in over 70 countries. The brand delivers consistent, omnichannel customer experiences, achieves scalability, diversifying into countries, and continents.",title:"International Motorcycle Brand."},{src:"/images/Manipal.png",summary:"Royal Enfield is a global brand since 1901, has a geographical presence in over 70 countries. The brand delivers consistent, omnichannel customer experiences, achieves scalability, diversifying into countries, and continents.",title:"International Motorcycle Brand."}]
-
-  const tagSection = [
-    "Web Design",
-    "Dashboard Design",
-    "UI",
-    "UX",
-    "Responsive",
+    offset: ["start start", "end end"],
+  });
+  const projects = [
+    {
+      src: "/images/ICICI.png",
+      summary:
+        "Royal Enfield is a global brand since 1901, has a geographical presence in over 70 countries. The brand delivers consistent, omnichannel customer experiences, achieves scalability, diversifying into countries, and continents.",
+      title: "International Motorcycle Brand.",
+    },
+    {
+      src: "/images/project-re.png",
+      summary:
+        "Royal Enfield is a global brand since 1901, has a geographical presence in over 70 countries. The brand delivers consistent, omnichannel customer experiences, achieves scalability, diversifying into countries, and continents.",
+      title: "International Motorcycle Brand.",
+    },
+    {
+      src: "/images/Manipal.png",
+      summary:
+        "Royal Enfield is a global brand since 1901, has a geographical presence in over 70 countries. The brand delivers consistent, omnichannel customer experiences, achieves scalability, diversifying into countries, and continents.",
+      title: "International Motorcycle Brand.",
+    },
   ];
+
   return (
     <section
       className={`${styles.projectsStyle} ${
@@ -108,7 +123,7 @@ const Projects = () => {
       }`}
     >
       <div className={cn("primary-container")}>
-        <div className="row">
+        <div className={cn("row", styles.rowSection)}>
           <div className="col-md-12 col-12">
             <p className={styles.projectHighlight}>Projects</p>
           </div>
@@ -133,9 +148,9 @@ const Projects = () => {
           </div>
         </div>
         <div ref={container} className={styles.cards}>
-      {projects.map((project, i) => {
-          const targetScale = 1 - (projects.length - i) * 0.05;
-          return (
+          {projects.map((project, i) => {
+            const targetScale = 1 - (projects.length - i) * 0.05;
+            return (
               <Card
                 key={`p_${i}`}
                 i={i}
@@ -145,7 +160,7 @@ const Projects = () => {
                 targetScale={targetScale}
               />
             );
-        })}
+          })}
         </div>
       </div>
     </section>

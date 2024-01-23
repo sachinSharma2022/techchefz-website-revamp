@@ -77,7 +77,7 @@ const Button = React.forwardRef(
         ref={ref}
         {...props}
       >
-        <p className={styles.btnText}>{children}</p>
+        <p className={cn(styles.btnText, props.pStyle)}>{children}</p>
         <div ref={circle} className={styles.circle}></div>
       </Comp>
     );

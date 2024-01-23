@@ -70,9 +70,7 @@ const Testimonials = (props) => {
     <section
       className={cn(
         styles.testimonialsStyle,
-        theme
-          ? styles.testimonialsStyleDark
-          : `${styles.testimonialsStyleDark}, "dark-sliderTestimonial"`,
+        theme ? styles.testimonialsStyleDark : "",
         "testimonial-style",
         props.className
       )}

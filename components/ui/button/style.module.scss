@@ -100,15 +100,6 @@
     background-color: color(primary-blue);
   }
 
-  // &:hover {
-  //   color: color(primary-blue);
-  //   background-color: transparent;
-  //   svg{
-  //     path{
-  //       stroke: color(primary-blue);
-  //     }
-  //   }
-  // }
   svg {
     display: inline-block;
     margin-left: 0.4rem;
@@ -134,6 +125,10 @@
     display: inline-block;
     margin-left: 0.4rem;
     margin-top: 0.2rem;
+  }
+
+  p {
+    margin: 0;
   }
 }
 

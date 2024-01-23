@@ -78,7 +78,7 @@
   .technologyStackBox {
     padding: 2.5rem;
     background-color: color(primary-white);
-    border: 0.125rem solid rgba(17, 17, 17, 0.12);
+    border: 0.125rem solid rgba(color(text-primary), 0.12);
     border-radius: 0.75rem;
     position: absolute;
     top: 50%;

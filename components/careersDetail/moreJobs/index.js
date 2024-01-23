@@ -119,7 +119,7 @@ const MoreJobs = () => {
                   <div className={styles.cardContainer} key={index}>
                     <div className={styles.cardDiv}>
                       <h1>{value.title}</h1>
-                      <p>{value.content}</p>
+                      <p className={styles.description}>{value.content}</p>
                       <div className={styles.spanDiv}>
                         <div className={styles.spanDetail}>
                           <Icons.TimerIcon size={16} />
@@ -131,7 +131,7 @@ const MoreJobs = () => {
                         </div>
                       </div>
                       <Button
-                        variant={theme ? "ligthBlueBtn" : "blueBtn"}
+                        variant={theme ? "lightBlueBtn" : "blueBtn"}
                         size="md"
                       >
                         Apply
