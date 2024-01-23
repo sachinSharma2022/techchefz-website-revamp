@@ -1,15 +1,17 @@
 "use client";
 import { Disclosure } from "@headlessui/react";
 import { useState } from "react";
-
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
-
 import { cn } from "@/lib/utils";
+
 import styles from "./style.module.scss";
 
 const SolutionOurValues = () => {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
+  const { theme, setTheme } = useContext(MyContext);
 
   function togglePanels(newPanel) {
     if (activeDisclosurePanel) {
@@ -96,7 +98,7 @@ const SolutionOurValues = () => {
     },
   ];
   return (
-    <section className={styles.solutionOurValuesStyle}>
+    <section className={`${styles.solutionOurValuesStyle} ${theme ? styles.solutionOurValuesDark : ""}`}>
       <div className={cn("primary-container", styles.flexContainer)}>
         <div className={styles.ourValuesHead}>
           <h6 className={styles.ourValuesTitle}>Our Values</h6>

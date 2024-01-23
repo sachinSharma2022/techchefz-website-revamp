@@ -1,0 +1,61 @@
+@import "~/styles/partials/config";
+
+.gridMarqueeGallery {
+  
+  .galleryImages {
+    padding: 0 0.7rem;
+    margin-top: 5rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative;
+
+    .galleryImage {
+      margin-top: 20px;
+      height: 230px;
+      width: 205px;
+
+      div {
+        height: 100%;
+      }
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: 0.75rem;
+      }
+    }
+
+    .gridHalf {
+      height: 320px;
+      width: 440px;
+
+      div {
+        height: 100%;
+      }
+    }
+
+    .smGrid {
+        height: 140px;
+  
+        div {
+          height: 100%;
+        }
+      }
+
+    .gridFull {
+      height: 480px;
+      width: 428px;
+
+      div {
+        height: 100%;
+      }
+    }
+  }
+
+  &.ourGalleryDark {
+    background-color: color(input-bg);
+    color: color(primary-white);
+  }
+}

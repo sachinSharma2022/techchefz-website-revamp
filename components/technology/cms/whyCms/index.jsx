@@ -1,15 +1,18 @@
 "use client";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import { Disclosure } from "@headlessui/react";
 import { useState } from "react";
 // import { ChevronRightIcon } from '@heroicons/react/20/solid'
-
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
+
+import styles from "./style.module.scss";
 
 const WhyCms = () => {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
+  const { theme, setTheme } = useContext(MyContext);
 
   function togglePanels(newPanel) {
     if (activeDisclosurePanel) {
@@ -50,7 +53,7 @@ const WhyCms = () => {
     },
   ];
   return (
-    <section className={styles.whyCmsStyle}>
+    <section className={`${styles.whyCmsStyle} ${theme ? styles.whyCmsDark : ""}`}>
       <div className={cn("primary-container")}>
         <div className={styles.ourValuesHead}>
           <h6 className={styles.ourValuesTitle}>Why CMS</h6>

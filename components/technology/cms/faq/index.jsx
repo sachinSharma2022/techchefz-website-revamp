@@ -1,5 +1,6 @@
 "use client";
-
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import { Icons } from "@/components/icons";
 import { Disclosure } from "@headlessui/react";
 import { useState } from "react";
@@ -8,6 +9,7 @@ import { cn } from "@/lib/utils";
 
 const Faq = () => {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
+  const { theme, setTheme } = useContext(MyContext);
 
   function togglePanels(newPanel) {
     if (activeDisclosurePanel) {
@@ -46,7 +48,7 @@ const Faq = () => {
     },
   ];
   return (
-    <section className={styles.cmsFaqSection}>
+    <section className={`${styles.cmsFaqSection}  ${theme ? styles.cmsFaqSectionDark : ""}`}>
       <div className={cn("primary-container")}>
         <div className={styles.faqHead}>
           <p className={styles.projectHighlight}>FAQ’s</p>
@@ -75,7 +77,7 @@ const Faq = () => {
                             togglePanels({ ...panel, key: index });
                           }}
                         >
-                          {data.title}{" "}
+                          {data.title}
                           {!open ? <Icons.IconPlus /> : <Icons.IconMinus />}
                         </Disclosure.Button>
                         <Disclosure.Panel className={styles.accordionBody}>

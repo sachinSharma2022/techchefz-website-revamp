@@ -9,7 +9,6 @@
     padding-inline: 0;
    }
 
-
    .tczLifeTop {
 
       @include desktop-hd {
@@ -71,5 +70,12 @@
          line-height: 1.875rem;
          opacity: 0.6;
       }
+   }
+
+ 
+   //Dark mode style
+   &.tczLifeDark{
+      background-color: color(text-primary);
+      color: color(primary-white);
    }
 }

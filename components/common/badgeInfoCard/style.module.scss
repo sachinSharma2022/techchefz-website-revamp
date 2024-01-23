@@ -62,4 +62,23 @@
          font-size: text(xxs);
       }
    }
+
+   &.browserAcceleratorCardDark{
+    background-color: color(text-primary);
+    color: color(primary-white);
+
+    .cardsTags{
+      button{
+         background-color: color(text-primary);
+         color: color(primary-white);
+         border: 1px solid rgba(255, 255, 255, 0.40);
+      }
+    }
+
+    .cardHeader{
+      .arrowUp path{
+         fill:color(primary-white) ;
+      }
+    }
+   }
 }

@@ -1,13 +1,17 @@
 "use client";
-
+import React from "react";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import Slider from "react-slick";
-import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 
+import styles from "./style.module.scss";
+
 const SolutionTechnologies = () => {
+  const { theme, setTheme } = useContext(MyContext);
   const serviceCard = [
     {
       icon: <Icons.Market width={56} height={56} />,
@@ -70,7 +74,7 @@ const SolutionTechnologies = () => {
     ],
   };
   return (
-    <section className={`${styles.solutionTechnologiesStyle}`}>
+    <section className={`${styles.solutionTechnologiesStyle} ${theme ? styles.solutionTechnologiesDark : ""}`}>
       <div className={cn("primary-container")}>
         <div className={styles.careerRow}>
           <div className="row">

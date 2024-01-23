@@ -1,11 +1,14 @@
 "use client";
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import Slider from "react-slick";
 
 import styles from "./style.module.scss";
 
 const TczLife = () => {
+  const { theme, setTheme } = useContext(MyContext);
   const settings = {
     dots: false,
     infinite: false,
@@ -58,7 +61,7 @@ const TczLife = () => {
     },
   ];
   return (
-    <section className={styles.tczLife}>
+    <section className={`${styles.tczLife} ${theme ? styles.tczLifeDark : ""} `}>
       <div className={styles.tczLifeTop}>
         <div className="row justify-content-between m-0">
           <div className="col-md-4 col-lg-4 p-0">

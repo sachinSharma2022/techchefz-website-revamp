@@ -650,16 +650,6 @@ input:-webkit-autofill {
   .slide-thumb-grid {
     cursor: pointer;
 
-    .swiper-wrapper {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-
-      @include mobile {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
     .progress-bar-animation {
       position: relative;
       width: 100%;
@@ -697,19 +687,8 @@ input:-webkit-autofill {
       }
     }
   }
-
-  .slide-thumb-grid-4 {
-    .swiper-wrapper {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 40px;
-
-      @include mobile {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-  }
 }
+
 
 .dark .technology-value .progress-bar-animation {
   background: rgba(color(primary-white), 0.2);

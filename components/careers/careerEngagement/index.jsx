@@ -3,6 +3,8 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 
 // import required modules
 import {
@@ -16,38 +18,52 @@ import {
 import { Icons } from "@/components/icons";
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
+import styles from "./style.module.scss";
 
-const EmployeeEngagement = () => {
+const CareerEngagement = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const { theme, setTheme } = useContext(MyContext);
   const valueData = [
     {
       icon: <Icons.Market width={56} height={56} />,
-      title: "Innovation",
+      title: "Career Growth & Learning",
       imgUrl:
-        "https://images.unsplash.com/photo-1494389945381-0fe114b8ea4b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fElubm92YXRpb258ZW58MHx8MHx8fDA%3D",
+        "https://images.unsplash.com/photo-1568992687947-868a62a9f521?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       content:
         "We believe in a customer-centric ethic without and people-centric paradigm within.",
     },
     {
       icon: <Icons.Rates width={56} height={56} />,
-      title: "Customer Success",
+      title: "Diversity, Equity & Inclusion (DEI)",
       imgUrl:
-        "https://images.unsplash.com/photo-1457131760772-7017c6180f05?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fEN1c3RvbWVyJTIwU3VjY2Vzc3xlbnwwfHwwfHx8MA%3D%3D",
+        "https://images.unsplash.com/photo-1603201667141-5a2d4c673378?q=80&w=2096&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       content:
         "We believe in a customer-centric ethic without and people-centric paradigm within.",
     },
     {
       icon: <Icons.PerformanceIcon width={56} height={56} />,
-      title: "Excellence in Delivery",
-      imgUrl: "/images/innovation.png",
+      title: "Environmental Sustainability",
+      imgUrl:
+        "https://images.unsplash.com/photo-1576267423048-15c0040fec78?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      content:
+        "We believe in a customer-centric ethic without and people-centric paradigm within.",
+    },
+    {
+      icon: <Icons.PerformanceIcon width={56} height={56} />,
+      title: "Work Life Balance",
+      imgUrl:
+        "https://images.unsplash.com/photo-1622675363311-3e1904dc1885?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       content:
         "We believe in a customer-centric ethic without and people-centric paradigm within.",
     },
   ];
   return (
-    <section className={`${styles.employeeEngagement} technology-value`}>
+    <section
+      className={`${styles.careerEngagement} ${
+        theme ? styles.careerEngagementDark : ""
+      } technology-value`}
+    >
       <div className={cn("primary-container")}>
         <div className={styles.headSection}>
           <h6 className={styles.valuesTitle}>Employee Engagement</h6>
@@ -85,11 +101,11 @@ const EmployeeEngagement = () => {
           <Swiper
             onSwiper={setThumbsSwiper}
             spaceBetween={10}
-            slidesPerView={3}
+            slidesPerView={4}
             freeMode={true}
             watchSlidesProgress={true}
             modules={[FreeMode, Navigation, Thumbs]}
-            className="slide-thumb-grid slide-thumb-grid-4"
+            className="slide-thumb-grid"
           >
             {valueData.map((data, index) => (
               <SwiperSlide key={index}>
@@ -108,4 +124,4 @@ const EmployeeEngagement = () => {
   );
 };
 
-export default EmployeeEngagement;
+export default CareerEngagement;

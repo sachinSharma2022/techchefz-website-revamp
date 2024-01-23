@@ -1,10 +1,16 @@
+"use client";
+import React from "react";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { cn } from "@/lib/utils";
+
 import styles from "./style.module.scss";
 
 const SolutionHeroBanner = () => {
+  const { theme, setTheme } = useContext(MyContext);
   return (
-    <section className={`${styles.solutionHeroBannerStyle}`}>
+    <section className={`${styles.solutionHeroBannerStyle} ${theme ? styles.solutionHeroBannerDark : ""}`}>
       <div className={cn("primary-container")}>
         <div className={styles.contentSection}>
           <h1 className={styles.title}>

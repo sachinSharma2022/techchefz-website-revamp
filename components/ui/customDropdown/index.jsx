@@ -1,20 +1,16 @@
 "use client";
-
 import React from "react";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
-import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 
-const CustomDropdown = ({ title, value, options, onChange }) => {
+import styles from "./style.module.scss";
+
+const CustomDropdown = ({ title, value, options, onChange, className }) => {
   const { theme, setTheme } = useContext(MyContext);
   return (
-    <div
-    className={`${styles.dropdownContainerStyle} ${
-      theme ? styles.dropdownContainerStyleDark : ""
-    }`}
-  >
-      <div className={`${styles.floatingDarkForm} form-floating`}>
+    <div className={cn(styles.dropdownContainerStyle, className , theme ? styles.dropdownContainerDark : "")}>
+      <div class="form-floating">
         <select
           className={`${styles.selectMain} form-select`}
           id="floatingSelect"

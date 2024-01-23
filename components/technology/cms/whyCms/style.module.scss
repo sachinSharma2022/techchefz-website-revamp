@@ -103,4 +103,23 @@
     align-items: center;
     justify-content: center;
   }
+
+  //Dark mode style
+  &.whyCmsDark{
+    color: color(primary-white);
+
+    .ourValuesTitle{
+      color: color(primary-white);
+    }
+
+    .ourValuesAccordion{
+      .accordionHead{
+        color: color(primary-white);
+      }
+    }
+
+    .iconBox{
+      background-color: color(text-primary);
+    }
+  }
 }

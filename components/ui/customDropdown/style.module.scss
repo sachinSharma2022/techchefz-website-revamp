@@ -44,4 +44,21 @@
   // select {
   //   font-weight: 500;
   // }
+
+  //Dark mode style
+  &.dropdownContainerDark{
+     .selectMain{
+      background-color: color(input-bg);
+      color: color(primary-white);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+     }
+
+     .customLabel{
+      color: color(primary-white);
+
+      &:after{
+      background-color: color(input-bg);
+      }
+     }
+  }
 }

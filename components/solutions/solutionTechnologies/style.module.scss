@@ -8,8 +8,6 @@
     padding: spacing(section-mob-padding);
   }
 
-
-
   .careerRow {
     margin-bottom: 5rem;
     @include mobile {
@@ -146,5 +144,19 @@
         }
       }
     }
+  }
+
+  //Dark mode style
+  &.solutionTechnologiesDark{
+    background-color: color(input-bg);
+    color: color(primary-white);
+
+    .ourNumberOption{
+      .serviceBox{
+        background-color: color(text-primary);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+    }
+   
   }
 }

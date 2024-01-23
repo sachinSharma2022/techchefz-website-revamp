@@ -350,15 +350,19 @@ const Header = () => {
         </nav>
         <div className={styles.headerRight}>
           <div onClick={classToggle} className={styles.modeBtn}>
-            <Button variant="default" onClick={() => setTheme(!theme)}>
+            <button variant="default" onClick={() => setTheme(!theme)}>
               {theme ? (
                 <Icons.DarkThemeIcon size={30} />
               ) : (
                 <Icons.Moon size={15} />
               )}
-            </Button>
+            </button>
           </div>
-          <Button variant="blueBtn" className={styles.headerBtn} size="sm">
+          <Button
+            variant={theme ? "blueBtnDark" : "blueBtn"}
+            className={styles.headerBtn}
+            size="sm"
+          >
             Estimate Project
           </Button>
 

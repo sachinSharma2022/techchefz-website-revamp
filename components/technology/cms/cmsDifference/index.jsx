@@ -1,3 +1,7 @@
+"use client"
+import React from "react";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import styles from "./style.module.scss";
@@ -5,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const CmsDifference = () => {
+  const { theme, setTheme } = useContext(MyContext);
   const differenceCard = [
     {
       sbTitle: "Headless CMS",
@@ -30,7 +35,7 @@ const CmsDifference = () => {
   ];
 
   return (
-    <section className={`${styles.cmsDifferenceStyle}`}>
+    <section className={`${styles.cmsDifferenceStyle} ${theme ? styles.cmsDifferenceDark : ""}`}>
       <div className={cn("primary-container")}>
         <div className={styles.careerRow}>
           <div className="row">
