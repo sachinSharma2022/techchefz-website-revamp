@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
+import CircularStepper from "./circularStepper";
 
 const SolutionTheProcess = () => {
   const { theme, setTheme } = useContext(MyContext);
@@ -35,11 +36,8 @@ const SolutionTheProcess = () => {
           </div>
 
           <div className={styles.ourNumbersImg}>
-            <ImageCustom
-              src="/images/process.svg"
-              width={410}
-              height={570}
-              alt="bannerImg"
+            <CircularStepper
+            className={styles.circularStepper}
             />
           </div>
         </div>
