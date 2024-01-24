@@ -10,7 +10,11 @@ import styles from "./style.module.scss";
 const SolutionHeroBanner = () => {
   const { theme, setTheme } = useContext(MyContext);
   return (
-    <section className={`${styles.solutionHeroBannerStyle} ${theme ? styles.solutionHeroBannerDark : ""}`}>
+    <section
+      className={`${styles.solutionHeroBannerStyle} ${
+        theme ? styles.solutionHeroBannerDark : ""
+      }`}
+    >
       <div className={cn("primary-container")}>
         <div className={styles.contentSection}>
           <h1 className={styles.title}>

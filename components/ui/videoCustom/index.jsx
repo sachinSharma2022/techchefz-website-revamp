@@ -25,6 +25,7 @@ const VideoCustom = (props) => {
         autoplay
         playsinline
         muted
+        loop
         ref={videoRef}
       >
         <source src={props.src} type="video/mp4" />

@@ -16,7 +16,7 @@
          text-transform: uppercase;
          opacity: 0.8;
          font-size: text(normal);
-         font-weight: 700;
+         font-weight: 500;
          line-height: 1.5rem;
       }
       .title {
@@ -40,7 +40,7 @@
          display: flex;
          justify-content: center;
          .faqNumber {
-            font-weight: 700;
+            font-weight: 500;
             margin-bottom: 0;
             font-size: text(xl);
             @include mobile {
@@ -64,7 +64,7 @@
             justify-content: space-between;
             align-items: center;
             font-size: text(xl);
-            font-weight: 700;
+            font-weight: 500;
             color: color(text-primary);
             padding: text(xl);
 

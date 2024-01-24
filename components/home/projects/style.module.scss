@@ -2,6 +2,7 @@
 
 .projectsStyle {
   padding: spacing(section-primary-padding);
+  padding-bottom: 6rem;
   background: color(dark-gray);
 
   @include mobile {
@@ -10,7 +11,7 @@
 
   .projectHighlight {
     font-size: text(normal);
-    font-weight: 700;
+    font-weight: 500;
     margin-bottom: text(lg);
     opacity: 0.6;
     color: color(primary-white);
@@ -29,10 +30,11 @@
 
     .badgeStyle {
       display: flex;
-      padding: 0.75rem;
+      padding-inline: 0.75rem;
       align-items: center;
       justify-content: center;
       gap: 10px;
+      height: 35px;
       border-radius: 0.5rem;
       border: 1px solid rgba(color(primary-white), 0.4);
       color: color(primary-white);

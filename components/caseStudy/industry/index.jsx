@@ -8,11 +8,12 @@ import { cn } from "@/lib/utils";
 
 import styles from "./style.module.scss";
 
-
 const Industry = () => {
   const { theme, setTheme } = useContext(MyContext);
   return (
-    <section className={`${styles.industry} ${theme ? styles.industryDark : ""}`}>
+    <section
+      className={`${styles.industry} ${theme ? styles.industryDark : ""}`}
+    >
       <div className={cn("primary-container")}>
         <div className="row justify-content-between">
           <div className="col-md-4 col-lg-4">
@@ -29,21 +30,21 @@ const Industry = () => {
 
               <h6> Services</h6>
               <div className={styles.serviceBtn}>
-                <Button variant="outline" size="xs">
+                <button variant="outline" size="xs">
                   Web Design
-                </Button>
-                <Button variant="outline" size="xs">
+                </button>
+                <button variant="outline" size="xs">
                   CMS
-                </Button>
-                <Button variant="outline" size="xs">
+                </button>
+                <button variant="outline" size="xs">
                   React
-                </Button>
-                <Button variant="outline" size="xs">
+                </button>
+                <button variant="outline" size="xs">
                   AEM
-                </Button>
-                <Button variant="outline" size="xs">
+                </button>
+                <button variant="outline" size="xs">
                   Retail
-                </Button>
+                </button>
               </div>
             </div>
           </div>

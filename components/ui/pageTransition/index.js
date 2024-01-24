@@ -42,8 +42,8 @@ export default function Curve({ children, backgroundColor }) {
       <motion.div className={styles.route} {...anim(text)}>
         <ImageCustom
           src="/images/logo-icon.svg"
-          width={220}
-          height={220}
+          width={180}
+          height={180}
           alt=""
         />
       </motion.div>

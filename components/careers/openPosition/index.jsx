@@ -214,14 +214,13 @@ const OpenPosition = () => {
 
         <div className={styles.serviceBtn}>
           {buttonVariants.map((buttonItem) => (
-            <Button
-              variant="outline"
-              size="sm"
+            <button
+              className={styles.badgeButton}
               onClick={() => filterItem(buttonItem.id)}
               key={buttonItem}
             >
               {buttonItem.buttonTitle}
-            </Button>
+            </button>
           ))}
         </div>
 

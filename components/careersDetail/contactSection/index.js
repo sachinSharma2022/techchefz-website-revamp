@@ -23,12 +23,12 @@ const ContactSection = () => {
         <div className={styles.workArea}>
           <div className={styles.workGrid}>
             <div className={styles.contactImg}>
-              <h1>
+              <h4>
                 Your new{" "}
-                <span className={styles.titlegradient}>journey awaits!</span>
-              </h1>
+                <span className={styles.titleGradient}>journey awaits!</span>
+              </h4>
               <p>
-                Delve into our case studies to witness firsthand how we've
+                Delve into our case studies to witness firsthand how we&apos;ve
                 tackled challenges, delivered solutions, and achieved measurable
                 success. Each story is a testament to our commitment, expertise,
                 and the transformative impact.
@@ -125,22 +125,15 @@ const ContactSection = () => {
                 />
               </div>
               <div className={styles.policyArea}>
-                <div className="row d-flex align-items-center">
-                  <div className="col-md-6 col-12">
-                    <div className={styles.policyText}>
-                      I understand and consent to my personal data being
-                      processed in accordance with TechChefz's
-                      <span className={styles.policyHighlight}>
-                        Privacy Policy
-                      </span>
-                    </div>
-                  </div>
-                  <div className={`${styles.buttonGrid} col-md-6 col-12`}>
-                    <Button variant="blueBtn" size="sm">
-                      Send a Message <Icons.ArrowRight size={18} />
-                    </Button>
-                  </div>
+                <div className={styles.policyText}>
+                  I understand and consent to my personal data being processed
+                  in accordance with TechChefz&apos;s
+                  <span className={styles.policyHighlight}>Privacy Policy</span>
                 </div>
+
+                <Button variant="blueBtn" size="lg" className={styles.btnGrid}>
+                  Send a Message <Icons.ArrowRight size={18} />
+                </Button>
               </div>
             </div>
           </div>

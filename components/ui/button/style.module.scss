@@ -17,6 +17,7 @@
   color: color(foreground);
   text-decoration: none;
   font-family: font(primary);
+  flex-direction: column;
 
   &:focus-visible {
     outline: none;
@@ -76,7 +77,7 @@
   }
 }
 
-.variant_blueBtndark {
+.variant_blueBtnDark {
   border-radius: 3em;
   cursor: pointer;
   position: relative;
@@ -112,35 +113,68 @@
   }
 }
 
+// With Animation
 .variant_lightBlueBtn {
   background-color: color(info-blue);
   color: color(primary-white);
-  border: 0.14rem solid color(info-blue);
+  overflow: hidden;
 
-  &:hover {
-    color: color(info-blue);
-    background-color: transparent;
-    svg {
-      path {
-        stroke: color(info-blue);
-      }
-    }
-  }
-  svg {
-    display: inline-block;
-    margin-left: 0.4rem;
-    margin-top: 0.2rem;
+  .btnText {
+    position: relative;
+    z-index: 1;
+    transition: color 0.4s linear;
+    margin-bottom: 0px;
   }
 
   p {
     margin: 0;
   }
+
+  svg {
+    display: inline-block;
+    margin-left: 0.4rem;
+    margin-top: 0.2rem;
+
+    path {
+      stroke: color(primary-white);
+    }
+  }
+
+  &:hover {
+    .btnText {
+      color: color(primary-white);
+    }
+    svg {
+      path {
+        stroke: color(primary-white);
+      }
+    }
+  }
+
+  .circle {
+    width: 100%;
+    height: 150%;
+    position: absolute;
+    border-radius: 50%;
+    top: 100%;
+    background-color: color(primary-blue);
+  }
 }
 
+// With Animation
 .variant_lightBlueOutline {
   background-color: transparent;
   color: color(info-blue);
   border: 0.14rem solid color(info-blue);
+  overflow: hidden;
+
+  .btnText {
+    position: relative;
+    z-index: 1;
+    transition: color 0.4s linear;
+    margin-bottom: 0px;
+  }
+
 
   svg {
     display: inline-block;
@@ -153,12 +187,33 @@
   }
 
   &:hover {
-    color: color(primary-white);
-    background-color: color(info-blue);
+    .btnText {
+      color: color(primary-white);
+    }
     svg {
       path {
         stroke: color(primary-white);
       }
+    }
+  }
+
+  .circle {
+    width: 100%;
+    height: 150%;
+    position: absolute;
+    border-radius: 50%;
+    top: 100%;
+    background-color: color(primary-blue);
+  }
+  svg {
+    display: inline-block;
+    margin-left: 0.4rem;
+    margin-top: 0.2rem;
+    transition: color 0.4s linear;
+
+    path {
+      stroke: color(primary-blue);
+      transition: stroke 0.4s linear;
     }
   }
 }
@@ -200,6 +255,7 @@
     margin-left: 0.4rem;
     margin-top: 0.2rem;
     transition: color 0.4s linear;
+
     path {
       stroke: color(primary-blue);
       transition: stroke 0.4s linear;

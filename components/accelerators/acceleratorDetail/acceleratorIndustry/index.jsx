@@ -11,7 +11,9 @@ import styles from "./style.module.scss";
 const AcceleratorIndustry = () => {
   const { theme, setTheme } = useContext(MyContext);
   return (
-    <section className={`${styles.industry} ${theme ? styles.industryDark : ""} `}>
+    <section
+      className={`${styles.industry} ${theme ? styles.industryDark : ""} `}
+    >
       <div className="primary-container">
         <div className={styles.gridSection}>
           <div className={styles.industryLeft}>
@@ -22,9 +24,9 @@ const AcceleratorIndustry = () => {
 
             <h6>Tags</h6>
             <div className={styles.serviceBtn}>
-              <Button variant="outline" size="xs">
+              <button variant="outline" size="xs">
                 Trending
-              </Button>
+              </button>
             </div>
           </div>
           <div>

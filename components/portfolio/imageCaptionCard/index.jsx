@@ -112,13 +112,14 @@ const ImageCaptionCard = () => {
           <Link href="/case-study" key={index} className={`grid-${index}`}>
             <div className={`${styles.imageCard} card`}>
               <div className={styles.cardImg}>
-                <ImageCustom
-                  src={data.imgSrc}
-                  width={1360}
-                  height={450}
-                  alt="captionImg"
-                />
-
+                <div className={`${styles.imgBox} imgBox`}>
+                  <ImageCustom
+                    src={data.imgSrc}
+                    width={1360}
+                    height={450}
+                    alt="captionImg"
+                  />
+                </div>
                 <div className={styles.cardBadges}>
                   {data.badgeList.map((badgeItem) => (
                     <div key={badgeItem} className={styles.badges}>
@@ -127,7 +128,6 @@ const ImageCaptionCard = () => {
                   ))}
                 </div>
               </div>
-
               <div className={styles.cardBody}>
                 <h2 className={styles.cardText}>{data.description}</h2>
                 <Icons.ArrowLongRight size={18} />
