@@ -26,7 +26,7 @@ const BrowserAccelerator = () => {
         "Enhance your machine learning models by leveraging Cleanlab Studio for improved data quality, leading to more accurate & reliable insights.",
     },
     {
-      cardIcon: <Icons.PerformanceIcon width={36} height={36} />,
+      cardIcon: <Icons.Intelligence width={36} height={36} />,
       subHeading: "Financial Services",
       heading: "Fine-Grained Demand Forecasting",
       description:

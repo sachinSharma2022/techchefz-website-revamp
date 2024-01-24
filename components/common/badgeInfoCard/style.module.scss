@@ -63,17 +63,31 @@
       }
    }
 
+   .badgeStyle {
+      border-radius: .75rem;
+      background-color: rgba(color(primary-white), 0.80);
+      border: 1px solid rgba(color(text-primary), 0.40);
+      color: color(text-primary);
+      padding: .625rem .75rem;
+   }
+
+   .heading {
+      font-size: 1rem;
+      opacity: 0.6;
+      font-weight: normal;
+   }
+
    &.browserAcceleratorCardDark{
     background-color: color(text-primary);
     color: color(primary-white);
 
-    .cardsTags{
-      button{
-         background-color: color(text-primary);
-         color: color(primary-white);
-         border: 1px solid rgba(255, 255, 255, 0.40);
-      }
-    }
+    .badgeStyle {
+      border-radius: .75rem;
+      background-color:  rgba(color(text-primary), 0.80);
+      border: 1px solid rgba(255, 255, 255, 0.40);
+      color: color(primary-white);
+      padding: .625rem .75rem;
+   }
 
     .cardHeader{
       .arrowUp path{

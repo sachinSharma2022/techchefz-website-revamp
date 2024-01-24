@@ -84,7 +84,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60vw;
+    width: 52rem;
+    max-width: 52rem;
     z-index: 1;
 
     .careerRow {

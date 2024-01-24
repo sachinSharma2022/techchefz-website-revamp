@@ -74,12 +74,11 @@ $border-radius: 5px;
       line-height: 3.5rem;
       margin: 0 0 2.188rem;
     }
-    .conatiner{
-      display: grid; 
-      grid-template-columns: auto auto auto auto; 
-      grid-gap: 20px; 
+    .contentContainer{
+      display: flex; 
+      gap: 1.25rem;
     }
-    .conatiner >div{
+    .contentContainer > div{
       font-size: text(xxl-larger);
       font-weight: 500;
       line-height: 1;

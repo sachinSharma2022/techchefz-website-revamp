@@ -31,6 +31,12 @@
   }
 }
 
+.btnText {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
 .variant_default {
   padding: 0;
   height: auto;
@@ -48,6 +54,7 @@
   padding: 15px 60px 15px 60px;
   background-color: color(primary-blue);
   color: color(primary-white);
+  gap: 1rem;
 
   .btnText {
     position: relative;
@@ -66,8 +73,6 @@
   }
   svg {
     display: inline-block;
-    margin-left: 0.4rem;
-    margin-top: 0.2rem;
   }
 }
 
@@ -239,6 +244,10 @@
   font-size: text(lg);
   border-radius: 0.75rem;
   font-weight: 500;
+
+  .btnText {
+    font-size: text(lg);
+  }
 }
 
 .size_number {
