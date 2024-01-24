@@ -4,7 +4,7 @@ import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
-import { useContext,useEffect} from "react";
+import { useContext, useEffect } from "react";
 
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
@@ -12,234 +12,6 @@ import Link from "next/link";
 
 const TechnologyStack = () => {
   const { theme, setTheme } = useContext(MyContext);
-
-  const serviceCard = [
-    {
-      icon: (
-        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/adobe.png" width={62} height={62} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/react.png" width={66} height={62} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/drupal-2.png" width={97} height={22} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/react.png" width={66} height={62} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/adobe.png" width={62} height={62} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/react.png" width={66} height={62} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/drupal-2.png" width={97} height={22} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/react.png" width={66} height={62} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/adobe.png" width={62} height={62} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/react.png" width={66} height={62} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/drupal-2.png" width={97} height={22} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/react.png" width={66} height={62} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/adobe.png" width={62} height={62} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/react.png" width={66} height={62} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/node.png" width={78} height={48} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/drupal-2.png" width={97} height={22} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/react.png" width={66} height={62} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/adobe.png" width={62} height={62} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/react.png" width={66} height={62} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/drupal-2.png" width={97} height={22} alt="" />
-      ),
-    },
-    {
-      icon: (
-        <ImageCustom src="/images/react.png" width={66} height={62} alt="" />
-      ),
-    },
-  ];
 
   const countsCard = [
     {
@@ -255,38 +27,31 @@ const TechnologyStack = () => {
       countText: "System Integrations",
     },
   ];
-  function move(e){
-    const el=document.getElementById("tech-Stack")
+
+  function move(e) {
+    const el = document.getElementById("tech-Stack");
     var movementStrength = 75;
-var height = movementStrength / window.innerHeight;
-var width = movementStrength / window.innerWidth;
-    var pageX = e.pageX - (window.innerWidth / 2);
-    var pageY = e.pageY - (window.innerHeight / 2);
+    var height = movementStrength / window.innerHeight;
+    var width = movementStrength / window.innerWidth;
+    var pageX = e.pageX - window.innerWidth / 2;
+    var pageY = e.pageY - window.innerHeight / 2;
     var newvalueX = width * pageX * -1 - 25;
     var newvalueY = height * pageY * -1 - 50;
-    console.log(newvalueX,newvalueY)
-    el.style.backgroundPosition= newvalueX+"px     "+newvalueY+"px";
-}
+    console.log(newvalueX, newvalueY);
+    el.style.backgroundPosition = newvalueX + "px     " + newvalueY + "px";
+  }
   useEffect(() => {
-    const ele=document.getElementById("tech-Stack")
-    
-    ele.addEventListener("mousemove", move);
+    const ele = document.getElementById("tech-Stack");
 
+    ele.addEventListener("mousemove", move);
   }, []);
   return (
-    <section 
+    <section
       className={`${styles.technologyStyle} ${
         theme ? styles.technologyStyleDark : ""
       }`}
       id="tech-Stack"
     >
-      <div className={styles.gridContainer}>
-        {/* {serviceCard.map((data, index) => (
-          <div key={index} className={styles.techCardLogo}>
-            {data.icon}
-          </div>
-        ))} */}
-      </div>
       <div className={cn("primary-container")}>
         <div className={styles.technologyStackBox}>
           <div className={styles.careerRow}>

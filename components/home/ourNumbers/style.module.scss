@@ -24,6 +24,10 @@
 
   .careerRow {
     margin-bottom: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
     @include mobile {
       margin-bottom: 2.5rem;
     }
@@ -36,7 +40,7 @@
     }
   }
 
-  .ProjectHighlight {
+  .projectHighlight {
     font-size: text(normal);
     font-weight: 700;
     margin-bottom: text(lg);
@@ -51,7 +55,7 @@
     font-size: 2.75rem;
     font-weight: 500;
     line-height: 3.375rem;
-    // max-width: 85%;
+    max-width: 42.6875rem;
     margin-bottom: 0;
 
     @include mobile {

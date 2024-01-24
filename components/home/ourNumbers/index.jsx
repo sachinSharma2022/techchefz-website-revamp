@@ -79,20 +79,16 @@ const OurNumbers = () => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.careerRow}>
-          <div className="row justify-content-between align-items-end">
-            <div className="col-md-8 col-lg-8 col-12">
-              <p className={styles.ProjectHighlight}>our numbers</p>
-              <h2 className={styles.datingText}>
-                Let the Numbers Tell the Success Story.
-              </h2>
-            </div>
-
-            <div className="col-md-4 col-lg-4 col-12 text-end">
-              <Button variant="outline" size="md">
-                Career Opportunities <Icons.ArrowRight size={18} />
-              </Button>
-            </div>
+          <div>
+            <p className={styles.projectHighlight}>our numbers</p>
+            <h2 className={styles.datingText}>
+              Let the Numbers Tell the Success Story.
+            </h2>
           </div>
+
+          <Button variant="outline" size="md">
+            Career Opportunities <Icons.ArrowRight size={18} />
+          </Button>
         </div>
 
         <div className={styles.ourNumberMain}>
