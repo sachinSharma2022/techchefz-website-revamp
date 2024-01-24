@@ -1,27 +1,28 @@
 @import "~/styles/partials/config";
 
 .dropdownStyle {
-  padding-inline: spacing(p-120);
   margin-bottom: 5rem;
   display: flex;
   justify-content: space-between;
   gap: 2.5rem;
 
+  @include mobile-tablet-p {
+    flex-direction: column;
+    gap: text(xl);
+    margin-bottom: 3.75rem;
+  }
+
   .inputDropPadding {
     width: 100%;
   }
 
-  @include desktop-hd {
-    padding-inline: 0;
-  }
-
-  @include mobile {
-    padding: spacing(section-mob-padding-Left-Right);
+  @include mobile-tablet-p {
+    padding: 0rem 1.25rem 0rem 1.25rem;
   }
 
   .inputDropPadding {
-    @include mobile {
-      margin-bottom: text(xl);
+    @include mobile-tablet-p {
+      margin-bottom: 0;
     }
   }
 }
@@ -35,7 +36,11 @@
   @include desktop-hd {
     padding-inline: 0;
   }
-
+  @include mobile-tablet-p {
+    padding: spacing(section-mob-padding-Left-Right);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.7rem;
+  }
   @include mobile {
     padding: spacing(section-mob-padding-Left-Right);
     grid-template-columns: repeat(1, 1fr);
@@ -71,7 +76,7 @@
           align-items: center;
           justify-content: center;
 
-          @include mobile {
+          @include mobile-tablet-p {
             padding: 0.5rem 0.75rem;
             font-size: 0.75rem;
           }
@@ -92,7 +97,7 @@
         font-size: text(xl);
         font-weight: 500;
         margin-bottom: 0;
-        @include mobile {
+        @include mobile-tablet-p {
           font-size: text(lg);
         }
       }
@@ -102,10 +107,9 @@
     }
   }
 
-
   //Dark mode style
-  &.captionCardDark{
-    .imageCard{
+  &.captionCardDark {
+    .imageCard {
       background-color: color(text-primary);
       color: color(primary-white);
       border-color: rgba(color(primary-white), 0.12);

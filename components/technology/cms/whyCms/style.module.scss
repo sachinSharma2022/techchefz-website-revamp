@@ -4,6 +4,11 @@
   padding: spacing(section-primary-padding);
   padding-bottom: 0;
 
+  @include mobile-tablet-p {
+    padding: spacing(section-mob-padding);
+    padding-block: 3.75rem 3.75rem;
+  }
+
   .ourValuesHead {
     margin-bottom: 5rem;
 
@@ -21,6 +26,10 @@
       font-size: text(larger);
       margin-bottom: 2.75rem;
 
+      @include mobile-tablet-p {
+        margin-bottom: 3.75rem;
+        font-size: 2rem;
+      }
       span {
         font-size: text(larger);
         color: color(heading-liner);
@@ -30,6 +39,10 @@
           color(heading-liner) 55.42%
         );
         @include textGradient;
+        @include mobile-tablet-p {
+          font-size: 2rem;
+          display: flex;
+        }
       }
     }
   }
@@ -38,6 +51,11 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 8.75rem;
+
+    @include mobile-tablet-p {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2.5rem;
+    }
 
     .ourValueImg div {
       border-radius: 0.75rem;
@@ -52,6 +70,7 @@
         object-fit: cover;
       }
     }
+    
     .ourValuesText {
       font-size: text(lg);
       opacity: 0.6;
@@ -62,10 +81,12 @@
         width: 100%;
         text-align: left;
         font-size: text(xl);
+        font-weight: 500;
         padding: 1.25rem 0;
         border-bottom: 0.14rem solid rgba(color(text-primary), 0.12);
         display: flex;
         justify-content: space-between;
+        font-family: font(primary);
       }
       .accordionBody {
         padding: 1.25rem 0;

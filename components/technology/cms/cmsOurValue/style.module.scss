@@ -3,8 +3,9 @@
 .cmsValueSection {
   padding: spacing(section-primary-padding);
   background-color: color(primary-white);
-  @include mobile {
+  @include mobile-tablet-p {
     padding: spacing(section-mob-padding);
+    padding-block: 3.75rem 3.75rem;
   }
 
   .ourValueHead {
@@ -42,7 +43,7 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2.5rem;
-      @include mobile {
+      @include mobile-tablet-p {
         grid-template-columns: repeat(2, 1fr);
       }
     }
