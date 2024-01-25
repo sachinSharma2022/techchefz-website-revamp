@@ -13,6 +13,10 @@
       padding: spacing(section-mob-padding);
       padding-block: 3.75rem 3.75rem;
     }
+
+    @include mobile{
+      padding-block: 3.75rem 0;
+    }
   }
 
   .relatedCaseTitle {
@@ -52,7 +56,12 @@
     @include desktop-hd {
       padding-left: 13vw;
     }
+
+    @include mobile{
+      padding: 0 1rem;
+    }
   }
+    
 
   .cardStyle {
     width: auto;

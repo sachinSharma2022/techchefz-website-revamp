@@ -4,9 +4,18 @@
    padding: spacing(section-primary-padding);
    padding-bottom: 0;
 
+   @include mobile{
+      padding: 2.75rem 1.5rem;
+   }
+
    .gridSection {
       display: flex;
       gap: 8.9375rem;
+
+      @include mobile{
+         flex-direction: column;
+         gap: 3.75rem;
+      }
    }
 
    .industryLeft {
