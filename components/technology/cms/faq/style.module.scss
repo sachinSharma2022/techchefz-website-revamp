@@ -1,0 +1,116 @@
+@import "~/styles/partials/config";
+
+.cmsFaqSection {
+   padding: spacing(section-primary-padding);
+   background-color: color(bg-soft);
+
+   @include mobile-tablet-p {
+    padding: spacing(section-mob-padding);
+    padding-block: 3.75rem 3.75rem;
+  }
+
+   .faqHead {
+      margin-bottom: 5rem;
+      .projectHighlight {
+         color: color(text-primary);
+         text-transform: uppercase;
+         opacity: 0.8;
+         font-size: text(normal);
+         font-weight: 500;
+         line-height: 1.5rem;
+      }
+      .title {
+         font-size: text(larger);
+         margin-bottom: 5rem;
+      }
+   }
+
+   .faqValuesContent {
+      .faqList {
+         display: flex;
+         align-items: center;
+         flex-direction: column;
+         width: 100%;
+      }
+      .numberSec {
+         background: rgba(38, 160, 248, 0.12);
+         padding: text(xl);
+         min-width: 4rem;
+         max-width: 4rem;
+         display: flex;
+         justify-content: center;
+         .faqNumber {
+            font-weight: 500;
+            margin-bottom: 0;
+            font-size: text(xl);
+            @include mobile {
+               font-weight: 500;
+               font-size: text(lg);
+            }
+         }
+      }
+      .faqSecMain {
+         display: flex;
+         border-top: 0.063rem solid rgba(17, 17, 17, 0.12);
+      }
+      .faqAccordion {
+         background-color: color(primary-white);
+         border-bottom: 0.063rem solid rgba(17, 17, 17, 0.12);
+
+         .accordionHead {
+            width: 100%;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: text(xl);
+            font-weight: 500;
+            color: color(text-primary);
+            padding: text(xl);
+
+            @include mobile {
+               font-size: text(lg);
+            }
+         }
+
+         [aria-expanded="true"] {
+            &.accordionHead {
+               background: linear-gradient(117.91deg, #1e8af2 11.5%, #05bed7 55.42%);
+               @include textGradient;
+            }
+         }
+
+         .accordionBody {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+         }
+      }
+   }
+
+   //Dark mode style
+   &.cmsFaqSectionDark {
+      background-color: color(dark-bg);
+
+      .faqHead {
+         color: color(primary-white);
+         p {
+            color: color(primary-white);
+         }
+      }
+
+      .faqAccordion {
+         .numberSec {
+            background-color: rgba(38, 160, 248, 0.12);
+         }
+         .accordionHead {
+            background-color: color(text-primary);
+            color: color(primary-white);
+         }
+
+        
+         .accordionBody {
+            background-color: color(text-primary);
+            color: color(primary-white);
+         }
+      }
+   }
+}

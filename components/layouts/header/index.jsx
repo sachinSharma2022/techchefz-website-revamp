@@ -20,7 +20,7 @@ const Header = () => {
 
   const [header, setHeader] = useState("header");
 
-  const listenScrollEvent = (event) => {
+  const listenScrollEvent = () => {
     if (window.scrollY < 73) {
       return setHeader("header-transparent");
     } else if (window.scrollY > 70) {

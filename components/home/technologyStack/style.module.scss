@@ -1,55 +1,25 @@
 @import "~/styles/partials/config";
 
 .technologyStyle {
-  background:url('/images/TechStack.png') -25px -50px;
   padding: 1.25rem;
   position: relative;
   overflow: hidden;
+  background: url('/images/techstack-white.png');
+  background-repeat: space repeat;
+  height: 100vh;
+  background-size: 150vw;
 
-  &.technologyStyleDark {
-    background-color: color(dark-bg);
-    background:url('/images/Techstack_White.png') -25px -50px;
 
-    .gridContainer {
-      .techCardLogo {
-        background-color: color(dark-icon);
-        img {
-          filter: invert(1);
-        }
-      }
-    }
-    .technologyStackBox {
-      background-color: color(text-primary);
-      color: color(primary-white);
-      border: 0.14rem solid rgba(color(primary-white), 0.12);
-    }
+  &::before {
+    background: url('/images/gradient-stack.svg');
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
   }
-
-  // &::before {
-  //   content: "";
-  //   width: 30rem;
-  //   height: 30rem;
-  //   border-radius: 50%;
-  //   background-color: color(primary-orange);
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   filter: blur(12.5rem);
-  //   opacity: 0.3;
-  // }
-
-  // &::after {
-  //   content: "";
-  //   width: 30rem;
-  //   height: 30rem;
-  //   border-radius: 50%;
-  //   background-color: color(circle-blue);
-  //   position: absolute;
-  //   bottom: 0;
-  //   right: 0;
-  //   filter: blur(12.5rem);
-  //   opacity: 0.4;
-  // }
 
   .gridContainer {
     position: relative;
@@ -84,7 +54,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60vw;
+    width: 52rem;
+    max-width: 52rem;
     z-index: 1;
 
     .careerRow {
@@ -92,7 +63,7 @@
 
       .ProjectHighlight {
         font-size: text(normal);
-        font-weight: 700;
+        font-weight: 500;
         opacity: 0.8;
         text-transform: uppercase;
         margin-bottom: text(normal);
@@ -150,6 +121,18 @@
           }
         }
       }
+    }
+  }
+
+  &.technologyStyleDark {
+    background:color(dark-bg) url('/images/techstack-dark.png');
+    background-size: 150vw;
+    background-repeat: space repeat;
+
+    .technologyStackBox {
+      background-color: color(text-primary);
+      color: color(primary-white);
+      border: 0.14rem solid rgba(color(primary-white), 0.12);
     }
   }
 }

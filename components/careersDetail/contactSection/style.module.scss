@@ -8,47 +8,12 @@
     padding: 4.75rem 0.5rem;
   }
 
-  &.lestWorkStyleDark {
-    background-color: color(text-primary);
-    border-radius: 0;
-    margin: 0;
-
-    .workArea {
-      background-color: color(text-primary);
-      color: color(primary-white);
-      .workGrid {
-        .contactUsForm {
-          .textArea {
-            background-color: color(dark-gray);
-            border: 0.14rem solid rgba(color(primary-white), 0.12);
-            color: rgba(color(primary-white), 0.9);
-          }
-          .uploader {
-            @extend .textArea;
-          }
-          .labelCustom {
-            color: rgba(color(primary-white), 0.5) !important;
-            &::after {
-              display: none;
-            }
-          }
-          .policyArea {
-            .policyText {
-              .policyHighlight {
-                color: color(heading-liner);
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
   @include mobile {
     padding: 1rem 1.25rem;
     border-radius: 1.6rem;
     margin: 0 1.5rem;
   }
+  
   .workArea {
     background-color: color(primary-background);
 
@@ -56,9 +21,8 @@
       padding: text(lg);
     }
     .workGrid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
+      display: flex;
+      gap: 8.9375rem;
 
       @include mobile-tablet-p {
         grid-template-columns: repeat(1, 1fr);
@@ -69,6 +33,8 @@
         gap: 0;
       }
       .contactUsForm {
+        width: 100%;
+
         .formHeading {
           font-size: 2.75rem;
           font-weight: 500;
@@ -152,20 +118,20 @@
               border-color: transparent;
             }
           }
-          .uploader{
+          .uploader {
             @extend .textArea;
             min-height: 0;
             padding: 1.1rem 0;
             padding-left: 1rem;
           }
-          .uploadIcon{
+          .uploadIcon {
             display: flex;
             align-items: center;
             position: absolute;
             right: 10px;
             top: 50%;
             transform: translateY(-50%);
-            color: #555; 
+            color: #555;
             cursor: pointer;
           }
           .labelCustom {
@@ -176,7 +142,7 @@
             font-family: font(primary);
             padding-inline: 1rem;
           }
-          .uploadIcon svg path{
+          .uploadIcon svg path {
             fill: color(text-primary);
           }
         }
@@ -189,10 +155,14 @@
           }
         }
         .policyArea {
+          display: flex;
+          justify-content: space-between;
+
           .policyText {
             font-size: text(xxs);
             font-weight: 400;
             line-height: text(lg);
+            max-width: 21.5rem;
 
             @include mobile {
               margin-bottom: text(lg);
@@ -204,15 +174,6 @@
               margin-left: 3px;
             }
           }
-
-          .buttonGrid {
-            display: flex;
-            justify-content: flex-end;
-
-            @include mobile {
-              justify-content: flex-start;
-            }
-          }
         }
       }
       .contactImg {
@@ -220,12 +181,13 @@
         flex-direction: column;
         justify-content: flex-start;
         width: 100%;
-        max-width: 60%;
+        max-width: 391px;
 
         @include mobile {
           max-width: 100%;
         }
-        h1 {
+
+        h4 {
           font-weight: 500;
           font-size: text(larger);
           line-height: 3.3rem;
@@ -234,7 +196,7 @@
             font-size: text(xxxl);
           }
         }
-        .titlegradient {
+        .titleGradient {
           font-weight: 500;
           font-size: text(larger);
           line-height: 3.3rem;
@@ -261,7 +223,7 @@
           }
         }
         h3 {
-          font-weight: 700;
+          font-weight: 500;
           font-size: text(lg);
           line-height: 1.8rem;
           opacity: 0.6;
@@ -280,6 +242,46 @@
           opacity: 0.6;
           @include mobile {
             font-size: text(normal);
+          }
+        }
+      }
+    }
+  }
+
+  // Dark Theme here
+  &.lestWorkStyleDark {
+    background-color: color(text-primary);
+    border-radius: 0;
+    margin: 0;
+
+    .workArea {
+      background-color: color(text-primary);
+      color: color(primary-white);
+
+      .workGrid {
+
+        .contactUsForm {
+
+          .textArea {
+            background-color: color(dark-gray);
+            border: 0.14rem solid rgba(color(primary-white), 0.12);
+            color: rgba(color(primary-white), 0.9);
+          }
+          .uploader {
+            @extend .textArea;
+          }
+          .labelCustom {
+            color: rgba(color(primary-white), 0.5) !important;
+            &::after {
+              display: none;
+            }
+          }
+          .policyArea {
+            .policyText {
+              .policyHighlight {
+                color: color(info-blue);
+              }
+            }
           }
         }
       }

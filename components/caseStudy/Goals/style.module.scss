@@ -22,7 +22,7 @@
       letter-spacing: 0.2rem;
       text-transform: uppercase;
       opacity: 0.8;
-      font-weight: 700;
+      font-weight: 500;
    }
    .goalsHeading {
       font-weight: 500;
@@ -42,7 +42,7 @@
    }
    .goalsTextWrapper {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: flex-start;
       border-bottom: 0.14rem solid rgba(color(text-primary), 0.12);;
       padding: 1rem 0;

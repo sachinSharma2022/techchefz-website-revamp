@@ -20,7 +20,7 @@
          margin-bottom: 0.2rem;
       }
       .heading {
-         font-weight: 700;
+         font-weight: 500;
          line-height: 2rem;
          font-size: text(xl);
          font-family: font(secondary);
@@ -59,14 +59,21 @@
    }
 
    .serviceBtn {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+
       button {
-         margin: 0 0.75rem 0.75rem 0;
          color: color(text-primary);
          font-size: text(normal);
-         font-weight: 400;
-         line-height: 1.875rem;
          border: 0.063rem solid rgba(color(text-primary), 0.4);
-         font-family: font(secondary);
+         padding: 0 .75rem;
+         border-radius: .5rem;
+         height: 2.1875rem;
+         display: flex;
+         align-items: center;
+         justify-content: center;
       }
    }
 

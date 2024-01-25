@@ -17,16 +17,18 @@
       opacity: 0.8;
       letter-spacing: 0.2rem;
       text-transform: uppercase;
-      font-weight: 700;
+      font-weight: 500;
       line-height: 1.5rem;
     }
     .ourTeamHeading {
       font-size: text(larger);
     }
   }
+
   .titleWrapper {
     width: 40%;
   }
+
   .tabWrapper {
     border: 2px solid color(heading-liner);
     padding: 0.5rem;
@@ -34,24 +36,19 @@
     width: fit-content;
     display: flex;
 
-    button {
-      white-space: nowrap;
-      width: 100%;
+    button span {
+      padding: 0 2rem;
+      height: 2.375rem;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.5rem;
+      display: flex;
+      min-width: 176px;
 
-      span {
-        padding: 0 2rem;
-        height: 2.375rem;
-        align-items: center;
-        justify-content: center;
-        border-radius: 0.5rem;
-        display: inline-flex;
-        width: 100%;
-
-        &.btnActive {
-          background-color: color(primary-blue);
+     &.btnActive {
+          background-color: color(info-blue);
           color: color(primary-white);
         }
-      }
     }
   }
   .contentWrapper {
@@ -131,15 +128,13 @@
     background-color: color(input-bg);
     color: color(primary-white);
 
-    .ourTeamHead {
-      .tabWrapper {
+   .tabWrapper {
         background-color: color(dark-tab);
-        min-width: 380px;
+
         button {
           color: rgba(color(primary-white), 0.8);
         }
       }
-    }
 
     .teamCardBg {
       border: 0.14rem solid color(input-bg);

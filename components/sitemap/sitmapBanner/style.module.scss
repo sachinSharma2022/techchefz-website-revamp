@@ -1,0 +1,32 @@
+@import "~/styles/partials/config";
+.sitmapBanner {
+   padding: 5rem 7.5rem;
+   .sitemap {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .bannerHeading {
+         font-size: text(xl-larger);
+         font-weight: 500;
+         line-height: 5rem;
+         background: linear-gradient(137deg, #1e8af2 16.55%, #05bed7 61.45%);
+         background-clip: text;
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;
+         margin: 0;
+      }
+      .bannerText {
+         width: 29.813rem;
+         font-size: text(lg);
+         line-height: 1.875rem;
+         opacity: 0.8;
+         margin: 0;
+      }
+   }
+ 
+   //    Dark mode style 
+   &.sitemapBannerDark{
+     color: color(primary-white);
+   }
+}
