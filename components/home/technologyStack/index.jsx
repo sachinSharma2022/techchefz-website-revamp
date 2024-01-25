@@ -2,13 +2,12 @@
 
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
-import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
 import { useContext, useEffect } from "react";
 
 import { cn } from "@/lib/utils";
-import styles from "./style.module.scss";
 import Link from "next/link";
+import styles from "./style.module.scss";
 
 const TechnologyStack = () => {
   const { theme, setTheme } = useContext(MyContext);
@@ -42,7 +41,6 @@ const TechnologyStack = () => {
   }
   useEffect(() => {
     const ele = document.getElementById("tech-Stack");
-
     ele.addEventListener("mousemove", move);
   }, []);
   return (

@@ -1,11 +1,25 @@
 @import "~/styles/partials/config";
 
 .technologyStyle {
-  background:url('/images/TechStack.png') -25px -50px;
   padding: 1.25rem;
   position: relative;
   overflow: hidden;
-  min-height: 100vh;
+  background: url('/images/techstack-white.png');
+  background-repeat: space repeat;
+  height: 100vh;
+  background-size: 150vw;
+
+
+  &::before {
+    background: url('/images/gradient-stack.svg');
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+  }
 
   .gridContainer {
     position: relative;
@@ -111,23 +125,14 @@
   }
 
   &.technologyStyleDark {
-    background-color: color(dark-bg);
-    background:url('/images/Techstack_White.png') -25px -50px;
+    background:color(dark-bg) url('/images/techstack-dark.png');
+    background-size: 150vw;
+    background-repeat: space repeat;
 
-    .gridContainer {
-      .techCardLogo {
-        background-color: color(dark-icon);
-
-        img {
-          filter: invert(1);
-        }
-      }
-    }
     .technologyStackBox {
       background-color: color(text-primary);
       color: color(primary-white);
       border: 0.14rem solid rgba(color(primary-white), 0.12);
     }
   }
-
 }

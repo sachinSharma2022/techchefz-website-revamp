@@ -30,14 +30,12 @@ const WeAreFuture = () => {
             <span className={styles.titleHighlight}>Technology Company.</span>
           </h2>
         </div>
-        <div className="row">
-          <div className="col-md-6 col-12">
-            <h3 className={styles.datingText}>
-              With roots dating back to 2017, we started as a pocket size team
-              of enthusiasts.
-            </h3>
-          </div>
-          <div className="col-md-6 col-12">
+        <div className={styles.contentSection}>
+          <h3 className={styles.datingText}>
+            With roots dating back to 2017, we started as a pocket size team of
+            enthusiasts.
+          </h3>
+          <div>
             <p className={styles.aboutText}>
               Over the next 3 years, we developed into a full-service digital
               agency. We support our clients with web development, mobile app

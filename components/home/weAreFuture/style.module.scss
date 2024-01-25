@@ -7,18 +7,9 @@
     padding: spacing(section-mob-padding);
   }
 
-  &.futureSpacingDark {
-    background-color: color(input-bg);
-    color: color(primary-white);
-
-    .futureTitle {
-      .text {
-        color: color(primary-white);
-      }
-    }
-    .aboutText {
-      color: color(primary-white);
-    }
+  .contentSection {
+    display: flex;
+    gap: 8.9375rem;
   }
 
   .futureTitle {
@@ -105,7 +96,7 @@
     font-size: text(larger);
     font-weight: 500;
     line-height: 3.375rem;
-    max-width: 85%;
+    max-width: 32rem;
 
     @include mobile {
       font-size: text(xl);
@@ -120,10 +111,28 @@
     opacity: 0.6;
     margin-bottom: text(larger);
     color: color(text-primary);
+    max-width: 37rem;
+
     @include mobile {
       font-size: text(xl);
       line-height: 1.875rem;
       margin-bottom: 2.25rem;
+    }
+  }
+
+
+  // Dark theme Style here
+  &.futureSpacingDark {
+    background-color: color(input-bg);
+    color: color(primary-white);
+
+    .futureTitle {
+      .text {
+        color: color(primary-white);
+      }
+    }
+    .aboutText {
+      color: color(primary-white);
     }
   }
 }
