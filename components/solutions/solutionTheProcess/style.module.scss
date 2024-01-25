@@ -55,8 +55,9 @@
     max-height: 57rem;
     height: 100%;
     overflow: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     cursor: pointer;
+    padding-bottom: 25rem;
 
     &::-webkit-scrollbar {
       width: 0; 

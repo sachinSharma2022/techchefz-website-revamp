@@ -37,11 +37,12 @@ import CircularStepper from "./circularStepper";
       description:
         "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
     },
+ 
   ];
 const SolutionTheProcess = () => {
   const { theme, setTheme } = useContext(MyContext);
   const [activeCardIndex, setActiveCardIndex] = useState(0);
-
+  const [isLastCardReached, setIsLastCardReached] = useState(false);
   const processCardSectionRef = useRef(null);
 
   useEffect(() => {
@@ -52,10 +53,13 @@ const SolutionTheProcess = () => {
   
         const scrollPosition = processCardSectionRef.current.scrollTop;
         const newActiveCardIndex = Math.floor(scrollPosition / cardHeight);
-  
-        // Update the active card index only if it has changed
-        if (newActiveCardIndex !== activeCardIndex) {
+        const reachedLastCard = newActiveCardIndex === totalCards ;
+
+        if (!reachedLastCard && newActiveCardIndex !== activeCardIndex) {
           setActiveCardIndex(newActiveCardIndex);
+        }
+        if (reachedLastCard) {
+          setIsLastCardReached(true);
         }
       }
     };
@@ -66,10 +70,10 @@ const SolutionTheProcess = () => {
   
     return () => {
       if (processCardSectionRef.current) {
-        processCardSectionRef.current.removeEventListener('scroll', handleScroll);
+        processCardSectionRef.current.removeEventListener('scroll', handleScroll);  
       }
     };
-  }, [accordionData, activeCardIndex]);
+  }, [accordionData, activeCardIndex,isLastCardReached]);
   
 
   return (
@@ -86,7 +90,7 @@ const SolutionTheProcess = () => {
           </div>
 
           <div className={styles.circularStepperContainer}>
-            <CircularStepper activeIndex={activeCardIndex} totalSteps={accordionData.length} circleWidth="400" />
+            <CircularStepper activeIndex={activeCardIndex} totalSteps={accordionData.length}   isLastCardReached={isLastCardReached} circleWidth="400" />
           </div>
         </div>
         <div className={`${styles.processCardSection}`} ref={processCardSectionRef}>

@@ -1,9 +1,10 @@
 import React from "react";
 import { ImageCustom } from "@/components/ui/imageCustom";
 
-const CircularStepper = ({ activeIndex, totalSteps, circleWidth }) => {
+const CircularStepper = ({ activeIndex, totalSteps, circleWidth , isLastCardReached }) => {
   const radius = 195;
-  const percentage = (activeIndex / (totalSteps)) * 100;
+  const percentage = isLastCardReached ? 100 : (activeIndex / (totalSteps)) * 100;
+  console.log(percentage,"percentage");
   const dashArray = radius * Math.PI * 2;
   const dashOffset = dashArray - (dashArray * percentage) / 100;
   return (
