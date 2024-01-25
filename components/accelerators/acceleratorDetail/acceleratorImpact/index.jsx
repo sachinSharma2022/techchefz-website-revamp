@@ -52,7 +52,7 @@ const AcceleratorImpact = (props) => {
               search can improve a business&apos;s online visibility.
             </li>
           </ul>
-          <Button variant="lightBlueOutline" size="sm">
+          <Button variant="lightBlueOutline" size="lg">
             Download Notebook <Icons.ArrowRight size={18} />
           </Button>
         </div>
@@ -66,7 +66,7 @@ const AcceleratorImpact = (props) => {
             The Solution Accelerator tackles this pervasive issue head-on by
             leveraging the power of real-time data and advanced analytics.{" "}
           </p>
-          <Button variant="lightBlueOutline" size="sm">
+          <Button variant="lightBlueOutline" size="lg">
             Download Notebook <Icons.ArrowRight size={18} />
           </Button>
         </div>
@@ -96,7 +96,7 @@ const AcceleratorImpact = (props) => {
             The Solution Accelerator tackles this pervasive issue head-on by
             leveraging the power of real-time data and advanced analytics.{" "}
           </p>
-          <Button variant="lightBlueOutline" size="sm">
+          <Button variant="lightBlueOutline" size="lg">
             Download Notebook <Icons.ArrowRight size={18} />
           </Button>
         </div>

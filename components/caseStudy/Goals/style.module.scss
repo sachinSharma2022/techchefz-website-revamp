@@ -3,19 +3,6 @@
 .goals {
    padding: 0 7.5rem;
 
-   &.goalsDark{
-      background-color: color(input-bg);
-      color: color(primary-white);
-
-      .goalsIcons{
-         svg > path{
-            fill: color(primary-white);
-           }
-        
-      }
-     
-
-   }
    .goalsTitle {
       font-size: text(normal);
       line-height: 1.5rem;
@@ -76,8 +63,8 @@
       padding: 0 0.4rem;
    }
 
-   .goalsImgs {
-      padding: 5rem 0;
+   .goalImage {
+      padding: 5rem 0 0;
       img {
          margin: 1.25rem 0;
          width: 100%;
@@ -89,6 +76,19 @@
          display: grid;
          grid-template-columns: repeat(2,1fr);
          gap: 2.5rem;
+      }
+   }
+
+   // Dark Theme Style
+   &.goalsDark{
+      background-color: color(input-bg);
+      color: color(primary-white);
+
+      .goalsIcons{
+         svg > path{
+            fill: color(primary-white);
+           }
+        
       }
    }
 }

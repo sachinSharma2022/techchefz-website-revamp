@@ -53,10 +53,30 @@ a {
 }
 
 // space
-
 .mt-120 {
   margin-top: 7.5rem;
 }
+
+.pt-120 {
+  padding-top: 7.5rem;
+}
+
+.pt-80 {
+  padding-top: 5rem;
+}
+
+.pb-80 {
+  padding-bottom: 5rem;
+}
+
+.mt-80 {
+  margin-top: 5rem;
+}
+
+.mb-80 {
+  margin-bottom: 5rem;
+}
+
 
 // Space End
 
@@ -623,7 +643,7 @@ input:-webkit-autofill {
 
   .slick-prev {
     left: auto;
-    right: 170px;
+    right: 210px;
     top: -14vh;
     svg {
       transform: rotate(-180deg);
@@ -631,7 +651,7 @@ input:-webkit-autofill {
   }
 
   .slick-next {
-    right: 100px;
+    right: 120px;
     left: auto;
     top: -14vh;
   }

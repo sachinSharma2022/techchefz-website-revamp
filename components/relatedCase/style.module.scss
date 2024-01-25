@@ -1,13 +1,13 @@
 @import "~/styles/partials/config";
 
 .relatedCase {
-  &.relatedCaseDark {
-    background-color: color(input-bg);
-    color: color(primary-white);
-  }
 
   .headSection {
     padding-inline: spacing(p-120);
+    
+    @include desktop-hd {
+      padding-inline: 0;
+    }
 
     @include mobile-tablet-p {
       padding: spacing(section-mob-padding);
@@ -60,5 +60,12 @@
   }
   .textStyle {
     max-width: 70%;
+  }
+
+
+  // Dark theme style
+  &.relatedCaseDark {
+    background-color: color(input-bg);
+    color: color(primary-white);
   }
 }
