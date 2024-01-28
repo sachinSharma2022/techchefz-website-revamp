@@ -2,7 +2,11 @@
 
 .whatWeDo {
   padding: spacing(section-primary-padding);
-
+  
+  @include mobile-tablet-p {
+    padding: spacing(section-mob-padding);
+    padding-block: 3.75rem 3.75rem;
+  }
   &.whatWeDoDark {
     background-color: color(input-bg);
     color: color(primary-white);
@@ -43,10 +47,18 @@
     font-weight: 500;
     line-height: 1.5rem;
     letter-spacing: 0.2rem;
+    @include mobile-tablet-p{
+      margin-bottom: 0.75rem;
+    }
   }
   .weDoHeading {
     font-size: text(larger);
     margin-bottom: 2.75rem;
+    @include mobile-tablet-p{
+      font-size: 2rem;
+      line-height: 2.5rem;
+      margin-bottom: 3.75rem;
+    }
   }
   .workCardWrapper {
     display: grid;
@@ -115,6 +127,11 @@
           margin-top: 5.5rem;
           padding-bottom: 2rem;
           transition: all 0.5s;
+          @include mobile-tablet-p{
+            font-size: text(lg);
+            font-weight: 500;
+            line-height: text(lg);
+          }
         }
 
         p {

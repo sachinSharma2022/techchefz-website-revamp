@@ -4,6 +4,11 @@
   padding: spacing(section-primary-padding);
   background-color: color(bg-soft);
 
+  @include mobile-tablet-p {
+    padding: spacing(section-mob-padding);
+    padding-block: 3.75rem 3.75rem;
+  }
+
   &.ourValuesDark {
     background-color: color(dark-bg);
     color: color(primary-white);
@@ -21,13 +26,16 @@
         }
       }
     }
-    .iconBox{
+    .iconBox {
       background-color: color(input-bg);
     }
   }
 
   .ourValuesHead {
     margin-bottom: 5rem;
+    @include mobile-tablet-p {
+      margin-bottom: 3.75rem;
+    }
     .ourValuesTitle {
       color: color(text-primary);
       text-transform: uppercase;
@@ -36,15 +44,26 @@
       font-weight: 500;
       line-height: 1.5rem;
       letter-spacing: 0.2rem;
+      @include mobile-tablet-p {
+        margin-bottom: 0.75rem;
+        line-height: text(normal);
+      }
     }
     .ourValuesHeading {
       font-size: text(larger);
       margin-bottom: 2.75rem;
+      @include mobile-tablet-p {
+        font-size: 2rem;
+        line-height: 2.5rem;
+      }
     }
   }
 
   .ourValuesContent {
     .ourValueImg {
+      @include mobile-tablet-p {
+        margin-bottom: 2.75rem;
+      }
       img {
         width: 100%;
         height: auto;
@@ -53,6 +72,9 @@
     .ourValuesText {
       font-size: text(lg);
       opacity: 0.6;
+      @include mobile-tablet-p {
+        line-height: 1.875rem;
+      }
     }
 
     .ourValuesAccordion {

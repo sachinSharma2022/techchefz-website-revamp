@@ -4,6 +4,11 @@
    padding: spacing(section-primary-padding);
    padding-bottom: 1rem;
 
+   @include mobile-tablet-p {
+      padding: spacing(section-mob-padding);
+      padding-block: 3.75rem 3.75rem;
+    }
+
    &.ourResultsDark {
     background-color: color(input-bg);
     color: color(primary-white);
@@ -32,10 +37,18 @@
       font-weight: 500;
       line-height: 1.5rem;
       letter-spacing: 0.2rem;
+      @include mobile-tablet-p{
+         margin-bottom: 0.75rem;
+      }
    }
    .ourResultsHeading {
       font-size: text(larger);
       margin-bottom: 2.75rem;
+      @include mobile-tablet-p{
+         font-size: 2rem;
+         line-height: 2.5rem;
+         margin-bottom: text(lg);
+      }
    }
    .ourResultsText {
       opacity: 0.6;
@@ -43,11 +56,17 @@
       line-height: 1.875rem;
       font-size: text(lg);
       margin-bottom: 5rem;
+      @include mobile-tablet-p{
+         margin-bottom: 3.75rem;
+      }
    }
    .resultCardWrapper {
       display: flex;
       justify-content: center;
       gap: 2.5rem;
+      @include mobile-tablet-p{
+         gap: text(lg);
+      }
 
       .resultCard {
          border: 2px solid rgba(color(text-primary), 12%);
@@ -56,6 +75,9 @@
          padding: 2rem;
          background-color: color(bg-soft);
          border-radius: 1.25rem;
+         @include mobile-tablet-p{
+            padding: text(lg);
+         }
          
          &:hover {
             border-color: color(heading-liner);

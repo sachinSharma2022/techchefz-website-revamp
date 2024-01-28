@@ -7,10 +7,18 @@
   padding: spacing(section-primary-padding);
   position: relative;
 
+  @include mobile-tablet-p {
+    padding: spacing(section-mob-padding);
+    padding-block: 3.75rem 3.75rem;
+  }
+
   .ourTeamHead {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include mobile-tablet-p {
+      flex-direction: column;
+    }
 
     .ourTeamTitle {
       font-size: text(normal);
@@ -22,11 +30,20 @@
     }
     .ourTeamHeading {
       font-size: text(larger);
+      @include mobile-tablet-p {
+        font-size: 2rem;
+        line-height: 2.5rem;
+        margin-bottom: 2.75rem;
+      }
     }
   }
 
   .titleWrapper {
     width: 40%;
+
+    @include mobile-tablet-p {
+      width: 100%;
+    }
   }
 
   .tabWrapper {
@@ -45,10 +62,10 @@
       display: flex;
       min-width: 176px;
 
-     &.btnActive {
-          background-color: color(info-blue);
-          color: color(primary-white);
-        }
+      &.btnActive {
+        background-color: color(info-blue);
+        color: color(primary-white);
+      }
     }
   }
   .contentWrapper {
@@ -59,6 +76,11 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
     margin-top: 3rem;
+
+    @include mobile-tablet-p {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2rem;
+    }
 
     .teamCardBg {
       border: 0.14rem solid color(primary-white);
@@ -128,13 +150,13 @@
     background-color: color(input-bg);
     color: color(primary-white);
 
-   .tabWrapper {
-        background-color: color(dark-tab);
+    .tabWrapper {
+      background-color: color(dark-tab);
 
-        button {
-          color: rgba(color(primary-white), 0.8);
-        }
+      button {
+        color: rgba(color(primary-white), 0.8);
       }
+    }
 
     .teamCardBg {
       border: 0.14rem solid color(input-bg);
@@ -144,7 +166,6 @@
 
 // Modal Body Content section
 .modalBody {
-
   .infoSec {
     padding: 1.5rem;
   }
@@ -191,7 +212,7 @@
     background-color: color(primary-white);
     padding: 1.5rem;
     color: color(text-primary);
-    
+
     .teamName {
       font-size: text(xl);
       font-weight: 500;
@@ -204,32 +225,32 @@
       line-height: 1.5rem;
       opacity: 0.6;
     }
-  
+
     .modalTitle {
       display: flex;
       justify-content: space-between;
       background-color: color(primary-white);
       color: color(text-primary);
       padding: 1.5rem;
-  
+
       .title {
         font-size: text(xl);
         font-weight: 500;
         line-height: 2rem;
       }
-  
+
       svg {
         cursor: pointer;
       }
     }
-  
+
     .modalImg > div {
       margin-bottom: 2rem;
       height: 250px;
       width: 208px;
       border-radius: 1rem;
       overflow: hidden;
-  
+
       img {
         height: 100%;
         width: 100%;
@@ -251,4 +272,3 @@
     }
   }
 }
-

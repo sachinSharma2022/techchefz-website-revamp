@@ -2,6 +2,10 @@
 
 .ourHistory {
   padding: spacing(section-primary-padding);
+  @include mobile-tablet-p {
+    padding: spacing(section-mob-padding);
+    padding-block: 3.75rem 3.75rem;
+  }
 
   &.ourHistoryDark {
     background-color: color(input-bg);
@@ -16,9 +20,9 @@
       }
     }
 
-    .cardStyle{
-      .infoStyle{
-        .ourHistoryContent{
+    .cardStyle {
+      .infoStyle {
+        .ourHistoryContent {
           color: color(primary-white);
           opacity: 0.6;
         }
@@ -29,6 +33,9 @@
   .ourHistoryTop {
     width: 100%;
     margin-bottom: 5rem;
+    @include mobile-tablet-p {
+      margin-bottom: 3.75rem;
+    }
   }
 
   .ourHistoryTitle {
@@ -39,11 +46,19 @@
     font-weight: 500;
     line-height: 1.5rem;
     letter-spacing: 0.2rem;
+    @include mobile-tablet-p {
+      margin-bottom: 0.75rem;
+    }
   }
   .ourHistoryHeading {
     font-size: text(larger);
     color: color(text-primary);
     max-width: 55%;
+    @include mobile-tablet-p {
+      max-width: 100%;
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
   }
 
   .subHeading {
@@ -51,6 +66,10 @@
     font-weight: 500;
     line-height: 2.5rem;
     margin-bottom: 0.5rem;
+    @include mobile-tablet-p {
+      font-size: text(lg);
+      line-height: 1.75rem;
+    }
   }
   .ourHistoryContent {
     font-weight: 400;
@@ -63,7 +82,7 @@
   .infoStyle {
     max-width: 85%;
 
-    @include mobile {
+    @include mobile-tablet-p {
       max-width: 100%;
     }
   }
@@ -84,5 +103,8 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     padding: 0 0.2rem;
+    @include mobile-tablet-p {
+      grid-template-columns: repeat(1, 1fr) !important;
+    }
   }
 }
