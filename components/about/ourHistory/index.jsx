@@ -1,11 +1,9 @@
 "use client";
+import { Icons } from "@/components/icons";
+import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 import Slider from "react-slick";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
-import { Icons } from "@/components/icons";
-import { ImageCustom } from "@/components/ui/imageCustom";
 
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
@@ -22,6 +20,7 @@ const OurHistory = () => {
       );
     },
     dots: true,
+    fade: true,
     infinite: false,
     speed: 500,
     slidesToShow: 1,
@@ -51,7 +50,21 @@ const OurHistory = () => {
         "Bridging Dreams to Reality in a Transformative Journey of Innovation and Impact at TechChefz.",
       content:
         "Founded in 2017, TechChefz arose from a shared passion for technology, uniting a team of pioneers. Fueled by enthusiasm and determination, they set on a transformative journey to shape the future.",
-      imgSrc: "/images/img/about/slider1.png",
+      imgSrc: "/images/goals1.png",
+    },
+    {
+      title:
+        "Bridging Dreams to Reality in a Transformative Journey of Innovation and Impact at TechChefz.",
+      content:
+        "Founded in 2017, TechChefz arose from a shared passion for technology, uniting a team of pioneers. Fueled by enthusiasm and determination, they set on a transformative journey to shape the future.",
+      imgSrc: "/images/goals2.png",
+    },
+    {
+      title:
+        "Bridging Dreams to Reality in a Transformative Journey of Innovation and Impact at TechChefz.",
+      content:
+        "Founded in 2017. Fueled by enthusiasm and determination, they set on a transformative journey to shape the future TechChefz arose from a shared passion for technology, uniting a team of pioneers",
+      imgSrc: "/images/goals3.png",
     },
     {
       title:
@@ -64,21 +77,7 @@ const OurHistory = () => {
       title:
         "Bridging Dreams to Reality in a Transformative Journey of Innovation and Impact at TechChefz.",
       content:
-        "Founded in 2017, TechChefz arose from a shared passion for technology, uniting a team of pioneers. Fueled by enthusiasm and determination, they set on a transformative journey to shape the future.",
-      imgSrc: "/images/img/about/slider1.png",
-    },
-    {
-      title:
-        "Bridging Dreams to Reality in a Transformative Journey of Innovation and Impact at TechChefz.",
-      content:
-        "Founded in 2017, TechChefz arose from a shared passion for technology, uniting a team of pioneers. Fueled by enthusiasm and determination, they set on a transformative journey to shape the future.",
-      imgSrc: "/images/img/about/slider1.png",
-    },
-    {
-      title:
-        "Bridging Dreams to Reality in a Transformative Journey of Innovation and Impact at TechChefz.",
-      content:
-        "Founded in 2017, TechChefz arose from a shared passion for technology, uniting a team of pioneers. Fueled by enthusiasm and determination, they set on a transformative journey to shape the future.",
+        "Founded in 2017. Fueled by enthusiasm and determination, they set on a transformative journey to shape the future TechChefz arose from a shared passion for technology, uniting a team of pioneers,",
       imgSrc: "/images/img/about/slider1.png",
     },
   ];

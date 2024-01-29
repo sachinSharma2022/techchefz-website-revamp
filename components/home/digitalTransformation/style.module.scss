@@ -7,27 +7,6 @@
     padding: spacing(section-mob-padding);
   }
 
-  &.digitalStyleDark {
-    background-color: color(dark-bg);
-    color: color(primary-white);
-
-    .digitalMain {
-      background-color: color(text-primary);
-      color: color(primary-white);
-      border: 0.14rem solid rgba(color(primary-white), 0.12);
-    }
-
-    .digitalMain {
-      .digitalGrid {
-        .experienceCardBox {
-          .CustomerHeading {
-            color: color(primary-white);
-          }
-        }
-      }
-    }
-  }
-
   .serviceRow {
     margin-bottom: 5rem;
     @include mobile {
@@ -44,15 +23,17 @@
 
   .projectHighlight {
     font-size: text(normal);
-    font-weight: 700;
+    font-weight: 500;
     margin-bottom: text(lg);
     opacity: 0.6;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
+    
     @include mobile {
       margin-bottom: 0.75rem;
     }
   }
+
   .datingText {
     font-size: 2.75rem;
     font-weight: 500;
@@ -137,6 +118,33 @@
             list-style: square;
             font-size: text(normal);
             opacity: 0.6;
+          }
+        }
+      }
+    }
+  }
+
+  // Dark Theme here
+  &.digitalStyleDark {
+    background-color: color(dark-bg);
+    color: color(primary-white);
+
+    .digitalMain {
+      background-color: color(text-primary);
+      color: color(primary-white);
+      border: 0.14rem solid rgba(color(primary-white), 0.12);
+    }
+
+
+    .digitalMain {
+      .digitalGrid {
+        .experienceCardBox {
+
+          .digitalText {
+            color: rgba(color(primary-white), 0.6);
+          }
+          .CustomerHeading {
+            color: color(primary-white);
           }
         }
       }

@@ -18,7 +18,7 @@
          text-transform: uppercase;
          opacity: 0.8;
          font-size: text(normal);
-         font-weight: 700;
+         font-weight: 500;
          line-height: 1.5rem;
          letter-spacing: 0.2rem;
       }
@@ -38,6 +38,7 @@
 
    .ourValuesAccordion {
       width: 100%;
+      border-top: 0.14rem solid rgba(color(text-primary), 0.12);
 
       .accordionHead {
          width: 100%;

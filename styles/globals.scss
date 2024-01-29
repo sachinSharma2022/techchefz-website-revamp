@@ -53,10 +53,30 @@ a {
 }
 
 // space
-
 .mt-120 {
   margin-top: 7.5rem;
 }
+
+.pt-120 {
+  padding-top: 7.5rem;
+}
+
+.pt-80 {
+  padding-top: 5rem;
+}
+
+.pb-80 {
+  padding-bottom: 5rem;
+}
+
+.mt-80 {
+  margin-top: 5rem;
+}
+
+.mb-80 {
+  margin-bottom: 5rem;
+}
+
 
 // Space End
 
@@ -589,6 +609,12 @@ input:-webkit-autofill {
       }
     }
   }
+
+  .grid-0, .grid-5 {
+    .imgBox div {
+      min-height: 43.25rem;
+    }
+  }
 }
 
 .related-case-slider {
@@ -596,9 +622,11 @@ input:-webkit-autofill {
     background-color: color(primary-blue);
     padding: 0;
     border-radius: 0.5rem;
-    padding: 0.9rem;
     width: 3rem;
     height: 3rem;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
 
     &:hover {
       background-color: color(primary-blue);
@@ -615,7 +643,7 @@ input:-webkit-autofill {
 
   .slick-prev {
     left: auto;
-    right: 170px;
+    right: 210px;
     top: -14vh;
     svg {
       transform: rotate(-180deg);
@@ -623,7 +651,7 @@ input:-webkit-autofill {
   }
 
   .slick-next {
-    right: 100px;
+    right: 120px;
     left: auto;
     top: -14vh;
   }
@@ -631,6 +659,7 @@ input:-webkit-autofill {
   .slick-disabled {
     background-color: color(primary-white);
     border: 0.14rem solid rgba(color(text-primary), 0.5);
+    
     &:hover {
       background-color: color(primary-white);
     }
@@ -701,9 +730,11 @@ input:-webkit-autofill {
     background-color: color(primary-blue);
     padding: 0;
     border-radius: 0.5rem;
-    padding: 0.9rem;
     width: 3rem;
     height: 3rem;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
 
     &:hover {
       background-color: color(primary-blue);

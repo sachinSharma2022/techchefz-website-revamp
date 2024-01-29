@@ -70,7 +70,7 @@ const OurTeam = () => {
                 <div className={styles.titleWrapper}>
                   <h6 className={styles.ourTeamTitle}>Our Team</h6>
                   <h3 className={styles.ourTeamHeading}>
-                    Meet the Founder behind the Vision.
+                    Meet the Founder <br /> behind the Vision.
                   </h3>
                 </div>
                 <Tab.List className={styles.tabWrapper}>
@@ -113,9 +113,7 @@ const OurTeam = () => {
                               <h6>{data.mebName} </h6>
                               <p>{data.role}</p>
                             </div>
-                            <Button variant="default" size="default">
-                              <Icons.ArrowRight width={26} height={24} />
-                            </Button>
+                            <Icons.ArrowRight width={26} height={24} />
                           </div>
                           <Link
                             className={styles.linkedInIcon}

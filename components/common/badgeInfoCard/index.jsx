@@ -9,11 +9,16 @@ import styles from "./style.module.scss";
 const BadgeInfoCard = (props) => {
   const { theme, setTheme } = useContext(MyContext);
   return (
-    <Link href={props.href} className={`${styles.browserAcceleratorCard} ${theme ? styles.browserAcceleratorCardDark : ""}`}>
+    <Link
+      href={props.href}
+      className={`${styles.browserAcceleratorCard} ${
+        theme ? styles.browserAcceleratorCardDark : ""
+      }`}
+    >
       <div className={styles.cardHeader}>
         <div className={styles.cardSubTitle}>
           <div>{props.icons}</div>
-          <p>{props.subHeading}</p>
+          <h4 className={styles.heading}>{props.subHeading}</h4>
         </div>
         <Icons.ArrowUpRight className={styles.arrowUp} width={15} height={15} />
       </div>
@@ -21,9 +26,9 @@ const BadgeInfoCard = (props) => {
       <p className={styles.cardContent}>{props.description}</p>
       <div className={styles.cardsTags}>
         {props.options.map((option) => (
-          <Button key={option.value} variant="outline" size="xs">
+          <div className={styles.badgeStyle} key={option.value}>
             {option}
-          </Button>
+          </div>
         ))}
       </div>
     </Link>

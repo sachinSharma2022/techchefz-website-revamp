@@ -11,8 +11,8 @@ const AcceleratorDetails = () => {
       <DetailBanner />
       <AcceleratorIndustry />
       <Impact />
-      <Challenges className="pb-5" />
-      <RelatedCase sliderClassName="mb-0" />
+      <Challenges />
+      <RelatedCase sliderClassName="mb-0" className="mt-5" />
       <LetsWork />
     </div>
   );

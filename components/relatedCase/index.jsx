@@ -32,7 +32,7 @@ const RelatedCase = (props) => {
       {
         breakpoint: 1500,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2.5,
           slidesToScroll: 3,
         },
       },
@@ -89,7 +89,13 @@ const RelatedCase = (props) => {
     },
   ];
   return (
-    <section className={cn(styles.relatedCase, props.className, theme ? styles.relatedCaseDark : "")}>
+    <section
+      className={cn(
+        styles.relatedCase,
+        props.className,
+        theme ? styles.relatedCaseDark : ""
+      )}
+    >
       <div className={cn("primary-container")}>
         <div className={styles.headSection}>
           <h6 className={styles.relatedCaseTitle}>Related Case Study</h6>

@@ -3,8 +3,9 @@
 @mixin innovationSpacingStyle {
   padding: spacing(section-primary-padding);
 
-  @include mobile {
+  @include mobile-tablet-p {
     padding: spacing(section-mob-padding);
+    padding-block: 3.75rem 3.75rem;
   }
   .innovationMain {
     display: flex;
@@ -13,22 +14,22 @@
     align-items: center;
     margin-bottom: 7.5rem;
 
-    @include mobile {
+    @include mobile-tablet-p {
       justify-content: flex-start;
       align-items: start;
-      margin-bottom: 3.5rem;
+      margin-bottom: 3.75rem;
     }
     .text {
       margin: 0;
       margin-bottom: 2.5rem;
       text-transform: uppercase;
       font-size: text(normal);
-      font-weight: 700;
+      font-weight: 500;
       color: color(text-primary);
       opacity: 0.6;
       letter-spacing: 0.2rem;
 
-      @include mobile {
+      @include mobile-tablet-p {
         margin-bottom: 0.75rem;
         font-weight: 400;
       }
@@ -39,11 +40,12 @@
       line-height: 3.375rem;
       text-align: center;
       max-width: 55%;
-      @include mobile {
+      @include mobile-tablet-p {
         text-align: left;
         font-size: 2rem;
         line-height: 2.5rem;
         min-width: 100%;
+        margin-bottom: 0;
       }
     }
   }
@@ -52,6 +54,10 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
 
+    @include mobile-tablet-p {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.75rem;
+    }
     @include mobile {
       grid-template-columns: repeat(1, 1fr);
       gap: 2.7rem;
@@ -69,13 +75,13 @@
       border: 0.125rem solid rgba(color(text-primary), 0.12);
       @include transition(0.5s);
 
-      @include mobile {
+      @include mobile-tablet-p {
         width: 100%;
       }
 
       .bgImage {
         width: 100%;
-        
+
         img {
           object-fit: contain;
           height: 100%;
@@ -90,7 +96,7 @@
         cursor: pointer;
 
         img {
-          mix-blend-mode:normal;
+          mix-blend-mode: normal;
         }
       }
 
@@ -105,20 +111,20 @@
           margin-bottom: 0;
           text-align: center;
           color: color(primary-blue);
-          @include mobile {
+          @include mobile-tablet-p {
             font-size: 2rem;
             color: color(text-primary);
           }
         }
         .sbSubtitle {
-          font-weight: 700;
+          font-weight: 500;
           font-size: text(normal);
           color: rgba(color(text-primary), 0.80);
           letter-spacing: 0.2rem;
           text-transform: uppercase;
           opacity: 0.6;
           text-align: center;
-          @include mobile {
+          @include mobile-tablet-p {
             font-size: text(normal);
             margin-bottom: 0.25rem;
           }
@@ -127,16 +133,14 @@
     }
   }
 }
-
 .innovationSpacing {
   @include innovationSpacingStyle();
 }
 
-//dark Mode 
-
+//dark Mode
 .darkMode {
-@include innovationSpacingStyle();
-background-color: color(input-bg);
+  @include innovationSpacingStyle();
+  background-color: color(input-bg);
 
   .innovationMain {
     .text {
@@ -163,11 +167,12 @@ background-color: color(input-bg);
       .textCardSpace {
         .sbTitle {
           color: color(info-blue);
+          @include mobile;
         }
         .sbSubtitle {
           color: rgba(color(primary-white), 0.6);
+        }
       }
     }
-  }
   }
 }

@@ -40,6 +40,9 @@
          font-weight: 400;
          line-height: 1.875rem;
          border: 0.14rem solid rgba(color(text-primary), 0.4);
+         border-radius: 8px;
+         padding: 0 2rem;
+         height: 44px;
 
          &:hover {
             background-color: color(primary-white);

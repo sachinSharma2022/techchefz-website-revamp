@@ -277,11 +277,13 @@
       margin-right: 2.5rem;
 
       button {
-        width: 2rem;
-        height: 2rem;
+        min-width: 2rem;
+        max-width: 2rem;
+        min-height: 2rem;
+        max-height: 2rem;
         border: 0.14rem solid rgba(color(text-primary), 0.3);
         border-radius: 50%;
-        display: inline-flex;
+        display: flex;
         justify-content: center;
         align-items: center;
         transition: all 0.5s;
@@ -574,70 +576,69 @@
   }
 
   // Dark Style here
-&.headerDarkStyle {
-  background-color: transparent;
+  &.headerDarkStyle {
+    background-color: transparent;
 
-  .logo {
-    a {
-      display: none;
+    .logo {
+      a {
+        display: none;
+      }
+      .darkLogo {
+        display: block;
+      }
     }
-    .darkLogo {
-      display: block;
-    }
-  }
 
-  .dropDown {
-    svg > rect {
-      fill: color(primary-white);
+    .dropDown {
+      svg > rect {
+        fill: color(primary-white);
+      }
     }
-  }
 
-  .headerRight {
-    .modeBtn {
-      button {
-        &:hover {
-          background-color: rgba(color(primary-white), 0.2);
+    .headerRight {
+      .modeBtn {
+        button {
+          &:hover {
+            background-color: rgba(color(primary-white), 0.2);
+          }
         }
       }
     }
-  }
 
-  nav {
-    ul {
-      li {
-        &.dropDown {
-          > a {
-            &.active {
-              .arrow {
-                border-color: color(info-blue);
+    nav {
+      ul {
+        li {
+          &.dropDown {
+            > a {
+              &.active {
+                .arrow {
+                  border-color: color(info-blue);
+                }
               }
             }
           }
-        }
-        a {
-          color: color(primary-white);
+          a {
+            color: color(primary-white);
 
-          &::after {
-            background-color: color(primary-white);
-          }
+            &::after {
+              background-color: color(primary-white);
+            }
 
-          &.active {
-            color: color(info-blue);
+            &.active {
+              color: color(info-blue);
+            }
           }
         }
       }
     }
-  }
-  .arrow {
-    border-color: color(primary-white);
-  }
-  .headerRight {
-    .modeBtn {
-      button {
-        border: 0.14rem solid rgba(color(primary-white), 0.12);
+    .arrow {
+      border-color: color(primary-white);
+    }
+    .headerRight {
+      .modeBtn {
+        button {
+          border: 0.14rem solid rgba(color(primary-white), 0.12);
+        }
       }
     }
   }
 }
-}
-

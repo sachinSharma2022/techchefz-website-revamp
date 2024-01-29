@@ -2,6 +2,7 @@
 
 .challenges {
   padding: spacing(section-primary-padding);
+  padding-block: spacing(space80);
 
   .headSec {
     max-width: 49.1875rem;
@@ -9,7 +10,7 @@
 
   .challengeTitle {
     font-size: text(normal);
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.5rem;
     letter-spacing: 0.2rem;
     text-transform: uppercase;
@@ -24,7 +25,7 @@
   .challengesCards {
     display: flex;
     gap: 2.5rem;
-    padding: 5rem 0;
+    padding-top: spacing(space80);
   }
 
   &.challengesDark {

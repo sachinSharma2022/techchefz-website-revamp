@@ -61,13 +61,15 @@ const TczLife = () => {
     },
   ];
   return (
-    <section className={`${styles.tczLife} ${theme ? styles.tczLifeDark : ""} `}>
+    <section
+      className={`${styles.tczLife} ${theme ? styles.tczLifeDark : ""} `}
+    >
       <div className={styles.tczLifeTop}>
         <div className="row justify-content-between m-0">
           <div className="col-md-4 col-lg-4 p-0">
             <h6 className={styles.tczLifeTitle}>Life at techchefz</h6>
             <h3 className={styles.tczLifeHeading}>
-              Make an Impact from <span>Day One.</span>
+              Make an Impact <br /> from <span>Day One.</span>
             </h3>
           </div>
           <div className="col-md-6 col-lg-6 p-0">
