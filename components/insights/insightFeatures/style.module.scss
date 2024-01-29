@@ -2,6 +2,10 @@
 @mixin insightFeatures() {
   padding: 5rem 7.5rem 0;
 
+  @include mobile{
+    padding: 2rem;
+  }
+
   .insightHeader {
     display: flex;
     justify-content: space-between;
@@ -9,9 +13,17 @@
     padding-bottom: 2.5rem;
     text-align: left;
 
+    @include mobile{
+      flex-direction: column;
+    }
+
     .serviceBtn {
       display: flex;
       gap: 1.25rem;
+
+      @include mobile{
+        flex-wrap: wrap;
+      }
 
       button {
         color: color(text-primary);
@@ -51,6 +63,10 @@
           grid-column: 1;
           grid-row: 1 /3;
 
+          @include mobile{
+            grid-row: 1/1;
+          }
+
           .featureImgBox {
             div {
               min-height: 360px;
@@ -63,12 +79,20 @@
           grid-row: 1;
           max-width: 477px;
           flex-direction: row;
+
+          @include mobile{
+            grid-column: 1;
+          }
         }
         &:nth-child(3) {
           grid-column: 2;
           grid-row: 2;
           max-width: 477px;
           flex-direction: row;
+          
+          @include mobile{
+            grid-column: 1;
+          }
         }
       }
     }
@@ -82,6 +106,10 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 2.5rem;
       margin: 2.5rem 0;
+
+      @include mobile{
+        grid-template-columns: repeat(1,1fr);
+      }
     }
 
     .insightButton {

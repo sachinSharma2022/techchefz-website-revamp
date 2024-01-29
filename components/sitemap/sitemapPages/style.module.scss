@@ -6,6 +6,11 @@
    gap: 3.75rem;
    background-color: color(bg-soft);
 
+   @include mobile{
+      flex-direction: column;
+      padding: 2rem;
+   }
+
    .sitemapPage {
       width: 360px;
       display: flex;

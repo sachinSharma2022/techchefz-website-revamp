@@ -1,10 +1,18 @@
 @import "~/styles/partials/config";
 .sitmapBanner {
    padding: 5rem 7.5rem;
+
+   @include mobile{
+      padding: 2rem;
+   }
    .sitemap {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
+      
+      @include mobile{
+         flex-direction: column;
+      }
 
       .bannerHeading {
          font-size: text(xl-larger);
@@ -22,6 +30,10 @@
          line-height: 1.875rem;
          opacity: 0.8;
          margin: 0;
+
+         @include mobile{
+            width: 20.938rem;
+         }
       }
    }
  
