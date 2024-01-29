@@ -1,9 +1,9 @@
-"use client"
-import React from "react";
-import { MyContext } from "@/context/theme";
-import { useContext } from "react";
+"use client";
 import { Icons } from "@/components/icons";
+import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
+import { useContext } from "react";
+import { Button } from "@/components/ui/button";
 
 import styles from "./style.module.scss";
 
@@ -12,7 +12,7 @@ const Streamline = () => {
   const streamlineCard = [
     {
       icons: (
-        <Icons.Market className={styles.cardIcon} width={140} height={140} />
+        <Icons.Market className={styles.cardIcon} width={120} height={120} />
       ),
       title: "Content Management ",
       content:
@@ -22,8 +22,8 @@ const Streamline = () => {
       icons: (
         <Icons.MarketPlace
           className={styles.cardIcon}
-          width={140}
-          height={140}
+          width={120}
+          height={120}
         />
       ),
       title: "E-commerce",
@@ -32,11 +32,7 @@ const Streamline = () => {
     },
     {
       icons: (
-        <Icons.PerformanceIcon
-          className={styles.cardIcon}
-          width={140}
-          height={140}
-        />
+        <Icons.Transform className={styles.cardIcon} width={120} height={120} />
       ),
       title: "Micro services",
       content:
@@ -44,7 +40,7 @@ const Streamline = () => {
     },
     {
       icons: (
-        <Icons.Transform className={styles.cardIcon} width={140} height={140} />
+        <Icons.Transform className={styles.cardIcon} width={120} height={120} />
       ),
       title: "Cloud & DevSecOps",
       content:
@@ -52,7 +48,7 @@ const Streamline = () => {
     },
     {
       icons: (
-        <Icons.Platforms className={styles.cardIcon} width={140} height={140} />
+        <Icons.Platforms className={styles.cardIcon} width={120} height={120} />
       ),
       title: "Data Intelligence",
       content:
@@ -60,7 +56,7 @@ const Streamline = () => {
     },
     {
       icons: (
-        <Icons.Platforms className={styles.cardIcon} width={140} height={140} />
+        <Icons.Platforms className={styles.cardIcon} width={120} height={120} />
       ),
       title: "Analysis Automation",
       content:
@@ -68,37 +64,40 @@ const Streamline = () => {
     },
   ];
   return (
-    <div className={`${styles.streamlineWrapper} ${theme ? styles.streamlineDark : ""}`}>
-      <section className={styles.streamlineSection}>
+    <section
+      className={`${styles.streamLineWrapper} ${
+        theme ? styles.streamlineDark : ""
+      }`}
+    >
+      <section className={styles.streamLineSection}>
         <div className={cn("primary-container", styles.flexContainer)}>
           <h3 className={styles.streamlineTitle}>
             Streamline your Business with our <span>Extensive Solution.</span>
           </h3>
           <p className={styles.streamlineContent}>
-            We&apos;re a wouldwide presence, serving client on four continents.
-            Our internation expertise ensures innovaive solutions tailored to
+            We&apos;re a would wide presence, serving client on four continents.
+            Our international expertise ensures innovative solutions tailored to
             diverse global needs
           </p>
         </div>
       </section>
-      <section>
-        {/* <div className={styles.streamlineCards}>
-              {streamlineCard.map((data, index) =>(
-                <div key={index} className={styles.streamlineCard}>
-                  {data.icons}
-                  <h6 className={styles.cardTitle}>{data.title} </h6>
-                  <p className={styles.cardContent}>
-                    {data.content}
-                  </p>
-                  <Button variant="outline" size="sm">
-                     Learn More <Icons.ArrowRight size={18} />
-                  </Button>
-               </div>
-              ))}
-               
-            </div> */}
-      </section>
-    </div>
+
+      {/* Other sections */}
+      <div className={styles.streamLineCards}>
+        {streamlineCard.map((data, index) => (
+          <section key={index}>
+            <div className={styles.streamlineCard}>
+              {data.icons}
+              <h6 className={styles.cardTitle}>{data.title} </h6>
+              <p className={styles.cardContent}>{data.content}</p>
+              <Button variant="outline" size="lg">
+                Learn More <Icons.ArrowRight size={18} />
+              </Button>
+            </div>
+          </section>
+        ))}
+      </div>
+    </section>
   );
 };
 

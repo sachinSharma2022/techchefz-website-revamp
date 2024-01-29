@@ -27,8 +27,9 @@ const VideoCustom = (props) => {
         muted
         loop
         ref={videoRef}
+        {...props}
       >
-        <source src={props.src} type="video/mp4" />
+        <source src={props.src} type={props.type || "video/mp4"} />
       </video>
     </div>
   );

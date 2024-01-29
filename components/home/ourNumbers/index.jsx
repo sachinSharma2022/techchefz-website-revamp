@@ -34,6 +34,7 @@ const OurNumbers = () => {
       sbText: "Enhanced SaaS CRO Performance.",
     },
   ];
+
   const settings = {
     className: "center",
     centerPadding: "0px",

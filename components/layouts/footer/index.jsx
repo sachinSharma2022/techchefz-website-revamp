@@ -17,7 +17,7 @@ const Footer = () => {
               src="/images/logo-white.svg"
               width={143}
               height={48}
-              alt=""
+              alt="tcz logo"
             />
           </div>
           <ScrollToTopButton />
@@ -140,7 +140,6 @@ const Footer = () => {
 
         <div className={styles.footCopyright}>
           <p>© 2023 TCZ Digital Pvt. Ltd. All rights reserved.</p>
-
           <ul>
             <li>
               <Link href="/">Terms of Use</Link>
