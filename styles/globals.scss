@@ -739,12 +739,12 @@ input:-webkit-autofill {
   /* the slides */
   .slick-slide {
     margin: 0 15px;
-}
+  }
 
-/* the parent */
-.slick-list {
+  /* the parent */
+  .slick-list {
     margin: 0 -15px;
-}
+  }
 
   .slick-disabled {
     background-color: color(bg-soft);
@@ -763,65 +763,7 @@ input:-webkit-autofill {
 }
 
 .job-detail-slider {
-  .slick-arrow {
-    background-color: color(primary-blue);
-    border-radius: 0.5rem;
-    width: 3rem;
-    height: 3rem;
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-
-    &:hover {
-      background-color: color(primary-blue);
-    }
-
-    svg {
-      width: 1.2rem;
-    }
-
-    &::before {
-      display: none;
-    }
-  }
-
-  .slick-prev {
-    left: auto;
-    right: 150px;
-    top: -8vh;
-
-    svg {
-      transform: rotate(-180deg);
-    }
-
-    @include mobile-tablet-p {
-      top: 16vh;
-    }
-  }
-
-  .slick-next {
-    right: 65px;
-    left: auto;
-    top: -8vh;
-
-    @include mobile-tablet-p {
-      top: 16vh;
-    }
-  }
-
-  .slick-disabled {
-    background-color: color(primary-white);
-    border: 0.14rem solid rgba(color(text-primary), 0.5);
-
-    &:hover {
-      background-color: color(primary-white);
-    }
-    svg {
-      path {
-        stroke: rgba(color(text-primary), 0.5);
-      }
-    }
-  }
+margin: 0 -20px 0 0;
 }
 
 .insight-explore-slider {
