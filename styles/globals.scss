@@ -275,6 +275,7 @@ input:-webkit-autofill {
           background: #dedede;
           border-radius: 3.125rem;
           font-size: 0px;
+          @include transition(0.5s);
 
           &::before {
             width: 1.25rem;
@@ -292,8 +293,7 @@ input:-webkit-autofill {
       .slick-active {
         button {
           background-color: #adadad;
-          width: 1.25rem;
-          height: 1.25rem;
+          transform: scale(1.7);
         }
       }
     }
