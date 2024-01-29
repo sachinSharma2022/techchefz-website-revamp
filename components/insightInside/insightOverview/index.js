@@ -17,50 +17,48 @@ const InsightOverview = () => {
     { name: "Retail" },
   ];
   return (
-    <>
-      <div
-        className={theme ? styles.insightOverviewContainer : styles.lightMode}
-      >
-        <div className={cn("primary-container", styles.flexContainer)}>
-          <div className={styles.textContainer}>
-            <h2>
-              The science behind inspiration and how to design more of it into
-              your life
-            </h2>
-            <div className={styles.publishDiv}>
-              <div className={styles.publishFlex}>
-                <p>Published On</p>
-                <h2>Dec 28, 2023</h2>
-              </div>
-              <div className={styles.publishFlex}>
-                <p>Author</p>
-                <h2>Sachin Kumar</h2>
-              </div>
+    <section
+      className={theme ? styles.insightOverviewContainer : styles.lightMode}
+    >
+      <div className={cn("primary-container", styles.flexContainer)}>
+        <div className={styles.textContainer}>
+          <h1>
+            The science behind inspiration and how to design more of it into
+            your life
+          </h1>
+          <div className={styles.publishDiv}>
+            <div className={styles.publishFlex}>
+              <p>Published On</p>
+              <h4>Dec 28, 2023</h4>
             </div>
-            <div className={styles.serviceDiv}>
-              <p>Services</p>
-              <div className={styles.techStackDiv}>
-                {techStackData.map((value) => (
-                  <div key={value} className={styles.techBtn}>
-                    {value.name}
-                  </div>
-                ))}
-              </div>
+            <div className={styles.publishFlex}>
+              <p>Author</p>
+              <h4>Sachin Kumar</h4>
             </div>
           </div>
-          <div className={styles.imageContainer}>
-            <div className={styles.imageDiv}>
-              <ImageCustom
-                src="/images/insight.png"
-                alt="Image"
-                width={600}
-                height={600}
-              />
+          <div className={styles.serviceDiv}>
+            <p>Services</p>
+            <div className={styles.techStackDiv}>
+              {techStackData.map((value) => (
+                <div key={value} className={styles.techBtn}>
+                  {value.name}
+                </div>
+              ))}
             </div>
           </div>
         </div>
+        <div className={styles.imageContainer}>
+          <div className={styles.imageDiv}>
+            <ImageCustom
+              src="/images/insight.png"
+              alt="Image"
+              width={600}
+              height={600}
+            />
+          </div>
+        </div>
       </div>
-    </>
+    </section>
   );
 };
 

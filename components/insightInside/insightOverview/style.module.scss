@@ -27,7 +27,7 @@
       max-width: 100%;
     }
 
-    h2 {
+    h1 {
       font-weight: 500;
       font-size: text(larger);
       color: color(primary-white);
@@ -68,7 +68,7 @@
           }
         }
 
-        h2 {
+        h4 {
           font-weight: 500;
           font-size: text(xl);
           color: color(primary-white);
@@ -172,8 +172,10 @@
   @include mobile {
     background-color: color(primary-white);
   }
+
   .textContainer {
-    h2 {
+    
+    h1 {
       color: color(text-primary);
     }
 
@@ -184,7 +186,7 @@
           opacity: 0.6;
         }
 
-        h2 {
+        h4 {
           color: color(text-primary);
         }
       }

@@ -2,15 +2,8 @@
 
 .privacyHeroBannerStyle {
   padding-inline: spacing(p-120);
-  padding-block: 6.25rem 5rem;
-  &.privacyHeroBannerDark {
-    background-color: color(dark-gray);
-    color: color(primary-white);
-    .leadText {
-      color: color(primary-white);
-      opacity: 0.8;
-    }
-  }
+  padding-block: 6.25rem 9.1rem;
+
   @include mobile-tablet-p {
     padding: spacing(section-mob-padding);
     padding-block: 3.75rem 3.75rem;
@@ -55,5 +48,15 @@
     font-weight: 400;
     color: rgba(color(text-primary), 0.8);
     margin-bottom: 0;
+  }
+
+  // Dark Mode
+  &.privacyHeroBannerDark {
+    background-color: color(dark-gray);
+    color: color(primary-white);
+    .leadText {
+      color: color(primary-white);
+      opacity: 0.8;
+    }
   }
 }

@@ -45,7 +45,9 @@ const InsightDetail = () => {
     },
   ];
   return (
-    <div className={theme ? styles.insightDetailContainer : styles.lightMode}>
+    <section
+      className={theme ? styles.insightDetailContainer : styles.lightMode}
+    >
       <div className={cn("primary-container", styles.flexContainer)}>
         <div className={styles.insightDetailFlex}>
           <div className={styles.socialMediaFlex}>
@@ -57,10 +59,10 @@ const InsightDetail = () => {
           </div>
 
           <div className={styles.insightDetailPara}>
-            <h2>
+            <h3>
               All of this can leave you wondering — when did being inspired feel
               like so much work?
-            </h2>
+            </h3>
             <p>
               Curiosity and wonder are innate to all humans, and particularly
               prevalent in children, but over time, as questions turn to
@@ -84,14 +86,13 @@ const InsightDetail = () => {
 
             {insightDetailData.map((value, index) => (
               <div className={styles.insightSection} key={index}>
-                <h2>{value.title}</h2>
+                <h3 className={styles.heading}>{value.title}</h3>
                 <p>{value.para}</p>
                 {value.img && (
                   <div className={styles.insightImageDiv}>
                     <ImageCustom src={value.img} width={690} height={480} />
                   </div>
                 )}
-
                 <ul>
                   {value.bullet.map((point, idx) => (
                     <li key={idx}>{point}</li>
@@ -102,7 +103,7 @@ const InsightDetail = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

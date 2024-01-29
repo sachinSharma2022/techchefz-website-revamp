@@ -6,12 +6,15 @@ import { Button } from "@/components/ui/button";
 import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
+import Link from "next/link";
 
 const InsightBanner = () => {
   const { theme, setTheme } = useContext(MyContext);
-  
+
   return (
-    <section className={cn(!theme ? styles.landingBannerStyle : styles.darkMode)}>
+    <section
+      className={cn(!theme ? styles.landingBannerStyle : styles.darkMode)}
+    >
       <div className={cn("primary-container")}>
         <div className={styles.contentSection}>
           <h1 className={styles.title}>
@@ -24,10 +27,16 @@ const InsightBanner = () => {
               Our international expertise ensures innovative solutions tailored
               to diverse global needs.
             </p>
-            <Button variant={theme ? "lightBlueBtn" : "blueBtn"} className={styles.headerBtn} size="md">
-              Let’s Work Together{" "}
-              <Icons.ArrowRight size={20} className="ms-2" />
-            </Button>
+            <Link href="/insight-inside">
+              <Button
+                variant={theme ? "lightBlueBtn" : "blueBtn"}
+                className={styles.headerBtn}
+                size="md"
+              >
+                Let’s Work Together{" "}
+                <Icons.ArrowRight size={20} className="ms-2" />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

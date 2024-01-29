@@ -5,16 +5,8 @@ import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 import styles from "./style.module.scss";
 
-const InputCustom = ({
-  label,
-  type,
-  placeholder,
-  disabled,
-  as,
-  rows,
-  isLabelShow,
-}) => {
-  const { theme, setTheme } = useContext(MyContext);
+const InputCustom = ({ label, type, placeholder, disabled, as, rows }) => {
+  const { theme } = useContext(MyContext);
   return (
     <div
       className={`${styles.inputContainerStyle} ${

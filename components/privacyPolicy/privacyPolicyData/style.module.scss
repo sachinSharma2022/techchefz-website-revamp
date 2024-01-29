@@ -2,28 +2,8 @@
 
 .privacyPolicyData {
   padding-inline: spacing(p-120);
-  padding-block: 5rem 5rem;
+  padding-block: 5rem;
   background-color: color(bg-soft);
-  &.privacyPolicyDataBannerDark {
-    background-color: color(dark-bg);
-    color: color(primary-white);
-    .policyDivide {
-      .customerList {
-        .list {
-          color: color(primary-white);
-          opacity: 0.8;
-        }
-      }
-      .title {
-        opacity: 0.8;
-      }
-
-      .leadText {
-        color: color(primary-white);
-        opacity: 0.8;
-      }
-    }
-  }
 
   @include mobile-tablet-p {
     padding: spacing(section-mob-padding);
@@ -88,6 +68,28 @@
     }
     .textSpace {
       margin-bottom: text(normal);
+    }
+  }
+
+  // Dark Mode
+  &.privacyPolicyDataBannerDark {
+    background-color: color(dark-bg);
+    color: color(primary-white);
+    .policyDivide {
+      .customerList {
+        .list {
+          color: color(primary-white);
+          opacity: 0.8;
+        }
+      }
+      .title {
+        opacity: 0.8;
+      }
+
+      .leadText {
+        color: color(primary-white);
+        opacity: 0.8;
+      }
     }
   }
 }

@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useContext } from "react";
-import styles from "./style.module.scss";
-import { MyContext } from "@/context/theme";
-import Slider from "react-slick";
-import { Button } from "@/components/ui/button";
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
+import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
+import { useContext } from "react";
+import Slider from "react-slick";
+
+import styles from "./style.module.scss";
 
 const sliderData = [
   {
@@ -85,7 +85,9 @@ const ExploreInsights = () => {
     ],
   };
   return (
-    <div className={theme ? styles.exploreInsightsContainer : styles.lightMode}>
+    <section
+      className={theme ? styles.exploreInsightsContainer : styles.lightMode}
+    >
       <div className={cn("primary-container", styles.flexContainer)}>
         <div className={styles.titleSection}>
           <h3>INSIGHTS</h3>
@@ -111,7 +113,7 @@ const ExploreInsights = () => {
           ))}
         </Slider>
       </div>
-    </div>
+    </section>
   );
 };
 
