@@ -1,8 +1,8 @@
 import { Icons } from "@/components/icons";
-import { ImageCustom } from "../imageCustom";
-
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
+import { ImageCustom } from "../imageCustom";
+
 import styles from "./style.module.scss";
 
 const PartnerCard = (props) => {

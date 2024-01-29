@@ -6,11 +6,13 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useContext } from "react";
 import { Button } from "../../ui/button";
+
+// Style
 import styles from "./style.module.scss";
 
 const LandingBanner = () => {
   const { theme, setTheme } = useContext(MyContext);
-  console.log(theme ? "blueBtnDark" : "blueBtn");
+
   return (
     <section
       className={`${styles.landingBannerStyle} ${
@@ -19,14 +21,14 @@ const LandingBanner = () => {
     >
       <div className={cn("primary-container")}>
         <h1 className={styles.title}>
-          Humanizing <div /> Digital Experience <div />
+          Humanizing <span /> Digital Experience <span />
           <div className={styles.contentContainer}>
-            <div>Through </div>
-            <div className={styles.slider}>
-              <div className={styles.text1}>Data</div>
-              <div className="text2"> Creativity</div>
-              <div className="text3"> Work</div>
-            </div>
+            <span>Through </span>
+            <span className={styles.slider}>
+              <span className={styles.text1}>Data</span>
+              <span className="text2"> Creativity</span>
+              <span className="text3"> Work</span>
+            </span>
           </div>
         </h1>
 

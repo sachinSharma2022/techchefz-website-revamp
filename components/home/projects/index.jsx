@@ -39,7 +39,7 @@ const Card = ({ ...props }) => {
       </div>
 
       <div className={styles.cardContentStyle}>
-        <h2 className={styles.projectBrand}>
+        <h3 className={styles.projectBrand}>
           {props.title.split(" ").map((word, index) => {
             return (
               <div key={index} className={styles.mask}>
@@ -54,7 +54,7 @@ const Card = ({ ...props }) => {
               </div>
             );
           })}
-        </h2>
+        </h3>
 
         <p ref={description} className={styles.brandFromText}>
           {props.summary.split(" ").map((word, index) => {

@@ -3,6 +3,7 @@ import PartnerCard from "@/components/ui/partnerCard";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 import { cn } from "@/lib/utils";
+
 import styles from "./style.module.scss";
 
 const Partners = () => {
