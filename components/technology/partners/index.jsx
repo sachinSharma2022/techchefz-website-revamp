@@ -9,37 +9,43 @@ const Partners = () => {
   const { theme, setTheme } = useContext(MyContext);
   const partnerCardData = [
     {
-      imgSrc: "/images/partners/partner1.png",
+      imgSrc: "/images/partners/aws-light.svg",
+      darkImgSrc: "/images/partners/aws-dark.svg",
       cardTitle: "AWS",
       cardContent:
         "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
     },
     {
-      imgSrc: "/images/partners/partner2.png",
+      imgSrc: "/images/partners/adobe.svg",
+      darkImgSrc: "/images/partners/adobe.svg",
       cardTitle: "Adobe",
       cardContent:
         "We Believe In Superior Frontend Development With The Combination Of JavaScript, HTML And CSS.",
     },
     {
-      imgSrc: "/images/Shopify.svg",
+      imgSrc: "/images/partners/shopify-light.svg",
+      darkImgSrc: "/images/partners/shopify-dark.svg",
       cardTitle: "Shopify",
       cardContent:
         "At TechChefz We Provide First-Class Artificial Intelligence And Machine Learning with Expertise.",
     },
     {
-      imgSrc: "/images/partners/partner3.png",
+      imgSrc: "/images/partners/twilio.svg",
+      darkImgSrc: "/images/partners/twilio.svg",
       cardTitle: "Twilio",
       cardContent:
         "We Facilitate Easy Cloud Migration And Deliver DevOps Automation And 24*7 Incident Management Services.",
     },
     {
-      imgSrc: "/images/Shopify.svg",
+      imgSrc: "/images/partners/shopify-light.svg",
+      darkImgSrc: "/images/partners/shopify-dark.svg",
       cardTitle: "Shopify",
       cardContent:
         "At TechChefz We Provide First-Class Artificial Intelligence And Machine Learning with Expertise.",
     },
     {
-      imgSrc: "/images/partners/partner1.png",
+      imgSrc: "/images/partners/aws-light.svg",
+      darkImgSrc: "/images/partners/aws-dark.svg",
       cardTitle: "AWS",
       cardContent:
         "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
@@ -60,6 +66,7 @@ const Partners = () => {
             <PartnerCard
               key={index}
               imgSrc={data.imgSrc}
+              darkImgSrc={data.darkImgSrc}
               cardTitle={data.cardTitle}
               cardContent={data.cardContent}
             />
