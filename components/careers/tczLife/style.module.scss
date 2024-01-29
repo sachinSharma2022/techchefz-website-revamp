@@ -1,81 +1,82 @@
 @import "~/styles/partials/config";
 
 .tczLife {
-   background-color: color(bg-soft);
-   padding-block: spacing(section-primary-padding);
-   padding-left: spacing(p-120);
+  background-color: color(bg-soft);
+  padding-block: spacing(section-primary-padding);
+  padding-left: spacing(p-120);
+	margin-top: 8.75rem;
 
-   @include desktop-hd {
+  @include desktop-hd {
     padding-inline: 0;
-   }
+  }
 
-   .tczLifeTop {
+  .tczLifeTop {
+    @include desktop-hd {
+      max-width: 1440px;
+      margin-inline: auto;
+    }
 
-      @include desktop-hd {
-         max-width: 1440px;
-         margin-inline: auto;
+    .tczLifeTitle {
+      font-size: text(normal);
+      font-weight: 500;
+      line-height: 1.5rem;
+      letter-spacing: 0.2rem;
+      text-transform: uppercase;
+      opacity: 0.8;
+      margin-bottom: 1rem;
+    }
+
+    .tczLifeHeading {
+      font-size: text(larger);
+      font-weight: 500;
+      line-height: 3.375rem;
+
+      span {
+        font-size: text(larger);
+        background: var(
+          --Gradient,
+          linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%)
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
+    }
+  }
 
-      .tczLifeTitle {
-         font-size: text(normal);
-         font-weight: 700;
-         line-height: 1.5rem;
-         letter-spacing: 0.2rem;
-         text-transform: uppercase;
-         opacity: 0.8;
-         margin-bottom: 1rem;
-      }
+  .videoWapper > div {
+    max-width: 92%;
+    height: 264px;
+    border-radius: 0.5rem;
+    overflow: hidden;
 
-      .tczLifeHeading {
-         font-size: text(larger);
-         font-weight: 500;
-         line-height: 3.375rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
 
-         span {
-            font-size: text(larger);
-            background: var(--Gradient, linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%));
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-         }
-      }
+  .tczLifeContent {
+    margin-top: 5rem;
+    max-width: 85vw;
 
-   }
+    @include desktop-hd {
+      max-width: 1440px;
+      margin-inline: auto;
+    }
 
-   .videoWapper > div {
-      max-width: 92%;
-      height: 264px;
-      border-radius: 0.5rem;
-      overflow: hidden;
+    p {
+      font-size: text(lg);
+      font-weight: 400;
+      line-height: 1.875rem;
+      opacity: 0.6;
+    }
+  }
 
-      img{
-         width: 100%;
-         height: 100%;
-         object-fit: cover;
-      }
-   }
-
-   .tczLifeContent {
-      margin-top: 5rem;
-      max-width: 85vw;
-
-      @include desktop-hd {
-         max-width: 1440px;
-         margin-inline: auto;
-      }
-
-      p {
-         font-size: text(lg);
-         font-weight: 400;
-         line-height: 1.875rem;
-         opacity: 0.6;
-      }
-   }
-
- 
-   //Dark mode style
-   &.tczLifeDark{
-      background-color: color(text-primary);
-      color: color(primary-white);
-   }
+  //Dark mode style
+  &.tczLifeDark {
+    background-color: color(dark-bg);
+    color: color(primary-white);
+  }
 }

@@ -79,27 +79,23 @@ const OurNumbers = () => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.careerRow}>
-          <div className="row justify-content-between align-items-end">
-            <div className="col-md-8 col-lg-8 col-12">
-              <p className={styles.ProjectHighlight}>our numbers</p>
-              <h2 className={styles.datingText}>
-                Let the Numbers Tell the Success Story.
-              </h2>
-            </div>
-
-            <div className="col-md-4 col-lg-4 col-12 text-end">
-              <Button variant="outline" size="md">
-                Career Opportunities <Icons.ArrowRight size={18} />
-              </Button>
-            </div>
+          <div>
+            <p className={styles.projectHighlight}>our numbers</p>
+            <h2 className={styles.datingText}>
+              Let the Numbers Tell the Success Story.
+            </h2>
           </div>
+
+          <Button variant="outline" size="md">
+            Career Opportunities <Icons.ArrowRight size={18} />
+          </Button>
         </div>
 
         <div className={styles.ourNumberMain}>
           <div className={styles.ourNumberGrid}>
             <div className={styles.ourNumbersImg}>
               <ImageCustom
-                src="/images/our-number.jpg"
+                src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 width={1000}
                 height={100}
                 alt="bannerImg"

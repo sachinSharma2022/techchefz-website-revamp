@@ -42,7 +42,7 @@ const CareerEngagement = () => {
         "We believe in a customer-centric ethic without and people-centric paradigm within.",
     },
     {
-      icon: <Icons.PerformanceIcon width={56} height={56} />,
+      icon: <Icons.Rates width={56} height={56} />,
       title: "Environmental Sustainability",
       imgUrl:
         "https://images.unsplash.com/photo-1576267423048-15c0040fec78?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -50,7 +50,7 @@ const CareerEngagement = () => {
         "We believe in a customer-centric ethic without and people-centric paradigm within.",
     },
     {
-      icon: <Icons.PerformanceIcon width={56} height={56} />,
+      icon: <Icons.Market width={56} height={56} />,
       title: "Work Life Balance",
       imgUrl:
         "https://images.unsplash.com/photo-1622675363311-3e1904dc1885?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",

@@ -13,22 +13,6 @@ const SolutionOurValues = () => {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
   const { theme, setTheme } = useContext(MyContext);
 
-  function togglePanels(newPanel) {
-    if (activeDisclosurePanel) {
-      if (
-        activeDisclosurePanel.key !== newPanel.key &&
-        activeDisclosurePanel.open
-      ) {
-        activeDisclosurePanel.close();
-      }
-    }
-
-    setActiveDisclosurePanel({
-      ...newPanel,
-      open: !newPanel.open,
-    });
-  }
-
   const accordionData = [
     {
       iconUrl: "images/icons/video.svg",
@@ -97,8 +81,29 @@ const SolutionOurValues = () => {
       ],
     },
   ];
+
+  function togglePanels(newPanel) {
+    if (activeDisclosurePanel) {
+      if (
+        activeDisclosurePanel.key !== newPanel.key &&
+        activeDisclosurePanel.open
+      ) {
+        activeDisclosurePanel.close();
+      }
+    }
+
+    setActiveDisclosurePanel({
+      ...newPanel,
+      open: !newPanel.open,
+    });
+  }
+
   return (
-    <section className={`${styles.solutionOurValuesStyle} ${theme ? styles.solutionOurValuesDark : ""}`}>
+    <section
+      className={`${styles.solutionOurValuesStyle} ${
+        theme ? styles.solutionOurValuesDark : ""
+      }`}
+    >
       <div className={cn("primary-container", styles.flexContainer)}>
         <div className={styles.ourValuesHead}>
           <h6 className={styles.ourValuesTitle}>Our Values</h6>

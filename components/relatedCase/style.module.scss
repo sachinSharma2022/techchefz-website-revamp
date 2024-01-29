@@ -1,27 +1,33 @@
 @import "~/styles/partials/config";
 
 .relatedCase {
-  &.relatedCaseDark{
+  &.relatedCaseDark {
     background-color: color(input-bg);
     color: color(primary-white);
   }
- 
+
   .headSection {
     padding-inline: spacing(p-120);
 
-    @include desktop-hd {
-      padding: 0;
+    @include mobile-tablet-p {
+      padding: spacing(section-mob-padding);
+      padding-block: 3.75rem 3.75rem;
     }
   }
 
   .relatedCaseTitle {
     font-size: text(normal);
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.5rem;
     letter-spacing: 0.2rem;
     text-transform: uppercase;
     opacity: 0.8;
     margin-bottom: 1rem;
+    @include mobile-tablet-p {
+      margin-bottom: 0.75rem;
+      font-weight: 400;
+      line-height: text(normal);
+    }
   }
 
   .relatedCaseHeading {
@@ -29,11 +35,19 @@
     font-weight: 500;
     line-height: 3.375rem;
     margin-bottom: 5rem;
+    @include mobile-tablet-p {
+      margin-bottom: 3.75rem;
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
   }
 
   .relatedCaseSlider {
     padding-left: spacing(p-120);
     margin-bottom: 8.75rem;
+    @include mobile-tablet-p {
+      margin-bottom: 2.75rem;
+    }
 
     @include desktop-hd {
       padding-left: 13vw;
