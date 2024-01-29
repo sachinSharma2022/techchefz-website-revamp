@@ -1,20 +1,16 @@
 @import "~/styles/partials/config";
 
-.streamlineWrapper {
+.streamLineWrapper {
    text-align: center;
    background: color(bg-soft);
+	 display: flex;
+	 align-items: center;
+	 flex-wrap: nowrap;
+	 overflow-x: scroll;
+	 @include scrollHide;
 
-   &.streamlineDark {
-      background-color: color(dark-bg);
-      color: color(primary-white);
-    
-      .streamlineContent{
-         opacity: 0.8;
-      }
-   }
-
-   .streamlineSection {
-      width: 100%;
+   .streamLineSection {
+      min-width: 100%;
       background: url("../../../public/images/pattern.png") no-repeat;
       background-size: cover;
 
@@ -44,9 +40,8 @@
       max-width: 38%;
    }
 
-   .streamlineCards {
+   .streamLineCards {
       display: flex;
-      flex-wrap: wrap;
 
       .streamlineCard {
          width: 31.25rem;
@@ -72,6 +67,7 @@
             font-weight: 400;
             line-height: 1.875rem;
             opacity: 0.8;
+						@include truncate(4);
          }
 
          button {
@@ -79,4 +75,14 @@
          }
       }
    }
+
+	//  Dark Mode
+	 &.streamlineDark {
+		background-color: color(dark-bg);
+		color: color(primary-white);
+	
+		.streamlineContent{
+			 opacity: 0.8;
+		}
+ }
 }

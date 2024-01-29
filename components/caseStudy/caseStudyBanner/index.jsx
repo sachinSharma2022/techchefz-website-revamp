@@ -10,7 +10,11 @@ import styles from "./style.module.scss";
 const CaseStudyBanner = () => {
   const { theme, setTheme } = useContext(MyContext);
   return (
-    <section className={`${styles.caseStudyBanner} ${theme ? styles.caseStudyDark : ""}`}>
+    <section
+      className={`${styles.caseStudyBanner} ${
+        theme ? styles.caseStudyDark : ""
+      }`}
+    >
       <div className={cn("primary-container")}>
         <h1 className={styles.bannerTitle}>
           Introducing the world of <br /> <span>Automobiles.</span>

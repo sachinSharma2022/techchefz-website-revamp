@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -11,7 +11,11 @@ import styles from "./style.module.scss";
 const TechnologyBanner = () => {
   const { theme, setTheme } = useContext(MyContext);
   return (
-    <section className={`${styles.landingBannerStyle} ${theme ? styles.landingBannerDark : ""}`}>
+    <section
+      className={`${styles.landingBannerStyle} ${
+        theme ? styles.landingBannerDark : ""
+      }`}
+    >
       <div className={cn("primary-container", styles.flexContainer)}>
         <h1 className={styles.title}>
           Innovating

@@ -2,6 +2,8 @@
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 import { ImageCustom } from "@/components/ui/imageCustom";
+
+// Swiper Styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -60,7 +62,7 @@ const TechnologyValues = () => {
         <div className={styles.headSection}>
           <h6 className={styles.valuesTitle}>Our Values</h6>
           <h3 className={styles.valuesHeading}>
-            Innovative IT Solutions for Future
+            Our Capability for CMS Implementation.
           </h3>
           <p className={styles.valuesText}>
             We believe in a customer-centric ethic without and people-centric

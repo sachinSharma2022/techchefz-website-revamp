@@ -1,12 +1,13 @@
 "use client";
 import { Icons } from "@/components/icons";
-import { MyContext } from "@/context/theme";
-import { useContext } from "react";
 import CustomDropdown from "@/components/ui/customDropdown";
 import { ImageCustom } from "@/components/ui/imageCustom";
+import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
-import styles from "./style.module.scss";
 import Link from "next/link";
+import { useContext } from "react";
+
+import styles from "./style.module.scss";
 
 const ImageCaptionCard = () => {
   const { theme, setTheme } = useContext(MyContext);
