@@ -2,6 +2,7 @@
 
 .challenges {
   padding: spacing(section-primary-padding);
+  padding-block: spacing(space80);
 
   @include mobile{
     padding: 1.75rem 1.5rem;
@@ -28,12 +29,16 @@
   .challengesCards {
     display: flex;
     gap: 2.5rem;
+<<<<<<< HEAD
     padding: 5rem 0;
 
     @include mobile{
       flex-direction: column;
       padding: 2rem 0;
     }
+=======
+    padding-top: spacing(space80);
+>>>>>>> 50713cf59bb4906628b603348f6f2cd2f469673a
   }
 
   &.challengesDark {

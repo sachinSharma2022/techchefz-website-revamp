@@ -61,7 +61,7 @@ const OurValues = () => {
             <div className={styles.ourValuesHead}>
               <h6 className={styles.ourValuesTitle}>Our Values</h6>
               <h3 className={styles.ourValuesHeading}>
-                Our values are part of everything we create at Instrument.
+                Our guiding principles behind Center of Excellence
               </h3>
             </div>
           </div>

@@ -1,11 +1,9 @@
 "use client";
+import { Icons } from "@/components/icons";
+import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 import Slider from "react-slick";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
-import { Icons } from "@/components/icons";
-import { ImageCustom } from "@/components/ui/imageCustom";
 
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
@@ -22,7 +20,7 @@ const OurHistory = () => {
       );
     },
     dots: true,
-    fade:true,
+    fade: true,
     infinite: false,
     speed: 500,
     slidesToShow: 1,

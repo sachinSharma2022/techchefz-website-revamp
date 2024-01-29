@@ -117,7 +117,7 @@ const InsightFeatures = () => {
   return (
     <section className={!theme ? styles.insightFeatures : styles.darkMode}>
       <div className={styles.insightHeader}>
-        <SearchInput theme={theme}/>
+        <SearchInput theme={theme} />
         <div className={styles.serviceBtn}>
           {buttonVariants.map((buttonItem) => (
             <Button
@@ -162,7 +162,7 @@ const InsightFeatures = () => {
         </div>
 
         <div className={styles.insightButton}>
-          <Button variant="outline" size="sm">
+          <Button variant="outline" size="lg">
             Show More
           </Button>
         </div>

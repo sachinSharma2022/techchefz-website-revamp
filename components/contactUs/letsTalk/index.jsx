@@ -7,19 +7,54 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import CustomInput from "@/components/ui/inputCustom";
 import { MyContext } from "@/context/theme";
 import { Tab } from "@headlessui/react";
-import { useContext, useState } from "react";
+import { Form, Formik } from "formik";
+import { useContext } from "react";
+import * as yep from "yup";
 
 import CustomDropdown from "@/components/ui/customDropdown";
 import { cn } from "@/lib/utils";
+
 import styles from "./style.module.scss";
+import ProjectForm from "./forms/project";
+import ServicesForm from "./forms/services";
+import JobsForm from "./forms/jobs";
+import VendorForm from "./forms/vendor";
 
 const LetsTalk = () => {
-  const { theme, setTheme } = useContext(MyContext);
-  let [isOpen, setIsOpen] = useState(false);
+  const { theme } = useContext(MyContext);
+  const formInitialSchema = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    companyName: "",
+    countrySelection: "",
+    projectExplanation: "",
+  };
+  const validationSchema = yep.object({
+    firstName: yep
+      .string()
+      .required("First Name is required")
+      .matches(/^[A-Za-z]+$/, "Only alphabets are allowed"),
+    lastName: yep
+      .string()
+      .required("Last Name is required")
+      .matches(/^[A-Za-z]+$/, "Only alphabets are allowed"),
+    email: yep
+      .string()
+      .email("Please enter a valid Email")
+      .required("Email is required"),
+    phone: yep.string().required("Phone is required"),
+    companyName: yep.string().required("Company Name is required"),
+    countrySelection: yep.string().required("Country is required"),
+    projectExplanation: yep
+      .string()
+      .required("Project Explanation is required"),
+  });
 
   return (
     <section className={cn("primary-container")}>
-      <section
+      <div
         className={`${styles.lestWorkStyle} ${
           theme ? styles.lestWorkStyleDark : ""
         }`}
@@ -37,7 +72,7 @@ const LetsTalk = () => {
           </div>
 
           <div className={`${styles.tabDropdownMob} col-md-6 col-12`}>
-          <h3 className={styles.tabDropLabel}>Choose Purpose</h3>
+            <h3 className={styles.tabDropLabel}>Choose Purpose</h3>
             <CustomDropdown
               title="Projects"
               options={[
@@ -117,99 +152,26 @@ const LetsTalk = () => {
               </Tab.List>
               <Tab.Panels>
                 <Tab.Panel>
-                  <div className={styles.contactUsForm}>
-                    <p className={styles.formText}>
-                      Fill up few details to contact you for a discussion about
-                      your project ideas.
-                    </p>
-                    <div className={styles.contactFormArea}>
-                      <div className="row">
-                        <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                          <CustomInput
-                            label="First Name*"
-                            placeholder="First Name*"
-                            type="name"
-                          />
-                        </div>
-                        <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                          <CustomInput
-                            label="Last Name*"
-                            placeholder="Last Name*"
-                            type="name"
-                          />
-                        </div>
-                        <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                          <CustomInput
-                            label="Email*"
-                            placeholder="Email*"
-                            type="email"
-                          />
-                        </div>
-                        <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                          <CountryDropdown />
-                        </div>
-                        <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                          <CustomInput
-                            label="Company Name*"
-                            placeholder="Company Name*"
-                            type="name"
-                          />
-                        </div>
-                        <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                          <CustomDropdown
-                            title="Country"
-                            options={[
-                              "Country",
-                              "India",
-                              "united State",
-                              "New York",
-                            ]}
-                          />
-                        </div>
-                        <div
-                          className={`${styles.inputSpace} col-md-12 col-12`}
-                        >
-                          <CustomInput
-                            label="Brief Explanation of your project**"
-                            placeholder="Brief Explanation of your project**"
-                            type="textarea"
-                            rows="4"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className={styles.captchaImg}>
-                      <ImageCustom
-                        src="/images/captcha.png"
-                        width={219}
-                        height={49}
-                        alt="captcha"
-                      />
-                    </div>
-                    <div className={styles.policyArea}>
-                      <div className={styles.policyText}>
-                        I understand and consent to my personal data being
-                        processed in accordance with TechChefz&apos;s
-                        <span className={styles.policyHighlight}>
-                          Privacy Policy
-                        </span>
-                      </div>
-                      <div className={`${styles.buttonGrid}`}>
-                        <Button variant="blueBtn" size="md">
-                          Send a Message <Icons.ArrowRight size={18} />
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
+                  {/* Project Form */}
+                  <ProjectForm />
                 </Tab.Panel>
-                <Tab.Panel>Content 2</Tab.Panel>
-                <Tab.Panel>Content 3</Tab.Panel>
-                <Tab.Panel>Content 4</Tab.Panel>
+                <Tab.Panel>
+                  {/* Services Form */}
+                  <ServicesForm />
+                </Tab.Panel>
+                <Tab.Panel>
+                  {/* Jobs Form */}
+                  <JobsForm />
+                </Tab.Panel>
+                <Tab.Panel>
+                  {/* Vendor Form */}
+                  <VendorForm />
+                </Tab.Panel>
               </Tab.Panels>
             </Tab.Group>
           </div>
         </div>
-      </section>
+      </div>
     </section>
   );
 };

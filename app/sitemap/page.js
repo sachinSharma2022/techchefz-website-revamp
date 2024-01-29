@@ -1,16 +1,15 @@
-import LetsWork from '@/components/home/letsWork'
-import SitemapPages from '@/components/sitemap/sitemapPages'
-import SitmapBanner from '@/components/sitemap/sitmapBanner'
-import React from 'react'
+import LetsWork from "@/components/home/letsWork";
+import SiteMapBanner from "@/components/sitemap/siteMapBanner";
+import SiteMapLinks from "@/components/sitemap/siteMapLinks";
 
 const Sitemap = () => {
   return (
     <div>
-        <SitmapBanner/>
-        <SitemapPages/>
-        <LetsWork />
+      <SiteMapBanner />
+      <SiteMapLinks />
+      <LetsWork />
     </div>
-  )
-}
+  );
+};
 
-export default Sitemap
+export default Sitemap;

@@ -7,29 +7,6 @@
     padding-inline: 0;
   }
 
-  &.lestWorkStyleDark {
-    background-color: color(dark-gray);
-
-    .workArea {
-      background-color: color(text-primary);
-      color: color(primary-white);
-      .tabDropdownMob {
-        background-color: color(dark-gray);
-      }
-      .workGrid {
-        .policyHighlight {
-          color: color(heading-liner);
-        }
-      }
-      .contactTabWrap {
-        .contactInnerFlex {
-          background-color: color(dark-gray);
-          color: color(primary-white);
-        }
-      }
-    }
-  }
-
   @include mobile-tablet-p {
     padding: spacing(section-mob-padding);
     padding-block: 3.75rem 3.75rem;
@@ -172,6 +149,7 @@
     .contactFormArea {
       .inputSpace {
         margin-bottom: 2.25rem;
+        position: relative;
 
         &:last-child {
           margin-bottom: 0;
@@ -251,7 +229,6 @@
       }
     }
   }
-
   .policyArea {
     display: flex;
     justify-content: space-between;
@@ -288,4 +265,37 @@
       }
     }
   }
+
+  .errorText {
+    color: color(error);
+    position: absolute;
+    font-size: .875rem;
+    bottom: -1.5rem;
+  }
+
+
+// Dark Mode
+  &.lestWorkStyleDark {
+    background-color: color(dark-gray);
+
+    .workArea {
+      background-color: color(text-primary);
+      color: color(primary-white);
+      .tabDropdownMob {
+        background-color: color(dark-gray);
+      }
+      .workGrid {
+        .policyHighlight {
+          color: color(heading-liner);
+        }
+      }
+      .contactTabWrap {
+        .contactInnerFlex {
+          background-color: color(dark-gray);
+          color: color(primary-white);
+        }
+      }
+    }
+  }
+
 }

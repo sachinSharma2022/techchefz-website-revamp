@@ -68,7 +68,7 @@ const Goals = () => {
           </div>
         </div>
 
-        <div className={styles.goalsImgs}>
+        <div className={styles.goalImage}>
           <div className="row justify-content-center ">
             <div className="col-md-12 col-lg12">
               <ImageCustom

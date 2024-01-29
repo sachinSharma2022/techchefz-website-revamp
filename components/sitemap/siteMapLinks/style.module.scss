@@ -2,9 +2,13 @@
 
 .sitemapPages {
    padding: spacing(section-primary-padding);
-   display: flex;
-   gap: 3.75rem;
    background-color: color(bg-soft);
+   padding-block: 5rem;
+
+   .flexContainer {
+      display: flex;
+      gap: 3.75rem;
+   }
 
    @include mobile{
       flex-direction: column;
