@@ -9,6 +9,7 @@ const TextRevel=({children})=>{
                   variants={slideUp}
                   initial="initial"
                   whileInView="enter"
+                  viewport={{ once: true }}
                 >
                   {children}
                 </motion.div>

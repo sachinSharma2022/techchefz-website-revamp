@@ -10,6 +10,7 @@ import Link from "next/link";
 import { useContext, useRef } from "react";
 import { opacity, slideUp } from "./animation";
 import styles from "./style.module.scss";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const Card = ({ ...props }) => {
   const description = useRef(null);
@@ -123,6 +124,9 @@ const Projects = () => {
       }`}
     >
       <div className={cn("primary-container")}>
+     <TextRevel>
+
+     
         <div className={cn("row", styles.rowSection)}>
           <div className="col-md-12 col-12">
             <p className={styles.projectHighlight}>Projects</p>
@@ -147,6 +151,7 @@ const Projects = () => {
             </Link>
           </div>
         </div>
+        </TextRevel>
         <div ref={container} className={styles.cards}>
           {projects.map((project, i) => {
             const targetScale = 1 - (projects.length - i) * 0.05;

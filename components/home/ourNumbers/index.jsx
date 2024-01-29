@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { useContext } from "react";
 import Slider from "react-slick";
 import styles from "./style.module.scss";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const OurNumbers = () => {
   const { theme, setTheme } = useContext(MyContext);
@@ -78,6 +79,8 @@ const OurNumbers = () => {
       className={`${styles.numberStyle} ${theme ? styles.numberStyleDark : ""}`}
     >
       <div className={cn("primary-container")}>
+      <TextRevel>
+     
         <div className={styles.careerRow}>
           <div>
             <p className={styles.projectHighlight}>our numbers</p>
@@ -90,7 +93,7 @@ const OurNumbers = () => {
             Career Opportunities <Icons.ArrowRight size={18} />
           </Button>
         </div>
-
+        </TextRevel>
         <div className={styles.ourNumberMain}>
           <div className={styles.ourNumberGrid}>
             <div className={styles.ourNumbersImg}>
