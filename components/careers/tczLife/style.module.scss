@@ -4,16 +4,30 @@
   background-color: color(bg-soft);
   padding-block: spacing(section-primary-padding);
   padding-left: spacing(p-120);
-	margin-top: 8.75rem;
+  margin-top: 8.75rem;
+  overflow: hidden;
 
   @include desktop-hd {
     padding-inline: 0;
   }
 
-  .tczLifeTop {
+  .tczLifeSliderSection {
+    width: 100%;
+
     @include desktop-hd {
       max-width: 1440px;
       margin-inline: auto;
+    }
+
+    .sliderSection {
+      padding: 0;
+    }
+
+    .tczActionSection {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-width: 23.25rem;
     }
 
     .tczLifeTitle {
@@ -37,18 +51,21 @@
           --Gradient,
           linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%)
         );
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        @include textGradient;
       }
     }
   }
 
-  .videoWapper > div {
-    max-width: 92%;
-    height: 264px;
+  .videoWhapper {
+    width: 100%;
+    height: 100%;
     border-radius: 0.5rem;
     overflow: hidden;
+
+    div {
+      width: 470px;
+      height: 264px;
+    }
 
     img {
       width: 100%;
@@ -71,6 +88,46 @@
       font-weight: 400;
       line-height: 1.875rem;
       opacity: 0.6;
+    }
+  }
+
+  .sliderArrow {
+    display: flex;
+    gap: 24px;
+
+    .button {
+      background-color: color(primary-blue);
+      padding: 0;
+      border-radius: 0.5rem;
+      width: 3rem;
+      height: 3rem;
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+    }
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    svg > path {
+      stroke: color(primary-white);
+    }
+  }
+
+  .arrowDisabled {
+    border-radius: 0.5rem;
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid rgba(color(text-primary), 0.20);
+    color: color(primary-blue);
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg > path {
+      stroke: color(primary-black);
     }
   }
 

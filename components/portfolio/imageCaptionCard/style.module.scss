@@ -37,6 +37,7 @@
   @include desktop-hd {
     padding-inline: 0;
   }
+
   @include mobile-tablet-p {
     padding: spacing(section-mob-padding-Left-Right);
     grid-template-columns: repeat(2, 1fr);
@@ -53,6 +54,7 @@
     border-radius: text(lg);
     border: 0.125rem solid rgba(color(text-primary), 0.12);
     background: color(bg-soft);
+    height: 100%;
 
     .cardImg {
       position: relative;

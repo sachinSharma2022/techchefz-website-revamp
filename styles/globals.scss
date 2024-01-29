@@ -77,7 +77,6 @@ a {
   margin-bottom: 5rem;
 }
 
-
 // Space End
 
 // Primary Container
@@ -339,7 +338,7 @@ input:-webkit-autofill {
     border: none !important;
   }
 
-  .btn  {
+  .btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -610,7 +609,8 @@ input:-webkit-autofill {
     }
   }
 
-  .grid-0, .grid-5 {
+  .grid-0,
+  .grid-5 {
     .imgBox div {
       min-height: 43.25rem;
     }
@@ -659,7 +659,7 @@ input:-webkit-autofill {
   .slick-disabled {
     background-color: color(primary-white);
     border: 0.14rem solid rgba(color(text-primary), 0.5);
-    
+
     &:hover {
       background-color: color(primary-white);
     }
@@ -726,54 +726,8 @@ input:-webkit-autofill {
 }
 
 .tczLifeSlider {
-  .slick-arrow {
-    background-color: color(primary-blue);
-    padding: 0;
-    border-radius: 0.5rem;
-    width: 3rem;
-    height: 3rem;
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-
-    &:hover {
-      background-color: color(primary-blue);
-    }
-
-    svg {
-      width: 1.2rem;
-    }
-
-    &::before {
-      display: none;
-    }
-  }
-
-  .slick-prev {
-    left: -100%;
-    bottom: 0;
-    z-index: 999;
-    top: 100%;
-
-    @include mobile {
-      left: 0;
-      top: 0;
-    }
-    svg {
-      transform: rotate(-180deg);
-    }
-  }
-
-  .slick-next {
-    right: inherit;
-    left: -90%;
-    bottom: 0;
-    z-index: 999;
-    top: 100%;
-    @include mobile {
-      left: 5rem;
-      top: 0;
-    }
+  .slick-track {
+    display: flex;
   }
 
   .slick-slider .slick-track,
@@ -782,13 +736,24 @@ input:-webkit-autofill {
       margin-top: 5rem;
     }
   }
+  /* the slides */
+  .slick-slide {
+    margin: 0 15px;
+}
+
+/* the parent */
+.slick-list {
+    margin: 0 -15px;
+}
 
   .slick-disabled {
     background-color: color(bg-soft);
     border: 0.14rem solid rgba(color(text-primary), 0.5);
+
     &:hover {
       background-color: color(primary-white);
     }
+
     svg {
       path {
         stroke: rgba(color(text-primary), 0.5);
