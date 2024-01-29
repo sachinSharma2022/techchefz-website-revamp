@@ -99,7 +99,7 @@ const ExploreInsights = () => {
             <div className={styles.cardContainer} key={index}>
               <div className={styles.cardDiv}>
                 <div className={styles.imgBox}>
-                  <ImageCustom src={value.img} width={500} height={500} />
+                  <ImageCustom src={value.img} width={500} height={500} alt="slider-img"/>
                 </div>
                 <h3>{value.title}</h3>
                 <div className={styles.spanDiv}>

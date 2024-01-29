@@ -12,27 +12,27 @@ import styles from "./style.module.scss";
 const people = [
   {
     name: "+91",
-    flag: <ImageCustom src="/images/flag.jpg" width={24} height={15} alt="" />,
+    flag: <ImageCustom src="/images/flag.jpg" width={24} height={15} alt="flag-img" />,
   },
   {
     name: "+93",
-    flag: <ImageCustom src="/images/flag.jpg" width={24} height={15} alt="" />,
+    flag: <ImageCustom src="/images/flag.jpg" width={24} height={15} alt="flag-img" />,
   },
   {
     name: "+355",
-    flag: <ImageCustom src="/images/flag.jpg" width={24} height={15} alt="" />,
+    flag: <ImageCustom src="/images/flag.jpg" width={24} height={15} alt="flag-img" />,
   },
   {
     name: "+376",
-    flag: <ImageCustom src="/images/flag.jpg" width={24} height={15} alt="" />,
+    flag: <ImageCustom src="/images/flag.jpg" width={24} height={15} alt="flag-img" />,
   },
   {
     name: "+244",
-    flag: <ImageCustom src="/images/flag.jpg" width={24} height={15} alt="" />,
+    flag: <ImageCustom src="/images/flag.jpg" width={24} height={15} alt="flag-img" />,
   },
   {
     name: "+672",
-    flag: <ImageCustom src="/images/flag.jpg" width={24} height={15} alt="" />,
+    flag: <ImageCustom src="/images/flag.jpg" width={24} height={15} alt="flag-img" />,
   },
 ];
 

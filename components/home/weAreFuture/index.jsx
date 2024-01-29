@@ -24,7 +24,7 @@ const WeAreFuture = () => {
             Pioneering
             <span className={styles.globalText}>
               Future
-              <ImageCustom src="/global.png" width="60" height="60" alt="" />
+              <ImageCustom src="/global.png" width="60" height="60" alt="global-img" />
               Global
             </span>
             <span className={styles.titleHighlight}>Technology Company.</span>

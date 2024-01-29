@@ -32,7 +32,7 @@ const SmoothDropdown = ({ buttonLabel, options, variant, size }) => {
                   <div className={styles.innerIconFlex}>
                     <ImageCustom
                       src={option.icon}
-                      alt=""
+                      alt="drop-icon"
                       width="25"
                       height="25"
                     />

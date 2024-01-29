@@ -77,7 +77,7 @@ const TczLife = () => {
               <Slider {...settings}>
                 {sliderVideo.map((data, index) => (
                   <div key={index} className={styles.videoWapper}>
-                    <ImageCustom src={data.video} width={500} height={500} />
+                    <ImageCustom src={data.video} width={500} height={500} alt="life-slider" />
                   </div>
                 ))}
               </Slider>

@@ -17,7 +17,7 @@ const Footer = () => {
               src="/images/logo-white.svg"
               width={143}
               height={48}
-              alt=""
+              alt="logo-white"
             />
           </div>
           <ScrollToTopButton />
@@ -42,7 +42,7 @@ const Footer = () => {
                   src="/images/partner.jpg"
                   width={294}
                   height={198}
-                  alt=""
+                  alt="partner-img"
                 />
               </div>
 

@@ -114,7 +114,7 @@ const Header = () => {
               src="/images/logo.svg"
               width={153}
               height={40}
-              alt=""
+              alt="header-logo"
             />
           </Link>
           <Link href="/" className={styles.darkLogo}>
@@ -122,7 +122,7 @@ const Header = () => {
               src="/images/white-logo.svg"
               width={153}
               height={40}
-              alt=""
+              alt="dark-logo"
             />
           </Link>
         </div>

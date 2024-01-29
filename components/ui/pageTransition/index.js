@@ -44,7 +44,7 @@ export default function Curve({ children, backgroundColor }) {
           src="/images/logo-icon.svg"
           width={180}
           height={180}
-          alt=""
+          alt="logo"
         />
       </motion.div>
       {dimensions.width != null && <SVG {...dimensions} />}
