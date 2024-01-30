@@ -25,6 +25,13 @@
     }
 
     .tabDropdownMob {
+      border: 1px solid rgba(17, 17, 17, 0.12);
+      background-color: color(primary-white);
+      padding: text(lg);
+      padding-bottom: 0;
+      margin-bottom: text(lg);
+      border-radius: 0.75rem;
+
       .tabDropLabel {
         font-size: 0.875rem;
         font-weight: 400;
@@ -50,12 +57,6 @@
         color: color(text-primary);
         left: -3px;
       }
-      border: 1px solid rgba(17, 17, 17, 0.12);
-      background-color: color(primary-white);
-      padding: text(lg);
-      padding-bottom: 0;
-      margin-bottom: text(lg);
-      border-radius: 0.75rem;
 
       @include tablet-desktop-full {
         display: none;
@@ -128,48 +129,7 @@
       }
     }
   }
-  .contactUsForm {
-    .formText {
-      font-size: text(lg);
-      font-weight: 400;
-      opacity: 0.8;
-      margin-bottom: text(xl);
-      line-height: 1.875rem;
 
-      @include mobile-tablet-p {
-        display: none;
-        padding: 0;
-        font-size: text(normal);
-        margin-bottom: 2.5rem;
-        line-height: text(xl);
-        max-width: 100%;
-      }
-    }
-
-    .contactFormArea {
-      .inputSpace {
-        margin-bottom: 2.25rem;
-        position: relative;
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-
-        @include mobile {
-          margin-bottom: text(lg);
-        }
-      }
-    }
-
-    .captchaImg {
-      margin: 2.5rem 0 2.5rem 0;
-      img {
-        border-radius: 0.5rem;
-        box-shadow: 0 0 0.25rem 0 rgba(0, 0, 0, 0.12);
-        cursor: pointer;
-      }
-    }
-  }
   .contactTabWrap {
     display: flex;
     gap: 9rem;
@@ -177,6 +137,7 @@
     @include mobile-tablet-p {
       flex-direction: column;
     }
+
     [aria-orientation="vertical"] {
       min-width: 300px;
       max-width: 300px;
@@ -194,11 +155,22 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: color(primary-white);
+      background-color: rgba(color(primary-white), 0.8);
       height: 80px;
       margin-bottom: 20px;
       border-radius: 12px;
       padding: 20px;
+      @include transition(0.2s);
+
+      &:hover {
+        background-color: rgba(color(primary-white), 1);
+      }
+
+      &.buttonActive {
+        background-color: rgba(color(primary-white), 1);
+      }
+
+
 
       .icon {
         animation: slide-in 0.5s forwards;
@@ -233,10 +205,12 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+
     @include mobile-tablet-p {
       flex-direction: column;
       align-items: flex-start;
     }
+
     .policyText {
       font-size: text(xxs);
       font-weight: 400;
@@ -281,19 +255,29 @@
     .workArea {
       background-color: color(text-primary);
       color: color(primary-white);
+      
       .tabDropdownMob {
         background-color: color(dark-gray);
       }
+
       .workGrid {
         .policyHighlight {
           color: color(heading-liner);
         }
       }
-      .contactTabWrap {
-        .contactInnerFlex {
-          background-color: color(dark-gray);
-          color: color(primary-white);
+
+      .contactInnerFlex {
+        background-color:rgba(color(input-bg), 0.8);
+        color: color(primary-white);
+
+        &:hover {
+          background-color:rgba(color(input-bg), 1);
         }
+
+        &.buttonActive {
+          background-color:rgba(color(input-bg), 1);
+        }
+  
       }
     }
   }

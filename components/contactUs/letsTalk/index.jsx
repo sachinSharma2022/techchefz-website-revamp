@@ -87,7 +87,12 @@ const LetsTalk = () => {
               <Tab.List>
                 <Tab>
                   {({ selected }) => (
-                    <div className={styles.contactInnerFlex}>
+                    <div
+                      className={cn(
+                        styles.contactInnerFlex,
+                        selected && styles.buttonActive
+                      )}
+                    >
                       <div className={styles.highlightIcon}>
                         <Icons.CustomDevelopment size={40} />
                         <h1>Projects</h1>
@@ -103,7 +108,12 @@ const LetsTalk = () => {
                 </Tab>
                 <Tab>
                   {({ selected }) => (
-                    <div className={styles.contactInnerFlex}>
+                    <div
+                      className={cn(
+                        styles.contactInnerFlex,
+                        selected && styles.buttonActive
+                      )}
+                    >
                       <div className={styles.highlightIcon}>
                         <Icons.Intelligence size={40} />
                         <h1>Services</h1>
@@ -119,7 +129,12 @@ const LetsTalk = () => {
                 </Tab>
                 <Tab>
                   {({ selected }) => (
-                    <div className={styles.contactInnerFlex}>
+                    <div
+                      className={cn(
+                        styles.contactInnerFlex,
+                        selected && styles.buttonActive
+                      )}
+                    >
                       <div className={styles.highlightIcon}>
                         <Icons.Platforms size={40} />
                         <h1>Jobs</h1>
@@ -135,7 +150,12 @@ const LetsTalk = () => {
                 </Tab>
                 <Tab>
                   {({ selected }) => (
-                    <div className={styles.contactInnerFlex}>
+                    <div
+                      className={cn(
+                        styles.contactInnerFlex,
+                        selected && styles.buttonActive
+                      )}
+                    >
                       <div className={styles.highlightIcon}>
                         <Icons.Market size={40} />
                         <h1>Vendors</h1>

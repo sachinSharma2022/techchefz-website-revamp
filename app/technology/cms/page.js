@@ -17,7 +17,7 @@ const Cms = () => {
       <CmsType />
       <CmsDifference />
       <TechnologyValues />
-      <RelatedCase />
+      <RelatedCase className="py-0" />
       <Faq />
       <LetsWork />
     </div>
