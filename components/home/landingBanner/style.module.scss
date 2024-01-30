@@ -8,12 +8,13 @@ $border-radius: 5px;
 
 .landingBannerStyle {
   padding-inline: spacing(p-120);
+  padding-top: 6.25rem;
+  padding-bottom: 8.75rem;
   position: relative;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
-  height: calc(100dvh - 79.52px);
 
   &::before {
     content: "";

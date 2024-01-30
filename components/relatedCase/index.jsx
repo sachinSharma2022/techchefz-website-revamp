@@ -100,8 +100,12 @@ const RelatedCase = (props) => {
       <div className={cn("primary-container")}>
         <div className={styles.headSection}>
           <div>
-            <h6 className={styles.relatedCaseTitle}>{props.subTitle}</h6>
-            <h3 className={styles.relatedCaseHeading}>{props.title}</h3>
+            <h6 className={styles.relatedCaseTitle}>
+              {props.subTitle || "Related Case Study"}
+            </h6>
+            <h3 className={styles.relatedCaseHeading}>
+              {props.title || "Unravel More of Our Success Stories"}
+            </h3>
           </div>
           <div className={styles.sliderArrow}>
             <button

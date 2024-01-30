@@ -154,27 +154,6 @@
             cursor: pointer;
           }
         }
-        .policyArea {
-          display: flex;
-          justify-content: space-between;
-
-          .policyText {
-            font-size: text(xxs);
-            font-weight: 400;
-            line-height: text(lg);
-            max-width: 21.5rem;
-
-            @include mobile {
-              margin-bottom: text(lg);
-            }
-
-            .policyHighlight {
-              color: color(primary-blue);
-              font-size: text(xxs);
-              margin-left: 3px;
-            }
-          }
-        }
       }
       .contactImg {
         display: flex;
@@ -274,13 +253,6 @@
             color: rgba(color(primary-white), 0.5) !important;
             &::after {
               display: none;
-            }
-          }
-          .policyArea {
-            .policyText {
-              .policyHighlight {
-                color: color(info-blue);
-              }
             }
           }
         }
