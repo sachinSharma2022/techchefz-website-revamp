@@ -80,13 +80,13 @@ const LetsWork = () => {
               <div className={styles.policyArea}>
                 <div className="row d-flex align-items-center">
                   <div className="col-md-6 col-12">
-                    <div className={styles.policyText}>
+                    <p className={styles.policyText}>
                       By sending this form I confirm that I have read and accept
                       the
                       <span className={styles.policyHighlight}>
                         Privacy Policy
                       </span>
-                    </div>
+                    </p>
                   </div>
                   <div className={`${styles.buttonGrid} col-md-6 col-12`}>
                     <Button variant="blueBtn" size="md">

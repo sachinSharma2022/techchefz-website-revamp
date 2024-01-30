@@ -86,12 +86,12 @@ const DigitalTransformation = () => {
             </div>
 
             <div className="col-md-8 col-12">
-              <h2 className={styles.datingText}>
+              <h3 className={styles.datingText}>
                 Remaining businesses by integrating
                 <span className={styles.digitalTechText}>
                   digital technologies.
                 </span>
-              </h2>
+              </h3>
             </div>
             <div className={`${styles.servicesBtn} col-md-4 col-12`}>
               <Link href="/solutions">

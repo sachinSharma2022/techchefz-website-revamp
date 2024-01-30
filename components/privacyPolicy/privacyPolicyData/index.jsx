@@ -6,12 +6,16 @@ import { useContext } from "react";
 import styles from "./style.module.scss";
 
 const PrivacyPolicyData = () => {
-  const { theme, setTheme } = useContext(MyContext);
+  const { theme } = useContext(MyContext);
   return (
-      <section className={`${styles.privacyPolicyData} ${theme ? styles.privacyPolicyDataBannerDark : ""}`}>
+    <section
+      className={`${styles.privacyPolicyData} ${
+        theme ? styles.privacyPolicyDataBannerDark : ""
+      }`}
+    >
       <div className={cn("primary-container")}>
         <div className={styles.policyDivide}>
-          <span className={styles.title}>Personal Information</span>
+          <h4 className={styles.title}>Personal Information</h4>
           <p className={styles.leadText}>
             When registering an enquiry or communicating with us on our site, as
             appropriate, you may be asked to enter your name, email address,
@@ -20,14 +24,14 @@ const PrivacyPolicyData = () => {
           </p>
         </div>
         <div className={styles.policyDivide}>
-          <span className={styles.title}>Data Collection</span>
+          <h4 className={styles.title}>Data Collection</h4>
           <p className={styles.leadText}>
             We collect information from you when you fill out a form or enter
             information on the Techchefz website.
           </p>
         </div>
         <div className={styles.policyDivide}>
-          <span className={styles.title}>Information usage</span>
+          <h4 className={styles.title}>Information usage</h4>
 
           <ul className={styles.customerList}>
             <p className={styles.leadText}>
@@ -44,7 +48,7 @@ const PrivacyPolicyData = () => {
         </div>
 
         <div className={styles.policyDivide}>
-          <span className={styles.title}>Information protection</span>
+          <h4 className={styles.title}>Information protection</h4>
 
           <ul className={styles.customerList}>
             <p className={`${styles.leadText} ${styles.textSpace}`}>
@@ -70,7 +74,7 @@ const PrivacyPolicyData = () => {
           </ul>
         </div>
         <div className={styles.policyDivide}>
-          <span className={styles.title}>Cookies usage</span>
+          <h4 className={styles.title}>Cookies usage</h4>
 
           <ul className={styles.customerList}>
             <p className={`${styles.leadText} ${styles.textSpace}`}>
@@ -106,7 +110,7 @@ const PrivacyPolicyData = () => {
         </div>
 
         <div className={styles.policyDivide}>
-          <span className={styles.title}>Third-party disclosure</span>
+          <h4 className={styles.title}>Third-party disclosure</h4>
           <p className={styles.leadText}>
             We do not sell, trade, or otherwise transfer to outside parties your
             personally identifiable information (PII).

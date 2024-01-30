@@ -71,7 +71,7 @@
         padding: 0;
       }
 
-      h2 {
+      h3 {
         font-weight: 500;
         font-size: text(xxxl);
         color: color(primary-white);
@@ -96,17 +96,21 @@
       }
 
       .insightImageDiv {
-        padding-top: 2rem;
-        padding-bottom: 3rem;
+        margin-block: 3.8rem;
+        height: 24.125rem;
+        width: 100%;
+        border-radius: 0.6rem;
+        overflow: hidden;
+
         img {
-          border-radius: 0.6rem;
           width: 100%;
           height: 100%;
+          object-fit: cover;
         }
       }
 
       .insightSection {
-        h2 {
+        .heading {
           font-weight: 500;
           font-size: text(xl);
           color: color(primary-white);
@@ -176,7 +180,7 @@
     }
 
     .insightDetailPara {
-      h2 {
+      h3 {
         color: color(text-primary);
       }
 
@@ -186,9 +190,11 @@
       }
 
       .insightSection {
-        h2 {
+
+        .heading {
           color: color(text-primary);
         }
+
         p {
           color: color(text-primary);
           opacity: 0.8;

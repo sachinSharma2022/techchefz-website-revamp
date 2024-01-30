@@ -11,6 +11,10 @@
     padding: 4.75rem 1.5rem;
   }
   .titleSection {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
     h3 {
       font-weight: 500;
       font-size: text(normal);
@@ -30,20 +34,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 3rem;
     padding-top: 3.5rem;
 
     @include mobile {
       justify-content: center;
       padding-top: 9.5rem;
     }
+
     .cardDiv {
       padding: 2rem;
       display: flex;
       flex-direction: column;
-      flex: 1 0 0;
       width: 100%;
-      max-width: 90%;
+      max-width: 95%;
       border-radius: 1rem;
       background-color: color(text-primary);
       border: 0.125rem solid rgba(color(primary-white), 0.12);
@@ -53,6 +56,7 @@
         border: 0.125rem solid color(heading-liner);
         cursor: pointer;
       }
+      
       h1 {
         font-weight: 500;
         font-size: text(xl);
@@ -77,6 +81,7 @@
           display: flex;
           gap: 0.5rem;
           align-items: center;
+          
           span {
             font-weight: 400;
             font-size: text(normal);
@@ -92,6 +97,46 @@
 
 .jobDetailContainer {
   @include jobDetailContainer();
+}
+
+.sliderArrow {
+  display: flex;
+  gap: 24px;
+
+  .button {
+    background-color: color(primary-blue);
+    padding: 0;
+    border-radius: 0.5rem;
+    width: 3rem;
+    height: 3rem;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+  }
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  svg > path {
+    stroke: color(primary-white);
+  }
+}
+
+.arrowDisabled {
+  border-radius: 0.5rem;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid rgba(color(text-primary), 0.20);
+  color: color(primary-blue);
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg > path {
+    stroke: color(primary-black);
+  }
 }
 
 //light mode

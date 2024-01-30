@@ -1,5 +1,4 @@
 "use client";
-
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
@@ -7,6 +6,7 @@ import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useContext } from "react";
+
 import styles from "./style.module.scss";
 
 const WeAreFuture = () => {

@@ -138,7 +138,7 @@ const BrowserAccelerator = () => {
 
             <CustomDropdown
               title="Sort By"
-              options={dataTechnology}
+              options={dataServices}
               className={styles.grayInput}
             />
           </div>

@@ -11,7 +11,12 @@ import styles from "./styles.module.scss";
 const CaptionCard = (props) => {
   const { theme, setTheme } = useContext(MyContext);
   return (
-    <Link href="/" className={`${styles.captionCard} ${props.className} ${theme ? styles.captionCardDark : ""} card`}>
+    <Link
+      href="/"
+      className={`${styles.captionCard} ${props.className} ${
+        theme ? styles.captionCardDark : ""
+      } card`}
+    >
       <div className={styles.cardImg}>
         <ImageCustom
           src={props.imgSrc}
@@ -21,9 +26,9 @@ const CaptionCard = (props) => {
         />
       </div>
       <div className={styles.cardBody}>
-        <h2 className={`${styles.cardText} ${props.textStyle}`}>
+        <h4 className={`${styles.cardText} ${props.textStyle}`}>
           {props.title}
-        </h2>
+        </h4>
         <Icons.ArrowLongRight size={18} />
       </div>
     </Link>

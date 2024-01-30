@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useContext } from "react";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
-import styles from "./style.module.scss";
 import Link from "next/link";
+import { useContext } from "react";
+import styles from "./style.module.scss";
 
 const Innovation = () => {
   const { theme, setTheme } = useContext(MyContext);
@@ -39,9 +39,9 @@ const Innovation = () => {
       <div className={cn("primary-container")}>
         <div className={styles.innovationMain}>
           <p className={styles.text}>Innovation</p>
-          <h2 className={styles.title}>
+          <h3 className={styles.title}>
             Driving Technological Advancements for the Future
-          </h2>
+          </h3>
         </div>
 
         <div className={`${styles.innovationCardsGrid}`}>

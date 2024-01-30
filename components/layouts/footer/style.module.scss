@@ -314,6 +314,7 @@
     ul {
       display: flex;
       list-style: none;
+      gap: 0 1rem;
 
       @include mobile {
         flex-wrap: wrap;
@@ -331,7 +332,6 @@
           color: rgba(color(primary-white), 0.8);
           font-weight: 400;
           font-size: text(normal);
-          margin: 0 1rem;
           transition: all 0.5s;
 
           @include mobile {

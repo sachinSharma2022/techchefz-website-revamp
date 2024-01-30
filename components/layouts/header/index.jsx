@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
+
 import styles from "./style.module.scss";
 
 const Header = () => {
@@ -372,7 +373,7 @@ const Header = () => {
               className={styles.navHamburger}
               onClick={toggleClass}
             >
-              <span></span>
+              <span/>
             </Button>
           </div>
         </div>
