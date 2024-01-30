@@ -1,9 +1,9 @@
 export const slideUp={
     initial: {
-        y: "20%",
+        y: "50%",
       },
       enter: {
-        y: "-10%",
+        y: "0%",
         transition: {duration: 0.5},
       },
       exit: {
