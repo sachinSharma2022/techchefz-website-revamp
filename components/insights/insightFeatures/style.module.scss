@@ -79,14 +79,12 @@
           grid-row: 1;
           max-width: 477px;
           flex-direction: row;
-
-<<<<<<< HEAD
+          
           @include mobile{
             grid-column: 1;
-=======
+          }
           .featureImgBox div {
             height: 230px;
->>>>>>> 50713cf59bb4906628b603348f6f2cd2f469673a
           }
         }
         
@@ -95,15 +93,13 @@
           grid-row: 2;
           max-width: 477px;
           flex-direction: row;
-<<<<<<< HEAD
-          
+
           @include mobile{
             grid-column: 1;
-=======
+          }
 
           .featureImgBox div {
             height: 230px;
->>>>>>> 50713cf59bb4906628b603348f6f2cd2f469673a
           }
         }
       }
