@@ -232,6 +232,7 @@ const OurTeam = ({props}) => {
           </div>
         </LeftDrawer>
       </div>
+      </div>
     </section>
   );
 };

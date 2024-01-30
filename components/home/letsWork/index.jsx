@@ -86,7 +86,7 @@ const LetsWork = ({contact}) => {
                       <span className={styles.policyHighlight}>
                         Privacy Policy
                       </span>
-                    </p>
+                    </div>
                   </div>
                   <div className={`${styles.buttonGrid} col-md-6 col-12`}>
                     <Button variant="blueBtn" size="md">

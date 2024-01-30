@@ -27,6 +27,7 @@ const Card = ({ ...props }) => {
     1,
     props.targetScale,
   ]);
+  console.log(props)
   return (
     <motion.div className={styles.cardSec} style={{ scale }}>
       <div className={styles.projectImg}>
@@ -40,7 +41,7 @@ const Card = ({ ...props }) => {
 
       <div className={styles.cardContentStyle}>
         <h3 className={styles.projectBrand}>
-          {props.title.split(" ").map((word, index) => {
+          {props.Title.split(" ").map((word, index) => {
             return (
               <div key={index} className={styles.mask}>
                 <motion.span

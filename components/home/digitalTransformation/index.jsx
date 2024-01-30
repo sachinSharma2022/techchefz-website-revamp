@@ -87,7 +87,7 @@ const DigitalTransformation = ({digital}) => {
             </div>
 
             <div className="col-md-8 col-12">
-              <h2 className={styles.datingText}>
+              <h3 className={styles.datingText}>
               {digital[0]?.SubTitle}
                 <span className={styles.digitalTechText}>
                 {digital[0]?.Description}

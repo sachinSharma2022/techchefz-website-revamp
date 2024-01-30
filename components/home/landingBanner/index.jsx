@@ -10,8 +10,6 @@ import { Button } from "../../ui/button";
 // Style
 import styles from "./style.module.scss";
 
-const LandingBanner = () => {
-  const { theme } = useContext(MyContext);
 
 const LandingBanner = ({props}) => {
   const { theme, setTheme } = useContext(MyContext);
