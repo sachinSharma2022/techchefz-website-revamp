@@ -11,7 +11,7 @@ import { Button } from "../../ui/button";
 import styles from "./style.module.scss";
 
 const LandingBanner = () => {
-  const { theme, setTheme } = useContext(MyContext);
+  const { theme } = useContext(MyContext);
 
   return (
     <section
