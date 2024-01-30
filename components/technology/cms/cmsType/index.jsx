@@ -1,17 +1,16 @@
 "use client";
 
 import LeftDrawer from "@/components/common/leftDrawer";
-import { Icons } from "@/components/icons";
+import { ImageCustom } from "@/components/ui/imageCustom";
 import PartnerCard from "@/components/ui/partnerCard";
 import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 import { useContext, useState } from "react";
 import styles from "./style.module.scss";
-import Link from "next/link";
-import { ImageCustom } from "@/components/ui/imageCustom";
 
 const CmsType = () => {
-  const { theme , setTheme} = useContext(MyContext);
+  const { theme, setTheme } = useContext(MyContext);
   let [isOpen, setIsOpen] = useState(false);
 
   const typeCard = [
@@ -54,7 +53,9 @@ const CmsType = () => {
   ];
 
   return (
-    <section className={`${styles.cmsTypeStyle} ${theme ? styles.cmsTypeDark : ""}`}>
+    <section
+      className={`${styles.cmsTypeStyle} ${theme ? styles.cmsTypeDark : ""}`}
+    >
       <div className={cn("primary-container")}>
         <div className={styles.careerRow}>
           <p className={styles.projectHighlight}>Types of CMS</p>

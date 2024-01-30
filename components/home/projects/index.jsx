@@ -89,7 +89,7 @@ const Card = ({ ...props }) => {
 };
 
 const Projects = () => {
-  const { theme, setTheme } = useContext(MyContext);
+  const { theme } = useContext(MyContext);
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
