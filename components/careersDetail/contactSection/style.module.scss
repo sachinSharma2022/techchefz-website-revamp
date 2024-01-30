@@ -28,8 +28,9 @@
         grid-template-columns: repeat(1, 1fr);
         gap: 0;
       }
+
       @include mobile {
-        grid-template-columns: repeat(1, 1fr);
+        flex-direction: column;
         gap: 0;
       }
       .contactUsForm {
@@ -157,6 +158,10 @@
         .policyArea {
           display: flex;
           justify-content: space-between;
+
+          @include mobile{
+            flex-direction: column;
+          }
 
           .policyText {
             font-size: text(xxs);

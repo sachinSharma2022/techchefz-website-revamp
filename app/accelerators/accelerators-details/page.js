@@ -11,13 +11,8 @@ const AcceleratorDetails = () => {
       <DetailBanner />
       <AcceleratorIndustry />
       <Impact />
-<<<<<<< HEAD
-      <Challenges className="pb-5 pb-sm-0" />
-      <RelatedCase sliderClassName="mb-0" />
-=======
       <Challenges />
       <RelatedCase sliderClassName="mb-0" className="mt-5" />
->>>>>>> 50713cf59bb4906628b603348f6f2cd2f469673a
       <LetsWork />
     </div>
   );
