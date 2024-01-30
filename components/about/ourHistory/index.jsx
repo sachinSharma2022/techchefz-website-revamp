@@ -7,13 +7,16 @@ import Slider from "react-slick";
 
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
+import { base_Uri } from "@/lib/constants";
 
-const OurHistory = () => {
+const OurHistory = ({props, OurHistory}) => {
+  console.log("manoj",props)
   const { theme, setTheme } = useContext(MyContext);
   const settings = {
     customPaging: function (i) {
       return (
         <div>
+          
           <span className="yearCount">201{i + 1}</span>
           <button />
         </div>
@@ -37,50 +40,7 @@ const OurHistory = () => {
     ),
   };
 
-  const sliderData = [
-    {
-      title:
-        "Bridging Dreams to Reality in a Transformative Journey of Innovation and Impact at TechChefz.",
-      content:
-        "Founded in 2017, TechChefz arose from a shared passion for technology, uniting a team of pioneers. Fueled by enthusiasm and determination, they set on a transformative journey to shape the future.",
-      imgSrc: "/images/img/about/slider1.png",
-    },
-    {
-      title:
-        "Bridging Dreams to Reality in a Transformative Journey of Innovation and Impact at TechChefz.",
-      content:
-        "Founded in 2017, TechChefz arose from a shared passion for technology, uniting a team of pioneers. Fueled by enthusiasm and determination, they set on a transformative journey to shape the future.",
-      imgSrc: "/images/goals1.png",
-    },
-    {
-      title:
-        "Bridging Dreams to Reality in a Transformative Journey of Innovation and Impact at TechChefz.",
-      content:
-        "Founded in 2017, TechChefz arose from a shared passion for technology, uniting a team of pioneers. Fueled by enthusiasm and determination, they set on a transformative journey to shape the future.",
-      imgSrc: "/images/goals2.png",
-    },
-    {
-      title:
-        "Bridging Dreams to Reality in a Transformative Journey of Innovation and Impact at TechChefz.",
-      content:
-        "Founded in 2017. Fueled by enthusiasm and determination, they set on a transformative journey to shape the future TechChefz arose from a shared passion for technology, uniting a team of pioneers",
-      imgSrc: "/images/goals3.png",
-    },
-    {
-      title:
-        "Bridging Dreams to Reality in a Transformative Journey of Innovation and Impact at TechChefz.",
-      content:
-        "Founded in 2017, TechChefz arose from a shared passion for technology, uniting a team of pioneers. Fueled by enthusiasm and determination, they set on a transformative journey to shape the future.",
-      imgSrc: "/images/img/about/slider1.png",
-    },
-    {
-      title:
-        "Bridging Dreams to Reality in a Transformative Journey of Innovation and Impact at TechChefz.",
-      content:
-        "Founded in 2017. Fueled by enthusiasm and determination, they set on a transformative journey to shape the future TechChefz arose from a shared passion for technology, uniting a team of pioneers,",
-      imgSrc: "/images/img/about/slider1.png",
-    },
-  ];
+ 
   return (
     <section
       className={`${styles.ourHistory} ${
@@ -89,23 +49,23 @@ const OurHistory = () => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.ourHistoryTop}>
-          <h6 className={styles.ourHistoryTitle}>Our History</h6>
+          <h6 className={styles.ourHistoryTitle}>{props[0]?.Title}</h6>
           <h3 className={styles.ourHistoryHeading}>
-            Tracing Innovation Through Time: Our IT Journey.
+          {props[0]?.SubTitle}
           </h3>
         </div>
 
         <div className="ourHistorySlider">
           <Slider {...settings}>
-            {sliderData.map((data, index) => (
+            {OurHistory.map((data, index) => (
               <div key={index} className={styles.cardStyle}>
                 <div className={styles.infoStyle}>
-                  <h4 className={styles.subHeading}>{data.title}</h4>
-                  <p className={styles.ourHistoryContent}>{data.content}</p>
+                  <h4 className={styles.subHeading}>{data.OurHistoryCard.title}</h4>
+                  <p className={styles.ourHistoryContent}>{data.OurHistoryCard.Description}</p>
                 </div>
                 <div className={styles.OurHistoryImage}>
                   <ImageCustom
-                    src={data.imgSrc}
+                    src={base_Uri+data?.OurHistoryCard?.Image?.data?.attributes?.url}
                     width={530}
                     height={397}
                     alt="slider-img"

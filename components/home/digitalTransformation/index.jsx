@@ -10,29 +10,30 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import { Icons } from "@/components/icons";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { base_Uri } from "@/lib/constants";
 
-const DigitalTransformation = () => {
+const DigitalTransformation = ({digital}) => {
   const { theme, setTheme } = useContext(MyContext);
-  const serviceCard = [
-    {
-      img: "/images/digital-trans.png",
-      digitalHeading: "Customer Experience (CX).",
-      digitalText:
-        "We help our clients to attract the relevant audience for their business with our advanced technology for a higher conversion rate. We perform advance digital operations like -",
-    },
-    {
-      img: "/images/digital-trans.png",
-      digitalHeading: "Customer Experience (CX).",
-      digitalText:
-        "We help our clients to attract the relevant audience for their business with our advanced technology for a higher conversion rate. We perform advance digital operations like -",
-    },
-    {
-      img: "/images/digital-trans.png",
-      digitalHeading: "Customer Experience (CX).",
-      digitalText:
-        "We help our clients to attract the relevant audience for their business with our advanced technology for a higher conversion rate. We perform advance digital operations like -",
-    },
-  ];
+  // const serviceCard = [
+  //   {
+  //     img: "/images/digital-trans.png",
+  //     digitalHeading: "Customer Experience (CX).",
+  //     digitalText:
+  //       "We help our clients to attract the relevant audience for their business with our advanced technology for a higher conversion rate. We perform advance digital operations like -",
+  //   },
+  //   {
+  //     img: "/images/digital-trans.png",
+  //     digitalHeading: "Customer Experience (CX).",
+  //     digitalText:
+  //       "We help our clients to attract the relevant audience for their business with our advanced technology for a higher conversion rate. We perform advance digital operations like -",
+  //   },
+  //   {
+  //     img: "/images/digital-trans.png",
+  //     digitalHeading: "Customer Experience (CX).",
+  //     digitalText:
+  //       "We help our clients to attract the relevant audience for their business with our advanced technology for a higher conversion rate. We perform advance digital operations like -",
+  //   },
+  // ];
   const settings = {
     className: "center",
     centerPadding: "0px",
@@ -82,21 +83,21 @@ const DigitalTransformation = () => {
         <div className={styles.serviceRow}>
           <div className="row">
             <div className="col-md-12 col-12">
-              <p className={styles.projectHighlight}>Digital Transformation</p>
+              <p className={styles.projectHighlight}>{digital[0]?.Title}</p>
             </div>
 
             <div className="col-md-8 col-12">
-              <h3 className={styles.datingText}>
-                Remaining businesses by integrating
+              <h2 className={styles.datingText}>
+              {digital[0]?.SubTitle}
                 <span className={styles.digitalTechText}>
-                  digital technologies.
+                {digital[0]?.Description}
                 </span>
               </h3>
             </div>
             <div className={`${styles.servicesBtn} col-md-4 col-12`}>
               <Link href="/solutions">
                 <Button variant="outline" size="md">
-                  Explore Services <Icons.ArrowRight size={18} />
+                {digital[0]?.Btn} <Icons.ArrowRight size={18} />
                 </Button>
               </Link>
             </div>
@@ -105,12 +106,12 @@ const DigitalTransformation = () => {
 
         <div className={`${styles.digitalMain} digital-transformation`}>
           <Slider {...settings}>
-            {serviceCard.map((data, index) => (
+            {digital[0]?.Experience.map((data, index) => (
               <div key={index}>
                 <div className={styles.digitalGrid}>
                   <div className={styles.digitalImg}>
                     <ImageCustom
-                      src={data.img}
+                      src={base_Uri+data?.Image?.data?.attributes?.url}
                       width={421}
                       height={318}
                       alt="bannerImg"
@@ -119,9 +120,9 @@ const DigitalTransformation = () => {
 
                   <div className={styles.experienceCardBox}>
                     <h4 className={styles.CustomerHeading}>
-                      {data.digitalHeading}
+                      {data.Title}
                     </h4>
-                    <p className={styles.digitalText}>{data.digitalText}</p>
+                    <p className={styles.digitalText}>{data.Description}</p>
 
                     <ul className={styles.customerList}>
                       <li className={styles.list}>

@@ -13,6 +13,8 @@ import styles from "./style.module.scss";
 const LandingBanner = () => {
   const { theme } = useContext(MyContext);
 
+const LandingBanner = ({props}) => {
+  const { theme, setTheme } = useContext(MyContext);
   return (
     <section
       className={`${styles.landingBannerStyle} ${
@@ -33,8 +35,8 @@ const LandingBanner = () => {
         </h1>
 
         <Link href="/contact-us">
-          <Button variant={theme ? "blueBtnDark" : "blueBtn"} size="md">
-            Let’s Work Together <Icons.ArrowRight size={18} />
+          <Button variant={theme?"blueBtnDark":"blueBtn"} size="md">
+            {props.button} <Icons.ArrowRight size={18} />
           </Button>
         </Link>
       </div>

@@ -10,8 +10,10 @@ import { useContext } from "react";
 
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
+import { base_Uri } from "@/lib/constants";
 
-const LetsWork = () => {
+const LetsWork = ({contact}) => {
+  
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section
@@ -24,14 +26,13 @@ const LetsWork = () => {
           <div className={styles.workGrid}>
             <div className={styles.contactUsForm}>
               <h3 className={styles.formHeading}>
-                Let’s work on your
+                {contact?.Title}
                 <span className={styles.formTechHighlight}>
-                  new digital ideas.
+                  {contact?.SubTitle}
                 </span>
               </h3>
               <p className={styles.formText}>
-                Fill out some quick details about your project and we will get
-                in touch with you!
+                {contact?.Description}
               </p>
               <div className={styles.contactFormArea}>
                 <div className="row">
@@ -80,9 +81,8 @@ const LetsWork = () => {
               <div className={styles.policyArea}>
                 <div className="row d-flex align-items-center">
                   <div className="col-md-6 col-12">
-                    <p className={styles.policyText}>
-                      By sending this form I confirm that I have read and accept
-                      the
+                    <div className={styles.policyText}>
+                    {contact?.policy}
                       <span className={styles.policyHighlight}>
                         Privacy Policy
                       </span>
@@ -90,7 +90,7 @@ const LetsWork = () => {
                   </div>
                   <div className={`${styles.buttonGrid} col-md-6 col-12`}>
                     <Button variant="blueBtn" size="md">
-                      Send a Message <Icons.ArrowRight size={18} />
+                     {contact?.Btn} <Icons.ArrowRight size={18} />
                     </Button>
                   </div>
                 </div>
@@ -99,7 +99,7 @@ const LetsWork = () => {
 
             <div className={styles.contactImg}>
               <ImageCustom
-                src="/images/contact.png"
+                src={base_Uri+contact?.Image?.data?.attributes?.url}
                 width={480}
                 height={616}
                 alt="contactImg"

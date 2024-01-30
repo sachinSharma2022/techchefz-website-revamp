@@ -9,7 +9,7 @@ import { useContext } from "react";
 
 import styles from "./style.module.scss";
 
-const WeAreFuture = () => {
+const WeAreFuture = ({props}) => {
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section
@@ -27,25 +27,23 @@ const WeAreFuture = () => {
               <ImageCustom src="/global.png" width="60" height="60" alt="" />
               Global
             </span>
-            <span className={styles.titleHighlight}>Technology Company.</span>
+            <span className={styles.titleHighlight}>{props?.Description}</span>
           </h2>
         </div>
-        <div className={styles.contentSection}>
-          <h3 className={styles.datingText}>
-            With roots dating back to 2017, we started as a pocket size team of
-            enthusiasts.
-          </h3>
-          <div>
+        <div className="row">
+          <div className="col-md-6 col-12">
+            <h3 className={styles.datingText}>
+             {props?.CompanyTechnology[0]?.title}
+            </h3>
+          </div>
+          <div className="col-md-6 col-12">
             <p className={styles.aboutText}>
-              Over the next 3 years, we developed into a full-service digital
-              agency. We support our clients with web development, mobile app
-              development, web design, branding UI/UX design and now getting
-              into AR/VR.
+            {props?.CompanyTechnology[0]?.description}
             </p>
 
             <Link href="/about">
               <Button variant="outline" size="md">
-                About the Company <Icons.ArrowRight size={18} />
+              {props?.CompanyTechnology[0]?.button} <Icons.ArrowRight size={18} />
               </Button>
             </Link>
           </div>

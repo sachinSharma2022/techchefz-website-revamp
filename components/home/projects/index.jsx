@@ -10,28 +10,28 @@ import Link from "next/link";
 import { useContext, useRef } from "react";
 import { opacity, slideUp } from "./animation";
 import styles from "./style.module.scss";
+import { base_Uri } from "@/lib/constants";
 
 const Card = ({ ...props }) => {
   const description = useRef(null);
   const isInView = useInView(description);
-  const tagSection = [
-    "Web Design",
-    "Dashboard Design",
-    "UI",
-    "UX",
-    "Responsive",
-  ];
+  // const tagSection = [
+  //   "Web Design",
+  //   "Dashboard Design",
+  //   "UI",
+  //   "UX",
+  //   "Responsive",
+  // ];
 
   const scale = useTransform(props.progress, props.range, [
     1,
     props.targetScale,
   ]);
-  console.log(scale);
   return (
     <motion.div className={styles.cardSec} style={{ scale }}>
       <div className={styles.projectImg}>
         <ImageCustom
-          src={props.src}
+          src={base_Uri+props?.Image?.data?.attributes?.formats?.large?.url}
           width={1360}
           height={300}
           alt="projectImg"
@@ -57,7 +57,7 @@ const Card = ({ ...props }) => {
         </h3>
 
         <p ref={description} className={styles.brandFromText}>
-          {props.summary.split(" ").map((word, index) => {
+          {props.Description.split(" ").map((word, index) => {
             return (
               <span key={index} className={styles.mask}>
                 <motion.span
@@ -77,9 +77,9 @@ const Card = ({ ...props }) => {
           animate={isInView ? "open" : "closed"}
           className={styles.projectBtn}
         >
-          {tagSection.map((tagItem) => (
+          {props.Tag.map((tagItem) => (
             <Link key={tagItem} href="/portfolio" className={styles.badgeStyle}>
-              {tagItem}
+              {tagItem.Title}
             </Link>
           ))}
         </motion.div>
@@ -88,33 +88,34 @@ const Card = ({ ...props }) => {
   );
 };
 
-const Projects = () => {
+const Projects = ({project,brands}) => {
   const { theme, setTheme } = useContext(MyContext);
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start start", "end end"],
   });
-  const projects = [
-    {
-      src: "/images/ICICI.png",
-      summary:
-        "Royal Enfield is a global brand since 1901, has a geographical presence in over 70 countries. The brand delivers consistent, omnichannel customer experiences, achieves scalability, diversifying into countries, and continents.",
-      title: "International Motorcycle Brand.",
-    },
-    {
-      src: "/images/project-re.png",
-      summary:
-        "Royal Enfield is a global brand since 1901, has a geographical presence in over 70 countries. The brand delivers consistent, omnichannel customer experiences, achieves scalability, diversifying into countries, and continents.",
-      title: "International Motorcycle Brand.",
-    },
-    {
-      src: "/images/Manipal.png",
-      summary:
-        "Royal Enfield is a global brand since 1901, has a geographical presence in over 70 countries. The brand delivers consistent, omnichannel customer experiences, achieves scalability, diversifying into countries, and continents.",
-      title: "International Motorcycle Brand.",
-    },
-  ];
+  // const projects = [
+  //   {
+  //     src: "/images/ICICI.png",
+  //     summary:
+  //       "Royal Enfield is a global brand since 1901, has a geographical presence in over 70 countries. The brand delivers consistent, omnichannel customer experiences, achieves scalability, diversifying into countries, and continents.",
+  //     title: "International Motorcycle Brand.",
+  //   },
+  //   {
+  //     src: "/images/project-re.png",
+  //     summary:
+  //       "Royal Enfield is a global brand since 1901, has a geographical presence in over 70 countries. The brand delivers consistent, omnichannel customer experiences, achieves scalability, diversifying into countries, and continents.",
+  //     title: "International Motorcycle Brand.",
+  //   },
+  //   {
+  //     src: "/images/Manipal.png",
+  //     summary:
+  //       "Royal Enfield is a global brand since 1901, has a geographical presence in over 70 countries. The brand delivers consistent, omnichannel customer experiences, achieves scalability, diversifying into countries, and continents.",
+  //     title: "International Motorcycle Brand.",
+  //   },
+  // ];
+
 
   return (
     <section
@@ -125,19 +126,16 @@ const Projects = () => {
       <div className={cn("primary-container")}>
         <div className={cn("row", styles.rowSection)}>
           <div className="col-md-12 col-12">
-            <p className={styles.projectHighlight}>Projects</p>
+            <p className={styles.projectHighlight}>{project[0]?.Title}</p>
           </div>
           <div className="col-md-5 col-12">
             <h3 className={styles.datingText}>
-              Unveiling Spotlight on Select Case Studies.
+              {project[0]?.SubTitle}
             </h3>
           </div>
           <div className="col-md-7 col-12">
             <p className={styles.aboutText}>
-              Delve into our case studies to witness firsthand how we&apos;ve
-              tackled challenges, delivered solutions, and achieved measurable
-              success. Each story is a testament to our commitment, expertise,
-              and the transformative impact.
+            {project[0]?.Description}
             </p>
 
             <Link href="/portfolio">
@@ -148,8 +146,8 @@ const Projects = () => {
           </div>
         </div>
         <div ref={container} className={styles.cards}>
-          {projects.map((project, i) => {
-            const targetScale = 1 - (projects.length - i) * 0.05;
+          {brands.map((project, i) => {
+            const targetScale = 1 - (brands.length - i) * 0.05;
             return (
               <Card
                 key={`p_${i}`}

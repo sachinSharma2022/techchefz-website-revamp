@@ -7,7 +7,8 @@ import styles from "./style.module.scss";
 import VideoCustom from "@/components/ui/videoCustom";
 import { cn } from "@/lib/utils";
 
-const OurVision = () => {
+const OurVision = ({ props }) => {
+
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section
@@ -15,32 +16,23 @@ const OurVision = () => {
     >
       <div className={cn("primary-container")}>
         <div className={cn(styles.flexContainer)}>
-          <h3 className={styles.aboutHeading}>
-            Our guiding lights in the dynamic tech landscape, fueling our
-            <span> dedication to innovation, excellence</span>, and a brighter
-            technological tomorrow.
+          <h3 className={styles.aboutHeading} dangerouslySetInnerHTML={{ __html: `${props[0]?.title}` }}>
+
           </h3>
 
           <div>
-            <div>
-              <h6 className={styles.aboutSubHeading}>Our Vision</h6>
-              <p className={styles.aboutParagraph}>
-                Be a partner for industry verticals on the inevitable journey
-                towards enterprise transformation and future readiness, by
-                harnessing the growing power of Artificial Intelligence, Machine
-                Learning, Data Science and emerging methodologies, with
-                immediacy of impact and swiftness of outcome.
-              </p>
-            </div>
-            <div>
-              <h6 className={styles.aboutSubHeading}>Our Mission</h6>
-              <p className={styles.aboutParagraph}>
-                To decode data, and code new intelligence into products and
-                automation, engineer, develop and deploy systems and
-                applications that redefine experiences and realign business
-                growth.
-              </p>
-            </div>
+            {props && props[0].OurVisionMissioninner.map((item, index) => {
+              return (
+                <div key={index}>
+                  <h6 className={styles.aboutSubHeading}>{item.title}</h6>
+                  <p className={styles.aboutParagraph}>
+                    {item.description}
+                  </p>
+                </div>
+              )
+
+            })}
+
           </div>
         </div>
 

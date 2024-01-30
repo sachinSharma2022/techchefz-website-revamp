@@ -9,24 +9,42 @@ import TechnologyStack from "@/components/home/technologyStack";
 import WeAreFuture from "@/components/home/weAreFuture";
 import VideoCustom from "@/components/ui/videoCustom";
 import Curve from "@/components/ui/pageTransition";
+import axios from "axios";
+import { api_Home_Page } from "@/lib/constants";
 
-const HomePage = () => {
+
+const  HomePage = async() => {
+    const data = await getData()
   return (
     <>
       <Curve>
-        <LandingBanner />
+        {data?<div>
+          <LandingBanner props={data.Banner}/>
         <VideoCustom src="global.mp4" />
-        <WeAreFuture />
-        <Service />
-        <Projects />
-        <OurNumbers />
-        <TechnologyStack />
-        <DigitalTransformation />
-        <HomeTestimonials />
-        <LetsWork />
+        <WeAreFuture props={data.Technology}  />
+        <Service props={data.Services} />
+        <Projects project={data.Project} brands={data.Brands} />
+        <OurNumbers  carrer={data.carrer} experience={data.ourExperience}/>
+        <TechnologyStack  technology={data.Technologys}/>
+        <DigitalTransformation digital={data.digitalTransform}/>
+        <HomeTestimonials testimonials={data.Testimonials} />
+        <LetsWork  contact={data.ContactUs}/>
+        </div>:<>{/* {"API fail fallback"} */}</>
+        }
+        
       </Curve>
     </>
   );
 };
 
 export default HomePage;
+ async function getData() {
+  try{
+    const response = await axios.get(api_Home_Page);
+    return response.data?.data[0]?.attributes
+  }catch(error){
+    console.log(error)
+    return null
+  }
+  
+}

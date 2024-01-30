@@ -6,7 +6,8 @@ import Marquee from "react-fast-marquee";
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 
-const GridMarqueeGallery = () => {
+const GridMarqueeGallery = ({props}) => {
+  console.log("nnn", props);
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section

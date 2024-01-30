@@ -3,6 +3,7 @@ import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
 import React, { useContext } from "react";
+import { base_Uri } from "@/lib/constants";
 
 // import required modules
 import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
@@ -16,55 +17,55 @@ import "swiper/css";
 import "swiper/css/navigation";
 import styles from "./style.module.scss";
 
-const Testimonials = (props) => {
+const Testimonials = ({props}) => {
   const { theme, setTheme } = useContext(MyContext);
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
 
-  const serviceCard = [
-    {
-      CustomerText:
-        "Techchefz Digital demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their simplicity. They’re very well thought out and have an excellent response to feedback. All of these qualities are why they’re our go-to user experience experts.",
-      img: "/images/profile.png",
-      CustomerName: "Arjuna Pandean.",
-      CustomerRole: "Group Manager, Royal Enfield",
-    },
-    {
-      CustomerText:
-        "Techchefz Digital demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their simplicity. They’re very well thought out and have an excellent response to feedback. All of these qualities are why they’re our go-to user experience experts.",
-      img: "/images/profile.png",
-      CustomerName: "Arjuna Pandean.",
-      CustomerRole: "Group Manager, Royal Enfield",
-    },
-    {
-      CustomerText:
-        "Techchefz Digital demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their simplicity. They’re very well thought out and have an excellent response to feedback. All of these qualities are why they’re our go-to user experience experts.",
-      img: "/images/profile.png",
-      CustomerName: "Arjuna Pandean.",
-      CustomerRole: "Group Manager, Royal Enfield",
-    },
-    {
-      CustomerText:
-        "Techchefz Digital demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their simplicity. They’re very well thought out and have an excellent response to feedback. All of these qualities are why they’re our go-to user experience experts.",
-      img: "/images/profile.png",
-      CustomerName: "Arjuna Pandean.",
-      CustomerRole: "Group Manager, Royal Enfield",
-    },
-    {
-      CustomerText:
-        "Techchefz Digital demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their simplicity. They’re very well thought out and have an excellent response to feedback. All of these qualities are why they’re our go-to user experience experts.",
-      img: "/images/profile.png",
-      CustomerName: "Arjuna Pandean.",
-      CustomerRole: "Group Manager, Royal Enfield",
-    },
-    {
-      CustomerText:
-        "Techchefz Digital demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their simplicity. They’re very well thought out and have an excellent response to feedback. All of these qualities are why they’re our go-to user experience experts.",
-      img: "/images/profile.png",
-      CustomerName: "Arjuna Pandean.",
-      CustomerRole: "Group Manager, Royal Enfield",
-    },
-  ];
+  // const serviceCard = [
+  //   {
+  //     CustomerText:
+  //       "Techchefz Digital demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their simplicity. They’re very well thought out and have an excellent response to feedback. All of these qualities are why they’re our go-to user experience experts.",
+  //     img: "/images/profile.png",
+  //     CustomerName: "Arjuna Pandean.",
+  //     CustomerRole: "Group Manager, Royal Enfield",
+  //   },
+  //   {
+  //     CustomerText:
+  //       "Techchefz Digital demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their simplicity. They’re very well thought out and have an excellent response to feedback. All of these qualities are why they’re our go-to user experience experts.",
+  //     img: "/images/profile.png",
+  //     CustomerName: "Arjuna Pandean.",
+  //     CustomerRole: "Group Manager, Royal Enfield",
+  //   },
+  //   {
+  //     CustomerText:
+  //       "Techchefz Digital demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their simplicity. They’re very well thought out and have an excellent response to feedback. All of these qualities are why they’re our go-to user experience experts.",
+  //     img: "/images/profile.png",
+  //     CustomerName: "Arjuna Pandean.",
+  //     CustomerRole: "Group Manager, Royal Enfield",
+  //   },
+  //   {
+  //     CustomerText:
+  //       "Techchefz Digital demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their simplicity. They’re very well thought out and have an excellent response to feedback. All of these qualities are why they’re our go-to user experience experts.",
+  //     img: "/images/profile.png",
+  //     CustomerName: "Arjuna Pandean.",
+  //     CustomerRole: "Group Manager, Royal Enfield",
+  //   },
+  //   {
+  //     CustomerText:
+  //       "Techchefz Digital demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their simplicity. They’re very well thought out and have an excellent response to feedback. All of these qualities are why they’re our go-to user experience experts.",
+  //     img: "/images/profile.png",
+  //     CustomerName: "Arjuna Pandean.",
+  //     CustomerRole: "Group Manager, Royal Enfield",
+  //   },
+  //   {
+  //     CustomerText:
+  //       "Techchefz Digital demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their simplicity. They’re very well thought out and have an excellent response to feedback. All of these qualities are why they’re our go-to user experience experts.",
+  //     img: "/images/profile.png",
+  //     CustomerName: "Arjuna Pandean.",
+  //     CustomerRole: "Group Manager, Royal Enfield",
+  //   },
+  // ];
 
   return (
     <section
@@ -80,11 +81,11 @@ const Testimonials = (props) => {
           <div className="col-sm-3">
             <div className={styles.infoSection}>
               <div className={styles.testimonialsLeft}>
-                <p className={styles.projectHighlight}>Testimonials</p>
+                <p className={styles.projectHighlight}>{props[0]?.Title}</p>
                 <div className={styles.testimonialsHeading}>
-                  <h3>{props.title}</h3>
+                  <h3>{props[0]?.SubTitle}</h3>
                 </div>
-                <p className={styles.testimonialsText}>{props.description}</p>
+                <p className={styles.testimonialsText}>{props[0]?.Description}</p>
               </div>
 
               <div className={styles.sliderController}>
@@ -134,27 +135,27 @@ const Testimonials = (props) => {
                   swiper.navigation.update();
                 }}
               >
-                {serviceCard.map((data, index) => (
+                {props[0]?.Testimonials.map((data, index) => (
                   <SwiperSlide key={index}>
                     <div className={styles.testimonialCardBox}>
                       <div className={styles.commaImg}>
                         <Icons.Comma width={29} height={24} />
                       </div>
-                      <p className={styles.customerText}>{data.CustomerText}</p>
+                      <p className={styles.customerText}>{data.Description}</p>
                       <div className={styles.customerProfile}>
                         <div className={styles.customerImg}>
                           <ImageCustom
-                            src={data.img}
+                            src={base_Uri+data.ProfileImage?.data?.attributes?.url}
                             width={100}
                             height={100}
                             alt="profileImg"
                           />
                         </div>
                         <p className={styles.customerName}>
-                          {data.CustomerName}
+                          {data.ProfileName}
                         </p>
                         <p className={styles.customerRole}>
-                          {data.CustomerRole}
+                          {data.Designation}
                         </p>
                       </div>
                     </div>

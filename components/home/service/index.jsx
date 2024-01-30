@@ -8,54 +8,55 @@ import { Button } from "@/components/ui/button";
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { base_Uri } from "@/lib/constants";
 
-const Service = () => {
+const Service = ({props}) => {
   const { theme, setTheme } = useContext(MyContext);
 
-  const serviceCard = [
-    {
-      icon: <Icons.Transform width={64} height={64} />,
-      sbTitle: "Strategy & Digital Transformation",
-      sbText:
-        "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
-    },
-    {
-      icon: <Icons.CustomDevelopment width={64} height={64} />,
-      sbTitle: "Product Engineering & Custom Development",
-      sbText:
-        "We Believe In Quality Backend Development For Faster Backend Processing. ",
-    },
-    {
-      icon: <Icons.MarTech width={64} height={64} />,
-      sbTitle: "Customer Experience & MarTech",
-      sbText:
-        "We Believe In Superior Frontend Development With The Combination Of JavaScript, HTML And CSS.",
-    },
-    {
-      icon: <Icons.Intelligence width={64} height={64} />,
-      sbTitle: "Data Analytics & Intelligence",
-      sbText:
-        "We Have Expertise In Development Of Mobile Applications Using Native And Hybrid Technologies.",
-    },
-    {
-      icon: <Icons.Platforms width={64} height={64} />,
-      sbTitle: "Enterprise Technology Platforms",
-      sbText:
-        "At TechChefz We Provide First-Class Artificial Intelligence And Machine Learning with Expertise.",
-    },
-    {
-      icon: <Icons.Cloud width={64} height={64} />,
-      sbTitle: "Cloud & Dev-Sec-Ops",
-      sbText:
-        "We Facilitate Easy Cloud Migration And Deliver DevOps Automation And 24*7 Incident Management Services.",
-    },
-    {
-      icon: <Icons.DataIntelligence width={64} height={64} />,
-      sbTitle: "Data Analytics & Intelligence",
-      sbText:
-        "We Facilitate Easy Cloud Migration And Deliver DevOps Automation And 24*7 Incident Management Services.",
-    },
-  ];
+  // const serviceCard = [
+  //   {
+  //     icon: <Icons.Transform width={64} height={64} />,
+  //     sbTitle: "Strategy & Digital Transformation",
+  //     sbText:
+  //       "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
+  //   },
+  //   {
+  //     icon: <Icons.CustomDevelopment width={64} height={64} />,
+  //     sbTitle: "Product Engineering & Custom Development",
+  //     sbText:
+  //       "We Believe In Quality Backend Development For Faster Backend Processing. ",
+  //   },
+  //   {
+  //     icon: <Icons.MarTech width={64} height={64} />,
+  //     sbTitle: "Customer Experience & MarTech",
+  //     sbText:
+  //       "We Believe In Superior Frontend Development With The Combination Of JavaScript, HTML And CSS.",
+  //   },
+  //   {
+  //     icon: <Icons.Intelligence width={64} height={64} />,
+  //     sbTitle: "Data Analytics & Intelligence",
+  //     sbText:
+  //       "We Have Expertise In Development Of Mobile Applications Using Native And Hybrid Technologies.",
+  //   },
+  //   {
+  //     icon: <Icons.Platforms width={64} height={64} />,
+  //     sbTitle: "Enterprise Technology Platforms",
+  //     sbText:
+  //       "At TechChefz We Provide First-Class Artificial Intelligence And Machine Learning with Expertise.",
+  //   },
+  //   {
+  //     icon: <Icons.Cloud width={64} height={64} />,
+  //     sbTitle: "Cloud & Dev-Sec-Ops",
+  //     sbText:
+  //       "We Facilitate Easy Cloud Migration And Deliver DevOps Automation And 24*7 Incident Management Services.",
+  //   },
+  //   {
+  //     icon: <Icons.DataIntelligence width={64} height={64} />,
+  //     sbTitle: "Data Analytics & Intelligence",
+  //     sbText:
+  //       "We Facilitate Easy Cloud Migration And Deliver DevOps Automation And 24*7 Incident Management Services.",
+  //   },
+  // ];
   const settings = {
     className: "center",
     centerPadding: "0px",
@@ -105,23 +106,23 @@ const Service = () => {
       <div className={cn("primary-container")}>
         <div className={styles.serviceGrid}>
           <div className={styles.serviceHeading}>
-            <p className={styles.serviceText}>Service</p>
+            <p className={styles.serviceText}>{props[0]?.Title}</p>
             <h3 className={styles.serviceTitle}>
-              Exclusive development leveraging top notch technologies
+              {props[0]?.Description}
             </h3>
             <Link href="/solutions">
               <Button variant="outline" size="md">
-                Our Solutions <Icons.ArrowRight size={18} />
+                {props[0]?.Btn} <Icons.ArrowRight size={18} />
               </Button>
             </Link>
           </div>
 
           <div className={`${styles.desktopCards} ${styles.serviceOption} `}>
-            {serviceCard.map((data, index) => (
+            {props[0]?.Service.map((data, index) => (
               <div key={index} className={styles.serviceBox}>
-                <div className={styles.bgIcon}>{data.icon}</div>
-                <h4 className={styles.sbTitle}>{data.sbTitle}</h4>
-                <p className={styles.sbText}>{data.sbText}</p>
+                <div className={styles.bgIcon}><img src={base_Uri+data?.Image?.data?.attributes?.url} alt="" /></div>
+                <h4 className={styles.sbTitle}>{data.Title}</h4>
+                <p className={styles.sbText}>{data.Description}</p>
               </div>
             ))}
           </div>
@@ -129,12 +130,12 @@ const Service = () => {
 
         <div className={`${styles.serviceOption} service-mobile-slider`}>
           <Slider {...settings}>
-            {serviceCard.map((data, index) => (
+            {props[0]?.Service.map((data, index) => (
               <div key={index}>
                 <div key={index} className={styles.serviceBox}>
-                  <div className={styles.bgIcon}>{data.icon}</div>
-                  <h4 className={styles.sbTitle}>{data.sbTitle}</h4>
-                  <p className={styles.sbText}>{data.sbText}</p>
+                  <div className={styles.bgIcon}><img src={base_Uri+data?.Image?.data?.attributes?.url} alt="" /></div>
+                  <h4 className={styles.sbTitle}>{data.Title}</h4>
+                  <p className={styles.sbText}>{data.Description}</p>
                 </div>
               </div>
             ))}
