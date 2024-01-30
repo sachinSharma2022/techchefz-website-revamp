@@ -77,7 +77,6 @@ a {
   margin-bottom: 5rem;
 }
 
-
 // Space End
 
 // Primary Container
@@ -311,6 +310,10 @@ input:-webkit-autofill {
   .testimonials-slider {
     position: relative;
 
+    @include mobile {
+      margin-top: 3.75rem;
+    }
+
     .swiper-slide {
       border: 0.14rem solid rgba(color(text-primary), 0.12);
       border-radius: 0.75rem;
@@ -339,7 +342,7 @@ input:-webkit-autofill {
     border: none !important;
   }
 
-  .btn  {
+  .btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -610,7 +613,8 @@ input:-webkit-autofill {
     }
   }
 
-  .grid-0, .grid-5 {
+  .grid-0,
+  .grid-5 {
     .imgBox div {
       min-height: 43.25rem;
     }
@@ -659,7 +663,7 @@ input:-webkit-autofill {
   .slick-disabled {
     background-color: color(primary-white);
     border: 0.14rem solid rgba(color(text-primary), 0.5);
-    
+
     &:hover {
       background-color: color(primary-white);
     }
@@ -770,6 +774,9 @@ input:-webkit-autofill {
     bottom: 0;
     z-index: 999;
     top: 100%;
+    @include mobile-tablet-p {
+      left: -86%;
+    }
     @include mobile {
       left: 5rem;
       top: 0;
@@ -778,8 +785,8 @@ input:-webkit-autofill {
 
   .slick-slider .slick-track,
   .slick-slider .slick-list {
-    @include mobile {
-      margin-top: 5rem;
+    @include mobile-tablet-p {
+      margin-top: 3.75rem;
     }
   }
 

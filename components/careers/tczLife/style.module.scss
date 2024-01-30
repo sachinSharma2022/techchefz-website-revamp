@@ -4,7 +4,12 @@
   background-color: color(bg-soft);
   padding-block: spacing(section-primary-padding);
   padding-left: spacing(p-120);
-	margin-top: 8.75rem;
+  margin-top: 8.75rem;
+
+  @include mobile-tablet-p {
+    padding: spacing(section-mob-padding);
+    padding-block: 3.75rem 3.75rem;
+  }
 
   @include desktop-hd {
     padding-inline: 0;
@@ -24,13 +29,20 @@
       text-transform: uppercase;
       opacity: 0.8;
       margin-bottom: 1rem;
+      @include mobile-tablet-p {
+        margin-bottom: 0.75rem;
+        line-height: text(normal);
+      }
     }
 
     .tczLifeHeading {
       font-size: text(larger);
       font-weight: 500;
       line-height: 3.375rem;
-
+      @include mobile-tablet-p {
+        font-size: 2rem;
+        line-height: 2.5rem;
+      }
       span {
         font-size: text(larger);
         background: var(
@@ -40,6 +52,10 @@
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        @include mobile-tablet-p {
+          font-size: 2rem;
+          line-height: 2.5rem;
+        }
       }
     }
   }
@@ -61,6 +77,9 @@
     margin-top: 5rem;
     max-width: 85vw;
 
+    @include mobile-tablet-p {
+      margin-top: 3.75rem;
+    }
     @include desktop-hd {
       max-width: 1440px;
       margin-inline: auto;
@@ -71,6 +90,12 @@
       font-weight: 400;
       line-height: 1.875rem;
       opacity: 0.6;
+      margin-bottom: 0;
+
+      @include mobile-tablet-p {
+        font-size: text(normal);
+        line-height: text(xl);
+      }
     }
   }
 

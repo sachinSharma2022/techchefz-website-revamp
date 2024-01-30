@@ -7,8 +7,9 @@
     display: flex;
     gap: 8rem;
 
-    @include mobile {
+    @include mobile-tablet-p {
       padding: spacing(section-mob-padding);
+      padding-block: 3.75rem 3.75rem;
       flex-direction: column;
       gap: 0;
     }
