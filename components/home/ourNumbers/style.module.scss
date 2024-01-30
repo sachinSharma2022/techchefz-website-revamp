@@ -4,8 +4,9 @@
   padding: spacing(section-primary-padding);
   background: color(primary-background);
 
-  @include mobile {
+  @include mobile-tablet-p {
     padding: spacing(section-mob-padding);
+    padding-block: 3.75rem 3.75rem;
   }
 
   &.numberStyleDark {
@@ -28,8 +29,10 @@
     justify-content: space-between;
     align-items: flex-end;
 
-    @include mobile {
+    @include mobile-tablet-p {
       margin-bottom: 2.5rem;
+      flex-direction: column;
+      align-items: flex-start;
     }
     .careerBtn {
       display: flex;
@@ -83,9 +86,9 @@
         border-radius: 0.75rem;
         overflow: hidden;
         img {
-         height: 100%;
-         width: 100%;
-         object-fit: cover;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
         }
         @include mobile {
           display: none;
@@ -109,7 +112,7 @@
       opacity: 0.8;
       @include mobile {
         font-size: text(normal);
-        margin-bottom: 2.75rem;
+        margin-bottom: 2.5rem;
         font-weight: 400;
       }
     }
@@ -137,7 +140,7 @@
           justify-content: space-between;
           align-items: center;
           margin-bottom: text(xxxl);
-          
+
           .sbTitle {
             font-size: 2.75rem;
             font-weight: 500;

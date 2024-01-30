@@ -3,9 +3,10 @@
 .technologyCase {
    padding-inline: spacing(p-120);
 
-   @include mobile {
-      padding: 1.5rem;
-   }
+   @include mobile-tablet-p {
+      padding: spacing(section-mob-padding);
+      padding-block: 3.75rem 3.75rem;
+    }
 
    &.technologyCaseDark{
       background-color: color(input-bg);
@@ -17,8 +18,10 @@
       align-items: flex-end;
       margin-bottom: 5rem;
 
-      @include mobile {
+      @include mobile-tablet-p {
          margin-bottom: 3rem;
+         flex-direction: column;
+         align-items: flex-start;
       }
    }
 
@@ -38,6 +41,11 @@
       text-transform: uppercase;
       opacity: 0.8;
       margin-bottom: 1rem;
+
+      @include mobile-tablet-p{
+         margin-bottom: 0.75rem;
+
+      }
    }
 
    .caseHeading {
@@ -48,9 +56,10 @@
       margin-bottom: 0;
       
 
-      @include mobile {
-         font-size: 1.7rem;
-         line-height: 2.375rem;
+      @include mobile-tablet-p {
+         font-size: 2rem;
+         line-height: 2.5rem;
+         margin-bottom: 2.25rem
       }
    }
 
@@ -59,10 +68,17 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 2.5rem;
 
+      @include mobile-tablet-p {
+         grid-template-columns: repeat(2, 1fr);
+         margin-top: 1rem;
+      }
+
       @include mobile {
          grid-template-columns: repeat(1, 1fr);
          margin-top: 1rem;
       }
+
+ 
 
       svg {
          width: 2rem;

@@ -3,8 +3,10 @@
 .discoverSection {
   padding: spacing(section-primary-padding);
 
-  @include mobile {
-    padding: 1.5rem;
+  @include mobile-tablet-p {
+    padding: spacing(section-mob-padding);
+    padding-block: 3.75rem 3.75rem;
+    padding-bottom: 0;
   }
 
   .discoverTop {
@@ -12,9 +14,11 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    
+
     @include mobile {
-      margin-bottom: 3rem;
+      flex-direction: column;
+      margin-bottom: 2.5rem;
+      align-items: flex-start;
     }
   }
   .discoverTitle {
@@ -32,9 +36,16 @@
     line-height: 3.375rem;
     margin: 0;
 
+    @include mobile-tablet-p {
+      margin-bottom: 0;
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
+
     @include mobile {
-      font-size: 1.7rem;
-      line-height: 2.375rem;
+      margin-bottom: 2.5rem;
+      font-size: 2rem;
+      line-height: 2.5rem;
     }
   }
 
@@ -58,6 +69,11 @@
     font-weight: 500;
     line-height: 2rem;
     margin-bottom: 1.5rem;
+    @include mobile-tablet-p {
+      margin-bottom: text(lg);
+      font-size: text(lg);
+      line-height: 1.75rem;
+    }
   }
 
   .platformsButtons {
@@ -67,6 +83,11 @@
     width: 100%;
     border-left: 0.14rem solid rgba(color(text-primary), 0.12);
     padding-left: 2.5rem;
+
+    @include mobile-tablet-p {
+      padding-left: 0;
+      border-left: 0;
+    }
 
     .platformsBtn {
       display: flex;
@@ -99,6 +120,11 @@
         font-size: text(lg);
         font-weight: 400;
         line-height: 1.875rem;
+
+        @include mobile-tablet-p {
+          font-size: text(normal);
+          line-height: text(xl);
+        }
       }
     }
   }
@@ -107,12 +133,20 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.25rem 2.5rem;
+
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   .discoverTabSection {
     display: flex;
     justify-content: space-between;
     gap: 2.5rem;
+
+    @include mobile-tablet-p {
+      flex-direction: column;
+    }
 
     .discoverLeft {
       display: flex;
@@ -129,6 +163,9 @@
 
     .dataSection {
       margin-bottom: 3.75rem;
+      @include mobile-tablet-p {
+        margin-bottom: text(lg);
+      }
 
       &:last-child {
         margin-bottom: 0;
@@ -147,29 +184,26 @@
     }
   }
 
-
-
   //dark mode style
 
   &.discoverSectionDark {
-   background-color: color(input-bg);
-   color: color(primary-white);
+    background-color: color(input-bg);
+    color: color(primary-white);
 
-   .platformsButtons{
-     .platformsBtn{
-       background-color: color(text-primary);
-     }
-   }
- 
-   .discoverHead{
-     color: color(primary-white);
-   }
-   
-   .platformsBtn{
-      svg > path{
-       fill: color(primary-white);
+    .platformsButtons {
+      .platformsBtn {
+        background-color: color(text-primary);
       }
-   }
+    }
 
-}
+    .discoverHead {
+      color: color(primary-white);
+    }
+
+    .platformsBtn {
+      svg > path {
+        fill: color(primary-white);
+      }
+    }
+  }
 }
