@@ -7,10 +7,9 @@
   align-items: center;
   flex-wrap: nowrap;
   overflow-x: scroll;
-  @include mobile-tablet-p{
+  @include mobile-tablet-p {
     flex-direction: column;
-    background-color: transparent
-    
+    background-color: transparent;
   }
   @include scrollHide;
 
@@ -61,6 +60,7 @@
   .streamlineContent {
     font-size: text(lg);
     max-width: 38%;
+    margin-bottom: 0;
 
     @include mobile-tablet-p {
       font-size: text(normal);
@@ -72,15 +72,16 @@
   .streamLineCards {
     display: flex;
 
-
-
-    @include mobile-tablet-p{
+    @include mobile-tablet-p {
       display: grid;
       gap: 2rem;
       grid-template-columns: repeat(2, 1fr);
+      padding: spacing(section-mob-padding);
+      padding-block: 0rem 3.75rem;
+      padding-bottom: 0;
     }
 
-    @include mobile{
+    @include mobile {
       display: grid;
       gap: 2.5rem;
       grid-template-columns: repeat(1, 1fr);
@@ -96,21 +97,16 @@
       padding: 2.5rem;
       margin: 1rem;
 
-      @include mobile {
-       height: auto;
-      }
-
       @include mobile-tablet-p {
         width: auto;
+        height: auto;
         padding: text(xl);
-        margin: 0 1rem 0 1rem;
+        margin: 0;
       }
-
- 
 
       .cardIcon {
         margin-bottom: 3.75rem;
-        @include mobile-tablet-p{
+        @include mobile-tablet-p {
           margin-bottom: 2.5rem;
         }
       }
@@ -119,7 +115,7 @@
         font-weight: 500;
         line-height: 2.5rem;
         margin-bottom: 1.25rem;
-        @include mobile-tablet-p{
+        @include mobile-tablet-p {
           font-size: text(lg);
           line-height: 1.75rem;
           margin-bottom: 0.75rem;
@@ -132,17 +128,16 @@
         opacity: 0.8;
         @include truncate(4);
 
-        @include mobile-tablet-p{
+        @include mobile-tablet-p {
           font-size: text(normal);
           line-height: text(xl);
           margin-bottom: 0;
         }
-
       }
 
       button {
         margin-top: 2rem;
-        @include mobile-tablet-p{
+        @include mobile-tablet-p {
           margin-top: 2.25rem;
         }
       }
