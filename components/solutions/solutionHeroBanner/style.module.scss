@@ -6,7 +6,7 @@
    justify-content: space-between;
 
    @include mobile {
-      padding: spacing(section-mob-padding);
+      padding: 2rem 1.25rem;
       flex-direction: column;
       gap: 0;
    }
@@ -20,6 +20,12 @@
 
       @include desktop-hd {
          padding-inline: 0;
+      }
+
+      @include mobile{
+         flex-direction: column;
+         padding: 2rem;
+         gap: 1.5rem;
       }
    }
 
@@ -40,7 +46,6 @@
       @include mobile {
          font-size: 2.75rem;
          line-height: 3.5rem;
-         margin-bottom: text(xl);
          word-break: break-word;
       }
 
