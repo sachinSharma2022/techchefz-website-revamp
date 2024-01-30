@@ -63,7 +63,6 @@
           --Gradient,
           linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%)
         );
-<<<<<<< HEAD
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -71,9 +70,6 @@
           font-size: 2rem;
           line-height: 2.5rem;
         }
-=======
-        @include textGradient;
->>>>>>> 16335d14b88b1b6be3765cefd85a3f02d5fb12d6
       }
     }
   }
