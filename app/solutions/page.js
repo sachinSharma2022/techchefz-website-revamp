@@ -6,6 +6,7 @@ import SolutionTechnologies from "@/components/solutions/solutionTechnologies";
 import SolutionTheProcess from "@/components/solutions/solutionTheProcess";
 
 import styles from "./style.module.scss";
+import SolutionCaseStudy from "@/components/solutions/solutionCaseStudy";
 
 const Solutions = () => {
   return (
@@ -14,9 +15,7 @@ const Solutions = () => {
       <SolutionOurValues />
       <SolutionTheProcess />
       <SolutionTechnologies />
-      <div className="mt-120">
-        <RelatedCase />
-      </div>
+      <SolutionCaseStudy />
       <Faq />
     </div>
   );
