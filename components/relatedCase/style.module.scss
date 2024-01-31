@@ -5,7 +5,9 @@
   position: relative;
 
   @include desktop-hd {
-    height: 85dvh;
+    min-height: 500px;
+    margin-block: 8.75rem;
+    padding-block: 0;
   }
 
   .headSection {
@@ -58,7 +60,6 @@
 
   .relatedCaseSlider {
     padding-left: spacing(p-120);
-    margin-bottom: 8.75rem;
     
     @include mobile-tablet-p {
       margin-bottom: 2.75rem;
@@ -130,5 +131,13 @@
   &.relatedCaseDark {
     background-color: color(input-bg);
     color: color(primary-white);
+
+    .arrowDisabled {
+      border: 1px solid rgba(color(primary-white), 0.20);
+    }
+
+    svg > path {
+      stroke: color(primary-white);
+    }
   }
 }

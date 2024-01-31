@@ -3,10 +3,12 @@ import { ImageCustom } from "../imageCustom";
 
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
+import Link from "next/link";
 
 const PostCard = (props) => {
   return (
-    <div
+    <Link
+      href={props.href}
       className={
         !props.theme
           ? cn(styles.postCard, props.className)
@@ -30,7 +32,7 @@ const PostCard = (props) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
