@@ -19,7 +19,7 @@ const Streamline = () => {
   useEffect(() => {
 let ctx = gsap.context(() => {
   const tl=gsap.timeline(
-    {scrollTrigger:{trigger:`.${styles.streamLineWrapper}`,scrub:1,markers:true,start:"top 6%",pin:true, invalidateOnRefresh: true,
+    {scrollTrigger:{trigger:`.${styles.streamLineWrapper}`,scrub:1,start:"top 6%",pin:true, invalidateOnRefresh: true,
     anticipatePin: 1}}
   );
   tl.to(`.${styles.streamLineSection}`,{
