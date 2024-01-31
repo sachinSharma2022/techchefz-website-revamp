@@ -41,7 +41,7 @@ const HomePage = async () => {
 export default HomePage;
 async function getData() {
   try {
-    const response = await axios.get(api_Home_Page, { cache: "no-store" });
+    const response = await axios.get(api_Home_Page);
     return response.data?.data[0]?.attributes;
   } catch (error) {
     console.log(error);
