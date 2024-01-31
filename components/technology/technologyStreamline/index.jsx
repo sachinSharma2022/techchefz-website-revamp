@@ -22,40 +22,36 @@ const Streamline = () => {
   // const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
   useEffect(() => {
 
-    // gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
 
-  // const tl=gsap.timeline(
-  //   {scrollTrigger:{trigger:`.${styles.streamLineCards}`,scrub:1,markers:true,start:"top 80%", invalidateOnRefresh: true,
-  //   anticipatePin: 1}}
-  // );
-  // gsap.to("section",{
-  //   xPercent: -100, 
-  //   ease: "none",
-  //   scrollTrigger: {
-  //   trigger:"#streamLineWrapper",
-  //   start: "top 0%" ,
-  //   scrub: true,
-  //   markers:true,
-  //   pin:true,
-  //   invalidateOnRefresh: true,
-  //   anticipatePin: 1
-  // }})
+  const tl=gsap.timeline(
+    {scrollTrigger:{trigger:`.${styles.streamLineCards}`,scrub:1,markers:true,start:"top 50%", invalidateOnRefresh: true,
+    anticipatePin: 1}}
+  );
+  tl.to(`.${styles.streamLineSection}`,{
+    xPercent: -100, 
+    ease: "none",
+   }).to(`.${styles.streamLineCards}`,{
+    xPercent: -100, 
+    ease: "none",
+    duration: 1
+   },'<')
 
-  gsap.registerPlugin(ScrollTrigger);
+//   gsap.registerPlugin(ScrollTrigger);
 
-let sections = gsap.utils.toArray("section");
+// let sections = gsap.utils.toArray("section");
 
-gsap.to(sections, {
-  xPercent: -100 * (2 - 1),
-  ease: "none",
-  scrollTrigger: {
-    trigger: `.${styles.streamLineCards}`,
-    pin: ".main",
-    pinSpacing: true,
-    scrub: 1,
-    end: "+=3000",
-  }
-});
+// gsap.to(sections, {
+//   xPercent: -100 * (2 - 1),
+//   ease: "none",
+//   scrollTrigger: {
+//     trigger: `.${styles.streamLineCards}`,
+//     pin: ".main",
+//     pinSpacing: true,
+//     scrub: 1,
+//     end: "+=3000",
+//   }
+// });
    
   }, []);
   
