@@ -2,31 +2,51 @@
 
 .error {
    display: flex;
-   gap: 8.938rem;
    align-items: center;
-   padding: 5rem;
+   justify-content: center;
+   gap: 8.938rem;
+   height: calc(100vh - 79.52px);
+   padding: 5rem 7.5rem;
 
-   .errorLeft {
+   @include desktop-hd {
+      padding-inline: 0;
+   }
+
+   .flexContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8.938rem;
+   }
+
+   .errorLeft div {
+      height: 34.625rem;
+      width: 100%;
+      position: relative;
+
       img {
          width: 100%;
-         height: auto;
+         height: 100%;
+         object-fit: cover;
       }
    }
+
    .errorRight {
-      h2 {
+      max-width: 35rem;
+      .title {
          font-size: text(xl-larger);
          font-weight: 500;
          line-height: 5rem;
          margin-bottom: 1.5rem;
       }
-      h4 {
+      .subTitle {
          font-size: text(xxxl);
          font-weight: 500;
          line-height: 2.5rem;
          margin-bottom: 2rem;
       }
 
-      p , ul{
+      .description {
          font-size: text(lg);
          margin-bottom: 0.75rem;
          font-weight: 400;
@@ -35,15 +55,31 @@
          color: color(text-primary);
       }
 
-      ul {
+      .listSection {
          list-style: square;
          margin-bottom: 3.75rem;
+
+         li {
+            @extend .description;
+         }
       }
 
       .errorBtn{
         svg > path{
             stroke: color(primary-white);
         }
+      }
+   }
+
+   // Dark Mode
+   &.errorDark {
+
+      .errorRight {
+         color: color(primary-white);
+         
+         .title, .subTitle, .description  {
+            color: color(primary-white);
+         }
       }
    }
 }
