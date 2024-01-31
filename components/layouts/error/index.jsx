@@ -1,13 +1,18 @@
+"use client";
 import React from "react";
 import styles from "./style.module.scss";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { Button } from "@/components/ui/button";
 import { Icons } from "@/components/icons";
+import { MyContext } from "@/context/theme";
+import { useContext } from "react";
+
 import Link from "next/link";
 
 const Error = () => {
+   const { theme, setTheme } = useContext(MyContext);
    return (
-      <section className={styles.error}>
+      <section className={`${styles.error} ${theme ? styles.errorDark : ""}`}>
          <div className={styles.errorLeft}>
             <ImageCustom src={"/images/notFound.png"} width={700} height={800} alt="error-img" />
          </div>
@@ -21,7 +26,7 @@ const Error = () => {
             </ul>
 
             <Link href="/">
-               <Button variant="blueBtn" className={styles.errorBtn} size="lg">
+               <Button variant={theme ? "blueBtnDark" : "blueBtn"} className={styles.errorBtn} size="lg">
                   <Icons.ArrowLeft size={20} /> Back to Homepage
                </Button>
             </Link>

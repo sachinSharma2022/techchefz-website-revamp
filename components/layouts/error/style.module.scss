@@ -12,6 +12,7 @@
          height: auto;
       }
    }
+
    .errorRight {
       h2 {
          font-size: text(xl-larger);
@@ -26,7 +27,8 @@
          margin-bottom: 2rem;
       }
 
-      p , ul{
+      p,
+      ul {
          font-size: text(lg);
          margin-bottom: 0.75rem;
          font-weight: 400;
@@ -40,10 +42,19 @@
          margin-bottom: 3.75rem;
       }
 
-      .errorBtn{
-        svg > path{
+      .errorBtn {
+         svg > path {
             stroke: color(primary-white);
-        }
+         }
+      }
+   }
+
+   //Dark mode style
+   &.errorDark {
+      color: color(primary-white);
+
+      p ,ul{
+         color: color(primary-white);
       }
    }
 }
