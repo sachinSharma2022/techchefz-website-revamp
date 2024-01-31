@@ -1,12 +1,8 @@
-import Error from '@/components/layouts/error'
-import React from 'react'
+import Error from "@/components/layouts/error";
+import React from "react";
 
 const NotFound = () => {
-  return (
-    <div>
-      <Error/>
-    </div>
-  )
-}
+  return <Error />;
+};
 
-export default NotFound
+export default NotFound;
