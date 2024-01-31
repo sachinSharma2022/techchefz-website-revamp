@@ -601,11 +601,14 @@
     }
 
     .headerRight {
+      border-color:rgba(color(primary-white), 0.12);
+      
       .modeBtn {
         button {
+          border: 0.14rem solid rgba(color(primary-white), 0.12);
+          
           &:hover {
             background-color: rgba(color(primary-white), 0.2);
-            border: 0.14rem solid rgba(color(primary-white), 0.12);
           }
 
           svg {

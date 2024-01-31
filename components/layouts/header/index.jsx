@@ -373,7 +373,7 @@ const Header = () => {
               className={styles.navHamburger}
               onClick={toggleClass}
             >
-              <span/>
+              <span />
             </Button>
           </div>
         </div>

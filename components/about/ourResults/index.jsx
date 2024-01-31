@@ -12,22 +12,22 @@ const OurResults = () => {
   const resultCardData = [
     {
       number: "4+",
-      icon: <Icons.Market width={36} height={36} />,
+      icon: <Icons.Market width={40} height={40} />,
       title: "Years of Experience in Market.",
     },
     {
       number: "1M+",
-      icon: <Icons.MarketPlace width={36} height={36} />,
+      icon: <Icons.MarketPlace width={40} height={40} />,
       title: "Users growth in marketplace.",
     },
     {
       number: "300%",
-      icon: <Icons.Rates width={36} height={36} />,
+      icon: <Icons.Rates width={40} height={40} />,
       title: "Years of Experience in Market.",
     },
     {
       number: "120%",
-      icon: <Icons.PerformanceIcon width={36} height={36} />,
+      icon: <Icons.Rates width={40} height={40} />,
       title: "Years of Experience in Market.",
     },
   ];

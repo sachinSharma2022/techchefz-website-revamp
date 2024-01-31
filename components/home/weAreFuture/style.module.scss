@@ -112,6 +112,7 @@
     margin-bottom: text(larger);
     color: color(text-primary);
     max-width: 37rem;
+    margin-top: 0.5rem;
 
     @include mobile {
       font-size: text(xl);

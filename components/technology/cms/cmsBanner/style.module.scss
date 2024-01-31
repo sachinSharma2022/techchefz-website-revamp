@@ -55,7 +55,7 @@
     font-weight: 400;
     max-width: 23.375rem;
     color: rgba(color(text-primary), 0.8);
-    padding-top: 10px;
+    margin-top: 0.8rem;
 
     @include mobile-tablet-p {
       max-width: 100%;

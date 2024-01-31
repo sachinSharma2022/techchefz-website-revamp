@@ -11,19 +11,34 @@ const CoeSupport = (props) => {
   const { theme, setTheme } = useContext(MyContext);
   const cardData = [
     {
-      title: "Navigating Cloud Integration Complexities",
+      title: "Project Delivery",
       content:
         "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges.",
     },
     {
-      title: "Cybersecurity in an Age of Advanced Threats",
+      title: "Technical Assurance",
+      content:
+        "As IT infrastructures grow in complexity, so do the threats they face. Cyberattacks have evolved, becoming more sophisticated and harder to detect. ",
+    },
+    {
+      title: "Continuous Improvement",
+      content:
+        "The fast-paced nature of technological advancements means that today's cutting-edge solutions might become obsolete tomorrow and Organizations face constant IT challenges .",
+    },
+    {
+      title: "Knowledge Management",
       content:
         "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges.",
     },
     {
-      title: "Scalability Amidst Rapid Technological Evolution",
+      title: "Quality Assurance",
       content:
-        "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges.",
+        "As IT infrastructures grow in complexity, so do the threats they face. Cyberattacks have evolved, becoming more sophisticated and harder to detect. ",
+    },
+    {
+      title: "Innovative Solutions",
+      content:
+        "The fast-paced nature of technological advancements means that today's cutting-edge solutions might become obsolete tomorrow and Organizations face constant IT challenges .",
     },
   ];
   return (
@@ -38,7 +53,7 @@ const CoeSupport = (props) => {
         <div className={styles.headSec}>
           <h6 className={styles.coeSupportTitle}>SUPPORT</h6>
           <h3 className={styles.coeSupportHeading}>
-            The CoE supports our global operations in the following areas
+            The CoE supports our global <br /> operations in the following areas
           </h3>
         </div>
         <div className={styles.coeSupportCards}>

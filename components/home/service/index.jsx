@@ -1,13 +1,13 @@
 "use client";
 
-import Slider from "react-slick";
-import { useContext } from "react";
-import { MyContext } from "@/context/theme";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
-import styles from "./style.module.scss";
+import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { useContext } from "react";
+import Slider from "react-slick";
+import styles from "./style.module.scss";
 
 const Service = () => {
   const { theme, setTheme } = useContext(MyContext);
@@ -98,9 +98,10 @@ const Service = () => {
 
   return (
     <section
-      className={`${styles.serviceDetailsMain} ${
+      className={cn(
+        styles.serviceDetailsMain,
         theme ? styles.serviceDetailsMainDark : ""
-      }`}
+      )}
     >
       <div className={cn("primary-container")}>
         <div className={styles.serviceGrid}>
@@ -116,7 +117,7 @@ const Service = () => {
             </Link>
           </div>
 
-          <div className={`${styles.desktopCards} ${styles.serviceOption} `}>
+          <div className={cn(styles.desktopCards, styles.serviceOption)}>
             {serviceCard.map((data, index) => (
               <div key={index} className={styles.serviceBox}>
                 <div className={styles.bgIcon}>{data.icon}</div>
@@ -127,7 +128,7 @@ const Service = () => {
           </div>
         </div>
 
-        <div className={`${styles.serviceOption} service-mobile-slider`}>
+        <div className={cn(styles.serviceOption, "service-mobile-slider")}>
           <Slider {...settings}>
             {serviceCard.map((data, index) => (
               <div key={index}>

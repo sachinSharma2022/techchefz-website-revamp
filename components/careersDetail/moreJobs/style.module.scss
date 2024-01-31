@@ -1,158 +1,93 @@
 @import "~/styles/partials/config";
 
-@mixin jobDetailContainer() {
+.jobDetailContainer {
   padding: spacing(section-primary-padding);
-  background-color: color(input-bg);
+  background-color: color(primary-white);
 
   @include mobile-tablet-p {
     padding: 8.75rem 2.5rem;
   }
+  
   @include mobile {
     padding: 4.75rem 1.5rem;
   }
+
   .titleSection {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
 
-    h3 {
+    h6 {
       font-weight: 500;
       font-size: text(normal);
-      color: color(primary-white);
+      color: color(text-primary);
       line-height: 1.5rem;
       letter-spacing: 0.2rem;
       opacity: 0.8;
     }
-    h1 {
+    h3 {
       font-weight: 500;
       font-size: text(xxxl);
-      color: color(primary-white);
-      line-height: 3.3rem;
+      color: color(text-primary);
+      margin-bottom: 0;
+      margin-top: 1rem;
     }
   }
-  .cardContainer {
+
+  .sliderArrow {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 3.5rem;
-
-    @include mobile {
+    gap: 24px;
+  
+    .button {
+      background-color: color(primary-blue);
+      padding: 0;
+      border-radius: 0.5rem;
+      width: 3rem;
+      height: 3rem;
+      display: flex !important;
       justify-content: center;
-      padding-top: 9.5rem;
+      align-items: center;
     }
-
-    .cardDiv {
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      max-width: 95%;
-      border-radius: 1rem;
-      background-color: color(text-primary);
-      border: 0.125rem solid rgba(color(primary-white), 0.12);
-      @include transition(0.5s);
-
-      &:hover {
-        border: 0.125rem solid color(heading-liner);
-        cursor: pointer;
-      }
-      
-      h1 {
-        font-weight: 500;
-        font-size: text(xl);
-        color: color(primary-white);
-        line-height: 2rem;
-        padding-bottom: 0.5rem;
-      }
-      .description {
-        font-weight: 400;
-        font-size: text(normal);
-        color: color(primary-white);
-        line-height: 1.5rem;
-        opacity: 0.8;
-      }
-      .spanDiv {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        padding-bottom: 2rem;
-
-        .spanDetail {
-          display: flex;
-          gap: 0.5rem;
-          align-items: center;
-          
-          span {
-            font-weight: 400;
-            font-size: text(normal);
-            color: color(primary-white);
-            line-height: 1.5rem;
-            opacity: 0.8;
-          }
-        }
-      }
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  
+    svg > path {
+      stroke: color(primary-white);
     }
   }
-}
-
-.jobDetailContainer {
-  @include jobDetailContainer();
-}
-
-.sliderArrow {
-  display: flex;
-  gap: 24px;
-
-  .button {
-    background-color: color(primary-blue);
-    padding: 0;
+  
+  .arrowDisabled {
     border-radius: 0.5rem;
     width: 3rem;
     height: 3rem;
-    display: flex !important;
-    justify-content: center;
+    border: 1px solid rgba(color(text-primary), 0.20);
+    color: color(primary-blue);
+    background: none;
+    display: flex;
     align-items: center;
-  }
-  svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  svg > path {
-    stroke: color(primary-white);
-  }
-}
-
-.arrowDisabled {
-  border-radius: 0.5rem;
-  width: 3rem;
-  height: 3rem;
-  border: 1px solid rgba(color(text-primary), 0.20);
-  color: color(primary-blue);
-  background: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  svg > path {
-    stroke: color(primary-black);
-  }
-}
-
-//light mode
-.lightMode {
-  @include jobDetailContainer();
-  background-color: color(primary-white);
-
-  .titleSection {
-    h3 {
-      color: color(text-primary);
-    }
-    h1 {
-      color: color(text-primary);
+    justify-content: center;
+  
+    svg > path {
+      stroke: color(primary-black);
     }
   }
-  .cardContainer {
+
+
+  // Dark Mode
+  &.jobDetailDarkContainer {
+    background-color: color(input-bg);
+
+    .titleSection {
+      h3 {
+        color: color(text-primary);
+      }
+      h1 {
+        color: color(text-primary);
+      }
+    }
+
     .cardDiv {
       background-color: color(primary-background);
       border: 0.125rem solid color(primary-white);
@@ -162,20 +97,20 @@
         cursor: pointer;
       }
       h1 {
-        color: color(text-primary);
+        color: color(primary-white);
       }
       .description {
-        color: color(text-primary);
+        color: color(primary-white);
       }
 
       .spanDiv {
         .spanDetail {
           span {
-            color: color(text-primary);
+            color: color(primary-white);
           }
         }
         .spanDetail svg path{
-          fill: color(text-primary)
+          fill: color(primary-white)
         }
       }
     }

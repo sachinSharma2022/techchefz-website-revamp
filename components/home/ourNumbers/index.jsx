@@ -1,5 +1,6 @@
 "use client";
 
+import ServiceInfoCard from "@/components/common/serviceInfoCard";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
@@ -29,7 +30,7 @@ const OurNumbers = () => {
       sbText: "Elevated Conversion Rates.",
     },
     {
-      icon: <Icons.PerformanceIcon width={56} height={56} />,
+      icon: <Icons.Market width={56} height={56} />,
       sbTitle: "120%",
       sbText: "Enhanced SaaS CRO Performance.",
     },
@@ -113,14 +114,12 @@ const OurNumbers = () => {
                 className={`${styles.desktopCards} ${styles.ourNumberOption} `}
               >
                 {serviceCard.map((data, index) => (
-                  <div key={index} className={styles.serviceBox}>
-                    <div className={styles.numberCardFlex}>
-                      <h2 className={styles.sbTitle}>{data.sbTitle}</h2>
-                      <div className={styles.bgIcon}>{data.icon}</div>
-                    </div>
-
-                    <p className={styles.sbText}>{data.sbText}</p>
-                  </div>
+                  <ServiceInfoCard
+                    key={index}
+                    sbTitle={data.sbTitle}
+                    icon={data.icon}
+                    sbText={data.sbText}
+                  />
                 ))}
               </div>
             </div>
@@ -129,14 +128,12 @@ const OurNumbers = () => {
           <div className={`${styles.ourNumberOption} service-mobile-slider`}>
             <Slider {...settings}>
               {serviceCard.map((data, index) => (
-                <div key={index} className={styles.serviceBox}>
-                  <div className={styles.numberCardFlex}>
-                    <h2 className={styles.sbTitle}>{data.sbTitle}</h2>
-                    <div className={styles.bgIcon}>{data.icon}</div>
-                  </div>
-
-                  <p className={styles.sbText}>{data.sbText}</p>
-                </div>
+                <ServiceInfoCard
+                  key={index}
+                  sbTitle={data.sbTitle}
+                  icon={data.icon}
+                  sbText={data.sbText}
+                />
               ))}
             </Slider>
           </div>

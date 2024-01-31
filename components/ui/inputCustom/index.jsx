@@ -17,28 +17,51 @@ const inputVariants = cva(styles.base, {
 });
 
 const Input = React.forwardRef(
-  ({ className, variant, size, inputError, label, icon, ...props }, ref) => {
+  (
+    {
+      className,
+      variant,
+      size,
+      inputError,
+      label,
+      icon,
+      inputStyle,
+      inputFloatingStyle,
+      ...props
+    },
+    ref
+  ) => {
     const { theme } = useContext(MyContext);
     return (
       <div
-        className={`${styles.inputContainerStyle} ${
+        className={cn(
+          styles.inputContainerStyle,
           theme ? styles.inputContainerStyleDark : ""
-        }`}
+        )}
       >
-        <div className={cn(styles.inputFloating, "form-floating")}>
+        <div
+          className={cn(
+            styles.inputFloating,
+            "form-floating",
+            inputFloatingStyle
+          )}
+        >
           <input
             className={cn(
               styles.floatInput,
               inputVariants({ variant, size, className }),
               inputError && styles.inputErrorStyle,
+              inputStyle,
               "form-control"
             )}
             ref={ref}
             {...props}
           />
-          <label className={styles.labelCustom} for="floatingInput">
-            {label}
-          </label>
+          {label && (
+            <label className={styles.labelCustom} for="floatingInput">
+              {label}
+            </label>
+          )}
           {icon && <div className={styles.iconStyle}>{icon}</div>}
         </div>
       </div>
@@ -65,9 +88,11 @@ const Textarea = React.forwardRef(
             ref={ref}
             {...props}
           />
-          <label className={styles.labelCustom} for="floatingInput">
-            {label}
-          </label>
+          {label && (
+            <label className={styles.labelCustom} for="floatingInput">
+              {label}
+            </label>
+          )}
         </div>
       </div>
     );

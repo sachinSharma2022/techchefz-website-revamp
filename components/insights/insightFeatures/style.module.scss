@@ -36,6 +36,7 @@
         padding: 0 2rem;
         border: 0.14rem solid rgba(color(text-primary), 0.4);
         border-radius: .5rem;
+        white-space: nowrap;
 
         &:hover {
           background-color: color(primary-white);
