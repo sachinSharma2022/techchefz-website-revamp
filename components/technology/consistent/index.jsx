@@ -6,23 +6,37 @@ import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { cn } from "@/lib/utils";
+import { motion, useTransform, useScroll } from "framer-motion";
+import { useRef } from "react";
 
 import styles from "./style.module.scss";
 
 const Consistent = () => {
   const { theme, setTheme } = useContext(MyContext);
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["100%", "0%"]);
   return (
     <section
+    ref={targetRef}
       className={`${styles.consistent}  ${theme ? styles.consistentDark : ""}`}
     >
+      <div className={styles.primaryConatiner}>
       <div className={cn("primary-container")}>
-        <div className={styles.consistentImg}>
+        <div   className={styles.consistentImg}>
+
+          <motion.div style={{ y }} >
           <ImageCustom
             src={"/images/consistent-img.png"}
             width={1000}
             height={600}
             alt="img"
           />
+          </motion.div>
+          
         </div>
         <div className={styles.contentSec}>
           <h3 className={styles.consistentTitle}>
@@ -41,6 +55,8 @@ const Consistent = () => {
           </div>
         </div>
       </div>
+      </div>
+      
     </section>
   );
 };

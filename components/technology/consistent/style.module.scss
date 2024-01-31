@@ -3,6 +3,7 @@
 .consistent {
   background-color: color(bg-soft);
   padding: spacing(section-primary-padding);
+  position: relative;
 
   @include mobile {
     padding: 1.5rem;
@@ -15,6 +16,8 @@
 
   .consistentImg {
     margin-bottom: 5rem;
+    overflow: hidden;
+    
     img {
       width: 100%;
       height: auto;
@@ -60,4 +63,8 @@
     opacity: 0.6;
     margin-bottom: 2.5rem;
   }
+}
+.primaryConatiner{
+  position: sticky;
+  top: 0px;
 }
