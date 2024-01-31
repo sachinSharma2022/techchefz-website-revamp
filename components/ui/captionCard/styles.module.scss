@@ -18,11 +18,6 @@
       margin-right: 0;
    }
 
-   &.captionCardDark {
-      background-color: color(text-primary);
-      color: color(primary-white);
-   }
-
    .cardImg div {
       height: 240px;
       width: 100%;
@@ -59,4 +54,12 @@
          cursor: pointer;
       }
    }
+
+   // Dark Mode
+   &.captionCardDark {
+      background-color: color(text-primary);
+      color: color(primary-white);
+      border-color: rgba(color(primary-white), 0.12);
+   }
+
 }

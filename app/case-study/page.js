@@ -17,7 +17,7 @@ function CaseStudy() {
       <Challenges />
       <Solutions />
       <Results />
-      <RelatedCase sliderClassName="mb-0" />
+      <RelatedCase className="my-0 py-0" />
       <LetsWork />
     </div>
   );

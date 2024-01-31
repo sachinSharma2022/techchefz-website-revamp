@@ -12,7 +12,7 @@ const AcceleratorDetails = () => {
       <AcceleratorIndustry />
       <Impact />
       <Challenges />
-      <RelatedCase sliderClassName="mb-0" className="mt-5 pb-0" />
+      <RelatedCase className="mt-0 mb-5 pt-5 pb-0" />
       <LetsWork />
     </div>
   );

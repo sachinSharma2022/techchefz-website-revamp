@@ -10,6 +10,11 @@
       gap: 3.75rem;
    }
 
+   @include mobile{
+      flex-direction: column;
+      padding: 2rem;
+   }
+
    .sitemapPage {
       width: 360px;
       display: flex;

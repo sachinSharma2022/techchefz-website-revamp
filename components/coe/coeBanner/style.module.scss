@@ -13,7 +13,11 @@
     @include desktop-hd {
       padding-inline: 0;
     }
-
+     
+    @include mobile{
+      padding: 2rem;
+      flex-direction: column;
+    }
     .bannerTitle {
       font-size: text(xl-larger);
       font-weight: 500;

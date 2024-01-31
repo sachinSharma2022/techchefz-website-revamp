@@ -2,6 +2,13 @@
 
 .relatedCase {
   padding-block: 8.75rem;
+  position: relative;
+
+  @include desktop-hd {
+    min-height: 500px;
+    margin-block: 8.75rem;
+    padding-block: 0;
+  }
 
   @include mobile-tablet-p {
     padding: spacing(section-mob-padding);
@@ -22,6 +29,10 @@
     @include mobile-tablet-p {
       padding: spacing(section-mob-padding);
       padding-block: 3.75rem 3.75rem;
+    }
+
+    @include mobile{
+      padding-block: 3.75rem 0;
     }
   }
 
@@ -54,15 +65,23 @@
 
   .relatedCaseSlider {
     padding-left: spacing(p-120);
-    margin-bottom: 8.75rem;
+    
     @include mobile-tablet-p {
       margin-bottom: 2.75rem;
     }
 
     @include desktop-hd {
-      padding-left: 13vw;
+      position: absolute;
+      right: 0;
+      left: 0;
+      padding-left: 0;
+    }
+
+    @include mobile{
+      padding: 0 1rem;
     }
   }
+    
 
   .cardStyle {
     width: auto;
@@ -117,5 +136,13 @@
   &.relatedCaseDark {
     background-color: color(input-bg);
     color: color(primary-white);
+
+    .arrowDisabled {
+      border: 1px solid rgba(color(primary-white), 0.20);
+    }
+
+    svg > path {
+      stroke: color(primary-white);
+    }
   }
 }

@@ -4,11 +4,20 @@
   padding: spacing(section-primary-padding);
   padding-top: 0;
 
+  @include mobile{
+    padding: 2rem;
+  }
+
 
   .flexContainer {
     display: flex;
     justify-content: space-between;
-    gap: 143px;
+    gap: 8.938rem;
+
+    @include mobile{
+      flex-direction: column;
+      gap: 3.75rem;
+    }
   }
 
   .headSection {
@@ -37,6 +46,13 @@
           color(heading-liner) 55.42%
         );
         @include textGradient;
+      }
+    }
+
+    .ourNumbersImg{
+      img{
+        width: 100%;
+        height: 100%;
       }
     }
   }

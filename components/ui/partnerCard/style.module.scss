@@ -7,8 +7,14 @@
   border: 0.14rem solid rgba(color(text-primary), 0.12);
   border-radius: 1.25rem;
   text-align: left;
+  @include transition(0.5s);
+
   @include mobile-tablet-p {
     padding: 1.5rem;
+  }
+
+  &:hover {
+    border-color: color(heading-liner);
   }
 
   .cardImg {

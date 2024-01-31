@@ -4,6 +4,10 @@
   padding: spacing(section-primary-padding);
   padding-bottom: 5rem;
 
+  @include mobile{
+  padding: 2rem;
+  }
+
   .headSec {
     max-width: 49.1875rem;
   }
@@ -26,6 +30,10 @@
     display: flex;
     gap: 2.5rem;
     padding: 5rem 0;
+
+    @include mobile{
+      flex-direction: column;
+    }
   }
 
   &.coeSupportDark {

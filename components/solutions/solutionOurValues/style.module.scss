@@ -3,15 +3,28 @@
 .solutionOurValuesStyle {
    padding: spacing(section-primary-padding);
 
+   @include mobile{
+      padding: 2rem;
+   }
+
    .flexContainer {
       display: flex;
       justify-content: space-between;
-      gap: 143px;
+      gap: 8.938rem;
+
+      @include mobile{
+         flex-direction: column;
+         gap: 3.75rem;
+      }
    }
 
    .ourValuesHead {
       margin-bottom: 5rem;
       max-width: 373px;
+
+      @include mobile{
+         margin-bottom: 0;
+      }
 
       .ourValuesTitle {
          color: color(text-primary);
@@ -27,11 +40,22 @@
          font-size: text(larger);
          margin-bottom: 2.75rem;
 
+         @include mobile{
+            margin-bottom: 1.25rem;
+         }
+
          span {
             font-size: text(larger);
             color: color(heading-liner);
             background: linear-gradient(118deg, color(primary-blue) 11.5%, color(heading-liner) 55.42%);
             @include textGradient;
+         }
+
+      }
+
+      .ourValuesText{
+         @include mobile{
+            margin-bottom: 0;
          }
       }
    }

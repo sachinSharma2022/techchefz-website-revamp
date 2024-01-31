@@ -4,9 +4,14 @@
   padding: spacing(section-primary-padding);
   padding-block: spacing(space80);
 
+<<<<<<< HEAD
   @include mobile-tablet-p {
     padding: spacing(section-mob-padding);
     padding-block: 0;
+=======
+  @include mobile{
+    padding: 1.75rem 1.5rem;
+>>>>>>> 52239b832e1cb394cffff2c347d23cbfe7f8cd94
   }
 
   .headSec {

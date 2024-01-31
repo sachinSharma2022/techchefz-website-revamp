@@ -145,6 +145,7 @@ const InsightFeatures = () => {
                 date={data.date}
                 cardStyle={styles.featureImgBox}
                 theme={theme}
+                href="/insight-inside"
               />
             ))}
           </div>
@@ -159,6 +160,7 @@ const InsightFeatures = () => {
                 title={data.title}
                 date={data.date}
                 theme={theme}
+                href="/insight-inside"
               />
             ))}
           </div>
