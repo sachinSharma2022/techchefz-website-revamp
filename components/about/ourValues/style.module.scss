@@ -9,28 +9,6 @@
     padding-block: 3.75rem 3.75rem;
   }
 
-  &.ourValuesDark {
-    background-color: color(dark-bg);
-    color: color(primary-white);
-
-    .ourValuesHead {
-      .ourValuesTitle {
-        color: color(primary-white);
-      }
-    }
-    .ourValuesContent {
-      .ourValuesAccordion {
-        .accordionHead {
-          color: color(primary-white);
-          border-bottom: 0.14rem solid rgba(color(primary-white), 0.12);
-        }
-      }
-    }
-    .iconBox {
-      background-color: color(input-bg);
-    }
-  }
-
   .ourValuesHead {
     margin-bottom: 5rem;
     @include mobile-tablet-p {
@@ -97,13 +75,12 @@
   .iconBox {
     width: 36px;
     height: 36px;
-    background: color(text-primary);
+    background: color(primary-white);
     border-radius: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-
 
   // Dark Mode
   &.ourValuesDark {
