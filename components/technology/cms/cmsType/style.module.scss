@@ -109,6 +109,7 @@
   //Dark mode style
   &.cmsTypeDark{
     color: color(primary-white);
+    background-color: color(input-bg);
 
     .projectHighlight{
       color: color(primary-white);

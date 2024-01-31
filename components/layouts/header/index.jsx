@@ -14,34 +14,38 @@ import styles from "./style.module.scss";
 const Header = () => {
   const { theme, setTheme } = useContext(MyContext);
   const pathname = usePathname();
-  const [isActive, setActive] = useState(false);
-  const toggleClass = () => {
-    setActive(!isActive);
-  };
-
+  const [isActive] = useState(false);
   const [header, setHeader] = useState("header");
 
   const listenScrollEvent = () => {
-    if (window.scrollY < 73) {
-      return setHeader("header-transparent");
-    } else if (window.scrollY > 70) {
-      return setHeader("header-white");
+    if (theme === true) {
+      if (window.scrollY < 73) {
+        return setHeader("header-transparent");
+      } else if (window.scrollY > 70) {
+        return setHeader("header-dark");
+      }
+    } else {
+      if (window.scrollY < 73) {
+        return setHeader("header-transparent");
+      } else if (window.scrollY > 70) {
+        return setHeader("header-white");
+      }
     }
   };
 
   useEffect(() => {
     window.addEventListener("scroll", listenScrollEvent);
     return () => window.removeEventListener("scroll", listenScrollEvent);
-  }, []);
-
-  useEffect(() => {
-    document.body.classList.add("font-light");
-    document.body.classList.add("text-gray-700");
   });
 
-  const classToggle = (e) => {
-    document.querySelector("body").classList.toggle("dark");
-  };
+  // useEffect(() => {
+  //   document.body.classList.add("font-light");
+  //   document.body.classList.add("text-gray-700");
+  // });
+
+  // const classToggle = (e) => {
+  //   document.querySelector("body").classList.toggle("dark");
+  // };
 
   function LatestTech() {
     return (
@@ -350,7 +354,7 @@ const Header = () => {
           </ul>
         </nav>
         <div className={styles.headerRight}>
-          <div onClick={classToggle} className={styles.modeBtn}>
+          <div className={styles.modeBtn}>
             <button variant="default" onClick={() => setTheme(!theme)}>
               {theme ? (
                 <Icons.DarkThemeIcon size={30} />
@@ -371,7 +375,7 @@ const Header = () => {
             <Button
               variant="default"
               className={styles.navHamburger}
-              onClick={toggleClass}
+              // onClick={toggleClass}
             >
               <span />
             </Button>

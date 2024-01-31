@@ -85,6 +85,7 @@
 
   //Dark mode style
   &.theProcessDark{
+    background-color: color(input-bg);
     color: color(primary-white);
 
     .heading{

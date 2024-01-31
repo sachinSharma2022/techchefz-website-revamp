@@ -4,7 +4,6 @@
   background-color: color(bg-soft);
   padding-block: spacing(section-primary-padding);
   padding-left: spacing(p-120);
-  margin-top: 8.75rem;
   overflow: hidden;
 
   @include mobile-tablet-p {
@@ -185,5 +184,13 @@
   &.tczLifeDark {
     background-color: color(dark-bg);
     color: color(primary-white);
+
+    .arrowDisabled {
+      border: 1px solid rgba(color(primary-white), 0.2);
+
+      svg > path {
+        stroke: color(primary-white);
+      }
+    }
   }
 }

@@ -1,9 +1,11 @@
 @import "~/styles/partials/config";
 
 .landingBannerStyle {
+  padding-bottom: 8.75rem;
+
   .contentSection {
     padding-inline: spacing(p-120);
-    padding-top: 5rem;
+    padding-top: 10rem;
     display: flex;
     gap: 8rem;
 

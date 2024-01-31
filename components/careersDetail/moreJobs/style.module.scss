@@ -7,7 +7,7 @@
   @include mobile-tablet-p {
     padding: 8.75rem 2.5rem;
   }
-  
+
   @include mobile {
     padding: 4.75rem 1.5rem;
   }
@@ -37,7 +37,7 @@
   .sliderArrow {
     display: flex;
     gap: 24px;
-  
+
     .button {
       background-color: color(primary-blue);
       padding: 0;
@@ -52,28 +52,27 @@
       width: 18px;
       height: 18px;
     }
-  
+
     svg > path {
       stroke: color(primary-white);
     }
   }
-  
+
   .arrowDisabled {
     border-radius: 0.5rem;
     width: 3rem;
     height: 3rem;
-    border: 1px solid rgba(color(text-primary), 0.20);
+    border: 1px solid rgba(color(text-primary), 0.2);
     color: color(primary-blue);
     background: none;
     display: flex;
     align-items: center;
     justify-content: center;
-  
+
     svg > path {
       stroke: color(primary-black);
     }
   }
-
 
   // Dark Mode
   &.jobDetailDarkContainer {
@@ -81,10 +80,10 @@
 
     .titleSection {
       h3 {
-        color: color(text-primary);
+        color: color(primary-white);
       }
-      h1 {
-        color: color(text-primary);
+      h6 {
+        color: color(primary-white);
       }
     }
 
@@ -109,9 +108,17 @@
             color: color(primary-white);
           }
         }
-        .spanDetail svg path{
-          fill: color(primary-white)
+        .spanDetail svg path {
+          fill: color(primary-white);
         }
+      }
+    }
+
+    .arrowDisabled {
+      border: 1px solid rgba(color(primary-white), 0.2);
+
+      svg > path {
+        stroke: color(primary-white);
       }
     }
   }

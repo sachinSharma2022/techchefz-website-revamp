@@ -110,7 +110,7 @@ const MoreJobs = () => {
       <div
         className={cn(
           styles.jobDetailContainer,
-          theme ? jobDetailDarkContainer : ""
+          theme ? styles.jobDetailDarkContainer : ""
         )}
       >
         <div className={cn("primary-container")}>

@@ -58,6 +58,10 @@
       background-color: color(input-bg);
       color: color(primary-white);
 
+      .breakLine {
+         color: rgba(color(primary-white), 0.12);
+      }
+
       .grayInput {
          label {
             color: color(primary-white);

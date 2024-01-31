@@ -2,11 +2,11 @@
 
 .headerMain {
   padding: 1.11rem 7.5rem;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 999;
+  width: 100%;
   box-shadow: 0 0 0.125rem rgba(color(text-primary), 0.3);
-  background: transparent;
 
   @include tablet {
     padding: 1rem 0.8rem;
@@ -583,7 +583,7 @@
 
   // Dark Style here
   &.headerDarkStyle {
-    background-color: transparent;
+    border-bottom: 1px solid rgba(color(primary-white), 0.12);
 
     .logo {
       a {

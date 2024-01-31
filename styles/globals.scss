@@ -53,6 +53,11 @@ a {
   transition: all 0.5s ease-in-out;
 }
 
+.header-dark {
+  background: color(input-bg);
+  transition: all 0.5s ease-in-out;
+}
+
 // space
 .mt-120 {
   margin-top: 7.5rem;
@@ -371,7 +376,7 @@ input:-webkit-autofill {
   }
 }
 
-.dark .testimonial-style {
+.testimonials-style-dark.testimonial-style {
   .swiper-slide-shadow-right {
     background-image: linear-gradient(
       90deg,
@@ -896,7 +901,7 @@ input:-webkit-autofill {
 }
 
 // All Global Dark Theme Style
-.dark {
+.custom-dropdown-dark-style {
   .css-t3ipsp-control {
     background: transparent;
     border-radius: 0.75rem;

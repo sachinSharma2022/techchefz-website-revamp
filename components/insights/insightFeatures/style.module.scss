@@ -1,4 +1,5 @@
 @import "~/styles/partials/config";
+
 @mixin insightFeatures() {
   padding: 5rem 7.5rem 0;
 
@@ -34,9 +35,10 @@
         line-height: 1.875rem;
         height: 2.75rem;
         padding: 0 2rem;
-        border: 0.14rem solid rgba(color(text-primary), 0.4);
+        border: 0.14rem solid rgba(color(text-primary), 0.12);
         border-radius: .5rem;
         white-space: nowrap;
+        @include transition(0.5s);
 
         &:hover {
           background-color: color(primary-white);
@@ -147,13 +149,13 @@
     .serviceBtn {
       button {
         color: color(primary-white);
-        border: 0.14rem solid rgba(255, 255, 255, 0.40);
+        border-color: rgba(color(primary-white), 0.4);
         background-color: color(text-primary);
         
         &:hover {
           background-color: color(text-primary);
           color: color(primary-white);
-          border: 0.14rem solid var(--Gradient, #1e8af2);
+          border-color: rgba(color(heading-liner), 1);
         }
       }
     }
