@@ -2,6 +2,11 @@
 
 .relatedCase {
   padding-block: 8.75rem;
+  position: relative;
+
+  @include desktop-hd {
+    height: 85dvh;
+  }
 
   .headSection {
     padding-inline: spacing(p-120);
@@ -50,12 +55,16 @@
   .relatedCaseSlider {
     padding-left: spacing(p-120);
     margin-bottom: 8.75rem;
+    
     @include mobile-tablet-p {
       margin-bottom: 2.75rem;
     }
 
     @include desktop-hd {
-      padding-left: 13vw;
+      position: absolute;
+      right: 0;
+      left: 0;
+      padding-left: 0;
     }
   }
 

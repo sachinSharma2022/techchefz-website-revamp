@@ -21,7 +21,7 @@ const TczLife = () => {
     arrows: false,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToScroll: 2,
     beforeChange: (current, next) => {
       setOldSlide(current);
       setActiveSlide(next);
@@ -29,19 +29,24 @@ const TczLife = () => {
     afterChange: (current) => setActiveSlide2(current),
     responsive: [
       {
+        breakpoint: 3000,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
         breakpoint: 1900,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          centerMode: false,
         },
       },
       {
         breakpoint: 1500,
         settings: {
-          slidesToShow: 1.5,
+          slidesToShow: 1.6,
           slidesToScroll: 1,
-          centerMode: false,
         },
       },
       {
@@ -119,6 +124,9 @@ const TczLife = () => {
             {sliderVideo.map((data, index) => (
               <div key={index} className={styles.videoWhapper}>
                 <ImageCustom src={data.video} width={800} height={800} />
+                <button className={cn(styles.videoButton)}>
+                  <Icons.VideoButton />
+                </button>
               </div>
             ))}
           </Slider>

@@ -287,13 +287,19 @@
         justify-content: center;
         align-items: center;
         transition: all 0.5s;
+        position: relative;
 
         &:hover {
           background-color: rgba(color(text-primary), 0.12);
         }
 
-        svg path {
-          fill: none;
+        svg {
+          position: relative;
+          left: 1px;
+
+          path {
+            fill: none;
+          }
         }
       }
     }
@@ -599,6 +605,11 @@
         button {
           &:hover {
             background-color: rgba(color(primary-white), 0.2);
+            border: 0.14rem solid rgba(color(primary-white), 0.12);
+          }
+
+          svg {
+            left: 0px;
           }
         }
       }
@@ -632,13 +643,6 @@
     }
     .arrow {
       border-color: color(primary-white);
-    }
-    .headerRight {
-      .modeBtn {
-        button {
-          border: 0.14rem solid rgba(color(primary-white), 0.12);
-        }
-      }
     }
   }
 }

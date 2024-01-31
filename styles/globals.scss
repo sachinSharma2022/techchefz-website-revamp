@@ -647,6 +647,15 @@ input:-webkit-autofill {
     }
   }
 
+  .slick-track {
+
+    @include desktop-hd {
+      max-width: 1440px;
+      display: flex;
+      white-space: nowrap;
+    }
+  }
+
   .slick-prev {
     left: auto;
     right: 210px;
