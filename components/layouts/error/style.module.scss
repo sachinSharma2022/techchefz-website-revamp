@@ -64,10 +64,19 @@
          }
       }
 
-      .errorBtn{
-        svg > path{
+      .errorBtn {
+         svg > path {
             stroke: color(primary-white);
-        }
+         }
+      }
+   }
+
+   //Dark mode style
+   &.errorDark {
+      color: color(primary-white);
+
+      p ,ul{
+         color: color(primary-white);
       }
    }
 
