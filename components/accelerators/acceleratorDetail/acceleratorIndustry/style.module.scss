@@ -4,7 +4,7 @@
    padding: spacing(section-primary-padding);
    padding-bottom: 0;
 
-   @include mobile{
+   @include mobile-tablet-p{
       padding: 2.75rem 1.5rem;
    }
 
@@ -12,7 +12,7 @@
       display: flex;
       gap: 8.9375rem;
 
-      @include mobile{
+      @include mobile-tablet-p{
          flex-direction: column;
          gap: 3.75rem;
       }
@@ -65,6 +65,11 @@
       font-size: text(larger);
       color: color(text-primary);
       margin-bottom: 2rem;
+
+      @include mobile{
+         font-size: text(xxxl);
+         line-height: 2.5rem;
+      }
    }
 
    .serviceBtn {
@@ -83,6 +88,10 @@
          display: flex;
          align-items: center;
          justify-content: center;
+
+         @include mobile{
+            width: 100%;
+         }
       }
    }
 
