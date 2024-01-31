@@ -13,45 +13,28 @@ import { gsap } from 'gsap';
 import {useEffect} from 'react';
 
 const Streamline = () => {
+  let component = useRef(null);
   const { theme, setTheme } = useContext(MyContext);
-  // const targetRef = useRef(null);
-  // const { scrollYProgress } = useScroll({
-  //   target: targetRef,
-  // });
-
-  // const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
+  gsap.registerPlugin(ScrollTrigger);
   useEffect(() => {
-
-    gsap.registerPlugin(ScrollTrigger);
-
+let ctx = gsap.context(() => {
   const tl=gsap.timeline(
-    {scrollTrigger:{trigger:`.${styles.streamLineCards}`,scrub:1,markers:true,start:"top 50%", invalidateOnRefresh: true,
+    {scrollTrigger:{trigger:`.${styles.streamLineWrapper}`,scrub:1,markers:true,start:"top 6%",pin:true, invalidateOnRefresh: true,
     anticipatePin: 1}}
   );
   tl.to(`.${styles.streamLineSection}`,{
-    xPercent: -100, 
+    xPercent: -101, 
     ease: "none",
    }).to(`.${styles.streamLineCards}`,{
     xPercent: -100, 
     ease: "none",
     duration: 1
-   },'<')
-
-//   gsap.registerPlugin(ScrollTrigger);
-
-// let sections = gsap.utils.toArray("section");
-
-// gsap.to(sections, {
-//   xPercent: -100 * (2 - 1),
-//   ease: "none",
-//   scrollTrigger: {
-//     trigger: `.${styles.streamLineCards}`,
-//     pin: ".main",
-//     pinSpacing: true,
-//     scrub: 1,
-//     end: "+=3000",
-//   }
-// });
+   },'<').to(`.${styles.streamLineCards}`,{
+    duration:0.10
+   })
+ 
+});
+return () => ctx.revert();
    
   }, []);
   
@@ -111,6 +94,7 @@ const Streamline = () => {
   ];
   return (
     <div id="streamLineWrapper"
+    
       className={`${styles.streamLineWrapper} ${
         theme ? styles.streamlineDark : ""
       }`}
@@ -129,7 +113,7 @@ const Streamline = () => {
       </section>
 
       {/* Other sections */}
-      <section className={styles.streamLineCards}>
+      <section ref={component} className={styles.streamLineCards}>
         {streamlineCard.map((data, index) => (
           <div key={index}>
             <div className={styles.streamlineCard}>
