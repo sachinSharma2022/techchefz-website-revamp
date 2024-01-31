@@ -3,10 +3,18 @@
 .siteMapBanner {
 	padding: 6.25rem spacing(120) 8.75rem;
 
+  @include mobile-tablet-p {
+    padding: 2rem 1rem;
+  }
+
   .sitemap {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+
+    @include mobile-tablet-p {
+      flex-direction: column;
+   }
 
     .bannerHeading {
       font-size: text(xl-larger);
@@ -15,6 +23,10 @@
       background: linear-gradient(137deg, #1e8af2 16.55%, #05bed7 61.45%);
       @include textGradient;
       margin: 0;
+
+      @include mobile-tablet-p  {
+        margin-bottom: 1rem;
+      }
     }
 
     .bannerText {
@@ -23,6 +35,10 @@
       line-height: 1.875rem;
       opacity: 0.8;
       margin: 0;
+
+      @include mobile-tablet-p {
+        width: 90%;
+     }
     }
   }
 
