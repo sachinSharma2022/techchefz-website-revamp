@@ -3,30 +3,43 @@
 .inputContainerStyle {
   width: 100%;
 
-  &.inputContainerStyleDark {
-    .floatInput {
-      background-color: color(dark-gray);
-      border: 0.14rem solid rgba(color(primary-white), 0.12);
-      color: rgba(color(primary-white), 0.9);
-    }
-    .labelCustom {
-      color: rgba(color(primary-white), 0.5) !important;
-      &::after {
-        display: none;
-      }
-    }
-  }
-
-  .floatInput {
-    padding: 1.125rem;
-    font-size: text(normal);
+  .inputFloating {
+    position: relative;
+    display: flex;
+    border: 0.14rem solid rgba(color(text-primary), 0.12);
+    @include transition(0.5s);
     border-radius: 0.75rem;
+    font-size: text(normal);
     font-weight: 400;
+    overflow: hidden;
+    background-color: color(primary-white);
 
+
+    &:hover,
     &:focus {
-      box-shadow: none;
+      border-color: color(heading-liner);
+    }
+
+    .iconStyle {
+      position: absolute;
+      right: 0;
+      z-index: 1;
+      top: 15px;
+      right: 15px;
+    }
+
+    input {
       border: none;
-      border-color: transparent;
+      box-shadow: none;
+      background: none;
+    }
+
+    textarea {
+      border: none;
+      box-shadow: none;
+      background: none;
+      height: auto;
+      resize: none;
     }
   }
 
@@ -36,6 +49,23 @@
     line-height: text(xl);
     font-weight: 400;
     font-family: font(primary);
-    padding-inline: 1.125rem;
+  }
+
+
+  // Dark Mode
+  &.inputContainerStyleDark {
+    
+    .floatInput {
+      background-color: color(dark-gray);
+      border: 0.14rem solid rgba(color(primary-white), 0.12);
+      color: rgba(color(primary-white), 0.9);
+    }
+
+    .labelCustom {
+      color: rgba(color(primary-white), 0.5) !important;
+      &::after {
+        display: none;
+      }
+    }
   }
 }
