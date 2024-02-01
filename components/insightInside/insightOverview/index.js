@@ -40,9 +40,9 @@ const InsightOverview = () => {
             <p>Services</p>
             <div className={styles.techStackDiv}>
               {techStackData.map((value) => (
-                <div key={value} className={styles.techBtn}>
+                <button key={value} className={styles.techBtn}>
                   {value.name}
-                </div>
+                </button>
               ))}
             </div>
           </div>

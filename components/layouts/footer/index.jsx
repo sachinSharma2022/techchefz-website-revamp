@@ -49,10 +49,14 @@ const Footer = () => {
               <div className={styles.subscribe}>
                 <h4 className="mb-3">Stay Ahead of the Tech Curve</h4>
                 <div className={styles.formFlex}>
-                  <Input placeholder="Business Email Address" />
+                  <Input
+                    inputFloatingStyle={styles.inputFloatingStyle}
+                    inputStyle={styles.inputStyle}
+                    placeholder="Business Email Address"
+                  />
                   <div className="d-flex align-items-center">
                     <Button variant="lightBlueBtn" size="lg">
-                      Subscribe <Icons.ArrowRight size={20} className="ms-2" />
+                      Subscribe <Icons.ArrowRight size={15} />
                     </Button>
                   </div>
                 </div>

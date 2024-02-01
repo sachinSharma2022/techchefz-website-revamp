@@ -36,7 +36,6 @@ const Error = () => {
             <li>The address may have been typed incorrectly.</li>
             <li>It may be a broken or outdated link.</li>
           </ul>
-
           <Link href="/">
             <Button variant="blueBtn" className={styles.errorBtn} size="lg">
               <Icons.ArrowLeft size={20} /> Back to Homepage

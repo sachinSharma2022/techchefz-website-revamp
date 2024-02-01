@@ -141,6 +141,7 @@
 
    //Dark mode style
    &.solutionOurValuesDark {
+      background-color: color(input-bg);
       color: color(primary-white);
       
       .ourValuesTitle{

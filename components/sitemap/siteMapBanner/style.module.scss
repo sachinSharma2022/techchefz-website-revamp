@@ -1,7 +1,7 @@
 @import "~/styles/partials/config";
 
 .siteMapBanner {
-	padding: 6.25rem spacing(120) 8.75rem;
+  padding: 11.25rem 7.5rem 8.125rem;
 
   @include mobile-tablet-p {
     padding: 2rem 1rem;
@@ -14,17 +14,16 @@
 
     @include mobile-tablet-p {
       flex-direction: column;
-   }
+    }
 
     .bannerHeading {
       font-size: text(xl-larger);
       font-weight: 500;
-      line-height: 5rem;
       background: linear-gradient(137deg, #1e8af2 16.55%, #05bed7 61.45%);
       @include textGradient;
-      margin: 0;
+      margin: -10px 0 0;
 
-      @include mobile-tablet-p  {
+      @include mobile-tablet-p {
         margin-bottom: 1rem;
       }
     }
@@ -32,18 +31,22 @@
     .bannerText {
       width: 29.813rem;
       font-size: text(lg);
-      line-height: 1.875rem;
       opacity: 0.8;
       margin: 0;
+      color: color(text-primary);
 
       @include mobile-tablet-p {
         width: 90%;
-     }
+      }
     }
   }
 
   //Dark mode style
   &.siteMapBannerDark {
-    color: color(primary-white);
+    background-color: color(input-bg);
+
+    .bannerText {
+      color: color(primary-white);
+    }
   }
 }

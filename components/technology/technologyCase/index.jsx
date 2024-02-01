@@ -29,7 +29,11 @@ const TechnologyCase = () => {
     },
   ];
   return (
-    <section className={`${styles.technologyCase} ${theme ? styles.technologyCaseDark : ""}`}>
+    <section
+      className={`${styles.technologyCase} ${
+        theme ? styles.technologyCaseDark : ""
+      }`}
+    >
       <div className={cn("primary-container")}>
         <div className={styles.headSection}>
           <div className={styles.caseTop}>
@@ -40,7 +44,7 @@ const TechnologyCase = () => {
           </div>
           <div className={styles.btnSection}>
             <Link href="/case-study">
-              <Button variant="outline" size="sm">
+              <Button variant="outline" size="md">
                 Explore Now <Icons.ArrowRight size={18} />
               </Button>
             </Link>

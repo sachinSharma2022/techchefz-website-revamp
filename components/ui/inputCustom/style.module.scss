@@ -55,14 +55,18 @@
   // Dark Mode
   &.inputContainerStyleDark {
     
-    .floatInput {
-      background-color: color(dark-gray);
+    .inputFloating {
       border: 0.14rem solid rgba(color(primary-white), 0.12);
-      color: rgba(color(primary-white), 0.9);
+      background-color: color(text-primary);
+    }
+
+    input {
+      color: color(primary-white);
     }
 
     .labelCustom {
       color: rgba(color(primary-white), 0.5) !important;
+      
       &::after {
         display: none;
       }

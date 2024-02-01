@@ -23,7 +23,7 @@ const CareerBanner = () => {
             <span className={styles.titleHighlight}> resourceful </span>tech
             teams in India.
           </h1>
-          <div>
+          <div className={styles.desc}>
             <p className={styles.leadText}>
               Discover your future with us. Explore opportunities, values, and
               culture. Join a dynamic and innovative team at Techchefz.

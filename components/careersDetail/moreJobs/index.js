@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useContext, useRef, useState } from "react";
-import styles from "./style.module.scss";
-import { MyContext } from "@/context/theme";
-import Slider from "react-slick";
-import { Button } from "@/components/ui/button";
+import JobCard from "@/components/common/jobCard";
 import { Icons } from "@/components/icons";
+import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
+import { useContext, useRef, useState } from "react";
+import Slider from "react-slick";
+import styles from "./style.module.scss";
 
 const MoreJobs = () => {
   const { theme, setTheme } = useContext(MyContext);
@@ -107,12 +107,17 @@ const MoreJobs = () => {
   ];
   return (
     <>
-      <div className={theme ? styles.jobDetailContainer : styles.lightMode}>
+      <div
+        className={cn(
+          styles.jobDetailContainer,
+          theme ? styles.jobDetailDarkContainer : ""
+        )}
+      >
         <div className={cn("primary-container")}>
           <div className={styles.titleSection}>
             <div>
-              <h3>SIMILAR VACANCIES</h3>
-              <h1>More jobs at TechChefz</h1>
+              <h6>SIMILAR VACANCIES</h6>
+              <h3>More jobs at TechChefz</h3>
             </div>
 
             <div className={styles.sliderArrow}>
@@ -136,28 +141,13 @@ const MoreJobs = () => {
           <div className="job-detail-slider">
             <Slider {...settings} ref={slider}>
               {sliderData.map((value, index) => (
-                <div className={styles.cardContainer} key={index}>
-                  <div className={styles.cardDiv}>
-                    <h1>{value.title}</h1>
-                    <p className={styles.description}>{value.content}</p>
-                    <div className={styles.spanDiv}>
-                      <div className={styles.spanDetail}>
-                        <Icons.TimerIcon size={16} />
-                        <span>{value.exp}</span>
-                      </div>
-                      <div className={styles.spanDetail}>
-                        <Icons.LocationIcon size={16} />
-                        <span>{value.location}</span>
-                      </div>
-                    </div>
-                    <Button
-                      variant={theme ? "lightBlueBtn" : "blueBtn"}
-                      size="md"
-                    >
-                      Apply
-                    </Button>
-                  </div>
-                </div>
+                <JobCard
+                  key={index}
+                  title={value.title}
+                  content={value.content}
+                  exp={value.exp}
+                  location={value.location}
+                />
               ))}
             </Slider>
           </div>

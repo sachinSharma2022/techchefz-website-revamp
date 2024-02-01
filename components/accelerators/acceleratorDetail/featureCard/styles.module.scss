@@ -1,18 +1,18 @@
 @import "~/styles/partials/config";
 
-.coeSupport {
+.challenges {
   padding: spacing(section-primary-padding);
-  padding-bottom: 5rem;
+  padding-block: spacing(space80);
 
   @include mobile{
-  padding: 2rem;
+    padding: 1.75rem 1.5rem;
   }
 
   .headSec {
     max-width: 49.1875rem;
   }
 
-  .coeSupportTitle {
+  .challengeTitle {
     font-size: text(normal);
     font-weight: 500;
     line-height: 1.5rem;
@@ -20,24 +20,24 @@
     text-transform: uppercase;
     opacity: 0.8;
   }
-  .coeSupportHeading {
+  .challengeHeading {
     font-size: text(larger);
     font-weight: 500;
     line-height: 3.375rem;
   }
 
-  .coeSupportCards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  .challengesCards {
+    display: flex;
     gap: 2.5rem;
-    padding: 5rem 0;
+    padding-top: spacing(space80);
 
     @include mobile{
       flex-direction: column;
+      padding: 2rem 0;
     }
   }
 
-  &.coeSupportDark {
+  &.challengesDark {
     background-color: color(input-bg);
     color: color(primary-white);
   }

@@ -73,7 +73,11 @@ const Discover = () => {
     },
   ];
   return (
-    <section className={`${styles.discoverSection} ${theme ? styles.discoverSectionDark : ""}`}>
+    <section
+      className={`${styles.discoverSection} ${
+        theme ? styles.discoverSectionDark : ""
+      }`}
+    >
       <div className={cn("primary-container")}>
         <div className={styles.discoverTop}>
           <div>
@@ -82,7 +86,7 @@ const Discover = () => {
           </div>
 
           <Link href="/technology/cms">
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="md">
               Explore Now <Icons.ArrowRight size={18} />
             </Button>
           </Link>

@@ -9,20 +9,6 @@
     padding-block: 3.75rem 3.75rem;
   }
 
-  &.numberStyleDark {
-    background-color: color(dark-bg);
-    color: color(primary-white);
-
-    .ourNumberGrid {
-      .desktopCards {
-        .serviceBox {
-          background-color: color(dark-bg);
-          border: 2px solid rgba(color(primary-white), 0.12);
-        }
-      }
-    }
-  }
-
   .careerRow {
     margin-bottom: 5rem;
     display: flex;
@@ -116,59 +102,12 @@
         font-weight: 400;
       }
     }
-    .ourNumberOption {
-      .serviceBox {
-        text-align: center;
-        background-color: color(primary-white);
-        padding: text(xxxl);
-        border-radius: text(xl);
-        border: 0.125rem solid color(primary-white);
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
+  }
 
-        &:hover {
-          border-color: color(heading-liner);
-        }
 
-        @include mobile {
-          margin-right: text(xl);
-          min-height: 18.5rem;
-          padding: text(lg);
-        }
-        .numberCardFlex {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-bottom: text(xxxl);
-
-          .sbTitle {
-            font-size: 2.75rem;
-            font-weight: 500;
-            margin-bottom: 0;
-            min-height: 2.75rem;
-            color: color(heading-liner);
-            background: linear-gradient(
-              118deg,
-              color(primary-blue) 11.5%,
-              color(heading-liner) 55.42%
-            );
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-          }
-        }
-        .sbText {
-          font-weight: 400;
-          font-size: text(lg);
-          line-height: 1.875rem;
-          opacity: 0.8;
-          text-align: left;
-          margin-bottom: 0;
-          @include mobile {
-            font-size: text(normal);
-          }
-        }
-      }
-    }
+  // Dark Mode
+  &.numberStyleDark {
+    background-color: color(dark-bg);
+    color: color(primary-white);
   }
 }
