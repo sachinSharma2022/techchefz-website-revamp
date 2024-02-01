@@ -51,9 +51,10 @@
    }
 
    .accordionBody {
-      padding: 1.25rem 0;
+      padding-top: 1.25rem;
       display: flex;
       gap: 40px;
+      overflow: hidden;
    }
 
    .iconBox {

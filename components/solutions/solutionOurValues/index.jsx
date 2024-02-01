@@ -6,11 +6,12 @@ import { useContext } from "react";
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { cn } from "@/lib/utils";
+import { motion } from 'framer-motion';
 
 import styles from "./style.module.scss";
 
 const SolutionOurValues = () => {
-  const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
+  const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(0);
   const { theme, setTheme } = useContext(MyContext);
 
   const accordionData = [
@@ -118,7 +119,7 @@ const SolutionOurValues = () => {
 
         <div className={styles.ourValuesAccordion}>
           {accordionData.map((data, index) => (
-            <Disclosure key={index}>
+            <Disclosure key={index} defaultOpen={index === activeDisclosurePanel}>
               {(panel) => {
                 const { open, close } = panel;
                 return (
@@ -143,7 +144,13 @@ const SolutionOurValues = () => {
                         {!open ? <Icons.ArrowDown /> : <Icons.ArrowUp />}
                       </div>
                     </Disclosure.Button>
-                    <Disclosure.Panel className={styles.accordionBody}>
+                    <motion.div
+                    initial={false}
+                    animate={{ height: open ? 'auto' : 0, opacity: open ? 1 : 0 }}
+                    transition={{ duration: 0.4, ease: 'easeInOut' }}
+                    style={{ overflow: 'hidden' }}
+                  >
+                    <Disclosure.Panel className={styles.accordionBody} as={motion.div}>
                       <div className={styles.imgBox}>
                         <ImageCustom
                           src="/images/our-number.jpg"
@@ -164,6 +171,7 @@ const SolutionOurValues = () => {
                         </ul>
                       </div>
                     </Disclosure.Panel>
+                    </motion.div>
                   </>
                 );
               }}
