@@ -4,7 +4,7 @@ import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import CountryDropdown from "@/components/ui/countryDropdown";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import { Input, Textarea } from "@/components/ui/inputCustom";
+import { Error, Input, Textarea } from "@/components/ui/inputCustom";
 import { MyContext } from "@/context/theme";
 import { Form, Formik } from "formik";
 import { useContext } from "react";
@@ -86,11 +86,10 @@ const ProjectForm = () => {
                     handleBlur={handleBlur}
                     values={values.firstName}
                     errorStatus={touched.firstName && errors.firstName}
+                    inputError={errors.lastName && true}
                   />
                   {touched.firstName && errors.firstName && (
-                    <div className={styles.errorText}>
-                      {touched.firstName && errors.firstName}
-                    </div>
+                    <Error>{touched.firstName && errors.firstName}</Error>
                   )}
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
@@ -105,9 +104,10 @@ const ProjectForm = () => {
                     handleBlur={handleBlur}
                     values={values.lastName}
                     errorStatus={touched.lastName && errors.lastName}
+                    inputError={errors.lastName && true}
                   />
                   {touched.lastName && errors.lastName && (
-                    <div className={styles.errorText}>{errors.lastName}</div>
+                    <Error>{errors.lastName}</Error>
                   )}
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
@@ -122,9 +122,10 @@ const ProjectForm = () => {
                     handleBlur={handleBlur}
                     values={values.email}
                     errorStatus={touched.email && errors.email}
+                    inputError={errors.lastName && true}
                   />
                   {touched.email && errors.email && (
-                    <div className={styles.errorText}>{errors.email}</div>
+                    <Error>{errors.email}</Error>
                   )}
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
@@ -135,9 +136,10 @@ const ProjectForm = () => {
                     handleBlur={handleBlur}
                     values={values.phone}
                     errorStatus={touched.phone && errors.phone}
+                    inputError={errors.lastName && true}
                   />
                   {touched.phone && errors.phone && (
-                    <div className={styles.errorText}>{errors.phone}</div>
+                    <Error>{errors.phone}</Error>
                   )}
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
@@ -152,9 +154,10 @@ const ProjectForm = () => {
                     handleBlur={handleBlur}
                     values={values.companyName}
                     errorStatus={touched.companyName && errors.companyName}
+                    inputError={errors.lastName && true}
                   />
                   {touched.companyName && errors.companyName && (
-                    <div className={styles.errorText}>{errors.companyName}</div>
+                    <Error>{errors.companyName}</Error>
                   )}
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
@@ -168,11 +171,11 @@ const ProjectForm = () => {
                     errorStatus={
                       touched.countrySelection && errors.countrySelection
                     }
+                    inputError={errors.lastName && true}
+                    className="custom-dropdown"
                   />
                   {touched.countrySelection && errors.countrySelection && (
-                    <div className={styles.errorText}>
-                      {errors.countrySelection}
-                    </div>
+                    <Error>{errors.countrySelection}</Error>
                   )}
                 </div>
                 <div className={`${styles.inputSpace} col-md-12 col-12`}>
@@ -192,11 +195,10 @@ const ProjectForm = () => {
                     errorStatus={
                       touched.projectExplanation && errors.projectExplanation
                     }
+                    inputError={errors.lastName && true}
                   />
                   {touched.projectExplanation && errors.projectExplanation && (
-                    <div className={styles.errorText}>
-                      {errors.projectExplanation}
-                    </div>
+                    <Error>{errors.projectExplanation}</Error>
                   )}
                 </div>
               </div>

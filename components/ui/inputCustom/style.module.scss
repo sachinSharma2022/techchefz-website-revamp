@@ -2,6 +2,7 @@
 
 .inputContainerStyle {
   width: 100%;
+  position: relative;
 
   .inputFloating {
     position: relative;
@@ -14,11 +15,15 @@
     overflow: hidden;
     background-color: color(primary-white);
 
-
     &:hover,
     &:focus {
       border-color: color(heading-liner);
     }
+
+    &.inputErrorStyle {
+      border-color: color(error);
+    }
+  
 
     .iconStyle {
       position: absolute;
@@ -49,15 +54,23 @@
     line-height: text(xl);
     font-weight: 400;
     font-family: font(primary);
-  }
-
+    width: 100%;
+  } 
 
   // Dark Mode
   &.inputContainerStyleDark {
-    
     .inputFloating {
       border: 0.14rem solid rgba(color(primary-white), 0.12);
       background-color: color(text-primary);
+
+      &.inputErrorStyle {
+        border-color: color(error);
+      }
+
+      &:hover,
+      &:focus {
+        border-color: color(heading-liner);
+      }
     }
 
     input {
@@ -66,10 +79,17 @@
 
     .labelCustom {
       color: rgba(color(primary-white), 0.5) !important;
-      
+
       &::after {
         display: none;
       }
     }
   }
 }
+
+.error {
+  color: color(error);
+  position: absolute;
+  font-size: .8rem;
+  bottom: -2.625rem;
+} 
