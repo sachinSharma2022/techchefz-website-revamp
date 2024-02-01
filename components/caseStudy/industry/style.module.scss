@@ -20,7 +20,7 @@
 
     .serviceBtn {
       display: flex;
-			flex-wrap: wrap;
+      flex-wrap: wrap;
       gap: 1rem;
       button {
         height: 35px;
@@ -57,12 +57,31 @@
   }
 
   .industryImg {
-    padding: 5rem 0;
+    padding: 5rem 0 0;
+    position: relative;
+    margin-bottom: 5rem;
 
-    img {
+    &::before {
       width: 100%;
-      height: auto;
+      height: 30%;
+      background-color: color(bg-soft);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      content: "";
+      border-radius: 10px;
     }
+    
+    div {
+      position: relative;
+      
+      img {
+        width: 85%;
+        height: auto;
+        margin: 0 auto;
+      }
+    }
+  
   }
 
   // Dark Theme Here
@@ -72,6 +91,13 @@
 
     .industryHeading {
       color: color(primary-white);
+    }
+
+    .industryImg {
+      
+      &::before {
+        background-color: color(text-primary);
+      }
     }
 
     .industryLeft {

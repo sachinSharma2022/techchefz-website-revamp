@@ -43,7 +43,7 @@ const Consistent = () => {
     <section
       className={`${styles.consistent}  ${theme ? styles.consistentDark : ""}`}
     >
-      <div className={styles.primaryConatiner}>
+      <div className={styles.primaryContainer}>
         <div className={cn("primary-container")}>
           <div className={styles.consistentImgContainer}>
             <div className={styles.consistentImg}>
