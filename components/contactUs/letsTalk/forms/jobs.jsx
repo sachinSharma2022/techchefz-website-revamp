@@ -4,7 +4,7 @@ import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import CountryDropdown from "@/components/ui/countryDropdown";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import { Input, Textarea } from "@/components/ui/inputCustom";
+import { Input, Textarea, Error } from "@/components/ui/inputCustom";
 import { MyContext } from "@/context/theme";
 import { Form, Formik } from "formik";
 import { useContext } from "react";
@@ -88,9 +88,7 @@ const JobsForm = () => {
                     errorStatus={touched.firstName && errors.firstName}
                   />
                   {touched.firstName && errors.firstName && (
-                    <div className={styles.errorText}>
-                      {touched.firstName && errors.firstName}
-                    </div>
+                    <Error>{touched.firstName && errors.firstName}</Error>
                   )}
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
@@ -107,7 +105,7 @@ const JobsForm = () => {
                     errorStatus={touched.lastName && errors.lastName}
                   />
                   {touched.lastName && errors.lastName && (
-                    <div className={styles.errorText}>{errors.lastName}</div>
+                    <Error>{errors.lastName}</Error>
                   )}
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
@@ -123,9 +121,7 @@ const JobsForm = () => {
                     values={values.email}
                     errorStatus={touched.email && errors.email}
                   />
-                  {touched.email && errors.email && (
-                    <div className={styles.errorText}>{errors.email}</div>
-                  )}
+                  {touched.email && errors.email && <div>{errors.email}</div>}
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
                   <CountryDropdown
@@ -137,7 +133,7 @@ const JobsForm = () => {
                     errorStatus={touched.phone && errors.phone}
                   />
                   {touched.phone && errors.phone && (
-                    <div className={styles.errorText}>{errors.phone}</div>
+                    <Error>{errors.phone}</Error>
                   )}
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
@@ -154,7 +150,7 @@ const JobsForm = () => {
                     errorStatus={touched.companyName && errors.companyName}
                   />
                   {touched.companyName && errors.companyName && (
-                    <div className={styles.errorText}>{errors.companyName}</div>
+                    <Error>{errors.companyName}</Error>
                   )}
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
@@ -170,9 +166,7 @@ const JobsForm = () => {
                     }
                   />
                   {touched.countrySelection && errors.countrySelection && (
-                    <div className={styles.errorText}>
-                      {errors.countrySelection}
-                    </div>
+                    <Error>{errors.countrySelection}</Error>
                   )}
                 </div>
                 <div className={`${styles.inputSpace} col-md-12 col-12`}>
@@ -194,9 +188,7 @@ const JobsForm = () => {
                     }
                   />
                   {touched.projectExplanation && errors.projectExplanation && (
-                    <div className={styles.errorText}>
-                      {errors.projectExplanation}
-                    </div>
+                    <Error>{errors.projectExplanation}</Error>
                   )}
                 </div>
               </div>

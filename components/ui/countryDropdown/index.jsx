@@ -8,6 +8,7 @@ import { Input } from "../inputCustom";
 import { ImageCustom } from "../imageCustom";
 
 import styles from "./style.module.scss";
+import { cn } from "@/lib/utils";
 
 const people = [
   {
@@ -78,16 +79,22 @@ const people = [
   },
 ];
 
-const CountryDropdown = () => {
+const CountryDropdown = (props) => {
   const { theme, setTheme } = useContext(MyContext);
   const [selected, setSelected] = useState(people[0]);
   return (
     <div
-      className={`${styles.dropdownContainerStyle} ${
+      className={cn(
+        styles.dropdownContainerStyle,
         theme ? styles.dropdownContainerStyleDark : ""
-      }`}
+      )}
     >
-      <div className={styles.countryDropdown}>
+      <div
+        className={cn(
+          styles.countryDropdown,
+          props.inputError && styles.inputErrorStyle
+        )}
+      >
         <Listbox value={selected} onChange={setSelected}>
           <div className={styles.floatDropdown}>
             <Listbox.Button>
@@ -117,9 +124,8 @@ const CountryDropdown = () => {
           </div>
         </Listbox>
 
-        <Input
+        <input
           type="text"
-          className={`${styles.floatInput} form-control`}
           id="username"
           placeholder="Phone Number*"
           required=""

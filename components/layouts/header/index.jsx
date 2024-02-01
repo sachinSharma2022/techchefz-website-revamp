@@ -38,15 +38,6 @@ const Header = () => {
     return () => window.removeEventListener("scroll", listenScrollEvent);
   });
 
-  // useEffect(() => {
-  //   document.body.classList.add("font-light");
-  //   document.body.classList.add("text-gray-700");
-  // });
-
-  // const classToggle = (e) => {
-  //   document.querySelector("body").classList.toggle("dark");
-  // };
-
   function LatestTech() {
     return (
       <div className={cn(styles.latestTech)}>

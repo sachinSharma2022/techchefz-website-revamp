@@ -102,12 +102,12 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px color(bg-soft) inset !important;
+  -webkit-box-shadow: 0 0 0 30px color(text-primary) inset !important;
 }
 
 /*Change text in autofill textbox*/
 input:-webkit-autofill {
-  -webkit-text-fill-color: color(foreground) !important;
+  -webkit-text-fill-color: color(primary-white) !important;
 }
 
 .service-mobile-slider {
@@ -426,7 +426,7 @@ input:-webkit-autofill {
 
 .modeBtn {
   margin: 0 1rem;
-  
+
   input {
     border: 0.14rem solid color(text-primary);
 
@@ -659,7 +659,6 @@ input:-webkit-autofill {
   }
 
   .slick-track {
-
     @include desktop-hd {
       max-width: 1440px;
       display: flex;
@@ -877,6 +876,7 @@ input:-webkit-autofill {
   }
 
   .css-13cymwt-control {
+    border: 0.14rem solid rgba(color(text-primary), 0.12);
     border-radius: 0.75rem;
   }
 
@@ -896,24 +896,36 @@ input:-webkit-autofill {
   .css-t3ipsp-control {
     box-shadow: none;
     border-radius: 0.75rem;
-    border-color: color(heading-liner);
+    border: 0.14rem solid color(heading-liner);
   }
 }
 
 // All Global Dark Theme Style
 .custom-dropdown-dark-style {
+  .css-13cymwt-control:hover {
+    border-color: rgba(color(heading-liner), 1);
+  }
+
+  .css-13cymwt-control:focus {
+    border-color: rgba(color(heading-liner), 1);
+  }
+
+  .css-t3ipsp-control:hover {
+    border: 0.14rem solid color(heading-liner);
+  }
+
   .css-t3ipsp-control {
     background: transparent;
     border-radius: 0.75rem;
+    color: color(primary-white);
   }
   .css-cymwt-control {
     background: transparent;
-    border-color: rgba(color(primary-white), 0.12);
   }
 
   .css-13cymwt-control {
-    background-color: color(input-bg);
-    border-color: rgba(color(primary-white), 0.12);
+    background-color: color(text-primary);
+    border: 0.14rem solid rgba(color(primary-white), 0.12);
   }
 
   .custom-label {
@@ -924,9 +936,15 @@ input:-webkit-autofill {
     color: rgba(color(primary-white), 1);
   }
 
-  .header-white {
-    background: color(primary-black);
-    transition: all 0.5s ease-in-out;
-    border-bottom: 0.14rem solid rgba(color(primary-white), 0.12);
+  input {
+    color: color(primary-white) !important;
+    font-size: 1rem !important;
+  }
+}
+
+// inputErrorStyle
+.input-error-style {
+  .css-13cymwt-control {
+    border-color: color(error);
   }
 }

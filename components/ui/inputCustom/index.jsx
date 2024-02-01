@@ -43,14 +43,14 @@ const Input = React.forwardRef(
           className={cn(
             styles.inputFloating,
             "form-floating",
-            inputFloatingStyle
+            inputFloatingStyle,
+            inputError && styles.inputErrorStyle
           )}
         >
           <input
             className={cn(
               styles.floatInput,
               inputVariants({ variant, size, className }),
-              inputError && styles.inputErrorStyle,
               inputStyle,
               "form-control"
             )}
@@ -72,7 +72,7 @@ const Input = React.forwardRef(
 Input.displayName = "Input";
 
 const Textarea = React.forwardRef(
-  ({ className, rounded, rows = 5, label, ...props }, ref) => {
+  ({ className, rounded, rows = 5, label, inputError, ...props }, ref) => {
     const { theme } = useContext(MyContext);
 
     return (
@@ -81,7 +81,13 @@ const Textarea = React.forwardRef(
           theme ? styles.inputContainerStyleDark : ""
         }`}
       >
-        <div className={cn(styles.inputFloating, "form-floating")}>
+        <div
+          className={cn(
+            styles.inputFloating,
+            "form-floating",
+            inputError && styles.inputErrorStyle
+          )}
+        >
           <textarea
             rows={rows}
             className={cn("form-control", className)}

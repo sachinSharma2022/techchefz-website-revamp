@@ -3,37 +3,23 @@
 .dropdownContainerStyle {
   width: 100%;
 
-  &.dropdownContainerStyleDark {
-    .countryDropdown {
-      .floatDropdown {
-        button {
-          color: rgba(color(primary-white), 0.9);
-          .countryValue {
-            .arrow {
-              border-color: rgba(color(primary-white), 0.9);
-            }
-          }
-        }
-
-        .countryList {
-          background-color: color(text-primary);
-          li {
-            color: rgba(color(primary-white), 0.9);
-          }
-        }
-      }
-    }
-  }
-
   .countryDropdown {
     display: flex;
     align-items: center;
     position: relative;
+    border: 0.14rem solid rgba(color(text-primary), 0.12);
+    border-radius: 0.75rem;
+    height: 3.875rem;
+    gap: .625rem;
+    padding: 0 .7rem;
+    background-color: color(primary-white);
+
+    &.inputErrorStyle {
+      border-color: color(error);
+    }
 
     .floatDropdown {
-      position: absolute;
-      left: 1rem;
-      top: 1rem;
+      position: relative;
       z-index: 9;
 
       button {
@@ -72,20 +58,18 @@
     }
 
     input {
-      padding-left: 5.5rem;
-      &:focus {
-        padding: 1rem;
-        padding-left: 7rem;
-      }
+      background: none;
+      border: none;
+      color: color(primary-white);
     }
+
     .countryList {
       background-color: color(primary-white);
       padding: 0;
-      left: -0.5rem;
       position: absolute;
-      top: 2.8rem;
       max-height: 13rem;
       overflow-y: auto;
+
       li {
         display: flex;
         align-items: center;
@@ -96,9 +80,40 @@
           margin-right: 0.4rem;
         }
 
-        .inputValueStyle{
+        .inputValueStyle {
           display: flex;
           align-items: center;
+        }
+      }
+    }
+  }
+
+  // Dark Mode
+  &.dropdownContainerStyleDark {
+    .countryDropdown {
+      border-color: rgba(color(primary-white), 0.12);
+      background-color: transparent;
+
+      &.inputErrorStyle {
+        border-color: color(error);
+      }
+    
+
+      .floatDropdown {
+        button {
+          color: rgba(color(primary-white), 0.9);
+          .countryValue {
+            .arrow {
+              border-color: rgba(color(primary-white), 0.9);
+            }
+          }
+        }
+
+        .countryList {
+          background-color: color(text-primary);
+          li {
+            color: rgba(color(primary-white), 0.9);
+          }
         }
       }
     }
