@@ -23,6 +23,11 @@ body {
   }
 }
 
+// main-container
+.main-container {
+  // overflow-x: hidden;
+}
+
 // Heading Style
 h1,
 h2,
@@ -861,11 +866,10 @@ input:-webkit-autofill {
   }
 }
 
-
 .custom-dropdown {
-   .react-select__control {
+  .react-select__control {
     background-color: color(primary-white);
-   }
+  }
 }
 
 .dark-theme-style {
@@ -873,5 +877,5 @@ input:-webkit-autofill {
     .react-select__control {
       background-color: transparent;
     }
- }
+  }
 }

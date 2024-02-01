@@ -12,9 +12,9 @@ import { useContext, useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
 const Header = () => {
-  const { theme, setTheme } = useContext(MyContext);
   const pathname = usePathname();
-  const [isActive] = useState(false);
+  const [mobileMenuShow, setMobileMenuShow] = useState(false);
+  const { theme, setTheme } = useContext(MyContext);
   const [header, setHeader] = useState("header");
 
   const listenScrollEvent = () => {
@@ -95,6 +95,29 @@ const Header = () => {
     );
   }
 
+  function EstimateSection() {
+    return (
+      <div className={styles.estimateSection}>
+        <p className={styles.description}>
+          Provide us with details about your vision, and let our experts tailor
+          a comprehensive plan, outlining timelines, scopes, and budgets
+          uniquely crafted to bring your ideas to life.
+        </p>
+        <Button
+          variant={theme ? "blueBtnDark" : "blueBtn"}
+          className={styles.headerBtn}
+          size="sm"
+        >
+          Estimate Project
+        </Button>
+      </div>
+    );
+  }
+
+  const mobileMenuToggle = () => {
+    setMobileMenuShow(!mobileMenuShow);
+  };
+
   return (
     <header
       className={cn(
@@ -122,7 +145,8 @@ const Header = () => {
             />
           </Link>
         </div>
-        <nav className={isActive ? styles.showNav : null}>
+        <nav className={mobileMenuShow ? styles.showNav : null}>
+          <h4 className={styles.mobileTitle}>Menu</h4>
           <ul>
             <li className={styles.menuItem}>
               <Link
@@ -259,7 +283,13 @@ const Header = () => {
             </li>
             <li className={styles.dropDown}>
               <Link href="/">
-                <Icons.MoreDotIcon width={4} height={14} /> More
+                <Icons.MoreDotIcon
+                  className={styles.dotIcon}
+                  width={4}
+                  height={14}
+                />
+                More
+                <div className={cn(styles.arrow, styles.hideDesktopIcon)} />
               </Link>
               <ul className={cn(styles.subMenu, styles.singleLayout)}>
                 <div className={styles.subsection}>
@@ -343,6 +373,8 @@ const Header = () => {
               </ul>
             </li>
           </ul>
+
+          <div className={styles.hideDesktop}>{EstimateSection()}</div>
         </nav>
         <div className={styles.headerRight}>
           <div className={styles.modeBtn}>
@@ -354,23 +386,19 @@ const Header = () => {
               )}
             </button>
           </div>
-          <Button
-            variant={theme ? "blueBtnDark" : "blueBtn"}
-            className={styles.headerBtn}
-            size="sm"
-          >
-            Estimate Project
-          </Button>
 
-          <div className={isActive ? styles.activeHumburger : null}>
-            <Button
-              variant="default"
-              className={styles.navHamburger}
-              // onClick={toggleClass}
-            >
-              <span />
-            </Button>
-          </div>
+          <div className={styles.hideMobile}>{EstimateSection()}</div>
+
+          <button
+            className={cn(
+              styles.navHamburger,
+              mobileMenuShow ? styles.toggleActive : ""
+            )}
+            onClick={mobileMenuToggle}
+          >
+            <span />
+            <span />
+          </button>
         </div>
       </div>
     </header>

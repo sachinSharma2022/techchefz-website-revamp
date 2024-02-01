@@ -9,7 +9,10 @@ export default function ThemeProvider({ children }) {
 
   return (
     <MyContext.Provider value={{ theme, setTheme }}>
-      <div className={cn(theme ? "dark" : "")}> {children}</div>
+      <main className={cn("main-container", theme ? "dark" : "")}>
+        {" "}
+        {children}
+      </main>
     </MyContext.Provider>
   );
 }
