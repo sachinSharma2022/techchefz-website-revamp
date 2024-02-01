@@ -62,9 +62,12 @@ const CareerEngagement = () => {
   ];
   return (
     <section
-      className={`${styles.careerEngagement} ${
-        theme ? styles.careerEngagementDark : ""
-      } technology-value`}
+      className={cn(
+        styles.careerEngagement,
+        theme ? styles.careerEngagementDark : "",
+        "technology-value",
+        theme ? "technology-value-dark" : ""
+      )}
     >
       <div className={cn("primary-container")}>
         <div className={styles.headSection}>
