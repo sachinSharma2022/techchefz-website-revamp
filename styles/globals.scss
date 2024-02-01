@@ -102,12 +102,12 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px color(bg-soft) inset !important;
+  -webkit-box-shadow: 0 0 0 30px color(text-primary) inset !important;
 }
 
 /*Change text in autofill textbox*/
 input:-webkit-autofill {
-  -webkit-text-fill-color: color(foreground) !important;
+  -webkit-text-fill-color: color(primary-white) !important;
 }
 
 .service-mobile-slider {
@@ -426,7 +426,7 @@ input:-webkit-autofill {
 
 .modeBtn {
   margin: 0 1rem;
-  
+
   input {
     border: 0.14rem solid color(text-primary);
 
@@ -659,7 +659,6 @@ input:-webkit-autofill {
   }
 
   .slick-track {
-
     @include desktop-hd {
       max-width: 1440px;
       display: flex;
@@ -862,71 +861,17 @@ input:-webkit-autofill {
   }
 }
 
-// custom-dropdown-style
-.custom-dropdown-style {
-  position: relative;
 
-  .css-1fdsijx-ValueContainer {
-    height: 60px;
-    font-size: 0.875rem;
-    padding-top: 20px;
-  }
-
-  .css-1u9des2-indicatorSeparator {
-    display: none;
-  }
-
-  .css-13cymwt-control {
-    border-radius: 0.75rem;
-  }
-
-  .css-1dimb5e-singleValue {
-    font-size: 1.125rem;
-  }
-
-  .custom-label {
-    font-size: 0.875rem;
-    opacity: 0.6;
-    background: none;
-    position: absolute;
-    top: 8px;
-    left: 12px;
-  }
-
-  .css-t3ipsp-control {
-    box-shadow: none;
-    border-radius: 0.75rem;
-    border-color: color(heading-liner);
-  }
+.custom-dropdown {
+   .react-select__control {
+    background-color: color(primary-white);
+   }
 }
 
-// All Global Dark Theme Style
-.custom-dropdown-dark-style {
-  .css-t3ipsp-control {
-    background: transparent;
-    border-radius: 0.75rem;
-  }
-  .css-cymwt-control {
-    background: transparent;
-    border-color: rgba(color(primary-white), 0.12);
-  }
-
-  .css-13cymwt-control {
-    background-color: color(input-bg);
-    border-color: rgba(color(primary-white), 0.12);
-  }
-
-  .custom-label {
-    color: rgba(color(primary-white), 1);
-  }
-
-  .css-1dimb5e-singleValue {
-    color: rgba(color(primary-white), 1);
-  }
-
-  .header-white {
-    background: color(primary-black);
-    transition: all 0.5s ease-in-out;
-    border-bottom: 0.14rem solid rgba(color(primary-white), 0.12);
-  }
+.dark-theme-style {
+  &.custom-dropdown {
+    .react-select__control {
+      background-color: transparent;
+    }
+ }
 }

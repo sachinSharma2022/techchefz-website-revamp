@@ -98,12 +98,17 @@
       text-align: left;
       padding: 2.5rem;
       margin: 1rem;
+      @include transition(0.5s);
 
       @include mobile-tablet-p {
         width: auto;
         height: auto;
         padding: text(xl);
         margin: 0;
+      }
+
+      &:hover {
+        border-color: rgba(color(heading-liner), 1);
       }
 
       .cardIcon {
@@ -150,6 +155,15 @@
   &.streamlineDark {
     background-color: color(dark-bg);
     color: color(primary-white);
+
+    .streamlineCard {
+      background: color(input-bg);
+      border-color: rgba(color(primary-white), 0.12);
+
+      &:hover {
+        border-color: rgba(color(heading-liner), 1);
+      }
+    }
 
     .streamlineContent {
       opacity: 0.8;

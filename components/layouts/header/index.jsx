@@ -38,15 +38,6 @@ const Header = () => {
     return () => window.removeEventListener("scroll", listenScrollEvent);
   });
 
-  // useEffect(() => {
-  //   document.body.classList.add("font-light");
-  //   document.body.classList.add("text-gray-700");
-  // });
-
-  // const classToggle = (e) => {
-  //   document.querySelector("body").classList.toggle("dark");
-  // };
-
   function LatestTech() {
     return (
       <div className={cn(styles.latestTech)}>
@@ -84,7 +75,7 @@ const Header = () => {
       <div className={styles.overviewFlex}>
         <div className={styles.overviewSubFlex}>
           <div>
-            <Icons.PerformanceIcon width={56} height={56} />
+            <Icons.MarketPlace width={56} height={56} />
           </div>
           <div className={styles.overviewTitle}>
             <h1>Technology Overview</h1>
@@ -270,7 +261,7 @@ const Header = () => {
               <Link href="/">
                 <Icons.MoreDotIcon width={4} height={14} /> More
               </Link>
-              <ul className={cn(styles.subMenu, styles.singleLayout)}>
+              {/* <ul className={cn(styles.subMenu, styles.singleLayout)}>
                 <div className={styles.subsection}>
                   {LatestTech()}
                   <div className={cn(styles.overviewTech)}>
@@ -349,7 +340,7 @@ const Header = () => {
                     </div>
                   </div>
                 </div>
-              </ul>
+              </ul> */}
             </li>
           </ul>
         </nav>
