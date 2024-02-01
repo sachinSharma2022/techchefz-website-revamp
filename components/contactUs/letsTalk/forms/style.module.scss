@@ -64,4 +64,11 @@
       }
     }
   }
+
+  .errorText {
+    color: color(error);
+    position: absolute;
+    font-size: .875rem;
+    bottom: -1.5rem;
+  }
 }

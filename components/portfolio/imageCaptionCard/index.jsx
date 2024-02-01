@@ -85,11 +85,9 @@ const ImageCaptionCard = () => {
   ];
 
   return (
-    <section className="primary-container">
+    <section className={cn("primary-container", theme ? styles.darkStyle : "")}>
       <div
-        className={`${styles.dropdownStyle} ${
-          theme ? styles.dropdownDark : ""
-        }`}
+        className={cn(styles.dropdownStyle, theme ? styles.dropdownDark : "")}
       >
         <div className={`${styles.inputDropPadding}`}>
           <CustomDropdown title="Services" options={dataServices} />
@@ -101,7 +99,6 @@ const ImageCaptionCard = () => {
           <CustomDropdown title="Technology" options={dataTechnology} />
         </div>
       </div>
-
       <div
         className={cn(
           styles.captionCardStyle,

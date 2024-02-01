@@ -1,85 +1,96 @@
 @import "~/styles/partials/config";
 
 .landingBannerStyle {
-   .contentSection {
-      padding-inline: spacing(p-120);
-      padding-top: 5rem;
-      display: flex;
-      gap: 8rem;
+  padding-bottom: 8.75rem;
 
-      @include mobile-tablet-p {
-         padding: spacing(section-mob-padding);
-         padding-block: 3.75rem 3.75rem;
-         flex-direction: column;
-         gap: 0;
-       }
+  .contentSection {
+    padding-inline: spacing(p-120);
+    padding-top: 10rem;
+    display: flex;
+    gap: 8rem;
 
-      @include desktop-hd {
-         padding-inline: 0;
-      }
-   }
-   .title {
+    @include mobile-tablet-p {
+      padding: spacing(section-mob-padding);
+      padding-block: 3.75rem 3.75rem;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    @include desktop-hd {
+      padding-inline: 0;
+    }
+  }
+  .title {
+    font-size: text(xl-larger);
+    font-weight: 500;
+    line-height: 5rem;
+
+    @include mobile-tablet-p {
+      font-size: 2.75rem;
+      line-height: 3.5rem;
+      margin-bottom: text(xl);
+      word-break: break-word;
+    }
+
+    .titleHighlight {
       font-size: text(xl-larger);
       font-weight: 500;
-      line-height: 5rem;
+      color: color(heading-liner);
+      background: linear-gradient(
+        118deg,
+        color(primary-blue) 11.5%,
+        color(heading-liner) 55.42%
+      );
+      @include textGradient;
 
       @include mobile-tablet-p {
-         font-size: 2.75rem;
-         line-height: 3.5rem;
-         margin-bottom: text(xl);
-         word-break: break-word;
+        font-size: 2.75rem;
+        line-height: 3.5rem;
       }
+    }
+  }
 
-      .titleHighlight {
-         font-size: text(xl-larger);
-         font-weight: 500;
-         color: color(heading-liner);
-         background: linear-gradient(118deg, color(primary-blue) 11.5%, color(heading-liner) 55.42%);
-         @include textGradient;
+  .desc {
+   max-width: 23rem;
+ }
 
-         @include mobile-tablet-p {
-            font-size: 2.75rem;
-            line-height: 3.5rem;
-         }
-      }
-   }
+  .leadText {
+    font-size: text(lg);
+    color: rgba(color(text-primary), 0.8);
+    line-height: 1.875rem;
+    opacity: 0.8;
+    margin-top: 0.9rem;
+    @include mobile-tablet-p {
+      max-width: 100%;
+      font-size: text(normal);
+      line-height: text(xl);
+      margin: 0;
+    }
+  }
 
-   .leadText {
-      font-size: text(lg);
-      color: rgba(color(text-primary), 0.8);
-      line-height: 1.875rem;
+  .flexCol {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .headerBtn {
+    margin-top: 4rem;
+    @include mobile-tablet-p {
+      margin-top: 2.25rem;
+    }
+  }
+
+  //Dark mode style
+  &.landingBannerDark {
+    background-color: color(input-bg);
+
+    .title {
+      color: color(primary-white);
+    }
+
+    .leadText {
+      color: color(primary-white);
       opacity: 0.8;
-      margin-top: 0.9rem;
-      @include mobile-tablet-p {
-         max-width: 100%;
-         font-size: text(normal);
-         line-height: text(xl);
-         margin: 0;
-      }
-   }
-
-   .flexCol {
-      display: flex;
-      justify-content: flex-end;
-   }
-   .headerBtn {
-      margin-top: 4rem;
-      @include mobile-tablet-p{
-         margin-top: 2.25rem;
-      }
-   }
-
-   //Dark mode style
-   &.landingBannerDark {
-      background-color: color(input-bg);
-
-      .title {
-         color: color(primary-white);
-      }
-
-      .leadText {
-         color: color(primary-white);
-         opacity: 0.8;
-      }
-   }
+    }
+  }
 }

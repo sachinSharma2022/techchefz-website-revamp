@@ -15,9 +15,10 @@ const LandingBanner = () => {
 
   return (
     <section
-      className={`${styles.landingBannerStyle} ${
+      className={cn(
+        styles.landingBannerStyle,
         theme ? styles.landingBannerDark : ""
-      }`}
+      )}
     >
       <div className={cn("primary-container")}>
         <h1 className={styles.title}>

@@ -3,6 +3,7 @@
 .consistent {
   background-color: color(bg-soft);
   padding: spacing(section-primary-padding);
+  position: relative;
 
   @include mobile-tablet-p {
     padding: spacing(section-mob-padding);
@@ -16,6 +17,7 @@
 
   .consistentImg {
     margin-bottom: 5rem;
+    
     img {
       width: 100%;
       height: auto;
@@ -73,4 +75,7 @@
       margin-bottom: 2.25rem;
     }
   }
+}
+.consistentImgContainer{
+  overflow: hidden;
 }

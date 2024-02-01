@@ -1,70 +1,57 @@
 @import "~/styles/partials/config";
 
 .banner {
-   padding: 4rem 7.5rem;
+  padding: 9rem 7.5rem 4rem;
 
-   @include mobile{
-      padding: 3rem 1.5rem;
-   }
+  @include mobile {
+    padding: 3rem 1.5rem;
+  }
 
-   .bannerContent {
+  .bannerContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8rem;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .bannerTitle {
+      font-size: text(xl-larger);
+      font-weight: 500;
+
+      span {
+        font-size: text(xl-larger);
+        background: linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%);
+        @include textGradient;
+      }
+    }
+
+    .bannerRight {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8rem;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 4rem;
+			max-width: 23.375rem;
 
-      @include mobile{
-         flex-direction: column;
-         gap: 1.5rem;
+      @include mobile {
+        gap: 2.25rem;
       }
 
-      .bannerTitle {
-         font-size: text(xl-larger);
-         font-weight: 500;
-         line-height: 5rem;
-
-         span {
-            font-size: text(xl-larger);
-            background: linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%);
-            @include textGradient;
-         }
+      p {
+        font-size: text(lg);
+        line-height: 1.875rem;
+        opacity: 0.8;
       }
+    }
+  }
 
-      .bannerRight {
-         display: flex;
-         flex-direction: column;
-         justify-content: center;
-         align-items: flex-start;
-         gap: 4rem;
-
-         @include mobile{
-            gap: 2.25rem;
-         }
-
-         p {
-            font-size: text(lg);
-            line-height: 1.875rem;
-            opacity: 0.8;
-         }
-
-         // .bannerRight {
-         //    display: flex;
-         //    flex-direction: column;
-         //    justify-content: center;
-         //    align-items: flex-start;
-         //    gap: 4rem;
-         //    p {
-         //       font-size: text(lg);
-         //       line-height: 1.875rem;
-         //       opacity: 0.8;
-         //    }
-         // }
-      }
-   }
-
-   //dark mode style
-   &.bannerDark {
-      background-color: color(input-bg);
-      color: color(primary-white);
-   }
+  //dark mode style
+  &.bannerDark {
+    background-color: color(input-bg);
+    color: color(primary-white);
+  }
 }

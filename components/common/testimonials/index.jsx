@@ -71,6 +71,7 @@ const Testimonials = (props) => {
       className={cn(
         styles.testimonialsStyle,
         theme ? styles.testimonialsStyleDark : "",
+        theme ? "testimonials-style-dark" : "",
         "testimonial-style",
         props.className
       )}

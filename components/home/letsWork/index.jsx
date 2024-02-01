@@ -4,7 +4,7 @@ import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import CountryDropdown from "@/components/ui/countryDropdown";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import CustomInput from "@/components/ui/inputCustom";
+import { Input, Textarea } from "@/components/ui/inputCustom";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 
@@ -36,31 +36,27 @@ const LetsWork = () => {
               <div className={styles.contactFormArea}>
                 <div className="row">
                   <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                    <CustomInput
+                    <Input
                       label="Full Name*"
                       placeholder="Full Name*"
                       type="name"
                     />
                   </div>
                   <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                    <CustomInput
-                      label="Email*"
-                      placeholder="Email*"
-                      type="email"
-                    />
+                    <Input label="Email*" placeholder="Email*" type="email" />
                   </div>
                   <div className={`${styles.inputSpace} col-md-6 col-12`}>
                     <CountryDropdown />
                   </div>
                   <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                    <CustomInput
+                    <Input
                       label="Company*"
                       placeholder="Company*"
                       type="text"
                     />
                   </div>
                   <div className={`${styles.inputSpace} col-md-12 col-12`}>
-                    <CustomInput
+                    <Textarea
                       label="Message*"
                       placeholder="Message*"
                       type="textarea"
@@ -89,7 +85,7 @@ const LetsWork = () => {
                     </p>
                   </div>
                   <div className={`${styles.buttonGrid} col-md-6 col-12`}>
-                    <Button variant="blueBtn" size="md">
+                    <Button variant="blueBtn" size="lg">
                       Send a Message <Icons.ArrowRight size={18} />
                     </Button>
                   </div>

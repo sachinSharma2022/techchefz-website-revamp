@@ -8,7 +8,7 @@
   .bannerContent {
     display: flex;
     justify-content: space-between;
-    padding: 5rem 7.5rem;
+    padding: 10rem 7.5rem 5rem;
 
     @include desktop-hd {
       padding-inline: 0;

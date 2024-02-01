@@ -1,0 +1,9 @@
+@import "~/styles/partials/config";
+
+.label {
+  font-size: text(xxs);
+  font-weight: 500;
+  font-family: font(secondary);
+  color: color(muted-foreground);
+  margin-bottom: 0.5rem;
+}

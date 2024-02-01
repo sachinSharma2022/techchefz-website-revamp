@@ -1,0 +1,44 @@
+@import "~/styles/partials/config";
+
+.challenges {
+  padding: spacing(section-primary-padding);
+  padding-block: spacing(space80);
+
+  @include mobile{
+    padding: 1.75rem 1.5rem;
+  }
+
+  .headSec {
+    max-width: 49.1875rem;
+  }
+
+  .challengeTitle {
+    font-size: text(normal);
+    font-weight: 500;
+    line-height: 1.5rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+  .challengeHeading {
+    font-size: text(larger);
+    font-weight: 500;
+    line-height: 3.375rem;
+  }
+
+  .challengesCards {
+    display: flex;
+    gap: 2.5rem;
+    padding-top: spacing(space80);
+
+    @include mobile{
+      flex-direction: column;
+      padding: 2rem 0;
+    }
+  }
+
+  &.challengesDark {
+    background-color: color(input-bg);
+    color: color(primary-white);
+  }
+}
