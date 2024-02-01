@@ -1,7 +1,7 @@
 "use client";
 
-import { createContext, useEffect } from "react";
-import { useState } from "react";
+import { cn } from "@/lib/utils";
+import { createContext, useEffect, useState } from "react";
 export const MyContext = createContext(null);
 
 export default function ThemeProvider({ children }) {
@@ -9,11 +9,11 @@ export default function ThemeProvider({ children }) {
 
   useEffect(() => {
     document.querySelector("body").classList.toggle(theme ? "dark" : "");
-  }, []);
+  });
 
   return (
     <MyContext.Provider value={{ theme, setTheme }}>
-      {children}
+      <div className={cn(theme ? "dark" : "")}> {children}</div>
     </MyContext.Provider>
   );
 }
