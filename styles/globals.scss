@@ -53,16 +53,6 @@ a {
   filter: contrast(0) brightness(100);
 }
 
-.header-white {
-  background: color(primary-white);
-  transition: all 0.5s ease-in-out;
-}
-
-.header-dark {
-  background: color(input-bg);
-  transition: all 0.5s ease-in-out;
-}
-
 // space
 .mt-120 {
   margin-top: 7.5rem;

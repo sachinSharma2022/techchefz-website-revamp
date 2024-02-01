@@ -15,28 +15,20 @@ const Header = () => {
   const pathname = usePathname();
   const [mobileMenuShow, setMobileMenuShow] = useState(false);
   const { theme, setTheme } = useContext(MyContext);
-  const [header, setHeader] = useState("header");
-
-  const listenScrollEvent = () => {
-    if (theme === true) {
-      if (window.scrollY < 73) {
-        return setHeader("header-transparent");
-      } else if (window.scrollY > 70) {
-        return setHeader("header-dark");
-      }
-    } else {
-      if (window.scrollY < 73) {
-        return setHeader("header-transparent");
-      } else if (window.scrollY > 70) {
-        return setHeader("header-white");
-      }
-    }
-  };
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", listenScrollEvent);
-    return () => window.removeEventListener("scroll", listenScrollEvent);
-  });
+    const handleScroll = () => {
+      const scrolled = window.scrollY > 0;
+      setIsScrolled(scrolled);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   function LatestTech() {
     return (
@@ -123,7 +115,9 @@ const Header = () => {
       className={cn(
         styles.headerMain,
         theme ? styles.headerDarkStyle : "",
-        header
+        theme
+          ? isScrolled && styles.headerDark
+          : isScrolled && styles.headerLight
       )}
     >
       <div className={cn(styles.headerContainer, "primary-container")}>

@@ -283,12 +283,12 @@
 
   // Estimate Section
   @include desktop {
-  .estimateSection {
-    .description {
-      display: none;
+    .estimateSection {
+      .description {
+        display: none;
+      }
     }
   }
-}
 
   @include mobile {
     .estimateSection {
@@ -701,4 +701,13 @@
       border-color: color(primary-white);
     }
   }
+}
+
+// Header Mode
+.headerLight {
+  background: color(primary-white);
+}
+
+.headerDark {
+  background: color(input-bg);
 }

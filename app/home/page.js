@@ -7,9 +7,8 @@ import Projects from "@/components/home/projects";
 import Service from "@/components/home/service";
 import TechnologyStack from "@/components/home/technologyStack";
 import WeAreFuture from "@/components/home/weAreFuture";
-import VideoCustom from "@/components/ui/videoCustom";
 import Curve from "@/components/ui/pageTransition";
-import Cookies from "@/components/ui/cookiesPopup";
+import VideoCustom from "@/components/ui/videoCustom";
 
 const HomePage = () => {
   return (
@@ -25,7 +24,6 @@ const HomePage = () => {
         <DigitalTransformation />
         <HomeTestimonials />
         <LetsWork />
-        <Cookies/>
       </Curve>
     </>
   );
