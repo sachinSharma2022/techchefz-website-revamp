@@ -7,7 +7,7 @@
       display: flex;
       gap: 8rem;
 
-      @include mobile {
+      @include mobile-tablet-p {
          padding: spacing(section-mob-padding);
          flex-direction: column;
          gap: 0;
@@ -22,7 +22,7 @@
       font-weight: 500;
       margin-bottom: 0;
 
-      @include mobile {
+      @include mobile-tablet-p {
          font-size: 2.75rem;
          line-height: 3.5rem;
          margin-bottom: text(xl);
@@ -35,7 +35,7 @@
          background: linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%);
          @include textGradient;
 
-         @include mobile {
+         @include mobile-tablet-p {
             font-size: 2.75rem;
             line-height: 3.5rem;
          }

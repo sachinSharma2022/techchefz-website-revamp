@@ -9,12 +9,12 @@
    align-items: center;
    gap: 5rem;
 
-   @include mobile{
+   @include mobile-tablet-p {
       padding: 3.75rem 1.5rem;
       gap: 3.75rem;
    }
 
-   &.impactDark{
+   &.impactDark {
       background-color: color(text-primary);
       color: color(primary-white);
    }
@@ -28,11 +28,22 @@
       text-transform: uppercase;
       opacity: 0.8;
       margin-bottom: 1rem;
+
+      @include mobile {
+         text-align: start;
+         margin-bottom: 0.5rem;
+      }
    }
    .impactHeading {
-    font-size: text(larger);
+      font-size: text(larger);
       font-weight: 500;
       line-height: 3.375rem;
+
+      @include mobile {
+         font-size: text(xxxl);
+         line-height: 2.5rem;
+         text-align: start;
+      }
    }
 
    .impactTopSection {
@@ -42,18 +53,18 @@
       gap: 8.938rem;
       padding: 2.5rem 0;
 
-      @include mobile{
+      @include mobile-tablet-p {
          flex-direction: column;
          gap: 3.75rem;
          padding: 0;
       }
 
       .impactImage {
-        width: 50%;
+         width: 50%;
 
-        @include mobile{
-         width: 100%;
-        }
+         @include mobile-tablet-p {
+            width: 100%;
+         }
 
          img {
             width: 100%;
@@ -63,11 +74,11 @@
       }
 
       .topSectionRight {
-        width: 50%;
+         width: 50%;
 
-        @include mobile{
-         width: 100%;
-        }
+         @include mobile {
+            width: 100%;
+         }
 
          h4 {
             font-size: text(xxxl);
@@ -75,6 +86,12 @@
             line-height: 2.5rem;
             max-width: 90%;
             margin-bottom: 0.75rem;
+
+            @include mobile{
+               font-size: text(xl);
+               line-height: 1.875rem;
+               max-width: 100%;
+            }
          }
 
          ul {
@@ -88,7 +105,7 @@
             }
          }
 
-         p{
+         p {
             font-size: text(lg);
             font-weight: 400;
             line-height: 1.875rem;
@@ -96,7 +113,7 @@
          }
 
          button {
-            margin-top: 2.5rem;
+            margin: 2.5rem 0;
          }
       }
    }
