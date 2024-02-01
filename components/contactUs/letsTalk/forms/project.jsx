@@ -172,6 +172,7 @@ const ProjectForm = () => {
                       touched.countrySelection && errors.countrySelection
                     }
                     inputError={errors.lastName && true}
+                    className="custom-dropdown"
                   />
                   {touched.countrySelection && errors.countrySelection && (
                     <Error>{errors.countrySelection}</Error>

@@ -90,13 +90,25 @@ const ImageCaptionCard = () => {
         className={cn(styles.dropdownStyle, theme ? styles.dropdownDark : "")}
       >
         <div className={`${styles.inputDropPadding}`}>
-          <CustomDropdown title="Services" options={dataServices} />
+          <CustomDropdown
+            title="Services"
+            options={dataServices}
+            className="custom-dropdown"
+          />
         </div>
         <div className={`${styles.inputDropPadding}`}>
-          <CustomDropdown title="Industry" options={dataIndustry} />
+          <CustomDropdown
+            title="Industry"
+            options={dataIndustry}
+            className="custom-dropdown"
+          />
         </div>
         <div className={`${styles.inputDropPadding}`}>
-          <CustomDropdown title="Technology" options={dataTechnology} />
+          <CustomDropdown
+            title="Technology"
+            options={dataTechnology}
+            className="custom-dropdown"
+          />
         </div>
       </div>
       <div

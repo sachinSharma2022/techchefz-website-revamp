@@ -1,14 +1,12 @@
 "use client";
 
-import { Fragment, useState } from "react";
-import { Listbox, Transition } from "@headlessui/react";
 import { MyContext } from "@/context/theme";
-import { useContext } from "react";
-import { Input } from "../inputCustom";
+import { Listbox, Transition } from "@headlessui/react";
+import { Fragment, useContext, useState } from "react";
 import { ImageCustom } from "../imageCustom";
 
-import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
+import styles from "./style.module.scss";
 
 const people = [
   {

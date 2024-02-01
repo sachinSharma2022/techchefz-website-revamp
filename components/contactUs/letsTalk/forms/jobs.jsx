@@ -164,6 +164,7 @@ const JobsForm = () => {
                     errorStatus={
                       touched.countrySelection && errors.countrySelection
                     }
+                    className="custom-dropdown"
                   />
                   {touched.countrySelection && errors.countrySelection && (
                     <Error>{errors.countrySelection}</Error>
