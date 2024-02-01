@@ -4,7 +4,7 @@
   padding: spacing(section-primary-padding);
   background-color: color(bg-soft);
 
-  @include mobile {
+  @include mobile-tablet-p{
     padding: spacing(section-mob-padding);
   }
 
@@ -22,6 +22,10 @@
     .title {
       font-size: text(larger);
       margin-bottom: 5rem;
+
+      @include mobile-tablet-p{
+        font-size: text(xxxl);
+      }
     }
   }
 

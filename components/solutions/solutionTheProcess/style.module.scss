@@ -4,7 +4,7 @@
   padding: spacing(section-primary-padding);
   padding-top: 0;
 
-  @include mobile{
+  @include mobile-tablet-p{
     padding: 2rem;
   }
 
@@ -14,7 +14,7 @@
     justify-content: space-between;
     gap: 8.938rem;
 
-    @include mobile{
+    @include mobile-tablet-p{
       flex-direction: column;
       gap: 3.75rem;
     }
@@ -37,6 +37,10 @@
       font-size: text(larger);
       margin-bottom: 2.75rem;
 
+      @include mobile-tablet-p{
+        font-size: text(xxxl);
+      }
+
       span {
         font-size: text(larger);
         color: color(heading-liner);
@@ -46,6 +50,10 @@
           color(heading-liner) 55.42%
         );
         @include textGradient;
+
+        @include mobile-tablet-p{
+          font-size: text(xxxl);
+        }
       }
     }
 

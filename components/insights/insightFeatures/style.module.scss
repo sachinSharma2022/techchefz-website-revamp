@@ -21,16 +21,16 @@
       }
 
       button {
-        color: color(text-primary);
-        font-size: text(normal);
-        font-weight: 400;
-        line-height: 1.875rem;
-        height: 2.75rem;
-        padding: 0 2rem;
-        border: 0.14rem solid rgba(color(text-primary), 0.12);
-        border-radius: .5rem;
-        white-space: nowrap;
-        @include transition(0.5s);
+         color: color(text-primary);
+         font-size: text(normal);
+         font-weight: 400;
+         line-height: 1.875rem;
+         height: 2.75rem;
+         padding: 0 2rem;
+         border: 0.14rem solid rgba(color(text-primary), 0.12);
+         border-radius: 0.5rem;
+         white-space: nowrap;
+         @include transition(0.5s);
 
          @include mobile {
             flex-wrap: wrap;
@@ -156,38 +156,38 @@
    .insightHeader {
       border-bottom: 0.14rem solid rgba(color(primary-white), 0.12);
 
-    .serviceBtn {
-      button {
-        color: color(primary-white);
-        border-color: rgba(color(primary-white), 0.4);
-        background-color: color(text-primary);
-        
-        &:hover {
-          background-color: color(text-primary);
-          color: color(primary-white);
-          border-color: rgba(color(heading-liner), 1);
-        }
-      }
-   }
+      .serviceBtn {
+         button {
+            color: color(primary-white);
+            border-color: rgba(color(primary-white), 0.4);
+            background-color: color(text-primary);
 
-   .insightSubHeading {
-      color: color(primary-white);
-   }
-
-   .allInsight {
-      margin-top: 3.75rem;
-
-      .allInsightCards {
-         display: grid;
-         grid-template-columns: repeat(3, 1fr);
-         gap: 2.5rem;
-         margin: 2.5rem 0;
+            &:hover {
+               background-color: color(text-primary);
+               color: color(primary-white);
+               border-color: rgba(color(heading-liner), 1);
+            }
+         }
       }
 
-      .insightButton {
-         margin-top: 5rem;
-         text-align: center;
+      .insightSubHeading {
+         color: color(primary-white);
+      }
+
+      .allInsight {
+         margin-top: 3.75rem;
+
+         .allInsightCards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin: 2.5rem 0;
+         }
+
+         .insightButton {
+            margin-top: 5rem;
+            text-align: center;
+         }
       }
    }
-}
 }

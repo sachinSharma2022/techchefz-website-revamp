@@ -3,7 +3,7 @@
 .solutionOurValuesStyle {
    padding: spacing(section-primary-padding);
 
-   @include mobile{
+   @include mobile-tablet-p{
       padding: 2rem;
    }
 
@@ -12,7 +12,7 @@
       justify-content: space-between;
       gap: 8.938rem;
 
-      @include mobile{
+      @include mobile-tablet-p{
          flex-direction: column;
          gap: 3.75rem;
       }
@@ -22,7 +22,7 @@
       margin-bottom: 5rem;
       max-width: 373px;
 
-      @include mobile{
+      @include mobile-tablet-p{
          margin-bottom: 0;
       }
 
@@ -40,8 +40,9 @@
          font-size: text(larger);
          margin-bottom: 2.75rem;
 
-         @include mobile{
+         @include mobile-tablet-p{
             margin-bottom: 1.25rem;
+            font-size: text(xxxl);
          }
 
          span {
@@ -49,6 +50,10 @@
             color: color(heading-liner);
             background: linear-gradient(118deg, color(primary-blue) 11.5%, color(heading-liner) 55.42%);
             @include textGradient;
+
+            @include mobile-tablet-p{
+               font-size: text(xxxl)
+            }
          }
 
       }
