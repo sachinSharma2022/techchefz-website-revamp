@@ -2,10 +2,4 @@
 
 .imgContainerStyle {
   position: relative;
-
-  @include mobile-tablet-p {
-    width: 0px;
-    visibility: hidden;
-    margin: 0 7px;
-  }
 }

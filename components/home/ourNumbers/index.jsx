@@ -45,6 +45,16 @@ const OurNumbers = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    nextArrow: (
+      <div>
+        <Icons.SliderArrow width="15" height="15" />
+      </div>
+    ),
+    prevArrow: (
+      <div>
+        <Icons.SliderArrow width="15" height="15" />
+      </div>
+    ),
 
     responsive: [
       {
@@ -58,14 +68,6 @@ const OurNumbers = () => {
       },
       {
         breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: true,
-        },
-      },
-      {
-        breakpoint: 480,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,

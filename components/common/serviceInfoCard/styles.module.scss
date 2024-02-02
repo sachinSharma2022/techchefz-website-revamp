@@ -15,9 +15,7 @@
   }
 
   @include mobile {
-    margin-right: text(xl);
-    min-height: 18.5rem;
-    padding: text(lg);
+    min-height: 11.25rem;
   }
   .numberCardFlex {
     display: flex;

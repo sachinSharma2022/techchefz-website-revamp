@@ -121,23 +121,48 @@ input:-webkit-autofill {
       border-radius: 0.25rem;
 
       &.slick-prev{
-        bottom: -5rem;
+        bottom: -6rem;
         transform: inherit;
         top: inherit;
-        left: 0.4rem;
-        padding: 0.313rem 0.625rem;
+        left: 1.25rem;
+        padding: 0.1rem 0.8rem;
+        svg{
+          rotate: 180deg;
+        }
       }
       &.slick-next{
-        bottom: -5rem;
+        bottom: -6rem;
         right: inherit;
-        left: 4.3rem;
+        left: 5rem;
         transform: inherit;
         top: inherit;
-        padding: 0.313rem 0.625rem;
+        padding: 0.2rem 0.8rem;
       }
       &::before{
         content: '';
       }
+
+      &.slick-disabled{
+        background-color: rgba(color(primary-white), 0.60);
+        svg{
+          path{
+            stroke: rgba(color(primary-black), 0.40);
+          }          
+        }
+      }
+    }
+
+    .slick-slide{
+      margin: 0 0.8rem;
+
+      &.slick-center{
+        margin: 0;
+      }
+    }
+
+    .slick-track{
+      display: flex;
+      align-items: center;
     }
   }
 }
@@ -247,7 +272,7 @@ input:-webkit-autofill {
       @include mobile {
         position: relative;
         top: 0;
-        padding-bottom: 1.25rem;
+        padding-bottom: 1.5rem;
       }
       .slick-active {
         button {
@@ -279,6 +304,10 @@ input:-webkit-autofill {
       overflow: hidden;
       width: 29.875rem;
       max-width: 29.875rem;
+
+      @include mobile{
+        max-width: 100%;
+      }
     }
 
     .swiper-slide-shadow-right {

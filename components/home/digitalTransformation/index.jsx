@@ -67,7 +67,7 @@ const DigitalTransformation = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           arrows: true,
-          centerPadding: "15px",
+          centerPadding: "0",
         },
       },
     ],

@@ -67,12 +67,12 @@ const Service = () => {
     slidesToScroll: 1,
     nextArrow: (
       <div>
-        <Icons.SliderArrow width="20" height="20" />
+        <Icons.SliderArrow width="15" height="15" />
       </div>
     ),
     prevArrow: (
       <div>
-        <Icons.SliderArrow width="20" height="20" />
+        <Icons.SliderArrow width="15" height="15" />
       </div>
     ),
 
@@ -92,15 +92,7 @@ const Service = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           arrows: true,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: true,
-          centerPadding: "15px",
+          centerPadding: "15px"
         },
       },
     ],

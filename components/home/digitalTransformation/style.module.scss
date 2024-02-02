@@ -77,8 +77,10 @@
 
       @include mobile {
         grid-template-columns: repeat(1, 1fr);
-        padding: text(lg);
+        padding: 0 1.25rem;
         margin-bottom: 2.75rem;
+        flex-wrap: wrap;
+        gap: 1rem 0;
       }
 
       .digitalImg div {

@@ -250,7 +250,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 9px;
+    gap: 0.5rem;
     position: relative;
     z-index: 99;
 
@@ -262,9 +262,9 @@
       display: block;
       position: relative;
       left: 0;
-      width: 24px;
-      height: 2px;
-      background-color: color(primary-white);
+      width: 1.5rem;
+      height: 0.14rem;
+      background-color: color(text-primary);
       content: "";
       @include transition(0.3s);
     }
@@ -636,6 +636,12 @@
 
     @include mobile {
       background-color: color(input-bg);
+    }
+
+    .navHamburger{
+      span{
+        background-color: color(primary-white);
+      }
     }
 
     .logo {
