@@ -25,7 +25,11 @@ body {
 
 // main-container
 .main-container {
-  // overflow-x: hidden;
+
+  @include mobile {
+    overflow-x: hidden;
+    padding-top: 70px;
+  }
 }
 
 // Heading Style
@@ -428,6 +432,10 @@ input:-webkit-autofill {
 
 .ourHistorySlider {
   margin-top: 6.25rem;
+
+  @include mobile-tablet-p {
+    margin-top: 3.75rem;
+  }
 
   .slick-dots {
     position: relative;

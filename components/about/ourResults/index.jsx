@@ -5,9 +5,12 @@ import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import { useContext } from "react";
 import styles from "./style.module.scss";
+import MobileSlider from "@/components/common/mobileSlider";
+import { useMediaQuery } from "react-responsive";
 
 const OurResults = () => {
   const { theme, setTheme } = useContext(MyContext);
+  const isMobileScreen = useMediaQuery({ query: "(max-width: 767px)" });
 
   const resultCardData = [
     {
@@ -52,18 +55,37 @@ const OurResults = () => {
             innovation.
           </p>
         </div>
-        <div className={styles.resultCardWrapper}>
-          {resultCardData.map((data, index) => (
-            <div key={index} className={styles.resultCard}>
-              <div className="d-flex justify-content-between align-items-center">
-                <h6 className={styles.cardNum}>{data.number}</h6>
-                <div className={styles.cardNum}>{data.icon}</div>
+
+        {!isMobileScreen && (
+          <div className={styles.resultCardWrapper}>
+            {resultCardData.map((data, index) => (
+              <div key={index} className={styles.resultCard}>
+                <div className="d-flex justify-content-between align-items-center">
+                  <h6 className={styles.cardNum}>{data.number}</h6>
+                  <div className={styles.cardNum}>{data.icon}</div>
+                </div>
+                <p className={styles.cardText}>{data.title}</p>
               </div>
-              <p className={styles.cardText}>{data.title}</p>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
+
+      {isMobileScreen && (
+        <div className={styles.mobileSlider}>
+          <MobileSlider slidesToShow={1.4}>
+            {resultCardData.map((data, index) => (
+              <div key={index} className={styles.resultCard}>
+                <div className="d-flex justify-content-between align-items-center">
+                  <h6 className={styles.cardNum}>{data.number}</h6>
+                  <div className={styles.cardNum}>{data.icon}</div>
+                </div>
+                <p className={styles.cardText}>{data.title}</p>
+              </div>
+            ))}
+          </MobileSlider>
+        </div>
+      )}
     </section>
   );
 };

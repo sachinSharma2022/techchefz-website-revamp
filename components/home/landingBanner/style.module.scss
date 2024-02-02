@@ -17,7 +17,14 @@ $border-radius: 5px;
   justify-content: center;
 
   @include mobile-tablet-p {
-    padding: 7rem 2rem;
+    padding: 5rem 1.25rem;
+
+    &::before {
+      display: none;
+    }
+    &::after {
+      display: none;
+    }
   }
 
   &::before {
@@ -44,30 +51,6 @@ $border-radius: 5px;
     right: 0;
     filter: blur(13rem);
     opacity: 0.3;
-  }
-
-  &.landingBannerDark {
-    background-color: color(input-bg);
-
-    &:after,
-    &::before {
-      z-index: 9;
-      opacity: 0.18;
-    }
-
-    .title {
-      color: color(primary-white);
-    }
-  }
-
-  @include mobile {
-    padding: spacing(section-mob-padding);
-    &::before {
-      display: none;
-    }
-    &::after {
-      display: none;
-    }
   }
 
   .title {
@@ -157,4 +140,19 @@ $border-radius: 5px;
       }
     }
   }
+
+  &.landingBannerDark {
+    background-color: color(input-bg);
+
+    &:after,
+    &::before {
+      z-index: 9;
+      opacity: 0.18;
+    }
+
+    .title {
+      color: color(primary-white);
+    }
+  }
+
 }

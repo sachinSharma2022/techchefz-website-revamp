@@ -56,6 +56,10 @@
     line-height: 1.875rem;
     color: rgba(color(text-primary), 0.6);
     margin-top: 1rem;
+
+    @include mobile-tablet-p {
+      @include truncate(4);
+    }
   }
 
   .infoStyle {
@@ -74,6 +78,11 @@
     border-radius: 0.5rem;
     overflow: hidden;
 
+    @include mobile-tablet-p {
+      height: 14.375rem;
+      margin-bottom: 2.5rem;
+    }
+
     img {
       object-fit: cover;
       height: 100%;
@@ -91,6 +100,10 @@
   .sliderArrow {
     display: flex;
     gap: 24px;
+
+    @include mobile-tablet-p {
+      margin-top: 3.75rem;
+    }
 
     .button {
       background-color: color(primary-blue);
@@ -129,11 +142,16 @@
     }
   }
 
-  // .sliderSection {
-  //   display: grid;
-  //   grid-template-columns: repeat(2, 1fr);
-  //   gap: 10px;
-  // }
+  .sliderSection {
+
+    @include mobile-tablet-p {
+      flex-direction: column-reverse;
+    }
+  }
+
+  .timelineSection {
+
+  }
 
   &.ourHistoryDark {
     background-color: color(input-bg);

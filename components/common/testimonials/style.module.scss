@@ -16,25 +16,6 @@
       padding-left: 7vw;
     }
   }
-
-  &.testimonialsStyleDark {
-    background-color: color(dark-gray);
-    color: color(primary-white);
-
-    .infoSection {
-      .testimonialsLeft {
-        .projectHighlight {
-          color: color(primary-white);
-          opacity: 0.8;
-        }
-      }
-    }
-
-    .testimonialCardBox {
-      background-color: color(text-primary);
-    }
-  }
-
   .infoSection {
     display: flex;
     flex-direction: column;
@@ -79,6 +60,7 @@
       @include mobile-tablet-p {
         font-size: text(normal);
         line-height: text(xl);
+        margin: 0;
       }
     }
   }
@@ -86,8 +68,11 @@
   .testimonialCardBox {
     padding: 2.5rem;
     background-color: color(primary-background);
+
     @include mobile-tablet-p{
       padding: text(lg);
+      border-radius: .75rem;
+      border: 0.14rem solid rgba(color(text-primary), 0.12)
     }
 
     .commaImg {
@@ -98,6 +83,7 @@
       font-weight: 500;
       line-height: 2.25rem;
       margin-bottom: 2.5rem;
+
       @include mobile-tablet-p {
         font-size: text(normal);
         line-height: text(xl);
@@ -136,6 +122,51 @@
     button {
       width: 3.75rem;
       height: 3.75rem;
+
+      @include mobile-tablet-p {
+        width: 2.75rem;
+        height: 2.75rem;
+      }
     }
   }
+
+  .mobileSlider {
+    margin: 2.5rem 0;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  .testimonialsDesktopSlider {
+    
+    @include mobile-tablet-p {
+      display: none;
+    }
+  }
+
+  // Dark Mode
+  &.testimonialsStyleDark {
+    background-color: color(dark-gray);
+    color: color(primary-white);
+
+    .infoSection {
+      .testimonialsLeft {
+        .projectHighlight {
+          color: color(primary-white);
+          opacity: 0.8;
+        }
+      }
+    }
+
+
+    .testimonialCardBox {
+      background-color: color(text-primary);
+
+      @include mobile-tablet-p{
+        border-color: rgba(color(primary-white), 0.12);
+      }
+    }
+  }
+
 }

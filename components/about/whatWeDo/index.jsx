@@ -1,14 +1,16 @@
 "use client";
 
-import React from "react";
-import { MyContext } from "@/context/theme";
-import { useContext } from "react";
-import styles from "./style.module.scss";
+import MobileSlider from "@/components/common/mobileSlider";
 import { Icons } from "@/components/icons";
+import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
+import { useContext } from "react";
+import { useMediaQuery } from "react-responsive";
+import styles from "./style.module.scss";
 
 const WhatWeDo = () => {
   const { theme, setTheme } = useContext(MyContext);
+  const isMobileScreen = useMediaQuery({ query: "(max-width: 767px)" });
 
   const cardData = [
     {
@@ -108,23 +110,46 @@ const WhatWeDo = () => {
           </h3>
         </div>
 
-        <div className={styles.workCardWrapper}>
-          {cardData.map((data, index) => (
-            <div key={index} className={styles.workCardMain}>
-              <div className={styles.workCard}>
-                <div className={`${styles.frontCard} ${styles.workCols}`}>
-                  {data.icon}
-                  <h6>{data.title}</h6>
-                </div>
-                <div className={`${styles.backCard}  ${styles.workCols}`}>
-                  <h6>{data.title} </h6>
-                  <p>{data.content} </p>
+        {!isMobileScreen && (
+          <div className={styles.workCardWrapper}>
+            {cardData.map((data, index) => (
+              <div key={index} className={styles.workCardMain}>
+                <div className={styles.workCard}>
+                  <div className={`${styles.frontCard} ${styles.workCols}`}>
+                    {data.icon}
+                    <h6>{data.title}</h6>
+                  </div>
+                  <div className={`${styles.backCard}  ${styles.workCols}`}>
+                    <h6>{data.title} </h6>
+                    <p>{data.content} </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
+
+      {isMobileScreen && (
+        <div className={styles.mobileSlider}>
+          <MobileSlider slidesToShow={1.4}>
+            {cardData.map((data, index) => (
+              <div key={index} className={styles.workCardMain}>
+                <div className={styles.workCard}>
+                  <div className={`${styles.frontCard} ${styles.workCols}`}>
+                    {data.icon}
+                    <h6>{data.title}</h6>
+                  </div>
+                  <div className={`${styles.backCard}  ${styles.workCols}`}>
+                    <h6>{data.title} </h6>
+                    <p>{data.content} </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </MobileSlider>
+        </div>
+      )}
     </section>
   );
 };

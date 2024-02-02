@@ -106,7 +106,7 @@ const OurHistory = () => {
       imgSrc: "/images/img/about/slider1.png",
     },
   ];
-  
+
   return (
     <section
       className={`${styles.ourHistory} ${
@@ -122,7 +122,7 @@ const OurHistory = () => {
         </div>
 
         <div className={cn(styles.sliderSection, "row")}>
-          <div className="col-6">
+          <div className="col-12 col-sm-6">
             <div className={styles.controlSection}>
               <Slider asNavFor={nav2} ref={slider1} {...setting1}>
                 {sliderData.map((data, index) => (
@@ -153,7 +153,8 @@ const OurHistory = () => {
               </div>
             </div>
           </div>
-          <div className="col-6">
+
+          <div className="col-12 col-sm-6">
             <Slider
               asNavFor={nav3}
               ref={slider2}
@@ -179,7 +180,7 @@ const OurHistory = () => {
         </div>
       </div>
 
-      <div className="ourHistorySlider">
+      <div className={cn(styles.timelineSection, "ourHistorySlider")}>
         <div className={cn("primary-container")}>
           <Slider asNavFor={nav1} ref={slider3} {...settingTimeline}>
             {sliderData.map((index) => (
