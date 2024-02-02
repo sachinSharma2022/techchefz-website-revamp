@@ -78,6 +78,11 @@
          gap: 2.5rem;
          grid-template-columns: auto auto;
 
+         @include mobile{
+            grid-template-columns:inherit;
+
+            }
+
          .featureInsightCard {
             width: 100%;
 
@@ -87,11 +92,20 @@
 
                @include mobile {
                   grid-row: 3/3;
+
+                  // img{
+                  //    display: none;
+                  // }
                }
 
                .featureImgBox {
                   div {
                      min-height: 360px;
+
+                     @include mobile{
+                        min-height: inherit;
+                        height: 152px;
+                     }
                   }
                }
             }
@@ -105,10 +119,19 @@
                @include mobile {
                   grid-column: 1;
                   grid-row: 4;
-                  max-width: 394px;
+                  max-width: inherit;
+                  width: 100%;
+
+                  img{
+                     display: none;
+                  }
                }
                .featureImgBox div {
                   height: 230px;
+                  
+                  @include mobile{
+                     height: 152px;
+                  }
                }
             }
 
@@ -121,10 +144,18 @@
                @include mobile {
                   grid-column: 1;
                   max-width: 394px;
+                  
+                  img{
+                     display: none;
+                  }
                }
 
                .featureImgBox div {
                   height: 230px;
+                  
+                  @include mobile{
+                     height: 152px;
+                  }
                }
             }
          }
