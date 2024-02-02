@@ -6,6 +6,7 @@ import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { cn } from "@/lib/utils";
+import { base_Uri } from "@/lib/constants";
 
 import styles from "./style.module.scss";
 
@@ -19,11 +20,12 @@ const CoeService = ({props}) => {
       <div className={cn("primary-container")}>
         <div className={styles.coeServiceImg}>
           <ImageCustom
-            src="https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src={`${base_Uri}${props[0]?.Image?.data.attributes.url}`}
             width={1000}
             height={600}
             alt="img"
           />
+         
         </div>
         <div className={styles.contentSec}>
           <h3 className={styles.coeServiceTitle} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>

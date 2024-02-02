@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { base_Uri } from "@/lib/constants";
 
 
+
 import styles from "./style.module.scss";
 
 const SolutionHeroBanner = ({props}) => {

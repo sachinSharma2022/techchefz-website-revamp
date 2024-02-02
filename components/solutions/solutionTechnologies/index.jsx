@@ -127,7 +127,7 @@ const SolutionTechnologies = ({props}) => {
             </div>
             <div className={styles.ourNumbersImg}>
               <ImageCustom
-                 src={`${base_Uri}${props.image.data.attributes.url}`}
+                 src={`${base_Uri}${props?.image.data.attributes.url}`}
                 width={1000}
                 height={100}
                 alt="bannerImg"

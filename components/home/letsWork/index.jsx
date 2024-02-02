@@ -99,7 +99,7 @@ const LetsWork = ({contact}) => {
 
             <div className={styles.contactImg}>
               {/* <ImageCustom
-                src={base_Uri+contact?.Image?.data?.attributes?.url}
+                 src={base_Uri+contact?.Image?.data?.attributes?.url}
                 width={480}
                 height={616}
                 alt="contactImg"
