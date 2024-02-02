@@ -16,6 +16,10 @@ $border-radius: 5px;
   flex-direction: column;
   justify-content: center;
 
+  @include mobile-tablet-p {
+    padding: 7rem 2rem;
+  }
+
   &::before {
     content: "";
     width: 30rem;
@@ -84,11 +88,19 @@ $border-radius: 5px;
     .contentContainer {
       display: flex;
       gap: 1.25rem;
+
+      @include mobile{
+        flex-wrap: wrap;
+      }
     }
     .contentContainer > span {
       font-size: text(xxl-larger);
       font-weight: 500;
       line-height: 1;
+
+      @include mobile{
+        font-size: text(larger);
+      }
     }
     .slider {
       height: 118px;

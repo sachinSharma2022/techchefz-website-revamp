@@ -111,86 +111,40 @@ input:-webkit-autofill {
 }
 
 .service-mobile-slider {
-  @include desktop {
-    display: none;
+  display: none;
+
+  @include mobile-tablet-p{
+    display: block;
   }
+
   .slick-slider {
-    .slick-arrow {
-      z-index: 2;
-      &::before {
-        content: "";
-        background-image: url("../public/images/slide-icon.svg");
-        background-repeat: no-repeat;
-        background-size: 1.625rem;
-        position: absolute;
-        top: 0;
-        width: 1.625rem;
-        height: 1.625rem;
-        z-index: 2;
+    .slick-arrow{
+      width: 2.75rem;
+      height: 2.75rem;
+      border: 2px solid rgba(color(dark-tab), 0.20);
+      background-color: color(nav-btn);
+      border-radius: 0.25rem;
+
+      &.slick-prev{
+        bottom: -5rem;
+        transform: inherit;
+        top: inherit;
+        left: 0.4rem;
+        padding: 0.313rem 0.625rem;
       }
-
-      &::after {
-        @include mobile-tablet-p {
-          display: none;
-        }
+      &.slick-next{
+        bottom: -5rem;
+        right: inherit;
+        left: 4.3rem;
+        transform: inherit;
+        top: inherit;
+        padding: 0.313rem 0.625rem;
       }
-    }
-
-    .slick-next {
-      right: 5.5rem;
-
-      &::before {
-        right: 0.1rem;
-      }
-
-      &::after {
-        content: "";
-        width: 6.25rem;
-        height: 8.7rem;
-        position: absolute;
-        right: 0;
-        top: -3.7rem;
-        z-index: 1;
-        right: -1.25rem;
-        background: linear-gradient(
-          to right,
-          rgba(24, 24, 24, 0.15) 30.64%,
-          color(secondary-background) 68.39%
-        );
-      }
-    }
-
-    .slick-prev {
-      left: 5.3rem;
-      &::before {
-        transform: rotate(180deg);
-        position: absolute;
-        z-index: 2;
-        top: 0;
-        left: -0.5rem;
-      }
-
-      &::after {
-        content: "";
-        width: 6.25rem;
-        height: 8.7rem;
-        position: absolute;
-        right: 0;
-        top: -3.7rem;
-        z-index: 1;
-        right: -1.5rem;
-        background: linear-gradient(
-          to left,
-          rgba(24, 24, 24, 0.5) 0.36%,
-          color(secondary-background) 28.39%
-        );
+      &::before{
+        content: '';
       }
     }
   }
-
-  // .slick-list {
-  //   padding-left: 7.5rem;
-  // }
 }
 
 .digital-transformation {

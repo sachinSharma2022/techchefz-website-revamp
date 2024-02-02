@@ -81,6 +81,7 @@ const OurHistory = () => {
       imgSrc: "/images/img/about/slider1.png",
     },
   ];
+  
   return (
     <section
       className={`${styles.ourHistory} ${

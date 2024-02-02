@@ -65,6 +65,16 @@ const Service = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    nextArrow: (
+      <div>
+        <Icons.SliderArrow width="20" height="20" />
+      </div>
+    ),
+    prevArrow: (
+      <div>
+        <Icons.SliderArrow width="20" height="20" />
+      </div>
+    ),
 
     responsive: [
       {

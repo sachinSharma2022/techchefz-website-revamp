@@ -4,8 +4,8 @@
   padding: spacing(section-primary-padding);
   background: color(primary-background);
 
-  @include mobile {
-    padding: spacing(section-mob-padding);
+  @include mobile-tablet-p {
+    padding: 5rem 1.25rem 8rem;
   }
 
   .serviceGrid {
@@ -61,6 +61,10 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1.25rem 2.5rem;
+
+      @include mobile-tablet-p{
+        display: none;
+      }
 
       @include mobile {
         grid-template-columns: repeat(1, 1fr);
