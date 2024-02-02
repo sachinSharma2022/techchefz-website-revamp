@@ -110,6 +110,8 @@ input:-webkit-autofill {
 
   @include mobile-tablet-p{
     display: block;
+    padding: 0 1.25rem;
+    padding-right: 0;
   }
 
   .slick-slider {
@@ -158,6 +160,11 @@ input:-webkit-autofill {
       &.slick-center{
         margin: 0;
       }
+    }
+
+    .slick-list {
+      padding-left: 0 !important;
+      margin-right: -0.5rem;
     }
 
     .slick-track{

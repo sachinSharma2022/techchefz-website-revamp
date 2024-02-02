@@ -9,7 +9,7 @@
     padding-block: 3.75rem 3.75rem;
   }
 
-  @include mobile{
+  @include mobile-tablet-p{
     padding: 3.75rem 0 10rem;
   }
 
@@ -23,9 +23,6 @@
       margin-bottom: 2.5rem;
       flex-direction: column;
       align-items: flex-start;
-    }
-
-    @include mobile{
       padding: 0 1.25rem;
     }
 
@@ -86,7 +83,7 @@
           width: 100%;
           object-fit: cover;
         }
-        @include mobile {
+        @include mobile-tablet-p {
           display: none;
         }
       }
@@ -95,7 +92,7 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 2.5rem;
-        @include mobile {
+        @include mobile-tablet-p {
           display: none;
         }
       }
@@ -107,7 +104,7 @@
       margin-bottom: 3.75rem;
       opacity: 0.8;
       
-      @include mobile {
+      @include mobile-tablet-p {
         font-size: text(normal);
         margin-bottom: 2.5rem;
         font-weight: 400;

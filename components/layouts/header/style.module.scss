@@ -633,6 +633,7 @@
   // Dark Style here
   &.headerDarkStyle {
     border-bottom: 1px solid rgba(color(primary-white), 0.12);
+    background-color: color(input-bg);
 
     @include mobile {
       background-color: color(input-bg);

@@ -24,7 +24,7 @@
       position: sticky;
       top: 14rem;
 
-      @include mobile {
+      @include tablet {
         margin-bottom: 3.75rem;
         position: static;
         height: 100%;

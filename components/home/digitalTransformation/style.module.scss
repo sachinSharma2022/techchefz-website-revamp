@@ -3,7 +3,8 @@
 .digitalStyle {
   padding: spacing(section-primary-padding);
   background: color(primary-background);
-  @include mobile {
+
+  @include mobile-tablet-p {
     padding: spacing(section-mob-padding);
   }
 
@@ -75,7 +76,7 @@
       margin-bottom: 3.75rem;
       padding: 0 2.5rem 0 2.5rem;
 
-      @include mobile {
+      @include mobile-tablet-p {
         grid-template-columns: repeat(1, 1fr);
         padding: 0 1.25rem;
         margin-bottom: 2.75rem;

@@ -5,7 +5,7 @@
   padding-bottom: 6rem;
   background: color(dark-gray);
 
-  @include mobile {
+  @include tablet {
     padding: spacing(section-mob-padding);
   }
 
