@@ -1,61 +1,69 @@
 @import "~/styles/partials/config";
 
 .banner {
-  padding: 9rem 7.5rem 4rem;
+   padding: 9rem 7.5rem 4rem;
 
-  @include mobile-tablet-p{
-   padding: 3rem 4.5rem;
-}
+   @include mobile-tablet-p {
+      padding: 3rem 4.5rem;
+   }
 
-  @include mobile {
-    padding: 3rem 1.5rem;
-  }
+   @include mobile {
+      padding: 3rem 1.5rem;
+   }
 
-  .bannerContent {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8rem;
-
-    @include mobile {
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .bannerTitle {
-      font-size: text(xl-larger);
-      font-weight: 500;
-
-      span {
-        font-size: text(xl-larger);
-        background: linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%);
-        @include textGradient;
-      }
-    }
-
-    .bannerRight {
+   .bannerContent {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 4rem;
-			max-width: 23.375rem;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8rem;
 
       @include mobile {
-        gap: 2.25rem;
+         flex-direction: column;
+         gap: 1.5rem;
       }
 
-      p {
-        font-size: text(lg);
-        line-height: 1.875rem;
-        opacity: 0.8;
-      }
-    }
-  }
+      .bannerTitle {
+         font-size: text(xl-larger);
+         font-weight: 500;
 
-  //dark mode style
-  &.bannerDark {
-    background-color: color(input-bg);
-    color: color(primary-white);
-  }
+         @include mobile-tablet-p {
+            font-size: text(larger);
+         }
+
+         span {
+            font-size: text(xl-larger);
+            background: linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%);
+            @include textGradient;
+
+            @include mobile-tablet-p {
+               font-size: text(larger);
+            }
+         }
+      }
+
+      .bannerRight {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: flex-start;
+         gap: 4rem;
+         max-width: 23.375rem;
+
+         @include mobile {
+            gap: 2.25rem;
+         }
+
+         p {
+            font-size: text(lg);
+            line-height: 1.875rem;
+            opacity: 0.8;
+         }
+      }
+   }
+
+   //dark mode style
+   &.bannerDark {
+      background-color: color(input-bg);
+      color: color(primary-white);
+   }
 }

@@ -12,8 +12,8 @@ const AcceleratorImpact = (props) => {
   const { theme } = useContext(MyContext);
   return (
     <section className={`${styles.impact} ${theme ? styles.impactDark : ""}`}>
-      <div className={cn("primary-container")}>
-        <div className="text-center">
+      <div className={cn("primary-container" , styles.impactContainer) }>
+        <div className="text-center text-sm-start">
           <h6 className={styles.subHeading}>Impact</h6>
           <h3 className={styles.impactHeading}>
             {props.heading || "Confronting Out of Stock (OOS) Challenges"}
