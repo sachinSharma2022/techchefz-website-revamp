@@ -78,7 +78,10 @@
   }
 
   .industryImg {
-    padding: 5rem 0;
+    padding: 5rem 0 0;
+    position: relative;
+    margin-bottom: 5rem;
+
     @include mobile-tablet-p {
       padding: 3.75rem 0 3.75rem 0;
     }
