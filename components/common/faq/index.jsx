@@ -56,8 +56,8 @@ const Faq = ({props}) => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.faqHead}>
-          <p className={styles.projectHighlight}>{props.Title}</p>
-          <h4 className={styles.title}>{props.Description}</h4>
+          <p className={styles.projectHighlight}>{props?.Title}</p>
+          <h4 className={styles.title}>{props?.Description}</h4>
         </div>
 
         <div className={styles.faqValuesContent}>

@@ -3,6 +3,7 @@ import React from "react";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 import { ImageCustom } from "@/components/ui/imageCustom";
+import { base_Uri } from "@/lib/constants";
 
 import styles from "./style.module.scss";
 
@@ -25,9 +26,7 @@ const CoeBanner = ({props}) => {
 
       <div className={styles.imgBox}>
         <ImageCustom
-          src={
-            "https://images.unsplash.com/photo-1601933470096-0e34634ffcde?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          }
+          src={`${base_Uri}${props?.Image?.data.attributes.url}`}
           width={1920}
           height={1080}
           alt="banner-img"
