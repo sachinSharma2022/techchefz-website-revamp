@@ -7,7 +7,7 @@ import { useState } from "react";
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 
-const Faq = () => {
+const Faq = ({props}) => {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
   const { theme, setTheme } = useContext(MyContext);
 
@@ -27,26 +27,26 @@ const Faq = () => {
     });
   }
 
-  const faqAccordionData = [
-    {
-      faqNumber: "01",
-      title: "How do I figure out how much your services will cost?",
-      content:
-        "Determining the cost of our services is best achieved through a 15-30 minute discovery call, where we can understand your unique requirements. Following that, we will provide a transparent and detailed price within 24-48 hours tailored specifically to your needs.",
-    },
-    {
-      faqNumber: "02",
-      title: "Who will be working on the project?",
-      content:
-        "Determining the cost of our services is best achieved through a 15-30 minute discovery call, where we can understand your unique requirements. Following that, we will provide a transparent and detailed price within 24-48 hours tailored specifically to your needs.",
-    },
-    {
-      faqNumber: "03",
-      title: "How do I figure out how much your services will cost?",
-      content:
-        "Determining the cost of our services is best achieved through a 15-30 minute discovery call, where we can understand your unique requirements. Following that, we will provide a transparent and detailed price within 24-48 hours tailored specifically to your needs.",
-    },
-  ];
+  // const faqAccordionData = [
+  //   {
+  //     faqNumber: "01",
+  //     title: "How do I figure out how much your services will cost?",
+  //     content:
+  //       "Determining the cost of our services is best achieved through a 15-30 minute discovery call, where we can understand your unique requirements. Following that, we will provide a transparent and detailed price within 24-48 hours tailored specifically to your needs.",
+  //   },
+  //   {
+  //     faqNumber: "02",
+  //     title: "Who will be working on the project?",
+  //     content:
+  //       "Determining the cost of our services is best achieved through a 15-30 minute discovery call, where we can understand your unique requirements. Following that, we will provide a transparent and detailed price within 24-48 hours tailored specifically to your needs.",
+  //   },
+  //   {
+  //     faqNumber: "03",
+  //     title: "How do I figure out how much your services will cost?",
+  //     content:
+  //       "Determining the cost of our services is best achieved through a 15-30 minute discovery call, where we can understand your unique requirements. Following that, we will provide a transparent and detailed price within 24-48 hours tailored specifically to your needs.",
+  //   },
+  // ];
   return (
     <section
       className={cn(
@@ -56,20 +56,20 @@ const Faq = () => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.faqHead}>
-          <p className={styles.projectHighlight}>FAQ’s</p>
-          <h4 className={styles.title}>Our commitment to transparency</h4>
+          <p className={styles.projectHighlight}>{props.Title}</p>
+          <h4 className={styles.title}>{props.Description}</h4>
         </div>
 
         <div className={styles.faqValuesContent}>
           <div className={styles.faqAccordion}>
-            {faqAccordionData.map((data, index) => (
+          {props?.innerFaqs?.map((data, index) => (
               <Disclosure key={index}>
                 {(panel) => {
                   const { open, close } = panel;
                   return (
                     <div className={styles.faqSecMain}>
                       <div className={styles.numberSec}>
-                        <h2 className={styles.faqNumber}>{data.faqNumber}</h2>
+                        <h2 className={styles.faqNumber}>{data.Title}</h2>
                       </div>
 
                       <div className={styles.faqList}>
@@ -82,11 +82,11 @@ const Faq = () => {
                             togglePanels({ ...panel, key: index });
                           }}
                         >
-                          {data.title}
+                          {data.title}{data.Description}
                           {!open ? <Icons.IconPlus /> : <Icons.IconMinus />}
                         </Disclosure.Button>
                         <Disclosure.Panel className={styles.accordionBody}>
-                          {data.content}
+                        {data.FullDescription}
                         </Disclosure.Panel>
                       </div>
                     </div>

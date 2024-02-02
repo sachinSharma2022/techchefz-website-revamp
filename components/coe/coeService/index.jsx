@@ -9,7 +9,8 @@ import { cn } from "@/lib/utils";
 
 import styles from "./style.module.scss";
 
-const CoeService = () => {
+const CoeService = ({props}) => {
+  console.log("bb",props);
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section
@@ -25,18 +26,15 @@ const CoeService = () => {
           />
         </div>
         <div className={styles.contentSec}>
-          <h3 className={styles.coeServiceTitle}>
-            Speed Your Journey from Idea to Impact with our{" "}
-            <span>Accelerators.</span>
+          <h3 className={styles.coeServiceTitle} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
+           
           </h3>
           <div>
             <p className={styles.coeServiceText}>
-              Streamline Your Tech Projects with Techchefz Solution
-              Accelerators. Our tailor-made toolkits designed to fast-track your
-              most critical and impactful projects.
+              {props[0]?.Description}
             </p>
             <Button variant="outline" size="lg">
-              Learn More <Icons.ArrowRight size={18} />
+            {props[0]?.Btn} <Icons.ArrowRight size={18} />
             </Button>
           </div>
         </div>

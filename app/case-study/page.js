@@ -22,6 +22,7 @@ const CaseStudy = async() =>{
       <Results />
       <RelatedCase sliderClassName="mb-0" />
       <LetsWork  contact={data.ContactUs}/>
+      <LetsWork  contact={data.ContactUs}/>
     </div>
   );
 };
