@@ -2,61 +2,86 @@
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
-import { useContext } from "react";
+import { useContext, useState, useRef, useEffect } from "react";
 import Slider from "react-slick";
 
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 
 const OurHistory = () => {
-  const { theme, setTheme } = useContext(MyContext);
-  const settings = {
-    customPaging: function (i) {
+  const { theme } = useContext(MyContext);
+
+  const [nav1, setNav1] = useState(null);
+  const [nav2, setNav2] = useState(null);
+  const [nav3, setNav3] = useState(null);
+
+  const slider1 = useRef(null);
+  const slider2 = useRef(null);
+  const slider3 = useRef(null);
+
+  useEffect(() => {
+    setNav1(slider1.current);
+    setNav2(slider2.current);
+    setNav3(slider3.current);
+  }, []);
+
+  const setting1 = {
+    dots: false,
+    fade: true,
+    infinite: false,
+    arrows: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
+  const setting2 = {
+    dots: false,
+    infinite: false,
+    arrows: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
+  const settingTimeline = {
+    customPaging: function (index) {
+      var num = index + 1;
       return (
         <div>
-          <span className="yearCount">201{i + 1}</span>
+          <span className="yearCount">201{num + 1}</span>
           <button />
         </div>
       );
     },
     dots: true,
-    fade: true,
     infinite: false,
+    arrows: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: (
-      <div>
-        <Icons.SliderArrow />
-      </div>
-    ),
-    prevArrow: (
-      <div>
-        <Icons.SliderArrow />
-      </div>
-    ),
   };
 
   const sliderData = [
     {
       title:
-        "Bridging Dreams to Reality in a Transformative Journey of Innovation and Impact at TechChefz.",
+        "Contrary to popular belief, Lorem Ipsum is not simply random text.",
       content:
-        "Founded in 2017, TechChefz arose from a shared passion for technology, uniting a team of pioneers. Fueled by enthusiasm and determination, they set on a transformative journey to shape the future.",
+        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old",
       imgSrc: "/images/img/about/slider1.png",
     },
     {
       title:
-        "Bridging Dreams to Reality in a Transformative Journey of Innovation and Impact at TechChefz.",
+        "All the Lorem Ipsum generators on the Internet tend to repeat predefined.",
       content:
         "Founded in 2017, TechChefz arose from a shared passion for technology, uniting a team of pioneers. Fueled by enthusiasm and determination, they set on a transformative journey to shape the future.",
       imgSrc: "/images/goals1.png",
     },
     {
       title:
-        "Bridging Dreams to Reality in a Transformative Journey of Innovation and Impact at TechChefz.",
+        "There are many variations of passages of Lorem Ipsum available, but the majority.",
       content:
-        "Founded in 2017, TechChefz arose from a shared passion for technology, uniting a team of pioneers. Fueled by enthusiasm and determination, they set on a transformative journey to shape the future.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.",
       imgSrc: "/images/goals2.png",
     },
     {
@@ -96,23 +121,69 @@ const OurHistory = () => {
           </h3>
         </div>
 
-        <div className="ourHistorySlider">
-          <Slider {...settings}>
-            {sliderData.map((data, index) => (
-              <div key={index} className={styles.cardStyle}>
-                <div className={styles.infoStyle}>
-                  <h4 className={styles.subHeading}>{data.title}</h4>
-                  <p className={styles.ourHistoryContent}>{data.content}</p>
-                </div>
-                <div className={styles.OurHistoryImage}>
-                  <ImageCustom
-                    src={data.imgSrc}
-                    width={530}
-                    height={397}
-                    alt="slider-img"
-                  />
-                </div>
+        <div className={cn(styles.sliderSection, "row")}>
+          <div className="col-6">
+            <div className={styles.controlSection}>
+              <Slider asNavFor={nav2} ref={slider1} {...setting1}>
+                {sliderData.map((data, index) => (
+                  <div key={index} className={styles.cardStyle}>
+                    <div className={styles.infoStyle}>
+                      <h4 className={styles.subHeading}>{data.title}</h4>
+                      <p className={styles.ourHistoryContent}>{data.content}</p>
+                    </div>
+                  </div>
+                ))}
+              </Slider>
+              <div className={styles.sliderArrow}>
+                <button
+                  className={styles.button}
+                  // className={
+                  //   activeSlide === 0 ? styles.arrowDisabled : styles.button
+                  // }
+                  onClick={() => slider2?.current?.slickPrev()}
+                >
+                  <Icons.ArrowLeft />
+                </button>
+                <button
+                  className={styles.button}
+                  onClick={() => slider2?.current?.slickNext()}
+                >
+                  <Icons.ArrowRight fill="black" stroke="black" />
+                </button>
               </div>
+            </div>
+          </div>
+          <div className="col-6">
+            <Slider
+              asNavFor={nav3}
+              ref={slider2}
+              slidesToShow={1}
+              swipeToSlide={true}
+              focusOnSelect={true}
+              {...setting2}
+            >
+              {sliderData.map((data, index) => (
+                <div key={index} className={styles.cardStyle}>
+                  <div className={styles.OurHistoryImage}>
+                    <ImageCustom
+                      src={data.imgSrc}
+                      width={530}
+                      height={397}
+                      alt="slider-img"
+                    />
+                  </div>
+                </div>
+              ))}
+            </Slider>
+          </div>
+        </div>
+      </div>
+
+      <div className="ourHistorySlider">
+        <div className={cn("primary-container")}>
+          <Slider asNavFor={nav1} ref={slider3} {...settingTimeline}>
+            {sliderData.map((index) => (
+              <div key={index} className={styles.cardStyle} />
             ))}
           </Slider>
         </div>

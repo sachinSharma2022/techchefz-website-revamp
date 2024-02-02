@@ -47,16 +47,15 @@ const InsightOverview = () => {
             </div>
           </div>
         </div>
-        <div className={styles.imageContainer}>
-          <div className={styles.imageDiv}>
-            <ImageCustom
-              src="/images/insight.png"
-              alt="Image"
-              width={600}
-              height={600}
-            />
-          </div>
-        </div>
+      </div>
+
+      <div className={styles.imageDiv}>
+        <ImageCustom
+          src="/images/insight.png"
+          alt="Image"
+          width={600}
+          height={600}
+        />
       </div>
     </section>
   );

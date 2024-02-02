@@ -191,6 +191,8 @@
     color: color(primary-white);
 
     .platformsButtons {
+      border-color: rgba(color(primary-white), 0.12);
+
       .platformsBtn {
         background-color: color(text-primary);
       }

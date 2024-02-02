@@ -1,12 +1,11 @@
 "use client";
 
-import { Fragment, useState } from "react";
-import { Listbox, Transition } from "@headlessui/react";
 import { MyContext } from "@/context/theme";
-import { useContext } from "react";
-import { Input } from "../inputCustom";
+import { Listbox, Transition } from "@headlessui/react";
+import { Fragment, useContext, useState } from "react";
 import { ImageCustom } from "../imageCustom";
 
+import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 
 const people = [
@@ -78,16 +77,22 @@ const people = [
   },
 ];
 
-const CountryDropdown = () => {
+const CountryDropdown = (props) => {
   const { theme, setTheme } = useContext(MyContext);
   const [selected, setSelected] = useState(people[0]);
   return (
     <div
-      className={`${styles.dropdownContainerStyle} ${
+      className={cn(
+        styles.dropdownContainerStyle,
         theme ? styles.dropdownContainerStyleDark : ""
-      }`}
+      )}
     >
-      <div className={styles.countryDropdown}>
+      <div
+        className={cn(
+          styles.countryDropdown,
+          props.inputError && styles.inputErrorStyle
+        )}
+      >
         <Listbox value={selected} onChange={setSelected}>
           <div className={styles.floatDropdown}>
             <Listbox.Button>
@@ -117,9 +122,8 @@ const CountryDropdown = () => {
           </div>
         </Listbox>
 
-        <Input
+        <input
           type="text"
-          className={`${styles.floatInput} form-control`}
           id="username"
           placeholder="Phone Number*"
           required=""

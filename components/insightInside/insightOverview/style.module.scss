@@ -13,12 +13,15 @@
     justify-content: center;
     align-items: center;
     padding: 4.75rem 2.5rem;
-
   }
   @include mobile {
     padding-inline: 1.5rem;
     padding-block: 3rem 3.75rem;
+  }
 
+  .flexContainer {
+    display: flex;
+    gap: 0 8.8125rem;
   }
 
   .textContainer {
@@ -120,40 +123,30 @@
     }
   }
 
-  .imageContainer {
+  .imageDiv {
     position: absolute;
     right: 0;
     top: 12rem;
 
-    @include mobile-tablet-p {
+    div {
+      width: 90%;
+      height: 38.5625rem;
+      border-radius: 0.6rem 0 0 0.6rem;
+      overflow: hidden;
       position: relative;
-      right: 0;
-      top: 0;
-      margin-bottom: 2.5rem;
-    }
+      margin-right: 0;
+      margin-left: auto;
 
-    .imageDiv {
-      width: 100%;
-      height: 100%;
+      @include mobile-tablet-p {
+        max-width: 601px;
+        max-height: 441px;
+      }
 
       img {
-        border-radius: 0.6rem;
-
-        @include mobile-tablet-p {
-          max-width: 601px;
-          max-height: 441px;
-        }
-        
-        @include mobile {
-          width: 100%;
-          height: 100%;
-        }
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
-    }
-
-    @include mobile {
-      flex-direction: column;
-      width: 100%;
     }
   }
 }
@@ -175,7 +168,6 @@
   }
 
   .textContainer {
-    
     h1 {
       color: color(text-primary);
     }
