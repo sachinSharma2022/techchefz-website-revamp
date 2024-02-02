@@ -23,6 +23,11 @@ body {
   }
 }
 
+// main-container
+.main-container {
+  // overflow-x: hidden;
+}
+
 // Heading Style
 h1,
 h2,
@@ -46,16 +51,6 @@ a {
 
 .asset-white {
   filter: contrast(0) brightness(100);
-}
-
-.header-white {
-  background: color(primary-white);
-  transition: all 0.5s ease-in-out;
-}
-
-.header-dark {
-  background: color(input-bg);
-  transition: all 0.5s ease-in-out;
 }
 
 // space
@@ -442,70 +437,22 @@ input:-webkit-autofill {
 }
 
 .ourHistorySlider {
-  .slick-arrow {
-    background-color: color(primary-blue);
-    padding: 0;
-    border-radius: 0.5rem;
-    width: 3rem;
-    height: 3rem;
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-
-    &:hover {
-      background-color: color(primary-blue);
-    }
-
-    svg {
-      width: 1.2rem;
-    }
-
-    &::before {
-      display: none;
-    }
-  }
-
-  .slick-prev {
-    left: 0;
-    bottom: 0;
-    z-index: 9;
-    top: inherit;
-    svg {
-      transform: rotate(-180deg);
-    }
-  }
-
-  .slick-next {
-    right: inherit;
-    left: 4.3rem;
-    bottom: 0;
-    z-index: 9;
-    top: inherit;
-  }
-
-  .slick-disabled {
-    background-color: color(primary-white);
-    border: 0.14rem solid rgba(color(text-primary), 0.5);
-    &:hover {
-      background-color: color(primary-white);
-    }
-    svg {
-      path {
-        stroke: rgba(color(text-primary), 0.5);
-      }
-    }
-  }
+  margin-top: 6.25rem;
 
   .slick-dots {
     position: relative;
-    top: 9rem;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    left: 0;
     display: flex !important;
     justify-content: space-between;
 
     .yearCount {
       color: color(bg-gray);
       position: absolute;
-      top: -1.875rem;
+      top: -2.875rem;
       left: 0;
     }
 
@@ -513,7 +460,7 @@ input:-webkit-autofill {
       content: "";
       width: 100vw;
       height: 0.063rem;
-      border: 0.14rem dashed color(bg-gray);
+      border: 1px dashed color(bg-gray);
       position: absolute;
       left: 50%;
       transform: translate(-50%);
@@ -554,7 +501,7 @@ input:-webkit-autofill {
       }
       .yearCount {
         color: color(info-blue);
-        top: -1.875rem;
+        top: -2.875rem;
       }
     }
   }
@@ -861,11 +808,10 @@ input:-webkit-autofill {
   }
 }
 
-
 .custom-dropdown {
-   .react-select__control {
+  .react-select__control {
     background-color: color(primary-white);
-   }
+  }
 }
 
 .dark-theme-style {
@@ -873,5 +819,5 @@ input:-webkit-autofill {
     .react-select__control {
       background-color: transparent;
     }
- }
+  }
 }

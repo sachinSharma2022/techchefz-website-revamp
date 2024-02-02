@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
       <body className={cn(aeonik.variable, helvetica.variable)}>
         <ThemeProvider>
           <Header />
-          <main className={cn("main-style")}>{children}</main>
+          <div className={cn("main-style")}>{children}</div>
           <Footer />
         </ThemeProvider>
       </body>

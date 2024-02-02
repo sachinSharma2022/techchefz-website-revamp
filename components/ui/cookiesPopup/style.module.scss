@@ -1,0 +1,49 @@
+@import "~/styles/partials/config";
+
+.cookies {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 7.5rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: color(text-primary);
+  color: color(primary-white);
+  z-index: 999;
+	animation: slide-in 1000ms;
+
+  @keyframes slide-in {
+    0% {
+     transform: translateY(100%);
+    }
+    100% {
+     transform: translateY(0);
+    }
+  }
+
+
+  .cookiesContent {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+
+    p {
+      max-width: 741px;
+      margin-bottom: 0;
+      font-size: text(normal);
+      line-height: 1.5rem;
+    }
+  }
+
+  .cookiesButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 270px;
+
+    button {
+      width: 100%;
+    }
+  }
+}
