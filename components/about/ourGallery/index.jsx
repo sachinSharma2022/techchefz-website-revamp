@@ -7,7 +7,7 @@ import { useContext } from "react";
 import styles from "./style.module.scss";
 
 const OurGallery = ({props}) => {
-  console.log("mmmm", props);
+  // console.log("mmmm", props);
   const { theme, setTheme } = useContext(MyContext);
 
   return (
