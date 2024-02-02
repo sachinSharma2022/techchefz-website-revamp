@@ -4,7 +4,7 @@
   padding: spacing(section-primary-padding);
   padding-bottom: 5rem;
 
-  @include mobile{
+  @include mobile-tablet-p{
   padding: 2rem;
   }
 
@@ -24,6 +24,11 @@
     font-size: text(larger);
     font-weight: 500;
     line-height: 3.375rem;
+
+    @include mobile-tablet-p{
+      font-size: text(xxxl);
+      line-height: 2.5rem;
+    }
   }
 
   .coeSupportCards {
@@ -32,8 +37,12 @@
     gap: 2.5rem;
     padding: 5rem 0;
 
+    @include mobile-tablet-p{
+      grid-template-columns: repeat(2, 1fr);
+    }
+
     @include mobile{
-      flex-direction: column;
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 

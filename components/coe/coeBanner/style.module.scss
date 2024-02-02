@@ -14,7 +14,7 @@
       padding-inline: 0;
     }
      
-    @include mobile{
+    @include mobile-tablet-p{
       padding: 2rem;
       flex-direction: column;
     }
@@ -24,10 +24,19 @@
       line-height: 5rem;
       max-width: 580px;
 
+      @include mobile-tablet-p{
+        font-size: text(larger);
+        line-height: 3.5rem;
+      }
+
       span {
         font-size: text(xl-larger);
         background: linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%);
        @include textGradient;
+
+       @include mobile-tablet-p{
+        font-size: text(larger);
+      }
       }
     }
 
@@ -42,6 +51,10 @@
         font-size: text(lg);
         line-height: 1.875rem;
         opacity: 0.8;
+
+        @include mobile-tablet-p{
+          font-size: text(normal);
+        }
       }
     }
   }

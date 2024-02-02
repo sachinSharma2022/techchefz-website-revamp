@@ -20,6 +20,14 @@
          flex-direction: column;
       }
 
+      .serviceBtn {
+         display: flex;
+         gap: 1.25rem;
+
+         @include mobile-tablet-p {
+            flex-wrap: wrap;
+         }
+      }
       button {
          color: color(text-primary);
          font-size: text(normal);
@@ -36,22 +44,22 @@
             flex-wrap: wrap;
          }
 
-         button {
-            color: color(text-primary);
-            font-size: text(normal);
-            font-weight: 400;
-            line-height: 1.875rem;
-            height: 2.75rem;
-            padding: 0 2rem;
-            border: 0.14rem solid rgba(color(text-primary), 0.4);
-            border-radius: 0.5rem;
+         // button {
+         // color: color(text-primary);
+         // font-size: text(normal);
+         // font-weight: 400;
+         // line-height: 1.875rem;
+         // height: 2.75rem;
+         // padding: 0 2rem;
+         // border: 0.14rem solid rgba(color(text-primary), 0.4);
+         // border-radius: 0.5rem;
 
-            &:hover {
-               background-color: color(primary-white);
-               color: color(text-primary);
-               border: 0.14rem solid var(--Gradient, #1e8af2);
-            }
-         }
+         // &:hover {
+         //    background-color: color(primary-white);
+         //    color: color(text-primary);
+         //    border: 0.14rem solid var(--Gradient, #1e8af2);
+         // }
+         // }
       }
    }
 
@@ -70,6 +78,11 @@
          gap: 2.5rem;
          grid-template-columns: auto auto;
 
+         @include mobile{
+            grid-template-columns:inherit;
+
+            }
+
          .featureInsightCard {
             width: 100%;
 
@@ -78,12 +91,21 @@
                grid-row: 1 /3;
 
                @include mobile {
-                  grid-row: 1/1;
+                  grid-row: 3/3;
+
+                  // img{
+                  //    display: none;
+                  // }
                }
 
                .featureImgBox {
                   div {
                      min-height: 360px;
+
+                     @include mobile{
+                        min-height: inherit;
+                        height: 152px;
+                     }
                   }
                }
             }
@@ -96,9 +118,20 @@
 
                @include mobile {
                   grid-column: 1;
+                  grid-row: 4;
+                  max-width: inherit;
+                  width: 100%;
+
+                  img{
+                     display: none;
+                  }
                }
                .featureImgBox div {
                   height: 230px;
+                  
+                  @include mobile{
+                     height: 152px;
+                  }
                }
             }
 
@@ -110,10 +143,19 @@
 
                @include mobile {
                   grid-column: 1;
+                  max-width: 394px;
+                  
+                  img{
+                     display: none;
+                  }
                }
 
                .featureImgBox div {
                   height: 230px;
+                  
+                  @include mobile{
+                     height: 152px;
+                  }
                }
             }
          }
@@ -169,25 +211,25 @@
             }
          }
       }
-
-      .insightSubHeading {
-         color: color(primary-white);
-      }
-
-      .allInsight {
-         margin-top: 3.75rem;
-
-         .allInsightCards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-            margin: 2.5rem 0;
-         }
-
-         .insightButton {
-            margin-top: 5rem;
-            text-align: center;
-         }
-      }
    }
+
+   .insightSubHeading {
+      color: color(primary-white);
+   }
+
+   // .allInsight {
+   //    margin-top: 3.75rem;
+
+   //    .allInsightCards {
+   //       display: grid;
+   //       grid-template-columns: repeat(3, 1fr);
+   //       gap: 2.5rem;
+   //       margin: 2.5rem 0;
+   //    }
+
+   //    .insightButton {
+   //       margin-top: 5rem;
+   //       text-align: center;
+   //    }
+   // }
 }

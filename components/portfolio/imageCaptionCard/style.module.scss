@@ -116,8 +116,10 @@
         font-size: text(xl);
         font-weight: 500;
         margin-bottom: 0;
+        line-height: 2.5rem;
         @include mobile-tablet-p {
           font-size: text(lg);
+          line-height: 1.75rem;
         }
       }
       svg {

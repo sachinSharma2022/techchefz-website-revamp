@@ -105,13 +105,12 @@
     }
   }
 
-
   //Dark mode style
-  &.cmsTypeDark{
+  &.cmsTypeDark {
     color: color(primary-white);
     background-color: color(input-bg);
 
-    .projectHighlight{
+    .projectHighlight {
       color: color(primary-white);
     }
   }
