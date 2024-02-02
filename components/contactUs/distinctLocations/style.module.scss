@@ -13,7 +13,7 @@
     margin-bottom: 3.75rem;
     max-width: 49.188rem;
 
-    @include mobile {
+    @include mobile-tablet-p {
       margin-bottom: 2.5rem;
     }
   }
@@ -27,7 +27,7 @@
     text-transform: uppercase;
     letter-spacing: 0.2rem;
 
-    @include mobile {
+    @include mobile-tablet-p {
       margin-bottom: 0.75rem;
     }
   }
@@ -37,7 +37,7 @@
     line-height: 3.375rem;
     margin-bottom: text(lg);
 
-    @include mobile {
+    @include mobile-tablet-p {
       font-size: text(xxxl);
       line-height: 2.5rem;
       padding-right: 0;
@@ -51,7 +51,7 @@
     opacity: 0.6;
     margin-bottom: 0;
 
-    @include mobile {
+    @include mobile-tablet-p {
       font-size: text(normal);
       max-width: 100%;
     }
@@ -83,7 +83,7 @@
           border-color: color(heading-liner);
         }
 
-        @include mobile {
+        @include mobile-tablet-p {
           padding: text(xl);
         }
         .backgroundImg div {
@@ -137,7 +137,7 @@
           margin-bottom: 0;
           line-height: 2rem;
 
-          @include mobile {
+          @include mobile-tablet-p {
             font-size: text(lg);
           }
         }
@@ -149,7 +149,7 @@
           opacity: 0.8;
           text-align: left;
           margin-bottom: text(lg);
-          @include mobile {
+          @include mobile-tablet-p {
             font-size: text(normal);
           }
         }
