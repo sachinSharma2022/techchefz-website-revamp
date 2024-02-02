@@ -2,32 +2,11 @@
 
 .ourHistory {
   padding: spacing(section-primary-padding);
+  padding-bottom: 0;
+
   @include mobile-tablet-p {
     padding: spacing(section-mob-padding);
     padding-block: 3.75rem 3.75rem;
-  }
-
-  &.ourHistoryDark {
-    background-color: color(input-bg);
-    color: color(primary-white);
-
-    .ourHistoryTop {
-      .ourHistoryTitle {
-        color: color(primary-white);
-      }
-      .ourHistoryHeading {
-        color: color(primary-white);
-      }
-    }
-
-    .cardStyle {
-      .infoStyle {
-        .ourHistoryContent {
-          color: color(primary-white);
-          opacity: 0.6;
-        }
-      }
-    }
   }
 
   .ourHistoryTop {
@@ -87,24 +66,103 @@
     }
   }
 
-  .OurHistoryImage {
+  .OurHistoryImage div {
     position: relative;
     display: flex;
     justify-content: flex-end;
+    height: 397px;
+    border-radius: 0.5rem;
+    overflow: hidden;
 
     img {
-      border-radius: 0.5rem;
       object-fit: cover;
+      height: 100%;
+      width: 100%;
     }
   }
 
-  .cardStyle {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    padding: 0 0.2rem;
-    @include mobile-tablet-p {
-      grid-template-columns: repeat(1, 1fr) !important;
+  .controlSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .sliderArrow {
+    display: flex;
+    gap: 24px;
+
+    .button {
+      background-color: color(primary-blue);
+      padding: 0;
+      border-radius: 0.5rem;
+      width: 3rem;
+      height: 3rem;
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    svg > path {
+      stroke: color(primary-white);
+    }
+  }
+
+  .arrowDisabled {
+    border-radius: 0.5rem;
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid rgba(color(text-primary), 0.2);
+    color: color(primary-blue);
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg > path {
+      stroke: color(primary-black);
+    }
+  }
+
+  // .sliderSection {
+  //   display: grid;
+  //   grid-template-columns: repeat(2, 1fr);
+  //   gap: 10px;
+  // }
+
+  &.ourHistoryDark {
+    background-color: color(input-bg);
+    color: color(primary-white);
+
+    .ourHistoryTop {
+      .ourHistoryTitle {
+        color: color(primary-white);
+      }
+      .ourHistoryHeading {
+        color: color(primary-white);
+      }
+    }
+
+    .cardStyle {
+      .infoStyle {
+        .ourHistoryContent {
+          color: color(primary-white);
+          opacity: 0.6;
+        }
+      }
+    }
+
+    .arrowDisabled {
+      border: 1px solid rgba(color(primary-white), 0.2);
+
+      svg > path {
+        stroke: color(primary-white);
+      }
     }
   }
 }
