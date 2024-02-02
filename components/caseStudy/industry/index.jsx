@@ -10,7 +10,7 @@ import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
 
 const Industry = ({props, CMSImplementation}) => {
-  console.log("nnn", props);
+ 
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section

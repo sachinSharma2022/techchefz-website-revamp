@@ -11,18 +11,19 @@ import axios, { Axios } from "axios";
 import { api_Case_study_Page } from "@/lib/constants";
 
 const CaseStudy = async() =>{
+  
   const data = await getData()
   return (
     <div>
       <CaseStudyBanner props={data.CaseStudyBanner}/>
       <Industry props={data.Industry} CMSImplementation={data.CMSImplementation}/>
-      <Goals />
-      <Challenges />
-      <Solutions />
-      <Results />
+      <Goals props={data.Goals} />
+      <Challenges props={data.Challenges}/>
+      <Solutions props={data.Solutions} />
+      <Results props={data.Results} />
       <RelatedCase sliderClassName="mb-0" />
       <LetsWork  contact={data.ContactUs}/>
-      <LetsWork  contact={data.ContactUs}/>
+     
     </div>
   );
 };

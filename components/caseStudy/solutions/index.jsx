@@ -7,7 +7,8 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 
-function Solutions() {
+const Solutions = ({props}) => {
+  
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section
@@ -16,18 +17,14 @@ function Solutions() {
       <div className={cn("primary-container")}>
         <div className="row justify-content-between">
           <div className="col-md-3 col-lg-3">
-            <h6 className={styles.solutionTitle}>Solutions</h6>
+            <h6 className={styles.solutionTitle}>{props.Title}</h6>
           </div>
           <div className="col-md-7 col-lg-8">
             <h3 className={styles.solutionHeading}>
-              Revving Up Digital Experiences: Ride, Record, and Recall.
+             {props.SubTitle}
             </h3>
             <p className={styles.solutionText}>
-              Our motorcycle mobile application development team aimed to craft
-              an MVP tailored for the iconic Royal Enfield brand. This app would
-              be effortlessly scalable and optimized post initial rider
-              feedback. Lets delve into the strategy that propelled us toward
-              this objective.
+              {props.Description}
             </p>
           </div>
         </div>
