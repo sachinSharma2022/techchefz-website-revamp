@@ -3,7 +3,7 @@
 .browserAccelerator {
    padding: 4rem 7.5rem 8.75rem;
 
-   @include mobile {
+   @include mobile-tablet-p{
       padding: 1rem 1.5rem 5.75rem;
    }
 
@@ -12,7 +12,7 @@
       justify-content: space-between;
       gap: 2.5rem;
 
-      @include mobile {
+      @include mobile-tablet-p{
          flex-direction: column;
       }
    }

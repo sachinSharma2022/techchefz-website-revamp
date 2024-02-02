@@ -18,6 +18,16 @@
       background-color: color(text-primary);
       color: color(primary-white);
    }
+   
+   .impactContainer{
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+
+      @include mobile-tablet-p{
+         gap: 3.75rem;
+      }
+   }
 
    .subHeading {
       font-size: text(normal);
@@ -76,7 +86,7 @@
       .topSectionRight {
          width: 50%;
 
-         @include mobile {
+         @include mobile-tablet-p {
             width: 100%;
          }
 
