@@ -12,12 +12,12 @@ const Coe = async() => {
   return (
     <>
     {data?<div>
-      <CoeBanner />
-      <OurValues />
-      <CoeSupport />
+      <CoeBanner props={data.CoeBanner} />
+      <OurValues props={data.Ourvaluesection}/>
+      <CoeSupport props={data.Support} />
       <CoeImpact />
-      <CoeService />
-      <LetsWork  contact={data.ContactUs}/>
+      <CoeService props={data.CoeService} />
+      <LetsWork />
     </div>:<></>}
     </>
     

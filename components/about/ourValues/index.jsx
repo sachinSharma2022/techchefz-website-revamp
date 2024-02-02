@@ -61,9 +61,9 @@ const OurValues = ({props}) => {
         <div className="row">
           <div className="col-md-7 col-lg-8">
             <div className={styles.ourValuesHead}>
-              <h6 className={styles.ourValuesTitle}>{props[0].Title}</h6>
+              <h6 className={styles.ourValuesTitle}>{props?.Title}</h6>
               <h3 className={styles.ourValuesHeading}>
-                {props[0].SubTitle}
+                {props?.SubTitle}
               </h3>
             </div>
           </div>
@@ -74,7 +74,7 @@ const OurValues = ({props}) => {
             <div className="col-md-6 col-lg-6">
               <div className={styles.ourValueImg}>
                 <ImageCustom
-                  src={`${base_Uri}${props[0]?.Image.data.attributes.url}`}
+                  src={`${base_Uri}${props?.Image.data.attributes.url}`}
                   width={600}
                   height={550}
                   alt="content-img"
@@ -83,10 +83,10 @@ const OurValues = ({props}) => {
             </div>
             <div className="col-md-6 col-lg-5">
               <p className={styles.ourValuesText}>
-                {props[0].Description}
+                {props?.Description}
               </p>
               <div className={styles.ourValuesAccordion}>
-                {props[0]?.FaqComponent?.map((data, index) => (
+                {props?.FaqComponent?.map((data, index) => (
                   <Disclosure key={index}>
                     {(panel) => {
                       const { open, close } = panel;

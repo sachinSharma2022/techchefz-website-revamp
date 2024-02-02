@@ -22,7 +22,7 @@ const AboutPage = async() => {
         <OurVision props={data.OurVisionMissionComponent} />
         <OurHistory  props={data.OurHistoryComponent} OurHistory={data.OurHistory}/>
         <WhatWeDo  props={data.WhatWeDoComponent} />
-        <OurValues props={data.CreateatInstrument}/>
+        <OurValues props={data.Ourvaluesection}/>
         <OurResults props={data.Result}/>
         <OurTeam  props={data.Team}/>
         <OurGallery props={data.Gallery}/>

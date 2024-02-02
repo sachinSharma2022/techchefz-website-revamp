@@ -4,10 +4,12 @@ import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { cn } from "@/lib/utils";
+import { base_Uri } from "@/lib/constants";
+
 
 import styles from "./style.module.scss";
 
-const SolutionHeroBanner = () => {
+const SolutionHeroBanner = ({props}) => {
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section
@@ -21,19 +23,18 @@ const SolutionHeroBanner = () => {
             Your most trusted <br />
             <span className={styles.titleHighlight}>Technology</span> Company.
           </h1>
+              {/* <h1 className={styles.title} dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}></h1> */}
+
 
           <p className={styles.leadText}>
-            We assist businesses by transforming their goals, teams, and
-            cultures with digital technology to make them colinear with the
-            digital age. Through digitalization, organizations can facilitate
-            advanced decision-making and management.
+          {props?.Description}
           </p>
         </div>
       </div>
 
       <div className={styles.landingPlayerStyle}>
-        <ImageCustom
-          src="/images/hero-solution.webp"
+      <ImageCustom
+          src={`${base_Uri}${props?.Image.data.attributes.url}`}
           width={1440}
           height={650}
           alt="bannerImg"

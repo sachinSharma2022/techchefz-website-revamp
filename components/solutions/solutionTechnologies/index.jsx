@@ -7,33 +7,35 @@ import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import Slider from "react-slick";
 import { cn } from "@/lib/utils";
+import { base_Uri } from "@/lib/constants";
 
 import styles from "./style.module.scss";
 
-const SolutionTechnologies = () => {
+const SolutionTechnologies = ({props}) => {
+   console.log("neee",props);
   const { theme, setTheme } = useContext(MyContext);
-  const serviceCard = [
-    {
-      icon: <Icons.Market width={56} height={56} />,
-      sbTitle: "4+",
-      sbText: "Years of Experience in Market.",
-    },
-    {
-      icon: <Icons.MarketPlace width={56} height={56} />,
-      sbTitle: "1M+",
-      sbText: "Users growth in marketplace.",
-    },
-    {
-      icon: <Icons.Rates width={56} height={56} />,
-      sbTitle: "300%",
-      sbText: "Elevated Conversion Rates.",
-    },
-    {
-      icon: <Icons.PerformanceIcon width={56} height={56} />,
-      sbTitle: "120%",
-      sbText: "Enhanced SaaS CRO Performance.",
-    },
-  ];
+  // const serviceCard = [
+  //   {
+  //     icon: <Icons.Market width={56} height={56} />,
+  //     sbTitle: "4+",
+  //     sbText: "Years of Experience in Market.",
+  //   },
+  //   {
+  //     icon: <Icons.MarketPlace width={56} height={56} />,
+  //     sbTitle: "1M+",
+  //     sbText: "Users growth in marketplace.",
+  //   },
+  //   {
+  //     icon: <Icons.Rates width={56} height={56} />,
+  //     sbTitle: "300%",
+  //     sbText: "Elevated Conversion Rates.",
+  //   },
+  //   {
+  //     icon: <Icons.PerformanceIcon width={56} height={56} />,
+  //     sbTitle: "120%",
+  //     sbText: "Enhanced SaaS CRO Performance.",
+  //   },
+  // ];
   const settings = {
     className: "center",
     centerPadding: "0px",
@@ -79,17 +81,17 @@ const SolutionTechnologies = () => {
         <div className={styles.careerRow}>
           <div className="row">
             <div className="col-md-12 col-12">
-              <p className={styles.ProjectHighlight}>Technologies</p>
+              <p className={styles.ProjectHighlight}>{props?.Title}</p>
             </div>
 
             <div className="col-md-8 col-12">
               <h2 className={styles.datingText}>
-                Driving Technological Advancements for the Future
+              {props?.SubTitle}
               </h2>
             </div>
             <div className={`${styles.careerBtn} col-md-4 col-12`}>
               <Button variant="outline" size="md">
-                Explore Technology <Icons.ArrowRight size={18} />
+              {props?.Button} <Icons.ArrowRight size={18} />
               </Button>
             </div>
           </div>
@@ -99,28 +101,33 @@ const SolutionTechnologies = () => {
           <div className={styles.ourNumberGrid}>
             <div>
               <p className={styles.ourNumbersText}>
-                In a world where technology evolves at the blink of an eye,
-                Techchefz stands at the helm, steering the course towards a
-                brighter, more connected future.
+              {props?.Description}
               </p>
               <div
                 className={`${styles.desktopCards} ${styles.ourNumberOption} `}
               >
-                {serviceCard.map((data, index) => (
+               {props?.TechnologyInner?.map((data, index) => (
                   <div key={index} className={styles.serviceBox}>
                     <div className={styles.numberCardFlex}>
-                      <h2 className={styles.sbTitle}>{data.sbTitle}</h2>
-                      <div className={styles.bgIcon}>{data.icon}</div>
+                      <h2 className={styles.sbTitle}>{data.Title}</h2>
+                      {/* <div className={styles.bgIcon}>{data.icon}</div> */}
+                      <div className={styles.bgIcon}>
+                        <ImageCustom
+                        src={`${base_Uri}${data?.Image?.data.attributes.url}`}
+                        width={56}
+                        height={56}
+                        alt="bannerImg"  />
+            </div>
                     </div>
 
-                    <p className={styles.sbText}>{data.sbText}</p>
+                    <p className={styles.sbText}>{data.Description}</p>
                   </div>
                 ))}
               </div>
             </div>
             <div className={styles.ourNumbersImg}>
               <ImageCustom
-                src="/images/our-number.jpg"
+                 src={`${base_Uri}${props.image.data.attributes.url}`}
                 width={1000}
                 height={100}
                 alt="bannerImg"
@@ -128,7 +135,7 @@ const SolutionTechnologies = () => {
             </div>
           </div>
 
-          <div className={`${styles.ourNumberOption} service-mobile-slider`}>
+          {/* <div className={`${styles.ourNumberOption} service-mobile-slider`}>
             <Slider {...settings}>
               {serviceCard.map((data, index) => (
                 <div key={index} className={styles.serviceBox}>
@@ -141,7 +148,7 @@ const SolutionTechnologies = () => {
                 </div>
               ))}
             </Slider>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
