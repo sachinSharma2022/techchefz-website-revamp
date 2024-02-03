@@ -27,7 +27,6 @@ const Card = ({ ...props }) => {
     1,
     props.targetScale,
   ]);
-  console.log(props)
   return (
     <motion.div className={styles.cardSec} style={{ scale }}>
       <div className={styles.projectImg}>

@@ -8,11 +8,11 @@ import TechnologyBanner from '@/components/technology/technologyBanner'
 import TechnologyCase from '@/components/technology/technologyCase'
 import TechnologyValues from '@/components/technology/technologyValues'
 import React from 'react'
-import axios from "axios";
+import { getData } from "@/lib/fetchData";
 import { api_Technology_Page } from "@/lib/constants";
 
 const Technology = async() => {
-  const data = await getData()
+  const data = await getData(api_Technology_Page)
   return (
     <>
      {data?<div>
@@ -33,13 +33,3 @@ const Technology = async() => {
 };
 
 export default Technology;
-async function getData() {
-  try{
-    const response = await axios.get(api_Technology_Page);
-    return response.data?.data[0]?.attributes
-  }catch(error){
-    console.log(error)
-    return null
-  }
-  
-}

@@ -9,11 +9,11 @@ import TechnologyStack from "@/components/home/technologyStack";
 import WeAreFuture from "@/components/home/weAreFuture";
 import VideoCustom from "@/components/ui/videoCustom";
 import Curve from "@/components/ui/pageTransition";
-import axios from "axios";
 import { api_Home_Page } from "@/lib/constants";
+import { getData } from "@/lib/fetchData";
 
 const HomePage = async () => {
-  const data = await getData();
+  const data = await getData(api_Home_Page);
   return (
     <>
       <Curve>
@@ -39,12 +39,4 @@ const HomePage = async () => {
 };
 
 export default HomePage;
-async function getData() {
-  try {
-    const response = await axios.get(api_Home_Page, { cache: "no-store" });
-    return response.data?.data[0]?.attributes;
-  } catch (error) {
-    console.log(error);
-    return null;
-  }
-}
+
