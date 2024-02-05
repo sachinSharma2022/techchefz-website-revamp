@@ -150,7 +150,7 @@ const Projects = ({project,brands}) => {
         <div ref={container} className={styles.cards}>
           {brands.map((project, i) => {
             const targetScale = 1 - (brands.length - i) * 0.05;
-            console.log(project,"projects")
+           
             return (
               <Card
                 key={`p_${i}`}

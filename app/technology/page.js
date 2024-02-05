@@ -21,7 +21,7 @@ const Technology = async() => {
            <Partners/>
            <Consistent/>
           <TechnologyValues/>
-          <OurNumbers  carrer={data.Career} experience={data.OurExperience}/>
+          {/* <OurNumbers  carrer={data.Career} experience={data.OurExperience}/> */}
           <Discover/>
           <TechnologyCase />
            <LetsWork  contact={data.ContactUs}/>

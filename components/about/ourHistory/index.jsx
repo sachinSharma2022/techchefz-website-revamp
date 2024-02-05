@@ -166,7 +166,7 @@ const OurHistory = ({props, OurHistory}) => {
               focusOnSelect={true}
               {...setting2}
             >
-              {sliderData.map((data, index) => (
+              {OurHistory.map((data, index) => (
                 <div key={index} className={styles.cardStyle}>
                   <div className={styles.OurHistoryImage}>
                     <ImageCustom
