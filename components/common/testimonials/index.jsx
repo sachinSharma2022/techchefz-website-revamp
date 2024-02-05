@@ -88,6 +88,7 @@ const Testimonials = (props) => {
                 <p className={styles.testimonialsText}>{props.description}</p>
               </div>
 
+              {/* Mobile Slider */}
               <div className={styles.mobileSlider}>
                 <Swiper
                   spaceBetween={5}
@@ -137,6 +138,7 @@ const Testimonials = (props) => {
                   ))}
                 </Swiper>
               </div>
+              {/* End Mobile Slider */}
 
               <div className={styles.sliderController}>
                 <button
@@ -178,11 +180,6 @@ const Testimonials = (props) => {
                   modifier: 1,
                   slideShadows: true,
                   scale: 1.02,
-                }}
-                breakpoints={{
-                  767: {
-                    slidesPerView: 1,
-                  },
                 }}
                 pagination={false}
                 modules={[EffectCoverflow, Pagination, Navigation]}

@@ -331,6 +331,10 @@ input:-webkit-autofill {
     }
   }
 
+  .swiper-slide-active {
+    transform: none !important;
+  }
+
   .swiper-slide-shadow-left {
     background-color: color(primary-white);
     box-shadow: none;
