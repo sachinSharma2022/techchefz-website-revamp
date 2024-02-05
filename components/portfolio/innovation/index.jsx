@@ -54,7 +54,7 @@ const Innovation = ({props}) => {
               </div>
               <div className={styles.bgImage}>
                 <ImageCustom
-                  src={`${base_Uri}${data?.Image?.data.attributes.url}`}
+                  src={data?.Image?.data?.attributes?.url?`${base_Uri}${data?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
                   width="500"
                   height="500"
                   alt="Innovation"
