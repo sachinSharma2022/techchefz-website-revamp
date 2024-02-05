@@ -46,20 +46,19 @@
 
     @include mobile-tablet-p {
       position: fixed;
-      left: 0;
+      left: -100%;
       top: 70px;
       height: calc(100vh - 70px);
       width: 100%;
       transform: inherit;
       z-index: 999;
       background-color: rgba(color(text-primary), 1);
-      left: -100%;
       transition: all 0.5s;
       overflow-y: scroll;
     }
 
     &.showNav {
-      left: 0;
+      left: 0%;
     }
 
     ul {
@@ -110,7 +109,8 @@
           }
         }
 
-        > a, button {
+        > a,
+        button {
           font-size: text(normal);
           color: color(text-primary);
           font-weight: 500;
@@ -126,8 +126,9 @@
             font-size: 20px;
             width: 100%;
             justify-content: space-between;
-            padding: 0;
+            padding: 7px 0 0;
             margin: 0;
+            width: 100%;
           }
 
           &:hover {
@@ -142,23 +143,23 @@
           }
 
           @include desktop {
-          &::before {
-            content: "";
-            width: 0px;
-            height: 0px;
-            border-style: solid;
-            border-width: 0 10px 10px 10px;
-            border-color: transparent transparent color(primary-blue)
-              transparent;
-            transform: rotate(0deg);
-            position: absolute;
-            top: 3.05rem;
-            left: 50%;
-            transform: translate(-50%);
-            opacity: 0;
-            transition: all 0.5s;
+            &::before {
+              content: "";
+              width: 0px;
+              height: 0px;
+              border-style: solid;
+              border-width: 0 10px 10px 10px;
+              border-color: transparent transparent color(primary-blue)
+                transparent;
+              transform: rotate(0deg);
+              position: absolute;
+              top: 3.05rem;
+              left: 50%;
+              transform: translate(-50%);
+              opacity: 0;
+              transition: all 0.5s;
+            }
           }
-        }
 
           &.active {
             color: color(primary-blue);
@@ -193,41 +194,40 @@
 
   // Dropdown Menu
   @include desktop {
+    .dropDown {
+      &:hover {
+        .subMenu {
+          display: block;
+          animation: slide-down 0.5s ease-in-out;
 
-  .dropDown {
-    &:hover {
-      .subMenu {
-        display: block;
-        animation: slide-down 0.5s ease-in-out;
+          @keyframes slide-down {
+            0% {
+              opacity: 0;
+              top: 90%;
+            }
+            100% {
+              opacity: 1;
+              top: 100%;
+            }
+          }
+        }
 
-        @keyframes slide-down {
-          0% {
-            opacity: 0;
-            top: 90%;
-          }
-          100% {
-            opacity: 1;
-            top: 100%;
-          }
+        a {
+          background-color: transparent;
         }
       }
 
-      a {
-        background-color: transparent;
+      svg {
+        margin-right: 0.5rem;
       }
-    }
 
-    svg {
-      margin-right: 0.5rem;
-    }
-
-    a {
-      &::after {
-        display: none;
+      a {
+        &::after {
+          display: none;
+        }
       }
     }
   }
-}
 
   .dotIcon {
     @include mobile {
@@ -281,7 +281,7 @@
         transform: rotate(45deg) translate(6px, 6px);
       }
       &:last-child {
-        transform: rotate(-45deg) translate(2px, -2px);
+        transform: rotate(-45deg) translate(1px, -1px);
       }
     }
   }
@@ -379,15 +379,28 @@
     border-radius: 0.5rem;
     box-shadow: 0 5px 32px rgba(color(text-primary), 0.2);
 
+    @include mobile-tablet-p {
+      display: block;
+      left: 0;
+      transform: inherit;
+      top: 70px;
+      min-width: auto;
+      width: 100%;
+      height: calc(100dvh - 70px);
+      padding: 0;
+      position: fixed;
+      background-color: color(text-primary);
+      overflow-y: scroll;
+    }
+
     &.singleLayout {
       max-width: 50vw;
       min-width: 50rem;
-    }
 
-    @include tablet {
-      left: 0;
-      transform: inherit;
-      top: 3rem;
+      @include mobile-tablet-p {
+        min-width: auto;
+        max-width: 100%;
+      }
     }
 
     li {
@@ -442,12 +455,22 @@
       width: 100%;
       display: flex;
 
+      @include mobile-tablet-p {
+        flex-direction: column;
+      }
+
       .latestTech {
         width: 100%;
         min-width: 378px;
         max-width: 30%;
         background-color: color(dark-gray);
         padding: 3rem;
+
+        @include mobile-tablet-p {
+          padding: 1.25rem;
+          min-width: auto;
+          max-width: 100%;
+        }
 
         h1 {
           font-size: text(normal);
@@ -524,14 +547,30 @@
           max-height: 60vh;
         }
 
+        @include mobile-tablet-p {
+          max-width: 100%;
+          padding: 1.25rem;
+          min-height: 100%;
+          max-height: 100%;
+        }
+
         .overviewFlex {
           display: flex;
           justify-content: space-between;
           align-items: center;
 
+          @include mobile-tablet-p {
+            flex-direction: column;
+            margin-bottom: 2rem;
+          }
+
           .overviewSubFlex {
             display: flex;
             gap: 1.5rem;
+
+            @include mobile-tablet-p {
+              // flex-direction: column;
+            }
           }
 
           h1 {
@@ -553,12 +592,20 @@
 
           .overviewBtn {
             margin-top: 2rem;
+
+            @include mobile-tablet-p {
+              width: 100%;
+            }
           }
         }
         .multiHrefs {
           margin-top: 2rem;
           position: relative;
           gap: 16px 0;
+
+          @include mobile-tablet-p {
+            margin-top: 0;
+          }
 
           .hrefsFlex {
             position: relative;
@@ -632,7 +679,23 @@
 
   .subMenuMore {
     @extend .subMenu;
-    min-width: 50rem;
+
+    @include desktop {
+      min-width: 50rem;
+    }
+  }
+
+  // Back Button
+  .backButton {
+    font-size: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    padding: 1.625rem 1.5rem;
+
+    svg path {
+      stroke: color(primary-white);
+    }
   }
 
   // Dark Style here
@@ -643,8 +706,8 @@
       background-color: color(input-bg);
     }
 
-    .navHamburger{
-      span{
+    .navHamburger {
+      span {
         background-color: color(primary-white);
       }
     }
@@ -694,7 +757,9 @@
               }
             }
           }
-          a, .linkButton {
+          a,
+          .linkButton,
+          button {
             color: color(primary-white);
 
             &::after {
@@ -710,6 +775,10 @@
     }
     .arrow {
       border-color: color(primary-white);
+    }
+
+    .overviewBtn button {
+      color: color(info-blue);
     }
   }
 }

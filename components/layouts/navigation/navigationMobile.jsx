@@ -14,6 +14,9 @@ import styles from "./style.module.scss";
 const NavigationMobile = () => {
   const pathname = usePathname();
   const [mobileMenuShow, setMobileMenuShow] = useState(false);
+  const [isTechMenu, setTechMenu] = useState(false);
+  const [isMoreMenu, setMoreMenu] = useState(false);
+
   const { theme, setTheme } = useContext(MyContext);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -109,7 +112,6 @@ const NavigationMobile = () => {
   const mobileMenuToggle = () => {
     setMobileMenuShow(!mobileMenuShow);
   };
-
   return (
     <header
       className={cn(
@@ -139,7 +141,7 @@ const NavigationMobile = () => {
             />
           </Link>
         </div>
-        <nav className={mobileMenuShow ? styles.showNav : null}>
+        <nav className={mobileMenuShow ? styles.showNav : styles.hideNav}>
           <h4 className={styles.mobileTitle}>Menu</h4>
           <ul>
             <li className={styles.menuItem}>
@@ -164,111 +166,121 @@ const NavigationMobile = () => {
                   styles.linkButton,
                   pathname == "/technology" ? styles.active : ""
                 )}
+                onClick={() => setTechMenu(true)}
               >
                 Technology <div className={styles.arrow} />
               </button>
 
-              <ul className={cn(styles.subMenu)}>
-                <section className={styles.subsection}>
-                  {LatestTech()}
+              {isTechMenu && (
+                <ul className={cn(styles.subMenu)}>
+                  <section className={styles.subsection}>
+                    <button
+                      className={styles.backButton}
+                      onClick={() => setTechMenu(false)}
+                    >
+                      <Icons.ArrowLeft />
+                      Go Back
+                    </button>
+                    <div className={cn(styles.overviewTech)}>
+                      {OverTech()}
+                      <div className={cn(styles.multiHrefs)}>
+                        <div className="row">
+                          <div className="col-sm-6">
+                            <Link
+                              href="/technology/cms"
+                              className={cn(styles.hrefInnerFlex)}
+                            >
+                              <div className={styles.head}>
+                                <h4 className={styles.linkTitle}>CMS</h4>
+                                <Icons.ArrowForward />
+                              </div>
+                              <p className={styles.excepPara}>
+                                Be a partner for industry verticals on the
+                                inevitable journey towards enterprise.
+                              </p>
+                            </Link>
+                            <Link href="/" className={cn(styles.hrefInnerFlex)}>
+                              <div className={styles.head}>
+                                <h4 className={styles.linkTitle}>Commerce</h4>
+                                <Icons.ArrowForward />
+                              </div>
+                              <p className={styles.excepPara}>
+                                Be a partner for industry verticals on the
+                                inevitable journey towards enterprise.
+                              </p>
+                            </Link>
+                            <Link href="/" className={cn(styles.hrefInnerFlex)}>
+                              <div className={styles.head}>
+                                <h4 className={styles.linkTitle}>
+                                  Microservices
+                                </h4>
+                                <Icons.ArrowForward />
+                              </div>
+                              <p className={styles.excepPara}>
+                                Be a partner for industry verticals on the
+                                inevitable journey towards enterprise.
+                              </p>
+                            </Link>
+                            <Link href="/" className={cn(styles.hrefInnerFlex)}>
+                              <div className={styles.head}>
+                                <h4 className={styles.linkTitle}>
+                                  Cloud & DevSecOps
+                                </h4>
+                                <Icons.ArrowForward />
+                              </div>
+                              <p className={styles.excepPara}>
+                                Be a partner for industry verticals on the
+                                inevitable journey towards enterprise.
+                              </p>
+                            </Link>
+                          </div>
 
-                  <div className={cn(styles.overviewTech)}>
-                    {OverTech()}
-                    <div className={cn(styles.multiHrefs)}>
-                      <div className="row">
-                        <div className="col-sm-6">
-                          <Link
-                            href="/technology/cms"
-                            className={cn(styles.hrefInnerFlex)}
-                          >
-                            <div className={styles.head}>
-                              <h4 className={styles.linkTitle}>CMS</h4>
-                              <Icons.ArrowForward />
-                            </div>
-                            <p className={styles.excepPara}>
-                              Be a partner for industry verticals on the
-                              inevitable journey towards enterprise.
-                            </p>
-                          </Link>
-                          <Link href="/" className={cn(styles.hrefInnerFlex)}>
-                            <div className={styles.head}>
-                              <h4 className={styles.linkTitle}>Commerce</h4>
-                              <Icons.ArrowForward />
-                            </div>
-                            <p className={styles.excepPara}>
-                              Be a partner for industry verticals on the
-                              inevitable journey towards enterprise.
-                            </p>
-                          </Link>
-                          <Link href="/" className={cn(styles.hrefInnerFlex)}>
-                            <div className={styles.head}>
-                              <h4 className={styles.linkTitle}>
-                                Microservices
-                              </h4>
-                              <Icons.ArrowForward />
-                            </div>
-                            <p className={styles.excepPara}>
-                              Be a partner for industry verticals on the
-                              inevitable journey towards enterprise.
-                            </p>
-                          </Link>
-                          <Link href="/" className={cn(styles.hrefInnerFlex)}>
-                            <div className={styles.head}>
-                              <h4 className={styles.linkTitle}>
-                                Cloud & DevSecOps
-                              </h4>
-                              <Icons.ArrowForward />
-                            </div>
-                            <p className={styles.excepPara}>
-                              Be a partner for industry verticals on the
-                              inevitable journey towards enterprise.
-                            </p>
-                          </Link>
-                        </div>
-
-                        <div className="col-sm-6">
-                          <Link href="/" className={cn(styles.hrefInnerFlex)}>
-                            <div className={styles.head}>
-                              <h4 className={styles.linkTitle}>
-                                Data Intelligence
-                              </h4>
-                              <Icons.ArrowForward />
-                            </div>
-                            <p className={styles.excepPara}>
-                              Be a partner for industry verticals on the
-                              inevitable journey towards enterprise.
-                            </p>
-                          </Link>
-                          <Link href="/" className={cn(styles.hrefInnerFlex)}>
-                            <div className={styles.head}>
-                              <h4 className={styles.linkTitle}>
-                                Custom Development
-                              </h4>
-                              <Icons.ArrowForward />
-                            </div>
-                            <p className={styles.excepPara}>
-                              Be a partner for industry verticals on the
-                              inevitable journey towards enterprise.
-                            </p>
-                          </Link>
-                          <Link href="/" className={cn(styles.hrefInnerFlex)}>
-                            <div className={styles.head}>
-                              <h4 className={styles.linkTitle}>
-                                Analytics Automation
-                              </h4>
-                              <Icons.ArrowForward />
-                            </div>
-                            <p className={styles.excepPara}>
-                              Be a partner for industry verticals on the
-                              inevitable journey towards enterprise.
-                            </p>
-                          </Link>
+                          <div className="col-sm-6">
+                            <Link href="/" className={cn(styles.hrefInnerFlex)}>
+                              <div className={styles.head}>
+                                <h4 className={styles.linkTitle}>
+                                  Data Intelligence
+                                </h4>
+                                <Icons.ArrowForward />
+                              </div>
+                              <p className={styles.excepPara}>
+                                Be a partner for industry verticals on the
+                                inevitable journey towards enterprise.
+                              </p>
+                            </Link>
+                            <Link href="/" className={cn(styles.hrefInnerFlex)}>
+                              <div className={styles.head}>
+                                <h4 className={styles.linkTitle}>
+                                  Custom Development
+                                </h4>
+                                <Icons.ArrowForward />
+                              </div>
+                              <p className={styles.excepPara}>
+                                Be a partner for industry verticals on the
+                                inevitable journey towards enterprise.
+                              </p>
+                            </Link>
+                            <Link href="/" className={cn(styles.hrefInnerFlex)}>
+                              <div className={styles.head}>
+                                <h4 className={styles.linkTitle}>
+                                  Analytics Automation
+                                </h4>
+                                <Icons.ArrowForward />
+                              </div>
+                              <p className={styles.excepPara}>
+                                Be a partner for industry verticals on the
+                                inevitable journey towards enterprise.
+                              </p>
+                            </Link>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </section>
-              </ul>
+
+                    {LatestTech()}
+                  </section>
+                </ul>
+              )}
             </li>
             <li className={styles.menuItem}>
               <Link
@@ -279,7 +291,10 @@ const NavigationMobile = () => {
               </Link>
             </li>
             <li className={styles.dropDown}>
-              <button className={styles.linkButton}>
+              <button
+                className={styles.linkButton}
+                onClick={() => setMoreMenu(true)}
+              >
                 <Icons.MoreDotIcon
                   className={styles.dotIcon}
                   width={4}
@@ -288,86 +303,99 @@ const NavigationMobile = () => {
                 More
                 <div className={cn(styles.arrow, styles.hideDesktopIcon)} />
               </button>
-              <ul className={cn(styles.subMenu, styles.singleLayout)}>
-                <div className={styles.subsection}>
-                  {LatestTech()}
-                  <div className={cn(styles.overviewTech)}>
-                    <div className={cn(styles.multiHrefs)}>
-                      <div className="row">
-                        <div className="col-sm-12">
-                          <Link
-                            href="/careers"
-                            className={cn(styles.hrefInnerFlex)}
-                          >
-                            <div className={styles.head}>
-                              <h4 className={styles.linkTitle}>Careers</h4>
-                              <Icons.ArrowForward />
-                            </div>
-                            <p className={styles.excepPara}>
-                              Be a partner for industry verticals on the
-                              inevitable journey towards enterprise.
-                            </p>
-                          </Link>
-                          <Link
-                            href="/insights"
-                            className={cn(styles.hrefInnerFlex)}
-                          >
-                            <div className={styles.head}>
-                              <h4 className={styles.linkTitle}>Insights</h4>
-                              <Icons.ArrowForward />
-                            </div>
-                            <p className={styles.excepPara}>
-                              Be a partner for industry verticals on the
-                              inevitable journey towards enterprise.
-                            </p>
-                          </Link>
-                          <Link
-                            href="/coe"
-                            className={cn(styles.hrefInnerFlex)}
-                          >
-                            <div className={styles.head}>
-                              <h4 className={styles.linkTitle}>
-                                Centre of Excellence
-                              </h4>
-                              <Icons.ArrowForward />
-                            </div>
-                            <p className={styles.excepPara}>
-                              Be a partner for industry verticals on the
-                              inevitable journey towards enterprise.
-                            </p>
-                          </Link>
-                          <Link
-                            href="/accelerators"
-                            className={cn(styles.hrefInnerFlex)}
-                          >
-                            <div className={styles.head}>
-                              <h4 className={styles.linkTitle}>Accelerators</h4>
-                              <Icons.ArrowForward />
-                            </div>
-                            <p className={styles.excepPara}>
-                              Be a partner for industry verticals on the
-                              inevitable journey towards enterprise.
-                            </p>
-                          </Link>
-                          <Link
-                            href="/contact-us"
-                            className={cn(styles.hrefInnerFlex)}
-                          >
-                            <div className={styles.head}>
-                              <h4 className={styles.linkTitle}>Contact us</h4>
-                              <Icons.ArrowForward />
-                            </div>
-                            <p className={styles.excepPara}>
-                              Be a partner for industry verticals on the
-                              inevitable journey towards enterprise.
-                            </p>
-                          </Link>
+
+              {isMoreMenu && (
+                <ul className={cn(styles.subMenu, styles.singleLayout)}>
+                  <div className={styles.subsection}>
+                    <button
+                      className={styles.backButton}
+                      onClick={() => setMoreMenu(false)}
+                    >
+                      <Icons.ArrowLeft />
+                      Go Back
+                    </button>
+
+                    <div className={cn(styles.overviewTech)}>
+                      <div className={cn(styles.multiHrefs)}>
+                        <div className="row">
+                          <div className="col-sm-12">
+                            <Link
+                              href="/careers"
+                              className={cn(styles.hrefInnerFlex)}
+                            >
+                              <div className={styles.head}>
+                                <h4 className={styles.linkTitle}>Careers</h4>
+                                <Icons.ArrowForward />
+                              </div>
+                              <p className={styles.excepPara}>
+                                Be a partner for industry verticals on the
+                                inevitable journey towards enterprise.
+                              </p>
+                            </Link>
+                            <Link
+                              href="/insights"
+                              className={cn(styles.hrefInnerFlex)}
+                            >
+                              <div className={styles.head}>
+                                <h4 className={styles.linkTitle}>Insights</h4>
+                                <Icons.ArrowForward />
+                              </div>
+                              <p className={styles.excepPara}>
+                                Be a partner for industry verticals on the
+                                inevitable journey towards enterprise.
+                              </p>
+                            </Link>
+                            <Link
+                              href="/coe"
+                              className={cn(styles.hrefInnerFlex)}
+                            >
+                              <div className={styles.head}>
+                                <h4 className={styles.linkTitle}>
+                                  Centre of Excellence
+                                </h4>
+                                <Icons.ArrowForward />
+                              </div>
+                              <p className={styles.excepPara}>
+                                Be a partner for industry verticals on the
+                                inevitable journey towards enterprise.
+                              </p>
+                            </Link>
+                            <Link
+                              href="/accelerators"
+                              className={cn(styles.hrefInnerFlex)}
+                            >
+                              <div className={styles.head}>
+                                <h4 className={styles.linkTitle}>
+                                  Accelerators
+                                </h4>
+                                <Icons.ArrowForward />
+                              </div>
+                              <p className={styles.excepPara}>
+                                Be a partner for industry verticals on the
+                                inevitable journey towards enterprise.
+                              </p>
+                            </Link>
+                            <Link
+                              href="/contact-us"
+                              className={cn(styles.hrefInnerFlex)}
+                            >
+                              <div className={styles.head}>
+                                <h4 className={styles.linkTitle}>Contact us</h4>
+                                <Icons.ArrowForward />
+                              </div>
+                              <p className={styles.excepPara}>
+                                Be a partner for industry verticals on the
+                                inevitable journey towards enterprise.
+                              </p>
+                            </Link>
+                          </div>
                         </div>
                       </div>
                     </div>
+                    {LatestTech()}
                   </div>
-                </div>
-              </ul>
+                </ul>
+              )}
             </li>
           </ul>
 
