@@ -81,6 +81,7 @@ const InsightDetail = () => {
                 src="/images/insightimg1.png"
                 width={850}
                 height={445}
+                alt="insight-img"
               />
             </div>
 
@@ -90,7 +91,12 @@ const InsightDetail = () => {
                 <p>{value.para}</p>
                 {value.img && (
                   <div className={styles.insightImageDiv}>
-                    <ImageCustom src={value.img} width={690} height={480} />
+                    <ImageCustom
+                      src={value.img}
+                      width={690}
+                      height={480}
+                      alt="insight-img"
+                    />
                   </div>
                 )}
                 <ul>

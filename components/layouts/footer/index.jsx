@@ -1,7 +1,7 @@
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import InputCustom from "@/components/ui/inputCustom";
+import { Input } from "@/components/ui/inputCustom";
 import ScrollToTopButton from "@/components/ui/scrollToTopButton";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -42,17 +42,21 @@ const Footer = () => {
                   src="/images/partner.jpg"
                   width={294}
                   height={198}
-                  alt=""
+                  alt="partner-img"
                 />
               </div>
 
               <div className={styles.subscribe}>
                 <h4 className="mb-3">Stay Ahead of the Tech Curve</h4>
                 <div className={styles.formFlex}>
-                  <InputCustom placeholder="Business Email Address" />
+                  <Input
+                    inputFloatingStyle={styles.inputFloatingStyle}
+                    inputStyle={styles.inputStyle}
+                    placeholder="Business Email Address"
+                  />
                   <div className="d-flex align-items-center">
                     <Button variant="lightBlueBtn" size="lg">
-                      Subscribe <Icons.ArrowRight size={20} className="ms-2" />
+                      Subscribe <Icons.ArrowRight size={15} />
                     </Button>
                   </div>
                 </div>

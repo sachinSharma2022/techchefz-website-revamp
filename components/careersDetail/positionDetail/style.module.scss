@@ -8,7 +8,7 @@
     padding-inline: 2.5rem;
   }
   @include mobile {
-    padding-inline: 1.5rem;
+    padding: 1.5rem;
   }
 
   @include desktop-hd {

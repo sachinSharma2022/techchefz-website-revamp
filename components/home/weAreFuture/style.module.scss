@@ -2,6 +2,10 @@
 
 .futureSpacing {
   padding: spacing(section-primary-padding);
+
+  @include mobile-tablet-p{
+    padding: 5rem 2rem;
+  }
   
   @include mobile {
     padding: spacing(section-mob-padding);
@@ -10,6 +14,11 @@
   .contentSection {
     display: flex;
     gap: 8.9375rem;
+
+    @include mobile-tablet-p{
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
   }
 
   .futureTitle {
@@ -19,11 +28,20 @@
     align-items: center;
     margin-bottom: 7.5rem;
     letter-spacing: 0.2rem;
+
+    @include mobile-tablet-p{
+      justify-content: flex-start;
+      text-align: left;
+      align-items: start;
+      margin-bottom: 2.5rem;
+    }
+
     @include mobile {
       justify-content: flex-start;
       align-items: start;
       margin-bottom: 2.5rem;
     }
+
     .text {
       margin: 0;
       margin-bottom: 2.5rem;
@@ -32,10 +50,13 @@
       font-weight: 500;
       color: color(text-primary);
       opacity: 0.6;
-      @include mobile {
+
+      @include mobile-tablet-p{
+        width: 100%;
         margin-bottom: 0;
       }
     }
+
     .globalText {
       display: flex;
       align-items: center;
@@ -44,13 +65,19 @@
       font-weight: 500;
       line-height: 5rem;
 
+      @include mobile-tablet-p {
+        justify-content: flex-start;
+      }
+
       img {
         margin: 0 1rem;
         border-radius: 7.5rem;
+
         @include mobile {
           display: none;
         }
       }
+
       @include mobile {
         font-size: text(xxxl);
         line-height: 2.5rem;
@@ -58,15 +85,18 @@
         justify-content: flex-start;
       }
     }
+
     .title {
       font-size: text(xl-larger);
       font-weight: 500;
       line-height: 5rem;
       text-align: center;
       letter-spacing: 0;
-      @include mobile {
+
+      @include mobile-tablet-p {
         text-align: left;
       }
+
       .titleHighlight {
         font-size: text(xl-larger);
         font-weight: 500;
@@ -112,9 +142,10 @@
     margin-bottom: text(larger);
     color: color(text-primary);
     max-width: 37rem;
+    margin-top: 0.5rem;
 
     @include mobile {
-      font-size: text(xl);
+      font-size: text(lg);
       line-height: 1.875rem;
       margin-bottom: 2.25rem;
     }

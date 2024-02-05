@@ -3,15 +3,28 @@
 .solutionOurValuesStyle {
    padding: spacing(section-primary-padding);
 
+   @include mobile-tablet-p{
+      padding: 2rem;
+   }
+
    .flexContainer {
       display: flex;
       justify-content: space-between;
-      gap: 143px;
+      gap: 8.938rem;
+
+      @include mobile-tablet-p{
+         flex-direction: column;
+         gap: 3.75rem;
+      }
    }
 
    .ourValuesHead {
       margin-bottom: 5rem;
       max-width: 373px;
+
+      @include mobile-tablet-p{
+         margin-bottom: 0;
+      }
 
       .ourValuesTitle {
          color: color(text-primary);
@@ -27,11 +40,27 @@
          font-size: text(larger);
          margin-bottom: 2.75rem;
 
+         @include mobile-tablet-p{
+            margin-bottom: 1.25rem;
+            font-size: text(xxxl);
+         }
+
          span {
             font-size: text(larger);
             color: color(heading-liner);
             background: linear-gradient(118deg, color(primary-blue) 11.5%, color(heading-liner) 55.42%);
             @include textGradient;
+
+            @include mobile-tablet-p{
+               font-size: text(xxxl)
+            }
+         }
+
+      }
+
+      .ourValuesText{
+         @include mobile{
+            margin-bottom: 0;
          }
       }
    }
@@ -117,6 +146,7 @@
 
    //Dark mode style
    &.solutionOurValuesDark {
+      background-color: color(input-bg);
       color: color(primary-white);
       
       .ourValuesTitle{

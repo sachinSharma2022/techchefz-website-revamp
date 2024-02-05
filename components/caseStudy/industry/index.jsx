@@ -22,10 +22,9 @@ const Industry = ({props, CMSImplementation}) => {
          
             <div className={styles.industryLeft}>
               <div className="mb-4">
-                <h6> Industry</h6>
+                <h6>Industry</h6>
                 <h5>Automobile</h5>
               </div>
-
               <div className="mb-4">
                 <h6> Platform</h6>
                 <h5>Web, Responsive</h5>

@@ -8,12 +8,24 @@ $border-radius: 5px;
 
 .landingBannerStyle {
   padding-inline: spacing(p-120);
+  padding-top: 11.25rem;
+  padding-bottom: 8.75rem;
   position: relative;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
-  height: calc(100dvh - 79.52px);
+
+  @include mobile-tablet-p {
+    padding: 5rem 1.25rem;
+
+    &::before {
+      display: none;
+    }
+    &::after {
+      display: none;
+    }
+  }
 
   &::before {
     content: "";
@@ -41,30 +53,6 @@ $border-radius: 5px;
     opacity: 0.3;
   }
 
-  &.landingBannerDark {
-    background-color: color(input-bg);
-
-    &:after,
-    &::before {
-      z-index: 9;
-      opacity: 0.18;
-    }
-
-    .title {
-      color: color(primary-white);
-    }
-  }
-
-  @include mobile {
-    padding: spacing(section-mob-padding);
-    &::before {
-      display: none;
-    }
-    &::after {
-      display: none;
-    }
-  }
-
   .title {
     font-size: text(xxl-larger);
     font-weight: 500;
@@ -83,11 +71,19 @@ $border-radius: 5px;
     .contentContainer {
       display: flex;
       gap: 1.25rem;
+
+      @include mobile{
+        flex-wrap: wrap;
+      }
     }
     .contentContainer > span {
       font-size: text(xxl-larger);
       font-weight: 500;
       line-height: 1;
+
+      @include mobile{
+        font-size: text(larger);
+      }
     }
     .slider {
       height: 118px;
@@ -144,4 +140,19 @@ $border-radius: 5px;
       }
     }
   }
+
+  &.landingBannerDark {
+    background-color: color(input-bg);
+
+    &:after,
+    &::before {
+      z-index: 9;
+      opacity: 0.18;
+    }
+
+    .title {
+      color: color(primary-white);
+    }
+  }
+
 }

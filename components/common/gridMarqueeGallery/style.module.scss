@@ -1,35 +1,40 @@
 @import "~/styles/partials/config";
 
 .gridMarqueeGallery {
+  overflow-x: hidden;
   
   .galleryImages {
     padding: 0 0.7rem;
     margin-top: 5rem;
     width: 100%;
     display: flex;
-    flex-wrap: nowrap;
     position: relative;
+    flex-wrap: nowrap;
+    overflow: hidden;
 
     .galleryImage {
       margin-top: 20px;
       height: 230px;
-      width: 205px;
+      min-width: 205px;
 
       div {
         height: 100%;
+        width: 100%;
+        border-radius: 0.75rem;
+        overflow: hidden;
+        position: relative;
       }
 
       img {
-        object-fit: cover;
         width: 100%;
         height: 100%;
-        border-radius: 0.75rem;
+        object-fit: cover;
       }
     }
 
     .gridHalf {
       height: 320px;
-      width: 440px;
+      min-width: 430px;
 
       div {
         height: 100%;
@@ -46,8 +51,8 @@
 
     .gridFull {
       height: 480px;
-      width: 428px;
-
+      min-width: 400px;
+      
       div {
         height: 100%;
       }

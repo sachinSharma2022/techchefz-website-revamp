@@ -5,7 +5,7 @@
   padding: spacing(section-primary-padding);
   margin-top: 8.75rem;
 
-  @include mobile {
+  @include mobile-tablet-p {
     padding: 1.5rem;
   }
 
@@ -31,6 +31,11 @@
   .contentSec {
     display: flex;
     gap: 8.938rem;
+
+    @include mobile-tablet-p{
+      flex-direction: column;
+      gap: 1.5rem;
+    }
   }
 
   .coeServiceTitle {
@@ -49,14 +54,15 @@
       );
       @include textGradient;
 
-      @include mobile {
-        font-size: 1.7rem;
+      @include mobile-tablet-p {
+        font-size: text(xxxl);
       }
     }
 
-    @include mobile {
-      font-size: 1.7rem;
-      line-height: 2.375rem;
+    @include mobile-tablet-p{
+      font-size: text(xxxl);
+      line-height: 2.5rem;
+      max-width: 90%;
     }
   }
 

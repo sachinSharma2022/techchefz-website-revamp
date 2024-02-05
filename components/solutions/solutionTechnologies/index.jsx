@@ -1,18 +1,19 @@
 "use client";
-import React from "react";
-import { MyContext } from "@/context/theme";
-import { useContext } from "react";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
+import { MyContext } from "@/context/theme";
+import { cn } from "@/lib/utils";
+import { useContext } from "react";
 import Slider from "react-slick";
 import { cn } from "@/lib/utils";
 import { base_Uri } from "@/lib/constants";
 
+import ServiceInfoCard from "@/components/common/serviceInfoCard";
 import styles from "./style.module.scss";
 
-const SolutionTechnologies = ({props}) => {
-   console.log("neee",props);
+const SolutionTechnologies = ({ props }) => {
+  console.log("neee", props);
   const { theme, setTheme } = useContext(MyContext);
   // const serviceCard = [
   //   {
@@ -76,7 +77,10 @@ const SolutionTechnologies = ({props}) => {
     ],
   };
   return (
-    <section className={`${styles.solutionTechnologiesStyle} ${theme ? styles.solutionTechnologiesDark : ""}`}>
+    <section
+      className={`${styles.solutionTechnologiesStyle} ${theme ? styles.solutionTechnologiesDark : ""
+        }`}
+    >
       <div className={cn("primary-container")}>
         <div className={styles.careerRow}>
           <div className="row">
@@ -86,12 +90,12 @@ const SolutionTechnologies = ({props}) => {
 
             <div className="col-md-8 col-12">
               <h2 className={styles.datingText}>
-              {props?.SubTitle}
+                {props?.SubTitle}
               </h2>
             </div>
             <div className={`${styles.careerBtn} col-md-4 col-12`}>
               <Button variant="outline" size="md">
-              {props?.Button} <Icons.ArrowRight size={18} />
+                {props?.Button} <Icons.ArrowRight size={18} />
               </Button>
             </div>
           </div>
@@ -101,33 +105,25 @@ const SolutionTechnologies = ({props}) => {
           <div className={styles.ourNumberGrid}>
             <div>
               <p className={styles.ourNumbersText}>
-              {props?.Description}
+                {props?.Description}
               </p>
               <div
                 className={`${styles.desktopCards} ${styles.ourNumberOption} `}
               >
-               {props?.TechnologyInner?.map((data, index) => (
-                  <div key={index} className={styles.serviceBox}>
-                    <div className={styles.numberCardFlex}>
-                      <h2 className={styles.sbTitle}>{data.Title}</h2>
-                      {/* <div className={styles.bgIcon}>{data.icon}</div> */}
-                      <div className={styles.bgIcon}>
-                        <ImageCustom
-                        src={`${base_Uri}${data?.Image?.data.attributes.url}`}
-                        width={56}
-                        height={56}
-                        alt="bannerImg"  />
-            </div>
-                    </div>
+                {props?.TechnologyInner?.map((data, index) => (
+                  <ServiceInfoCard
+                    key={index}
+                    sbTitle={data.Title}
+                    icon={`${base_Uri}${data?.Image?.data.attributes.url}`}
 
-                    <p className={styles.sbText}>{data.Description}</p>
-                  </div>
+                    sbText={data.Description}
+                  />
                 ))}
               </div>
             </div>
             <div className={styles.ourNumbersImg}>
               <ImageCustom
-                 src={`${base_Uri}${props?.image.data.attributes.url}`}
+                src={`${base_Uri}${props?.image.data.attributes.url}`}
                 width={1000}
                 height={100}
                 alt="bannerImg"
@@ -138,14 +134,12 @@ const SolutionTechnologies = ({props}) => {
           {/* <div className={`${styles.ourNumberOption} service-mobile-slider`}>
             <Slider {...settings}>
               {serviceCard.map((data, index) => (
-                <div key={index} className={styles.serviceBox}>
-                  <div className={styles.numberCardFlex}>
-                    <h2 className={styles.sbTitle}>{data.sbTitle}</h2>
-                    <div className={styles.bgIcon}>{data.icon}</div>
-                  </div>
-
-                  <p className={styles.sbText}>{data.sbText}</p>
-                </div>
+                <ServiceInfoCard
+                  key={index}
+                  sbTitle={data.sbTitle}
+                  icon={data.icon}
+                  sbText={data.sbText}
+                />
               ))}
             </Slider>
           </div> */}

@@ -1,10 +1,9 @@
 "use client";
-import React from "react";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 
-import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
+import styles from "./style.module.scss";
 
 function SitMapBanner() {
   const { theme } = useContext(MyContext);

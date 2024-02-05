@@ -4,10 +4,16 @@
   .bannerContent {
     display: flex;
     gap: 8rem;
-    padding: 5rem 7.5rem;
+    padding: 10rem 7.5rem 5rem;
 
     @include desktop-hd {
       padding-inline: 0;
+    }
+
+    @include mobile-tablet-p{
+      flex-direction: column;
+      padding: 3rem 1.5rem;
+      gap: 1.5rem;
     }
 
     .bannerTitle {
@@ -15,6 +21,11 @@
       font-weight: 500;
       line-height: 5rem;
       width: 100%;
+
+      @include mobile{
+        font-size: text(larger);
+        line-height: 3.5rem;
+      }
 
       span {
         font-size: text(xl-larger);
@@ -30,10 +41,19 @@
       align-items: flex-start;
       gap: 4rem;
       width: 100%;
+
+      @include mobile{
+        gap: 2.25rem;
+      }
       p {
         font-size: text(lg);
         line-height: 1.875rem;
         opacity: 0.8;
+
+        @include mobile{
+          font-size: text(normal);
+          line-height: 1.5rem;
+        }
       }
     }
   }

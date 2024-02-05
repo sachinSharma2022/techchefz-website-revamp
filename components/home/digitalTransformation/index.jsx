@@ -48,7 +48,7 @@ const DigitalTransformation = ({digital}) => {
       {
         breakpoint: 1199,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
           centerMode: false,
           arrows: true,
@@ -68,7 +68,7 @@ const DigitalTransformation = ({digital}) => {
           slidesToShow: 1,
           slidesToScroll: 1,
           arrows: true,
-          centerPadding: "15px",
+          centerPadding: "0",
         },
       },
     ],

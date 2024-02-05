@@ -7,6 +7,7 @@ import Projects from "@/components/home/projects";
 import Service from "@/components/home/service";
 import TechnologyStack from "@/components/home/technologyStack";
 import WeAreFuture from "@/components/home/weAreFuture";
+import Curve from "@/components/ui/pageTransition";
 import VideoCustom from "@/components/ui/videoCustom";
 import Curve from "@/components/ui/pageTransition";
 import { api_Home_Page } from "@/lib/constants";

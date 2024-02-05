@@ -7,8 +7,14 @@
   border: 0.14rem solid rgba(color(text-primary), 0.12);
   border-radius: 1.25rem;
   text-align: left;
-  @include mobile-tablet-p{
+  @include transition(0.5s);
+
+  @include mobile-tablet-p {
     padding: 1.5rem;
+  }
+
+  &:hover {
+    border-color: color(heading-liner);
   }
 
   .cardImg {
@@ -16,7 +22,7 @@
     justify-content: space-between;
     margin-bottom: 2.5rem;
 
-    @include mobile-tablet-p{
+    @include mobile-tablet-p {
       margin-bottom: 1.5rem;
     }
 
@@ -43,17 +49,27 @@
     font-weight: 500;
     line-height: 32px;
     margin-bottom: 0.75rem;
+    @include mobile-tablet-p {
+      font-size: text(lg);
+      line-height: 1.75rem;
+    }
   }
 
   .cardContent {
     font-size: text(normal);
     line-height: 1.5rem;
     opacity: 0.8;
+    margin-bottom: 0;
   }
 
   &.partnerCardDark {
     background-color: color(text-primary);
     color: color(primary-white);
+    border-color: rgba(color(primary-white), 0.12);
+
+    &:hover {
+      border-color: color(heading-liner);
+    }
 
     .cardTitle {
       color: color(primary-white);
@@ -63,7 +79,7 @@
       svg > rect {
         stroke: color(primary-white);
       }
-      svg > path{
+      svg > path {
         fill: color(primary-white);
       }
     }

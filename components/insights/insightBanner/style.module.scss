@@ -3,11 +3,11 @@
 @mixin landingBannerStyle() {
 
    .contentSection {
-      padding: 5rem 7.5rem;
+      padding: 10rem 7.5rem 4.75rem;
       display: flex;
       gap: 8rem;
 
-      @include mobile {
+      @include mobile-tablet-p {
          padding: spacing(section-mob-padding);
          flex-direction: column;
          gap: 0;
@@ -20,10 +20,9 @@
    .title {
       font-size: text(xl-larger);
       font-weight: 500;
-      line-height: 5rem;
       margin-bottom: 0;
 
-      @include mobile {
+      @include mobile-tablet-p {
          font-size: 2.75rem;
          line-height: 3.5rem;
          margin-bottom: text(xl);
@@ -33,13 +32,10 @@
       .titleHighlight {
          font-size: text(xl-larger);
          font-weight: 500;
-         //  color: color(heading-liner);
-         background: var(--Gradient, linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%));
-         background-clip: text;
-         -webkit-background-clip: text;
-         -webkit-text-fill-color: transparent;
+         background: linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%);
+         @include textGradient;
 
-         @include mobile {
+         @include mobile-tablet-p {
             font-size: 2.75rem;
             line-height: 3.5rem;
          }

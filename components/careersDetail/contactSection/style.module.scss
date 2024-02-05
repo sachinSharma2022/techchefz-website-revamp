@@ -28,8 +28,9 @@
         grid-template-columns: repeat(1, 1fr);
         gap: 0;
       }
+
       @include mobile {
-        grid-template-columns: repeat(1, 1fr);
+        flex-direction: column;
         gap: 0;
       }
       .contactUsForm {
@@ -98,6 +99,7 @@
         .contactFormArea {
           .inputSpace {
             margin-bottom: 2.25rem;
+            
             &:last-child {
               margin-bottom: 0;
             }
@@ -152,27 +154,6 @@
             border-radius: 0.5rem;
             box-shadow: 0 0 0.25rem 0 rgba(0, 0, 0, 0.12);
             cursor: pointer;
-          }
-        }
-        .policyArea {
-          display: flex;
-          justify-content: space-between;
-
-          .policyText {
-            font-size: text(xxs);
-            font-weight: 400;
-            line-height: text(lg);
-            max-width: 21.5rem;
-
-            @include mobile {
-              margin-bottom: text(lg);
-            }
-
-            .policyHighlight {
-              color: color(primary-blue);
-              font-size: text(xxs);
-              margin-left: 3px;
-            }
           }
         }
       }
@@ -248,6 +229,45 @@
     }
   }
 
+  .policyArea {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    @include mobile-tablet-p {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .policyText {
+      font-size: text(xxs);
+      font-weight: 400;
+      line-height: text(lg);
+      max-width: 344px;
+      margin-bottom: 0;
+
+      @include mobile-tablet-p {
+        margin-bottom: text(lg);
+        max-width: 100%;
+      }
+
+      .policyHighlight {
+        color: color(primary-blue);
+        font-size: text(xxs);
+        margin-left: 3px;
+      }
+    }
+
+    .buttonGrid {
+      display: flex;
+      justify-content: flex-end;
+
+      @include mobile {
+        justify-content: flex-start;
+      }
+    }
+  }
+
   // Dark Theme here
   &.lestWorkStyleDark {
     background-color: color(text-primary);
@@ -274,13 +294,6 @@
             color: rgba(color(primary-white), 0.5) !important;
             &::after {
               display: none;
-            }
-          }
-          .policyArea {
-            .policyText {
-              .policyHighlight {
-                color: color(info-blue);
-              }
             }
           }
         }

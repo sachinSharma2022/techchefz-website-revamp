@@ -15,9 +15,10 @@ const LandingBanner = ({props}) => {
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section
-      className={`${styles.landingBannerStyle} ${
+      className={cn(
+        styles.landingBannerStyle,
         theme ? styles.landingBannerDark : ""
-      }`}
+      )}
     >
       <div className={cn("primary-container")}>
         <h1 className={styles.title}>

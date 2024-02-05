@@ -9,8 +9,11 @@ import Image from "next/image";
 import { base_Uri } from "@/lib/constants";
 
 const OurResults = ({props}) => {
-  
+  import MobileSlider from "@/components/common/mobileSlider";
+import { useMediaQuery } from "react-responsive";
+
   const { theme, setTheme } = useContext(MyContext);
+  const isMobileScreen = useMediaQuery({ query: "(max-width: 767px)" });
 
   // const resultCardData = [
   //   {
@@ -65,6 +68,22 @@ const OurResults = ({props}) => {
           ))}
         </div>
       </div>
+
+      {isMobileScreen && (
+        <div className={styles.mobileSlider}>
+          <MobileSlider slidesToShow={1.4}>
+            {resultCardData.map((data, index) => (
+              <div key={index} className={styles.resultCard}>
+                <div className="d-flex justify-content-between align-items-center">
+                  <h6 className={styles.cardNum}>{data.number}</h6>
+                  <div className={styles.cardNum}>{data.icon}</div>
+                </div>
+                <p className={styles.cardText}>{data.title}</p>
+              </div>
+            ))}
+          </MobileSlider>
+        </div>
+      )}
     </section>
   );
 };

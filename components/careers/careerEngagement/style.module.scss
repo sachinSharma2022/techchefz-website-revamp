@@ -4,8 +4,9 @@
   padding: spacing(section-primary-padding);
   background: color(bg-soft);
 
-  @include mobile {
-    padding: 1.5rem;
+  @include mobile-tablet-p {
+    padding: spacing(section-mob-padding);
+    padding-block: 3.75rem 3.75rem;
   }
 
   .valuesTitle {
@@ -15,6 +16,9 @@
     letter-spacing: 0.2rem;
     text-transform: uppercase;
     opacity: 0.8;
+    @include mobile-tablet-p {
+      margin-bottom: 0.75rem;
+    }
   }
 
   .valuesHeading {
@@ -22,6 +26,9 @@
     font-weight: 500;
     line-height: 3.375rem;
     margin: 1rem 0 2rem 0;
+    @include mobile-tablet-p {
+      margin: 0.75rem 0 1.25rem 0;
+    }
   }
 
   .valuesText {
@@ -31,7 +38,7 @@
     opacity: 0.6;
     max-width: 65%;
 
-    @include mobile {
+    @include mobile-tablet-p {
       max-width: 100%;
     }
   }
@@ -42,9 +49,9 @@
     border-radius: 0.6rem;
     overflow: hidden;
 
-    @include mobile {
+    @include mobile-tablet-p {
       height: 265px;
-      margin: 1rem 0;
+      margin: 3.75rem 0 3.75rem 0;
     }
 
     img {
@@ -78,6 +85,10 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
+
+    @include mobile-tablet-p {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   .infoSec {

@@ -301,8 +301,17 @@
   border-radius: 0.75rem;
   font-weight: 500;
 
+  @include mobile{
+    height: 3.25rem;
+    padding: 0 1.8rem;
+  }
+
   .btnText {
     font-size: text(lg);
+
+    @include mobile{
+      font-size: text(normal);
+    }
   }
 }
 

@@ -5,8 +5,8 @@
    flex-direction: column;
    justify-content: space-between;
 
-   @include mobile {
-      padding: spacing(section-mob-padding);
+   @include mobile-tablet-p {
+      padding: 2rem 1.25rem;
       flex-direction: column;
       gap: 0;
    }
@@ -15,11 +15,17 @@
       display: flex;
       justify-content: space-between;
       padding-inline: spacing(p-120);
-      padding-block: 5rem 5rem;
+      padding-block: 11.25rem 5rem;
       gap: 8.938rem;
 
       @include desktop-hd {
          padding-inline: 0;
+      }
+
+      @include mobile-tablet-p{
+         flex-direction: column;
+         padding: 2rem;
+         gap: 1.5rem;
       }
    }
 
@@ -38,9 +44,8 @@
       line-height: 5rem;
 
       @include mobile {
-         font-size: 2.75rem;
+         font-size: 2rem;
          line-height: 3.5rem;
-         margin-bottom: text(xl);
          word-break: break-word;
       }
 
@@ -52,7 +57,7 @@
          @include textGradient;
 
          @include mobile {
-            font-size: 2.75rem;
+            font-size: 2rem;
             line-height: 3.5rem;
          }
       }

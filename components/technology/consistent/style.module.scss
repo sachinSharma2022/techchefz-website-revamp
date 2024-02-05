@@ -3,33 +3,54 @@
 .consistent {
   background-color: color(bg-soft);
   padding: spacing(section-primary-padding);
+  position: relative;
 
-  @include mobile {
-    padding: 1.5rem;
-  }
-
-  &.consistentDark{
-    background-color: color(dark-bg);
-    color: color(primary-white);
+  @include mobile-tablet-p {
+    padding: spacing(section-mob-padding);
+    padding-block: 3.75rem 3.75rem;
   }
 
   .consistentImg {
     margin-bottom: 5rem;
-    img {
+    position: relative;
+
+    &::before {
       width: 100%;
+      height: 30%;
+      background-color: color(primary-white);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      content: '';
+      border-radius: 10px;
+    }
+    
+    img {
+      width: 85%;
       height: auto;
+      margin: 0 auto;
     }
   }
 
   .contentSec {
     display: flex;
     gap: 8.938rem;
+    @include mobile-tablet-p {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
   }
 
   .consistentTitle {
     font-size: text(larger);
     font-weight: 500;
     line-height: 3.375rem;
+    margin-bottom: 0;
+
+    @include mobile-tablet-p {
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
 
     span {
       font-size: text(larger);
@@ -42,14 +63,10 @@
       );
       @include textGradient;
 
-      @include mobile {
-        font-size: 1.7rem;
+      @include mobile-tablet-p {
+        font-size: 2rem;
+        line-height: 2.5rem;
       }
-    }
-
-    @include mobile {
-      font-size: 1.7rem;
-      line-height: 2.375rem;
     }
   }
 
@@ -59,5 +76,28 @@
     line-height: 1.875rem;
     opacity: 0.6;
     margin-bottom: 2.5rem;
+
+    @include mobile-tablet-p {
+      font-size: text(normal);
+      line-height: text(xl);
+      margin-bottom: 2.25rem;
+    }
   }
+
+  &.consistentDark {
+    background-color: color(dark-bg);
+    color: color(primary-white);
+
+    .consistentImg {
+      margin-bottom: 5rem;
+      position: relative;
+  
+      &::before {
+        background-color: color(text-primary);
+      }
+    }  
+  }
+}
+.consistentImgContainer{
+  overflow: hidden;
 }

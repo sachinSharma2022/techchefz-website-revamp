@@ -4,8 +4,8 @@
   padding: spacing(section-primary-padding);
   background: color(primary-background);
 
-  @include mobile {
-    padding: spacing(section-mob-padding);
+  @include mobile-tablet-p {
+    padding: 5rem 0 10rem;
   }
 
   .serviceGrid {
@@ -24,10 +24,11 @@
       position: sticky;
       top: 14rem;
 
-      @include mobile {
+      @include tablet {
         margin-bottom: 3.75rem;
         position: static;
         height: 100%;
+        padding: 0 1.25rem;
       }
 
       .serviceText {
@@ -62,6 +63,10 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 1.25rem 2.5rem;
 
+      @include mobile-tablet-p{
+        display: none;
+      }
+
       @include mobile {
         grid-template-columns: repeat(1, 1fr);
       }
@@ -93,7 +98,6 @@
       }
 
       @include mobile {
-        margin-right: text(xl);
         min-height: 18.5rem;
         padding: text(lg);
         min-width: 100%;

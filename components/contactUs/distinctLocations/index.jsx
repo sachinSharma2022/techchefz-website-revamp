@@ -49,7 +49,7 @@ const DistinctLocations = () => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.careerRow}>
-          <p className={styles.ProjectHighlight}>Presence</p>
+          <p className={styles.projectHighlight}>Presence</p>
           <h2 className={styles.datingText}>Our Distinct Locations</h2>
           <p className={styles.descriptionText}>
             Our 50+ team members, from account executives, strategists, project

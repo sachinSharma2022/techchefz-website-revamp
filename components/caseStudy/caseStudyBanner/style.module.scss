@@ -6,11 +6,22 @@
       color: color(primary-white);
    }
    .bannerTitle {
-      padding: 3.75rem 7.5rem 5rem 7.5rem;
+      padding: 11.25rem 7.5rem 5rem 7.5rem;
       font-weight: 500;
       line-height: 5rem;
       font-size: text(xl-larger);
       max-width: 80%;
+
+      @include mobile-tablet-p {
+         padding: spacing(section-mob-padding);
+         padding-block: 3.75rem 3.75rem;
+         font-size: 2.75rem;
+         line-height: 3.5rem;
+
+         br{
+            display: none;
+         }
+       }
 
       @include desktop-hd {
          padding-inline: 0;
@@ -19,6 +30,10 @@
       span{
         font-size: text(xl-larger);
         color: color(info-blue);
+        @include mobile-tablet-p {
+         font-size: 2.75rem;
+         line-height: 3.5rem;
+       }
       }
    }
 

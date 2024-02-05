@@ -1,9 +1,10 @@
 "use client";
-import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { text, curve, translate } from "./anim";
-import styles from "./style.module.scss";
+import { useEffect, useState } from "react";
 import { ImageCustom } from "../imageCustom";
+import { curve, text, translate } from "./anim";
+
+import styles from "./style.module.scss";
 
 const anim = (variants) => {
   return {
@@ -44,7 +45,7 @@ export default function Curve({ children, backgroundColor }) {
           src="/images/logo-icon.svg"
           width={180}
           height={180}
-          alt=""
+          alt="logo"
         />
       </motion.div>
       {dimensions.width != null && <SVG {...dimensions} />}

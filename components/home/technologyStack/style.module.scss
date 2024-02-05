@@ -9,16 +9,36 @@
   height: 100vh;
   background-size: 150vw;
 
+  @include mobile{
+    padding: 6rem 1.25rem;
+    height: auto;
+    background-size: cover;
+  }
 
-  &::before {
-    background: url('/images/gradient-stack.svg');
-    content: '';
-    height: 100%;
-    width: 100%;
+  &::before{
+    content: "";
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+    background-color: color(primary-orange);
     position: absolute;
     top: 0;
     left: 0;
-    background-size: cover;
+    filter: blur(13rem);
+    opacity: 0.3;
+  }
+
+  &::after{
+    content: "";
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+    background-color: color(circle-blue);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    filter: blur(13rem);
+    opacity: 0.3;
   }
 
   .gridContainer {
@@ -63,6 +83,15 @@
       max-width: 52rem;
     }
 
+    @include mobile-tablet-p{
+      width: 100%;
+      position: relative;
+      transform: inherit;
+      padding: 2.5rem 1rem;
+      top: inherit;
+      left: inherit;
+    }
+
     .careerRow {
       text-align: center;
 
@@ -102,6 +131,11 @@
         gap: 5rem;
         margin-bottom: 3.75rem;
 
+        @include mobile{
+          gap: 0 1rem;
+          margin-bottom: 3rem;
+        }
+
         .counterCard {
           width: 8.5rem;
 
@@ -133,6 +167,12 @@
     background:color(dark-bg) url('/images/techstack-dark.png');
     background-size: 150vw;
     background-repeat: space repeat;
+
+    @include mobile-tablet-p{
+      background-size: cover;
+      height: auto;
+      padding: 6rem 1.25rem;
+    }
 
     .technologyStackBox {
       background-color: color(text-primary);

@@ -3,36 +3,22 @@
 .distinctLocationsStyle {
   padding-inline: spacing(p-120);
   padding-block: 8.75rem 8.75rem;
+
   @include mobile-tablet-p {
     padding: spacing(section-mob-padding);
     padding-block: 3.75rem 3.75rem;
   }
 
-  &.distinctLocationsBannerDark {
-    background-color: color(input-bg);
-    color: color(primary-white);
-    .gridNumberMain {
-      .locationGridCards {
-        .locationBox {
-          background-color: color(dark-bg);
-          color: color(primary-white);
-        }
-      }
-    }
-    .ProjectHighlight {
-      color: color(primary-white);
-    }
-  }
   .careerRow {
     margin-bottom: 3.75rem;
     max-width: 49.188rem;
 
-    @include mobile {
+    @include mobile-tablet-p {
       margin-bottom: 2.5rem;
     }
   }
 
-  .ProjectHighlight {
+  .projectHighlight {
     font-size: text(normal);
     font-weight: 500;
     margin-bottom: text(lg);
@@ -41,7 +27,7 @@
     text-transform: uppercase;
     letter-spacing: 0.2rem;
 
-    @include mobile {
+    @include mobile-tablet-p {
       margin-bottom: 0.75rem;
     }
   }
@@ -51,7 +37,7 @@
     line-height: 3.375rem;
     margin-bottom: text(lg);
 
-    @include mobile {
+    @include mobile-tablet-p {
       font-size: text(xxxl);
       line-height: 2.5rem;
       padding-right: 0;
@@ -65,7 +51,7 @@
     opacity: 0.6;
     margin-bottom: 0;
 
-    @include mobile {
+    @include mobile-tablet-p {
       font-size: text(normal);
       max-width: 100%;
     }
@@ -76,9 +62,11 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2.5rem;
+
       @include mobile-tablet-p {
         grid-template-columns: repeat(2, 1fr);
       }
+
       @include mobile {
         grid-template-columns: repeat(1, 1fr);
       }
@@ -87,19 +75,28 @@
         background-color: color(bg-soft);
         padding: text(lg);
         border-radius: text(xl);
-        border: 2px solid rgba(color(text-primary), 0.12);
+        border: 0.14rem solid rgba(color(text-primary), 0.12);
         cursor: pointer;
+        @include transition(0.5s);
 
-        @include mobile {
+        &:hover {
+          border-color: color(heading-liner);
+        }
+
+        @include mobile-tablet-p {
           padding: text(xl);
         }
-        .backgroundImg {
+        .backgroundImg div {
           margin-bottom: text(lg);
+          height: 13.563rem;
+          border-radius: 1.25rem;
+          overflow: hidden;
+          width: 100%;
+
           img {
             object-fit: cover;
             width: 100%;
-            height: 13.563rem;
-            border-radius: 1.25rem;
+            height: 100%;
           }
         }
         .countryFlag {
@@ -107,6 +104,7 @@
           justify-content: space-between;
           align-items: center;
           margin-bottom: 0.5rem;
+
           .flag {
             img {
               width: 36.023px;
@@ -139,7 +137,7 @@
           margin-bottom: 0;
           line-height: 2rem;
 
-          @include mobile {
+          @include mobile-tablet-p {
             font-size: text(lg);
           }
         }
@@ -151,11 +149,35 @@
           opacity: 0.8;
           text-align: left;
           margin-bottom: text(lg);
-          @include mobile {
+          @include mobile-tablet-p {
             font-size: text(normal);
           }
         }
       }
+    }
+  }
+
+  // Dark Mode
+  &.distinctLocationsBannerDark {
+    background-color: color(input-bg);
+    color: color(primary-white);
+
+    .gridNumberMain {
+      .locationGridCards {
+        .locationBox {
+          background-color: color(dark-bg);
+          color: color(primary-white);
+          border-color: rgba(color(primary-white), 0.12);
+
+          &:hover {
+            border-color: color(heading-liner);
+          }
+        }
+      }
+    }
+
+    .projectHighlight {
+      color: color(primary-white);
     }
   }
 }
