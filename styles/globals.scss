@@ -823,3 +823,29 @@ input:-webkit-autofill {
     }
   }
 }
+
+
+// Project Slider
+.project-slider {
+  
+  .swiper-pagination {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+
+    .swiper-pagination-bullet {
+      width: 100%;
+      border-radius: 0;
+      background-color: rgba(color(primary-white), 0.40);
+      text-indent: -9999px;
+      height: 1px;
+      margin: 0 !important;
+    }
+
+    .swiper-pagination-bullet-active {
+      height: 6px;
+      border-radius: 8px;
+      background: linear-gradient(124.4deg, color(primary-blue) 0%, color(heading-liner) 89.84%);
+    }
+  }
+}
