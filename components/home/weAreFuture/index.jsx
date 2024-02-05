@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useContext } from "react";
 
 import styles from "./style.module.scss";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const WeAreFuture = () => {
   const { theme, setTheme } = useContext(MyContext);
@@ -30,18 +31,23 @@ const WeAreFuture = () => {
             <span className={styles.titleHighlight}>Technology Company.</span>
           </h2>
         </div>
-        <div className={styles.contentSection}>
-          <h3 className={styles.datingText}>
-            With roots dating back to 2017, we started as a pocket size team of
-            enthusiasts.
-          </h3>
-          <div>
-            <p className={styles.aboutText}>
+        <TextRevel>
+        <div className="row">
+          <div className="col-md-6 col-12">
+            <div  className={styles.datingText}>
+              With roots dating back to 2017, we started as a pocket size teamof enthusiasts.
+            </div>
+          </div>
+          <div className="col-md-6 col-12">
+            <div className={styles.aboutText}>
+              
               Over the next 3 years, we developed into a full-service digital
               agency. We support our clients with web development, mobile app
               development, web design, branding UI/UX design and now getting
               into AR/VR.
-            </p>
+              
+              
+            </div>
 
             <Link href="/about">
               <Button variant="outline" size="md">
@@ -50,6 +56,7 @@ const WeAreFuture = () => {
             </Link>
           </div>
         </div>
+        </TextRevel>
       </div>
     </section>
   );

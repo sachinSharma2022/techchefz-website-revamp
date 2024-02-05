@@ -10,6 +10,7 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import { Icons } from "@/components/icons";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const DigitalTransformation = () => {
   const { theme, setTheme } = useContext(MyContext);
@@ -79,6 +80,7 @@ const DigitalTransformation = () => {
       }`}
     >
       <div className={cn("primary-container")}>
+        <TextRevel>
         <div className={styles.serviceRow}>
           <div className="row">
             <div className="col-md-12 col-12">
@@ -102,6 +104,7 @@ const DigitalTransformation = () => {
             </div>
           </div>
         </div>
+        </TextRevel>
 
         <div className={`${styles.digitalMain} digital-transformation`}>
           <Slider {...settings}>
