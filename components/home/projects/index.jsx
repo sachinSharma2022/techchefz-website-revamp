@@ -55,7 +55,7 @@ const Card = ({ ...props }) => {
         <h3 className={styles.projectBrand}>
           {props.title.split(" ").map((word, index) => {
             return (
-              <div key={index} className={styles.mask}>
+              <span key={index} className={styles.mask}>
                 <motion.span
                   variants={slideUp}
                   custom={index}
@@ -64,7 +64,7 @@ const Card = ({ ...props }) => {
                 >
                   {word}
                 </motion.span>
-              </div>
+              </span>
             );
           })}
         </h3>

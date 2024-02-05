@@ -791,3 +791,18 @@
 .headerDark {
   background: color(input-bg);
 }
+
+
+.headerMainDesktop {
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.headerMobile {
+
+  @include desktop {
+    display: none;
+  }
+}

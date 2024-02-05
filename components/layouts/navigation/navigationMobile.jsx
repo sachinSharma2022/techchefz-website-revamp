@@ -116,6 +116,7 @@ const NavigationMobile = () => {
     <header
       className={cn(
         styles.headerMain,
+        styles.headerMobile,
         theme ? styles.headerDarkStyle : "",
         theme
           ? isScrolled && styles.headerDark

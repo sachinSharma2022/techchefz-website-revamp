@@ -90,6 +90,7 @@ const NavigationDesktop = () => {
     <header
       className={cn(
         styles.headerMain,
+        styles.headerMainDesktop,
         theme ? styles.headerDarkStyle : "",
         theme
           ? isScrolled && styles.headerDark

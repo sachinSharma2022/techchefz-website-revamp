@@ -4,18 +4,18 @@
   padding: spacing(section-primary-padding);
   padding-right: 0;
   background-color: color(primary-white);
-  overflow-x: hidden;
+  overflow: hidden;
+  position: relative;
 
   @include mobile-tablet-p {
     padding: spacing(section-mob-padding);
     padding-block: 3.75rem 3.75rem;
   }
 
-  .testimonialContainer {
-    @include desktop-hd {
-      padding-left: 7vw;
-    }
+  @include desktop-hd {
+    padding-inline: 0;
   }
+
   .infoSection {
     display: flex;
     flex-direction: column;
@@ -139,7 +139,8 @@
   }
 
   .testimonialsDesktopSlider {
-    
+    position: relative;
+
     @include mobile-tablet-p {
       display: none;
     }
