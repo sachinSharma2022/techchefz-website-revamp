@@ -2,12 +2,15 @@
 import React from "react";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
+import MobileSlider from "@/components/common/mobileSlider";
+import { useMediaQuery } from "react-responsive";
 
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 
 const Results = () => {
   const { theme, setTheme } = useContext(MyContext);
+  const isMobileScreen = useMediaQuery({ query: "(max-width: 767px)" });
   const resultCard = [
     {
       number: "500+",
@@ -39,14 +42,32 @@ const Results = () => {
               enhancing this offering to fully embody the spirit of Royal
               Enfield.
             </p>
-            <div className={styles.resultCards}>
-              {resultCard.map((data, index) => (
-                <div key={index} className={styles.resultCard}>
-                  <h3>{data.number} </h3>
-                  <h4>{data.title} </h4>
+
+            {!isMobileScreen && (
+              <div className={styles.resultCards}>
+                {resultCard.map((data, index) => (
+                  <div key={index} className={styles.resultCard}>
+                    <h3>{data.number} </h3>
+                    <h4>{data.title} </h4>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {isMobileScreen && (
+              <div className={styles.mobileSliderCard}>
+                <div className={styles.resultCards}>
+                  <MobileSlider slidesToShow={1.4}>
+                    {resultCard.map((data, index) => (
+                      <div key={index} className={styles.resultCard}>
+                        <h3>{data.number} </h3>
+                        <h4>{data.title} </h4>
+                      </div>
+                    ))}
+                  </MobileSlider>
                 </div>
-              ))}
-            </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
