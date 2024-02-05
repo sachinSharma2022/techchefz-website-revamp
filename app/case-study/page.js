@@ -22,7 +22,7 @@ const CaseStudy = async() =>{
       <Solutions props={data.Solutions} />
       <Results props={data.Results} />
       <RelatedCase sliderClassName="mb-0" />
-      <LetsWork  contact={data.ContactUs}/>
+      <LetsWork  contact={data.LetsWork}/>
      
     </div>:<></>}
     </>
