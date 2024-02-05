@@ -20,11 +20,11 @@ const SolutionHeroBanner = ({props}) => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.contentSection}>
-          <h1 className={styles.title}>
-            Your most trusted <br />
-            <span className={styles.titleHighlight}>Technology</span> Company.
-          </h1>
-              {/* <h1 className={styles.title} dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}></h1> */}
+          <h1 className={styles.title} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
+
+           </h1>
+              {/* <h1 className={styles.title} dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}>
+              </h1> */}
 
 
           <p className={styles.leadText}>

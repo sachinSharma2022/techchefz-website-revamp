@@ -6,7 +6,7 @@ import { Icons } from "@/components/icons";
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 
-const LandingBanner = () => {
+const LandingBanner = ({props}) => {
   const { theme, setTheme } = useContext(MyContext);
 
   return (
@@ -19,9 +19,7 @@ const LandingBanner = () => {
         </h1>
 
         <p className={styles.leadText}>
-          We&apos;re a worldwide presence, serving clients on four continents.
-          Our international expertise ensures innovative solutions tailored to
-          diverse global needs.
+          {props[0]?.subtitle}
         </p>
       </div>
     </section>
