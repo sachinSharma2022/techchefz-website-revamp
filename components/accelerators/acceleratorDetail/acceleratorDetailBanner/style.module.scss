@@ -22,7 +22,7 @@
       line-height: 5rem;
       width: 100%;
 
-      @include mobile{
+      @include mobile-tablet-p{
         font-size: text(larger);
         line-height: 3.5rem;
       }
@@ -31,6 +31,11 @@
         font-size: text(xl-larger);
         background: linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%);
         @include textGradient;
+
+        @include mobile-tablet-p{
+          font-size: text(larger);
+          line-height: 3.5rem;
+        }
       }
     }
 
@@ -62,6 +67,10 @@
     height: 31.25rem;
     overflow: hidden;
     position: relative;
+
+    @include mobile-tablet-p{
+      height: 20.25rem;
+    }
 
     img {
       width: 100%;
