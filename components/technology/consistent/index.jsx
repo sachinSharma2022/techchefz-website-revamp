@@ -68,7 +68,7 @@ const Consistent = () => {
                 unwavering commitment to excellence consistently, year after
                 year.
               </p>
-              <Button variant="outline" size="md">
+              <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
                 Learn More <Icons.ArrowRight size={18} />
               </Button>
             </div>

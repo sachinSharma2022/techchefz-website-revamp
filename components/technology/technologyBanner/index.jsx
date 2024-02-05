@@ -31,7 +31,7 @@ const TechnologyBanner = () => {
             diverse global needs.
           </p>
           <Link href="/contact-us">
-            <Button variant="blueBtn" className={styles.headerBtn} size="md">
+            <Button variant={theme ? "blueBtnDark" : "blueBtn"} className={styles.headerBtn} size="md">
               Let’s Work Together
               <Icons.ArrowRight size={20} className="ms-2" />
             </Button>
