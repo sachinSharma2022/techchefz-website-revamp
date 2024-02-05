@@ -86,17 +86,12 @@ $border-radius: 5px;
       }
     }
     .slider {
-      height: 118px;
-      overflow: hidden;
-      padding: 0 10px;
       display: inline-block;
     }
-    .slider > span {
-      display: flex;
+    .slider .text {
       color: color(primary-white);
       font-size: text(xxl-larger);
       font-weight: 500;
-      line-height: 2;
       color: color(heading-liner);
       background: linear-gradient(
         118deg,
@@ -107,36 +102,6 @@ $border-radius: 5px;
       @include mobile {
         font-size: text(larger);
         line-height: 3.5rem;
-      }
-    }
-
-    .text1 {
-      animation: slide 10s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
-    }
-    .text2 {
-      padding: 4px 0px;
-    }
-    @keyframes slide {
-      0% {
-        margin-top: -525px;
-      }
-      5% {
-        margin-top: -444px;
-      }
-      33% {
-        margin-top: -444px;
-      }
-      38% {
-        margin-top: -250px;
-      }
-      66% {
-        margin-top: -250px;
-      }
-      72% {
-        margin-top: -50px;
-      }
-      100% {
-        margin-top: -50px;
       }
     }
   }

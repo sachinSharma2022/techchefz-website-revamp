@@ -29,6 +29,10 @@
     gap: 0.75rem;
     justify-content: flex-end;
 
+    @include mobile-tablet-p {
+      justify-content: flex-start;
+    }
+
     .badgeStyle {
       display: flex;
       padding-inline: 0.75rem;
@@ -83,6 +87,11 @@
     margin-bottom: 30px;
     border-radius: 12px;
     overflow: hidden;
+
+    @include mobile-tablet-p {
+      margin-bottom: 60px;
+      border-radius: 0;
+    }
   }
 
   .projectImg div {
@@ -92,6 +101,10 @@
     border-radius: 12px;
     overflow: hidden;
     position: relative;
+
+    @include mobile-tablet-p {
+      height: 11.75rem;
+    }
 
     img {
       width: 100%;
@@ -168,7 +181,7 @@
     display: flex;
     justify-content: space-between;
     gap: 2.5rem;
-    
+
     @include mobile {
       flex-direction: column;
       gap: 1.25rem;
@@ -194,16 +207,20 @@
       color: color(text-primary);
       opacity: 0.8;
     }
+
     .datingText {
       color: color(text-primary);
     }
+
     .aboutText {
       color: color(text-primary);
       opacity: 0.8;
     }
+
     .cardSec {
       background-color: color(primary-white);
     }
+
     .cardContentStyle {
       .projectBrand {
         color: color(text-primary);
