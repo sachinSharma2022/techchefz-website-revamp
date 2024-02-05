@@ -8,7 +8,7 @@ import { useContext } from "react";
 
 import styles from "./style.module.scss";
 
-const TechnologyBanner = () => {
+const TechnologyBanner = ({props}) => {
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section
@@ -17,18 +17,16 @@ const TechnologyBanner = () => {
       }`}
     >
       <div className={cn("primary-container", styles.flexContainer)}>
-        <h1 className={styles.title}>
-          Innovating
+        <h1 className={styles.title} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
+          {/* Innovating
           <span className={styles.titleHighlight}> Technology</span> <br />
           <span className={styles.titleHighlight}>Landscape</span> for the
           <br />
-          future.
+          future. */}
         </h1>
         <div className={styles.contentSec}>
-          <p className={styles.leadText}>
-            We&apos;re a worldwide presence, serving clients on four continents.
-            Our international expertise ensures innovative solutions tailored to
-            diverse global needs.
+          <p className={styles.leadText}  dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}`}}>
+         
           </p>
           <Link href="/contact-us">
             <Button variant="blueBtn" className={styles.headerBtn} size="md">
