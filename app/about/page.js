@@ -20,7 +20,7 @@ const AboutPage = async() => {
       <div className="overflow-hidden">
         <AboutBanner props={data.BannerComponent} />
         <OurVision props={data.OurVisionMissionComponent} />
-        <OurHistory  props={data.OurHistoryComponent} OurHistory={data.OurHistory}/>
+        {/* <OurHistory  props={data.OurHistoryComponent} OurHistory={data.OurHistory}/> */}
         <WhatWeDo  props={data.WhatWeDoComponent} />
         <OurValues props={data.Ourvaluesection}/>
         <OurResults props={data.Result}/>

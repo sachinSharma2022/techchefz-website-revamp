@@ -7,10 +7,6 @@ import { cn } from "@/lib/utils";
 import { useContext } from "react";
 import { useMediaQuery } from "react-responsive";
 import styles from "./style.module.scss";
-
-const WhatWeDo = () => {
-import { Icons } from "@/components/icons";
-import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { base_Uri } from "@/lib/constants";
 

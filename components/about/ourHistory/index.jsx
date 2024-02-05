@@ -170,7 +170,8 @@ const OurHistory = ({props, OurHistory}) => {
                 <div key={index} className={styles.cardStyle}>
                   <div className={styles.OurHistoryImage}>
                     <ImageCustom
-                      src={base_Uri+data?.OurHistoryCard?.Image?.data?.attributes?.url}
+                      src={data?.OurHistoryCard?.Image?.data?.attributes?.url?`${base_Uri}${data?.OurHistoryCard?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+                      
                       width={530}
                       height={397}
                       alt="slider-img"

@@ -7,10 +7,10 @@ import { useContext } from "react";
 import styles from "./style.module.scss";
 import Image from "next/image";
 import { base_Uri } from "@/lib/constants";
-
-const OurResults = ({props}) => {
-  import MobileSlider from "@/components/common/mobileSlider";
+import MobileSlider from "@/components/common/mobileSlider";
 import { useMediaQuery } from "react-responsive";
+const OurResults = ({props}) => {
+ 
 
   const { theme, setTheme } = useContext(MyContext);
   const isMobileScreen = useMediaQuery({ query: "(max-width: 767px)" });
