@@ -7,12 +7,25 @@ import Link from "next/link";
 import { useContext } from "react";
 import { Button } from "../../ui/button";
 
+// import required modules
+import Slider from "react-slick";
+
 // Style
 import styles from "./style.module.scss";
 
 const LandingBanner = () => {
   const { theme } = useContext(MyContext);
-
+  const settings = {
+    dots: false,
+    autoplay: true,
+    infinite: true,
+    arrows: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    vertical: true,
+    verticalSwiping: true,
+    swipeToSlide: true,
+  };
   return (
     <section
       className={cn(
@@ -22,14 +35,16 @@ const LandingBanner = () => {
     >
       <div className={cn("primary-container")}>
         <h1 className={styles.title}>
-          Humanizing <span /> Digital Experience <span />
+          Humanizing Digital <br /> Experience <br />
           <div className={styles.contentContainer}>
-            <span>Through </span>
-            <span className={styles.slider}>
-              <span className={styles.text1}>Data</span>
-              <span className="text2"> Creativity</span>
-              <span className="text3"> Work</span>
-            </span>
+            Through
+            <div className={styles.slider}>
+              <Slider {...settings}>
+                <div className={styles.text}>Data</div>
+                <div className={styles.text}> Creativity</div>
+                <div className={styles.text}> Work</div>
+              </Slider>
+            </div>
           </div>
         </h1>
 

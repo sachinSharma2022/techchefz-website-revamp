@@ -9,10 +9,11 @@
   background-color: color(text-primary);
 
   @include mobile-tablet-p {
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     padding: 4.75rem 2.5rem;
+    gap: 1.5rem;
   }
   @include mobile {
     padding-inline: 1.5rem;
@@ -105,6 +106,10 @@
         display: flex;
         gap: 1rem;
 
+        @include mobile-tablet-p{
+          flex-wrap: wrap;
+        }
+
         .techBtn {
           display: flex;
           justify-content: center;
@@ -128,6 +133,11 @@
     right: 0;
     top: 12rem;
 
+    @include mobile-tablet-p{
+      position: relative;
+      top: 0;
+    }
+
     div {
       width: 90%;
       height: 38.5625rem;
@@ -138,8 +148,14 @@
       margin-left: auto;
 
       @include mobile-tablet-p {
-        max-width: 601px;
-        max-height: 441px;
+        // max-width: 601px;
+        // max-height: 441px;
+        width: 47rem;
+        height: 20rem;
+      }
+
+      @include mobile{
+        width: 100%;
       }
 
       img {

@@ -124,7 +124,7 @@ const Streamline = () => {
               {data.icons}
               <h6 className={styles.cardTitle}>{data.title} </h6>
               <p className={styles.cardContent}>{data.content}</p>
-              <Button variant="outline" size="md">
+              <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
                 Learn More <Icons.ArrowRight size={18} />
               </Button>
             </div>

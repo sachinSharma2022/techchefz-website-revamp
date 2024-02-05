@@ -307,13 +307,13 @@ const OpenPosition = () => {
                             </ul>
 
                             <div className={styles.btnSection}>
-                              <Button variant="blueBtn" size="md">
+                              <Button variant={theme ? "blueBtnDark" : "blueBtn"} size="md">
                                 More Info
                               </Button>
                               <SmoothDropdown
                                 options={options}
                                 buttonLabel="Apply through"
-                                variant="outline"
+                                variant={theme ? "lightBlueOutline" : "outline"}
                                 size="md"
                               />
                             </div>

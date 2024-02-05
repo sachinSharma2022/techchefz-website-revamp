@@ -63,18 +63,27 @@ $border-radius: 5px;
       max-width: 60%;
     }
 
-    @include mobile {
+    @include mobile-tablet-p {
       font-size: text(larger);
-      line-height: 3.5rem;
       margin: 0 0 2.188rem;
+      line-height: 60px;
     }
+    
     .contentContainer {
+      font-size: text(xxl-larger);
+      font-weight: 500;
+      line-height: 1.2;
       display: flex;
       gap: 1.25rem;
 
-      @include mobile{
+      @include mobile-tablet-p {
         flex-wrap: wrap;
+        font-size: text(larger);
+        margin: 0 0 2.188rem;
+        line-height: 56px;
+        gap: 0;
       }
+      
     }
     .contentContainer > span {
       font-size: text(xxl-larger);
@@ -86,17 +95,12 @@ $border-radius: 5px;
       }
     }
     .slider {
-      height: 118px;
-      overflow: hidden;
-      padding: 0 10px;
       display: inline-block;
     }
-    .slider > span {
-      display: flex;
+    .slider .text {
       color: color(primary-white);
       font-size: text(xxl-larger);
       font-weight: 500;
-      line-height: 2;
       color: color(heading-liner);
       background: linear-gradient(
         118deg,
@@ -104,39 +108,10 @@ $border-radius: 5px;
         color(heading-liner) 55.42%
       );
       @include textGradient;
-      @include mobile {
-        font-size: text(larger);
-        line-height: 3.5rem;
-      }
-    }
-
-    .text1 {
-      animation: slide 10s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
-    }
-    .text2 {
-      padding: 4px 0px;
-    }
-    @keyframes slide {
-      0% {
-        margin-top: -525px;
-      }
-      5% {
-        margin-top: -444px;
-      }
-      33% {
-        margin-top: -444px;
-      }
-      38% {
-        margin-top: -250px;
-      }
-      66% {
-        margin-top: -250px;
-      }
-      72% {
-        margin-top: -50px;
-      }
-      100% {
-        margin-top: -50px;
+      
+      @include mobile-tablet-p {
+        font-size: 3.5rem;
+        line-height: normal;
       }
     }
   }

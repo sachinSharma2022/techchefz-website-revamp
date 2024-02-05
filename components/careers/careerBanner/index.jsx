@@ -29,7 +29,7 @@ const CareerBanner = () => {
               culture. Join a dynamic and innovative team at Techchefz.
             </p>
             <Link href="/careers-detail">
-              <Button variant="blueBtn" className={styles.headerBtn} size="md">
+              <Button variant={theme ? "blueBtnDark" : "blueBtn"} className={styles.headerBtn} size="md">
                 View Openings <Icons.ArrowRight size={20} className="ms-2" />
               </Button>
             </Link>

@@ -92,7 +92,7 @@ const SolutionTechnologies = () => {
               </h2>
             </div>
             <div className={`${styles.careerBtn} col-md-4 col-12`}>
-              <Button variant="outline" size="md">
+              <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
                 Explore Technology <Icons.ArrowRight size={18} />
               </Button>
             </div>
