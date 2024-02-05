@@ -122,15 +122,17 @@ const DigitalTransformation = ({digital}) => {
                     <h4 className={styles.CustomerHeading}>
                       {data.Title}
                     </h4>
-                    <p className={styles.digitalText}>{data.Description}</p>
+                    <p className={styles.digitalText} dangerouslySetInnerHTML={{ __html: `${data?.Description}`}}>
+                      
+                    </p>
 
-                    <ul className={styles.customerList}>
+                    {/* <ul className={styles.customerList}>
                       <li className={styles.list}>
                         Attract & Engage more users/customers
                       </li>
                       <li className={styles.list}>Increase Conversions</li>
                       <li className={styles.list}>Automate Marketing Tasks</li>
-                    </ul>
+                    </ul> */}
                   </div>
                 </div>
               </div>

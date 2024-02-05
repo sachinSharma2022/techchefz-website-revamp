@@ -21,14 +21,14 @@ const LandingBanner = ({props}) => {
       )}
     >
       <div className={cn("primary-container")}>
-        <h1 className={styles.title}>
-          Humanizing <span /> Digital Experience <span />
+        <h1 className={styles.title} >
+         {props.title} <span /> {props.description} <span />
           <div className={styles.contentContainer}>
-            <span>Through </span>
+            <span>{props.SubTitle1} </span>
             <span className={styles.slider}>
-              <span className={styles.text1}>Data</span>
-              <span className="text2"> Creativity</span>
-              <span className="text3"> Work</span>
+              <span className={styles.text1}>{props.SubTitle2}</span>
+              <span className="text2"> {props.SubTitle3}</span>
+              <span className="text3"> {props.SubTitle4}</span>
             </span>
           </div>
         </h1>

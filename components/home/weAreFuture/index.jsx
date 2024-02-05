@@ -19,15 +19,15 @@ const WeAreFuture = ({props}) => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.futureTitle}>
-          <p className={styles.text}>We are a</p>
+          <p className={styles.text}>{props?.Title}</p>
           <h2 className={styles.title}>
-            Pioneering
+            {props?.SubTitle}
             <span className={styles.globalText}>
-              Future
+              {props?.Description}
               <ImageCustom src="/global.png" width="60" height="60" alt="global-img" />
-              Global
+              {props?.SubTitle2}
             </span>
-            <span className={styles.titleHighlight}>{props?.Description}</span>
+            <span className={styles.titleHighlight}>{props?.SubTitle3}</span>
           </h2>
         </div>
         <div className="row">
