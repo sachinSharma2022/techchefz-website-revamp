@@ -35,15 +35,13 @@ const LandingBanner = () => {
     >
       <div className={cn("primary-container")}>
         <h1 className={styles.title}>
-          Humanizing <span /> Digital Experience <span />
+          Humanizing Digital <br /> Experience <br />
           <div className={styles.contentContainer}>
-            <span>Through </span>
+            Through
             <div className={styles.slider}>
               <Slider {...settings}>
                 <div className={styles.text}>Data</div>
-
                 <div className={styles.text}> Creativity</div>
-
                 <div className={styles.text}> Work</div>
               </Slider>
             </div>

@@ -63,18 +63,27 @@ $border-radius: 5px;
       max-width: 60%;
     }
 
-    @include mobile {
+    @include mobile-tablet-p {
       font-size: text(larger);
-      line-height: 3.5rem;
       margin: 0 0 2.188rem;
+      line-height: 60px;
     }
+    
     .contentContainer {
+      font-size: text(xxl-larger);
+      font-weight: 500;
+      line-height: 1.2;
       display: flex;
       gap: 1.25rem;
 
-      @include mobile{
+      @include mobile-tablet-p {
         flex-wrap: wrap;
+        font-size: text(larger);
+        margin: 0 0 2.188rem;
+        line-height: 56px;
+        gap: 0;
       }
+      
     }
     .contentContainer > span {
       font-size: text(xxl-larger);
@@ -99,9 +108,10 @@ $border-radius: 5px;
         color(heading-liner) 55.42%
       );
       @include textGradient;
-      @include mobile {
-        font-size: text(larger);
-        line-height: 3.5rem;
+      
+      @include mobile-tablet-p {
+        font-size: 3.5rem;
+        line-height: normal;
       }
     }
   }
