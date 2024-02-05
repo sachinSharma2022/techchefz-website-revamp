@@ -4,33 +4,28 @@
   padding: spacing(section-primary-padding);
   background: color(primary-background);
 
-  @include mobile {
+  @include mobile-tablet-p {
     padding: spacing(section-mob-padding);
+    padding-block: 3.75rem 3.75rem;
   }
 
-  &.numberStyleDark {
-    background-color: color(dark-bg);
-    color: color(primary-white);
-
-    .ourNumberGrid {
-      .desktopCards {
-        .serviceBox {
-          background-color: color(dark-bg);
-          border: 2px solid rgba(color(primary-white), 0.12);
-        }
-      }
-    }
+  @include mobile-tablet-p{
+    padding: 3.75rem 0 10rem;
   }
 
   .careerRow {
     margin-bottom: 5rem;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
 
-    @include mobile {
+    @include mobile-tablet-p {
       margin-bottom: 2.5rem;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0 1.25rem;
     }
+
     .careerBtn {
       display: flex;
       justify-content: flex-end;
@@ -58,7 +53,7 @@
     max-width: 42.6875rem;
     margin-bottom: 0;
 
-    @include mobile {
+    @include mobile-tablet-p {
       font-size: text(xxxl);
       line-height: 2.5rem;
       padding-right: 0;
@@ -77,17 +72,18 @@
         display: unset;
         grid-template-columns: repeat(1, 1fr);
       }
+      
       .ourNumbersImg div {
         width: 100%;
         height: 40.688rem;
         border-radius: 0.75rem;
         overflow: hidden;
         img {
-         height: 100%;
-         width: 100%;
-         object-fit: cover;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
         }
-        @include mobile {
+        @include mobile-tablet-p {
           display: none;
         }
       }
@@ -96,7 +92,7 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 2.5rem;
-        @include mobile {
+        @include mobile-tablet-p {
           display: none;
         }
       }
@@ -107,65 +103,20 @@
       line-height: 1.875rem;
       margin-bottom: 3.75rem;
       opacity: 0.8;
-      @include mobile {
+      
+      @include mobile-tablet-p {
         font-size: text(normal);
-        margin-bottom: 2.75rem;
+        margin-bottom: 2.5rem;
         font-weight: 400;
+        padding: 0 1.25rem;
       }
     }
-    .ourNumberOption {
-      .serviceBox {
-        text-align: center;
-        background-color: color(primary-white);
-        padding: text(xxxl);
-        border-radius: text(xl);
-        border: 0.125rem solid color(primary-white);
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
+  }
 
-        &:hover {
-          border-color: color(heading-liner);
-        }
 
-        @include mobile {
-          margin-right: text(xl);
-          min-height: 18.5rem;
-          padding: text(lg);
-        }
-        .numberCardFlex {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-bottom: text(xxxl);
-          
-          .sbTitle {
-            font-size: 2.75rem;
-            font-weight: 500;
-            margin-bottom: 0;
-            min-height: 2.75rem;
-            color: color(heading-liner);
-            background: linear-gradient(
-              118deg,
-              color(primary-blue) 11.5%,
-              color(heading-liner) 55.42%
-            );
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-          }
-        }
-        .sbText {
-          font-weight: 400;
-          font-size: text(lg);
-          line-height: 1.875rem;
-          opacity: 0.8;
-          text-align: left;
-          margin-bottom: 0;
-          @include mobile {
-            font-size: text(normal);
-          }
-        }
-      }
-    }
+  // Dark Mode
+  &.numberStyleDark {
+    background-color: color(dark-bg);
+    color: color(primary-white);
   }
 }

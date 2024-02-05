@@ -12,36 +12,23 @@ import { useContext, useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
 const Header = () => {
-  const { theme, setTheme } = useContext(MyContext);
   const pathname = usePathname();
-  const [isActive, setActive] = useState(false);
-  const toggleClass = () => {
-    setActive(!isActive);
-  };
-
-  const [header, setHeader] = useState("header");
-
-  const listenScrollEvent = () => {
-    if (window.scrollY < 73) {
-      return setHeader("header-transparent");
-    } else if (window.scrollY > 70) {
-      return setHeader("header-white");
-    }
-  };
+  const [mobileMenuShow, setMobileMenuShow] = useState(false);
+  const { theme, setTheme } = useContext(MyContext);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", listenScrollEvent);
-    return () => window.removeEventListener("scroll", listenScrollEvent);
+    const handleScroll = () => {
+      const scrolled = window.scrollY > 0;
+      setIsScrolled(scrolled);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
-
-  useEffect(() => {
-    document.body.classList.add("font-light");
-    document.body.classList.add("text-gray-700");
-  });
-
-  const classToggle = (e) => {
-    document.querySelector("body").classList.toggle("dark");
-  };
 
   function LatestTech() {
     return (
@@ -80,7 +67,7 @@ const Header = () => {
       <div className={styles.overviewFlex}>
         <div className={styles.overviewSubFlex}>
           <div>
-            <Icons.PerformanceIcon width={56} height={56} />
+            <Icons.MarketPlace width={56} height={56} />
           </div>
           <div className={styles.overviewTitle}>
             <h1>Technology Overview</h1>
@@ -100,12 +87,37 @@ const Header = () => {
     );
   }
 
+  function EstimateSection() {
+    return (
+      <div className={styles.estimateSection}>
+        <p className={styles.description}>
+          Provide us with details about your vision, and let our experts tailor
+          a comprehensive plan, outlining timelines, scopes, and budgets
+          uniquely crafted to bring your ideas to life.
+        </p>
+        <Button
+          variant={theme ? "blueBtnDark" : "blueBtn"}
+          className={styles.headerBtn}
+          size="sm"
+        >
+          Estimate Project
+        </Button>
+      </div>
+    );
+  }
+
+  const mobileMenuToggle = () => {
+    setMobileMenuShow(!mobileMenuShow);
+  };
+
   return (
     <header
       className={cn(
         styles.headerMain,
         theme ? styles.headerDarkStyle : "",
-        header
+        theme
+          ? isScrolled && styles.headerDark
+          : isScrolled && styles.headerLight
       )}
     >
       <div className={cn(styles.headerContainer, "primary-container")}>
@@ -115,7 +127,7 @@ const Header = () => {
               src="/images/logo.svg"
               width={153}
               height={40}
-              alt=""
+              alt="header-logo"
             />
           </Link>
           <Link href="/" className={styles.darkLogo}>
@@ -123,11 +135,12 @@ const Header = () => {
               src="/images/white-logo.svg"
               width={153}
               height={40}
-              alt=""
+              alt="dark-logo"
             />
           </Link>
         </div>
-        <nav className={isActive ? styles.showNav : null}>
+        <nav className={mobileMenuShow ? styles.showNav : null}>
+          <h4 className={styles.mobileTitle}>Menu</h4>
           <ul>
             <li className={styles.menuItem}>
               <Link
@@ -264,7 +277,13 @@ const Header = () => {
             </li>
             <li className={styles.dropDown}>
               <Link href="/">
-                <Icons.MoreDotIcon width={4} height={14} /> More
+                <Icons.MoreDotIcon
+                  className={styles.dotIcon}
+                  width={4}
+                  height={14}
+                />
+                More
+                <div className={cn(styles.arrow, styles.hideDesktopIcon)} />
               </Link>
               <ul className={cn(styles.subMenu, styles.singleLayout)}>
                 <div className={styles.subsection}>
@@ -348,9 +367,11 @@ const Header = () => {
               </ul>
             </li>
           </ul>
+
+          <div className={styles.hideDesktop}>{EstimateSection()}</div>
         </nav>
         <div className={styles.headerRight}>
-          <div onClick={classToggle} className={styles.modeBtn}>
+          <div className={styles.modeBtn}>
             <button variant="default" onClick={() => setTheme(!theme)}>
               {theme ? (
                 <Icons.DarkThemeIcon size={30} />
@@ -359,23 +380,19 @@ const Header = () => {
               )}
             </button>
           </div>
-          <Button
-            variant={theme ? "blueBtnDark" : "blueBtn"}
-            className={styles.headerBtn}
-            size="sm"
-          >
-            Estimate Project
-          </Button>
 
-          <div className={isActive ? styles.activeHumburger : null}>
-            <Button
-              variant="default"
-              className={styles.navHamburger}
-              onClick={toggleClass}
-            >
-              <span/>
-            </Button>
-          </div>
+          <div className={styles.hideMobile}>{EstimateSection()}</div>
+
+          <button
+            className={cn(
+              styles.navHamburger,
+              mobileMenuShow ? styles.toggleActive : ""
+            )}
+            onClick={mobileMenuToggle}
+          >
+            <span />
+            <span />
+          </button>
         </div>
       </div>
     </header>

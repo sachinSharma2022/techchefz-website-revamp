@@ -70,10 +70,14 @@
         object-fit: cover;
       }
     }
-    
+
     .ourValuesText {
       font-size: text(lg);
       opacity: 0.6;
+
+      @include mobile-tablet-p {
+        margin-bottom: 2.25rem;
+      }
     }
 
     .ourValuesAccordion {
@@ -105,21 +109,22 @@
   }
 
   //Dark mode style
-  &.whyCmsDark{
+  &.whyCmsDark {
     color: color(primary-white);
+    background-color: color(input-bg);
 
-    .ourValuesTitle{
+    .ourValuesTitle {
       color: color(primary-white);
     }
 
-    .ourValuesAccordion{
-      .accordionHead{
+    .ourValuesAccordion {
+      .accordionHead {
         color: color(primary-white);
         border-color: rgba(color(primary-white), 0.12);
       }
     }
 
-    .iconBox{
+    .iconBox {
       background-color: color(text-primary);
     }
   }

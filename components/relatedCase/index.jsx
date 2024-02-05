@@ -22,7 +22,7 @@ const RelatedCase = (props) => {
     arrows: false,
     speed: 500,
     slidesToShow: 3.5,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
     initialSlide: 0,
     beforeChange: (current, next) => {
       setOldSlide(current);
@@ -34,7 +34,7 @@ const RelatedCase = (props) => {
         breakpoint: 1500,
         settings: {
           slidesToShow: 2.5,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
         },
       },
       {
@@ -48,8 +48,7 @@ const RelatedCase = (props) => {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
+          slidesToScroll: 1,
         },
       },
     ],
@@ -97,11 +96,15 @@ const RelatedCase = (props) => {
         theme ? styles.relatedCaseDark : ""
       )}
     >
-      <div className={cn("primary-container")}>
+      <div className={cn("primary-container relative")}>
         <div className={styles.headSection}>
           <div>
-            <h6 className={styles.relatedCaseTitle}>{props.subTitle}</h6>
-            <h3 className={styles.relatedCaseHeading}>{props.title}</h3>
+            <h6 className={styles.relatedCaseTitle}>
+              {props.subTitle || "Related Case Study"}
+            </h6>
+            <h3 className={styles.relatedCaseHeading}>
+              {props.title || "Unravel More of Our Success Stories"}
+            </h3>
           </div>
           <div className={styles.sliderArrow}>
             <button
@@ -120,27 +123,27 @@ const RelatedCase = (props) => {
             </button>
           </div>
         </div>
-      </div>
 
-      <div
-        className={cn(
-          styles.relatedCaseSlider,
-          props.sliderClassName,
-          "related-case-slider"
-        )}
-      >
-        <Slider {...settings} ref={slider}>
-          {captionCard.map((data, index) => (
-            <div key={index}>
-              <CaptionCard
-                className={styles.cardStyle}
-                imgSrc={data.imgSrc}
-                title={data.title}
-                textStyle={styles.textStyle}
-              />
-            </div>
-          ))}
-        </Slider>
+        <div
+          className={cn(
+            styles.relatedCaseSlider,
+            props.sliderClassName,
+            "related-case-slider"
+          )}
+        >
+          <Slider {...settings} ref={slider}>
+            {captionCard.map((data, index) => (
+              <div key={index}>
+                <CaptionCard
+                  className={styles.cardStyle}
+                  imgSrc={data.imgSrc}
+                  title={data.title}
+                  textStyle={styles.textStyle}
+                />
+              </div>
+            ))}
+          </Slider>
+        </div>
       </div>
     </section>
   );

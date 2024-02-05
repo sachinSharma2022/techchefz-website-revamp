@@ -1,96 +1,115 @@
 @import "~/styles/partials/config";
 
 .impact {
-  padding: spacing(section-primary-padding);
-  background-color: color(bg-soft);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 5rem;
+   padding: spacing(section-primary-padding);
+   background-color: color(bg-soft);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 5rem;
 
-  &.impactDark {
-    background-color: color(text-primary);
-    color: color(primary-white);
-  }
+   &.impactDark {
+      background-color: color(text-primary);
+      color: color(primary-white);
+   }
 
-  .headSection {
-    margin-bottom: 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
+   @include mobile-tablet-p {
+    padding: 2rem;
+   }
 
-  .subHeading {
-    font-size: text(normal);
-    font-family: font(secondary);
-    font-weight: 500;
-    line-height: 1.5rem;
-    letter-spacing: 0.2rem;
-    text-transform: uppercase;
-    opacity: 0.8;
-    margin-bottom: 1rem;
-  }
-  .impactHeading {
-    font-size: text(larger);
-    font-weight: 500;
-    line-height: 3.375rem;
-  }
+   .headSection {
+      margin-bottom: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
 
-  .impactTopSection {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    align-items: center;
-    gap: 8.938rem;
-    padding: 2.5rem 0;
-
-    .impactImage div {
-      max-width: 32.5rem;
-      width: 100%;
-      height: 32.5rem;
-      position: relative;
-      border-radius: 0.5rem;
-      overflow: hidden;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      @include mobile-tablet-p{
+         align-items: start;
       }
-    }
+   }
 
-    .topSectionRight {
-      h4 {
-        font-size: text(xxxl);
-        font-weight: 500;
-        line-height: 2.5rem;
-        max-width: 90%;
-        margin-bottom: 0.75rem;
+   .subHeading {
+      font-size: text(normal);
+      font-family: font(secondary);
+      font-weight: 500;
+      line-height: 1.5rem;
+      letter-spacing: 0.2rem;
+      text-transform: uppercase;
+      opacity: 0.8;
+      margin-bottom: 1rem;
+   }
+   .impactHeading {
+      font-size: text(larger);
+      font-weight: 500;
+      line-height: 3.375rem;
+
+      @include mobile-tablet-p{
+         font-size: text(xxxl);
+         line-height: 2.5rem;
+         max-width: 90%;
+      }
+   }
+
+   .impactTopSection {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      align-items: center;
+      gap: 8.938rem;
+      padding: 2.5rem 0;
+
+      @include mobile-tablet-p{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 3.75rem;
       }
 
-      ul {
-        list-style: square;
+      .impactImage div {
+         // max-width: 32.5rem;
+         width: 100%;
+         height: 32.5rem;
+         position: relative;
+         border-radius: 0.5rem;
+         overflow: hidden;
 
-        li {
-          font-size: text(lg);
-          font-weight: 400;
-          line-height: 1.875rem;
-          opacity: 0.6;
-        }
+         img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+         }
       }
 
-      p {
-        font-size: text(lg);
-        font-weight: 400;
-        line-height: 1.875rem;
-        opacity: 0.6;
-      }
+      .topSectionRight {
+         h4 {
+            font-size: text(xxxl);
+            font-weight: 500;
+            line-height: 2.5rem;
+            max-width: 90%;
+            margin-bottom: 0.75rem;
+         }
 
-      button {
-        margin-top: 2.5rem;
+         ul {
+            list-style: square;
+
+            li {
+               font-size: text(lg);
+               font-weight: 400;
+               line-height: 1.875rem;
+               opacity: 0.6;
+            }
+         }
+
+         p {
+            font-size: text(lg);
+            font-weight: 400;
+            line-height: 1.875rem;
+            opacity: 0.6;
+         }
+
+         button {
+            margin-top: 2.5rem;
+         }
       }
-    }
-  }
+   }
 }

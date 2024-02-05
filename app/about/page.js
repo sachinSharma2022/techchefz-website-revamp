@@ -10,10 +10,10 @@ import WhatWeDo from "@/components/about/whatWeDo";
 import LetsWork from "@/components/home/letsWork";
 import Curve from "@/components/ui/pageTransition";
 import { api_About_Page } from "@/lib/constants";
-import axios, { Axios } from "axios";
+import { getData } from "@/lib/fetchData";
 
 const AboutPage = async() => {
-  const data = await getData()
+  const data = await getData(api_About_Page)
   
   return (
     <Curve>
@@ -33,14 +33,3 @@ const AboutPage = async() => {
 };
 
 export default AboutPage;
-
-async function getData() {
-  try{
-    const response = await axios.get(api_About_Page);
-    return response.data?.data[0]?.attributes
-  }catch(error){
-    console.log(error)
-    return null
-  }
-  
-}

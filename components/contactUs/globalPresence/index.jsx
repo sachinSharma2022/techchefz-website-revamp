@@ -32,7 +32,7 @@ const GlobalPresence = () => {
                 src="/images/map.svg"
                 width={1000}
                 height={1000}
-                alt=""
+                alt="map"
               />
             </div>
           </Popover.Button>
@@ -44,7 +44,7 @@ const GlobalPresence = () => {
                   src="/images/united-state-flag.png"
                   width={40}
                   height={26}
-                  alt=""
+                  alt="flag-img"
                 />
               </div>
               <h1 className={styles.locationHeading}>United States</h1>

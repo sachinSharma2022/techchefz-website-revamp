@@ -8,6 +8,14 @@
    .flexContainer {
       display: flex;
       gap: 3.75rem;
+
+      @include mobile {
+         flex-direction: column;
+      }
+   }
+
+   @include mobile-tablet-p {
+      padding: 2rem;
    }
 
    .sitemapPage {
@@ -41,9 +49,9 @@
       }
    }
 
-//    Dark mode style 
-   &.sitemapPagesDark{
-    background-color: color(dark-bg);
-    color: color(primary-white);
+   //    Dark mode style
+   &.sitemapPagesDark {
+      background-color: color(dark-bg);
+      color: color(primary-white);
    }
 }

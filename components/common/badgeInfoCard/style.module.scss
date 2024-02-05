@@ -6,7 +6,7 @@
    height: auto;
    padding: 1.875rem;
    border-radius: 1.25rem;
-   border: 2px solid rgba(color(text-primary), 0.12);
+   border: 0.14rem solid rgba(color(text-primary), 0.12);
    cursor: pointer;
    transition: all 0.5s ease-in-out;
    color: color(text-primary);
@@ -80,6 +80,11 @@
    &.browserAcceleratorCardDark{
     background-color: color(text-primary);
     color: color(primary-white);
+    border-color: rgba(color(primary-white), 0.12);
+
+    &:hover{
+      border-color: color(heading-liner);
+   }
 
     .badgeStyle {
       border-radius: .75rem;

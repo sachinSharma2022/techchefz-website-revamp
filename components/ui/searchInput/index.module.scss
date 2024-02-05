@@ -1,49 +1,49 @@
 @import "~/styles/partials/config";
 
 @mixin searchStyles() {
-   width: 100%;
-   max-width: 580px;
-   position: relative;
-   border: 0.14rem solid rgba(color(text-primary), 0.12);
-   border-radius: 12px;
-   height: 60px;
-   color: rgba(color(text-primary), 0.8);
-   overflow: hidden;
-   background: color(bg-soft);
-   display: flex;
-   padding: 0 20px;
+  width: 100%;
+  max-width: 580px;
+  position: relative;
+  border: 0.14rem solid rgba(color(text-primary), 0.12);
+  border-radius: 12px;
+  height: 60px;
+  color: rgba(color(text-primary), 0.8);
+  overflow: hidden;
+  background: color(bg-soft);
+  display: flex;
+  padding: 0 20px;
 
-   @include mobile {
-      width: 100%;
-   }
+  @include mobile {
+    width: 100%;
+  }
 
-   input {
-      font-size: text(normal);
-      line-height: 1.5rem;
-      width: 100%;
-      background-color: transparent;
-      height: 100%;
-      border: none;
-      padding-right: 10px;
-   }
+  input {
+    font-size: text(normal);
+    line-height: 1.5rem;
+    width: 100%;
+    background-color: transparent;
+    height: 100%;
+    border: none;
+    padding-right: 10px;
+  }
 
-   button {
-      position: relative;
-      right: 0;
-      top: 0;
-   }
+  button {
+    position: relative;
+    right: 0;
+    top: 0;
+  }
 }
 
 .search {
-   @include searchStyles();
+  @include searchStyles();
 
-   &.searchDark {
-      background-color: color(text-primary);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      .searchIcon {
-         svg > path {
-            stroke: color(primary-white);
-         }
+  &.searchDark {
+    background-color: color(text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    .searchIcon {
+      svg > path {
+        stroke: color(primary-white);
       }
-   }
+    }
+  }
 }

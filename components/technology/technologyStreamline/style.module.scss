@@ -1,88 +1,172 @@
 @import "~/styles/partials/config";
 
 .streamLineWrapper {
-   text-align: center;
-   background: color(bg-soft);
-	 display: flex;
-	 align-items: center;
-	 flex-wrap: nowrap;
-	 overflow-x: scroll;
-	 @include scrollHide;
+  text-align: center;
+  background: color(bg-soft);
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  //  @include scrollHide;
 
-   .streamLineSection {
-      min-width: 100%;
-      background: url("../../../public/images/pattern.png") no-repeat;
-      background-size: cover;
+  @include mobile-tablet-p {
+    flex-direction: column;
+    background-color: transparent;
+  }
 
-      .flexContainer {
-         display: flex;
-         flex-direction: column;
-         justify-content: center;
-         align-items: center;
-         height: 100vh;
-      }
-   }
+  .streamLineSection {
+    height: 100vh;
+    min-width: 100%;
+    background: url("../../../public/images/pattern.png") no-repeat;
+    background-size: cover;
 
-   .streamlineTitle {
-      font-size: 2.75rem;
-      font-weight: 500;
-      max-width: 41%;
-      line-height: 1.3;
-
-      span {
-         font-size: 2.75rem;
-         color: color(heading-liner);
-      }
-   }
-
-   .streamlineContent {
-      font-size: text(lg);
-      max-width: 38%;
-   }
-
-   .streamLineCards {
+    .flexContainer {
       display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
 
-      .streamlineCard {
-         width: 31.25rem;
-         height: 36.375rem;
-         border-radius: 1.25rem;
-         border: 0.14rem solid rgba(color(text-primary), 0.12);
-         background: color(primary-white);
-         text-align: left;
-         padding: 2.5rem;
-         margin: 1rem;
-
-         .cardIcon {
-            margin-bottom: 3.75rem;
-         }
-         .cardTitle {
-            font-size: text(xxxl);
-            font-weight: 500;
-            line-height: 2.5rem;
-            margin-bottom: 1.25rem;
-         }
-         .cardContent {
-            font-size: text(lg);
-            font-weight: 400;
-            line-height: 1.875rem;
-            opacity: 0.8;
-						@include truncate(4);
-         }
-
-         button {
-            margin-top: 2rem;
-         }
+      @include mobile-tablet-p {
+        height: auto;
+        padding: spacing(section-mob-padding);
+        padding-block: 3.75rem 3.75rem;
       }
-   }
+    }
+  }
 
-	//  Dark Mode
-	 &.streamlineDark {
-		background-color: color(dark-bg);
-		color: color(primary-white);
-	
-		.streamlineContent{
-			 opacity: 0.8;
-		}
- }
+  .streamlineTitle {
+    font-size: 2.75rem;
+    font-weight: 500;
+    max-width: 41%;
+    line-height: 1.3;
+
+    @include mobile-tablet-p {
+      font-size: 2rem;
+      line-height: 2.5rem;
+      max-width: 100%;
+      margin-bottom: text(xl);
+    }
+
+    span {
+      font-size: 2.75rem;
+      color: color(heading-liner);
+
+      @include mobile-tablet-p {
+        font-size: 2rem;
+        line-height: 2.5rem;
+      }
+    }
+  }
+
+  .streamlineContent {
+    font-size: text(lg);
+    max-width: 38%;
+    margin-bottom: 0;
+
+    @include mobile-tablet-p {
+      font-size: text(normal);
+      line-height: text(xl);
+      max-width: 100%;
+    }
+  }
+
+  .streamLineCards {
+    display: flex;
+
+    @include mobile-tablet-p {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(2, 1fr);
+      padding: spacing(section-mob-padding);
+      padding-block: 0rem 3.75rem;
+      padding-bottom: 0;
+    }
+
+    @include mobile {
+      display: grid;
+      gap: 2.5rem;
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .streamlineCard {
+      width: 31.25rem;
+      height: 36.375rem;
+      border-radius: 1.25rem;
+      border: 0.14rem solid rgba(color(text-primary), 0.12);
+      background: color(primary-white);
+      text-align: left;
+      padding: 2.5rem;
+      margin: 1rem;
+      @include transition(0.5s);
+
+      @include mobile-tablet-p {
+        width: auto;
+        height: auto;
+        padding: text(xl);
+        margin: 0;
+      }
+
+      &:hover {
+        border-color: rgba(color(heading-liner), 1);
+      }
+
+      .cardIcon {
+        margin-bottom: 3.75rem;
+        @include mobile-tablet-p {
+          margin-bottom: 2.5rem;
+        }
+      }
+      .cardTitle {
+        font-size: text(xxxl);
+        font-weight: 500;
+        line-height: 2.5rem;
+        margin-bottom: 1.25rem;
+        @include mobile-tablet-p {
+          font-size: text(lg);
+          line-height: 1.75rem;
+          margin-bottom: 0.75rem;
+        }
+      }
+      .cardContent {
+        font-size: text(lg);
+        font-weight: 400;
+        line-height: 1.875rem;
+        opacity: 0.8;
+        @include truncate(4);
+
+        @include mobile-tablet-p {
+          font-size: text(normal);
+          line-height: text(xl);
+          margin-bottom: 0;
+        }
+      }
+
+      button {
+        margin-top: 2rem;
+        @include mobile-tablet-p {
+          margin-top: 2.25rem;
+        }
+      }
+    }
+  }
+
+  //  Dark Mode
+  &.streamlineDark {
+    background-color: color(dark-bg);
+    color: color(primary-white);
+
+    .streamlineCard {
+      background: color(input-bg);
+      border-color: rgba(color(primary-white), 0.12);
+
+      &:hover {
+        border-color: rgba(color(heading-liner), 1);
+      }
+    }
+
+    .streamlineContent {
+      opacity: 0.8;
+    }
+  }
 }

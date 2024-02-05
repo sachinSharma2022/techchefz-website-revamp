@@ -48,7 +48,7 @@ const DigitalTransformation = ({digital}) => {
       {
         breakpoint: 1199,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
           centerMode: false,
           arrows: true,
@@ -68,7 +68,7 @@ const DigitalTransformation = ({digital}) => {
           slidesToShow: 1,
           slidesToScroll: 1,
           arrows: true,
-          centerPadding: "15px",
+          centerPadding: "0",
         },
       },
     ],
@@ -111,7 +111,7 @@ const DigitalTransformation = ({digital}) => {
                 <div className={styles.digitalGrid}>
                   <div className={styles.digitalImg}>
                     <ImageCustom
-                      src={base_Uri+data?.Image?.data?.attributes?.url}
+                      src={data?.Image?.data?.attributes?.url?`${base_Uri}${data?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
                       width={421}
                       height={318}
                       alt="bannerImg"

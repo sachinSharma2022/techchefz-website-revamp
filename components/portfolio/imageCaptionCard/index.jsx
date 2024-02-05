@@ -85,57 +85,68 @@ const ImageCaptionCard = () => {
   ];
 
   return (
-    <section className="primary-container">
-      <div
-        className={`${styles.dropdownStyle} ${
-          theme ? styles.dropdownDark : ""
-        }`}
-      >
-        <div className={`${styles.inputDropPadding}`}>
-          <CustomDropdown title="Services" options={dataServices} />
+    <section className={cn(theme ? styles.darkStyle : "")}>
+      <div className={cn("primary-container")}>
+        <div
+          className={cn(styles.dropdownStyle, theme ? styles.dropdownDark : "")}
+        >
+          <div className={`${styles.inputDropPadding}`}>
+            <CustomDropdown
+              title="Services"
+              options={dataServices}
+              className="custom-dropdown"
+            />
+          </div>
+          <div className={`${styles.inputDropPadding}`}>
+            <CustomDropdown
+              title="Industry"
+              options={dataIndustry}
+              className="custom-dropdown"
+            />
+          </div>
+          <div className={`${styles.inputDropPadding}`}>
+            <CustomDropdown
+              title="Technology"
+              options={dataTechnology}
+              className="custom-dropdown"
+            />
+          </div>
         </div>
-        <div className={`${styles.inputDropPadding}`}>
-          <CustomDropdown title="Industry" options={dataIndustry} />
-        </div>
-        <div className={`${styles.inputDropPadding}`}>
-          <CustomDropdown title="Technology" options={dataTechnology} />
-        </div>
-      </div>
-
-      <div
-        className={cn(
-          styles.captionCardStyle,
-          theme ? styles.captionCardDark : "",
-          "captionCardSection"
-        )}
-      >
-        {imageCaptionData.map((data, index) => (
-          <Link href="/case-study" key={index} className={`grid-${index}`}>
-            <div className={`${styles.imageCard} card`}>
-              <div className={styles.cardImg}>
-                <div className={`${styles.imgBox} imgBox`}>
-                  <ImageCustom
-                    src={data.imgSrc}
-                    width={1360}
-                    height={450}
-                    alt="captionImg"
-                  />
+        <div
+          className={cn(
+            styles.captionCardStyle,
+            theme ? styles.captionCardDark : "",
+            "captionCardSection"
+          )}
+        >
+          {imageCaptionData.map((data, index) => (
+            <Link href="/case-study" key={index} className={`grid-${index}`}>
+              <div className={`${styles.imageCard} card`}>
+                <div className={styles.cardImg}>
+                  <div className={`${styles.imgBox} imgBox`}>
+                    <ImageCustom
+                      src={data.imgSrc}
+                      width={1360}
+                      height={450}
+                      alt="captionImg"
+                    />
+                  </div>
+                  <div className={styles.cardBadges}>
+                    {data.badgeList.map((badgeItem) => (
+                      <div key={badgeItem} className={styles.badges}>
+                        {badgeItem}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className={styles.cardBadges}>
-                  {data.badgeList.map((badgeItem) => (
-                    <div key={badgeItem} className={styles.badges}>
-                      {badgeItem}
-                    </div>
-                  ))}
+                <div className={styles.cardBody}>
+                  <h2 className={styles.cardText}>{data.description}</h2>
+                  <Icons.ArrowLongRight size={18} />
                 </div>
               </div>
-              <div className={styles.cardBody}>
-                <h2 className={styles.cardText}>{data.description}</h2>
-                <Icons.ArrowLongRight size={18} />
-              </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   );

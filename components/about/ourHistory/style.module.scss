@@ -2,6 +2,156 @@
 
 .ourHistory {
   padding: spacing(section-primary-padding);
+  padding-bottom: 0;
+
+  @include mobile-tablet-p {
+    padding: spacing(section-mob-padding);
+    padding-block: 3.75rem 3.75rem;
+  }
+
+  .ourHistoryTop {
+    width: 100%;
+    margin-bottom: 5rem;
+    @include mobile-tablet-p {
+      margin-bottom: 3.75rem;
+    }
+  }
+
+  .ourHistoryTitle {
+    color: color(text-primary);
+    text-transform: uppercase;
+    opacity: 0.8;
+    font-size: text(normal);
+    font-weight: 500;
+    line-height: 1.5rem;
+    letter-spacing: 0.2rem;
+    @include mobile-tablet-p {
+      margin-bottom: 0.75rem;
+    }
+  }
+  .ourHistoryHeading {
+    font-size: text(larger);
+    color: color(text-primary);
+    max-width: 55%;
+    @include mobile-tablet-p {
+      max-width: 100%;
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
+  }
+
+  .subHeading {
+    font-size: text(xxxl);
+    font-weight: 500;
+    line-height: 2.5rem;
+    margin-bottom: 0.5rem;
+    @include mobile-tablet-p {
+      font-size: text(lg);
+      line-height: 1.75rem;
+    }
+  }
+  .ourHistoryContent {
+    font-weight: 400;
+    font-size: text(lg);
+    line-height: 1.875rem;
+    color: rgba(color(text-primary), 0.6);
+    margin-top: 1rem;
+
+    @include mobile-tablet-p {
+      @include truncate(4);
+    }
+  }
+
+  .infoStyle {
+    max-width: 85%;
+
+    @include mobile-tablet-p {
+      max-width: 100%;
+    }
+  }
+
+  .OurHistoryImage div {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    height: 397px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+
+    @include mobile-tablet-p {
+      height: 14.375rem;
+      margin-bottom: 2.5rem;
+    }
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .controlSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .sliderArrow {
+    display: flex;
+    gap: 24px;
+
+    @include mobile-tablet-p {
+      margin-top: 3.75rem;
+    }
+
+    .button {
+      background-color: color(primary-blue);
+      padding: 0;
+      border-radius: 0.5rem;
+      width: 3rem;
+      height: 3rem;
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    svg > path {
+      stroke: color(primary-white);
+    }
+  }
+
+  .arrowDisabled {
+    border-radius: 0.5rem;
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid rgba(color(text-primary), 0.2);
+    color: color(primary-blue);
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg > path {
+      stroke: color(primary-black);
+    }
+  }
+
+  .sliderSection {
+
+    @include mobile-tablet-p {
+      flex-direction: column-reverse;
+    }
+  }
+
+  .timelineSection {
+
+  }
 
   &.ourHistoryDark {
     background-color: color(input-bg);
@@ -16,73 +166,21 @@
       }
     }
 
-    .cardStyle{
-      .infoStyle{
-        .ourHistoryContent{
+    .cardStyle {
+      .infoStyle {
+        .ourHistoryContent {
           color: color(primary-white);
           opacity: 0.6;
         }
       }
     }
-  }
 
-  .ourHistoryTop {
-    width: 100%;
-    margin-bottom: 5rem;
-  }
+    .arrowDisabled {
+      border: 1px solid rgba(color(primary-white), 0.2);
 
-  .ourHistoryTitle {
-    color: color(text-primary);
-    text-transform: uppercase;
-    opacity: 0.8;
-    font-size: text(normal);
-    font-weight: 500;
-    line-height: 1.5rem;
-    letter-spacing: 0.2rem;
-  }
-  .ourHistoryHeading {
-    font-size: text(larger);
-    color: color(text-primary);
-    max-width: 55%;
-  }
-
-  .subHeading {
-    font-size: text(xxxl);
-    font-weight: 500;
-    line-height: 2.5rem;
-    margin-bottom: 0.5rem;
-  }
-  .ourHistoryContent {
-    font-weight: 400;
-    font-size: text(lg);
-    line-height: 1.875rem;
-    color: rgba(color(text-primary), 0.6);
-    margin-top: 1rem;
-  }
-
-  .infoStyle {
-    max-width: 85%;
-
-    @include mobile {
-      max-width: 100%;
+      svg > path {
+        stroke: color(primary-white);
+      }
     }
-  }
-
-  .OurHistoryImage {
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-
-    img {
-      border-radius: 0.5rem;
-      object-fit: cover;
-    }
-  }
-
-  .cardStyle {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    padding: 0 0.2rem;
   }
 }

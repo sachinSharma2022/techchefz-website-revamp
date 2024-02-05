@@ -4,11 +4,11 @@ import CoeImpact from "@/components/coe/coeImpact";
 import CoeService from "@/components/coe/coeService";
 import CoeSupport from "@/components/coe/coeSupport";
 import LetsWork from "@/components/home/letsWork";
-import axios from "axios";
+import { getData } from "@/lib/fetchData";
 import { api_Coe_Page } from "@/lib/constants";
 
 const Coe = async() => {
-  const data = await getData()
+  const data = await getData(api_Coe_Page)
   return (
     <>
     {data?<div>
@@ -17,7 +17,7 @@ const Coe = async() => {
       <CoeSupport props={data.Support} />
       <CoeImpact />
       <CoeService props={data.CoeService} />
-      <LetsWork />
+      <LetsWork contact={data.ContactUs}/>
     </div>:<></>}
     </>
     
@@ -25,14 +25,3 @@ const Coe = async() => {
 };
 
 export default Coe;
-
-async function getData() {
-  try{
-    const response = await axios.get(api_Coe_Page);
-    return response.data?.data[0]?.attributes
-  }catch(error){
-    console.log(error)
-    return null
-  }
-  
-}

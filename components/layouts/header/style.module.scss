@@ -2,14 +2,18 @@
 
 .headerMain {
   padding: 1.11rem 7.5rem;
-  position: sticky;
-  top: 0;
+  position: fixed;
+  top: 0px;
   z-index: 999;
+  width: 100%;
   box-shadow: 0 0 0.125rem rgba(color(text-primary), 0.3);
-  background: transparent;
 
-  @include tablet {
-    padding: 1rem 0.8rem;
+  @include mobile-tablet-p {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0px 1rem;
+    background-color: color(primary-white);
   }
 
   .headerContainer {
@@ -19,6 +23,13 @@
   }
 
   .logo {
+    @include mobile {
+      scale: 0.8;
+      left: -11px;
+      top: 4px;
+      position: relative;
+    }
+
     .lightLogo {
       display: block;
     }
@@ -33,17 +44,18 @@
     top: 50%;
     transform: translate(-50%, -50%);
 
-    @include tablet {
+    @include mobile-tablet-p {
       position: fixed;
       left: 0;
-      top: 0;
-      height: 100vh;
+      top: 70px;
+      height: calc(100vh - 70px);
       width: 100%;
       transform: inherit;
-      z-index: 9;
-      background-color: rgba(color(primary-white), 0.9);
+      z-index: 999;
+      background-color: rgba(color(text-primary), 1);
       left: -100%;
       transition: all 0.5s;
+      overflow-y: scroll;
     }
 
     &.showNav {
@@ -57,10 +69,9 @@
       padding: 0;
       margin: 0;
 
-      @include tablet {
+      @include mobile-tablet-p {
         flex-wrap: wrap;
-        padding: 0;
-        padding-top: 2rem;
+        padding: 2rem 1rem;
       }
 
       li {
@@ -75,9 +86,14 @@
         display: flex;
         align-items: center;
 
-        @include tablet {
+        @include mobile-tablet-p {
           width: 100%;
           padding: 0.5rem 0;
+          border-top: 1px solid rgba(color(primary-white), 0.06);
+
+          &:last-child {
+            border-bottom: 1px solid rgba(color(primary-white), 0.06);
+          }
         }
 
         &:hover {
@@ -105,6 +121,14 @@
           margin: 0 0.5rem;
           border-radius: 0.5rem;
           transition: all 0.5s;
+
+          @include mobile-tablet-p {
+            font-size: 20px;
+            width: 100%;
+            justify-content: space-between;
+            padding: 0;
+            margin: 0;
+          }
 
           &:hover {
             color: color(primary-blue);
@@ -156,6 +180,8 @@
 
             @include mobile {
               transform: rotate(-45deg);
+              height: 0.8rem;
+              width: 0.8rem;
             }
           }
         }
@@ -198,74 +224,97 @@
     }
   }
 
-  .activeHumburger {
-    button {
-      span {
-        background: 0;
-        &::before {
-          top: 0;
-          transform: rotate(45deg);
-        }
-        &::after {
-          bottom: 0;
-          transform: rotate(-45deg);
-        }
-      }
+  .dotIcon {
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .hideDesktopIcon {
+    @include desktop {
+      display: none;
+    }
+  }
+
+  .mobileTitle {
+    color: #e3e3e3;
+    font-size: 1rem;
+    padding: 20px 20px 0;
+
+    @include desktop {
+      display: none;
     }
   }
 
   .navHamburger {
-    display: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 99;
 
-    @include tablet {
-      display: inline-block;
+    @include desktop {
+      display: none;
+    }
+
+    span {
+      display: block;
       position: relative;
-      overflow: hidden;
-      margin: 0;
-      padding: 0;
-      width: 1.5625rem;
-      height: 2.8125rem;
-      font-size: 0;
-      text-indent: -624.938rem;
-      appearance: none;
-      box-shadow: none;
-      border-radius: none;
-      cursor: pointer;
-      background: 0;
-      z-index: 99;
+      left: 0;
+      width: 1.5rem;
+      height: 0.14rem;
+      background-color: color(text-primary);
+      content: "";
+      @include transition(0.3s);
+    }
+  }
 
-      span {
-        display: block;
-        position: absolute;
-        top: 1.4375rem;
-        left: 0;
-        right: 0;
-        height: 0.125rem;
-        background: color(text-primary);
-
-        &::before,
-        &::after {
-          position: absolute;
-          display: block;
-          left: 0;
-          width: 100%;
-          height: 0.125rem;
-          background-color: color(text-primary);
-          content: "";
-          transition-delay: 0.3s, 0;
-        }
-
-        &::before {
-          top: -0.5rem;
-          transition-property: top;
-          transition: 0.3s all;
-        }
-        &::after {
-          bottom: -0.5rem;
-          transition-property: bottom;
-          transition: 0.3s all;
-        }
+  .toggleActive {
+    span {
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
       }
+      &:last-child {
+        transform: rotate(-45deg) translate(2px, -2px);
+      }
+    }
+  }
+
+  // Estimate Section
+  @include desktop {
+    .estimateSection {
+      .description {
+        display: none;
+      }
+    }
+  }
+
+  @include mobile {
+    .estimateSection {
+      padding: 2rem 1.5rem 5rem;
+
+      .description {
+        color: color(primary-white);
+        font-size: 0.875rem;
+      }
+
+      .headerBtn {
+        width: 100%;
+        height: 60px;
+      }
+    }
+  }
+
+  .hideDesktop {
+    @include desktop {
+      display: none;
+    }
+  }
+
+  .hideMobile {
+    @include mobile-tablet-p {
+      display: none;
     }
   }
 
@@ -287,13 +336,19 @@
         justify-content: center;
         align-items: center;
         transition: all 0.5s;
+        position: relative;
 
         &:hover {
           background-color: rgba(color(text-primary), 0.12);
         }
 
-        svg path {
-          fill: none;
+        svg {
+          position: relative;
+          left: 1px;
+
+          path {
+            fill: none;
+          }
         }
       }
     }
@@ -313,7 +368,7 @@
     background-color: color(dark-gray);
     width: auto;
     min-width: 70rem;
-    z-index: 2;
+    z-index: 99;
     margin: 0;
     border: 0.063rem solid rgba(color(text-primary), 0.2);
     border-radius: 0.5rem;
@@ -577,7 +632,17 @@
 
   // Dark Style here
   &.headerDarkStyle {
-    background-color: transparent;
+    border-bottom: 1px solid rgba(color(primary-white), 0.12);
+
+    @include mobile {
+      background-color: color(input-bg);
+    }
+
+    .navHamburger{
+      span{
+        background-color: color(primary-white);
+      }
+    }
 
     .logo {
       a {
@@ -595,10 +660,18 @@
     }
 
     .headerRight {
+      border-color: rgba(color(primary-white), 0.12);
+
       .modeBtn {
         button {
+          border: 0.14rem solid rgba(color(primary-white), 0.12);
+
           &:hover {
             background-color: rgba(color(primary-white), 0.2);
+          }
+
+          svg {
+            left: 0px;
           }
         }
       }
@@ -633,12 +706,14 @@
     .arrow {
       border-color: color(primary-white);
     }
-    .headerRight {
-      .modeBtn {
-        button {
-          border: 0.14rem solid rgba(color(primary-white), 0.12);
-        }
-      }
-    }
   }
+}
+
+// Header Mode
+.headerLight {
+  background: color(primary-white);
+}
+
+.headerDark {
+  background: color(input-bg);
 }

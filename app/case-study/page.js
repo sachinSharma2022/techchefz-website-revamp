@@ -7,14 +7,14 @@ import Results from "@/components/caseStudy/results";
 import Solutions from "@/components/caseStudy/solutions";
 import LetsWork from "@/components/home/letsWork";
 import React from "react";
-import axios, { Axios } from "axios";
+import { getData } from "@/lib/fetchData";
 import { api_Case_study_Page } from "@/lib/constants";
 
 const CaseStudy = async() =>{
   
-  const data = await getData()
+  const data = await getData(api_Case_study_Page)
   return (
-    <div>
+    <>{data? <div>
       <CaseStudyBanner props={data.CaseStudyBanner}/>
       <Industry props={data.Industry} CMSImplementation={data.CMSImplementation}/>
       <Goals props={data.Goals} />
@@ -24,19 +24,10 @@ const CaseStudy = async() =>{
       <RelatedCase sliderClassName="mb-0" />
       <LetsWork  contact={data.ContactUs}/>
      
-    </div>
+    </div>:<></>}
+    </>
+   
   );
 };
 
 export default CaseStudy;
-
-async function getData() {
-  try{
-    const response = await axios.get(api_Case_study_Page);
-    return response.data?.data[0]?.attributes
-  }catch(error){
-    console.log(error)
-    return null
-  }
-  
-}

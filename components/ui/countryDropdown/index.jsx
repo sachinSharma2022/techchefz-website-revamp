@@ -1,51 +1,98 @@
 "use client";
 
-import { Fragment, useState } from "react";
-import { Listbox, Transition } from "@headlessui/react";
 import { MyContext } from "@/context/theme";
-import { useContext } from "react";
-import InputCustom from "../inputCustom";
+import { Listbox, Transition } from "@headlessui/react";
+import { Fragment, useContext, useState } from "react";
 import { ImageCustom } from "../imageCustom";
 
+import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 
 const people = [
   {
     name: "+91",
-    flag: <ImageCustom src="/images/flag.jpg" width={24} height={15} alt="" />,
+    flag: (
+      <ImageCustom
+        src="/images/flag.jpg"
+        width={24}
+        height={15}
+        alt="flag-img"
+      />
+    ),
   },
   {
     name: "+93",
-    flag: <ImageCustom src="/images/flag.jpg" width={24} height={15} alt="" />,
+    flag: (
+      <ImageCustom
+        src="/images/flag.jpg"
+        width={24}
+        height={15}
+        alt="flag-img"
+      />
+    ),
   },
   {
     name: "+355",
-    flag: <ImageCustom src="/images/flag.jpg" width={24} height={15} alt="" />,
+    flag: (
+      <ImageCustom
+        src="/images/flag.jpg"
+        width={24}
+        height={15}
+        alt="flag-img"
+      />
+    ),
   },
   {
     name: "+376",
-    flag: <ImageCustom src="/images/flag.jpg" width={24} height={15} alt="" />,
+    flag: (
+      <ImageCustom
+        src="/images/flag.jpg"
+        width={24}
+        height={15}
+        alt="flag-img"
+      />
+    ),
   },
   {
     name: "+244",
-    flag: <ImageCustom src="/images/flag.jpg" width={24} height={15} alt="" />,
+    flag: (
+      <ImageCustom
+        src="/images/flag.jpg"
+        width={24}
+        height={15}
+        alt="flag-img"
+      />
+    ),
   },
   {
     name: "+672",
-    flag: <ImageCustom src="/images/flag.jpg" width={24} height={15} alt="" />,
+    flag: (
+      <ImageCustom
+        src="/images/flag.jpg"
+        width={24}
+        height={15}
+        alt="flag-img"
+      />
+    ),
   },
 ];
 
-const CountryDropdown = () => {
+const CountryDropdown = (props) => {
   const { theme, setTheme } = useContext(MyContext);
   const [selected, setSelected] = useState(people[0]);
   return (
     <div
-      className={`${styles.dropdownContainerStyle} ${
+      className={cn(
+        styles.dropdownContainerStyle,
         theme ? styles.dropdownContainerStyleDark : ""
-      }`}
+      )}
     >
-      <div className={styles.countryDropdown}>
+      <div
+        className={cn(
+          styles.countryDropdown,
+          props.inputError && styles.inputErrorStyle
+        )}
+      >
         <Listbox value={selected} onChange={setSelected}>
           <div className={styles.floatDropdown}>
             <Listbox.Button>
@@ -75,9 +122,8 @@ const CountryDropdown = () => {
           </div>
         </Listbox>
 
-        <InputCustom
+        <input
           type="text"
-          className={`${styles.floatInput} form-control`}
           id="username"
           placeholder="Phone Number*"
           required=""

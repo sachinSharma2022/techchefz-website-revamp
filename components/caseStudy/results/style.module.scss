@@ -1,17 +1,22 @@
 @import "~/styles/partials/config";
 
 .results {
-   padding: 0 7.5rem 7.5rem;
-   &.resultsDark {
+  padding: 0 7.5rem 7.5rem;
+
+  @include mobile-tablet-p {
+    padding: spacing(section-mob-padding);
+    padding-block: 0rem;
+  }
+  &.resultsDark {
     background-color: color(input-bg);
     color: color(primary-white);
 
     .resultCards {
-       .resultCard {
-          background-color: color(text-primary);
-       }
+      .resultCard {
+        background-color: color(text-primary);
+      }
     }
- }
+  }
 
   .resultTitle {
     font-size: text(normal);
@@ -27,6 +32,12 @@
     line-height: 3.375rem;
     max-width: 95%;
     margin-bottom: 2rem;
+
+    @include mobile-tablet-p {
+      font-size: 2rem;
+      line-height: 2.5rem;
+      margin-bottom: text(lg);
+    }
   }
   .resultText {
     font-size: text(lg);
@@ -34,11 +45,27 @@
     line-height: 1.875rem;
     opacity: 0.8;
     margin-bottom: 3.75rem;
+
+    @include mobile-tablet-p {
+      font-size: text(normal);
+      line-height: text(xl);
+      margin-bottom: 2.75rem;
+    }
   }
   .resultCards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
+
+    @include mobile-tablet-p {
+      grid-template-columns: repeat(2, 1fr);
+      gap: text(lg);
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+      gap: text(lg);
+    }
 
     .resultCard {
       width: 100%;
@@ -72,6 +99,6 @@
           max-width: 70%;
         }
       }
-   }
-}
+    }
+  }
 }

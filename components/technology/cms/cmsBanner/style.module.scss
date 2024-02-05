@@ -2,7 +2,7 @@
 
 .cmsBannerStyle {
   padding-inline: spacing(p-120);
-  padding-block: 5rem 5rem;
+  padding-block: 10rem 8.75rem;
 
   @include mobile-tablet-p {
     padding: spacing(section-mob-padding);
@@ -55,10 +55,11 @@
     font-weight: 400;
     max-width: 23.375rem;
     color: rgba(color(text-primary), 0.8);
-    padding-top: 10px;
+    margin-top: 0.8rem;
 
     @include mobile-tablet-p {
       max-width: 100%;
+      margin: 0;
     }
   }
 
@@ -70,6 +71,7 @@
   //Dark mode style
   &.cmsBannerDark {
     color: color(primary-white);
+    background-color: color(input-bg);
 
     .leadText {
       color: color(primary-white);

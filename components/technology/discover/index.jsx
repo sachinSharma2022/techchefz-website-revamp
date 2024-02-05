@@ -73,7 +73,11 @@ const Discover = () => {
     },
   ];
   return (
-    <section className={`${styles.discoverSection} ${theme ? styles.discoverSectionDark : ""}`}>
+    <section
+      className={`${styles.discoverSection} ${
+        theme ? styles.discoverSectionDark : ""
+      }`}
+    >
       <div className={cn("primary-container")}>
         <div className={styles.discoverTop}>
           <div>
@@ -82,7 +86,7 @@ const Discover = () => {
           </div>
 
           <Link href="/technology/cms">
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="md">
               Explore Now <Icons.ArrowRight size={18} />
             </Button>
           </Link>
@@ -159,9 +163,87 @@ const Discover = () => {
                   </div>
                 ))}
               </Tab.Panel>
-              <Tab.Panel>Content 1</Tab.Panel>
-              <Tab.Panel>Content 2</Tab.Panel>
-              <Tab.Panel>Content 3</Tab.Panel>
+              <Tab.Panel>
+                {technologyData.map((item, index) => (
+                  <div key={index} className={styles.dataSection}>
+                    <h6 className={styles.subTitle}>{item.title}</h6>
+
+                    {/* Sub Section */}
+                    <div className={styles.buttonSection}>
+                      {item.technologyList.map((subItems, index) => (
+                        <div key={index} className={styles.platformsBtn}>
+                          <div className="d-flex align-items-center">
+                            <div className={styles.iconImg}>
+                              <ImageCustom
+                                src={subItems.icon}
+                                width={24}
+                                height={22}
+                                alt="image"
+                              />
+                            </div>
+                            <p>{subItems.title} </p>
+                          </div>
+                          <Icons.ArrowUpRight />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </Tab.Panel>
+              <Tab.Panel>
+                {technologyData.map((item, index) => (
+                  <div key={index} className={styles.dataSection}>
+                    <h6 className={styles.subTitle}>{item.title}</h6>
+
+                    {/* Sub Section */}
+                    <div className={styles.buttonSection}>
+                      {item.technologyList.map((subItems, index) => (
+                        <div key={index} className={styles.platformsBtn}>
+                          <div className="d-flex align-items-center">
+                            <div className={styles.iconImg}>
+                              <ImageCustom
+                                src={subItems.icon}
+                                width={24}
+                                height={22}
+                                alt="image"
+                              />
+                            </div>
+                            <p>{subItems.title} </p>
+                          </div>
+                          <Icons.ArrowUpRight />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </Tab.Panel>
+              <Tab.Panel>
+                {technologyData.map((item, index) => (
+                  <div key={index} className={styles.dataSection}>
+                    <h6 className={styles.subTitle}>{item.title}</h6>
+
+                    {/* Sub Section */}
+                    <div className={styles.buttonSection}>
+                      {item.technologyList.map((subItems, index) => (
+                        <div key={index} className={styles.platformsBtn}>
+                          <div className="d-flex align-items-center">
+                            <div className={styles.iconImg}>
+                              <ImageCustom
+                                src={subItems.icon}
+                                width={24}
+                                height={22}
+                                alt="image"
+                              />
+                            </div>
+                            <p>{subItems.title} </p>
+                          </div>
+                          <Icons.ArrowUpRight />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </Tab.Panel>
             </Tab.Panels>
           </Tab.Group>
         </div>
