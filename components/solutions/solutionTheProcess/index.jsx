@@ -10,6 +10,9 @@ import { useEffect, useRef } from "react";
 
 const SolutionTheProcess = () => {
   const { theme, setTheme } = useContext(MyContext);
+  const circleWidth=400
+  const radius = 195;
+  const dashArray = radius * Math.PI * 2;
   const accordionData = [
     {
       title: "Navigating Cloud Integration Complexities",
@@ -66,14 +69,37 @@ const SolutionTheProcess = () => {
         scrollTrigger: {
           trigger: `.${styles.processCardSection}`,
           scrub: 1,
-          start: "top 11%",
-          end:"bottom +=500",
+          start: "top 30%",
+          end:"bottom 45%",
           markers:true,
           invalidateOnRefresh: true,
-          anticipatePin: 1,
+          anticipatePin: 1, 
         },
       });
+      tl_circle.to(".circle-progress", {
+        strokeDashoffset: 0
+       })
 
+
+
+      // titles.forEach((text, i) => {
+        
+
+      //   gsap.to(".circle-progress", {
+      //     scrollTrigger:{
+      //       trigger: text,
+      //       start: "top 45%",
+      //       end:"center 20%", 
+      //       markers: true,
+      //       toggleActions: "play none reverse none",
+      //       snap:1/(titles.length-1)
+      //     },
+      //     strokeDashoffset: dashArray-((dashArray/titles.length)*(i+1))
+          
+      //   })
+        
+      // });
+     
       
       
     
@@ -81,9 +107,7 @@ const SolutionTheProcess = () => {
     });
     return () => ctx.revert();
   }, []);
-  const circleWidth=400
-  const radius = 195;
-  const dashArray = radius * Math.PI * 2;
+  
   return (
     <section className={`${styles.theProcessStyle} ${theme ? styles.theProcessDark : ""}`}>
       <div className={cn("primary-container", styles.flexContainer)}>
@@ -94,7 +118,9 @@ const SolutionTheProcess = () => {
           </div>
 
           <div className={styles.ourNumbersImg}>
-          {/* <div className="circularStepper" >
+          <div className={styles.circularStepperContainer}>
+          <div className="circularStepper" >
+          </div>
       <svg
         width={circleWidth}
         height={circleWidth}
@@ -146,19 +172,13 @@ const SolutionTheProcess = () => {
           alt="bannerImg"
         />
       </div>
-      <span className="one">01</span>
+      {/* <span className="one">01</span>
       <span className="two">02</span>
       <span className="three">03</span>
       <span className="four">04</span>
       <span className="five">05</span>
-      <span className="six">06</span>
-    </div> */}
-     <ImageCustom
-              src="/images/process.svg"
-              width={410}
-              height={570}
-              alt="bannerImg"
-            />
+      <span className="six">06</span> */}
+    </div>
           </div>
         </div>
 
