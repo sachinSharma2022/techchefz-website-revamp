@@ -92,7 +92,7 @@ const OurNumbers = () => {
             </h2>
           </div>
 
-          <Button variant="outline" size="md">
+          <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
             Career Opportunities <Icons.ArrowRight size={18} />
           </Button>
         </div>

@@ -85,7 +85,10 @@ const LetsWork = () => {
                     </p>
                   </div>
                   <div className={`${styles.buttonGrid} col-md-6 col-12`}>
-                    <Button variant="blueBtn" size="lg">
+                    <Button
+                    variant={theme ? "blueBtnDark" : "blueBtn"}
+                    //  variant="blueBtn"
+                      size="lg">
                       Send a Message <Icons.ArrowRight size={18} />
                     </Button>
                   </div>

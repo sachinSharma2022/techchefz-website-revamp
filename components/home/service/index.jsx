@@ -113,7 +113,7 @@ const Service = () => {
               Exclusive development leveraging top notch technologies
             </h3>
             <Link href="/solutions">
-              <Button variant="outline" size="md">
+              <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
                 Our Solutions <Icons.ArrowRight size={18} />
               </Button>
             </Link>

@@ -83,7 +83,7 @@ const TechnologyStack = () => {
               </div>
               <div className="col-md-12 col-12">
                 <Link href="/technology">
-                  <Button variant="outline" size="md">
+                  <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
                     Explore Technologies <Icons.ArrowRight size={18} />
                   </Button>
                 </Link>
