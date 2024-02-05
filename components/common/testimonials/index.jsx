@@ -109,7 +109,7 @@ const Testimonials = ({props}) => {
                     swiper.navigation.update();
                   }}
                 >
-                  {serviceCard.map((data, index) => (
+                  {props[0]?.Testimonials.map((data, index) => (
                     <SwiperSlide key={index}>
                       <div className={styles.testimonialCardBox}>
                         <div className={styles.commaImg}>

@@ -6,7 +6,6 @@ import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import { useContext } from "react";
 import Slider from "react-slick";
-import { cn } from "@/lib/utils";
 import { base_Uri } from "@/lib/constants";
 
 import ServiceInfoCard from "@/components/common/serviceInfoCard";

@@ -27,11 +27,12 @@ const Card = ({ ...props }) => {
     1,
     props.targetScale,
   ]);
+  console.log("pro",props)
   return (
     <motion.div className={styles.cardSec} style={{ scale }}>
       <div className={styles.projectImg}>
         <ImageCustom
-          src={base_Uri+props?.Image?.data?.attributes?.formats?.large?.url}
+          src={props?.project?.Image?.data?.attributes?.url?`${base_Uri}${props?.project?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
           width={1360}
           height={300}
           alt="projectImg"
@@ -40,7 +41,7 @@ const Card = ({ ...props }) => {
 
       <div className={styles.cardContentStyle}>
         <h3 className={styles.projectBrand}>
-          {props.Title.split(" ").map((word, index) => {
+          {props?.project?.Title.split(" ").map((word, index) => {
             return (
               <div key={index} className={styles.mask}>
                 <motion.span
@@ -57,7 +58,7 @@ const Card = ({ ...props }) => {
         </h3>
 
         <p ref={description} className={styles.brandFromText}>
-          {props.Description.split(" ").map((word, index) => {
+          {props?.project?.Description.split(" ").map((word, index) => {
             return (
               <span key={index} className={styles.mask}>
                 <motion.span
@@ -77,7 +78,7 @@ const Card = ({ ...props }) => {
           animate={isInView ? "open" : "closed"}
           className={styles.projectBtn}
         >
-          {props.Tag.map((tagItem) => (
+          {props?.project?.Tag.map((tagItem) => (
             <Link key={tagItem} href="/portfolio" className={styles.badgeStyle}>
               {tagItem.Title}
             </Link>
@@ -95,6 +96,7 @@ const Projects = ({project,brands}) => {
     target: container,
     offset: ["start start", "end end"],
   });
+  console.log(brands,"brands")
   // const projects = [
   //   {
   //     src: "/images/ICICI.png",
@@ -148,11 +150,12 @@ const Projects = ({project,brands}) => {
         <div ref={container} className={styles.cards}>
           {brands.map((project, i) => {
             const targetScale = 1 - (brands.length - i) * 0.05;
+            console.log(project,"projects")
             return (
               <Card
                 key={`p_${i}`}
                 i={i}
-                {...project}
+                project={project}
                 progress={scrollYProgress}
                 range={[i * 0.25, 1]}
                 targetScale={targetScale}
