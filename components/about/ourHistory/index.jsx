@@ -131,7 +131,7 @@ const OurHistory = ({props, OurHistory}) => {
                 {OurHistory.map((data, index) => (
                   <div key={index} className={styles.cardStyle}>
                     <div className={styles.infoStyle}>
-                      <h4 className={styles.subHeading}>{data.OurHistoryCard.title}</h4>
+                      <h4 className={styles.subHeading}>{data.OurHistoryCard.Title}</h4>
                       <p className={styles.ourHistoryContent}>{data.OurHistoryCard.Description}</p>
                     </div>
                   </div>
