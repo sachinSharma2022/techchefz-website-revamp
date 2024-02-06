@@ -78,7 +78,7 @@ const Testimonials = (props) => {
     >
       <div className={cn("primary-container", styles.testimonialContainer)}>
         <div className="row">
-          <div className="col-12 col-sm-3 col-md-12">
+          <div className="col-12 col-sm-3">
             <div className={styles.infoSection}>
               <div className={styles.testimonialsLeft}>
                 <p className={styles.projectHighlight}>Testimonials</p>
