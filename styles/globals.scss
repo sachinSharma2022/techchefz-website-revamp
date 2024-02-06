@@ -368,7 +368,7 @@ input:-webkit-autofill {
   margin-top: 6.25rem;
 
   @include mobile-tablet-p {
-    margin-top: 1.5rem;
+    margin: 1.5rem 0;
   }
 
   .slick-dots {
