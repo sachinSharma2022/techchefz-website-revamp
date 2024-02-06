@@ -1,3 +1,4 @@
+
 import Faq from "@/components/common/faq";
 import RelatedCase from "@/components/relatedCase";
 import SolutionHeroBanner from "@/components/solutions/solutionHeroBanner";
@@ -8,7 +9,9 @@ import SolutionTheProcess from "@/components/solutions/solutionTheProcess";
 import styles from "./style.module.scss";
 import SolutionCaseStudy from "@/components/solutions/solutionCaseStudy";
 
+
 const Solutions = () => {
+ 
   return (
     <div className={styles.solutionsPageStyle}>
       <SolutionHeroBanner />

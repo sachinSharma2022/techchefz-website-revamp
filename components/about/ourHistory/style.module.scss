@@ -27,6 +27,7 @@
     letter-spacing: 0.2rem;
     @include mobile-tablet-p {
       margin-bottom: 0.75rem;
+      font-weight: 400;
     }
   }
   .ourHistoryHeading {
@@ -80,7 +81,7 @@
 
     @include mobile-tablet-p {
       height: 14.375rem;
-      margin-bottom: 2.5rem;
+      margin-bottom: 3.5rem;
     }
 
     img {

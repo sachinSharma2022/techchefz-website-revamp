@@ -1,12 +1,12 @@
 "use client";
 
+import MobileSlider from "@/components/common/mobileSlider";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useContext } from "react";
-import Slider from "react-slick";
 import styles from "./style.module.scss";
 
 const Service = () => {
@@ -56,47 +56,6 @@ const Service = () => {
         "We Facilitate Easy Cloud Migration And Deliver DevOps Automation And 24*7 Incident Management Services.",
     },
   ];
-  const settings = {
-    className: "center",
-    centerPadding: "0px",
-    centerMode: true,
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    nextArrow: (
-      <div>
-        <Icons.SliderArrow width="15" height="15" />
-      </div>
-    ),
-    prevArrow: (
-      <div>
-        <Icons.SliderArrow width="15" height="15" />
-      </div>
-    ),
-
-    responsive: [
-      {
-        breakpoint: 1199,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          centerMode: false,
-          arrows: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: true,
-          centerPadding: "15px"
-        },
-      },
-    ],
-  };
 
   return (
     <section
@@ -113,7 +72,10 @@ const Service = () => {
               Exclusive development leveraging top notch technologies
             </h3>
             <Link href="/solutions">
-              <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
+              <Button
+                variant={theme ? "lightBlueOutline" : "outline"}
+                size="md"
+              >
                 Our Solutions <Icons.ArrowRight size={18} />
               </Button>
             </Link>
@@ -130,8 +92,8 @@ const Service = () => {
           </div>
         </div>
 
-        <div className={cn(styles.serviceOption, "service-mobile-slider")}>
-          <Slider {...settings}>
+        <div className={cn(styles.mobileCards, styles.serviceOption)}>
+          <MobileSlider slidesToShow={1.3}>
             {serviceCard.map((data, index) => (
               <div key={index}>
                 <div key={index} className={styles.serviceBox}>
@@ -141,7 +103,7 @@ const Service = () => {
                 </div>
               </div>
             ))}
-          </Slider>
+          </MobileSlider>
         </div>
       </div>
     </section>

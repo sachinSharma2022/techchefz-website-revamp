@@ -27,6 +27,7 @@
     letter-spacing: 0.2rem;
     @include mobile-tablet-p {
       margin-bottom: 0.75rem;
+      font-weight: 400;
     }
   }
   .ourResultsHeading {
@@ -48,6 +49,8 @@
 
     @include mobile-tablet-p {
       margin-bottom: 0;
+      font-size: text(normal);
+      line-height: text(xl);
     }
   }
   .resultCardWrapper {

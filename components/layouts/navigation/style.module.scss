@@ -330,6 +330,11 @@
     .modeBtn {
       margin-right: 2.5rem;
 
+      @include mobile-tablet-p {
+        scale: 0.9;
+        margin-right: 1.5rem;
+      }
+
       button {
         min-width: 2rem;
         max-width: 2rem;
