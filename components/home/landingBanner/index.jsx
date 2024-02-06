@@ -34,21 +34,23 @@ const LandingBanner = () => {
       )}
     >
       <div className={cn("primary-container")}>
-        <h1 className={styles.title} >
-         {props.title} <span /> {props.description} <span />
+        <h1 className={styles.title}>
+          Humanizing <br /> Digital Experience <br />
           <div className={styles.contentContainer}>
-            <span>{props.SubTitle1} </span>
-            <span className={styles.slider}>
-              <span className={styles.text1}>{props.SubTitle2}</span>
-              <span className="text2"> {props.SubTitle3}</span>
-              <span className="text3"> {props.SubTitle4}</span>
-            </span>
+            Through
+            <div className={styles.slider}>
+              <Slider {...settings}>
+                <div className={styles.text}>Data</div>
+                <div className={styles.text}> Creativity</div>
+                <div className={styles.text}> Work</div>
+              </Slider>
+            </div>
           </div>
         </h1>
 
         <Link href="/contact-us">
-          <Button variant={theme?"blueBtnDark":"blueBtn"} size="md">
-            {props.button} <Icons.ArrowRight size={18} />
+          <Button variant={theme ? "blueBtnDark" : "blueBtn"} size="md">
+            Let’s Work Together <Icons.ArrowRight size={18} />
           </Button>
         </Link>
       </div>

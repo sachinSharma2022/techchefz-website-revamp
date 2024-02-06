@@ -10,31 +10,27 @@ import { base_Uri } from "@/lib/constants";
 
 import styles from "./style.module.scss";
 
-const SolutionHeroBanner = ({props}) => {
+const SolutionHeroBanner = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section
-      className={`${styles.solutionHeroBannerStyle} ${
-        theme ? styles.solutionHeroBannerDark : ""
-      }`}
+      className={`${styles.solutionHeroBannerStyle} ${theme ? styles.solutionHeroBannerDark : ""
+        }`}
     >
       <div className={cn("primary-container")}>
         <div className={styles.contentSection}>
-          <h1 className={styles.title} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
+          <h1 className={styles.title} dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}>
 
-           </h1>
-              {/* <h1 className={styles.title} dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}>
-              </h1> */}
-
+          </h1>
 
           <p className={styles.leadText}>
-          {props?.Description}
+            {props?.Description}
           </p>
         </div>
       </div>
 
       <div className={styles.landingPlayerStyle}>
-      <ImageCustom
+        <ImageCustom
           src={`${base_Uri}${props?.Image.data.attributes.url}`}
           width={1440}
           height={650}

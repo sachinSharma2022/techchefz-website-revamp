@@ -74,6 +74,7 @@ const OurNumbers = ({carrer,experience}) => {
             {carrer.button}<Icons.ArrowRight size={18} />
             </Button>
           </div>
+          </div>
         </TextRevel>
         <div className={styles.ourNumberMain}>
           <div className={styles.ourNumberGrid}>
