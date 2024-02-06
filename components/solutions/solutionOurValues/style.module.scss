@@ -14,7 +14,7 @@
 
       @include mobile-tablet-p{
          flex-direction: column;
-         gap: 3.75rem;
+         gap: 2.25rem;
       }
    }
 
@@ -43,6 +43,7 @@
          @include mobile-tablet-p{
             margin-bottom: 1.25rem;
             font-size: text(xxxl);
+            line-height: 2.5rem;
          }
 
          span {
@@ -83,6 +84,10 @@
       padding: 1.25rem 0;
       display: flex;
       gap: 2.5rem;
+
+      @include mobile-tablet-p{
+         flex-direction: column;
+      }
    }
 
    .iconBox {
@@ -97,11 +102,16 @@
    }
 
    .imgBox div {
-      max-height: 164px;
-      min-width: 164px;
+      max-height: 10.25rem;
+      min-width:10.25rem;
       position: relative;
       overflow: hidden;
       border-radius: 0.5rem;
+
+      @include mobile-tablet-p{
+         max-height: 20.938rem;
+         max-width: 20.938rem;
+      }
 
       img {
          width: 100%;
