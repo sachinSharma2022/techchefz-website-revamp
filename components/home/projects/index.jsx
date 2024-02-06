@@ -40,7 +40,6 @@ const Card = ({ ...props }) => {
     1,
     props.targetScale,
   ]);
-
   return (
     <motion.div className={styles.cardSec} style={isMobileScreen ? "" : {scale}}>
       <div className={styles.projectImg}>
@@ -170,7 +169,7 @@ const Projects = ({project,brands}) => {
               <Card
                 key={`p_${i}`}
                 i={i}
-                {...project}
+                project={project}
                 progress={scrollYProgress}
                 range={[i * 0.25, 1]}
                 targetScale={targetScale}
@@ -195,7 +194,7 @@ const Projects = ({project,brands}) => {
                   <SwiperSlide key={`p_${i}`}>
                     <Card
                       i={i}
-                      {...project}
+                      project={project}
                       progress={scrollYProgress}
                       range={[i * 0.25, 1]}
                       targetScale={targetScale}
