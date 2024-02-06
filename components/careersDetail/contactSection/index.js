@@ -117,7 +117,7 @@ const ContactSection = () => {
                   <span className={styles.policyHighlight}>Privacy Policy</span>
                 </div>
 
-                <Button variant="blueBtn" size="lg" className={styles.btnGrid}>
+                <Button variant={theme ? "blueBtnDark" : "blueBtn"} size="lg" className={styles.btnGrid}>
                   Send a Message <Icons.ArrowRight size={18} />
                 </Button>
               </div>
