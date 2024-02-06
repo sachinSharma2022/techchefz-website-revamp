@@ -166,7 +166,7 @@ const InsightFeatures = () => {
           </div>
 
           <div className={styles.insightButton}>
-            <Button variant="outline" size="md">
+            <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
               Show More
             </Button>
           </div>
