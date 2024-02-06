@@ -19,11 +19,11 @@ const TechnologyStack = () => {
     },
     {
       count: "3000+",
-      countText: "Integrations",
+      countText: "Projects",
     },
     {
       count: "500+",
-      countText: "System Integrations",
+      countText: "Integrations",
     },
   ];
 
@@ -53,42 +53,30 @@ const TechnologyStack = () => {
       <div className={cn("primary-container")}>
         <div className={styles.technologyStackBox}>
           <div className={styles.careerRow}>
-            <div className="row">
-              <div className="col-md-12 col-12">
-                <p className={styles.ProjectHighlight}>Technology stack</p>
-              </div>
-
-              <div className="col-md-12 col-12">
-                <h3 className={styles.techHeading}>
-                  Empowering Tomorrow, Today.
-                </h3>
-              </div>
-              <div className="col-md-12 col-12">
-                <p className={styles.techText}>
-                  We approach each project focusing on the latest technologies ~
-                  our stacks follow exactly the most up-to-date market trends,
-                  with particular attention to the latest stable versions of the
-                  individual frameworks.
-                </p>
-              </div>
-              <div className="row">
-                <div className={styles.partnerCounter}>
-                  {countsCard.map((data, index) => (
-                    <div key={index} className={styles.counterCard}>
-                      <h3 className={styles.counts}>{data.count}</h3>
-                      <p className={styles.countsText}>{data.countText}</p>
-                    </div>
-                  ))}
+            <p className={styles.ProjectHighlight}>Technology stack</p>
+            <h3 className={styles.techHeading}>Empowering Tomorrow, Today.</h3>
+            <p className={styles.techText}>
+              We approach each project focusing on the latest technologies ~ our
+              stacks follow exactly the most up-to-date market trends, with
+              particular attention to the latest stable versions of the
+              individual frameworks.
+            </p>
+            <div className={styles.partnerCounter}>
+              {countsCard.map((data, index) => (
+                <div key={index} className={styles.counterCard}>
+                  <h3 className={styles.counts}>{data.count}</h3>
+                  <p className={styles.countsText}>{data.countText}</p>
                 </div>
-              </div>
-              <div className="col-md-12 col-12">
-                <Link href="/technology">
-                  <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
-                    Explore Technologies <Icons.ArrowRight size={18} />
-                  </Button>
-                </Link>
-              </div>
+              ))}
             </div>
+            <Link href="/technology">
+              <Button
+                variant={theme ? "lightBlueOutline" : "outline"}
+                size="md"
+              >
+                Explore Technologies <Icons.ArrowRight size={18} />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
