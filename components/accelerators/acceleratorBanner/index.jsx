@@ -23,7 +23,7 @@ const AcceleratorBanner = () => {
               Accelerators. Our tailor-made toolkits designed to fast-track your
               most critical and impactful projects.
             </p>
-            <Button variant="blueBtn" className={styles.headerBtn} size="md">
+            <Button variant={theme ? "blueBtnDark" : "blueBtn"} className={styles.headerBtn} size="md">
               Request a Demo <Icons.ArrowRight size={20} className="ms-2" />
             </Button>
           </div>

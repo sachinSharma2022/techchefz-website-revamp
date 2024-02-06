@@ -42,7 +42,7 @@ const AcceleratorIndustry = () => {
                 products and information through intuitive conversational
                 queries.
               </p>
-              <Button variant="lightBlueOutline" className="info" size="md">
+              <Button variant={theme ? "lightBlueOutline" : "outline"} className="info" size="md">
                 Access the Git Repository <Icons.ArrowRight size={18} />
               </Button>
             </div>
