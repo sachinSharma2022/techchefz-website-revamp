@@ -118,7 +118,8 @@ const OurHistory = ({props, OurHistory}) => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.ourHistoryTop}>
-          <h6 className={styles.ourHistoryTitle}>{props[0]?.Title}</h6>
+          <h6 className={styles.ourHistoryTitle} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
+          </h6>
           <h3 className={styles.ourHistoryHeading}>
           {props[0]?.SubTitle}
           </h3>
