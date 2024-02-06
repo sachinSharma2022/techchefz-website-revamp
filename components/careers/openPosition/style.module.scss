@@ -1,275 +1,290 @@
 @import "~/styles/partials/config";
 
 .openPosition {
-  padding: spacing(section-primary-padding);
-  padding-bottom: 0;
+   padding: spacing(section-primary-padding);
+   padding-bottom: 0;
 
-  @include mobile-tablet-p {
-    padding: spacing(section-mob-padding);
-    padding-block: 3.75rem 3.75rem;
-    padding: 2rem;
-  }
+   @include mobile-tablet-p {
+      padding: spacing(section-mob-padding);
+      padding-block: 3.75rem 3.75rem;
+      padding: 2rem;
+   }
 
-  .openPositionHeader {
-    margin-bottom: 5rem;
-    display: flex;
-    justify-content: space-between;
-
-    @include mobile-tablet-p {
-      flex-direction: column;
-      margin-bottom: 3.5rem;
-    }
-
-    .openPositionHeading {
-      font-size: text(larger);
-      font-weight: 500;
-      line-height: 54px;
-      opacity: 0.8;
-      @include mobile-tablet-p {
-        margin-bottom: 2.5rem;
-        font-size: 2rem;
-        line-height: 2.5rem;
-      }
-
-      span {
-        background: linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%);
-        @include textGradient;
-        font-size: text(xl-larger);
-        @include mobile-tablet-p {
-          font-size: 2.75rem;
-          line-height: 3.5rem;
-        }
-      }
-    }
-  }
-
-  .serviceBtn {
-    border-bottom: 0.14rem solid rgba(color(text-primary), 0.12);
-    padding-bottom: 2.5rem;
-    margin-bottom: 2.5rem;
-    display: flex;
-    gap: 1.25rem;
-
-    @include mobile-tablet-p {
-      display: block;
-      padding-bottom: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    button {
-      color: color(text-primary);
-      font-size: text(normal);
-      font-weight: 400;
-      line-height: 1.875rem;
-      border: 0.14rem solid rgba(color(text-primary), 0.4);
-      border-radius: 8px;
-      padding: 0 2rem;
-      height: 44px;
-      white-space: nowrap;
-
-      @include mobile-tablet-p {
-        margin: 0 1.25rem 1.25rem 0;
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
-
-      &:hover {
-        background-color: color(primary-white);
-        color: color(text-primary);
-        border: 0.14rem solid color(heading-liner);
-      }
-    }
-  }
-
-  .openPositionContent {
-    background-color: color(bg-soft);
-    padding: 2.5rem;
-    border-radius: 1.25rem;
-    margin-bottom: 2.5rem;
-    display: flex;
-    gap: 8.938rem;
-    
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    @include mobile-tablet-p {
-      padding: 1.5rem;
-      flex-direction: column;
-      gap: 2.5rem;
-    }
-
-    .openPositionAccordion {
-      width: 100%;
-      max-width: 44.188rem;
-      margin-right: 0;
-      margin-left: auto;
+   .openPositionHeader {
+      margin-bottom: 5rem;
       display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
+      justify-content: space-between;
 
-      @include mobile {
-        width: 100%;
+      @include mobile-tablet-p {
+         flex-direction: column;
+         margin-bottom: 3.5rem;
       }
 
-      .openPositionTitle {
-        width: 30%;
+      .openPositionHeading {
+         font-size: text(larger);
+         font-weight: 500;
+         line-height: 54px;
+         opacity: 0.8;
+         @include mobile-tablet-p {
+            margin-bottom: 2.5rem;
+            font-size: 2rem;
+            line-height: 2.5rem;
+         }
 
-        @include mobile {
-          width: 100%;
-        }
-        .title {
-          font-size: text(xxxl);
-          font-weight: 500;
-          line-height: 2.5rem;
-          @include mobile-tablet-p {
-            font-size: text(xl);
-            line-height: 1.875rem;
-            margin-bottom: 0;
-          }
-        }
-      }
-
-      .accordionBody {
-        width: 100%;
-        border-radius: 0.75rem;
-        background: color(primary-white);
-        padding: 2rem;
-        border: 0.14rem solid transparent;
-
-        @include mobile-tablet-p {
-          padding: text(lg);
-        }
-
-        &.accordionShow {
-          border-color: color(heading-liner);
-        }
-      }
-      .accordionButton {
-        text-align: left;
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-
-        @include mobile-tablet-p {
-          padding: 0;
-        }
-
-        .buttonTitle {
-          h6 {
-            font-size: text(xl);
-            font-weight: 500;
-            line-height: 2rem;
+         span {
+            background: linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%);
+            @include textGradient;
+            font-size: text(xl-larger);
             @include mobile-tablet-p {
-              font-size: text(lg);
-              line-height: text(xl);
-              margin-bottom: 0.375rem;
+               font-size: 2.75rem;
+               line-height: 3.5rem;
             }
-          }
-          p {
-            margin: 0;
-            font-size: text(normal);
-            font-weight: 400;
-            line-height: 1.5rem;
-            opacity: 0.8;
-          }
-        }
-        .buttonIcon {
-          width: 36px;
-          height: 36px;
-          background: color(bg-soft);
-          border-radius: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
+         }
       }
-      .accordionPanel {
-        border-top: 0.14rem solid rgba(color(text-primary), 0.12);
-        padding-top: 2.5rem;
-        margin-top: 2.5rem;
+   }
+
+   .serviceBtn {
+      border-bottom: 0.14rem solid rgba(color(text-primary), 0.12);
+      padding-bottom: 2.5rem;
+      margin-bottom: 2.5rem;
+      display: flex;
+      gap: 1.25rem;
+
+      @include mobile-tablet-p {
+         display: block;
+         padding-bottom: 2rem;
+         margin-bottom: 2rem;
       }
-      .accordionContent {
-        h6 {
-          font-size: text(xl);
-          font-weight: 500;
-          line-height: 2rem;
-          margin-bottom: 1rem;
-          @include mobile-tablet-p {
-            margin-bottom: 0.5rem;
-          }
-        }
-        p {
-          font-size: text(lg);
-          font-weight: 400;
-          line-height: 30px;
-          opacity: 0.6;
-        }
-        ul {
-          list-style: square;
-          display: flex;
-          gap: 4px;
-          flex-direction: column;
-
-          li {
-            opacity: 0.6;
-            font-size: text(lg);
-          }
-        }
-      }
-
-      .btnSection {
-        border-top: 0.14rem solid rgba(color(text-primary), 0.12);
-        padding-top: 2.5rem;
-        margin-top: 2.5rem;
-        display: flex;
-        align-items: flex-start;
-        gap: 2rem;
-
-        button {
-          &:first-child {
-            white-space: nowrap;
-          }
-        }
-      }
-    }
-  }
-
-  //Dark mode style
-  &.openPositionDark {
-    background-color: color(input-bg);
-    color: color(primary-white);
-    padding-bottom: 2.5rem;
-
-    .serviceBtn {
-      border-color: rgba(color(primary-white), 0.12);
 
       button {
-        background: color(text-primary);
-        color: color(primary-white);
-        border: 1px solid rgba(255, 255, 255, 0.4);
+         color: color(text-primary);
+         font-size: text(normal);
+         font-weight: 400;
+         line-height: 1.875rem;
+         border: 0.14rem solid rgba(color(text-primary), 0.4);
+         border-radius: 8px;
+         padding: 0 2rem;
+         height: 44px;
+         white-space: nowrap;
 
-        &:hover {
-          border: 1px solid color(heading-liner);
-        }
+         @include mobile-tablet-p {
+            margin: 0 1.25rem 1.25rem 0;
+            &:last-child {
+               margin-bottom: 0;
+            }
+         }
+
+         &:hover {
+            background-color: color(primary-white);
+            color: color(text-primary);
+            border: 0.14rem solid color(heading-liner);
+         }
       }
-    }
+   }
 
-    .openPositionContent {
-      background: color(dark-bg);
+   .openPositionContent {
+      background-color: color(bg-soft);
+      padding: 2.5rem;
+      border-radius: 1.25rem;
+      margin-bottom: 2.5rem;
+      display: flex;
+      gap: 8.938rem;
 
-      .accordionBody {
-        background-color: color(text-primary);
+      &:last-child {
+         margin-bottom: 0;
       }
 
-      .accordionButton {
-        color: color(primary-white);
-
-        .buttonIcon {
-          background: color(dark-bg);
-        }
+      @include mobile-tablet-p {
+         padding: 1.5rem;
+         flex-direction: column;
+         gap: 2.5rem;
       }
-    }
-  }
+
+      .openPositionAccordion {
+         width: 100%;
+         max-width: 44.188rem;
+         margin-right: 0;
+         margin-left: auto;
+         display: flex;
+         flex-direction: column;
+         gap: 2.5rem;
+
+         @include mobile {
+            width: 100%;
+         }
+
+         .openPositionTitle {
+            width: 30%;
+
+            @include mobile {
+               width: 100%;
+            }
+            .title {
+               font-size: text(xxxl);
+               font-weight: 500;
+               line-height: 2.5rem;
+               @include mobile-tablet-p {
+                  font-size: text(xl);
+                  line-height: 1.875rem;
+                  margin-bottom: 0;
+               }
+            }
+         }
+
+         .accordionBody {
+            width: 100%;
+            border-radius: 0.75rem;
+            background: color(primary-white);
+            padding: 2rem;
+            border: 0.14rem solid transparent;
+
+            @include mobile-tablet-p {
+               padding: text(lg);
+            }
+
+            &.accordionShow {
+               border-color: color(heading-liner);
+            }
+         }
+         .accordionButton {
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+            @include mobile-tablet-p {
+               padding: 0;
+            }
+
+            .buttonTitle {
+               h6 {
+                  font-size: text(xl);
+                  font-weight: 500;
+                  line-height: 2rem;
+                  @include mobile-tablet-p {
+                     font-size: text(lg);
+                     line-height: text(xl);
+                     margin-bottom: 0.375rem;
+                  }
+               }
+               p {
+                  margin: 0;
+                  font-size: text(normal);
+                  font-weight: 400;
+                  line-height: 1.5rem;
+                  opacity: 0.8;
+               }
+            }
+            .buttonIcon {
+               width: 36px;
+               height: 36px;
+               background: color(bg-soft);
+               border-radius: 100%;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+            }
+         }
+         .accordionPanel {
+            border-top: 0.14rem solid rgba(color(text-primary), 0.12);
+            padding-top: 2.5rem;
+            margin-top: 2.5rem;
+         }
+         .accordionContent {
+            h6 {
+               font-size: text(xl);
+               font-weight: 500;
+               line-height: 2rem;
+               margin-bottom: 1rem;
+               @include mobile-tablet-p {
+                  margin-bottom: 0.5rem;
+               }
+            }
+            p {
+               font-size: text(lg);
+               font-weight: 400;
+               line-height: 30px;
+               opacity: 0.6;
+
+               @include mobile-tablet-p {
+                  font-size: text(normal);
+               }
+            }
+            ul {
+               list-style: square;
+               display: flex;
+               gap: 4px;
+               flex-direction: column;
+
+               li {
+                  opacity: 0.6;
+                  font-size: text(lg);
+
+                  @include mobile-tablet-p {
+                     font-size: text(normal);
+                  }
+               }
+            }
+         }
+
+         .btnSection {
+            border-top: 0.14rem solid rgba(color(text-primary), 0.12);
+            padding-top: 2.5rem;
+            margin-top: 2.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+
+            @include mobile-tablet-p {
+               flex-direction: column;
+            }
+
+            button {
+               @include mobile-tablet-p {
+                  width: 100%;
+               }
+               &:first-child {
+                  white-space: nowrap;
+               }
+            }
+         }
+      }
+   }
+
+   //Dark mode style
+   &.openPositionDark {
+      background-color: color(input-bg);
+      color: color(primary-white);
+      padding-bottom: 2.5rem;
+
+      .serviceBtn {
+         border-color: rgba(color(primary-white), 0.12);
+
+         button {
+            background: color(text-primary);
+            color: color(primary-white);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+
+            &:hover {
+               border: 1px solid color(heading-liner);
+            }
+         }
+      }
+
+      .openPositionContent {
+         background: color(dark-bg);
+
+         .accordionBody {
+            background-color: color(text-primary);
+         }
+
+         .accordionButton {
+            color: color(primary-white);
+
+            .buttonIcon {
+               background: color(dark-bg);
+            }
+         }
+      }
+   }
 }
