@@ -8,12 +8,12 @@
     position: relative;
     display: flex;
     border: 0.14rem solid rgba(color(text-primary), 0.12);
-    @include transition(0.5s);
     border-radius: 0.75rem;
     font-size: text(normal);
     font-weight: 400;
     overflow: hidden;
     background-color: color(primary-white);
+    @include transition(0.5s);
 
     &:hover,
     &:focus {

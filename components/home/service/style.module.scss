@@ -100,7 +100,8 @@
       }
 
       @include mobile-tablet-p {
-        min-height: 19.5rem;
+        min-height:auto;
+        height: 18.5rem;
         padding: text(lg);
         max-width: 95%;
         min-width: auto;
@@ -118,8 +119,10 @@
         line-height: text(xxxl);
         margin-bottom: 0.75rem;
         text-align: left;
+        
         @include mobile-tablet-p{
           font-size: text(lg);
+          @include truncate(2);
         }
       }
       .sbText {
