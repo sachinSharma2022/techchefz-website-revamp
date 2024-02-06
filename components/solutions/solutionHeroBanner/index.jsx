@@ -19,7 +19,7 @@ const SolutionHeroBanner = () => {
         <div className={styles.contentSection}>
           <h1 className={styles.title}>
             Your most trusted <br />
-            <span className={styles.titleHighlight}>Technology</span> Company.
+            <span>Technology</span> Company.
           </h1>
 
           <p className={styles.leadText}>
