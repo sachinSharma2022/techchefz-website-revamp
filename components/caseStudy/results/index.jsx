@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 const Results = ({props}) => {
  
   const { theme, setTheme } = useContext(MyContext);
+  const isMobileScreen = useMediaQuery({ query: "(max-width: 767px)" });
   // const resultCard = [
   //   {
   //     number: "500+",
