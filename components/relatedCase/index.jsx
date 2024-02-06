@@ -6,10 +6,11 @@ import { Icons } from "@/components/icons";
 import CaptionCard from "@/components/ui/captionCard";
 import { cn } from "@/lib/utils";
 import Slider from "react-slick";
-
+import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
 
-const RelatedCase = (props) => {
+const RelatedCase = ({props}) => {
+  
   const [oldSlide, setOldSlide] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
   const [activeSlide2, setActiveSlide2] = useState(0);
@@ -54,40 +55,40 @@ const RelatedCase = (props) => {
     ],
   };
 
-  const captionCard = [
-    {
-      imgSrc: "/images/case1.png",
-      title: "Revolutionizing Retail: A Digital Transition for Royal Enfield",
-    },
-    {
-      imgSrc: "/images/case2.png",
-      title: "Fitbit OS: A Digital Transforming Fitness Tracking",
-    },
-    {
-      imgSrc: "/images/case1.png",
-      title: "Revolutionizing Retail: A Digital Transition for Royal Enfield",
-    },
-    {
-      imgSrc: "/images/case2.png",
-      title: "Nike’s Expansion and Global Outlook",
-    },
-    {
-      imgSrc: "/images/case1.png",
-      title: "Nike’s Expansion and Global Outlook",
-    },
-    {
-      imgSrc: "/images/case2.png",
-      title: "Nike’s Expansion and Global Outlook",
-    },
-    {
-      imgSrc: "/images/case2.png",
-      title: "Fitbit OS: A Digital Transforming Fitness Tracking",
-    },
-    {
-      imgSrc: "/images/case1.png",
-      title: "Revolutionizing Retail: A Digital Transition for Royal Enfield",
-    },
-  ];
+  // const captionCard = [
+  //   {
+  //     imgSrc: "/images/case1.png",
+  //     title: "Revolutionizing Retail: A Digital Transition for Royal Enfield",
+  //   },
+  //   {
+  //     imgSrc: "/images/case2.png",
+  //     title: "Fitbit OS: A Digital Transforming Fitness Tracking",
+  //   },
+  //   {
+  //     imgSrc: "/images/case1.png",
+  //     title: "Revolutionizing Retail: A Digital Transition for Royal Enfield",
+  //   },
+  //   {
+  //     imgSrc: "/images/case2.png",
+  //     title: "Nike’s Expansion and Global Outlook",
+  //   },
+  //   {
+  //     imgSrc: "/images/case1.png",
+  //     title: "Nike’s Expansion and Global Outlook",
+  //   },
+  //   {
+  //     imgSrc: "/images/case2.png",
+  //     title: "Nike’s Expansion and Global Outlook",
+  //   },
+  //   {
+  //     imgSrc: "/images/case2.png",
+  //     title: "Fitbit OS: A Digital Transforming Fitness Tracking",
+  //   },
+  //   {
+  //     imgSrc: "/images/case1.png",
+  //     title: "Revolutionizing Retail: A Digital Transition for Royal Enfield",
+  //   },
+  // ];
   return (
     <section
       className={cn(
@@ -100,10 +101,10 @@ const RelatedCase = (props) => {
         <div className={styles.headSection}>
           <div>
             <h6 className={styles.relatedCaseTitle}>
-              {props.subTitle || "Related Case Study"}
+              {props.Title || "Related Case Study"}
             </h6>
             <h3 className={styles.relatedCaseHeading}>
-              {props.title || "Unravel More of Our Success Stories"}
+              {props.Description || "Unravel More of Our Success Stories"}
             </h3>
           </div>
           <div className={styles.sliderArrow}>
@@ -132,12 +133,12 @@ const RelatedCase = (props) => {
           )}
         >
           <Slider {...settings} ref={slider}>
-            {captionCard.map((data, index) => (
+            {props?.CaseStudyCard?.map((data, index) => (
               <div key={index}>
                 <CaptionCard
                   className={styles.cardStyle}
-                  imgSrc={data.imgSrc}
-                  title={data.title}
+                  imgSrc={base_Uri+data?.Image?.data?.attributes?.url}
+                  title={data.Title}
                   textStyle={styles.textStyle}
                 />
               </div>

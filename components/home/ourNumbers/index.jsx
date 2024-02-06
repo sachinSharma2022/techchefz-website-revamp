@@ -87,7 +87,7 @@ const OurNumbers = ({carrer,experience}) => {
             </div>
             <div>
               <p className={styles.ourNumbersText}>
-               {experience.Description}
+               {experience[0].Description}
               </p>
               <div
                 className={`${styles.desktopCards} ${styles.ourNumberOption} `}

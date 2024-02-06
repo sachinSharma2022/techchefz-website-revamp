@@ -15,10 +15,11 @@ const Solutions = async() => {
 return (
     <div className={styles.solutionsPageStyle}>
       <SolutionHeroBanner props={data.Banner} />
-      <SolutionOurValues />
+      <SolutionOurValues props={data.ourValues} />
       <SolutionTheProcess props={data.OurProcess} />
       <SolutionTechnologies props={data.Technology} />
-      <SolutionCaseStudy />
+      {/* <SolutionCaseStudy /> */}
+      <RelatedCase sliderClassName="mb-0" props={data.CaseStudy} />
       <Faq props ={data.Faq} />
     </div>
   );

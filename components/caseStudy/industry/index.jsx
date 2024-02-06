@@ -9,8 +9,8 @@ import { base_Uri } from "@/lib/constants";
 
 import styles from "./style.module.scss";
 
-const Industry = ({props, CMSImplementation}) => {
- 
+const Industry = ({props, CMSImplementation, Industryinner}) => {
+
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section
@@ -22,31 +22,24 @@ const Industry = ({props, CMSImplementation}) => {
          
             <div className={styles.industryLeft}>
               <div className="mb-4">
-                <h6>Industry</h6>
-                <h5>Automobile</h5>
+                <h6>{props[0].Title}</h6>
+                <h5>{props[0].Description}</h5>
               </div>
               <div className="mb-4">
-                <h6> Platform</h6>
-                <h5>Web, Responsive</h5>
+                <h6> {props[0].SubTitle}</h6>
+                <h5>{props[0].Description2}</h5>
               </div>
           
-              <h6> Services</h6>
+              <h6> {Industryinner[0].Title}</h6>
               <div className={styles.serviceBtn}>
+              {Industryinner[0]?.techStacktags?.map((data, index) => (
+              
                 <button variant="outline" size="xs">
-                  Web Design
+                  {data?.Title}
                 </button>
-                <button variant="outline" size="xs">
-                  CMS
-                </button>
-                <button variant="outline" size="xs">
-                  React
-                </button>
-                <button variant="outline" size="xs">
-                  AEM
-                </button>
-                <button variant="outline" size="xs">
-                  Retail
-                </button>
+                
+              
+              ))}
               </div>
             </div>
           

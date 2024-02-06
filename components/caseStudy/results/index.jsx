@@ -7,7 +7,7 @@ import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 
 const Results = ({props}) => {
-  console.log("nnnn", props);
+ 
   const { theme, setTheme } = useContext(MyContext);
   // const resultCard = [
   //   {

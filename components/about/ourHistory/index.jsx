@@ -118,7 +118,8 @@ const OurHistory = ({props, OurHistory}) => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.ourHistoryTop}>
-          <h6 className={styles.ourHistoryTitle}>{props[0]?.Title}</h6>
+          <h6 className={styles.ourHistoryTitle} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
+          </h6>
           <h3 className={styles.ourHistoryHeading}>
           {props[0]?.SubTitle}
           </h3>
@@ -131,7 +132,7 @@ const OurHistory = ({props, OurHistory}) => {
                 {OurHistory.map((data, index) => (
                   <div key={index} className={styles.cardStyle}>
                     <div className={styles.infoStyle}>
-                      <h4 className={styles.subHeading}>{data.OurHistoryCard.title}</h4>
+                      <h4 className={styles.subHeading}>{data.OurHistoryCard.Title}</h4>
                       <p className={styles.ourHistoryContent}>{data.OurHistoryCard.Description}</p>
                     </div>
                   </div>
