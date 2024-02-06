@@ -22,7 +22,7 @@ const AcceleratorIndustry = () => {
               <h4 className={styles.heading}>Media & Entertainment</h4>
             </div>
 
-            <h6>Tags</h6>
+            <h6>Services</h6>
             <div className={styles.serviceBtn}>
               <button variant="outline" size="xs">
                 Trending

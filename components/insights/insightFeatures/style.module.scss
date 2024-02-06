@@ -20,6 +20,11 @@
       flex-direction: column;
     }
 
+    .searchButton{
+      @include mobile-tablet-p{
+        display: none;
+      }
+    }
     .serviceBtn {
       display: flex;
       gap: 1.25rem;
@@ -104,10 +109,6 @@
             grid-row: 4;
             max-width: inherit;
             width: 100%;
-
-            img {
-              display: none;
-            }
           }
           .featureImgBox div {
             height: 230px;
@@ -128,9 +129,6 @@
             grid-column: 1;
             max-width: 394px;
 
-            img {
-              display: none;
-            }
           }
 
           .featureImgBox div {

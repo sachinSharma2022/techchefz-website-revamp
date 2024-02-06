@@ -54,6 +54,7 @@
 
         @include mobile-tablet-p{
           font-size: text(normal);
+          line-height: 1.5rem;
         }
       }
     }
@@ -66,7 +67,7 @@
     position: relative;
 
     @include mobile-tablet-p{
-      height: 20rem;
+      height: 8.188rem;
     }
 
     img {
