@@ -28,6 +28,7 @@
 
     @include mobile-tablet-p {
       margin-bottom: 0.75rem;
+      font-weight: 400;
     }
   }
   .weDoHeading {
@@ -99,6 +100,11 @@
         h6 {
           margin-top: 0;
           padding-bottom: 0.5rem;
+          @include mobile-tablet-p {
+            font-size: text(lg);
+            line-height: 1.75rem;
+            margin-bottom: 2rem;
+          }
         }
       }
 
@@ -128,6 +134,10 @@
       p {
         font-size: text(normal);
         opacity: 0.8;
+        @include mobile-tablet-p {
+          line-height: text(xl);
+          font-weight: 400;
+        }
       }
     }
 
@@ -142,7 +152,6 @@
       }
     }
   }
-
 
   .mobileSlider {
     padding-left: 1.25rem;

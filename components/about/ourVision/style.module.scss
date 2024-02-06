@@ -30,7 +30,7 @@
     line-height: 3.375rem;
     @include mobile-tablet-p {
       font-size: text(xl);
-      line-height: (normal);
+      line-height: 1.8rem;
     }
 
     span {
@@ -38,6 +38,7 @@
       color: color(heading-liner);
       @include mobile-tablet-p {
         font-size: text(xl);
+        line-height: 1.8rem;
       }
     }
   }
