@@ -5,11 +5,11 @@ import { useContext } from "react";
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { cn } from "@/lib/utils";
-
+import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
 
 const Goals = ({props}) => {
- 
+
   const { theme, setTheme } = useContext(MyContext);
   // const listData = [
   //   {
@@ -69,7 +69,8 @@ const Goals = ({props}) => {
           <div className="row justify-content-center ">
             <div className="col-md-12 col-lg12">
               <ImageCustom
-                src="/images/goals1.png"
+                src={props[0].gallaryImages[0].Image.data[0].attributes.url?`${base_Uri}${props[0].gallaryImages[0].Image.data[0].attributes.url}`:`${base_Uri}/`}
+                
                 width={1060}
                 height={500}
                 alt="content-img"
@@ -79,7 +80,8 @@ const Goals = ({props}) => {
           <div className={styles.goalsBottomImg}>
             <div>
               <ImageCustom
-                src="/images/goals2.png"
+                src={props[0].gallaryImages[1].Image.data[0].attributes.url?`${base_Uri}${props[0].gallaryImages[1].Image.data[0].attributes.url}`:`${base_Uri}/`}
+                
                 width={500}
                 height={400}
                 alt="content-img"
@@ -87,7 +89,8 @@ const Goals = ({props}) => {
             </div>
             <div>
               <ImageCustom
-                src="/images/goals3.png"
+                src={props[0].gallaryImages[2].Image.data[0].attributes.url?`${base_Uri}${props[0].gallaryImages[2].Image.data[0].attributes.url}`:`${base_Uri}/`}
+               
                 width={500}
                 height={400}
                 alt="content-img"

@@ -16,12 +16,12 @@ const CaseStudy = async() =>{
   return (
     <>{data? <div>
       <CaseStudyBanner props={data.CaseStudyBanner}/>
-      <Industry props={data.Industry} CMSImplementation={data.CMSImplementation}/>
+      <Industry props={data.Industry} CMSImplementation={data.CMSImplementation} Industryinner={data.Industryinner}/>
       <Goals props={data.Goals} />
       <Challenges props={data.Challenges}/>
       <Solutions props={data.Solutions} />
       <Results props={data.Results} />
-      <RelatedCase sliderClassName="mb-0" />
+      <RelatedCase sliderClassName="mb-0" props={data.CaseStudy} />
       <LetsWork  contact={data.LetsWork}/>
      
     </div>:<></>}

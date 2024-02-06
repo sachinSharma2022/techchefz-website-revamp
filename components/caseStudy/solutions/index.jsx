@@ -3,12 +3,12 @@ import React from "react";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 import { ImageCustom } from "@/components/ui/imageCustom";
-
+import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 
 const Solutions = ({props}) => {
-  
+
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section
@@ -33,7 +33,8 @@ const Solutions = ({props}) => {
           <div className="row justify-content-center ">
             <div className="col-md-12 col-lg-12">
               <ImageCustom
-                src="/images/solution1.png"
+                src= {props?.gallaryImages[0].Image.data[0].attributes.url?`${base_Uri}${props?.gallaryImages[0].Image.data[0].attributes.url}`:`${base_Uri}/`}
+               
                 width={1060}
                 height={500}
                 alt="content-img"
@@ -43,7 +44,7 @@ const Solutions = ({props}) => {
           <div className={styles.solutionBottomImgs}>
             <div>
               <ImageCustom
-                src="/images/solution2.png"
+                src={props?.gallaryImages[1].Image.data[0].attributes.url?`${base_Uri}${props?.gallaryImages[1].Image.data[0].attributes.url}`:`${base_Uri}/`}
                 width={500}
                 height={400}
                 alt="content-img"
@@ -51,7 +52,7 @@ const Solutions = ({props}) => {
             </div>
             <div>
               <ImageCustom
-                src="/images/solution3.png"
+                src={props?.gallaryImages[2].Image.data[0].attributes.url?`${base_Uri}${props?.gallaryImages[2].Image.data[0].attributes.url}`:`${base_Uri}/`}
                 width={500}
                 height={400}
                 alt="content-img"
