@@ -103,7 +103,7 @@
     gap: 24px;
 
     @include mobile-tablet-p {
-      margin-top: 3.75rem;
+      margin-top: 1.5rem;
     }
 
     .button {
@@ -148,10 +148,6 @@
     @include mobile-tablet-p {
       flex-direction: column-reverse;
     }
-  }
-
-  .timelineSection {
-
   }
 
   &.ourHistoryDark {
