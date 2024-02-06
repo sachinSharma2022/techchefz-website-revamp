@@ -122,11 +122,9 @@ const DigitalTransformation = ({digital}) => {
                   </div>
 
                   <div className={styles.experienceCardBox}>
-                    <h4 className={styles.CustomerHeading}>
-                      {data.Title}
+                    <h4 className={styles.CustomerHeading} dangerouslySetInnerHTML={{ __html: `${data?.Title}`}}>
                     </h4>
-                    <p className={styles.digitalText} dangerouslySetInnerHTML={{ __html: `${data?.Description}`}}>
-                      
+                    <p className={styles.digitalText} dangerouslySetInnerHTML={{ __html: `${data?.Description}`}}> 
                     </p>
 
                     {/* <ul className={styles.customerList}>
