@@ -18,7 +18,8 @@ return (
       <SolutionOurValues />
       <SolutionTheProcess props={data.OurProcess} />
       <SolutionTechnologies props={data.Technology} />
-      <SolutionCaseStudy />
+      {/* <SolutionCaseStudy /> */}
+      <RelatedCase sliderClassName="mb-0" props={data.CaseStudy} />
       <Faq props ={data.Faq} />
     </div>
   );

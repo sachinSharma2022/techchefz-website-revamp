@@ -10,7 +10,7 @@ import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
 
 const RelatedCase = ({props}) => {
-    console.log("inn",props);
+  
   const [oldSlide, setOldSlide] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
   const [activeSlide2, setActiveSlide2] = useState(0);
