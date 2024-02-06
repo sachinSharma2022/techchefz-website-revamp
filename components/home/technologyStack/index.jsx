@@ -54,12 +54,12 @@ const TechnologyStack = ({technology}) => {
           <div className={styles.careerRow}>
             <div className="row">
               <div className="col-md-12 col-12">
-                <p className={styles.ProjectHighlight}>{technology[0]?.Title}</p>
+                <p className={styles.ProjectHighlight} dangerouslySetInnerHTML={{ __html: `${technology[0]?.Title}`}}>
+                </p>
               </div>
 
               <div className="col-md-12 col-12">
-                <h2 className={styles.techHeading}>
-                {technology[0]?.SubTitle}
+                <h2 className={styles.techHeading}  dangerouslySetInnerHTML={{ __html: `${technology[0]?.SubTitle}`}}>
                 </h2>
               </div>
               <div className="col-md-12 col-12">

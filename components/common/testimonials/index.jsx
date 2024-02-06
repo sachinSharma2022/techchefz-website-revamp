@@ -82,9 +82,11 @@ const Testimonials = ({props}) => {
           <div className="col-sm-3">
             <div className={styles.infoSection}>
               <div className={styles.testimonialsLeft}>
-                <p className={styles.projectHighlight}>{props[0]?.Title}</p>
+                <p className={styles.projectHighlight} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
+                  </p>
                 <div className={styles.testimonialsHeading}>
-                  <h3>{props[0]?.SubTitle}</h3>
+                  <h3 dangerouslySetInnerHTML={{ __html: `${props[0]?.SubTitle}`}}>
+                  </h3>
                 </div>
                 <p className={styles.testimonialsText}>{props[0]?.Description}</p>
               </div>

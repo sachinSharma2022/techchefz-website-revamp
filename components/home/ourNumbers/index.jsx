@@ -61,9 +61,9 @@ const OurNumbers = ({carrer,experience}) => {
         <div className={styles.careerRow}>
           <div className="row justify-content-between align-items-end">
             <div className="col-md-8 col-lg-8 col-12">
-              <p className={styles.ProjectHighlight}>{carrer.title}</p>
-              <h2 className={styles.datingText}>
-              {carrer.description}
+              <p className={styles.ProjectHighlight}  dangerouslySetInnerHTML={{ __html: `${carrer?.title}`}}>
+                </p>
+              <h2 className={styles.datingText}  dangerouslySetInnerHTML={{ __html: `${carrer?.description}`}}>
               </h2>
             </div>
 

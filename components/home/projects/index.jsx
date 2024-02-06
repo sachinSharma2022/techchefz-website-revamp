@@ -128,11 +128,12 @@ const Projects = ({project,brands}) => {
       <div className={cn("primary-container")}>
         <div className={cn("row", styles.rowSection)}>
           <div className="col-md-12 col-12">
-            <p className={styles.projectHighlight}>{project[0]?.Title}</p>
+            <p className={styles.projectHighlight} dangerouslySetInnerHTML={{ __html: `${project[0]?.Title}`}}>
+              </p>
           </div>
           <div className="col-md-5 col-12">
-            <h3 className={styles.datingText}>
-              {project[0]?.SubTitle}
+            <h3 className={styles.datingText} dangerouslySetInnerHTML={{ __html: `${project[0]?.SubTitle}`}}>
+              
             </h3>
           </div>
           <div className="col-md-7 col-12">

@@ -32,8 +32,7 @@ const WeAreFuture = ({props}) => {
         </div>
         <div className="row">
           <div className="col-md-6 col-12">
-            <h3 className={styles.datingText}>
-             {props?.CompanyTechnology[0]?.title}
+            <h3 className={styles.datingText} dangerouslySetInnerHTML={{ __html: `${props?.CompanyTechnology[0]?.title}`}}>
             </h3>
           </div>
           <div className="col-md-6 col-12">
