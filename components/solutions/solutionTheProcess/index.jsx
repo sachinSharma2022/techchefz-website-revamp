@@ -6,13 +6,16 @@ import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 
 const SolutionTheProcess = () => {
   const { theme, setTheme } = useContext(MyContext);
+  
   const circleWidth=400
-  const radius = 195;
+  const radius = 235;
   const dashArray = radius * Math.PI * 2;
+  const [dashOffset, setdashOffset] = useState(dashArray);
+  const [prevdashOffset, prevsetdashOffset] = useState(dashArray);
   const accordionData = [
     {
       title: "Navigating Cloud Integration Complexities",
@@ -44,6 +47,8 @@ const SolutionTheProcess = () => {
   ];
   gsap.registerPlugin(ScrollTrigger);
   useEffect(() => {
+    console.log(dashOffset,"dasofset")
+    console.log(prevdashOffset,"prevdasofset")
     let ctx = gsap.context(() => 
     {
       const tl = gsap.timeline({
@@ -65,11 +70,19 @@ const SolutionTheProcess = () => {
         
 
         gsap.to(text, {
+          onStart:function(){ setdashOffset((prev)=>{
+              prevsetdashOffset(prev)
+              if(1===0){
+                return dashArray
+              }
+            
+            return dashArray-((dashArray/titles.length)*(i+1))
+          }) },
           scrollTrigger:{
             trigger: text,
             start: "top 45%",
             end:"center 20%",
-            markers: false,
+            markers: true,
             toggleActions: "play reset play reverse",
           },
           opacity: 1,
@@ -77,40 +90,33 @@ const SolutionTheProcess = () => {
         
       });
         
-      // const tl_circle = gsap.timeline({
-      //   scrollTrigger: {
-      //     trigger: `.${styles.processCardSection}`,
-      //     scrub: 1,
-      //     start: "top 45%",
-      //     end:"80% 10%",
-      //     markers:true,
-      //     invalidateOnRefresh: true,
-      //     anticipatePin: 1, 
+
+
+      // titles.forEach((text, i) => {
+        
+      // const tl2 = gsap.timeline({
+      //   scrollTrigger:{
+      //     trigger: ".circleFil",
+      //     start: "top ",
+      //     end:"bottom ", 
+      //     markers: true,
+      //     //toggleActions: "complete none none none",
+      
       //   },
       // });
-      // tl_circle.to(".circle-progress", {
-      //   strokeDashoffset: 0
-      //  })
-
-
-
-      titles.forEach((text, i) => {
-        
-
-        gsap.to(".circle-progress", {
-          scrollTrigger:{
-            trigger: text,
-            start: "top 45%",
-            end:"bottom 20%", 
-            markers: false,
-            toggleActions: "complete none none none",
-        
-          },
-          strokeDashoffset: dashArray-((dashArray/titles.length)*(i+1))
+      gsap.fromTo(".circleFil", {
+          strokeDashoffset: prevdashOffset,
+          duration:3,
+          ease: "power1.out"
           
+        },{ 
+       
+        strokeDashoffset: dashOffset,
+        duration:3,
+        ease: "power1.out"
         })
         
-      });
+      // });
      
       
       
@@ -118,7 +124,7 @@ const SolutionTheProcess = () => {
        
     });
     return () => ctx.revert();
-  }, []);
+  }, [dashOffset,prevdashOffset]);
   
   return (
     <section className={`${styles.theProcessStyle} ${theme ? styles.theProcessDark : ""}`}>
@@ -133,7 +139,7 @@ const SolutionTheProcess = () => {
           <div className={styles.circularStepperContainer}>
           <div className="circularStepper" >
           </div>
-      <svg
+      {/* <svg
         width={circleWidth}
         height={circleWidth}
         viewBox={`0 0 ${circleWidth} ${circleWidth}`}
@@ -174,12 +180,14 @@ const SolutionTheProcess = () => {
           transform={`rotate(-90 ${circleWidth / 2} ${circleWidth / 2})`}
         />
         
-      </svg>
-      {/* <svg width="470" height="510" viewBox="0 0 470 510" fill="none" xmlns="http://www.w3.org/2000/svg">
+      </svg> */}
+      <svg width="470" height="510" viewBox="0 0 470 510" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="235" cy="255" r="235" fill="#F1F1F1"/>
 <circle cx="235" cy="255" r="230" stroke="#111111" stroke-opacity="0.4" stroke-width="10"/>
+<circle className="circleFil" cx="235" cy="255" r="230" stroke="url(#paint4_linear_1035_26193)"  stroke-width="10" style={{ strokeDasharray: dashArray,
+            strokeDashoffset: dashArray}} transform={`rotate(-90 ${470 / 2} ${510 / 2})`} />
 <g filter="url(#filter0_i_1035_26193)">
-<circle cx="234.5" cy="254.5" r="193.5" fill="white"/>
+<circle cx="234.5" cy="254.5" r="193.5" fill="white" />
 </g>
 <g clip-path="url(#clip0_1035_26193)">
 <mask id="mask0_1035_26193" style={{maskType:"luminance"}} maskUnits="userSpaceOnUse" x="106" y="126" width="258" height="258">
@@ -197,12 +205,6 @@ const SolutionTheProcess = () => {
 <path d="M207.328 217.31C208.904 217.31 210.183 216.033 210.183 214.457C210.183 212.883 208.904 211.605 207.328 211.605C205.751 211.605 204.473 212.883 204.473 214.457C204.473 216.033 205.751 217.31 207.328 217.31Z" fill="#1E1E1E"/>
 </g>
 </g>
-<path d="M235 20C277.09 20 318.407 31.3043 354.635 52.7316C390.862 74.159 420.67 104.923 440.943 141.809L432.678 146.352C413.218 110.946 384.607 81.4171 349.833 60.8498C315.06 40.2824 275.401 29.4318 235 29.4318V20Z" style={{ strokeDasharray: dashArray,
-            strokeDashoffset: 0}} fill="url(#paint4_linear_1035_26193)"/>
-            <path d="M235 20C277.09 20 318.407 31.3043 354.635 52.7316C390.862 74.159 420.67 104.923 440.943 141.809L432.678 146.352C413.218 110.946 384.607 81.4171 349.833 60.8498C315.06 40.2824 275.401 29.4318 235 29.4318V20Z" style={{ strokeDasharray: dashArray,
-            strokeDashoffset: 0}} fill="url(#paint4_linear_1035_26193)"/>
-            <path d="M235 20C277.09 20 318.407 31.3043 354.635 52.7316C390.862 74.159 420.67 104.923 440.943 141.809L432.678 146.352C413.218 110.946 384.607 81.4171 349.833 60.8498C315.06 40.2824 275.401 29.4318 235 29.4318V20Z" style={{ strokeDasharray: dashArray,
-            strokeDashoffset: 0}} fill="url(#paint4_linear_1035_26193)"/>
 <circle cx="235" cy="20" r="20" fill="white"/>
 <circle cx="235" cy="20" r="10" fill="#26A0F8"/>
 <circle cx="31" cy="138" r="20" fill="white"/>
@@ -250,7 +252,7 @@ const SolutionTheProcess = () => {
 <rect width="258" height="258" fill="white" transform="translate(106 126)"/>
 </clipPath>
 </defs>
-</svg> */}
+</svg>
 
 
       {/* <div className="stepperImg">
