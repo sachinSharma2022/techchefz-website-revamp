@@ -62,11 +62,6 @@
       gap: text(lg);
     }
 
-    @include mobile {
-      grid-template-columns: repeat(1, 1fr);
-      gap: text(lg);
-    }
-
     .resultCard {
       width: 100%;
       height: auto;
@@ -97,6 +92,21 @@
 
         @include desktop-hd {
           max-width: 70%;
+        }
+      }
+    }
+  }
+
+  .mobileSliderCard {
+    .resultCards {
+      display: block;
+      .resultCard {
+        padding: 1.25rem;
+        max-width: 90%;
+        height: 13.5rem;
+
+        h4 {
+          max-width: 100%;
         }
       }
     }

@@ -18,9 +18,10 @@ import styles from "./style.module.scss";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/autoplay";
 
 // import required modules
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 
 const Card = ({ ...props }) => {
   const isMobileScreen = useMediaQuery({ query: "(max-width: 767px)" });
@@ -54,7 +55,7 @@ const Card = ({ ...props }) => {
         <h3 className={styles.projectBrand}>
           {props.title.split(" ").map((word, index) => {
             return (
-              <div key={index} className={styles.mask}>
+              <span key={index} className={styles.mask}>
                 <motion.span
                   variants={slideUp}
                   custom={index}
@@ -63,7 +64,7 @@ const Card = ({ ...props }) => {
                 >
                   {word}
                 </motion.span>
-              </div>
+              </span>
             );
           })}
         </h3>
@@ -190,8 +191,12 @@ const Projects = () => {
           <div ref={container} className={styles.cards}>
             <Swiper
               pagination={pagination}
-              modules={[Pagination]}
+              modules={[Pagination, Autoplay]}
               className="mySwiper"
+              autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+              }}
             >
               {projects.map((project, i) => {
                 const targetScale = 1 - (projects.length - i) * 0.05;

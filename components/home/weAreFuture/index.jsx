@@ -25,37 +25,43 @@ const WeAreFuture = () => {
             Pioneering
             <span className={styles.globalText}>
               Future
-              <ImageCustom src="/global.png" width="60" height="60" alt="global-img" />
+              <ImageCustom
+                src="/global.png"
+                width="60"
+                height="60"
+                alt="global-img"
+              />
               Global
             </span>
             <span className={styles.titleHighlight}>Technology Company.</span>
           </h2>
         </div>
         <TextRevel>
-        <div className="row">
-          <div className="col-md-6 col-12">
-            <div  className={styles.datingText}>
-              With roots dating back to 2017, we started as a pocket size teamof enthusiasts.
+          <div className="row">
+            <div className="col-md-6 col-12">
+              <div className={styles.datingText}>
+                With roots dating back to 2017, we started as a pocket size
+                teamof enthusiasts.
+              </div>
             </div>
-          </div>
-          <div className="col-md-6 col-12">
-            <div className={styles.aboutText}>
-              
-              Over the next 3 years, we developed into a full-service digital
-              agency. We support our clients with web development, mobile app
-              development, web design, branding UI/UX design and now getting
-              into AR/VR.
-              
-              
-            </div>
+            <div className="col-md-6 col-12">
+              <div className={styles.aboutText}>
+                Over the next 3 years, we developed into a full-service digital
+                agency. We support our clients with web development, mobile app
+                development, web design, branding UI/UX design and now getting
+                into AR/VR.
+              </div>
 
-            <Link href="/about">
-              <Button variant="outline" size="md">
-                About the Company <Icons.ArrowRight size={18} />
-              </Button>
-            </Link>
+              <Link href="/about">
+                <Button
+                  variant={theme ? "lightBlueOutline" : "outline"}
+                  size="md"
+                >
+                  About the Company <Icons.ArrowRight size={18} />
+                </Button>
+              </Link>
+            </div>
           </div>
-        </div>
         </TextRevel>
       </div>
     </section>

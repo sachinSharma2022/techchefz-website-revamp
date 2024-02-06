@@ -86,7 +86,7 @@ const Discover = () => {
           </div>
 
           <Link href="/technology/cms">
-            <Button variant="outline" size="md">
+            <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
               Explore Now <Icons.ArrowRight size={18} />
             </Button>
           </Link>

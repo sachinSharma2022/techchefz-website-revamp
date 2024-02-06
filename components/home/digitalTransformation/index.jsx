@@ -97,7 +97,7 @@ const DigitalTransformation = () => {
             </div>
             <div className={`${styles.servicesBtn} col-md-4 col-12`}>
               <Link href="/solutions">
-                <Button variant="outline" size="md">
+                <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
                   Explore Services <Icons.ArrowRight size={18} />
                 </Button>
               </Link>

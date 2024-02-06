@@ -63,7 +63,7 @@
       justify-content: center;
       font-size: text(xl-larger);
       font-weight: 500;
-      line-height: 5rem;
+      gap: .225rem;
 
       @include mobile-tablet-p {
         justify-content: flex-start;
@@ -73,7 +73,7 @@
         margin: 0 1rem;
         border-radius: 7.5rem;
 
-        @include mobile {
+        @include mobile-tablet-p {
           display: none;
         }
       }
@@ -107,9 +107,7 @@
           color(primary-blue) 11.5%,
           color(heading-liner) 55.42%
         );
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+       @include textGradient;
 
         @include mobile {
           font-size: text(xxxl);

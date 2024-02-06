@@ -17,7 +17,7 @@
       justify-content: space-between;
       gap: 8rem;
 
-      @include mobile {
+      @include mobile-tablet-p {
          flex-direction: column;
          gap: 1.5rem;
       }
@@ -49,8 +49,9 @@
          gap: 4rem;
          max-width: 23.375rem;
 
-         @include mobile {
+         @include mobile-tablet-p  {
             gap: 2.25rem;
+            max-width: 100%;
          }
 
          p {

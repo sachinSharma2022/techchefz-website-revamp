@@ -56,13 +56,14 @@
     font-weight: 500;
     line-height: 3.375rem;
     max-width: 80%;
-
     color: color(primary-white);
-    @include mobile {
+
+    @include mobile-tablet-p {
       font-size: text(xxxl);
       line-height: 2.5rem;
       padding-right: 0;
       margin-bottom: text(lg);
+      max-width: 100%;
     }
   }
 

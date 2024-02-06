@@ -307,7 +307,7 @@
     ul {
       display: flex;
       list-style: none;
-      gap: 0 1rem;
+      gap: 1rem;
 
       @include mobile {
         flex-wrap: wrap;

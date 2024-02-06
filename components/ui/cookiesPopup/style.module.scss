@@ -11,22 +11,30 @@
   background-color: color(text-primary);
   color: color(primary-white);
   z-index: 999;
-	animation: slide-in 1000ms;
+  animation: slide-in 1000ms;
+
+  @include mobile {
+    flex-direction: column;
+    padding: text(lg);
+  }
 
   @keyframes slide-in {
     0% {
-     transform: translateY(100%);
+      transform: translateY(100%);
     }
     100% {
-     transform: translateY(0);
+      transform: translateY(0);
     }
   }
-
 
   .cookiesContent {
     display: flex;
     align-items: center;
     gap: 1.25rem;
+
+    @include mobile {
+      margin-bottom: text(normal);
+    }
 
     p {
       max-width: 741px;
@@ -44,6 +52,7 @@
 
     button {
       width: 100%;
+      gap: 1rem;
     }
   }
 }

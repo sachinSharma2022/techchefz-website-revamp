@@ -23,6 +23,10 @@
   .headSection {
     margin-bottom: 5rem;
 
+    @include mobile-tablet-p{
+      margin-bottom: 0;
+    }
+
     .heading {
       color: color(text-primary);
       text-transform: uppercase;
@@ -36,9 +40,12 @@
     .subHeading {
       font-size: text(larger);
       margin-bottom: 2.75rem;
+      line-height: 3.375rem;
 
       @include mobile-tablet-p{
         font-size: text(xxxl);
+        max-width: 90%;
+        line-height: 2.5rem;
       }
 
       
