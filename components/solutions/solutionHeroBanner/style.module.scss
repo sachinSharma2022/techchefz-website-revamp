@@ -43,8 +43,8 @@
       font-weight: 500;
       line-height: 5rem;
 
-      @include mobile {
-         font-size: 2rem;
+      @include mobile-tablet-p {
+         font-size: text(larger);
          line-height: 3.5rem;
          word-break: break-word;
       }
@@ -56,8 +56,8 @@
          background: linear-gradient(118deg, color(primary-blue) 11.5%, color(heading-liner) 55.42%);
          @include textGradient;
 
-         @include mobile {
-            font-size: 2rem;
+         @include mobile-tablet-p {
+            font-size: text(larger);
             line-height: 3.5rem;
          }
       }
@@ -67,6 +67,7 @@
       font-weight: 400;
       max-width: 23.375rem;
       color: rgba(color(text-primary), 0.8);
+      margin-bottom: 0;
 
       @include mobile {
          max-width: 100%;

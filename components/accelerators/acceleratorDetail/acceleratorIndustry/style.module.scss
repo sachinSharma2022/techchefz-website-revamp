@@ -66,7 +66,7 @@
       color: color(text-primary);
       margin-bottom: 2rem;
 
-      @include mobile{
+      @include mobile-tablet-p{
          font-size: text(xxxl);
          line-height: 2.5rem;
       }
@@ -102,6 +102,10 @@
          height: 39.0625rem;
          border-radius: 0.5rem;
          overflow: hidden;
+
+         @include mobile-tablet-p{
+            height: 30rem;
+         }
 
          img {
             width: 100%;

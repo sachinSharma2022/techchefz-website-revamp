@@ -1,5 +1,6 @@
 "use client";
 
+import MobileSlider from "@/components/common/mobileSlider";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { MyContext } from "@/context/theme";
@@ -7,7 +8,6 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { base_Uri } from "@/lib/constants";
 import { useContext } from "react";
-import Slider from "react-slick";
 import styles from "./style.module.scss";
 
 const Service = ({props}) => {
@@ -114,7 +114,10 @@ const Service = ({props}) => {
               {props[0]?.Description}
             </h3>
             <Link href="/solutions">
-              <Button variant="outline" size="md">
+              <Button
+                variant={theme ? "lightBlueOutline" : "outline"}
+                size="md"
+              >
                 {props[0]?.Btn} <Icons.ArrowRight size={18} />
               </Button>
             </Link>
@@ -131,8 +134,8 @@ const Service = ({props}) => {
           </div>
         </div>
 
-        <div className={cn(styles.serviceOption, "service-mobile-slider")}>
-          <Slider {...settings}>
+        <div className={cn(styles.mobileCards, styles.serviceOption)}>
+          <MobileSlider slidesToShow={1.3}>
             {props[0]?.Service.map((data, index) => (
               <div key={index}>
                 <div key={index} className={styles.serviceBox}>
@@ -142,7 +145,7 @@ const Service = ({props}) => {
                 </div>
               </div>
             ))}
-          </Slider>
+          </MobileSlider>
         </div>
       </div>
     </section>

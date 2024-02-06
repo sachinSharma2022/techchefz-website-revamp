@@ -2,6 +2,8 @@
 import React from "react";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
+import MobileSlider from "@/components/common/mobileSlider";
+import { useMediaQuery } from "react-responsive";
 
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
@@ -37,14 +39,32 @@ const Results = ({props}) => {
             <p className={styles.resultText}>
               {props?.Description}
             </p>
-            <div className={styles.resultCards}>
-              {props.ITSolutionsCards.map((data, index) => (
-                <div key={index} className={styles.resultCard}>
-                  <h3>{data.Title} </h3>
-                  <h4>{data.Description} </h4>
+
+            {!isMobileScreen && (
+              <div className={styles.resultCards}>
+                {props.ITSolutionsCards.map((data, index) => (
+                  <div key={index} className={styles.resultCard}>
+                    <h3>{data.Title} </h3>
+                    <h4>{data.Description} </h4>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {isMobileScreen && (
+              <div className={styles.mobileSliderCard}>
+                <div className={styles.resultCards}>
+                  <MobileSlider slidesToShow={1.4}>
+                    {resultCard.map((data, index) => (
+                      <div key={index} className={styles.resultCard}>
+                        <h3>{data.number} </h3>
+                        <h4>{data.title} </h4>
+                      </div>
+                    ))}
+                  </MobileSlider>
                 </div>
-              ))}
-            </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

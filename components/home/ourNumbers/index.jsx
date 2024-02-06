@@ -10,6 +10,8 @@ import { useContext } from "react";
 import Slider from "react-slick";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
+import TextRevel from "@/components/ui/sectionAnimation";
+import MobileSlider from "@/components/common/mobileSlider";
 
 const OurNumbers = ({carrer,experience}) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -58,23 +60,21 @@ const OurNumbers = ({carrer,experience}) => {
       className={`${styles.numberStyle} ${theme ? styles.numberStyleDark : ""}`}
     >
       <div className={cn("primary-container")}>
-        <div className={styles.careerRow}>
-          <div className="row justify-content-between align-items-end">
-            <div className="col-md-8 col-lg-8 col-12">
-              <p className={styles.ProjectHighlight}>{carrer.title}</p>
-              <h2 className={styles.datingText}>
-              {carrer.description}
-              </h2>
-            </div>
+        <TextRevel>
+          <div className={styles.careerRow}>
+            <div >
+        
+                <p className={styles.projectHighlight}>{carrer.title}</p>
+                <h2 className={styles.datingText}>
+                {carrer.description}
+                </h2>
+              
 
-            <div className="col-md-4 col-lg-4 col-12 text-end">
-              <Button variant="outline" size="md">
-              {carrer.button} <Icons.ArrowRight size={18} />
-              </Button>
-            </div>
+            <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
+            {carrer.button}<Icons.ArrowRight size={18} />
+            </Button>
           </div>
-        </div>
-
+        </TextRevel>
         <div className={styles.ourNumberMain}>
           <div className={styles.ourNumberGrid}>
             <div className={styles.ourNumbersImg}>
@@ -104,8 +104,8 @@ const OurNumbers = ({carrer,experience}) => {
             </div>
           </div>
 
-          <div className={`${styles.ourNumberOption} service-mobile-slider`}>
-            <Slider {...settings}>
+          <div className={cn(styles.mobileCards, styles.ourNumberOption)}>
+            <MobileSlider slidesToShow={1.3}>
               {experience[0].Vews.map((data, index) => (
                 <ServiceInfoCard
                 key={index}
@@ -114,7 +114,7 @@ const OurNumbers = ({carrer,experience}) => {
                     sbText={data.Description}
                 />
               ))}
-            </Slider>
+            </MobileSlider>
           </div>
         </div>
       </div>

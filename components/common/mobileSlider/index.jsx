@@ -29,7 +29,9 @@ const MobileSlider = ({ children, slidesToShow }) => {
   };
 
   return (
-    <div className={cn(styles.mobileSlider, theme ? styles.mobileSlider : "")}>
+    <div
+      className={cn(styles.mobileSlider, theme ? styles.mobileSliderDark : "")}
+    >
       <div className={cn(styles.sliderSection)}>
         <Slider {...settings} ref={slider}>
           {children}

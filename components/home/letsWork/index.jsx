@@ -35,35 +35,29 @@ const LetsWork = ({contact}) => {
                 {contact?.Description}
               </p>
               <div className={styles.contactFormArea}>
-                <div className="row">
-                  <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                    <Input
-                      label="Full Name*"
-                      placeholder="Full Name*"
-                      type="name"
-                    />
-                  </div>
-                  <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                    <Input label="Email*" placeholder="Email*" type="email" />
-                  </div>
-                  <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                    <CountryDropdown />
-                  </div>
-                  <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                    <Input
-                      label="Company*"
-                      placeholder="Company*"
-                      type="text"
-                    />
-                  </div>
-                  <div className={`${styles.inputSpace} col-md-12 col-12`}>
-                    <Textarea
-                      label="Message*"
-                      placeholder="Message*"
-                      type="textarea"
-                      rows="4"
-                    />
-                  </div>
+                <div className={`${styles.inputSpace}`}>
+                  <Input
+                    label="Full Name*"
+                    placeholder="Full Name*"
+                    type="name"
+                  />
+                </div>
+                <div className={`${styles.inputSpace}`}>
+                  <Input label="Email*" placeholder="Email*" type="email" />
+                </div>
+                <div className={`${styles.inputSpace}`}>
+                  <CountryDropdown />
+                </div>
+                <div className={`${styles.inputSpace}`}>
+                  <Input label="Company*" placeholder="Company*" type="text" />
+                </div>
+                <div className={`${styles.inputSpace}`}>
+                  <Textarea
+                    label="Message*"
+                    placeholder="Message*"
+                    type="textarea"
+                    rows="4"
+                  />
                 </div>
               </div>
               <div className={styles.captchaImg}>

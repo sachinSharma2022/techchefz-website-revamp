@@ -59,6 +59,7 @@
 
     @include mobile-tablet-p {
       @include truncate(4);
+      margin-bottom: 0;
     }
   }
 
@@ -102,7 +103,7 @@
     gap: 24px;
 
     @include mobile-tablet-p {
-      margin-top: 3.75rem;
+      margin: 1.5rem 0;
     }
 
     .button {
@@ -147,10 +148,6 @@
     @include mobile-tablet-p {
       flex-direction: column-reverse;
     }
-  }
-
-  .timelineSection {
-
   }
 
   &.ourHistoryDark {

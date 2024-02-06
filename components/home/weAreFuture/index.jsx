@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useContext } from "react";
 
 import styles from "./style.module.scss";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const WeAreFuture = ({props}) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -30,6 +31,7 @@ const WeAreFuture = ({props}) => {
             <span className={styles.titleHighlight}>{props?.SubTitle3}</span>
           </h2>
         </div>
+        <TextRevel>
         <div className="row">
           <div className="col-md-6 col-12">
             <h3 className={styles.datingText}>
@@ -48,6 +50,7 @@ const WeAreFuture = ({props}) => {
             </Link>
           </div>
         </div>
+        </TextRevel>
       </div>
     </section>
   );

@@ -14,9 +14,11 @@
     border-color: color(heading-liner);
   }
 
-  @include mobile {
+  @include mobile-tablet-p {
     min-height: 11.25rem;
     padding: 1.25rem;
+    border-radius: 8px;
+    max-width: 95%;
   }
   .numberCardFlex {
     display: flex;

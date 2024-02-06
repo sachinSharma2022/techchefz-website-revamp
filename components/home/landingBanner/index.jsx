@@ -7,12 +7,25 @@ import Link from "next/link";
 import { useContext } from "react";
 import { Button } from "../../ui/button";
 
+// import required modules
+import Slider from "react-slick";
+
 // Style
 import styles from "./style.module.scss";
 
-
-const LandingBanner = ({props}) => {
-  const { theme, setTheme } = useContext(MyContext);
+const LandingBanner = () => {
+  const { theme } = useContext(MyContext);
+  const settings = {
+    dots: false,
+    autoplay: true,
+    infinite: true,
+    arrows: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    vertical: true,
+    verticalSwiping: true,
+    swipeToSlide: true,
+  };
   return (
     <section
       className={cn(

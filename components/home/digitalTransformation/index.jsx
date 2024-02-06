@@ -11,6 +11,7 @@ import { Icons } from "@/components/icons";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { base_Uri } from "@/lib/constants";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const DigitalTransformation = ({digital}) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -80,6 +81,7 @@ const DigitalTransformation = ({digital}) => {
       }`}
     >
       <div className={cn("primary-container")}>
+        <TextRevel>
         <div className={styles.serviceRow}>
           <div className="row">
             <div className="col-md-12 col-12">
@@ -96,13 +98,14 @@ const DigitalTransformation = ({digital}) => {
             </div>
             <div className={`${styles.servicesBtn} col-md-4 col-12`}>
               <Link href="/solutions">
-                <Button variant="outline" size="md">
+                <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
                 {digital[0]?.Btn} <Icons.ArrowRight size={18} />
                 </Button>
               </Link>
             </div>
           </div>
         </div>
+        </TextRevel>
 
         <div className={`${styles.digitalMain} digital-transformation`}>
           <Slider {...settings}>

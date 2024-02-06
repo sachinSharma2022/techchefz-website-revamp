@@ -1,3 +1,4 @@
+
 import Faq from "@/components/common/faq";
 import RelatedCase from "@/components/relatedCase";
 import SolutionHeroBanner from "@/components/solutions/solutionHeroBanner";
@@ -9,6 +10,7 @@ import { getData } from "@/lib/fetchData";
 
 import styles from "./style.module.scss";
 import SolutionCaseStudy from "@/components/solutions/solutionCaseStudy";
+
 
 const Solutions = async() => {
   const data = await getData(api_Solutions_Page)

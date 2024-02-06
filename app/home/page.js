@@ -1,3 +1,4 @@
+'use client'
 import DigitalTransformation from "@/components/home/digitalTransformation";
 import HomeTestimonials from "@/components/home/homeTestimonials";
 import LandingBanner from "@/components/home/landingBanner";
@@ -11,6 +12,8 @@ import Curve from "@/components/ui/pageTransition";
 import VideoCustom from "@/components/ui/videoCustom";
 import { api_Home_Page } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
+import Lenis from '@studio-freight/lenis'
+import {useEffect} from 'react'
 
 const HomePage = async () => {
   const data = await getData(api_Home_Page);

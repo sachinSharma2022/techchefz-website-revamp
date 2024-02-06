@@ -27,8 +27,7 @@
     .tabDropdownMob {
       border: 1px solid rgba(17, 17, 17, 0.12);
       background-color: color(primary-white);
-      padding: text(lg);
-      padding-bottom: 0;
+      padding: 1rem 0.75rem;
       margin-bottom: text(lg);
       border-radius: 0.75rem;
 
@@ -38,11 +37,13 @@
         line-height: text(xl);
         margin-bottom: text(normal);
         opacity: 0.6;
+        
       }
       select {
         padding: 0;
         border: none;
         font-size: 0.875rem;
+        border: transparent;
 
         &:focus {
           border: none;
@@ -55,7 +56,6 @@
         font-weight: 500;
         font-family: font(primary);
         color: color(text-primary);
-        left: -3px;
       }
 
       @include tablet-desktop-full {
