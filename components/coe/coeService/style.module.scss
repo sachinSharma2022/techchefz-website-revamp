@@ -22,7 +22,8 @@
     overflow: hidden;
 
     @include mobile-tablet-p{
-      height: 20rem;
+      height: 8.75rem;
+      margin-bottom: 3.75rem;
     }
 
     img {
@@ -76,5 +77,10 @@
     line-height: 1.875rem;
     opacity: 0.6;
     margin-bottom: 2.5rem;
+
+    @include mobile-tablet-p{
+      font-size: text(normal);
+      line-height: 1.5rem;
+    }
   }
 }

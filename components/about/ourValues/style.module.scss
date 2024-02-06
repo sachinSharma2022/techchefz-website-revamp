@@ -44,8 +44,9 @@
         margin-bottom: 2.75rem;
       }
       img {
+        border-radius: 0.75rem;
         @include mobile-tablet-p {
-          height: 23.813rem;
+          height: 18.875rem;
           object-fit: cover;
         }
         width: 100%;
