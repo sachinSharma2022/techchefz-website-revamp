@@ -35,7 +35,7 @@ const CoeService = () => {
               Accelerators. Our tailor-made toolkits designed to fast-track your
               most critical and impactful projects.
             </p>
-            <Button variant="outline" size="md">
+            <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
               Learn More <Icons.ArrowRight size={18} />
             </Button>
           </div>
