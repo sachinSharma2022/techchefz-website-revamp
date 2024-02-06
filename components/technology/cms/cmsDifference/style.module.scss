@@ -37,6 +37,7 @@
 
     @include mobile-tablet-p {
       margin-bottom: 0.75rem;
+      font-weight: 400;
     }
   }
   .datingText {
@@ -96,7 +97,7 @@
         cursor: pointer;
         position: relative;
 
-        @include mobile {
+        @include mobile-tablet-p {
           padding: text(xl);
         }
         .backgroundImg {
@@ -105,6 +106,10 @@
             width: 100%;
             height: 10.125rem;
             border-radius: 1.25rem;
+
+            @include mobile-tablet-p {
+              height: 9.063rem;
+            }
           }
         }
 
@@ -115,8 +120,9 @@
           margin-bottom: 0;
           position: relative;
 
-          @include mobile {
+          @include mobile-tablet-p {
             font-size: text(lg);
+            line-height: 1.75rem;
           }
         }
 
@@ -127,8 +133,10 @@
           opacity: 0.8;
           text-align: left;
           margin: 1.25rem 0 1.25rem 0;
-          @include mobile {
+          @include mobile-tablet-p {
             font-size: text(normal);
+            line-height: text(xl);
+            margin: 0.75rem 0 1.25rem 0;
           }
         }
       }
@@ -136,20 +144,19 @@
   }
 
   //Dark mode style
-  &.cmsDifferenceDark{
+  &.cmsDifferenceDark {
     background-color: color(dark-bg);
     color: color(primary-white);
 
-    .ProjectHighlight{
+    .ProjectHighlight {
       color: color(primary-white);
     }
 
-    .differenceGridCards{
-      .differenceCmsBox{
+    .differenceGridCards {
+      .differenceCmsBox {
         background-color: color(text-primary);
         border-color: color(text-primary);
       }
     }
-   
   }
 }

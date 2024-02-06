@@ -48,11 +48,11 @@
         );
         @include textGradient;
 
-        @include mobile {
+        @include mobile-tablet-p {
           font-size: text(xxxl);
           line-height: 2.5rem;
           padding-right: 0;
-          margin-bottom: text(lg);
+          margin-bottom: text(normal);
         }
       }
       .globalText {
@@ -61,6 +61,10 @@
         line-height: 1.875rem;
         max-width: 588px;
         margin: 0 auto;
+        @include mobile-tablet-p {
+          font-size: text(normal);
+          line-height: text(xl);
+        }
       }
     }
     .contactMap > div {
