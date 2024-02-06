@@ -58,10 +58,7 @@ $border-radius: 5px;
     font-weight: 500;
     line-height: 1.2;
     margin: 0 0 5rem;
-    
-    @include desktop-hd {
-      max-width: 60%;
-    }
+  
 
     @include mobile-tablet-p {
       font-size: text(larger);
