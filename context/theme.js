@@ -5,7 +5,7 @@ import { createContext, useEffect, useState } from "react";
 export const MyContext = createContext(null);
 
 export default function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState(true);
+  const [theme, setTheme] = useState(false);
 
   return (
     <MyContext.Provider value={{ theme, setTheme }}>

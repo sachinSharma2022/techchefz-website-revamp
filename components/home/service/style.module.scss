@@ -5,7 +5,7 @@
   background: color(primary-background);
 
   @include mobile-tablet-p {
-    padding: 5rem 0 10rem;
+    padding: 5rem 0;
   }
 
   .serviceGrid {
@@ -38,7 +38,8 @@
         line-height: text(xl);
         letter-spacing: 0.2rem;
         text-transform: uppercase;
-        @include mobile {
+
+        @include mobile-tablet-p {
           font-size: text(normal);
           margin-bottom: 0.75rem;
           font-weight: 400;
@@ -50,7 +51,7 @@
         line-height: 3.375rem;
         margin-bottom: 3.75rem;
 
-        @include mobile {
+        @include mobile-tablet-p {
           font-size: text(xxxl);
           line-height: 2.5rem;
           font-weight: 500;
@@ -58,6 +59,7 @@
         }
       }
     }
+
     .desktopCards {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -97,11 +99,13 @@
         }
       }
 
-      @include mobile {
-        min-height: 18.5rem;
+      @include mobile-tablet-p {
+        min-height: 19.5rem;
         padding: text(lg);
-        min-width: 100%;
+        max-width: 95%;
+        min-width: auto;
       }
+
       .bgIcon {
         margin-bottom: 2rem;
         display: flex;
@@ -114,7 +118,7 @@
         line-height: text(xxxl);
         margin-bottom: 0.75rem;
         text-align: left;
-        @include mobile {
+        @include mobile-tablet-p{
           font-size: text(lg);
         }
       }
@@ -124,13 +128,67 @@
         line-height: 1.5rem;
         opacity: 0.8;
         text-align: left;
-        @include mobile {
+
+        @include mobile-tablet-p {
           font-size: text(normal);
+          @include truncate(3);
         }
       }
     }
   }
 
+
+  .mobileCards {
+    padding-left: 1.25rem;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  .sliderArrow {
+    display: flex;
+    gap: 24px;
+    margin-top: 3rem;
+
+    .button {
+      background-color: color(primary-blue);
+      padding: 0;
+      border-radius: 0.5rem;
+      width: 3rem;
+      height: 3rem;
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+    }
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    svg > path {
+      stroke: color(primary-white);
+    }
+  }
+
+  .arrowDisabled {
+    border-radius: 0.5rem;
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid rgba(color(text-primary), 0.2);
+    color: color(primary-blue);
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg > path {
+      stroke: color(primary-black);
+    }
+  }
+
+
+// Dark mode
   &.serviceDetailsMainDark {
     background-color: color(dark-bg);
     color: color(primary-white);

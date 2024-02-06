@@ -10,6 +10,7 @@ import { useContext } from "react";
 import Slider from "react-slick";
 import styles from "./style.module.scss";
 import TextRevel from "@/components/ui/sectionAnimation";
+import MobileSlider from "@/components/common/mobileSlider";
 
 const OurNumbers = () => {
   const { theme, setTheme } = useContext(MyContext);
@@ -82,20 +83,19 @@ const OurNumbers = () => {
       className={`${styles.numberStyle} ${theme ? styles.numberStyleDark : ""}`}
     >
       <div className={cn("primary-container")}>
-      <TextRevel>
-     
-        <div className={styles.careerRow}>
-          <div>
-            <p className={styles.projectHighlight}>our numbers</p>
-            <h2 className={styles.datingText}>
-              Let the Numbers Tell the Success Story.
-            </h2>
-          </div>
+        <TextRevel>
+          <div className={styles.careerRow}>
+            <div>
+              <p className={styles.projectHighlight}>our numbers</p>
+              <h2 className={styles.datingText}>
+                Let the Numbers Tell the Success Story.
+              </h2>
+            </div>
 
-          <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
-            Career Opportunities <Icons.ArrowRight size={18} />
-          </Button>
-        </div>
+            <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
+              Career Opportunities <Icons.ArrowRight size={18} />
+            </Button>
+          </div>
         </TextRevel>
         <div className={styles.ourNumberMain}>
           <div className={styles.ourNumberGrid}>
@@ -129,8 +129,8 @@ const OurNumbers = () => {
             </div>
           </div>
 
-          <div className={`${styles.ourNumberOption} service-mobile-slider`}>
-            <Slider {...settings}>
+          <div className={cn(styles.mobileCards, styles.ourNumberOption)}>
+            <MobileSlider slidesToShow={1.3}>
               {serviceCard.map((data, index) => (
                 <ServiceInfoCard
                   key={index}
@@ -139,7 +139,7 @@ const OurNumbers = () => {
                   sbText={data.sbText}
                 />
               ))}
-            </Slider>
+            </MobileSlider>
           </div>
         </div>
       </div>

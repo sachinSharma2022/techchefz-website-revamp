@@ -4,13 +4,8 @@
   padding: spacing(section-primary-padding);
   background: color(primary-background);
 
-  @include mobile-tablet-p {
-    padding: spacing(section-mob-padding);
-    padding-block: 3.75rem 3.75rem;
-  }
-
   @include mobile-tablet-p{
-    padding: 3.75rem 0 10rem;
+    padding: 3.75rem 0;
   }
 
   .careerRow {
@@ -111,6 +106,11 @@
         padding: 0 1.25rem;
       }
     }
+  }
+
+
+  .mobileCards {
+    padding-left: 1.25rem;
   }
 
 
