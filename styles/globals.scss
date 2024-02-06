@@ -25,7 +25,6 @@ body {
 
 // main-container
 .main-container {
-
   @include mobile {
     overflow-x: hidden;
     padding-top: 70px;
@@ -247,7 +246,7 @@ input:-webkit-autofill {
       width: 29.875rem;
       max-width: 29.875rem;
 
-      @include mobile{
+      @include mobile {
         max-width: 100%;
       }
     }
@@ -755,10 +754,8 @@ input:-webkit-autofill {
   }
 }
 
-
 // Project Slider
 .project-slider {
-  
   .swiper-pagination {
     display: flex;
     align-items: center;
@@ -767,7 +764,7 @@ input:-webkit-autofill {
     .swiper-pagination-bullet {
       width: 100%;
       border-radius: 0;
-      background-color: rgba(color(primary-white), 0.40);
+      background-color: rgba(color(primary-white), 0.4);
       text-indent: -9999px;
       height: 1px;
       margin: 0 !important;
@@ -776,7 +773,27 @@ input:-webkit-autofill {
     .swiper-pagination-bullet-active {
       height: 6px;
       border-radius: 8px;
-      background: linear-gradient(124.4deg, color(primary-blue) 0%, color(heading-liner) 89.84%);
+      background: linear-gradient(
+        124.4deg,
+        color(primary-blue) 0%,
+        color(heading-liner) 89.84%
+      );
     }
   }
+}
+
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }

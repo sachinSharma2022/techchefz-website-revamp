@@ -41,7 +41,7 @@ const Card = ({ ...props }) => {
   ]);
 
   return (
-    <motion.div className={styles.cardSec} style={isMobileScreen ? scale : ""}>
+    <motion.div className={styles.cardSec} style={isMobileScreen ? "" : {scale}}>
       <div className={styles.projectImg}>
         <ImageCustom
           src={props.src}
@@ -174,7 +174,7 @@ const Projects = () => {
         {!isMobileScreen ? (
           <div ref={container} className={styles.cards}>
             {projects.map((project, i) => {
-              const targetScale = 1 - (projects.length - i) * 0.05;
+              const targetScale = 1 - (projects.length - i) * 0.10;
               return (
                 <Card
                   key={`p_${i}`}
