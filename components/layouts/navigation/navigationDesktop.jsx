@@ -141,7 +141,7 @@ const NavigationDesktop = () => {
               >
                 Technology <div className={styles.arrow} />
               </Link>
-              <ul className={cn(styles.subMenu)}>
+              {/* <ul className={cn(styles.subMenu)}>
                 <section className={styles.subsection}>
                   {LatestTech()}
 
@@ -241,7 +241,7 @@ const NavigationDesktop = () => {
                     </div>
                   </div>
                 </section>
-              </ul>
+              </ul> */}
             </li>
             <li className={styles.menuItem}>
               <Link
@@ -261,7 +261,7 @@ const NavigationDesktop = () => {
                 More
                 <div className={cn(styles.arrow, styles.hideDesktopIcon)} />
               </Link>
-              <ul className={cn(styles.subMenu, styles.singleLayout)}>
+              {/* <ul className={cn(styles.subMenu, styles.singleLayout)}>
                 <div className={styles.subsection}>
                   {LatestTech()}
                   <div className={cn(styles.overviewTech)}>
@@ -340,7 +340,7 @@ const NavigationDesktop = () => {
                     </div>
                   </div>
                 </div>
-              </ul>
+              </ul> */}
             </li>
           </ul>
         </nav>

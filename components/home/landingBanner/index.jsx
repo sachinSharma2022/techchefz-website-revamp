@@ -35,7 +35,7 @@ const LandingBanner = () => {
     >
       <div className={cn("primary-container")}>
         <h1 className={styles.title}>
-          Humanizing Digital <br /> Experience <br />
+          Humanizing <br /> Digital Experience <br />
           <div className={styles.contentContainer}>
             Through
             <div className={styles.slider}>

@@ -22,7 +22,17 @@
     justify-content: space-between;
   }
 
-  .logo {
+  .logo div {
+    height: 2.7vw;
+    width: 10.625vw;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
     @include mobile {
       scale: 0.8;
       left: -11px;
@@ -495,7 +505,7 @@
           }
 
           .imgBox div {
-            height: 116px;
+            height: 10vw;
             width: 100%;
             border-radius: 12px;
             overflow: hidden;
