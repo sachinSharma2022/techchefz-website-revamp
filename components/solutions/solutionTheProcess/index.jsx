@@ -238,7 +238,7 @@ const SolutionTheProcess = () => {
       </div>
       <div id="2-img" className={styles.stepperImg} style={{display:"none"}}>
         <ImageCustom
-          src="/images/contact-us.png"
+          src="/images/icon 4.svg"
           width={258}
           height={258}
           alt="bannerImg"
@@ -246,7 +246,7 @@ const SolutionTheProcess = () => {
       </div>
       <div id="3-img" className={styles.stepperImg} style={{display:"none"}}>
         <ImageCustom
-          src="/images/shield.png"
+          src="/images/icon 5.svg"
           width={258}
           height={258}
           alt="bannerImg"
@@ -254,7 +254,7 @@ const SolutionTheProcess = () => {
       </div>
       <div id="4-img" className={styles.stepperImg} style={{display:"none"}}>
         <ImageCustom
-          src="/images/contact-us.png"
+          src="/images/icon 4.svg"
           width={258}
           height={258}
           alt="bannerImg"
@@ -262,7 +262,7 @@ const SolutionTheProcess = () => {
       </div>
       <div id="5-img" className={styles.stepperImg} style={{display:"none"}}>
         <ImageCustom
-          src="/images/shield.png"
+          src="/images/icon 5.svg"
           width={258}
           height={258}
           alt="bannerImg"
@@ -270,7 +270,7 @@ const SolutionTheProcess = () => {
       </div>
       <div id="6-img" className={styles.stepperImg} style={{display:"none"}}>
         <ImageCustom
-          src="/images/contact-us.png"
+          src="/images/icon 4.svg"
           width={258}
           height={258}
           alt="bannerImg"
