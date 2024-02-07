@@ -57,7 +57,7 @@ const CustomDropdown = ({
       color: theme ? "white" : "#111",
     }),
     indicatorSeparator: () => ({ display: "none" }),
-    valueContainer: () => ({ top: 25, position: "relative", left: 9 }),
+    valueContainer: () => ({ top: 25, position: "relative", left: 17 }),
     option: (styles, { isFocused }) => {
       return {
         ...styles,

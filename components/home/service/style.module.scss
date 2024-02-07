@@ -63,7 +63,7 @@
     .desktopCards {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1.25rem 2.5rem;
+      gap: 1.25rem;
 
       @include mobile-tablet-p{
         display: none;

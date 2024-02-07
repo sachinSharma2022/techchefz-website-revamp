@@ -297,6 +297,16 @@ input:-webkit-autofill {
       filter: invert(1);
     }
   }
+
+  .btn-arrow {
+    background-color: color(nav-btn);
+    border-color: color(nav-btn);
+
+    &:hover, &:focus {
+      background-color: color(nav-btn);
+      border-color: color(nav-btn);
+    }
+  }
 }
 
 .testimonials-style-dark.testimonial-style {
