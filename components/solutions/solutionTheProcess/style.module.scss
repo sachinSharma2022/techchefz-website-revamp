@@ -18,6 +18,14 @@
       flex-direction: column;
       gap: 3.75rem;
     }
+    .stepperImg{
+      position: absolute;
+      width: 258px;
+      height: 258px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 
   .headSection {
@@ -57,6 +65,7 @@
         height: 100%;
       }
     }
+   
     .circularStepperContainer{
       position: relative;
     }

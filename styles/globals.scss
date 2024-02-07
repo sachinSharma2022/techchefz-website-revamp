@@ -795,12 +795,7 @@ input:-webkit-autofill {
   inset 0 0 0 45px #F1F1F1,
   0 0 10px rgba(0, 0, 0, 0.1);
 }
-.stepperImg{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+
 .circle-background{
  fill: none;
  stroke: rgba(17, 17, 17, 0.40);
@@ -823,33 +818,4 @@ input:-webkit-autofill {
   justify-content: center;
   align-items: center;
   color: #FFFFFF;
-}
-.one {
-  top: -12px;
-  left: 46%;
-}
-
-.two {
-  top: 25%;
-  right: 1%;
-}
-
-.three {
-  right: 6px;
-  top: 67%;
-}
-
-.four {
-  bottom: -13px;
-  left: 47%;
-}
-
-.five {
-  left: 2%;
-  top: 67%;
-}
-
-.six {
-  top: 25%;
-  left: 1%;
 }

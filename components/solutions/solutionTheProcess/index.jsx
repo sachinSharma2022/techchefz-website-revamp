@@ -47,6 +47,20 @@ const SolutionTheProcess = () => {
   ];
   gsap.registerPlugin(ScrollTrigger);
   useEffect(() => {
+    const changeDot=(i)=>{
+      const ele=document.getElementsByClassName("dot")
+      for (let i = 0; i < ele.length; i++) {
+        ele[i].style.fill="white";    }
+      document.getElementById(i).style.fill="#26A0F8";
+
+    }
+    const changeImg=(i)=>{
+      const ele=document.getElementsByClassName(styles.stepperImg)
+      for (let i = 0; i < ele.length; i++) {
+        ele[i].style.display="none";    }
+      document.getElementById(`${i}-img`).style.display="block";
+
+    }
     console.log(dashOffset,"dasofset")
     console.log(prevdashOffset,"prevdasofset")
     let ctx = gsap.context(() => 
@@ -70,13 +84,16 @@ const SolutionTheProcess = () => {
         
 
         gsap.to(text, {
-          onStart:function(){ setdashOffset((prev)=>{
-              prevsetdashOffset(prev)
-              if(1===0){
-                return dashArray
-              }
+          onStart:function(){ 
+            setTimeout(() => {
+              changeDot(i+1)
+              changeImg(i+1)
+
+            }, 100);
             
-            return dashArray-((dashArray/titles.length)*(i+1))
+            setdashOffset((prev)=>{
+              prevsetdashOffset(prev)
+              return dashArray-((dashArray/titles.length)*(i+1))
           }) },
           scrollTrigger:{
             trigger: text,
@@ -89,39 +106,32 @@ const SolutionTheProcess = () => {
         })
         
       });
-        
-
-
-      // titles.forEach((text, i) => {
-        
-      // const tl2 = gsap.timeline({
-      //   scrollTrigger:{
-      //     trigger: ".circleFil",
-      //     start: "top ",
-      //     end:"bottom ", 
-      //     markers: true,
-      //     //toggleActions: "complete none none none",
-      
-      //   },
-      // });
       gsap.fromTo(".circleFil", {
           strokeDashoffset: prevdashOffset,
           duration:3,
-          ease: "power1.out"
+          ease: "power1.inOut"
           
         },{ 
        
         strokeDashoffset: dashOffset,
+        transition: "stroke-dashoffset 1.6s linear 0s",
         duration:3,
-        ease: "power1.out"
+        ease: "power1.inOut"
         })
+        
         
       // });
      
       
       
     
-       
+      
+      // });
+     
+      
+      
+    
+           
     });
     return () => ctx.revert();
   }, [dashOffset,prevdashOffset]);
@@ -137,51 +147,7 @@ const SolutionTheProcess = () => {
 
           <div className={styles.ourNumbersImg}>
           <div className={styles.circularStepperContainer}>
-          <div className="circularStepper" >
-          </div>
-      {/* <svg
-        width={circleWidth}
-        height={circleWidth}
-        viewBox={`0 0 ${circleWidth} ${circleWidth}`}
-      >
-        <defs>
-          <linearGradient
-            id="progressGradient"
-            x1="0%"
-            y1="0%"
-            x2="100%"
-            y2="0%"
-          >
-            <stop offset="0%" style={{ stopColor: "#1E8AF2" }} />
-            <stop offset="100%" style={{ stopColor: "#05BED7" }} />
-          </linearGradient>
-          
-        </defs>
-        
-        <circle
-          cx={circleWidth / 2}
-          cy={circleWidth / 2}
-          strokeWidth="10px"
-          r={radius}
-          className="circle-background"
-          filter="url(#inset-shadow)"
-        />
-        <circle
-          cx={circleWidth / 2}
-          cy={circleWidth / 2}
-          strokeWidth="10px"
-          r={radius}
-          className="circle-progress"
-          style={{
-            stroke: "url(#progressGradient)",
-            strokeDasharray: dashArray,
-            strokeDashoffset: dashArray,
-          }}
-          transform={`rotate(-90 ${circleWidth / 2} ${circleWidth / 2})`}
-        />
-        
-      </svg> */}
-      <svg width="470" height="510" viewBox="0 0 470 510" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="470" height="510" viewBox="0 0 470 510" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="235" cy="255" r="235" fill="#F1F1F1"/>
 <circle cx="235" cy="255" r="230" stroke="#111111" stroke-opacity="0.4" stroke-width="10"/>
 <circle className="circleFil" cx="235" cy="255" r="230" stroke="url(#paint4_linear_1035_26193)"  stroke-width="10" style={{ strokeDasharray: dashArray,
@@ -189,7 +155,7 @@ const SolutionTheProcess = () => {
 <g filter="url(#filter0_i_1035_26193)">
 <circle cx="234.5" cy="254.5" r="193.5" fill="white" />
 </g>
-<g clip-path="url(#clip0_1035_26193)">
+{/* <g clip-path="url(#clip0_1035_26193)">
 <mask id="mask0_1035_26193" style={{maskType:"luminance"}} maskUnits="userSpaceOnUse" x="106" y="126" width="258" height="258">
 <path d="M364 126H106V384H364V126Z" fill="white"/>
 </mask>
@@ -204,19 +170,36 @@ const SolutionTheProcess = () => {
 <path d="M207.327 225.213C213.273 225.213 218.093 220.398 218.093 214.457C218.093 208.517 213.273 203.702 207.327 203.702C201.381 203.702 196.561 208.517 196.561 214.457C196.561 220.398 201.381 225.213 207.327 225.213Z" fill="url(#paint3_linear_1035_26193)"/>
 <path d="M207.328 217.31C208.904 217.31 210.183 216.033 210.183 214.457C210.183 212.883 208.904 211.605 207.328 211.605C205.751 211.605 204.473 212.883 204.473 214.457C204.473 216.033 205.751 217.31 207.328 217.31Z" fill="#1E1E1E"/>
 </g>
+</g> */}
+<g>
+<circle className="dot" id="6" cx="235" cy="20" r="20" fill="#26A0F8" stroke-width="2" stroke="#26A0F8"/>
+<text x="235" y="20" text-anchor="middle" fill="white" alignment-baseline="middle" style={{}}>1</text>
 </g>
-<circle cx="235" cy="20" r="20" fill="white"/>
-<circle cx="235" cy="20" r="10" fill="#26A0F8"/>
-<circle cx="31" cy="138" r="20" fill="white"/>
-<circle cx="31" cy="138" r="10" fill="#26A0F8"/>
-<circle cx="31" cy="373" r="20" fill="white"/>
-<circle cx="31" cy="373" r="10" fill="#26A0F8"/>
-<circle cx="235" cy="490" r="20" fill="white"/>
-<circle cx="235" cy="490" r="10" fill="#26A0F8"/>
-<circle cx="439" cy="373" r="20" fill="white"/>
-<circle cx="439" cy="373" r="10" fill="#26A0F8"/>
-<circle cx="439" cy="138" r="19" fill="#26A0F8" stroke="#26A0F8" stroke-width="2"/>
-<path d="M426.84 138.68C426.84 137.36 427.06 136.18 427.52 135.14C427.98 134.1 428.64 133.3 429.48 132.74C430.32 132.18 431.28 131.88 432.36 131.88C433.42 131.88 434.36 132.18 435.2 132.74C436.04 133.3 436.68 134.1 437.16 135.14C437.62 136.18 437.86 137.36 437.86 138.68V139.32C437.86 140.72 437.62 141.92 437.16 142.94C436.7 143.98 436.06 144.76 435.22 145.3C434.38 145.86 433.44 146.12 432.36 146.12C431.26 146.12 430.3 145.86 429.46 145.3C428.62 144.76 427.98 143.98 427.52 142.94C427.06 141.92 426.84 140.72 426.84 139.32V138.68ZM434.74 135.14C434.14 134.26 433.36 133.82 432.36 133.82C431.36 133.82 430.56 134.26 429.96 135.14C429.36 136.02 429.06 137.22 429.06 138.76V139.24C429.06 140.8 429.36 142 429.96 142.88C430.56 143.76 431.36 144.18 432.36 144.18C433.36 144.18 434.14 143.76 434.74 142.88C435.34 142 435.64 140.8 435.64 139.24V138.76C435.64 137.22 435.34 136.02 434.74 135.14ZM444.775 139.64C445.495 139.04 446.055 138.48 446.415 137.96C446.775 137.44 446.975 136.88 446.975 136.26C446.975 135.48 446.735 134.86 446.255 134.42C445.775 133.98 445.115 133.76 444.295 133.76C443.495 133.76 442.835 134.02 442.355 134.54C441.875 135.06 441.635 135.74 441.635 136.58V136.84H439.415V136.46C439.415 135.58 439.615 134.8 440.015 134.1C440.415 133.42 440.995 132.86 441.735 132.46C442.455 132.06 443.315 131.86 444.295 131.86C445.855 131.86 447.055 132.26 447.935 133.04C448.795 133.82 449.235 134.86 449.235 136.16C449.235 137.12 448.975 137.94 448.495 138.66C447.995 139.38 447.255 140.14 446.275 140.96L442.555 144.06H449.315V146H439.395V144.22L444.775 139.64Z" fill="white"/>
+<g>
+<circle className="dot" id="5" cx="31" cy="138" r="20" fill="white" stroke-width="2" stroke="#26A0F8"/>
+<text x="31" y="138" text-anchor="middle" fill="white" alignment-baseline="middle" style={{}}>6</text>
+</g>
+<g>
+<circle className="dot" id="4" cx="31" cy="373" r="20" fill="white" stroke-width="2" stroke="#26A0F8"/>
+<text x="31" y="373" text-anchor="middle" fill="white" alignment-baseline="middle" style={{}}>5</text>
+
+</g>
+<g>
+<circle className="dot" id="3" cx="235" cy="490" r="20" fill="white" stroke-width="2" stroke="#26A0F8"/>
+<text x="235" y="490" text-anchor="middle" fill="white" alignment-baseline="middle" style={{}}>4</text>
+</g>
+<g>
+<circle className="dot" id="2" cx="439" cy="373" r="20" fill="white" stroke-width="2" stroke="#26A0F8"/>
+<text x="439" y="373" text-anchor="middle" fill="white" alignment-baseline="middle" style={{}}>3</text>
+</g>
+<g>
+<circle className="dot" id="1" cx="439" cy="138" r="19" fill="white" stroke-width="2" stroke="#26A0F8"/>
+<text x="439" y="138" text-anchor="middle" fill="white" alignment-baseline="middle" style={{}}>2</text>
+</g>
+
+
+
+
 <defs>
 <filter id="filter0_i_1035_26193" x="41" y="61" width="387" height="393" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
@@ -252,23 +235,57 @@ const SolutionTheProcess = () => {
 <rect width="258" height="258" fill="white" transform="translate(106 126)"/>
 </clipPath>
 </defs>
-</svg>
+          </svg>
 
 
-      {/* <div className="stepperImg">
+      <div id="1-img" className={styles.stepperImg}>
         <ImageCustom
           src="/images/shield.png"
-          width={200}
-          height={200}
+          width={258}
+          height={258}
           alt="bannerImg"
         />
-      </div> */}
-      {/* <span className="one">01</span>
-      <span className="two">02</span>
-      <span className="three">03</span>
-      <span className="four">04</span>
-      <span className="five">05</span>
-      <span className="six">06</span> */}
+      </div>
+      <div id="2-img" className={styles.stepperImg} style={{display:"none"}}>
+        <ImageCustom
+          src="/images/contact-us.png"
+          width={258}
+          height={258}
+          alt="bannerImg"
+        />
+      </div>
+      <div id="3-img" className={styles.stepperImg} style={{display:"none"}}>
+        <ImageCustom
+          src="/images/shield.png"
+          width={258}
+          height={258}
+          alt="bannerImg"
+        />
+      </div>
+      <div id="4-img" className={styles.stepperImg} style={{display:"none"}}>
+        <ImageCustom
+          src="/images/contact-us.png"
+          width={258}
+          height={258}
+          alt="bannerImg"
+        />
+      </div>
+      <div id="5-img" className={styles.stepperImg} style={{display:"none"}}>
+        <ImageCustom
+          src="/images/shield.png"
+          width={258}
+          height={258}
+          alt="bannerImg"
+        />
+      </div>
+      <div id="6-img" className={styles.stepperImg} style={{display:"none"}}>
+        <ImageCustom
+          src="/images/contact-us.png"
+          width={258}
+          height={258}
+          alt="bannerImg"
+        />
+      </div>
     </div>
           </div>
         </div>
