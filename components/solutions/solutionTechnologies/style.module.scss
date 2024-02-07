@@ -4,26 +4,33 @@
   padding: spacing(section-primary-padding);
   background: color(primary-background);
 
-  @include mobile {
-    padding: spacing(section-mob-padding);
+  @include mobile-tablet-p {
+    padding: 0;
     padding-bottom: 8rem;
   }
 
   .careerRow {
     margin-bottom: 5rem;
-    @include mobile {
+    display: flex;
+    
+    @include mobile-tablet-p {
       margin-bottom: 2.5rem;
+      flex-direction: column;
+      padding: 3.75rem 1.25rem 0;
     }
+
     .careerBtn {
       display: flex;
       justify-content: flex-end;
+      white-space: nowrap;
+
       @include mobile{
         justify-content: flex-start;
       }
     }
   }
 
-  .ProjectHighlight {
+  .projectHighlight {
     font-size: text(normal);
     font-weight: 500;
     margin-bottom: text(lg);
@@ -87,10 +94,11 @@
       line-height: 1.875rem;
       margin-bottom: 3.75rem;
       opacity: 0.8;
-      @include mobile {
+
+      @include mobile-tablet-p {
         font-size: text(normal);
         margin-bottom: 2.75rem;
-        font-weight: 400;
+        padding: 0 1.25rem 3rem;
       }
     }
     .ourNumberOption {
@@ -145,6 +153,13 @@
           }
         }
       }
+    }
+  }
+
+  .mobileSlider {
+
+    @include mobile-tablet-p {
+      padding-left: 1.25rem;
     }
   }
 
