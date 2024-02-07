@@ -91,10 +91,14 @@ const OurNumbers = () => {
                 Let the Numbers Tell the Success Story.
               </h2>
             </div>
-
-            <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
-              Career Opportunities <Icons.ArrowRight size={18} />
-            </Button>
+            <div>
+              <Button
+                variant={theme ? "lightBlueOutline" : "outline"}
+                size="md"
+              >
+                Career Opportunities <Icons.ArrowRight size={18} />
+              </Button>
+            </div>
           </div>
         </TextRevel>
         <div className={styles.ourNumberMain}>
