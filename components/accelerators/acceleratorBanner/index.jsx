@@ -7,24 +7,20 @@ import { useContext } from "react";
 
 import styles from "./style.module.scss";
 
-const AcceleratorBanner = () => {
+const AcceleratorBanner = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section className={`${styles.banner} ${theme ? styles.bannerDark : ""}`}>
       <div className={cn("primary-container")}>
         <div className={styles.bannerContent}>
-          <h1 className={styles.bannerTitle}>
-            Speed Your Journey from Idea to Impact with our{" "}
-            <span>Accelerators.</span>
+          <h1 className={styles.bannerTitle} dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}>
           </h1>
           <div className={styles.bannerRight}>
             <p>
-              Streamline Your Tech Projects with Techchefz Solution
-              Accelerators. Our tailor-made toolkits designed to fast-track your
-              most critical and impactful projects.
+              {props.Description}
             </p>
-            <Button variant="blueBtn" className={styles.headerBtn} size="md">
-              Request a Demo <Icons.ArrowRight size={20} className="ms-2" />
+            <Button variant={theme ? "blueBtnDark" : "blueBtn"} className={styles.headerBtn} size="md">
+              {props.Btn} <Icons.ArrowRight size={20} className="ms-2" />
             </Button>
           </div>
         </div>

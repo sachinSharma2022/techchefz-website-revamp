@@ -11,6 +11,7 @@ import { Icons } from "@/components/icons";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { base_Uri } from "@/lib/constants";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const DigitalTransformation = ({digital}) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -48,7 +49,7 @@ const DigitalTransformation = ({digital}) => {
       {
         breakpoint: 1199,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
           centerMode: false,
           arrows: true,
@@ -68,7 +69,7 @@ const DigitalTransformation = ({digital}) => {
           slidesToShow: 1,
           slidesToScroll: 1,
           arrows: true,
-          centerPadding: "15px",
+          centerPadding: "0",
         },
       },
     ],
@@ -80,6 +81,7 @@ const DigitalTransformation = ({digital}) => {
       }`}
     >
       <div className={cn("primary-container")}>
+        <TextRevel>
         <div className={styles.serviceRow}>
           <div className="row">
             <div className="col-md-12 col-12">
@@ -96,13 +98,14 @@ const DigitalTransformation = ({digital}) => {
             </div>
             <div className={`${styles.servicesBtn} col-md-4 col-12`}>
               <Link href="/solutions">
-                <Button variant="outline" size="md">
+                <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
                 {digital[0]?.Btn} <Icons.ArrowRight size={18} />
                 </Button>
               </Link>
             </div>
           </div>
         </div>
+        </TextRevel>
 
         <div className={`${styles.digitalMain} digital-transformation`}>
           <Slider {...settings}>
@@ -119,18 +122,18 @@ const DigitalTransformation = ({digital}) => {
                   </div>
 
                   <div className={styles.experienceCardBox}>
-                    <h4 className={styles.CustomerHeading}>
-                      {data.Title}
+                    <h4 className={styles.CustomerHeading} dangerouslySetInnerHTML={{ __html: `${data?.Title}`}}>
                     </h4>
-                    <p className={styles.digitalText}>{data.Description}</p>
+                    <p className={styles.digitalText} dangerouslySetInnerHTML={{ __html: `${data?.Description}`}}> 
+                    </p>
 
-                    <ul className={styles.customerList}>
+                    {/* <ul className={styles.customerList}>
                       <li className={styles.list}>
                         Attract & Engage more users/customers
                       </li>
                       <li className={styles.list}>Increase Conversions</li>
                       <li className={styles.list}>Automate Marketing Tasks</li>
-                    </ul>
+                    </ul> */}
                   </div>
                 </div>
               </div>

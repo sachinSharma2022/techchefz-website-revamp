@@ -4,10 +4,16 @@
   .bannerContent {
     display: flex;
     gap: 8rem;
-    padding: 5rem 7.5rem;
+    padding: 10rem 7.5rem 5rem;
 
     @include desktop-hd {
       padding-inline: 0;
+    }
+
+    @include mobile-tablet-p{
+      flex-direction: column;
+      padding: 3rem 1.5rem;
+      gap: 1.5rem;
     }
 
     .bannerTitle {
@@ -16,10 +22,20 @@
       line-height: 5rem;
       width: 100%;
 
+      @include mobile-tablet-p{
+        font-size: text(larger);
+        line-height: 3.5rem;
+      }
+
       span {
         font-size: text(xl-larger);
         background: linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%);
         @include textGradient;
+
+        @include mobile-tablet-p{
+          font-size: text(larger);
+          line-height: 3.5rem;
+        }
       }
     }
 
@@ -30,10 +46,19 @@
       align-items: flex-start;
       gap: 4rem;
       width: 100%;
+
+      @include mobile{
+        gap: 2.25rem;
+      }
       p {
         font-size: text(lg);
         line-height: 1.875rem;
         opacity: 0.8;
+
+        @include mobile{
+          font-size: text(normal);
+          line-height: 1.5rem;
+        }
       }
     }
   }
@@ -42,6 +67,10 @@
     height: 31.25rem;
     overflow: hidden;
     position: relative;
+
+    @include mobile-tablet-p{
+      height: 8.188rem;
+    }
 
     img {
       width: 100%;

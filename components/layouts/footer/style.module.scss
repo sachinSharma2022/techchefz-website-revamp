@@ -36,7 +36,7 @@
       color: rgba(color(primary-white), 0.8);
       font-size: text(lg);
 
-      &:hover{
+      &:hover {
         color: color(info-blue);
       }
 
@@ -116,28 +116,21 @@
         flex-wrap: wrap;
       }
 
-      input {
-        padding: 0.5rem 1rem;
-        background-color: color(input-bg);
-        color: color(primary-white);
+      .inputFloatingStyle {
         border: none;
-        font-weight: 400;
-        font-size: text(normal);
-        height: 3.25rem;
-        min-height: 3.25rem;
+        height: 52px;
+        background: color(input-bg);
+      }
+
+      input {
+        height: 52px;
+        padding: 0 15px;
+        min-height: 100%;
+        color: color(primary-white);
 
         &::placeholder {
           color: rgba(color(primary-white), 0.5);
         }
-
-        &:focus {
-          &::placeholder {
-            opacity: 0;
-          }
-        }
-      }
-      label {
-        display: none;
       }
 
       button {
@@ -145,7 +138,7 @@
         white-space: nowrap;
         display: flex;
         align-items: center;
-        
+
         p {
           margin: 0;
         }
@@ -153,7 +146,7 @@
         svg {
           margin: 0;
         }
-        
+
         @include mobile {
           margin-left: 0;
           margin-top: 1rem;
@@ -314,7 +307,7 @@
     ul {
       display: flex;
       list-style: none;
-      gap: 0 1rem;
+      gap: 1rem;
 
       @include mobile {
         flex-wrap: wrap;
@@ -360,5 +353,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    .footLogo {
+      height: 70px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 }

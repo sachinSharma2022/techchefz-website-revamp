@@ -76,7 +76,7 @@ const OurTeam = ({props}) => {
                     {props[0].Description}
                   </h3>
                 </div>
-                <Tab.List className={styles.tabWrapper}>
+                {/* <Tab.List className={styles.tabWrapper}>
                   <Tab>
                     {({ selected }) => (
                       <span
@@ -97,7 +97,7 @@ const OurTeam = ({props}) => {
                       </span>
                     )}
                   </Tab>
-                </Tab.List>
+                </Tab.List> */}
               </div>
 
               <Tab.Panels className={styles.contentWrapper}>

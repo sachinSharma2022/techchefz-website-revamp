@@ -3,30 +3,29 @@
 .globalPresenceStyle {
   background-color: color(bg-soft);
   padding-block: 8.75rem 8.75rem;
-  
+
   @include mobile-tablet-p {
     padding: spacing(section-mob-padding);
     padding-block: 3.75rem 3.75rem;
   }
-  
+
   &.globalPresenceBannerDark {
     background-color: color(dark-bg);
     color: color(primary-white);
 
-    .globalStackBox {
-      .locationPopoverCard {
-        background-color: color(input-bg);
-        color: color(primary-white);
+    .locationPopoverCard {
+      background-color: color(input-bg);
+      color: color(primary-white);
+      @include mobile-tablet-p {
+        border: 1px solid color(bg-soft);
       }
     }
 
     .contactMap > div {
-
       img {
-       filter: contrast(0) brightness(100);
+        filter: contrast(0) brightness(100);
       }
     }
-
   }
 
   .globalStackBox {
@@ -49,11 +48,11 @@
         );
         @include textGradient;
 
-        @include mobile {
+        @include mobile-tablet-p {
           font-size: text(xxxl);
           line-height: 2.5rem;
           padding-right: 0;
-          margin-bottom: text(lg);
+          margin-bottom: text(normal);
         }
       }
       .globalText {
@@ -62,6 +61,10 @@
         line-height: 1.875rem;
         max-width: 588px;
         margin: 0 auto;
+        @include mobile-tablet-p {
+          font-size: text(normal);
+          line-height: text(xl);
+        }
       }
     }
     .contactMap > div {
@@ -71,40 +74,61 @@
       height: 566px;
       width: 100%;
 
+      @include mobile-tablet-p {
+        height: auto;
+      }
+
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-      }
-    }
-    .locationPopoverCard {
-      padding: 2rem;
-      border: 0.14rem solid color(heading-liner);
-      background: color(bg-soft);
-      text-align: center;
-      max-width: 16rem;
-      border-radius: text(lg);
-      @include mobile-tablet-p {
-        max-width: 100%;
-      }
-      .popoverMapIcon {
-        margin-bottom: 0.5rem;
-        display: flex;
-        justify-content: center;
-        img {
-          height: auto;
+
+        @include mobile-tablet-p {
+          margin-bottom: 40px;
         }
       }
-      .locationHeading {
-        font-size: text(lg);
-        font-weight: 500;
-        line-height: 1.875rem;
-        margin-bottom: 0.25rem;
+    }
+  }
+
+  .locationPopoverCard {
+    padding: 2rem;
+    border: 0.14rem solid color(heading-liner);
+    background: color(bg-soft);
+    text-align: center;
+    max-width: 16rem;
+    border-radius: text(lg);
+    @include mobile-tablet-p {
+      max-width: 100%;
+      padding: text(lg);
+    }
+
+    .popoverMapIcon {
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: center;
+      img {
+        height: auto;
       }
-      .locationAreaText {
-        font-size: text(normal);
-        font-weight: 400;
-        line-height: text(xl);
+    }
+    .locationHeading {
+      font-size: text(lg);
+      font-weight: 500;
+      line-height: 1.875rem;
+      margin-bottom: 0.25rem;
+    }
+    .locationAreaText {
+      font-size: text(normal);
+      font-weight: 400;
+      line-height: text(xl);
+      margin-bottom: 0;
+    }
+  }
+
+  .popoverCardMobile {
+    .locationPopoverCard {
+      margin-bottom: text(lg);
+      border: 1px solid color(border-darker);
+      &:last-child {
         margin-bottom: 0;
       }
     }

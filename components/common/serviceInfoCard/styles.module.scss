@@ -1,0 +1,65 @@
+@import "~/styles/partials/config";
+
+// .serviceBox {
+.serviceBox {
+  text-align: center;
+  background-color: color(primary-white);
+  padding: text(xxxl);
+  border-radius: text(xl);
+  border: 0.125rem solid rgba(color(text-primary), 0.12);
+  cursor: pointer;
+  @include transition(0.4s);
+
+  &:hover {
+    border-color: color(heading-liner);
+  }
+
+  @include mobile-tablet-p {
+    min-height: 11.25rem;
+    padding: 1.25rem;
+    border-radius: 8px;
+    max-width: 95%;
+  }
+  .numberCardFlex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: text(xxxl);
+
+    .sbTitle {
+      font-size: 2.75rem;
+      font-weight: 500;
+      margin-bottom: 0;
+      min-height: 2.75rem;
+      color: color(heading-liner);
+      background: linear-gradient(
+        118deg,
+        color(primary-blue) 11.5%,
+        color(heading-liner) 55.42%
+      );
+      @include textGradient;
+    }
+  }
+  .sbText {
+    font-weight: 400;
+    font-size: text(lg);
+    line-height: 1.875rem;
+    opacity: 0.8;
+    text-align: left;
+    margin-bottom: 0;
+
+    @include mobile {
+      font-size: text(lg);
+    }
+  }
+
+  // Dark Mode
+  &.serviceBoxDark {
+    background-color: color(dark-bg);
+    border-color: rgba(color(primary-white), 0.12);
+
+    &:hover {
+      border-color: color(heading-liner);
+    }
+  }
+}

@@ -4,30 +4,16 @@
   padding: spacing(section-primary-padding);
   padding-right: 0;
   background-color: color(primary-white);
-  overflow-x: hidden;
+  overflow: hidden;
+  position: relative;
 
-  .testimonialContainer {
-    @include desktop-hd {
-      padding-left: 7vw;
-    }
+  @include mobile-tablet-p {
+    padding: spacing(section-mob-padding);
+    padding-block: 3.75rem 3.75rem;
   }
 
-  &.testimonialsStyleDark {
-    background-color: color(dark-gray);
-    color: color(primary-white);
-
-    .infoSection {
-      .testimonialsLeft {
-        .projectHighlight {
-          color: color(primary-white);
-          opacity: 0.8;
-        }
-      }
-    }
-
-    .testimonialCardBox {
-      background-color: color(text-primary);
-    }
+  @include desktop-hd {
+    padding-inline: 0;
   }
 
   .infoSection {
@@ -46,7 +32,7 @@
       text-transform: uppercase;
       letter-spacing: 0.2rem;
       color: color(text-primary);
-      @include mobile {
+      @include mobile-tablet-p {
         margin-bottom: 0.75rem;
       }
     }
@@ -56,6 +42,12 @@
         font-weight: 500;
         line-height: 3.375rem;
         margin-bottom: 2rem;
+        @include mobile-tablet-p {
+          margin-bottom: text(lg);
+          font-size: 2rem;
+          line-height: 2.5rem;
+          // margin-bottom: 3.75rem;
+        }
       }
     }
 
@@ -65,9 +57,10 @@
       opacity: 0.6;
       line-height: 1.875rem;
 
-      @include mobile {
+      @include mobile-tablet-p {
         font-size: text(normal);
         line-height: text(xl);
+        margin: 0;
       }
     }
   }
@@ -75,6 +68,12 @@
   .testimonialCardBox {
     padding: 2.5rem;
     background-color: color(primary-background);
+
+    @include mobile-tablet-p{
+      padding: text(lg);
+      border-radius: .75rem;
+      border: 0.14rem solid rgba(color(text-primary), 0.12)
+    }
 
     .commaImg {
       margin-bottom: text(lg);
@@ -84,14 +83,16 @@
       font-weight: 500;
       line-height: 2.25rem;
       margin-bottom: 2.5rem;
-      @include mobile {
-        font-size: text(xl);
-        margin-bottom: text(normal);
+
+      @include mobile-tablet-p {
+        font-size: text(normal);
+        line-height: text(xl);
+        margin-bottom: 2.5rem;
       }
     }
     .customerProfile {
       .customerImg {
-        margin-bottom: text(xl);
+        margin-bottom: text(normal);
         img {
           border-radius: 16.25rem;
         }
@@ -121,6 +122,52 @@
     button {
       width: 3.75rem;
       height: 3.75rem;
+
+      @include mobile-tablet-p {
+        width: 2.75rem;
+        height: 2.75rem;
+      }
     }
   }
+
+  .mobileSlider {
+    margin: 2.5rem 0;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  .testimonialsDesktopSlider {
+    position: relative;
+
+    @include mobile-tablet-p {
+      display: none;
+    }
+  }
+
+  // Dark Mode
+  &.testimonialsStyleDark {
+    background-color: color(dark-gray);
+    color: color(primary-white);
+
+    .infoSection {
+      .testimonialsLeft {
+        .projectHighlight {
+          color: color(primary-white);
+          opacity: 0.8;
+        }
+      }
+    }
+
+
+    .testimonialCardBox {
+      background-color: color(text-primary);
+
+      @include mobile-tablet-p{
+        border-color: rgba(color(primary-white), 0.12);
+      }
+    }
+  }
+
 }

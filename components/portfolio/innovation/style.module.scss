@@ -49,15 +49,18 @@
       }
     }
   }
+
   .innovationCardsGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
 
-    @include mobile-tablet-p {
+
+    @include desktop-hd{
       grid-template-columns: repeat(2, 1fr);
       gap: 2.75rem;
     }
+
     @include mobile {
       grid-template-columns: repeat(1, 1fr);
       gap: 2.7rem;

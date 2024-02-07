@@ -4,8 +4,12 @@
   background-color: color(bg-soft);
   padding-block: spacing(section-primary-padding);
   padding-left: spacing(p-120);
-  margin-top: 8.75rem;
   overflow: hidden;
+
+  @include mobile-tablet-p {
+    padding: spacing(section-mob-padding);
+    padding-block: 3.75rem 3.75rem;
+  }
 
   @include desktop-hd {
     padding-inline: 0;
@@ -21,6 +25,8 @@
 
     .sliderSection {
       padding: 0;
+      position: absolute;
+      right: 0;
     }
 
     .tczActionSection {
@@ -38,6 +44,11 @@
       text-transform: uppercase;
       opacity: 0.8;
       margin-bottom: 1rem;
+      
+      @include mobile-tablet-p {
+        margin-bottom: 0.75rem;
+        line-height: text(normal);
+      }
     }
 
     .tczLifeHeading {
@@ -45,13 +56,18 @@
       font-weight: 500;
       line-height: 3.375rem;
 
+      @include mobile-tablet-p {
+        font-size: 2rem;
+        line-height: 2.5rem;
+      }
       span {
         font-size: text(larger);
-        background: var(
-          --Gradient,
-          linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%)
-        );
+        background:linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%);
         @include textGradient;
+        @include mobile-tablet-p {
+          font-size: 2rem;
+          line-height: 2.5rem;
+        }
       }
     }
   }
@@ -61,9 +77,13 @@
     height: 100%;
     border-radius: 0.5rem;
     overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     div {
-      width: 470px;
+      min-width: 47vw;
       height: 264px;
     }
 
@@ -72,12 +92,33 @@
       height: 100%;
       object-fit: cover;
     }
+
+    .videoButton {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      @include transition(0.5s);
+    }
+
+    &:hover {
+
+      .videoButton {
+        scale: 1.15;
+      }
+    }
   }
 
   .tczLifeContent {
     margin-top: 5rem;
     max-width: 85vw;
 
+    @include mobile-tablet-p {
+      margin-top: 3.75rem;
+    }
     @include desktop-hd {
       max-width: 1440px;
       margin-inline: auto;
@@ -88,12 +129,19 @@
       font-weight: 400;
       line-height: 1.875rem;
       opacity: 0.6;
+      margin-bottom: 0;
+
+      @include mobile-tablet-p {
+        font-size: text(normal);
+        line-height: text(xl);
+      }
     }
   }
 
   .sliderArrow {
     display: flex;
     gap: 24px;
+    margin-top: 3.5rem;
 
     .button {
       background-color: color(primary-blue);
@@ -105,6 +153,7 @@
       justify-content: center;
       align-items: center;
     }
+
     svg {
       width: 18px;
       height: 18px;
@@ -135,5 +184,13 @@
   &.tczLifeDark {
     background-color: color(dark-bg);
     color: color(primary-white);
+
+    .arrowDisabled {
+      border: 1px solid rgba(color(primary-white), 0.2);
+
+      svg > path {
+        stroke: color(primary-white);
+      }
+    }
   }
 }

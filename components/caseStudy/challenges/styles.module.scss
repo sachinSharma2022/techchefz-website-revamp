@@ -4,6 +4,10 @@
   padding: spacing(section-primary-padding);
   padding-block: spacing(space80);
 
+  @include mobile{
+    padding: 1.75rem 1.5rem;
+  }
+
   .headSec {
     max-width: 49.1875rem;
   }
@@ -15,17 +19,38 @@
     letter-spacing: 0.2rem;
     text-transform: uppercase;
     opacity: 0.8;
+    @include mobile-tablet-p {
+      margin-bottom: 0.75rem;
+    }
   }
   .challengeHeading {
     font-size: text(larger);
     font-weight: 500;
     line-height: 3.375rem;
+    margin-bottom: 5rem;
+    @include mobile-tablet-p {
+      font-size: 2rem;
+      line-height: 2.5rem;
+      margin-bottom: 3.75rem;
+    }
   }
 
   .challengesCards {
     display: flex;
     gap: 2.5rem;
-    padding-top: spacing(space80);
+
+    @include mobile-tablet-p {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: text(lg);
+    }
+
+    @include mobile {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      flex-direction: column;
+      gap: text(lg);
+    }
   }
 
   &.challengesDark {

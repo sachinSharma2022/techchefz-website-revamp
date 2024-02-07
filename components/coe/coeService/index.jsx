@@ -35,7 +35,7 @@ const CoeService = ({props}) => {
             <p className={styles.coeServiceText}>
               {props[0]?.Description}
             </p>
-            <Button variant="outline" size="lg">
+            <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
             {props[0]?.Btn} <Icons.ArrowRight size={18} />
             </Button>
           </div>

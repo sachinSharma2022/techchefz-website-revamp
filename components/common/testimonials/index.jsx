@@ -72,21 +72,76 @@ const Testimonials = ({props}) => {
       className={cn(
         styles.testimonialsStyle,
         theme ? styles.testimonialsStyleDark : "",
+        theme ? "testimonials-style-dark" : "",
         "testimonial-style",
         props.className
       )}
     >
-      <div className={cn(styles.testimonialContainer)}>
+      <div className={cn("primary-container", styles.testimonialContainer)}>
         <div className="row">
-          <div className="col-sm-3">
+          <div className="col-12 col-sm-3">
             <div className={styles.infoSection}>
               <div className={styles.testimonialsLeft}>
-                <p className={styles.projectHighlight}>{props[0]?.Title}</p>
+                <p className={styles.projectHighlight} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
+                  </p>
                 <div className={styles.testimonialsHeading}>
-                  <h3>{props[0]?.SubTitle}</h3>
+                  <h3 dangerouslySetInnerHTML={{ __html: `${props[0]?.SubTitle}`}}>
+                  </h3>
                 </div>
                 <p className={styles.testimonialsText}>{props[0]?.Description}</p>
               </div>
+
+              {/* Mobile Slider */}
+              <div className={styles.mobileSlider}>
+                <Swiper
+                  spaceBetween={5}
+                  slidesPerView={1}
+                  navigation={{
+                    prevEl: navigationPrevRef.current,
+                    nextEl: navigationNextRef.current,
+                  }}
+                  pagination={false}
+                  modules={[Pagination, Navigation]}
+                  className="mySwiper"
+                  onSwiper={(swiper) => {
+                    swiper.params.navigation.prevEl = navigationPrevRef.current;
+                    swiper.params.navigation.nextEl = navigationNextRef.current;
+                    swiper.navigation.destroy();
+                    swiper.navigation.init();
+                    swiper.navigation.update();
+                  }}
+                >
+                  {props[0]?.Testimonials.map((data, index) => (
+                    <SwiperSlide key={index}>
+                      <div className={styles.testimonialCardBox}>
+                        <div className={styles.commaImg}>
+                          <Icons.Comma width={29} height={24} />
+                        </div>
+                        <p className={styles.customerText}>
+                          {data.CustomerText}
+                        </p>
+                        <div className={styles.customerProfile}>
+                          <div className={styles.customerImg}>
+                            <ImageCustom
+                              src={data.img}
+                              width={100}
+                              height={100}
+                              alt="profileImg"
+                            />
+                          </div>
+                          <p className={styles.customerName}>
+                            {data.CustomerName}
+                          </p>
+                          <p className={styles.customerRole}>
+                            {data.CustomerRole}
+                          </p>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+              {/* End Mobile Slider */}
 
               <div className={styles.sliderController}>
                 <button
@@ -106,7 +161,12 @@ const Testimonials = ({props}) => {
           </div>
 
           <div className="col-sm-9">
-            <div className="testimonials-slider">
+            <div
+              className={cn(
+                styles.testimonialsDesktopSlider,
+                "testimonials-slider"
+              )}
+            >
               <Swiper
                 effect={"coverflow"}
                 spaceBetween={5}

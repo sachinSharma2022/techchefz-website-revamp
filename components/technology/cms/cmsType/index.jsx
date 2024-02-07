@@ -1,52 +1,57 @@
 "use client";
 
 import LeftDrawer from "@/components/common/leftDrawer";
-import { Icons } from "@/components/icons";
+import { ImageCustom } from "@/components/ui/imageCustom";
 import PartnerCard from "@/components/ui/partnerCard";
 import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 import { useContext, useState } from "react";
 import styles from "./style.module.scss";
-import Link from "next/link";
-import { ImageCustom } from "@/components/ui/imageCustom";
 
 const CmsType = () => {
-  const { theme , setTheme} = useContext(MyContext);
+  const { theme, setTheme } = useContext(MyContext);
   let [isOpen, setIsOpen] = useState(false);
 
   const typeCard = [
     {
       imgUrl: "/images/drupal.png",
+      darkImgSrc: "/images/partners/shopify-dark.svg",
       sbTitle: "Drupal",
       sbText:
         "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
     },
     {
       imgUrl: "/images/wordpress.png",
+      darkImgSrc: "/images/partners/shopify-dark.svg",
       sbTitle: "WordPress",
       sbText:
         "We Believe In Superior Frontend Development With The Combination Of JavaScript, HTML And CSS.",
     },
     {
       imgUrl: "/images/Shopify.svg",
+      darkImgSrc: "/images/partners/shopify-dark.svg",
       sbTitle: "Shopify",
       sbText:
         "At TechChefz We Provide First-Class Artificial Intelligence And Machine Learning with Expertise.",
     },
     {
       imgUrl: "/images/strapi.png",
+      darkImgSrc: "/images/partners/shopify-dark.svg",
       sbTitle: "Strapi",
       sbText:
         "We Facilitate Easy Cloud Migration And Deliver DevOps Automation And 24*7 Incident Management Services.",
     },
     {
       imgUrl: "/images/aem.svg",
+      darkImgSrc: "/images/partners/shopify-dark.svg",
       sbTitle: "AEM",
       sbText:
         "We Have Expertise In Development Of Mobile Applications Using Native And Hybrid Technologies.",
     },
     {
       imgUrl: "/images/Shopify.svg",
+      darkImgSrc: "/images/partners/shopify-dark.svg",
       sbTitle: "Shopify",
       sbText:
         "At TechChefz We Provide First-Class Artificial Intelligence And Machine Learning with Expertise.",
@@ -54,7 +59,9 @@ const CmsType = () => {
   ];
 
   return (
-    <section className={`${styles.cmsTypeStyle} ${theme ? styles.cmsTypeDark : ""}`}>
+    <section
+      className={`${styles.cmsTypeStyle} ${theme ? styles.cmsTypeDark : ""}`}
+    >
       <div className={cn("primary-container")}>
         <div className={styles.careerRow}>
           <p className={styles.projectHighlight}>Types of CMS</p>
@@ -67,7 +74,8 @@ const CmsType = () => {
           {typeCard.map((data, index) => (
             <PartnerCard
               key={index}
-              imgSrc={data.imgUrl}
+              imgSrc={data.imgSrc}
+              darkImgSrc={data.darkImgSrc}
               cardTitle={data.sbTitle}
               cardContent={data.sbText}
               arrowUp

@@ -6,10 +6,11 @@ import { useContext } from "react";
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { cn } from "@/lib/utils";
-
+import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
 
-const SolutionOurValues = () => {
+const SolutionOurValues = ({props}) => {
+  console.log("mmm",props)
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
   const { theme, setTheme } = useContext(MyContext);
 
@@ -106,21 +107,22 @@ const SolutionOurValues = () => {
     >
       <div className={cn("primary-container", styles.flexContainer)}>
         <div className={styles.ourValuesHead}>
-          <h6 className={styles.ourValuesTitle}>Our Values</h6>
-          <h3 className={styles.ourValuesHeading}>
-            Solutions that Meet Your <span>Requirements</span>
+          <h6 className={styles.ourValuesTitle}>{props.Title}</h6>
+          <h3 className={styles.ourValuesHeading} dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}`}}>
+            
           </h3>
           <p className={styles.ourValuesText}>
-            We specialize in comprehensive website audits that provide valuable
-            insights and recommendations to enhance your online presence.
+            {props?.Description}
           </p>
         </div>
 
         <div className={styles.ourValuesAccordion}>
-          {accordionData.map((data, index) => (
+          {props?.Views.map((data, index) => (
             <Disclosure key={index}>
               {(panel) => {
                 const { open, close } = panel;
+                console.log("jj",data.secoundDescription.split(","))
+
                 return (
                   <>
                     <Disclosure.Button
@@ -133,12 +135,13 @@ const SolutionOurValues = () => {
                       }}
                     >
                       <ImageCustom
-                        src={data.iconUrl}
+                        src={data.Image.data.attributes.url?`${base_Uri}${data.Image.data.attributes.url}`:`${base_Uri}/`}
+                        
                         width={30}
                         height={30}
                         alt="bannerImg"
                       />
-                      <h4 className={styles.title}>{data.title}</h4>
+                      <h4 className={styles.title}>{data.Title}</h4>
                       <div className={styles.iconBox}>
                         {!open ? <Icons.ArrowDown /> : <Icons.ArrowUp />}
                       </div>
@@ -146,16 +149,16 @@ const SolutionOurValues = () => {
                     <Disclosure.Panel className={styles.accordionBody}>
                       <div className={styles.imgBox}>
                         <ImageCustom
-                          src="/images/our-number.jpg"
+                          src={data.img.data.attributes.url?`${base_Uri}${data.img.data.attributes.url}`:`${base_Uri}/`}
                           width={200}
                           height={200}
                           alt="bannerImg"
                         />
                       </div>
                       <div className={styles.accordionBodyContent}>
-                        {data.content}
+                        {data.Description}
                         <ul className={styles.listStyle}>
-                          {data.listItems.map((items, index) => (
+                          {data?.secoundDescription?.split(",").map((items, index) => (
                             <li key={index}>
                               <Icons.CheckIcon />
                               {items}

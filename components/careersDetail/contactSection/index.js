@@ -4,7 +4,7 @@ import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import CountryDropdown from "@/components/ui/countryDropdown";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import CustomInput from "@/components/ui/inputCustom";
+import { Input, Textarea } from "@/components/ui/inputCustom";
 import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import { useContext } from "react";
@@ -51,21 +51,24 @@ const ContactSection = () => {
               <div className={styles.contactFormArea}>
                 <div className="row">
                   <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                    <CustomInput
+                    <Input
+                      variant="default"
                       label="First Name*"
                       placeholder="First Name*"
                       type="name"
                     />
                   </div>
                   <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                    <CustomInput
+                    <Input
+                      variant="default"
                       label="Last Name*"
                       placeholder="Last Name*"
                       type="name"
                     />
                   </div>
                   <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                    <CustomInput
+                    <Input
+                      variant="default"
                       label="Email*"
                       placeholder="Email*"
                       type="email"
@@ -75,44 +78,27 @@ const ContactSection = () => {
                     <CountryDropdown />
                   </div>
                   <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                    <div className="form-floating">
-                      <input
-                        label="Upload CV* (pdf/doc upto 5mb)"
-                        placeholder="Upload CV* (pdf/doc upto 5mb)"
-                        className={`${styles.uploader} form-control`}
-                        id="floatingInput"
-                        // type="file"
-                        // onChange={handleCvFileSelect}
-                      />
-                      <label className={styles.labelCustom} for="floatingInput">
-                        Upload CV* (pdf/doc upto 5mb)
-                      </label>
-                      <div className={styles.uploadIcon}>
-                        <Icons.uploader />
-                      </div>
-                    </div>
+                    <Input
+                      variant="default"
+                      label="Upload CV* (pdf/doc upto 5mb)"
+                      placeholder="Upload CV* (pdf/doc upto 5mb)"
+                      type="text"
+                    />
                   </div>
                   <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                    <CustomInput
+                    <Input
+                      variant="default"
                       label="Portfolio Link"
                       placeholder="Portfolio Link"
                       type="text"
                     />
                   </div>
                   <div className={`${styles.inputSpace} col-md-12 col-12`}>
-                    <div className="form-floating">
-                      <textarea
-                        label="Cover Letter*"
-                        placeholder="Cover Letter*"
-                        className={`${styles.textArea} form-control`}
-                        id="floatingInput"
-                        type="text"
-                        rows="5"
-                      />
-                      <label className={styles.labelCustom} for="floatingInput">
-                        Cover Letter*
-                      </label>
-                    </div>
+                    <Textarea
+                      label="Cover Letter*"
+                      placeholder="Cover Letter*"
+                      rows="5"
+                    />
                   </div>
                 </div>
               </div>
@@ -131,7 +117,7 @@ const ContactSection = () => {
                   <span className={styles.policyHighlight}>Privacy Policy</span>
                 </div>
 
-                <Button variant="blueBtn" size="lg" className={styles.btnGrid}>
+                <Button variant={theme ? "blueBtnDark" : "blueBtn"} size="lg" className={styles.btnGrid}>
                   Send a Message <Icons.ArrowRight size={18} />
                 </Button>
               </div>

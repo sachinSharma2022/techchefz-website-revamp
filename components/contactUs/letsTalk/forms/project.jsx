@@ -4,7 +4,7 @@ import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import CountryDropdown from "@/components/ui/countryDropdown";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import CustomInput from "@/components/ui/inputCustom";
+import { Error, Input, Textarea } from "@/components/ui/inputCustom";
 import { MyContext } from "@/context/theme";
 import { Form, Formik } from "formik";
 import { useContext } from "react";
@@ -46,6 +46,13 @@ const ProjectForm = () => {
       .required("Project Explanation is required"),
   });
 
+  const dropdownData = [
+    { value: "Country", label: "Country" },
+    { value: "India", label: "India" },
+    { value: "united State", label: "united State" },
+    { value: "New York", label: "New York" },
+  ];
+
   return (
     <Formik
       onSubmit={(values) => {
@@ -68,7 +75,7 @@ const ProjectForm = () => {
             <div className={styles.contactFormArea}>
               <div className="row">
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                  <CustomInput
+                  <Input
                     label="First Name*"
                     placeholder="First Name*"
                     type="name"
@@ -79,15 +86,14 @@ const ProjectForm = () => {
                     handleBlur={handleBlur}
                     values={values.firstName}
                     errorStatus={touched.firstName && errors.firstName}
+                    inputError={errors.lastName && true}
                   />
                   {touched.firstName && errors.firstName && (
-                    <div className={styles.errorText}>
-                      {touched.firstName && errors.firstName}
-                    </div>
+                    <Error>{touched.firstName && errors.firstName}</Error>
                   )}
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                  <CustomInput
+                  <Input
                     label="Last Name*"
                     placeholder="Last Name*"
                     type="name"
@@ -98,13 +104,14 @@ const ProjectForm = () => {
                     handleBlur={handleBlur}
                     values={values.lastName}
                     errorStatus={touched.lastName && errors.lastName}
+                    inputError={errors.lastName && true}
                   />
                   {touched.lastName && errors.lastName && (
-                    <div className={styles.errorText}>{errors.lastName}</div>
+                    <Error>{errors.lastName}</Error>
                   )}
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                  <CustomInput
+                  <Input
                     label="Email*"
                     placeholder="Email*"
                     type="email"
@@ -115,9 +122,10 @@ const ProjectForm = () => {
                     handleBlur={handleBlur}
                     values={values.email}
                     errorStatus={touched.email && errors.email}
+                    inputError={errors.lastName && true}
                   />
                   {touched.email && errors.email && (
-                    <div className={styles.errorText}>{errors.email}</div>
+                    <Error>{errors.email}</Error>
                   )}
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
@@ -128,13 +136,14 @@ const ProjectForm = () => {
                     handleBlur={handleBlur}
                     values={values.phone}
                     errorStatus={touched.phone && errors.phone}
+                    inputError={errors.lastName && true}
                   />
                   {touched.phone && errors.phone && (
-                    <div className={styles.errorText}>{errors.phone}</div>
+                    <Error>{errors.phone}</Error>
                   )}
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                  <CustomInput
+                  <Input
                     label="Company Name*"
                     placeholder="Company Name*"
                     type="name"
@@ -145,9 +154,10 @@ const ProjectForm = () => {
                     handleBlur={handleBlur}
                     values={values.companyName}
                     errorStatus={touched.companyName && errors.companyName}
+                    inputError={errors.lastName && true}
                   />
                   {touched.companyName && errors.companyName && (
-                    <div className={styles.errorText}>{errors.companyName}</div>
+                    <Error>{errors.companyName}</Error>
                   )}
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
@@ -157,19 +167,19 @@ const ProjectForm = () => {
                     handleChange={handleChange}
                     handleBlur={handleBlur}
                     values={values.countrySelection}
-                    options={["Country", "India", "united State", "New York"]}
+                    options={dropdownData}
                     errorStatus={
                       touched.countrySelection && errors.countrySelection
                     }
+                    inputError={errors.lastName && true}
+                    className="custom-dropdown"
                   />
                   {touched.countrySelection && errors.countrySelection && (
-                    <div className={styles.errorText}>
-                      {errors.countrySelection}
-                    </div>
+                    <Error>{errors.countrySelection}</Error>
                   )}
                 </div>
                 <div className={`${styles.inputSpace} col-md-12 col-12`}>
-                  <CustomInput
+                  <Textarea
                     label="Brief Explanation of your project**"
                     placeholder="Brief Explanation of your project**"
                     type="textarea"
@@ -185,11 +195,10 @@ const ProjectForm = () => {
                     errorStatus={
                       touched.projectExplanation && errors.projectExplanation
                     }
+                    inputError={errors.lastName && true}
                   />
                   {touched.projectExplanation && errors.projectExplanation && (
-                    <div className={styles.errorText}>
-                      {errors.projectExplanation}
-                    </div>
+                    <Error>{errors.projectExplanation}</Error>
                   )}
                 </div>
               </div>
@@ -209,7 +218,7 @@ const ProjectForm = () => {
                 <span className={styles.policyHighlight}>Privacy Policy</span>
               </div>
               <div className={`${styles.buttonGrid}`}>
-                <Button variant="blueBtn" size="md" type="submit">
+                <Button variant={theme ? "blueBtnDark" : "blueBtn"} size="lg" type="submit">
                   Send a Message <Icons.ArrowRight size={18} />
                 </Button>
               </div>

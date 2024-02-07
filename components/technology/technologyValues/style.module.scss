@@ -19,6 +19,11 @@
     letter-spacing: 0.2rem;
     text-transform: uppercase;
     opacity: 0.8;
+
+    @include mobile-tablet-p {
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+    }
   }
 
   .valuesHeading {
@@ -29,7 +34,7 @@
     @include mobile-tablet-p {
       font-size: 2rem;
       line-height: 2.5rem;
-      margin: 0.75rem 0 1.25rem 0;
+      margin: 0 0 1.25rem 0;
     }
   }
 

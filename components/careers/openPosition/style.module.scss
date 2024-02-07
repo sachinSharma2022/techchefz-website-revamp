@@ -4,7 +4,9 @@
    padding: spacing(section-primary-padding);
    padding-bottom: 0;
 
-   @include mobile {
+   @include mobile-tablet-p {
+      padding: spacing(section-mob-padding);
+      padding-block: 3.75rem 3.75rem;
       padding: 2rem;
    }
 
@@ -13,16 +15,30 @@
       display: flex;
       justify-content: space-between;
 
+      @include mobile-tablet-p {
+         flex-direction: column;
+         margin-bottom: 3.5rem;
+      }
+
       .openPositionHeading {
          font-size: text(larger);
          font-weight: 500;
          line-height: 54px;
          opacity: 0.8;
+         @include mobile-tablet-p {
+            margin-bottom: 2.5rem;
+            font-size: 2rem;
+            line-height: 2.5rem;
+         }
 
          span {
             background: linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%);
             @include textGradient;
             font-size: text(xl-larger);
+            @include mobile-tablet-p {
+               font-size: 2.75rem;
+               line-height: 3.5rem;
+            }
          }
       }
    }
@@ -34,6 +50,12 @@
       display: flex;
       gap: 1.25rem;
 
+      @include mobile-tablet-p {
+         display: block;
+         padding-bottom: 2rem;
+         margin-bottom: 2rem;
+      }
+
       button {
          color: color(text-primary);
          font-size: text(normal);
@@ -43,11 +65,19 @@
          border-radius: 8px;
          padding: 0 2rem;
          height: 44px;
+         white-space: nowrap;
+
+         @include mobile-tablet-p {
+            margin: 0 1.25rem 1.25rem 0;
+            &:last-child {
+               margin-bottom: 0;
+            }
+         }
 
          &:hover {
             background-color: color(primary-white);
             color: color(text-primary);
-            border: 0.14rem solid var(--Gradient, #1e8af2);
+            border: 0.14rem solid color(heading-liner);
          }
       }
    }
@@ -60,7 +90,11 @@
       display: flex;
       gap: 8.938rem;
 
-      @include mobile {
+      &:last-child {
+         margin-bottom: 0;
+      }
+
+      @include mobile-tablet-p {
          padding: 1.5rem;
          flex-direction: column;
          gap: 2.5rem;
@@ -89,6 +123,11 @@
                font-size: text(xxxl);
                font-weight: 500;
                line-height: 2.5rem;
+               @include mobile-tablet-p {
+                  font-size: text(xl);
+                  line-height: 1.875rem;
+                  margin-bottom: 0;
+               }
             }
          }
 
@@ -98,6 +137,10 @@
             background: color(primary-white);
             padding: 2rem;
             border: 0.14rem solid transparent;
+
+            @include mobile-tablet-p {
+               padding: text(lg);
+            }
 
             &.accordionShow {
                border-color: color(heading-liner);
@@ -109,8 +152,8 @@
             justify-content: space-between;
             width: 100%;
 
-            @include mobile {
-               padding: 1rem;
+            @include mobile-tablet-p {
+               padding: 0;
             }
 
             .buttonTitle {
@@ -118,6 +161,11 @@
                   font-size: text(xl);
                   font-weight: 500;
                   line-height: 2rem;
+                  @include mobile-tablet-p {
+                     font-size: text(lg);
+                     line-height: text(xl);
+                     margin-bottom: 0.375rem;
+                  }
                }
                p {
                   margin: 0;
@@ -148,12 +196,19 @@
                font-weight: 500;
                line-height: 2rem;
                margin-bottom: 1rem;
+               @include mobile-tablet-p {
+                  margin-bottom: 0.5rem;
+               }
             }
             p {
                font-size: text(lg);
                font-weight: 400;
                line-height: 30px;
                opacity: 0.6;
+
+               @include mobile-tablet-p {
+                  font-size: text(normal);
+               }
             }
             ul {
                list-style: square;
@@ -164,6 +219,10 @@
                li {
                   opacity: 0.6;
                   font-size: text(lg);
+
+                  @include mobile-tablet-p {
+                     font-size: text(normal);
+                  }
                }
             }
          }
@@ -176,7 +235,14 @@
             align-items: flex-start;
             gap: 2rem;
 
+            @include mobile-tablet-p {
+               flex-direction: column;
+            }
+
             button {
+               @include mobile-tablet-p {
+                  width: 100%;
+               }
                &:first-child {
                   white-space: nowrap;
                }
@@ -191,33 +257,34 @@
       color: color(primary-white);
       padding-bottom: 2.5rem;
 
-      .serviceBtn{
-        button{
-          background: color(text-primary);
-          color: color(primary-white);
-          border: 1px solid rgba(255, 255, 255, 0.40);
+      .serviceBtn {
+         border-color: rgba(color(primary-white), 0.12);
 
-          &:hover{
-            border: 1px solid var(--Gradient, #1E8AF2);
-          }
-        }
+         button {
+            background: color(text-primary);
+            color: color(primary-white);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+
+            &:hover {
+               border: 1px solid color(heading-liner);
+            }
+         }
       }
 
-      .openPositionContent{
-        background: color(dark-bg);
+      .openPositionContent {
+         background: color(dark-bg);
 
-        .accordionBody{
-          background-color: color(text-primary);
-        }
+         .accordionBody {
+            background-color: color(text-primary);
+         }
 
-        .accordionButton{
-          color: color(primary-white);
-          
-          .buttonIcon{
-            background: color(dark-bg);
-          }
-        }
+         .accordionButton {
+            color: color(primary-white);
 
+            .buttonIcon {
+               background: color(dark-bg);
+            }
+         }
       }
    }
 }

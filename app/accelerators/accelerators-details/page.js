@@ -1,20 +1,28 @@
 import DetailBanner from "@/components/accelerators/acceleratorDetail/acceleratorDetailBanner";
-import AcceleratorIndustry from "@/components/accelerators/acceleratorDetail/acceleratorIndustry";
 import Impact from "@/components/accelerators/acceleratorDetail/acceleratorImpact";
-import Challenges from "@/components/caseStudy/challenges";
+import AcceleratorIndustry from "@/components/accelerators/acceleratorDetail/acceleratorIndustry";
+import FeatureCard from "@/components/accelerators/acceleratorDetail/featureCard";
 import LetsWork from "@/components/home/letsWork";
 import RelatedCase from "@/components/relatedCase";
+import { getData } from "@/lib/fetchData";
+import { api_acceleratorsDeatial_Page } from "@/lib/constants";
 
-const AcceleratorDetails = () => {
+const AcceleratorDetails = async() => {
+  const data = await getData(api_acceleratorsDeatial_Page)
   return (
-    <div>
+    <>{data?  <div>
       <DetailBanner />
       <AcceleratorIndustry />
       <Impact />
-      <Challenges />
-      <RelatedCase sliderClassName="mb-0" className="mt-5" />
+      <FeatureCard />
+      <RelatedCase
+        className="mt-0 mb-5 pt-5 pb-0"
+        props={data.CaseStudy}
+      />
       <LetsWork />
-    </div>
+    </div>:<></>}
+    </>
+  
   );
 };
 

@@ -8,10 +8,19 @@
   height: auto;
   padding: 2.5rem;
 
+  @include mobile-tablet-p {
+    padding: text(lg);
+  }
+
   h5 {
     font-size: text(xl);
     font-weight: 500;
     line-height: 2.125rem;
+    @include mobile-tablet-p {
+      font-size: text(lg);
+      line-height: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
   }
 
   p {
@@ -19,6 +28,7 @@
     font-weight: 400;
     line-height: 1.5rem;
     opacity: 0.8;
+    margin-bottom: 0;
   }
 
   &.titleCardDark {

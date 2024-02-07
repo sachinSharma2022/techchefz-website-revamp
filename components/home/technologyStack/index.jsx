@@ -12,20 +12,20 @@ import styles from "./style.module.scss";
 const TechnologyStack = ({technology}) => {
   const { theme, setTheme } = useContext(MyContext);
 
-  const countsCard = [
-    {
-      count: "930+",
-      countText: "Partners",
-    },
-    {
-      count: "3000+",
-      countText: "Integrations",
-    },
-    {
-      count: "500+",
-      countText: "System Integrations",
-    },
-  ];
+  // const countsCard = [
+  //   {
+  //     count: "930+",
+  //     countText: "Partners",
+  //   },
+  //   {
+  //     count: "3000+",
+  //     countText: "Integrations",
+  //   },
+  //   {
+  //     count: "500+",
+  //     countText: "System Integrations",
+  //   },
+  // ];
 
   function move(e) {
     const el = document.getElementById("tech-Stack");
@@ -52,39 +52,27 @@ const TechnologyStack = ({technology}) => {
       <div className={cn("primary-container")}>
         <div className={styles.technologyStackBox}>
           <div className={styles.careerRow}>
-            <div className="row">
-              <div className="col-md-12 col-12">
-                <p className={styles.ProjectHighlight}>{technology[0]?.Title}</p>
-              </div>
-
-              <div className="col-md-12 col-12">
-                <h2 className={styles.techHeading}>
-                {technology[0]?.SubTitle}
-                </h2>
-              </div>
-              <div className="col-md-12 col-12">
-                <p className={styles.techText}>
-                {technology[0]?.Description}
-                </p>
-              </div>
-              <div className="row">
-                <div className={styles.partnerCounter}>
-                  {technology[0]?.Ratings.map((data, index) => (
-                    <div key={index} className={styles.counterCard}>
-                      <h3 className={styles.counts}>{data.Rating}</h3>
-                      <p className={styles.countsText}>{data.Title}</p>
-                    </div>
-                  ))}
+            <p className={styles.ProjectHighlight}>{technology[0]?.Title}</p>
+            <h3 className={styles.techHeading}> {technology[0]?.SubTitle}</h3>
+            <p className={styles.techText}>
+            {technology[0]?.Description}
+            </p>
+            <div className={styles.partnerCounter}>
+              {technology[0]?.Ratings.map((data, index) => (
+                <div key={index} className={styles.counterCard}>
+                  <h3 className={styles.counts}>{data.Rating}</h3>
+                  <p className={styles.countsText}>{data.Title}</p>
                 </div>
-              </div>
-              <div className="col-md-12 col-12">
-                <Link href="/technology">
-                  <Button variant="outline" size="md">
-                  {technology[0]?.Btn} <Icons.ArrowRight size={18} />
-                  </Button>
-                </Link>
-              </div>
+              ))}
             </div>
+            <Link href="/technology">
+              <Button
+                variant={theme ? "lightBlueOutline" : "outline"}
+                size="md"
+              >
+                {technology[0]?.Btn} <Icons.ArrowRight size={18} />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

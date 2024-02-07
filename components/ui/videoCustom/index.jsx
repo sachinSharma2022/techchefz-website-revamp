@@ -2,10 +2,11 @@
 
 import { useContext, useEffect, useRef } from "react";
 import { MyContext } from "@/context/theme";
-
+import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
 
-const VideoCustom = (props) => {
+const VideoCustom = ({props}) => {
+ 
   const { theme } = useContext(MyContext);
   const videoRef = useRef();
 
@@ -29,7 +30,8 @@ const VideoCustom = (props) => {
         ref={videoRef}
         {...props}
       >
-        <source src={props.src} type={props.type || "video/mp4"} />
+        <source src={props?.Video?.data.attributes.url?`${base_Uri}${props?.Video?.data.attributes.url}`:`${base_Uri}/`}
+         type={props.type || "video/mp4"} />
       </video>
     </div>
   );

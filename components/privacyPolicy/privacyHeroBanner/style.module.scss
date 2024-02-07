@@ -2,7 +2,7 @@
 
 .privacyHeroBannerStyle {
   padding-inline: spacing(p-120);
-  padding-block: 6.25rem 9.1rem;
+  padding-block: 11.25rem 9.1rem;
 
   @include mobile-tablet-p {
     padding: spacing(section-mob-padding);
@@ -48,6 +48,9 @@
     font-weight: 400;
     color: rgba(color(text-primary), 0.8);
     margin-bottom: 0;
+
+    @include mobile-tablet-p {
+    }
   }
 
   // Dark Mode

@@ -1,14 +1,51 @@
 "use client";
 import { Icons } from "@/components/icons";
+import { Button } from "@/components/ui/button";
 import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import { useContext } from "react";
-import { Button } from "@/components/ui/button";
 
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
 import styles from "./style.module.scss";
 
 const Streamline = () => {
+  let component = useRef(null);
   const { theme, setTheme } = useContext(MyContext);
+  gsap.registerPlugin(ScrollTrigger);
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: `.${styles.streamLineWrapper}`,
+          scrub: 1,
+          start: "top 6%",
+          pin: true,
+          invalidateOnRefresh: true,
+          anticipatePin: 1,
+        },
+      });
+      tl.to(`.${styles.streamLineSection}`, {
+        xPercent: -101,
+        ease: "none",
+      })
+        .to(
+          `.${styles.streamLineCards}`,
+          {
+            xPercent: -100,
+            ease: "none",
+            duration: 1,
+          },
+          "<"
+        )
+        .to(`.${styles.streamLineCards}`, {
+          duration: 0.1,
+        });
+    });
+    return () => ctx.revert();
+  }, []);
+
   const streamlineCard = [
     {
       icons: (
@@ -20,11 +57,7 @@ const Streamline = () => {
     },
     {
       icons: (
-        <Icons.MarketPlace
-          className={styles.cardIcon}
-          width={120}
-          height={120}
-        />
+        <Icons.Platforms className={styles.cardIcon} width={120} height={120} />
       ),
       title: "E-commerce",
       content:
@@ -64,7 +97,8 @@ const Streamline = () => {
     },
   ];
   return (
-    <section
+    <div
+      id="streamLineWrapper"
       className={`${styles.streamLineWrapper} ${
         theme ? styles.streamlineDark : ""
       }`}
@@ -83,21 +117,21 @@ const Streamline = () => {
       </section>
 
       {/* Other sections */}
-      <div className={styles.streamLineCards}>
+      <section ref={component} className={styles.streamLineCards}>
         {streamlineCard.map((data, index) => (
-          <section key={index}>
+          <div key={index}>
             <div className={styles.streamlineCard}>
               {data.icons}
               <h6 className={styles.cardTitle}>{data.title} </h6>
               <p className={styles.cardContent}>{data.content}</p>
-              <Button variant="outline" size="lg">
+              <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
                 Learn More <Icons.ArrowRight size={18} />
               </Button>
             </div>
-          </section>
+          </div>
         ))}
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 

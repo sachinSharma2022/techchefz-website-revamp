@@ -4,7 +4,7 @@ import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import CountryDropdown from "@/components/ui/countryDropdown";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import CustomInput from "@/components/ui/inputCustom";
+import { Input, Textarea } from "@/components/ui/inputCustom";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 
@@ -35,39 +35,29 @@ const LetsWork = ({contact}) => {
                 {contact?.Description}
               </p>
               <div className={styles.contactFormArea}>
-                <div className="row">
-                  <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                    <CustomInput
-                      label="Full Name*"
-                      placeholder="Full Name*"
-                      type="name"
-                    />
-                  </div>
-                  <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                    <CustomInput
-                      label="Email*"
-                      placeholder="Email*"
-                      type="email"
-                    />
-                  </div>
-                  <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                    <CountryDropdown />
-                  </div>
-                  <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                    <CustomInput
-                      label="Company*"
-                      placeholder="Company*"
-                      type="text"
-                    />
-                  </div>
-                  <div className={`${styles.inputSpace} col-md-12 col-12`}>
-                    <CustomInput
-                      label="Message*"
-                      placeholder="Message*"
-                      type="textarea"
-                      rows="4"
-                    />
-                  </div>
+                <div className={`${styles.inputSpace}`}>
+                  <Input
+                    label="Full Name*"
+                    placeholder="Full Name*"
+                    type="name"
+                  />
+                </div>
+                <div className={`${styles.inputSpace}`}>
+                  <Input label="Email*" placeholder="Email*" type="email" />
+                </div>
+                <div className={`${styles.inputSpace}`}>
+                  <CountryDropdown />
+                </div>
+                <div className={`${styles.inputSpace}`}>
+                  <Input label="Company*" placeholder="Company*" type="text" />
+                </div>
+                <div className={`${styles.inputSpace}`}>
+                  <Textarea
+                    label="Message*"
+                    placeholder="Message*"
+                    type="textarea"
+                    rows="4"
+                  />
                 </div>
               </div>
               <div className={styles.captchaImg}>
@@ -89,7 +79,7 @@ const LetsWork = ({contact}) => {
                     </div>
                   </div>
                   <div className={`${styles.buttonGrid} col-md-6 col-12`}>
-                    <Button variant="blueBtn" size="md">
+                    <Button variant="blueBtn" size="lg">
                      {contact?.Btn} <Icons.ArrowRight size={18} />
                     </Button>
                   </div>
@@ -98,12 +88,12 @@ const LetsWork = ({contact}) => {
             </div>
 
             <div className={styles.contactImg}>
-              {/* <ImageCustom
-                 src={base_Uri+contact?.Image?.data?.attributes?.url}
+              <ImageCustom
+                 src={contact?.Image?.data?.attributes?.url?`${base_Uri}${contact?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
                 width={480}
                 height={616}
                 alt="contactImg"
-              /> */}
+              />
             </div>
           </div>
         </div>

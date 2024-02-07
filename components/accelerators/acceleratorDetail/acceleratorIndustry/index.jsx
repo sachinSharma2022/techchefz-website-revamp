@@ -22,7 +22,7 @@ const AcceleratorIndustry = () => {
               <h4 className={styles.heading}>Media & Entertainment</h4>
             </div>
 
-            <h6>Tags</h6>
+            <h6>Services</h6>
             <div className={styles.serviceBtn}>
               <button variant="outline" size="xs">
                 Trending
@@ -42,7 +42,7 @@ const AcceleratorIndustry = () => {
                 products and information through intuitive conversational
                 queries.
               </p>
-              <Button variant="lightBlueOutline" className="info" size="md">
+              <Button variant={theme ? "lightBlueOutline" : "outline"} className="info" size="md">
                 Access the Git Repository <Icons.ArrowRight size={18} />
               </Button>
             </div>

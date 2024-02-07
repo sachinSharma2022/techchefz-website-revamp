@@ -2,31 +2,49 @@
 
 .inputContainerStyle {
   width: 100%;
+  position: relative;
 
-  &.inputContainerStyleDark {
-    .floatInput {
-      background-color: color(dark-gray);
-      border: 0.14rem solid rgba(color(primary-white), 0.12);
-      color: rgba(color(primary-white), 0.9);
-    }
-    .labelCustom {
-      color: rgba(color(primary-white), 0.5) !important;
-      &::after {
-        display: none;
-      }
-    }
-  }
-
-  .floatInput {
-    padding: 1.125rem;
-    font-size: text(normal);
+  .inputFloating {
+    position: relative;
+    display: flex;
+    border: 0.14rem solid rgba(color(text-primary), 0.12);
     border-radius: 0.75rem;
+    font-size: text(normal);
     font-weight: 400;
+    overflow: hidden;
+    background-color: color(primary-white);
+    @include transition(0.5s);
 
+    &:hover,
     &:focus {
-      box-shadow: none;
+      border-color: color(heading-liner);
+    }
+
+    &.inputErrorStyle {
+      border-color: color(error);
+    }
+  
+
+    .iconStyle {
+      position: absolute;
+      right: 0;
+      z-index: 1;
+      top: 15px;
+      right: 15px;
+    }
+
+    input {
       border: none;
-      border-color: transparent;
+      box-shadow: none;
+      background: none;
+    }
+
+    textarea {
+      border: none;
+      box-shadow: none;
+      background: none;
+      height: auto;
+      resize: none;
     }
   }
 
@@ -36,6 +54,42 @@
     line-height: text(xl);
     font-weight: 400;
     font-family: font(primary);
-    padding-inline: 1.125rem;
+    width: 100%;
+  } 
+
+  // Dark Mode
+  &.inputContainerStyleDark {
+    .inputFloating {
+      border: 0.14rem solid rgba(color(primary-white), 0.12);
+      background-color: color(text-primary);
+
+      &.inputErrorStyle {
+        border-color: color(error);
+      }
+
+      &:hover,
+      &:focus {
+        border-color: color(heading-liner);
+      }
+    }
+
+    input {
+      color: color(primary-white);
+    }
+
+    .labelCustom {
+      color: rgba(color(primary-white), 0.5) !important;
+
+      &::after {
+        display: none;
+      }
+    }
   }
 }
+
+.error {
+  color: color(error);
+  position: absolute;
+  font-size: .8rem;
+  bottom: -2.625rem;
+} 

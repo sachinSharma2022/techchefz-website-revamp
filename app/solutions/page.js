@@ -1,3 +1,4 @@
+
 import Faq from "@/components/common/faq";
 import RelatedCase from "@/components/relatedCase";
 import SolutionHeroBanner from "@/components/solutions/solutionHeroBanner";
@@ -10,15 +11,17 @@ import { getData } from "@/lib/fetchData";
 import styles from "./style.module.scss";
 import SolutionCaseStudy from "@/components/solutions/solutionCaseStudy";
 
+
 const Solutions = async() => {
   const data = await getData(api_Solutions_Page)
 return (
     <div className={styles.solutionsPageStyle}>
       <SolutionHeroBanner props={data.Banner} />
-      <SolutionOurValues />
+      <SolutionOurValues props={data.ourValues} />
       <SolutionTheProcess props={data.OurProcess} />
       <SolutionTechnologies props={data.Technology} />
-      <SolutionCaseStudy />
+      {/* <SolutionCaseStudy /> */}
+      <RelatedCase sliderClassName="mb-0" props={data.CaseStudy} />
       <Faq props ={data.Faq} />
     </div>
   );

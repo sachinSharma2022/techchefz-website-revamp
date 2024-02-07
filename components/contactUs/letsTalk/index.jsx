@@ -52,6 +52,11 @@ const LetsTalk = () => {
       .required("Project Explanation is required"),
   });
 
+  const dropdownData = [
+    { value: "Contact us for project ideas.", label: "Data" },
+    { value: "Contact us for project.", label: "It Development" },
+  ];
+
   return (
     <section className={cn("primary-container")}>
       <div
@@ -73,13 +78,7 @@ const LetsTalk = () => {
 
           <div className={`${styles.tabDropdownMob} col-md-6 col-12`}>
             <h3 className={styles.tabDropLabel}>Choose Purpose</h3>
-            <CustomDropdown
-              title="Projects"
-              options={[
-                "Contact us for project ideas.",
-                "Contact us for project.",
-              ]}
-            />
+            <CustomDropdown title="Projects" options={dropdownData} />
           </div>
 
           <div className={styles.contactTabWrap}>
@@ -87,7 +86,12 @@ const LetsTalk = () => {
               <Tab.List>
                 <Tab>
                   {({ selected }) => (
-                    <div className={styles.contactInnerFlex}>
+                    <div
+                      className={cn(
+                        styles.contactInnerFlex,
+                        selected && styles.buttonActive
+                      )}
+                    >
                       <div className={styles.highlightIcon}>
                         <Icons.CustomDevelopment size={40} />
                         <h1>Projects</h1>
@@ -103,7 +107,12 @@ const LetsTalk = () => {
                 </Tab>
                 <Tab>
                   {({ selected }) => (
-                    <div className={styles.contactInnerFlex}>
+                    <div
+                      className={cn(
+                        styles.contactInnerFlex,
+                        selected && styles.buttonActive
+                      )}
+                    >
                       <div className={styles.highlightIcon}>
                         <Icons.Intelligence size={40} />
                         <h1>Services</h1>
@@ -119,7 +128,12 @@ const LetsTalk = () => {
                 </Tab>
                 <Tab>
                   {({ selected }) => (
-                    <div className={styles.contactInnerFlex}>
+                    <div
+                      className={cn(
+                        styles.contactInnerFlex,
+                        selected && styles.buttonActive
+                      )}
+                    >
                       <div className={styles.highlightIcon}>
                         <Icons.Platforms size={40} />
                         <h1>Jobs</h1>
@@ -135,7 +149,12 @@ const LetsTalk = () => {
                 </Tab>
                 <Tab>
                   {({ selected }) => (
-                    <div className={styles.contactInnerFlex}>
+                    <div
+                      className={cn(
+                        styles.contactInnerFlex,
+                        selected && styles.buttonActive
+                      )}
+                    >
                       <div className={styles.highlightIcon}>
                         <Icons.Market size={40} />
                         <h1>Vendors</h1>

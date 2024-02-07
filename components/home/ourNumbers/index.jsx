@@ -1,5 +1,6 @@
 "use client";
 
+import ServiceInfoCard from "@/components/common/serviceInfoCard";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
@@ -9,32 +10,12 @@ import { useContext } from "react";
 import Slider from "react-slick";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
+import TextRevel from "@/components/ui/sectionAnimation";
+import MobileSlider from "@/components/common/mobileSlider";
 
 const OurNumbers = ({carrer,experience}) => {
+  console.log("vvvv",experience)
   const { theme, setTheme } = useContext(MyContext);
-
-  // const serviceCard = [
-  //   {
-  //     icon: <Icons.Market width={56} height={56} />,
-  //     sbTitle: "4+",
-  //     sbText: "Years of Experience in Market.",
-  //   },
-  //   {
-  //     icon: <Icons.MarketPlace width={56} height={56} />,
-  //     sbTitle: "1M+",
-  //     sbText: "Users growth in marketplace.",
-  //   },
-  //   {
-  //     icon: <Icons.Rates width={56} height={56} />,
-  //     sbTitle: "300%",
-  //     sbText: "Elevated Conversion Rates.",
-  //   },
-  //   {
-  //     icon: <Icons.PerformanceIcon width={56} height={56} />,
-  //     sbTitle: "120%",
-  //     sbText: "Enhanced SaaS CRO Performance.",
-  //   },
-  // ];
   const settings = {
     className: "center",
     centerPadding: "0px",
@@ -44,6 +25,16 @@ const OurNumbers = ({carrer,experience}) => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    nextArrow: (
+      <div>
+        <Icons.SliderArrow width="15" height="15" />
+      </div>
+    ),
+    prevArrow: (
+      <div>
+        <Icons.SliderArrow width="15" height="15" />
+      </div>
+    ),
 
     responsive: [
       {
@@ -56,20 +47,11 @@ const OurNumbers = ({carrer,experience}) => {
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 767,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 1.3,
           slidesToScroll: 1,
           arrows: true,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: true,
-          centerPadding: "15px",
         },
       },
     ],
@@ -79,28 +61,27 @@ const OurNumbers = ({carrer,experience}) => {
       className={`${styles.numberStyle} ${theme ? styles.numberStyleDark : ""}`}
     >
       <div className={cn("primary-container")}>
-        <div className={styles.careerRow}>
-          <div className="row justify-content-between align-items-end">
-            <div className="col-md-8 col-lg-8 col-12">
-              <p className={styles.ProjectHighlight}>{carrer.title}</p>
-              <h2 className={styles.datingText}>
-              {carrer.description}
-              </h2>
-            </div>
+        <TextRevel>
+          <div className={styles.careerRow}>
+            <div >
+        
+                <p className={styles.projectHighlight}>{carrer.title}</p>
+                <h2 className={styles.datingText}>
+                {carrer.description}
+                </h2>
+              
 
-            <div className="col-md-4 col-lg-4 col-12 text-end">
-              <Button variant="outline" size="md">
-              {carrer.button} <Icons.ArrowRight size={18} />
-              </Button>
-            </div>
+            <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
+            {carrer.button}<Icons.ArrowRight size={18} />
+            </Button>
           </div>
-        </div>
-
+          </div>
+        </TextRevel>
         <div className={styles.ourNumberMain}>
           <div className={styles.ourNumberGrid}>
             <div className={styles.ourNumbersImg}>
               <ImageCustom
-                src={base_Uri+experience[0]?.Image?.data?.attributes?.formats?.small?.url}
+                src={experience[0].Image.data.attributes.url?`${base_Uri}${experience[0].Image.data.attributes.url}`:`${base_Uri}/`}
                 width={1000}
                 height={100}
                 alt="bannerImg"
@@ -108,38 +89,34 @@ const OurNumbers = ({carrer,experience}) => {
             </div>
             <div>
               <p className={styles.ourNumbersText}>
-               {experience.Description}
+               {experience[0].Description}
               </p>
               <div
                 className={`${styles.desktopCards} ${styles.ourNumberOption} `}
               >
                 {experience[0].Vews.map((data, index) => (
-                  <div key={index} className={styles.serviceBox}>
-                    <div className={styles.numberCardFlex}>
-                      <h2 className={styles.sbTitle}>{data.Title}</h2>
-                      <div className={styles.bgIcon}><img src={base_Uri+data?.Image?.data?.attributes?.url} alt="" /></div>
-                    </div>
-
-                    <p className={styles.sbText}>{data.Description}</p>
-                  </div>
+                  <ServiceInfoCard
+                    key={index}
+                    sbTitle={data.Title}
+                    icon={data?.Image?.data.attributes.url?`${base_Uri}${data?.Image?.data.attributes.url}`:`${base_Uri}/`}
+                    sbText={data.Description}
+                  />
                 ))}
               </div>
             </div>
           </div>
 
-          <div className={`${styles.ourNumberOption} service-mobile-slider`}>
-            <Slider {...settings}>
+          <div className={cn(styles.mobileCards, styles.ourNumberOption)}>
+            <MobileSlider slidesToShow={1.3}>
               {experience[0].Vews.map((data, index) => (
-                <div key={index} className={styles.serviceBox}>
-                  <div className={styles.numberCardFlex}>
-                      <h2 className={styles.sbTitle}>{data.Title}</h2>
-                      <div className={styles.bgIcon}><img src={base_Uri+data?.Image?.data?.attributes?.url} alt="" /></div>
-                    </div>
-
-                    <p className={styles.sbText}>{data.Description}</p>
-                </div>
+                <ServiceInfoCard
+                key={index}
+                    sbTitle={data.Title}
+                    icon={data?.Image?.data.attributes.url?`${base_Uri}${data?.Image?.data.attributes.url}`:`${base_Uri}/`}
+                    sbText={data.Description}
+                />
               ))}
-            </Slider>
+            </MobileSlider>
           </div>
         </div>
       </div>

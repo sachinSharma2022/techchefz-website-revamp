@@ -44,7 +44,7 @@ const TechnologyValues = () => {
         "We believe in a customer-centric ethic without and people-centric paradigm within.",
     },
     {
-      icon: <Icons.PerformanceIcon width={56} height={56} />,
+      icon: <Icons.MarketPlace width={56} height={56} />,
       title: "Excellence in Delivery",
       imgUrl:
         "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -54,9 +54,12 @@ const TechnologyValues = () => {
   ];
   return (
     <section
-      className={`${styles.technologyValues} ${
-        theme ? styles.technologyValuesDark : ""
-      } technology-value`}
+      className={cn(
+        styles.technologyValues,
+        theme ? styles.technologyValuesDark : "",
+        "technology-value",
+        theme ? "technology-value-dark" : ""
+      )}
     >
       <div className={cn("primary-container")}>
         <div className={styles.headSection}>

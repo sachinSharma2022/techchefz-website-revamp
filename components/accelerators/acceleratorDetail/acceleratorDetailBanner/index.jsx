@@ -26,7 +26,7 @@ const DetailBanner = () => {
               technologies, users can find specific products or information in a
               more intuitive and human-like manner.
             </p>
-            <Button variant="blueBtn" className={styles.headerBtn} size="md">
+            <Button variant={theme ? "blueBtnDark" : "blueBtn"} className={styles.headerBtn} size="md">
               Request a Demo <Icons.ArrowRight size={20} className="ms-2" />
             </Button>
           </div>

@@ -1,0 +1,25 @@
+@import "~/styles/partials/config";
+
+.wrapperStyle {
+  position: relative;
+  z-index: 99;
+
+  .inputErrorStyle {
+    border-color: color(error);
+  }
+
+  .customLabel {
+    font-size: 0.875rem;
+    opacity: 0.6;
+    background: none;
+    position: absolute;
+    top: 8px;
+    left: 12px;
+  }
+
+  &.darkThemeStyle {
+    .customLabel {
+      color: color(primary-white);
+    }
+  }
+}

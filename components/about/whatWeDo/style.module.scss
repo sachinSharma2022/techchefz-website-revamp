@@ -3,35 +3,17 @@
 .whatWeDo {
   padding: spacing(section-primary-padding);
 
-  &.whatWeDoDark {
-    background-color: color(input-bg);
-    color: color(primary-white);
-
-    .weDoTitle {
-      color: color(primary-white);
-    }
-
-    .workCardWrapper {
-      .workCardMain {
-        &:hover {
-          .workCard {
-            .workCols {
-              border: 0.14rem solid color(info-blue);
-            }
-          }
-        }
-        .workCard {
-          .workCols {
-            background-color: color(text-primary);
-            border: 0.14rem solid rgba(color(primary-white), 0.12);
-          }
-        }
-      }
-    }
+  @include mobile-tablet-p {
+    padding: 0;
   }
 
   .flexContainer {
     max-width: 48rem;
+
+    @include mobile-tablet-p {
+      max-width: 100%;
+      padding: 5rem 1.25rem;
+    }
   }
 
   .weDoTitle {
@@ -43,10 +25,21 @@
     font-weight: 500;
     line-height: 1.5rem;
     letter-spacing: 0.2rem;
+
+    @include mobile-tablet-p {
+      margin-bottom: 0.75rem;
+      font-weight: 400;
+    }
   }
   .weDoHeading {
     font-size: text(larger);
     margin-bottom: 2.75rem;
+
+    @include mobile-tablet-p {
+      font-size: 2rem;
+      line-height: 2.5rem;
+      margin-bottom: 0;
+    }
   }
   .workCardWrapper {
     display: grid;
@@ -64,73 +57,128 @@
     @include mobile {
       grid-template-columns: repeat(1, 1fr);
     }
+  }
 
-    .workCardMain {
-      height: 19.25rem;
+  .workCardMain {
+    height: 19.25rem;
 
-      .workCard {
-        transition: transform 1s;
-        transform-style: preserve-3d;
+    @include mobile-tablet-p {
+      max-width: 90%;
+    }
 
-        .workCols {
-          min-width: 16.875rem;
-          height: 19.25rem;
-          border: 0.14rem solid rgba(color(text-primary), 0.12);
-          border-radius: 1.25rem;
-          position: relative;
-          cursor: pointer;
-          overflow: hidden;
-          padding: spacing(section-primary-padding);
-          padding: 2rem;
-        }
+    .workCard {
+      transition: transform 1s;
+      transform-style: preserve-3d;
 
-        .frontCard,
-        .backCard {
-          position: absolute;
-          width: 100%;
-          backface-visibility: hidden;
-        }
+      .workCols {
+        min-width: 16.875rem;
+        height: 19.25rem;
+        border: 0.14rem solid rgba(color(text-primary), 0.12);
+        border-radius: 1.25rem;
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+        padding: spacing(section-primary-padding);
+        padding: 2rem;
 
-        .backCard {
-          transform: rotateY(180deg);
-          h6 {
-            margin-top: 0;
-            padding-bottom: 0.5rem;
-          }
-        }
-
-        .workCardIcon {
-          transition: all 0.5s;
-        }
-
-        &:hover {
-          border-color: color(heading-liner);
-        }
-
-        h6 {
-          font-size: text(xl);
-          position: relative;
-          width: 100%;
-          max-width: 9rem;
-          margin-top: 5.5rem;
-          padding-bottom: 2rem;
-          transition: all 0.5s;
-        }
-
-        p {
-          font-size: text(normal);
-          opacity: 0.8;
+        @include mobile-tablet-p {
+          min-width: 100%;
+          max-width: 90vw;
+          padding: 2rem 1rem;
         }
       }
 
+      .frontCard,
+      .backCard {
+        position: absolute;
+        width: 100%;
+        backface-visibility: hidden;
+      }
+
+      .backCard {
+        transform: rotateY(180deg);
+        h6 {
+          margin-top: 0;
+          padding-bottom: 0.5rem;
+          @include mobile-tablet-p {
+            font-size: text(lg);
+            line-height: 1.75rem;
+            margin-bottom: 2rem;
+          }
+        }
+      }
+
+      .workCardIcon {
+        transition: all 0.5s;
+      }
+
+      &:hover {
+        border-color: color(heading-liner);
+      }
+
+      h6 {
+        font-size: text(xl);
+        position: relative;
+        width: 100%;
+        max-width: 9rem;
+        margin-top: 5.5rem;
+        padding-bottom: 2rem;
+        transition: all 0.5s;
+        @include mobile-tablet-p {
+          font-size: text(lg);
+          font-weight: 500;
+          line-height: text(lg);
+        }
+      }
+
+      p {
+        font-size: text(normal);
+        opacity: 0.8;
+        @include mobile-tablet-p {
+          line-height: text(xl);
+          font-weight: 400;
+        }
+      }
+    }
+
+    &:hover {
+      .workCard {
+        transform: rotateY(180deg);
+        transition: transform 0.5s;
+      }
+
+      .workCols {
+        border: 0.14rem solid color(heading-liner);
+      }
+    }
+  }
+
+  .mobileSlider {
+    padding-left: 1.25rem;
+    padding-bottom: 5rem;
+  }
+
+  // Dark Mode
+  &.whatWeDoDark {
+    background-color: color(input-bg);
+    color: color(primary-white);
+
+    .weDoTitle {
+      color: color(primary-white);
+    }
+
+    .workCardMain {
       &:hover {
         .workCard {
-          transform: rotateY(180deg);
-          transition: transform 0.5s;
+          .workCols {
+            border: 0.14rem solid color(info-blue);
+          }
         }
-
+      }
+      .workCard {
         .workCols {
-          border: 0.14rem solid color(heading-liner);
+          background-color: color(text-primary);
+          border: 0.14rem solid rgba(color(primary-white), 0.12);
         }
       }
     }

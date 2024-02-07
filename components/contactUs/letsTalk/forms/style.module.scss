@@ -41,4 +41,32 @@
       cursor: pointer;
     }
   }
+
+  .policyArea {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .policyText {
+      font-size: text(xxs);
+      font-weight: 400;
+      line-height: text(lg);
+      max-width: 21.5rem;
+
+      @include mobile {
+        margin-bottom: text(lg);
+      }
+
+      .policyHighlight {
+        color: color(primary-blue);
+        font-size: text(xxs);
+        margin-left: 3px;
+      }
+    }
+  }
 }

@@ -1,16 +1,17 @@
 "use client";
 
-import Slider from "react-slick";
-import { useContext } from "react";
-import { MyContext } from "@/context/theme";
+import MobileSlider from "@/components/common/mobileSlider";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
-import styles from "./style.module.scss";
+import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { base_Uri } from "@/lib/constants";
+import { useContext } from "react";
+import styles from "./style.module.scss";
 
 const Service = ({props}) => {
+  
   const { theme, setTheme } = useContext(MyContext);
 
   // const serviceCard = [
@@ -66,6 +67,16 @@ const Service = ({props}) => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    nextArrow: (
+      <div>
+        <Icons.SliderArrow width="15" height="15" />
+      </div>
+    ),
+    prevArrow: (
+      <div>
+        <Icons.SliderArrow width="15" height="15" />
+      </div>
+    ),
 
     responsive: [
       {
@@ -83,15 +94,7 @@ const Service = ({props}) => {
           slidesToShow: 1,
           slidesToScroll: 1,
           arrows: true,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: true,
-          centerPadding: "15px",
+          centerPadding: "15px"
         },
       },
     ],
@@ -99,28 +102,34 @@ const Service = ({props}) => {
 
   return (
     <section
-      className={`${styles.serviceDetailsMain} ${
+      className={cn(
+        styles.serviceDetailsMain,
         theme ? styles.serviceDetailsMainDark : ""
-      }`}
+      )}
     >
       <div className={cn("primary-container")}>
         <div className={styles.serviceGrid}>
           <div className={styles.serviceHeading}>
-            <p className={styles.serviceText}>{props[0]?.Title}</p>
-            <h3 className={styles.serviceTitle}>
-              {props[0]?.Description}
+            <p className={styles.serviceText}dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
+            </p>
+            <h3 className={styles.serviceTitle}dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}`}}>
+              
             </h3>
             <Link href="/solutions">
-              <Button variant="outline" size="md">
+              <Button
+                variant={theme ? "lightBlueOutline" : "outline"}
+                size="md"
+              >
                 {props[0]?.Btn} <Icons.ArrowRight size={18} />
               </Button>
             </Link>
           </div>
 
-          <div className={`${styles.desktopCards} ${styles.serviceOption} `}>
+          <div className={cn(styles.desktopCards, styles.serviceOption)}>
             {props[0]?.Service.map((data, index) => (
               <div key={index} className={styles.serviceBox}>
-                <div className={styles.bgIcon}><img src={base_Uri+data?.Image?.data?.attributes?.url} alt="" /></div>
+                <div className={styles.bgIcon}><img src={props[0]?.Service[0]?.Image?.data.attributes.url?`${base_Uri}${props[0]?.Service[0]?.Image?.data.attributes.url}`:`${base_Uri}/`} 
+                alt="" /></div>
                 <h4 className={styles.sbTitle}>{data.Title}</h4>
                 <p className={styles.sbText}>{data.Description}</p>
               </div>
@@ -128,18 +137,18 @@ const Service = ({props}) => {
           </div>
         </div>
 
-        <div className={`${styles.serviceOption} service-mobile-slider`}>
-          <Slider {...settings}>
+        <div className={cn(styles.mobileCards, styles.serviceOption)}>
+          <MobileSlider slidesToShow={1.3}>
             {props[0]?.Service.map((data, index) => (
               <div key={index}>
                 <div key={index} className={styles.serviceBox}>
-                  <div className={styles.bgIcon}><img src={base_Uri+data?.Image?.data?.attributes?.url} alt="" /></div>
+                  <div className={styles.bgIcon}><img src={props[0]?.Service[0]?.Image?.data.attributes.url?`${base_Uri}${props[0]?.Service[0]?.Image?.data.attributes.url}`:`${base_Uri}/`}  alt="" /></div>
                   <h4 className={styles.sbTitle}>{data.Title}</h4>
                   <p className={styles.sbText}>{data.Description}</p>
                 </div>
               </div>
             ))}
-          </Slider>
+          </MobileSlider>
         </div>
       </div>
     </section>

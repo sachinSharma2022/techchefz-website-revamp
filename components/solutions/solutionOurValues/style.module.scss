@@ -3,15 +3,28 @@
 .solutionOurValuesStyle {
    padding: spacing(section-primary-padding);
 
+   @include mobile-tablet-p{
+      padding: 2rem;
+   }
+
    .flexContainer {
       display: flex;
       justify-content: space-between;
-      gap: 143px;
+      gap: 8.938rem;
+
+      @include mobile-tablet-p{
+         flex-direction: column;
+         gap: 2.25rem;
+      }
    }
 
    .ourValuesHead {
       margin-bottom: 5rem;
       max-width: 373px;
+
+      @include mobile-tablet-p{
+         margin-bottom: 0;
+      }
 
       .ourValuesTitle {
          color: color(text-primary);
@@ -27,11 +40,28 @@
          font-size: text(larger);
          margin-bottom: 2.75rem;
 
+         @include mobile-tablet-p{
+            margin-bottom: 1.25rem;
+            font-size: text(xxxl);
+            line-height: 2.5rem;
+         }
+
          span {
             font-size: text(larger);
             color: color(heading-liner);
             background: linear-gradient(118deg, color(primary-blue) 11.5%, color(heading-liner) 55.42%);
             @include textGradient;
+
+            @include mobile-tablet-p{
+               font-size: text(xxxl)
+            }
+         }
+
+      }
+
+      .ourValuesText{
+         @include mobile{
+            margin-bottom: 0;
          }
       }
    }
@@ -53,12 +83,16 @@
    .accordionBody {
       padding: 1.25rem 0;
       display: flex;
-      gap: 40px;
+      gap: 2.5rem;
+
+      @include mobile-tablet-p{
+         flex-direction: column;
+      }
    }
 
    .iconBox {
-      width: 36px;
-      height: 36px;
+      width: 2.25rem;
+      height: 2.25rem;
       background: color(primary-white);
       border-radius: 100%;
       display: flex;
@@ -68,11 +102,16 @@
    }
 
    .imgBox div {
-      max-height: 164px;
-      min-width: 164px;
+      max-height: 10.25rem;
+      min-width:10.25rem;
       position: relative;
       overflow: hidden;
-      border-radius: 8px;
+      border-radius: 0.5rem;
+
+      @include mobile-tablet-p{
+         max-height: 20.938rem;
+         max-width: 20.938rem;
+      }
 
       img {
          width: 100%;
@@ -82,15 +121,21 @@
    }
 
    .title {
-      margin-left: 20px;
+      margin-left: 1.25rem;
       font-size: text(xl);
       font-weight: 500;
+
+      @include mobile-tablet-p{
+         text-align: left;
+         font-size: text(lg);
+         max-width: 70%;
+      }
    }
 
    .accordionBodyContent {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 1.25rem;
       color: rgba(color(text-primary), 0.8);
    }
 
@@ -99,24 +144,25 @@
       padding: 0;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 0.75rem;
 
       li {
          display: flex;
          align-items: flex-start;
-         gap: 12px;
+         gap: 0.75rem;
 
          svg {
             position: relative;
-            top: 8px;
-            min-width: 15px;
-            height: 10px;
+            top: 0.5rem;
+            min-width: 0.938rem;
+            height: 0.625rem;
          }
       }
    }
 
    //Dark mode style
    &.solutionOurValuesDark {
+      background-color: color(input-bg);
       color: color(primary-white);
       
       .ourValuesTitle{

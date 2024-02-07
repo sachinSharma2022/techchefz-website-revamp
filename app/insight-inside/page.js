@@ -1,14 +1,13 @@
-import React from "react";
-import InsightOverview from "@/components/insightInside/insightOverview";
 import InsightDetail from "@/components/insightInside/insightDetail";
-import ExploreInsights from "@/components/insightInside/exploreInsight";
+import InsightOverview from "@/components/insightInside/insightOverview";
+import RelatedCase from "@/components/relatedCase";
 
 const InsightInside = () => {
   return (
     <>
       <InsightOverview />
       <InsightDetail />
-      <ExploreInsights />
+      {/* <RelatedCase subTitle="INSIGHTS" title="Explore More of Our Insights" /> */}
     </>
   );
 };

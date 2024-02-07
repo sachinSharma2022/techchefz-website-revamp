@@ -2,7 +2,7 @@
 
 @mixin jobPostDetailStyles() {
   padding-inline: spacing(p-120);
-  padding-block: 4rem 4.75rem;
+  padding-block: 9rem 4.75rem;
   background-color: color(text-primary);
 
   @include mobile {
@@ -43,6 +43,7 @@
       @include mobile {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
       }
       .detail {
         display: flex;

@@ -7,6 +7,10 @@
   gap: 2.5rem;
   padding-inline: spacing(p-120);
 
+  @include desktop-hd {
+    padding-inline: 0;
+  }
+
   @include mobile-tablet-p {
     flex-direction: column;
     gap: text(xl);
@@ -50,11 +54,16 @@
   }
 
   .imageCard {
-    padding: text(lg);
-    border-radius: text(lg);
+    padding: 15px;
+    border-radius: 12px;
     border: 0.125rem solid rgba(color(text-primary), 0.12);
     background: color(bg-soft);
     height: 100%;
+    @include transition(0.5s);
+
+    &:hover {
+      border-color: color(heading-liner);
+    }
 
     .cardImg {
       position: relative;
@@ -72,7 +81,7 @@
           background: rgba(color(text-primary), 0.8);
           border: 0.14rem solid rgba(255, 255, 255, 0.4);
           color: color(primary-white);
-          border-radius: 0.5rem;
+          border-radius: 12px;
           font-size: text(normal);
           font-weight: 400;
           display: flex;
@@ -86,7 +95,7 @@
         }
       }
       .imgBox div {
-        border-radius: text(lg);
+        border-radius: 12px;
         margin-bottom: text(lg);
         height: 322px;
         overflow: hidden;
@@ -107,10 +116,14 @@
         font-size: text(xl);
         font-weight: 500;
         margin-bottom: 0;
+        line-height: 2.5rem;
+
         @include mobile-tablet-p {
           font-size: text(lg);
+          line-height: 1.75rem;
         }
       }
+
       svg {
         cursor: pointer;
       }
@@ -124,5 +137,15 @@
       color: color(primary-white);
       border-color: rgba(color(primary-white), 0.12);
     }
+    .cardBody {
+
+      svg path {
+        fill: color(primary-white);
+      }
+    }
   }
+}
+
+.darkStyle {
+  background: color(input-bg);
 }

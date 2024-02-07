@@ -7,27 +7,43 @@ import Link from "next/link";
 import { useContext } from "react";
 import { Button } from "../../ui/button";
 
+// import required modules
+import Slider from "react-slick";
+
 // Style
 import styles from "./style.module.scss";
 
-
 const LandingBanner = ({props}) => {
-  const { theme, setTheme } = useContext(MyContext);
+  const { theme } = useContext(MyContext);
+  const settings = {
+    dots: false,
+    autoplay: true,
+    infinite: true,
+    arrows: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    vertical: true,
+    verticalSwiping: true,
+    swipeToSlide: true,
+  };
   return (
     <section
-      className={`${styles.landingBannerStyle} ${
+      className={cn(
+        styles.landingBannerStyle,
         theme ? styles.landingBannerDark : ""
-      }`}
+      )}
     >
       <div className={cn("primary-container")}>
-        <h1 className={styles.title}>
-          Humanizing <span /> Digital Experience <span />
+        <h1 className={styles.title} >
+         {props.title} <span /> {props.description} <span />
           <div className={styles.contentContainer}>
-            <span>Through </span>
+            <span>{props.SubTitle1} </span>
             <span className={styles.slider}>
-              <span className={styles.text1}>Data</span>
-              <span className="text2"> Creativity</span>
-              <span className="text3"> Work</span>
+            <Slider {...settings}>
+              <span className={styles.text}>{props.SubTitle2}</span>
+              <span className={styles.text}> {props.SubTitle3}</span>
+              <span className={styles.text}> {props.SubTitle4}</span>
+              </Slider>
             </span>
           </div>
         </h1>

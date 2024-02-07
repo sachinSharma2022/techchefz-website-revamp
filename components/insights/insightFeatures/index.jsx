@@ -6,6 +6,7 @@ import { MyContext } from "@/context/theme";
 import SearchInput from "@/components/ui/searchInput";
 import PostCard from "@/components/ui/postCard";
 import styles from "./style.module.scss";
+import { cn } from "@/lib/utils";
 
 const InsightFeatures = () => {
   const { theme, setTheme } = useContext(MyContext);
@@ -116,55 +117,61 @@ const InsightFeatures = () => {
   ];
   return (
     <section className={!theme ? styles.insightFeatures : styles.darkMode}>
-      <div className={styles.insightHeader}>
-        <SearchInput theme={theme} />
-        <div className={styles.serviceBtn}>
-          {buttonVariants.map((buttonItem) => (
-            <Button
-              variant="outline"
-              size="sm"
-              // onClick={() => filterItem(buttonItem.id)}
-              key={buttonItem}
-            >
-              {buttonItem.buttonTitle}
-            </Button>
-          ))}
+      <div className={cn("primary-container", styles.flexContainer)}>
+        <div className={styles.insightHeader}>
+          <div className={styles.searchButton}>
+          <SearchInput theme={theme} />
+          </div>
+          <div className={styles.serviceBtn}>
+            {buttonVariants.map((buttonItem) => (
+              <button
+                variant="outline"
+                size="sm"
+                // onClick={() => filterItem(buttonItem.id)}
+                key={buttonItem}
+              >
+                {buttonItem.buttonTitle}
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
-      <div className={styles.featureInsight}>
-        <h6 className={styles.insightSubHeading}>Our Featured Insights </h6>
-        <div className={styles.featureInsightCards}>
-          {featureInsight.map((data, index) => (
-            <PostCard
-              className={styles.featureInsightCard}
-              key={index}
-              imgSrc={data.imgSrc}
-              title={data.title}
-              date={data.date}
-              cardStyle={styles.featureImgBox}
-              theme={theme}
-            />
-          ))}
+        <div className={styles.featureInsight}>
+          <h6 className={styles.insightSubHeading}>Our Featured Insights </h6>
+          <div className={styles.featureInsightCards}>
+            {featureInsight.map((data, index) => (
+              <PostCard
+                className={styles.featureInsightCard}
+                key={index}
+                imgSrc={data.imgSrc}
+                title={data.title}
+                date={data.date}
+                cardStyle={styles.featureImgBox}
+                theme={theme}
+                href="/insight-inside"
+              />
+            ))}
+          </div>
         </div>
-      </div>
-      <div className={styles.allInsight}>
-        <h6 className={styles.insightSubHeading}>All Insights </h6>
-        <div className={styles.allInsightCards}>
-          {allInsightData.map((data, index) => (
-            <PostCard
-              key={index}
-              imgSrc={data.imgSrc}
-              title={data.title}
-              date={data.date}
-              theme={theme}
-            />
-          ))}
-        </div>
+        <div className={styles.allInsight}>
+          <h6 className={styles.insightSubHeading}>All Insights </h6>
+          <div className={styles.allInsightCards}>
+            {allInsightData.map((data, index) => (
+              <PostCard
+                key={index}
+                imgSrc={data.imgSrc}
+                title={data.title}
+                date={data.date}
+                theme={theme}
+                href="/insight-inside"
+              />
+            ))}
+          </div>
 
-        <div className={styles.insightButton}>
-          <Button variant="outline" size="lg">
-            Show More
-          </Button>
+          <div className={styles.insightButton}>
+            <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
+              Show More
+            </Button>
+          </div>
         </div>
       </div>
     </section>

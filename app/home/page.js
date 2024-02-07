@@ -7,10 +7,11 @@ import Projects from "@/components/home/projects";
 import Service from "@/components/home/service";
 import TechnologyStack from "@/components/home/technologyStack";
 import WeAreFuture from "@/components/home/weAreFuture";
-import VideoCustom from "@/components/ui/videoCustom";
 import Curve from "@/components/ui/pageTransition";
+import VideoCustom from "@/components/ui/videoCustom";
 import { api_Home_Page } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
+
 
 const HomePage = async () => {
   const data = await getData(api_Home_Page);
@@ -20,7 +21,7 @@ const HomePage = async () => {
         {data ? (
           <div>
             <LandingBanner props={data.Banner} />
-            <VideoCustom src="global.mp4" />
+            <VideoCustom props={data.Technology} />
             <WeAreFuture props={data.Technology} />
             <Service props={data.Services} />
             <Projects project={data.Project} brands={data.Brands} />

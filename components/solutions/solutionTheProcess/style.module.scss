@@ -4,15 +4,28 @@
   padding: spacing(section-primary-padding);
   padding-top: 0;
 
+  @include mobile-tablet-p{
+    padding: 2rem;
+  }
+
 
   .flexContainer {
     display: flex;
     justify-content: space-between;
-    gap: 143px;
+    gap: 8.938rem;
+
+    @include mobile-tablet-p{
+      flex-direction: column;
+      gap: 3.75rem;
+    }
   }
 
   .headSection {
     margin-bottom: 5rem;
+
+    @include mobile-tablet-p{
+      margin-bottom: 0;
+    }
 
     .heading {
       color: color(text-primary);
@@ -27,6 +40,13 @@
     .subHeading {
       font-size: text(larger);
       margin-bottom: 2.75rem;
+      line-height: 3.375rem;
+
+      @include mobile-tablet-p{
+        font-size: text(xxxl);
+        max-width: 90%;
+        line-height: 2.5rem;
+      }
 
       span {
         font-size: text(larger);
@@ -37,6 +57,17 @@
           color(heading-liner) 55.42%
         );
         @include textGradient;
+
+        @include mobile-tablet-p{
+          font-size: text(xxxl);
+        }
+      }
+    }
+
+    .ourNumbersImg{
+      img{
+        width: 100%;
+        height: 100%;
       }
     }
   }
@@ -69,6 +100,7 @@
 
   //Dark mode style
   &.theProcessDark{
+    background-color: color(input-bg);
     color: color(primary-white);
 
     .heading{

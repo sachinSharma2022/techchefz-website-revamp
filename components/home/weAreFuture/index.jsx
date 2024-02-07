@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useContext } from "react";
 
 import styles from "./style.module.scss";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const WeAreFuture = ({props}) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -19,21 +20,21 @@ const WeAreFuture = ({props}) => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.futureTitle}>
-          <p className={styles.text}>We are a</p>
+          <p className={styles.text}>{props?.Title}</p>
           <h2 className={styles.title}>
-            Pioneering
+            {props?.SubTitle}
             <span className={styles.globalText}>
-              Future
-              <ImageCustom src="/global.png" width="60" height="60" alt="" />
-              Global
+              {props?.Description}
+              <ImageCustom src="/global.png" width="60" height="60" alt="global-img" />
+              {props?.SubTitle2}
             </span>
-            <span className={styles.titleHighlight}>{props?.Description}</span>
+            <span className={styles.titleHighlight}>{props?.SubTitle3}</span>
           </h2>
         </div>
+        <TextRevel>
         <div className="row">
           <div className="col-md-6 col-12">
-            <h3 className={styles.datingText}>
-             {props?.CompanyTechnology[0]?.title}
+            <h3 className={styles.datingText} dangerouslySetInnerHTML={{ __html: `${props?.CompanyTechnology[0]?.title}`}}>
             </h3>
           </div>
           <div className="col-md-6 col-12">
@@ -48,6 +49,7 @@ const WeAreFuture = ({props}) => {
             </Link>
           </div>
         </div>
+        </TextRevel>
       </div>
     </section>
   );
