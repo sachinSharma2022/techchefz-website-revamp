@@ -4,21 +4,25 @@ import AcceleratorIndustry from "@/components/accelerators/acceleratorDetail/acc
 import FeatureCard from "@/components/accelerators/acceleratorDetail/featureCard";
 import LetsWork from "@/components/home/letsWork";
 import RelatedCase from "@/components/relatedCase";
+import { getData } from "@/lib/fetchData";
+import { api_acceleratorsDeatial_Page } from "@/lib/constants";
 
-const AcceleratorDetails = () => {
+const AcceleratorDetails = async() => {
+  const data = await getData(api_acceleratorsDeatial_Page)
   return (
-    <div>
+    <>{data?  <div>
       <DetailBanner />
       <AcceleratorIndustry />
       <Impact />
       <FeatureCard />
       <RelatedCase
-        title="Discover Insights on Related Topics"
-        subTitle="Insights"
         className="mt-0 mb-5 pt-5 pb-0"
+        props={data.CaseStudy}
       />
       <LetsWork />
-    </div>
+    </div>:<></>}
+    </>
+  
   );
 };
 

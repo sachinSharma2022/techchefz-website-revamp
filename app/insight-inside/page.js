@@ -7,7 +7,7 @@ const InsightInside = () => {
     <>
       <InsightOverview />
       <InsightDetail />
-      <RelatedCase subTitle="INSIGHTS" title="Explore More of Our Insights" />
+      {/* <RelatedCase subTitle="INSIGHTS" title="Explore More of Our Insights" /> */}
     </>
   );
 };
