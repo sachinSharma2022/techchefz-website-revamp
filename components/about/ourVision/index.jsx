@@ -6,6 +6,7 @@ import { useContext } from "react";
 import styles from "./style.module.scss";
 import VideoCustom from "@/components/ui/videoCustom";
 import { cn } from "@/lib/utils";
+import { base_Uri } from "@/lib/constants";
 
 const OurVision = ({ props }) => {
 
@@ -37,7 +38,9 @@ const OurVision = ({ props }) => {
         </div>
 
         <div className={styles.videoWrapper}>
-          <VideoCustom src={"about.mp4"} width={1200} height={500} />
+          <VideoCustom src={props[0].Video.data[0].attributes.url?`${base_Uri}${props[0].Video.data[0].attributes.url}`:`${base_Uri}/`}
+          
+          width={1200} height={500} />
         </div>
       </div>
     </section>

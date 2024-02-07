@@ -21,7 +21,7 @@ const HomePage = async () => {
         {data ? (
           <div>
             <LandingBanner props={data.Banner} />
-            <VideoCustom src="global.mp4" />
+            <VideoCustom props={data.Technology} />
             <WeAreFuture props={data.Technology} />
             <Service props={data.Services} />
             <Projects project={data.Project} brands={data.Brands} />

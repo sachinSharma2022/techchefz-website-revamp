@@ -155,7 +155,7 @@ const Projects = ({project,brands}) => {
 
             <Link href="/portfolio">
               <Button variant="outline" size="md">
-                Check Our Portfolio <Icons.ArrowRight size={18} />
+                {project[0]?.Btn} <Icons.ArrowRight size={18} />
               </Button>
             </Link>
           </div>

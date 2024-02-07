@@ -11,6 +11,7 @@ import { useContext } from "react";
 import styles from "./style.module.scss";
 
 const Service = ({props}) => {
+  
   const { theme, setTheme } = useContext(MyContext);
 
   // const serviceCard = [
@@ -127,7 +128,8 @@ const Service = ({props}) => {
           <div className={cn(styles.desktopCards, styles.serviceOption)}>
             {props[0]?.Service.map((data, index) => (
               <div key={index} className={styles.serviceBox}>
-                <div className={styles.bgIcon}><img src={base_Uri+data?.Image?.data?.attributes?.url} alt="" /></div>
+                <div className={styles.bgIcon}><img src={props[0]?.Service[0]?.Image?.data.attributes.url?`${base_Uri}${props[0]?.Service[0]?.Image?.data.attributes.url}`:`${base_Uri}/`} 
+                alt="" /></div>
                 <h4 className={styles.sbTitle}>{data.Title}</h4>
                 <p className={styles.sbText}>{data.Description}</p>
               </div>
@@ -140,7 +142,7 @@ const Service = ({props}) => {
             {props[0]?.Service.map((data, index) => (
               <div key={index}>
                 <div key={index} className={styles.serviceBox}>
-                  <div className={styles.bgIcon}><img src={base_Uri+data?.Image?.data?.attributes?.url} alt="" /></div>
+                  <div className={styles.bgIcon}><img src={props[0]?.Service[0]?.Image?.data.attributes.url?`${base_Uri}${props[0]?.Service[0]?.Image?.data.attributes.url}`:`${base_Uri}/`}  alt="" /></div>
                   <h4 className={styles.sbTitle}>{data.Title}</h4>
                   <p className={styles.sbText}>{data.Description}</p>
                 </div>

@@ -14,6 +14,7 @@ import TextRevel from "@/components/ui/sectionAnimation";
 import MobileSlider from "@/components/common/mobileSlider";
 
 const OurNumbers = ({carrer,experience}) => {
+  console.log("vvvv",experience)
   const { theme, setTheme } = useContext(MyContext);
   const settings = {
     className: "center",
@@ -80,7 +81,7 @@ const OurNumbers = ({carrer,experience}) => {
           <div className={styles.ourNumberGrid}>
             <div className={styles.ourNumbersImg}>
               <ImageCustom
-                src={base_Uri+experience[0]?.Image?.data?.attributes?.url}
+                src={experience[0].Image.data.attributes.url?`${base_Uri}${experience[0].Image.data.attributes.url}`:`${base_Uri}/`}
                 width={1000}
                 height={100}
                 alt="bannerImg"
@@ -97,7 +98,7 @@ const OurNumbers = ({carrer,experience}) => {
                   <ServiceInfoCard
                     key={index}
                     sbTitle={data.Title}
-                    icon={base_Uri+data?.Image?.data?.attributes?.url}
+                    icon={data?.Image?.data.attributes.url?`${base_Uri}${data?.Image?.data.attributes.url}`:`${base_Uri}/`}
                     sbText={data.Description}
                   />
                 ))}
@@ -111,7 +112,7 @@ const OurNumbers = ({carrer,experience}) => {
                 <ServiceInfoCard
                 key={index}
                     sbTitle={data.Title}
-                    icon={base_Uri+data?.Image?.data?.attributes?.url}
+                    icon={data?.Image?.data.attributes.url?`${base_Uri}${data?.Image?.data.attributes.url}`:`${base_Uri}/`}
                     sbText={data.Description}
                 />
               ))}
