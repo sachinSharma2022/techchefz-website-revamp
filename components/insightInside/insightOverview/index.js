@@ -5,17 +5,19 @@ import styles from "./style.module.scss";
 import { MyContext } from "@/context/theme";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { cn } from "@/lib/utils";
+import { base_Uri } from "@/lib/constants";
 
-const InsightOverview = () => {
+const InsightOverview = ({props, Insightinner, TechStackData}) => {
+ 
   const { theme, setTheme } = useContext(MyContext);
 
-  const techStackData = [
-    { name: "Web Design" },
-    { name: "CMS" },
-    { name: "React" },
-    { name: "AEM" },
-    { name: "Retail" },
-  ];
+  // const techStackData = [
+  //   { name: "Web Design" },
+  //   { name: "CMS" },
+  //   { name: "React" },
+  //   { name: "AEM" },
+  //   { name: "Retail" },
+  // ];
   return (
     <section
       className={theme ? styles.insightOverviewContainer : styles.lightMode}
@@ -23,25 +25,24 @@ const InsightOverview = () => {
       <div className={cn("primary-container", styles.flexContainer)}>
         <div className={styles.textContainer}>
           <h1>
-            The science behind inspiration and how to design more of it into
-            your life
+            {props[0]?.Title}
           </h1>
           <div className={styles.publishDiv}>
             <div className={styles.publishFlex}>
-              <p>Published On</p>
-              <h4>Dec 28, 2023</h4>
+              <p>{Insightinner[0].Title}</p>
+              <h4>{Insightinner[0].Description}</h4>
             </div>
             <div className={styles.publishFlex}>
-              <p>Author</p>
-              <h4>Sachin Kumar</h4>
+            <p>{Insightinner[1].Title}</p>
+              <h4>{Insightinner[1].Description}</h4>
             </div>
           </div>
           <div className={styles.serviceDiv}>
-            <p>Services</p>
+            <p>{TechStackData[0]?.Title}</p>
             <div className={styles.techStackDiv}>
-              {techStackData.map((value) => (
+              {TechStackData[0].techStacktags.map((value) => (
                 <button key={value} className={styles.techBtn}>
-                  {value.name}
+                  {value.Title}
                 </button>
               ))}
             </div>
@@ -51,7 +52,7 @@ const InsightOverview = () => {
 
       <div className={styles.imageDiv}>
         <ImageCustom
-          src="/images/insight.png"
+          src={props[0]?.Image?.data.attributes.url?`${base_Uri}${props[0]?.Image?.data.attributes.url}`:`${base_Uri}/`}
           alt="Image"
           width={600}
           height={600}
