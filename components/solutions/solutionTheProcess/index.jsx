@@ -53,7 +53,7 @@ const SolutionTheProcess = ({props}) => {
               key={index}
               className={`${styles.processCard} ${data.current}`}
             >
-              <div className={styles.textGradient}>{index}</div>
+              <div className={styles.textGradient}>{data.Title}</div>
               <h4 className={styles.title}>{data?.Description}</h4>
               <p className={styles.description}>{data.secoundDescription}</p>
             </div>
