@@ -11,17 +11,18 @@ import Curve from "@/components/ui/pageTransition";
 import VideoCustom from "@/components/ui/videoCustom";
 import { api_Home_Page } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
-
+import { base_Uri } from "@/lib/constants";
 
 const HomePage = async () => {
   const data = await getData(api_Home_Page);
+   console.log("bb",data.Technology);
   return (
     <>
       <Curve>
         {data ? (
           <div>
             <LandingBanner props={data.Banner} />
-            <VideoCustom props={data.Technology} />
+            <VideoCustom src={data?.Technology?.Video?.data?.attributes?.url?`${base_Uri}${data?.Technology?.Video?.data?.attributes?.url}`:`${base_Uri}/`} />
             <WeAreFuture props={data.Technology} />
             <Service props={data.Services} />
             <Projects project={data.Project} brands={data.Brands} />

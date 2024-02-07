@@ -14,7 +14,7 @@ import TextRevel from "@/components/ui/sectionAnimation";
 import MobileSlider from "@/components/common/mobileSlider";
 
 const OurNumbers = ({carrer,experience}) => {
-  console.log("vvvv",experience)
+ 
   const { theme, setTheme } = useContext(MyContext);
   const settings = {
     className: "center",
