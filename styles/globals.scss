@@ -514,26 +514,48 @@ input:-webkit-autofill {
 }
 
 .related-case-slider {
-  .slick-arrow {
-    background-color: color(primary-blue);
-    padding: 0;
-    border-radius: 0.5rem;
-    width: 3rem;
-    height: 3rem;
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
+  .slick-dots {
+    justify-content: space-between;
+    bottom: -50px;
+    position: relative;
 
-    &:hover {
-      background-color: color(primary-blue);
-    }
-
-    svg {
-      width: 1.2rem;
+    @include mobile-tablet-p {
+      display: flex !important;
     }
 
     &::before {
-      display: none;
+      height: 1px;
+      content: "";
+      width: 100%;
+      top: 1.5px;
+      position: absolute;
+      background-color: rgba(color(primary-white), 0.2);
+    }
+
+    li {
+      width: 100%;
+      margin: 0;
+
+      button {
+        padding: 0;
+        width: 100%;
+  
+        &::before {
+          display: none;
+        }
+    } 
+
+    &.slick-active {
+      button {
+        background: linear-gradient(124.4deg, color(primary-blue) 0%, color(heading-liner) 89.84%); 
+        height: 4px;
+        border-radius: .5rem;
+      }
+    }
+    }
+
+    @include desktop {
+      display: none !important;
     }
   }
 
@@ -542,35 +564,6 @@ input:-webkit-autofill {
       max-width: 1440px;
       display: flex;
       white-space: nowrap;
-    }
-  }
-
-  .slick-prev {
-    left: auto;
-    right: 210px;
-    top: -14vh;
-    svg {
-      transform: rotate(-180deg);
-    }
-  }
-
-  .slick-next {
-    right: 120px;
-    left: auto;
-    top: -14vh;
-  }
-
-  .slick-disabled {
-    background-color: color(primary-white);
-    border: 0.14rem solid rgba(color(text-primary), 0.5);
-
-    &:hover {
-      background-color: color(primary-white);
-    }
-    svg {
-      path {
-        stroke: rgba(color(text-primary), 0.5);
-      }
     }
   }
 }

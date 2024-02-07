@@ -89,13 +89,7 @@ const SolutionTechnologies = () => {
         </div>
       </div>
 
-      <div
-        className={cn(
-          styles.ourNumberOption,
-          styles.mobileSlider,
-          "service-mobile-slider"
-        )}
-      >
+      <div className={cn(styles.ourNumberOption, styles.mobileSlider)}>
         <MobileSlider slidesToShow={1.4}>
           {serviceCard.map((data, index) => (
             <ServiceInfoCard
