@@ -19,8 +19,8 @@ const TechnologyBanner = () => {
       <div className={cn("primary-container", styles.flexContainer)}>
         <h1 className={styles.title}>
           Innovating
-          <span className={styles.titleHighlight}> Technology</span> <br />
-          <span className={styles.titleHighlight}>Landscape</span> for the
+          <span> Technology</span> <br />
+          <span>Landscape</span> for the
           <br />
           future.
         </h1>
@@ -31,7 +31,11 @@ const TechnologyBanner = () => {
             diverse global needs.
           </p>
           <Link href="/contact-us">
-            <Button variant={theme ? "blueBtnDark" : "blueBtn"} className={styles.headerBtn} size="md">
+            <Button
+              variant={theme ? "blueBtnDark" : "blueBtn"}
+              className={styles.headerBtn}
+              size="md"
+            >
               Let’s Work Together
               <Icons.ArrowRight size={20} className="ms-2" />
             </Button>
