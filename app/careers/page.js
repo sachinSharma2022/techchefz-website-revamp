@@ -7,19 +7,23 @@ import Innovation from "@/components/portfolio/innovation";
 import { getData } from "@/lib/fetchData";
 import { api_Career_Page } from "@/lib/constants";
 
-const Career = async() => {
-  const data = await getData(api_Career_Page)
+const Career = async () => {
+  const data = await getData(api_Career_Page);
   return (
-    <>{data? <div>
-      <CareerBanner />
-      <TczLife />
-      <OpenPosition />
-      <CareerTestimonials testimonials={data.Testimonials} />
-      <CareerEngagement />
-      <Innovation />
-    </div>:<></>}
+    <>
+      {data ? (
+        <div>
+          <CareerBanner props={data.CareerBanner} />
+          <TczLife />
+          <OpenPosition />
+          <CareerTestimonials testimonials={data.Testimonials} />
+          <CareerEngagement />
+          <Innovation />
+        </div>
+      ) : (
+        <></>
+      )}
     </>
-   
   );
 };
 
