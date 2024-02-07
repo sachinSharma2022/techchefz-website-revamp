@@ -15,14 +15,19 @@ import { base_Uri } from "@/lib/constants";
 
 const HomePage = async () => {
   const data = await getData(api_Home_Page);
-   console.log("bb",data.Technology);
   return (
     <>
       <Curve>
         {data ? (
           <div>
             <LandingBanner props={data.Banner} />
-            <VideoCustom src={data?.Technology?.Video?.data?.attributes?.url?`${base_Uri}${data?.Technology?.Video?.data?.attributes?.url}`:`${base_Uri}/`} />
+            <VideoCustom
+              src={
+                data?.Technology?.Video?.data?.attributes?.url
+                  ? `${base_Uri}${data?.Technology?.Video?.data?.attributes?.url}`
+                  : `${base_Uri}/`
+              }
+            />
             <WeAreFuture props={data.Technology} />
             <Service props={data.Services} />
             <Projects project={data.Project} brands={data.Brands} />
@@ -41,4 +46,3 @@ const HomePage = async () => {
 };
 
 export default HomePage;
-
