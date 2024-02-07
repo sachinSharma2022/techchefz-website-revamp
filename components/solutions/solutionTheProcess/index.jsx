@@ -10,8 +10,6 @@ import { useEffect, useState } from "react";
 
 const SolutionTheProcess = () => {
   const { theme, setTheme } = useContext(MyContext);
-  
-  const circleWidth=400
   const radius = 235;
   const dashArray = radius * Math.PI * 2;
   const [dashOffset, setdashOffset] = useState(dashArray);
@@ -57,12 +55,18 @@ const SolutionTheProcess = () => {
     const changeImg=(i)=>{
       const ele=document.getElementsByClassName(styles.stepperImg)
       for (let i = 0; i < ele.length; i++) {
-        ele[i].style.display="none";    }
-      document.getElementById(`${i}-img`).style.display="block";
+        ele[i].style.display="none"; 
+        // ele[i].style.opacity="0";
+        // ele[i].style.transition="opacity 0.3s, display 0.3s";  
+       }
+     
+        document.getElementById(`${i}-img`).style.display="block";
+        // document.getElementById(`${i}-img`).style.opacity="1";
+        // document.getElementById(`${i}-img`).style.transition = 'opacity 0.5s display 0.5s ';
 
     }
-    console.log(dashOffset,"dasofset")
-    console.log(prevdashOffset,"prevdasofset")
+    // console.log(dashOffset,"dasofset")
+    // console.log(prevdashOffset,"prevdasofset")
     let ctx = gsap.context(() => 
     {
       const tl = gsap.timeline({
@@ -118,21 +122,7 @@ const SolutionTheProcess = () => {
         duration:3,
         ease: "power1.inOut"
         })
-        
-        
-      // });
-     
-      
-      
-    
-      
-      // });
-     
-      
-      
-    
-           
-    });
+        });
     return () => ctx.revert();
   }, [dashOffset,prevdashOffset]);
   
