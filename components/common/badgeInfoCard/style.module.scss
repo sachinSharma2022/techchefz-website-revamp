@@ -38,6 +38,10 @@
       font-weight: 500;
       line-height: 32px;
       margin-bottom: 0.75rem;
+
+      @include mobile-tablet-p{
+         font-size: text(lg);
+      }
    }
    .cardContent {
       font-size: text(normal);

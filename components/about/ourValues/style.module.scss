@@ -24,6 +24,7 @@
       letter-spacing: 0.2rem;
       @include mobile-tablet-p {
         margin-bottom: 0.75rem;
+        font-weight: 400;
         line-height: text(normal);
       }
     }
@@ -43,6 +44,11 @@
         margin-bottom: 2.75rem;
       }
       img {
+        border-radius: 0.75rem;
+        @include mobile-tablet-p {
+          height: 18.875rem;
+          object-fit: cover;
+        }
         width: 100%;
         height: auto;
       }
@@ -100,7 +106,7 @@
         }
       }
     }
-    .iconBox{
+    .iconBox {
       background-color: color(input-bg);
     }
   }

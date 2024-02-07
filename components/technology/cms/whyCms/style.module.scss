@@ -20,6 +20,10 @@
       font-weight: 500;
       line-height: 1.5rem;
       letter-spacing: 0.2rem;
+      @include mobile-tablet-p {
+        font-weight: 400;
+        margin-bottom: 0.75rem;
+      }
     }
 
     .ourValuesHeading {
@@ -29,6 +33,7 @@
       @include mobile-tablet-p {
         margin-bottom: 3.75rem;
         font-size: 2rem;
+        line-height: 2.5rem;
       }
       span {
         font-size: text(larger);
@@ -42,6 +47,7 @@
         @include mobile-tablet-p {
           font-size: 2rem;
           display: flex;
+          line-height: 2.5rem;
         }
       }
     }
@@ -63,6 +69,10 @@
       height: 520px;
       width: 100%;
       position: relative;
+
+      @include mobile-tablet-p {
+        height: 18.938rem;
+      }
 
       img {
         width: 100%;

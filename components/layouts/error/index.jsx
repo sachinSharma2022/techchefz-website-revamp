@@ -37,7 +37,7 @@ const Error = () => {
             <li>It may be a broken or outdated link.</li>
           </ul>
           <Link href="/">
-            <Button variant="blueBtn" className={styles.errorBtn} size="lg">
+            <Button variant={theme ? "blueBtnDark" : "blueBtn"} className={styles.errorBtn} size="lg">
               <Icons.ArrowLeft size={20} /> Back to Homepage
             </Button>
           </Link>

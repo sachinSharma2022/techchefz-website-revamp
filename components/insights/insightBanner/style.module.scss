@@ -56,7 +56,10 @@
       line-height: 1.875rem;
       opacity: 0.8;
       margin-bottom: 0;
-      @include mobile {
+
+      @include mobile-tablet-p {
+         font-size: text(normal);
+         line-height: 1.5rem;
          max-width: 100%;
       }
    }

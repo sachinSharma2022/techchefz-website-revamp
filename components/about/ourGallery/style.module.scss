@@ -13,6 +13,11 @@
     letter-spacing: 0.2rem;
     text-transform: uppercase;
     opacity: 0.8;
+
+    @include mobile-tablet-p {
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+    }
   }
 
   .contentSection {

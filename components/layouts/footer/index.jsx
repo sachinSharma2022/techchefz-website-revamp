@@ -12,7 +12,7 @@ const Footer = () => {
     <footer className={styles.footerSection}>
       <div className={cn("primary-container")}>
         <div className={styles.footLogoFlex}>
-          <div className={styles.footlogo}>
+          <div className={styles.footLogo}>
             <ImageCustom
               src="/images/logo-white.svg"
               width={143}

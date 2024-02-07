@@ -69,6 +69,10 @@
       color: rgba(color(text-primary), 0.8);
       margin-bottom: 0;
 
+      @include mobile-tablet-p{
+         font-size: text(normal);
+      }
+
       @include mobile {
          max-width: 100%;
       }

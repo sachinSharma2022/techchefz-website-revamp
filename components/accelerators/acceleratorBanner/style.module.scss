@@ -25,9 +25,11 @@
       .bannerTitle {
          font-size: text(xl-larger);
          font-weight: 500;
+         line-height: 5rem;
 
          @include mobile-tablet-p {
             font-size: text(larger);
+            line-height: 3.5rem;
          }
 
          span {
@@ -58,6 +60,11 @@
             font-size: text(lg);
             line-height: 1.875rem;
             opacity: 0.8;
+
+            @include mobile-tablet-p{
+               font-size: text(normal);
+               line-height: 1.5rem;
+            }
          }
       }
    }

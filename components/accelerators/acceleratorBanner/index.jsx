@@ -19,7 +19,7 @@ const AcceleratorBanner = ({ props }) => {
             <p>
               {props.Description}
             </p>
-            <Button variant="blueBtn" className={styles.headerBtn} size="md">
+            <Button variant={theme ? "blueBtnDark" : "blueBtn"} className={styles.headerBtn} size="md">
               {props.Btn} <Icons.ArrowRight size={20} className="ms-2" />
             </Button>
           </div>
