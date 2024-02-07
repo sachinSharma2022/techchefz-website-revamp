@@ -41,7 +41,10 @@ const Card = ({ ...props }) => {
   ]);
 
   return (
-    <motion.div className={styles.cardSec} style={isMobileScreen ? "" : {scale}}>
+    <motion.div
+      className={styles.cardSec}
+      style={isMobileScreen ? "" : { scale }}
+    >
       <div className={styles.projectImg}>
         <ImageCustom
           src={props.src}
@@ -111,19 +114,19 @@ const Projects = () => {
   });
   const projects = [
     {
-      src: "/images/ICICI.png",
+      src: "https://images.unsplash.com/photo-1622185135505-2d795003994a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       summary:
         "Royal Enfield is a global brand since 1901, has a geographical presence in over 70 countries. The brand delivers consistent, omnichannel customer experiences, achieves scalability, diversifying into countries, and continents.",
       title: "International Motorcycle Brand.",
     },
     {
-      src: "/images/project-re.png",
+      src: "https://images.unsplash.com/photo-1573013043679-4d44547b78a2?q=80&w=2754&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       summary:
         "Royal Enfield is a global brand since 1901, has a geographical presence in over 70 countries. The brand delivers consistent, omnichannel customer experiences, achieves scalability, diversifying into countries, and continents.",
       title: "International Motorcycle Brand.",
     },
     {
-      src: "/images/Manipal.png",
+      src: "https://images.unsplash.com/photo-1633527908145-bb4e3f41b3a6?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       summary:
         "Royal Enfield is a global brand since 1901, has a geographical presence in over 70 countries. The brand delivers consistent, omnichannel customer experiences, achieves scalability, diversifying into countries, and continents.",
       title: "International Motorcycle Brand.",
@@ -174,7 +177,7 @@ const Projects = () => {
         {!isMobileScreen ? (
           <div ref={container} className={styles.cards}>
             {projects.map((project, i) => {
-              const targetScale = 1 - (projects.length - i) * 0.10;
+              const targetScale = 1 - (projects.length - i) * 0.1;
               return (
                 <Card
                   key={`p_${i}`}
