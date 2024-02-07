@@ -498,10 +498,6 @@ input:-webkit-autofill {
     }
     img {
       min-height: 50rem;
-
-      @include mobile-tablet-p {
-        min-height: 14.875rem;
-      }
     }
   }
 
@@ -509,6 +505,15 @@ input:-webkit-autofill {
   .grid-5 {
     .imgBox div {
       min-height: 43.25rem;
+    }
+  }
+
+  .card {
+    .imgBox div {
+      @include mobile-tablet-p {
+        min-height: 10.875rem;
+        max-height: 10.875rem;
+      }
     }
   }
 }
@@ -539,19 +544,23 @@ input:-webkit-autofill {
       button {
         padding: 0;
         width: 100%;
-  
+
         &::before {
           display: none;
         }
-    } 
-
-    &.slick-active {
-      button {
-        background: linear-gradient(124.4deg, color(primary-blue) 0%, color(heading-liner) 89.84%); 
-        height: 4px;
-        border-radius: .5rem;
       }
-    }
+
+      &.slick-active {
+        button {
+          background: linear-gradient(
+            124.4deg,
+            color(primary-blue) 0%,
+            color(heading-liner) 89.84%
+          );
+          height: 4px;
+          border-radius: 0.5rem;
+        }
+      }
     }
 
     @include desktop {
@@ -578,6 +587,10 @@ input:-webkit-autofill {
 
   .slide-thumb-grid {
     cursor: pointer;
+
+    @include mobile-tablet-p {
+      margin-top: 2rem;
+    }
 
     .progress-bar-animation {
       position: relative;
@@ -613,6 +626,16 @@ input:-webkit-autofill {
 
       100% {
         width: 100%;
+      }
+    }
+
+    .swiper-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+
+      .swiper-slide {
+        width: 100% !important;
       }
     }
   }
@@ -774,7 +797,6 @@ input:-webkit-autofill {
     }
   }
 }
-
 
 // Smooth Scroll Style here
 html.lenis {

@@ -48,6 +48,11 @@
          @include desktop-hd {
             font-size: text(lg);
          }
+
+         @include mobile-tablet-p {
+            font-size: text(lg);
+            max-width: 80%;
+         }
       }
 
       svg {
@@ -60,6 +65,13 @@
       background-color: color(text-primary);
       color: color(primary-white);
       border-color: rgba(color(primary-white), 0.12);
+
+      .cardBody {
+
+         svg path {
+            fill: color(primary-white)
+         }
+      }
    }
 
 }
