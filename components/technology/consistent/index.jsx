@@ -11,10 +11,10 @@ import { useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { gsap } from "gsap";
 import { useEffect } from "react";
-
+import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
 
-const Consistent = () => {
+const Consistent = ({props}) => {
   const { theme, setTheme } = useContext(MyContext);
   // const targetRef = useRef(null);
   // const { scrollYProgress } = useScroll({
@@ -48,7 +48,7 @@ const Consistent = () => {
           <div className={styles.consistentImgContainer}>
             <div className={styles.consistentImg}>
               <ImageCustom
-                src={"/images/consistent-img.png"}
+                src={props?.Image?.data?.attributes?.url?`${base_Uri}${props?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
                 width={1000}
                 height={600}
                 alt="img"
@@ -57,19 +57,15 @@ const Consistent = () => {
           </div>
 
           <div className={styles.contentSec}>
-            <h3 className={styles.consistentTitle}>
-              <span>7+ years</span> of consistent excellence, meeting deadlines
-              and budgets with precision.
+            <h3 className={styles.consistentTitle} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
+              
             </h3>
             <div>
-              <p className={styles.consistentText}>
-                For over seven years, Techchefz has been at the forefront of
-                technological innovation. But what truly sets us apart is our
-                unwavering commitment to excellence consistently, year after
-                year.
+              <p className={styles.consistentText} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
+                
               </p>
               <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
-                Learn More <Icons.ArrowRight size={18} />
+                {props?.Btn} <Icons.ArrowRight size={18} />
               </Button>
             </div>
           </div>

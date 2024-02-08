@@ -18,13 +18,13 @@ const Technology = async() => {
      {data?<div>
           <TechnologyBanner props={data.BannerComponent}/>
            <Streamline props={data.Extensive} />
-           <Partners/>
-           <Consistent/>
-          <TechnologyValues/>
-          {/* <OurNumbers  carrer={data.Career} experience={data.OurExperience}/> */}
-          <Discover/>
-          <TechnologyCase />
-           <LetsWork  contact={data.ContactUs}/>
+           <Partners props={data.PARTNERS}/>
+           <Consistent props={data.Consistent}/>
+          <TechnologyValues props={data.Technology}/>
+          <OurNumbers  carrer={data.carrer} experience={data.ourExperience}/>
+          <Discover props={data.DiscoverTech}/>
+          <TechnologyCase  props={data.TechnologyCase}/>
+           <LetsWork  contact={data.LetsWork}/>
            </div>:<>{/* {"API fail fallback"} */}</>}
     </>
    

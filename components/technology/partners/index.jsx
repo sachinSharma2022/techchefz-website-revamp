@@ -8,10 +8,13 @@ import styles from "./style.module.scss";
 import LeftDrawer from "@/components/common/leftDrawer";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import Link from "next/link";
+import { base_Uri } from "@/lib/constants";
 
-const Partners = () => {
+const Partners = ({props}) => {
+  
   const { theme, setTheme } = useContext(MyContext);
   let [isOpen, setIsOpen] = useState(false);
+
   const partnerCardData = [
     {
       imgSrc: "/images/partners/aws-light.svg",
@@ -60,26 +63,28 @@ const Partners = () => {
     <section className={`${styles.partner} ${theme ? styles.partnerDark : ""}`}>
       <div className={cn("primary-container", styles.flexContainer)}>
         <div className={styles.headSection}>
-          <h6 className={styles.partnerTitle}>Partners</h6>
-          <h3 className={styles.partnerHeading}>
-            Together in every code. Discover the strength of our partnership.
+          <h6 className={styles.partnerTitle} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
+
+          </h6>
+          <h3 className={styles.partnerHeading} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
+            
           </h3>
         </div>
 
         <div className={styles.partnerCards}>
-          {partnerCardData.map((data, index) => (
+          {props?.Slider?.map((data, index) => (
             <PartnerCard
               key={index}
-              imgSrc={data.imgSrc}
-              darkImgSrc={data.darkImgSrc}
-              cardTitle={data.cardTitle}
-              cardContent={data.cardContent}
+              imgSrc={data?.Image?.data?.attributes?.url?`${base_Uri}${data?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+              darkImgSrc={data?.Image?.data?.attributes?.url?`${base_Uri}${data?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+              cardTitle={data.Title}
+              cardContent={data.Description}
               onClick={() => setIsOpen(true)}
             />
           ))}
         </div>
       </div>
-
+    
       <LeftDrawer
         title="wordpress"
         open={isOpen}

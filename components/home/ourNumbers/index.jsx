@@ -81,7 +81,7 @@ const OurNumbers = ({carrer,experience}) => {
           <div className={styles.ourNumberGrid}>
             <div className={styles.ourNumbersImg}>
               <ImageCustom
-                src={experience[0].Image.data.attributes.url?`${base_Uri}${experience[0].Image.data.attributes.url}`:`${base_Uri}/`}
+                src={experience.Image.data.attributes.url?`${base_Uri}${experience.Image.data.attributes.url}`:`${base_Uri}/`}
                 width={1000}
                 height={100}
                 alt="bannerImg"
@@ -89,12 +89,12 @@ const OurNumbers = ({carrer,experience}) => {
             </div>
             <div>
               <p className={styles.ourNumbersText}>
-               {experience[0].Description}
+               {experience?.Description}
               </p>
               <div
                 className={`${styles.desktopCards} ${styles.ourNumberOption} `}
               >
-                {experience[0].Vews.map((data, index) => (
+                {experience?.Vews.map((data, index) => (
                   <ServiceInfoCard
                     key={index}
                     sbTitle={data.Title}
@@ -108,7 +108,7 @@ const OurNumbers = ({carrer,experience}) => {
 
           <div className={cn(styles.mobileCards, styles.ourNumberOption)}>
             <MobileSlider slidesToShow={1.3}>
-              {experience[0].Vews.map((data, index) => (
+              {experience.Vews.map((data, index) => (
                 <ServiceInfoCard
                 key={index}
                     sbTitle={data.Title}
