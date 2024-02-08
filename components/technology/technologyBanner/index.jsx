@@ -34,7 +34,7 @@ const TechnologyBanner = ({props}) => {
               className={styles.headerBtn}
               size="md"
             >
-              Let’s Work Together
+              {props[0]?.Button}
               <Icons.ArrowRight size={20} className="ms-2" />
             </Button>
           </Link>

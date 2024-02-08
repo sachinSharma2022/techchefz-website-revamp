@@ -17,7 +17,7 @@ const Technology = async() => {
     <>
      {data?<div>
           <TechnologyBanner props={data.BannerComponent}/>
-           <Streamline />
+           <Streamline props={data.Extensive} />
            <Partners/>
            <Consistent/>
           <TechnologyValues/>

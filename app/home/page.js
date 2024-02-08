@@ -12,6 +12,7 @@ import VideoCustom from "@/components/ui/videoCustom";
 import { api_Home_Page } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
 import { base_Uri } from "@/lib/constants";
+import { base_Url } from "@/lib/constants";
 
 const HomePage = async () => {
   const data = await getData(api_Home_Page);
@@ -24,8 +25,8 @@ const HomePage = async () => {
             <VideoCustom
               src={
                 data?.Technology?.Video?.data?.attributes?.url
-                  ? `${base_Uri}${data?.Technology?.Video?.data?.attributes?.url}`
-                  : `${base_Uri}/`
+                  ? `${base_Url}${data?.Technology?.Video?.data?.attributes?.url}`
+                  : `${base_Url}/`
               }
             />
             <WeAreFuture props={data.Technology} />

@@ -78,9 +78,7 @@ const SolutionTechnologies = ({ props }) => {
   };
   return (
     <section
-      className={`${styles.solutionTechnologiesStyle} ${theme ? styles.solutionTechnologiesDark : ""
-        }`}
-    >
+      className={`${styles.solutionTechnologiesStyle} ${theme ? styles.solutionTechnologiesDark : "" }`} >
       <div className={cn("primary-container")}>
         <div className={styles.careerRow}>
           <div className="row">
@@ -107,9 +105,7 @@ const SolutionTechnologies = ({ props }) => {
               <p className={styles.ourNumbersText}>
                 {props?.Description}
               </p>
-              <div
-                className={`${styles.desktopCards} ${styles.ourNumberOption} `}
-              >
+              <div className={`${styles.desktopCards} ${styles.ourNumberOption} `} >
                 {props?.TechnologyInner?.map((data, index) => (
                   <ServiceInfoCard
                     key={index}
@@ -133,22 +129,22 @@ const SolutionTechnologies = ({ props }) => {
         </div>
       </div>
 
-          {/* <div className={`${styles.ourNumberOption} service-mobile-slider`}>
+          <div className={`${styles.ourNumberOption} service-mobile-slider`}>
             <Slider {...settings}>
-              {serviceCard.map((data, index) => (
+              {props?.TechnologyInner?.map((data, index) => (
                 <ServiceInfoCard
                   key={index}
-                  sbTitle={data.sbTitle}
-                  icon={data.icon}
-                  sbText={data.sbText}
+                  sbTitle={data.Title}
+                  icon={`${base_Uri}${data?.Image?.data.attributes.url}`}
+                  sbText={data.Description}
                 />
               ))}
             </Slider>
-          </div> */}
-        </div>
-      </div>
+          </div>
+       
+      
     </section>
-  );
+  )
 };
 
 export default SolutionTechnologies;

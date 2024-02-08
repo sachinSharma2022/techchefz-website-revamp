@@ -9,10 +9,11 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
 import { useMediaQuery } from "react-responsive";
-
+import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
 
-const Streamline = () => {
+const Streamline = ({ props }) => {
+  console.log("tt", props);
   const isBigScreen = useMediaQuery({ minWidth: 1025 });
   let component = useRef(null);
   const { theme, setTheme } = useContext(MyContext);
@@ -112,30 +113,31 @@ const Streamline = () => {
     >
       <section className={styles.streamLineSection}>
         <div className={cn("primary-container", styles.flexContainer)}>
-          <h3 className={styles.streamlineTitle}>
-            Streamline your Business with our <span>Extensive Solution.</span>
+          <h3 className={styles.streamlineTitle} dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}>
+
           </h3>
-          <p className={styles.streamlineContent}>
-            We&apos;re a would wide presence, serving client on four continents.
-            Our international expertise ensures innovative solutions tailored to
-            diverse global needs
+          <p className={styles.streamlineContent} dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}>
+
           </p>
         </div>
       </section>
 
       {/* Other sections */}
       <section ref={component} className={styles.streamLineCards}>
-        {streamlineCard.map((data, index) => (
+        {props?.Slider?.map((data, index) => (
           <div key={index}>
             <div className={styles.streamlineCard}>
-              <div className={styles.iconStyle}>{data.icons}</div>
-              <h6 className={styles.cardTitle}>{data.title} </h6>
-              <p className={styles.cardContent}>{data.content}</p>
+              <div className={styles.iconStyle}>
+                <img src= {data?.Image?.data?.attributes?.url?`${base_Uri}${data?.Image?.data?.attributes?.url}`:`${base_Uri}/`} />
+               
+              </div>
+              <h6 className={styles.cardTitle}>{data.Title} </h6>
+              <p className={styles.cardContent}>{data.Description}</p>
               <Button
                 variant={theme ? "lightBlueOutline" : "outline"}
                 size="md"
               >
-                Learn More <Icons.ArrowRight size={18} />
+                {data.Btn} <Icons.ArrowRight size={18} />
               </Button>
             </div>
           </div>
