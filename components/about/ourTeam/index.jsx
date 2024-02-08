@@ -7,10 +7,9 @@ import { Tab } from "@headlessui/react";
 import { useContext, useState } from "react";
 
 import LeftDrawer from "@/components/common/leftDrawer";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import styles from "./style.module.scss";
 import Link from "next/link";
+import styles from "./style.module.scss";
 
 const OurTeam = () => {
   const { theme } = useContext(MyContext);
@@ -33,35 +32,61 @@ const OurTeam = () => {
       image: "/images/img/team/team3.png",
     },
   ];
-  const teamData2 = [
+
+  const coreTeam = [
     {
-      mebName: "Mayank Maggon",
+      name: "Nishant Bhadana",
       role: "CEO & CTO",
       image: "/images/img/team/team1.png",
     },
     {
-      mebName: "Akshit Maggon",
+      name: "Pranav Kumar",
       role: "Director",
       image: "/images/img/team/team2.png",
     },
     {
-      mebName: "Anita Ahlawat",
+      name: "Faraz Ahmed",
       role: "Co-Founder",
       image: "/images/img/team/team3.png",
     },
     {
-      mebName: "Akshit Maggon",
+      name: "Sachin Sharma",
       role: "Director",
       image: "/images/img/team/team2.png",
     },
     {
-      mebName: "Anita Ahlawat",
+      name: "Anita Ahlawat",
+      role: "Co-Founder",
+      image: "/images/img/team/team3.png",
+    },
+    {
+      name: "Nishant Bhadana",
+      role: "CEO & CTO",
+      image: "/images/img/team/team1.png",
+    },
+    {
+      name: "Pranav Kumar",
+      role: "Director",
+      image: "/images/img/team/team2.png",
+    },
+    {
+      name: "Faraz Ahmed",
+      role: "Co-Founder",
+      image: "/images/img/team/team3.png",
+    },
+    {
+      name: "Sachin Sharma",
+      role: "Director",
+      image: "/images/img/team/team2.png",
+    },
+    {
+      name: "Anita Ahlawat",
       role: "Co-Founder",
       image: "/images/img/team/team3.png",
     },
   ];
   return (
-    <section className={`${styles.ourTeam} ${theme ? styles.ourTeamDark : ""}`}>
+    <section className={cn(styles.ourTeam, theme ? styles.ourTeamDark : "")}>
       <div className={cn("primary-container")}>
         <div className="tab">
           <Tab.Group>
@@ -72,7 +97,7 @@ const OurTeam = () => {
                   Meet the Founder <br /> behind the Vision.
                 </h3>
               </div>
-              {/* <Tab.List className={styles.tabWrapper}>
+              <Tab.List className={styles.tabWrapper}>
                 <Tab>
                   {({ selected }) => (
                     <span
@@ -93,7 +118,7 @@ const OurTeam = () => {
                     </span>
                   )}
                 </Tab>
-              </Tab.List> */}
+              </Tab.List>
             </div>
 
             <Tab.Panels className={styles.contentWrapper}>
@@ -134,35 +159,20 @@ const OurTeam = () => {
                 </div>
               </Tab.Panel>
               <Tab.Panel>
-                <div className="row">
-                  <div className={styles.teamCards}>
-                    {teamData2.map((data, index) => (
-                      <div key={index} className={styles.teamCardBg}>
-                        <div className={styles.cardHead}>
-                          <div>
-                            <h6>{data.mebName} </h6>
-                            <p>{data.role}</p>
-                          </div>
-                          <Icons.ArrowRight width={26} height={24} />
-                        </div>
-                        <Link
-                          className={styles.linkedInIcon}
-                          href="https://www.linkedin.com/"
-                          target="_blank"
-                        >
-                          <Icons.Linkedin width={34} height={34} />
-                        </Link>
-                        <div className={styles.teamImg}>
-                          <ImageCustom
-                            src={data.image}
-                            width={240}
-                            height={320}
-                            alt="team-member"
-                          />
-                        </div>
+                <div className={styles.coreTeam}>
+                  {coreTeam.map((item, index) => (
+                    <div key={index} className={styles.cardItem}>
+                      <div className={styles.teamImage}>
+                        <ImageCustom
+                          src="/images/img/team/profile1.png"
+                          width={500}
+                          height={530}
+                          alt="profile"
+                        />
                       </div>
-                    ))}
-                  </div>
+                      <h4 className={styles.nameTitle}>{item.name}</h4>
+                    </div>
+                  ))}
                 </div>
               </Tab.Panel>
             </Tab.Panels>

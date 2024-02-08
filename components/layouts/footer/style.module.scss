@@ -2,7 +2,7 @@
 
 .footerSection {
   background-color: color(text-primary);
-  padding: 3rem 7.5rem 0;
+  padding: 3.75rem 7.5rem 0;
   color: color(primary-white);
 
   @include tablet {
@@ -154,13 +154,13 @@
       }
     }
 
-    .partenerCard {
+    .partnerCard {
       display: flex;
       align-items: center;
       justify-content: space-between;
       border: 0.14rem solid color(primary-blue);
       border-radius: 1rem;
-      margin: 3rem 0;
+      margin:80px 0 2.5rem;
 
       @include tablet {
         margin: 2rem 0;

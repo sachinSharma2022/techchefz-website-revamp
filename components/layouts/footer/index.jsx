@@ -31,7 +31,7 @@ const Footer = () => {
                 insights by subscribing to our newsletter.
               </p>
 
-              <div className={styles.partenerCard}>
+              <div className={styles.partnerCard}>
                 <div className={styles.partnerCols}>
                   <Link href="/">
                     Become our Partner <Icons.ArrowRight size={16} />

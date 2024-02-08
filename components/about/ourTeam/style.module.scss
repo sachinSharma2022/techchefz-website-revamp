@@ -42,6 +42,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 99;
     @include mobile-tablet-p {
       flex-direction: column;
     }
@@ -197,6 +199,50 @@
     }
   }
 
+  // Core Team
+  .coreTeam {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+    margin-top: 5rem;
+    
+    .cardItem {
+      background: color(bg-soft);
+      padding: 1.25rem;
+      border-radius: .75rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+   
+    .nameTitle {
+      font-size: text(lg);
+      font-weight: 400;
+      color: color(text-primary);
+
+      @include mobile-tablet-p {
+        line-height: 1.875rem;
+        font-size: text(normal);
+        margin-bottom: 0;
+      }
+    }
+
+    .teamImage div {
+      width: 3rem;
+      height: 3rem;
+      position: relative;
+      border-radius: 100%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+    }
+  }
+
   // Dark theme style
   &.ourTeamDark {
     background-color: color(input-bg);
@@ -213,6 +259,16 @@
     .teamCardBg {
       border: 0.14rem solid color(input-bg);
     }
+
+    .coreTeam {
+      .cardItem {
+        background: color(text-primary);
+      }
+      .nameTitle {
+        color: color(primary-white);
+      }
+    }
+  
   }
 }
 

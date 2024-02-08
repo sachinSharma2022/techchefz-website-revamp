@@ -1,0 +1,246 @@
+@import "~/styles/partials/config";
+
+.founderDesk {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7.5rem;
+  position: relative;
+  background-color: color(bg-soft);
+
+  @include mobile-tablet-p {
+    padding: spacing(section-mob-padding);
+    padding-block: 3.75rem 3.75rem;
+  }
+
+  .flexContainer {
+    max-width: 80%;
+
+    @include mobile-tablet-p {
+      padding: 5rem 1.25rem;
+      max-width: 100%;
+    }
+  }
+
+  .heading {
+    font-size: text(larger);
+    margin-bottom: 2.75rem;
+
+    @include mobile-tablet-p {
+      font-size: 2rem;
+      line-height: 2.5rem;
+      margin-bottom: text(lg);
+    }
+
+    span {
+      font-size: text(larger);
+      margin-bottom: 2.75rem;
+      background: linear-gradient(
+        322deg,
+        #4cc3da 20.24%,
+        #3376d9 49.39%,
+        #2720a9 102.1%
+      );
+      @include textGradient;
+    }
+  }
+
+  .subHeading {
+    opacity: 0.6;
+    font-weight: 400;
+    line-height: 1.875rem;
+    font-size: text(lg);
+
+    @include mobile-tablet-p {
+      margin-bottom: 0;
+      font-size: text(normal);
+      line-height: text(xl);
+    }
+  }
+
+  .paraSection {
+    height: 32.5rem;
+    overflow-y: scroll;
+
+    .description {
+      opacity: 0.8;
+      font-weight: 400;
+      line-height: 1.875rem;
+      font-size: text(2);
+      margin-bottom: 1rem;
+
+      @include mobile-tablet-p {
+        margin-bottom: 0;
+        font-size: text(normal);
+        line-height: text(xl);
+      }
+    }
+  }
+
+  .contentSec {
+    display: flex;
+    gap: 5rem;
+  }
+
+  .ourTeamHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include mobile-tablet-p {
+      flex-direction: column;
+    }
+
+    .ourTeamTitle {
+      font-size: text(normal);
+      opacity: 0.8;
+      letter-spacing: 0.2rem;
+      text-transform: uppercase;
+      font-weight: 500;
+      line-height: 1.5rem;
+      @include mobile-tablet-p {
+        font-weight: 400;
+        margin-bottom: 0.75rem;
+      }
+    }
+    .ourTeamHeading {
+      font-size: text(larger);
+      @include mobile-tablet-p {
+        font-size: 2rem;
+        line-height: 2.5rem;
+        margin-bottom: 3.75rem;
+      }
+    }
+  }
+
+  .titleWrapper {
+    width: 40%;
+
+    @include mobile-tablet-p {
+      width: 100%;
+    }
+  }
+
+  .tabWrapper {
+    border: 2px solid color(heading-liner);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    width: fit-content;
+    display: flex;
+    @include mobile-tablet-p {
+      width: auto;
+      padding: 0.25rem 0.75rem 0.25rem 0.75rem;
+    }
+
+    button span {
+      padding: 0 2rem;
+      height: 2.375rem;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.5rem;
+      display: flex;
+      min-width: 176px;
+      @include mobile {
+        font-size: text(normal);
+        line-height: text(normal);
+      }
+
+      &.btnActive {
+        background-color: color(info-blue);
+        color: color(primary-white);
+      }
+    }
+  }
+  .contentWrapper {
+    position: relative;
+  }
+  .teamCards {
+    .teamCardBg {
+      border: 0.14rem solid color(primary-white);
+      background: linear-gradient(
+        322deg,
+        #4cc3da 20.24%,
+        #3376d9 49.39%,
+        #2720a9 102.1%
+      );
+      height: 32.5rem;
+      width: 23.3125rem;
+      border-radius: 0.7rem;
+      overflow: hidden;
+      color: color(primary-white);
+      position: relative;
+      transition: all 0.5s ease-in-out;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        background: url("../../../public/images/noise-bg.svg");
+        background-size: cover;
+      }
+
+      &:hover {
+        border-color: color(border-light-blue);
+      }
+
+      .teamImg {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+
+      .cardHead {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem;
+
+        h6 {
+          font-size: text(xl);
+          font-style: normal;
+          font-weight: 500;
+          @include mobile-tablet-p {
+            line-height: 2rem;
+            margin-bottom: 0.5rem;
+          }
+        }
+        p {
+          font-size: text(lg);
+          font-weight: 400;
+          opacity: 0.6;
+          @include mobile-tablet-p {
+            line-height: 1.875rem;
+            font-size: text(normal);
+            margin-bottom: 0;
+          }
+        }
+      }
+      .linkedInIcon {
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        z-index: 1;
+      }
+    }
+  }
+
+  // Dark theme style
+  &.founderDeskDark {
+    background-color: color(dark-bg);
+    color: color(primary-white);
+
+    .tabWrapper {
+      background-color: color(dark-tab);
+
+      button {
+        color: rgba(color(primary-white), 0.8);
+      }
+    }
+
+    .teamCardBg {
+      border: 0.14rem solid color(input-bg);
+    }
+  }
+}
