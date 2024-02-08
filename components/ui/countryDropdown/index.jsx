@@ -123,10 +123,13 @@ const CountryDropdown = (props) => {
         </Listbox>
 
         <input
-          type="text"
-          id="username"
+          type="number"
           placeholder="Phone Number*"
           required=""
+          id={props.id}
+          name={props.name}
+          onChange={props.onChange}
+          onBlur={props.onBlur}
         />
       </div>
     </div>

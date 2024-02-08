@@ -6,9 +6,11 @@ import CountryDropdown from "@/components/ui/countryDropdown";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { Error, Input, Textarea } from "@/components/ui/inputCustom";
 import { MyContext } from "@/context/theme";
-import { Form, Formik } from "formik";
+import { Form, Formik, useFormik } from "formik";
 import { useContext } from "react";
-import * as yep from "yup";
+import { validationSchema } from "@/lib/FormSchema";
+import { triggerMail } from "@/lib/triggerMail";
+
 
 import CustomDropdown from "@/components/ui/customDropdown";
 
@@ -25,27 +27,18 @@ const ProjectForm = () => {
     countrySelection: "",
     projectExplanation: "",
   };
-  const validationSchema = yep.object({
-    firstName: yep
-      .string()
-      .required("First Name is required")
-      .matches(/^[A-Za-z]+$/, "Only alphabets are allowed"),
-    lastName: yep
-      .string()
-      .required("Last Name is required")
-      .matches(/^[A-Za-z]+$/, "Only alphabets are allowed"),
-    email: yep
-      .string()
-      .email("Please enter a valid Email")
-      .required("Email is required"),
-    phone: yep.string().required("Phone is required"),
-    companyName: yep.string().required("Company Name is required"),
-    countrySelection: yep.string().required("Country is required"),
-    projectExplanation: yep
-      .string()
-      .required("Project Explanation is required"),
-  });
-
+  
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit,setFieldValue } =
+    useFormik({
+      initialValues:formInitialSchema,
+      validationSchema: validationSchema,
+      onSubmit: (values, action) => {
+        console.log(values);
+        triggerMail({content:JSON.stringify(values)})
+        action.resetForm();
+      },
+    });
+  
   const dropdownData = [
     { value: "Country", label: "Country" },
     { value: "India", label: "India" },
@@ -54,19 +47,20 @@ const ProjectForm = () => {
   ];
 
   return (
-    <Formik
-      onSubmit={(values) => {
-        console.log(values, "values");
-      }}
-      initialValues={formInitialSchema}
-      initialStatus={{
-        success: false,
-        successMsg: "",
-      }}
-      validationSchema={validationSchema}
-    >
-      {({ errors, handleBlur, handleChange, touched, values }) => (
-        <Form>
+    // <Formik
+    //   onSubmit={(values) => {
+    //     console.log(values, "values");
+    //   }}
+    //   initialValues={formInitialSchema}
+    //   initialStatus={{
+    //     success: false,
+    //     successMsg: "",
+    //   }}
+    //   // validationSchema={validationSchema}
+    // >
+      // {({ errors, handleBlur, handleChange,handleSubmit, touched, values }) => (
+        <Formik>
+          <Form onSubmit={handleSubmit}>
           <div className={styles.contactUsForm}>
             <p className={styles.formText}>
               Fill up few details to contact you for a discussion about your
@@ -82,14 +76,14 @@ const ProjectForm = () => {
                     id="firstName"
                     name="firstName"
                     error={Boolean(touched.firstName && errors.firstName)}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                     values={values.firstName}
-                    errorStatus={touched.firstName && errors.firstName}
-                    inputError={errors.lastName && true}
+                    // errorStatus={touched.firstName && errors.firstName}
+                    // inputError={errors.lastName && true}
                   />
                   {touched.firstName && errors.firstName && (
-                    <Error>{touched.firstName && errors.firstName}</Error>
+                    <Error>{errors.firstName }</Error>
                   )}
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
@@ -100,14 +94,14 @@ const ProjectForm = () => {
                     id="lastName"
                     name="lastName"
                     error={Boolean(touched.lastName && errors.lastName)}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                     values={values.lastName}
-                    errorStatus={touched.lastName && errors.lastName}
-                    inputError={errors.lastName && true}
+                    // errorStatus={touched.lastName && errors.lastName}
+                    // inputError={errors.lastName && true}
                   />
                   {touched.lastName && errors.lastName && (
-                    <Error>{errors.lastName}</Error>
+                    <Error>{errors.lastName }</Error>
                   )}
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
@@ -118,11 +112,11 @@ const ProjectForm = () => {
                     id="email"
                     name="email"
                     error={Boolean(touched.email && errors.email)}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                     values={values.email}
-                    errorStatus={touched.email && errors.email}
-                    inputError={errors.lastName && true}
+                    // errorStatus={touched.email && errors.email}
+                    // inputError={errors.lastName && true}
                   />
                   {touched.email && errors.email && (
                     <Error>{errors.email}</Error>
@@ -132,11 +126,11 @@ const ProjectForm = () => {
                   <CountryDropdown
                     id="phone"
                     name="phone"
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                     values={values.phone}
-                    errorStatus={touched.phone && errors.phone}
-                    inputError={errors.lastName && true}
+                    // errorStatus={touched.phone && errors.phone}
+                    // inputError={errors.lastName && true}
                   />
                   {touched.phone && errors.phone && (
                     <Error>{errors.phone}</Error>
@@ -150,11 +144,11 @@ const ProjectForm = () => {
                     id="companyName"
                     name="companyName"
                     error={Boolean(touched.companyName && errors.companyName)}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                     values={values.companyName}
-                    errorStatus={touched.companyName && errors.companyName}
-                    inputError={errors.lastName && true}
+                    // errorStatus={touched.companyName && errors.companyName}
+                    // inputError={errors.lastName && true}
                   />
                   {touched.companyName && errors.companyName && (
                     <Error>{errors.companyName}</Error>
@@ -164,14 +158,14 @@ const ProjectForm = () => {
                   <CustomDropdown
                     title="Country"
                     name="countrySelection"
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
+                    setFieldValue={setFieldValue}
+                    onBlur={handleBlur}
                     values={values.countrySelection}
                     options={dropdownData}
-                    errorStatus={
-                      touched.countrySelection && errors.countrySelection
-                    }
-                    inputError={errors.lastName && true}
+                    // errorStatus={
+                    //   touched.countrySelection && errors.countrySelection
+                    // }
+                    // inputError={errors.lastName && true}
                     className="custom-dropdown"
                   />
                   {touched.countrySelection && errors.countrySelection && (
@@ -189,13 +183,13 @@ const ProjectForm = () => {
                     error={Boolean(
                       touched.projectExplanation && errors.projectExplanation
                     )}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                     values={values.projectExplanation}
-                    errorStatus={
-                      touched.projectExplanation && errors.projectExplanation
-                    }
-                    inputError={errors.lastName && true}
+                    // errorStatus={
+                    //   touched.projectExplanation && errors.projectExplanation
+                    // }
+                    // inputError={errors.lastName && true}
                   />
                   {touched.projectExplanation && errors.projectExplanation && (
                     <Error>{errors.projectExplanation}</Error>
@@ -225,7 +219,7 @@ const ProjectForm = () => {
             </div>
           </div>
         </Form>
-      )}
+    {/* //   )} */}
     </Formik>
   );
 };
