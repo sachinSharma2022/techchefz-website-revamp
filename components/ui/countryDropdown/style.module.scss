@@ -2,12 +2,13 @@
 
 .dropdownContainerStyle {
   width: 100%;
+  position: relative;
+  z-index: 10;
 
   &:hover,
   &:focus {
     border-color: color(heading-liner);
   }
-
 
   .countryDropdown {
     display: flex;
@@ -23,41 +24,6 @@
 
     &.inputErrorStyle {
       border-color: color(error);
-    }
-
-    .floatDropdown {
-      position: relative;
-      z-index: 9;
-
-      button {
-        display: flex;
-        align-items: center;
-        font-size: text(normal);
-        font-weight: 500;
-        font-family: font(primary);
-        color: rgba(color(text-primary), 0.9);
-      }
-
-      .countryValue {
-        margin-right: 1.8rem;
-        display: flex;
-        align-items: center;
-        position: relative;
-      }
-
-      .arrow {
-        box-sizing: border-box;
-        height: 0.4rem;
-        width: 0.4rem;
-        border-style: solid;
-        border-color: color(text-primary);
-        border-width: 0rem 0.122rem 0.122rem 0rem;
-        transform: rotate(45deg);
-        transition: border-width 150ms ease-in-out;
-        transition: all 0.5s;
-        position: absolute;
-        right: -15px;
-      }
     }
 
     input {
@@ -98,6 +64,12 @@
         }
       }
     }
+  }
+
+  .countryOption {
+    display: flex;
+    align-items: center;
+    gap: .625rem;
   }
 
   // Dark Mode

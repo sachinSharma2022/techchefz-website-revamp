@@ -2,7 +2,7 @@
 
 .wrapperStyle {
   position: relative;
-  z-index: 99;
+  z-index: 9;
 
   .inputErrorStyle {
     border-color: color(error);
@@ -19,7 +19,7 @@
 
   &.darkThemeStyle {
     .customLabel {
-      color: color(primary-white);
+      color: color(primary-white) !important;
     }
   }
 }

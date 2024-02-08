@@ -1,68 +1,36 @@
 "use client";
 
 import { Icons } from "@/components/icons";
-import { Button } from "@/components/ui/button";
-import CountryDropdown from "@/components/ui/countryDropdown";
-import { ImageCustom } from "@/components/ui/imageCustom";
-import CustomInput from "@/components/ui/inputCustom";
 import { MyContext } from "@/context/theme";
 import { Tab } from "@headlessui/react";
-import { Form, Formik } from "formik";
 import { useContext } from "react";
-import * as yep from "yup";
 
 import CustomDropdown from "@/components/ui/customDropdown";
 import { cn } from "@/lib/utils";
 
-import styles from "./style.module.scss";
+import JobsForm from "./forms/jobs";
 import ProjectForm from "./forms/project";
 import ServicesForm from "./forms/services";
-import JobsForm from "./forms/jobs";
 import VendorForm from "./forms/vendor";
+import styles from "./style.module.scss";
 
 const LetsTalk = () => {
   const { theme } = useContext(MyContext);
-  const formInitialSchema = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    companyName: "",
-    countrySelection: "",
-    projectExplanation: "",
-  };
-  const validationSchema = yep.object({
-    firstName: yep
-      .string()
-      .required("First Name is required")
-      .matches(/^[A-Za-z]+$/, "Only alphabets are allowed"),
-    lastName: yep
-      .string()
-      .required("Last Name is required")
-      .matches(/^[A-Za-z]+$/, "Only alphabets are allowed"),
-    email: yep
-      .string()
-      .email("Please enter a valid Email")
-      .required("Email is required"),
-    phone: yep.string().required("Phone is required"),
-    companyName: yep.string().required("Company Name is required"),
-    countrySelection: yep.string().required("Country is required"),
-    projectExplanation: yep
-      .string()
-      .required("Project Explanation is required"),
-  });
 
   const dropdownData = [
-    { value: "Contact us for project ideas.", label: "Data" },
-    { value: "Contact us for project.", label: "It Development" },
+    { value: "Project", label: "Project" },
+    { value: "Job", label: "Job" },
+    { value: "Services", label: "Services" },
+    { value: "Vendor", label: "Vendor" },
   ];
 
   return (
     <section className={cn("primary-container")}>
       <div
-        className={`${styles.lestWorkStyle} ${
+        className={cn(
+          styles.lestWorkStyle,
           theme ? styles.lestWorkStyleDark : ""
-        }`}
+        )}
       >
         <div className={styles.workArea}>
           <div className={styles.headingMain}>
@@ -78,7 +46,11 @@ const LetsTalk = () => {
 
           <div className={`${styles.tabDropdownMob} col-md-6 col-12`}>
             <h3 className={styles.tabDropLabel}>Choose Purpose</h3>
-            <CustomDropdown title="Projects" options={dropdownData} />
+            <CustomDropdown
+              placeholder=""
+              title="Projects"
+              options={dropdownData}
+            />
           </div>
 
           <div className={styles.contactTabWrap}>

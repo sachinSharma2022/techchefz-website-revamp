@@ -15,8 +15,8 @@ const ContactSection = () => {
 
   return (
     <section
-      className={`${styles.lestWorkStyle} ${
-        theme ? styles.lestWorkStyleDark : ""
+      className={`${styles.contactSectionStyle} ${
+        theme ? styles.contactSectionStyleDark : ""
       }`}
     >
       <div className={cn("primary-container")}>
@@ -117,7 +117,11 @@ const ContactSection = () => {
                   <span className={styles.policyHighlight}>Privacy Policy</span>
                 </div>
 
-                <Button variant={theme ? "blueBtnDark" : "blueBtn"} size="lg" className={styles.btnGrid}>
+                <Button
+                  variant={theme ? "blueBtnDark" : "blueBtn"}
+                  size="lg"
+                  className={styles.btnGrid}
+                >
                   Send a Message <Icons.ArrowRight size={18} />
                 </Button>
               </div>

@@ -8,7 +8,7 @@ import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 
 const ContactHeroBanner = () => {
-  const { theme, setTheme } = useContext(MyContext);
+  const { theme } = useContext(MyContext);
   return (
     <section
       className={`${styles.contactHeroBannerStyle} ${

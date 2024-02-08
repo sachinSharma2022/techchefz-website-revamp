@@ -30,12 +30,13 @@ import dropdownStyle from "./style.module.scss";
 // valueContainer
 
 const CustomDropdown = ({
-  title,
+  label,
   options,
   onChange,
   className,
   inputError,
   styles,
+  placeholder,
 }) => {
   const { theme } = useContext(MyContext);
 
@@ -53,11 +54,11 @@ const CustomDropdown = ({
       boxShadow: "none",
       // fontWeight: 500,
     }),
-    singleValue: (styles) => ({
+    singleValue: () => ({
       color: theme ? "white" : "#111",
     }),
     indicatorSeparator: () => ({ display: "none" }),
-    valueContainer: () => ({ top: 25, position: "relative", left: 17 }),
+    valueContainer: () => ({ top: 12, position: "relative", left: 17 }),
     option: (styles, { isFocused }) => {
       return {
         ...styles,
@@ -83,12 +84,10 @@ const CustomDropdown = ({
         onChange={onChange}
         options={options}
         classNamePrefix="react-select"
-        placeholder="Select"
+        placeholder={"Select" || placeholder}
         styles={controlStyle || styles}
+        isSearchable={false}
       />
-      <label className={dropdownStyle.customLabel} for="floatingSelect">
-        {title}
-      </label>
     </div>
   );
 };
