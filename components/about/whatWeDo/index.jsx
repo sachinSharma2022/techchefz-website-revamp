@@ -9,7 +9,7 @@ import { useMediaQuery } from "react-responsive";
 import styles from "./style.module.scss";
 import Image from "next/image";
 import { base_Uri } from "@/lib/constants";
-
+import { base_Url } from "@/lib/constants";
 const WhatWeDo = ({props}) => {
   
   const { theme, setTheme } = useContext(MyContext);
@@ -120,7 +120,7 @@ const WhatWeDo = ({props}) => {
               <div className={styles.workCard}>
                 <div className={`${styles.frontCard} ${styles.workCols}`} >
                   {/* {data.icon} */}
-                  <Image height={100}  width={100} src={`${base_Uri}${data.Image.data.attributes.url}`} />
+                  <Image height={100}  width={100} src={`${base_Url}${data.Image.data.attributes.url}`} />
                   
                   <h6>{data.Title}</h6>
                 </div>
