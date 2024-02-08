@@ -5,14 +5,59 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import Slider from "react-slick";
 import styles from "./style.module.scss";
-import { Button } from "@/components/ui/button";
 
 const OurClients = () => {
   const { theme } = useContext(MyContext);
+  const sliderLeft = {
+    speed: 15000,
+    autoplay: true,
+    autoplaySpeed: 0,
+    arrows: false,
+    cssEase: "linear",
+    slidesToShow: 3.5,
+    slidesToScroll: 1,
+    infinite: true,
+    swipeToSlide: true,
+    centerMode: true,
+    focusOnSelect: true,
+  };
 
+  const sliderRight = {
+    speed: 15000,
+    autoplay: true,
+    autoplaySpeed: 0,
+    arrows: false,
+    cssEase: "linear",
+    slidesToShow: 3.5,
+    slidesToScroll: -1,
+    infinite: true,
+    swipeToSlide: true,
+    centerMode: true,
+    focusOnSelect: true,
+    rtl: true,
+  };
+
+  const logoSec = [
+    "/images/clients/logo1.png",
+    "/images/clients/logo2.png",
+    "/images/clients/logo3.png",
+    "/images/clients/logo4.png",
+    "/images/clients/logo5.png",
+    "/images/clients/logo6.png",
+    "/images/clients/logo1.png",
+    "/images/clients/logo1.png",
+    "/images/clients/logo2.png",
+    "/images/clients/logo3.png",
+    "/images/clients/logo4.png",
+    "/images/clients/logo5.png",
+    "/images/clients/logo6.png",
+    "/images/clients/logo1.png",
+  ];
   return (
     <section
       className={cn(styles.ourClients, theme ? styles.ourClientsDark : "")}
@@ -45,6 +90,79 @@ const OurClients = () => {
               development, web design, branding UI/UX design and now getting
               into AR/VR.
             </p>
+
+            <div className={cn(styles.logoAnimation, "logo-animation")}>
+              <div className={styles.logoSection}>
+                <Slider {...sliderLeft}>
+                  {logoSec.map((item, index) => (
+                    <div key={index} className={styles.teamImg}>
+                      <ImageCustom
+                        src={item}
+                        width={240}
+                        height={320}
+                        alt="team-member"
+                      />
+                    </div>
+                  ))}
+                </Slider>
+              </div>
+              <div className={styles.logoSection}>
+                <Slider {...sliderRight}>
+                  {logoSec.map((item, index) => (
+                    <div key={index} className={styles.teamImg}>
+                      <ImageCustom
+                        src={item}
+                        width={240}
+                        height={320}
+                        alt="team-member"
+                      />
+                    </div>
+                  ))}
+                </Slider>
+              </div>
+              <div className={styles.logoSection}>
+                <Slider {...sliderLeft}>
+                  {logoSec.map((item, index) => (
+                    <div key={index} className={styles.teamImg}>
+                      <ImageCustom
+                        src={item}
+                        width={240}
+                        height={320}
+                        alt="team-member"
+                      />
+                    </div>
+                  ))}
+                </Slider>
+              </div>
+              {/* <div className={styles.logoSection}>
+                  <Slider {...settings}>
+                    {logoSec2.map((item, index) => (
+                      <div key={index} className={styles.teamImg}>
+                        <ImageCustom
+                          src={item}
+                          width={240}
+                          height={320}
+                          alt="team-member"
+                        />
+                      </div>
+                    ))}
+                  </Slider>
+                </div>
+                <div className={styles.logoSection}>
+                  <Slider {...settings}>
+                    {logoSec3.map((item, index) => (
+                      <div key={index} className={styles.teamImg}>
+                        <ImageCustom
+                          src={item}
+                          width={240}
+                          height={320}
+                          alt="team-member"
+                        />
+                      </div>
+                    ))}
+                  </Slider>
+                </div> */}
+            </div>
           </div>
         </div>
       </div>

@@ -825,3 +825,10 @@ html.lenis {
   pointer-events: none;
 }
 // Smooth Scroll Style End here
+
+
+// logo-animation
+.logo-animation {
+  .slick-list {margin: 0 -50px;}
+.slick-slide>div {padding: 0 50px;}
+}

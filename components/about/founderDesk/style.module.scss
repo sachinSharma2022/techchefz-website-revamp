@@ -50,6 +50,7 @@
     font-weight: 400;
     line-height: 1.875rem;
     font-size: text(lg);
+    text-transform: uppercase;
 
     @include mobile-tablet-p {
       margin-bottom: 0;

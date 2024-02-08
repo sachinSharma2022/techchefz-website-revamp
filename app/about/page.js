@@ -2,7 +2,6 @@
 import AboutBanner from "@/components/about/aboutBanner";
 import FounderDesk from "@/components/about/founderDesk";
 import OurClients from "@/components/about/ourClients";
-import OurGallery from "@/components/about/ourGallery";
 import OurHistory from "@/components/about/ourHistory";
 import OurResults from "@/components/about/ourResults";
 import OurTeam from "@/components/about/ourTeam";
@@ -25,7 +24,6 @@ const AboutPage = () => {
         <FounderDesk />
         <OurTeam />
         <OurClients />
-        {/* <OurGallery /> */}
         <LetsWork />
       </div>
     </Curve>
