@@ -25,6 +25,15 @@ const OurClients = () => {
     swipeToSlide: true,
     centerMode: true,
     focusOnSelect: true,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 2.2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   const sliderRight = {
@@ -40,6 +49,15 @@ const OurClients = () => {
     centerMode: true,
     focusOnSelect: true,
     rtl: true,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 2.2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   const logoSec = [
@@ -134,34 +152,6 @@ const OurClients = () => {
                   ))}
                 </Slider>
               </div>
-              {/* <div className={styles.logoSection}>
-                  <Slider {...settings}>
-                    {logoSec2.map((item, index) => (
-                      <div key={index} className={styles.teamImg}>
-                        <ImageCustom
-                          src={item}
-                          width={240}
-                          height={320}
-                          alt="team-member"
-                        />
-                      </div>
-                    ))}
-                  </Slider>
-                </div>
-                <div className={styles.logoSection}>
-                  <Slider {...settings}>
-                    {logoSec3.map((item, index) => (
-                      <div key={index} className={styles.teamImg}>
-                        <ImageCustom
-                          src={item}
-                          width={240}
-                          height={320}
-                          alt="team-member"
-                        />
-                      </div>
-                    ))}
-                  </Slider>
-                </div> */}
             </div>
           </div>
         </div>

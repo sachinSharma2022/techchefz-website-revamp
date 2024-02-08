@@ -96,11 +96,6 @@
 
         .formTechHighlight {
           color: color(primary-blue);
-          background: linear-gradient(
-            118deg,
-            color(primary-blue) 11.5%,
-            color(heading-liner) 55.42%
-          );
           @include textGradient;
           font-size: 2.75rem;
           font-weight: 500;

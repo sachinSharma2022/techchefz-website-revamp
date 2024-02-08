@@ -49,11 +49,6 @@
             font-weight: 500;
             line-height: 3.375rem;
             color: color(primary-blue);
-            background: linear-gradient(
-              118deg,
-              color(primary-blue) 11.5%,
-              color(heading-liner) 55.42%
-            );
             @include textGradient;
 
             @include mobile-tablet-p {

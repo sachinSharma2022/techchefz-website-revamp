@@ -42,6 +42,7 @@ h5 {
 
 h6 {
   font-family: font(secondary);
+  letter-spacing: 1.5px;
 }
 
 a {
@@ -302,7 +303,8 @@ input:-webkit-autofill {
     background-color: color(nav-btn);
     border-color: color(nav-btn);
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       background-color: color(nav-btn);
       border-color: color(nav-btn);
     }
@@ -826,9 +828,12 @@ html.lenis {
 }
 // Smooth Scroll Style End here
 
-
 // logo-animation
 .logo-animation {
-  .slick-list {margin: 0 -50px;}
-.slick-slide>div {padding: 0 50px;}
+  .slick-list {
+    margin: 0 -50px;
+  }
+  .slick-slide > div {
+    padding: 0 50px;
+  }
 }

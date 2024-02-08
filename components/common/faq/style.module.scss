@@ -91,7 +91,6 @@
 
       [aria-expanded="true"] {
         &.accordionHead {
-          background: linear-gradient(117.91deg, #1e8af2 11.5%, #05bed7 55.42%);
           @include textGradient;
         }
       }

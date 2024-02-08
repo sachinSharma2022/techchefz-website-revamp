@@ -181,11 +181,6 @@
           font-weight: 500;
           font-size: text(larger);
           line-height: 3.3rem;
-          background: linear-gradient(
-            118deg,
-            color(primary-blue) 11.5%,
-            color(heading-liner) 55.42%
-          );
           @include textGradient;
 
           @include mobile {

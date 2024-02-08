@@ -9,7 +9,7 @@
   background-color: color(bg-soft);
 
   @include mobile-tablet-p {
-    padding: spacing(section-mob-padding);
+    padding: 0;
     padding-block: 3.75rem 3.75rem;
   }
 
@@ -26,12 +26,6 @@
     span {
       font-size: text(larger);
       margin-bottom: 2.75rem;
-      background: linear-gradient(
-        322deg,
-        #4cc3da 20.24%,
-        #3376d9 49.39%,
-        #2720a9 102.1%
-      );
       @include textGradient;
     }
   }
@@ -58,7 +52,6 @@
     margin-bottom: 2.75rem;
 
     @include mobile-tablet-p {
-      margin-bottom: 0;
       font-size: text(normal);
       line-height: text(xl);
     }
@@ -66,11 +59,22 @@
 
   .contentSec {
     max-width: 372px;
+
+    @include mobile-tablet-p {
+      max-width: 100%;
+      width: 100%;
+      padding-inline: 1.25rem;
+    }
   }
 
   .flexContainer {
     display: flex;
     gap: 8.9375rem;
+
+    @include mobile-tablet-p {
+      flex-direction: column;
+      gap: 3.75rem;
+    }
   }
 
   .clientSection {
@@ -78,7 +82,12 @@
 
     .description {
       max-width: 50%;
-  }
+
+      @include mobile-tablet-p {
+        max-width: 100%;
+        padding-inline: 1.25rem;
+      }
+    }
   }
 
   .logoAnimation {
@@ -86,8 +95,13 @@
     overflow: hidden;
     max-width: 77.8%;
 
+    @include mobile-tablet-p {
+      max-width: 100%;
+      margin-left: 1.25rem;
+    }
+
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       width: 120px;
       height: 678px;
@@ -99,11 +113,20 @@
         color(bg-soft) 62.5%,
         rgba(26, 26, 26, 0) 100%
       );
+
+      @include mobile-tablet-p {
+        display: none;
+      }
     }
     .teamImg div {
       width: 200px;
       height: 50px;
       overflow: hidden;
+
+      @include mobile-tablet-p {
+        width: 120px;
+        height: 30px;
+      }
 
       img {
         width: 100%;
@@ -116,6 +139,10 @@
     .logoSection {
       border-top: 1px solid rgba(color(text-primary), 0.12);
       padding: 2.8125rem 0;
+
+      &:last-child {
+        border-bottom: 1px solid rgba(color(text-primary), 0.12);
+      }
     }
   }
 
@@ -132,7 +159,6 @@
       }
     }
     .logoAnimation {
-
       &::after {
         background: linear-gradient(
           270deg,
@@ -142,16 +168,16 @@
         );
       }
 
-    .teamImg div {
-      img {
-        filter: invert(0);
+      .teamImg div {
+        img {
+          filter: invert(0);
+        }
+      }
+
+      .logoSection {
+        border-color: rgba(color(primary-white), 0.12);
       }
     }
-
-    .logoSection {
-      border-color: rgba(color(primary-white), 0.12);
-    }
-  }
 
     .teamCardBg {
       border: 0.14rem solid color(input-bg);

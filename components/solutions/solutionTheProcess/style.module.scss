@@ -50,11 +50,6 @@
       span {
         font-size: text(larger);
         color: color(heading-liner);
-        background: linear-gradient(
-          118deg,
-          color(primary-blue) 11.5%,
-          color(heading-liner) 55.42%
-        );
         @include textGradient;
 
         @include mobile-tablet-p{
@@ -91,7 +86,6 @@
 
     .textGradient {
       font-size: text(xxxl);
-      background: linear-gradient(117.91deg, #1E8AF2 11.5%, #05BED7 55.42%);
       @include textGradient;
       margin-bottom: 20px;
     }

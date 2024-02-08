@@ -84,9 +84,12 @@
     border-radius: 0.5rem;
     width: fit-content;
     display: flex;
+
     @include mobile-tablet-p {
-      width: auto;
-      padding: 0.25rem 0.75rem 0.25rem 0.75rem;
+      width: 100%;
+      padding: 0.25rem;
+      justify-content: space-between;
+      margin-bottom: 3.75rem;
     }
 
     button span {
@@ -97,9 +100,12 @@
       border-radius: 0.5rem;
       display: flex;
       min-width: 176px;
-      @include mobile {
+
+      @include mobile-tablet-p {
         font-size: text(normal);
         line-height: text(normal);
+        min-width: auto;
+        padding: 0 1rem;
       }
 
       &.btnActive {
@@ -111,6 +117,7 @@
   .contentWrapper {
     position: relative;
   }
+
   .teamCards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
