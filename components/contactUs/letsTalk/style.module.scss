@@ -8,8 +8,7 @@
   }
 
   @include mobile-tablet-p {
-    padding: spacing(section-mob-padding);
-    padding-block: 3.75rem 3.75rem;
+    padding: 0;
   }
 
   .workArea {
@@ -20,12 +19,12 @@
     position: relative;
 
     @include mobile-tablet-p {
-      padding: text(lg);
-      margin-top: 0;
+      margin-top: 1.25rem;
+      padding: 3.75rem text(lg);
     }
 
     .tabDropdownMob {
-      border: 1px solid rgba(17, 17, 17, 0.12);
+      border: 1px solid rgba(color(text-primary), 0.12);
       background-color: color(primary-white);
       padding: 1rem 0.75rem;
       margin-bottom: text(lg);
@@ -96,11 +95,6 @@
 
         .formTechHighlight {
           color: color(primary-blue);
-          background: linear-gradient(
-            118deg,
-            color(primary-blue) 11.5%,
-            color(heading-liner) 55.42%
-          );
           @include textGradient;
           font-size: 2.75rem;
           font-weight: 500;

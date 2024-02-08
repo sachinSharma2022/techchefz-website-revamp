@@ -23,12 +23,19 @@
     }
   }
 
-  .landingPlayerStyle {
+  .landingPlayerStyle div {
+    height: 31.25rem;
+    width: 100%;
     position: relative;
+
+    @include mobile-tablet-p {
+      height: 11.75rem;
+    }
 
     img {
       width: 100%;
       height: 100%;
+      object-fit: cover;
     }
   }
 
@@ -48,11 +55,6 @@
       font-size: 4rem;
       font-weight: 500;
       color: color(heading-liner);
-      background: linear-gradient(
-        118deg,
-        color(primary-blue) 11.5%,
-        color(heading-liner) 55.42%
-      );
       @include textGradient;
 
       @include mobile-tablet-p {

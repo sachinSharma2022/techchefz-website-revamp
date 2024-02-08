@@ -11,7 +11,7 @@ const OurGallery = () => {
 
   return (
     <section
-      className={`${styles.ourGallery} ${theme ? styles.ourGalleryDark : ""}`}
+      className={cn(styles.ourGallery, theme ? styles.ourGalleryDark : "")}
     >
       <div className={cn("primary-container")}>
         <div className={styles.contentSection}>

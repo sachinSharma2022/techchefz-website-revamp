@@ -20,7 +20,7 @@
     .workGrid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
+      gap: 3.75rem;
 
       @include mobile-tablet-p {
         display: flex;
@@ -49,11 +49,6 @@
             font-weight: 500;
             line-height: 3.375rem;
             color: color(primary-blue);
-            background: linear-gradient(
-              118deg,
-              color(primary-blue) 11.5%,
-              color(heading-liner) 55.42%
-            );
             @include textGradient;
 
             @include mobile-tablet-p {
@@ -131,6 +126,7 @@
         height: 100%;
 
         img {
+          width: 100%;
           max-width: 38rem;
           height: 100%;
           object-fit: cover;
@@ -176,7 +172,7 @@
     .workArea {
       background-color: color(text-primary);
       color: color(primary-white);
-      
+
       .workGrid {
         .contactUsForm {
           .policyArea {

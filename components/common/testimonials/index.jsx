@@ -143,13 +143,13 @@ const Testimonials = (props) => {
               <div className={styles.sliderController}>
                 <button
                   ref={navigationPrevRef}
-                  className="btn btn-primary btn-back"
+                  className="btn btn-arrow btn-back"
                 >
                   <Icons.ArrowLeft size={20} className="asset-white" />
                 </button>
                 <button
                   ref={navigationNextRef}
-                  className="btn btn-primary btn-move"
+                  className="btn btn-arrow btn-move"
                 >
                   <Icons.ArrowRight size={20} />
                 </button>

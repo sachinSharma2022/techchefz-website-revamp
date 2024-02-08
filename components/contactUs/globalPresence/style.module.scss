@@ -41,11 +41,6 @@
         line-height: 3.375rem;
         margin-bottom: text(normal);
         color: color(heading-liner);
-        background: linear-gradient(
-          118deg,
-          color(primary-blue) 11.5%,
-          color(heading-liner) 55.42%
-        );
         @include textGradient;
 
         @include mobile-tablet-p {

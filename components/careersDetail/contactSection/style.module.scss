@@ -1,6 +1,6 @@
 @import "~/styles/partials/config";
 
-.lestWorkStyle {
+.contactSectionStyle {
   padding: spacing(section-primary-padding);
   background-color: color(primary-background);
 
@@ -181,11 +181,6 @@
           font-weight: 500;
           font-size: text(larger);
           line-height: 3.3rem;
-          background: linear-gradient(
-            118deg,
-            color(primary-blue) 11.5%,
-            color(heading-liner) 55.42%
-          );
           @include textGradient;
 
           @include mobile {
@@ -269,7 +264,7 @@
   }
 
   // Dark Theme here
-  &.lestWorkStyleDark {
+  &.contactSectionStyleDark {
     background-color: color(text-primary);
     border-radius: 0;
     margin: 0;
@@ -292,6 +287,7 @@
           }
           .labelCustom {
             color: rgba(color(primary-white), 0.5) !important;
+            
             &::after {
               display: none;
             }

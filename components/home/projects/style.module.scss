@@ -178,6 +178,7 @@
       margin-bottom: text(xxxl);
     }
   }
+  
   .cardContentStyle {
     display: flex;
     justify-content: space-between;
@@ -200,6 +201,7 @@
     margin-bottom: 5rem;
   }
 
+  // Dark Mode
   &.projectsStyleDark {
     background-color: color(primary-white);
     color: color(text-primary);

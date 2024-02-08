@@ -1,87 +1,85 @@
 @import "~/styles/partials/config";
 
 .technologyCase {
-   padding-inline: spacing(p-120);
+  padding-inline: spacing(p-120);
 
-   @include mobile-tablet-p {
-      padding: spacing(section-mob-padding);
-      padding-block: 3.75rem 3.75rem;
+  @include mobile-tablet-p {
+    padding: spacing(section-mob-padding);
+    padding-block: 3.75rem 1rem;
+  }
+
+  .headSection {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 5rem;
+
+    @include mobile-tablet-p {
+      margin-bottom: 3rem;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .btnSection {
+    display: flex;
+
+    button {
+      white-space: nowrap;
+    }
+  }
+
+  .caseTitle {
+    font-size: text(normal);
+    font-weight: 500;
+    line-height: 1.5rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-bottom: 1rem;
+
+    @include mobile-tablet-p {
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  .caseHeading {
+    font-size: text(larger);
+    font-weight: 500;
+    line-height: 3.375rem;
+    max-width: 75%;
+    margin-bottom: 0;
+
+    @include mobile-tablet-p {
+      font-size: 2rem;
+      line-height: 2.5rem;
+      margin-bottom: 2.25rem;
+      max-width: 100%;
+    }
+  }
+
+  .technologyCaseCards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+
+    @include mobile-tablet-p {
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 1rem;
     }
 
-   &.technologyCaseDark{
-      background-color: color(input-bg);
-      color: color(primary-white);
-   }
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+      margin-top: 1rem;
+    }
 
-   .headSection {
-      display: flex;
-      align-items: flex-end;
-      margin-bottom: 5rem;
+    svg {
+      width: 2rem;
+    }
+  }
 
-      @include mobile-tablet-p {
-         margin-bottom: 3rem;
-         flex-direction: column;
-         align-items: flex-start;
-      }
-   }
-
-   .btnSection {
-      display: flex;
-   
-      button {
-         white-space: nowrap;
-      }
-   }
-
-   .caseTitle {
-      font-size: text(normal);
-      font-weight: 500;
-      line-height: 1.5rem;
-      letter-spacing: 0.2rem;
-      text-transform: uppercase;
-      opacity: 0.8;
-      margin-bottom: 1rem;
-
-      @include mobile-tablet-p{
-         margin-bottom: 0.75rem;
-
-      }
-   }
-
-   .caseHeading {
-      font-size: text(larger);
-      font-weight: 500;
-      line-height: 3.375rem;
-      max-width: 75%;
-      margin-bottom: 0;
-      
-
-      @include mobile-tablet-p {
-         font-size: 2rem;
-         line-height: 2.5rem;
-         margin-bottom: 2.25rem
-      }
-   }
-
-   .technologyCaseCards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2.5rem;
-
-      @include mobile-tablet-p {
-         grid-template-columns: repeat(2, 1fr);
-         margin-top: 1rem;
-      }
-
-      @include mobile {
-         grid-template-columns: repeat(1, 1fr);
-         margin-top: 1rem;
-      }
-
- 
-
-      svg {
-         width: 2rem;
-      }
-   }
+	// Dark Mode
+	&.technologyCaseDark {
+    background-color: color(input-bg);
+    color: color(primary-white);
+  }
 }

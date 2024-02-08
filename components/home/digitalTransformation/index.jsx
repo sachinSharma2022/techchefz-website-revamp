@@ -81,29 +81,34 @@ const DigitalTransformation = () => {
     >
       <div className={cn("primary-container")}>
         <TextRevel>
-        <div className={styles.serviceRow}>
-          <div className="row">
-            <div className="col-md-12 col-12">
-              <p className={styles.projectHighlight}>Digital Transformation</p>
-            </div>
+          <div className={styles.serviceRow}>
+            <div className="row">
+              <div className="col-md-12 col-12">
+                <p className={styles.projectHighlight}>
+                  Digital Transformation
+                </p>
+              </div>
 
-            <div className="col-md-8 col-12">
-              <h3 className={styles.datingText}>
-                Remaining businesses by integrating
-                <span className={styles.digitalTechText}>
-                  digital technologies.
-                </span>
-              </h3>
-            </div>
-            <div className={`${styles.servicesBtn} col-md-4 col-12`}>
-              <Link href="/solutions">
-                <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
-                  Explore Services <Icons.ArrowRight size={18} />
-                </Button>
-              </Link>
+              <div className="col-md-8 col-12">
+                <h3 className={styles.datingText}>
+                  Remaining businesses by integrating
+                  <span className={styles.digitalTechText}>
+                    digital technologies.
+                  </span>
+                </h3>
+              </div>
+              <div className={`${styles.servicesBtn} col-md-4 col-12`}>
+                <Link href="/solutions">
+                  <Button
+                    variant={theme ? "lightBlueOutline" : "outline"}
+                    size="md"
+                  >
+                    Explore Services <Icons.ArrowRight size={18} />
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
         </TextRevel>
 
         <div className={`${styles.digitalMain} digital-transformation`}>

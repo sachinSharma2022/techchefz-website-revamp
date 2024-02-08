@@ -49,7 +49,6 @@
          span {
             font-size: text(larger);
             color: color(heading-liner);
-            background: linear-gradient(118deg, color(primary-blue) 11.5%, color(heading-liner) 55.42%);
             @include textGradient;
 
             @include mobile-tablet-p{
@@ -170,6 +169,7 @@
       }
 
       .ourValuesAccordion{
+         border-color: rgba(color(primary-white), 0.12);
         .accordionHead{
           color: color(primary-white);
           border-color: rgba(color(primary-white), 0.12);

@@ -74,11 +74,6 @@
         font-size: text(xl-larger);
         font-weight: 500;
         line-height: 5rem;
-        background: linear-gradient(
-          118deg,
-          color(primary-blue) 11.5%,
-          color(heading-liner) 55.42%
-        );
         @include textGradient;
         margin-bottom: 2rem;
       }

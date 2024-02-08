@@ -62,7 +62,6 @@
       }
       span {
         font-size: text(larger);
-        background:linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%);
         @include textGradient;
         @include mobile-tablet-p {
           font-size: 2rem;
