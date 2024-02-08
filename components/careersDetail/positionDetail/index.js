@@ -49,8 +49,11 @@ const PositionDescription = () => {
           className={theme ? styles.jobDetailContainer : styles.lightMode}
           key={index}
         >
-          <h2>About the Job</h2>
+         <div className={styles.section}>
+         <h2>About the Job</h2>
           <p>{value.about.bullet}</p>
+         </div>
+       
           <div className={styles.section}>
             <h2>Responsibilities</h2>
             <ul>

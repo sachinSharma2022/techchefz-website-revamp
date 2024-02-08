@@ -4,7 +4,7 @@
    padding: spacing(section-primary-padding);
 
    @include mobile-tablet-p{
-      padding: 2rem;
+      padding:3.75rem 1.25rem;
    }
 
    .flexContainer {
@@ -170,6 +170,7 @@
       }
 
       .ourValuesAccordion{
+         border-color: rgba(color(primary-white), 0.12);
         .accordionHead{
           color: color(primary-white);
           border-color: rgba(color(primary-white), 0.12);

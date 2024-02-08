@@ -8,42 +8,48 @@ import { useContext } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
+import { useMediaQuery } from "react-responsive";
+
 import styles from "./style.module.scss";
 
 const Streamline = () => {
+  const isBigScreen = useMediaQuery({ minWidth: 1025 });
   let component = useRef(null);
   const { theme, setTheme } = useContext(MyContext);
   gsap.registerPlugin(ScrollTrigger);
   useEffect(() => {
-    let ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: `.${styles.streamLineWrapper}`,
-          scrub: 1,
-          start: "top 6%",
-          pin: true,
-          invalidateOnRefresh: true,
-          anticipatePin: 1,
-        },
-      });
-      tl.to(`.${styles.streamLineSection}`, {
-        xPercent: -101,
-        ease: "none",
-      })
-        .to(
-          `.${styles.streamLineCards}`,
-          {
-            xPercent: -100,
-            ease: "none",
-            duration: 1,
+    if (isBigScreen) {
+      let ctx = gsap.context(() => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: `.${styles.streamLineWrapper}`,
+            scrub: 1,
+            start: "top 6%",
+            pin: true,
+            invalidateOnRefresh: true,
+            anticipatePin: 1,
           },
-          "<"
-        )
-        .to(`.${styles.streamLineCards}`, {
-          duration: 0.1,
         });
-    });
-    return () => ctx.revert();
+        tl.to(`.${styles.streamLineSection}`, {
+          xPercent: -101,
+          ease: "none",
+        })
+          .to(
+            `.${styles.streamLineCards}`,
+            {
+              xPercent: -100,
+              ease: "none",
+              duration: 1,
+            },
+            "<"
+          )
+          .to(`.${styles.streamLineCards}`, {
+            duration: 0.1,
+          });
+      });
+
+      return () => ctx.revert();
+    }
   }, []);
 
   const streamlineCard = [
@@ -99,9 +105,10 @@ const Streamline = () => {
   return (
     <div
       id="streamLineWrapper"
-      className={`${styles.streamLineWrapper} ${
+      className={cn(
+        styles.streamLineWrapper,
         theme ? styles.streamlineDark : ""
-      }`}
+      )}
     >
       <section className={styles.streamLineSection}>
         <div className={cn("primary-container", styles.flexContainer)}>
@@ -121,10 +128,13 @@ const Streamline = () => {
         {streamlineCard.map((data, index) => (
           <div key={index}>
             <div className={styles.streamlineCard}>
-              {data.icons}
+              <div className={styles.iconStyle}>{data.icons}</div>
               <h6 className={styles.cardTitle}>{data.title} </h6>
               <p className={styles.cardContent}>{data.content}</p>
-              <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
+              <Button
+                variant={theme ? "lightBlueOutline" : "outline"}
+                size="md"
+              >
                 Learn More <Icons.ArrowRight size={18} />
               </Button>
             </div>

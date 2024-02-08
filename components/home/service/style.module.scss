@@ -63,7 +63,7 @@
     .desktopCards {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1.25rem 2.5rem;
+      gap: 1.25rem;
 
       @include mobile-tablet-p{
         display: none;
@@ -210,6 +210,11 @@
       .serviceBox {
         background-color: color(dark-bg);
         border: 2px solid rgba(color(primary-white), 0.12);
+
+        &:hover {
+          border: 0.125rem solid color(heading-liner);
+          cursor: pointer;
+        }
       }
     }
   }

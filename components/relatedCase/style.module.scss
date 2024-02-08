@@ -93,6 +93,7 @@
     @include mobile-tablet-p {
       margin: 3rem 0 2rem;
       width: 100%;
+      display: none;
     }
 
     .button {
@@ -111,7 +112,7 @@
     }
 
     svg > path {
-      stroke: color(primary-white);
+      fill: color(primary-white);
     }
   }
 
@@ -142,7 +143,14 @@
     }
 
     svg > path {
-      stroke: color(primary-white);
+      fill: color(primary-white);
+    }
+
+    .sliderArrow {
+
+      svg > path {
+        stroke: color(primary-white);
+      }
     }
   }
 }

@@ -4,7 +4,7 @@
   padding: spacing(section-primary-padding);
   background-color: color(bg-soft);
 
-  @include mobile-tablet-p{
+  @include mobile-tablet-p {
     padding: spacing(section-mob-padding);
   }
 
@@ -23,7 +23,7 @@
       font-size: text(larger);
       margin-bottom: 5rem;
 
-      @include mobile-tablet-p{
+      @include mobile-tablet-p {
         font-size: text(xxxl);
       }
     }
@@ -77,8 +77,15 @@
         color: color(text-primary);
         padding: text(xl);
 
-        @include mobile {
+        @include mobile-tablet-p {
           font-size: text(lg);
+          padding: text(normal);
+
+          svg {
+            min-width: 30px;
+            min-height: 30px;
+            margin-left: 20px;
+          }
         }
       }
 
@@ -129,7 +136,7 @@
         }
 
         .accordionBody {
-          background-color:none;
+          background-color: none;
           color: color(primary-white);
         }
       }

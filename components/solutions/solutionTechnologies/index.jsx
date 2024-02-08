@@ -8,6 +8,7 @@ import { useContext } from "react";
 import Slider from "react-slick";
 import { base_Uri } from "@/lib/constants";
 
+import MobileSlider from "@/components/common/mobileSlider";
 import ServiceInfoCard from "@/components/common/serviceInfoCard";
 import styles from "./style.module.scss";
 
@@ -129,6 +130,8 @@ const SolutionTechnologies = ({ props }) => {
               />
             </div>
           </div>
+        </div>
+      </div>
 
           {/* <div className={`${styles.ourNumberOption} service-mobile-slider`}>
             <Slider {...settings}>

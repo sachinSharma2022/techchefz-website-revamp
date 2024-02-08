@@ -18,7 +18,7 @@ const RelatedCase = ({props}) => {
   const { theme, setTheme } = useContext(MyContext);
 
   var settings = {
-    dots: false,
+    dots: true,
     infinite: false,
     arrows: false,
     speed: 500,
@@ -107,6 +107,7 @@ const RelatedCase = ({props}) => {
               {props.Description || "Unravel More of Our Success Stories"}
             </h3>
           </div>
+
           <div className={styles.sliderArrow}>
             <button
               className={

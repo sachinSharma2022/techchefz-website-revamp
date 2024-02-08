@@ -15,4 +15,9 @@
   z-index: 99;
   transition: all 0.5s;
   transform: rotate(-90deg);
+
+  @include mobile-tablet-p {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
 }
