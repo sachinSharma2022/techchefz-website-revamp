@@ -4,7 +4,7 @@ import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import CountryDropdown from "@/components/ui/countryDropdown";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import { Input, Textarea, Error } from "@/components/ui/inputCustom";
+import { Input, Textarea, Error, InputFile } from "@/components/ui/inputCustom";
 import { MyContext } from "@/context/theme";
 import { Form, Formik } from "formik";
 import { useContext } from "react";
@@ -138,23 +138,18 @@ const JobsForm = () => {
                 </div>
 
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                  <div className={styles.attachStyle}>
-                    <span className={styles.iconStyle}>
-                      <Icons.AttachFile />
-                    </span>
-                    <Input
-                      label="Upload CV* (pdf/doc upto 5mb)"
-                      placeholder="Upload CV* (pdf/doc upto 5mb)"
-                      type="name"
-                      id="companyName"
-                      name="companyName"
-                      error={Boolean(touched.companyName && errors.companyName)}
-                      handleChange={handleChange}
-                      handleBlur={handleBlur}
-                      values={values.companyName}
-                      errorStatus={touched.companyName && errors.companyName}
-                    />
-                  </div>
+                  <InputFile
+                    label="Upload CV* (pdf/doc upto 5mb)"
+                    placeholder="Upload CV* (pdf/doc upto 5mb)"
+                    type="file"
+                    id="companyName"
+                    name="companyName"
+                    error={Boolean(touched.companyName && errors.companyName)}
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                    values={values.companyName}
+                    errorStatus={touched.companyName && errors.companyName}
+                  />
                   {touched.companyName && errors.companyName && (
                     <Error>{errors.companyName}</Error>
                   )}

@@ -23,7 +23,6 @@
     &.inputErrorStyle {
       border-color: color(error);
     }
-  
 
     .iconStyle {
       position: absolute;
@@ -49,6 +48,28 @@
     }
   }
 
+  .inputFile {
+    position: relative;
+    display: flex;
+    border: 0.14rem solid rgba(color(text-primary), 0.12);
+    border-radius: 0.75rem;
+    font-size: text(normal);
+    font-weight: 400;
+    overflow: hidden;
+    background-color: color(primary-white);
+    @include transition(0.5s);
+    height: 60px;
+
+    &:hover,
+    &:focus {
+      border-color: color(heading-liner);
+    }
+
+    &.inputErrorStyle {
+      border-color: color(error);
+    }
+  }
+
   .labelCustom {
     font-size: text(normal);
     color: rgba(color(text-primary), 0.5);
@@ -57,11 +78,59 @@
     font-family: font(primary);
     width: 100%;
     padding: 1rem;
-  } 
+  }
+
+  .buttonUpload {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: 1px solid currentColor;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    max-width: 40px;
+    border: none;
+  }
+  .buttonUpload:focus {
+    outline-offset: 4px; /* make Chrome show a focus ring around the button */
+  }
+
+  .filePath {
+    position: relative;
+    top: 28px;
+    left: 18px;
+    font-size: 14px;
+    width: 80%;
+    overflow: hidden;
+    @include truncate(1);
+    height: 20px;
+  }
+
+  .labelCustomFloat {
+    transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+  }
 
   // Dark Mode
   &.inputContainerStyleDark {
     .inputFloating {
+      border: 0.14rem solid rgba(color(primary-white), 0.12);
+      background-color: color(text-primary);
+
+      &.inputErrorStyle {
+        border-color: color(error);
+      }
+
+      &:hover,
+      &:focus {
+        border-color: color(heading-liner);
+      }
+    }
+
+    .inputFile {
       border: 0.14rem solid rgba(color(primary-white), 0.12);
       background-color: color(text-primary);
 
@@ -92,6 +161,6 @@
 .error {
   color: color(error);
   position: absolute;
-  font-size: .8rem;
+  font-size: 0.8rem;
   bottom: -2.625rem;
-} 
+}
