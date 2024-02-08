@@ -27,6 +27,7 @@ const Input = React.forwardRef(
       icon,
       inputStyle,
       inputFloatingStyle,
+      inputContainerStyle,
       ...props
     },
     ref
@@ -36,7 +37,8 @@ const Input = React.forwardRef(
       <div
         className={cn(
           styles.inputContainerStyle,
-          theme ? styles.inputContainerStyleDark : ""
+          theme ? styles.inputContainerStyleDark : "",
+          inputContainerStyle
         )}
       >
         <div

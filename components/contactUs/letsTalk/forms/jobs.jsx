@@ -136,10 +136,34 @@ const JobsForm = () => {
                     <Error>{errors.phone}</Error>
                   )}
                 </div>
+
+                <div className={`${styles.inputSpace} col-md-6 col-12`}>
+                  <div className={styles.attachStyle}>
+                    <span className={styles.iconStyle}>
+                      <Icons.AttachFile />
+                    </span>
+                    <Input
+                      label="Upload CV* (pdf/doc upto 5mb)"
+                      placeholder="Upload CV* (pdf/doc upto 5mb)"
+                      type="name"
+                      id="companyName"
+                      name="companyName"
+                      error={Boolean(touched.companyName && errors.companyName)}
+                      handleChange={handleChange}
+                      handleBlur={handleBlur}
+                      values={values.companyName}
+                      errorStatus={touched.companyName && errors.companyName}
+                    />
+                  </div>
+                  {touched.companyName && errors.companyName && (
+                    <Error>{errors.companyName}</Error>
+                  )}
+                </div>
+
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
                   <Input
-                    label="Company Name*"
-                    placeholder="Company Name*"
+                    label="Portfolio Link"
+                    placeholder="Portfolio Link"
                     type="name"
                     id="companyName"
                     name="companyName"
@@ -153,23 +177,7 @@ const JobsForm = () => {
                     <Error>{errors.companyName}</Error>
                   )}
                 </div>
-                <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                  <CustomDropdown
-                    title="Country"
-                    name="countrySelection"
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
-                    values={values.countrySelection}
-                    options={dropdownData}
-                    errorStatus={
-                      touched.countrySelection && errors.countrySelection
-                    }
-                    className="custom-dropdown"
-                  />
-                  {touched.countrySelection && errors.countrySelection && (
-                    <Error>{errors.countrySelection}</Error>
-                  )}
-                </div>
+
                 <div className={`${styles.inputSpace} col-md-12 col-12`}>
                   <Textarea
                     label="Brief Explanation of your project**"
@@ -209,7 +217,11 @@ const JobsForm = () => {
                 <span className={styles.policyHighlight}>Privacy Policy</span>
               </div>
               <div className={`${styles.buttonGrid}`}>
-                <Button variant={theme ? "blueBtnDark" : "blueBtn"} size="lg" type="submit">
+                <Button
+                  variant={theme ? "blueBtnDark" : "blueBtn"}
+                  size="lg"
+                  type="submit"
+                >
                   Send a Message <Icons.ArrowRight size={18} />
                 </Button>
               </div>

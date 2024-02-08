@@ -7,6 +7,7 @@ import { ImageCustom } from "../imageCustom";
 
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
+import { Input } from "../inputCustom";
 
 const people = [
   {
@@ -122,11 +123,21 @@ const CountryDropdown = (props) => {
           </div>
         </Listbox>
 
-        <input
+        {/* <input
           type="text"
           id="username"
           placeholder="Phone Number*"
           required=""
+        /> */}
+
+        <Input
+          label="Phone Number*"
+          placeholder="Phone Number*"
+          type="name"
+          id="companyName"
+          name="companyName"
+          inputContainerStyle={styles.inputContainerStyle}
+          inputFloatingStyle={styles.inputFloatingStyle}
         />
       </div>
     </div>

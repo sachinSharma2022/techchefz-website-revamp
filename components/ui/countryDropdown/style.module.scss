@@ -3,6 +3,12 @@
 .dropdownContainerStyle {
   width: 100%;
 
+  &:hover,
+  &:focus {
+    border-color: color(heading-liner);
+  }
+
+
   .countryDropdown {
     display: flex;
     align-items: center;
@@ -11,8 +17,9 @@
     border-radius: 0.75rem;
     height: 3.875rem;
     gap: .625rem;
-    padding: 0 .7rem;
+    padding: 0 0 0 1rem;
     background-color: color(primary-white);
+    
 
     &.inputErrorStyle {
       border-color: color(error);
@@ -53,14 +60,19 @@
       }
     }
 
-    label {
-      display: none;
-    }
-
     input {
       background: none;
       border: none;
       color: color(primary-white);
+    }
+
+    .inputContainerStyle {
+      border: none;
+      padding: 0;
+    }
+
+    .inputFloatingStyle {
+      border: none;
     }
 
     .countryList {
