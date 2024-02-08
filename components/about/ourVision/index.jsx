@@ -7,6 +7,7 @@ import styles from "./style.module.scss";
 import VideoCustom from "@/components/ui/videoCustom";
 import { cn } from "@/lib/utils";
 import { base_Uri } from "@/lib/constants";
+import { base_Url } from "@/lib/constants";
 
 const OurVision = ({ props }) => {
 
@@ -38,7 +39,7 @@ const OurVision = ({ props }) => {
         </div>
 
         <div className={styles.videoWrapper}>
-          <VideoCustom src={props[0].Video.data[0].attributes.url?`${base_Uri}${props[0].Video.data[0].attributes.url}`:`${base_Uri}/`}
+          <VideoCustom src={props[0].Video.data[0].attributes.url?`${base_Url}${props[0].Video.data[0].attributes.url}`:`${base_Url}/`}
           
           width={1200} height={500} />
         </div>
