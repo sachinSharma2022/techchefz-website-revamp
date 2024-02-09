@@ -1,11 +1,13 @@
 import CareerBanner from "@/components/careers/careerBanner";
-import CareerEngagement from "@/components/careers/careerEngagement";
 import CareerTestimonials from "@/components/careers/careerTestimonials";
 import OpenPosition from "@/components/careers/openPosition";
 import TczLife from "@/components/careers/tczLife";
 import Innovation from "@/components/portfolio/innovation";
 import { getData } from "@/lib/fetchData";
 import { api_Career_Page } from "@/lib/constants";
+import HomeTestimonials from "@/components/home/homeTestimonials";
+import TechnologyValues from "@/components/technology/technologyValues";
+
 
 const Career = async () => {
   const data = await getData(api_Career_Page);
@@ -14,11 +16,12 @@ const Career = async () => {
       {data ? (
         <div>
           <CareerBanner props={data.CareerBanner} />
-          <TczLife />
+          <TczLife props={data.Lifeattechchefz} />
           <OpenPosition />
-          <CareerTestimonials testimonials={data.Testimonials} />
-          <CareerEngagement />
-          <Innovation />
+          {/* <CareerTestimonials testimonials={data.Testimonials} /> */}
+          {/* <HomeTestimonials testimonials={data.Testimonials} /> */}
+          <TechnologyValues props={data.Technology} />
+          <Innovation props={data.ourInnvotion} />
         </div>
       ) : (
         <></>

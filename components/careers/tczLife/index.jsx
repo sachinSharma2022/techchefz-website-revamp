@@ -4,11 +4,15 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
 import { useContext, useRef, useState } from "react";
 import Slider from "react-slick";
+import VideoCustom from "@/components/ui/videoCustom";
+import { base_Url } from "@/lib/constants";
+
 
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 
-const TczLife = () => {
+const TczLife = ({props}) => {
+  console.log("rr",props);
   const slider = useRef(null);
   const [oldSlide, setOldSlide] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
@@ -59,36 +63,36 @@ const TczLife = () => {
     ],
   };
 
-  const sliderVideo = [
-    {
-      video:
-        "https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8b2ZmaWNlfGVufDB8fDB8fHww",
-    },
-    {
-      video:
-        "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8b2ZmaWNlfGVufDB8fDB8fHww",
-    },
-    {
-      video:
-        "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fG9mZmljZXxlbnwwfHwwfHx8MA%3D%3D",
-    },
-    {
-      video:
-        "https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fG9mZmljZXxlbnwwfHwwfHx8MA%3D%3D",
-    },
-    {
-      video:
-        "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8b2ZmaWNlfGVufDB8fDB8fHww",
-    },
-    {
-      video:
-        "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fG9mZmljZXxlbnwwfHwwfHx8MA%3D%3D",
-    },
-    {
-      video:
-        "https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fG9mZmljZXxlbnwwfHwwfHx8MA%3D%3D",
-    },
-  ];
+  // const sliderVideo = [
+  //   {
+  //     video:
+  //       "https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8b2ZmaWNlfGVufDB8fDB8fHww",
+  //   },
+  //   {
+  //     video:
+  //       "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8b2ZmaWNlfGVufDB8fDB8fHww",
+  //   },
+  //   {
+  //     video:
+  //       "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fG9mZmljZXxlbnwwfHwwfHx8MA%3D%3D",
+  //   },
+  //   {
+  //     video:
+  //       "https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fG9mZmljZXxlbnwwfHwwfHx8MA%3D%3D",
+  //   },
+  //   {
+  //     video:
+  //       "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8b2ZmaWNlfGVufDB8fDB8fHww",
+  //   },
+  //   {
+  //     video:
+  //       "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fG9mZmljZXxlbnwwfHwwfHx8MA%3D%3D",
+  //   },
+  //   {
+  //     video:
+  //       "https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fG9mZmljZXxlbnwwfHwwfHx8MA%3D%3D",
+  //   },
+  // ];
   return (
     <section
       className={`${styles.tczLife} ${theme ? styles.tczLifeDark : ""} `}
@@ -96,9 +100,8 @@ const TczLife = () => {
       <div className={cn(styles.tczLifeSliderSection, "row")}>
         <div className={cn(styles.tczActionSection, "col-sm-6")}>
           <div>
-            <h6 className={styles.tczLifeTitle}>Life at techchefz</h6>
-            <h3 className={styles.tczLifeHeading}>
-              Make an Impact <br /> from <span>Day One.</span>
+            <h6 className={styles.tczLifeTitle}>{props?.Title}</h6>
+            <h3 className={styles.tczLifeHeading} dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}`}}>
             </h3>
           </div>
 
@@ -121,9 +124,10 @@ const TczLife = () => {
         </div>
         <div className={cn(styles.sliderSection, "col-sm-6 tczLifeSlider")}>
           <Slider {...settings} ref={slider}>
-            {sliderVideo.map((data, index) => (
+            {props?.VideoSlider?.map((data, index) => (
               <div key={index} className={styles.videoWhapper}>
-                <ImageCustom src={data.video} width={800} height={800} />
+                 <VideoCustom src={data?.Video?.data?.attributes?.url?`${base_Url}${data.Video.data.attributes.url}`:`${base_Url}/`}
+                 width={800} height={800} />
                 <button className={cn(styles.videoButton)}>
                   <Icons.VideoButton />
                 </button>
@@ -135,14 +139,7 @@ const TczLife = () => {
 
       <div className={styles.tczLifeContent}>
         <p>
-          Techchefz Digital demonstrates an excellent understanding of user
-          needs and all of their designs are creative and elegant in their
-          simplicity. They’re very well thought out and have an excellent
-          response to feedback. All of these qualities are why they’re our go-to
-          user experience experts. We demonstrate an excellent understanding of
-          user needs and all of their designs are creative and elegant in their
-          simplicity. They’re very well thought out and have an excellent
-          response to feedback.
+          {props?.Description}
         </p>
       </div>
     </section>
