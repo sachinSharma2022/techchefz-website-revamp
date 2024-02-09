@@ -11,14 +11,12 @@ function Solutions() {
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section
-      className={`${styles.solutions} ${theme ? styles.solutionsDark : ""}`}
+      className={cn(styles.solutions, theme ? styles.solutionsDark : "")}
     >
       <div className={cn("primary-container")}>
-        <div className="row justify-content-between">
-          <div className="col-md-3 col-lg-3">
-            <h6 className={styles.solutionTitle}>Solutions</h6>
-          </div>
-          <div className="col-md-7 col-lg-8">
+        <div className={styles.contentSection}>
+          <h6 className={styles.solutionTitle}>Solutions</h6>
+          <div>
             <h3 className={styles.solutionHeading}>
               Revving Up Digital Experiences: Ride, Record, and Recall.
             </h3>
@@ -32,35 +30,28 @@ function Solutions() {
           </div>
         </div>
 
-        <div className={styles.solutionImgs}>
-          <div className="row justify-content-center ">
-            <div className="col-md-12 col-lg-12">
-              <ImageCustom
-                src="/images/solution1.png"
-                width={1060}
-                height={500}
-                alt="content-img"
-              />
-            </div>
-          </div>
-          <div className={styles.solutionBottomImgs}>
-            <div>
-              <ImageCustom
-                src="/images/solution2.png"
-                width={500}
-                height={400}
-                alt="content-img"
-              />
-            </div>
-            <div>
-              <ImageCustom
-                src="/images/solution3.png"
-                width={500}
-                height={400}
-                alt="content-img"
-              />
-            </div>
-          </div>
+        <div className={styles.solutionImages}>
+          <ImageCustom
+            src="/images/solution1.png"
+            width={1060}
+            height={500}
+            alt="content-img"
+            className={styles.goalInnerImage}
+          />
+          <ImageCustom
+            src="/images/solution2.png"
+            width={500}
+            height={400}
+            alt="content-img"
+            className={styles.goalInnerImage}
+          />
+          <ImageCustom
+            src="/images/solution3.png"
+            width={500}
+            height={400}
+            alt="content-img"
+            className={styles.goalInnerImage}
+          />
         </div>
       </div>
     </section>
