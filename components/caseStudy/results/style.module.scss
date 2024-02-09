@@ -40,7 +40,7 @@
     @include mobile-tablet-p {
       font-size: text(normal);
       line-height: text(xl);
-      margin-bottom: 2.75rem;
+      margin-bottom: 0;
     }
   }
   .resultCards {
@@ -60,6 +60,11 @@
       border: 0.14rem solid rgba(color(text-primary), 0.12);
       background: color(bg-soft);
       border-radius: 0.5rem;
+      @include transition(0.5s);
+
+      &:hover {
+        border-color: color(heading-liner);
+      }
 
       h3 {
         font-size: text(xl-larger);
@@ -125,6 +130,11 @@
     .resultCards {
       .resultCard {
         background-color: color(text-primary);
+        border-color: rgba(color(primary-white), 0.12);
+
+        &:hover {
+          border-color: color(heading-liner);
+        }
       }
     }
   }

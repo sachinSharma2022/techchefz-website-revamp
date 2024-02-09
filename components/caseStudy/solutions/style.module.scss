@@ -56,13 +56,14 @@
     }
 
     .goalInnerImage {
-      height: 11.6875rem;
+      height: 20.4375rem;
       width: 100%;
       border-radius: 0.75rem;
       overflow: hidden;
 
-      @include mobile {
+      @include mobile-tablet-p {
         aspect-ratio: 1;
+        height: 11.6875rem;
       }
 
       &:nth-child(1) {
