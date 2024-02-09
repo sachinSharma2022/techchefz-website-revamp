@@ -8,8 +8,10 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useContext, useState } from "react";
 import styles from "./style.module.scss";
+import { base_Uri } from "@/lib/constants";
 
-const CmsType = () => {
+const CmsType = ({props}) => {
+ 
   const { theme, setTheme } = useContext(MyContext);
   let [isOpen, setIsOpen] = useState(false);
 
@@ -64,20 +66,20 @@ const CmsType = () => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.careerRow}>
-          <p className={styles.projectHighlight}>Types of CMS</p>
+          <p className={styles.projectHighlight}>{props?.Title}</p>
           <h2 className={styles.datingText}>
-            Together in every code. Discover the strength of our partnership.
+          {props?.Description}
           </h2>
         </div>
 
         <div className={`${styles.cmsGridCards} `}>
-          {typeCard.map((data, index) => (
+          {props?.Slider?.map((data, index) => (
             <PartnerCard
               key={index}
-              imgSrc={data.imgSrc}
-              darkImgSrc={data.darkImgSrc}
-              cardTitle={data.sbTitle}
-              cardContent={data.sbText}
+              imgSrc={data?.Image?.data?.attributes?.url?`${base_Uri}${data?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+              darkImgSrc={data?.Image?.data?.attributes?.url?`${base_Uri}${data?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+              cardTitle={data.Title}
+              cardContent={data.Description}
               arrowUp
               onClick={() => setIsOpen(true)}
             />

@@ -7,10 +7,11 @@ import { useState } from "react";
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { cn } from "@/lib/utils";
+import { base_Uri } from "@/lib/constants";
 
 import styles from "./style.module.scss";
 
-const WhyCms = () => {
+const WhyCms = ({props}) => {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
   const { theme, setTheme } = useContext(MyContext);
 
@@ -30,57 +31,52 @@ const WhyCms = () => {
     });
   }
 
-  const accordionData = [
-    {
-      title: "Innovation",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    },
-    {
-      title: "Obsession with Customer Success",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    },
-    {
-      title: "Exploration",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    },
-    {
-      title: "Excellence in Delivery",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    },
-  ];
+  // const accordionData = [
+  //   {
+  //     title: "Innovation",
+  //     content:
+  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  //   },
+  //   {
+  //     title: "Obsession with Customer Success",
+  //     content:
+  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  //   },
+  //   {
+  //     title: "Exploration",
+  //     content:
+  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  //   },
+  //   {
+  //     title: "Excellence in Delivery",
+  //     content:
+  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  //   },
+  // ];
   return (
     <section className={`${styles.whyCmsStyle} ${theme ? styles.whyCmsDark : ""}`}>
       <div className={cn("primary-container")}>
         <div className={styles.ourValuesHead}>
-          <h6 className={styles.ourValuesTitle}>Why CMS</h6>
-          <h3 className={styles.ourValuesHeading}>
-            Why do we need a <span>CMS</span>
+          <h6 className={styles.ourValuesTitle}>{props.Title}</h6>
+          <h3 className={styles.ourValuesHeading} dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}`}}>
           </h3>
         </div>
 
         <div className={styles.ourValuesContent}>
           <div className={styles.ourValueImg}>
-            <ImageCustom
-              src={"/images/img/ourValues.png"}
-              width={600}
-              height={650}
-              alt="content-img"
-            />
+          <ImageCustom
+                  src={`${base_Uri}${props?.Image.data.attributes.url}`}
+                  width={600}
+                  height={550}
+                  alt="content-img"
+                />
           </div>
           <div>
             <p className={styles.ourValuesText}>
-              We believe in a customer-centric ethic without and people-centric
-              paradigm within. With a strong sense of community, ownership, and
-              collaboration our people work in a spirit of co-creation,
-              co-innovation, and co-development to engineer next-generation
-              software products with the help of accelerators.
+              {props.Description}
             </p>
             <div className={styles.ourValuesAccordion}>
-              {accordionData.map((data, index) => (
+              {props?.FaqComponent.map((data, index) => (
                 <Disclosure key={index}>
                   {(panel) => {
                     const { open, close } = panel;
@@ -95,13 +91,13 @@ const WhyCms = () => {
                             togglePanels({ ...panel, key: index });
                           }}
                         >
-                          {data.title}
+                          {data?.Title}
                           <div className={styles.iconBox}>
                             {!open ? <Icons.ArrowDown /> : <Icons.ArrowUp />}
                           </div>
                         </Disclosure.Button>
                         <Disclosure.Panel className={styles.accordionBody}>
-                          {data.content}
+                        {data?.Description}
                         </Disclosure.Panel>
                       </>
                     );

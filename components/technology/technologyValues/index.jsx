@@ -4,7 +4,6 @@ import { useContext } from "react";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { base_Uri } from "@/lib/constants";
 import Image from "next/image";
-import { base_Url } from "@/lib/constants"; 
 
 // Swiper Styles
 import "swiper/css";
@@ -27,7 +26,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./style.module.scss";
 
 const TechnologyValues = ({props}) => {
- 
+
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const { theme, setTheme } = useContext(MyContext);
   // const valueData = [
@@ -67,14 +66,12 @@ const TechnologyValues = ({props}) => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.headSection}>
-          <h6 className={styles.valuesTitle} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
-
-          </h6>
-          <h3 className={styles.valuesHeading} dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}`}}>
-            
+          <h6 className={styles.valuesTitle}>{props?.Title}</h6>
+          <h3 className={styles.valuesHeading}>
+          {props?.SubTitle}
           </h3>
-          <p className={styles.valuesText} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
-           
+          <p className={styles.valuesText}>
+          {props?.Description}
           </p>
         </div>
 
@@ -92,7 +89,7 @@ const TechnologyValues = ({props}) => {
             {props?.TechnologyVal?.map((data, index) => (
               <SwiperSlide key={index} className={styles.valuesImg}>
                 <ImageCustom
-                  src={data?.SliderImage.data.attributes.url?`${base_Uri}${data?.SliderImage?.data?.attributes?.url}`:`${base_Uri}/`}
+                  src={data?.SliderImage?.data.attributes.url?`${base_Uri}${data?.SliderImage?.data.attributes.url}`:`${base_Uri}/`}
                   width={1000}
                   height={1000}
                   alt="img"
@@ -115,10 +112,10 @@ const TechnologyValues = ({props}) => {
                 <div className="progress-bar-animation" />
                 <div className={styles.infoSec}>
                   <div className={styles.icons}>
-                  <ImageCustom height={100}  width={100} src={data?.Images?.data?.attributes?.url?`${base_Url}${data?.Images?.data?.attributes?.url}`:`${base_Url}/`}/>
-                    </div>
-                  <h6 className={styles.subTitle}>{data.Title}</h6>
-                  <p className={styles.content}>{data.Description} </p>
+                  <Image height={100}  width={100} src={data?.Images?.data?.attributes?.url?`${base_Uri}${data?.Images?.data?.attributes?.url}`:`${base_Uri}/`}/>
+                  </div>
+                  <h6 className={styles.subTitle}>{data?.Title}</h6>
+                  <p className={styles.content}>{data?.Description} </p>
                 </div>
               </SwiperSlide>
             ))}
