@@ -10,7 +10,7 @@ import TechnologyValues from '@/components/technology/technologyValues'
 import React from 'react'
 import { getData } from "@/lib/fetchData";
 import { api_Technology_Page } from "@/lib/constants";
-
+import { ImageCustom } from "@/components/ui/imageCustom";
 const Technology = async() => {
   const data = await getData(api_Technology_Page)
   return (

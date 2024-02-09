@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import { useContext } from "react";
-import Image from "next/image";
+import { ImageCustom } from "@/components/ui/imageCustom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
@@ -128,7 +128,7 @@ const Streamline = ({ props }) => {
           <div key={index}>
             <div className={styles.streamlineCard}>
               <div className={styles.iconStyle}>
-              <Image height={100}  width={100} src= {data?.Image?.data?.attributes?.url?`${base_Uri}${data?.Image?.data?.attributes?.url}`:`${base_Uri}/`} />
+              <ImageCustom height={100}  width={100} src= {data?.Image?.data?.attributes?.url?`${base_Uri}${data?.Image?.data?.attributes?.url}`:`${base_Uri}/`} />
                
               </div>
               <h6 className={styles.cardTitle}>{data.Title} </h6>

@@ -114,7 +114,7 @@ const TechnologyValues = ({props}) => {
                 <div className="progress-bar-animation" />
                 <div className={styles.infoSec}>
                   <div className={styles.icons}>
-                  <Image height={100}  width={100} src={data?.Images?.data?.attributes?.url?`${base_Uri}${data?.Images?.data?.attributes?.url}`:`${base_Uri}/`}/>
+                  <ImageCustom height={100}  width={100} src={data?.Images?.data?.attributes?.url?`${base_Uri}${data?.Images?.data?.attributes?.url}`:`${base_Uri}/`}/>
                     </div>
                   <h6 className={styles.subTitle}>{data.Title}</h6>
                   <p className={styles.content}>{data.Description} </p>

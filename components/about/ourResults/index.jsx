@@ -9,6 +9,7 @@ import Image from "next/image";
 import { base_Uri } from "@/lib/constants";
 import MobileSlider from "@/components/common/mobileSlider";
 import { useMediaQuery } from "react-responsive";
+import { ImageCustom } from "@/components/ui/imageCustom";
 const OurResults = ({props}) => {
  
 
@@ -58,7 +59,7 @@ const OurResults = ({props}) => {
               <div className="d-flex justify-content-between align-items-center">
                 <h6 className={styles.cardNum}>{data.Title}</h6>
                 <div className={styles.cardNum}>
-                  <Image height={36} width={36}  src={`${base_Uri}${data.Image.data.attributes.url}`} />
+                  <ImageCustom height={36} width={36}  src={`${base_Uri}${data.Image.data.attributes.url}`} />
                  
                   
                 </div>

@@ -81,7 +81,7 @@ const OurNumbers = ({carrer,experience}) => {
           <div className={styles.ourNumberGrid}>
             <div className={styles.ourNumbersImg}>
               <ImageCustom
-                src={experience.Image.data.attributes.url?`${base_Uri}${experience.Image.data.attributes.url}`:`${base_Uri}/`}
+                src={experience?.Image?.data?.attributes?.url?`${base_Uri}${experience?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
                 width={1000}
                 height={100}
                 alt="bannerImg"

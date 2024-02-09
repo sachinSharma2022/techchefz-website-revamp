@@ -133,7 +133,7 @@ const OurTeam = ({props}) => {
                               height={320}
                               alt="team-member"
                             /> */}
-                            <Image height={320} width={240}  src={`${base_Uri}${data.Images.data.attributes.url}`} />
+                            <ImageCustom height={320} width={240}  src={`${base_Uri}${data.Images.data.attributes.url}`} />
                           </div>
                         </div>
                       ))}
@@ -166,7 +166,7 @@ const OurTeam = ({props}) => {
                               height={320}
                               alt="team-member"
                             /> */}
-                             <Image height={320} width={240}  src={`${base_Uri}${data.Images.data.attributes.url}`} />
+                             <ImageCustom height={320} width={240}  src={`${base_Uri}${data.Images.data.attributes.url}`} />
                           </div>
                         </div>
                       ))}

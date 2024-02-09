@@ -10,6 +10,7 @@ import { base_Uri } from "@/lib/constants";
 import { useContext } from "react";
 import styles from "./style.module.scss";
 import { base_Url } from "@/lib/constants";
+import { ImageCustom } from "@/components/ui/imageCustom";
 
 const Service = ({props}) => {
   
@@ -129,8 +130,12 @@ const Service = ({props}) => {
           <div className={cn(styles.desktopCards, styles.serviceOption)}>
             {props[0]?.Service.map((data, index) => (
               <div key={index} className={styles.serviceBox}>
-                <div className={styles.bgIcon}><img src={data?.Image?.data.attributes.url?`${base_Url}${data?.Image?.data.attributes.url}`:`${base_Url}/`} 
-                alt="" /></div>
+                <div className={styles.bgIcon}>
+                  <ImageCustom src={data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data.attributes.url}`:`${base_Url}/`} 
+                  width={64}
+                  height={64}
+                  alt="bannerImg"
+                   /></div>
                 <h4 className={styles.sbTitle}>{data.Title}</h4>
                 <p className={styles.sbText}>{data.Description}</p>
               </div>
@@ -143,7 +148,12 @@ const Service = ({props}) => {
             {props[0]?.Service.map((data, index) => (
               <div key={index}>
                 <div key={index} className={styles.serviceBox}>
-                  <div className={styles.bgIcon}><img src={props[0]?.Service[0]?.Image?.data.attributes.url?`${base_Url}${props[0]?.Service[0]?.Image?.data.attributes.url}`:`${base_Url}/`}  alt="" /></div>
+                  <div className={styles.bgIcon}>
+                  <ImageCustom src={data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data.attributes.url}`:`${base_Url}/`} 
+                  width={64}
+                  height={64}
+                  alt="bannerImg"
+                   /></div>
                   <h4 className={styles.sbTitle}>{data.Title}</h4>
                   <p className={styles.sbText}>{data.Description}</p>
                 </div>
