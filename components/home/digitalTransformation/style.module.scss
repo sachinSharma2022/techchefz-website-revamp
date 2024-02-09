@@ -120,6 +120,10 @@
           color: rgba(color(text-primary), 0.6);
           line-height: text(xl);
           max-width: 34.25rem;
+
+          @include mobile-tablet-p {
+            font-size: text(normal);
+          }
         }
 
         .customerList {
@@ -127,6 +131,9 @@
             list-style: square;
             font-size: text(lg);
             opacity: 0.6;
+            @include mobile-tablet-p {
+              font-size: text(normal);
+            }
           }
         }
       }

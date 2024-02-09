@@ -510,6 +510,9 @@ input:-webkit-autofill {
     }
     img {
       min-height: 50rem;
+      @include mobile-tablet-p {
+        min-height: auto;
+      }
     }
   }
 
@@ -517,6 +520,10 @@ input:-webkit-autofill {
   .grid-5 {
     .imgBox div {
       min-height: 43.25rem;
+
+      @include mobile-tablet-p {
+        min-height: auto;
+      }
     }
   }
 
@@ -642,13 +649,16 @@ input:-webkit-autofill {
     }
 
     .swiper-wrapper {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      @include mobile-tablet-p {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
 
-      .swiper-slide {
-        width: 100% !important;
+        .swiper-slide {
+          width: 100% !important;
+        }
       }
+
     }
   }
 }
