@@ -28,8 +28,8 @@ const LetsTalk = () => {
     <section className={cn("primary-container")}>
       <div
         className={cn(
-          styles.lestWorkStyle,
-          theme ? styles.lestWorkStyleDark : ""
+          styles.letsContactStyle,
+          theme ? styles.letsContactStyleDark : ""
         )}
       >
         <div className={styles.workArea}>

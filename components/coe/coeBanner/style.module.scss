@@ -11,9 +11,11 @@
     }
     
     @include mobile-tablet-p {
-      padding: 2rem;
+      padding:5rem 1.25rem 3.75rem;
       flex-direction: column;
+      gap: 1.5rem;
     }
+    
     .bannerTitle {
       font-size: text(xl-larger);
       font-weight: 500;
