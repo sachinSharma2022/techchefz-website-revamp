@@ -28,11 +28,9 @@ const Results = () => {
   return (
     <section className={cn(styles.results, theme ? styles.resultsDark : "")}>
       <div className={cn("primary-container")}>
-        <div className="row justify-content-between">
-          <div className="col-md-3 col-lg-3">
-            <h6 className={styles.resultTitle}>Results</h6>
-          </div>
-          <div className="col-md-9 col-lg-9">
+        <div className={styles.contentSection}>
+          <h6 className={styles.resultTitle}>Results</h6>
+          <div>
             <h3 className={styles.resultHeading}>
               Riding into Tomorrow, Results that Rev Up Royal Enfield.
             </h3>
