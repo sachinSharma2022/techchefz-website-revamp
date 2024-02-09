@@ -30,7 +30,6 @@ import dropdownStyle from "./style.module.scss";
 // valueContainer
 
 const CustomDropdown = ({
-  label,
   options,
   onChange,
   className,
@@ -52,7 +51,6 @@ const CustomDropdown = ({
         borderColor: "#05bed7",
       },
       boxShadow: "none",
-      // fontWeight: 500,
     }),
     singleValue: () => ({
       color: theme ? "white" : "#111",

@@ -9,24 +9,21 @@ import OurValues from "@/components/about/ourValues";
 import OurVision from "@/components/about/ourVision";
 import WhatWeDo from "@/components/about/whatWeDo";
 import LetsWork from "@/components/home/letsWork";
-import Curve from "@/components/ui/pageTransition";
 
 const AboutPage = () => {
   return (
-    <Curve>
-      <div className="overflow-hidden">
-        <AboutBanner />
-        <OurVision />
-        <OurHistory />
-        <WhatWeDo />
-        <OurValues />
-        <OurResults />
-        <FounderDesk />
-        <OurTeam />
-        <OurClients />
-        <LetsWork />
-      </div>
-    </Curve>
+    <div className="overflow-hidden">
+      <AboutBanner />
+      <OurVision />
+      <OurHistory />
+      <WhatWeDo />
+      <OurValues />
+      <OurResults />
+      <FounderDesk />
+      <OurTeam />
+      <OurClients />
+      <LetsWork />
+    </div>
   );
 };
 
