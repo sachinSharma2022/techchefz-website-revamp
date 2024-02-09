@@ -19,8 +19,11 @@ import ProjectForm from "./forms/project";
 import ServicesForm from "./forms/services";
 import JobsForm from "./forms/jobs";
 import VendorForm from "./forms/vendor";
+import { base_Uri } from "@/lib/constants";
+import { base_Url } from "@/lib/constants";
 
-const LetsTalk = () => {
+const LetsTalk = ({props}) => {
+ 
   const { theme } = useContext(MyContext);
   const formInitialSchema = {
     firstName: "",
@@ -66,13 +69,11 @@ const LetsTalk = () => {
       >
         <div className={styles.workArea}>
           <div className={styles.headingMain}>
-            <h3 className={styles.formHeading}>
-              Let&apos;s
-              <span className={styles.formTechHighlight}>Connect!</span>
+            <h3 className={styles.formHeading} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
+             
             </h3>
-            <p className={styles.descriptionText}>
-              Have questions or need assistance? Our team is here to provide you
-              with the support and information you need.
+            <p className={styles.descriptionText} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
+              
             </p>
           </div>
 
@@ -93,8 +94,8 @@ const LetsTalk = () => {
                       )}
                     >
                       <div className={styles.highlightIcon}>
-                        <Icons.CustomDevelopment size={40} />
-                        <h1>Projects</h1>
+                        <ImageCustom height={40}  width={40} src={props?.Image1?.data?.attributes?.url?`${base_Url}${props?.Image1?.data?.attributes?.url}`:`${base_Url}/`} />
+                        <h1>{props.Title1}</h1>
                       </div>
 
                       {selected && (
@@ -114,8 +115,8 @@ const LetsTalk = () => {
                       )}
                     >
                       <div className={styles.highlightIcon}>
-                        <Icons.Intelligence size={40} />
-                        <h1>Services</h1>
+                      <ImageCustom height={40}  width={40} src={props?.Image2?.data?.attributes?.url?`${base_Url}${props?.Image2?.data?.attributes?.url}`:`${base_Url}/`} />
+                        <h1>{props.Title2}</h1>
                       </div>
 
                       {selected && (
@@ -135,8 +136,8 @@ const LetsTalk = () => {
                       )}
                     >
                       <div className={styles.highlightIcon}>
-                        <Icons.Platforms size={40} />
-                        <h1>Jobs</h1>
+                        <ImageCustom height={40}  width={40} src={props?.Image3?.data?.attributes?.url?`${base_Url}${props?.Image3?.data?.attributes?.url}`:`${base_Url}/`} />
+                        <h1>{props.Title3}</h1>
                       </div>
 
                       {selected && (
@@ -156,8 +157,8 @@ const LetsTalk = () => {
                       )}
                     >
                       <div className={styles.highlightIcon}>
-                        <Icons.Market size={40} />
-                        <h1>Vendors</h1>
+                      <ImageCustom height={40}  width={40} src={props?.Image4?.data?.attributes?.url?`${base_Url}${props?.Image4?.data?.attributes?.url}`:`${base_Url}/`} />
+                        <h1>{props.Title4}</h1>
                       </div>
 
                       {selected && (

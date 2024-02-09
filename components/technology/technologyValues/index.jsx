@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { base_Uri } from "@/lib/constants";
 import Image from "next/image";
-
+import { base_Url } from "@/lib/constants";
 // Swiper Styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -112,7 +112,7 @@ const TechnologyValues = ({props}) => {
                 <div className="progress-bar-animation" />
                 <div className={styles.infoSec}>
                   <div className={styles.icons}>
-                  <Image height={100}  width={100} src={data?.Images?.data?.attributes?.url?`${base_Uri}${data?.Images?.data?.attributes?.url}`:`${base_Uri}/`}/>
+                  <ImageCustom height={100}  width={100} src={data?.Images?.data?.attributes?.url?`${base_Url}${data?.Images?.data?.attributes?.url}`:`${base_Url}/`}/>
                   </div>
                   <h6 className={styles.subTitle}>{data?.Title}</h6>
                   <p className={styles.content}>{data?.Description} </p>

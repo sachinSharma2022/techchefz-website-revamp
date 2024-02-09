@@ -8,28 +8,30 @@ import { useContext } from "react";
 import { Popover } from "@headlessui/react";
 import { useMediaQuery } from "react-responsive";
 import styles from "./style.module.scss";
+import { base_Uri } from "@/lib/constants";
 
-const GlobalPresence = () => {
+const GlobalPresence = ({props}) => {
+ 
   const { theme, setTheme } = useContext(MyContext);
   const isMobileScreen = useMediaQuery({ query: "(max-width: 767px)" });
 
-  const popoverCardMob = [
-    {
-      flagImg: "/images/united-state-flag.png",
-      location: "United States",
-      area: "100 Smith Street Collingwood VIC 3066 AU",
-    },
-    {
-      flagImg: "/images/united-state-flag.png",
-      location: "United States",
-      area: "100 Smith Street Collingwood VIC 3066 AU",
-    },
-    {
-      flagImg: "/images/united-state-flag.png",
-      location: "United States",
-      area: "100 Smith Street Collingwood VIC 3066 AU",
-    },
-  ];
+  // const popoverCardMob = [
+  //   {
+  //     flagImg: "/images/united-state-flag.png",
+  //     location: "United States",
+  //     area: "100 Smith Street Collingwood VIC 3066 AU",
+  //   },
+  //   {
+  //     flagImg: "/images/united-state-flag.png",
+  //     location: "United States",
+  //     area: "100 Smith Street Collingwood VIC 3066 AU",
+  //   },
+  //   {
+  //     flagImg: "/images/united-state-flag.png",
+  //     location: "United States",
+  //     area: "100 Smith Street Collingwood VIC 3066 AU",
+  //   },
+  // ];
 
   return (
     <section
@@ -39,10 +41,8 @@ const GlobalPresence = () => {
     >
       <div className={styles.globalStackBox}>
         <div className={cn("primary-container", styles.globalRow)}>
-          <h2 className={styles.globalHeading}>Global Presence</h2>
-          <p className={styles.globalText}>
-            We have a presence in three strategic locations around the world to
-            better serve our customers.
+          <h2 className={styles.globalHeading} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}></h2>
+          <p className={styles.globalText} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
           </p>
         </div>
 
@@ -50,7 +50,7 @@ const GlobalPresence = () => {
           <Popover.Button>
             <div className={styles.contactMap}>
               <ImageCustom
-                src="/images/map.svg"
+                src={props?.Image?.data?.attributes?.url?`${base_Uri}${props?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
                 width={1000}
                 height={1000}
                 alt="map"
@@ -69,9 +69,9 @@ const GlobalPresence = () => {
                     alt="flag-img"
                   />
                 </div>
-                <h1 className={styles.locationHeading}>United States</h1>
+                <h1 className={styles.locationHeading}>{props.DescriptionInner[0].Title}</h1>
                 <p className={styles.locationAreaText}>
-                  100 Smith Street Collingwood VIC 3066 AU
+                  {props?.DescriptionInner[0].Description}
                 </p>
               </div>
             )}
@@ -81,18 +81,18 @@ const GlobalPresence = () => {
 
       {isMobileScreen && (
         <div className={styles.popoverCardMobile}>
-          {popoverCardMob.map((data, index) => (
+          {props?.DescriptionInner?.map((data, index) => (
             <div className={styles.locationPopoverCard}>
               <div className={styles.popoverMapIcon}>
                 <ImageCustom
-                  src={data.flagImg}
+                  src={data?.Images?.data?.attributes?.url?`${base_Uri}${data?.Images?.data?.attributes?.url}`:`${base_Uri}/`}
                   width={40}
                   height={26}
                   alt="flag-img"
                 />
               </div>
-              <h1 className={styles.locationHeading}>{data.location}</h1>
-              <p className={styles.locationAreaText}>{data.area}</p>
+              <h1 className={styles.locationHeading}>{data.Title}</h1>
+              <p className={styles.locationAreaText}>{data.Description}</p>
             </div>
           ))}
         </div>
