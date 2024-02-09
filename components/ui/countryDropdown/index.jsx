@@ -1,85 +1,74 @@
 "use client";
 
 import { MyContext } from "@/context/theme";
-import { Listbox, Transition } from "@headlessui/react";
-import { Fragment, useContext, useState } from "react";
+import { useContext, useState } from "react";
+import Select from "react-select";
 import { ImageCustom } from "../imageCustom";
 
 import { cn } from "@/lib/utils";
+import { Input } from "../inputCustom";
 import styles from "./style.module.scss";
-
-const people = [
-  {
-    name: "+91",
-    flag: (
-      <ImageCustom
-        src="/images/flag.jpg"
-        width={24}
-        height={15}
-        alt="flag-img"
-      />
-    ),
-  },
-  {
-    name: "+93",
-    flag: (
-      <ImageCustom
-        src="/images/flag.jpg"
-        width={24}
-        height={15}
-        alt="flag-img"
-      />
-    ),
-  },
-  {
-    name: "+355",
-    flag: (
-      <ImageCustom
-        src="/images/flag.jpg"
-        width={24}
-        height={15}
-        alt="flag-img"
-      />
-    ),
-  },
-  {
-    name: "+376",
-    flag: (
-      <ImageCustom
-        src="/images/flag.jpg"
-        width={24}
-        height={15}
-        alt="flag-img"
-      />
-    ),
-  },
-  {
-    name: "+244",
-    flag: (
-      <ImageCustom
-        src="/images/flag.jpg"
-        width={24}
-        height={15}
-        alt="flag-img"
-      />
-    ),
-  },
-  {
-    name: "+672",
-    flag: (
-      <ImageCustom
-        src="/images/flag.jpg"
-        width={24}
-        height={15}
-        alt="flag-img"
-      />
-    ),
-  },
-];
+import { useMediaQuery } from "react-responsive";
 
 const CountryDropdown = (props) => {
   const { theme, setTheme } = useContext(MyContext);
-  const [selected, setSelected] = useState(people[0]);
+  const [selectedOption, setSelectedOption] = useState(null);
+  const isBigScreen = useMediaQuery({ query: "(min-width: 1024px)" });
+
+  const countries = [
+    { value: "+91", label: "+91", image: "/images/flag.jpg" },
+    { value: "+93", label: "+93", image: "/images/flag.jpg" },
+    { value: "+244", label: "+244", image: "/images/flag.jpg" },
+    { value: "+672", label: "+672", image: "/images/flag.jpg" },
+  ];
+
+  const controlStyle = {
+    control: (styles) => ({
+      ...styles,
+      height: 60,
+      minWidth: 80,
+      maxWidth: 80,
+      borderRadius: 0,
+      zIndex: 9,
+      backgroundColor: "none",
+      borderWidth: "0",
+      borderColor: theme ? "rgba(256,256,256,0.12)" : "rgba(17, 17, 17, 0.12)",
+      "&:hover": {
+        borderColor: "#05bed7",
+      },
+      flexWrap: "nowrap",
+      boxShadow: "none",
+    }),
+    menu: (css) => ({
+      ...css,
+      width: "auto",
+    }),
+    singleValue: (styles) => ({
+      ...styles,
+      color: theme ? "white" : "#111",
+      fontSize: 8,
+    }),
+    indicatorSeparator: () => ({ display: "none" }),
+    indicatorsContainer: (styles) => ({
+      ...styles,
+      paddingTop: 0,
+      top: 23,
+      height: 20,
+      position: "relative",
+    }),
+    valueContainer: () => ({ top: 15, position: "relative", left: 0 }),
+    option: (styles, { isFocused }) => {
+      return {
+        ...styles,
+        backgroundColor: isFocused ? "#0066CC" : null,
+        color: isFocused ? "white" : "#111",
+        fontSize: "1rem",
+        borderColor: isFocused ? "#05bed7" : "#05bed7",
+        minWidth: isBigScreen ? "20vw" : "50vw",
+      };
+    },
+  };
+
   return (
     <div
       className={cn(
@@ -93,40 +82,33 @@ const CountryDropdown = (props) => {
           props.inputError && styles.inputErrorStyle
         )}
       >
-        <Listbox value={selected} onChange={setSelected}>
-          <div className={styles.floatDropdown}>
-            <Listbox.Button>
-              <div className={styles.countryValue}>
-                {selected.flag} <span className={styles.arrow}></span>
-              </div>
-              {selected.name}
-            </Listbox.Button>
-            <Transition as={Fragment}>
-              <Listbox.Options className={styles.countryList}>
-                {people.map((person, personIdx) => (
-                  <Listbox.Option
-                    key={personIdx}
-                    className={({ active }) =>
-                      `${active ? styles.active : styles.inActive}`
-                    }
-                    value={person}
-                  >
-                    <div className={styles.inputValueStyle}>
-                      <span>{person.flag}</span>
-                      {person.name}
-                    </div>
-                  </Listbox.Option>
-                ))}
-              </Listbox.Options>
-            </Transition>
-          </div>
-        </Listbox>
+        <Select
+          defaultValue={selectedOption}
+          onChange={setSelectedOption}
+          options={countries}
+          styles={controlStyle || styles}
+          isSearchable={false}
+          formatOptionLabel={(country) => (
+            <div className={styles.countryOption}>
+              <ImageCustom
+                width={24}
+                height={15}
+                src={country.image}
+                alt="country-image"
+              />
+              <span>{country.label}</span>
+            </div>
+          )}
+        />
 
-        <input
-          type="text"
-          id="username"
+        <Input
+          label="Phone Number*"
           placeholder="Phone Number*"
-          required=""
+          type="name"
+          id="companyName"
+          name="companyName"
+          inputContainerStyle={styles.inputContainerStyle}
+          inputFloatingStyle={styles.inputFloatingStyle}
         />
       </div>
     </div>

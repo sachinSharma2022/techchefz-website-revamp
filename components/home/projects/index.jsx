@@ -135,9 +135,11 @@ const Projects = ({project,brands}) => {
 
   return (
     <section
-      className={`${styles.projectsStyle} ${
-        (theme ? styles.projectsStyleDark : "", "project-slider")
-      }`}
+      className={cn(
+        styles.projectsStyle,
+        theme ? styles.projectsStyleDark : "",
+        "project-slider"
+      )}
     >
       <div className={cn("primary-container")}>
       <TextRevel>

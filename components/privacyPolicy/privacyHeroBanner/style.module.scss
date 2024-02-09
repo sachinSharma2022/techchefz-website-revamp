@@ -18,7 +18,7 @@
 
     @include mobile-tablet-p {
       font-size: 2.75rem;
-      line-height: 3.5rem;
+      line-height: 3.125rem;
       margin-bottom: text(xl);
     }
 
@@ -27,11 +27,6 @@
       font-size: 4rem;
       font-weight: 500;
       color: color(heading-liner);
-      background: linear-gradient(
-        118deg,
-        color(primary-blue) 11.5%,
-        color(heading-liner) 55.42%
-      );
       @include textGradient;
 
       @include mobile-tablet-p {

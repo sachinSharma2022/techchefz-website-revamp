@@ -20,7 +20,7 @@
 
   .contactFormArea {
     .inputSpace {
-      margin-bottom: 2.25rem;
+      margin-bottom: 1.5rem;
       position: relative;
 
       &:last-child {
@@ -68,5 +68,18 @@
         margin-left: 3px;
       }
     }
+  }
+}
+
+
+// Attach Style
+.attachStyle {
+  position: relative;
+
+  .iconStyle {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1;
   }
 }

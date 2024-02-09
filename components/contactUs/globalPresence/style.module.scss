@@ -17,7 +17,7 @@
       background-color: color(input-bg);
       color: color(primary-white);
       @include mobile-tablet-p {
-        border: 1px solid color(bg-soft);
+        border: 0.14rem solid color(bg-soft);
       }
     }
 
@@ -41,11 +41,6 @@
         line-height: 3.375rem;
         margin-bottom: text(normal);
         color: color(heading-liner);
-        background: linear-gradient(
-          118deg,
-          color(primary-blue) 11.5%,
-          color(heading-liner) 55.42%
-        );
         @include textGradient;
 
         @include mobile-tablet-p {
@@ -127,7 +122,7 @@
   .popoverCardMobile {
     .locationPopoverCard {
       margin-bottom: text(lg);
-      border: 1px solid color(border-darker);
+      border: 0.14rem solid color(border-darker);
       &:last-child {
         margin-bottom: 0;
       }

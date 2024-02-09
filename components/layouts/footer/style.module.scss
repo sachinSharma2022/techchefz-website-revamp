@@ -2,12 +2,12 @@
 
 .footerSection {
   background-color: color(text-primary);
-  padding: 3rem 7.5rem 0;
+  padding: 3.75rem 7.5rem 0;
   color: color(primary-white);
+  position: relative;
 
-  @include tablet {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+  @include mobile-tablet-p {
+    padding: 3.125rem 1.25rem 2.5rem;
   }
 
   h4 {
@@ -26,8 +26,7 @@
     color: rgba(color(primary-white), 0.8);
     margin-bottom: 1.75rem;
 
-    @include mobile {
-      font-size: text(normal);
+    @include mobile-tablet-p {
       margin-bottom: 1rem;
       color: color(primary-white);
     }
@@ -39,10 +38,6 @@
       &:hover {
         color: color(info-blue);
       }
-
-      @include mobile {
-        font-size: text(normal);
-      }
     }
   }
 
@@ -50,8 +45,10 @@
     list-style: none;
     margin: 0;
     padding: 0;
+
     li {
       list-style-type: none;
+
       a {
         color: rgba(color(primary-white), 0.8);
         font-weight: 400;
@@ -70,24 +67,52 @@
   .footerBox {
     display: flex;
     justify-content: space-between;
-    margin-top: 2.5rem;
+    margin-top: 4.5rem;
 
-    @include mobile {
-      flex-wrap: wrap;
-      flex-direction: column-reverse;
+    @include mobile-tablet-p {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.75rem;
     }
 
     .footerCols {
-      @include mobile {
-        width: 100%;
-        margin-bottom: 1rem;
-      }
 
       ul {
-        @include mobile {
-          width: 100%;
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        flex-direction: column;
+        gap: .75rem;
+      }
+
+      &:nth-child(1) {
+       
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        a {
+          font-size: text(lg);
+          font-weight: 500;
+          color: rgba(color(primary-white), 0.8);
+
+          @include mobile-tablet-p {
+            font-size: text(normal);
+          }
+        }
+      }
+
+      @include mobile-tablet-p {
+        width: 100%;
+        margin-bottom: 1rem;
+
+        &:nth-child(1) {
+          grid-column: 1 / 3;
+          grid-row: 1;
+          ul {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+          }
         }
       }
     }
@@ -104,7 +129,11 @@
       font-size: text(normal);
       font-weight: 400;
       color: rgba(color(primary-white), 0.8);
-      margin: 1rem 0;
+      margin: 1.5rem 0 0;
+
+      @include mobile-tablet-p {
+        color: rgba(color(primary-white), 0.6);
+      }
     }
 
     .formFlex {
@@ -112,7 +141,7 @@
       align-items: center;
       justify-content: space-between;
 
-      @include mobile {
+      @include mobile-tablet-p {
         flex-wrap: wrap;
       }
 
@@ -154,32 +183,34 @@
       }
     }
 
-    .partenerCard {
+    .partnerCard {
       display: flex;
       align-items: center;
       justify-content: space-between;
       border: 0.14rem solid color(primary-blue);
       border-radius: 1rem;
-      margin: 3rem 0;
+      margin: 5rem 0 2.5rem;
 
-      @include tablet {
-        margin: 2rem 0;
+      @include mobile-tablet-p {
+        margin: 2.875em 0;
       }
 
       .partnerCols {
         padding: 0.5rem 1.5rem;
+
         @include mobile {
           padding: 0.5rem 1rem;
         }
+
         a {
-          color: color(primary-blue);
+          color: color(info-blue);
           font-size: text(lg);
           font-weight: 500;
           display: flex;
           align-items: center;
           white-space: nowrap;
 
-          @include mobile {
+          @include mobile-tablet-p {
             font-size: text(normal);
           }
 
@@ -214,7 +245,7 @@
     margin-top: 0.8rem;
 
     @include mobile {
-      margin-top: 2.5rem;
+      margin-top: 2.875rem;
     }
 
     a {
@@ -247,6 +278,7 @@
           color: color(primary-blue);
         }
       }
+
       &:last-child {
         svg {
           path {
@@ -277,7 +309,7 @@
   }
 
   .footCopyright {
-    margin-top: 5rem;
+    margin-top: 3.75rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -287,6 +319,7 @@
     @include mobile {
       flex-wrap: wrap;
       margin-top: 2rem;
+      padding: 1.5rem 0 0;
       flex-direction: column-reverse;
       justify-content: flex-start;
     }
@@ -355,7 +388,8 @@
     justify-content: space-between;
 
     .footLogo {
-      height: 60px;
+      height: 48px;
+      width: 183px;
 
       @include mobile-tablet-p {
         height: 50px;
@@ -367,5 +401,9 @@
         height: 100%;
       }
     }
+  }
+
+  .fadeLink {
+    opacity: 0.8;
   }
 }

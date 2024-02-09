@@ -1,6 +1,7 @@
 "use client";
 
 import MobileSlider from "@/components/common/mobileSlider";
+import ServiceCard from "@/components/common/serviceCard";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { MyContext } from "@/context/theme";
@@ -8,6 +9,8 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { base_Uri } from "@/lib/constants";
 import { useContext } from "react";
+import { useMediaQuery } from "react-responsive";
+
 import styles from "./style.module.scss";
 import { base_Url } from "@/lib/constants";
 import { ImageCustom } from "@/components/ui/imageCustom";
@@ -15,6 +18,7 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 const Service = ({props}) => {
   
   const { theme, setTheme } = useContext(MyContext);
+  const isBigScreen = useMediaQuery({ query: "(min-width: 1024px)" });
 
   // const serviceCard = [
   //   {
@@ -127,9 +131,10 @@ const Service = ({props}) => {
             </Link>
           </div>
 
-          <div className={cn(styles.desktopCards, styles.serviceOption)}>
-            {props[0]?.Service.map((data, index) => (
-              <div key={index} className={styles.serviceBox}>
+          {isBigScreen && (
+            <div className={cn(styles.desktopCards, styles.serviceOption)}>
+              {props[0]?.Service.map((data, index) => (
+                <div key={index} className={styles.serviceBox}>
                 <div className={styles.bgIcon}>
                   <ImageCustom src={data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data.attributes.url}`:`${base_Url}/`} 
                   width={64}
@@ -139,28 +144,25 @@ const Service = ({props}) => {
                 <h4 className={styles.sbTitle}>{data.Title}</h4>
                 <p className={styles.sbText}>{data.Description}</p>
               </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
 
-        <div className={cn(styles.mobileCards, styles.serviceOption)}>
-          <MobileSlider slidesToShow={1.3}>
-            {props[0]?.Service.map((data, index) => (
-              <div key={index}>
-                <div key={index} className={styles.serviceBox}>
-                  <div className={styles.bgIcon}>
-                  <ImageCustom src={data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data.attributes.url}`:`${base_Url}/`} 
-                  width={64}
-                  height={64}
-                  alt="bannerImg"
-                   /></div>
-                  <h4 className={styles.sbTitle}>{data.Title}</h4>
-                  <p className={styles.sbText}>{data.Description}</p>
-                </div>
-              </div>
-            ))}
-          </MobileSlider>
-        </div>
+        {!isBigScreen && (
+          <div className={cn(styles.mobileCards)}>
+            <MobileSlider slidesToShow={1.3}>
+              {serviceCard.map((data, index) => (
+                <ServiceCard
+                  key={index}
+                  icon={data.icon}
+                  subTitle={data.subTitle}
+                  subText={data.subText}
+                />
+              ))}
+            </MobileSlider>
+          </div>
+        )}
       </div>
     </section>
   );

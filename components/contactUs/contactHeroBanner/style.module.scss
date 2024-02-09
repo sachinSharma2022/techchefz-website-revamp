@@ -1,46 +1,47 @@
 @import "~/styles/partials/config";
 
 .contactHeroBannerStyle {
-  &.contactHeroBannerDark {
-    .contentSection {
-      background-color: color(input-bg);
-      color: color(primary-white);
-    }
-  }
   .contentSection {
     display: flex;
     padding-inline: spacing(p-120);
     padding-block: 8.75rem 5.25rem;
-
+  
     @include desktop-hd {
       padding-inline: 0;
     }
-
+  
     @include mobile-tablet-p {
       padding: spacing(section-mob-padding);
       padding-block: 3.75rem 3.75rem;
       flex-direction: column;
     }
   }
-
-  .landingPlayerStyle {
+  
+  .landingPlayerStyle div {
+    height: 31.25rem;
+    width: 100%;
     position: relative;
-
+  
+    @include mobile-tablet-p {
+      height: 11.75rem;
+    }
+  
     img {
       width: 100%;
       height: 100%;
+      object-fit: cover;
     }
   }
-
+  
   .title {
     font-size: 4rem;
     font-weight: 500;
     line-height: 5rem;
     margin-bottom: 0;
-
+  
     @include mobile-tablet-p {
       font-size: 2.75rem;
-      line-height: 3.5rem;
+      line-height: 3.125rem;
     }
 
     span {
@@ -48,17 +49,20 @@
       font-size: 4rem;
       font-weight: 500;
       color: color(heading-liner);
-      background: linear-gradient(
-        118deg,
-        color(primary-blue) 11.5%,
-        color(heading-liner) 55.42%
-      );
       @include textGradient;
-
+  
       @include mobile-tablet-p {
         font-size: 2.75rem;
         line-height: 3.5rem;
       }
+    }
+  }
+
+  // Dark Mode
+  &.contactHeroBannerDark {
+    .contentSection {
+      background-color: color(input-bg);
+      color: color(primary-white);
     }
   }
 }

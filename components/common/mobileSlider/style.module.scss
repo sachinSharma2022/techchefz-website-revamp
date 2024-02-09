@@ -31,7 +31,7 @@
     border-radius: 0.5rem;
     width: 3rem;
     height: 3rem;
-    border: 1px solid rgba(color(text-primary), 0.2);
+    border: 0.14rem solid rgba(color(text-primary), 0.2);
     color: color(primary-blue);
     background: none;
     display: flex;
@@ -47,7 +47,7 @@
   //Dark mode style
   &.mobileSliderDark {
     .arrowDisabled {
-      border: 1px solid rgba(color(primary-white), 0.2);
+      border-color: rgba(color(primary-white), 0.2);
 
       svg > path {
         stroke: color(primary-white);

@@ -7,8 +7,8 @@ import { Tab } from "@headlessui/react";
 import { useContext, useState } from "react";
 
 import LeftDrawer from "@/components/common/leftDrawer";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 import styles from "./style.module.scss";
 import Link from "next/link";
 import { base_Uri } from "@/lib/constants";
@@ -64,7 +64,7 @@ const OurTeam = ({props}) => {
   //   },
   // ];
   return (
-    <section className={`${styles.ourTeam} ${theme ? styles.ourTeamDark : ""}`}>
+    <section className={cn(styles.ourTeam, theme ? styles.ourTeamDark : "")}>
       <div className={cn("primary-container")}>
         <div>
           <div className="tab">

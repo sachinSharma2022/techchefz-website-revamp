@@ -1,28 +1,36 @@
 @import "~/styles/partials/config";
 
 .theProcessStyle {
-  padding: spacing(section-primary-padding);
+  padding: 8.75rem 7.5rem 20rem;
   padding-top: 0;
 
-  @include mobile-tablet-p{
-    padding:3.75rem 1.25rem;
- }
+  @include mobile-tablet-p {
+    padding: 3.75rem 1.25rem;
+  }
 
   .flexContainer {
     display: flex;
     justify-content: space-between;
     gap: 8.938rem;
 
-    @include mobile-tablet-p{
+    @include mobile-tablet-p {
       flex-direction: column;
       gap: 3.75rem;
+    }
+    .stepperImg {
+      position: absolute;
+      width: 258px;
+      height: 258px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 
   .headSection {
     margin-bottom: 5rem;
 
-    @include mobile-tablet-p{
+    @include mobile-tablet-p {
       margin-bottom: 0;
     }
 
@@ -41,7 +49,7 @@
       margin-bottom: 2.75rem;
       line-height: 3.375rem;
 
-      @include mobile-tablet-p{
+      @include mobile-tablet-p {
         font-size: text(xxxl);
         max-width: 90%;
         line-height: 2.5rem;
@@ -50,23 +58,46 @@
       span {
         font-size: text(larger);
         color: color(heading-liner);
-        background: linear-gradient(
-          118deg,
-          color(primary-blue) 11.5%,
-          color(heading-liner) 55.42%
-        );
         @include textGradient;
 
-        @include mobile-tablet-p{
+        @include mobile-tablet-p {
           font-size: text(xxxl);
         }
       }
     }
 
-    .ourNumbersImg{
-      img{
+    .ourNumbersImg {
+      img {
         width: 100%;
         height: 100%;
+      }
+    }
+
+    .circularStepperContainer {
+      position: relative;
+
+      @include mobile-tablet-p {
+        width: 100vw;
+        scale: 0.8;
+        left: -20px;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .circularStepperContainer > span {
+      font-size: text(larger);
+      color: color(heading-liner);
+      background: linear-gradient(
+        118deg,
+        color(primary-blue) 11.5%,
+        color(heading-liner) 55.42%
+      );
+
+      @include textGradient;
+
+      @include mobile-tablet-p {
+        font-size: text(xxxl);
       }
     }
   }
@@ -75,6 +106,13 @@
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
+    margin-top: 12.75rem;
+
+    @include mobile {
+      flex-direction: row;
+      overflow-x: scroll;
+      @include scrollHide;
+    }
 
     .processCard {
       background: color(bg-soft);
@@ -82,31 +120,30 @@
       border-radius: 1.25rem;
       border: 0.14rem solid rgba(color(text-primary), 0.12);
       max-width: 587px;
-      opacity: 0.6;
+      opacity: 0.4;
 
-      &.active {
-        opacity: 1;
+      @include mobile {
+        min-width: 100%;
       }
     }
 
     .textGradient {
       font-size: text(xxxl);
-      background: linear-gradient(117.91deg, #1E8AF2 11.5%, #05BED7 55.42%);
       @include textGradient;
       margin-bottom: 20px;
     }
   }
 
   //Dark mode style
-  &.theProcessDark{
+  &.theProcessDark {
     background-color: color(input-bg);
     color: color(primary-white);
 
-    .heading{
+    .heading {
       color: color(primary-white);
     }
 
-    .processCard{
+    .processCard {
       background-color: color(text-primary);
     }
   }
