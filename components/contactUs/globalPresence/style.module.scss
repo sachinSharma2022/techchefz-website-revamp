@@ -17,7 +17,7 @@
       background-color: color(input-bg);
       color: color(primary-white);
       @include mobile-tablet-p {
-        border: 1px solid color(bg-soft);
+        border: 0.14rem solid color(bg-soft);
       }
     }
 
@@ -122,7 +122,7 @@
   .popoverCardMobile {
     .locationPopoverCard {
       margin-bottom: text(lg);
-      border: 1px solid color(border-darker);
+      border: 0.14rem solid color(border-darker);
       &:last-child {
         margin-bottom: 0;
       }

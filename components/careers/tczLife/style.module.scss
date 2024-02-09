@@ -167,7 +167,7 @@
     border-radius: 0.5rem;
     width: 3rem;
     height: 3rem;
-    border: 1px solid rgba(color(text-primary), 0.20);
+    border: 0.14rem solid rgba(color(text-primary), 0.20);
     color: color(primary-blue);
     background: none;
     display: flex;
@@ -185,7 +185,7 @@
     color: color(primary-white);
 
     .arrowDisabled {
-      border: 1px solid rgba(color(primary-white), 0.2);
+      border: 0.14rem solid rgba(color(primary-white), 0.2);
 
       svg > path {
         stroke: color(primary-white);
