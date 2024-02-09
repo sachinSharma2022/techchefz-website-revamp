@@ -856,3 +856,15 @@ html.lenis {
     padding: 0;
   }
 }
+
+
+// Grid Marquee Gallery
+.gridMarqueeGallery {
+
+  .slick-track .slick-slide {
+
+    @include mobile-tablet-p {
+      // width: auto !important;
+    }
+  }
+}

@@ -5,6 +5,7 @@
   padding-block: spacing(section-primary-padding);
   padding-left: spacing(p-120);
   overflow: hidden;
+  position: relative;
 
   @include mobile-tablet-p {
     padding: 0 0 3.75rem;
