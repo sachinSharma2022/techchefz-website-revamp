@@ -300,13 +300,13 @@ input:-webkit-autofill {
   }
 
   .btn-arrow {
-    background-color: color(nav-btn);
-    border-color: color(nav-btn);
+    background-color: color(primary-blue);
+    border-color: color(primary-blue);
 
     &:hover,
     &:focus {
-      background-color: color(nav-btn);
-      border-color: color(nav-btn);
+      background-color: color(primary-blue);
+      border-color: color(primary-blue);
     }
   }
 }
@@ -810,6 +810,15 @@ input:-webkit-autofill {
   }
 }
 
+.dark .project-slider {
+  .swiper-pagination {
+
+    .swiper-pagination-bullet {
+      background-color: rgba(color(text-primary), 0.4);
+    }
+  }
+}
+
 // Smooth Scroll Style here
 html.lenis {
   height: auto;
@@ -835,5 +844,17 @@ html.lenis {
   }
   .slick-slide > div {
     padding: 0 50px;
+  }
+}
+
+
+// Error Page
+.error-page {
+  header, footer {
+    display: none;
+  }
+
+  .main-container {
+    padding: 0;
   }
 }

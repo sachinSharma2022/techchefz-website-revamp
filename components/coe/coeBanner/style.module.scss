@@ -1,19 +1,15 @@
 @import "~/styles/partials/config";
 
 .banner {
-  &.bannerDark {
-    background-color: color(input-bg);
-    color: color(primary-white);
-  }
   .bannerContent {
     display: flex;
     justify-content: space-between;
     padding: 10rem 7.5rem 5rem;
-
+    
     @include desktop-hd {
       padding-inline: 0;
     }
-
+    
     @include mobile-tablet-p {
       padding: 2rem;
       flex-direction: column;
@@ -23,22 +19,22 @@
       font-weight: 500;
       line-height: 5rem;
       max-width: 580px;
-
+      
       @include mobile-tablet-p {
         font-size: text(larger);
-        line-height: 3.5rem;
+        line-height: 3.125rem;
       }
-
+      
       span {
         font-size: text(xl-larger);
         @include textGradient;
-
+        
         @include mobile-tablet-p {
           font-size: text(larger);
         }
       }
     }
-
+    
     .bannerRight {
       display: flex;
       flex-direction: column;
@@ -50,7 +46,7 @@
         font-size: text(lg);
         line-height: 1.875rem;
         opacity: 0.8;
-
+        
         @include mobile-tablet-p {
           font-size: text(normal);
           line-height: 1.5rem;
@@ -58,21 +54,27 @@
       }
     }
   }
-
+  
   .imgBox div {
     height: 31.25rem;
     width: 100%;
     overflow: hidden;
     position: relative;
-
+    
     @include mobile-tablet-p {
       height: 8.188rem;
     }
-
+    
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
+  }
+
+  // Dark Mode
+  &.bannerDark {
+    background-color: color(input-bg);
+    color: color(primary-white);
   }
 }

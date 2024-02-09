@@ -1,20 +1,6 @@
 @import "~/styles/partials/config";
 
 .aboutBanner {
-
-  // Dark theme
-  &.aboutBannerDark {
-   background-color: color(input-bg);
-
-   .bannerTitle{
-      color: color(primary-white);
-
-      .bannerImg {
-         background-color: color(input-bg);
-      }
-   }
-  }
-
   .bannerTitle {
     width: 100%;
     padding-top: 11.25rem;
@@ -27,22 +13,23 @@
     @include desktop-hd {
       padding-inline: 0;
     }
+
     @include mobile-tablet-p {
       padding: spacing(section-mob-padding);
       padding-block: 3.75rem 3.75rem;
       font-size: 2.75rem;
-      line-height: 3.5rem;
+      line-height: 3.125rem;
     }
     @include mobile {
       br {
         display: none;
       }
     }
-    
+
     span {
       color: color(heading-liner);
       font-size: text(xl-larger);
-      @include mobile-tablet-p{
+      @include mobile-tablet-p {
         font-size: 2.75rem;
       }
     }
@@ -52,6 +39,19 @@
     img {
       width: 100%;
       height: auto;
+    }
+  }
+
+  // Dark theme
+  &.aboutBannerDark {
+    background-color: color(input-bg);
+
+    .bannerTitle {
+      color: color(primary-white);
+
+      .bannerImg {
+        background-color: color(input-bg);
+      }
     }
   }
 }
