@@ -92,7 +92,7 @@ const TechnologyValues = ({props}) => {
             {props?.TechnologyVal?.map((data, index) => (
               <SwiperSlide key={index} className={styles.valuesImg}>
                 <ImageCustom
-                  src={data?.SliderImage.data.attributes.url?`${base_Url}${data?.SliderImage?.data?.attributes?.url}`:`${base_Url}/`}
+                  src={data?.SliderImage.data.attributes.url?`${base_Uri}${data?.SliderImage?.data?.attributes?.url}`:`${base_Uri}/`}
                   width={1000}
                   height={1000}
                   alt="img"
