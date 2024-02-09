@@ -12,6 +12,8 @@ import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
 import TextRevel from "@/components/ui/sectionAnimation";
 import MobileSlider from "@/components/common/mobileSlider";
+import { base_Url } from "@/lib/constants";
+
 
 const OurNumbers = ({carrer,experience}) => {
  
@@ -98,7 +100,7 @@ const OurNumbers = ({carrer,experience}) => {
                   <ServiceInfoCard
                     key={index}
                     sbTitle={data.Title}
-                    icon={data?.Image?.data.attributes.url?`${base_Uri}${data?.Image?.data.attributes.url}`:`${base_Uri}/`}
+                    icon={data?.Image?.data.attributes.url?`${base_Url}${data?.Image?.data.attributes.url}`:`${base_Url}/`}
                     sbText={data.Description}
                   />
                 ))}
@@ -112,7 +114,7 @@ const OurNumbers = ({carrer,experience}) => {
                 <ServiceInfoCard
                 key={index}
                     sbTitle={data.Title}
-                    icon={data?.Image?.data.attributes.url?`${base_Uri}${data?.Image?.data.attributes.url}`:`${base_Uri}/`}
+                    icon={data?.Image?.data.attributes.url?`${base_Url}${data?.Image?.data.attributes.url}`:`${base_Url}/`}
                     sbText={data.Description}
                 />
               ))}

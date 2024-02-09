@@ -11,9 +11,10 @@ import { useEffect, useRef } from "react";
 import { useMediaQuery } from "react-responsive";
 import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
+import { base_Url } from "@/lib/constants"; 
 
 const Streamline = ({ props }) => {
- 
+
   const isBigScreen = useMediaQuery({ minWidth: 1025 });
   let component = useRef(null);
   const { theme, setTheme } = useContext(MyContext);
@@ -128,7 +129,7 @@ const Streamline = ({ props }) => {
           <div key={index}>
             <div className={styles.streamlineCard}>
               <div className={styles.iconStyle}>
-              <ImageCustom height={100}  width={100} src= {data?.Image?.data?.attributes?.url?`${base_Uri}${data?.Image?.data?.attributes?.url}`:`${base_Uri}/`} />
+              <ImageCustom height={100}  width={100} src= {data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data?.attributes?.url}`:`${base_Url}/`} />
                
               </div>
               <h6 className={styles.cardTitle}>{data.Title} </h6>

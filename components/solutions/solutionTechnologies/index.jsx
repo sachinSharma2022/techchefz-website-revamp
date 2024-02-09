@@ -11,6 +11,7 @@ import { base_Uri } from "@/lib/constants";
 import MobileSlider from "@/components/common/mobileSlider";
 import ServiceInfoCard from "@/components/common/serviceInfoCard";
 import styles from "./style.module.scss";
+import { base_Url } from "@/lib/constants";
 
 const SolutionTechnologies = ({ props }) => {
   console.log("neee", props);
@@ -110,8 +111,8 @@ const SolutionTechnologies = ({ props }) => {
                   <ServiceInfoCard
                     key={index}
                     sbTitle={data.Title}
-                    icon={`${base_Uri}${data?.Image?.data.attributes.url}`}
-
+                    icon={data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data?.attributes?.url}`:`${base_Url}/`}
+                    
                     sbText={data.Description}
                   />
                 ))}
@@ -135,7 +136,8 @@ const SolutionTechnologies = ({ props }) => {
                 <ServiceInfoCard
                   key={index}
                   sbTitle={data.Title}
-                  icon={`${base_Uri}${data?.Image?.data.attributes.url}`}
+                  icon= {data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data?.attributes?.url}`:`${base_Url}/`}
+                 
                   sbText={data.Description}
                 />
               ))}

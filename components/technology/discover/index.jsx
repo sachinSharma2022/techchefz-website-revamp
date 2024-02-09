@@ -10,6 +10,7 @@ import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { base_Uri } from "@/lib/constants";
+import { base_Url } from "@/lib/constants"; 
 
 const Discover = ({props}) => {
  
@@ -148,7 +149,7 @@ const Discover = ({props}) => {
                           <div className="d-flex align-items-center">
                             <div className={styles.iconImg}>
                               <ImageCustom
-                                src={subItems?.Image?.data?.attributes?.url?`${base_Uri}${subItems?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+                                src={subItems?.Image?.data?.attributes?.url?`${base_Url}${subItems?.Image?.data?.attributes?.url}`:`${base_Url}/`}
                                 width={24}
                                 height={22}
                                 alt="image"

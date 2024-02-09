@@ -8,6 +8,8 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import { cn } from "@/lib/utils";
 import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
+import { base_Url } from "@/lib/constants";
+
 
 const SolutionOurValues = ({props}) => {
   console.log("mmm",props)
@@ -135,7 +137,7 @@ const SolutionOurValues = ({props}) => {
                       }}
                     >
                       <ImageCustom
-                        src={data.Image.data.attributes.url?`${base_Uri}${data.Image.data.attributes.url}`:`${base_Uri}/`}
+                        src={data.Image.data.attributes.url?`${base_Url}${data.Image.data.attributes.url}`:`${base_Url}/`}
                         
                         width={30}
                         height={30}
@@ -149,7 +151,7 @@ const SolutionOurValues = ({props}) => {
                     <Disclosure.Panel className={styles.accordionBody}>
                       <div className={styles.imgBox}>
                         <ImageCustom
-                          src={data.img.data.attributes.url?`${base_Uri}${data.img.data.attributes.url}`:`${base_Uri}/`}
+                          src={data.img.data.attributes.url?`${base_Url}${data.img.data.attributes.url}`:`${base_Url}/`}
                           width={200}
                           height={200}
                           alt="bannerImg"
