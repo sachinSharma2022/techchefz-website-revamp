@@ -65,7 +65,8 @@
   &.partnerCardDark {
     background-color: color(text-primary);
     color: color(primary-white);
-    border-color: rgba(color(primary-white), 0.12);
+    border: 0.14rem solid color(text-primary);
+
 
     &:hover {
       border-color: color(heading-liner);
