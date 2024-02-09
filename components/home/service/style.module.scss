@@ -84,6 +84,7 @@
       border-radius: text(xl);
       border: 0.125rem solid color(primary-white);
       min-width: 23.438rem;
+      margin-bottom: 0;
       @include transition(0.5s);
 
       &:hover {

@@ -87,6 +87,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    @include mobile-tablet-p{
+      background-color: transparent;
+    }
   }
 
   // Dark Mode

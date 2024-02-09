@@ -510,6 +510,9 @@ input:-webkit-autofill {
     }
     img {
       min-height: 50rem;
+      @include mobile-tablet-p {
+        min-height: 100%;
+      }
     }
   }
 
@@ -812,7 +815,6 @@ input:-webkit-autofill {
 
 .dark .project-slider {
   .swiper-pagination {
-
     .swiper-pagination-bullet {
       background-color: rgba(color(text-primary), 0.4);
     }
@@ -847,10 +849,10 @@ html.lenis {
   }
 }
 
-
 // Error Page
 .error-page {
-  header, footer {
+  header,
+  footer {
     display: none;
   }
 
