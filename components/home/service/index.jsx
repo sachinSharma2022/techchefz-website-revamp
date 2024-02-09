@@ -15,55 +15,13 @@ import styles from "./style.module.scss";
 import { base_Url } from "@/lib/constants";
 import { ImageCustom } from "@/components/ui/imageCustom";
 
-const Service = ({props}) => {
-  
+
+const Service = ({ props }) => {
+
   const { theme, setTheme } = useContext(MyContext);
   const isBigScreen = useMediaQuery({ query: "(min-width: 1024px)" });
 
-  // const serviceCard = [
-  //   {
-  //     icon: <Icons.Transform width={64} height={64} />,
-  //     sbTitle: "Strategy & Digital Transformation",
-  //     sbText:
-  //       "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
-  //   },
-  //   {
-  //     icon: <Icons.CustomDevelopment width={64} height={64} />,
-  //     sbTitle: "Product Engineering & Custom Development",
-  //     sbText:
-  //       "We Believe In Quality Backend Development For Faster Backend Processing. ",
-  //   },
-  //   {
-  //     icon: <Icons.MarTech width={64} height={64} />,
-  //     sbTitle: "Customer Experience & MarTech",
-  //     sbText:
-  //       "We Believe In Superior Frontend Development With The Combination Of JavaScript, HTML And CSS.",
-  //   },
-  //   {
-  //     icon: <Icons.Intelligence width={64} height={64} />,
-  //     sbTitle: "Data Analytics & Intelligence",
-  //     sbText:
-  //       "We Have Expertise In Development Of Mobile Applications Using Native And Hybrid Technologies.",
-  //   },
-  //   {
-  //     icon: <Icons.Platforms width={64} height={64} />,
-  //     sbTitle: "Enterprise Technology Platforms",
-  //     sbText:
-  //       "At TechChefz We Provide First-Class Artificial Intelligence And Machine Learning with Expertise.",
-  //   },
-  //   {
-  //     icon: <Icons.Cloud width={64} height={64} />,
-  //     sbTitle: "Cloud & Dev-Sec-Ops",
-  //     sbText:
-  //       "We Facilitate Easy Cloud Migration And Deliver DevOps Automation And 24*7 Incident Management Services.",
-  //   },
-  //   {
-  //     icon: <Icons.DataIntelligence width={64} height={64} />,
-  //     sbTitle: "Data Analytics & Intelligence",
-  //     sbText:
-  //       "We Facilitate Easy Cloud Migration And Deliver DevOps Automation And 24*7 Incident Management Services.",
-  //   },
-  // ];
+
   const settings = {
     className: "center",
     centerPadding: "0px",
@@ -116,10 +74,10 @@ const Service = ({props}) => {
       <div className={cn("primary-container")}>
         <div className={styles.serviceGrid}>
           <div className={styles.serviceHeading}>
-            <p className={styles.serviceText}dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
+            <p className={styles.serviceText} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}` }}>
             </p>
-            <h3 className={styles.serviceTitle}dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}`}}>
-              
+            <h3 className={styles.serviceTitle} dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}` }}>
+
             </h3>
             <Link href="/solutions">
               <Button
@@ -132,18 +90,26 @@ const Service = ({props}) => {
           </div>
 
           {isBigScreen && (
-            <div className={cn(styles.desktopCards, styles.serviceOption)}>
-              {props[0]?.Service.map((data, index) => (
-                <div key={index} className={styles.serviceBox}>
-                <div className={styles.bgIcon}>
-                  <ImageCustom src={data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data.attributes.url}`:`${base_Url}/`} 
-                  width={64}
-                  height={64}
-                  alt="bannerImg"
-                   /></div>
-                <h4 className={styles.sbTitle}>{data.Title}</h4>
-                <p className={styles.sbText}>{data.Description}</p>
-              </div>
+            <div className={cn(styles.desktopCards)}>
+              {props[0]?.Service?.map((data, index) => (
+
+                <ServiceCard
+                  key={index}
+                  icon={data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data.attributes.url}`:`${base_Url}/`} 
+                  subTitle={data.Title}
+                  subText={data.Description}
+                />
+
+                //   <div key={index} className={styles.serviceBox}>
+                //   <div className={styles.bgIcon}>
+                //     <ImageCustom src={data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data.attributes.url}`:`${base_Url}/`} 
+                //     width={64}
+                //     height={64}
+                //     alt="bannerImg"
+                //      /></div>
+                //   <h4 className={styles.sbTitle}>{data.Title}</h4>
+                //   <p className={styles.sbText}>{data.Description}</p>
+                // </div>
               ))}
             </div>
           )}
@@ -152,12 +118,12 @@ const Service = ({props}) => {
         {!isBigScreen && (
           <div className={cn(styles.mobileCards)}>
             <MobileSlider slidesToShow={1.3}>
-              {serviceCard.map((data, index) => (
+              {props[0]?.Service.map((data, index) => (
                 <ServiceCard
                   key={index}
-                  icon={data.icon}
-                  subTitle={data.subTitle}
-                  subText={data.subText}
+                  icon={data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data.attributes.url}`:`${base_Url}/`} 
+                  subTitle={data.Title}
+                  subText={data.Description}
                 />
               ))}
             </MobileSlider>

@@ -4,16 +4,16 @@ import { Icons } from "@/components/icons";
 import { MyContext } from "@/context/theme";
 import { Tab } from "@headlessui/react";
 import { useContext } from "react";
-
 import CustomDropdown from "@/components/ui/customDropdown";
 import { cn } from "@/lib/utils";
-
+import styles from "./style.module.scss";
 import JobsForm from "./forms/jobs";
 import ProjectForm from "./forms/project";
 import ServicesForm from "./forms/services";
 import VendorForm from "./forms/vendor";
 import { base_Uri } from "@/lib/constants";
 import { base_Url } from "@/lib/constants";
+import { ImageCustom } from "@/components/ui/imageCustom";
 
 const LetsTalk = ({props}) => {
  

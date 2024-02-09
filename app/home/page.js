@@ -12,6 +12,7 @@ import { api_Home_Page } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
 import { base_Uri } from "@/lib/constants";
 import { base_Url } from "@/lib/constants";
+import Curve from "@/components/ui/pageTransition";
 
 const HomePage = async () => {
   const data = await getData(api_Home_Page);

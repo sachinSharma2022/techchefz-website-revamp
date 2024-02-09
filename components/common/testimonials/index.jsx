@@ -123,7 +123,7 @@ const Testimonials = ({props}) => {
                         <div className={styles.customerProfile}>
                           <div className={styles.customerImg}>
                             <ImageCustom
-                              src={data.img}
+                              src={data?.ProfileImage?.data?.attributes?.url?`${base_Uri}${data?.ProfileImage?.data?.attributes?.url}`:`${base_Uri}/`}
                               width={100}
                               height={100}
                               alt="profileImg"
@@ -205,7 +205,7 @@ const Testimonials = ({props}) => {
                       <div className={styles.customerProfile}>
                         <div className={styles.customerImg}>
                           <ImageCustom
-                            src={base_Uri+data.ProfileImage?.data?.attributes?.url}
+                            src={data?.ProfileImage?.data?.attributes?.url?`${base_Uri}${data?.ProfileImage?.data?.attributes?.url}`:`${base_Uri}/`}
                             width={100}
                             height={100}
                             alt="profileImg"
