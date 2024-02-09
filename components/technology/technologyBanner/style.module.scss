@@ -9,19 +9,6 @@
     padding-block: 3.75rem 3.75rem;
   }
 
-  &.landingBannerDark {
-    background-color: color(input-bg);
-
-    .title {
-      color: color(primary-white);
-    }
-
-    .leadText {
-      color: color(primary-white);
-      opacity: 0.8;
-    }
-  }
-
   .flexContainer {
     display: flex;
     gap: 8.938rem;
@@ -44,7 +31,7 @@
 
     @include mobile-tablet-p {
       font-size: 2.75rem;
-      line-height: 3.5rem;
+      line-height: 3.125rem;
       margin-bottom: text(xl);
       word-break: break-word;
 
@@ -57,11 +44,6 @@
       font-size: text(xl-larger);
       font-weight: 500;
       color: color(heading-liner);
-      background: linear-gradient(
-        118deg,
-        color(primary-blue) 11.5%,
-        color(heading-liner) 55.42%
-      );
       @include textGradient;
 
       @include mobile-tablet-p {
@@ -92,4 +74,19 @@
       margin-top: 1.875rem;
     }
   }
+
+  // Dark Mode
+  &.landingBannerDark {
+    background-color: color(input-bg);
+
+    .title {
+      color: color(primary-white);
+    }
+
+    .leadText {
+      color: color(primary-white);
+      opacity: 0.8;
+    }
+  }
+  
 }

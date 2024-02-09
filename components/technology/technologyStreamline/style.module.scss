@@ -97,6 +97,9 @@
       text-align: left;
       padding: 2.5rem;
       margin: 1rem;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
       @include transition(0.5s);
 
       @include mobile-tablet-p {
@@ -111,12 +114,12 @@
       }
 
       .iconStyle {
-        width: 100px;
-        height: 100px;
+        width: 140px;
+        height: 140px;
 
         @include mobile-tablet-p {
-          width: 80px;
-          height: 80px;
+          width: 85px;
+          height: 85px;
         }
 
        svg {

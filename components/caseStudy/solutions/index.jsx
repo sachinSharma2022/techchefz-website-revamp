@@ -33,7 +33,7 @@ const Solutions = ({props}) => {
           <div className="row justify-content-center ">
             <div className="col-md-12 col-lg-12">
               <ImageCustom
-                src= {props?.gallaryImages[0].Image.data[0].attributes.url?`${base_Uri}${props?.gallaryImages[0].Image.data[0].attributes.url}`:`${base_Uri}/`}
+                src= {props?.gallaryImages[0].Image?.data?.attributes?.url?`${base_Uri}${props?.gallaryImages[0].Image.data?.attributes.url}`:`${base_Uri}/`}
                
                 width={1060}
                 height={500}
@@ -44,7 +44,7 @@ const Solutions = ({props}) => {
           <div className={styles.solutionBottomImgs}>
             <div>
               <ImageCustom
-                src={props?.gallaryImages[1].Image.data[0].attributes.url?`${base_Uri}${props?.gallaryImages[1].Image.data[0].attributes.url}`:`${base_Uri}/`}
+                src={props?.gallaryImages[1].Image.data?.attributes.url?`${base_Uri}${props?.gallaryImages[1].Image.data?.attributes.url}`:`${base_Uri}/`}
                 width={500}
                 height={400}
                 alt="content-img"
@@ -52,7 +52,7 @@ const Solutions = ({props}) => {
             </div>
             <div>
               <ImageCustom
-                src={props?.gallaryImages[2].Image.data[0].attributes.url?`${base_Uri}${props?.gallaryImages[2].Image.data[0].attributes.url}`:`${base_Uri}/`}
+                src={props?.gallaryImages[2].Image.data?.attributes.url?`${base_Uri}${props?.gallaryImages[2].Image.data?.attributes.url}`:`${base_Uri}/`}
                 width={500}
                 height={400}
                 alt="content-img"

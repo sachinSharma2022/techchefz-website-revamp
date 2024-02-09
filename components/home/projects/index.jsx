@@ -47,7 +47,11 @@ const Card = ({ ...props }) => {
     >
       <div className={styles.projectImg}>
         <ImageCustom
-          src={props?.project?.Image?.data?.attributes?.url?`${base_Uri}${props?.project?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+          src={
+            props?.project?.Image?.data?.attributes?.url
+              ? `${base_Uri}${props?.project?.Image?.data?.attributes?.url}`
+              : `${base_Uri}/`
+          }
           width={1360}
           height={300}
           alt="projectImg"
@@ -104,7 +108,7 @@ const Card = ({ ...props }) => {
   );
 };
 
-const Projects = ({project,brands}) => {
+const Projects = ({ project, brands }) => {
   const isMobileScreen = useMediaQuery({ query: "(max-width: 767px)" });
   const { theme, setTheme } = useContext(MyContext);
   const container = useRef(null);
@@ -135,52 +139,53 @@ const Projects = ({project,brands}) => {
 
   return (
     <section
-      className={`${styles.projectsStyle} ${
-        (theme ? styles.projectsStyleDark : "", "project-slider")
-      }`}
+      className={cn(
+        styles.projectsStyle,
+        theme ? styles.projectsStyleDark : "",
+        "project-slider"
+      )}
     >
       <div className={cn("primary-container")}>
-      <TextRevel>
-        <div className={cn("row", styles.rowSection)}>
-          <div className="col-md-12 col-12">
-            <p className={styles.projectHighlight} dangerouslySetInnerHTML={{ __html: `${project[0]?.Title}`}}>
-              </p>
-          </div>
-          <div className="col-md-5 col-12">
-            <h3 className={styles.datingText} dangerouslySetInnerHTML={{ __html: `${project[0]?.SubTitle}`}}>
-              
-            </h3>
-          </div>
-          <div className="col-md-7 col-12">
-            <p className={styles.aboutText}>
-            {project[0]?.Description}
-            </p>
+        <TextRevel>
+          <div className={cn(styles.rowSection)}>
+            <div>
+              <p
+                className={styles.projectHighlight}
+                dangerouslySetInnerHTML={{ __html: `${project[0]?.Title}` }}
+              ></p>
+              <h3
+                className={styles.datingText}
+                dangerouslySetInnerHTML={{ __html: `${project[0]?.SubTitle}` }}
+              ></h3>
+            </div>
+            <div className={styles.paraSec}>
+              <p className={styles.aboutText}>{project[0]?.Description}</p>
 
-            <Link href="/portfolio">
-              <Button variant="outline" size="md">
-                {project[0]?.Btn} <Icons.ArrowRight size={18} />
-              </Button>
-            </Link>
+              <Link href="/portfolio">
+                <Button variant="outline" size="md">
+                  {project[0]?.Btn} <Icons.ArrowRight size={18} />
+                </Button>
+              </Link>
+            </div>
           </div>
-        </div>
         </TextRevel>
         {!isMobileScreen ? (
-        <div ref={container} className={styles.cards}>
-          {brands.map((project, i) => {
-            const targetScale = 1 - (projects.length - i) * 0.05;
-            return (
-              <Card
-                key={`p_${i}`}
-                i={i}
-                project={project}
-                progress={scrollYProgress}
-                range={[i * 0.25, 1]}
-                targetScale={targetScale}
-              />
-            );
-          })}
-        </div>
-         ) : (
+          <div ref={container} className={styles.cards}>
+            {brands.map((project, i) => {
+              const targetScale = 1 - (projects.length - i) * 0.05;
+              return (
+                <Card
+                  key={`p_${i}`}
+                  i={i}
+                  project={project}
+                  progress={scrollYProgress}
+                  range={[i * 0.25, 1]}
+                  targetScale={targetScale}
+                />
+              );
+            })}
+          </div>
+        ) : (
           <div ref={container} className={styles.cards}>
             <Swiper
               pagination={pagination}

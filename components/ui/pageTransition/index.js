@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { ImageCustom } from "../imageCustom";
 import { curve, text, translate } from "./anim";
 
+import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 
 const anim = (variants) => {
@@ -34,21 +35,29 @@ export default function Curve({ children, backgroundColor }) {
     };
   }, []);
   return (
-    <div className={styles.curve} style={{ backgroundColor }}>
+    <div
+      className={cn(styles.curve, styles.curveAnimation)}
+      style={{ backgroundColor }}
+    >
       <div
         style={{ opacity: dimensions.width === null ? 1 : 0 }}
         className={styles.background}
       />
 
-      <motion.div className={styles.route} {...anim(text)}>
-        <ImageCustom
-          src="/images/logo-icon.svg"
-          width={180}
-          height={180}
-          alt="logo"
-        />
-      </motion.div>
-      {dimensions.width != null && <SVG {...dimensions} />}
+      {dimensions && (
+        <>
+          <motion.div className={styles.route} {...anim(text)}>
+            <ImageCustom
+              src="/images/logo-icon.svg"
+              width={180}
+              height={180}
+              alt="logo"
+              className={styles.routeLogo}
+            />
+          </motion.div>
+          {dimensions.width != null && <SVG {...dimensions} />}
+        </>
+      )}
       {children}
     </div>
   );

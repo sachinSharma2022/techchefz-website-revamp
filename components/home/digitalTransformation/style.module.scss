@@ -45,7 +45,6 @@
       font-weight: 500;
       line-height: 3.375rem;
       display: block;
-      background: linear-gradient(271deg, color(primary-blue) 57.74%, color(heading-liner) 78.66%);
      @include textGradient;
 
       @include mobile {
@@ -116,7 +115,7 @@
           }
         }
         .digitalText {
-          font-size: text(normal);
+          font-size: text(lg);
           font-weight: 400;
           color: rgba(color(text-primary), 0.6);
           line-height: text(xl);
@@ -126,7 +125,7 @@
         .customerList {
           .list {
             list-style: square;
-            font-size: text(normal);
+            font-size: text(lg);
             opacity: 0.6;
           }
         }

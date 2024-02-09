@@ -70,7 +70,7 @@
     position: absolute;
     border-radius: 50%;
     top: 100%;
-    background-color: #26a0f8;
+    background-color: color(info-blue);
   }
   svg {
     display: inline-block;
@@ -86,7 +86,7 @@
   justify-content: center;
   overflow: hidden;
   padding: 15px 60px 15px 60px;
-  background-color: #26a0f8;
+  background-color: color(info-blue);
   color: color(primary-white);
   //border: 0.14rem solid color(primary-blue);
 
