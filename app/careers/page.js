@@ -1,5 +1,4 @@
 import CareerBanner from "@/components/careers/careerBanner";
-import CareerTestimonials from "@/components/careers/careerTestimonials";
 import OpenPosition from "@/components/careers/openPosition";
 import TczLife from "@/components/careers/tczLife";
 import Innovation from "@/components/portfolio/innovation";
@@ -18,8 +17,8 @@ const Career = async () => {
           <CareerBanner props={data.CareerBanner} />
           <TczLife props={data.Lifeattechchefz} />
           <OpenPosition />
-          {/* <CareerTestimonials testimonials={data.Testimonials} /> */}
-          {/* <HomeTestimonials testimonials={data.Testimonials} /> */}
+
+          <HomeTestimonials testimonials={data.Testimonials} />
           <TechnologyValues props={data.Technology} />
           <Innovation props={data.ourInnvotion} />
         </div>
