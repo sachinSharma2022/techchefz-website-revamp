@@ -1,17 +1,20 @@
 "use client";
 
 import MobileSlider from "@/components/common/mobileSlider";
+import ServiceCard from "@/components/common/serviceCard";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useContext } from "react";
+import { useMediaQuery } from "react-responsive";
+
 import styles from "./style.module.scss";
-import ServiceCard from "@/components/common/serviceCard";
 
 const Service = () => {
   const { theme, setTheme } = useContext(MyContext);
+  const isBigScreen = useMediaQuery({ query: "(min-width: 1024px)" });
 
   const serviceCard = [
     {
@@ -82,30 +85,34 @@ const Service = () => {
             </Link>
           </div>
 
-          <div className={cn(styles.desktopCards)}>
-            {serviceCard.map((data, index) => (
-              <ServiceCard
-                key={index}
-                icon={data.icon}
-                subTitle={data.subTitle}
-                subText={data.subText}
-              />
-            ))}
-          </div>
+          {isBigScreen && (
+            <div className={cn(styles.desktopCards)}>
+              {serviceCard.map((data, index) => (
+                <ServiceCard
+                  key={index}
+                  icon={data.icon}
+                  subTitle={data.subTitle}
+                  subText={data.subText}
+                />
+              ))}
+            </div>
+          )}
         </div>
 
-        <div className={cn(styles.mobileCards)}>
-          <MobileSlider slidesToShow={1.3}>
-            {serviceCard.map((data, index) => (
-              <ServiceCard
-                key={index}
-                icon={data.icon}
-                subTitle={data.subTitle}
-                subText={data.subText}
-              />
-            ))}
-          </MobileSlider>
-        </div>
+        {!isBigScreen && (
+          <div className={cn(styles.mobileCards)}>
+            <MobileSlider slidesToShow={1.3}>
+              {serviceCard.map((data, index) => (
+                <ServiceCard
+                  key={index}
+                  icon={data.icon}
+                  subTitle={data.subTitle}
+                  subText={data.subText}
+                />
+              ))}
+            </MobileSlider>
+          </div>
+        )}
       </div>
     </section>
   );
