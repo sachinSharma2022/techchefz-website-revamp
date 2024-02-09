@@ -15,7 +15,7 @@ const AboutPage = () => {
   return (
     <Curve>
       <div className="overflow-hidden">
-        {/* <AboutBanner /> */}
+        <AboutBanner />
         <OurVision />
         <OurHistory />
         <WhatWeDo />

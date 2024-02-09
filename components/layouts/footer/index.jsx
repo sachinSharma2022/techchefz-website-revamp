@@ -20,7 +20,6 @@ const Footer = () => {
               alt="tcz logo"
             />
           </div>
-          <ScrollToTopButton />
         </div>
 
         <div className="row">
@@ -80,25 +79,25 @@ const Footer = () => {
             <div className={styles.footerBox}>
               <div className={styles.footerCols}>
                 <ul>
-                  <h5>
+                  <li>
                     <Link href="/about">About us</Link>
-                  </h5>
-                  <h5>
+                  </li>
+                  <li>
                     <Link href="/solutions">Solutions</Link>
-                  </h5>
-                  <h5>
+                  </li>
+                  <li>
                     <Link href="/portfolio">Portfolio</Link>
-                  </h5>
-                  <h5>
+                  </li>
+                  <li>
                     <Link href="/">Contact Us</Link>
-                  </h5>
+                  </li>
                 </ul>
               </div>
               <div className={styles.footerCols}>
                 <h5>
                   <Link href="/technology">Technology</Link>
                 </h5>
-                <ul>
+                <ul className={styles.fadeLink}>
                   <li>
                     <Link href="/technology/cms">CMS</Link>
                   </li>
@@ -120,10 +119,8 @@ const Footer = () => {
                 </ul>
               </div>
               <div className={styles.footerCols}>
-                <h5>
-                  <Link href="/">More</Link>
-                </h5>
-                <ul>
+                <h5>More</h5>
+                <ul className={styles.fadeLink}>
                   <li>
                     <Link href="/careers">Careers</Link>
                   </li>
@@ -157,6 +154,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
+      <ScrollToTopButton />
     </footer>
   );
 };

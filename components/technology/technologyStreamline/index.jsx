@@ -129,14 +129,16 @@ const Streamline = () => {
           <div key={index}>
             <div className={styles.streamlineCard}>
               <div className={styles.iconStyle}>{data.icons}</div>
-              <h6 className={styles.cardTitle}>{data.title} </h6>
-              <p className={styles.cardContent}>{data.content}</p>
-              <Button
-                variant={theme ? "lightBlueOutline" : "outline"}
-                size="md"
-              >
-                Learn More <Icons.ArrowRight size={18} />
-              </Button>
+              <div>
+                <h6 className={styles.cardTitle}>{data.title} </h6>
+                <p className={styles.cardContent}>{data.content}</p>
+                <Button
+                  variant={theme ? "lightBlueOutline" : "outline"}
+                  size="md"
+                >
+                  Learn More <Icons.ArrowRight size={18} />
+                </Button>
+              </div>
             </div>
           </div>
         ))}
