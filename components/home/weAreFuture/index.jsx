@@ -39,18 +39,18 @@ const WeAreFuture = () => {
         <TextRevel>
           <div className="row">
             <div className="col-md-6 col-12">
-              <div className={styles.datingText}>
+              <h3 className={styles.datingText}>
                 With roots dating back to 2017, we started as a pocket size
                 teamof enthusiasts.
-              </div>
+              </h3>
             </div>
             <div className="col-md-6 col-12">
-              <div className={styles.aboutText}>
+              <p className={styles.aboutText}>
                 Over the next 3 years, we developed into a full-service digital
                 agency. We support our clients with web development, mobile app
                 development, web design, branding UI/UX design and now getting
                 into AR/VR.
-              </div>
+              </p>
 
               <Link href="/about">
                 <Button

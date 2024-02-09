@@ -7,8 +7,7 @@
   overflow: hidden;
 
   @include mobile-tablet-p {
-    padding: spacing(section-mob-padding);
-    padding-block: 3.75rem 3.75rem;
+    padding: 0 0 3.75rem;
   }
 
   @include desktop-hd {
@@ -27,6 +26,13 @@
       padding: 0;
       position: absolute;
       right: 0;
+
+      @include mobile-tablet-p {
+        position: relative;
+        margin-top: 3.75rem;
+        padding-left: 2.25rem;
+        padding-right: 0;
+      }
     }
 
     .tczActionSection {
@@ -34,6 +40,11 @@
       flex-direction: column;
       justify-content: space-between;
       min-width: 23.25rem;
+
+      @include mobile-tablet-p {
+        margin: 3.75rem 1.25rem 0;
+        min-width: auto;
+      }
     }
 
     .tczLifeTitle {
@@ -84,6 +95,10 @@
     div {
       min-width: 47vw;
       height: 264px;
+
+      @include mobile-tablet-p {
+        height: 139px;
+      }
     }
 
     img {
@@ -115,12 +130,15 @@
     margin-top: 5rem;
     max-width: 85vw;
 
-    @include mobile-tablet-p {
-      margin-top: 3.75rem;
-    }
     @include desktop-hd {
       max-width: 1440px;
       margin-inline: auto;
+    }
+
+    @include mobile-tablet-p {
+      margin-top: 3.75rem;
+      min-width: 100%;
+      padding: 0 1.25rem;
     }
 
     p {

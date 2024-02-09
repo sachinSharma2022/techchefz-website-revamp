@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useContext } from "react";
 import styles from "./style.module.scss";
+import ServiceCard from "@/components/common/serviceCard";
 
 const Service = () => {
   const { theme, setTheme } = useContext(MyContext);
@@ -15,44 +16,44 @@ const Service = () => {
   const serviceCard = [
     {
       icon: <Icons.Transform width={64} height={64} />,
-      sbTitle: "Strategy & Digital Transformation",
-      sbText:
+      subTitle: "Strategy & Digital Transformation",
+      subText:
         "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
     },
     {
       icon: <Icons.CustomDevelopment width={64} height={64} />,
-      sbTitle: "Product Engineering & Custom Development",
-      sbText:
+      subTitle: "Product Engineering & Custom Development",
+      subText:
         "We Believe In Quality Backend Development For Faster Backend Processing. ",
     },
     {
       icon: <Icons.MarTech width={64} height={64} />,
-      sbTitle: "Customer Experience & MarTech",
-      sbText:
+      subTitle: "Customer Experience & MarTech",
+      subText:
         "We Believe In Superior Frontend Development With The Combination Of JavaScript, HTML And CSS.",
     },
     {
       icon: <Icons.Intelligence width={64} height={64} />,
-      sbTitle: "Data Analytics & Intelligence",
-      sbText:
+      subTitle: "Data Analytics & Intelligence",
+      subText:
         "We Have Expertise In Development Of Mobile Applications Using Native And Hybrid Technologies.",
     },
     {
       icon: <Icons.Platforms width={64} height={64} />,
-      sbTitle: "Enterprise Technology Platforms",
-      sbText:
+      subTitle: "Enterprise Technology Platforms",
+      subText:
         "At TechChefz We Provide First-Class Artificial Intelligence And Machine Learning with Expertise.",
     },
     {
       icon: <Icons.Cloud width={64} height={64} />,
-      sbTitle: "Cloud & Dev-Sec-Ops",
-      sbText:
+      subTitle: "Cloud & Dev-Sec-Ops",
+      subText:
         "We Facilitate Easy Cloud Migration And Deliver DevOps Automation And 24*7 Incident Management Services.",
     },
     {
       icon: <Icons.DataIntelligence width={64} height={64} />,
-      sbTitle: "Data Analytics & Intelligence",
-      sbText:
+      subTitle: "Data Analytics & Intelligence",
+      subText:
         "We Facilitate Easy Cloud Migration And Deliver DevOps Automation And 24*7 Incident Management Services.",
     },
   ];
@@ -81,27 +82,27 @@ const Service = () => {
             </Link>
           </div>
 
-          <div className={cn(styles.desktopCards, styles.serviceOption)}>
+          <div className={cn(styles.desktopCards)}>
             {serviceCard.map((data, index) => (
-              <div key={index} className={styles.serviceBox}>
-                <div className={styles.bgIcon}>{data.icon}</div>
-                <h4 className={styles.sbTitle}>{data.sbTitle}</h4>
-                <p className={styles.sbText}>{data.sbText}</p>
-              </div>
+              <ServiceCard
+                key={index}
+                icon={data.icon}
+                subTitle={data.subTitle}
+                subText={data.subText}
+              />
             ))}
           </div>
         </div>
 
-        <div className={cn(styles.mobileCards, styles.serviceOption)}>
+        <div className={cn(styles.mobileCards)}>
           <MobileSlider slidesToShow={1.3}>
             {serviceCard.map((data, index) => (
-              <div key={index}>
-                <div key={index} className={styles.serviceBox}>
-                  <div className={styles.bgIcon}>{data.icon}</div>
-                  <h4 className={styles.sbTitle}>{data.sbTitle}</h4>
-                  <p className={styles.sbText}>{data.sbText}</p>
-                </div>
-              </div>
+              <ServiceCard
+                key={index}
+                icon={data.icon}
+                subTitle={data.subTitle}
+                subText={data.subText}
+              />
             ))}
           </MobileSlider>
         </div>

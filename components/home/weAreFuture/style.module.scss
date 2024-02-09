@@ -120,6 +120,7 @@
     font-weight: 500;
     line-height: 3.375rem;
     max-width: 32rem;
+    color: rgba(color(text-primary), 0.8);
 
     @include mobile {
       font-size: text(xl);

@@ -142,7 +142,7 @@
     .contactFormArea {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
+      gap: 1.5rem;
 
       @include mobile-tablet-p {
         display: flex;
@@ -150,7 +150,7 @@
       }
 
       .inputSpace {
-        margin-bottom: 2.25rem;
+        // margin-bottom: 2.25rem;
 
         &:last-child {
           margin-bottom: 0;
