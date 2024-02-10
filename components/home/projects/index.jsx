@@ -15,7 +15,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { opacity, slideUp } from "./animation";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
