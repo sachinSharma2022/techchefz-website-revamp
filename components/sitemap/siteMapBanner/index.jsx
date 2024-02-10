@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 
-function SitMapBanner() {
+function SitMapBanner({props}) {
   const { theme } = useContext(MyContext);
   return (
     <section
@@ -15,11 +15,9 @@ function SitMapBanner() {
     >
       <div className={cn("primary-container")}>
         <div className={styles.sitemap}>
-          <h1 className={styles.bannerHeading}>Sitemap</h1>
-          <p className={styles.bannerText}>
-            Technology-driven solutions are becoming the norm in our industry.
-            More than ever, customers expect us to assess and adopt innovation
-            to.
+          <h1 className={styles.bannerHeading} dangerouslySetInnerHTML={{ __html: `${props?.title}`}}></h1>
+          <p className={styles.bannerText} dangerouslySetInnerHTML={{ __html: `${props?.subtitle}`}}>
+            
           </p>
         </div>
       </div>
