@@ -498,17 +498,21 @@
             border-color: color(primary-blue);
           }
 
-          .imgBox div {
-            height: 116px;
-            width: 100%;
-            border-radius: 12px;
-            overflow: hidden;
-
-            img {
+          .imgBox {
+            margin-bottom: 1rem;
+            
+            div {
+              height: 116px;
               width: 100%;
-              height: 100%;
-              object-fit: cover;
-            }
+              border-radius: 12px;
+              overflow: hidden;
+  
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+          }
           }
           .infoBox {
             display: flex;
@@ -523,7 +527,6 @@
               line-height: normal;
               margin-bottom: 0;
               color: #e3e3e3;
-              margin-top: 1rem;
             }
 
             svg {
