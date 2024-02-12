@@ -134,7 +134,7 @@ const OurTeam = () => {
                       >
                         <div className={styles.cardHead}>
                           <div>
-                            <h6>{data.mebName} </h6>
+                            <h4>{data.mebName} </h4>
                             <p>{data.role}</p>
                           </div>
                           <Icons.ArrowRight width={26} height={24} />
