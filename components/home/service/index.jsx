@@ -85,34 +85,30 @@ const Service = () => {
             </Link>
           </div>
 
-          {isBigScreen && (
-            <div className={cn(styles.desktopCards)}>
-              {serviceCard.map((data, index) => (
-                <ServiceCard
-                  key={index}
-                  icon={data.icon}
-                  subTitle={data.subTitle}
-                  subText={data.subText}
-                />
-              ))}
-            </div>
-          )}
+          <div className={cn(styles.desktopCards)}>
+            {serviceCard.map((data, index) => (
+              <ServiceCard
+                key={index}
+                icon={data.icon}
+                subTitle={data.subTitle}
+                subText={data.subText}
+              />
+            ))}
+          </div>
         </div>
 
-        {!isBigScreen && (
-          <div className={cn(styles.mobileCards)}>
-            <MobileSlider slidesToShow={1.3}>
-              {serviceCard.map((data, index) => (
-                <ServiceCard
-                  key={index}
-                  icon={data.icon}
-                  subTitle={data.subTitle}
-                  subText={data.subText}
-                />
-              ))}
-            </MobileSlider>
-          </div>
-        )}
+        <div className={cn(styles.mobileCards)}>
+          <MobileSlider slidesToShow={1.3}>
+            {serviceCard.map((data, index) => (
+              <ServiceCard
+                key={index}
+                icon={data.icon}
+                subTitle={data.subTitle}
+                subText={data.subText}
+              />
+            ))}
+          </MobileSlider>
+        </div>
       </div>
     </section>
   );
