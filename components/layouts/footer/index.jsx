@@ -20,6 +20,7 @@ const Footer = () => {
               alt="tcz logo"
             />
           </div>
+          <ScrollToTopButton />
         </div>
 
         <div className="row">
@@ -153,7 +154,6 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <ScrollToTopButton />
     </footer>
   );
 };
