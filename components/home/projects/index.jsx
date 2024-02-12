@@ -44,7 +44,7 @@ const Card = ({ ...props }) => {
       className={styles.cardSec}
       style={isMobileScreen ? "" : { scale }}
     >
-      <div className={styles.projectImg}>
+      <Link href="/case-study" className={styles.projectImg}>
         <ImageCustom
           src={
             props?.project?.Image?.data?.attributes?.url
@@ -55,7 +55,7 @@ const Card = ({ ...props }) => {
           height={300}
           alt="projectImg"
         />
-      </div>
+      </Link>
 
       <div className={styles.cardContentStyle}>
         <h3 className={styles.projectBrand}>

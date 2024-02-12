@@ -32,15 +32,14 @@ const WeAreFuture = ({props}) => {
           </h2>
         </div>
         <TextRevel>
-        <div className="row">
-          <div className="col-md-6 col-12">
+          <div className={styles.contentSection}>
             <h3 className={cn(styles.datingText, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.CompanyTechnology[0]?.title}`}}>
+              
             </h3>
-          </div>
-          <div className="col-md-6 col-12">
-            <p className={styles.aboutText}>
-            {props?.CompanyTechnology[0]?.description}
-            </p>
+            <div>
+              <p className={styles.aboutText}>
+              {props?.CompanyTechnology[0]?.description}
+              </p>
 
             <Link href="/about">
               <Button variant="outline" size="md">

@@ -31,8 +31,8 @@ const Error = () => {
           <h4 className={styles.subTitle}>
             The page you are looking for cannot be found.
           </h4>
-          <p className={styles.description}>Few possible reasons :</p>
-          <ul className={styles.listSection}>
+          <p >Few possible reasons :</p>
+          <ul >
             <li>The address may have been typed incorrectly.</li>
             <li>It may be a broken or outdated link.</li>
           </ul>

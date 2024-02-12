@@ -55,7 +55,7 @@
 
     span {
       font-size: 2.75rem;
-      color: color(heading-liner);
+      @include textGradient;
 
       @include mobile-tablet-p {
         font-size: 2rem;
