@@ -7,8 +7,10 @@ import Slider from "react-slick";
 
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
+import PrimaryModal from "@/components/ui/primaryModal";
 
 const TczLife = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const slider = useRef(null);
   const [oldSlide, setOldSlide] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
@@ -122,15 +124,35 @@ const TczLife = () => {
         <div className={cn(styles.sliderSection, "col-sm-6 tczLifeSlider")}>
           <Slider {...settings} ref={slider}>
             {sliderVideo.map((data, index) => (
-              <div key={index} className={styles.videoWhapper}>
+              <button
+                key={index}
+                className={styles.videoWhapper}
+                onClick={() => setIsOpen(true)}
+              >
                 <ImageCustom src={data.video} width={800} height={800} />
                 <button className={cn(styles.videoButton)}>
                   <Icons.VideoButton />
                 </button>
-              </div>
+              </button>
             ))}
           </Slider>
         </div>
+
+        <PrimaryModal open={isOpen} onClose={() => setIsOpen(false)}>
+          <video
+            width="100"
+            height="100"
+            playsInline
+            autoPlay
+            loop
+            className="video-block"
+          >
+            <source
+              src="http://122.176.75.250:4561/uploads/Video2_38a998231a.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </PrimaryModal>
       </div>
 
       <div className={styles.tczLifeContent}>
