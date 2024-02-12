@@ -122,7 +122,7 @@
   &.inputContainerStyleDark {
     .inputFloating {
       border: 0.14rem solid rgba(color(primary-white), 0.12);
-      background-color: color(text-primary);
+      background-color: color(dark-gray);
 
       &.inputErrorStyle {
         border-color: color(error);

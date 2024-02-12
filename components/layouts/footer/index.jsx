@@ -145,9 +145,6 @@ const Footer = () => {
           <p>© 2023 TCZ Digital Pvt. Ltd. All rights reserved.</p>
           <ul>
             <li>
-              <Link href="/">Terms of Use</Link>
-            </li>
-            <li>
               <Link href="/privacy-policy">Privacy Policy</Link>
             </li>
             <li>

@@ -45,14 +45,14 @@ const Card = ({ ...props }) => {
       className={styles.cardSec}
       style={isMobileScreen ? "" : { scale }}
     >
-      <div className={styles.projectImg}>
+      <Link href="/case-study" className={styles.projectImg}>
         <ImageCustom
           src={props.src}
           width={1360}
           height={300}
           alt="projectImg"
         />
-      </div>
+      </Link>
 
       <div className={styles.cardContentStyle}>
         <h3 className={styles.projectBrand}>
