@@ -40,8 +40,8 @@ const WeAreFuture = () => {
           <div className="row">
             <div className="col-md-6 col-12">
               <h3 className={styles.datingText}>
-                With roots dating back to 2017, we started as a pocket size
-                teamof enthusiasts.
+                With roots dating back to 2017, we started as a pocket size team
+                of enthusiasts.
               </h3>
             </div>
             <div className="col-md-6 col-12">
