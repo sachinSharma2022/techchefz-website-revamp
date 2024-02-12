@@ -133,7 +133,7 @@ const TczLife = ({props}) => {
                 onClick={() => setIsOpen(true)}
               >
                 {/* <ImageCustom src={data.video} width={800} height={800} /> */}
-                <VideoCustom src={data?.Video?.data?.attributes?.url?`${base_Url}${data.Video.data.attributes.url}`:`${base_Url}/`}
+                <video src={data?.Video?.data?.attributes?.url?`${base_Url}${data.Video.data.attributes.url}`:`${base_Url}/`}
                  width={800} height={800} />
                 <div className={cn(styles.videoButton)}>
                   <Icons.VideoButton />
@@ -142,9 +142,12 @@ const TczLife = ({props}) => {
             ))}
           </Slider>
         </div>
-
+      
         <PrimaryModal open={isOpen} onClose={() => setIsOpen(false)}>
+        {props?.VideoSlider?.map((data, index) => (
+          
           <video
+            key={index}
             width="100"
             height="100"
             playsInline
@@ -157,6 +160,7 @@ const TczLife = ({props}) => {
               type="video/mp4"
             />
           </video>
+             ))}
         </PrimaryModal>
       </div>
 
