@@ -109,6 +109,15 @@ input:-webkit-autofill {
   -webkit-text-fill-color: color(primary-white) !important;
 }
 
+// Span Gradient
+.gradient-text {
+
+  span {
+    @include textGradient;
+    font-size: 1em;
+  }
+}
+
 .digital-transformation {
   .slick-slider {
     .slick-arrow {
@@ -776,7 +785,7 @@ input:-webkit-autofill {
 .dark-theme-style {
   &.custom-dropdown {
     .react-select__control {
-      background-color: transparent;
+      background-color: color(dark-gray);
     }
   }
 }
