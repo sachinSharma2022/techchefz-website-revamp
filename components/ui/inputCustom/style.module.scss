@@ -4,6 +4,10 @@
   width: 100%;
   position: relative;
 
+  * {
+    font-family: font(primary);
+  }
+
   .inputFloating {
     position: relative;
     display: flex;
@@ -77,7 +81,6 @@
     color: rgba(color(text-primary), 0.5);
     line-height: text(xl);
     font-weight: 400;
-    font-family: font(primary);
     width: 100%;
     padding: 1rem;
     height: auto;
