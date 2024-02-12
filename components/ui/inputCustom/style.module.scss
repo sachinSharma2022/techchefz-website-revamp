@@ -43,8 +43,10 @@
       border: none;
       box-shadow: none;
       background: none;
-      height: auto;
       resize: none;
+      height: 100px;
+      padding: 0px 1.09rem !important;
+      margin-top: 30px;
     }
   }
 
@@ -78,6 +80,7 @@
     font-family: font(primary);
     width: 100%;
     padding: 1rem;
+    height: auto;
   }
 
   .buttonUpload {
@@ -95,6 +98,7 @@
     max-width: 40px;
     border: none;
   }
+
   .buttonUpload:focus {
     outline-offset: 4px; /* make Chrome show a focus ring around the button */
   }
@@ -144,7 +148,7 @@
       }
     }
 
-    input {
+    input, textarea {
       color: color(primary-white);
     }
 

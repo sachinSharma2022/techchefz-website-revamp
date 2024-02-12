@@ -1,16 +1,17 @@
 "use client";
-import React from "react";
+import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { base_Uri } from "@/lib/constants";
 
+import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 
 const CoeBanner = ({props}) => {
   const { theme, setTheme } = useContext(MyContext);
   return (
-    <section className={`${styles.banner} ${theme ? styles.bannerDark : ""}`}>
+    <section className={cn(styles.banner, theme ? styles.bannerDark : "")}>
       <div className="primary-container">
         <div className={styles.bannerContent}>
           <h1 className={styles.bannerTitle}dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>

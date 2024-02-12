@@ -3,6 +3,10 @@
 .landingBannerStyle {
   padding-bottom: 8.75rem;
 
+  @include mobile-tablet-p {
+    padding-bottom: 5rem;
+  }
+
   .contentSection {
     padding-inline: spacing(p-120);
     padding-top: 10rem;

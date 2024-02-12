@@ -65,15 +65,17 @@ const Footer = () => {
           <div className="col-md-12 col-lg-6">
             <div className={styles.footSocial}>
               <h4 className="mb-3">Follow Us on Social Media</h4>
-              <Link href="/">
-                <Icons.facebook size={16} /> <span>Linkedin</span>
-              </Link>
-              <Link href="/">
-                <Icons.linkedin size={16} /> <span>Facebook</span>
-              </Link>
-              <Link href="/">
-                <Icons.twitter size={16} /> <span>Twitter</span>
-              </Link>
+              <div className={styles.footSocialLinks}>
+                <Link href="/">
+                  <Icons.facebook size={16} /> <span>Linkedin</span>
+                </Link>
+                <Link href="/">
+                  <Icons.linkedin size={16} /> <span>Facebook</span>
+                </Link>
+                <Link href="/">
+                  <Icons.twitter size={16} /> <span>Twitter</span>
+                </Link>
+              </div>
             </div>
 
             <div className={styles.footerBox}>

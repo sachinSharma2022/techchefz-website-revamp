@@ -65,11 +65,19 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
+
+    @include mobile-tablet-p {
+      display: none;
+    }
   }
   
 
   .mobileCards {
     padding-left: 1.25rem;
+    
+    @include desktop {
+      display: none;
+    }
   }
 
   .sliderArrow {

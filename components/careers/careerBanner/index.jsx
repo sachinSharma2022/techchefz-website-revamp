@@ -27,7 +27,11 @@ const CareerBanner = ({ props }) => {
             {props[0]?.Description}
             </p>
             <Link href="/careers-detail">
-              <Button variant={theme ? "blueBtnDark" : "blueBtn"} className={styles.headerBtn} size="md">
+              <Button
+                variant={theme ? "blueBtnDark" : "blueBtn"}
+                className={styles.headerBtn}
+                size="md"
+              >
               {props[0]?.Button} <Icons.ArrowRight size={20} className="ms-2" />
               </Button>
             </Link>

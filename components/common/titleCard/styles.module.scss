@@ -7,6 +7,11 @@
   width: 100%;
   height: auto;
   padding: 2.5rem;
+  @include transition(0.5s);
+
+  &:hover {
+    border-color: color(heading-liner);
+  }
 
   @include mobile-tablet-p {
     padding: text(lg);
@@ -16,6 +21,7 @@
     font-size: text(xl);
     font-weight: 500;
     line-height: 2.125rem;
+
     @include mobile-tablet-p {
       font-size: text(lg);
       line-height: 1.75rem;
@@ -31,11 +37,15 @@
     margin-bottom: 0;
   }
 
+
+  // Dark Mode
   &.titleCardDark {
-    border-radius: 1.25rem;
-    border-color: rgba(color(primary-white), 0.12);
     background: color(primary-black);
-    color: color(primary-white);
+    border-color: rgba(color(primary-white), 0.18);
+
+    &:hover {
+      border-color: color(heading-liner);
+    }
 
     h5 {
       color: color(primary-white);

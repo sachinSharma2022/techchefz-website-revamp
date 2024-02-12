@@ -115,20 +115,18 @@ const Service = ({ props }) => {
           )}
         </div>
 
-        {!isBigScreen && (
-          <div className={cn(styles.mobileCards)}>
-            <MobileSlider slidesToShow={1.3}>
-              {props[0]?.Service.map((data, index) => (
-                <ServiceCard
-                  key={index}
-                  icon={data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data.attributes.url}`:`${base_Url}/`} 
-                  subTitle={data.Title}
-                  subText={data.Description}
-                />
-              ))}
-            </MobileSlider>
-          </div>
-        )}
+        <div className={cn(styles.mobileCards)}>
+          <MobileSlider slidesToShow={1.3}>
+            {props[0]?.Service.map((data, index) => (
+              <ServiceCard
+                key={index}
+                icon={data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data.attributes.url}`:`${base_Url}/`} 
+                subTitle={data.Title}
+                subText={data.Description}
+              />
+            ))}
+          </MobileSlider>
+        </div>
       </div>
     </section>
   );

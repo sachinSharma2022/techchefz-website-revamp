@@ -198,7 +198,7 @@ input:-webkit-autofill {
         button {
           width: 0.75rem;
           height: 0.75rem;
-          background: rgba(#ADADAD, 0.4);
+          background: rgba(#adadad, 0.4);
           border-radius: 3.125rem;
           font-size: 0px;
           @include transition(0.5s);
@@ -510,6 +510,9 @@ input:-webkit-autofill {
     }
     img {
       min-height: 50rem;
+      @include mobile-tablet-p {
+        min-height: auto;
+      }
     }
   }
 
@@ -517,6 +520,10 @@ input:-webkit-autofill {
   .grid-5 {
     .imgBox div {
       min-height: 43.25rem;
+
+      @include mobile-tablet-p {
+        min-height: auto;
+      }
     }
   }
 
@@ -642,12 +649,14 @@ input:-webkit-autofill {
     }
 
     .swiper-wrapper {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      @include mobile-tablet-p {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
 
-      .swiper-slide {
-        width: 100% !important;
+        .swiper-slide {
+          width: 100% !important;
+        }
       }
     }
   }
@@ -661,7 +670,7 @@ input:-webkit-autofill {
   .slick-track {
     display: flex;
   }
-  
+
   /* the slides */
   .slick-slide {
     margin: 0 15px;
@@ -686,10 +695,6 @@ input:-webkit-autofill {
       }
     }
   }
-}
-
-.job-detail-slider {
-  margin: 0 -20px 0 0;
 }
 
 .insight-explore-slider {
@@ -806,7 +811,6 @@ input:-webkit-autofill {
 
 .dark .project-slider {
   .swiper-pagination {
-
     .swiper-pagination-bullet {
       background-color: rgba(color(text-primary), 0.4);
     }
@@ -841,14 +845,26 @@ html.lenis {
   }
 }
 
-
 // Error Page
 .error-page {
-  header, footer {
+  header,
+  footer {
     display: none;
   }
 
   .main-container {
     padding: 0;
+  }
+}
+
+
+// Grid Marquee Gallery
+.gridMarqueeGallery {
+
+  .slick-track .slick-slide {
+
+    @include mobile-tablet-p {
+      // width: auto !important;
+    }
   }
 }
