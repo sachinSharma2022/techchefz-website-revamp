@@ -34,7 +34,7 @@ const WeAreFuture = ({props}) => {
         <TextRevel>
         <div className="row">
           <div className="col-md-6 col-12">
-            <h3 className={styles.datingText} dangerouslySetInnerHTML={{ __html: `${props?.CompanyTechnology[0]?.title}`}}>
+            <h3 className={cn(styles.datingText, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.CompanyTechnology[0]?.title}`}}>
             </h3>
           </div>
           <div className="col-md-6 col-12">

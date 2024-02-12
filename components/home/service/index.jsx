@@ -74,9 +74,9 @@ const Service = ({ props }) => {
       <div className={cn("primary-container")}>
         <div className={styles.serviceGrid}>
           <div className={styles.serviceHeading}>
-            <p className={styles.serviceText} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}` }}>
+            <p className={cn(styles.serviceText, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}` }}>
             </p>
-            <h3 className={styles.serviceTitle} dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}` }}>
+            <h3 className={cn(styles.serviceTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}` }}>
 
             </h3>
             <Link href="/solutions">

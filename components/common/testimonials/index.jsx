@@ -82,9 +82,9 @@ const Testimonials = ({props}) => {
           <div className="col-12 col-sm-3">
             <div className={styles.infoSection}>
               <div className={styles.testimonialsLeft}>
-                <p className={styles.projectHighlight} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
+                <p className={cn(styles.projectHighlight, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
                   </p>
-                <div className={styles.testimonialsHeading}>
+                <div className={cn(styles.testimonialsHeading, "gradient-text")}>
                   <h3 dangerouslySetInnerHTML={{ __html: `${props[0]?.SubTitle}`}}>
                   </h3>
                 </div>

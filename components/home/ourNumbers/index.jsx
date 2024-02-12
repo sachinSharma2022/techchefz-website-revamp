@@ -67,9 +67,10 @@ const OurNumbers = ({carrer,experience}) => {
           <div className={styles.careerRow}>
             <div >
         
-                <p className={styles.projectHighlight}>{carrer.title}</p>
-                <h2 className={styles.datingText}>
-                {carrer.description}
+                <p className={cn(styles.projectHighlight,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${carrer?.title}`}}>
+                  </p>
+                <h2 className={cn(styles.datingText,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${carrer?.description}`}}>
+                
                 </h2>
               
 

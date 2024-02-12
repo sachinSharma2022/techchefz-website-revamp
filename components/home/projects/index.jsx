@@ -149,11 +149,11 @@ const Projects = ({ project, brands }) => {
           <div className={cn(styles.rowSection)}>
             <div>
               <p
-                className={styles.projectHighlight}
+                className={cn(styles.projectHighlight, "gradient-text")}
                 dangerouslySetInnerHTML={{ __html: `${project[0]?.Title}` }}
               ></p>
               <h3
-                className={styles.datingText}
+                className={cn(styles.datingText, "gradient-text")}
                 dangerouslySetInnerHTML={{ __html: `${project[0]?.SubTitle}` }}
               ></h3>
             </div>
