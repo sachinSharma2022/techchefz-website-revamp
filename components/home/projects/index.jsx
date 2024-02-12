@@ -165,7 +165,10 @@ const Projects = () => {
                 and the transformative impact.
               </p>
               <Link href="/portfolio">
-                <Button variant="outline" size="md">
+                <Button
+                  variant={!theme ? "lightBlueOutline" : "outline"}
+                  size="md"
+                >
                   Check Our Portfolio <Icons.ArrowRight size={18} />
                 </Button>
               </Link>
