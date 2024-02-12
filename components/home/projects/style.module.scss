@@ -103,9 +103,15 @@
     border-radius: 12px;
     overflow: hidden;
     position: relative;
+    border: 1px solid transparent;
+    @include transition(0.5s);
 
     @include mobile-tablet-p {
       height: 11.75rem;
+    }
+
+    &:hover {
+      border-color: color(heading-liner);
     }
 
     img {
@@ -172,7 +178,7 @@
       margin-bottom: text(xxxl);
     }
   }
-  
+
   .cardContentStyle {
     display: flex;
     justify-content: space-between;

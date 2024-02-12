@@ -76,7 +76,7 @@
   &.dropdownContainerStyleDark {
     .countryDropdown {
       border-color: rgba(color(primary-white), 0.12);
-      background-color: transparent;
+      background-color: color(dark-gray);
 
       &.inputErrorStyle {
         border-color: color(error);

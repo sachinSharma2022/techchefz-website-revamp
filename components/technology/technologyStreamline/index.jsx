@@ -112,7 +112,7 @@ const Streamline = () => {
     >
       <section className={styles.streamLineSection}>
         <div className={cn("primary-container", styles.flexContainer)}>
-          <h3 className={styles.streamlineTitle}>
+          <h3 className={cn(styles.streamlineTitle, "text-gradient")}>
             Streamline your Business with our <span>Extensive Solution.</span>
           </h3>
           <p className={styles.streamlineContent}>

@@ -44,7 +44,7 @@ const CustomDropdown = ({
       ...styles,
       height: 60,
       borderRadius: 12,
-      backgroundColor: theme ? "#1F1F1F" : "#F1F1F1",
+      backgroundColor: theme ? "#1F1F1F" : "#1F1F1F",
       borderWidth: "0.14rem",
       borderColor: theme ? "rgba(256,256,256,0.12)" : "rgba(17, 17, 17, 0.12)",
       "&:hover": {
