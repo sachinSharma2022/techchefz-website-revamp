@@ -130,7 +130,7 @@ const SolutionTechnologies = ({ props }) => {
         </div>
       </div>
 
-          <div className={`${styles.ourNumberOption} service-mobile-slider`}>
+          {/* <div className={`${styles.ourNumberOption} service-mobile-slider`}>
             <Slider {...settings}>
               {props?.TechnologyInner?.map((data, index) => (
                 <ServiceInfoCard
@@ -142,7 +142,7 @@ const SolutionTechnologies = ({ props }) => {
                 />
               ))}
             </Slider>
-          </div>
+          </div> */}
        
       
     </section>
