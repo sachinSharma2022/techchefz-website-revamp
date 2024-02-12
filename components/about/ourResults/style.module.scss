@@ -109,6 +109,10 @@
     .resultCard {
       background-color: color(text-primary);
       border: 0.14rem solid rgba(color(primary-white), 0.12);
+
+      &:hover {
+        border-color: color(heading-liner);
+      }
     }
   }
 }

@@ -74,13 +74,13 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 52rem;
-    max-width: 52rem;
+    width: 56rem;
+    max-width: 56rem;
     z-index: 1;
 
     @include desktop-hd {
-      width: 52rem;
-      max-width: 52rem;
+      width: 56rem;
+      max-width: 56rem;
     }
 
     @include mobile-tablet-p {
