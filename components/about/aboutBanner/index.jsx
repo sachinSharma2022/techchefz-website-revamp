@@ -17,8 +17,7 @@ const AboutBanner = ({props, OurHistory}) => {
       className={`${styles.aboutBanner} ${theme ? styles.aboutBannerDark : ""}`}
     >
       <div className={cn("primary-container")}>
-        <h1 className={styles.bannerTitle} dangerouslySetInnerHTML={{ __html: `${props[0]?.title}`}}>
-        
+        <h1 className={cn(styles.bannerTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.title}`}}> 
         </h1>
       </div>
 

@@ -16,74 +16,74 @@ const SolutionOurValues = ({props}) => {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
   const { theme, setTheme } = useContext(MyContext);
 
-  const accordionData = [
-    {
-      iconUrl: "images/icons/video.svg",
-      title: "Strategy and Consulting",
-      content:
-        "We specialize in comprehensive website audits that provide valuable insights and recommendations to enhance your online presence. ",
-      listItems: [
-        "We specialize in comprehensive website audits that provide valuable insights.",
-        "We provide comprehensive website audits that provide valuable insights.",
-        "We understand your requirements and provide comprehensive website audits that provide valuable insights.",
-      ],
-    },
-    {
-      iconUrl: "images/icons/video.svg",
-      title: "Product Engineering & Custom Development",
-      content:
-        "We specialize in comprehensive website audits that provide valuable insights and recommendations to enhance your online presence. ",
-      listItems: [
-        "We specialize in comprehensive website audits that provide valuable insights.",
-        "We provide comprehensive website audits that provide valuable insights.",
-        "We understand your requirements and provide comprehensive website audits that provide valuable insights.",
-      ],
-    },
-    {
-      iconUrl: "images/icons/customer.svg",
-      title: "Customer Experience & Martech",
-      content:
-        "We specialize in comprehensive website audits that provide valuable insights and recommendations to enhance your online presence. ",
-      listItems: [
-        "We specialize in comprehensive website audits that provide valuable insights.",
-        "We provide comprehensive website audits that provide valuable insights.",
-        "We understand your requirements and provide comprehensive website audits that provide valuable insights.",
-      ],
-    },
-    {
-      iconUrl: "images/icons/data.svg",
-      title: "Data Analytics & Intelligence",
-      content:
-        "We specialize in comprehensive website audits that provide valuable insights and recommendations to enhance your online presence. ",
-      listItems: [
-        "We specialize in comprehensive website audits that provide valuable insights.",
-        "We provide comprehensive website audits that provide valuable insights.",
-        "We understand your requirements and provide comprehensive website audits that provide valuable insights.",
-      ],
-    },
-    {
-      iconUrl: "images/icons/enterprise.svg",
-      title: "Enterprise Technology Platforms",
-      content:
-        "We specialize in comprehensive website audits that provide valuable insights and recommendations to enhance your online presence. ",
-      listItems: [
-        "We specialize in comprehensive website audits that provide valuable insights.",
-        "We provide comprehensive website audits that provide valuable insights.",
-        "We understand your requirements and provide comprehensive website audits that provide valuable insights.",
-      ],
-    },
-    {
-      iconUrl: "images/icons/team.svg",
-      title: "Team Augmentation",
-      content:
-        "We specialize in comprehensive website audits that provide valuable insights and recommendations to enhance your online presence. ",
-      listItems: [
-        "We specialize in comprehensive website audits that provide valuable insights.",
-        "We provide comprehensive website audits that provide valuable insights.",
-        "We understand your requirements and provide comprehensive website audits that provide valuable insights.",
-      ],
-    },
-  ];
+  // const accordionData = [
+  //   {
+  //     iconUrl: "images/icons/video.svg",
+  //     title: "Strategy and Consulting",
+  //     content:
+  //       "We specialize in comprehensive website audits that provide valuable insights and recommendations to enhance your online presence. ",
+  //     listItems: [
+  //       "We specialize in comprehensive website audits that provide valuable insights.",
+  //       "We provide comprehensive website audits that provide valuable insights.",
+  //       "We understand your requirements and provide comprehensive website audits that provide valuable insights.",
+  //     ],
+  //   },
+  //   {
+  //     iconUrl: "images/icons/video.svg",
+  //     title: "Product Engineering & Custom Development",
+  //     content:
+  //       "We specialize in comprehensive website audits that provide valuable insights and recommendations to enhance your online presence. ",
+  //     listItems: [
+  //       "We specialize in comprehensive website audits that provide valuable insights.",
+  //       "We provide comprehensive website audits that provide valuable insights.",
+  //       "We understand your requirements and provide comprehensive website audits that provide valuable insights.",
+  //     ],
+  //   },
+  //   {
+  //     iconUrl: "images/icons/customer.svg",
+  //     title: "Customer Experience & Martech",
+  //     content:
+  //       "We specialize in comprehensive website audits that provide valuable insights and recommendations to enhance your online presence. ",
+  //     listItems: [
+  //       "We specialize in comprehensive website audits that provide valuable insights.",
+  //       "We provide comprehensive website audits that provide valuable insights.",
+  //       "We understand your requirements and provide comprehensive website audits that provide valuable insights.",
+  //     ],
+  //   },
+  //   {
+  //     iconUrl: "images/icons/data.svg",
+  //     title: "Data Analytics & Intelligence",
+  //     content:
+  //       "We specialize in comprehensive website audits that provide valuable insights and recommendations to enhance your online presence. ",
+  //     listItems: [
+  //       "We specialize in comprehensive website audits that provide valuable insights.",
+  //       "We provide comprehensive website audits that provide valuable insights.",
+  //       "We understand your requirements and provide comprehensive website audits that provide valuable insights.",
+  //     ],
+  //   },
+  //   {
+  //     iconUrl: "images/icons/enterprise.svg",
+  //     title: "Enterprise Technology Platforms",
+  //     content:
+  //       "We specialize in comprehensive website audits that provide valuable insights and recommendations to enhance your online presence. ",
+  //     listItems: [
+  //       "We specialize in comprehensive website audits that provide valuable insights.",
+  //       "We provide comprehensive website audits that provide valuable insights.",
+  //       "We understand your requirements and provide comprehensive website audits that provide valuable insights.",
+  //     ],
+  //   },
+  //   {
+  //     iconUrl: "images/icons/team.svg",
+  //     title: "Team Augmentation",
+  //     content:
+  //       "We specialize in comprehensive website audits that provide valuable insights and recommendations to enhance your online presence. ",
+  //     listItems: [
+  //       "We specialize in comprehensive website audits that provide valuable insights.",
+  //       "We provide comprehensive website audits that provide valuable insights.",
+  //       "We understand your requirements and provide comprehensive website audits that provide valuable insights.",
+  //     ],
+  //   },
+  // ];
 
   function togglePanels(newPanel) {
     if (activeDisclosurePanel) {
@@ -109,8 +109,9 @@ const SolutionOurValues = ({props}) => {
     >
       <div className={cn("primary-container", styles.flexContainer)}>
         <div className={styles.ourValuesHead}>
-          <h6 className={styles.ourValuesTitle}>{props.Title}</h6>
-          <h3 className={styles.ourValuesHeading} dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}`}}>
+          <h6 className={cn(styles.ourValuesTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
+            </h6>
+          <h3 className={cn(styles.ourValuesHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}`}}>
             
           </h3>
           <p className={styles.ourValuesText}>

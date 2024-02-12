@@ -57,8 +57,9 @@ const WhyCms = ({props}) => {
     <section className={`${styles.whyCmsStyle} ${theme ? styles.whyCmsDark : ""}`}>
       <div className={cn("primary-container")}>
         <div className={styles.ourValuesHead}>
-          <h6 className={styles.ourValuesTitle}>{props.Title}</h6>
-          <h3 className={styles.ourValuesHeading} dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}`}}>
+          <h6 className={cn(styles.ourValuesTitle,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
+          </h6>
+          <h3 className={cn(styles.ourValuesHeading,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}`}}>
           </h3>
         </div>
 

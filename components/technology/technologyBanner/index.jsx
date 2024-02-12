@@ -17,7 +17,7 @@ const TechnologyBanner = ({props}) => {
       }`}
     >
       <div className={cn("primary-container", styles.flexContainer)}>
-        <h1 className={styles.title} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
+        <h1 className={cn(styles.title, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
           {/* Innovating
           <span className={styles.titleHighlight}> Technology</span> <br />
           <span className={styles.titleHighlight}>Landscape</span> for the

@@ -15,38 +15,38 @@ const SolutionTheProcess = ({props}) => {
   const dashArray = radius * Math.PI * 2;
   const [dashOffset, setdashOffset] = useState(dashArray);
   const [prevdashOffset, prevsetdashOffset] = useState(dashArray);
-  const accordionData = [
-    {
-      title: "Navigating Cloud Integration Complexities",
-      description:
-        "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
-    },
-    {
-      title: "Navigating Cloud Integration Complexities",
-      description:
-        "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
-    },
-    {
-      title: "Navigating Cloud Integration Complexities",
-      description:
-        "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
-    },
-    {
-      title: "Navigating Cloud Integration Complexities",
-      description:
-        "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
-    },
-    {
-      title: "Navigating Cloud Integration Complexities",
-      description:
-        "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
-    },
-    {
-      title: "Navigating Cloud Integration Complexities",
-      description:
-        "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
-    },
-  ];
+  // const accordionData = [
+  //   {
+  //     title: "Navigating Cloud Integration Complexities",
+  //     description:
+  //       "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
+  //   },
+  //   {
+  //     title: "Navigating Cloud Integration Complexities",
+  //     description:
+  //       "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
+  //   },
+  //   {
+  //     title: "Navigating Cloud Integration Complexities",
+  //     description:
+  //       "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
+  //   },
+  //   {
+  //     title: "Navigating Cloud Integration Complexities",
+  //     description:
+  //       "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
+  //   },
+  //   {
+  //     title: "Navigating Cloud Integration Complexities",
+  //     description:
+  //       "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
+  //   },
+  //   {
+  //     title: "Navigating Cloud Integration Complexities",
+  //     description:
+  //       "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
+  //   },
+  // ];
   gsap.registerPlugin(ScrollTrigger);
   useEffect(() => {
     const changeDot = (i) => {
@@ -130,8 +130,10 @@ const SolutionTheProcess = ({props}) => {
       <div className={cn("primary-container", styles.flexContainer)}>
         <div className={styles.headSection}>
           <div>
-            <h6 className={styles.heading}>{props?.Title}</h6>
-            <h3 className={styles.subHeading}>{props?.SubTitle}</h3>
+            <h6 className={cn(styles.heading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
+              </h6>
+            <h3 className={styles.subHeading} dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}`}}>
+              </h3>
           </div>
 
           <div className={styles.ourNumbersImg}>

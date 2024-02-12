@@ -84,9 +84,9 @@ const Discover = ({props}) => {
       <div className={cn("primary-container")}>
         <div className={styles.discoverTop}>
           <div>
-            <h6 className={styles.discoverTitle} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
+            <h6 className={cn(styles.discoverTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
             </h6>
-            <h3 className={styles.discoverHeading} dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}`}}>
+            <h3 className={cn(styles.discoverHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}`}}>
             </h3>
           </div>
 

@@ -16,8 +16,10 @@ const OurGallery = ({props}) => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.contentSection}>
-          <h6 className={styles.ourGalleryTitle}>{props[0]?.Title}</h6>
-          <h3 className={styles.ourGalleryHeading}>{props[0]?.SubTitle}</h3>
+          <h6 className={cn(styles.ourGalleryTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
+            </h6>
+          <h3 className={cn(styles.ourGalleryHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.SubTitle}`}}>
+            </h3>
           <p className={styles.ourGalleryText}>
             {props[0]?.Description}
           </p>

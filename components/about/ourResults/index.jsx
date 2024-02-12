@@ -49,9 +49,9 @@ const OurResults = ({props}) => {
     >
       <div className={cn("primary-container")}>
         <div className={cn(styles.flexContainer)}>
-          <h6 className={styles.ourResultsTitle}>{props[0].Title}</h6>
-          <h3 className={styles.ourResultsHeading}>
-            {props[0].SubTitle}
+          <h6 className={cn(styles.ourResultsTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0].Title}`}}>
+            </h6>
+          <h3 className={cn(styles.ourResultsHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0].SubTitle}`}}>
           </h3>
           <p className={styles.ourResultsText}>
             {props[0].Description}

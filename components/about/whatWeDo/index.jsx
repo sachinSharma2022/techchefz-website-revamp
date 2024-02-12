@@ -108,9 +108,9 @@ const WhatWeDo = ({props}) => {
     >
       <div className={cn("primary-container")}>
         <div className={cn(styles.flexContainer)}>
-          <h6 className={styles.weDoTitle} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
+          <h6 className={cn(styles.weDoTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
           </h6>
-          <h3 className={styles.weDoHeading} dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}`}}>
+          <h3 className={cn(styles.weDoHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}`}}>
            
           </h3>
         </div>

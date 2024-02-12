@@ -66,9 +66,9 @@ const TechnologyValues = ({props}) => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.headSection}>
-          <h6 className={styles.valuesTitle}>{props?.Title}</h6>
-          <h3 className={styles.valuesHeading}>
-          {props?.SubTitle}
+          <h6 className={cn(styles.valuesTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
+            </h6>
+          <h3 className={cn(styles.valuesHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}`}}>
           </h3>
           <p className={styles.valuesText}>
           {props?.Description}

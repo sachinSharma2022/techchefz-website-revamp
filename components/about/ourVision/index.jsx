@@ -18,7 +18,7 @@ console.log("aa",props);
     >
       <div className={cn("primary-container")}>
         <div className={cn(styles.flexContainer)}>
-          <h3 className={styles.aboutHeading} dangerouslySetInnerHTML={{ __html: `${props[0]?.title}` }}>
+          <h3 className={cn(styles.aboutHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.title}` }}>
 
           </h3>
 

@@ -39,8 +39,8 @@ const TechnologyCase = ({props}) => {
       <div className={cn("primary-container")}>
         <div className={styles.headSection}>
           <div className={styles.caseTop}>
-            <h4 className={styles.caseTitle} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}></h4>
-            <h3 className={styles.caseHeading} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
+            <h4 className={cn(styles.caseTitle,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}></h4>
+            <h3 className={cn(styles.caseHeading,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
               
             </h3>
           </div>

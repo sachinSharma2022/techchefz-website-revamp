@@ -15,10 +15,9 @@ const CmsBanner = ({props}) => {
       }`}
     >
       <div className={cn("primary-container", styles.flexContainer)}>
-        <h1 className={styles.title} dangerouslySetInnerHTML={{ __html: `${props?.title}`}}>
+        <h1 className={cn(styles.title,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.title}`}}>
         </h1>
-        <p className={styles.leadText}>
-          {props.subtitle}
+        <p className={cn(styles.leadText,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props.subtitle}`}}>
         </p>
       </div>
     </section>

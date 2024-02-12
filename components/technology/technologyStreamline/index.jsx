@@ -114,7 +114,7 @@ const Streamline = ({ props }) => {
     >
       <section className={styles.streamLineSection}>
         <div className={cn("primary-container", styles.flexContainer)}>
-          <h3 className={styles.streamlineTitle} dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}>
+          <h3 className={cn(styles.streamlineTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}>
 
           </h3>
           <p className={styles.streamlineContent} dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}>

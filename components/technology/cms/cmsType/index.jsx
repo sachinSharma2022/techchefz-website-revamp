@@ -66,9 +66,9 @@ const CmsType = ({props}) => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.careerRow}>
-          <p className={styles.projectHighlight}>{props?.Title}</p>
-          <h2 className={styles.datingText}>
-          {props?.Description}
+          <p className={cn(styles.projectHighlight,"gradient-text")}dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}> 
+          </p>
+          <h2 className={cn(styles.datingText,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
           </h2>
         </div>
 

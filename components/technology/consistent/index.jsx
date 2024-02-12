@@ -57,11 +57,11 @@ const Consistent = ({props}) => {
           </div>
 
           <div className={styles.contentSec}>
-            <h3 className={styles.consistentTitle} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
+            <h3 className={cn(styles.consistentTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
               
             </h3>
             <div>
-              <p className={styles.consistentText} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
+              <p className={cn(styles.consistentText, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
                 
               </p>
               <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">

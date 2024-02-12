@@ -15,58 +15,58 @@ const Partners = ({props}) => {
   const { theme, setTheme } = useContext(MyContext);
   let [isOpen, setIsOpen] = useState(false);
 
-  const partnerCardData = [
-    {
-      imgSrc: "/images/partners/aws-light.svg",
-      darkImgSrc: "/images/partners/aws-dark.svg",
-      cardTitle: "AWS",
-      cardContent:
-        "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
-    },
-    {
-      imgSrc: "/images/partners/adobe.svg",
-      darkImgSrc: "/images/partners/adobe.svg",
-      cardTitle: "Adobe",
-      cardContent:
-        "We Believe In Superior Frontend Development With The Combination Of JavaScript, HTML And CSS.",
-    },
-    {
-      imgSrc: "/images/partners/shopify-light.svg",
-      darkImgSrc: "/images/partners/shopify-dark.svg",
-      cardTitle: "Shopify",
-      cardContent:
-        "At TechChefz We Provide First-Class Artificial Intelligence And Machine Learning with Expertise.",
-    },
-    {
-      imgSrc: "/images/partners/twilio.svg",
-      darkImgSrc: "/images/partners/twilio.svg",
-      cardTitle: "Twilio",
-      cardContent:
-        "We Facilitate Easy Cloud Migration And Deliver DevOps Automation And 24*7 Incident Management Services.",
-    },
-    {
-      imgSrc: "/images/partners/shopify-light.svg",
-      darkImgSrc: "/images/partners/shopify-dark.svg",
-      cardTitle: "Shopify",
-      cardContent:
-        "At TechChefz We Provide First-Class Artificial Intelligence And Machine Learning with Expertise.",
-    },
-    {
-      imgSrc: "/images/partners/aws-light.svg",
-      darkImgSrc: "/images/partners/aws-dark.svg",
-      cardTitle: "AWS",
-      cardContent:
-        "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
-    },
-  ];
+  // const partnerCardData = [
+  //   {
+  //     imgSrc: "/images/partners/aws-light.svg",
+  //     darkImgSrc: "/images/partners/aws-dark.svg",
+  //     cardTitle: "AWS",
+  //     cardContent:
+  //       "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
+  //   },
+  //   {
+  //     imgSrc: "/images/partners/adobe.svg",
+  //     darkImgSrc: "/images/partners/adobe.svg",
+  //     cardTitle: "Adobe",
+  //     cardContent:
+  //       "We Believe In Superior Frontend Development With The Combination Of JavaScript, HTML And CSS.",
+  //   },
+  //   {
+  //     imgSrc: "/images/partners/shopify-light.svg",
+  //     darkImgSrc: "/images/partners/shopify-dark.svg",
+  //     cardTitle: "Shopify",
+  //     cardContent:
+  //       "At TechChefz We Provide First-Class Artificial Intelligence And Machine Learning with Expertise.",
+  //   },
+  //   {
+  //     imgSrc: "/images/partners/twilio.svg",
+  //     darkImgSrc: "/images/partners/twilio.svg",
+  //     cardTitle: "Twilio",
+  //     cardContent:
+  //       "We Facilitate Easy Cloud Migration And Deliver DevOps Automation And 24*7 Incident Management Services.",
+  //   },
+  //   {
+  //     imgSrc: "/images/partners/shopify-light.svg",
+  //     darkImgSrc: "/images/partners/shopify-dark.svg",
+  //     cardTitle: "Shopify",
+  //     cardContent:
+  //       "At TechChefz We Provide First-Class Artificial Intelligence And Machine Learning with Expertise.",
+  //   },
+  //   {
+  //     imgSrc: "/images/partners/aws-light.svg",
+  //     darkImgSrc: "/images/partners/aws-dark.svg",
+  //     cardTitle: "AWS",
+  //     cardContent:
+  //       "We Provide A Humanized And Contextual Experience To Build An Exclusive Digital Experience.",
+  //   },
+  // ];
   return (
     <section className={`${styles.partner} ${theme ? styles.partnerDark : ""}`}>
       <div className={cn("primary-container", styles.flexContainer)}>
         <div className={styles.headSection}>
-          <h6 className={styles.partnerTitle} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
+          <h6 className={cn(styles.partnerTitle,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
 
           </h6>
-          <h3 className={styles.partnerHeading} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
+          <h3 className={cn(styles.partnerHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
             
           </h3>
         </div>
