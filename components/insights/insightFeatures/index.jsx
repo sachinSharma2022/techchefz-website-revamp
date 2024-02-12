@@ -122,7 +122,7 @@ const InsightFeatures = ({props, feature}) => {
       <div className={cn("primary-container", styles.flexContainer)}>
         <div className={styles.insightHeader}>
           <div className={styles.searchButton}>
-          <SearchInput theme={theme} />
+            <SearchInput theme={theme} />
           </div>
           <div className={styles.serviceBtn}>
             {props.map((buttonItem) => (

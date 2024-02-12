@@ -10,9 +10,11 @@ import { base_Url } from "@/lib/constants";
 
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
+import PrimaryModal from "@/components/ui/primaryModal";
 
 const TczLife = ({props}) => {
   console.log("rr",props);
+  const [isOpen, setIsOpen] = useState(false);
   const slider = useRef(null);
   const [oldSlide, setOldSlide] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
@@ -125,16 +127,37 @@ const TczLife = ({props}) => {
         <div className={cn(styles.sliderSection, "col-sm-6 tczLifeSlider")}>
           <Slider {...settings} ref={slider}>
             {props?.VideoSlider?.map((data, index) => (
-              <div key={index} className={styles.videoWhapper}>
-                 <VideoCustom src={data?.Video?.data?.attributes?.url?`${base_Url}${data.Video.data.attributes.url}`:`${base_Url}/`}
+              <button
+                key={index}
+                className={styles.videoWhapper}
+                onClick={() => setIsOpen(true)}
+              >
+                {/* <ImageCustom src={data.video} width={800} height={800} /> */}
+                <VideoCustom src={data?.Video?.data?.attributes?.url?`${base_Url}${data.Video.data.attributes.url}`:`${base_Url}/`}
                  width={800} height={800} />
-                <button className={cn(styles.videoButton)}>
+                <div className={cn(styles.videoButton)}>
                   <Icons.VideoButton />
-                </button>
-              </div>
+                </div>
+              </button>
             ))}
           </Slider>
         </div>
+
+        <PrimaryModal open={isOpen} onClose={() => setIsOpen(false)}>
+          <video
+            width="100"
+            height="100"
+            playsInline
+            autoPlay
+            loop
+            className="video-block"
+          >
+            <source
+              src={data?.Video?.data?.attributes?.url?`${base_Url}${data.Video.data.attributes.url}`:`${base_Url}/`}
+              type="video/mp4"
+            />
+          </video>
+        </PrimaryModal>
       </div>
 
       <div className={styles.tczLifeContent}>

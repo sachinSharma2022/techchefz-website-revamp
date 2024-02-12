@@ -21,10 +21,15 @@ body {
   .dark {
     background-color: color(dark-gray);
   }
+
+  @include desktop-4k {
+    zoom: 1.15;
+  }
 }
 
 // main-container
 .main-container {
+  
   @include mobile {
     overflow-x: hidden;
     padding-top: 70px;
@@ -320,6 +325,7 @@ input:-webkit-autofill {
   }
 }
 
+
 .testimonials-style-dark.testimonial-style {
   .swiper-slide-shadow-right {
     background-image: linear-gradient(
@@ -344,8 +350,20 @@ input:-webkit-autofill {
     }
   }
 
+  .btn-arrow {
+    background-color: color(info-blue);
+    border-color: color(info-blue);
+
+    &:hover,
+    &:focus {
+      background-color: color(info-blue);
+      border-color: color(info-blue);
+    }
+  }
+
   .btn.swiper-button-disabled {
     border-color: rgba(color(primary-white), 0.2);
+    background-color: transparent;
 
     svg {
       filter: none;
@@ -457,6 +475,7 @@ input:-webkit-autofill {
         top: -2.875rem;
       }
     }
+
   }
 }
 
@@ -876,4 +895,11 @@ html.lenis {
       // width: auto !important;
     }
   }
+}
+
+
+// Video block
+.video-block {
+  width: 100%;
+  height: 100%;
 }

@@ -1,10 +1,8 @@
 "use client";
-import React from "react";
-import { MyContext } from "@/context/theme";
-import { useContext } from "react";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
+import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
@@ -16,29 +14,6 @@ import styles from "./style.module.scss";
 
 const Consistent = ({props}) => {
   const { theme, setTheme } = useContext(MyContext);
-  // const targetRef = useRef(null);
-  // const { scrollYProgress } = useScroll({
-  //   target: targetRef,
-
-  // });
-
-  // const y = useTransform(scrollYProgress, [0, 1], ["100%", "0%"]);
-
-  //   gsap.registerPlugin(ScrollTrigger);
-  //   useEffect(() => {
-  // let ctx = gsap.context(() => {
-  //   const tl=gsap.timeline(
-  //     {scrollTrigger:{trigger:`.${styles.consistent}`,scrub:1,markers:true,start:"top 100%",end:"center 80%", invalidateOnRefresh: true,
-  //     anticipatePin: 1}}
-  //   );
-  //   tl.fromTo(`.${styles.consistentImg}`,{
-  //     yPercent: 100,
-  //    },{ yPercent: 0,})
-
-  // });
-  // return () => ctx.revert();
-
-  //   }, []);
   return (
     <section
       className={`${styles.consistent}  ${theme ? styles.consistentDark : ""}`}

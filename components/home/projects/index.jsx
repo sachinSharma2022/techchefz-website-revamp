@@ -161,8 +161,11 @@ const Projects = ({ project, brands }) => {
               <p className={styles.aboutText}>{project[0]?.Description}</p>
 
               <Link href="/portfolio">
-                <Button variant="outline" size="md">
-                  {project[0]?.Btn} <Icons.ArrowRight size={18} />
+                <Button
+                  variant={!theme ? "lightBlueOutline" : "outline"}
+                  size="md"
+                >
+                  {project[0]?.Btn}  <Icons.ArrowRight size={18} />
                 </Button>
               </Link>
             </div>

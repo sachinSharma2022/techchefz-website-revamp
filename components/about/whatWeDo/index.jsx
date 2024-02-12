@@ -123,10 +123,10 @@ const WhatWeDo = ({props}) => {
                   {/* {data.icon} */}
                   <ImageCustom height={100}  width={100} src={`${base_Url}${data.Image.data.attributes.url}`} />
                   
-                  <h6>{data.Title}</h6>
+                  <h3>{data.Title}</h3>
                 </div>
                 <div className={`${styles.backCard}  ${styles.workCols}`}>
-                  <h6>{data.Hedding} </h6>
+                  <h3>{data.Hedding} </h3>
                   <p>{data.Description} </p>
                 </div>
               </div>
