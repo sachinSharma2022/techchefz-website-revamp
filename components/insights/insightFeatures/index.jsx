@@ -120,16 +120,11 @@ const InsightFeatures = () => {
       <div className={cn("primary-container", styles.flexContainer)}>
         <div className={styles.insightHeader}>
           <div className={styles.searchButton}>
-          <SearchInput theme={theme} />
+            <SearchInput theme={theme} />
           </div>
           <div className={styles.serviceBtn}>
             {buttonVariants.map((buttonItem) => (
-              <button
-                variant="outline"
-                size="sm"
-                // onClick={() => filterItem(buttonItem.id)}
-                key={buttonItem}
-              >
+              <button variant="outline" size="sm" key={buttonItem}>
                 {buttonItem.buttonTitle}
               </button>
             ))}
