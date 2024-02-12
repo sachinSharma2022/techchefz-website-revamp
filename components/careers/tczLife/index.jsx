@@ -1,19 +1,16 @@
 "use client";
 import { Icons } from "@/components/icons";
-import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
+import { base_Url } from "@/lib/constants";
 import { useContext, useRef, useState } from "react";
 import Slider from "react-slick";
-import VideoCustom from "@/components/ui/videoCustom";
-import { base_Url } from "@/lib/constants";
 
-
+import PrimaryModal from "@/components/ui/primaryModal";
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
-import PrimaryModal from "@/components/ui/primaryModal";
 
-const TczLife = ({props}) => {
-  console.log("rr",props);
+const TczLife = ({ props }) => {
+  console.log("rr", props);
   const [isOpen, setIsOpen] = useState(false);
   const slider = useRef(null);
   const [oldSlide, setOldSlide] = useState(0);
@@ -103,8 +100,10 @@ const TczLife = ({props}) => {
         <div className={cn(styles.tczActionSection, "col-sm-6")}>
           <div>
             <h6 className={styles.tczLifeTitle}>{props?.Title}</h6>
-            <h3 className={styles.tczLifeHeading} dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}`}}>
-            </h3>
+            <h3
+              className={styles.tczLifeHeading}
+              dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
+            ></h3>
           </div>
 
           <div className={styles.sliderArrow}>
@@ -132,9 +131,25 @@ const TczLife = ({props}) => {
                 className={styles.videoWhapper}
                 onClick={() => setIsOpen(true)}
               >
-                {/* <ImageCustom src={data.video} width={800} height={800} /> */}
-                <video src={data?.Video?.data?.attributes?.url?`${base_Url}${data.Video.data.attributes.url}`:`${base_Url}/`}
-                 width={800} height={800} />
+                <div>
+                  <video
+                    key={index}
+                    width="100"
+                    height="100"
+                    muted
+                    className="video-block"
+                  >
+                    <source
+                      src={
+                        data?.Video?.data?.attributes?.url
+                          ? `${base_Url}${data.Video.data.attributes.url}`
+                          : `${base_Url}/`
+                      }
+                      type="video/mp4"
+                    />
+                  </video>
+                </div>
+
                 <div className={cn(styles.videoButton)}>
                   <Icons.VideoButton />
                 </div>
@@ -142,32 +157,33 @@ const TczLife = ({props}) => {
             ))}
           </Slider>
         </div>
-      
+
         <PrimaryModal open={isOpen} onClose={() => setIsOpen(false)}>
-        {props?.VideoSlider?.map((data, index) => (
-          
-          <video
-            key={index}
-            width="100"
-            height="100"
-            playsInline
-            autoPlay
-            loop
-            className="video-block"
-          >
-            <source
-              src={data?.Video?.data?.attributes?.url?`${base_Url}${data.Video.data.attributes.url}`:`${base_Url}/`}
-              type="video/mp4"
-            />
-          </video>
-             ))}
+          {props?.VideoSlider?.map((data, index) => (
+            <video
+              key={index}
+              width="100"
+              height="100"
+              playsInline
+              autoPlay
+              loop
+              className="video-block"
+            >
+              <source
+                src={
+                  data?.Video?.data?.attributes?.url
+                    ? `${base_Url}${data.Video.data.attributes.url}`
+                    : `${base_Url}/`
+                }
+                type="video/mp4"
+              />
+            </video>
+          ))}
         </PrimaryModal>
       </div>
 
       <div className={styles.tczLifeContent}>
-        <p>
-          {props?.Description}
-        </p>
+        <p>{props?.Description}</p>
       </div>
     </section>
   );

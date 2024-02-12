@@ -56,7 +56,7 @@
       text-transform: uppercase;
       opacity: 0.8;
       margin-bottom: 1rem;
-      
+
       @include mobile-tablet-p {
         margin-bottom: 0.75rem;
         line-height: text(normal);
@@ -94,18 +94,20 @@
     justify-content: center;
 
     div {
-      min-width: 47vw;
+      width: 47vw;
       height: 264px;
+      position: relative;
+      overflow: hidden;
 
       @include mobile-tablet-p {
         height: 139px;
       }
-    }
 
-    video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
 
     .videoButton {
@@ -116,11 +118,12 @@
       right: 0;
       bottom: 0;
       margin: auto;
+      width: 60px;
+      height: 60px;
       @include transition(0.5s);
     }
 
     &:hover {
-
       .videoButton {
         scale: 1.15;
       }
@@ -186,7 +189,7 @@
     border-radius: 0.5rem;
     width: 3rem;
     height: 3rem;
-    border: 0.14rem solid rgba(color(text-primary), 0.20);
+    border: 0.14rem solid rgba(color(text-primary), 0.2);
     color: color(primary-blue);
     background: none;
     display: flex;
@@ -212,7 +215,6 @@
     }
 
     .sliderArrow {
-  
       .button {
         background-color: color(info-blue);
       }

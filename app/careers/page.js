@@ -7,7 +7,6 @@ import { api_Career_Page } from "@/lib/constants";
 import HomeTestimonials from "@/components/home/homeTestimonials";
 import TechnologyValues from "@/components/technology/technologyValues";
 
-
 const Career = async () => {
   const data = await getData(api_Career_Page);
   return (
@@ -17,7 +16,6 @@ const Career = async () => {
           <CareerBanner props={data.CareerBanner} />
           <TczLife props={data.Lifeattechchefz} />
           <OpenPosition />
-
           <HomeTestimonials testimonials={data.Testimonials} />
           <TechnologyValues props={data.Technology} />
           <Innovation props={data.ourInnvotion} />
