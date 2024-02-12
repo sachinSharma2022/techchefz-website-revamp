@@ -2,7 +2,7 @@
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
-import { ImageCustom } from "@/components/ui/imageCustom";
+
 import { base_Uri } from "@/lib/constants";
 
 import { cn } from "@/lib/utils";
