@@ -45,9 +45,10 @@ const TechnologyStack = () => {
   }, []);
   return (
     <section
-      className={`${styles.technologyStyle} ${
+      className={cn(
+        styles.technologyStyle,
         theme ? styles.technologyStyleDark : ""
-      }`}
+      )}
       id="tech-Stack"
     >
       <div className={cn("primary-container")}>
