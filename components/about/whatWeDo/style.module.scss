@@ -97,7 +97,8 @@
 
       .backCard {
         transform: rotateY(180deg);
-        h6 {
+
+        h3 {
           margin-top: 0;
           padding-bottom: 0.5rem;
           @include mobile-tablet-p {
@@ -116,7 +117,7 @@
         border-color: color(heading-liner);
       }
 
-      h6 {
+      h3 {
         font-size: text(xl);
         position: relative;
         width: 100%;
