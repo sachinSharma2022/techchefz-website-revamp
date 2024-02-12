@@ -99,17 +99,6 @@ const Service = ({ props }) => {
                   subTitle={data.Title}
                   subText={data.Description}
                 />
-
-                //   <div key={index} className={styles.serviceBox}>
-                //   <div className={styles.bgIcon}>
-                //     <ImageCustom src={data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data.attributes.url}`:`${base_Url}/`} 
-                //     width={64}
-                //     height={64}
-                //     alt="bannerImg"
-                //      /></div>
-                //   <h4 className={styles.sbTitle}>{data.Title}</h4>
-                //   <p className={styles.sbText}>{data.Description}</p>
-                // </div>
               ))}
             </div>
           )}
