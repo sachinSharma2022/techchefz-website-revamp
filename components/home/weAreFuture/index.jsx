@@ -20,7 +20,7 @@ const WeAreFuture = ({props}) => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.futureTitle}>
-          <p className={styles.text}>{props?.Title}</p>
+          <p className={cn(styles.text, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}></p>
           <h2 className={styles.title}>
             {props?.SubTitle}
             <span className={styles.globalText}>

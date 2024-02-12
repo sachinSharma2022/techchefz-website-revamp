@@ -63,19 +63,25 @@ const OurNumbers = ({ carrer, experience }) => {
       <div className={cn("primary-container")}>
         <TextRevel>
           <div className={styles.careerRow}>
-            <div >
-        
-                <p className={cn(styles.projectHighlight,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${carrer?.title}`}}>
-                  </p>
-                <h2 className={cn(styles.datingText,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${carrer?.description}`}}>
-                
-                </h2>
-              
-
-            <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
-            {carrer.button}<Icons.ArrowRight size={18} />
-            </Button>
-          </div>
+            <div>
+              <p
+                className={cn(styles.projectHighlight, "gradient-text")}
+                dangerouslySetInnerHTML={{ __html: `${carrer?.title}` }}
+              ></p>
+              <h2
+                className={cn(styles.datingText, "gradient-text")}
+                dangerouslySetInnerHTML={{ __html: `${carrer?.description}` }}
+              ></h2>
+            </div>
+            <div>
+              <Button
+                variant={theme ? "lightBlueOutline" : "outline"}
+                size="md"
+              >
+                {carrer.button}
+                <Icons.ArrowRight size={18} />
+              </Button>
+            </div>
           </div>
         </TextRevel>
         <div className={styles.ourNumberMain}>

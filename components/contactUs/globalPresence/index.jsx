@@ -9,6 +9,7 @@ import { Popover } from "@headlessui/react";
 import { useMediaQuery } from "react-responsive";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
+import { base_Url } from "@/lib/constants";
 
 const GlobalPresence = ({props}) => {
  
@@ -50,7 +51,7 @@ const GlobalPresence = ({props}) => {
           <Popover.Button>
             <div className={styles.contactMap}>
               <ImageCustom
-                src={props?.Image?.data?.attributes?.url?`${base_Uri}${props?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+                src={props?.Image?.data?.attributes?.url?`${base_Url}${props?.Image?.data?.attributes?.url}`:`${base_Url}/`}
                 width={1000}
                 height={1000}
                 alt="map"
@@ -85,7 +86,7 @@ const GlobalPresence = ({props}) => {
             <div className={styles.locationPopoverCard}>
               <div className={styles.popoverMapIcon}>
                 <ImageCustom
-                  src={data?.Images?.data?.attributes?.url?`${base_Uri}${data?.Images?.data?.attributes?.url}`:`${base_Uri}/`}
+                  src={data?.Images?.data?.attributes?.url?`${base_Url}${data?.Images?.data?.attributes?.url}`:`${base_Url}/`}
                   width={40}
                   height={26}
                   alt="flag-img"
