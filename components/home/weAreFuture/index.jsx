@@ -38,9 +38,9 @@ const WeAreFuture = () => {
         </div>
         <TextRevel>
           <div className={styles.contentSection}>
-            <h3 className={styles.datingText}>
+            <h3 className={cn(styles.datingText, "gradient-text")}>
               With roots dating back to 2017, we started as a pocket size teamof
-              enthusiasts.
+              <span> enthusiasts.</span>
             </h3>
             <div>
               <p className={styles.aboutText}>

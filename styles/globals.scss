@@ -114,6 +114,7 @@ input:-webkit-autofill {
 
   span {
     @include textGradient;
+    font-size: 1em;
   }
 }
 
