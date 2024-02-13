@@ -1,8 +1,7 @@
 @import "~/styles/partials/config";
 
 .testimonialsStyle {
-  padding: spacing(section-primary-padding);
-  padding-right: 0;
+  padding: 8.75rem 0  0 7.5rem;
   background-color: color(primary-white);
   overflow: hidden;
   position: relative;
@@ -27,14 +26,10 @@
     .projectHighlight {
       font-size: text(normal);
       font-weight: 500;
-      margin-bottom: text(lg);
       opacity: 0.8;
       text-transform: uppercase;
       letter-spacing: 0.2rem;
       color: color(text-primary);
-      @include mobile-tablet-p {
-        margin-bottom: 0.75rem;
-      }
     }
     .testimonialsHeading {
       h3 {

@@ -7,6 +7,7 @@ import BadgeInfoCard from "@/components/common/badgeInfoCard";
 import { Icons } from "@/components/icons";
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
+import { base_Url } from "@/lib/constants";
 
 const BrowserAccelerator = ({props}) => {
   console.log("aa",props);
@@ -145,17 +146,17 @@ const BrowserAccelerator = ({props}) => {
           </div>
         </div>
         <hr className={styles.breakLine} />
-        <h5 className={styles.browserAcceleratorHeading} dangerouslySetInnerHTML={{ __html: `${props[0]?.Heading}`}}>
+        <h5 className={cn(styles.browserAcceleratorHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Heading}`}}>
          
         </h5>
         <div className={styles.browserAcceleratorCards}>
-          {browserCardData.map((item, index) => (
+          {props?.map((item, index) => (
             <BadgeInfoCard
               key={index}
-              icons={item.cardIcon}
-              subHeading={item.subHeading}
-              heading={item.heading}
-              description={item.description}
+              icons={item?.Image?.data?.attributes?.url?`${base_Url}${item?.Image?.data.attributes.url}`:`${base_Url}/`} 
+              subHeading={item.Title}
+              heading={item.SubTitle}
+              description={item.Description}
               href="/accelerators/accelerators-details"
               options={["Automobile", "Trending", "New"]}
             />

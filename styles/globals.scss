@@ -29,7 +29,6 @@ body {
 
 // main-container
 .main-container {
-  
   @include mobile {
     overflow-x: hidden;
     padding-top: 70px;
@@ -48,6 +47,11 @@ h5 {
 h6 {
   font-family: font(secondary);
   letter-spacing: 1.5px;
+  margin-bottom: 2rem;
+
+  @include mobile-tablet-p {
+    margin-bottom: 1.5rem;
+  }
 }
 
 a {
@@ -116,7 +120,6 @@ input:-webkit-autofill {
 
 // Span Gradient
 .gradient-text {
-
   span {
     @include textGradient;
     font-size: 1em;
@@ -325,7 +328,6 @@ input:-webkit-autofill {
   }
 }
 
-
 .testimonials-style-dark.testimonial-style {
   .swiper-slide-shadow-right {
     background-image: linear-gradient(
@@ -475,7 +477,6 @@ input:-webkit-autofill {
         top: -2.875rem;
       }
     }
-
   }
 }
 
@@ -885,21 +886,49 @@ html.lenis {
   }
 }
 
-
 // Grid Marquee Gallery
 .gridMarqueeGallery {
-
   .slick-track .slick-slide {
-
     @include mobile-tablet-p {
       // width: auto !important;
     }
   }
 }
 
-
 // Video block
 .video-block {
   width: 100%;
   height: 100%;
+}
+
+
+// Pages BG Style
+.technology-career-style {
+  background-color: color(bg-soft);
+
+  @include desktop {
+    margin-top: 8.5rem;
+  }
+}
+
+.dark .technology-career-style {
+  background: color(dark-bg);
+}
+
+.technology-styles {
+  background-color: color(primary-white);
+}
+
+.dark .technology-styles {
+  background-color: color(input-bg);
+}
+
+.technology-cms-styles {
+  background-color: color(primary-white);
+  padding-bottom: 0;
+}
+
+.dark .technology-cms-styles {
+  background-color: color(input-bg);
+  padding-bottom: 0;
 }

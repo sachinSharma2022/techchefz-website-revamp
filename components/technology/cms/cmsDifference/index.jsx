@@ -41,8 +41,8 @@ const CmsDifference = ({props}) => {
         <div className={styles.careerRow}>
           <div className="row">
             <div className="col-md-12 col-12">
-              <p className={cn(styles.ProjectHighlight,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
-                </p>
+              <h6 className={cn(styles.projectHighlight,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
+                </h6>
             </div>
 
             <div className="col-md-8 col-12">

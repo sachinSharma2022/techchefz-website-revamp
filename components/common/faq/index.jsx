@@ -56,8 +56,8 @@ const Faq = ({props}) => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.faqHead}>
-          <p className={cn(styles.projectHighlight,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
-            </p>
+          <h6 className={cn(styles.projectHighlight,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
+            </h6>
           <h4 className={cn(styles.title,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
             </h4>
         </div>
