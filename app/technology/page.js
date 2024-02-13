@@ -3,14 +3,12 @@ import OurNumbers from "@/components/home/ourNumbers";
 import Consistent from "@/components/technology/consistent";
 import Discover from "@/components/technology/discover";
 import Partners from "@/components/technology/partners";
-import Streamline from "@/components/technology/technologyStreamline";
 import TechnologyBanner from "@/components/technology/technologyBanner";
 import TechnologyCase from "@/components/technology/technologyCase";
+import Streamline from "@/components/technology/technologyStreamline";
 import TechnologyValues from "@/components/technology/technologyValues";
-import React from "react";
-import { getData } from "@/lib/fetchData";
 import { api_Technology_Page } from "@/lib/constants";
-import { ImageCustom } from "@/components/ui/imageCustom";
+import { getData } from "@/lib/fetchData";
 const Technology = async () => {
   const data = await getData(api_Technology_Page);
   return (

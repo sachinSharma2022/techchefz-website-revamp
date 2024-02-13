@@ -56,7 +56,6 @@ $border-radius: 5px;
   .title {
     font-size: text(xxl-larger);
     font-weight: 500;
-    // line-height: 1.2;
     margin: 0 0 5rem;
   
 
@@ -84,7 +83,6 @@ $border-radius: 5px;
     .contentContainer > span {
       font-size: text(xxl-larger);
       font-weight: 500;
-      line-height: 1;
 
       @include mobile{
         font-size: text(larger);

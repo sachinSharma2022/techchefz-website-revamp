@@ -2,14 +2,10 @@
 
 .technologyValues {
   padding: spacing(section-primary-padding);
+
   @include mobile-tablet-p {
     padding: spacing(section-mob-padding);
     padding-block: 3.75rem 3.75rem;
-  }
-
-  &.technologyValuesDark {
-    background-color: color(input-bg);
-    color: color(primary-white);
   }
 
   .valuesTitle {
@@ -105,5 +101,11 @@
 
   .infoSec {
     margin-top: 24px;
+  }
+
+  // dark Mode
+  &.technologyValuesDark {
+    background-color: color(input-bg);
+    color: color(primary-white);
   }
 }

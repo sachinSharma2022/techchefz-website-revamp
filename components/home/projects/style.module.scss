@@ -38,11 +38,11 @@
       padding-inline: 0.75rem;
       align-items: center;
       justify-content: center;
-      height: 35px;
+      min-height: 35px;
       border-radius: 0.5rem;
       border: 0.14rem solid rgba(color(primary-white), 0.4);
       color: color(primary-white);
-      transition: all 0.5s ease-in-out;
+      @include transition(0.5s);
 
       &:hover {
         background-color: color(primary-white);
@@ -103,7 +103,7 @@
     border-radius: 12px;
     overflow: hidden;
     position: relative;
-    border: 1px solid transparent;
+    border: 3px solid transparent;
     @include transition(0.5s);
 
     @include mobile-tablet-p {
@@ -125,7 +125,7 @@
     font-size: 2rem;
     font-weight: 500;
     color: color(primary-white);
-    margin-bottom: text(lg);
+    margin-bottom: 0;
 
     &:nth-of-type(1) {
       line-height: 40px;
@@ -183,6 +183,7 @@
     display: flex;
     justify-content: space-between;
     gap: 2.5rem;
+    padding-bottom: 1rem;
 
     @include mobile {
       flex-direction: column;
