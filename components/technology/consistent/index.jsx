@@ -3,17 +3,12 @@ import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
-import { cn } from "@/lib/utils";
-import { motion, useTransform, useScroll } from "framer-motion";
-import { useRef } from "react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { gsap } from "gsap";
-import { useEffect } from "react";
 import { base_Uri } from "@/lib/constants";
-import styles from "./style.module.scss";
+import { cn } from "@/lib/utils";
 import { useContext } from "react";
+import styles from "./style.module.scss";
 
-const Consistent = ({props}) => {
+const Consistent = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section
@@ -24,7 +19,11 @@ const Consistent = ({props}) => {
           <div className={styles.consistentImgContainer}>
             <div className={styles.consistentImg}>
               <ImageCustom
-                src={props?.Image?.data?.attributes?.url?`${base_Uri}${props?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+                src={
+                  props?.Image?.data?.attributes?.url
+                    ? `${base_Uri}${props?.Image?.data?.attributes?.url}`
+                    : `${base_Uri}/`
+                }
                 width={1000}
                 height={600}
                 alt="img"
@@ -33,14 +32,19 @@ const Consistent = ({props}) => {
           </div>
 
           <div className={styles.contentSec}>
-            <h3 className={cn(styles.consistentTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
-              
-            </h3>
+            <h3
+              className={cn(styles.consistentTitle, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+            ></h3>
             <div>
-              <p className={cn(styles.consistentText, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
-                
-              </p>
-              <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
+              <p
+                className={cn(styles.consistentText, "gradient-text")}
+                dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
+              ></p>
+              <Button
+                variant={theme ? "lightBlueOutline" : "outline"}
+                size="md"
+              >
                 {props?.Btn} <Icons.ArrowRight size={18} />
               </Button>
             </div>
