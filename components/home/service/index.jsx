@@ -15,12 +15,9 @@ import styles from "./style.module.scss";
 import { base_Url } from "@/lib/constants";
 import { ImageCustom } from "@/components/ui/imageCustom";
 
-
 const Service = ({ props }) => {
-
   const { theme, setTheme } = useContext(MyContext);
   const isBigScreen = useMediaQuery({ query: "(min-width: 1024px)" });
-
 
   const settings = {
     className: "center",
@@ -58,7 +55,7 @@ const Service = ({ props }) => {
           slidesToShow: 1,
           slidesToScroll: 1,
           arrows: true,
-          centerPadding: "15px"
+          centerPadding: "15px",
         },
       },
     ],
@@ -74,11 +71,14 @@ const Service = ({ props }) => {
       <div className={cn("primary-container")}>
         <div className={styles.serviceGrid}>
           <div className={styles.serviceHeading}>
-            <p className={cn(styles.serviceText, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}` }}>
-            </p>
-            <h3 className={cn(styles.serviceTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}` }}>
-
-            </h3>
+            <p
+              className={cn(styles.serviceText, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}` }}
+            ></p>
+            <h3
+              className={cn(styles.serviceTitle, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}` }}
+            ></h3>
             <Link href="/solutions">
               <Button
                 variant={theme ? "lightBlueOutline" : "outline"}
@@ -92,10 +92,13 @@ const Service = ({ props }) => {
           {isBigScreen && (
             <div className={cn(styles.desktopCards)}>
               {props[0]?.Service?.map((data, index) => (
-
                 <ServiceCard
                   key={index}
-                  icon={data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data.attributes.url}`:`${base_Url}/`} 
+                  icon={
+                    data?.Image?.data?.attributes?.url
+                      ? `${base_Url}${data?.Image?.data.attributes.url}`
+                      : `${base_Url}/`
+                  }
                   subTitle={data.Title}
                   subText={data.Description}
                 />
@@ -109,7 +112,11 @@ const Service = ({ props }) => {
             {props[0]?.Service.map((data, index) => (
               <ServiceCard
                 key={index}
-                icon={data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data.attributes.url}`:`${base_Url}/`} 
+                icon={
+                  data?.Image?.data?.attributes?.url
+                    ? `${base_Url}${data?.Image?.data.attributes.url}`
+                    : `${base_Url}/`
+                }
                 subTitle={data.Title}
                 subText={data.Description}
               />

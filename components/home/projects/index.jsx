@@ -11,17 +11,17 @@ import Link from "next/link";
 import { useContext, useRef } from "react";
 import { useMediaQuery } from "react-responsive";
 // Import Swiper React components
+import { base_Uri } from "@/lib/constants";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { opacity, slideUp } from "./animation";
 import styles from "./style.module.scss";
-import { base_Uri } from "@/lib/constants";
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/autoplay";
+import "swiper/css/pagination";
 
 // import required modules
-import { Pagination, Autoplay } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 
 const Card = ({ ...props }) => {
   const isMobileScreen = useMediaQuery({ query: "(max-width: 767px)" });
@@ -165,7 +165,7 @@ const Projects = ({ project, brands }) => {
                   variant={!theme ? "lightBlueOutline" : "outline"}
                   size="md"
                 >
-                  {project[0]?.Btn}  <Icons.ArrowRight size={18} />
+                  {project[0]?.Btn} <Icons.ArrowRight size={18} />
                 </Button>
               </Link>
             </div>
@@ -190,7 +190,7 @@ const Projects = ({ project, brands }) => {
         ) : (
           <div ref={container} className={styles.cards}>
             <Swiper
-              pagination={pagination}
+              pagination={Pagination}
               modules={[Pagination, Autoplay]}
               className="mySwiper"
               autoplay={{
