@@ -8,7 +8,8 @@ import { Input, Textarea, Error } from "@/components/ui/inputCustom";
 import { MyContext } from "@/context/theme";
 import { Form, Formik } from "formik";
 import { useContext } from "react";
-import * as yep from "yup";
+import { serviceValidationSchema } from "@/lib/FormSchema";
+import { triggerMail } from "@/lib/triggerMail";
 
 import CustomDropdown from "@/components/ui/customDropdown";
 
@@ -21,31 +22,12 @@ const ServicesForm = () => {
     lastName: "",
     email: "",
     phone: "",
+    countyCode:"",
     companyName: "",
-    countrySelection: "",
+    serviceRequired: "",
     projectExplanation: "",
   };
-  const validationSchema = yep.object({
-    firstName: yep
-      .string()
-      .required("First Name is required")
-      .matches(/^[A-Za-z]+$/, "Only alphabets are allowed"),
-    lastName: yep
-      .string()
-      .required("Last Name is required")
-      .matches(/^[A-Za-z]+$/, "Only alphabets are allowed"),
-    email: yep
-      .string()
-      .email("Please enter a valid Email")
-      .required("Email is required"),
-    phone: yep.string().required("Phone is required"),
-    companyName: yep.string().required("Company Name is required"),
-    countrySelection: yep.string().required("Country is required"),
-    projectExplanation: yep
-      .string()
-      .required("Project Explanation is required"),
-  });
-
+  
   const dropdownData = [
     { value: "Country", label: "Country" },
     { value: "India", label: "India" },
@@ -55,17 +37,17 @@ const ServicesForm = () => {
 
   return (
     <Formik
-      onSubmit={(values) => {
-        console.log(values, "values");
+      onSubmit={(values,action) => {
+        triggerMail({content:JSON.stringify(values)})
       }}
       initialValues={formInitialSchema}
       initialStatus={{
         success: false,
         successMsg: "",
       }}
-      validationSchema={validationSchema}
+      validationSchema={serviceValidationSchema}
     >
-      {({ errors, handleBlur, handleChange, touched, values }) => (
+      {({ errors, handleBlur, handleChange,setFieldValue, touched, values }) => (
         <Form>
           <div className={styles.contactUsForm}>
             <p className={styles.formText}>
@@ -81,8 +63,8 @@ const ServicesForm = () => {
                     id="firstName"
                     name="firstName"
                     error={Boolean(touched.firstName && errors.firstName)}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                     values={values.firstName}
                     errorStatus={touched.firstName && errors.firstName}
                   />
@@ -98,8 +80,8 @@ const ServicesForm = () => {
                     id="lastName"
                     name="lastName"
                     error={Boolean(touched.lastName && errors.lastName)}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                     values={values.lastName}
                     errorStatus={touched.lastName && errors.lastName}
                   />
@@ -115,8 +97,8 @@ const ServicesForm = () => {
                     id="email"
                     name="email"
                     error={Boolean(touched.email && errors.email)}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                     values={values.email}
                     errorStatus={touched.email && errors.email}
                   />
@@ -128,8 +110,9 @@ const ServicesForm = () => {
                   <CountryDropdown
                     id="phone"
                     name="phone"
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
+                    onChange={handleChange}
+                    setFieldValue={setFieldValue}
+                    onBlur={handleBlur}
                     values={values.phone}
                     errorStatus={touched.phone && errors.phone}
                   />
@@ -145,8 +128,8 @@ const ServicesForm = () => {
                     id="companyName"
                     name="companyName"
                     error={Boolean(touched.companyName && errors.companyName)}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                     values={values.companyName}
                     errorStatus={touched.companyName && errors.companyName}
                   />
@@ -155,20 +138,21 @@ const ServicesForm = () => {
                   )}
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                  <CustomDropdown
+                  <CustomDropdown 
                     label="Service Required*"
-                    name="countrySelection"
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
-                    values={values.countrySelection}
+                    name="serviceRequired"
+                    setFieldValue={setFieldValue}
+                    onBlur={handleBlur}
+                    values={values.serviceRequired}
                     options={dropdownData}
                     errorStatus={
-                      touched.countrySelection && errors.countrySelection
+                      touched.serviceRequired && errors.serviceRequired
                     }
                     className="custom-dropdown"
+                    placeholder="Service Required*"
                   />
-                  {touched.countrySelection && errors.countrySelection && (
-                    <Error>{errors.countrySelection}</Error>
+                  {touched.serviceRequired && errors.serviceRequired && (
+                    <Error>{errors.serviceRequired}</Error>
                   )}
                 </div>
                 <div className={`${styles.inputSpace} col-md-12 col-12`}>
@@ -182,8 +166,8 @@ const ServicesForm = () => {
                     error={Boolean(
                       touched.projectExplanation && errors.projectExplanation
                     )}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                     values={values.projectExplanation}
                     errorStatus={
                       touched.projectExplanation && errors.projectExplanation

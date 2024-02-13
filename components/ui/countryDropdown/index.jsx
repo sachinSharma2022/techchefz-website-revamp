@@ -83,8 +83,10 @@ const CountryDropdown = (props) => {
         )}
       >
         <Select
-          defaultValue={selectedOption}
-          onChange={setSelectedOption}
+          onChange={(option)=> {
+            props.setFieldValue("countyCode", option.value)
+  
+          }}
           options={countries}
           styles={controlStyle || styles}
           isSearchable={false}
@@ -104,13 +106,15 @@ const CountryDropdown = (props) => {
         <Input
           label="Phone Number*"
           placeholder="Phone Number*"
-          type="tel"
-          id="companyName"
-          name="companyName"
+          type="number"
           pattern="/^-?\d+\.?\d*$/"
           maxLength="10"
           inputContainerStyle={styles.inputContainerStyle}
           inputFloatingStyle={styles.inputFloatingStyle}
+          id={props.id}
+          name={props.name}
+          onChange={props.onChange}
+          onBlur={props.onBlur}
         />
       </div>
     </div>

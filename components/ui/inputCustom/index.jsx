@@ -144,7 +144,7 @@ const InputFile = React.forwardRef(
             inputError && styles.inputErrorStyle
           )}
         >
-          <FileUploader handleFile={handleFile} {...props} />
+          <FileUploader handleFile={handleFile} props={props} />
           {fileName ? (
             <p className={styles.filePath}>Uploaded file: {fileName}</p>
           ) : null}

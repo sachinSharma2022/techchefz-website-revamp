@@ -31,6 +31,10 @@
       border: none;
       color: color(text-primary);
     }
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
 
     .inputContainerStyle {
       border: none;
