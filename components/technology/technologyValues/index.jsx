@@ -22,7 +22,7 @@ import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./style.module.scss";
 
-const TechnologyValues = ({ props }) => {
+const TechnologyValues = ({ props, wrapperStyle }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const { theme, setTheme } = useContext(MyContext);
   // const valueData = [
@@ -58,7 +58,7 @@ const TechnologyValues = ({ props }) => {
         theme ? styles.technologyValuesDark : "",
         "technology-value",
         theme ? "technology-value-dark" : "",
-        props?.className
+        wrapperStyle
       )}
     >
       <div className={cn("primary-container")}>

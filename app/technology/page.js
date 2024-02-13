@@ -9,6 +9,7 @@ import Streamline from "@/components/technology/technologyStreamline";
 import TechnologyValues from "@/components/technology/technologyValues";
 import { api_Technology_Page } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
+
 const Technology = async () => {
   const data = await getData(api_Technology_Page);
   return (
@@ -19,7 +20,10 @@ const Technology = async () => {
           <Streamline props={data.Extensive} />
           <Partners props={data.PARTNERS} />
           <Consistent props={data.Consistent} />
-          <TechnologyValues props={data.Technology} />
+          <TechnologyValues
+            wrapperStyle="technology-styles"
+            props={data.Technology}
+          />
           <OurNumbers carrer={data.carrer} experience={data.ourExperience} />
           <Discover props={data.DiscoverTech} />
           <TechnologyCase props={data.TechnologyCase} />
