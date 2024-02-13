@@ -148,10 +148,10 @@ const Projects = ({ project, brands }) => {
         <TextRevel>
           <div className={cn(styles.rowSection)}>
             <div>
-              <p
+              <h6
                 className={cn(styles.projectHighlight, "gradient-text")}
                 dangerouslySetInnerHTML={{ __html: `${project[0]?.Title}` }}
-              ></p>
+              ></h6>
               <h3
                 className={cn(styles.datingText, "gradient-text")}
                 dangerouslySetInnerHTML={{ __html: `${project[0]?.SubTitle}` }}

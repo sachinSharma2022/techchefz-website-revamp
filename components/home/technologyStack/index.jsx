@@ -53,9 +53,9 @@ const TechnologyStack = ({technology}) => {
       <div className={cn("primary-container")}>
         <div className={styles.technologyStackBox}>
           <div className={styles.careerRow}>
-            <p className={cn(styles.ProjectHighlight, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${technology[0]?.Title}`}}>
+            <h6 className={cn(styles.projectHighlight, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${technology[0]?.Title}`}}>
 
-            </p>
+            </h6>
             <h3 className={cn(styles.techHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${technology[0]?.SubTitle}`}}> 
             </h3>
             <p className={styles.techText}>

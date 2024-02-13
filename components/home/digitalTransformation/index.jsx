@@ -85,8 +85,8 @@ const DigitalTransformation = ({digital}) => {
         <div className={styles.serviceRow}>
           <div className="row">
             <div className="col-md-12 col-12">
-              <p className={cn(styles.projectHighlight, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${digital[0]?.Title}`}}>
-                </p>
+              <h6 className={cn(styles.projectHighlight, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${digital[0]?.Title}`}}>
+                </h6>
             </div>
 
             <div className="col-md-8 col-12">

@@ -29,7 +29,6 @@ body {
 
 // main-container
 .main-container {
-  
   @include mobile {
     overflow-x: hidden;
     padding-top: 70px;
@@ -48,6 +47,11 @@ h5 {
 h6 {
   font-family: font(secondary);
   letter-spacing: 1.5px;
+  margin-bottom: 2rem;
+
+  @include mobile-tablet-p {
+    margin-bottom: 1.5rem;
+  }
 }
 
 a {
@@ -116,7 +120,6 @@ input:-webkit-autofill {
 
 // Span Gradient
 .gradient-text {
-
   span {
     @include textGradient;
     font-size: 1em;
@@ -325,7 +328,6 @@ input:-webkit-autofill {
   }
 }
 
-
 .testimonials-style-dark.testimonial-style {
   .swiper-slide-shadow-right {
     background-image: linear-gradient(
@@ -475,7 +477,6 @@ input:-webkit-autofill {
         top: -2.875rem;
       }
     }
-
   }
 }
 
@@ -885,18 +886,14 @@ html.lenis {
   }
 }
 
-
 // Grid Marquee Gallery
 .gridMarqueeGallery {
-
   .slick-track .slick-slide {
-
     @include mobile-tablet-p {
       // width: auto !important;
     }
   }
 }
-
 
 // Video block
 .video-block {

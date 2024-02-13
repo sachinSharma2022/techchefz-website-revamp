@@ -95,17 +95,12 @@
     .careerRow {
       text-align: center;
 
-      .ProjectHighlight {
+      .projectHighlight {
         font-size: text(normal);
         font-weight: 500;
         opacity: 0.8;
         text-transform: uppercase;
-        margin-bottom: text(normal);
         letter-spacing: 0.2rem;
-
-        @include mobile-tablet-p {
-          margin-bottom: 0.75rem;
-        }
       }
       .techHeading {
         font-size: 2.75rem;
