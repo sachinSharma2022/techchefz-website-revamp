@@ -11,6 +11,7 @@ import { gsap } from "gsap";
 import { useEffect } from "react";
 import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
+import { useContext } from "react";
 
 const Consistent = ({props}) => {
   const { theme, setTheme } = useContext(MyContext);
