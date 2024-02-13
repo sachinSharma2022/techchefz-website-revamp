@@ -195,7 +195,7 @@ const OurTeam = ({props}) => {
            
               <div className={styles.modalImg}>
                 <ImageCustom
-                  key={index}
+                 
                   src={data?.Images?.data?.attributes?.url?`${base_Uri}${data?.Images?.data?.attributes?.url}`:`${base_Uri}/`}
                   width={500}
                   height={530}
