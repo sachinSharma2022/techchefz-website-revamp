@@ -10,81 +10,83 @@ import LeftDrawer from "@/components/common/leftDrawer";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import styles from "./style.module.scss";
+import { base_Uri } from "@/lib/constants";
 
-const OurTeam = () => {
+const OurTeam = ({props}) => {
+  console.log("aa", props);
   const { theme } = useContext(MyContext);
   let [isOpen, setIsOpen] = useState(false);
 
-  const teamData = [
-    {
-      mebName: "Mayank Maggon",
-      role: "CEO & CTO",
-      image: "/images/img/team/team1.png",
-    },
-    {
-      mebName: "Akshit Maggon",
-      role: "Director",
-      image: "/images/img/team/team2.png",
-    },
-    {
-      mebName: "Anita Ahlawat",
-      role: "Co-Founder",
-      image: "/images/img/team/team3.png",
-    },
-  ];
+  // const teamData = [
+  //   {
+  //     mebName: "Mayank Maggon",
+  //     role: "CEO & CTO",
+  //     image: "/images/img/team/team1.png",
+  //   },
+  //   {
+  //     mebName: "Akshit Maggon",
+  //     role: "Director",
+  //     image: "/images/img/team/team2.png",
+  //   },
+  //   {
+  //     mebName: "Anita Ahlawat",
+  //     role: "Co-Founder",
+  //     image: "/images/img/team/team3.png",
+  //   },
+  // ];
 
-  const coreTeam = [
-    {
-      name: "Nishant Bhadana",
-      role: "CEO & CTO",
-      image: "/images/img/team/team1.png",
-    },
-    {
-      name: "Pranav Kumar",
-      role: "Director",
-      image: "/images/img/team/team2.png",
-    },
-    {
-      name: "Faraz Ahmed",
-      role: "Co-Founder",
-      image: "/images/img/team/team3.png",
-    },
-    {
-      name: "Sachin Sharma",
-      role: "Director",
-      image: "/images/img/team/team2.png",
-    },
-    {
-      name: "Anita Ahlawat",
-      role: "Co-Founder",
-      image: "/images/img/team/team3.png",
-    },
-    {
-      name: "Nishant Bhadana",
-      role: "CEO & CTO",
-      image: "/images/img/team/team1.png",
-    },
-    {
-      name: "Pranav Kumar",
-      role: "Director",
-      image: "/images/img/team/team2.png",
-    },
-    {
-      name: "Faraz Ahmed",
-      role: "Co-Founder",
-      image: "/images/img/team/team3.png",
-    },
-    {
-      name: "Sachin Sharma",
-      role: "Director",
-      image: "/images/img/team/team2.png",
-    },
-    {
-      name: "Anita Ahlawat",
-      role: "Co-Founder",
-      image: "/images/img/team/team3.png",
-    },
-  ];
+  // const coreTeam = [
+  //   {
+  //     name: "Nishant Bhadana",
+  //     role: "CEO & CTO",
+  //     image: "/images/img/team/team1.png",
+  //   },
+  //   {
+  //     name: "Pranav Kumar",
+  //     role: "Director",
+  //     image: "/images/img/team/team2.png",
+  //   },
+  //   {
+  //     name: "Faraz Ahmed",
+  //     role: "Co-Founder",
+  //     image: "/images/img/team/team3.png",
+  //   },
+  //   {
+  //     name: "Sachin Sharma",
+  //     role: "Director",
+  //     image: "/images/img/team/team2.png",
+  //   },
+  //   {
+  //     name: "Anita Ahlawat",
+  //     role: "Co-Founder",
+  //     image: "/images/img/team/team3.png",
+  //   },
+  //   {
+  //     name: "Nishant Bhadana",
+  //     role: "CEO & CTO",
+  //     image: "/images/img/team/team1.png",
+  //   },
+  //   {
+  //     name: "Pranav Kumar",
+  //     role: "Director",
+  //     image: "/images/img/team/team2.png",
+  //   },
+  //   {
+  //     name: "Faraz Ahmed",
+  //     role: "Co-Founder",
+  //     image: "/images/img/team/team3.png",
+  //   },
+  //   {
+  //     name: "Sachin Sharma",
+  //     role: "Director",
+  //     image: "/images/img/team/team2.png",
+  //   },
+  //   {
+  //     name: "Anita Ahlawat",
+  //     role: "Co-Founder",
+  //     image: "/images/img/team/team3.png",
+  //   },
+  // ];
   return (
     <section className={cn(styles.ourTeam, theme ? styles.ourTeamDark : "")}>
       <div className={cn("primary-container")}>
@@ -92,9 +94,9 @@ const OurTeam = () => {
           <Tab.Group>
             <div className={styles.ourTeamHead}>
               <div className={styles.titleWrapper}>
-                <h6 className={styles.ourTeamTitle}>Our Team</h6>
-                <h3 className={styles.ourTeamHeading}>
-                  Meet the Founder <br /> behind the Vision.
+                <h6 className={cn(styles.ourTeamTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}></h6>
+                <h3 className={cn(styles.ourTeamHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}`}}>
+                 
                 </h3>
               </div>
               <Tab.List className={styles.tabWrapper}>
@@ -103,7 +105,7 @@ const OurTeam = () => {
                     <span
                       className={selected ? styles.btnActive : styles.btnIn}
                     >
-                      Board of Directors
+                      {props[0]?.BoardOfDirector}
                     </span>
                   )}
                 </Tab>
@@ -114,7 +116,7 @@ const OurTeam = () => {
                         selected ? styles.btnActive : styles.btnInactive
                       }
                     >
-                      Executive Team
+                      {props[0]?.TeamMembers}
                     </span>
                   )}
                 </Tab>
@@ -125,7 +127,7 @@ const OurTeam = () => {
               <Tab.Panel>
                 <div className="row">
                   <div className={styles.teamCards}>
-                    {teamData.map((data, index) => (
+                    {props[0]?.ListofDirectors?.map((data, index) => (
                       <div
                         role="button"
                         onClick={() => setIsOpen(true)}
@@ -134,20 +136,20 @@ const OurTeam = () => {
                       >
                         <div className={styles.cardHead}>
                           <div>
-                            <h4>{data.mebName} </h4>
-                            <p>{data.role}</p>
+                            <h4>{data.Name} </h4>
+                            <p>{data.Designation}</p>
                           </div>
                           <Icons.ArrowRight width={26} height={24} />
                         </div>
                         <Link
                           className={styles.linkedInIcon}
-                          href="https://www.linkedin.com/"
+                          href={data.LinkedinLink}
                         >
                           <Icons.Linkedin width={34} height={34} />
                         </Link>
                         <div className={styles.teamImg}>
                           <ImageCustom
-                            src={data.image}
+                            src={data?.Images?.data?.attributes?.url?`${base_Uri}${data?.Images?.data?.attributes?.url}`:`${base_Uri}/`}
                             width={240}
                             height={320}
                             alt="team-member"
@@ -160,17 +162,17 @@ const OurTeam = () => {
               </Tab.Panel>
               <Tab.Panel>
                 <div className={styles.coreTeam}>
-                  {coreTeam.map((item, index) => (
+                  {props[0]?.TeamList?.map((item, index) => (
                     <div key={index} className={styles.cardItem}>
                       <div className={styles.teamImage}>
                         <ImageCustom
-                          src="/images/img/team/profile1.png"
+                          src={item?.Images?.data?.attributes?.url?`${base_Uri}${item?.Images?.data?.attributes?.url}`:`${base_Uri}/`}
                           width={500}
                           height={530}
                           alt="profile"
                         />
                       </div>
-                      <h4 className={styles.nameTitle}>{item.name}</h4>
+                      <h4 className={styles.nameTitle}>{item.Name}</h4>
                     </div>
                   ))}
                 </div>
@@ -178,8 +180,9 @@ const OurTeam = () => {
             </Tab.Panels>
           </Tab.Group>
         </div>
-
+      {props[0]?.ListofDirectors?.map((data, index) => (
         <LeftDrawer
+        
           title="About"
           open={isOpen}
           onClose={() => setIsOpen(false)}
@@ -187,32 +190,29 @@ const OurTeam = () => {
           <div
             className={cn(styles.modalBody, theme ? styles.darkThemeStyle : "")}
           >
+             
             <div className={styles.modalInfo}>
+           
               <div className={styles.modalImg}>
                 <ImageCustom
-                  src="/images/img/team/profile1.png"
+                  key={index}
+                  src={data?.Images?.data?.attributes?.url?`${base_Uri}${data?.Images?.data?.attributes?.url}`:`${base_Uri}/`}
                   width={500}
                   height={530}
                   alt="profile"
                 />
               </div>
-              <h4 className={styles.teamName}>Mayank Moggon</h4>
-              <p className={styles.teamRole}>CEO & CTO</p>
+              <h4 className={styles.teamName}>{data.Name}</h4>
+              <p className={styles.teamRole}>{data.Designation}</p>
             </div>
 
             <div className={styles.infoSec}>
               <p className={styles.modalContent}>
-                Our visionary CEO, brings dynamic leadership to Techchefz. With
-                a profound understanding of industry trends and unwavering
-                commitment, he spearheads our strategic direction, driving
-                innovation and growth. As our dedicated CTO, Mayank Maggon
-                shapes our technological landscape. With a rich background in
-                tech, he leads our teams in creating cutting-edge solutions,
-                ensuring we stay at the forefront of industry advancements.
+                {data.Description}
               </p>
               <p className={styles.teamMail}>
                 <Icons.MailIcon width={24} height={24} className="me-2" />
-                mayankmaggon@techchefz.com
+                {data.email}
               </p>
 
               <div className={styles.socialSection}>
@@ -233,6 +233,7 @@ const OurTeam = () => {
             </div>
           </div>
         </LeftDrawer>
+         ))}
       </div>
     </section>
   );
