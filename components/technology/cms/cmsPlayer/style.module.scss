@@ -1,8 +1,12 @@
 @import "~/styles/partials/config";
 
-.landingPlayerStyle {
+.landingPlayerStyle div {
+  height: 31.25rem;
+  width: 100%;
+
   img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
   }
 }

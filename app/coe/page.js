@@ -15,7 +15,7 @@ const Coe = async() => {
       <CoeBanner props={data.CoeBanner} />
       <OurValues props={data.Ourvaluesection}/>
       <CoeSupport props={data.Support} />
-      <CoeImpact />
+      <CoeImpact props={data.CoeImpact} />
       <CoeService props={data.CoeService} />
       <LetsWork contact={data.ContactUs}/>
     </div>:<></>}

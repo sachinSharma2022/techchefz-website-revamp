@@ -5,10 +5,10 @@
   padding-block: spacing(section-primary-padding);
   padding-left: spacing(p-120);
   overflow: hidden;
+  position: relative;
 
   @include mobile-tablet-p {
-    padding: spacing(section-mob-padding);
-    padding-block: 3.75rem 3.75rem;
+    padding: 0 0 3.75rem;
   }
 
   @include desktop-hd {
@@ -27,6 +27,13 @@
       padding: 0;
       position: absolute;
       right: 0;
+
+      @include mobile-tablet-p {
+        position: relative;
+        margin-top: 3.75rem;
+        padding-left: 2.25rem;
+        padding-right: 0;
+      }
     }
 
     .tczActionSection {
@@ -34,6 +41,11 @@
       flex-direction: column;
       justify-content: space-between;
       min-width: 23.25rem;
+
+      @include mobile-tablet-p {
+        margin: 3.75rem 1.25rem 0;
+        min-width: auto;
+      }
     }
 
     .tczLifeTitle {
@@ -44,7 +56,7 @@
       text-transform: uppercase;
       opacity: 0.8;
       margin-bottom: 1rem;
-      
+
       @include mobile-tablet-p {
         margin-bottom: 0.75rem;
         line-height: text(normal);
@@ -62,7 +74,6 @@
       }
       span {
         font-size: text(larger);
-        background:linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%);
         @include textGradient;
         @include mobile-tablet-p {
           font-size: 2rem;
@@ -83,14 +94,20 @@
     justify-content: center;
 
     div {
-      min-width: 47vw;
+      width: 47vw;
       height: 264px;
-    }
+      position: relative;
+      overflow: hidden;
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      @include mobile-tablet-p {
+        height: 139px;
+      }
+
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
 
     .videoButton {
@@ -101,11 +118,12 @@
       right: 0;
       bottom: 0;
       margin: auto;
+      width: 60px;
+      height: 60px;
       @include transition(0.5s);
     }
 
     &:hover {
-
       .videoButton {
         scale: 1.15;
       }
@@ -116,12 +134,15 @@
     margin-top: 5rem;
     max-width: 85vw;
 
-    @include mobile-tablet-p {
-      margin-top: 3.75rem;
-    }
     @include desktop-hd {
       max-width: 1440px;
       margin-inline: auto;
+    }
+
+    @include mobile-tablet-p {
+      margin-top: 3.75rem;
+      min-width: 100%;
+      padding: 0 1.25rem;
     }
 
     p {
@@ -168,7 +189,7 @@
     border-radius: 0.5rem;
     width: 3rem;
     height: 3rem;
-    border: 1px solid rgba(color(text-primary), 0.20);
+    border: 0.14rem solid rgba(color(text-primary), 0.2);
     color: color(primary-blue);
     background: none;
     display: flex;
@@ -186,10 +207,16 @@
     color: color(primary-white);
 
     .arrowDisabled {
-      border: 1px solid rgba(color(primary-white), 0.2);
+      border: 0.14rem solid rgba(color(primary-white), 0.2);
 
       svg > path {
         stroke: color(primary-white);
+      }
+    }
+
+    .sliderArrow {
+      .button {
+        background-color: color(info-blue);
       }
     }
   }

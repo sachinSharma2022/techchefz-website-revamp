@@ -31,7 +31,7 @@ const Footer = () => {
                 insights by subscribing to our newsletter.
               </p>
 
-              <div className={styles.partenerCard}>
+              <div className={styles.partnerCard}>
                 <div className={styles.partnerCols}>
                   <Link href="/">
                     Become our Partner <Icons.ArrowRight size={16} />
@@ -66,39 +66,41 @@ const Footer = () => {
           <div className="col-md-12 col-lg-6">
             <div className={styles.footSocial}>
               <h4 className="mb-3">Follow Us on Social Media</h4>
-              <Link href="/">
-                <Icons.facebook size={16} /> <span>Linkedin</span>
-              </Link>
-              <Link href="/">
-                <Icons.linkedin size={16} /> <span>Facebook</span>
-              </Link>
-              <Link href="/">
-                <Icons.twitter size={16} /> <span>Twitter</span>
-              </Link>
+              <div className={styles.footSocialLinks}>
+                <Link href="/">
+                  <Icons.facebook size={16} /> <span>Linkedin</span>
+                </Link>
+                <Link href="/">
+                  <Icons.linkedin size={16} /> <span>Facebook</span>
+                </Link>
+                <Link href="/">
+                  <Icons.twitter size={16} /> <span>Twitter</span>
+                </Link>
+              </div>
             </div>
 
             <div className={styles.footerBox}>
               <div className={styles.footerCols}>
                 <ul>
-                  <h5>
+                  <li>
                     <Link href="/about">About us</Link>
-                  </h5>
-                  <h5>
+                  </li>
+                  <li>
                     <Link href="/solutions">Solutions</Link>
-                  </h5>
-                  <h5>
+                  </li>
+                  <li>
                     <Link href="/portfolio">Portfolio</Link>
-                  </h5>
-                  <h5>
+                  </li>
+                  <li>
                     <Link href="/">Contact Us</Link>
-                  </h5>
+                  </li>
                 </ul>
               </div>
               <div className={styles.footerCols}>
                 <h5>
                   <Link href="/technology">Technology</Link>
                 </h5>
-                <ul>
+                <ul className={styles.fadeLink}>
                   <li>
                     <Link href="/technology/cms">CMS</Link>
                   </li>
@@ -120,10 +122,8 @@ const Footer = () => {
                 </ul>
               </div>
               <div className={styles.footerCols}>
-                <h5>
-                  <Link href="/">More</Link>
-                </h5>
-                <ul>
+                <h5>More</h5>
+                <ul className={styles.fadeLink}>
                   <li>
                     <Link href="/careers">Careers</Link>
                   </li>
@@ -145,9 +145,6 @@ const Footer = () => {
         <div className={styles.footCopyright}>
           <p>© 2023 TCZ Digital Pvt. Ltd. All rights reserved.</p>
           <ul>
-            <li>
-              <Link href="/">Terms of Use</Link>
-            </li>
             <li>
               <Link href="/privacy-policy">Privacy Policy</Link>
             </li>

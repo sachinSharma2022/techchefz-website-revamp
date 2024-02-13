@@ -8,7 +8,8 @@ import { Icons } from "@/components/icons";
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 
-const BrowserAccelerator = () => {
+const BrowserAccelerator = ({props}) => {
+  console.log("aa",props);
   const { theme, setTheme } = useContext(MyContext);
   const browserCardData = [
     {
@@ -144,8 +145,8 @@ const BrowserAccelerator = () => {
           </div>
         </div>
         <hr className={styles.breakLine} />
-        <h5 className={styles.browserAcceleratorHeading}>
-          Browser Accelerator
+        <h5 className={styles.browserAcceleratorHeading} dangerouslySetInnerHTML={{ __html: `${props[0]?.Heading}`}}>
+         
         </h5>
         <div className={styles.browserAcceleratorCards}>
           {browserCardData.map((item, index) => (

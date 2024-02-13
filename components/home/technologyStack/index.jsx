@@ -44,16 +44,20 @@ const TechnologyStack = ({technology}) => {
   }, []);
   return (
     <section
-      className={`${styles.technologyStyle} ${
+      className={cn(
+        styles.technologyStyle,
         theme ? styles.technologyStyleDark : ""
-      }`}
+      )}
       id="tech-Stack"
     >
       <div className={cn("primary-container")}>
         <div className={styles.technologyStackBox}>
           <div className={styles.careerRow}>
-            <p className={styles.ProjectHighlight}>{technology[0]?.Title}</p>
-            <h3 className={styles.techHeading}> {technology[0]?.SubTitle}</h3>
+            <p className={cn(styles.ProjectHighlight, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${technology[0]?.Title}`}}>
+
+            </p>
+            <h3 className={cn(styles.techHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${technology[0]?.SubTitle}`}}> 
+            </h3>
             <p className={styles.techText}>
             {technology[0]?.Description}
             </p>

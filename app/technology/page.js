@@ -10,21 +10,21 @@ import TechnologyValues from '@/components/technology/technologyValues'
 import React from 'react'
 import { getData } from "@/lib/fetchData";
 import { api_Technology_Page } from "@/lib/constants";
-
+import { ImageCustom } from "@/components/ui/imageCustom";
 const Technology = async() => {
   const data = await getData(api_Technology_Page)
   return (
     <>
      {data?<div>
           <TechnologyBanner props={data.BannerComponent}/>
-           <Streamline />
-           <Partners/>
-           <Consistent/>
-          <TechnologyValues/>
-          {/* <OurNumbers  carrer={data.Career} experience={data.OurExperience}/> */}
-          <Discover/>
-          <TechnologyCase />
-           <LetsWork  contact={data.ContactUs}/>
+           <Streamline props={data.Extensive} />
+           <Partners props={data.PARTNERS}/>
+           <Consistent props={data.Consistent}/>
+          <TechnologyValues props={data.Technology}/>
+          <OurNumbers  carrer={data.carrer} experience={data.ourExperience}/>
+          <Discover props={data.DiscoverTech}/>
+          <TechnologyCase  props={data.TechnologyCase}/>
+           <LetsWork  contact={data.LetsWork}/>
            </div>:<>{/* {"API fail fallback"} */}</>}
     </>
    

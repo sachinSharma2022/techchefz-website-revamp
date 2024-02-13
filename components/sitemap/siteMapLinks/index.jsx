@@ -5,7 +5,8 @@ import { useContext } from "react";
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 
-function SiteMapLinks() {
+function SiteMapLinks({props}) {
+  console.log("sm",props);
   const { theme } = useContext(MyContext);
   return (
     <section
@@ -15,29 +16,29 @@ function SiteMapLinks() {
     >
       <div className={cn("primary-container", styles.flexContainer)}>
         <div className={styles.sitemapPage}>
-          <h6>About us</h6>
-          <h6>Contact us</h6>
-          <h6>Homepage</h6>
-          <h6>Portfolio</h6>
-          <h6>Privacy Policy</h6>
-          <h6>Solutions</h6>
-          <h6>Terms of Use</h6>
+          <h6 dangerouslySetInnerHTML={{ __html: `${props?.tags1[0].Title}`}}></h6>
+          <h6 dangerouslySetInnerHTML={{ __html: `${props?.tags1[1].Title}`}}></h6>
+          <h6 dangerouslySetInnerHTML={{ __html: `${props?.tags1[2].Title}`}}></h6>
+          <h6 dangerouslySetInnerHTML={{ __html: `${props?.tags1[3].Title}`}}></h6>
+          <h6 dangerouslySetInnerHTML={{ __html: `${props?.tags1[4].Title}`}}></h6>
+          <h6 dangerouslySetInnerHTML={{ __html: `${props?.tags1[5].Title}`}}></h6>
+          <h6 dangerouslySetInnerHTML={{ __html: `${props?.tags1[6].Title}`}}></h6>
         </div>
         <div className={styles.sitemapContent}>
-          <h6>Technology</h6>
-          <p>Analysis Automation</p>
-          <p>Cloud & DevSecOps</p>
-          <p>CMS</p>
-          <p>Commerce</p>
-          <p>Data Intelligence</p>
-          <p>Microservices</p>
+          <h6 dangerouslySetInnerHTML={{ __html: `${props?.Title2}`}}></h6>
+          <p dangerouslySetInnerHTML={{ __html: `${props?.tags2[0].Title}`}}></p>
+          <p dangerouslySetInnerHTML={{ __html: `${props?.tags2[1].Title}`}}></p>
+          <p dangerouslySetInnerHTML={{ __html: `${props?.tags2[2].Title}`}}></p>
+          <p dangerouslySetInnerHTML={{ __html: `${props?.tags2[3].Title}`}}></p>
+          <p dangerouslySetInnerHTML={{ __html: `${props?.tags2[4].Title}`}}></p>
+          <p dangerouslySetInnerHTML={{ __html: `${props?.tags2[5].Title}`}}></p>
         </div>
         <div className={styles.sitemapContent}>
-          <h6>More</h6>
-          <p>Accelerators</p>
-          <p>Careers</p>
-          <p>Center of Excellence</p>
-          <p>Insights</p>
+          <h6 dangerouslySetInnerHTML={{ __html: `${props?.Title3}`}}></h6>
+          <p dangerouslySetInnerHTML={{ __html: `${props?.tags3[0].Title}`}}></p>
+          <p dangerouslySetInnerHTML={{ __html: `${props?.tags3[1].Title}`}}></p>
+          <p dangerouslySetInnerHTML={{ __html: `${props?.tags3[2].Title}`}}></p>
+          <p dangerouslySetInnerHTML={{ __html: `${props?.tags3[3].Title}`}}></p>
         </div>
       </div>
     </section>

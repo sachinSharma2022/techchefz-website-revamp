@@ -12,11 +12,12 @@ import { base_Uri } from "@/lib/constants";
 const OurHistory = ({props, OurHistory}) => {
   console.log("manoj",props)
   const { theme } = useContext(MyContext);
-
+  const [oldSlide, setOldSlide] = useState(0);
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [activeSlide2, setActiveSlide2] = useState(0);
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
   const [nav3, setNav3] = useState(null);
-
   const slider1 = useRef(null);
   const slider2 = useRef(null);
   const slider3 = useRef(null);
@@ -28,6 +29,11 @@ const OurHistory = ({props, OurHistory}) => {
   }, []);
 
   const setting1 = {
+    beforeChange: (current, next) => {
+      setOldSlide(current);
+      setActiveSlide(next);
+    },
+    afterChange: (current) => setActiveSlide2(current),
     dots: false,
     fade: true,
     infinite: false,
@@ -118,10 +124,9 @@ const OurHistory = ({props, OurHistory}) => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.ourHistoryTop}>
-          <h6 className={styles.ourHistoryTitle} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
+          <h6 className={cn(styles.ourHistoryTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
           </h6>
-          <h3 className={styles.ourHistoryHeading}>
-          {props[0]?.SubTitle}
+          <h3 className={cn(styles.ourHistoryHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.SubTitle}`}}>
           </h3>
         </div>
 
@@ -140,10 +145,10 @@ const OurHistory = ({props, OurHistory}) => {
               </Slider>
               <div className={styles.sliderArrow}>
                 <button
-                  className={styles.button}
-                  // className={
-                  //   activeSlide === 0 ? styles.arrowDisabled : styles.button
-                  // }
+                  className={
+                    (cn(styles.button),
+                    activeSlide === 0 ? styles.arrowDisabled : styles.button)
+                  }
                   onClick={() => slider2?.current?.slickPrev()}
                 >
                   <Icons.ArrowLeft />

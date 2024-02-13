@@ -6,8 +6,10 @@ import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
+import { base_Uri } from "@/lib/constants";
 
-const DistinctLocations = () => {
+const DistinctLocations = ({props}) => {
+  console.log("us",props);
   const { theme, setTheme } = useContext(MyContext);
   const differenceCard = [
     {
@@ -49,44 +51,41 @@ const DistinctLocations = () => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.careerRow}>
-          <p className={styles.projectHighlight}>Presence</p>
-          <h2 className={styles.datingText}>Our Distinct Locations</h2>
-          <p className={styles.descriptionText}>
-            Our 50+ team members, from account executives, strategists, project
-            managers/delivery leads, product designers, and developers, are
-            ready to find the best solution to any challenges you face.
-            Let&apos;s start collaborating!
+          <p className={styles.projectHighlight} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}></p>
+          <h2 className={styles.datingText} dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}`}}></h2>
+          <p className={styles.descriptionText} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
+           
           </p>
         </div>
 
         <div className={styles.gridNumberMain}>
           <div className={`${styles.locationGridCards} `}>
-            {differenceCard.map((data, index) => (
+            {props?.slider?.map((data, index) => (
               <div key={index} className={styles.cardStyle}>
                 <div className={styles.locationBox}>
                   <div className={styles.backgroundImg}>
                     <ImageCustom
-                      src={data.brandImg}
+                      src={data?.brandImg?.data?.attributes?.url?`${base_Uri}${data?.brandImg?.data?.attributes?.url}`:`${base_Uri}/`}
                       width={330}
                       height={162}
                       alt="image"
                     />
                   </div>
                   <div className={styles.countryFlag}>
-                    <h2 className={styles.sbTitle}>{data.sbTitle}</h2>
+                    <h2 className={styles.sbTitle}>{data.Title}</h2>
                     <div className={styles.flag}>
                       <ImageCustom
-                        src={data.countryFlagImg}
+                        src={data?.countryFlagImg?.data?.attributes?.url?`${base_Uri}${data?.countryFlagImg?.data?.attributes?.url}`:`${base_Uri}/`}
                         width={100}
                         height={24}
                         alt="flag"
                       />
                     </div>
                   </div>
-                  <p className={styles.sbText}>{data.sbText}</p>
+                  <p className={styles.sbText}>{data.SubTitle}</p>
                   <div className={styles.addressArea}>
                     <Icons.ContactLocation width={40} height={40} />
-                    <p className={styles.addressText}>{data.address}</p>
+                    <p className={styles.addressText}>{data.location}</p>
                   </div>
 
                   <div className={styles.addressArea}>

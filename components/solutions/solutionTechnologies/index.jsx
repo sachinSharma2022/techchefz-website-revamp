@@ -8,8 +8,10 @@ import { useContext } from "react";
 import Slider from "react-slick";
 import { base_Uri } from "@/lib/constants";
 
+import MobileSlider from "@/components/common/mobileSlider";
 import ServiceInfoCard from "@/components/common/serviceInfoCard";
 import styles from "./style.module.scss";
+import { base_Url } from "@/lib/constants";
 
 const SolutionTechnologies = ({ props }) => {
   console.log("neee", props);
@@ -77,19 +79,17 @@ const SolutionTechnologies = ({ props }) => {
   };
   return (
     <section
-      className={`${styles.solutionTechnologiesStyle} ${theme ? styles.solutionTechnologiesDark : ""
-        }`}
-    >
+      className={`${styles.solutionTechnologiesStyle} ${theme ? styles.solutionTechnologiesDark : "" }`} >
       <div className={cn("primary-container")}>
         <div className={styles.careerRow}>
           <div className="row">
             <div className="col-md-12 col-12">
-              <p className={styles.ProjectHighlight}>{props?.Title}</p>
+              <p className={cn(styles.ProjectHighlight,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
+              </p>
             </div>
 
             <div className="col-md-8 col-12">
-              <h2 className={styles.datingText}>
-                {props?.SubTitle}
+              <h2 className={cn(styles.datingText, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}`}}>
               </h2>
             </div>
             <div className={`${styles.careerBtn} col-md-4 col-12`}>
@@ -106,15 +106,13 @@ const SolutionTechnologies = ({ props }) => {
               <p className={styles.ourNumbersText}>
                 {props?.Description}
               </p>
-              <div
-                className={`${styles.desktopCards} ${styles.ourNumberOption} `}
-              >
+              <div className={`${styles.desktopCards} ${styles.ourNumberOption} `} >
                 {props?.TechnologyInner?.map((data, index) => (
                   <ServiceInfoCard
                     key={index}
                     sbTitle={data.Title}
-                    icon={`${base_Uri}${data?.Image?.data.attributes.url}`}
-
+                    icon={data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data?.attributes?.url}`:`${base_Url}/`}
+                    
                     sbText={data.Description}
                   />
                 ))}
@@ -129,23 +127,26 @@ const SolutionTechnologies = ({ props }) => {
               />
             </div>
           </div>
+        </div>
+      </div>
 
           {/* <div className={`${styles.ourNumberOption} service-mobile-slider`}>
             <Slider {...settings}>
-              {serviceCard.map((data, index) => (
+              {props?.TechnologyInner?.map((data, index) => (
                 <ServiceInfoCard
                   key={index}
-                  sbTitle={data.sbTitle}
-                  icon={data.icon}
-                  sbText={data.sbText}
+                  sbTitle={data.Title}
+                  icon= {data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data?.attributes?.url}`:`${base_Url}/`}
+                 
+                  sbText={data.Description}
                 />
               ))}
             </Slider>
           </div> */}
-        </div>
-      </div>
+       
+      
     </section>
-  );
+  )
 };
 
 export default SolutionTechnologies;

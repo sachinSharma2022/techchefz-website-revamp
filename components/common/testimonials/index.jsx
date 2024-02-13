@@ -82,9 +82,9 @@ const Testimonials = ({props}) => {
           <div className="col-12 col-sm-3">
             <div className={styles.infoSection}>
               <div className={styles.testimonialsLeft}>
-                <p className={styles.projectHighlight} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
+                <p className={cn(styles.projectHighlight, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
                   </p>
-                <div className={styles.testimonialsHeading}>
+                <div className={cn(styles.testimonialsHeading, "gradient-text")}>
                   <h3 dangerouslySetInnerHTML={{ __html: `${props[0]?.SubTitle}`}}>
                   </h3>
                 </div>
@@ -123,7 +123,7 @@ const Testimonials = ({props}) => {
                         <div className={styles.customerProfile}>
                           <div className={styles.customerImg}>
                             <ImageCustom
-                              src={data.img}
+                              src={data?.ProfileImage?.data?.attributes?.url?`${base_Uri}${data?.ProfileImage?.data?.attributes?.url}`:`${base_Uri}/`}
                               width={100}
                               height={100}
                               alt="profileImg"
@@ -146,13 +146,13 @@ const Testimonials = ({props}) => {
               <div className={styles.sliderController}>
                 <button
                   ref={navigationPrevRef}
-                  className="btn btn-primary btn-back"
+                  className="btn btn-arrow btn-back"
                 >
                   <Icons.ArrowLeft size={20} className="asset-white" />
                 </button>
                 <button
                   ref={navigationNextRef}
-                  className="btn btn-primary btn-move"
+                  className="btn btn-arrow btn-move"
                 >
                   <Icons.ArrowRight size={20} />
                 </button>
@@ -205,7 +205,7 @@ const Testimonials = ({props}) => {
                       <div className={styles.customerProfile}>
                         <div className={styles.customerImg}>
                           <ImageCustom
-                            src={base_Uri+data.ProfileImage?.data?.attributes?.url}
+                            src={data?.ProfileImage?.data?.attributes?.url?`${base_Uri}${data?.ProfileImage?.data?.attributes?.url}`:`${base_Uri}/`}
                             width={100}
                             height={100}
                             alt="profileImg"

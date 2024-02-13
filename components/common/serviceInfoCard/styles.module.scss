@@ -7,7 +7,6 @@
   padding: text(xxxl);
   border-radius: text(xl);
   border: 0.125rem solid rgba(color(text-primary), 0.12);
-  cursor: pointer;
   @include transition(0.4s);
 
   &:hover {
@@ -32,11 +31,6 @@
       margin-bottom: 0;
       min-height: 2.75rem;
       color: color(heading-liner);
-      background: linear-gradient(
-        118deg,
-        color(primary-blue) 11.5%,
-        color(heading-liner) 55.42%
-      );
       @include textGradient;
     }
   }

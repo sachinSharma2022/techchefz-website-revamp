@@ -21,10 +21,15 @@ body {
   .dark {
     background-color: color(dark-gray);
   }
+
+  @include desktop-4k {
+    zoom: 1.15;
+  }
 }
 
 // main-container
 .main-container {
+  
   @include mobile {
     overflow-x: hidden;
     padding-top: 70px;
@@ -42,6 +47,7 @@ h5 {
 
 h6 {
   font-family: font(secondary);
+  letter-spacing: 1.5px;
 }
 
 a {
@@ -106,6 +112,15 @@ input:-webkit-autofill:active {
 /*Change text in autofill textbox*/
 input:-webkit-autofill {
   -webkit-text-fill-color: color(primary-white) !important;
+}
+
+// Span Gradient
+.gradient-text {
+
+  span {
+    @include textGradient;
+    font-size: 1em;
+  }
 }
 
 .digital-transformation {
@@ -197,7 +212,7 @@ input:-webkit-autofill {
         button {
           width: 0.75rem;
           height: 0.75rem;
-          background: #dedede;
+          background: rgba(#adadad, 0.4);
           border-radius: 3.125rem;
           font-size: 0px;
           @include transition(0.5s);
@@ -297,7 +312,19 @@ input:-webkit-autofill {
       filter: invert(1);
     }
   }
+
+  .btn-arrow {
+    background-color: color(primary-blue);
+    border-color: color(primary-blue);
+
+    &:hover,
+    &:focus {
+      background-color: color(primary-blue);
+      border-color: color(primary-blue);
+    }
+  }
 }
+
 
 .testimonials-style-dark.testimonial-style {
   .swiper-slide-shadow-right {
@@ -323,8 +350,20 @@ input:-webkit-autofill {
     }
   }
 
+  .btn-arrow {
+    background-color: color(info-blue);
+    border-color: color(info-blue);
+
+    &:hover,
+    &:focus {
+      background-color: color(info-blue);
+      border-color: color(info-blue);
+    }
+  }
+
   .btn.swiper-button-disabled {
     border-color: rgba(color(primary-white), 0.2);
+    background-color: transparent;
 
     svg {
       filter: none;
@@ -392,7 +431,7 @@ input:-webkit-autofill {
       content: "";
       width: 100vw;
       height: 0.063rem;
-      border: 1px dashed color(bg-gray);
+      border: 0.14rem dashed color(bg-gray);
       position: absolute;
       left: 50%;
       transform: translate(-50%);
@@ -436,6 +475,7 @@ input:-webkit-autofill {
         top: -2.875rem;
       }
     }
+
   }
 }
 
@@ -498,9 +538,8 @@ input:-webkit-autofill {
     }
     img {
       min-height: 50rem;
-
       @include mobile-tablet-p {
-        min-height: 14.875rem;
+        min-height: auto;
       }
     }
   }
@@ -509,31 +548,70 @@ input:-webkit-autofill {
   .grid-5 {
     .imgBox div {
       min-height: 43.25rem;
+
+      @include mobile-tablet-p {
+        min-height: auto;
+      }
+    }
+  }
+
+  .card {
+    .imgBox div {
+      @include mobile-tablet-p {
+        min-height: 10.875rem;
+        max-height: 10.875rem;
+      }
     }
   }
 }
 
 .related-case-slider {
-  .slick-arrow {
-    background-color: color(primary-blue);
-    padding: 0;
-    border-radius: 0.5rem;
-    width: 3rem;
-    height: 3rem;
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
+  .slick-dots {
+    justify-content: space-between;
+    bottom: -50px;
+    position: relative;
 
-    &:hover {
-      background-color: color(primary-blue);
-    }
-
-    svg {
-      width: 1.2rem;
+    @include mobile-tablet-p {
+      display: flex !important;
     }
 
     &::before {
-      display: none;
+      height: 1px;
+      content: "";
+      width: 100%;
+      top: 1.5px;
+      position: absolute;
+      background-color: rgba(color(primary-white), 0.2);
+    }
+
+    li {
+      width: 100%;
+      margin: 0;
+
+      button {
+        padding: 0;
+        width: 100%;
+
+        &::before {
+          display: none;
+        }
+      }
+
+      &.slick-active {
+        button {
+          background: linear-gradient(
+            124.4deg,
+            color(primary-blue) 0%,
+            color(heading-liner) 89.84%
+          );
+          height: 4px;
+          border-radius: 0.5rem;
+        }
+      }
+    }
+
+    @include desktop {
+      display: none !important;
     }
   }
 
@@ -542,35 +620,6 @@ input:-webkit-autofill {
       max-width: 1440px;
       display: flex;
       white-space: nowrap;
-    }
-  }
-
-  .slick-prev {
-    left: auto;
-    right: 210px;
-    top: -14vh;
-    svg {
-      transform: rotate(-180deg);
-    }
-  }
-
-  .slick-next {
-    right: 120px;
-    left: auto;
-    top: -14vh;
-  }
-
-  .slick-disabled {
-    background-color: color(primary-white);
-    border: 0.14rem solid rgba(color(text-primary), 0.5);
-
-    &:hover {
-      background-color: color(primary-white);
-    }
-    svg {
-      path {
-        stroke: rgba(color(text-primary), 0.5);
-      }
     }
   }
 }
@@ -585,6 +634,10 @@ input:-webkit-autofill {
 
   .slide-thumb-grid {
     cursor: pointer;
+
+    @include mobile-tablet-p {
+      margin-top: 2rem;
+    }
 
     .progress-bar-animation {
       position: relative;
@@ -622,6 +675,18 @@ input:-webkit-autofill {
         width: 100%;
       }
     }
+
+    .swiper-wrapper {
+      @include mobile-tablet-p {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+
+        .swiper-slide {
+          width: 100% !important;
+        }
+      }
+    }
   }
 }
 
@@ -634,12 +699,6 @@ input:-webkit-autofill {
     display: flex;
   }
 
-  .slick-slider .slick-track,
-  .slick-slider .slick-list {
-    @include mobile-tablet-p {
-      margin-top: 3.75rem;
-    }
-  }
   /* the slides */
   .slick-slide {
     margin: 0 15px;
@@ -664,10 +723,6 @@ input:-webkit-autofill {
       }
     }
   }
-}
-
-.job-detail-slider {
-  margin: 0 -20px 0 0;
 }
 
 .insight-explore-slider {
@@ -749,7 +804,7 @@ input:-webkit-autofill {
 .dark-theme-style {
   &.custom-dropdown {
     .react-select__control {
-      background-color: transparent;
+      background-color: color(dark-gray);
     }
   }
 }
@@ -782,6 +837,13 @@ input:-webkit-autofill {
   }
 }
 
+.dark .project-slider {
+  .swiper-pagination {
+    .swiper-pagination-bullet {
+      background-color: rgba(color(text-primary), 0.4);
+    }
+  }
+}
 
 // Smooth Scroll Style here
 html.lenis {
@@ -800,3 +862,44 @@ html.lenis {
   pointer-events: none;
 }
 // Smooth Scroll Style End here
+
+// logo-animation
+.logo-animation {
+  .slick-list {
+    margin: 0 -50px;
+  }
+  .slick-slide > div {
+    padding: 0 50px;
+  }
+}
+
+// Error Page
+.error-page {
+  header,
+  footer {
+    display: none;
+  }
+
+  .main-container {
+    padding: 0;
+  }
+}
+
+
+// Grid Marquee Gallery
+.gridMarqueeGallery {
+
+  .slick-track .slick-slide {
+
+    @include mobile-tablet-p {
+      // width: auto !important;
+    }
+  }
+}
+
+
+// Video block
+.video-block {
+  width: 100%;
+  height: 100%;
+}

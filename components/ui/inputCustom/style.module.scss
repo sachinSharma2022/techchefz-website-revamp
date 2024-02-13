@@ -4,6 +4,10 @@
   width: 100%;
   position: relative;
 
+  * {
+    font-family: font(primary);
+  }
+
   .inputFloating {
     position: relative;
     display: flex;
@@ -23,7 +27,6 @@
     &.inputErrorStyle {
       border-color: color(error);
     }
-  
 
     .iconStyle {
       position: absolute;
@@ -37,14 +40,39 @@
       border: none;
       box-shadow: none;
       background: none;
+      padding: 1rem 1.2rem;
     }
 
     textarea {
       border: none;
       box-shadow: none;
       background: none;
-      height: auto;
       resize: none;
+      height: 100px;
+      padding: 0px 1.09rem !important;
+      margin-top: 30px;
+    }
+  }
+
+  .inputFile {
+    position: relative;
+    display: flex;
+    border: 0.14rem solid rgba(color(text-primary), 0.12);
+    border-radius: 0.75rem;
+    font-size: text(normal);
+    font-weight: 400;
+    overflow: hidden;
+    background-color: color(primary-white);
+    @include transition(0.5s);
+    height: 60px;
+
+    &:hover,
+    &:focus {
+      border-color: color(heading-liner);
+    }
+
+    &.inputErrorStyle {
+      border-color: color(error);
     }
   }
 
@@ -53,13 +81,63 @@
     color: rgba(color(text-primary), 0.5);
     line-height: text(xl);
     font-weight: 400;
-    font-family: font(primary);
     width: 100%;
-  } 
+    padding: 1rem;
+    height: auto;
+  }
+
+  .buttonUpload {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: 0.14rem solid currentColor;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    max-width: 40px;
+    border: none;
+  }
+
+  .buttonUpload:focus {
+    outline-offset: 4px; /* make Chrome show a focus ring around the button */
+  }
+
+  .filePath {
+    position: relative;
+    top: 28px;
+    left: 18px;
+    font-size: 14px;
+    width: 80%;
+    overflow: hidden;
+    @include truncate(1);
+    height: 20px;
+  }
+
+  .labelCustomFloat {
+    transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+  }
 
   // Dark Mode
   &.inputContainerStyleDark {
     .inputFloating {
+      border: 0.14rem solid rgba(color(primary-white), 0.12);
+      background-color: color(dark-gray);
+
+      &.inputErrorStyle {
+        border-color: color(error);
+      }
+
+      &:hover,
+      &:focus {
+        border-color: color(heading-liner);
+      }
+    }
+
+    .inputFile {
       border: 0.14rem solid rgba(color(primary-white), 0.12);
       background-color: color(text-primary);
 
@@ -73,7 +151,7 @@
       }
     }
 
-    input {
+    input, textarea {
       color: color(primary-white);
     }
 
@@ -90,6 +168,6 @@
 .error {
   color: color(error);
   position: absolute;
-  font-size: .8rem;
+  font-size: 0.8rem;
   bottom: -2.625rem;
-} 
+}

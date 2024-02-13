@@ -9,6 +9,7 @@ import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
 
 const Innovation = ({props}) => {
+  
   const { theme, setTheme } = useContext(MyContext);
 
   // const innovationCardMap = [

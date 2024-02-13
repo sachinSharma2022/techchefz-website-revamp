@@ -85,15 +85,12 @@ const DigitalTransformation = ({digital}) => {
         <div className={styles.serviceRow}>
           <div className="row">
             <div className="col-md-12 col-12">
-              <p className={styles.projectHighlight}>{digital[0]?.Title}</p>
+              <p className={cn(styles.projectHighlight, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${digital[0]?.Title}`}}>
+                </p>
             </div>
 
             <div className="col-md-8 col-12">
-              <h3 className={styles.datingText}>
-              {digital[0]?.SubTitle}
-                <span className={styles.digitalTechText}>
-                {digital[0]?.Description}
-                </span>
+              <h3 className={cn(styles.datingText, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${digital[0]?.SubTitle}`}}>
               </h3>
             </div>
             <div className={`${styles.servicesBtn} col-md-4 col-12`}>
@@ -122,9 +119,9 @@ const DigitalTransformation = ({digital}) => {
                   </div>
 
                   <div className={styles.experienceCardBox}>
-                    <h4 className={styles.CustomerHeading} dangerouslySetInnerHTML={{ __html: `${data?.Title}`}}>
+                    <h4 className={cn(styles.CustomerHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${data?.Title}`}}>
                     </h4>
-                    <p className={styles.digitalText} dangerouslySetInnerHTML={{ __html: `${data?.Description}`}}> 
+                    <p className={cn(styles.digitalText, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${data?.Description}`}}> 
                     </p>
 
                     {/* <ul className={styles.customerList}>

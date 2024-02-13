@@ -9,7 +9,7 @@ import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
 
 const AboutBanner = ({props, OurHistory}) => {
-  
+  console.log("hh",props);
   const { theme, setTheme } = useContext(MyContext);
 
   return (
@@ -17,8 +17,7 @@ const AboutBanner = ({props, OurHistory}) => {
       className={`${styles.aboutBanner} ${theme ? styles.aboutBannerDark : ""}`}
     >
       <div className={cn("primary-container")}>
-        <h1 className={styles.bannerTitle} dangerouslySetInnerHTML={{ __html: `${props[0]?.title}`}}>
-        
+        <h1 className={cn(styles.bannerTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.title}`}}> 
         </h1>
       </div>
 

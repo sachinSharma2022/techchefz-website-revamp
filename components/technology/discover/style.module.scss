@@ -52,7 +52,7 @@
   .subHeading {
     font-size: text(xl);
     font-weight: 500;
-    line-height: 2.5rem;
+    line-height: 2rem;
     margin: 0;
   }
 
@@ -178,7 +178,6 @@
       }
 
       .subHeading {
-        background: linear-gradient(118deg, #1e8af2 11.5%, #05bed7 55.42%);
         @include textGradient;
       }
     }

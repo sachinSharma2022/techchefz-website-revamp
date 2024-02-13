@@ -25,19 +25,52 @@ const NavigationMobile = () => {
       const scrolled = window.scrollY > 0;
       setIsScrolled(scrolled);
     };
-
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
+  function EstimateSection() {
+    return (
+      <div className={styles.estimateSection}>
+        <p className={styles.description}>
+          Provide us with details about your vision, and let our experts tailor
+          a comprehensive plan, outlining timelines, scopes, and budgets
+          uniquely crafted to bring your ideas to life.
+        </p>
+        <Button
+          variant={theme ? "blueBtnDark" : "blueBtn"}
+          className={styles.headerBtn}
+          size="sm"
+        >
+          Estimate Project
+        </Button>
+      </div>
+    );
+  }
+
+  const mobileMenuToggle = () => {
+    setMobileMenuShow(!mobileMenuShow);
+    setTechMenu(false);
+    setMoreMenu(false);
+  };
+
+  const closeMenu = () => {
+    setMobileMenuShow(!mobileMenuShow);
+    setTechMenu(false);
+    setMoreMenu(false);
+  };
+
+  const technologyToggle = () => {
+    setTechMenu(true);
+  };
+
   function LatestTech() {
     return (
       <div className={cn(styles.latestTech)}>
         <h1>Latest from technology</h1>
-        <Link href="/" className={styles.imageTech}>
+        <Link href="/technology" className={styles.imageTech}>
           <div className={styles.imgBox}>
             <ImageCustom
               src="/images/img/nav-img.png"
@@ -82,36 +115,16 @@ const NavigationMobile = () => {
           </div>
         </div>
         <div className={styles.overviewBtn}>
-          <Button variant="outline" size="sm">
-            Overview <Icons.ArrowRight size={18} />
-          </Button>
+          <Link href="/technology">
+            <Button variant="outline" size="sm">
+              Overview <Icons.ArrowRight size={18} />
+            </Button>
+          </Link>
         </div>
       </div>
     );
   }
 
-  function EstimateSection() {
-    return (
-      <div className={styles.estimateSection}>
-        <p className={styles.description}>
-          Provide us with details about your vision, and let our experts tailor
-          a comprehensive plan, outlining timelines, scopes, and budgets
-          uniquely crafted to bring your ideas to life.
-        </p>
-        <Button
-          variant={theme ? "blueBtnDark" : "blueBtn"}
-          className={styles.headerBtn}
-          size="sm"
-        >
-          Estimate Project
-        </Button>
-      </div>
-    );
-  }
-
-  const mobileMenuToggle = () => {
-    setMobileMenuShow(!mobileMenuShow);
-  };
   return (
     <header
       className={cn(
@@ -148,6 +161,7 @@ const NavigationMobile = () => {
             <li className={styles.menuItem}>
               <Link
                 href="/about"
+                onClick={closeMenu}
                 className={pathname == "/about" ? styles.active : ""}
               >
                 About Us
@@ -156,6 +170,7 @@ const NavigationMobile = () => {
             <li className={styles.menuItem}>
               <Link
                 href="/solutions"
+                onClick={closeMenu}
                 className={pathname == "/solutions" ? styles.active : ""}
               >
                 Solutions
@@ -163,11 +178,8 @@ const NavigationMobile = () => {
             </li>
             <li className={styles.dropDown}>
               <button
-                className={cn(
-                  styles.linkButton,
-                  pathname == "/technology" ? styles.active : ""
-                )}
-                onClick={() => setTechMenu(true)}
+                className={cn(styles.linkButton)}
+                onClick={technologyToggle}
               >
                 Technology <div className={styles.arrow} />
               </button>
@@ -189,6 +201,7 @@ const NavigationMobile = () => {
                           <div className="col-sm-6">
                             <Link
                               href="/technology/cms"
+                              onClick={closeMenu}
                               className={cn(styles.hrefInnerFlex)}
                             >
                               <div className={styles.head}>
@@ -286,6 +299,7 @@ const NavigationMobile = () => {
             <li className={styles.menuItem}>
               <Link
                 href="/portfolio"
+                onClick={closeMenu}
                 className={pathname == "/portfolio" ? styles.active : ""}
               >
                 Portfolio
@@ -322,6 +336,7 @@ const NavigationMobile = () => {
                           <div className="col-sm-12">
                             <Link
                               href="/careers"
+                              onClick={closeMenu}
                               className={cn(styles.hrefInnerFlex)}
                             >
                               <div className={styles.head}>
@@ -335,6 +350,7 @@ const NavigationMobile = () => {
                             </Link>
                             <Link
                               href="/insights"
+                              onClick={closeMenu}
                               className={cn(styles.hrefInnerFlex)}
                             >
                               <div className={styles.head}>
@@ -348,6 +364,7 @@ const NavigationMobile = () => {
                             </Link>
                             <Link
                               href="/coe"
+                              onClick={closeMenu}
                               className={cn(styles.hrefInnerFlex)}
                             >
                               <div className={styles.head}>
@@ -363,6 +380,7 @@ const NavigationMobile = () => {
                             </Link>
                             <Link
                               href="/accelerators"
+                              onClick={closeMenu}
                               className={cn(styles.hrefInnerFlex)}
                             >
                               <div className={styles.head}>
@@ -378,6 +396,7 @@ const NavigationMobile = () => {
                             </Link>
                             <Link
                               href="/contact-us"
+                              onClick={closeMenu}
                               className={cn(styles.hrefInnerFlex)}
                             >
                               <div className={styles.head}>

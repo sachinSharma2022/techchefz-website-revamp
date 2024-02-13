@@ -4,33 +4,43 @@
   padding: spacing(section-primary-padding);
   background: color(primary-background);
 
-  @include mobile {
-    padding: spacing(section-mob-padding);
-    padding-bottom: 8rem;
+  @include mobile-tablet-p {
+    padding: 0;
+    padding-bottom: 4rem;
   }
 
   .careerRow {
     margin-bottom: 5rem;
-    @include mobile {
+    display: flex;
+    align-items: flex-end;
+
+    @include mobile-tablet-p {
       margin-bottom: 2.5rem;
+      flex-direction: column;
+      padding: 3.75rem 1.25rem 0;
+      align-items: flex-start;
     }
+
     .careerBtn {
       display: flex;
       justify-content: flex-end;
-      @include mobile{
+      white-space: nowrap;
+
+      @include mobile {
         justify-content: flex-start;
       }
     }
   }
 
-  .ProjectHighlight {
+  .projectHighlight {
     font-size: text(normal);
     font-weight: 500;
     margin-bottom: text(lg);
     opacity: 0.6;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
-    @include mobile {
+
+    @include mobile-tablet-p {
       margin-bottom: 0.75rem;
     }
   }
@@ -39,8 +49,9 @@
     font-weight: 500;
     line-height: 3.375rem;
     max-width: 85%;
+    margin-bottom: 0;
 
-    @include mobile {
+    @include mobile-tablet-p {
       font-size: text(xxxl);
       line-height: 2.5rem;
       padding-right: 0;
@@ -56,19 +67,29 @@
 
       @include mobile-tablet-p {
         gap: 0 1rem;
-        display: unset;
-        grid-template-columns: repeat(1, 1fr);
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 0 1.25rem;
       }
-      .ourNumbersImg {
+
+      .ourNumbersImg div {
         margin-left: auto;
-        img {
-          width: 31.5rem;
-          height: 40.688rem;
-          flex-shrink: 0;
-          border-radius: 0.75rem;
-        }
+        width: 31.5rem;
+        height: 40.688rem;
+        border-radius: 0.75rem;
+        overflow: hidden;
+        position: relative;
+
         @include mobile-tablet-p {
-          display: none;
+          width: 100%;
+          height: 27rem;
+          margin: 2.75rem 0;
+        }
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
         }
       }
 
@@ -76,6 +97,7 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 2.5rem;
+
         @include mobile-tablet-p {
           display: none;
         }
@@ -87,10 +109,10 @@
       line-height: 1.875rem;
       margin-bottom: 3.75rem;
       opacity: 0.8;
-      @include mobile {
+
+      @include mobile-tablet-p {
         font-size: text(normal);
         margin-bottom: 2.75rem;
-        font-weight: 400;
       }
     }
     .ourNumberOption {
@@ -100,7 +122,7 @@
         padding: text(xxxl);
         border-radius: text(xl);
         border: 0.125rem solid color(primary-white);
-        @include transition(0.5s);        
+        @include transition(0.5s);
 
         &:hover {
           border-color: color(heading-liner);
@@ -148,17 +170,25 @@
     }
   }
 
+  .mobileSlider {
+    display: none;
+
+    @include mobile-tablet-p {
+      display: block;
+      padding-left: 1.25rem;
+    }
+  }
+
   //Dark mode style
-  &.solutionTechnologiesDark{
+  &.solutionTechnologiesDark {
     background-color: color(dark-bg);
     color: color(primary-white);
 
-    .ourNumberOption{
-      .serviceBox{
+    .ourNumberOption {
+      .serviceBox {
         background-color: color(text-primary);
-        border: 1px solid rgba(255, 255, 255, 0.12);
+        border: 0.14rem solid rgba(255, 255, 255, 0.12);
       }
     }
-   
   }
 }

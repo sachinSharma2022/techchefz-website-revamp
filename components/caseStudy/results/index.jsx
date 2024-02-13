@@ -27,13 +27,11 @@ const Results = ({props}) => {
   //   },
   // ];
   return (
-    <section className={`${styles.results} ${theme ? styles.resultsDark : ""}`}>
+    <section className={cn(styles.results, theme ? styles.resultsDark : "")}>
       <div className={cn("primary-container")}>
-        <div className="row justify-content-between">
-          <div className="col-md-3 col-lg-3">
-            <h6 className={styles.resultTitle}>{props.Title}</h6>
-          </div>
-          <div className="col-md-9 col-lg-9">
+        <div className={styles.contentSection}>
+          <h6 className={styles.resultTitle}>{props.Title}</h6>
+          <div>
             <h3 className={styles.resultHeading}>
               {props?.SubTitle}
             </h3>
@@ -51,24 +49,24 @@ const Results = ({props}) => {
                 ))}
               </div>
             )}
-
-            {isMobileScreen && (
-              <div className={styles.mobileSliderCard}>
-                <div className={styles.resultCards}>
-                  <MobileSlider slidesToShow={1.4}>
-                    {resultCard.map((data, index) => (
-                      <div key={index} className={styles.resultCard}>
-                        <h3>{data.number} </h3>
-                        <h4>{data.title} </h4>
-                      </div>
-                    ))}
-                  </MobileSlider>
-                </div>
-              </div>
-            )}
           </div>
         </div>
       </div>
+
+      {isMobileScreen && (
+        <div className={styles.mobileSliderCard}>
+          <div className={styles.resultCards}>
+            <MobileSlider slidesToShow={1.3}>
+              {resultCard.map((data, index) => (
+                <div key={index} className={styles.resultCard}>
+                  <h3>{data.number}</h3>
+                  <h4>{data.title}</h4>
+                </div>
+              ))}
+            </MobileSlider>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

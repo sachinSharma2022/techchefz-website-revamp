@@ -1,0 +1,186 @@
+@import "~/styles/partials/config";
+
+.ourClients {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7.5rem;
+  position: relative;
+  background-color: color(bg-soft);
+
+  @include mobile-tablet-p {
+    padding: 0;
+    padding-block: 3.75rem 3.75rem;
+  }
+
+  .heading {
+    font-size: text(larger);
+    margin-bottom: 1.25rem;
+
+    @include mobile-tablet-p {
+      font-size: 2rem;
+      line-height: 2.5rem;
+      margin-bottom: text(lg);
+    }
+
+    span {
+      font-size: text(larger);
+      margin-bottom: 2.75rem;
+      @include textGradient;
+    }
+  }
+
+  .subHeading {
+    opacity: 0.6;
+    font-weight: 400;
+    line-height: 1.875rem;
+    font-size: text(lg);
+    text-transform: uppercase;
+
+    @include mobile-tablet-p {
+      margin-bottom: 0;
+      font-size: text(normal);
+      line-height: text(xl);
+    }
+  }
+
+  .description {
+    opacity: 0.6;
+    font-weight: 400;
+    line-height: 1.875rem;
+    font-size: text(2);
+    margin-bottom: 2.75rem;
+
+    @include mobile-tablet-p {
+      font-size: text(normal);
+      line-height: text(xl);
+    }
+  }
+
+  .contentSec {
+    max-width: 372px;
+
+    @include mobile-tablet-p {
+      max-width: 100%;
+      width: 100%;
+      padding-inline: 1.25rem;
+    }
+  }
+
+  .flexContainer {
+    display: flex;
+    gap: 8.9375rem;
+
+    @include mobile-tablet-p {
+      flex-direction: column;
+      gap: 3.75rem;
+    }
+  }
+
+  .clientSection {
+    width: 100%;
+
+    .description {
+      max-width: 50%;
+
+      @include mobile-tablet-p {
+        max-width: 100%;
+        padding-inline: 1.25rem;
+      }
+    }
+  }
+
+  .logoAnimation {
+    position: relative;
+    overflow: hidden;
+    max-width: 77.8%;
+
+    @include mobile-tablet-p {
+      max-width: 100%;
+      margin-left: 1.25rem;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 678px;
+      right: 0px;
+      top: 0px;
+      background: linear-gradient(
+        270deg,
+        color(bg-soft) 0%,
+        color(bg-soft) 62.5%,
+        rgba(26, 26, 26, 0) 100%
+      );
+
+      @include mobile-tablet-p {
+        display: none;
+      }
+    }
+    .teamImg div {
+      width: 200px;
+      height: 50px;
+      overflow: hidden;
+
+      @include mobile-tablet-p {
+        width: 120px;
+        height: 30px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        filter: invert(100);
+      }
+    }
+
+    .logoSection {
+      border-top: 1px solid rgba(color(text-primary), 0.12);
+      padding: 2.8125rem 0;
+
+      &:last-child {
+        border-bottom: 1px solid rgba(color(text-primary), 0.12);
+      }
+    }
+  }
+
+  // Dark theme style
+  &.ourClientsDark {
+    background-color: color(dark-bg);
+    color: color(primary-white);
+
+    .tabWrapper {
+      background-color: color(dark-tab);
+
+      button {
+        color: rgba(color(primary-white), 0.8);
+      }
+    }
+    .logoAnimation {
+      &::after {
+        background: linear-gradient(
+          270deg,
+          #1a1a1a 0%,
+          #1a1a1a 62.5%,
+          rgba(26, 26, 26, 0) 100%
+        );
+      }
+
+      .teamImg div {
+        img {
+          filter: invert(0);
+        }
+      }
+
+      .logoSection {
+        border-color: rgba(color(primary-white), 0.12);
+      }
+    }
+
+    .teamCardBg {
+      border: 0.14rem solid color(input-bg);
+    }
+  }
+}

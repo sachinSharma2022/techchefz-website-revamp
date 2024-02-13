@@ -4,7 +4,7 @@ import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import CountryDropdown from "@/components/ui/countryDropdown";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import { Input, Textarea } from "@/components/ui/inputCustom";
+import { Input, InputFile, Textarea } from "@/components/ui/inputCustom";
 import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import { useContext } from "react";
@@ -15,8 +15,8 @@ const ContactSection = () => {
 
   return (
     <section
-      className={`${styles.lestWorkStyle} ${
-        theme ? styles.lestWorkStyleDark : ""
+      className={`${styles.contactSectionStyle} ${
+        theme ? styles.contactSectionStyleDark : ""
       }`}
     >
       <div className={cn("primary-container")}>
@@ -78,11 +78,12 @@ const ContactSection = () => {
                     <CountryDropdown />
                   </div>
                   <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                    <Input
-                      variant="default"
+                    <InputFile
                       label="Upload CV* (pdf/doc upto 5mb)"
                       placeholder="Upload CV* (pdf/doc upto 5mb)"
-                      type="text"
+                      type="file"
+                      id="companyName"
+                      name="companyName"
                     />
                   </div>
                   <div className={`${styles.inputSpace} col-md-6 col-12`}>
@@ -117,7 +118,11 @@ const ContactSection = () => {
                   <span className={styles.policyHighlight}>Privacy Policy</span>
                 </div>
 
-                <Button variant={theme ? "blueBtnDark" : "blueBtn"} size="lg" className={styles.btnGrid}>
+                <Button
+                  variant={theme ? "blueBtnDark" : "blueBtn"}
+                  size="lg"
+                  className={styles.btnGrid}
+                >
                   Send a Message <Icons.ArrowRight size={18} />
                 </Button>
               </div>

@@ -15,7 +15,7 @@ const ImageCaptionCard = () => {
     {
       description: " Nike’s Expansion and Global Outlook",
       imgSrc:
-        "https://images.unsplash.com/photo-1579298245158-33e8f568f7d3?q=80&w=2090&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       badgeList: ["Web Design", "E-Commerce", "Retail"],
     },
     {
@@ -126,8 +126,8 @@ const ImageCaptionCard = () => {
                   <div className={`${styles.imgBox} imgBox`}>
                     <ImageCustom
                       src={data.imgSrc}
-                      width={1360}
-                      height={450}
+                      width={1500}
+                      height={1500}
                       alt="captionImg"
                     />
                   </div>

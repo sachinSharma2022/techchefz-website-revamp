@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 import Link from "next/link";
 
-const InsightBanner = () => {
+const InsightBanner = ({props}) => {
   const { theme, setTheme } = useContext(MyContext);
 
   return (
@@ -17,15 +17,12 @@ const InsightBanner = () => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.contentSection}>
-          <h1 className={styles.title}>
-            Check out our latest news,announcements, and{" "}
-            <span className={styles.titleHighlight}>featured </span>articles.
+          <h1 className={styles.title} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
+           
           </h1>
           <div className={styles.contentRight}>
             <p className={styles.leadText}>
-              We’re a worldwide presence, serving clients on four continents.
-              Our international expertise ensures innovative solutions tailored
-              to diverse global needs.
+              {props.SubTitle}
             </p>
             <Link href="/insight-inside">
               <Button
@@ -33,7 +30,7 @@ const InsightBanner = () => {
                 className={styles.headerBtn}
                 size="md"
               >
-                Let’s Work Together{" "}
+                {props?.Btn}
                 <Icons.ArrowRight size={20} className="ms-2" />
               </Button>
             </Link>
