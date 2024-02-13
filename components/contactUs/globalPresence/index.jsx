@@ -42,8 +42,8 @@ const GlobalPresence = ({props}) => {
     >
       <div className={styles.globalStackBox}>
         <div className={cn("primary-container", styles.globalRow)}>
-          <h2 className={styles.globalHeading} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}></h2>
-          <p className={styles.globalText} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
+          <h2 className={cn(styles.globalHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}></h2>
+          <p className={cn(styles.globalText, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
           </p>
         </div>
 

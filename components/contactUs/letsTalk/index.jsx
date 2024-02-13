@@ -36,7 +36,7 @@ const LetsTalk = ({props}) => {
       >
         <div className={styles.workArea}>
           <div className={styles.headingMain}>
-            <h3 className={styles.formHeading} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
+            <h3 className={cn(styles.formHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
              
             </h3>
             <p className={styles.descriptionText} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
