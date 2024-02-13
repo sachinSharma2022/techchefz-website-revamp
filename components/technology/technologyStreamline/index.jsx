@@ -11,10 +11,9 @@ import { useEffect, useRef } from "react";
 import { useMediaQuery } from "react-responsive";
 import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
-import { base_Url } from "@/lib/constants"; 
+import { base_Url } from "@/lib/constants";
 
 const Streamline = ({ props }) => {
-
   const isBigScreen = useMediaQuery({ minWidth: 1025 });
   let component = useRef(null);
   const { theme, setTheme } = useContext(MyContext);
@@ -114,12 +113,14 @@ const Streamline = ({ props }) => {
     >
       <section className={styles.streamLineSection}>
         <div className={cn("primary-container", styles.flexContainer)}>
-          <h3 className={cn(styles.streamlineTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}>
-
-          </h3>
-          <p className={styles.streamlineContent} dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}>
-
-          </p>
+          <h3
+            className={cn(styles.streamlineTitle, "gradient-text")}
+            dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+          ></h3>
+          <p
+            className={styles.streamlineContent}
+            dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
+          ></p>
         </div>
       </section>
 
@@ -129,17 +130,26 @@ const Streamline = ({ props }) => {
           <div key={index}>
             <div className={styles.streamlineCard}>
               <div className={styles.iconStyle}>
-              <ImageCustom height={100}  width={100} src= {data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data?.attributes?.url}`:`${base_Url}/`} />
-               
+                <ImageCustom
+                  height={100}
+                  width={100}
+                  src={
+                    data?.Image?.data?.attributes?.url
+                      ? `${base_Url}${data?.Image?.data?.attributes?.url}`
+                      : `${base_Url}/`
+                  }
+                />
               </div>
               <h6 className={styles.cardTitle}>{data.Title} </h6>
               <p className={styles.cardContent}>{data.Description}</p>
-              <Button
-                variant={theme ? "lightBlueOutline" : "outline"}
-                size="md"
-              >
-                {data.Btn} <Icons.ArrowRight size={18} />
-              </Button>
+              <div>
+                <Button
+                  variant={theme ? "lightBlueOutline" : "outline"}
+                  size="md"
+                >
+                  {data.Btn} <Icons.ArrowRight size={18} />
+                </Button>
+              </div>
             </div>
           </div>
         ))}
