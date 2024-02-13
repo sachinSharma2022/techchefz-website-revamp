@@ -212,6 +212,8 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 2.5rem;
     margin-top: 5rem;
+    position: relative;
+    z-index: 1;
     
     .cardItem {
       background: color(bg-soft);
@@ -220,12 +222,21 @@
       display: flex;
       align-items: center;
       gap: 1.25rem;
+      border: 1px solid transparent;
+      @include transition(0.5s);
+
+      &:hover {
+        border-color: color(heading-liner);
+      }
     }
    
     .nameTitle {
       font-size: text(lg);
       font-weight: 400;
       color: color(text-primary);
+      margin: 0;
+      text-transform: capitalize;
+      @include truncate(2);
 
       @include mobile-tablet-p {
         line-height: 1.875rem;

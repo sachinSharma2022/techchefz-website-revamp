@@ -50,10 +50,11 @@
   }
 
   .subHeading {
-    font-size: text(xl);
+    font-size: 1.125rem;
     font-weight: 500;
     line-height: 2rem;
     margin: 0;
+    color: rgba(color(text-primary), 0.6);
   }
 
   .subContent {
@@ -65,10 +66,11 @@
   }
 
   .subTitle {
-    font-size: text(xl);
+    font-size: text(lg);
     font-weight: 500;
     line-height: 2rem;
     margin-bottom: 1.5rem;
+
     @include mobile-tablet-p {
       margin-bottom: text(lg);
       font-size: text(lg);
@@ -105,8 +107,8 @@
       }
 
       svg {
-        width: 16px;
-        height: 16px;
+        width: 14px;
+        height: 14px;
       }
 
       .iconImg {
@@ -153,16 +155,30 @@
       flex-direction: column;
       align-items: flex-start;
       justify-content: flex-start;
-      gap: 2rem;
       max-width: 270px;
+      width: 100%;
+    }
+
+    button {
+      width: 100%;
+
+      &:first-child {
+        .discoverHead {
+          padding-top: 0;
+        }
+      }
     }
 
     .discoverHead {
       text-align: left;
+      border-bottom: 0.14rem solid rgba(color(text-primary), 0.12);
+      width: 100%;
+      padding: 1rem 0;
     }
 
     .dataSection {
       margin-bottom: 3.75rem;
+
       @include mobile-tablet-p {
         margin-bottom: text(lg);
       }
@@ -178,7 +194,7 @@
       }
 
       .subHeading {
-        @include textGradient;
+        color: color(text-primary);
       }
     }
   }
@@ -197,14 +213,31 @@
       }
     }
 
+    button[aria-selected="true"] {
+      .subHeading {
+        color: color(primary-white);
+      }
+    }
+
     .discoverHead {
       color: color(primary-white);
+      border-color: rgba(color(primary-white), 0.12);
     }
 
     .platformsBtn {
       svg > path {
         fill: color(primary-white);
       }
+    }
+
+    .platformsBtn {
+      .iconImg {
+        border-color: rgba(color(primary-white), 0.2);
+      }
+    }
+
+    .subHeading {
+      color: rgba(color(primary-white), 0.6);
     }
   }
 }

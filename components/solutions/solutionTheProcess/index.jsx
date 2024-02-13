@@ -9,7 +9,7 @@ import { base_Uri } from "@/lib/constants";
 
 import styles from "./style.module.scss";
 
-const SolutionTheProcess = ({props}) => {
+const SolutionTheProcess = ({ props }) => {
   const { theme } = useContext(MyContext);
   const radius = 235;
   const dashArray = radius * Math.PI * 2;
@@ -130,10 +130,14 @@ const SolutionTheProcess = ({props}) => {
       <div className={cn("primary-container", styles.flexContainer)}>
         <div className={styles.headSection}>
           <div>
-            <h6 className={cn(styles.heading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
-              </h6>
-            <h3 className={styles.subHeading} dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}`}}>
-              </h3>
+            <h6
+              className={cn(styles.heading, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+            ></h6>
+            <h3
+              className={styles.subHeading}
+              dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
+            ></h3>
           </div>
 
           <div className={styles.ourNumbersImg}>
@@ -493,7 +497,7 @@ const SolutionTheProcess = ({props}) => {
         </div>
 
         <div className={`${styles.processCardSection}`}>
-        {props?.ITSolutionsCards?.map((data, index) => (
+          {props?.ITSolutionsCards?.map((data, index) => (
             <div
               key={index}
               className={`${styles.processCard} ${data.current}`}

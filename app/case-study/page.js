@@ -10,23 +10,29 @@ import React from "react";
 import { getData } from "@/lib/fetchData";
 import { api_Case_study_Page } from "@/lib/constants";
 
-const CaseStudy = async() =>{
-  
-  const data = await getData(api_Case_study_Page)
+const CaseStudy = async () => {
+  const data = await getData(api_Case_study_Page);
   return (
-    <>{data? <div>
-      <CaseStudyBanner props={data.CaseStudyBanner}/>
-      <Industry props={data.Industry} CMSImplementation={data.CMSImplementation} Industryinner={data.Industryinner}/>
-      <Goals props={data.Goals} />
-      <Challenges props={data.Challenges}/>
-      <Solutions props={data.Solutions} />
-      <Results props={data.Results} />
-      <RelatedCase sliderClassName="mb-0" props={data.CaseStudy} />
-      <LetsWork  contact={data.LetsWork}/>
-     
-    </div>:<></>}
+    <>
+      {data ? (
+        <div>
+          <CaseStudyBanner props={data.CaseStudyBanner} />
+          <Industry
+            props={data.Industry}
+            CMSImplementation={data.CMSImplementation}
+            Industryinner={data.Industryinner}
+          />
+          <Goals props={data.Goals} />
+          <Challenges props={data.Challenges} />
+          <Solutions props={data.Solutions} />
+          <Results props={data.Results} />
+          <RelatedCase sliderClassName="mb-0" props={data.CaseStudy} />
+          <LetsWork contact={data.LetsWork} />
+        </div>
+      ) : (
+        <></>
+      )}
     </>
-   
   );
 };
 

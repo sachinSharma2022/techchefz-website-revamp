@@ -12,7 +12,7 @@ import Link from "next/link";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
 
-const OurTeam = ({props}) => {
+const OurTeam = ({ props }) => {
   console.log("aa", props);
   const { theme } = useContext(MyContext);
   let [isOpen, setIsOpen] = useState(false);
@@ -94,10 +94,16 @@ const OurTeam = ({props}) => {
           <Tab.Group>
             <div className={styles.ourTeamHead}>
               <div className={styles.titleWrapper}>
-                <h6 className={cn(styles.ourTeamTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}></h6>
-                <h3 className={cn(styles.ourTeamHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}`}}>
-                 
-                </h3>
+                <h6
+                  className={cn(styles.ourTeamTitle, "gradient-text")}
+                  dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}` }}
+                ></h6>
+                <h3
+                  className={cn(styles.ourTeamHeading, "gradient-text")}
+                  dangerouslySetInnerHTML={{
+                    __html: `${props[0]?.Description}`,
+                  }}
+                ></h3>
               </div>
               <Tab.List className={styles.tabWrapper}>
                 <Tab>
@@ -149,7 +155,11 @@ const OurTeam = ({props}) => {
                         </Link>
                         <div className={styles.teamImg}>
                           <ImageCustom
-                            src={data?.Images?.data?.attributes?.url?`${base_Uri}${data?.Images?.data?.attributes?.url}`:`${base_Uri}/`}
+                            src={
+                              data?.Images?.data?.attributes?.url
+                                ? `${base_Uri}${data?.Images?.data?.attributes?.url}`
+                                : `${base_Uri}/`
+                            }
                             width={240}
                             height={320}
                             alt="team-member"
@@ -166,7 +176,11 @@ const OurTeam = ({props}) => {
                     <div key={index} className={styles.cardItem}>
                       <div className={styles.teamImage}>
                         <ImageCustom
-                          src={item?.Images?.data?.attributes?.url?`${base_Uri}${item?.Images?.data?.attributes?.url}`:`${base_Uri}/`}
+                          src={
+                            item?.Images?.data?.attributes?.url
+                              ? `${base_Uri}${item?.Images?.data?.attributes?.url}`
+                              : `${base_Uri}/`
+                          }
                           width={500}
                           height={530}
                           alt="profile"
@@ -180,60 +194,63 @@ const OurTeam = ({props}) => {
             </Tab.Panels>
           </Tab.Group>
         </div>
-      {props[0]?.ListofDirectors?.map((data, index) => (
-        <LeftDrawer
-        
-          title="About"
-          open={isOpen}
-          onClose={() => setIsOpen(false)}
-        >
-          <div
-            className={cn(styles.modalBody, theme ? styles.darkThemeStyle : "")}
+        {props[0]?.ListofDirectors?.map((data, index) => (
+          <LeftDrawer
+            key={index}
+            title="About"
+            open={isOpen}
+            onClose={() => setIsOpen(false)}
           >
-             
-            <div className={styles.modalInfo}>
-           
-              <div className={styles.modalImg}>
-                <ImageCustom
-                  key={index}
-                  src={data?.Images?.data?.attributes?.url?`${base_Uri}${data?.Images?.data?.attributes?.url}`:`${base_Uri}/`}
-                  width={500}
-                  height={530}
-                  alt="profile"
-                />
+            <div
+              className={cn(
+                styles.modalBody,
+                theme ? styles.darkThemeStyle : ""
+              )}
+            >
+              <div className={styles.modalInfo}>
+                <div className={styles.modalImg}>
+                  <ImageCustom
+                    key={index}
+                    src={
+                      data?.Images?.data?.attributes?.url
+                        ? `${base_Uri}${data?.Images?.data?.attributes?.url}`
+                        : `${base_Uri}/`
+                    }
+                    width={500}
+                    height={530}
+                    alt="profile"
+                  />
+                </div>
+                <h4 className={styles.teamName}>{data.Name}</h4>
+                <p className={styles.teamRole}>{data.Designation}</p>
               </div>
-              <h4 className={styles.teamName}>{data.Name}</h4>
-              <p className={styles.teamRole}>{data.Designation}</p>
-            </div>
 
-            <div className={styles.infoSec}>
-              <p className={styles.modalContent}>
-                {data.Description}
-              </p>
-              <p className={styles.teamMail}>
-                <Icons.MailIcon width={24} height={24} className="me-2" />
-                {data.email}
-              </p>
+              <div className={styles.infoSec}>
+                <p className={styles.modalContent}>{data.Description}</p>
+                <p className={styles.teamMail}>
+                  <Icons.MailIcon width={24} height={24} className="me-2" />
+                  {data.email}
+                </p>
 
-              <div className={styles.socialSection}>
-                <h6>Let’s Get Connect</h6>
-                <div className={styles.modalIcons}>
-                  <Icons.Linkedin
-                    className={styles.linkdinIcon}
-                    width={34}
-                    height={34}
-                  />
-                  <Icons.twitter
-                    className={styles.twitter}
-                    width={34}
-                    height={34}
-                  />
+                <div className={styles.socialSection}>
+                  <h6>Let’s Get Connect</h6>
+                  <div className={styles.modalIcons}>
+                    <Icons.Linkedin
+                      className={styles.linkdinIcon}
+                      width={34}
+                      height={34}
+                    />
+                    <Icons.twitter
+                      className={styles.twitter}
+                      width={34}
+                      height={34}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </LeftDrawer>
-         ))}
+          </LeftDrawer>
+        ))}
       </div>
     </section>
   );
