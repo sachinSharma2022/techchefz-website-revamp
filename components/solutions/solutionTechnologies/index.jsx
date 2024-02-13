@@ -79,21 +79,31 @@ const SolutionTechnologies = ({ props }) => {
   };
   return (
     <section
-      className={`${styles.solutionTechnologiesStyle} ${theme ? styles.solutionTechnologiesDark : "" }`} >
+      className={`${styles.solutionTechnologiesStyle} ${
+        theme ? styles.solutionTechnologiesDark : ""
+      }`}
+    >
       <div className={cn("primary-container")}>
         <div className={styles.careerRow}>
           <div className="row">
             <div className="col-md-12 col-12">
-              <h6 className={cn(styles.projectHighlight,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
-              </h6>
+              <h6
+                className={cn(styles.projectHighlight, "gradient-text")}
+                dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+              ></h6>
             </div>
 
             <div className="col-md-8 col-12">
-              <h2 className={cn(styles.datingText, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}`}}>
-              </h2>
+              <h2
+                className={cn(styles.datingText, "gradient-text")}
+                dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
+              ></h2>
             </div>
             <div className={`${styles.careerBtn} col-md-4 col-12`}>
-              <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
+              <Button
+                variant={theme ? "lightBlueOutline" : "outline"}
+                size="md"
+              >
                 {props?.Button} <Icons.ArrowRight size={18} />
               </Button>
             </div>
@@ -103,16 +113,19 @@ const SolutionTechnologies = ({ props }) => {
         <div className={styles.ourNumberMain}>
           <div className={styles.ourNumberGrid}>
             <div>
-              <p className={styles.ourNumbersText}>
-                {props?.Description}
-              </p>
-              <div className={`${styles.desktopCards} ${styles.ourNumberOption} `} >
+              <p className={styles.ourNumbersText}>{props?.Description}</p>
+              <div
+                className={`${styles.desktopCards} ${styles.ourNumberOption} `}
+              >
                 {props?.TechnologyInner?.map((data, index) => (
                   <ServiceInfoCard
                     key={index}
                     sbTitle={data.Title}
-                    icon={data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data?.attributes?.url}`:`${base_Url}/`}
-                    
+                    icon={
+                      data?.Image?.data?.attributes?.url
+                        ? `${base_Url}${data?.Image?.data?.attributes?.url}`
+                        : `${base_Url}/`
+                    }
                     sbText={data.Description}
                   />
                 ))}
@@ -130,7 +143,7 @@ const SolutionTechnologies = ({ props }) => {
         </div>
       </div>
 
-          {/* <div className={`${styles.ourNumberOption} service-mobile-slider`}>
+      {/* <div className={`${styles.ourNumberOption} service-mobile-slider`}>
             <Slider {...settings}>
               {props?.TechnologyInner?.map((data, index) => (
                 <ServiceInfoCard
@@ -143,10 +156,8 @@ const SolutionTechnologies = ({ props }) => {
               ))}
             </Slider>
           </div> */}
-       
-      
     </section>
-  )
+  );
 };
 
 export default SolutionTechnologies;

@@ -9,8 +9,7 @@ import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 import { base_Uri } from "@/lib/constants";
 
-const InsightFeatures = ({props, feature}) => {
-
+const InsightFeatures = ({ props, feature }) => {
   const { theme, setTheme } = useContext(MyContext);
 
   // const buttonVariants = [
@@ -138,14 +137,20 @@ const InsightFeatures = ({props, feature}) => {
           </div>
         </div>
         <div className={styles.featureInsight}>
-          <h6 className={cn(styles.insightSubHeading,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${feature[0].Title}`}}>
-              </h6>
+          <h6
+            className={cn(styles.insightSubHeading, "gradient-text")}
+            dangerouslySetInnerHTML={{ __html: `${feature[0].Title}` }}
+          ></h6>
           <div className={styles.featureInsightCards}>
             {feature[0].featureInsightData.map((data, index) => (
               <PostCard
                 className={styles.featureInsightCard}
                 key={index}
-                imgSrc={data?.Image?.data.attributes.url?`${base_Uri}${data?.Image.data.attributes.url}`:`${base_Uri}/`}
+                imgSrc={
+                  data?.Image?.data.attributes.url
+                    ? `${base_Uri}${data?.Image.data.attributes.url}`
+                    : `${base_Uri}/`
+                }
                 title={data.Title}
                 date={data.Description}
                 cardStyle={styles.featureImgBox}
@@ -161,7 +166,11 @@ const InsightFeatures = ({props, feature}) => {
             {feature[1].featureInsightData.map((data, index) => (
               <PostCard
                 key={index}
-                imgSrc={data?.Image?.data.attributes.url?`${base_Uri}${data?.Image.data.attributes.url}`:`${base_Uri}/`}
+                imgSrc={
+                  data?.Image?.data.attributes.url
+                    ? `${base_Uri}${data?.Image.data.attributes.url}`
+                    : `${base_Uri}/`
+                }
                 title={data.Title}
                 date={data.Description}
                 theme={theme}

@@ -10,10 +10,9 @@ import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { base_Uri } from "@/lib/constants";
-import { base_Url } from "@/lib/constants"; 
+import { base_Url } from "@/lib/constants";
 
-const Discover = ({props}) => {
- 
+const Discover = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   const technologyData = [
     {
@@ -84,10 +83,14 @@ const Discover = ({props}) => {
       <div className={cn("primary-container")}>
         <div className={styles.discoverTop}>
           <div>
-            <h6 className={cn(styles.discoverTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
-            </h6>
-            <h3 className={cn(styles.discoverHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}`}}>
-            </h3>
+            <h6
+              className={cn(styles.discoverTitle, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}` }}
+            ></h6>
+            <h3
+              className={cn(styles.discoverHeading, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}` }}
+            ></h3>
           </div>
 
           <Link href="/technology/cms">
@@ -102,36 +105,66 @@ const Discover = ({props}) => {
             <Tab.List className={styles.discoverLeft}>
               <Tab>
                 <div className={styles.discoverHead}>
-                  <h5 className={`${styles.subHeading}`} dangerouslySetInnerHTML={{ __html: `${props[0]?.SubTitle1}`}}></h5>
-                  <p className={styles.subContent} dangerouslySetInnerHTML={{ __html: `${props[0]?.SubDescription1}`}}>
-                    
-                  </p>
+                  <h5
+                    className={`${styles.subHeading}`}
+                    dangerouslySetInnerHTML={{
+                      __html: `${props[0]?.SubTitle1}`,
+                    }}
+                  ></h5>
+                  <p
+                    className={styles.subContent}
+                    dangerouslySetInnerHTML={{
+                      __html: `${props[0]?.SubDescription1}`,
+                    }}
+                  ></p>
                 </div>
               </Tab>
               <Tab>
                 <div className={styles.discoverHead}>
-                  <h5 className={`${styles.subHeading}`} dangerouslySetInnerHTML={{ __html: `${props[0]?.SubTitle2}`}}></h5>
-                  <p className={styles.subContent} dangerouslySetInnerHTML={{ __html: `${props[0]?.SubDescription2}`}}>
-                    
-                  </p>
+                  <h5
+                    className={`${styles.subHeading}`}
+                    dangerouslySetInnerHTML={{
+                      __html: `${props[0]?.SubTitle2}`,
+                    }}
+                  ></h5>
+                  <p
+                    className={styles.subContent}
+                    dangerouslySetInnerHTML={{
+                      __html: `${props[0]?.SubDescription2}`,
+                    }}
+                  ></p>
                 </div>
               </Tab>
               <Tab>
                 <div className={styles.discoverHead}>
-                  <h5 className={`${styles.subHeading}`} dangerouslySetInnerHTML={{ __html: `${props[0]?.SubTitle3}`}}>
-                    
-                  </h5>
-                  <p className={styles.subContent} dangerouslySetInnerHTML={{ __html: `${props[0]?.SubDescription3}`}}>
-                    
-                  </p>
+                  <h5
+                    className={`${styles.subHeading}`}
+                    dangerouslySetInnerHTML={{
+                      __html: `${props[0]?.SubTitle3}`,
+                    }}
+                  ></h5>
+                  <p
+                    className={styles.subContent}
+                    dangerouslySetInnerHTML={{
+                      __html: `${props[0]?.SubDescription3}`,
+                    }}
+                  ></p>
                 </div>
               </Tab>
               <Tab>
                 <div className={styles.discoverHead}>
-                  <h5 className={`${styles.subHeading}`} dangerouslySetInnerHTML={{ __html: `${props[0]?.SubTitle4}`}}></h5>
-                  <p className={styles.subContent} dangerouslySetInnerHTML={{ __html: `${props[0]?.SubDescription4}`}}>
-                    
-                  </p>
+                  <h5
+                    className={`${styles.subHeading}`}
+                    dangerouslySetInnerHTML={{
+                      __html: `${props[0]?.SubTitle4}`,
+                    }}
+                  ></h5>
+                  <p
+                    className={styles.subContent}
+                    dangerouslySetInnerHTML={{
+                      __html: `${props[0]?.SubDescription4}`,
+                    }}
+                  ></p>
                 </div>
               </Tab>
             </Tab.List>
@@ -149,9 +182,13 @@ const Discover = ({props}) => {
                           <div className="d-flex align-items-center">
                             <div className={styles.iconImg}>
                               <ImageCustom
-                                src={subItems?.Image?.data?.attributes?.url?`${base_Url}${subItems?.Image?.data?.attributes?.url}`:`${base_Url}/`}
-                                width={24}
-                                height={22}
+                                src={
+                                  subItems?.Image?.data?.attributes?.url
+                                    ? `${base_Url}${subItems?.Image?.data?.attributes?.url}`
+                                    : `${base_Url}/`
+                                }
+                                width={28}
+                                height={28}
                                 alt="image"
                               />
                             </div>

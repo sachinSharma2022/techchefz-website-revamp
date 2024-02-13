@@ -6,13 +6,16 @@ import { getData } from "@/lib/fetchData";
 import { api_insights_Page } from "@/lib/constants";
 
 const Insights = async () => {
-  const data = await getData(api_insights_Page)
+  const data = await getData(api_insights_Page);
 
   return (
     <div>
-      <InsightBanner props={data.InsightBanner}/>
-      <InsightFeatures props={data.InsightFeatures} feature={data.featureInsight} />
-      <Innovation  props={data.ourInnvotion}/>
+      <InsightBanner props={data.InsightBanner} />
+      <InsightFeatures
+        props={data.InsightFeatures}
+        feature={data.featureInsight}
+      />
+      <Innovation props={data.ourInnvotion} />
     </div>
   );
 };
