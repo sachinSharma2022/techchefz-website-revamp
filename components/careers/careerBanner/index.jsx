@@ -19,7 +19,7 @@ const CareerBanner = ({ props }) => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.contentSection}>
-          <h1 className={styles.title} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}` }}>
+          <h1 className={cn(styles.title,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}` }}>
 
           </h1>
           <div className={styles.desc}>

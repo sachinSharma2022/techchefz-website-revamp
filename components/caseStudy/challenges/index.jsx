@@ -37,9 +37,8 @@ const Challenges = ({props}) => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.headSec}>
-          <h6 className={styles.challengeTitle}>{props[0].Title}</h6>
-          <h3 className={styles.challengeHeading}>
-            {props[0].Description}
+          <h6 className={cn(styles.challengeTitle,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0].Title}` }}></h6>
+          <h3 className={cn(styles.challengeHeading,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0].Description}` }}>
           </h3>
         </div>
         <div className={styles.challengesCards}>

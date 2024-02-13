@@ -26,7 +26,7 @@ const AboutPage = async() => {
         <WhatWeDo  props={data.WhatWeDoComponent} />
         <OurValues props={data.Ourvaluesection}/>
         <OurResults props={data.Result}/>
-        <FounderDesk />
+        <FounderDesk props={data.FounderDesk}/>
         <OurTeam  props={data.Team}/>
         <OurGallery props={data.Gallery}/>
         <LetsWork  contact={data.ContactUs}/>

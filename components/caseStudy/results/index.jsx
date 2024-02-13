@@ -30,10 +30,10 @@ const Results = ({props}) => {
     <section className={cn(styles.results, theme ? styles.resultsDark : "")}>
       <div className={cn("primary-container")}>
         <div className={styles.contentSection}>
-          <h6 className={styles.resultTitle}>{props.Title}</h6>
+          <h6 className={cn(styles.resultTitle,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props.Title}` }}>
+          </h6>
           <div>
-            <h3 className={styles.resultHeading}>
-              {props?.SubTitle}
+            <h3 className={cn(styles.resultHeading,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}>
             </h3>
             <p className={styles.resultText}>
               {props?.Description}

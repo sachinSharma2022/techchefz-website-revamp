@@ -13,7 +13,7 @@ const AcceleratorBanner = ({ props }) => {
     <section className={`${styles.banner} ${theme ? styles.bannerDark : ""}`}>
       <div className={cn("primary-container")}>
         <div className={styles.bannerContent}>
-          <h1 className={styles.bannerTitle} dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}>
+          <h1 className={cn(styles.bannerTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}>
           </h1>
           <div className={styles.bannerRight}>
             <p>

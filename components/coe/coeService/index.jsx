@@ -28,7 +28,7 @@ const CoeService = ({props}) => {
          
         </div>
         <div className={styles.contentSec}>
-          <h3 className={styles.coeServiceTitle} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
+          <h3 className={cn(styles.coeServiceTitle,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
            
           </h3>
           <div>

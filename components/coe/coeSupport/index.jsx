@@ -36,9 +36,9 @@ const CoeSupport = ({props}) => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.headSec}>
-          <h6 className={styles.coeSupportTitle}>{props?.Title}</h6>
-          <h3 className={styles.coeSupportHeading}>
-          {props?.SubTitle}
+          <h6 className={cn(styles.coeSupportTitle,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}> 
+          </h6>
+          <h3 className={cn(styles.coeSupportHeading,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}`}}> 
           </h3>
         </div>
         <div className={styles.coeSupportCards}>
