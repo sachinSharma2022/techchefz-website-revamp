@@ -8,7 +8,8 @@ import { Input, Textarea, Error } from "@/components/ui/inputCustom";
 import { MyContext } from "@/context/theme";
 import { Form, Formik } from "formik";
 import { useContext } from "react";
-import * as yep from "yup";
+import { triggerMail } from "@/lib/triggerMail";
+import { vendorValidationSchema } from "@/lib/FormSchema";
 
 import CustomDropdown from "@/components/ui/customDropdown";
 
@@ -21,33 +22,14 @@ const VendorForm = () => {
     lastName: "",
     email: "",
     phone: "",
+    countyCode:"",
     companyName: "",
-    countrySelection: "",
+    serviceOffered: "",
     projectExplanation: "",
   };
-  const validationSchema = yep.object({
-    firstName: yep
-      .string()
-      .required("First Name is required")
-      .matches(/^[A-Za-z]+$/, "Only alphabets are allowed"),
-    lastName: yep
-      .string()
-      .required("Last Name is required")
-      .matches(/^[A-Za-z]+$/, "Only alphabets are allowed"),
-    email: yep
-      .string()
-      .email("Please enter a valid Email")
-      .required("Email is required"),
-    phone: yep.string().required("Phone is required"),
-    companyName: yep.string().required("Company Name is required"),
-    countrySelection: yep.string().required("Country is required"),
-    projectExplanation: yep
-      .string()
-      .required("Project Explanation is required"),
-  });
+ 
 
   const dropdownData = [
-    { value: "Country", label: "Country" },
     { value: "India", label: "India" },
     { value: "united State", label: "united State" },
     { value: "New York", label: "New York" },
@@ -56,16 +38,17 @@ const VendorForm = () => {
   return (
     <Formik
       onSubmit={(values) => {
-        console.log(values, "values");
+        console.log(values)
+        triggerMail({content:JSON.stringify(values)})
       }}
       initialValues={formInitialSchema}
       initialStatus={{
         success: false,
         successMsg: "",
       }}
-      validationSchema={validationSchema}
+      validationSchema={vendorValidationSchema}
     >
-      {({ errors, handleBlur, handleChange, touched, values }) => (
+      {({ errors, handleBlur, handleChange,setFieldValue, touched, values }) => (
         <Form>
           <div className={styles.contactUsForm}>
             <p className={styles.formText}>
@@ -81,8 +64,8 @@ const VendorForm = () => {
                     id="firstName"
                     name="firstName"
                     error={Boolean(touched.firstName && errors.firstName)}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                     values={values.firstName}
                     errorStatus={touched.firstName && errors.firstName}
                   />
@@ -98,8 +81,8 @@ const VendorForm = () => {
                     id="lastName"
                     name="lastName"
                     error={Boolean(touched.lastName && errors.lastName)}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                     values={values.lastName}
                     errorStatus={touched.lastName && errors.lastName}
                   />
@@ -115,8 +98,8 @@ const VendorForm = () => {
                     id="email"
                     name="email"
                     error={Boolean(touched.email && errors.email)}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
+                    onChange={handleChange}
+                   onBlur={handleBlur}
                     values={values.email}
                     errorStatus={touched.email && errors.email}
                   />
@@ -128,8 +111,9 @@ const VendorForm = () => {
                   <CountryDropdown
                     id="phone"
                     name="phone"
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
+                    onChange={handleChange}
+                    setFieldValue={setFieldValue}
+                    onBlur={handleBlur}
                     values={values.phone}
                     errorStatus={touched.phone && errors.phone}
                   />
@@ -145,8 +129,8 @@ const VendorForm = () => {
                     id="companyName"
                     name="companyName"
                     error={Boolean(touched.companyName && errors.companyName)}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                     values={values.companyName}
                     errorStatus={touched.companyName && errors.companyName}
                   />
@@ -156,19 +140,20 @@ const VendorForm = () => {
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
                   <CustomDropdown
-                    label="Country"
-                    name="countrySelection"
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
-                    values={values.countrySelection}
+                    label="Service Offered"
+                    name="serviceOffered"
+                    setFieldValue={setFieldValue}
+                    onBlur={handleBlur}
+                    values={values.serviceOffered}
                     options={dropdownData}
                     errorStatus={
-                      touched.countrySelection && errors.countrySelection
+                      touched.serviceOffered && errors.serviceOffered
                     }
                     className="custom-dropdown"
+                    placeholder="Service Offered*"
                   />
-                  {touched.countrySelection && errors.countrySelection && (
-                    <Error>{errors.countrySelection}</Error>
+                  {touched.serviceOffered && errors.serviceOffered && (
+                    <Error>{errors.serviceOffered}</Error>
                   )}
                 </div>
                 <div className={`${styles.inputSpace} col-md-12 col-12`}>
@@ -182,8 +167,8 @@ const VendorForm = () => {
                     error={Boolean(
                       touched.projectExplanation && errors.projectExplanation
                     )}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                     values={values.projectExplanation}
                     errorStatus={
                       touched.projectExplanation && errors.projectExplanation

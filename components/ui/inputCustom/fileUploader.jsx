@@ -10,8 +10,9 @@ export const FileUploader = ({ handleFile, className, props }) => {
 
   const handleChange = (event) => {
     const fileUploaded = event.target.files[0];
+    props.setFieldValue(props.name,event.target.files[0])
     handleFile(fileUploaded);
-  };
+  };  
   return (
     <>
       <div role="button" className={styles.buttonUpload} onClick={handleClick}>

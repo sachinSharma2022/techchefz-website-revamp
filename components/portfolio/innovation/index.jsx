@@ -50,8 +50,8 @@ const Innovation = ({props}) => {
           {props?.Views?.map((data, index) => (
             <Link key={index} href={data?.ButtonLink} className={styles.innovationBox}>
               <div className={styles.textCardSpace}>
-                <p className={styles.sbSubtitle}>{data?.Title}</p>
-                <h4 className={styles.sbTitle}>{data?.Description}</h4>
+                <p className={cn(styles.sbSubtitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${data?.Title}`}}></p>
+                <h4 className={cn(styles.sbTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${data?.Description}`}}></h4>
               </div>
               <div className={styles.bgImage}>
                 <ImageCustom
