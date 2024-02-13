@@ -64,10 +64,10 @@ const OurNumbers = ({ carrer, experience }) => {
         <TextRevel>
           <div className={styles.careerRow}>
             <div>
-              <p
+              <h6
                 className={cn(styles.projectHighlight, "gradient-text")}
                 dangerouslySetInnerHTML={{ __html: `${carrer?.title}` }}
-              ></p>
+              ></h6>
               <h2
                 className={cn(styles.datingText, "gradient-text")}
                 dangerouslySetInnerHTML={{ __html: `${carrer?.description}` }}

@@ -28,7 +28,7 @@ const CmsOurValue = () => {
       <div className="row">
         <div className="col-md-7 col-lg-8 col-12">
           <div className={styles.ourValueHead}>
-            <p className={styles.projectHighlight}>Our Values</p>
+            <h6 className={styles.projectHighlight}>Our Values</h6>
             <h4 className={styles.title}>
               Our Capability for CMS Implementation.
             </h4>

@@ -59,8 +59,15 @@
       }
 
       .ourValuesText{
+         font-size: text(lg);
+         font-weight: 400;
+         opacity: 0.8;
+         line-height: 1.875rem;
+         margin-bottom: 0;
          @include mobile{
             margin-bottom: 0;
+            font-size: text(normal);
+            line-height: text(xl);
          }
       }
    }
@@ -72,7 +79,7 @@
       .accordionHead {
          width: 100%;
          font-size: text(xl);
-         padding: 1.25rem 0;
+         padding: 2rem 0;
          border-bottom: 0.14rem solid rgba(color(text-primary), 0.12);
          display: flex;
          justify-content: flex-start;

@@ -10,27 +10,29 @@ import TechnologyValues from "@/components/technology/technologyValues";
 import { getData } from "@/lib/fetchData";
 import { api_cms_technologies_Page } from "@/lib/constants";
 
-
-const Cms = async() => {
-  const data = await getData(api_cms_technologies_Page)
+const Cms = async () => {
+  const data = await getData(api_cms_technologies_Page);
   return (
-    <>{
-      data? <div>
-      <CmsBanner props={data.CmsBanner} />
-      <CmsPlayer props={data.CmsPlayer} />
-      <WhyCms props={data.WhyCms} />
-      <CmsType props={data.CmsType} />
-      <CmsDifference props={data.CmsDifference} />
-      <TechnologyValues props={data.Technology} />
-      <RelatedCase sliderClassName="mb-0" props={data.CaseStudy} />
-      <Faq props ={data.Faq} />
-      <LetsWork  contact={data.ContactUs}/>
-    </div>:<></>
-    }
-    
-    
+    <>
+      {data ? (
+        <div>
+          <CmsBanner props={data.CmsBanner} />
+          <CmsPlayer props={data.CmsPlayer} />
+          <WhyCms props={data.WhyCms} />
+          <CmsType props={data.CmsType} />
+          <CmsDifference props={data.CmsDifference} />
+          <TechnologyValues
+            wrapperStyle="technology-cms-styles"
+            props={data.Technology}
+          />
+          <RelatedCase sliderClassName="mb-0" props={data.CaseStudy} />
+          <Faq props={data.Faq} />
+          <LetsWork contact={data.ContactUs} />
+        </div>
+      ) : (
+        <></>
+      )}
     </>
-   
   );
 };
 
