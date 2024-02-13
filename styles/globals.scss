@@ -900,3 +900,35 @@ html.lenis {
   width: 100%;
   height: 100%;
 }
+
+
+// Pages BG Style
+.technology-career-style {
+  background-color: color(bg-soft);
+
+  @include desktop {
+    margin-top: 8.5rem;
+  }
+}
+
+.dark .technology-career-style {
+  background: color(dark-bg);
+}
+
+.technology-styles {
+  background-color: color(primary-white);
+}
+
+.dark .technology-styles {
+  background-color: color(input-bg);
+}
+
+.technology-cms-styles {
+  background-color: color(primary-white);
+  padding-bottom: 0;
+}
+
+.dark .technology-cms-styles {
+  background-color: color(input-bg);
+  padding-bottom: 0;
+}

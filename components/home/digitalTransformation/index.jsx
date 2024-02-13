@@ -13,7 +13,7 @@ import Link from "next/link";
 import { base_Uri } from "@/lib/constants";
 import TextRevel from "@/components/ui/sectionAnimation";
 
-const DigitalTransformation = ({digital}) => {
+const DigitalTransformation = ({ digital }) => {
   const { theme, setTheme } = useContext(MyContext);
   // const serviceCard = [
   //   {
@@ -89,19 +89,26 @@ const DigitalTransformation = ({digital}) => {
                 </h6>
             </div>
 
-            <div className="col-md-8 col-12">
-              <h3 className={cn(styles.datingText, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${digital[0]?.SubTitle}`}}>
-              </h3>
-            </div>
-            <div className={`${styles.servicesBtn} col-md-4 col-12`}>
-              <Link href="/solutions">
-                <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
-                {digital[0]?.Btn} <Icons.ArrowRight size={18} />
-                </Button>
-              </Link>
+              <div className="col-md-8 col-12">
+                <h3
+                  className={cn(styles.datingText, "gradient-text")}
+                  dangerouslySetInnerHTML={{
+                    __html: `${digital[0]?.SubTitle}`,
+                  }}
+                ></h3>
+              </div>
+              <div className={`${styles.servicesBtn} col-md-4 col-12`}>
+                <Link href="/solutions">
+                  <Button
+                    variant={theme ? "lightBlueOutline" : "outline"}
+                    size="md"
+                  >
+                    {digital[0]?.Btn} <Icons.ArrowRight size={18} />
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
         </TextRevel>
 
         <div className={`${styles.digitalMain} digital-transformation`}>
@@ -111,7 +118,11 @@ const DigitalTransformation = ({digital}) => {
                 <div className={styles.digitalGrid}>
                   <div className={styles.digitalImg}>
                     <ImageCustom
-                      src={data?.Image?.data?.attributes?.url?`${base_Uri}${data?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+                      src={
+                        data?.Image?.data?.attributes?.url
+                          ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
+                          : `${base_Uri}/`
+                      }
                       width={421}
                       height={318}
                       alt="bannerImg"
@@ -119,18 +130,16 @@ const DigitalTransformation = ({digital}) => {
                   </div>
 
                   <div className={styles.experienceCardBox}>
-                    <h4 className={cn(styles.CustomerHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${data?.Title}`}}>
-                    </h4>
-                    <p className={cn(styles.digitalText, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${data?.Description}`}}> 
-                    </p>
-
-                    {/* <ul className={styles.customerList}>
-                      <li className={styles.list}>
-                        Attract & Engage more users/customers
-                      </li>
-                      <li className={styles.list}>Increase Conversions</li>
-                      <li className={styles.list}>Automate Marketing Tasks</li>
-                    </ul> */}
+                    <h4
+                      className={cn(styles.CustomerHeading, "gradient-text")}
+                      dangerouslySetInnerHTML={{ __html: `${data?.Title}` }}
+                    ></h4>
+                    <p
+                      className={cn(styles.digitalText, "gradient-text")}
+                      dangerouslySetInnerHTML={{
+                        __html: `${data?.Description}`,
+                      }}
+                    ></p>
                   </div>
                 </div>
               </div>

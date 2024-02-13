@@ -20,28 +20,7 @@ const OurResults = ({props}) => {
   const { theme, setTheme } = useContext(MyContext);
   const isMobileScreen = useMediaQuery({ query: "(max-width: 767px)" });
 
-  // const resultCardData = [
-  //   {
-  //     number: "4+",
-  //     icon: <Icons.Market width={36} height={36} />,
-  //     title: "Years of Experience in Market.",
-  //   },
-  //   {
-  //     number: "1M+",
-  //     icon: <Icons.MarketPlace width={36} height={36} />,
-  //     title: "Users growth in marketplace.",
-  //   },
-  //   {
-  //     number: "300%",
-  //     icon: <Icons.Rates width={36} height={36} />,
-  //     title: "Years of Experience in Market.",
-  //   },
-  //   {
-  //     number: "120%",
-  //     icon: <Icons.PerformanceIcon width={36} height={36} />,
-  //     title: "Years of Experience in Market.",
-  //   },
-  // ];
+
 
   return (
     <section
@@ -76,13 +55,13 @@ const OurResults = ({props}) => {
       {isMobileScreen && (
         <div className={styles.mobileSlider}>
           <MobileSlider slidesToShow={1.4}>
-            {resultCardData.map((data, index) => (
+            {props[0]?.Views?.map((data, index) => (
               <div key={index} className={styles.resultCard}>
                 <div className="d-flex justify-content-between align-items-center">
-                  <h6 className={styles.cardNum}>{data.number}</h6>
-                  <div className={styles.cardNum}>{data.icon}</div>
+                  <h6 className={styles.cardNum}>{data.Title}</h6>
+                  <div className={styles.cardNum}><ImageCustom height={36} width={36}  src= {data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data?.attributes?.url}`:`${base_Url}/`} /></div>
                 </div>
-                <p className={styles.cardText}>{data.title}</p>
+                <p className={styles.cardText}>{data.Description}</p>
               </div>
             ))}
           </MobileSlider>

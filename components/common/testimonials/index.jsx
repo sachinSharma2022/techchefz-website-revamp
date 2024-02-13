@@ -17,7 +17,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import styles from "./style.module.scss";
 
-const Testimonials = ({props}) => {
+const Testimonials = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
@@ -88,7 +88,9 @@ const Testimonials = ({props}) => {
                   <h3 dangerouslySetInnerHTML={{ __html: `${props[0]?.SubTitle}`}}>
                   </h3>
                 </div>
-                <p className={styles.testimonialsText}>{props[0]?.Description}</p>
+                <p className={styles.testimonialsText}>
+                  {props[0]?.Description}
+                </p>
               </div>
 
               {/* Mobile Slider */}
@@ -123,7 +125,11 @@ const Testimonials = ({props}) => {
                         <div className={styles.customerProfile}>
                           <div className={styles.customerImg}>
                             <ImageCustom
-                              src={data?.ProfileImage?.data?.attributes?.url?`${base_Uri}${data?.ProfileImage?.data?.attributes?.url}`:`${base_Uri}/`}
+                              src={
+                                data?.ProfileImage?.data?.attributes?.url
+                                  ? `${base_Uri}${data?.ProfileImage?.data?.attributes?.url}`
+                                  : `${base_Uri}/`
+                              }
                               width={100}
                               height={100}
                               alt="profileImg"
@@ -205,7 +211,11 @@ const Testimonials = ({props}) => {
                       <div className={styles.customerProfile}>
                         <div className={styles.customerImg}>
                           <ImageCustom
-                            src={data?.ProfileImage?.data?.attributes?.url?`${base_Uri}${data?.ProfileImage?.data?.attributes?.url}`:`${base_Uri}/`}
+                            src={
+                              data?.ProfileImage?.data?.attributes?.url
+                                ? `${base_Uri}${data?.ProfileImage?.data?.attributes?.url}`
+                                : `${base_Uri}/`
+                            }
                             width={100}
                             height={100}
                             alt="profileImg"

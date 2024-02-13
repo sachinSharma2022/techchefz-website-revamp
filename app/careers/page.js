@@ -17,7 +17,10 @@ const Career = async () => {
           <TczLife props={data.Lifeattechchefz} />
           <OpenPosition />
           <HomeTestimonials testimonials={data.Testimonials} />
-          <TechnologyValues props={data.Technology} />
+          <TechnologyValues
+            wrapperStyle="technology-career-style"
+            props={data.Technology}
+          />
           <Innovation props={data.ourInnvotion} />
         </div>
       ) : (
