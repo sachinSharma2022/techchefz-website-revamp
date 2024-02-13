@@ -16,10 +16,10 @@ const Solutions = ({props}) => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.contentSection}>
-          <h6 className={styles.solutionTitle}>{props.Title}</h6>
+          <h6 className={cn(styles.solutionTitle,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props.Title}` }}>
+          </h6>
           <div>
-            <h3 className={styles.solutionHeading}>
-             {props.SubTitle}
+            <h3 className={cn(styles.solutionHeading,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props.SubTitle}` }}>
             </h3>
             <p className={styles.solutionText}>
               {props.Description}

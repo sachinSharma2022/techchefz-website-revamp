@@ -14,7 +14,7 @@ const PrivacyHeroBanner = ({props}) => {
       }`}
     >
       <div className={cn("primary-container")}>
-        <h1 className={styles.title} dangerouslySetInnerHTML={{ __html: `${props[0]?.title}`}}>
+        <h1 className={cn(styles.title,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.title}`}}>
           
         </h1>
         <p className={styles.leadText} dangerouslySetInnerHTML={{ __html: `${props[0]?.subtitle}`}}>

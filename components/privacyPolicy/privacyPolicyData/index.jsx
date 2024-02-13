@@ -17,7 +17,7 @@ const PrivacyPolicyData = ({props}) => {
       <div className={cn("primary-container")}>
       {props?.map((data, index) => (
         <div className={styles.policyDivide}>
-          <h4 className={styles.title} dangerouslySetInnerHTML={{ __html: `${data?.Title}`}}></h4>
+          <h4 className={cn(styles.title, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${data?.Title}`}}></h4>
           <p className={styles.leadText} dangerouslySetInnerHTML={{ __html: `${data?.FullDescription}`}}>
           
           </p>

@@ -138,7 +138,8 @@ const InsightFeatures = ({props, feature}) => {
           </div>
         </div>
         <div className={styles.featureInsight}>
-          <h6 className={styles.insightSubHeading}>{feature[0].Title} </h6>
+          <h6 className={cn(styles.insightSubHeading,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${feature[0].Title}`}}>
+              </h6>
           <div className={styles.featureInsightCards}>
             {feature[0].featureInsightData.map((data, index) => (
               <PostCard

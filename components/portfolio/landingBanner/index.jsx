@@ -12,7 +12,7 @@ const LandingBanner = ({props}) => {
   return (
     <section className={!theme ? styles.landingBannerStyle : styles.darkMode}>
       <div className={cn("primary-container", styles.flexContainer)}>
-        <h1 className={styles.title} dangerouslySetInnerHTML={{ __html: `${props[0]?.title}`}}>
+        <h1 className={cn(styles.title,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.title}`}}>
           
         </h1>
 

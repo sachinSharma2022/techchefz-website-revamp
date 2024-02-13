@@ -13,9 +13,9 @@ const CoeImpact = ({props}) => {
     <section className={`${styles.impact} ${theme ? styles.impactDark : ""}`}>
       <div className={cn("primary-container")}>
         <div className={styles.headSection}>
-          <h6 className={styles.subHeading}>{props.Title}</h6>
-          <h3 className={styles.impactHeading}>
-            {props.SubTitle}
+          <h6 className={cn(styles.subHeading,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
+          </h6>
+          <h3 className={cn(styles.impactHeading,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}`}}>
           </h3>
         </div>
 

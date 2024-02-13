@@ -18,7 +18,7 @@ const CaseStudyBanner = ({props}) => {
       }`}
     >
       <div className={cn("primary-container")}>
-        <h1 className={styles.bannerTitle} dangerouslySetInnerHTML={{ __html: `${props?.title}` }}>
+        <h1 className={cn(styles.bannerTitle,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.title}` }}>
 
         </h1>
       </div>

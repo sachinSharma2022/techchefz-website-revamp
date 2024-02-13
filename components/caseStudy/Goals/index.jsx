@@ -30,11 +30,11 @@ const Goals = ({props}) => {
       <div className={cn("primary-container")}>
         <div className="row justify-content-between">
           <div className="col-md-3 col-lg-3">
-            <h5 className={styles.goalsTitle}>{props[0].Title}</h5>
+            <h5 className={cn(styles.goalsTitle,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0].Title}` }}> 
+            </h5>
           </div>
           <div className="col-md-7 col-lg-8">
-            <h3 className={styles.goalsHeading}>
-              {props[0].SubTitle}
+            <h3 className={cn(styles.goalsHeading,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0].SubTitle}` }}>
             </h3>
             <p className={styles.goalsContent} dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}` }}>
               
