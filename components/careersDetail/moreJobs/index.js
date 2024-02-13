@@ -33,19 +33,13 @@ const MoreJobs = () => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
-          dots: false,
-          infinite: false,
-          speed: 500,
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 767,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          dots: false,
-          infinite: false,
-          speed: 500,
         },
       },
       {
@@ -53,9 +47,6 @@ const MoreJobs = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          dots: false,
-          infinite: false,
-          speed: 500,
         },
       },
     ],
@@ -113,12 +104,26 @@ const MoreJobs = () => {
           theme ? styles.jobDetailDarkContainer : ""
         )}
       >
-        <div className={cn("primary-container")}>
+        <div className={cn("primary-container", styles.containerStyle)}>
           <div className={styles.titleSection}>
             <div>
               <h6>SIMILAR VACANCIES</h6>
               <h3>More jobs at TechChefz</h3>
             </div>
+          </div>
+
+          <div className={cn(styles.sliderSection)}>
+            <Slider {...settings} ref={slider}>
+              {sliderData.map((value, index) => (
+                <JobCard
+                  key={index}
+                  title={value.title}
+                  content={value.content}
+                  exp={value.exp}
+                  location={value.location}
+                />
+              ))}
+            </Slider>
 
             <div className={styles.sliderArrow}>
               <button
@@ -136,20 +141,6 @@ const MoreJobs = () => {
                 <Icons.ArrowRight fill="black" stroke="black" />
               </button>
             </div>
-          </div>
-
-          <div className="job-detail-slider">
-            <Slider {...settings} ref={slider}>
-              {sliderData.map((value, index) => (
-                <JobCard
-                  key={index}
-                  title={value.title}
-                  content={value.content}
-                  exp={value.exp}
-                  location={value.location}
-                />
-              ))}
-            </Slider>
           </div>
         </div>
       </div>

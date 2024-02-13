@@ -4,11 +4,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 3.5rem;
 
-  @include mobile {
-    justify-content: center;
-    padding-top: 9.5rem;
+  @include mobile-tablet-p {
+    padding-top: 0;
   }
 
   .cardDiv {
@@ -25,6 +23,11 @@
     &:hover {
       border: 0.125rem solid color(heading-liner);
       cursor: pointer;
+    }
+
+    @include mobile-tablet-p {
+      padding: 1.25rem;
+      max-width: 100%;
     }
     
     h1 {
@@ -46,6 +49,10 @@
       align-items: center;
       gap: 1rem;
       padding-bottom: 2rem;
+
+      @include mobile-tablet-p {
+        justify-content: space-between;
+      }
 
       .spanDetail {
         display: flex;

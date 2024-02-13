@@ -1,10 +1,6 @@
 @import "~/styles/partials/config";
 
 .ourGallery {
-  &.ourGalleryDark {
-    background-color: color(input-bg);
-    color: color(primary-white);
-  }
 
   .ourGalleryTitle {
     font-size: text(normal);
@@ -106,5 +102,11 @@
         height: 100%;
       }
     }
+  }
+
+  // Dark Mode
+  &.ourGalleryDark {
+    background-color: color(input-bg);
+    color: color(primary-white);
   }
 }

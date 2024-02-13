@@ -69,7 +69,7 @@ const Goals = ({props}) => {
           <div className="row justify-content-center ">
             <div className="col-md-12 col-lg12">
               <ImageCustom
-                src={props[0].gallaryImages[0].Image.data[0].attributes.url?`${base_Uri}${props[0].gallaryImages[0].Image.data[0].attributes.url}`:`${base_Uri}/`}
+                src={props[0]?.gallaryImages[0]?.Image?.data?.attributes?.url?`${base_Uri}${props[0].gallaryImages[0].Image.data?.attributes.url}`:`${base_Uri}/`}
                 
                 width={1060}
                 height={500}
@@ -80,7 +80,7 @@ const Goals = ({props}) => {
           <div className={styles.goalsBottomImg}>
             <div>
               <ImageCustom
-                src={props[0].gallaryImages[1].Image.data[0].attributes.url?`${base_Uri}${props[0].gallaryImages[1].Image.data[0].attributes.url}`:`${base_Uri}/`}
+                src={props[0].gallaryImages[1].Image?.data?.attributes?.url?`${base_Uri}${props[0].gallaryImages[1].Image?.data?.attributes.url}`:`${base_Uri}/`}
                 
                 width={500}
                 height={400}
@@ -89,7 +89,7 @@ const Goals = ({props}) => {
             </div>
             <div>
               <ImageCustom
-                src={props[0].gallaryImages[2].Image.data[0].attributes.url?`${base_Uri}${props[0].gallaryImages[2].Image.data[0].attributes.url}`:`${base_Uri}/`}
+                src={props[0].gallaryImages[2].Image?.data?.attributes?.url?`${base_Uri}${props[0].gallaryImages[2].Image.data.attributes.url}`:`${base_Uri}/`}
                
                 width={500}
                 height={400}

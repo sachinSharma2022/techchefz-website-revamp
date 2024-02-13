@@ -2,7 +2,7 @@
 
 .scrollTop {
   position: relative;
-  bottom: 0;
+  top: 0;
   right: 0;
   display: inline-flex;
   align-items: center;
@@ -15,4 +15,8 @@
   z-index: 99;
   transition: all 0.5s;
   transform: rotate(-90deg);
+
+  @include mobile-tablet-p {
+    display: none;
+  }
 }

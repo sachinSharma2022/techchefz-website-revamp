@@ -39,7 +39,7 @@
     display: flex;
     gap: 2.5rem;
 
-    @include mobile-tablet-p {
+    @include tablet {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: text(lg);
@@ -48,7 +48,6 @@
     @include mobile {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
-      flex-direction: column;
       gap: text(lg);
     }
   }

@@ -1,11 +1,11 @@
 "use client";
 
-import React from "react";
 import { MyContext } from "@/context/theme";
-import { useContext } from "react";
 import { cn } from "@/lib/utils";
 import { cva } from "class-variance-authority";
+import React, { useContext, useState } from "react";
 
+import { FileUploader } from "./fileUploader";
 import styles from "./style.module.scss";
 
 const inputVariants = cva(styles.base, {
@@ -27,6 +27,7 @@ const Input = React.forwardRef(
       icon,
       inputStyle,
       inputFloatingStyle,
+      inputContainerStyle,
       ...props
     },
     ref
@@ -36,7 +37,8 @@ const Input = React.forwardRef(
       <div
         className={cn(
           styles.inputContainerStyle,
-          theme ? styles.inputContainerStyleDark : ""
+          theme ? styles.inputContainerStyleDark : "",
+          inputContainerStyle
         )}
       >
         <div
@@ -106,8 +108,67 @@ const Textarea = React.forwardRef(
 );
 Textarea.displayName = "Textarea";
 
+const InputFile = React.forwardRef(
+  (
+    {
+      className,
+      variant,
+      size,
+      inputError,
+      label,
+      icon,
+      inputStyle,
+      inputFloatingStyle,
+      inputContainerStyle,
+      ...props
+    },
+    ref
+  ) => {
+    const { theme } = useContext(MyContext);
+    const [fileName, setFileName] = useState("");
+    const handleFile = (file) => {
+      setFileName(file.name);
+    };
+
+    return (
+      <div
+        className={`${styles.inputContainerStyle} ${
+          theme ? styles.inputContainerStyleDark : ""
+        }`}
+      >
+        <div
+          className={cn(
+            styles.inputFile,
+            "form-floating",
+            inputFloatingStyle,
+            inputError && styles.inputErrorStyle
+          )}
+        >
+          <FileUploader handleFile={handleFile} {...props} />
+          {fileName ? (
+            <p className={styles.filePath}>Uploaded file: {fileName}</p>
+          ) : null}
+
+          {label && (
+            <label
+              className={cn(
+                styles.labelCustom,
+                fileName && styles.labelCustomFloat
+              )}
+              for="floatingInput"
+            >
+              {label}
+            </label>
+          )}
+        </div>
+      </div>
+    );
+  }
+);
+InputFile.displayName = "InputFIle";
+
 const Error = ({ className, children }) => (
   <p className={cn(styles.error, className)}>{children}</p>
 );
 
-export { Error, Input, Textarea };
+export { Error, Input, InputFile, Textarea };

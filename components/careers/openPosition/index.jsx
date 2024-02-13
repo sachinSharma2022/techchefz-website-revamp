@@ -182,6 +182,11 @@ const OpenPosition = () => {
 
   const options = [
     {
+      label: "Techchef Portal",
+      link: "https://www.techchefz.com/careers/applyjob/",
+      icon: "/images/logo-icon-blue.svg",
+    },
+    {
       label: "Linkedin",
       link: "https://in.linkedin.com/",
       icon: "/images/icons/linkedin.png",
@@ -307,7 +312,10 @@ const OpenPosition = () => {
                             </ul>
 
                             <div className={styles.btnSection}>
-                              <Button variant={theme ? "blueBtnDark" : "blueBtn"} size="md">
+                              <Button
+                                variant={theme ? "blueBtnDark" : "blueBtn"}
+                                size="md"
+                              >
                                 More Info
                               </Button>
                               <SmoothDropdown

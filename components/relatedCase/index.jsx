@@ -18,7 +18,7 @@ const RelatedCase = ({props}) => {
   const { theme, setTheme } = useContext(MyContext);
 
   var settings = {
-    dots: false,
+    dots: true,
     infinite: false,
     arrows: false,
     speed: 500,
@@ -100,13 +100,12 @@ const RelatedCase = ({props}) => {
       <div className={cn("primary-container relative")}>
         <div className={styles.headSection}>
           <div>
-            <h6 className={styles.relatedCaseTitle}>
-              {props.Title || "Related Case Study"}
+            <h6 className={cn(styles.relatedCaseTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props.Title }`}}>
             </h6>
-            <h3 className={styles.relatedCaseHeading}>
-              {props.Description || "Unravel More of Our Success Stories"}
+            <h3 className={cn(styles.relatedCaseHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props.Description }`}}>
             </h3>
           </div>
+
           <div className={styles.sliderArrow}>
             <button
               className={

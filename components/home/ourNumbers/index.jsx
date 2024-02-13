@@ -12,9 +12,9 @@ import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
 import TextRevel from "@/components/ui/sectionAnimation";
 import MobileSlider from "@/components/common/mobileSlider";
+import { base_Url } from "@/lib/constants";
 
-const OurNumbers = ({carrer,experience}) => {
-  console.log("vvvv",experience)
+const OurNumbers = ({ carrer, experience }) => {
   const { theme, setTheme } = useContext(MyContext);
   const settings = {
     className: "center",
@@ -63,42 +63,56 @@ const OurNumbers = ({carrer,experience}) => {
       <div className={cn("primary-container")}>
         <TextRevel>
           <div className={styles.careerRow}>
-            <div >
-        
-                <p className={styles.projectHighlight}>{carrer.title}</p>
-                <h2 className={styles.datingText}>
-                {carrer.description}
-                </h2>
-              
+            <div>
+              <p
+                className={cn(styles.projectHighlight, "gradient-text")}
+                dangerouslySetInnerHTML={{ __html: `${carrer?.title}` }}
+              ></p>
+              <h2
+                className={cn(styles.datingText, "gradient-text")}
+                dangerouslySetInnerHTML={{ __html: `${carrer?.description}` }}
+              ></h2>
+            </div>
 
-            <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
-            {carrer.button}<Icons.ArrowRight size={18} />
-            </Button>
-          </div>
+            <div>
+              <Button
+                variant={theme ? "lightBlueOutline" : "outline"}
+                size="md"
+              >
+                {carrer.button}
+                <Icons.ArrowRight size={18} />
+              </Button>
+            </div>
           </div>
         </TextRevel>
         <div className={styles.ourNumberMain}>
           <div className={styles.ourNumberGrid}>
             <div className={styles.ourNumbersImg}>
               <ImageCustom
-                src={experience[0].Image.data.attributes.url?`${base_Uri}${experience[0].Image.data.attributes.url}`:`${base_Uri}/`}
+                src={
+                  experience?.Image?.data?.attributes?.url
+                    ? `${base_Uri}${experience?.Image?.data?.attributes?.url}`
+                    : `${base_Uri}/`
+                }
                 width={1000}
                 height={100}
                 alt="bannerImg"
               />
             </div>
             <div>
-              <p className={styles.ourNumbersText}>
-               {experience[0].Description}
-              </p>
+              <p className={styles.ourNumbersText}>{experience?.Description}</p>
               <div
                 className={`${styles.desktopCards} ${styles.ourNumberOption} `}
               >
-                {experience[0].Vews.map((data, index) => (
+                {experience?.Vews.map((data, index) => (
                   <ServiceInfoCard
                     key={index}
                     sbTitle={data.Title}
-                    icon={data?.Image?.data.attributes.url?`${base_Uri}${data?.Image?.data.attributes.url}`:`${base_Uri}/`}
+                    icon={
+                      data?.Image?.data.attributes.url
+                        ? `${base_Url}${data?.Image?.data.attributes.url}`
+                        : `${base_Url}/`
+                    }
                     sbText={data.Description}
                   />
                 ))}
@@ -108,12 +122,16 @@ const OurNumbers = ({carrer,experience}) => {
 
           <div className={cn(styles.mobileCards, styles.ourNumberOption)}>
             <MobileSlider slidesToShow={1.3}>
-              {experience[0].Vews.map((data, index) => (
+              {experience.Vews.map((data, index) => (
                 <ServiceInfoCard
-                key={index}
-                    sbTitle={data.Title}
-                    icon={data?.Image?.data.attributes.url?`${base_Uri}${data?.Image?.data.attributes.url}`:`${base_Uri}/`}
-                    sbText={data.Description}
+                  key={index}
+                  sbTitle={data.Title}
+                  icon={
+                    data?.Image?.data.attributes.url
+                      ? `${base_Url}${data?.Image?.data.attributes.url}`
+                      : `${base_Url}/`
+                  }
+                  sbText={data.Description}
                 />
               ))}
             </MobileSlider>

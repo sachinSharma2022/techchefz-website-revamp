@@ -1,0 +1,76 @@
+@import "~/styles/partials/config";
+
+  .serviceBox {
+    text-align: center;
+    background-color: color(primary-white);
+    padding: text(xxxl);
+    min-height: 8.6rem;
+    border-radius: text(xl);
+    border: 0.125rem solid color(primary-white);
+    min-width: 23.438rem;
+    @include transition(0.5s);
+
+    &:hover {
+      border: 0.125rem solid color(heading-liner);
+      cursor: pointer;
+    }
+
+    &:nth-child(even) {
+      position: relative;
+      top: 6.25rem;
+
+      @include mobile {
+        top: 0;
+      }
+    }
+
+    @include mobile-tablet-p {
+      min-height: auto;
+      height: 18.5rem;
+      padding: text(lg);
+      max-width: 95%;
+      min-width: auto;
+    }
+
+    .bgIcon {
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .sbTitle {
+      font-size: text(xl);
+      font-weight: 500;
+      line-height: text(xxxl);
+      margin-bottom: 0.75rem;
+      text-align: left;
+
+      @include mobile-tablet-p {
+        font-size: text(lg);
+        @include truncate(2);
+      }
+    }
+    .sbText {
+      font-weight: 400;
+      font-size: text(normal);
+      line-height: 1.5rem;
+      opacity: 0.8;
+      text-align: left;
+
+      @include mobile-tablet-p {
+        font-size: text(normal);
+        @include truncate(3);
+      }
+    }
+
+
+    &.serviceBoxDark {
+      background-color: color(dark-bg);
+      border: 0.14rem solid rgba(color(primary-white), 0.12);
+
+      &:hover {
+        border: 0.125rem solid color(heading-liner);
+        cursor: pointer;
+      }
+    }
+  }

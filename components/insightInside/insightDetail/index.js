@@ -7,7 +7,8 @@ import { cn } from "@/lib/utils";
 import { useContext } from "react";
 import styles from "./style.module.scss";
 
-const InsightDetail = () => {
+const InsightDetail = ({props}) => {
+  console.log("nn",props);
   const { theme, setTheme } = useContext(MyContext);
 
   const iconMediaData = [
@@ -85,10 +86,10 @@ const InsightDetail = () => {
               />
             </div>
 
-            {insightDetailData.map((value, index) => (
+            {props?.map((value, index) => (
               <div className={styles.insightSection} key={index}>
-                <h3 className={styles.heading}>{value.title}</h3>
-                <p>{value.para}</p>
+                <h3 className={styles.heading}>{value.Title}</h3>
+                <p>{value.Description}</p>
                 {value.img && (
                   <div className={styles.insightImageDiv}>
                     <ImageCustom
@@ -99,11 +100,11 @@ const InsightDetail = () => {
                     />
                   </div>
                 )}
-                <ul>
+                {/* <ul>
                   {value.bullet.map((point, idx) => (
                     <li key={idx}>{point}</li>
                   ))}
-                </ul>
+                </ul> */}
               </div>
             ))}
           </div>

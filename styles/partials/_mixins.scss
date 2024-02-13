@@ -30,6 +30,7 @@ $desktop-width: 1024px;
 $desktop-width-xl: 1199px;
 $desktop-width-lg: 1500px;
 $desktop-width-hd: 1600px;
+$desktop-4k: 2560px;
 
 // iPhone5 Mixin
 @mixin iphone5 {
@@ -131,6 +132,12 @@ $desktop-width-hd: 1600px;
 // Large HD Desktops
 @mixin desktop-hd {
   @media (min-width: #{$desktop-width-hd}) {
+    @content;
+  }
+}
+
+@mixin desktop-4k {
+  @media (min-width: #{$desktop-4k}) {
     @content;
   }
 }
@@ -299,6 +306,11 @@ $desktop-width-hd: 1600px;
 }
 
 @mixin textGradient {
+  background: linear-gradient(
+    140deg,
+    color(primary-blue) 11.5%,
+    color(heading-liner) 55.42%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

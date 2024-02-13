@@ -40,12 +40,12 @@
     font-weight: 500;
     line-height: 3.375rem;
 
-    .digitalTechText {
-      color: color(primary-blue);
+    span {
       font-size: 2.75rem;
       font-weight: 500;
       line-height: 3.375rem;
       display: block;
+     @include textGradient;
 
       @include mobile {
         padding-right: 0;
@@ -115,18 +115,25 @@
           }
         }
         .digitalText {
-          font-size: text(normal);
+          font-size: text(lg);
           font-weight: 400;
           color: rgba(color(text-primary), 0.6);
           line-height: text(xl);
           max-width: 34.25rem;
+
+          @include mobile-tablet-p {
+            font-size: text(normal);
+          }
         }
 
         .customerList {
           .list {
             list-style: square;
-            font-size: text(normal);
+            font-size: text(lg);
             opacity: 0.6;
+            @include mobile-tablet-p {
+              font-size: text(normal);
+            }
           }
         }
       }

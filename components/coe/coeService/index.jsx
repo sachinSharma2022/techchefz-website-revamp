@@ -11,11 +11,11 @@ import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
 
 const CoeService = ({props}) => {
-  console.log("bb",props);
+  
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section
-      className={`${styles.coeService}  ${theme ? styles.coeServiceDark : ""}`}
+      className={cn(styles.coeService, theme ? styles.coeServiceDark : "")}
     >
       <div className={cn("primary-container")}>
         <div className={styles.coeServiceImg}>

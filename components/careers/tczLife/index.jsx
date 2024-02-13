@@ -1,14 +1,17 @@
 "use client";
 import { Icons } from "@/components/icons";
-import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
+import { base_Url } from "@/lib/constants";
 import { useContext, useRef, useState } from "react";
 import Slider from "react-slick";
 
+import PrimaryModal from "@/components/ui/primaryModal";
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 
-const TczLife = () => {
+const TczLife = ({ props }) => {
+  console.log("rr", props);
+  const [isOpen, setIsOpen] = useState(false);
   const slider = useRef(null);
   const [oldSlide, setOldSlide] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
@@ -52,43 +55,43 @@ const TczLife = () => {
       {
         breakpoint: 767,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 1.3,
           slidesToScroll: 1,
         },
       },
     ],
   };
 
-  const sliderVideo = [
-    {
-      video:
-        "https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8b2ZmaWNlfGVufDB8fDB8fHww",
-    },
-    {
-      video:
-        "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8b2ZmaWNlfGVufDB8fDB8fHww",
-    },
-    {
-      video:
-        "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fG9mZmljZXxlbnwwfHwwfHx8MA%3D%3D",
-    },
-    {
-      video:
-        "https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fG9mZmljZXxlbnwwfHwwfHx8MA%3D%3D",
-    },
-    {
-      video:
-        "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8b2ZmaWNlfGVufDB8fDB8fHww",
-    },
-    {
-      video:
-        "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fG9mZmljZXxlbnwwfHwwfHx8MA%3D%3D",
-    },
-    {
-      video:
-        "https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fG9mZmljZXxlbnwwfHwwfHx8MA%3D%3D",
-    },
-  ];
+  // const sliderVideo = [
+  //   {
+  //     video:
+  //       "https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8b2ZmaWNlfGVufDB8fDB8fHww",
+  //   },
+  //   {
+  //     video:
+  //       "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8b2ZmaWNlfGVufDB8fDB8fHww",
+  //   },
+  //   {
+  //     video:
+  //       "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fG9mZmljZXxlbnwwfHwwfHx8MA%3D%3D",
+  //   },
+  //   {
+  //     video:
+  //       "https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fG9mZmljZXxlbnwwfHwwfHx8MA%3D%3D",
+  //   },
+  //   {
+  //     video:
+  //       "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8b2ZmaWNlfGVufDB8fDB8fHww",
+  //   },
+  //   {
+  //     video:
+  //       "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fG9mZmljZXxlbnwwfHwwfHx8MA%3D%3D",
+  //   },
+  //   {
+  //     video:
+  //       "https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fG9mZmljZXxlbnwwfHwwfHx8MA%3D%3D",
+  //   },
+  // ];
   return (
     <section
       className={`${styles.tczLife} ${theme ? styles.tczLifeDark : ""} `}
@@ -96,10 +99,11 @@ const TczLife = () => {
       <div className={cn(styles.tczLifeSliderSection, "row")}>
         <div className={cn(styles.tczActionSection, "col-sm-6")}>
           <div>
-            <h6 className={styles.tczLifeTitle}>Life at techchefz</h6>
-            <h3 className={styles.tczLifeHeading}>
-              Make an Impact <br /> from <span>Day One.</span>
-            </h3>
+            <h6 className={styles.tczLifeTitle}>{props?.Title}</h6>
+            <h3
+              className={styles.tczLifeHeading}
+              dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
+            ></h3>
           </div>
 
           <div className={styles.sliderArrow}>
@@ -121,29 +125,65 @@ const TczLife = () => {
         </div>
         <div className={cn(styles.sliderSection, "col-sm-6 tczLifeSlider")}>
           <Slider {...settings} ref={slider}>
-            {sliderVideo.map((data, index) => (
-              <div key={index} className={styles.videoWhapper}>
-                <ImageCustom src={data.video} width={800} height={800} />
-                <button className={cn(styles.videoButton)}>
+            {props?.VideoSlider?.map((data, index) => (
+              <button
+                key={index}
+                className={styles.videoWhapper}
+                onClick={() => setIsOpen(true)}
+              >
+                <div>
+                  <video
+                    key={index}
+                    width="100"
+                    height="100"
+                    muted
+                    className="video-block"
+                  >
+                    <source
+                      src={
+                        data?.Video?.data?.attributes?.url
+                          ? `${base_Url}${data.Video.data.attributes.url}`
+                          : `${base_Url}/`
+                      }
+                      type="video/mp4"
+                    />
+                  </video>
+                </div>
+
+                <div className={cn(styles.videoButton)}>
                   <Icons.VideoButton />
-                </button>
-              </div>
+                </div>
+              </button>
             ))}
           </Slider>
         </div>
+
+        <PrimaryModal open={isOpen} onClose={() => setIsOpen(false)}>
+          {props?.VideoSlider?.map((data, index) => (
+            <video
+              key={index}
+              width="100"
+              height="100"
+              playsInline
+              autoPlay
+              loop
+              className="video-block"
+            >
+              <source
+                src={
+                  data?.Video?.data?.attributes?.url
+                    ? `${base_Url}${data.Video.data.attributes.url}`
+                    : `${base_Url}/`
+                }
+                type="video/mp4"
+              />
+            </video>
+          ))}
+        </PrimaryModal>
       </div>
 
       <div className={styles.tczLifeContent}>
-        <p>
-          Techchefz Digital demonstrates an excellent understanding of user
-          needs and all of their designs are creative and elegant in their
-          simplicity. They’re very well thought out and have an excellent
-          response to feedback. All of these qualities are why they’re our go-to
-          user experience experts. We demonstrate an excellent understanding of
-          user needs and all of their designs are creative and elegant in their
-          simplicity. They’re very well thought out and have an excellent
-          response to feedback.
-        </p>
+        <p>{props?.Description}</p>
       </div>
     </section>
   );

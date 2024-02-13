@@ -17,9 +17,10 @@ const LetsWork = ({contact}) => {
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section
-      className={`${styles.lestWorkStyle} ${
+      className={cn(
+        styles.lestWorkStyle,
         theme ? styles.lestWorkStyleDark : ""
-      }`}
+      )}
     >
       <div className={cn("primary-container")}>
         <div className={styles.workArea}>
@@ -69,20 +70,14 @@ const LetsWork = ({contact}) => {
                 />
               </div>
               <div className={styles.policyArea}>
-                <div className="row d-flex align-items-center">
-                  <div className="col-md-6 col-12">
-                    <div className={styles.policyText}>
-                    {contact?.policy}
-                      <span className={styles.policyHighlight}>
-                        Privacy Policy
-                      </span>
-                    </div>
-                  </div>
-                  <div className={`${styles.buttonGrid} col-md-6 col-12`}>
-                    <Button variant="blueBtn" size="lg">
-                     {contact?.Btn} <Icons.ArrowRight size={18} />
-                    </Button>
-                  </div>
+                <p className={styles.policyText}>
+                {contact?.policy}
+                  <span className={styles.policyHighlight}>Privacy Policy</span>
+                </p>
+                <div className={`${styles.buttonGrid} col-md-6 col-12`}>
+                  <Button variant={theme ? "blueBtnDark" : "blueBtn"} size="lg">
+                  {contact?.Btn} <Icons.ArrowRight size={18} />
+                  </Button>
                 </div>
               </div>
             </div>

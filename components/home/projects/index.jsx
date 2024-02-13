@@ -15,7 +15,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { opacity, slideUp } from "./animation";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -41,15 +40,22 @@ const Card = ({ ...props }) => {
     props.targetScale,
   ]);
   return (
-    <motion.div className={styles.cardSec} style={isMobileScreen ? "" : {scale}}>
-      <div className={styles.projectImg}>
+    <motion.div
+      className={styles.cardSec}
+      style={isMobileScreen ? "" : { scale }}
+    >
+      <Link href="/case-study" className={styles.projectImg}>
         <ImageCustom
-          src={props?.project?.Image?.data?.attributes?.url?`${base_Uri}${props?.project?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+          src={
+            props?.project?.Image?.data?.attributes?.url
+              ? `${base_Uri}${props?.project?.Image?.data?.attributes?.url}`
+              : `${base_Uri}/`
+          }
           width={1360}
           height={300}
           alt="projectImg"
         />
-      </div>
+      </Link>
 
       <div className={styles.cardContentStyle}>
         <h3 className={styles.projectBrand}>
@@ -101,7 +107,7 @@ const Card = ({ ...props }) => {
   );
 };
 
-const Projects = ({project,brands}) => {
+const Projects = ({ project, brands }) => {
   const isMobileScreen = useMediaQuery({ query: "(max-width: 767px)" });
   const { theme, setTheme } = useContext(MyContext);
   const container = useRef(null);
@@ -111,19 +117,19 @@ const Projects = ({project,brands}) => {
   });
   const projects = [
     {
-      src: "/images/ICICI.png",
+      src: "https://images.unsplash.com/photo-1622185135505-2d795003994a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       summary:
         "Royal Enfield is a global brand since 1901, has a geographical presence in over 70 countries. The brand delivers consistent, omnichannel customer experiences, achieves scalability, diversifying into countries, and continents.",
       title: "International Motorcycle Brand.",
     },
     {
-      src: "/images/project-re.png",
+      src: "https://images.unsplash.com/photo-1573013043679-4d44547b78a2?q=80&w=2754&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       summary:
         "Royal Enfield is a global brand since 1901, has a geographical presence in over 70 countries. The brand delivers consistent, omnichannel customer experiences, achieves scalability, diversifying into countries, and continents.",
       title: "International Motorcycle Brand.",
     },
     {
-      src: "/images/Manipal.png",
+      src: "https://images.unsplash.com/photo-1633527908145-bb4e3f41b3a6?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       summary:
         "Royal Enfield is a global brand since 1901, has a geographical presence in over 70 countries. The brand delivers consistent, omnichannel customer experiences, achieves scalability, diversifying into countries, and continents.",
       title: "International Motorcycle Brand.",
@@ -132,52 +138,56 @@ const Projects = ({project,brands}) => {
 
   return (
     <section
-      className={`${styles.projectsStyle} ${
-        (theme ? styles.projectsStyleDark : "", "project-slider")
-      }`}
+      className={cn(
+        styles.projectsStyle,
+        theme ? styles.projectsStyleDark : "",
+        "project-slider"
+      )}
     >
       <div className={cn("primary-container")}>
-      <TextRevel>
-        <div className={cn("row", styles.rowSection)}>
-          <div className="col-md-12 col-12">
-            <p className={styles.projectHighlight} dangerouslySetInnerHTML={{ __html: `${project[0]?.Title}`}}>
-              </p>
-          </div>
-          <div className="col-md-5 col-12">
-            <h3 className={styles.datingText} dangerouslySetInnerHTML={{ __html: `${project[0]?.SubTitle}`}}>
-              
-            </h3>
-          </div>
-          <div className="col-md-7 col-12">
-            <p className={styles.aboutText}>
-            {project[0]?.Description}
-            </p>
+        <TextRevel>
+          <div className={cn(styles.rowSection)}>
+            <div>
+              <p
+                className={cn(styles.projectHighlight, "gradient-text")}
+                dangerouslySetInnerHTML={{ __html: `${project[0]?.Title}` }}
+              ></p>
+              <h3
+                className={cn(styles.datingText, "gradient-text")}
+                dangerouslySetInnerHTML={{ __html: `${project[0]?.SubTitle}` }}
+              ></h3>
+            </div>
+            <div className={styles.paraSec}>
+              <p className={styles.aboutText}>{project[0]?.Description}</p>
 
-            <Link href="/portfolio">
-              <Button variant="outline" size="md">
-                {project[0]?.Btn} <Icons.ArrowRight size={18} />
-              </Button>
-            </Link>
+              <Link href="/portfolio">
+                <Button
+                  variant={!theme ? "lightBlueOutline" : "outline"}
+                  size="md"
+                >
+                  {project[0]?.Btn}  <Icons.ArrowRight size={18} />
+                </Button>
+              </Link>
+            </div>
           </div>
-        </div>
         </TextRevel>
         {!isMobileScreen ? (
-        <div ref={container} className={styles.cards}>
-          {brands.map((project, i) => {
-            const targetScale = 1 - (projects.length - i) * 0.05;
-            return (
-              <Card
-                key={`p_${i}`}
-                i={i}
-                project={project}
-                progress={scrollYProgress}
-                range={[i * 0.25, 1]}
-                targetScale={targetScale}
-              />
-            );
-          })}
-        </div>
-         ) : (
+          <div ref={container} className={styles.cards}>
+            {brands.map((project, i) => {
+              const targetScale = 1 - (projects.length - i) * 0.05;
+              return (
+                <Card
+                  key={`p_${i}`}
+                  i={i}
+                  project={project}
+                  progress={scrollYProgress}
+                  range={[i * 0.25, 1]}
+                  targetScale={targetScale}
+                />
+              );
+            })}
+          </div>
+        ) : (
           <div ref={container} className={styles.cards}>
             <Swiper
               pagination={pagination}

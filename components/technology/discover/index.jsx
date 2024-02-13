@@ -9,8 +9,11 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { base_Uri } from "@/lib/constants";
+import { base_Url } from "@/lib/constants"; 
 
-const Discover = () => {
+const Discover = ({props}) => {
+ 
   const { theme, setTheme } = useContext(MyContext);
   const technologyData = [
     {
@@ -81,13 +84,15 @@ const Discover = () => {
       <div className={cn("primary-container")}>
         <div className={styles.discoverTop}>
           <div>
-            <h6 className={styles.discoverTitle}>Discover</h6>
-            <h3 className={styles.discoverHeading}>Technology Stack</h3>
+            <h6 className={cn(styles.discoverTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
+            </h6>
+            <h3 className={cn(styles.discoverHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}`}}>
+            </h3>
           </div>
 
           <Link href="/technology/cms">
             <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
-              Explore Now <Icons.ArrowRight size={18} />
+              {props[0].Btn} <Icons.ArrowRight size={18} />
             </Button>
           </Link>
         </div>
@@ -97,39 +102,35 @@ const Discover = () => {
             <Tab.List className={styles.discoverLeft}>
               <Tab>
                 <div className={styles.discoverHead}>
-                  <h5 className={`${styles.subHeading}`}>Web Platforms</h5>
-                  <p className={styles.subContent}>
-                    We specialize in comprehensive website audits that provide
-                    valuable insights
+                  <h5 className={`${styles.subHeading}`} dangerouslySetInnerHTML={{ __html: `${props[0]?.SubTitle1}`}}></h5>
+                  <p className={styles.subContent} dangerouslySetInnerHTML={{ __html: `${props[0]?.SubDescription1}`}}>
+                    
                   </p>
                 </div>
               </Tab>
               <Tab>
                 <div className={styles.discoverHead}>
-                  <h5 className={`${styles.subHeading}`}>Commerce</h5>
-                  <p className={styles.subContent}>
-                    We specialize in comprehensive website audits that provide
-                    valuable insights
+                  <h5 className={`${styles.subHeading}`} dangerouslySetInnerHTML={{ __html: `${props[0]?.SubTitle2}`}}></h5>
+                  <p className={styles.subContent} dangerouslySetInnerHTML={{ __html: `${props[0]?.SubDescription2}`}}>
+                    
                   </p>
                 </div>
               </Tab>
               <Tab>
                 <div className={styles.discoverHead}>
-                  <h5 className={`${styles.subHeading}`}>
-                    Analytics & Marketing
+                  <h5 className={`${styles.subHeading}`} dangerouslySetInnerHTML={{ __html: `${props[0]?.SubTitle3}`}}>
+                    
                   </h5>
-                  <p className={styles.subContent}>
-                    We specialize in comprehensive website audits that provide
-                    valuable insights
+                  <p className={styles.subContent} dangerouslySetInnerHTML={{ __html: `${props[0]?.SubDescription3}`}}>
+                    
                   </p>
                 </div>
               </Tab>
               <Tab>
                 <div className={styles.discoverHead}>
-                  <h5 className={`${styles.subHeading}`}>DevSecOps</h5>
-                  <p className={styles.subContent}>
-                    We specialize in comprehensive website audits that provide
-                    valuable insights
+                  <h5 className={`${styles.subHeading}`} dangerouslySetInnerHTML={{ __html: `${props[0]?.SubTitle4}`}}></h5>
+                  <p className={styles.subContent} dangerouslySetInnerHTML={{ __html: `${props[0]?.SubDescription4}`}}>
+                    
                   </p>
                 </div>
               </Tab>
@@ -143,18 +144,18 @@ const Discover = () => {
 
                     {/* Sub Section */}
                     <div className={styles.buttonSection}>
-                      {item.technologyList.map((subItems, index) => (
+                      {props[0].techplatform.map((subItems, index) => (
                         <div key={index} className={styles.platformsBtn}>
                           <div className="d-flex align-items-center">
                             <div className={styles.iconImg}>
                               <ImageCustom
-                                src={subItems.icon}
+                                src={subItems?.Image?.data?.attributes?.url?`${base_Url}${subItems?.Image?.data?.attributes?.url}`:`${base_Url}/`}
                                 width={24}
                                 height={22}
                                 alt="image"
                               />
                             </div>
-                            <p>{subItems.title} </p>
+                            <p>{subItems.Title} </p>
                           </div>
                           <Icons.ArrowUpRight />
                         </div>

@@ -2,10 +2,9 @@
 
 .ourResults {
   padding: spacing(section-primary-padding);
-  padding-bottom: 1rem;
 
   @include mobile-tablet-p {
-    padding: 0;
+    padding: 0 0 5rem;
   }
 
   .flexContainer {
@@ -110,6 +109,10 @@
     .resultCard {
       background-color: color(text-primary);
       border: 0.14rem solid rgba(color(primary-white), 0.12);
+
+      &:hover {
+        border-color: color(heading-liner);
+      }
     }
   }
 }

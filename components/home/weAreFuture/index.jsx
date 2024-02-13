@@ -20,7 +20,7 @@ const WeAreFuture = ({props}) => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.futureTitle}>
-          <p className={styles.text}>{props?.Title}</p>
+          <p className={cn(styles.text, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}></p>
           <h2 className={styles.title}>
             {props?.SubTitle}
             <span className={styles.globalText}>
@@ -32,15 +32,14 @@ const WeAreFuture = ({props}) => {
           </h2>
         </div>
         <TextRevel>
-        <div className="row">
-          <div className="col-md-6 col-12">
-            <h3 className={styles.datingText} dangerouslySetInnerHTML={{ __html: `${props?.CompanyTechnology[0]?.title}`}}>
+          <div className={styles.contentSection}>
+            <h3 className={cn(styles.datingText, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.CompanyTechnology[0]?.title}`}}>
+              
             </h3>
-          </div>
-          <div className="col-md-6 col-12">
-            <p className={styles.aboutText}>
-            {props?.CompanyTechnology[0]?.description}
-            </p>
+            <div>
+              <p className={styles.aboutText}>
+              {props?.CompanyTechnology[0]?.description}
+              </p>
 
             <Link href="/about">
               <Button variant="outline" size="md">

@@ -9,7 +9,8 @@ import { useMediaQuery } from "react-responsive";
 import styles from "./style.module.scss";
 import Image from "next/image";
 import { base_Uri } from "@/lib/constants";
-
+import { base_Url } from "@/lib/constants";
+import { ImageCustom } from "@/components/ui/imageCustom";
 const WhatWeDo = ({props}) => {
   
   const { theme, setTheme } = useContext(MyContext);
@@ -107,9 +108,9 @@ const WhatWeDo = ({props}) => {
     >
       <div className={cn("primary-container")}>
         <div className={cn(styles.flexContainer)}>
-          <h6 className={styles.weDoTitle} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
+          <h6 className={cn(styles.weDoTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
           </h6>
-          <h3 className={styles.weDoHeading} dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}`}}>
+          <h3 className={cn(styles.weDoHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}`}}>
            
           </h3>
         </div>
@@ -120,12 +121,12 @@ const WhatWeDo = ({props}) => {
               <div className={styles.workCard}>
                 <div className={`${styles.frontCard} ${styles.workCols}`} >
                   {/* {data.icon} */}
-                  <Image height={100}  width={100} src={`${base_Uri}${data.Image.data.attributes.url}`} />
+                  <ImageCustom height={100}  width={100} src={`${base_Url}${data.Image.data.attributes.url}`} />
                   
-                  <h6>{data.Title}</h6>
+                  <h3>{data.Title}</h3>
                 </div>
                 <div className={`${styles.backCard}  ${styles.workCols}`}>
-                  <h6>{data.Hedding} </h6>
+                  <h3>{data.Hedding} </h3>
                   <p>{data.Description} </p>
                 </div>
               </div>

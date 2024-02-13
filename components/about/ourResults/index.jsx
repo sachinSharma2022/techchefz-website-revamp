@@ -9,8 +9,13 @@ import Image from "next/image";
 import { base_Uri } from "@/lib/constants";
 import MobileSlider from "@/components/common/mobileSlider";
 import { useMediaQuery } from "react-responsive";
+import { ImageCustom } from "@/components/ui/imageCustom";
+import { base_Url } from "@/lib/constants";
+
+
+
 const OurResults = ({props}) => {
- 
+
 
   const { theme, setTheme } = useContext(MyContext);
   const isMobileScreen = useMediaQuery({ query: "(max-width: 767px)" });
@@ -44,9 +49,9 @@ const OurResults = ({props}) => {
     >
       <div className={cn("primary-container")}>
         <div className={cn(styles.flexContainer)}>
-          <h6 className={styles.ourResultsTitle}>{props[0].Title}</h6>
-          <h3 className={styles.ourResultsHeading}>
-            {props[0].SubTitle}
+          <h6 className={cn(styles.ourResultsTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0].Title}`}}>
+            </h6>
+          <h3 className={cn(styles.ourResultsHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0].SubTitle}`}}>
           </h3>
           <p className={styles.ourResultsText}>
             {props[0].Description}
@@ -58,9 +63,8 @@ const OurResults = ({props}) => {
               <div className="d-flex justify-content-between align-items-center">
                 <h6 className={styles.cardNum}>{data.Title}</h6>
                 <div className={styles.cardNum}>
-                  <Image height={36} width={36}  src={`${base_Uri}${data.Image.data.attributes.url}`} />
-                 
-                  
+                  <ImageCustom height={36} width={36}  src= {data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data?.attributes?.url}`:`${base_Url}/`} />
+
                 </div>
               </div>
               <p className={styles.cardText}>{data.Description}</p>
