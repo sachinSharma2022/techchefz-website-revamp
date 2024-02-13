@@ -4,17 +4,38 @@ import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import CountryDropdown from "@/components/ui/countryDropdown";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import { Input, Textarea } from "@/components/ui/inputCustom";
+import {Error, Input, Textarea } from "@/components/ui/inputCustom";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
+import { Form, Formik, useFormik } from "formik";
+import { commonValidationSchema } from "@/lib/FormSchema";
+import { triggerMail } from "@/lib/triggerMail";
 
 const LetsWork = ({contact}) => {
   
   const { theme, setTheme } = useContext(MyContext);
+
+  const formInitialSchema = {
+    fullName: "",
+    email: "",
+    phone: "",
+    countyCode:"",
+    companyName: "",
+    projectExplanation: "",
+  };
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit,setFieldValue,handleReset } =
+    useFormik({
+      initialValues:formInitialSchema,
+      validationSchema: commonValidationSchema,
+      onSubmit: (values, action) => {
+        console.log(values);
+        triggerMail({content:JSON.stringify(values)}) 
+      },
+    });
   return (
     <section
       className={cn(
@@ -25,6 +46,8 @@ const LetsWork = ({contact}) => {
       <div className={cn("primary-container")}>
         <div className={styles.workArea}>
           <div className={styles.workGrid}>
+          <Formik>
+          <Form onSubmit={handleSubmit}>
             <div className={styles.contactUsForm}>
               <h3 className={styles.formHeading}>
                 {contact?.Title}
@@ -41,16 +64,63 @@ const LetsWork = ({contact}) => {
                     label="Full Name*"
                     placeholder="Full Name*"
                     type="name"
+                    id="fullName"
+                    name="fullName"
+                    // error={Boolean(touched.fullName && errors.fullName)}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    values={values.fullName}
+                    errorStatus={touched.fullName && errors.fullName}
+                    
                   />
+                   {touched.fullName && errors.fullName && (
+                    <Error>{errors.fullName }</Error>
+                  )}
                 </div>
                 <div className={`${styles.inputSpace}`}>
-                  <Input label="Email*" placeholder="Email*" type="email" />
+                  <Input 
+                  label="Email*" 
+                  placeholder="Email*" 
+                  type="email" 
+                  id="email"
+                  name="email"
+                  error={Boolean(touched.email && errors.email)}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  values={values.email}
+                  />
+                  {touched.email && errors.email && (
+                    <Error>{errors.email}</Error>
+                  )}
                 </div>
                 <div className={`${styles.inputSpace}`}>
-                  <CountryDropdown />
+                  <CountryDropdown 
+                   id="phone"
+                   name="phone"
+                   onChange={handleChange}
+                   setFieldValue={setFieldValue}
+                   onBlur={handleBlur}
+                   values={values.phone}
+                  />
+                  {touched.phone && errors.phone && (
+                    <Error>{errors.phone}</Error>
+                  )}
                 </div>
                 <div className={`${styles.inputSpace}`}>
-                  <Input label="Company*" placeholder="Company*" type="text" />
+                  <Input 
+                  label="Company*" 
+                  placeholder="Company*" 
+                  type="text" 
+                  id="companyName"
+                  name="companyName"
+                  error={Boolean(touched.companyName && errors.companyName)}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  values={values.companyName}
+                  />
+                   {touched.companyName && errors.companyName && (
+                    <Error>{errors.companyName}</Error>
+                  )}
                 </div>
                 <div className={`${styles.inputSpace}`}>
                   <Textarea
@@ -58,7 +128,18 @@ const LetsWork = ({contact}) => {
                     placeholder="Message*"
                     type="textarea"
                     rows="4"
+                    id="projectExplanation"
+                    name="projectExplanation"
+                    error={Boolean(
+                      touched.projectExplanation && errors.projectExplanation
+                    )}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    values={values.projectExplanation}
                   />
+                  {touched.projectExplanation && errors.projectExplanation && (
+                    <Error>{errors.projectExplanation}</Error>
+                  )}
                 </div>
               </div>
               <div className={styles.captchaImg}>
@@ -75,12 +156,14 @@ const LetsWork = ({contact}) => {
                   <span className={styles.policyHighlight}>Privacy Policy</span>
                 </p>
                 <div className={`${styles.buttonGrid} col-md-6 col-12`}>
-                  <Button variant={theme ? "blueBtnDark" : "blueBtn"} size="lg">
+                  <Button variant={theme ? "blueBtnDark" : "blueBtn"} size="lg" type="submit">
                   {contact?.Btn} <Icons.ArrowRight size={18} />
                   </Button>
                 </div>
               </div>
             </div>
+          </Form>
+          </Formik>
 
             <div className={styles.contactImg}>
               <ImageCustom
