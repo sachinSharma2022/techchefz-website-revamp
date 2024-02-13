@@ -8,7 +8,7 @@ import { Error, Input, Textarea } from "@/components/ui/inputCustom";
 import { MyContext } from "@/context/theme";
 import { Form, Formik, useFormik } from "formik";
 import { useContext } from "react";
-import { validationSchema } from "@/lib/FormSchema";
+import { projectValidationSchema } from "@/lib/FormSchema";
 import { triggerMail } from "@/lib/triggerMail";
 
 
@@ -23,18 +23,18 @@ const ProjectForm = () => {
     lastName: "",
     email: "",
     phone: "",
+    countyCode:"",
     companyName: "",
     countrySelection: "",
     projectExplanation: "",
   };
-  const { values, errors, touched, handleBlur, handleChange, handleSubmit,setFieldValue } =
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit,setFieldValue,handleReset } =
     useFormik({
       initialValues:formInitialSchema,
-      validationSchema: validationSchema,
+      validationSchema: projectValidationSchema,
       onSubmit: (values, action) => {
         console.log(values);
         triggerMail({content:JSON.stringify(values)})
-        action.resetForm();
       },
     });
   
@@ -46,18 +46,6 @@ const ProjectForm = () => {
   ];
 
   return (
-    // <Formik
-    //   onSubmit={(values) => {
-    //     console.log(values, "values");
-    //   }}
-    //   initialValues={formInitialSchema}
-    //   initialStatus={{
-    //     success: false,
-    //     successMsg: "",
-    //   }}
-    //   // validationSchema={validationSchema}
-    // >
-      // {({ errors, handleBlur, handleChange,handleSubmit, touched, values }) => (
         <Formik>
           <Form onSubmit={handleSubmit}>
           <div className={styles.contactUsForm}>
@@ -78,7 +66,7 @@ const ProjectForm = () => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     values={values.firstName}
-                    // errorStatus={touched.firstName && errors.firstName}
+                    errorStatus={touched.firstName && errors.firstName}
                     // inputError={errors.lastName && true}
                   />
                   {touched.firstName && errors.firstName && (
@@ -126,6 +114,7 @@ const ProjectForm = () => {
                     id="phone"
                     name="phone"
                     onChange={handleChange}
+                    setFieldValue={setFieldValue}
                     onBlur={handleBlur}
                     values={values.phone}
                     // errorStatus={touched.phone && errors.phone}
@@ -155,16 +144,16 @@ const ProjectForm = () => {
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
                   <CustomDropdown
-                    title="Country"
+                    label="Country"
                     name="countrySelection"
                     setFieldValue={setFieldValue}
                     onBlur={handleBlur}
                     values={values.countrySelection}
                     options={dropdownData}
-                    // errorStatus={
-                    //   touched.countrySelection && errors.countrySelection
-                    // }
-                    // inputError={errors.lastName && true}
+                    errorStatus={
+                      touched.countrySelection && errors.countrySelection
+                    }
+                    placeholder="Country*"
                     className="custom-dropdown"
                   />
                   {touched.countrySelection && errors.countrySelection && (

@@ -8,9 +8,8 @@ import { Input, Textarea, Error, InputFile } from "@/components/ui/inputCustom";
 import { MyContext } from "@/context/theme";
 import { Form, Formik } from "formik";
 import { useContext } from "react";
-import * as yep from "yup";
-
-import CustomDropdown from "@/components/ui/customDropdown";
+import { jobsValidationSchema } from "@/lib/FormSchema";
+import { triggerMail } from "@/lib/triggerMail";
 
 import styles from "./style.module.scss";
 
@@ -21,30 +20,12 @@ const JobsForm = () => {
     lastName: "",
     email: "",
     phone: "",
-    companyName: "",
-    countrySelection: "",
+    countyCode:"",
+    portfolioLink: "",
+    uploadCV: "",
     projectExplanation: "",
   };
-  const validationSchema = yep.object({
-    firstName: yep
-      .string()
-      .required("First Name is required")
-      .matches(/^[A-Za-z]+$/, "Only alphabets are allowed"),
-    lastName: yep
-      .string()
-      .required("Last Name is required")
-      .matches(/^[A-Za-z]+$/, "Only alphabets are allowed"),
-    email: yep
-      .string()
-      .email("Please enter a valid Email")
-      .required("Email is required"),
-    phone: yep.string().required("Phone is required"),
-    companyName: yep.string().required("Company Name is required"),
-    countrySelection: yep.string().required("Country is required"),
-    projectExplanation: yep
-      .string()
-      .required("Project Explanation is required"),
-  });
+  
 
   const dropdownData = [
     { value: "Country", label: "Country" },
@@ -56,16 +37,21 @@ const JobsForm = () => {
   return (
     <Formik
       onSubmit={(values) => {
-        console.log(values, "values");
+        // const formdata = new FormData();
+        // Object.entries(values).forEach(([key, value]) => {
+        //     formdata.append(key, value);
+        // });
+         console.log(values, "values");
+        triggerMail({content:JSON.stringify(values)})
       }}
       initialValues={formInitialSchema}
       initialStatus={{
         success: false,
         successMsg: "",
       }}
-      validationSchema={validationSchema}
+      validationSchema={jobsValidationSchema}
     >
-      {({ errors, handleBlur, handleChange, touched, values }) => (
+      {({ errors, handleBlur, handleChange,setFieldValue, touched, values }) => (
         <Form>
           <div className={styles.contactUsForm}>
             <p className={styles.formText}>
@@ -82,8 +68,8 @@ const JobsForm = () => {
                     id="firstName"
                     name="firstName"
                     error={Boolean(touched.firstName && errors.firstName)}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                     values={values.firstName}
                     errorStatus={touched.firstName && errors.firstName}
                   />
@@ -99,8 +85,8 @@ const JobsForm = () => {
                     id="lastName"
                     name="lastName"
                     error={Boolean(touched.lastName && errors.lastName)}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                     values={values.lastName}
                     errorStatus={touched.lastName && errors.lastName}
                   />
@@ -116,19 +102,20 @@ const JobsForm = () => {
                     id="email"
                     name="email"
                     error={Boolean(touched.email && errors.email)}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                     values={values.email}
                     errorStatus={touched.email && errors.email}
                   />
-                  {touched.email && errors.email && <div>{errors.email}</div>}
+                  {touched.email && errors.email && <Error>{errors.email}</Error>}
                 </div>
                 <div className={`${styles.inputSpace} col-md-6 col-12`}>
                   <CountryDropdown
                     id="phone"
                     name="phone"
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
+                    setFieldValue={setFieldValue}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                     values={values.phone}
                     errorStatus={touched.phone && errors.phone}
                   />
@@ -142,16 +129,16 @@ const JobsForm = () => {
                     label="Upload CV* (pdf/doc upto 5mb)"
                     placeholder="Upload CV* (pdf/doc upto 5mb)"
                     type="file"
-                    id="companyName"
-                    name="companyName"
-                    error={Boolean(touched.companyName && errors.companyName)}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
-                    values={values.companyName}
-                    errorStatus={touched.companyName && errors.companyName}
+                    id="uploadCV"
+                    name="uploadCV"
+                    error={Boolean(touched.uploadCV && errors.uploadCV)}
+                    setFieldValue={setFieldValue}
+                    onBlur={handleBlur}
+                    values={values.uploadCV}
+                    errorStatus={touched.uploadCV && errors.uploadCV}
                   />
-                  {touched.companyName && errors.companyName && (
-                    <Error>{errors.companyName}</Error>
+                  {touched.uploadCV && errors.uploadCV && (
+                    <Error>{errors.uploadCV}</Error>
                   )}
                 </div>
 
@@ -160,16 +147,16 @@ const JobsForm = () => {
                     label="Portfolio Link"
                     placeholder="Portfolio Link"
                     type="name"
-                    id="companyName"
-                    name="companyName"
-                    error={Boolean(touched.companyName && errors.companyName)}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
-                    values={values.companyName}
-                    errorStatus={touched.companyName && errors.companyName}
+                    id="portfolioLink"
+                    name="portfolioLink"
+                    error={Boolean(touched.portfolioLink && errors.portfolioLink)}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    values={values.portfolioLink}
+                    errorStatus={touched.portfolioLink && errors.portfolioLink}
                   />
-                  {touched.companyName && errors.companyName && (
-                    <Error>{errors.companyName}</Error>
+                  {touched.portfolioLink && errors.portfolioLink && (
+                    <Error>{errors.portfolioLink}</Error>
                   )}
                 </div>
 
@@ -184,8 +171,8 @@ const JobsForm = () => {
                     error={Boolean(
                       touched.projectExplanation && errors.projectExplanation
                     )}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                     values={values.projectExplanation}
                     errorStatus={
                       touched.projectExplanation && errors.projectExplanation

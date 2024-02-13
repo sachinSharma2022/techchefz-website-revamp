@@ -30,7 +30,7 @@ import dropdownStyle from "./style.module.scss";
 // valueContainer
 
 const CustomDropdown = ({
-  label,
+  name,
   options,
   setFieldValue,
   className,
@@ -82,13 +82,13 @@ const CustomDropdown = ({
     >
       <Select
         onChange={(option)=> {
-          setFieldValue("countrySelection", option.value)
+          setFieldValue(name, option.value)
 
         }
         }
         options={options}
         classNamePrefix="react-select"
-        placeholder={"Select" || placeholder}
+        placeholder={placeholder?placeholder:"Select"}
         styles={controlStyle || styles}
         isSearchable={false}
       />
