@@ -5,6 +5,7 @@ import Link from "next/link";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 import styles from "./style.module.scss";
+import { ImageCustom } from "@/components/ui/imageCustom";
 
 const BadgeInfoCard = (props) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -17,7 +18,10 @@ const BadgeInfoCard = (props) => {
     >
       <div className={styles.cardHeader}>
         <div className={styles.cardSubTitle}>
-          <div>{props.icons}</div>
+          <div>
+            {/* {props.icons} */}
+            <ImageCustom width={40} height={40} src= {props.icons} alt="Service Icon" className={styles.iconImage} />
+            </div>
           <h4 className={styles.heading}>{props.subHeading}</h4>
         </div>
         <Icons.ArrowUpRight className={styles.arrowUp} width={15} height={15} />
