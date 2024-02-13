@@ -57,7 +57,7 @@ const OurHistory = ({props, OurHistory}) => {
       var num = index + 1;
       return (
         <div>
-          <span className="yearCount">201{num + 1}</span>
+          <span className="yearCount">{2016 + num}</span>
           <button />
         </div>
       );
@@ -69,51 +69,6 @@ const OurHistory = ({props, OurHistory}) => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
-
-  const sliderData = [
-    {
-      title:
-        "Contrary to popular belief, Lorem Ipsum is not simply random text.",
-      content:
-        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old",
-      imgSrc: "/images/img/about/slider1.png",
-    },
-    {
-      title:
-        "All the Lorem Ipsum generators on the Internet tend to repeat predefined.",
-      content:
-        "Founded in 2017, TechChefz arose from a shared passion for technology, uniting a team of pioneers. Fueled by enthusiasm and determination, they set on a transformative journey to shape the future.",
-      imgSrc: "/images/goals1.png",
-    },
-    {
-      title:
-        "There are many variations of passages of Lorem Ipsum available, but the majority.",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.",
-      imgSrc: "/images/goals2.png",
-    },
-    {
-      title:
-        "Bridging Dreams to Reality in a Transformative Journey of Innovation and Impact at TechChefz.",
-      content:
-        "Founded in 2017. Fueled by enthusiasm and determination, they set on a transformative journey to shape the future TechChefz arose from a shared passion for technology, uniting a team of pioneers",
-      imgSrc: "/images/goals3.png",
-    },
-    {
-      title:
-        "Bridging Dreams to Reality in a Transformative Journey of Innovation and Impact at TechChefz.",
-      content:
-        "Founded in 2017, TechChefz arose from a shared passion for technology, uniting a team of pioneers. Fueled by enthusiasm and determination, they set on a transformative journey to shape the future.",
-      imgSrc: "/images/img/about/slider1.png",
-    },
-    {
-      title:
-        "Bridging Dreams to Reality in a Transformative Journey of Innovation and Impact at TechChefz.",
-      content:
-        "Founded in 2017. Fueled by enthusiasm and determination, they set on a transformative journey to shape the future TechChefz arose from a shared passion for technology, uniting a team of pioneers,",
-      imgSrc: "/images/img/about/slider1.png",
-    },
-  ];
 
  
   return (
@@ -193,7 +148,7 @@ const OurHistory = ({props, OurHistory}) => {
       <div className={cn(styles.timelineSection, "ourHistorySlider")}>
         <div className={cn("primary-container")}>
           <Slider asNavFor={nav1} ref={slider3} {...settingTimeline}>
-            {sliderData.map((index) => (
+            {OurHistory.map((index) => (
               <div key={index} className={styles.cardStyle} />
             ))}
           </Slider>

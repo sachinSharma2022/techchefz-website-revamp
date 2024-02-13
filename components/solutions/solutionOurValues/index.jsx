@@ -10,9 +10,8 @@ import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
 import { base_Url } from "@/lib/constants";
 
-
-const SolutionOurValues = ({props}) => {
-  console.log("mmm",props)
+const SolutionOurValues = ({ props }) => {
+  console.log("mmm", props);
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
   const { theme, setTheme } = useContext(MyContext);
 
@@ -109,14 +108,15 @@ const SolutionOurValues = ({props}) => {
     >
       <div className={cn("primary-container", styles.flexContainer)}>
         <div className={styles.ourValuesHead}>
-          <h6 className={cn(styles.ourValuesTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
-            </h6>
-          <h3 className={cn(styles.ourValuesHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}`}}>
-            
-          </h3>
-          <p className={styles.ourValuesText}>
-            {props?.Description}
-          </p>
+          <h6
+            className={cn(styles.ourValuesTitle, "gradient-text")}
+            dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+          ></h6>
+          <h3
+            className={cn(styles.ourValuesHeading, "gradient-text")}
+            dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
+          ></h3>
+          <p className={styles.ourValuesText}>{props?.Description}</p>
         </div>
 
         <div className={styles.ourValuesAccordion}>
@@ -124,7 +124,7 @@ const SolutionOurValues = ({props}) => {
             <Disclosure key={index}>
               {(panel) => {
                 const { open, close } = panel;
-                console.log("jj",data.secoundDescription.split(","))
+                console.log("jj", data.secoundDescription.split(","));
 
                 return (
                   <>
@@ -138,8 +138,11 @@ const SolutionOurValues = ({props}) => {
                       }}
                     >
                       <ImageCustom
-                        src={data.Image.data.attributes.url?`${base_Url}${data.Image.data.attributes.url}`:`${base_Url}/`}
-                        
+                        src={
+                          data.Image.data.attributes.url
+                            ? `${base_Url}${data.Image.data.attributes.url}`
+                            : `${base_Url}/`
+                        }
                         width={30}
                         height={30}
                         alt="bannerImg"
@@ -152,7 +155,11 @@ const SolutionOurValues = ({props}) => {
                     <Disclosure.Panel className={styles.accordionBody}>
                       <div className={styles.imgBox}>
                         <ImageCustom
-                          src={data.img.data.attributes.url?`${base_Uri}${data.img.data.attributes.url}`:`${base_Uri}/`}
+                          src={
+                            data.img.data.attributes.url
+                              ? `${base_Uri}${data.img.data.attributes.url}`
+                              : `${base_Uri}/`
+                          }
                           width={200}
                           height={200}
                           alt="bannerImg"
@@ -161,12 +168,14 @@ const SolutionOurValues = ({props}) => {
                       <div className={styles.accordionBodyContent}>
                         {data.Description}
                         <ul className={styles.listStyle}>
-                          {data?.secoundDescription?.split(",").map((items, index) => (
-                            <li key={index}>
-                              <Icons.CheckIcon />
-                              {items}
-                            </li>
-                          ))}
+                          {data?.secoundDescription
+                            ?.split(",")
+                            .map((items, index) => (
+                              <li key={index}>
+                                <Icons.CheckIcon />
+                                {items}
+                              </li>
+                            ))}
                         </ul>
                       </div>
                     </Disclosure.Panel>
