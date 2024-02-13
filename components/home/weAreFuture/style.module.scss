@@ -97,7 +97,7 @@
         text-align: left;
       }
 
-      .titleHighlight {
+      span {
         font-size: text(xl-larger);
         font-weight: 500;
         line-height: 5rem;
@@ -120,6 +120,7 @@
     font-weight: 500;
     line-height: 3.375rem;
     max-width: 32rem;
+    color: rgba(color(text-primary), 0.8);
 
     @include mobile {
       font-size: text(xl);
@@ -157,6 +158,9 @@
     }
     .aboutText {
       color: color(primary-white);
+    }
+    .datingText {
+      color: rgba(color(primary-white), 0.8);
     }
   }
 }

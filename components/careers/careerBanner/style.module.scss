@@ -3,6 +3,10 @@
 .landingBannerStyle {
   padding-bottom: 8.75rem;
 
+  @include mobile-tablet-p {
+    padding-bottom: 5rem;
+  }
+
   .contentSection {
     padding-inline: spacing(p-120);
     padding-top: 10rem;
@@ -27,7 +31,7 @@
 
     @include mobile-tablet-p {
       font-size: 2.75rem;
-      line-height: 3.5rem;
+      line-height: 3.125rem;
       margin-bottom: text(xl);
       word-break: break-word;
     }

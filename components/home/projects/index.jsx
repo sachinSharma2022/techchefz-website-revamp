@@ -45,14 +45,14 @@ const Card = ({ ...props }) => {
       className={styles.cardSec}
       style={isMobileScreen ? "" : { scale }}
     >
-      <div className={styles.projectImg}>
+      <Link href="/case-study" className={styles.projectImg}>
         <ImageCustom
           src={props.src}
           width={1360}
           height={300}
           alt="projectImg"
         />
-      </div>
+      </Link>
 
       <div className={styles.cardContentStyle}>
         <h3 className={styles.projectBrand}>
@@ -150,25 +150,25 @@ const Projects = () => {
     >
       <div className={cn("primary-container")}>
         <TextRevel>
-          <div className={cn("row", styles.rowSection)}>
-            <div className="col-md-12 col-12">
+          <div className={cn(styles.rowSection)}>
+            <div>
               <p className={styles.projectHighlight}>Projects</p>
-            </div>
-            <div className="col-md-5 col-12">
               <h3 className={styles.datingText}>
                 Unveiling Spotlight on Select Case Studies.
               </h3>
             </div>
-            <div className="col-md-7 col-12">
+            <div className={styles.paraSec}>
               <p className={styles.aboutText}>
                 Delve into our case studies to witness firsthand how we&apos;ve
                 tackled challenges, delivered solutions, and achieved measurable
                 success. Each story is a testament to our commitment, expertise,
                 and the transformative impact.
               </p>
-
               <Link href="/portfolio">
-                <Button variant="outline" size="md">
+                <Button
+                  variant={!theme ? "lightBlueOutline" : "outline"}
+                  size="md"
+                >
                   Check Our Portfolio <Icons.ArrowRight size={18} />
                 </Button>
               </Link>

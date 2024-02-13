@@ -299,6 +299,7 @@ const NavigationMobile = () => {
             <li className={styles.menuItem}>
               <Link
                 href="/portfolio"
+                onClick={closeMenu}
                 className={pathname == "/portfolio" ? styles.active : ""}
               >
                 Portfolio

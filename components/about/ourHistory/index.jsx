@@ -10,11 +10,12 @@ import styles from "./style.module.scss";
 
 const OurHistory = () => {
   const { theme } = useContext(MyContext);
-
+  const [oldSlide, setOldSlide] = useState(0);
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [activeSlide2, setActiveSlide2] = useState(0);
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
   const [nav3, setNav3] = useState(null);
-
   const slider1 = useRef(null);
   const slider2 = useRef(null);
   const slider3 = useRef(null);
@@ -26,6 +27,11 @@ const OurHistory = () => {
   }, []);
 
   const setting1 = {
+    beforeChange: (current, next) => {
+      setOldSlide(current);
+      setActiveSlide(next);
+    },
+    afterChange: (current) => setActiveSlide2(current),
     dots: false,
     fade: true,
     infinite: false,
@@ -136,10 +142,10 @@ const OurHistory = () => {
               </Slider>
               <div className={styles.sliderArrow}>
                 <button
-                  className={styles.button}
-                  // className={
-                  //   activeSlide === 0 ? styles.arrowDisabled : styles.button
-                  // }
+                  className={
+                    (cn(styles.button),
+                    activeSlide === 0 ? styles.arrowDisabled : styles.button)
+                  }
                   onClick={() => slider2?.current?.slickPrev()}
                 >
                   <Icons.ArrowLeft />

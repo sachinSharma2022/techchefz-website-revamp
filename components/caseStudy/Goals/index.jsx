@@ -27,11 +27,9 @@ const Goals = () => {
   return (
     <section className={`${styles.goals} ${theme ? styles.goalsDark : ""}`}>
       <div className={cn("primary-container")}>
-        <div className="row justify-content-between">
-          <div className="col-md-3 col-lg-3">
-            <h5 className={styles.goalsTitle}>Goals & Objectives</h5>
-          </div>
-          <div className="col-md-7 col-lg-8">
+        <div className={styles.contentSection}>
+          <h5 className={styles.goalsTitle}>Goals & Objectives</h5>
+          <div>
             <h3 className={styles.goalsHeading}>
               After a thorough consultation with the client concerning the RE’s
               unique requirements, we determined the core objectives:
@@ -51,52 +49,43 @@ const Goals = () => {
 
             <div className={styles.goalsList}>
               {listData.map((data, index) => (
-                <>
-                  <div key={index} className={styles.goalsTextWrapper}>
-                    <div className={styles.goalsIcons}>
-                      <Icons.BikeIcon
-                        className={styles.goalsIcon}
-                        width={27}
-                        height={16}
-                      />
-                    </div>
-                    <p className={styles.goalsText}>{data.content}</p>
+                <div key={index} className={styles.goalsTextWrapper}>
+                  <div className={styles.goalsIcons}>
+                    <Icons.BikeIcon
+                      className={styles.goalsIcon}
+                      width={27}
+                      height={16}
+                    />
                   </div>
-                </>
+                  <p className={styles.goalsText}>{data.content}</p>
+                </div>
               ))}
             </div>
           </div>
         </div>
 
         <div className={styles.goalImage}>
-          <div className="row justify-content-center ">
-            <div className="col-md-12 col-lg12">
-              <ImageCustom
-                src="/images/goals1.png"
-                width={1060}
-                height={500}
-                alt="content-img"
-              />
-            </div>
-          </div>
-          <div className={styles.goalsBottomImg}>
-            <div>
-              <ImageCustom
-                src="/images/goals2.png"
-                width={500}
-                height={400}
-                alt="content-img"
-              />
-            </div>
-            <div>
-              <ImageCustom
-                src="/images/goals3.png"
-                width={500}
-                height={400}
-                alt="content-img"
-              />
-            </div>
-          </div>
+          <ImageCustom
+            src="/images/goals1.png"
+            width={1060}
+            height={500}
+            alt="content-img"
+            className={styles.goalInnerImage}
+          />
+          <ImageCustom
+            src="/images/goals2.png"
+            width={500}
+            height={400}
+            alt="content-img"
+            className={styles.goalInnerImage}
+          />
+          <ImageCustom
+            src="/images/goals3.png"
+            width={500}
+            height={400}
+            alt="content-img"
+            className={styles.goalInnerImage}
+          />
         </div>
       </div>
     </section>

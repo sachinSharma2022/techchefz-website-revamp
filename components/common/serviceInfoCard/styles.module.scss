@@ -7,7 +7,6 @@
   padding: text(xxxl);
   border-radius: text(xl);
   border: 0.125rem solid rgba(color(text-primary), 0.12);
-  cursor: pointer;
   @include transition(0.4s);
 
   &:hover {

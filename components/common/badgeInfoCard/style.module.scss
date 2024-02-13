@@ -1,107 +1,112 @@
 @import "~/styles/partials/config";
 
 .browserAcceleratorCard {
-   background-color: color(bg-soft);
-   width: 100%;
-   height: auto;
-   padding: 1.875rem;
-   border-radius: 1.25rem;
-   border: 0.14rem solid rgba(color(text-primary), 0.12);
-   cursor: pointer;
-   transition: all 0.5s ease-in-out;
-   color: color(text-primary);
+  background-color: color(bg-soft);
+  width: 100%;
+  height: auto;
+  padding: 1.875rem;
+  border-radius: 1.25rem;
+  border: 0.14rem solid rgba(color(text-primary), 0.12);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  color: color(text-primary);
 
-   &:hover{
-      border-color: color(heading-liner);
-   }
+  &:hover {
+    border-color: color(heading-liner);
+  }
 
-   .cardHeader {
+  @include mobile-tablet-p {
+    padding: 1.25rem;
+  }
+
+  .cardHeader {
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5rem;
+    align-items: center;
+    margin-bottom: 1.25rem;
+
+    .cardSubTitle {
       display: flex;
-      justify-content: space-between;
-      gap: 2.5rem;
+      gap: 1.25rem;
       align-items: center;
-      margin-bottom: 1.25rem;
+    }
 
-      .cardSubTitle {
-         display: flex;
-         gap: 1.25rem;
-         align-items: center;
-      }
+    p {
+      margin-bottom: 0;
+    }
+  }
 
-      p {
-         margin-bottom: 0;
-      }
-   }
+  .cardTitle {
+    font-size: text(xl);
+    font-weight: 500;
+    line-height: 32px;
+    margin-bottom: 0.75rem;
 
-   .cardTitle {
-      font-size: text(xl);
-      font-weight: 500;
-      line-height: 32px;
-      margin-bottom: 0.75rem;
+    @include mobile-tablet-p {
+      font-size: text(lg);
+    }
+  }
+  .cardContent {
+    font-size: text(normal);
+    line-height: 1.5rem;
+    opacity: 0.8;
+    margin-bottom: 1.25rem;
+    @include truncate(3);
+  }
 
-      @include mobile-tablet-p{
-         font-size: text(lg);
-      }
-   }
-   .cardContent {
-      font-size: text(normal);
-      line-height: 1.5rem;
-      opacity: 0.8;
-      margin-bottom: 1.25rem;
-      @include truncate(3);
-   }
+  .cardsTags {
+    display: flex;
+    gap: 0.625rem;
+    flex-wrap: wrap;
 
-   .cardsTags {
-      display: flex;
-      gap: 0.625rem;
-
-      button {
-         color: color(text-primary);
-         border-radius: 0.5rem;
-         background-color: color(primary-white);
-         border: 0.14rem solid rgba(color(text-primary), 0.17);
-         font-weight: 400;
-         height: 30px;
-         line-height: 30px;
-         font-size: text(xxs);
-      }
-   }
-
-   .badgeStyle {
-      border-radius: .75rem;
-      background-color: rgba(color(primary-white), 0.80);
-      border: 1px solid rgba(color(text-primary), 0.40);
+    button {
       color: color(text-primary);
-      padding: .625rem .75rem;
-   }
+      border-radius: 0.5rem;
+      background-color: color(primary-white);
+      border: 0.14rem solid rgba(color(text-primary), 0.17);
+      font-weight: 400;
+      height: 30px;
+      line-height: 30px;
+      font-size: text(xxs);
+    }
+  }
 
-   .heading {
-      font-size: 1rem;
-      opacity: 0.6;
-      font-weight: normal;
-   }
+  .badgeStyle {
+    border-radius: 0.75rem;
+    background-color: rgba(color(primary-white), 0.8);
+    border: 0.14rem solid rgba(color(text-primary), 0.4);
+    color: color(text-primary);
+    padding: 0.625rem 0.75rem;
+  }
 
-   &.browserAcceleratorCardDark{
+  .heading {
+    font-size: 1rem;
+    opacity: 0.6;
+    font-weight: normal;
+  }
+
+  &.browserAcceleratorCardDark {
     background-color: color(text-primary);
     color: color(primary-white);
     border-color: rgba(color(primary-white), 0.12);
 
-    &:hover{
+    &:hover {
       border-color: color(heading-liner);
-   }
+    }
 
     .badgeStyle {
-      border-radius: .75rem;
-      background-color:  rgba(color(text-primary), 0.80);
-      border: 1px solid rgba(255, 255, 255, 0.40);
+      border-radius: 0.75rem;
+      background-color: rgba(color(text-primary), 0.8);
+      border: 0.14rem solid rgba(255, 255, 255, 0.4);
       color: color(primary-white);
-      padding: .625rem .75rem;
-   }
+      padding: 0.625rem 0.75rem;
+    }
 
-    .cardHeader{
-      .arrowUp path{
-         fill:color(primary-white) ;
+    .cardHeader {
+      .arrowUp path {
+        fill: color(primary-white);
       }
     }
-   }
+  }
 }

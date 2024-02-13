@@ -1,13 +1,12 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
 import { MyContext } from "@/context/theme";
-import { useContext } from "react";
 import { cn } from "@/lib/utils";
 import { cva } from "class-variance-authority";
+import React, { useContext, useState } from "react";
 
-import styles from "./style.module.scss";
 import { FileUploader } from "./fileUploader";
+import styles from "./style.module.scss";
 
 const inputVariants = cva(styles.base, {
   variants: {
@@ -172,4 +171,4 @@ const Error = ({ className, children }) => (
   <p className={cn(styles.error, className)}>{children}</p>
 );
 
-export { Error, Input, Textarea, InputFile };
+export { Error, Input, InputFile, Textarea };

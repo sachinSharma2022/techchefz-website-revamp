@@ -101,7 +101,7 @@
         font-size: text(xl);
         font-weight: 500;
         line-height: 2rem;
-        color: color(nav-btn);
+        color: color(primary-blue);
         font-family: font(primary);
         margin-bottom: 0;
       }
@@ -168,6 +168,11 @@
         border-color: rgba(color(primary-white), 0.12);
       }
     }
-  }
 
+    .customerProfile {
+      .customerName {
+        color: color(info-blue);
+      }
+    }
+  }
 }

@@ -79,7 +79,7 @@
   }
 
   .tabWrapper {
-    border: 2px solid color(heading-liner);
+    border: 0.14rem solid color(heading-liner);
     padding: 0.5rem;
     border-radius: 0.5rem;
     width: fit-content;
@@ -177,7 +177,7 @@
         align-items: center;
         padding: 2rem;
 
-        h6 {
+        h4 {
           font-size: text(xl);
           font-style: normal;
           font-weight: 500;

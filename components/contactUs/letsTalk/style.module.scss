@@ -1,6 +1,6 @@
 @import "~/styles/partials/config";
 
-.lestWorkStyle {
+.letsContactStyle {
   padding: spacing(section-primary-padding);
 
   @include desktop-hd {
@@ -24,7 +24,7 @@
     }
 
     .tabDropdownMob {
-      border: 1px solid rgba(color(text-primary), 0.12);
+      border: 0.14rem solid rgba(color(text-primary), 0.12);
       background-color: color(primary-white);
       padding: 1rem 0.75rem;
       margin-bottom: text(lg);
@@ -236,7 +236,7 @@
 
 
 // Dark Mode
-  &.lestWorkStyleDark {
+  &.letsContactStyleDark {
     background-color: color(dark-gray);
 
     .workArea {
@@ -249,7 +249,7 @@
 
       .workGrid {
         .policyHighlight {
-          color: color(heading-liner);
+          color: color(info-blue);
         }
       }
 

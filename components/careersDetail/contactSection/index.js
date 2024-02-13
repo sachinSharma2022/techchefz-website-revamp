@@ -4,7 +4,7 @@ import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import CountryDropdown from "@/components/ui/countryDropdown";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import { Input, Textarea } from "@/components/ui/inputCustom";
+import { Input, InputFile, Textarea } from "@/components/ui/inputCustom";
 import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import { useContext } from "react";
@@ -78,11 +78,12 @@ const ContactSection = () => {
                     <CountryDropdown />
                   </div>
                   <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                    <Input
-                      variant="default"
+                    <InputFile
                       label="Upload CV* (pdf/doc upto 5mb)"
                       placeholder="Upload CV* (pdf/doc upto 5mb)"
-                      type="text"
+                      type="file"
+                      id="companyName"
+                      name="companyName"
                     />
                   </div>
                   <div className={`${styles.inputSpace} col-md-6 col-12`}>

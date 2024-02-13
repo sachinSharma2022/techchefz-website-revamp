@@ -21,6 +21,8 @@
     }
 
     .searchButton{
+      width: 100%;
+      
       @include mobile-tablet-p{
         display: none;
       }

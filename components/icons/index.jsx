@@ -1009,34 +1009,33 @@ export const Icons = {
   ),
   ArrowRight: ({ size, ...props }) => (
     <svg
+      width="18"
+      height="16"
+      viewBox="0 0 18 16"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      width={size}
-      height={size}
-      viewBox="0 0 26 24"
-      fill="currentColor"
-      stroke="currentColor"
       {...props}
     >
       <path
-        d="M1 12.0005H25"
+        d="M1 8H16.9996"
         stroke="white"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
       />
       <path
-        d="M14.713 22.2862L24.9987 12.0005"
+        d="M10.1426 14.857L16.9996 8"
         stroke="white"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
       />
       <path
-        d="M14.713 1.71399L24.9987 11.9997"
+        d="M10.1426 1.14307L16.9996 8.00005"
         stroke="white"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
       />
     </svg>
   ),

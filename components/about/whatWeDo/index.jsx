@@ -117,10 +117,10 @@ const WhatWeDo = () => {
                 <div className={styles.workCard}>
                   <div className={`${styles.frontCard} ${styles.workCols}`}>
                     {data.icon}
-                    <h6>{data.title}</h6>
+                    <h3>{data.title}</h3>
                   </div>
                   <div className={`${styles.backCard}  ${styles.workCols}`}>
-                    <h6>{data.title} </h6>
+                    <h3>{data.title} </h3>
                     <p>{data.content} </p>
                   </div>
                 </div>

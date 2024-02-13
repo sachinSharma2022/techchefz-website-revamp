@@ -13,7 +13,7 @@ const CoeService = () => {
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section
-      className={`${styles.coeService}  ${theme ? styles.coeServiceDark : ""}`}
+      className={cn(styles.coeService, theme ? styles.coeServiceDark : "")}
     >
       <div className={cn("primary-container")}>
         <div className={styles.coeServiceImg}>

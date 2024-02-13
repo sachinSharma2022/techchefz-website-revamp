@@ -9,14 +9,17 @@
     left: 0;
     top: 0;
     z-index: 99999;
-    @include mobile-tablet-p{
+
+    @include mobile-tablet-p {
       display: none;
     }
   }
+
   .background {
-    background-color: black;
+    background-color: color(primary-black);
     transition: opacity 0s linear 0.1s;
   }
+
   .route {
     z-index: 999999;
     position: absolute;
@@ -26,5 +29,28 @@
     font-size: 46px;
     transform: translateX(-50%);
     text-align: center;
+  }
+
+  .routeLogo {
+
+
+    img {
+      height: 11.25rem;
+      width: 11.25rem;
+    }
+
+    @include mobile-tablet-p {
+      img {
+        height: 8.25rem;
+        width: 8.25rem;
+      }
+    }
+  }
+}
+
+.curveAnimation {
+
+  > .background[style*="opacity: 0;"], .route[style*="opacity: 0;"] {
+    display: none;
   }
 }

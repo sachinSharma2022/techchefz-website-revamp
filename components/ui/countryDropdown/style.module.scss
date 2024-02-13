@@ -29,7 +29,7 @@
     input {
       background: none;
       border: none;
-      color: color(primary-white);
+      color: color(text-primary);
     }
     input::-webkit-inner-spin-button {
       -webkit-appearance: none;
@@ -80,7 +80,7 @@
   &.dropdownContainerStyleDark {
     .countryDropdown {
       border-color: rgba(color(primary-white), 0.12);
-      background-color: transparent;
+      background-color: color(dark-gray);
 
       &.inputErrorStyle {
         border-color: color(error);
@@ -104,6 +104,11 @@
           }
         }
       }
+
+      input {
+        color: color(primary-white);
+      }
+  
     }
   }
 }

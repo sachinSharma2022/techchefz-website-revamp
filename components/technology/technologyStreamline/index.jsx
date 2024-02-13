@@ -112,7 +112,7 @@ const Streamline = () => {
     >
       <section className={styles.streamLineSection}>
         <div className={cn("primary-container", styles.flexContainer)}>
-          <h3 className={styles.streamlineTitle}>
+          <h3 className={cn(styles.streamlineTitle, "text-gradient")}>
             Streamline your Business with our <span>Extensive Solution.</span>
           </h3>
           <p className={styles.streamlineContent}>
@@ -129,14 +129,16 @@ const Streamline = () => {
           <div key={index}>
             <div className={styles.streamlineCard}>
               <div className={styles.iconStyle}>{data.icons}</div>
-              <h6 className={styles.cardTitle}>{data.title} </h6>
-              <p className={styles.cardContent}>{data.content}</p>
-              <Button
-                variant={theme ? "lightBlueOutline" : "outline"}
-                size="md"
-              >
-                Learn More <Icons.ArrowRight size={18} />
-              </Button>
+              <div>
+                <h6 className={styles.cardTitle}>{data.title} </h6>
+                <p className={styles.cardContent}>{data.content}</p>
+                <Button
+                  variant={theme ? "lightBlueOutline" : "outline"}
+                  size="md"
+                >
+                  Learn More <Icons.ArrowRight size={18} />
+                </Button>
+              </div>
             </div>
           </div>
         ))}

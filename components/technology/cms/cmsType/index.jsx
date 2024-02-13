@@ -74,7 +74,7 @@ const CmsType = () => {
           {typeCard.map((data, index) => (
             <PartnerCard
               key={index}
-              imgSrc={data.imgSrc}
+              imgSrc={data.imgUrl}
               darkImgSrc={data.darkImgSrc}
               cardTitle={data.sbTitle}
               cardContent={data.sbText}

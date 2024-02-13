@@ -12,12 +12,13 @@ import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 
 const LetsWork = () => {
-  const { theme, setTheme } = useContext(MyContext);
+  const { theme } = useContext(MyContext);
   return (
     <section
-      className={`${styles.lestWorkStyle} ${
+      className={cn(
+        styles.lestWorkStyle,
         theme ? styles.lestWorkStyleDark : ""
-      }`}
+      )}
     >
       <div className={cn("primary-container")}>
         <div className={styles.workArea}>
@@ -73,11 +74,7 @@ const LetsWork = () => {
                   <span className={styles.policyHighlight}>Privacy Policy</span>
                 </p>
                 <div className={`${styles.buttonGrid} col-md-6 col-12`}>
-                  <Button
-                    variant={theme ? "blueBtnDark" : "blueBtn"}
-                    //  variant="blueBtn"
-                    size="lg"
-                  >
+                  <Button variant={theme ? "blueBtnDark" : "blueBtn"} size="lg">
                     Send a Message <Icons.ArrowRight size={18} />
                   </Button>
                 </div>

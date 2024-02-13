@@ -1,7 +1,7 @@
 @import "~/styles/partials/config";
 
 .theProcessStyle {
-  padding: spacing(section-primary-padding);
+  padding: 8.75rem 7.5rem 20rem;
   padding-top: 0;
 
   @include mobile-tablet-p {
@@ -75,7 +75,16 @@
 
     .circularStepperContainer {
       position: relative;
+
+      @include mobile-tablet-p {
+        width: 100vw;
+        scale: 0.8;
+        left: -20px;
+        display: flex;
+        align-items: center;
+      }
     }
+
     .circularStepperContainer > span {
       font-size: text(larger);
       color: color(heading-liner);
@@ -84,6 +93,7 @@
         color(primary-blue) 11.5%,
         color(heading-liner) 55.42%
       );
+
       @include textGradient;
 
       @include mobile-tablet-p {
@@ -98,6 +108,12 @@
     gap: 2.5rem;
     margin-top: 12.75rem;
 
+    @include mobile {
+      flex-direction: row;
+      overflow-x: scroll;
+      @include scrollHide;
+    }
+
     .processCard {
       background: color(bg-soft);
       padding: 2.5rem;
@@ -105,13 +121,10 @@
       border: 0.14rem solid rgba(color(text-primary), 0.12);
       max-width: 587px;
       opacity: 0.4;
-      // &:nth-child(1){
-      //   opacity: 1;
-      // }
 
-      // &.active {
-      //   opacity: 1;
-      // }
+      @include mobile {
+        min-width: 100%;
+      }
     }
 
     .textGradient {
