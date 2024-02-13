@@ -35,7 +35,7 @@ const LandingBanner = ({ props }) => {
     >
       <div className={cn("primary-container")}>
         <h1 className={styles.title}>
-          {props.title} <span /> {props.description} <span />
+          {props.title} <span /> <br /> {props.description} <span />
           <div className={styles.contentContainer}>
             <span>{props.SubTitle1} </span>
             <span className={styles.slider}>
