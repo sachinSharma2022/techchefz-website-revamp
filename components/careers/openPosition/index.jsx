@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 import SmoothDropdown from "@/components/ui/smoothDropdownButton";
 
-const OpenPosition = () => {
+const OpenPosition = ({props}) => {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
   const { theme, setTheme } = useContext(MyContext);
 
@@ -30,118 +30,118 @@ const OpenPosition = () => {
       open: !newPanel.open,
     });
   }
-  const openPositionData = [
-    {
-      id: 1,
-      title: "Backend",
-      itemNum: 4,
-      category: "backEnd",
-      openPositionContent: [
-        {
-          accordionTitle: "Developer - NodeJS",
-          accordionLocation: "Noida, Delhi",
-        },
-        {
-          accordionTitle: "Developer - NodeJS",
-          accordionLocation: "Noida, Delhi",
-          accordionContent: "conten2",
-        },
-      ],
-    },
-    {
-      id: 2,
-      title: "Business Development",
-      itemNum: 4,
-      category: "business",
-      openPositionContent: [
-        {
-          accordionTitle: "Developer - NodeJS",
-          accordionLocation: "Noida, Delhi",
-          accordionContent: "conten1",
-        },
-        {
-          accordionTitle: "Developer - NodeJS",
-          accordionLocation: "Noida, Delhi",
-          accordionContent: "conten2",
-        },
-      ],
-    },
-    {
-      id: 3,
-      title: "DevOps",
-      itemNum: 3,
-      category: "devOps",
-      openPositionContent: [
-        {
-          accordionTitle: "Developer - NodeJS",
-          accordionLocation: "Noida, Delhi",
-          accordionContent: "conten1",
-        },
-        {
-          accordionTitle: "Developer - NodeJS",
-          accordionLocation: "Noida, Delhi",
-          accordionContent: "conten2",
-        },
-      ],
-    },
-    {
-      id: 4,
-      title: "Design",
-      itemNum: 1,
-      category: "design",
-      openPositionContent: [
-        {
-          accordionTitle: "Developer - NodeJS",
-          accordionLocation: "Noida, Delhi",
-          accordionContent: "conten1",
-        },
-        {
-          accordionTitle: "Developer - NodeJS",
-          accordionLocation: "Noida, Delhi",
-          accordionContent: "conten2",
-        },
-      ],
-    },
-    {
-      id: 4,
-      title: "Marketing",
-      itemNum: 2,
-      category: "marketing",
-      openPositionContent: [
-        {
-          accordionTitle: "Developer - NodeJS",
-          accordionLocation: "Noida, Delhi",
-          accordionContent: "conten1",
-        },
-        {
-          accordionTitle: "Developer - NodeJS",
-          accordionLocation: "Noida, Delhi",
-          accordionContent: "conten2",
-        },
-      ],
-    },
-    {
-      id: 4,
-      title: "HR",
-      category: "hr",
-      openPositionContent: [
-        {
-          accordionTitle: "Developer - NodeJS",
-          accordionLocation: "Noida, Delhi",
-          accordionContent: "conten1",
-        },
-        {
-          accordionTitle: "Developer - NodeJS",
-          accordionLocation: "Noida, Delhi",
-          accordionContent: "conten2",
-        },
-      ],
-    },
-  ];
-  const [items, setItems] = useState(openPositionData);
+  // const openPositionData = [
+  //   {
+  //     id: 1,
+  //     title: "Backend",
+  //     itemNum: 4,
+  //     category: "backEnd",
+  //     openPositionContent: [
+  //       {
+  //         accordionTitle: "Developer - NodeJS",
+  //         accordionLocation: "Noida, Delhi",
+  //       },
+  //       {
+  //         accordionTitle: "Developer - NodeJS",
+  //         accordionLocation: "Noida, Delhi",
+  //         accordionContent: "conten2",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Business Development",
+  //     itemNum: 4,
+  //     category: "business",
+  //     openPositionContent: [
+  //       {
+  //         accordionTitle: "Developer - NodeJS",
+  //         accordionLocation: "Noida, Delhi",
+  //         accordionContent: "conten1",
+  //       },
+  //       {
+  //         accordionTitle: "Developer - NodeJS",
+  //         accordionLocation: "Noida, Delhi",
+  //         accordionContent: "conten2",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "DevOps",
+  //     itemNum: 3,
+  //     category: "devOps",
+  //     openPositionContent: [
+  //       {
+  //         accordionTitle: "Developer - NodeJS",
+  //         accordionLocation: "Noida, Delhi",
+  //         accordionContent: "conten1",
+  //       },
+  //       {
+  //         accordionTitle: "Developer - NodeJS",
+  //         accordionLocation: "Noida, Delhi",
+  //         accordionContent: "conten2",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "Design",
+  //     itemNum: 1,
+  //     category: "design",
+  //     openPositionContent: [
+  //       {
+  //         accordionTitle: "Developer - NodeJS",
+  //         accordionLocation: "Noida, Delhi",
+  //         accordionContent: "conten1",
+  //       },
+  //       {
+  //         accordionTitle: "Developer - NodeJS",
+  //         accordionLocation: "Noida, Delhi",
+  //         accordionContent: "conten2",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "Marketing",
+  //     itemNum: 2,
+  //     category: "marketing",
+  //     openPositionContent: [
+  //       {
+  //         accordionTitle: "Developer - NodeJS",
+  //         accordionLocation: "Noida, Delhi",
+  //         accordionContent: "conten1",
+  //       },
+  //       {
+  //         accordionTitle: "Developer - NodeJS",
+  //         accordionLocation: "Noida, Delhi",
+  //         accordionContent: "conten2",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "HR",
+  //     category: "hr",
+  //     openPositionContent: [
+  //       {
+  //         accordionTitle: "Developer - NodeJS",
+  //         accordionLocation: "Noida, Delhi",
+  //         accordionContent: "conten1",
+  //       },
+  //       {
+  //         accordionTitle: "Developer - NodeJS",
+  //         accordionLocation: "Noida, Delhi",
+  //         accordionContent: "conten2",
+  //       },
+  //     ],
+  //   },
+  // ];
+  // const [items, setItems] = useState({props});
   const [active, setActive] = useState(false);
   const filterItem = (categItem) => {
-    const updateItems = openPositionData.filter((curElem) => {
+    const updateItems = props.filter((curElem) => {
       return curElem.category === categItem;
     });
 
@@ -149,36 +149,36 @@ const OpenPosition = () => {
     setActive(true);
   };
 
-  const buttonVariants = [
-    {
-      buttonTitle: "Backend",
-      id: "backEnd",
-    },
-    {
-      buttonTitle: "Business Development",
-      id: "business",
-    },
-    {
-      buttonTitle: "DevOps",
-      id: "devOps",
-    },
-    {
-      buttonTitle: "Backend",
-      id: "backEnd",
-    },
-    {
-      buttonTitle: "Design",
-      id: "design",
-    },
-    {
-      buttonTitle: "marketing",
-      id: "marketing",
-    },
-    {
-      buttonTitle: "HR",
-      id: "hr",
-    },
-  ];
+  // const buttonVariants = [
+  //   {
+  //     buttonTitle: "Backend",
+  //     id: "backEnd",
+  //   },
+  //   {
+  //     buttonTitle: "Business Development",
+  //     id: "business",
+  //   },
+  //   {
+  //     buttonTitle: "DevOps",
+  //     id: "devOps",
+  //   },
+  //   {
+  //     buttonTitle: "Backend",
+  //     id: "backEnd",
+  //   },
+  //   {
+  //     buttonTitle: "Design",
+  //     id: "design",
+  //   },
+  //   {
+  //     buttonTitle: "marketing",
+  //     id: "marketing",
+  //   },
+  //   {
+  //     buttonTitle: "HR",
+  //     id: "hr",
+  //   },
+  // ];
 
   const options = [
     {
@@ -211,34 +211,34 @@ const OpenPosition = () => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.openPositionHeader}>
-          <h4 className={styles.openPositionHeading}>
-            <span>21</span> Open Positions
+          <h4 className={cn(styles.openPositionHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
+           
           </h4>
           <SearchInput />
         </div>
 
         <div className={styles.serviceBtn}>
-          {buttonVariants.map((buttonItem) => (
+          {props?.map((buttonItem) => (
             <button
               className={styles.badgeButton}
-              onClick={() => filterItem(buttonItem.id)}
+              onClick={() => filterItem(buttonItem.Heading)}
               key={buttonItem}
             >
-              {buttonItem.buttonTitle}
+              {buttonItem.Heading}
             </button>
           ))}
         </div>
 
-        {items.map((item, index) => (
+        {props.map((item, index) => (
           <div key={index} className={styles.openPositionContent} id={item.id}>
             <div className={styles.openPositionTitle}>
               <h4 className={styles.title}>
-                {item.title} <sup>{item.itemNum} </sup>
+                {item.Heading} <sup>{item.itemNum} </sup>
               </h4>
             </div>
 
             <div className={styles.openPositionAccordion}>
-              {item.openPositionContent.map((subItem, index) => (
+              {item?.post?.map((subItem, index) => (
                 <Disclosure key={index}>
                   {(panel) => {
                     const { open, close } = panel;
@@ -258,8 +258,8 @@ const OpenPosition = () => {
                           className={styles.accordionButton}
                         >
                           <div className={styles.buttonTitle}>
-                            <h6>{subItem.accordionTitle} </h6>
-                            <p>{subItem.accordionLocation}</p>
+                            <h6>{subItem.Title} </h6>
+                            <p>{subItem.Location}</p>
                           </div>
                           <div className={styles.buttonIcon}>
                             <Icons.ArrowDown />
@@ -267,8 +267,8 @@ const OpenPosition = () => {
                         </Disclosure.Button>
                         <Disclosure.Panel className={styles.accordionPanel}>
                           <div className={styles.accordionContent}>
-                            <h6>About the Job</h6>
-                            <p>
+                            <h6 dangerouslySetInnerHTML={{ __html: `${subItem?.Description}`}}></h6>
+                            {/* <p>
                               Your specific duties will be based upon your
                               experience as a UI/UX Designer. In this role, you
                               will be responsible for designing and delivering
@@ -309,14 +309,14 @@ const OpenPosition = () => {
                             <h6>Location</h6>
                             <ul>
                               <li>Remote</li>
-                            </ul>
+                            </ul> */}
 
                             <div className={styles.btnSection}>
                               <Button
                                 variant={theme ? "blueBtnDark" : "blueBtn"}
                                 size="md"
                               >
-                                More Info
+                                {subItem?.button}
                               </Button>
                               <SmoothDropdown
                                 options={options}
