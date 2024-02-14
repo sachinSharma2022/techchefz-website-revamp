@@ -800,6 +800,11 @@ input:-webkit-autofill {
   .react-select__control {
     background-color: color(primary-white);
   }
+
+  .react-select__single-value {
+    position: relative;
+    top: -3px;
+  }
 }
 
 .dark-theme-style {

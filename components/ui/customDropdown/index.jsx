@@ -1,8 +1,8 @@
 "use client";
 import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
-import { useContext } from "react";
-import Select from "react-select";
+import React, { useContext } from "react";
+import Select, { components } from "react-select";
 
 import dropdownStyle from "./style.module.scss";
 
@@ -28,11 +28,23 @@ import dropdownStyle from "./style.module.scss";
 // placeholder
 // singleValue
 // valueContainer
+const { ValueContainer, Placeholder } = components;
+const CustomValueContainer = ({ children, ...props }) => {
+  return (
+    <ValueContainer {...props}>
+      <Placeholder {...props} isFocused={props.isFocused}>
+        {props.selectProps.placeholder}
+      </Placeholder>
+      {React.Children.map(children, (child) =>
+        child && child.type !== Placeholder ? child : null
+      )}
+    </ValueContainer>
+  );
+};
 
 const CustomDropdown = ({
-  name,
   options,
-  setFieldValue,
+  onChange,
   className,
   inputError,
   styles,
@@ -45,7 +57,7 @@ const CustomDropdown = ({
       ...styles,
       height: 60,
       borderRadius: 12,
-      backgroundColor: theme ? "#1F1F1F" : "#1F1F1F",
+      backgroundColor: theme ? "#1F1F1F" : "#F1F1F1",
       borderWidth: "0.14rem",
       borderColor: theme ? "rgba(256,256,256,0.12)" : "rgba(17, 17, 17, 0.12)",
       "&:hover": {
@@ -55,9 +67,24 @@ const CustomDropdown = ({
     }),
     singleValue: () => ({
       color: theme ? "white" : "#111",
+      top: "-5px",
     }),
     indicatorSeparator: () => ({ display: "none" }),
-    valueContainer: () => ({ top: 12, position: "relative", left: 17 }),
+    valueContainer: (provided) => ({
+      ...provided,
+      overflow: "visible",
+      top: 0,
+      position: "relative",
+      left: 10,
+    }),
+    placeholder: (provided, state) => ({
+      ...provided,
+      position: "absolute",
+      top: state.hasValue || state.selectProps.inputValue ? 0 : "0",
+      left: -2,
+      transition: "top 0.1s, font-size 0.1s",
+      fontSize: (state.hasValue || state.selectProps.inputValue) && 13,
+    }),
     option: (styles, { isFocused }) => {
       return {
         ...styles,
@@ -80,17 +107,17 @@ const CustomDropdown = ({
       )}
     >
       <Select
-        onChange={(option)=> {
-          setFieldValue(name, option.value)
-
-        }
-        }
+        onChange={onChange}
         options={options}
         classNamePrefix="react-select"
-        placeholder={placeholder?placeholder:"Select"}
         styles={controlStyle || styles}
         isSearchable={false}
+        placeholder={placeholder}
+        components={{
+          ValueContainer: CustomValueContainer,
+        }}
       />
+      {/* <label className={dropdownStyle.labelCustom}>Select Name</label> */}
     </div>
   );
 };

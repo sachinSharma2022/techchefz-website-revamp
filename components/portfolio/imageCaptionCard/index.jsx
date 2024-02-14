@@ -95,6 +95,7 @@ const ImageCaptionCard = () => {
               title="Services"
               options={dataServices}
               className="custom-dropdown"
+              placeholder="Select Services"
             />
           </div>
           <div className={`${styles.inputDropPadding}`}>
@@ -102,6 +103,7 @@ const ImageCaptionCard = () => {
               title="Industry"
               options={dataIndustry}
               className="custom-dropdown"
+              placeholder="Select Industry"
             />
           </div>
           <div className={`${styles.inputDropPadding}`}>
@@ -109,6 +111,7 @@ const ImageCaptionCard = () => {
               title="Technology"
               options={dataTechnology}
               className="custom-dropdown"
+              placeholder="Select Technology"
             />
           </div>
         </div>
