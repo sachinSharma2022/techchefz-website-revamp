@@ -61,7 +61,7 @@ $border-radius: 5px;
     @include mobile-tablet-p {
       font-size: text(larger);
       margin: 0 0 2.188rem;
-      line-height: 60px;
+      line-height: 50px;
     }
     
     .contentContainer {
@@ -74,7 +74,7 @@ $border-radius: 5px;
         flex-wrap: wrap;
         font-size: text(larger);
         margin: 0 0 2.188rem;
-        line-height: 56px;
+        line-height: 55px;
         gap: 0;
       }
       

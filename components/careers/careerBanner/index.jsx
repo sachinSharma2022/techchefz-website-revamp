@@ -14,25 +14,26 @@ const CareerBanner = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section
-      className={`${styles.landingBannerStyle} ${theme ? styles.landingBannerDark : ""
-        }`}
+      className={`${styles.landingBannerStyle} ${
+        theme ? styles.landingBannerDark : ""
+      }`}
     >
       <div className={cn("primary-container")}>
         <div className={styles.contentSection}>
-          <h1 className={cn(styles.title,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}` }}>
-
-          </h1>
+          <h1
+            className={cn(styles.title, "gradient-text")}
+            dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}` }}
+          ></h1>
           <div className={styles.desc}>
-            <p className={styles.leadText}>
-            {props[0]?.Description}
-            </p>
+            <p className={styles.leadText}>{props[0]?.Description}</p>
             <Link href="/careers-detail">
               <Button
                 variant={theme ? "blueBtnDark" : "blueBtn"}
                 className={styles.headerBtn}
                 size="md"
               >
-              {props[0]?.Button} <Icons.ArrowRight size={20} className="ms-2" />
+                {props[0]?.Button}{" "}
+                <Icons.ArrowRight size={20} className="ms-2" />
               </Button>
             </Link>
           </div>

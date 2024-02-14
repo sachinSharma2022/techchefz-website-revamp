@@ -27,13 +27,6 @@ const Card = ({ ...props }) => {
   const isMobileScreen = useMediaQuery({ query: "(max-width: 767px)" });
   const description = useRef(null);
   const isInView = useInView(description);
-  // const tagSection = [
-  //   "Web Design",
-  //   "Dashboard Design",
-  //   "UI",
-  //   "UX",
-  //   "Responsive",
-  // ];
 
   const scale = useTransform(props.progress, props.range, [
     1,
@@ -136,6 +129,13 @@ const Projects = ({ project, brands }) => {
     },
   ];
 
+  const pagination = {
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '">' + (index + 1) + "</span>";
+    },
+  };
+
   return (
     <section
       className={cn(
@@ -190,7 +190,7 @@ const Projects = ({ project, brands }) => {
         ) : (
           <div ref={container} className={styles.cards}>
             <Swiper
-              pagination={Pagination}
+              pagination={pagination}
               modules={[Pagination, Autoplay]}
               className="mySwiper"
               autoplay={{
