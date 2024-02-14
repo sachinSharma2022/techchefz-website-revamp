@@ -33,7 +33,6 @@ const Input = React.forwardRef(
     ref
   ) => {
     const { theme } = useContext(MyContext);
-    console.log(props)
     return (
       <div
         className={cn(
