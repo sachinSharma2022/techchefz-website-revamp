@@ -14,6 +14,9 @@ import { base_Uri } from "@/lib/constants";
 import { Form, Formik, useFormik } from "formik";
 import { commonValidationSchema } from "@/lib/FormSchema";
 import { triggerMail } from "@/lib/triggerMail";
+import ReCAPTCHA from "react-google-recaptcha"
+import { verifyCaptcha } from "@/lib/ServerActions";
+import { useRef, useState } from "react"
 
 const LetsWork = ({contact}) => {
   
@@ -36,6 +39,18 @@ const LetsWork = ({contact}) => {
         triggerMail({content:JSON.stringify(values)}) 
       },
     });
+
+    const recaptchaRef = useRef(null)
+    const [isVerified, setIsverified] = useState(false)
+  
+    async function handleCaptchaSubmission(token) {
+      // Server function to verify captcha
+      await verifyCaptcha(token)
+        .then(() => setIsverified(true))
+        .catch(() => setIsverified(false))
+    }
+  
+
   return (
     <section
       className={cn(
@@ -143,12 +158,17 @@ const LetsWork = ({contact}) => {
                 </div>
               </div>
               <div className={styles.captchaImg}>
-                <ImageCustom
+                {/* <ImageCustom
                   src="/images/captcha.png"
                   width={219}
                   height={49}
                   alt="captcha"
-                />
+                /> */}
+                <ReCAPTCHA
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+            ref={recaptchaRef}
+            onChange={handleCaptchaSubmission}
+          />
               </div>
               <div className={styles.policyArea}>
                 <p className={styles.policyText}>
@@ -156,9 +176,10 @@ const LetsWork = ({contact}) => {
                   <span className={styles.policyHighlight}>Privacy Policy</span>
                 </p>
                 <div className={`${styles.buttonGrid} col-md-6 col-12`}>
-                  <Button variant={theme ? "blueBtnDark" : "blueBtn"} size="lg" type="submit">
+                
+                  {isVerified?<Button  variant={theme ? "blueBtnDark" : "blueBtn"} size="lg" type="submit">
                   {contact?.Btn} <Icons.ArrowRight size={18} />
-                  </Button>
+                  </Button>:<></>}
                 </div>
               </div>
             </div>
