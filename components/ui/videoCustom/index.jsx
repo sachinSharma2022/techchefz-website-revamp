@@ -17,17 +17,24 @@ const VideoCustom = (props) => {
     // let ctx = gsap.context(() => {
     //   const tl = gsap.timeline({
     //     scrollTrigger: {
-    //       trigger: `.${styles.videoCustom}`,
+    //       trigger: `.${styles.video}`,
     //       scrub: 1,
-    //       start: "top 11%",
-    //       end: "bottom +=500",
-
-    //       pin: true,
+    //       start: "top 40% ",
+    //       end:  '+=' + (272 + window.innerHeight),
     //       markers: true,
     //       invalidateOnRefresh: true,
     //       anticipatePin: 1,
     //     },
     //   });
+    //   ScrollTrigger.create({  
+    //     trigger:`.${styles.videocont}`,
+    //     pin: true,
+    //     markers: false,
+    //     start: "top 12%",
+    //     end: '+=' + (252 + window.innerHeight)
+    //   })
+    //   tl.to(`.${styles.video}`,{width:"100%",duration:4,borderRadius: '0%'},).to(`.${styles.video}`,{width:"70%",height: "70%",duration:4,borderRadius: '0%'},).to(`.${styles.video}`,{
+    //     y:50,duration:8,width:"5%",top:"10%", height: "10%",borderRadius: '10%'},">8").to(`.${styles.video}`,{borderRadius: '50%',duration: 1})
     // });
     // return () => ctx.revert();
 
@@ -37,6 +44,8 @@ const VideoCustom = (props) => {
     <div
       className={`${styles.videoCustom} ${theme ? styles.videoCustomDark : ""}`}
     >
+      <div className={styles.videocont}>
+
       <video
         className={styles.video}
         id="my-video"
@@ -51,6 +60,9 @@ const VideoCustom = (props) => {
       >
         <source src={props.src} type={props.type || "video/mp4"} />
       </video>
+        
+      </div>
+    
     </div>
   );
 };
