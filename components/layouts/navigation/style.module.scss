@@ -802,7 +802,7 @@
 
 .headerMainDesktop {
 
-  @include mobile {
+  @include mobile-tablet-p {
     display: none;
   }
 }

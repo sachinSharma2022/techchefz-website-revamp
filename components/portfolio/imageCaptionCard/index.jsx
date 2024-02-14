@@ -10,7 +10,7 @@ import { base_Uri } from "@/lib/constants";
 
 import styles from "./style.module.scss";
 
-const ImageCaptionCard = ({props}) => {
+const ImageCaptionCard = ({ props }) => {
   console.log("pp", props);
   const { theme, setTheme } = useContext(MyContext);
   const imageCaptionData = [
@@ -130,7 +130,11 @@ const ImageCaptionCard = ({props}) => {
                 <div className={styles.cardImg}>
                   <div className={`${styles.imgBox} imgBox`}>
                     <ImageCustom
-                      src={data?.Image?.data?.attributes?.url?`${base_Uri}${data?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+                      src={
+                        data?.Image?.data?.attributes?.url
+                          ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
+                          : `${base_Uri}/`
+                      }
                       width={1500}
                       height={1500}
                       alt="captionImg"
@@ -138,7 +142,7 @@ const ImageCaptionCard = ({props}) => {
                   </div>
                   <div className={styles.cardBadges}>
                     {data.Tag.map((items) => (
-                      <div  className={styles.badges}>
+                      <div key={items} className={styles.badges}>
                         {items.Title}
                       </div>
                     ))}
