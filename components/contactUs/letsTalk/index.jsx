@@ -15,8 +15,7 @@ import { base_Uri } from "@/lib/constants";
 import { base_Url } from "@/lib/constants";
 import { ImageCustom } from "@/components/ui/imageCustom";
 
-const LetsTalk = ({props}) => {
- 
+const LetsTalk = ({ props }) => {
   const { theme } = useContext(MyContext);
 
   const dropdownData = [
@@ -36,18 +35,20 @@ const LetsTalk = ({props}) => {
       >
         <div className={styles.workArea}>
           <div className={styles.headingMain}>
-            <h3 className={cn(styles.formHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
-             
-            </h3>
-            <p className={styles.descriptionText} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
-              
-            </p>
+            <h3
+              className={cn(styles.formHeading, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+            ></h3>
+            <p
+              className={styles.descriptionText}
+              dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
+            ></p>
           </div>
 
           <div className={`${styles.tabDropdownMob} col-md-6 col-12`}>
             <h3 className={styles.tabDropLabel}>Choose Purpose</h3>
             <CustomDropdown
-              placeholder=""
+              placeholder="Select Projects"
               title="Projects"
               options={dropdownData}
             />
@@ -65,7 +66,15 @@ const LetsTalk = ({props}) => {
                       )}
                     >
                       <div className={styles.highlightIcon}>
-                        <ImageCustom height={40}  width={40} src={props?.Image1?.data?.attributes?.url?`${base_Url}${props?.Image1?.data?.attributes?.url}`:`${base_Url}/`} />
+                        <ImageCustom
+                          height={40}
+                          width={40}
+                          src={
+                            props?.Image1?.data?.attributes?.url
+                              ? `${base_Url}${props?.Image1?.data?.attributes?.url}`
+                              : `${base_Url}/`
+                          }
+                        />
                         <h1>{props.Title1}</h1>
                       </div>
 
@@ -86,7 +95,15 @@ const LetsTalk = ({props}) => {
                       )}
                     >
                       <div className={styles.highlightIcon}>
-                      <ImageCustom height={40}  width={40} src={props?.Image2?.data?.attributes?.url?`${base_Url}${props?.Image2?.data?.attributes?.url}`:`${base_Url}/`} />
+                        <ImageCustom
+                          height={40}
+                          width={40}
+                          src={
+                            props?.Image2?.data?.attributes?.url
+                              ? `${base_Url}${props?.Image2?.data?.attributes?.url}`
+                              : `${base_Url}/`
+                          }
+                        />
                         <h1>{props.Title2}</h1>
                       </div>
 
@@ -107,7 +124,15 @@ const LetsTalk = ({props}) => {
                       )}
                     >
                       <div className={styles.highlightIcon}>
-                        <ImageCustom height={40}  width={40} src={props?.Image3?.data?.attributes?.url?`${base_Url}${props?.Image3?.data?.attributes?.url}`:`${base_Url}/`} />
+                        <ImageCustom
+                          height={40}
+                          width={40}
+                          src={
+                            props?.Image3?.data?.attributes?.url
+                              ? `${base_Url}${props?.Image3?.data?.attributes?.url}`
+                              : `${base_Url}/`
+                          }
+                        />
                         <h1>{props.Title3}</h1>
                       </div>
 
@@ -128,7 +153,15 @@ const LetsTalk = ({props}) => {
                       )}
                     >
                       <div className={styles.highlightIcon}>
-                      <ImageCustom height={40}  width={40} src={props?.Image4?.data?.attributes?.url?`${base_Url}${props?.Image4?.data?.attributes?.url}`:`${base_Url}/`} />
+                        <ImageCustom
+                          height={40}
+                          width={40}
+                          src={
+                            props?.Image4?.data?.attributes?.url
+                              ? `${base_Url}${props?.Image4?.data?.attributes?.url}`
+                              : `${base_Url}/`
+                          }
+                        />
                         <h1>{props.Title4}</h1>
                       </div>
 

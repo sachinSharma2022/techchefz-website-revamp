@@ -98,7 +98,7 @@ $border-radius: 5px;
       @include textGradient;
       
       @include mobile-tablet-p {
-        font-size: 3.5rem;
+        font-size: text(larger);
         line-height: normal;
       }
     }

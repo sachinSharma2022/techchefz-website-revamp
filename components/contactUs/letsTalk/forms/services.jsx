@@ -4,15 +4,16 @@ import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import CountryDropdown from "@/components/ui/countryDropdown";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import { Input, Textarea, Error } from "@/components/ui/inputCustom";
+import { Error, Input, Textarea } from "@/components/ui/inputCustom";
 import { MyContext } from "@/context/theme";
-import { Form, Formik } from "formik";
-import { useContext } from "react";
 import { serviceValidationSchema } from "@/lib/FormSchema";
 import { triggerMail } from "@/lib/triggerMail";
+import { Form, Formik } from "formik";
+import { useContext } from "react";
 
 import CustomDropdown from "@/components/ui/customDropdown";
 
+import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 
 const ServicesForm = () => {
@@ -22,12 +23,12 @@ const ServicesForm = () => {
     lastName: "",
     email: "",
     phone: "",
-    countyCode:"",
+    countyCode: "",
     companyName: "",
     serviceRequired: "",
     projectExplanation: "",
   };
-  
+
   const dropdownData = [
     { value: "Country", label: "Country" },
     { value: "India", label: "India" },
@@ -37,8 +38,8 @@ const ServicesForm = () => {
 
   return (
     <Formik
-      onSubmit={(values,action) => {
-        triggerMail({content:JSON.stringify(values)})
+      onSubmit={(values, action) => {
+        triggerMail({ content: JSON.stringify(values) });
       }}
       initialValues={formInitialSchema}
       initialStatus={{
@@ -47,15 +48,22 @@ const ServicesForm = () => {
       }}
       validationSchema={serviceValidationSchema}
     >
-      {({ errors, handleBlur, handleChange,setFieldValue, touched, values }) => (
+      {({
+        errors,
+        handleBlur,
+        handleChange,
+        setFieldValue,
+        touched,
+        values,
+      }) => (
         <Form>
           <div className={styles.contactUsForm}>
             <p className={styles.formText}>
               Fill up few details for your specific service requirement.
             </p>
             <div className={styles.contactFormArea}>
-              <div className="row">
-                <div className={`${styles.inputSpace} col-md-6 col-12`}>
+              <div className="grid-2-last-full">
+                <div className={cn(styles.inputSpace, "input-item")}>
                   <Input
                     label="First Name*"
                     placeholder="First Name*"
@@ -72,7 +80,7 @@ const ServicesForm = () => {
                     <Error>{touched.firstName && errors.firstName}</Error>
                   )}
                 </div>
-                <div className={`${styles.inputSpace} col-md-6 col-12`}>
+                <div className={cn(styles.inputSpace, "input-item")}>
                   <Input
                     label="Last Name*"
                     placeholder="Last Name*"
@@ -89,7 +97,7 @@ const ServicesForm = () => {
                     <Error>{errors.lastName}</Error>
                   )}
                 </div>
-                <div className={`${styles.inputSpace} col-md-6 col-12`}>
+                <div className={cn(styles.inputSpace, "input-item")}>
                   <Input
                     label="Email*"
                     placeholder="Email*"
@@ -106,7 +114,7 @@ const ServicesForm = () => {
                     <Error>{errors.email}</Error>
                   )}
                 </div>
-                <div className={`${styles.inputSpace} col-md-6 col-12`}>
+                <div className={cn(styles.inputSpace, "input-item")}>
                   <CountryDropdown
                     id="phone"
                     name="phone"
@@ -120,7 +128,7 @@ const ServicesForm = () => {
                     <Error>{errors.phone}</Error>
                   )}
                 </div>
-                <div className={`${styles.inputSpace} col-md-6 col-12`}>
+                <div className={cn(styles.inputSpace, "input-item")}>
                   <Input
                     label="Company Name*"
                     placeholder="Company Name*"
@@ -137,8 +145,8 @@ const ServicesForm = () => {
                     <Error>{errors.companyName}</Error>
                   )}
                 </div>
-                <div className={`${styles.inputSpace} col-md-6 col-12`}>
-                  <CustomDropdown 
+                <div className={cn(styles.inputSpace, "input-item")}>
+                  <CustomDropdown
                     label="Service Required*"
                     name="serviceRequired"
                     setFieldValue={setFieldValue}
@@ -155,7 +163,7 @@ const ServicesForm = () => {
                     <Error>{errors.serviceRequired}</Error>
                   )}
                 </div>
-                <div className={`${styles.inputSpace} col-md-12 col-12`}>
+                <div className={cn(styles.inputSpace, "input-item")}>
                   <Textarea
                     label="Brief Explanation of your project**"
                     placeholder="Brief Explanation of your project**"

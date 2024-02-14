@@ -101,7 +101,7 @@ const CustomDropdown = ({
       className={cn(
         className,
         dropdownStyle.wrapperStyle,
-        inputError && dropdownStyle.inputErrorStyle,
+        inputError && "custom-dropdown-style",
         theme && dropdownStyle.darkThemeStyle,
         theme && "dark-theme-style"
       )}
@@ -117,7 +117,6 @@ const CustomDropdown = ({
           ValueContainer: CustomValueContainer,
         }}
       />
-      {/* <label className={dropdownStyle.labelCustom}>Select Name</label> */}
     </div>
   );
 };

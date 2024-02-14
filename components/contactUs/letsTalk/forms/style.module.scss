@@ -19,22 +19,15 @@
   }
 
   .contactFormArea {
+    
     .inputSpace {
-      margin-bottom: 1.5rem;
       position: relative;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-
-      @include mobile {
-        margin-bottom: text(lg);
-      }
     }
   }
 
   .captchaImg {
     margin: 2.5rem 0 2.5rem 0;
+
     img {
       border-radius: 0.5rem;
       box-shadow: 0 0 0.25rem 0 rgba(0, 0, 0, 0.12);

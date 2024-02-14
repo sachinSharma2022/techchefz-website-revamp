@@ -53,7 +53,7 @@ const TczLife = ({ props }) => {
         },
       },
       {
-        breakpoint: 1024,
+        breakpoint: 767,
         settings: {
           slidesToShow: 1.3,
           slidesToScroll: 1,

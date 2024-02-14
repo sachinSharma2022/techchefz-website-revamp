@@ -4,13 +4,14 @@ import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import CountryDropdown from "@/components/ui/countryDropdown";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import { Input, Textarea, Error, InputFile } from "@/components/ui/inputCustom";
+import { Error, Input, InputFile, Textarea } from "@/components/ui/inputCustom";
 import { MyContext } from "@/context/theme";
-import { Form, Formik } from "formik";
-import { useContext } from "react";
 import { jobsValidationSchema } from "@/lib/FormSchema";
 import { triggerMail } from "@/lib/triggerMail";
+import { Form, Formik } from "formik";
+import { useContext } from "react";
 
+import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 
 const JobsForm = () => {
@@ -20,12 +21,11 @@ const JobsForm = () => {
     lastName: "",
     email: "",
     phone: "",
-    countyCode:"",
+    countyCode: "",
     portfolioLink: "",
     uploadCV: "",
     projectExplanation: "",
   };
-  
 
   const dropdownData = [
     { value: "Country", label: "Country" },
@@ -41,8 +41,8 @@ const JobsForm = () => {
         // Object.entries(values).forEach(([key, value]) => {
         //     formdata.append(key, value);
         // });
-         console.log(values, "values");
-        triggerMail({content:JSON.stringify(values)})
+        console.log(values, "values");
+        triggerMail({ content: JSON.stringify(values) });
       }}
       initialValues={formInitialSchema}
       initialStatus={{
@@ -51,7 +51,14 @@ const JobsForm = () => {
       }}
       validationSchema={jobsValidationSchema}
     >
-      {({ errors, handleBlur, handleChange,setFieldValue, touched, values }) => (
+      {({
+        errors,
+        handleBlur,
+        handleChange,
+        setFieldValue,
+        touched,
+        values,
+      }) => (
         <Form>
           <div className={styles.contactUsForm}>
             <p className={styles.formText}>
@@ -59,8 +66,8 @@ const JobsForm = () => {
               opportunity.
             </p>
             <div className={styles.contactFormArea}>
-              <div className="row">
-                <div className={`${styles.inputSpace} col-md-6 col-12`}>
+              <div className="grid-2-last-full">
+                <div className={cn(styles.inputSpace, "input-item")}>
                   <Input
                     label="First Name*"
                     placeholder="First Name*"
@@ -77,7 +84,7 @@ const JobsForm = () => {
                     <Error>{touched.firstName && errors.firstName}</Error>
                   )}
                 </div>
-                <div className={`${styles.inputSpace} col-md-6 col-12`}>
+                <div className={cn(styles.inputSpace, "input-item")}>
                   <Input
                     label="Last Name*"
                     placeholder="Last Name*"
@@ -94,7 +101,7 @@ const JobsForm = () => {
                     <Error>{errors.lastName}</Error>
                   )}
                 </div>
-                <div className={`${styles.inputSpace} col-md-6 col-12`}>
+                <div className={cn(styles.inputSpace, "input-item")}>
                   <Input
                     label="Email*"
                     placeholder="Email*"
@@ -107,9 +114,11 @@ const JobsForm = () => {
                     values={values.email}
                     errorStatus={touched.email && errors.email}
                   />
-                  {touched.email && errors.email && <Error>{errors.email}</Error>}
+                  {touched.email && errors.email && (
+                    <Error>{errors.email}</Error>
+                  )}
                 </div>
-                <div className={`${styles.inputSpace} col-md-6 col-12`}>
+                <div className={cn(styles.inputSpace, "input-item")}>
                   <CountryDropdown
                     id="phone"
                     name="phone"
@@ -124,7 +133,7 @@ const JobsForm = () => {
                   )}
                 </div>
 
-                <div className={`${styles.inputSpace} col-md-6 col-12`}>
+                <div className={cn(styles.inputSpace, "input-item")}>
                   <InputFile
                     label="Upload CV* (pdf/doc upto 5mb)"
                     placeholder="Upload CV* (pdf/doc upto 5mb)"
@@ -142,14 +151,16 @@ const JobsForm = () => {
                   )}
                 </div>
 
-                <div className={`${styles.inputSpace} col-md-6 col-12`}>
+                <div className={cn(styles.inputSpace, "input-item")}>
                   <Input
                     label="Portfolio Link"
                     placeholder="Portfolio Link"
                     type="name"
                     id="portfolioLink"
                     name="portfolioLink"
-                    error={Boolean(touched.portfolioLink && errors.portfolioLink)}
+                    error={Boolean(
+                      touched.portfolioLink && errors.portfolioLink
+                    )}
                     onChange={handleChange}
                     onBlur={handleBlur}
                     values={values.portfolioLink}
@@ -160,7 +171,7 @@ const JobsForm = () => {
                   )}
                 </div>
 
-                <div className={`${styles.inputSpace} col-md-12 col-12`}>
+                <div className={cn(styles.inputSpace, "input-item")}>
                   <Textarea
                     label="Brief Explanation of your project**"
                     placeholder="Brief Explanation of your project**"
