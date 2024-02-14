@@ -211,7 +211,7 @@ const OpenPosition = ({props}) => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.openPositionHeader}>
-          <h4 className={cn(styles.openPositionHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
+          <h4 className={cn(styles.openPositionHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
            
           </h4>
           <SearchInput />
