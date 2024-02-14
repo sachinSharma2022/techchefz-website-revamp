@@ -1,13 +1,29 @@
+"use client";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import { Input } from "@/components/ui/inputCustom";
+import { Input,Error } from "@/components/ui/inputCustom";
 import ScrollToTopButton from "@/components/ui/scrollToTopButton";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import styles from "./style.module.scss";
+import { Form, Formik, useFormik } from "formik";
+import { footerValidationSchema } from "@/lib/FormSchema";
+import { triggerMail } from "@/lib/triggerMail";
 
 const Footer = () => {
+  const formInitialSchema = {
+    email: ""
+  };
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit} =
+  useFormik({
+    initialValues:formInitialSchema,
+    validationSchema: footerValidationSchema,
+    onSubmit: (values, action) => {
+      console.log(values);
+      triggerMail({content:JSON.stringify(values)}) 
+    },
+  });
   return (
     <footer className={styles.footerSection}>
       <div className={cn("primary-container")}>
@@ -48,18 +64,31 @@ const Footer = () => {
 
               <div className={styles.subscribe}>
                 <h4 className="mb-3">Stay Ahead of the Tech Curve</h4>
+                <Formik>
+          <Form onSubmit={handleSubmit}>
                 <div className={styles.formFlex}>
                   <Input
                     inputFloatingStyle={styles.inputFloatingStyle}
                     inputStyle={styles.inputStyle}
                     placeholder="Business Email Address"
+                    id="email"
+                    name="email"
+                    error={Boolean(touched.email && errors.email)}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    values={values.email}
                   />
+                   {touched.email && errors.email && (
+                    <Error>{errors.email}</Error>
+                  )}
                   <div className="d-flex align-items-center">
                     <Button variant="lightBlueBtn" size="lg">
                       Subscribe <Icons.ArrowRight size={15} />
                     </Button>
                   </div>
                 </div>
+                </Form>
+                </Formik>
               </div>
             </div>
           </div>
