@@ -7,7 +7,6 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useContext } from "react";
 import { base_Uri } from "@/lib/constants";
-import { base_Uri } from "@/lib/constants";
 
 import styles from "./style.module.scss";
 
