@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 import { useContext } from "react";
 import styles from "./style.module.scss";
 
-const ContactSection = () => {
+const ContactSection = ({props}) => {
   const { theme, setTheme } = useContext(MyContext);
 
   return (
@@ -24,29 +24,26 @@ const ContactSection = () => {
           <div className={styles.workGrid}>
             <div className={styles.contactImg}>
               <h4>
-                Your new{" "}
-                <span className={styles.titleGradient}>journey awaits!</span>
+                {/* Your new{" "}
+                <span className={styles.titleGradient}>journey awaits!</span> */}
+                {props?.Title}
               </h4>
               <p>
-                Delve into our case studies to witness firsthand how we&apos;ve
-                tackled challenges, delivered solutions, and achieved measurable
-                success. Each story is a testament to our commitment, expertise,
-                and the transformative impact.
+              {props?.Description}
               </p>
 
-              <h3>Heads Up:</h3>
+               <h3>{props.Hedding}</h3>
               <ul>
                 <li>Only pdf/doc are accepted up to 5mb only.</li>
                 <li>
                   Designers are appreciated to share their portfolio links.
                 </li>
-              </ul>
+              </ul> 
             </div>
 
             <div className={styles.contactUsForm}>
               <p className={styles.formText}>
-                Fill up few details so that we can contact your regarding an
-                opportunity.
+              {props.SubTitle}
               </p>
               <div className={styles.contactFormArea}>
                 <div className="row">

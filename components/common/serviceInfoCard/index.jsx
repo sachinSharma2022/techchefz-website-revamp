@@ -14,10 +14,12 @@ const ServiceInfoCard = (props) => {
         <h2 className={styles.sbTitle}>{props.sbTitle}</h2>
         <div className={styles.bgIcon}>
           <ImageCustom
-                width={56} height={56}
-                src={props.icon}
-                alt="bannerImg"
-              /></div>
+            width={56}
+            height={56}
+            src={props.icon}
+            alt="bannerImg"
+          />
+        </div>
       </div>
 
       <p className={styles.sbText}>{props.sbText}</p>

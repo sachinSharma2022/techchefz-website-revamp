@@ -9,8 +9,7 @@ import Slider from "react-slick";
 import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
 
-const RelatedCase = ({props}) => {
-  
+const RelatedCase = ({ props }) => {
   const [oldSlide, setOldSlide] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
   const [activeSlide2, setActiveSlide2] = useState(0);
@@ -22,7 +21,7 @@ const RelatedCase = ({props}) => {
     infinite: false,
     arrows: false,
     speed: 500,
-    slidesToShow: 3.5,
+    slidesToShow: 5,
     slidesToScroll: 1,
     initialSlide: 0,
     beforeChange: (current, next) => {
@@ -31,6 +30,13 @@ const RelatedCase = ({props}) => {
     },
     afterChange: (current) => setActiveSlide2(current),
     responsive: [
+      {
+        breakpoint: 3000,
+        settings: {
+          slidesToShow: 3.8,
+          slidesToScroll: 1,
+        },
+      },
       {
         breakpoint: 1500,
         settings: {
@@ -100,10 +106,14 @@ const RelatedCase = ({props}) => {
       <div className={cn("primary-container relative")}>
         <div className={styles.headSection}>
           <div>
-            <h6 className={cn(styles.relatedCaseTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props.Title }`}}>
-            </h6>
-            <h3 className={cn(styles.relatedCaseHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props.Description }`}}>
-            </h3>
+            <h6
+              className={cn(styles.relatedCaseTitle, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props.Title}` }}
+            ></h6>
+            <h3
+              className={cn(styles.relatedCaseHeading, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props.Description}` }}
+            ></h3>
           </div>
 
           <div className={styles.sliderArrow}>

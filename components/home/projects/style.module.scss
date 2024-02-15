@@ -210,9 +210,11 @@
 
     .paraSec {
       min-width: 42.75rem;
+      margin-top: 3.6rem;
 
       @include mobile-tablet-p {
         min-width: auto;
+        margin-top:0;
       }
     }
   }

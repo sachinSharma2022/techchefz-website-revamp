@@ -52,6 +52,7 @@
 
     @include mobile-tablet-p {
       grid-template-columns: repeat(2, 1fr);
+      padding: 1.25rem;
     }
 
     @include mobile {
@@ -88,11 +89,31 @@
         }
       }
 
+      .imgBox div {
+        height: 75px;
+        width: 75px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
       .frontCard,
       .backCard {
         position: absolute;
         width: 100%;
         backface-visibility: hidden;
+      }
+
+      .frontCard {
+        h6 {
+          @include mobile-tablet-p {
+            position: absolute;
+            bottom: 0;
+          }
+        }
       }
 
       .backCard {

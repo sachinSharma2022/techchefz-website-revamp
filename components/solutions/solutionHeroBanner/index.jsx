@@ -6,26 +6,24 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import { cn } from "@/lib/utils";
 import { base_Uri } from "@/lib/constants";
 
-
-
 import styles from "./style.module.scss";
 
 const SolutionHeroBanner = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section
-      className={`${styles.solutionHeroBannerStyle} ${theme ? styles.solutionHeroBannerDark : ""
-        }`}
+      className={`${styles.solutionHeroBannerStyle} ${
+        theme ? styles.solutionHeroBannerDark : ""
+      }`}
     >
       <div className={cn("primary-container")}>
         <div className={styles.contentSection}>
-          <h1 className={cn(styles.title, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}>
+          <h1
+            className={cn(styles.title, "gradient-text")}
+            dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+          ></h1>
 
-          </h1>
-
-          <p className={styles.leadText}>
-            {props?.Description}
-          </p>
+          <p className={styles.leadText}>{props?.Description}</p>
         </div>
       </div>
 

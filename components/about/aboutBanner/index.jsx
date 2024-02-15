@@ -9,7 +9,6 @@ import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
 
 const AboutBanner = ({props, OurHistory}) => {
-  console.log("hh",props);
   const { theme, setTheme } = useContext(MyContext);
 
   return (

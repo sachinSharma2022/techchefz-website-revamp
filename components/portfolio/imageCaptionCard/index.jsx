@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useContext } from "react";
 import { base_Uri } from "@/lib/constants";
+import { base_Uri } from "@/lib/constants";
 
 import styles from "./style.module.scss";
 
@@ -96,6 +97,7 @@ const ImageCaptionCard = ({case_study}) => {
               title="Services"
               options={dataServices}
               className="custom-dropdown"
+              placeholder="Select Services"
             />
           </div>
           <div className={`${styles.inputDropPadding}`}>
@@ -103,6 +105,7 @@ const ImageCaptionCard = ({case_study}) => {
               title="Industry"
               options={dataIndustry}
               className="custom-dropdown"
+              placeholder="Select Industry"
             />
           </div>
           <div className={`${styles.inputDropPadding}`}>
@@ -110,6 +113,7 @@ const ImageCaptionCard = ({case_study}) => {
               title="Technology"
               options={dataTechnology}
               className="custom-dropdown"
+              placeholder="Select Technology"
             />
           </div>
         </div>
