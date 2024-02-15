@@ -18,6 +18,7 @@ const InsightOverview = ({props, Insightinner, TechStackData}) => {
   //   { name: "AEM" },
   //   { name: "Retail" },
   // ];
+  console.log()
   return (
     <section
       className={theme ? styles.insightOverviewContainer : styles.lightMode}
@@ -52,7 +53,7 @@ const InsightOverview = ({props, Insightinner, TechStackData}) => {
 
       <div className={styles.imageDiv}>
         <ImageCustom
-          src={props[0]?.Image?.data.attributes.url?`${base_Uri}${props[0]?.Image?.data.attributes.url}`:`${base_Uri}/`}
+          src={props[0]?.Image?.data?.attributes?.url?`${base_Uri}${props[0]?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
           alt="Image"
           width={600}
           height={600}

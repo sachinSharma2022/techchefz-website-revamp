@@ -9,7 +9,9 @@ import { MyContext } from "@/context/theme";
 import { projectValidationSchema } from "@/lib/FormSchema";
 import { triggerMail } from "@/lib/triggerMail";
 import { Form, Formik, useFormik } from "formik";
-import { useContext } from "react";
+import { useContext,useState,useRef } from "react";
+import ReCAPTCHA from "react-google-recaptcha"
+import { verifyCaptcha } from "@/lib/ServerActions";
 
 import CustomDropdown from "@/components/ui/customDropdown";
 
@@ -18,6 +20,8 @@ import styles from "./style.module.scss";
 
 const ProjectForm = () => {
   const { theme } = useContext(MyContext);
+  const recaptchaRef = useRef(null)
+  const [isVerified, setIsverified] = useState(false)
   const formInitialSchema = {
     firstName: "",
     lastName: "",
@@ -52,6 +56,12 @@ const ProjectForm = () => {
     { value: "united State", label: "united State" },
     { value: "New York", label: "New York" },
   ];
+  async function handleCaptchaSubmission(token) {
+    // Server function to verify captcha
+    await verifyCaptcha(token)
+      .then(() => setIsverified(true))
+      .catch(() => setIsverified(false))
+  }
 
   return (
     <Formik>
@@ -191,12 +201,11 @@ const ProjectForm = () => {
             </div>
           </div>
           <div className={styles.captchaImg}>
-            <ImageCustom
-              src="/images/captcha.png"
-              width={219}
-              height={49}
-              alt="captcha"
-            />
+          <ReCAPTCHA
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+            ref={recaptchaRef}
+            onChange={handleCaptchaSubmission}
+          />
           </div>
           <div className={styles.policyArea}>
             <div className={styles.policyText}>
@@ -205,13 +214,9 @@ const ProjectForm = () => {
               <span className={styles.policyHighlight}>Privacy Policy</span>
             </div>
             <div className={`${styles.buttonGrid}`}>
-              <Button
-                variant={theme ? "blueBtnDark" : "blueBtn"}
-                size="lg"
-                type="submit"
-              >
+            {isVerified?<Button  variant={theme ? "blueBtnDark" : "blueBtn"} size="lg" type="submit">
                 Send a Message <Icons.ArrowRight size={18} />
-              </Button>
+                  </Button>:<></>}
             </div>
           </div>
         </div>

@@ -14,29 +14,29 @@ const VideoCustom = (props) => {
 
   useEffect(() => {
     videoRef.current.play();
-    // let ctx = gsap.context(() => {
-    //   const tl = gsap.timeline({
-    //     scrollTrigger: {
-    //       trigger: `.${styles.video}`,
-    //       scrub: 1,
-    //       start: "top 40% ",
-    //       end:  '+=' + (272 + window.innerHeight),
-    //       markers: true,
-    //       invalidateOnRefresh: true,
-    //       anticipatePin: 1,
-    //     },
-    //   });
-    //   ScrollTrigger.create({  
-    //     trigger:`.${styles.videocont}`,
-    //     pin: true,
-    //     markers: false,
-    //     start: "top 12%",
-    //     end: '+=' + (252 + window.innerHeight)
-    //   })
-    //   tl.to(`.${styles.video}`,{width:"100%",duration:4,borderRadius: '0%'},).to(`.${styles.video}`,{width:"70%",height: "70%",duration:4,borderRadius: '0%'},).to(`.${styles.video}`,{
-    //     y:50,duration:8,width:"5%",top:"10%", height: "10%",borderRadius: '10%'},">8").to(`.${styles.video}`,{borderRadius: '50%',duration: 1})
-    // });
-    // return () => ctx.revert();
+    let ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: `.${styles.video}`,
+          scrub: 1,
+          start: "top 30% ",
+          end:  '+=' + (272 + window.innerHeight),
+          markers: false,
+          invalidateOnRefresh: true,
+          anticipatePin: 1,
+        },
+      });
+      ScrollTrigger.create({  
+        trigger:`.${styles.videocont}`,
+        pin: true,
+        markers: false,
+        start: "top 12%",
+        end: '+=' + (252 + window.innerHeight)
+      })
+      tl.to(`.${styles.video}`,{width:"100%",duration:4,borderRadius: '0%'},).to(`.${styles.video}`,{width:"70%",height: "70%",duration:4,borderRadius: '0%'},).to(`.${styles.video}`,{
+        y:50,duration:8,width:"5%",top:"10%", height: "10%",borderRadius: '10%'},">8").to(`.${styles.video}`,{borderRadius: '50%',duration: 1})
+    });
+    return () => ctx.revert();
 
   }, []);
 
