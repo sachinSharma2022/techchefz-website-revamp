@@ -82,11 +82,18 @@ const Testimonials = ({ props }) => {
           <div className="col-12 col-sm-3">
             <div className={styles.infoSection}>
               <div className={styles.testimonialsLeft}>
-                <h6 className={cn(styles.projectHighlight, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
-                  </h6>
-                <div className={cn(styles.testimonialsHeading, "gradient-text")}>
-                  <h3 dangerouslySetInnerHTML={{ __html: `${props[0]?.SubTitle}`}}>
-                  </h3>
+                <h6
+                  className={cn(styles.projectHighlight, "gradient-text")}
+                  dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}` }}
+                ></h6>
+                <div
+                  className={cn(styles.testimonialsHeading, "gradient-text")}
+                >
+                  <h3
+                    dangerouslySetInnerHTML={{
+                      __html: `${props[0]?.SubTitle}`,
+                    }}
+                  ></h3>
                 </div>
                 <p className={styles.testimonialsText}>
                   {props[0]?.Description}
@@ -116,12 +123,14 @@ const Testimonials = ({ props }) => {
                   {props[0]?.Testimonials.map((data, index) => (
                     <SwiperSlide key={index}>
                       <div className={styles.testimonialCardBox}>
-                        <div className={styles.commaImg}>
-                          <Icons.Comma width={29} height={24} />
+                        <div>
+                          <div className={styles.commaImg}>
+                            <Icons.Comma width={29} height={24} />
+                          </div>
+                          <p className={styles.customerText}>
+                            {data.CustomerText}
+                          </p>
                         </div>
-                        <p className={styles.customerText}>
-                          {data.CustomerText}
-                        </p>
                         <div className={styles.customerProfile}>
                           <div className={styles.customerImg}>
                             <ImageCustom

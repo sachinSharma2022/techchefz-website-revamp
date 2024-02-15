@@ -63,6 +63,10 @@
   .testimonialCardBox {
     padding: 2.5rem;
     background-color: color(primary-background);
+    min-height: 41.625rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     @include mobile-tablet-p{
       padding: text(lg);
@@ -78,6 +82,7 @@
       font-weight: 500;
       line-height: 2.25rem;
       margin-bottom: 2.5rem;
+      @include truncate(9);
 
       @include mobile-tablet-p {
         font-size: text(normal);
