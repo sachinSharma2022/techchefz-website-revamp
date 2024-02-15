@@ -8,19 +8,19 @@ import Faq from "@/components/common/faq";
 import WhyCms from "@/components/technology/cms/whyCms";
 import TechnologyValues from "@/components/technology/technologyValues";
 import { getData } from "@/lib/fetchData";
-import { api_cms_technologies_Page } from "@/lib/constants";
+import { api_data_intelligences_Page } from "@/lib/constants";
 
 const Cms = async () => {
-  const data = await getData(api_cms_technologies_Page);
+  const data = await getData(api_data_intelligences_Page);
   return (
     <>
       {data ? (
         <div>
-          <CmsBanner props={data.CmsBanner} />
-          <CmsPlayer props={data.CmsPlayer} />
-          <WhyCms props={data.WhyCms} />
-          <CmsType props={data.CmsType} />
-          <CmsDifference props={data.CmsDifference} />
+          <CmsBanner props={data.Banner} />
+          <CmsPlayer props={data.Player} />
+          <WhyCms props={data.Why} />
+          <CmsType props={data.Type} />
+          <CmsDifference props={data.Difference} />
           <TechnologyValues
             wrapperStyle="technology-cms-styles"
             props={data.Technology}
