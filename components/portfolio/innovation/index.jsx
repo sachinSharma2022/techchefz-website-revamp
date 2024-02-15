@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useContext } from "react";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
+import { base_Url } from "@/lib/constants";
 
 const Innovation = ({props}) => {
   
@@ -55,7 +56,7 @@ const Innovation = ({props}) => {
               </div>
               <div className={styles.bgImage}>
                 <ImageCustom
-                  src={data?.Image?.data?.attributes?.url?`${base_Uri}${data?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+                  src={data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data?.attributes?.url}`:`${base_Url}/`}
                   width="500"
                   height="500"
                   alt="Innovation"
