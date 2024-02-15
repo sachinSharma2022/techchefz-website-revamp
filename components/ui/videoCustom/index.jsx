@@ -21,7 +21,7 @@ const VideoCustom = (props) => {
           scrub: 1,
           start: "top 30% ",
           end:  '+=' + (272 + window.innerHeight),
-          markers: true,
+          markers: false,
           invalidateOnRefresh: true,
           anticipatePin: 1,
         },
