@@ -21,7 +21,7 @@ import styles from "./style.module.scss";
 const ProjectForm = () => {
   const { theme } = useContext(MyContext);
   const recaptchaRef = useRef(null)
-    const [isVerified, setIsverified] = useState(false)
+  const [isVerified, setIsverified] = useState(false)
   const formInitialSchema = {
     firstName: "",
     lastName: "",

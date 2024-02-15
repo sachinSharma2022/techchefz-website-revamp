@@ -219,7 +219,7 @@ const JobsForm = () => {
               </div>
               <div className={`${styles.buttonGrid}`}>
                 {isVerified?<Button  variant={theme ? "blueBtnDark" : "blueBtn"} size="lg" type="submit">
-                  Send Message <Icons.ArrowRight size={18} />
+                Send a Message <Icons.ArrowRight size={18} />
                   </Button>:<></>}
               </div>
             </div>
