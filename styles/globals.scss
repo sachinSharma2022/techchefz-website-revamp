@@ -8,6 +8,7 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
+
 * {
   @include scrollbarCustom;
 }
@@ -65,6 +66,26 @@ a {
 .asset-white {
   filter: contrast(0) brightness(100);
 }
+
+
+// Button Disabled
+button:disabled, button[disabled] {
+  border-color: rgba(color(text-primary), 0.6) !important;
+  background-color: rgba(color(text-primary), 0.6);
+  color: color(text-primary);
+  cursor: not-allowed;
+}
+
+.dark {
+  button:disabled, button[disabled] {
+    border-color: rgba(color(primary-white), 0.6) !important;
+    background-color: rgba(color(primary-white), 0.6);
+    color: color(primary-white);
+    cursor: not-allowed;
+  }
+  
+}
+
 
 // space
 .mt-120 {

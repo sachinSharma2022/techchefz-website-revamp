@@ -84,8 +84,6 @@ const ProjectForm = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   values={values.firstName}
-                  errorStatus={touched.firstName && errors.firstName}
-                  inputError={errors.lastName && true}
                 />
                 {touched.firstName && errors.firstName && (
                   <Error>{errors.firstName}</Error>
@@ -102,8 +100,6 @@ const ProjectForm = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   values={values.lastName}
-                  // errorStatus={touched.lastName && errors.lastName}
-                  inputError={errors.lastName && true}
                 />
                 {touched.lastName && errors.lastName && (
                   <Error>{errors.lastName}</Error>
@@ -120,8 +116,6 @@ const ProjectForm = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   values={values.email}
-                  // errorStatus={touched.email && errors.email}
-                  inputError={errors.lastName && true}
                 />
                 {touched.email && errors.email && <Error>{errors.email}</Error>}
               </div>
@@ -133,8 +127,6 @@ const ProjectForm = () => {
                   setFieldValue={setFieldValue}
                   onBlur={handleBlur}
                   values={values.phone}
-                  // errorStatus={touched.phone && errors.phone}
-                  inputError={errors.phone && true}
                 />
                 {touched.phone && errors.phone && <Error>{errors.phone}</Error>}
               </div>
@@ -149,8 +141,6 @@ const ProjectForm = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   values={values.companyName}
-                  // errorStatus={touched.companyName && errors.companyName}
-                  inputError={errors.companyName && true}
                 />
                 {touched.companyName && errors.companyName && (
                   <Error>{errors.companyName}</Error>
@@ -169,7 +159,6 @@ const ProjectForm = () => {
                   }
                   placeholder="Country*"
                   className="custom-dropdown"
-                  inputError={errors.countrySelection && true}
                 />
                 {touched.countrySelection && errors.countrySelection && (
                   <Error>{errors.countrySelection}</Error>
@@ -189,10 +178,6 @@ const ProjectForm = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   values={values.projectExplanation}
-                  // errorStatus={
-                  //   touched.projectExplanation && errors.projectExplanation
-                  // }
-                  inputError={errors.projectExplanation && true}
                 />
                 {touched.projectExplanation && errors.projectExplanation && (
                   <Error>{errors.projectExplanation}</Error>
