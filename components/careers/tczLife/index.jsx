@@ -24,7 +24,7 @@ const TczLife = ({ props }) => {
     arrows: false,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     beforeChange: (current, next) => {
       setOldSlide(current);
       setActiveSlide(next);
@@ -41,8 +41,8 @@ const TczLife = ({ props }) => {
       {
         breakpoint: 1900,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 1.8,
+          slidesToScroll: 1,
         },
       },
       {
@@ -99,10 +99,12 @@ const TczLife = ({ props }) => {
       <div className={cn(styles.tczLifeSliderSection, "row")}>
         <div className={cn(styles.tczActionSection, "col-sm-6")}>
           <div>
-            <h6 className={cn(styles.tczLifeTitle,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
-            </h6>
+            <h6
+              className={cn(styles.tczLifeTitle, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+            ></h6>
             <h3
-              className={cn(styles.tczLifeHeading,"gradient-text")}
+              className={cn(styles.tczLifeHeading, "gradient-text")}
               dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
             ></h3>
           </div>

@@ -58,7 +58,7 @@
         transition: all 0.5s;
 
         &:hover {
-          color: color(primary-blue);
+          color: color(info-blue);
         }
       }
     }
@@ -98,6 +98,10 @@
 
           @include mobile-tablet-p {
             font-size: text(normal);
+          }
+
+          &:hover {
+            color: color(info-blue);
           }
         }
       }
@@ -148,16 +152,16 @@
       }
 
       .inputFloatingStyle {
-        border: none;
+        border-color: transparent;
         height: 52px;
         background: color(input-bg);
       }
 
       input {
-        height: 52px;
         padding: 0 15px;
-        min-height: 100%;
         color: color(primary-white);
+        height: auto;
+        min-height: auto;
 
         &::placeholder {
           color: rgba(color(primary-white), 0.5);
@@ -189,9 +193,16 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border: 0.14rem solid color(primary-blue);
+      border: 0.14rem solid color(heading-liner);
       border-radius: 1rem;
       margin: 5rem 0 2.5rem;
+      color: rgba(color(primary-white), 0.8);
+      @include transition(0.5s);
+
+      &:hover {
+        border-color: color(info-blue);
+      }
+      
 
       @include mobile-tablet-p {
         margin: 2.875em 0;
@@ -320,7 +331,7 @@
     padding: 1.5rem 0;
     border-top: 0.14rem solid rgba(color(primary-white), 0.2);
 
-    @include mobile {
+    @include mobile-tablet-p {
       flex-wrap: wrap;
       margin-top: 2rem;
       padding: 1.5rem 0 0;
@@ -334,9 +345,9 @@
       font-size: text(xxs);
       opacity: 0.6;
 
-      @include mobile {
+      @include mobile-tablet-p  {
         width: 100%;
-        margin-top: 1rem;
+        margin-top: 2rem;
         text-align: center;
       }
     }
@@ -346,7 +357,7 @@
       list-style: none;
       gap: 1rem;
 
-      @include mobile {
+      @include mobile-tablet-p  {
         flex-wrap: wrap;
         width: 100%;
       }
@@ -369,7 +380,7 @@
           }
 
           &:hover {
-            color: color(primary-blue);
+            color: color(info-blue);
           }
         }
       }

@@ -4,15 +4,16 @@ import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import CountryDropdown from "@/components/ui/countryDropdown";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import { Input, Textarea, Error } from "@/components/ui/inputCustom";
+import { Error, Input, Textarea } from "@/components/ui/inputCustom";
 import { MyContext } from "@/context/theme";
+import { vendorValidationSchema } from "@/lib/FormSchema";
+import { triggerMail } from "@/lib/triggerMail";
 import { Form, Formik } from "formik";
 import { useContext } from "react";
-import { triggerMail } from "@/lib/triggerMail";
-import { vendorValidationSchema } from "@/lib/FormSchema";
 
 import CustomDropdown from "@/components/ui/customDropdown";
 
+import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 
 const VendorForm = () => {
@@ -22,12 +23,11 @@ const VendorForm = () => {
     lastName: "",
     email: "",
     phone: "",
-    countyCode:"",
+    countyCode: "",
     companyName: "",
     serviceOffered: "",
     projectExplanation: "",
   };
- 
 
   const dropdownData = [
     { value: "India", label: "India" },
@@ -38,8 +38,8 @@ const VendorForm = () => {
   return (
     <Formik
       onSubmit={(values) => {
-        console.log(values)
-        triggerMail({content:JSON.stringify(values)})
+        console.log(values);
+        triggerMail({ content: JSON.stringify(values) });
       }}
       initialValues={formInitialSchema}
       initialStatus={{
@@ -48,15 +48,22 @@ const VendorForm = () => {
       }}
       validationSchema={vendorValidationSchema}
     >
-      {({ errors, handleBlur, handleChange,setFieldValue, touched, values }) => (
+      {({
+        errors,
+        handleBlur,
+        handleChange,
+        setFieldValue,
+        touched,
+        values,
+      }) => (
         <Form>
           <div className={styles.contactUsForm}>
             <p className={styles.formText}>
               Fill up few details to contact us for offering your services.
             </p>
             <div className={styles.contactFormArea}>
-              <div className="row">
-                <div className={`${styles.inputSpace} col-md-6 col-12`}>
+              <div className="grid-2-last-full">
+                <div className={cn(styles.inputSpace, "input-item")}>
                   <Input
                     label="First Name*"
                     placeholder="First Name*"
@@ -73,7 +80,7 @@ const VendorForm = () => {
                     <Error>{touched.firstName && errors.firstName}</Error>
                   )}
                 </div>
-                <div className={`${styles.inputSpace} col-md-6 col-12`}>
+                <div className={cn(styles.inputSpace, "input-item")}>
                   <Input
                     label="Last Name*"
                     placeholder="Last Name*"
@@ -90,7 +97,7 @@ const VendorForm = () => {
                     <Error>{errors.lastName}</Error>
                   )}
                 </div>
-                <div className={`${styles.inputSpace} col-md-6 col-12`}>
+                <div className={cn(styles.inputSpace, "input-item")}>
                   <Input
                     label="Email*"
                     placeholder="Email*"
@@ -99,7 +106,7 @@ const VendorForm = () => {
                     name="email"
                     error={Boolean(touched.email && errors.email)}
                     onChange={handleChange}
-                   onBlur={handleBlur}
+                    onBlur={handleBlur}
                     values={values.email}
                     errorStatus={touched.email && errors.email}
                   />
@@ -107,7 +114,7 @@ const VendorForm = () => {
                     <Error>{errors.email}</Error>
                   )}
                 </div>
-                <div className={`${styles.inputSpace} col-md-6 col-12`}>
+                <div className={cn(styles.inputSpace, "input-item")}>
                   <CountryDropdown
                     id="phone"
                     name="phone"
@@ -121,7 +128,7 @@ const VendorForm = () => {
                     <Error>{errors.phone}</Error>
                   )}
                 </div>
-                <div className={`${styles.inputSpace} col-md-6 col-12`}>
+                <div className={cn(styles.inputSpace, "input-item")}>
                   <Input
                     label="Company Name*"
                     placeholder="Company Name*"
@@ -138,7 +145,7 @@ const VendorForm = () => {
                     <Error>{errors.companyName}</Error>
                   )}
                 </div>
-                <div className={`${styles.inputSpace} col-md-6 col-12`}>
+                <div className={cn(styles.inputSpace, "input-item")}>
                   <CustomDropdown
                     label="Service Offered"
                     name="serviceOffered"
@@ -156,7 +163,7 @@ const VendorForm = () => {
                     <Error>{errors.serviceOffered}</Error>
                   )}
                 </div>
-                <div className={`${styles.inputSpace} col-md-12 col-12`}>
+                <div className={cn(styles.inputSpace, "input-item")}>
                   <Textarea
                     label="Brief Explanation of your project**"
                     placeholder="Brief Explanation of your project**"

@@ -14,9 +14,9 @@
   }
 
   @include mobile-tablet-p {
-    min-height: 11.25rem;
+    min-height: 12.25rem;
     padding: 1.25rem;
-    border-radius: 8px;
+    border-radius: text(xl);
     max-width: 95%;
   }
   .numberCardFlex {

@@ -139,7 +139,7 @@
 
     .inputFile {
       border: 0.14rem solid rgba(color(primary-white), 0.12);
-      background-color: color(text-primary);
+      background-color: color(dark-gray);
 
       &.inputErrorStyle {
         border-color: color(error);
@@ -168,6 +168,7 @@
 .error {
   color: color(error);
   position: absolute;
-  font-size: 0.8rem;
-  bottom: -2.625rem;
+  font-size: .875rem;
+  bottom: -22px;
+  margin: 0;
 }

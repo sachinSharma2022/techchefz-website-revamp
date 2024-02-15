@@ -25,6 +25,11 @@
       border-radius: 0.5rem;
       margin-bottom: text(lg);
       overflow: hidden;
+     
+      @include desktop-hd {
+         aspect-ratio: 2/1.3;
+         height: auto;
+      }
 
       img {
          object-fit: cover;

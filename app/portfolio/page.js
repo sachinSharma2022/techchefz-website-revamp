@@ -12,7 +12,7 @@ const Portfolio = async () => {
   return (
     <div className={styles.portfolioPageStyle}>
       <LandingBanner props={data.Banner} />
-      <ImageCaptionCard />
+      <ImageCaptionCard props={data.Portfolio}/>
       <Innovation props={data.ourInnvotion} />
     </div>
   );

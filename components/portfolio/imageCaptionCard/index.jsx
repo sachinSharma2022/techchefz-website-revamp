@@ -6,10 +6,12 @@ import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useContext } from "react";
+import { base_Uri } from "@/lib/constants";
 
 import styles from "./style.module.scss";
 
-const ImageCaptionCard = () => {
+const ImageCaptionCard = ({ props }) => {
+  console.log("pp", props);
   const { theme, setTheme } = useContext(MyContext);
   const imageCaptionData = [
     {
@@ -95,6 +97,7 @@ const ImageCaptionCard = () => {
               title="Services"
               options={dataServices}
               className="custom-dropdown"
+              placeholder="Select Services"
             />
           </div>
           <div className={`${styles.inputDropPadding}`}>
@@ -102,6 +105,7 @@ const ImageCaptionCard = () => {
               title="Industry"
               options={dataIndustry}
               className="custom-dropdown"
+              placeholder="Select Industry"
             />
           </div>
           <div className={`${styles.inputDropPadding}`}>
@@ -109,6 +113,7 @@ const ImageCaptionCard = () => {
               title="Technology"
               options={dataTechnology}
               className="custom-dropdown"
+              placeholder="Select Technology"
             />
           </div>
         </div>
@@ -119,28 +124,32 @@ const ImageCaptionCard = () => {
             "captionCardSection"
           )}
         >
-          {imageCaptionData.map((data, index) => (
+          {props.map((data, index) => (
             <Link href="/case-study" key={index} className={`grid-${index}`}>
               <div className={`${styles.imageCard} card`}>
                 <div className={styles.cardImg}>
                   <div className={`${styles.imgBox} imgBox`}>
                     <ImageCustom
-                      src={data.imgSrc}
+                      src={
+                        data?.Image?.data?.attributes?.url
+                          ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
+                          : `${base_Uri}/`
+                      }
                       width={1500}
                       height={1500}
                       alt="captionImg"
                     />
                   </div>
                   <div className={styles.cardBadges}>
-                    {data.badgeList.map((badgeItem) => (
-                      <div key={badgeItem} className={styles.badges}>
-                        {badgeItem}
+                    {data.Tag.map((items) => (
+                      <div key={items} className={styles.badges}>
+                        {items.Title}
                       </div>
                     ))}
                   </div>
                 </div>
                 <div className={styles.cardBody}>
-                  <h2 className={styles.cardText}>{data.description}</h2>
+                  <h2 className={styles.cardText}>{data.Title}</h2>
                   <Icons.ArrowLongRight size={18} />
                 </div>
               </div>
