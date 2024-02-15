@@ -12,6 +12,7 @@
   .flexContainer {
     display: flex;
     gap: 8.938rem;
+    justify-content: space-between;
 
     @include mobile-tablet-p {
       flex-direction: column;
@@ -20,7 +21,7 @@
   }
 
   .contentSec {
-    max-width: 373px;
+    max-width: 500px;
     padding-top: 20px;
   }
 

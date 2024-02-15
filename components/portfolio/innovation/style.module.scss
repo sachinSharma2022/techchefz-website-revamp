@@ -55,8 +55,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
 
-
-    @include desktop-hd{
+    @include desktop-hd {
       grid-template-columns: repeat(2, 1fr);
       gap: 2.75rem;
     }
@@ -82,24 +81,27 @@
         width: 100%;
       }
 
-      .bgImage {
+      .bgImage div {
         width: 100%;
+        height: 200px;
+        @include transition(0.5s);
 
         img {
           object-fit: contain;
           height: 100%;
           mix-blend-mode: luminosity;
           width: 100%;
-          transition: all 0.5s ease-in-out;
+          @include transition(0.5s)
         }
       }
 
       &:hover {
         border: 0.125rem solid color(heading-liner);
-        cursor: pointer;
 
-        img {
-          mix-blend-mode: normal;
+        .bgImage div {
+          img {
+            mix-blend-mode: normal;
+          }
         }
       }
 
@@ -122,7 +124,7 @@
         .sbSubtitle {
           font-weight: 500;
           font-size: text(normal);
-          color: rgba(color(text-primary), 0.80);
+          color: rgba(color(text-primary), 0.8);
           letter-spacing: 0.2rem;
           text-transform: uppercase;
           opacity: 0.6;
@@ -164,7 +166,11 @@
     }
 
     .innovationBox {
-      background: linear-gradient(0deg, #111 3.48%, rgba(color(text-primary), 0.00) 121.7%);
+      background: linear-gradient(
+        0deg,
+        #111 3.48%,
+        rgba(color(text-primary), 0) 121.7%
+      );
       border: 0.125rem solid rgba(255, 255, 255, 0.12);
 
       .textCardSpace {
