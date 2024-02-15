@@ -3,14 +3,18 @@ import CareerPositionOverview from "@/components/careersDetail/positionOverview"
 import PositionDescription from "@/components/careersDetail/positionDetail";
 import ContactSection from "@/components/careersDetail/contactSection";
 import MoreJobs from "@/components/careersDetail/moreJobs";
+import { api_Career_detail_Page } from "@/lib/constants";
+import { getData } from "@/lib/fetchData";
 
-const CareerDetail = () => {
+const CareerDetail = async () => {
+  const data = await getData(api_Career_detail_Page)
+
   return (
     <>
       <CareerPositionOverview />
-      <PositionDescription />
-      <ContactSection />
-      <MoreJobs />
+      <PositionDescription  />
+      <ContactSection props={data.Developercontact} />
+      <MoreJobs props={data.MoreDetail}/>
     </>
   );
 };

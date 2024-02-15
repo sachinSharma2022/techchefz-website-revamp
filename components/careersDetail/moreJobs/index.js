@@ -8,7 +8,7 @@ import { useContext, useRef, useState } from "react";
 import Slider from "react-slick";
 import styles from "./style.module.scss";
 
-const MoreJobs = () => {
+const MoreJobs = ({props}) => {
   const { theme, setTheme } = useContext(MyContext);
   const [oldSlide, setOldSlide] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
@@ -107,8 +107,8 @@ const MoreJobs = () => {
         <div className={cn("primary-container", styles.containerStyle)}>
           <div className={styles.titleSection}>
             <div>
-              <h6>SIMILAR VACANCIES</h6>
-              <h3>More jobs at TechChefz</h3>
+              <h6>{props[0]?.Title}</h6>
+              <h3>{props[0]?.SubTitle}</h3>
             </div>
           </div>
 
