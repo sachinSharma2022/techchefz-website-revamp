@@ -107,7 +107,7 @@ const CountryDropdown = (props) => {
           label="Phone Number*"
           placeholder="Phone Number*"
           type="tel"
-          pattern="/^-?\d+\.?\d*$/"
+          pattern="[0-9]{}"
           maxLength="12"
           inputContainerStyle={styles.inputContainerStyle}
           inputFloatingStyle={styles.inputFloatingStyle}

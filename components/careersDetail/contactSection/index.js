@@ -13,6 +13,7 @@ import { verifyCaptcha } from "@/lib/ServerActions";
 import styles from "./style.module.scss";
 import { careerValidationSchema } from "@/lib/FormSchema";
 import { Form, Formik,useFormik } from "formik";
+import { triggerMail } from "@/lib/triggerMail";
 
 const ContactSection = ({props}) => {
   const { theme, setTheme } = useContext(MyContext);
