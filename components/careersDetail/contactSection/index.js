@@ -101,7 +101,6 @@ const ContactSection = ({props}) => {
                       onChange={handleChange}
                       onBlur={handleBlur}
                       values={values.firstName}
-                      onkeydown="return /[a-z]/i.test(event.key)"
                     />
                     {touched.firstName && errors.firstName && (
                   <Error>{errors.firstName}</Error>

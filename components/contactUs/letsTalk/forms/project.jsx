@@ -84,7 +84,7 @@ const ProjectForm = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   values={values.firstName}
-                  onKeyDown="return onlyLetters(event)"
+                  onKeyDown="return /[a-z]/i.test(event.key)"
                   
                 />
                 {touched.firstName && errors.firstName && (
