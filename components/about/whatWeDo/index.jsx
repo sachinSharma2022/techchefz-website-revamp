@@ -64,11 +64,13 @@ const WhatWeDo = ({ props }) => {
               <div key={index} className={styles.workCardMain}>
                 <div className={styles.workCard}>
                   <div className={`${styles.frontCard} ${styles.workCols}`}>
-                    <ImageCustom
-                      height={100}
-                      width={100}
-                      src={`${base_Url}${data.Image.data.attributes.url}`}
-                    />
+                    <div className={styles.imgBox}>
+                      <ImageCustom
+                        height={100}
+                        width={100}
+                        src={`${base_Url}${data.Image.data.attributes.url}`}
+                      />
+                    </div>
                     <h6>{data.Title}</h6>
                   </div>
                   <div className={`${styles.backCard}  ${styles.workCols}`}>
