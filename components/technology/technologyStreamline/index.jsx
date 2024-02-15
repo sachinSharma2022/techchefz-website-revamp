@@ -53,56 +53,7 @@ const Streamline = ({ props }) => {
     }
   }, []);
 
-  // const streamlineCard = [
-  //   {
-  //     icons: (
-  //       <Icons.Market className={styles.cardIcon} width={120} height={120} />
-  //     ),
-  //     title: "Content Management ",
-  //     content:
-  //       " Our CMS services provide an intuitive and efficient way to manage your website content. With powerful features and a user-friendly interface, you can easily create, edit, and publish content.",
-  //   },
-  //   {
-  //     icons: (
-  //       <Icons.Platforms className={styles.cardIcon} width={120} height={120} />
-  //     ),
-  //     title: "E-commerce",
-  //     content:
-  //       " Our CMS services provide an intuitive and efficient way to manage your website content. With powerful features and a user-friendly interface, you can easily create, edit, and publish content.",
-  //   },
-  //   {
-  //     icons: (
-  //       <Icons.Transform className={styles.cardIcon} width={120} height={120} />
-  //     ),
-  //     title: "Micro services",
-  //     content:
-  //       " Our CMS services provide an intuitive and efficient way to manage your website content. With powerful features and a user-friendly interface, you can easily create, edit, and publish content.",
-  //   },
-  //   {
-  //     icons: (
-  //       <Icons.Transform className={styles.cardIcon} width={120} height={120} />
-  //     ),
-  //     title: "Cloud & DevSecOps",
-  //     content:
-  //       " Our CMS services provide an intuitive and efficient way to manage your website content. With powerful features and a user-friendly interface, you can easily create, edit, and publish content.",
-  //   },
-  //   {
-  //     icons: (
-  //       <Icons.Platforms className={styles.cardIcon} width={120} height={120} />
-  //     ),
-  //     title: "Data Intelligence",
-  //     content:
-  //       " Our CMS services provide an intuitive and efficient way to manage your website content. With powerful features and a user-friendly interface, you can easily create, edit, and publish content.",
-  //   },
-  //   {
-  //     icons: (
-  //       <Icons.Platforms className={styles.cardIcon} width={120} height={120} />
-  //     ),
-  //     title: "Analysis Automation",
-  //     content:
-  //       " Our CMS services provide an intuitive and efficient way to manage your website content. With powerful features and a user-friendly interface, you can easily create, edit, and publish content.",
-  //   },
-  // ];
+ 
   return (
     <div
       id="streamLineWrapper"

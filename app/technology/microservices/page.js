@@ -18,7 +18,7 @@ const Cms = async () => {
         <div>
           <CmsBanner props={data.Banner} />
           <CmsPlayer props={data.Player} />
-          <WhyCms props={data.Cms} />
+          <WhyCms props={data.Why} />
           <CmsType props={data.Type} />
           <CmsDifference props={data.Difference} />
           <TechnologyValues

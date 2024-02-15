@@ -15,38 +15,7 @@ const SolutionTheProcess = ({ props }) => {
   const dashArray = radius * Math.PI * 2;
   const [dashOffset, setdashOffset] = useState(dashArray);
   const [prevdashOffset, prevsetdashOffset] = useState(dashArray);
-  // const accordionData = [
-  //   {
-  //     title: "Navigating Cloud Integration Complexities",
-  //     description:
-  //       "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
-  //   },
-  //   {
-  //     title: "Navigating Cloud Integration Complexities",
-  //     description:
-  //       "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
-  //   },
-  //   {
-  //     title: "Navigating Cloud Integration Complexities",
-  //     description:
-  //       "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
-  //   },
-  //   {
-  //     title: "Navigating Cloud Integration Complexities",
-  //     description:
-  //       "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
-  //   },
-  //   {
-  //     title: "Navigating Cloud Integration Complexities",
-  //     description:
-  //       "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
-  //   },
-  //   {
-  //     title: "Navigating Cloud Integration Complexities",
-  //     description:
-  //       "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
-  //   },
-  // ];
+ 
   gsap.registerPlugin(ScrollTrigger);
   useEffect(() => {
     const changeDot = (i) => {

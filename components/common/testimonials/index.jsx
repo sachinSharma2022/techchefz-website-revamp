@@ -22,50 +22,6 @@ const Testimonials = ({ props }) => {
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
 
-  // const serviceCard = [
-  //   {
-  //     CustomerText:
-  //       "Techchefz Digital demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their simplicity. They’re very well thought out and have an excellent response to feedback. All of these qualities are why they’re our go-to user experience experts.",
-  //     img: "/images/profile.png",
-  //     CustomerName: "Arjuna Pandean.",
-  //     CustomerRole: "Group Manager, Royal Enfield",
-  //   },
-  //   {
-  //     CustomerText:
-  //       "Techchefz Digital demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their simplicity. They’re very well thought out and have an excellent response to feedback. All of these qualities are why they’re our go-to user experience experts.",
-  //     img: "/images/profile.png",
-  //     CustomerName: "Arjuna Pandean.",
-  //     CustomerRole: "Group Manager, Royal Enfield",
-  //   },
-  //   {
-  //     CustomerText:
-  //       "Techchefz Digital demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their simplicity. They’re very well thought out and have an excellent response to feedback. All of these qualities are why they’re our go-to user experience experts.",
-  //     img: "/images/profile.png",
-  //     CustomerName: "Arjuna Pandean.",
-  //     CustomerRole: "Group Manager, Royal Enfield",
-  //   },
-  //   {
-  //     CustomerText:
-  //       "Techchefz Digital demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their simplicity. They’re very well thought out and have an excellent response to feedback. All of these qualities are why they’re our go-to user experience experts.",
-  //     img: "/images/profile.png",
-  //     CustomerName: "Arjuna Pandean.",
-  //     CustomerRole: "Group Manager, Royal Enfield",
-  //   },
-  //   {
-  //     CustomerText:
-  //       "Techchefz Digital demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their simplicity. They’re very well thought out and have an excellent response to feedback. All of these qualities are why they’re our go-to user experience experts.",
-  //     img: "/images/profile.png",
-  //     CustomerName: "Arjuna Pandean.",
-  //     CustomerRole: "Group Manager, Royal Enfield",
-  //   },
-  //   {
-  //     CustomerText:
-  //       "Techchefz Digital demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their simplicity. They’re very well thought out and have an excellent response to feedback. All of these qualities are why they’re our go-to user experience experts.",
-  //     img: "/images/profile.png",
-  //     CustomerName: "Arjuna Pandean.",
-  //     CustomerRole: "Group Manager, Royal Enfield",
-  //   },
-  // ];
 
   return (
     <section

@@ -9,23 +9,7 @@ import TitleCard from "@/components/common/titleCard";
 
 const Challenges = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
-  // const cardData = [
-  //   {
-  //     title: "Navigating Cloud Integration Complexities",
-  //     content:
-  //       "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges.",
-  //   },
-  //   {
-  //     title: "Cybersecurity in an Age of Advanced Threats",
-  //     content:
-  //       "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges.",
-  //   },
-  //   {
-  //     title: "Scalability Amidst Rapid Technological Evolution",
-  //     content:
-  //       "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges.",
-  //   },
-  // ];
+ 
   return (
     <section
       className={cn(

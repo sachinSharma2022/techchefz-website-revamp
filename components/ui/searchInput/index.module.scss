@@ -9,7 +9,7 @@
   height: 60px;
   color: rgba(color(text-primary), 0.8);
   overflow: hidden;
-  background: color(bg-soft);
+  background: color(bg-primary);
   display: flex;
   padding: 0 20px;
 
@@ -38,7 +38,7 @@
   @include searchStyles();
 
   &.searchDark {
-    background-color: color(text-primary);
+    background-color: color(dark-bg);
     border: 0.14rem solid rgba(255, 255, 255, 0.12);
     
     .searchIcon {
