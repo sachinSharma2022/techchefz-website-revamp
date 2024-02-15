@@ -31,28 +31,6 @@ const WhyCms = ({props}) => {
     });
   }
 
-  // const accordionData = [
-  //   {
-  //     title: "Innovation",
-  //     content:
-  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  //   },
-  //   {
-  //     title: "Obsession with Customer Success",
-  //     content:
-  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  //   },
-  //   {
-  //     title: "Exploration",
-  //     content:
-  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  //   },
-  //   {
-  //     title: "Excellence in Delivery",
-  //     content:
-  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  //   },
-  // ];
   return (
     <section className={`${styles.whyCmsStyle} ${theme ? styles.whyCmsDark : ""}`}>
       <div className={cn("primary-container")}>
@@ -66,7 +44,8 @@ const WhyCms = ({props}) => {
         <div className={styles.ourValuesContent}>
           <div className={styles.ourValueImg}>
           <ImageCustom
-                  src={`${base_Uri}${props?.Image.data.attributes.url}`}
+                  src= {props?.Image?.data?.attributes?.url?`${base_Uri}${props?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+                 
                   width={600}
                   height={550}
                   alt="content-img"
@@ -74,7 +53,7 @@ const WhyCms = ({props}) => {
           </div>
           <div>
             <p className={styles.ourValuesText}>
-              {props.Description}
+              {props?.Description}
             </p>
             <div className={styles.ourValuesAccordion}>
               {props?.FaqComponent.map((data, index) => (
