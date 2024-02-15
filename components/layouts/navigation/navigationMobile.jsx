@@ -213,7 +213,10 @@ const NavigationMobile = () => {
                                 inevitable journey towards enterprise.
                               </p>
                             </Link>
-                            <Link href="/technology/commerce" className={cn(styles.hrefInnerFlex)}>
+                            <Link
+                              href="/technology/commerce"
+                              className={cn(styles.hrefInnerFlex)}
+                            >
                               <div className={styles.head}>
                                 <h4 className={styles.linkTitle}>Commerce</h4>
                                 <Icons.ArrowForward />
@@ -223,7 +226,10 @@ const NavigationMobile = () => {
                                 inevitable journey towards enterprise.
                               </p>
                             </Link>
-                            <Link href="/technology/microservices" className={cn(styles.hrefInnerFlex)}>
+                            <Link
+                              href="/technology/microservices"
+                              className={cn(styles.hrefInnerFlex)}
+                            >
                               <div className={styles.head}>
                                 <h4 className={styles.linkTitle}>
                                   Microservices
@@ -235,7 +241,10 @@ const NavigationMobile = () => {
                                 inevitable journey towards enterprise.
                               </p>
                             </Link>
-                            <Link href="/technology/cloud-devsec-ops" className={cn(styles.hrefInnerFlex)}>
+                            <Link
+                              href="/technology/cloud-devsec-ops"
+                              className={cn(styles.hrefInnerFlex)}
+                            >
                               <div className={styles.head}>
                                 <h4 className={styles.linkTitle}>
                                   Cloud & DevSecOps
@@ -250,7 +259,10 @@ const NavigationMobile = () => {
                           </div>
 
                           <div className="col-sm-6">
-                            <Link href="/technology/data-intelligence" className={cn(styles.hrefInnerFlex)}>
+                            <Link
+                              href="/technology/data-intelligence"
+                              className={cn(styles.hrefInnerFlex)}
+                            >
                               <div className={styles.head}>
                                 <h4 className={styles.linkTitle}>
                                   Data Intelligence
@@ -262,7 +274,10 @@ const NavigationMobile = () => {
                                 inevitable journey towards enterprise.
                               </p>
                             </Link>
-                            <Link href="/technology/custom-development" className={cn(styles.hrefInnerFlex)}>
+                            <Link
+                              href="/technology/custom-development"
+                              className={cn(styles.hrefInnerFlex)}
+                            >
                               <div className={styles.head}>
                                 <h4 className={styles.linkTitle}>
                                   Custom Development
@@ -274,7 +289,10 @@ const NavigationMobile = () => {
                                 inevitable journey towards enterprise.
                               </p>
                             </Link>
-                            <Link href="/technology/analytics-automation" className={cn(styles.hrefInnerFlex)}>
+                            <Link
+                              href="/technology/analytics-automation"
+                              className={cn(styles.hrefInnerFlex)}
+                            >
                               <div className={styles.head}>
                                 <h4 className={styles.linkTitle}>
                                   Analytics Automation
