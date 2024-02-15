@@ -11,6 +11,7 @@ import { base_Uri } from "@/lib/constants";
 
 const InsightFeatures = ({ props, feature }) => {
   const { theme, setTheme } = useContext(MyContext);
+  console.log(feature,"feat")
 
   // const buttonVariants = [
   //   {
@@ -142,20 +143,20 @@ const InsightFeatures = ({ props, feature }) => {
             dangerouslySetInnerHTML={{ __html: `${feature[0].Title}` }}
           ></h6>
           <div className={styles.featureInsightCards}>
-            {feature[0].featureInsightData.map((data, index) => (
+            {feature.filter((data) =>  data?.attributes?.InsightOverview[0]?.Featured==true).map((data, index) => (
               <PostCard
                 className={styles.featureInsightCard}
                 key={index}
                 imgSrc={
-                  data?.Image?.data.attributes.url
-                    ? `${base_Uri}${data?.Image.data.attributes.url}`
+                  data?.attributes?.InsightOverview[0]?.Image?.data?.attributes?.url
+                    ? `${base_Uri}${data?.attributes?.InsightOverview[0]?.Image?.data?.attributes?.url}`
                     : `${base_Uri}/`
                 }
-                title={data.Title}
-                date={data.Description}
+                title={data?.attributes?.InsightOverview[0].Title}
+                date={data?.attributes?.updatedAt}
                 cardStyle={styles.featureImgBox}
                 theme={theme}
-                href="/insight-inside"
+                href={`/insights/${data?.id}`}
               />
             ))}
           </div>
@@ -163,18 +164,18 @@ const InsightFeatures = ({ props, feature }) => {
         <div className={styles.allInsight}>
           <h6 className={styles.insightSubHeading}>{feature[1].Title} </h6>
           <div className={styles.allInsightCards}>
-            {feature[1].featureInsightData.map((data, index) => (
+            {feature.filter((data) =>  data?.attributes?.InsightOverview[0]?.Featured!=true).map((data, index) => (
               <PostCard
                 key={index}
                 imgSrc={
-                  data?.Image?.data.attributes.url
-                    ? `${base_Uri}${data?.Image.data.attributes.url}`
+                  data?.attributes?.InsightOverview[0]?.Image?.data?.attributes?.url
+                    ? `${base_Uri}${data?.attributes?.InsightOverview[0]?.Image?.data?.attributes?.url}`
                     : `${base_Uri}/`
                 }
-                title={data.Title}
-                date={data.Description}
+                title={data?.attributes?.InsightOverview[0].Title}
+                date={data?.attributes?.updatedAt}
                 theme={theme}
-                href="/insight-inside"
+                href={`/insights/${data?.id}`}
               />
             ))}
           </div>
