@@ -33,9 +33,11 @@ const buttonVariants = cva(styles.base, {
 });
 
 const Button = React.forwardRef(
-  ({ className, children, variant, size, asChild = false, ...props }, ref) => {
+  (
+    { className, children, variant, size, asChild = false, disabled, ...props },
+    ref
+  ) => {
     const Comp = asChild ? Slot : "button";
-
     const circle = useRef(null);
     let timeline = useRef(null);
     let timeoutId = null;
@@ -76,6 +78,7 @@ const Button = React.forwardRef(
         }}
         ref={ref}
         {...props}
+        disabled={disabled}
       >
         <div className={cn(styles.btnText, props.pStyle)}>{children}</div>
         <div ref={circle} className={styles.circle}></div>

@@ -6,6 +6,7 @@ export const MyContext = createContext(null);
 
 export default function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(true);
+
   // useEffect(() => {
   //   (async () => {
   //     const LocomotiveScroll = (await import("locomotive-scroll")).default;
