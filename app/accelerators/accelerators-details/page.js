@@ -5,10 +5,10 @@ import FeatureCard from "@/components/accelerators/acceleratorDetail/featureCard
 import LetsWork from "@/components/home/letsWork";
 import RelatedCase from "@/components/relatedCase";
 import { getData } from "@/lib/fetchData";
-import { api_acceleratorsDeatial_Page } from "@/lib/constants";
+import { api_accelerators_details_Page } from "@/lib/constants";
 
 const AcceleratorDetails = async() => {
-  const data = await getData(api_acceleratorsDeatial_Page)
+  const data = await getData(api_accelerators_details_Page)
   return (
     <>{data?  <div>
       <DetailBanner />
