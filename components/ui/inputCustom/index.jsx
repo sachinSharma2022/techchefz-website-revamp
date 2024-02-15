@@ -94,6 +94,7 @@ const Textarea = React.forwardRef(
             rows={rows}
             className={cn("form-control", className)}
             ref={ref}
+            maxLength={250}
             {...props}
           />
           {label && (

@@ -77,13 +77,15 @@ const ProjectForm = () => {
                 <Input
                   label="First Name*"
                   placeholder="First Name*"
-                  type="name"
+                  // type="name"
                   id="firstName"
                   name="firstName"
                   error={Boolean(touched.firstName && errors.firstName)}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   values={values.firstName}
+                  onKeyDown="return /[a-z]/i.test(event.key)"
+                  
                 />
                 {touched.firstName && errors.firstName && (
                   <Error>{errors.firstName}</Error>
