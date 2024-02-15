@@ -185,18 +185,9 @@ const LetsWork = ({ contact }) => {
                       </span>
                     </p>
                     <div className={`${styles.buttonGrid} col-md-6 col-12`}>
-                      {isVerified ? (
-                        <Button
-                          variant={theme ? "blueBtnDark" : "blueBtn"}
-                          size="lg"
-                          type="submit"
-                          disabled
-                        >
-                          {contact?.Btn} <Icons.ArrowRight size={18} />
-                        </Button>
-                      ) : (
-                        <></>
-                      )}
+                      <Button  variant={theme ? "blueBtnDark" : "blueBtn"} size="lg" disabled={isVerified?false:true} type="submit">
+                      {contact?.Btn} <Icons.ArrowRight size={18} />
+                  </Button>
                     </div>
                   </div>
                 </div>
