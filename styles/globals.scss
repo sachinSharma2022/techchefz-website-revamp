@@ -110,13 +110,30 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px color(text-primary) inset !important;
+  -webkit-box-shadow: 0 0 0 30px color(primary-white) inset !important;
+}
+
+/*Change text in autofill textbox*/
+input:-webkit-autofill {
+  -webkit-text-fill-color: color(text-primary) !important;
+}
+
+
+.dark {
+  input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px color(dark-bg) inset !important;
 }
 
 /*Change text in autofill textbox*/
 input:-webkit-autofill {
   -webkit-text-fill-color: color(primary-white) !important;
 }
+
+}
+
 
 // Span Gradient
 .gradient-text {

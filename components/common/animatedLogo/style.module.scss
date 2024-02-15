@@ -1,0 +1,37 @@
+@import "~/styles/partials/config";
+
+.animatedLogo {
+
+  .logo {
+    position: relative;
+
+    .lightLogo {
+      display: block;
+    }
+    .darkLogo {
+      display: none;
+    }
+  }
+
+  .character {
+    width: 145px;
+    height: 60px;
+    position: absolute;
+    top: 5px;
+    right: -44px;
+    scale: 0.4;
+    background: url('/images/sprite-logo.png') left center no-repeat;
+    animation: play 10s steps(300) infinite;
+    background-size: cover;
+  }
+
+  @keyframes play {
+    100% { background-position: -45000px; }
+  }
+
+
+  // Dark Mode
+  &.animatedLogoDark {
+ 
+  }
+}

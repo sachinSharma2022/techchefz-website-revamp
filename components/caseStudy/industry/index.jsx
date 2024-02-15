@@ -7,15 +7,13 @@ import { useContext } from "react";
 
 import styles from "./style.module.scss";
 
-const Industry = ({props, CMSImplementation, Industryinner}) => {
-
+const Industry = ({ props, CMSImplementation, Industryinner }) => {
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section className={cn(styles.industry, theme ? styles.industryDark : "")}>
       <div className={cn("primary-container")}>
         <div className="row justify-content-between">
           <div className="col-md-4 col-lg-4">
-         
             <div className={styles.industryLeft}>
               <div className="mb-4">
                 <h6>{props[0].Title}</h6>
@@ -25,20 +23,16 @@ const Industry = ({props, CMSImplementation, Industryinner}) => {
                 <h6> {props[0].SubTitle}</h6>
                 <h5>{props[0].Description2}</h5>
               </div>
-          
+
               <h6> {Industryinner[0].Title}</h6>
               <div className={styles.serviceBtn}>
-              {Industryinner[0]?.techStacktags?.map((data, index) => (
-              
-                <button variant="outline" size="xs">
-                  {data?.Title}
-                </button>
-                
-              
-              ))}
+                {Industryinner[0]?.techStacktags?.map((data, index) => (
+                  <button key={index} variant="outline" size="xs">
+                    {data?.Title}
+                  </button>
+                ))}
               </div>
             </div>
-          
           </div>
           <div className="col-md-7 col-lg-7">
             <div className={styles.industryRight}>
@@ -54,7 +48,11 @@ const Industry = ({props, CMSImplementation, Industryinner}) => {
 
         <div className={styles.industryImg}>
           <ImageCustom
-            src={CMSImplementation[0]?.Image?.data?.attributes?.url?`${base_Uri}${CMSImplementation[0]?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+            src={
+              CMSImplementation[0]?.Image?.data?.attributes?.url
+                ? `${base_Uri}${CMSImplementation[0]?.Image?.data?.attributes?.url}`
+                : `${base_Uri}/`
+            }
             width={1300}
             height={500}
             alt="website-img"

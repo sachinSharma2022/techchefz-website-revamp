@@ -10,14 +10,13 @@ import React from "react";
 import { getDataDynamic } from "@/lib/fetchData";
 import { api_Case_study_Page } from "@/lib/constants";
 
-const CaseStudy = async ({params}) => {
+const CaseStudy = async ({ params }) => {
   const data = await getDataDynamic(api_Case_study_Page);
-  let index=0
+  let index = 0;
   for (const i in data) {
-    if(data[i].id==params.caseStudy){
-       index=i
+    if (data[i].id == params.caseStudy) {
+      index = i;
     }
-    
   }
   return (
     <>
@@ -33,7 +32,10 @@ const CaseStudy = async ({params}) => {
           <Challenges props={data[index].attributes.Challenges} />
           <Solutions props={data[index].attributes.Solutions} />
           <Results props={data[index].attributes.Results} />
-          <RelatedCase sliderClassName="mb-0" props={data[index].attributes.CaseStudy} />
+          <RelatedCase
+            sliderClassName="mb-0"
+            props={data[index].attributes.CaseStudy}
+          />
           <LetsWork contact={data[index].attributes.LetsWork} />
         </div>
       ) : (

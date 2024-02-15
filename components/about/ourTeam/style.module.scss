@@ -214,11 +214,17 @@
     margin-top: 5rem;
     position: relative;
     z-index: 1;
-    
+
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 0;
+    }
+
     .cardItem {
       background: color(bg-soft);
       padding: 1.25rem;
-      border-radius: .75rem;
+      border-radius: 0.75rem;
       display: flex;
       align-items: center;
       gap: 1.25rem;
@@ -228,8 +234,13 @@
       &:hover {
         border-color: color(heading-liner);
       }
+
+      @include mobile {
+        padding: 1rem;
+        gap: 1rem;
+      }
     }
-   
+
     .nameTitle {
       font-size: text(lg);
       font-weight: 400;
@@ -239,7 +250,7 @@
       @include truncate(2);
 
       @include mobile-tablet-p {
-        line-height: 1.875rem;
+        line-height: 1.3rem;
         font-size: text(normal);
         margin-bottom: 0;
       }
@@ -257,7 +268,6 @@
         height: 100%;
         object-fit: cover;
       }
-
     }
   }
 
@@ -286,7 +296,6 @@
         color: color(primary-white);
       }
     }
-  
   }
 }
 

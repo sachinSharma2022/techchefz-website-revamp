@@ -30,6 +30,7 @@
       background: none;
       border: none;
       color: color(text-primary);
+      border-radius: 0;
     }
     input::-webkit-inner-spin-button {
       -webkit-appearance: none;
@@ -43,6 +44,7 @@
 
     .inputFloatingStyle {
       border: none;
+      border-radius: 0 10px 10px 0px;
     }
 
     .countryList {

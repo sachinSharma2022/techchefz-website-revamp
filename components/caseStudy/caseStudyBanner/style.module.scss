@@ -39,21 +39,19 @@
     }
   }
 
-  .bannerImg {
+  .bannerImg div {
     height: 31.25rem;
     width: 100%;
     position: relative;
+
     @include mobile-tablet-p {
       height: 11.343rem;
     }
 
     img {
-      @include mobile-tablet-p {
-        height: 11.343rem;
-      }
       width: 100%;
+      height: 100%;
       object-fit: cover;
-      object-position: center;
     }
   }
 }

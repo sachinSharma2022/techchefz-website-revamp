@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
 
 import styles from "./style.module.scss";
+import AnimatedLogo from "@/components/common/animatedLogo";
 
 const NavigationDesktop = () => {
   const pathname = usePathname();
@@ -98,24 +99,7 @@ const NavigationDesktop = () => {
       )}
     >
       <div className={cn(styles.headerContainer, "primary-container")}>
-        <div className={styles.logo}>
-          <Link href="/" className={styles.lightLogo}>
-            <ImageCustom
-              src="/images/logo.svg"
-              width={153}
-              height={40}
-              alt="header-logo"
-            />
-          </Link>
-          <Link href="/" className={styles.darkLogo}>
-            <ImageCustom
-              src="/images/white-logo.svg"
-              width={153}
-              height={40}
-              alt="dark-logo"
-            />
-          </Link>
-        </div>
+        <AnimatedLogo />
         <nav>
           <ul>
             <li className={styles.menuItem}>
@@ -163,7 +147,10 @@ const NavigationDesktop = () => {
                               inevitable journey towards enterprise.
                             </p>
                           </Link>
-                          <Link href="/technology/commerce" className={cn(styles.hrefInnerFlex)}>
+                          <Link
+                            href="/technology/commerce"
+                            className={cn(styles.hrefInnerFlex)}
+                          >
                             <div className={styles.head}>
                               <h4 className={styles.linkTitle}>Commerce</h4>
                               <Icons.ArrowForward />
@@ -173,7 +160,10 @@ const NavigationDesktop = () => {
                               inevitable journey towards enterprise.
                             </p>
                           </Link>
-                          <Link href="/technology/microservices" className={cn(styles.hrefInnerFlex)}>
+                          <Link
+                            href="/technology/microservices"
+                            className={cn(styles.hrefInnerFlex)}
+                          >
                             <div className={styles.head}>
                               <h4 className={styles.linkTitle}>
                                 Microservices
@@ -185,7 +175,10 @@ const NavigationDesktop = () => {
                               inevitable journey towards enterprise.
                             </p>
                           </Link>
-                          <Link href="/technology/cloud-devsec-ops" className={cn(styles.hrefInnerFlex)}>
+                          <Link
+                            href="/technology/cloud-devsec-ops"
+                            className={cn(styles.hrefInnerFlex)}
+                          >
                             <div className={styles.head}>
                               <h4 className={styles.linkTitle}>
                                 Cloud & DevSecOps
@@ -200,7 +193,10 @@ const NavigationDesktop = () => {
                         </div>
 
                         <div className="col-sm-6">
-                          <Link href="/technology/data-intelligence" className={cn(styles.hrefInnerFlex)}>
+                          <Link
+                            href="/technology/data-intelligence"
+                            className={cn(styles.hrefInnerFlex)}
+                          >
                             <div className={styles.head}>
                               <h4 className={styles.linkTitle}>
                                 Data Intelligence
@@ -212,7 +208,10 @@ const NavigationDesktop = () => {
                               inevitable journey towards enterprise.
                             </p>
                           </Link>
-                          <Link href="/technology/custom-development" className={cn(styles.hrefInnerFlex)}>
+                          <Link
+                            href="/technology/custom-development"
+                            className={cn(styles.hrefInnerFlex)}
+                          >
                             <div className={styles.head}>
                               <h4 className={styles.linkTitle}>
                                 Custom Development
@@ -224,7 +223,10 @@ const NavigationDesktop = () => {
                               inevitable journey towards enterprise.
                             </p>
                           </Link>
-                          <Link href="/technology/analytics-automation" className={cn(styles.hrefInnerFlex)}>
+                          <Link
+                            href="/technology/analytics-automation"
+                            className={cn(styles.hrefInnerFlex)}
+                          >
                             <div className={styles.head}>
                               <h4 className={styles.linkTitle}>
                                 Analytics Automation
@@ -354,14 +356,15 @@ const NavigationDesktop = () => {
               )}
             </button>
           </div>
-
-          <Button
-            variant={theme ? "blueBtnDark" : "blueBtn"}
-            className={styles.headerBtn}
-            size="sm"
-          >
-            Estimate Project
-          </Button>
+          <Link href="/contact-us">
+            <Button
+              variant={theme ? "blueBtnDark" : "blueBtn"}
+              className={styles.headerBtn}
+              size="sm"
+            >
+              Estimate Project
+            </Button>
+          </Link>
         </div>
       </div>
     </header>
