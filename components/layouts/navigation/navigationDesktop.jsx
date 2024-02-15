@@ -354,14 +354,16 @@ const NavigationDesktop = () => {
               )}
             </button>
           </div>
-
-          <Button
-            variant={theme ? "blueBtnDark" : "blueBtn"}
-            className={styles.headerBtn}
-            size="sm"
-          >
-            Estimate Project
-          </Button>
+          <Link
+            href="/contact-us">
+            <Button
+              variant={theme ? "blueBtnDark" : "blueBtn"}
+              className={styles.headerBtn}
+              size="sm"
+            >
+              Estimate Project
+            </Button>
+          </Link>
         </div>
       </div>
     </header>
