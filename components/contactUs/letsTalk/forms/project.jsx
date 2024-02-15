@@ -77,13 +77,15 @@ const ProjectForm = () => {
                 <Input
                   label="First Name*"
                   placeholder="First Name*"
-                  type="name"
+                  // type="name"
                   id="firstName"
                   name="firstName"
                   error={Boolean(touched.firstName && errors.firstName)}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   values={values.firstName}
+                  onKeyDown="return /[a-z]/i.test(event.key)"
+                  
                 />
                 {touched.firstName && errors.firstName && (
                   <Error>{errors.firstName}</Error>
@@ -199,9 +201,9 @@ const ProjectForm = () => {
               <span className={styles.policyHighlight}>Privacy Policy</span>
             </div>
             <div className={`${styles.buttonGrid}`}>
-            {isVerified?<Button  variant={theme ? "blueBtnDark" : "blueBtn"} size="lg" type="submit">
+            <Button  variant={theme ? "blueBtnDark" : "blueBtn"} size="lg" disabled={isVerified?false:true} type="submit">
                 Send a Message <Icons.ArrowRight size={18} />
-                  </Button>:<></>}
+                  </Button>
             </div>
           </div>
         </div>

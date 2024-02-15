@@ -218,9 +218,9 @@ const JobsForm = () => {
                 <span className={styles.policyHighlight}>Privacy Policy</span>
               </div>
               <div className={`${styles.buttonGrid}`}>
-                {isVerified?<Button  variant={theme ? "blueBtnDark" : "blueBtn"} size="lg" type="submit">
+              <Button  variant={theme ? "blueBtnDark" : "blueBtn"} size="lg" disabled={isVerified?false:true} type="submit">
                 Send a Message <Icons.ArrowRight size={18} />
-                  </Button>:<></>}
+                  </Button>
               </div>
             </div>
           </div>
