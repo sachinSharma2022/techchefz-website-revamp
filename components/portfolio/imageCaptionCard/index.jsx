@@ -10,8 +10,7 @@ import { base_Uri } from "@/lib/constants";
 
 import styles from "./style.module.scss";
 
-const ImageCaptionCard = ({ props }) => {
-  console.log("pp", props);
+const ImageCaptionCard = ({case_study}) => {
   const { theme, setTheme } = useContext(MyContext);
   const imageCaptionData = [
     {
@@ -124,32 +123,28 @@ const ImageCaptionCard = ({ props }) => {
             "captionCardSection"
           )}
         >
-          {props.map((data, index) => (
-            <Link href="/case-study" key={index} className={`grid-${index}`}>
+          {case_study.map((data, index) => (
+            <Link href={`/portfolio/${data.id}`} key={index} className={`grid-${index}`}>
               <div className={`${styles.imageCard} card`}>
                 <div className={styles.cardImg}>
                   <div className={`${styles.imgBox} imgBox`}>
                     <ImageCustom
-                      src={
-                        data?.Image?.data?.attributes?.url
-                          ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
-                          : `${base_Uri}/`
-                      }
+                      src={data?.attributes?.CaseStudyBanner?.image?.data?.attributes?.url?`${base_Uri}${data?.attributes?.CaseStudyBanner?.image?.data?.attributes?.url}`:`${base_Uri}/`}
                       width={1500}
                       height={1500}
                       alt="captionImg"
                     />
                   </div>
                   <div className={styles.cardBadges}>
-                    {data.Tag.map((items) => (
-                      <div key={items} className={styles.badges}>
-                        {items.Title}
+                    {data?.attributes?.Industryinner[0]?.techStacktags?.map((badgeItem) => (
+                      <div key={badgeItem} className={styles.badges}>
+                        {badgeItem.Title}
                       </div>
                     ))}
                   </div>
                 </div>
                 <div className={styles.cardBody}>
-                  <h2 className={styles.cardText}>{data.Title}</h2>
+                  <h2 className={styles.cardText}>{data?.attributes?.CaseStudyBanner?.title}</h2>
                   <Icons.ArrowLongRight size={18} />
                 </div>
               </div>

@@ -54,7 +54,7 @@ const Industry = ({props, CMSImplementation, Industryinner}) => {
 
         <div className={styles.industryImg}>
           <ImageCustom
-            src={`${base_Uri}${CMSImplementation[0]?.Image.data.attributes.url}`}
+            src={CMSImplementation[0]?.Image?.data?.attributes?.url?`${base_Uri}${CMSImplementation[0]?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
             width={1300}
             height={500}
             alt="website-img"

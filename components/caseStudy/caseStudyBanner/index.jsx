@@ -24,7 +24,7 @@ const CaseStudyBanner = ({props}) => {
       </div>
       <div className={styles.bannerImg}>
         <ImageCustom
-          src={props.image.data.attributes.url?`${base_Uri}${props.image.data.attributes.url}`:`${base_Uri}/`}
+          src={props?.image?.data?.attributes?.url?`${base_Uri}${props?.image?.data?.attributes?.url}`:`${base_Uri}/`}
 
           width={1360}
           height={500}

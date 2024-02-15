@@ -146,7 +146,7 @@ const RelatedCase = ({ props }) => {
               <div key={index}>
                 <CaptionCard
                   className={styles.cardStyle}
-                  imgSrc={base_Uri + data?.Image?.data?.attributes?.url}
+                  imgSrc={data?.Image?.data?.attributes?.url?base_Uri+data?.Image?.data?.attributes?.url:`${base_Uri}/`}
                   title={data.Title}
                   textStyle={styles.textStyle}
                 />
