@@ -11,20 +11,7 @@ import { cn } from "@/lib/utils";
 const Results = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   const isMobileScreen = useMediaQuery({ query: "(max-width: 767px)" });
-  // const resultCard = [
-  //   {
-  //     number: "500+",
-  //     title: "Technology Innovation",
-  //   },
-  //   {
-  //     number: "200+",
-  //     title: "AI solutions integrated.",
-  //   },
-  //   {
-  //     number: "200+",
-  //     title: "Global Business Optimized",
-  //   },
-  // ];
+ 
   return (
     <section className={cn(styles.results, theme ? styles.resultsDark : "")}>
       <div className={cn("primary-container")}>

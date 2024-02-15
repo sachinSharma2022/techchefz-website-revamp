@@ -10,20 +10,6 @@ import styles from "./style.module.scss";
 
 const Goals = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
-  // const listData = [
-  //   {
-  //     content:
-  //       "Create a user-friendly mobile application for storing and monitoring test results, planning visits to medical specialists on the calendar, as well as saving recommendations and doctor’s prescriptions;",
-  //   },
-  //   {
-  //     content:
-  //       "Create a user-friendly mobile application for storing and monitoring test results, planning visits to medical specialists on the calendar, as well as saving recommendations and doctor’s prescriptions;",
-  //   },
-  //   {
-  //     content:
-  //       "Optimize the first release of the project by launching the MVP in the shortest possible time;",
-  //   },
-  // ];
   return (
     <section className={`${styles.goals} ${theme ? styles.goalsDark : ""}`}>
       <div className={cn("primary-container")}>
@@ -43,12 +29,6 @@ const Goals = ({ props }) => {
               className={styles.goalsContent}
               dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}` }}
             ></p>
-            {/* <p className={styles.goalsContent}>
-              This is why the client’s web service should have been checked for
-              vulnerabilities that may lead to user data losses, confidentiality
-              violations, breach of confidentiality, or unauthorized access to
-              the system.
-            </p> */}
 
             <div className={styles.goalsList}>
               {props[0].Views.map((data, index) => (

@@ -16,23 +16,7 @@ const GlobalPresence = ({props}) => {
   const { theme, setTheme } = useContext(MyContext);
   const isMobileScreen = useMediaQuery({ query: "(max-width: 767px)" });
 
-  // const popoverCardMob = [
-  //   {
-  //     flagImg: "/images/united-state-flag.png",
-  //     location: "United States",
-  //     area: "100 Smith Street Collingwood VIC 3066 AU",
-  //   },
-  //   {
-  //     flagImg: "/images/united-state-flag.png",
-  //     location: "United States",
-  //     area: "100 Smith Street Collingwood VIC 3066 AU",
-  //   },
-  //   {
-  //     flagImg: "/images/united-state-flag.png",
-  //     location: "United States",
-  //     area: "100 Smith Street Collingwood VIC 3066 AU",
-  //   },
-  // ];
+  
 
   return (
     <section

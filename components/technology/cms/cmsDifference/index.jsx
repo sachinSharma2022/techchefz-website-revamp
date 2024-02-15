@@ -11,29 +11,6 @@ import { base_Uri } from "@/lib/constants";
 
 const CmsDifference = ({props}) => {
   const { theme, setTheme } = useContext(MyContext);
-  // const differenceCard = [
-  //   {
-  //     sbTitle: "Headless CMS",
-  //     sbText:
-  //       "Seamlessly manage content and presentation in one unified platform, providing stability and ease-of-use.",
-  //     brandImg:
-  //       "https://images.unsplash.com/photo-1600673736081-50451fd6e9eb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //   },
-  //   {
-  //     sbTitle: "Traditional CMS",
-  //     sbText:
-  //       "Seamlessly manage content and presentation in one unified platform, providing stability and ease-of-use.",
-  //     brandImg:
-  //       "https://images.unsplash.com/photo-1620121692029-d088224ddc74?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //   },
-  //   {
-  //     sbTitle: "Advanced CMS",
-  //     sbText:
-  //       "Seamlessly manage content and presentation in one unified platform, providing stability and ease-of-use.",
-  //     brandImg:
-  //       "https://images.unsplash.com/photo-1518563077661-23ad56581d77?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //   },
-  // ];
 
   return (
     <section className={`${styles.cmsDifferenceStyle} ${theme ? styles.cmsDifferenceDark : ""}`}>

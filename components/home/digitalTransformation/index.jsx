@@ -15,26 +15,7 @@ import TextRevel from "@/components/ui/sectionAnimation";
 
 const DigitalTransformation = ({ digital }) => {
   const { theme, setTheme } = useContext(MyContext);
-  // const serviceCard = [
-  //   {
-  //     img: "/images/digital-trans.png",
-  //     digitalHeading: "Customer Experience (CX).",
-  //     digitalText:
-  //       "We help our clients to attract the relevant audience for their business with our advanced technology for a higher conversion rate. We perform advance digital operations like -",
-  //   },
-  //   {
-  //     img: "/images/digital-trans.png",
-  //     digitalHeading: "Customer Experience (CX).",
-  //     digitalText:
-  //       "We help our clients to attract the relevant audience for their business with our advanced technology for a higher conversion rate. We perform advance digital operations like -",
-  //   },
-  //   {
-  //     img: "/images/digital-trans.png",
-  //     digitalHeading: "Customer Experience (CX).",
-  //     digitalText:
-  //       "We help our clients to attract the relevant audience for their business with our advanced technology for a higher conversion rate. We perform advance digital operations like -",
-  //   },
-  // ];
+
   const settings = {
     className: "center",
     centerPadding: "0px",
