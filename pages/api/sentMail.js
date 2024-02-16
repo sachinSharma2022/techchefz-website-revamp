@@ -1,4 +1,5 @@
 import { sendMail } from "@/service/mailService";
+import { prepEmailTemplate } from "@/lib/emailTemplate";
 // import { Writable } from "stream";
 // import formidable from "formidable";
 
@@ -69,8 +70,9 @@ const handler = async (req, res) => {
       const { method,body } = req;
       switch (method) {
         case "POST": {
+          const content=prepEmailTemplate(body["content"])
          const response= await sendMail(
-            body["content"]
+          content
           );
           res.status(200).send({});
           break;
