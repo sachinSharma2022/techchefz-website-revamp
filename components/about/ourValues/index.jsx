@@ -10,8 +10,7 @@ import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
 
-const OurValues = ({props}) => {
- 
+const OurValues = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
 
@@ -36,15 +35,15 @@ const OurValues = ({props}) => {
       className={`${styles.ourValues} ${theme ? styles.ourValuesDark : ""}`}
     >
       <div className={cn("primary-container")}>
-        <div className="row">
-          <div className="col-md-7 col-lg-8">
-            <div className={styles.ourValuesHead}>
-              <h6 className={cn(styles.ourValuesTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
-                </h6>
-              <h3 className={cn(styles.ourValuesHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}`}}>
-              </h3>
-            </div>
-          </div>
+        <div className={styles.ourValuesHead}>
+          <h6
+            className={cn(styles.ourValuesTitle, "gradient-text")}
+            dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+          ></h6>
+          <h3
+            className={cn(styles.ourValuesHeading, "gradient-text")}
+            dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
+          ></h3>
         </div>
 
         <div className={styles.ourValuesContent}>
@@ -52,8 +51,11 @@ const OurValues = ({props}) => {
             <div className="col-md-6 col-lg-6">
               <div className={styles.ourValueImg}>
                 <ImageCustom
-                  src={props?.Image?.data?.attributes?.url?`${base_Uri}${props?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
-                  
+                  src={
+                    props?.Image?.data?.attributes?.url
+                      ? `${base_Uri}${props?.Image?.data?.attributes?.url}`
+                      : `${base_Uri}/`
+                  }
                   width={600}
                   height={550}
                   alt="content-img"
@@ -61,9 +63,7 @@ const OurValues = ({props}) => {
               </div>
             </div>
             <div className="col-md-6 col-lg-5">
-              <p className={styles.ourValuesText}>
-                {props?.Description}
-              </p>
+              <p className={styles.ourValuesText}>{props?.Description}</p>
               <div className={styles.ourValuesAccordion}>
                 {props?.FaqComponent?.map((data, index) => (
                   <Disclosure key={index}>

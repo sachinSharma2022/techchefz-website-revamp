@@ -12,6 +12,7 @@
   .ourHistoryTop {
     width: 100%;
     margin-bottom: 5rem;
+
     @include mobile-tablet-p {
       margin-bottom: 3.75rem;
     }
@@ -25,6 +26,7 @@
     font-weight: 500;
     line-height: 1.5rem;
     letter-spacing: 0.2rem;
+
     @include mobile-tablet-p {
       margin-bottom: 0.75rem;
       font-weight: 400;
@@ -33,7 +35,8 @@
   .ourHistoryHeading {
     font-size: text(larger);
     color: color(text-primary);
-    max-width: 55%;
+    max-width: 80%;
+
     @include mobile-tablet-p {
       max-width: 100%;
       font-size: 2rem;

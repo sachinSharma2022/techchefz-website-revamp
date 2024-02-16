@@ -8,7 +8,7 @@ const nextConfig = {
   },
   env: {
     NODEMAILER_FROM_EMAIL: "manoj.yadav@techchefz.com",
-    NODEMAILER_TO_EMAIL: "pranav.kumar@techchefz.com",
+    NODEMAILER_TO_EMAIL: "khalid406090@gmail.com",
     NODEMAILER_PW: "ucpw vzze prbs wooi",
     NEXT_PUBLIC_RECAPTCHA_SITE_KEY: "6Lf9PHIpAAAAADV0YdvKjHZFuq2bNPnTttD8x7JP",
     RECAPTCHA_SECRET_KEY: "6Lf9PHIpAAAAACHATjXYUbLtFJIQtZLoDaaCOWKa",
