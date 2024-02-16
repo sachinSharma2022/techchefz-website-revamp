@@ -18,8 +18,8 @@ const CoeBanner = ({props}) => {
           </h1>
 
           <div className={styles.bannerRight}>
-            <p>
-            {props?.Description}
+            <p dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
+            
             </p>
           </div>
         </div>
@@ -27,7 +27,7 @@ const CoeBanner = ({props}) => {
 
       <div className={styles.imgBox}>
         <ImageCustom
-          src={`${base_Uri}${props?.Image?.data.attributes.url}`}
+          src= {props?.Image?.data?.attributes?.url?`${base_Uri}${props?.Image?.data?.attributes?.url}`:`${base_Uri}/`}      
           width={1920}
           height={1080}
           alt="banner-img"
