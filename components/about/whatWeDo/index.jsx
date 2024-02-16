@@ -43,7 +43,7 @@ const WhatWeDo = ({ props }) => {
                     <ImageCustom
                       height={100}
                       width={100}
-                      src={data?.Image?.data?.attributes?.url?`${base_Uri}${data?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+                      src={data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data?.attributes?.url}`:`${base_Url}/`}
                       
                     />
 
@@ -71,7 +71,7 @@ const WhatWeDo = ({ props }) => {
                       <ImageCustom
                         height={100}
                         width={100}
-                        src={data?.Image?.data?.attributes?.url?`${base_Uri}${data?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+                        src={data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data?.attributes?.url}`:`${base_Url}/`}
                         
                       />
                     </div>

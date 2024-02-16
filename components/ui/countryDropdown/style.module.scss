@@ -20,6 +20,10 @@
     gap: .625rem;
     padding: 0 0 0 1rem;
     background-color: color(primary-white);
+
+    @include mobile-tablet-p{
+      margin: 0.5rem 0;
+    }
     
 
     &.inputErrorStyle {

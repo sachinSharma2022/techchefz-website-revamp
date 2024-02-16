@@ -1,0 +1,18 @@
+@import "~/styles/partials/config";
+
+.btnLoader {
+  position: relative;
+
+  svg {
+    width: 20px;
+    height: 20px;
+
+    path {
+      position: absolute;
+    }
+
+    circle {
+      scale: 0.2;
+    }
+  }
+}
