@@ -31,28 +31,6 @@ const OurValues = ({props}) => {
     });
   }
 
-  // const accordionData = [
-  //   {
-  //     title: "Innovation",
-  //     content:
-  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  //   },
-  //   {
-  //     title: "Obsession with Customer Success",
-  //     content:
-  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  //   },
-  //   {
-  //     title: "Exploration",
-  //     content:
-  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  //   },
-  //   {
-  //     title: "Excellence in Delivery",
-  //     content:
-  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  //   },
-  // ];
   return (
     <section
       className={`${styles.ourValues} ${theme ? styles.ourValuesDark : ""}`}

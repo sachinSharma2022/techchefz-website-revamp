@@ -12,20 +12,7 @@ import styles from "./style.module.scss";
 const TechnologyStack = ({technology}) => {
   const { theme, setTheme } = useContext(MyContext);
 
-  // const countsCard = [
-  //   {
-  //     count: "930+",
-  //     countText: "Partners",
-  //   },
-  //   {
-  //     count: "3000+",
-  //     countText: "Integrations",
-  //   },
-  //   {
-  //     count: "500+",
-  //     countText: "System Integrations",
-  //   },
-  // ];
+ 
 
   function move(e) {
     const el = document.getElementById("tech-Stack");

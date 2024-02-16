@@ -12,30 +12,7 @@ import { base_Url } from "@/lib/constants";
 const Innovation = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
 
-  // const innovationCardMap = [
-  //   {
-  //     link: "/insights",
-  //     sbSubtitle: "Discover Perspectives",
-  //     sbTitle: "Insights",
-  //     imgSrc: "/images/innovation-printer.png",
-  //   },
-  //   {
-  //     link: "/careers",
-  //     sbSubtitle: "Join Us",
-  //     sbTitle: "Career",
-  //     imgSrc: "/images/career-hand.png",
-  //     width: "",
-  //     height: "",
-  //   },
-  //   {
-  //     link: "/contact-us",
-  //     sbSubtitle: "Lets's Work Together",
-  //     sbTitle: "Contact Us",
-  //     imgSrc: "/images/contact-us.png",
-  //     width: "",
-  //     height: "",
-  //   },
-  // ];
+  
   return (
     <section className={!theme ? styles.innovationSpacing : styles.darkMode}>
       <div className={cn("primary-container")}>

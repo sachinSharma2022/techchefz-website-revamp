@@ -61,40 +61,7 @@ const RelatedCase = ({ props }) => {
     ],
   };
 
-  // const captionCard = [
-  //   {
-  //     imgSrc: "/images/case1.png",
-  //     title: "Revolutionizing Retail: A Digital Transition for Royal Enfield",
-  //   },
-  //   {
-  //     imgSrc: "/images/case2.png",
-  //     title: "Fitbit OS: A Digital Transforming Fitness Tracking",
-  //   },
-  //   {
-  //     imgSrc: "/images/case1.png",
-  //     title: "Revolutionizing Retail: A Digital Transition for Royal Enfield",
-  //   },
-  //   {
-  //     imgSrc: "/images/case2.png",
-  //     title: "Nike’s Expansion and Global Outlook",
-  //   },
-  //   {
-  //     imgSrc: "/images/case1.png",
-  //     title: "Nike’s Expansion and Global Outlook",
-  //   },
-  //   {
-  //     imgSrc: "/images/case2.png",
-  //     title: "Nike’s Expansion and Global Outlook",
-  //   },
-  //   {
-  //     imgSrc: "/images/case2.png",
-  //     title: "Fitbit OS: A Digital Transforming Fitness Tracking",
-  //   },
-  //   {
-  //     imgSrc: "/images/case1.png",
-  //     title: "Revolutionizing Retail: A Digital Transition for Royal Enfield",
-  //   },
-  // ];
+ 
   return (
     <section
       className={cn(

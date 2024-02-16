@@ -25,32 +25,7 @@ import styles from "./style.module.scss";
 const TechnologyValues = ({ props, wrapperStyle }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const { theme, setTheme } = useContext(MyContext);
-  // const valueData = [
-  //   {
-  //     icon: <Icons.Market width={56} height={56} />,
-  //     title: "Innovation",
-  //     imgUrl:
-  //       "https://images.unsplash.com/photo-1622675363311-3e1904dc1885?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //     content:
-  //       "We believe in a customer-centric ethic without and people-centric paradigm within.",
-  //   },
-  //   {
-  //     icon: <Icons.Rates width={56} height={56} />,
-  //     title: "Customer Success",
-  //     imgUrl:
-  //       "https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //     content:
-  //       "We believe in a customer-centric ethic without and people-centric paradigm within.",
-  //   },
-  //   {
-  //     icon: <Icons.MarketPlace width={56} height={56} />,
-  //     title: "Excellence in Delivery",
-  //     imgUrl:
-  //       "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //     content:
-  //       "We believe in a customer-centric ethic without and people-centric paradigm within.",
-  //   },
-  // ];
+
   return (
     <section
       className={cn(

@@ -11,13 +11,7 @@ const InsightOverview = ({props, Insightinner, TechStackData}) => {
  
   const { theme, setTheme } = useContext(MyContext);
 
-  // const techStackData = [
-  //   { name: "Web Design" },
-  //   { name: "CMS" },
-  //   { name: "React" },
-  //   { name: "AEM" },
-  //   { name: "Retail" },
-  // ];
+ 
   console.log()
   return (
     <section

@@ -16,28 +16,7 @@ import { base_Url } from "@/lib/constants";
 const SolutionTechnologies = ({ props }) => {
   console.log("neee", props);
   const { theme, setTheme } = useContext(MyContext);
-  // const serviceCard = [
-  //   {
-  //     icon: <Icons.Market width={56} height={56} />,
-  //     sbTitle: "4+",
-  //     sbText: "Years of Experience in Market.",
-  //   },
-  //   {
-  //     icon: <Icons.MarketPlace width={56} height={56} />,
-  //     sbTitle: "1M+",
-  //     sbText: "Users growth in marketplace.",
-  //   },
-  //   {
-  //     icon: <Icons.Rates width={56} height={56} />,
-  //     sbTitle: "300%",
-  //     sbText: "Elevated Conversion Rates.",
-  //   },
-  //   {
-  //     icon: <Icons.PerformanceIcon width={56} height={56} />,
-  //     sbTitle: "120%",
-  //     sbText: "Enhanced SaaS CRO Performance.",
-  //   },
-  // ];
+ 
   const settings = {
     className: "center",
     centerPadding: "0px",

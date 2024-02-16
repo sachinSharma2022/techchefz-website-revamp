@@ -15,74 +15,7 @@ const SolutionOurValues = ({ props }) => {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
   const { theme, setTheme } = useContext(MyContext);
 
-  // const accordionData = [
-  //   {
-  //     iconUrl: "images/icons/video.svg",
-  //     title: "Strategy and Consulting",
-  //     content:
-  //       "We specialize in comprehensive website audits that provide valuable insights and recommendations to enhance your online presence. ",
-  //     listItems: [
-  //       "We specialize in comprehensive website audits that provide valuable insights.",
-  //       "We provide comprehensive website audits that provide valuable insights.",
-  //       "We understand your requirements and provide comprehensive website audits that provide valuable insights.",
-  //     ],
-  //   },
-  //   {
-  //     iconUrl: "images/icons/video.svg",
-  //     title: "Product Engineering & Custom Development",
-  //     content:
-  //       "We specialize in comprehensive website audits that provide valuable insights and recommendations to enhance your online presence. ",
-  //     listItems: [
-  //       "We specialize in comprehensive website audits that provide valuable insights.",
-  //       "We provide comprehensive website audits that provide valuable insights.",
-  //       "We understand your requirements and provide comprehensive website audits that provide valuable insights.",
-  //     ],
-  //   },
-  //   {
-  //     iconUrl: "images/icons/customer.svg",
-  //     title: "Customer Experience & Martech",
-  //     content:
-  //       "We specialize in comprehensive website audits that provide valuable insights and recommendations to enhance your online presence. ",
-  //     listItems: [
-  //       "We specialize in comprehensive website audits that provide valuable insights.",
-  //       "We provide comprehensive website audits that provide valuable insights.",
-  //       "We understand your requirements and provide comprehensive website audits that provide valuable insights.",
-  //     ],
-  //   },
-  //   {
-  //     iconUrl: "images/icons/data.svg",
-  //     title: "Data Analytics & Intelligence",
-  //     content:
-  //       "We specialize in comprehensive website audits that provide valuable insights and recommendations to enhance your online presence. ",
-  //     listItems: [
-  //       "We specialize in comprehensive website audits that provide valuable insights.",
-  //       "We provide comprehensive website audits that provide valuable insights.",
-  //       "We understand your requirements and provide comprehensive website audits that provide valuable insights.",
-  //     ],
-  //   },
-  //   {
-  //     iconUrl: "images/icons/enterprise.svg",
-  //     title: "Enterprise Technology Platforms",
-  //     content:
-  //       "We specialize in comprehensive website audits that provide valuable insights and recommendations to enhance your online presence. ",
-  //     listItems: [
-  //       "We specialize in comprehensive website audits that provide valuable insights.",
-  //       "We provide comprehensive website audits that provide valuable insights.",
-  //       "We understand your requirements and provide comprehensive website audits that provide valuable insights.",
-  //     ],
-  //   },
-  //   {
-  //     iconUrl: "images/icons/team.svg",
-  //     title: "Team Augmentation",
-  //     content:
-  //       "We specialize in comprehensive website audits that provide valuable insights and recommendations to enhance your online presence. ",
-  //     listItems: [
-  //       "We specialize in comprehensive website audits that provide valuable insights.",
-  //       "We provide comprehensive website audits that provide valuable insights.",
-  //       "We understand your requirements and provide comprehensive website audits that provide valuable insights.",
-  //     ],
-  //   },
-  // ];
+
 
   function togglePanels(newPanel) {
     if (activeDisclosurePanel) {

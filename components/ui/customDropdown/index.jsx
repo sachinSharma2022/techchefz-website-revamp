@@ -49,6 +49,8 @@ const CustomDropdown = ({
   inputError,
   styles,
   placeholder,
+  setFieldValue,
+  name
 }) => {
   const { theme } = useContext(MyContext);
 
@@ -107,7 +109,10 @@ const CustomDropdown = ({
       )}
     >
       <Select
-        onChange={onChange}
+        onChange={(opt)=>{
+
+           setFieldValue(name,opt.value)
+        }}
         options={options}
         classNamePrefix="react-select"
         styles={controlStyle || styles}
