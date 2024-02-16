@@ -9,7 +9,7 @@ import TitleCard from "@/components/common/titleCard";
 
 const Challenges = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
- 
+
   return (
     <section
       className={cn(
