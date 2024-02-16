@@ -22,7 +22,7 @@ const CaseStudy = async ({ params }) => {
     <>
       {data ? (
         <div>
-          <CaseStudyBanner props={data[index].attributes.CaseStudyBanner} />
+          <CaseStudyBanner props={data[index].attributes.Banner} />
           <Industry
             props={data[index].attributes.Industry}
             CMSImplementation={data[index].attributes.CMSImplementation}
