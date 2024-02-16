@@ -10,7 +10,7 @@ import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
 
 const OurHistory = ({props, OurHistory}) => {
-  console.log("manoj",props)
+ 
   const { theme } = useContext(MyContext);
   const [oldSlide, setOldSlide] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);

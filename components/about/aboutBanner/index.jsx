@@ -22,7 +22,8 @@ const AboutBanner = ({props, OurHistory}) => {
 
       <div className={styles.bannerImg}>
         <ImageCustom
-          src={`${base_Uri}${props[0].image.data.attributes.url}`}
+          src={props[0]?.image?.data?.attributes?.url?`${base_Uri}${props[0]?.image?.data?.attributes?.url}`:`${base_Uri}/`}
+          
           width={1360}
           height={450}
           alt="bannerImg"

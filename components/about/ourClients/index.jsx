@@ -10,8 +10,10 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Slider from "react-slick";
 import styles from "./style.module.scss";
+import { base_Uri } from "@/lib/constants";
 
-const OurClients = () => {
+const OurClients = ({props}) => {
+  console.log("aa", props);
   const { theme } = useContext(MyContext);
   const sliderLeft = {
     speed: 15000,
@@ -60,22 +62,7 @@ const OurClients = () => {
     ],
   };
 
-  const logoSec = [
-    "/images/clients/logo1.png",
-    "/images/clients/logo2.png",
-    "/images/clients/logo3.png",
-    "/images/clients/logo4.png",
-    "/images/clients/logo5.png",
-    "/images/clients/logo6.png",
-    "/images/clients/logo1.png",
-    "/images/clients/logo1.png",
-    "/images/clients/logo2.png",
-    "/images/clients/logo3.png",
-    "/images/clients/logo4.png",
-    "/images/clients/logo5.png",
-    "/images/clients/logo6.png",
-    "/images/clients/logo1.png",
-  ];
+  
   return (
     <section
       className={cn(styles.ourClients, theme ? styles.ourClientsDark : "")}
@@ -83,39 +70,35 @@ const OurClients = () => {
       <div className={cn("primary-container")}>
         <div className={cn(styles.flexContainer)}>
           <div className={styles.contentSec}>
-            <h6 className={styles.subHeading}>Our Clients</h6>
-            <h3 className={styles.heading}>
-              From <span>Clients to Friends.</span>
+            <h6 className={styles.subHeading} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}></h6>
+            <h3 className={styles.heading} dangerouslySetInnerHTML={{ __html: `${props?.subTitle}`}}>
+             
             </h3>
-            <p className={styles.description}>
-              We’ve designed, developed, and optimized 100’s of Webflow projects
-              and met some incredible people along the way.
+            <p className={styles.description} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
+              
             </p>
             <Link href="/contact-us">
               <Button
                 variant={theme ? "lightBlueOutline" : "outline"}
                 size="lg"
               >
-                Go to Portfolio <Icons.ArrowRight size={18} />
+                {props?.Btn} <Icons.ArrowRight size={18} />
               </Button>
             </Link>
           </div>
 
           <div className={styles.clientSection}>
-            <p className={styles.description}>
-              Over the next 3 years, we developed into a full-service digital
-              agency. We support our clients with web development, mobile app
-              development, web design, branding UI/UX design and now getting
-              into AR/VR.
+            <p className={styles.description} dangerouslySetInnerHTML={{ __html: `${props?.SubDescription}`}}>
+             
             </p>
 
             <div className={cn(styles.logoAnimation, "logo-animation")}>
               <div className={styles.logoSection}>
                 <Slider {...sliderLeft}>
-                  {logoSec.map((item, index) => (
+                  {props?.clientlogo?.map((item, index) => (
                     <div key={index} className={styles.teamImg}>
                       <ImageCustom
-                        src={item}
+                        src={item?.Image?.data?.attributes?.url?`${base_Uri}${item?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
                         width={240}
                         height={320}
                         alt="team-member"
@@ -126,10 +109,10 @@ const OurClients = () => {
               </div>
               <div className={styles.logoSection}>
                 <Slider {...sliderRight}>
-                  {logoSec.map((item, index) => (
+                  {props?.clientlogo?.map((item, index) => (
                     <div key={index} className={styles.teamImg}>
                       <ImageCustom
-                        src={item}
+                        src={item?.Image?.data?.attributes?.url?`${base_Uri}${item?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
                         width={240}
                         height={320}
                         alt="team-member"
@@ -140,10 +123,10 @@ const OurClients = () => {
               </div>
               <div className={styles.logoSection}>
                 <Slider {...sliderLeft}>
-                  {logoSec.map((item, index) => (
+                  {props?.clientlogo?.map((item, index) => (
                     <div key={index} className={styles.teamImg}>
                       <ImageCustom
-                        src={item}
+                        src={item?.Image?.data?.attributes?.url?`${base_Uri}${item?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
                         width={240}
                         height={320}
                         alt="team-member"

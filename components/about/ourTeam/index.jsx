@@ -17,6 +17,7 @@ const OurTeam = ({ props }) => {
   const { theme } = useContext(MyContext);
   let [isOpen, setIsOpen] = useState(false);
 
+  
   return (
     <section className={cn(styles.ourTeam, theme ? styles.ourTeamDark : "")}>
       <div className={cn("primary-container")}>
