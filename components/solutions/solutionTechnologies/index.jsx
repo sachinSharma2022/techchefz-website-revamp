@@ -16,7 +16,7 @@ import { base_Url } from "@/lib/constants";
 const SolutionTechnologies = ({ props }) => {
   console.log("neee", props);
   const { theme, setTheme } = useContext(MyContext);
- 
+
   const settings = {
     className: "center",
     centerPadding: "0px",
@@ -64,28 +64,22 @@ const SolutionTechnologies = ({ props }) => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.careerRow}>
-          <div className="row">
-            <div className="col-md-12 col-12">
-              <h6
-                className={cn(styles.projectHighlight, "gradient-text")}
-                dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
-              ></h6>
-            </div>
+          <div>
+            <h6
+              className={cn(styles.projectHighlight, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+            ></h6>
 
-            <div className="col-md-8 col-12">
-              <h2
-                className={cn(styles.datingText, "gradient-text")}
-                dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
-              ></h2>
-            </div>
-            <div className={`${styles.careerBtn} col-md-4 col-12`}>
-              <Button
-                variant={theme ? "lightBlueOutline" : "outline"}
-                size="md"
-              >
-                {props?.Button} <Icons.ArrowRight size={18} />
-              </Button>
-            </div>
+            <h2
+              className={cn(styles.datingText, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
+            ></h2>
+          </div>
+
+          <div className={`${styles.careerBtn}`}>
+            <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
+              {props?.Button} <Icons.ArrowRight size={18} />
+            </Button>
           </div>
         </div>
 

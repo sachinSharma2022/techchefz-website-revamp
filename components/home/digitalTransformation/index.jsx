@@ -63,31 +63,30 @@ const DigitalTransformation = ({ digital }) => {
     >
       <div className={cn("primary-container")}>
         <TextRevel>
-        <div className={styles.serviceRow}>
-          <div className="row">
-            <div className="col-md-12 col-12">
-              <h6 className={cn(styles.projectHighlight, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${digital[0]?.Title}`}}>
-                </h6>
+          <div className={styles.serviceRow}>
+            <div>
+              <h6
+                className={cn(styles.projectHighlight, "gradient-text")}
+                dangerouslySetInnerHTML={{ __html: `${digital[0]?.Title}` }}
+              ></h6>
+
+              <h3
+                className={cn(styles.datingText, "gradient-text")}
+                dangerouslySetInnerHTML={{
+                  __html: `${digital[0]?.SubTitle}`,
+                }}
+              ></h3>
             </div>
 
-              <div className="col-md-8 col-12">
-                <h3
-                  className={cn(styles.datingText, "gradient-text")}
-                  dangerouslySetInnerHTML={{
-                    __html: `${digital[0]?.SubTitle}`,
-                  }}
-                ></h3>
-              </div>
-              <div className={`${styles.servicesBtn} col-md-4 col-12`}>
-                <Link href="/solutions">
-                  <Button
-                    variant={theme ? "lightBlueOutline" : "outline"}
-                    size="md"
-                  >
-                    {digital[0]?.Btn} <Icons.ArrowRight size={18} />
-                  </Button>
-                </Link>
-              </div>
+            <div className={`${styles.servicesBtn}`}>
+              <Link href="/solutions">
+                <Button
+                  variant={theme ? "lightBlueOutline" : "outline"}
+                  size="md"
+                >
+                  {digital[0]?.Btn} <Icons.ArrowRight size={18} />
+                </Button>
+              </Link>
             </div>
           </div>
         </TextRevel>
