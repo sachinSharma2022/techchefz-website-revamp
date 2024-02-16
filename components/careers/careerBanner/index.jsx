@@ -9,7 +9,7 @@ import Link from "next/link";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
 
-const CareerBanner = ({ props }) => {
+const CareerBanner = ({ props,gallary }) => {
   console.log("dataaa", props);
   const { theme, setTheme } = useContext(MyContext);
   return (
@@ -40,7 +40,7 @@ const CareerBanner = ({ props }) => {
         </div>
       </div>
 
-      <GridMarqueeGallery />
+      <GridMarqueeGallery props={gallary} />
     </section>
   );
 };
