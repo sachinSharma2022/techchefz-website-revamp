@@ -10,6 +10,7 @@
 
   .ourValuesHead {
     margin-bottom: 5rem;
+    
     @include mobile-tablet-p {
       margin-bottom: 3.75rem;
     }
