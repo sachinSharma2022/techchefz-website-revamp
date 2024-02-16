@@ -4,78 +4,55 @@ import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
-
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
+import { base_Uri } from "@/lib/constants";
 
-const AcceleratorImpact = (props) => {
+const AcceleratorImpact = ({props}) => {
+  console.log("ac",props);
   const { theme } = useContext(MyContext);
   return (
     <section className={`${styles.impact} ${theme ? styles.impactDark : ""}`}>
       <div className={cn("primary-container" , styles.impactContainer) }>
         <div className="text-center text-sm-start">
-          <h6 className={styles.subHeading}>Impact</h6>
-          <h3 className={styles.impactHeading}>
-            {props.heading || "Confronting Out of Stock (OOS) Challenges"}
+          <h6 className={cn(styles.subHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}></h6>
+          <h3 className={cn(styles.impactHeading, "gradient-text")}  dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}`}}>
+           
           </h3>
         </div>
 
         <div className={styles.impactTopSection}>
           <div className={styles.impactImage}>
             <ImageCustom
-              src={"/images/impact1.png"}
+              src={props?.imagelinks[0]?.Image?.data?.attributes?.url?`${base_Uri}${props?.imagelinks[0]?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
               width={700}
               height={600}
               alt="impact-img"
             />
           </div>
           <div className={styles.topSectionRight}>
-            <h4>Unleashing Language Precision and Data Excellence</h4>
-            <ul>
-              <li>
-                Improved User Experience: Increases customer satisfaction and
-                engagement.
-              </li>
-              <li>
-                Enhanced Customer Support: Improves customer service and also
-                reduces the workload on human support staff.
-              </li>
-              <li>
-                Better Understanding of Customer Needs: Data gathered can be
-                retrieved for multiple purposes
-              </li>
-              <li>
-                Increased Sales and Conversion Rates: Buying process becomes
-                more effective. This can lead to increased sales and higher
-                conversion rates.
-              </li>
-              <li>
-                SEO and Visibility Advantages: optimizing for conversational
-                search can improve a business&apos;s online visibility.
-              </li>
+            <h4 dangerouslySetInnerHTML={{ __html: `${props?.imagelinks[0].Title}`}}></h4>
+            <ul dangerouslySetInnerHTML={{ __html: `${props?.imagelinks[0].Description}`}}>
+              
             </ul>
             <Button variant={theme ? "lightBlueOutline" : "outline"} size="lg">
-              Download Notebook <Icons.ArrowRight size={18} />
+              {props?.imagelinks[0].btn} <Icons.ArrowRight size={18} />
             </Button>
           </div>
         </div>
         <div className={styles.impactTopSection}>
           <div className={styles.topSectionRight}>
-            <h4>Unleashing Language Precision and Data Excellence</h4>
-            <p>
-              Out of Stock (OOS) situations present a significant challenge in
-              the retail industry, directly impacting sales and customer
-              satisfaction. The Solution Accelerator tackles this pervasive
-              issue head-on by leveraging the power of real-time data and
-              advanced analytics.{" "}
+            <h4 dangerouslySetInnerHTML={{ __html: `${props?.imagelinks[1].Title}`}}></h4>
+            <p dangerouslySetInnerHTML={{ __html: `${props?.imagelinks[1].Description}`}}>
+              
             </p>
             <Button variant={theme ? "lightBlueOutline" : "outline"} size="lg">
-              Download Notebook <Icons.ArrowRight size={18} />
+            {props?.imagelinks[1].btn} <Icons.ArrowRight size={18} />
             </Button>
           </div>
           <div className={styles.impactImage}>
             <ImageCustom
-              src={"/images/impact2.png"}
+              src={props?.imagelinks[1]?.Image?.data?.attributes?.url?`${base_Uri}${props?.imagelinks[1]?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
               width={700}
               height={600}
               alt="impact-img"
@@ -85,23 +62,19 @@ const AcceleratorImpact = (props) => {
         <div className={styles.impactTopSection}>
           <div className={styles.impactImage}>
             <ImageCustom
-              src={"/images/impact3.png"}
+              src={props?.imagelinks[2]?.Image?.data?.attributes?.url?`${base_Uri}${props?.imagelinks[2]?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
               width={700}
               height={600}
               alt="impact-img"
             />
           </div>
           <div className={styles.topSectionRight}>
-            <h4>Unleashing Language Precision and Data Excellence</h4>
-            <p>
-              Out of Stock (OOS) situations present a significant challenge in
-              the retail industry, directly impacting sales and customer
-              satisfaction. The Solution Accelerator tackles this pervasive
-              issue head-on by leveraging the power of real-time data and
-              advanced analytics.{" "}
+            <h4 dangerouslySetInnerHTML={{ __html: `${props?.imagelinks[2].Title}`}}></h4>
+            <p dangerouslySetInnerHTML={{ __html: `${props?.imagelinks[2].Description}`}}>
+              
             </p>
             <Button variant={theme ? "lightBlueOutline" : "outline"} size="lg">
-              Download Notebook <Icons.ArrowRight size={18} />
+            {props?.imagelinks[2].btn}  <Icons.ArrowRight size={18} />
             </Button>
           </div>
         </div>

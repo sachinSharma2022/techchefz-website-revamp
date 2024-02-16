@@ -7,6 +7,7 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import { cn } from "@/lib/utils";
 import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
+import { base_Url } from "@/lib/constants";
 
 const Goals = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -35,8 +36,8 @@ const Goals = ({ props }) => {
                 <>
                   <div key={index} className={styles.goalsTextWrapper}>
                     <div className={styles.goalsIcons}>
-                      <Icons.BikeIcon
-                        className={styles.goalsIcon}
+                      <ImageCustom
+                        src={data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data?.attributes?.url}`:`${base_Url}/`}
                         width={27}
                         height={16}
                       />

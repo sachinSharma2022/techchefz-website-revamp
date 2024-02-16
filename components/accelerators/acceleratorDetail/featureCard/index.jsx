@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import styles from "./styles.module.scss";
 import TitleCard from "@/components/common/titleCard";
 
-const FeatureCard = (props) => {
+const FeatureCard = ({props}) => {
   const { theme } = useContext(MyContext);
   const cardData = [
     {
@@ -36,14 +36,14 @@ const FeatureCard = (props) => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.headSec}>
-          <h6 className={styles.challengeTitle}>Features</h6>
-          <h3 className={styles.challengeHeading}>
-            Unleashing Language Precision and <br /> Data Excellence
+          <h6 className={cn(styles.challengeTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}></h6>
+          <h3 className={cn(styles.challengeHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
+           
           </h3>
         </div>
         <div className={styles.challengesCards}>
-          {cardData.map((data, index) => (
-            <TitleCard key={index} title={data.title} content={data.content} />
+          {props?.innerFaqs?.map((data, index) => (
+            <TitleCard key={index} title={data.Title} content={data.Description} />
           ))}
         </div>
       </div>
