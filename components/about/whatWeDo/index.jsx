@@ -11,6 +11,8 @@ import Image from "next/image";
 import { base_Uri } from "@/lib/constants";
 import { base_Url } from "@/lib/constants";
 import { ImageCustom } from "@/components/ui/imageCustom";
+
+
 const WhatWeDo = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   const isBigScreen = useMediaQuery({ query: "(min-width: 1025px)" });
@@ -41,7 +43,8 @@ const WhatWeDo = ({ props }) => {
                     <ImageCustom
                       height={100}
                       width={100}
-                      src={`${base_Url}${data.Image.data.attributes.url}`}
+                      src={data?.Image?.data?.attributes?.url?`${base_Uri}${data?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+                      
                     />
 
                     <h3>{data.Title}</h3>
@@ -68,7 +71,8 @@ const WhatWeDo = ({ props }) => {
                       <ImageCustom
                         height={100}
                         width={100}
-                        src={`${base_Url}${data.Image.data.attributes.url}`}
+                        src={data?.Image?.data?.attributes?.url?`${base_Uri}${data?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+                        
                       />
                     </div>
                     <h6>{data.Title}</h6>

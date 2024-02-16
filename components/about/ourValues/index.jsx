@@ -52,7 +52,8 @@ const OurValues = ({props}) => {
             <div className="col-md-6 col-lg-6">
               <div className={styles.ourValueImg}>
                 <ImageCustom
-                  src={`${base_Uri}${props?.Image.data.attributes.url}`}
+                  src={props?.Image?.data?.attributes?.url?`${base_Uri}${props?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+                  
                   width={600}
                   height={550}
                   alt="content-img"
