@@ -16,6 +16,7 @@ const OurTeam = ({ props }) => {
   console.log("aa", props);
   const { theme } = useContext(MyContext);
   let [isOpen, setIsOpen] = useState(false);
+  const [index, setIndex] = useState(0);
 
   
   return (
@@ -67,7 +68,10 @@ const OurTeam = ({ props }) => {
                     {props[0]?.ListofDirectors?.map((data, index) => (
                       <div
                         role="button"
-                        onClick={() => setIsOpen(true)}
+                        onClick={() => {
+                          setIndex(index)
+                          setIsOpen(true)
+                        }}
                         key={index}
                         className={styles.teamCardBg}
                       >
@@ -125,7 +129,6 @@ const OurTeam = ({ props }) => {
             </Tab.Panels>
           </Tab.Group>
         </div>
-        {props[0]?.ListofDirectors?.map((data, index) => (
           <LeftDrawer
             key={index}
             title="About"
@@ -143,8 +146,8 @@ const OurTeam = ({ props }) => {
                   <ImageCustom
                    
                     src={
-                      data?.Images?.data?.attributes?.url
-                        ? `${base_Uri}${data?.Images?.data?.attributes?.url}`
+                      props[0]?.ListofDirectors[index]?.Images?.data?.attributes?.url
+                        ? `${base_Uri}${props[0]?.ListofDirectors[index]?.Images?.data?.attributes?.url}`
                         : `${base_Uri}/`
                     }
                     width={500}
@@ -152,15 +155,15 @@ const OurTeam = ({ props }) => {
                     alt="profile"
                   />
                 </div>
-                <h4 className={styles.teamName}>{data.Name}</h4>
-                <p className={styles.teamRole}>{data.Designation}</p>
+                <h4 className={styles.teamName}>{props[0]?.ListofDirectors[index]?.Name}</h4>
+                <p className={styles.teamRole}>{props[0]?.ListofDirectors[index]?.Designation}</p>
               </div>
 
               <div className={styles.infoSec}>
-                <p className={styles.modalContent}>{data.Description}</p>
+                <p className={styles.modalContent}>{props[0]?.ListofDirectors[index]?.Description}</p>
                 <p className={styles.teamMail}>
                   <Icons.MailIcon width={24} height={24} className="me-2" />
-                  {data.email}
+                  {props[0]?.ListofDirectors[index]?.email}
                 </p>
 
                 <div className={styles.socialSection}>
@@ -181,7 +184,7 @@ const OurTeam = ({ props }) => {
               </div>
             </div>
           </LeftDrawer>
-        ))}
+        
       </div>
     </section>
   );
