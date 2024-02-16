@@ -61,7 +61,7 @@ const Goals = ({ props }) => {
             alt="content-img"
             className={styles.goalInnerImage}
           />
-          <ImageCustom
+          {/* <ImageCustom
             src={
               props[0].gallaryImages[1].Image?.data?.attributes?.url
                 ? `${base_Uri}${props[0].gallaryImages[1].Image?.data?.attributes.url}`
@@ -82,7 +82,7 @@ const Goals = ({ props }) => {
             height={400}
             alt="content-img"
             className={styles.goalInnerImage}
-          />
+          /> */}
         </div>
       </div>
     </section>

@@ -29,7 +29,7 @@ const SolutionHeroBanner = ({ props }) => {
 
       <div className={styles.landingPlayerStyle}>
         <ImageCustom
-          src={`${base_Uri}${props?.Image.data.attributes.url}`}
+          src={props?.Image?.data?.attributes?.url?`${base_Uri}${props?.Image?.data?.attributes?.url}`:`${base_Uri}/`}        
           width={1440}
           height={650}
           alt="bannerImg"

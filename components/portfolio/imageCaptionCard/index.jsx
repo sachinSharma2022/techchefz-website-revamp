@@ -12,58 +12,8 @@ import styles from "./style.module.scss";
 
 const ImageCaptionCard = ({case_study}) => {
   const { theme, setTheme } = useContext(MyContext);
-  const imageCaptionData = [
-    {
-      description: " Nike’s Expansion and Global Outlook",
-      imgSrc:
-        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      badgeList: ["Web Design", "E-Commerce", "Retail"],
-    },
-    {
-      description:
-        " Revolutionizing Retail: A Digital Transition for Royal Enfield",
-      imgSrc:
-        "https://images.unsplash.com/photo-1575209426388-3f545c9a7490?q=80&w=2060&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      badgeList: ["Web Design", "E-Commerce", "Retail"],
-    },
-    {
-      description: " Fitbit OS: A Digital Transforming Fitness Tracking",
-      imgSrc:
-        "https://images.unsplash.com/photo-1543164904-8ff92670a192?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      badgeList: ["Web Design", "E-Commerce", "Retail"],
-    },
-    {
-      description: " Mobile Stock Trading App Impact Analysis",
-      imgSrc:
-        "https://images.unsplash.com/photo-1579225663317-c0251b4369bc?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      badgeList: ["Web Design", "E-Commerce", "Retail"],
-    },
-    {
-      description: " Goldman Sachs' Trading Strategy Success",
-      imgSrc:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      badgeList: ["Web Design", "E-Commerce", "Retail"],
-    },
-    {
-      description: " Audi’s Global Reach and Dynamics",
-      imgSrc:
-        "https://images.unsplash.com/photo-1646405871744-2005e64f8e32?q=80&w=2060&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      badgeList: ["Web Design", "E-Commerce", "Retail"],
-    },
-    {
-      description:
-        " Sustainable Energy: A Success Story for EV Vehicles Sustainable Energy abcd...",
-      imgSrc:
-        "https://images.unsplash.com/photo-1700411882036-f20df01413ff?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      badgeList: ["Web Design", "E-Commerce", "Retail"],
-    },
-    {
-      description: "Goldman Sachs' Trading Strategy Success",
-      imgSrc:
-        "https://images.unsplash.com/photo-1666625519702-7270420bb4f9?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      badgeList: ["Web Design", "E-Commerce", "Retail"],
-    },
-  ];
+
+ 
 
   const dataServices = [
     { value: "Data", label: "Data" },
@@ -129,7 +79,7 @@ const ImageCaptionCard = ({case_study}) => {
                 <div className={styles.cardImg}>
                   <div className={`${styles.imgBox} imgBox`}>
                     <ImageCustom
-                      src={data?.attributes?.CaseStudyBanner?.image?.data?.attributes?.url?`${base_Uri}${data?.attributes?.CaseStudyBanner?.image?.data?.attributes?.url}`:`${base_Uri}/`}
+                      src={data?.attributes?.Banner?.PortfolioImage?.data?.attributes?.url?`${base_Uri}${data?.attributes?.Banner?.PortfolioImage?.data?.attributes?.url}`:`${base_Uri}/`}
                       width={1500}
                       height={1500}
                       alt="captionImg"
@@ -144,7 +94,7 @@ const ImageCaptionCard = ({case_study}) => {
                   </div>
                 </div>
                 <div className={styles.cardBody}>
-                  <h2 className={styles.cardText}>{data?.attributes?.CaseStudyBanner?.title}</h2>
+                  <h2 className={styles.cardText}>{data?.attributes?.Banner?.PortfolioTitle}</h2>
                   <Icons.ArrowLongRight size={18} />
                 </div>
               </div>

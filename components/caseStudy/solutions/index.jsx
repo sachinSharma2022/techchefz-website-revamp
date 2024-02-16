@@ -21,8 +21,8 @@ const Solutions = ({props}) => {
           <div>
             <h3 className={cn(styles.solutionHeading,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props.SubTitle}` }}>
             </h3>
-            <p className={styles.solutionText}>
-              {props.Description}
+            <p className={styles.solutionText} dangerouslySetInnerHTML={{ __html: `${props.Description}`}}>
+             
             </p>
           </div>
         </div>

@@ -11,38 +11,9 @@ import { base_Uri } from "@/lib/constants";
 const DistinctLocations = ({props}) => {
   console.log("us",props);
   const { theme, setTheme } = useContext(MyContext);
-  const differenceCard = [
-    {
-      brandImg:
-        "https://images.unsplash.com/photo-1548013146-72479768bada?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW5kaWF8ZW58MHx8MHx8fDA%3D",
-      sbTitle: "India",
-      countryFlagImg: "/images/country-contact-flag.png",
-      sbText: "New Delhi",
-      address:
-        "FIEE Complex, A - 53 First Floor, Phase 2, Okhla Industrial Estate, New Delhi, Delhi 110020",
-      phoneNumber: "+91 9824349812",
-    },
-    {
-      brandImg:
-        "https://plus.unsplash.com/premium_photo-1675118548262-60f7e4e77483?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8VW5pdGVkJTIwU3RhdGVzfGVufDB8fDB8fHww",
-      sbTitle: "United States",
-      countryFlagImg: "/images/united-state-flag.png",
-      sbText: "San Francisco",
-      address:
-        "FIEE Complex, A - 53 First Floor, Phase 2, Okhla Industrial Estate, New Delhi, Delhi 110020",
-      phoneNumber: "+91 9824349812",
-    },
-    {
-      brandImg:
-        "https://images.unsplash.com/photo-1665649968710-2917b5128171?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmV3JTIweW91ciUyMGNpdHl8ZW58MHx8MHx8fDA%3D",
-      sbTitle: "United States",
-      countryFlagImg: "/images/united-state-flag.png",
-      sbText: "New York",
-      address:
-        "FIEE Complex, A - 53 First Floor, Phase 2, Okhla Industrial Estate, New Delhi, Delhi 110020",
-      phoneNumber: "+91 9824349812",
-    },
-  ];
+
+  
+
   return (
     <section
       className={`${styles.distinctLocationsStyle} ${

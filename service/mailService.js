@@ -13,7 +13,7 @@ export async function sendMail(otpText) {
       from: process.env.NODEMAILER_FROM_EMAIL,
       to: process.env.NODEMAILER_TO_EMAIL,
       subject: mailer_Subject,
-      text: otpText,
+      html: otpText,
     };
   
     transporter.sendMail(mailOptions, function (error, info) {
