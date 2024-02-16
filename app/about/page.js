@@ -29,7 +29,7 @@ const AboutPage = async () => {
         <OurResults props={data.Result} />
         <FounderDesk props={data.FounderDesk} />
         <OurTeam props={data.Team} />
-        <OurClients />
+        <OurClients props={data.OurClient}/>
         <LetsWork contact={data.ContactUs} />
       </div>
     </Curve>
