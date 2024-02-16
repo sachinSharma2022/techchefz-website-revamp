@@ -112,7 +112,7 @@ const SolutionTechnologies = ({ props }) => {
             </div>
             <div className={styles.ourNumbersImg}>
               <ImageCustom
-                src={`${base_Uri}${props?.image.data.attributes.url}`}
+                src={props?.image?.data?.attributes?.url?`${base_Uri}${props?.image?.data?.attributes?.url}`:`${base_Uri}/`}               
                 width={1000}
                 height={100}
                 alt="bannerImg"
@@ -122,19 +122,7 @@ const SolutionTechnologies = ({ props }) => {
         </div>
       </div>
 
-      {/* <div className={`${styles.ourNumberOption} service-mobile-slider`}>
-            <Slider {...settings}>
-              {props?.TechnologyInner?.map((data, index) => (
-                <ServiceInfoCard
-                  key={index}
-                  sbTitle={data.Title}
-                  icon= {data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data?.attributes?.url}`:`${base_Url}/`}
-                 
-                  sbText={data.Description}
-                />
-              ))}
-            </Slider>
-          </div> */}
+      
     </section>
   );
 };

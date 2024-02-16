@@ -17,6 +17,7 @@ import { triggerMail } from "@/lib/triggerMail";
 import ReCAPTCHA from "react-google-recaptcha";
 import { verifyCaptcha } from "@/lib/ServerActions";
 import { useRef, useState } from "react";
+import CircleLoader from "@/components/ui/circleLoader";
 
 const LetsWork = ({ contact }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -184,10 +185,17 @@ const LetsWork = ({ contact }) => {
                         Privacy Policy
                       </span>
                     </p>
-                    <div className={`${styles.buttonGrid} col-md-6 col-12`}>
-                      <Button  variant={theme ? "blueBtnDark" : "blueBtn"} size="lg" disabled={isVerified?false:true} type="submit">
-                      {contact?.Btn} <Icons.ArrowRight size={18} />
-                  </Button>
+                    <div className={`${styles.buttonGrid}`}>
+                      <Button
+                        variant={theme ? "blueBtnDark" : "blueBtn"}
+                        size="lg"
+                        disabled={isVerified ? false : true}
+                        type="submit"
+                      >
+                        {contact?.Btn}
+                        <Icons.ArrowRight size={18} />
+                        <CircleLoader repeatCount={2} />
+                      </Button>
                     </div>
                   </div>
                 </div>

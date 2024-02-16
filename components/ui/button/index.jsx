@@ -6,6 +6,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
 import styles from "./style.module.scss";
+import CircleLoader from "../circleLoader";
 
 const buttonVariants = cva(styles.base, {
   variants: {
@@ -34,7 +35,18 @@ const buttonVariants = cva(styles.base, {
 
 const Button = React.forwardRef(
   (
-    { className, children, variant, size, asChild = false, disabled, ...props },
+    {
+      className,
+      children,
+      variant,
+      size,
+      asChild = false,
+      disabled,
+      loader,
+      repeatCount,
+      dur,
+      ...props
+    },
     ref
   ) => {
     const Comp = asChild ? Slot : "button";
@@ -66,7 +78,7 @@ const Button = React.forwardRef(
         timeline.current.play();
       }, 300);
     };
-  console.log(disabled,"button")
+    console.log(disabled, "button");
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
@@ -80,7 +92,10 @@ const Button = React.forwardRef(
         {...props}
         disabled={disabled}
       >
-        <div className={cn(styles.btnText, props.pStyle)}>{children}</div>
+        <div className={cn(styles.btnText, props.pStyle)}>
+          {children}
+          {loader && <CircleLoader repeatCount={repeatCount} dur={dur} />}
+        </div>
         <div ref={circle} className={styles.circle}></div>
       </Comp>
     );

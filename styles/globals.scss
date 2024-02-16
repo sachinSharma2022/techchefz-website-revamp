@@ -7,8 +7,7 @@
 // Slick Slider
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
-@import 'node_modules/locomotive-scroll/dist/locomotive-scroll';
-
+@import "node_modules/locomotive-scroll/dist/locomotive-scroll";
 
 * {
   @include scrollbarCustom;
@@ -68,9 +67,9 @@ a {
   filter: contrast(0) brightness(100);
 }
 
-
 // Button Disabled
-button:disabled, button[disabled] {
+button:disabled,
+button[disabled] {
   border-color: rgba(color(text-primary), 0.6) !important;
   background-color: rgba(color(text-primary), 0.6);
   color: color(text-primary);
@@ -78,15 +77,14 @@ button:disabled, button[disabled] {
 }
 
 .dark {
-  button:disabled, button[disabled] {
+  button:disabled,
+  button[disabled] {
     border-color: rgba(color(primary-white), 0.6) !important;
     background-color: rgba(color(primary-white), 0.6);
     color: color(primary-white);
     cursor: not-allowed;
   }
-  
 }
-
 
 // space
 .mt-120 {
@@ -140,22 +138,19 @@ input:-webkit-autofill {
   -webkit-text-fill-color: color(text-primary) !important;
 }
 
-
 .dark {
   input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px color(dark-bg) inset !important;
-}
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px color(dark-bg) inset !important;
+  }
 
-/*Change text in autofill textbox*/
-input:-webkit-autofill {
-  -webkit-text-fill-color: color(primary-white) !important;
+  /*Change text in autofill textbox*/
+  input:-webkit-autofill {
+    -webkit-text-fill-color: color(primary-white) !important;
+  }
 }
-
-}
-
 
 // Span Gradient
 .gradient-text {
@@ -303,6 +298,14 @@ input:-webkit-autofill {
       width: 29.875rem;
       max-width: 29.875rem;
 
+      @include desktop-hd {
+        opacity: 0.3;
+
+        &.swiper-slide-active {
+          opacity: 1;
+        }
+      }
+
       @include mobile {
         max-width: 100%;
       }
@@ -315,6 +318,17 @@ input:-webkit-autofill {
         rgba(255, 255, 255, 0.5) 0.61%,
         #ffffff 61.29%
       ) !important;
+
+      @include desktop-hd {
+        display: none;
+      }
+    }
+  }
+
+  .swiper-wrapper {
+
+    @include desktop-hd {
+      margin-left: -25vw;
     }
   }
 
@@ -1001,3 +1015,13 @@ html.lenis {
     }
   }
 }
+
+
+// =================================
+// Loader Animation
+// =================================
+
+
+// =================================
+// Loader Animation End
+// =================================

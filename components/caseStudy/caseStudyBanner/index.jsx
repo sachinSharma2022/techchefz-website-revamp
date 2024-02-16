@@ -20,14 +20,14 @@ const CaseStudyBanner = ({ props }) => {
       <div className={cn("primary-container")}>
         <h1
           className={cn(styles.bannerTitle, "gradient-text")}
-          dangerouslySetInnerHTML={{ __html: `${props?.title}` }}
+          dangerouslySetInnerHTML={{ __html: `${props?.CaseStudyTitle}` }}
         ></h1>
       </div>
       <div className={styles.bannerImg}>
         <ImageCustom
           src={
-            props?.image?.data?.attributes?.url
-              ? `${base_Uri}${props?.image?.data?.attributes?.url}`
+            props?.CaseStudyImage?.data?.attributes?.url
+              ? `${base_Uri}${props?.CaseStudyImage?.data?.attributes?.url}`
               : `${base_Uri}/`
           }
           width={1360}

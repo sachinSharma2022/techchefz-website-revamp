@@ -8,7 +8,7 @@
   }
 
   .flexContainer {
-    max-width: 48rem;
+    max-width: 80%;
 
     @include mobile-tablet-p {
       max-width: 100%;
@@ -19,7 +19,6 @@
   .weDoTitle {
     color: color(text-primary);
     text-transform: uppercase;
-    opacity: 0.8;
     opacity: 0.8;
     font-size: text(normal);
     font-weight: 500;
