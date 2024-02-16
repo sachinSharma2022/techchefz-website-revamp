@@ -16,8 +16,8 @@ const AcceleratorBanner = ({ props }) => {
           <h1 className={cn(styles.bannerTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}>
           </h1>
           <div className={styles.bannerRight}>
-            <p>
-              {props.Description}
+            <p dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
+             
             </p>
             <Button variant={theme ? "blueBtnDark" : "blueBtn"} className={styles.headerBtn} size="md">
               {props.Btn} <Icons.ArrowRight size={20} className="ms-2" />

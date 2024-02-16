@@ -25,7 +25,7 @@ const Results = ({ props }) => {
               className={cn(styles.resultHeading, "gradient-text")}
               dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
             ></h3>
-            <p className={styles.resultText}>{props?.Description}</p>
+            <p className={styles.resultText} dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}></p>
 
             {!isMobileScreen && (
               <div className={styles.resultCards}>
