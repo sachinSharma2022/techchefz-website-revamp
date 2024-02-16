@@ -22,7 +22,6 @@ const Testimonials = ({ props }) => {
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
 
-
   return (
     <section
       className={cn(
@@ -154,6 +153,19 @@ const Testimonials = ({ props }) => {
                   modifier: 1,
                   slideShadows: true,
                   scale: 1.02,
+                }}
+                breakpoints={{
+                  1900: {
+                    slidesPerView: "auto",
+                    centeredSlides: true,
+                    coverflowEffect: {
+                      rotate: -10,
+                      stretch: 0,
+                      depth: 90,
+                      modifier: 1,
+                      scale: 0.98,
+                    },
+                  },
                 }}
                 pagination={false}
                 modules={[EffectCoverflow, Pagination, Navigation]}

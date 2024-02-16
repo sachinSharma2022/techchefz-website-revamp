@@ -298,6 +298,14 @@ input:-webkit-autofill {
       width: 29.875rem;
       max-width: 29.875rem;
 
+      @include desktop-hd {
+        opacity: 0.3;
+
+        &.swiper-slide-active {
+          opacity: 1;
+        }
+      }
+
       @include mobile {
         max-width: 100%;
       }
@@ -310,6 +318,17 @@ input:-webkit-autofill {
         rgba(255, 255, 255, 0.5) 0.61%,
         #ffffff 61.29%
       ) !important;
+
+      @include desktop-hd {
+        display: none;
+      }
+    }
+  }
+
+  .swiper-wrapper {
+
+    @include desktop-hd {
+      margin-left: -25vw;
     }
   }
 
