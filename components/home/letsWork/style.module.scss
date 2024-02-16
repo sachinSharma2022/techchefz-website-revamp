@@ -87,6 +87,7 @@
         .policyArea {
           display: flex;
           justify-content: space-between;
+          gap: 4rem;
 
           @include mobile-tablet-p {
             flex-direction: column;
@@ -112,6 +113,7 @@
           .buttonGrid {
             display: flex;
             justify-content: flex-end;
+            width: 100%;
 
             @include mobile-tablet-p {
               justify-content: flex-start;
