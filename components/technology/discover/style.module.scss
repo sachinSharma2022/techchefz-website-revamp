@@ -14,11 +14,13 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    gap: 8.9375rem;
 
-    @include mobile {
+    @include mobile-tablet-p {
       flex-direction: column;
       margin-bottom: 2.5rem;
       align-items: flex-start;
+      gap: 1.5rem;
     }
   }
   .discoverTitle {
@@ -38,12 +40,6 @@
 
     @include mobile-tablet-p {
       margin-bottom: 0;
-      font-size: 2rem;
-      line-height: 2.5rem;
-    }
-
-    @include mobile {
-      margin-bottom: 2.5rem;
       font-size: 2rem;
       line-height: 2.5rem;
     }

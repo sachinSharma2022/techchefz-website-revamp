@@ -11,9 +11,17 @@
 
   .careerRow {
     margin-bottom: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8.9375rem;
 
     @include mobile-tablet-p {
       margin-bottom: 3.75rem;
+      flex-direction: column;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
     }
   }
 
@@ -48,7 +56,8 @@
       font-size: text(xxxl);
       line-height: 2.5rem;
       padding-right: 0;
-      margin-bottom: text(lg);
+      margin-bottom: 0;
+      max-width: 100%;
     }
   }
 
