@@ -16,66 +16,7 @@ const Discover = ({ props }) => {
   console.log("tt", props);
   const { theme, setTheme } = useContext(MyContext);
 
-  // const technologyData = [
-  //   {
-  //     title: "Frontend",
-  //     technologyList: [
-  //       {
-  //         icon: "/images/icons/react.svg",
-  //         title: "React.JS",
-  //       },
-  //       {
-  //         icon: "/images/icons/react.svg",
-  //         title: "React.JS",
-  //       },
-  //       {
-  //         icon: "/images/icons/react.svg",
-  //         title: "React.JS",
-  //       },
-  //       {
-  //         icon: "/images/icons/react.svg",
-  //         title: "React.JS",
-  //       },
-  //       {
-  //         icon: "/images/icons/react.svg",
-  //         title: "React.JS",
-  //       },
-  //       {
-  //         icon: "/images/icons/react.svg",
-  //         title: "React.JS",
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     title: "Back-end",
-  //     technologyList: [
-  //       {
-  //         icon: "/images/icons/react.svg",
-  //         title: "React.JS",
-  //       },
-  //       {
-  //         icon: "/images/icons/react.svg",
-  //         title: "React.JS",
-  //       },
-  //       {
-  //         icon: "/images/icons/react.svg",
-  //         title: "React.JS",
-  //       },
-  //       {
-  //         icon: "/images/icons/react.svg",
-  //         title: "React.JS",
-  //       },
-  //       {
-  //         icon: "/images/icons/react.svg",
-  //         title: "React.JS",
-  //       },
-  //       {
-  //         icon: "/images/icons/react.svg",
-  //         title: "React.JS",
-  //       },
-  //     ],
-  //   },
-  // ];
+  
   return (
     <section
       className={`${styles.discoverSection} ${
@@ -116,14 +57,15 @@ const Discover = ({ props }) => {
             </Tab.List>
 
             <Tab.Panels className={styles.platformsButtons}>
+            {props?.techStack?.map((item, index) => (
               <Tab.Panel>
-                {props?.techStack[0]?.TechDetail?.map((item, index) => (
+               
                   <div key={index} className={styles.dataSection}>
-                    <h6 className={styles.subTitle}>{item.Heading}</h6>
-
+                    <h6 className={styles.subTitle}>{item.TechDetail[0]?.Heading}</h6>
+                   
                     {/* Sub Section */}
                     <div className={styles.buttonSection}>
-                      {props?.techStack[0]?.TechDetail?.map((subItems, index) => (
+                      {item?.TechDetail?.map((subItems, index) => (
                         <div key={index} className={styles.platformsBtn}>
                           <div className="d-flex align-items-center">
                             <div className={styles.iconImg}>
@@ -145,89 +87,44 @@ const Discover = ({ props }) => {
                       ))}
                     </div>
                   </div>
-                ))}
-              </Tab.Panel>
-              <Tab.Panel>
-                {props?.techStack?.map((item, index) => (
-                  <div key={index} className={styles.dataSection}>
-                    <h6 className={styles.subTitle}>{item.title}</h6>
 
-                    {/* Sub Section */}
-                    <div className={styles.buttonSection}>
-                      {/* {item.technologyList.map((subItems, index) => (
-                        <div key={index} className={styles.platformsBtn}>
-                          <div className="d-flex align-items-center">
-                            <div className={styles.iconImg}>
-                              <ImageCustom
-                                src={subItems.icon}
-                                width={24}
-                                height={22}
-                                alt="image"
-                              />
-                            </div>
-                            <p>{subItems.title} </p>
-                          </div>
-                          <Icons.ArrowUpRight />
-                        </div>
-                      ))} */}
-                    </div>
-                  </div>
-                ))}
-              </Tab.Panel>
-              <Tab.Panel>
-                {/* {technologyData.map((item, index) => (
+                 
                   <div key={index} className={styles.dataSection}>
-                    <h6 className={styles.subTitle}>{item.title}</h6>
-
+                    <h6 className={styles.subTitle}>{item.multipletech2[0]?.Heading}</h6>
                    
+                  
                     <div className={styles.buttonSection}>
-                      {item.technologyList.map((subItems, index) => (
+                      {item?.multipletech2?.map((subItems, index) => (
                         <div key={index} className={styles.platformsBtn}>
                           <div className="d-flex align-items-center">
                             <div className={styles.iconImg}>
                               <ImageCustom
-                                src={subItems.icon}
+                                src={
+                                  subItems?.Images?.data?.attributes?.url
+                                    ? `${base_Url}${subItems?.Images?.data?.attributes?.url}`
+                                    : `${base_Url}/`
+                                }
                                 width={24}
                                 height={22}
                                 alt="image"
                               />
                             </div>
-                            <p>{subItems.title} </p>
-                          </div>
-                          <Icons.ArrowUpRight />
-                        </div>
-                      ))} */}
-                {/* </div>
-                  </div>
-                ))} */}
-              </Tab.Panel>
-              <Tab.Panel>
-                {/* {technologyData.map((item, index) => (
-                  <div key={index} className={styles.dataSection}>
-                    <h6 className={styles.subTitle}>{item.title}</h6>
-
-                   
-                    <div className={styles.buttonSection}>
-                      {item.technologyList.map((subItems, index) => (
-                        <div key={index} className={styles.platformsBtn}>
-                          <div className="d-flex align-items-center">
-                            <div className={styles.iconImg}>
-                              <ImageCustom
-                                src={subItems.icon}
-                                width={24}
-                                height={22}
-                                alt="image"
-                              />
-                            </div>
-                            <p>{subItems.title} </p>
+                            <p>{subItems.Title} </p>
                           </div>
                           <Icons.ArrowUpRight />
                         </div>
                       ))}
                     </div>
                   </div>
-                ))} */}
+            
+              
               </Tab.Panel>
+
+              ))}
+
+             
+             
+              
             </Tab.Panels>
           </Tab.Group>
         </div>
