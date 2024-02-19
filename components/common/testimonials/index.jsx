@@ -147,12 +147,12 @@ const Testimonials = ({ props }) => {
                 }}
                 centeredSlides={true}
                 coverflowEffect={{
-                  rotate: -30,
+                  rotate: -35,
                   stretch: 0,
-                  depth: 160,
+                  depth: 200,
                   modifier: 1,
                   slideShadows: true,
-                  scale: 1.02,
+                  scale: 1.03,
                 }}
                 breakpoints={{
                   1900: {
@@ -181,10 +181,14 @@ const Testimonials = ({ props }) => {
                 {props[0]?.Testimonials.map((data, index) => (
                   <SwiperSlide key={index}>
                     <div className={styles.testimonialCardBox}>
-                      <div className={styles.commaImg}>
-                        <Icons.Comma width={29} height={24} />
+                      <div>
+                        <div className={styles.commaImg}>
+                          <Icons.Comma width={29} height={24} />
+                        </div>
+                        <p className={styles.customerText}>
+                          {data.Description}
+                        </p>
                       </div>
-                      <p className={styles.customerText}>{data.Description}</p>
                       <div className={styles.customerProfile}>
                         <div className={styles.customerImg}>
                           <ImageCustom
