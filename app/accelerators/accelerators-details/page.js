@@ -11,15 +11,15 @@ const AcceleratorDetails = async() => {
   const data = await getData(api_accelerators_details_Page)
   return (
     <>{data?  <div>
-      <DetailBanner />
-      <AcceleratorIndustry />
-      <Impact />
-      <FeatureCard />
+      <DetailBanner props={data.Banner}/>
+      <AcceleratorIndustry props={data.Media}/>
+      <Impact props={data.Impact}/>
+      <FeatureCard props={data.Challanges}/>
       <RelatedCase
         className="mt-0 mb-5 pt-5 pb-0"
         props={data.CaseStudy}
       />
-      <LetsWork />
+      <LetsWork contact={data.LetsWork} />
     </div>:<></>}
     </>
   

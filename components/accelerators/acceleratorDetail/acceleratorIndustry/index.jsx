@@ -5,10 +5,12 @@ import { useContext } from "react";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { Icons } from "@/components/icons";
-
 import styles from "./style.module.scss";
+import { base_Uri } from "@/lib/constants";
 
-const AcceleratorIndustry = () => {
+
+const AcceleratorIndustry = ({props}) => {
+ 
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section
@@ -18,32 +20,27 @@ const AcceleratorIndustry = () => {
         <div className={styles.gridSection}>
           <div className={styles.industryLeft}>
             <div className="mb-4">
-              <h6>Industry</h6>
-              <h4 className={styles.heading}>Media & Entertainment</h4>
+              <h6>{props?.Title}</h6>
+              <h4 className={styles.heading}>{props?.SubTitle}</h4>
             </div>
 
-            <h6>Services</h6>
+            <h6 >{props?.Description}</h6>
             <div className={styles.serviceBtn}>
               <button variant="outline" size="xs">
-                Trending
+                {props?.DescriptionInner[0].Tags}
               </button>
             </div>
           </div>
           <div>
             <div className={styles.industryRight}>
-              <h3 className={styles.industryHeading}>
-                Improve training data to boost LLM performance
+              <h3 className={styles.industryHeading} dangerouslySetInnerHTML={{ __html: `${props?.DescriptionInner[0].Title}`}}>
+               
               </h3>
-              <p className={styles.industryText}>
-                Unlock the potential of natural language processing in your
-                business with our latest accelerator, the Conversational Search
-                System. This cutting-edge tool transcends the limits of
-                traditional search functionalities, enabling your users to find
-                products and information through intuitive conversational
-                queries.
+              <p className={styles.industryText} dangerouslySetInnerHTML={{ __html: `${props?.DescriptionInner[0].Description}`}}>
+                
               </p>
               <Button variant={theme ? "lightBlueOutline" : "outline"} className="info" size="md">
-                Access the Git Repository <Icons.ArrowRight size={18} />
+                {props?.DescriptionInner[0].Btn} <Icons.ArrowRight size={18} />
               </Button>
             </div>
           </div>
@@ -51,10 +48,11 @@ const AcceleratorIndustry = () => {
 
         <div className={styles.industryImg}>
           <ImageCustom
-            src="https://images.unsplash.com/photo-1559163499-413811fb2344?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src={props?.Image?.data?.attributes?.url?`${base_Uri}${props?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
             width={1300}
             height={800}
             alt="website-img"
+            
           />
         </div>
       </div>
