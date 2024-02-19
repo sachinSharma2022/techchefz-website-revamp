@@ -25,7 +25,7 @@ const Technology = async () => {
             props={data.Technology}
           />
           <OurNumbers carrer={data.carrer} experience={data.ourExperience} />
-          <Discover props={data.DiscoverTech} />
+          {/* <Discover props={data.DiscoverTech} /> */}
           <TechnologyCase props={data.TechnologyCase} />
           <LetsWork contact={data.LetsWork} />
         </div>
