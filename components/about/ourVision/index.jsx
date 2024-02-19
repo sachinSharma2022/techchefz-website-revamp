@@ -10,7 +10,6 @@ import { base_Uri } from "@/lib/constants";
 import { base_Url } from "@/lib/constants";
 
 const OurVision = ({ props }) => {
-
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section
@@ -18,30 +17,33 @@ const OurVision = ({ props }) => {
     >
       <div className={cn("primary-container")}>
         <div className={cn(styles.flexContainer)}>
-          <h3 className={cn(styles.aboutHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.title}` }}>
-
-          </h3>
-
-          <div>
-            {props && props[0].OurVisionMissioninner.map((item, index) => {
-              return (
-                <div key={index}>
-                  <h6 className={styles.aboutSubHeading}>{item.title}</h6>
-                  <p className={styles.aboutParagraph}>
-                    {item.description}
-                  </p>
-                </div>
-              )
-
-            })}
-
+          <h3
+            className={cn(styles.aboutHeading, "gradient-text")}
+            dangerouslySetInnerHTML={{ __html: `${props[0]?.title}` }}
+          ></h3>
+          <div className={styles.contentSec}>
+            {props &&
+              props[0].OurVisionMissioninner.map((item, index) => {
+                return (
+                  <div key={index}>
+                    <h6 className={styles.aboutSubHeading}>{item.title}</h6>
+                    <p className={styles.aboutParagraph}>{item.description}</p>
+                  </div>
+                );
+              })}
           </div>
         </div>
 
         <div className={styles.videoWrapper}>
-          <VideoCustom src={props[0].Video.data[0].attributes.url?`${base_Url}${props[0].Video.data[0].attributes.url}`:`${base_Url}/`}
-          
-          width={1200} height={500} />
+          <VideoCustom
+            src={
+              props[0].Video.data[0].attributes.url
+                ? `${base_Url}${props[0].Video.data[0].attributes.url}`
+                : `${base_Url}/`
+            }
+            width={1200}
+            height={500}
+          />
         </div>
       </div>
     </section>

@@ -14,6 +14,7 @@ const Partners = ({props}) => {
   
   const { theme, setTheme } = useContext(MyContext);
   let [isOpen, setIsOpen] = useState(false);
+  const [index, setIndex] = useState(0);
 
  
   return (
@@ -36,14 +37,18 @@ const Partners = ({props}) => {
               darkImgSrc={data?.Image?.data?.attributes?.url?`${base_Uri}${data?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
               cardTitle={data.Title}
               cardContent={data.Description}
-              onClick={() => setIsOpen(true)}
+              onClick={() =>{
+                setIsOpen(true)
+                setIndex(index)
+
+              }}
             />
           ))}
         </div>
       </div>
     
       <LeftDrawer
-        title="wordpress"
+        title={props?.Slider[index]?.Title}
         open={isOpen}
         onClose={() => setIsOpen(false)}
       >
@@ -52,7 +57,9 @@ const Partners = ({props}) => {
         >
           <div className={styles.cardImg}>
             <ImageCustom
-              src="/images/wordpress.png"
+              src={props?.Slider[index]?.Image?.data?.attributes?.url
+                ? `${base_Uri}${props?.Slider[index]?.Image?.data?.attributes?.url}`
+                : `${base_Uri}/`}
               width={110}
               height={40}
               alt="partner-logo"
@@ -60,16 +67,10 @@ const Partners = ({props}) => {
             />
           </div>
           <p className={styles.modalContent}>
-            Shopify is a leading e-commerce platform that enables businesses of
-            all sizes to set up, operate, and scale their online stores.
-            It&lsquo;s known for its user-friendly interface, making it
-            accessible even to those without technical expertise. Shopify offers
-            a variety of customizable templates, allowing businesses to design
-            their stores to match their brand&lsquo;s aesthetics and
-            requirements.
+            {props?.Slider[index]?.Description}
           </p>
-          <Link href="https://www.shopify.com/" target="_blank">
-            https://www.shopify.com/
+          <Link href={props?.Slider[index]?.BtnLink} target="_blank">
+          {props?.Slider[index]?.BtnLink}
           </Link>
         </div>
       </LeftDrawer>
