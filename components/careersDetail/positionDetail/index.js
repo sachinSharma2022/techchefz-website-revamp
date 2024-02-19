@@ -39,46 +39,44 @@ const DescriptionData = [
     },
   },
 ];
-const PositionDescription = () => {
+const PositionDescription = ({props}) => {
+  console.log("cc",props);
   const { theme, setTheme } = useContext(MyContext);
 
   return (
     <div className={cn("primary-container")}>
-      {DescriptionData.map((value, index) => (
+     
         <div
           className={theme ? styles.jobDetailContainer : styles.lightMode}
-          key={index}
+          
         >
          <div className={styles.section}>
-         <h2>About the Job</h2>
-          <p>{value.about.bullet}</p>
+         <h2>{props[0]?.Title}</h2>
+          <p>{props[0]?.FullDescription}</p>
          </div>
        
           <div className={styles.section}>
-            <h2>Responsibilities</h2>
-            <ul>
-              {value.responsibility.bullet.map((point, idx) => (
-                <li key={idx}>{point}</li>
-              ))}
+            <h2>{props[1]?.Title}</h2>
+            <ul dangerouslySetInnerHTML={{ __html: `${props[1]?.FullDescription}`}}>
             </ul>
           </div>
           <div className={styles.section}>
-            <h2>Requirements</h2>
-            <ul>
-              {value.requirements.bullet.map((point, idx) => (
+            <h2>{props[2]?.Title}</h2>
+            <ul dangerouslySetInnerHTML={{ __html: `${props[2]?.FullDescription}`}}>
+              {/* {props[1]?.FullDescription?.split(",").map((point, idx) => (
                 <li key={idx}>{point}</li>
-              ))}
+              ))} */}
             </ul>
           </div>
 
           <div className={styles.section}>
             <h2 className={styles.gradientHead}>
-              Why Explore a Career at TechChefz
+              {props[3]?.Title}
             </h2>
-            <p>{value.techchefz.bullet}</p>
+            <p>{props[3].FullDescription}</p>
           </div>
         </div>
-      ))}
+    
     </div>
   );
 };

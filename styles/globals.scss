@@ -331,7 +331,6 @@ input:-webkit-autofill {
   }
 
   .swiper-wrapper {
-
     @include desktop-hd {
       margin-left: -25vw;
     }
@@ -495,11 +494,18 @@ input:-webkit-autofill {
       content: "";
       width: 100vw;
       height: 0.063rem;
-      border: 0.14rem dashed color(bg-gray);
       position: absolute;
       left: 50%;
       transform: translate(-50%);
       bottom: 1rem;
+      background-image: linear-gradient(
+        to right,
+        color(bg-gray) 33%,
+        rgba(color(bg-gray), 0) 0%
+      );
+      background-position: bottom;
+      background-size: 10px 1px;
+      background-repeat: repeat-x;
     }
 
     li {
@@ -1025,11 +1031,9 @@ html.lenis {
   }
 }
 
-
 // =================================
 // Loader Animation
 // =================================
-
 
 // =================================
 // Loader Animation End

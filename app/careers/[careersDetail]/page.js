@@ -18,7 +18,7 @@ const CareerDetail = async ({params}) => {
   return (
     <>
       <CareerPositionOverview  props={data[index].attributes.DeveloperApply} />
-      <PositionDescription />
+      <PositionDescription  props={data[index].attributes.DeveloperDetail}/>
       <ContactSection props={data[index].attributes.Developercontact} />
       <MoreJobs props={data[index].attributes.MoreDetail}/>
     </>
