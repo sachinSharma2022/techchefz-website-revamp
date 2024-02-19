@@ -14,6 +14,7 @@ import styles from "./style.module.scss";
 import { careerValidationSchema } from "@/lib/FormSchema";
 import { Form, Formik,useFormik } from "formik";
 import { triggerMail } from "@/lib/triggerMail";
+import CircleLoader from "@/components/ui/circleLoader";
 
 const ContactSection = ({props}) => {
   const { theme, setTheme } = useContext(MyContext);
