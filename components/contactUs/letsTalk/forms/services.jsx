@@ -12,6 +12,7 @@ import { Form, Formik } from "formik";
 import { useContext,useState,useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha"
 import { verifyCaptcha } from "@/lib/ServerActions";
+import CircleLoader from "@/components/ui/circleLoader";
 
 import CustomDropdown from "@/components/ui/customDropdown";
 
@@ -22,6 +23,7 @@ const ServicesForm = () => {
   const { theme } = useContext(MyContext);
   const recaptchaRef = useRef(null)
   const [isVerified, setIsverified] = useState(false)
+  const [inprogress, setinprogress] = useState(false);
   const formInitialSchema = {
     firstName: "",
     lastName: "",
@@ -49,7 +51,11 @@ const ServicesForm = () => {
   return (
     <Formik
       onSubmit={(values, action) => {
+        setinprogress(true)
         triggerMail({ content: JSON.stringify(values) });
+        setTimeout(() => {
+          setinprogress(false)
+        }, 4000);
       }}
       initialValues={formInitialSchema}
       initialStatus={{
@@ -211,8 +217,9 @@ const ServicesForm = () => {
                 <span className={styles.policyHighlight}>Privacy Policy</span>
               </div>
               <div className={`${styles.buttonGrid}`}>
-              <Button  variant={theme ? "blueBtnDark" : "blueBtn"} size="lg" disabled={isVerified?false:true} type="submit">
-                Send a Message <Icons.ArrowRight size={18} />
+              <Button  variant={theme ? "blueBtnDark" : "blueBtn"} size="lg" disabled={(isVerified? false : true)?true:(inprogress?true:false)} type="submit">
+                Send a Message 
+                {inprogress?<CircleLoader repeatCount={1} />:<Icons.ArrowRight size={18} />}
                   </Button>
               </div>
             </div>

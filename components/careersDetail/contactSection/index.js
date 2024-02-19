@@ -14,11 +14,13 @@ import styles from "./style.module.scss";
 import { careerValidationSchema } from "@/lib/FormSchema";
 import { Form, Formik,useFormik } from "formik";
 import { triggerMail } from "@/lib/triggerMail";
+import CircleLoader from "@/components/ui/circleLoader";
 
 const ContactSection = ({props}) => {
   const { theme, setTheme } = useContext(MyContext);
   const recaptchaRef = useRef(null)
     const [isVerified, setIsverified] = useState(false)
+    const [inprogress, setinprogress] = useState(false);
     const formInitialSchema = {
       firstName: "",
       lastName: "",
@@ -44,7 +46,11 @@ const ContactSection = ({props}) => {
     validationSchema: careerValidationSchema,
     onSubmit: (values, action) => {
       console.log(values);
+      setinprogress(true)
       triggerMail({ content: JSON.stringify(values) });
+      setTimeout(() => {
+        setinprogress(false)
+      }, 4000);
     },
   });
 
@@ -226,8 +232,9 @@ const ContactSection = ({props}) => {
                   <span className={styles.policyHighlight}>Privacy Policy</span>
                 </div>
 
-                <Button  variant={theme ? "blueBtnDark" : "blueBtn"} size="lg" disabled={isVerified?false:true} type="submit">
-                Send a Message <Icons.ArrowRight size={18} />
+                <Button  variant={theme ? "blueBtnDark" : "blueBtn"} size="lg" disabled={(isVerified? false : true)?true:(inprogress?true:false)} type="submit">
+                Send a Message 
+                {inprogress?<CircleLoader repeatCount={1} />:<Icons.ArrowRight size={18} />}
                   </Button>
               </div>
             </div>
