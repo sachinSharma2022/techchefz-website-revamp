@@ -4,6 +4,8 @@ import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 import MobileSlider from "@/components/common/mobileSlider";
 import { useMediaQuery } from "react-responsive";
+import { base_Url } from "@/lib/constants";
+import { ImageCustom } from "@/components/ui/imageCustom";
 
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
@@ -26,6 +28,23 @@ const Results = ({ props }) => {
               dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
             ></h3>
             <p className={styles.resultText} dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}></p>
+
+            <div className={styles.goalsList}>
+              {props.Viewcard.map((data, index) => (
+                <>
+                  <div key={index} className={styles.goalsTextWrapper}>
+                    <div className={styles.goalsIcons}>
+                      <ImageCustom
+                        src={data?.image?.data?.attributes?.url?`${base_Url}${data?.image?.data?.attributes?.url}`:`${base_Url}/`}
+                        width={27}
+                        height={16}
+                      />
+                    </div>
+                    <p className={styles.goalsText}>{data.title}</p>
+                  </div>
+                </>
+              ))}
+            </div>
 
             {!isMobileScreen && (
               <div className={styles.resultCards}>
