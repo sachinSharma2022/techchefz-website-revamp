@@ -14,6 +14,7 @@ const Partners = ({props}) => {
   
   const { theme, setTheme } = useContext(MyContext);
   let [isOpen, setIsOpen] = useState(false);
+  const [index, setIndex] = useState(0);
 
  
   return (
@@ -36,7 +37,10 @@ const Partners = ({props}) => {
               darkImgSrc={data?.Image?.data?.attributes?.url?`${base_Uri}${data?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
               cardTitle={data.Title}
               cardContent={data.Description}
-              onClick={() => setIsOpen(true)}
+              onClick={() =>{
+                setIsOpen(true)
+
+              }}
             />
           ))}
         </div>
