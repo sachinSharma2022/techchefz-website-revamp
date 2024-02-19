@@ -78,7 +78,6 @@ const Button = React.forwardRef(
         timeline.current.play();
       }, 300);
     };
-    console.log(disabled, "button");
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
