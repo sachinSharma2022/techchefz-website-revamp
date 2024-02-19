@@ -13,67 +13,10 @@ import { base_Uri } from "@/lib/constants";
 import { base_Url } from "@/lib/constants";
 
 const Discover = ({ props }) => {
+  console.log("tt", props);
   const { theme, setTheme } = useContext(MyContext);
-  const technologyData = [
-    {
-      title: "Frontend",
-      technologyList: [
-        {
-          icon: "/images/icons/react.svg",
-          title: "React.JS",
-        },
-        {
-          icon: "/images/icons/react.svg",
-          title: "React.JS",
-        },
-        {
-          icon: "/images/icons/react.svg",
-          title: "React.JS",
-        },
-        {
-          icon: "/images/icons/react.svg",
-          title: "React.JS",
-        },
-        {
-          icon: "/images/icons/react.svg",
-          title: "React.JS",
-        },
-        {
-          icon: "/images/icons/react.svg",
-          title: "React.JS",
-        },
-      ],
-    },
-    {
-      title: "Back-end",
-      technologyList: [
-        {
-          icon: "/images/icons/react.svg",
-          title: "React.JS",
-        },
-        {
-          icon: "/images/icons/react.svg",
-          title: "React.JS",
-        },
-        {
-          icon: "/images/icons/react.svg",
-          title: "React.JS",
-        },
-        {
-          icon: "/images/icons/react.svg",
-          title: "React.JS",
-        },
-        {
-          icon: "/images/icons/react.svg",
-          title: "React.JS",
-        },
-        {
-          icon: "/images/icons/react.svg",
-          title: "React.JS",
-        },
-      ],
-    },
-  ];
+
+  
   return (
     <section
       className={`${styles.discoverSection} ${
@@ -85,17 +28,17 @@ const Discover = ({ props }) => {
           <div>
             <h6
               className={cn(styles.discoverTitle, "gradient-text")}
-              dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}` }}
+              dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
             ></h6>
             <h3
               className={cn(styles.discoverHeading, "gradient-text")}
-              dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}` }}
+              dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
             ></h3>
           </div>
 
           <Link href="/technology/cms">
             <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
-              {props[0].Btn} <Icons.ArrowRight size={18} />
+              {props.Btn} <Icons.ArrowRight size={18} />
             </Button>
           </Link>
         </div>
@@ -103,88 +46,33 @@ const Discover = ({ props }) => {
         <div className={styles.discoverTabSection}>
           <Tab.Group vertical defaultIndex={0}>
             <Tab.List className={styles.discoverLeft}>
-              <Tab>
-                <div className={styles.discoverHead}>
-                  <h5
-                    className={`${styles.subHeading}`}
-                    dangerouslySetInnerHTML={{
-                      __html: `${props[0]?.SubTitle1}`,
-                    }}
-                  ></h5>
-                  <p
-                    className={styles.subContent}
-                    dangerouslySetInnerHTML={{
-                      __html: `${props[0]?.SubDescription1}`,
-                    }}
-                  ></p>
-                </div>
-              </Tab>
-              <Tab>
-                <div className={styles.discoverHead}>
-                  <h5
-                    className={`${styles.subHeading}`}
-                    dangerouslySetInnerHTML={{
-                      __html: `${props[0]?.SubTitle2}`,
-                    }}
-                  ></h5>
-                  <p
-                    className={styles.subContent}
-                    dangerouslySetInnerHTML={{
-                      __html: `${props[0]?.SubDescription2}`,
-                    }}
-                  ></p>
-                </div>
-              </Tab>
-              <Tab>
-                <div className={styles.discoverHead}>
-                  <h5
-                    className={`${styles.subHeading}`}
-                    dangerouslySetInnerHTML={{
-                      __html: `${props[0]?.SubTitle3}`,
-                    }}
-                  ></h5>
-                  <p
-                    className={styles.subContent}
-                    dangerouslySetInnerHTML={{
-                      __html: `${props[0]?.SubDescription3}`,
-                    }}
-                  ></p>
-                </div>
-              </Tab>
-              <Tab>
-                <div className={styles.discoverHead}>
-                  <h5
-                    className={`${styles.subHeading}`}
-                    dangerouslySetInnerHTML={{
-                      __html: `${props[0]?.SubTitle4}`,
-                    }}
-                  ></h5>
-                  <p
-                    className={styles.subContent}
-                    dangerouslySetInnerHTML={{
-                      __html: `${props[0]?.SubDescription4}`,
-                    }}
-                  ></p>
-                </div>
-              </Tab>
+              {props?.techStack?.map((data, index) => (
+                <Tab>
+                  <div className={styles.discoverHead}>
+                    <h5 className={`${styles.subHeading}`}>{data.Title}</h5>
+                    <p className={styles.subContent}>{data.Description}</p>
+                  </div>
+                </Tab>
+              ))}
             </Tab.List>
 
             <Tab.Panels className={styles.platformsButtons}>
+            {props?.techStack?.map((item, index) => (
               <Tab.Panel>
-                {technologyData.map((item, index) => (
+               
                   <div key={index} className={styles.dataSection}>
-                    <h6 className={styles.subTitle}>{item.title}</h6>
-
+                    <h6 className={styles.subTitle}>{item.TechDetail[0]?.Heading}</h6>
+                   
                     {/* Sub Section */}
                     <div className={styles.buttonSection}>
-                      {props[0].techplatform.map((subItems, index) => (
+                      {item?.TechDetail?.map((subItems, index) => (
                         <div key={index} className={styles.platformsBtn}>
                           <div className="d-flex align-items-center">
                             <div className={styles.iconImg}>
                               <ImageCustom
                                 src={
-                                  subItems?.Image?.data?.attributes?.url
-                                    ? `${base_Url}${subItems?.Image?.data?.attributes?.url}`
+                                  subItems?.Images?.data?.attributes?.url
+                                    ? `${base_Url}${subItems?.Images?.data?.attributes?.url}`
                                     : `${base_Url}/`
                                 }
                                 width={28}
@@ -199,89 +87,44 @@ const Discover = ({ props }) => {
                       ))}
                     </div>
                   </div>
-                ))}
-              </Tab.Panel>
-              <Tab.Panel>
-                {technologyData.map((item, index) => (
-                  <div key={index} className={styles.dataSection}>
-                    <h6 className={styles.subTitle}>{item.title}</h6>
 
-                    {/* Sub Section */}
+                 
+                  <div key={index} className={styles.dataSection}>
+                    <h6 className={styles.subTitle}>{item.multipletech2[0]?.Heading}</h6>
+                   
+                  
                     <div className={styles.buttonSection}>
-                      {item.technologyList.map((subItems, index) => (
+                      {item?.multipletech2?.map((subItems, index) => (
                         <div key={index} className={styles.platformsBtn}>
                           <div className="d-flex align-items-center">
                             <div className={styles.iconImg}>
                               <ImageCustom
-                                src={subItems.icon}
+                                src={
+                                  subItems?.Images?.data?.attributes?.url
+                                    ? `${base_Url}${subItems?.Images?.data?.attributes?.url}`
+                                    : `${base_Url}/`
+                                }
                                 width={24}
                                 height={22}
                                 alt="image"
                               />
                             </div>
-                            <p>{subItems.title} </p>
+                            <p>{subItems.Title} </p>
                           </div>
                           <Icons.ArrowUpRight />
                         </div>
                       ))}
                     </div>
                   </div>
-                ))}
+            
+              
               </Tab.Panel>
-              <Tab.Panel>
-                {technologyData.map((item, index) => (
-                  <div key={index} className={styles.dataSection}>
-                    <h6 className={styles.subTitle}>{item.title}</h6>
 
-                    {/* Sub Section */}
-                    <div className={styles.buttonSection}>
-                      {item.technologyList.map((subItems, index) => (
-                        <div key={index} className={styles.platformsBtn}>
-                          <div className="d-flex align-items-center">
-                            <div className={styles.iconImg}>
-                              <ImageCustom
-                                src={subItems.icon}
-                                width={24}
-                                height={22}
-                                alt="image"
-                              />
-                            </div>
-                            <p>{subItems.title} </p>
-                          </div>
-                          <Icons.ArrowUpRight />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </Tab.Panel>
-              <Tab.Panel>
-                {technologyData.map((item, index) => (
-                  <div key={index} className={styles.dataSection}>
-                    <h6 className={styles.subTitle}>{item.title}</h6>
+              ))}
 
-                    {/* Sub Section */}
-                    <div className={styles.buttonSection}>
-                      {item.technologyList.map((subItems, index) => (
-                        <div key={index} className={styles.platformsBtn}>
-                          <div className="d-flex align-items-center">
-                            <div className={styles.iconImg}>
-                              <ImageCustom
-                                src={subItems.icon}
-                                width={24}
-                                height={22}
-                                alt="image"
-                              />
-                            </div>
-                            <p>{subItems.title} </p>
-                          </div>
-                          <Icons.ArrowUpRight />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </Tab.Panel>
+             
+             
+              
             </Tab.Panels>
           </Tab.Group>
         </div>
