@@ -21,6 +21,7 @@ import CircleLoader from "@/components/ui/circleLoader";
 
 const LetsWork = ({ contact }) => {
   const { theme, setTheme } = useContext(MyContext);
+  const [inprogress, setinprogress] = useState(false);
 
   const formInitialSchema = {
     fullName: "",
@@ -44,7 +45,11 @@ const LetsWork = ({ contact }) => {
     validationSchema: commonValidationSchema,
     onSubmit: (values, action) => {
       console.log(values);
+      setinprogress(true)
       triggerMail({ content: JSON.stringify(values) });
+      setTimeout(() => {
+        setinprogress(false)
+      }, 4000);
     },
   });
 
@@ -188,13 +193,13 @@ const LetsWork = ({ contact }) => {
                     <div className={`${styles.buttonGrid}`}>
                       <Button
                         variant={theme ? "blueBtnDark" : "blueBtn"}
-                        size="lg"
-                        disabled={isVerified ? false : true}
+                        size="lg"i
+                        disabled={(isVerified? false : true)?true:(inprogress?true:false)}
                         type="submit"
                       >
                         {contact?.Btn}
-                        <Icons.ArrowRight size={18} />
-                        <CircleLoader repeatCount={2} />
+                        {inprogress?<CircleLoader repeatCount={1} />:<Icons.ArrowRight size={18} />}
+                        
                       </Button>
                     </div>
                   </div>

@@ -22,6 +22,7 @@ const ProjectForm = () => {
   const { theme } = useContext(MyContext);
   const recaptchaRef = useRef(null)
   const [isVerified, setIsverified] = useState(false)
+  const [inprogress, setinprogress] = useState(false);
   const formInitialSchema = {
     firstName: "",
     lastName: "",
@@ -46,7 +47,11 @@ const ProjectForm = () => {
     validationSchema: projectValidationSchema,
     onSubmit: (values, action) => {
       console.log(values);
-      triggerMail({ content: JSON.stringify(values) });
+      setinprogress(true)
+        triggerMail({ content: JSON.stringify(values) });
+        setTimeout(() => {
+          setinprogress(false)
+        }, 4000);
     },
   });
 
@@ -201,8 +206,9 @@ const ProjectForm = () => {
               <span className={styles.policyHighlight}>Privacy Policy</span>
             </div>
             <div className={`${styles.buttonGrid}`}>
-            <Button  variant={theme ? "blueBtnDark" : "blueBtn"} size="lg" disabled={isVerified?false:true} type="submit">
-                Send a Message <Icons.ArrowRight size={18} />
+            <Button  variant={theme ? "blueBtnDark" : "blueBtn"} size="lg" disabled={(isVerified? false : true)?true:(inprogress?true:false)} type="submit">
+                Send a Message 
+                {inprogress?<CircleLoader repeatCount={1} />:<Icons.ArrowRight size={18} />}
                   </Button>
             </div>
           </div>
