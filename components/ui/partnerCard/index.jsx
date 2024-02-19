@@ -33,7 +33,7 @@ const PartnerCard = (props) => {
         {props.arrowUp && <Icons.ArrowUpRight />}
       </div>
       <h6 className={styles.cardTitle}>{props.cardTitle} </h6>
-      <p className={styles.cardContent}> {props.cardContent} </p>
+      <p className={styles.cardContent}>{props.cardContent} </p>
     </button>
   );
 };

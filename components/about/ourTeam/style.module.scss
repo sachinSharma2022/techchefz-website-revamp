@@ -121,7 +121,7 @@
   .teamCards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    gap: 4.5rem;
     margin-top: 3rem;
 
     @include mobile-tablet-p {
@@ -217,7 +217,7 @@
   .coreTeam {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2.5rem;
+    gap: 1.25rem 2.5rem;
     margin-top: 5rem;
     position: relative;
     z-index: 1;
