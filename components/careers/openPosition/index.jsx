@@ -14,6 +14,7 @@ import SmoothDropdown from "@/components/ui/smoothDropdownButton";
 
 const OpenPosition = ({props}) => {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
+  const [items, setItems] = useState(props);
   const { theme, setTheme } = useContext(MyContext);
   const jobCatogery=["Backend","Frontend","CMS "]
  console.log(props,"")
@@ -34,9 +35,10 @@ const OpenPosition = ({props}) => {
   }
  
   const [active, setActive] = useState(false);
+  
   const filterItem = (categItem) => {
     const updateItems = props.filter((curElem) => {
-      return curElem.category === categItem;
+      return curElem?.attributes?.DeveloperApply[0]?.Tag === categItem;
     });
 
     setItems(updateItems);
@@ -74,8 +76,8 @@ const OpenPosition = ({props}) => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.openPositionHeader}>
-          <h4 className={cn(styles.openPositionHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `Not integrated`}}>
-           
+          <h4 className={cn(styles.openPositionHeading, "gradient-text")}>
+          Open Position<sup>{props.length}</sup>
           </h4>
           <SearchInput />
         </div>
@@ -84,7 +86,7 @@ const OpenPosition = ({props}) => {
           {jobCatogery?.map((buttonItem) => (
             <button
               className={styles.badgeButton}
-              onClick={() => filterItem(buttonItem.Heading)}
+              onClick={() => filterItem(buttonItem)}
               key={buttonItem}
             >
               {buttonItem}
@@ -92,22 +94,23 @@ const OpenPosition = ({props}) => {
           ))}
         </div>
 
-        {jobCatogery.map((catogery)=>(
-
-<div  className={styles.openPositionContent} >
+        {jobCatogery.map((catogery)=>{
+          const i=items.filter((job)=>job.attributes?.DeveloperApply[0]?.Tag===catogery)
+           return( <>
+       {i.length? 
+       <div  className={styles.openPositionContent} >
 <div className={styles.openPositionTitle}>
   <h4 className={styles.title}>
-    {catogery} <sup>2</sup>
+    {catogery} <sup>{i.length}</sup>
   </h4>
 </div>
 <div className={styles.openPositionAccordion}>
-         {  props.filter((job)=>job.attributes?.DeveloperApply[0]?.Tag===catogery).map((item, index) => (
+         {  items.filter((job)=>job.attributes?.DeveloperApply[0]?.Tag===catogery).map((item, index) => (
           
             
               <Disclosure key={index}>
                 {(panel) => {
                   const { open, close } = panel;
-                  console.log(item,catogery,"item")
                   return (
                     <div
                       className={`${styles.accordionBody} ${
@@ -204,9 +207,11 @@ const OpenPosition = ({props}) => {
        
       ))}
       </div>
-        </div>
-
-        ))
+        </div>:<></>
+}
+       </>)
+      
+})
         }
       </div>
     </section>

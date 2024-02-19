@@ -10,7 +10,7 @@ const CareerDetail = async ({params}) => {
   const data = await getDataDynamic(api_Career_detail_Page)
   let index = 0;
   for (const i in data) {
-    if (data[i].id == params.caseStudy) {
+    if (data[i].id == params.careersDetail) {
       index = i;
     }
   }
