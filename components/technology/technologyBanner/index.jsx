@@ -20,8 +20,7 @@ const TechnologyBanner = ({ props }) => {
         <h1
           className={cn(styles.title, "gradient-text")}
           dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}` }}
-        >
-        </h1>
+        ></h1>
         <div className={styles.contentSec}>
           <p
             className={styles.leadText}
