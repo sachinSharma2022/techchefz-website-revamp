@@ -16,7 +16,6 @@ const Discover = ({ props }) => {
   console.log("tt", props);
   const { theme, setTheme } = useContext(MyContext);
 
-  
   return (
     <section
       className={`${styles.discoverSection} ${
@@ -47,7 +46,7 @@ const Discover = ({ props }) => {
           <Tab.Group vertical defaultIndex={0}>
             <Tab.List className={styles.discoverLeft}>
               {props?.techStack?.map((data, index) => (
-                <Tab>
+                <Tab key={index}>
                   <div className={styles.discoverHead}>
                     <h5 className={`${styles.subHeading}`}>{data.Title}</h5>
                     <p className={styles.subContent}>{data.Description}</p>
@@ -57,16 +56,21 @@ const Discover = ({ props }) => {
             </Tab.List>
 
             <Tab.Panels className={styles.platformsButtons}>
-            {props?.techStack?.map((item, index) => (
-              <Tab.Panel>
-               
-                  <div key={index} className={styles.dataSection}>
-                    <h6 className={styles.subTitle}>{item.TechDetail[0]?.Heading}</h6>
-                   
+              {props?.techStack?.map((item, index) => (
+                <Tab.Panel key={index}>
+                  <div className={styles.dataSection}>
+                    <h6 className={styles.subTitle}>
+                      {item.TechDetail[0]?.Heading}
+                    </h6>
+
                     {/* Sub Section */}
                     <div className={styles.buttonSection}>
                       {item?.TechDetail?.map((subItems, index) => (
-                        <div key={index} className={styles.platformsBtn}>
+                        <Link
+                          href="/"
+                          key={index}
+                          className={styles.platformsBtn}
+                        >
                           <div className="d-flex align-items-center">
                             <div className={styles.iconImg}>
                               <ImageCustom
@@ -83,19 +87,22 @@ const Discover = ({ props }) => {
                             <p>{subItems.Title} </p>
                           </div>
                           <Icons.ArrowUpRight />
-                        </div>
+                        </Link>
                       ))}
                     </div>
                   </div>
 
-                 
-                  <div key={index} className={styles.dataSection}>
-                    <h6 className={styles.subTitle}>{item.multipletech2[0]?.Heading}</h6>
-                   
-                  
+                  <div className={styles.dataSection}>
+                    <h6 className={styles.subTitle}>
+                      {item.multipletech2[0]?.Heading}
+                    </h6>
                     <div className={styles.buttonSection}>
                       {item?.multipletech2?.map((subItems, index) => (
-                        <div key={index} className={styles.platformsBtn}>
+                        <Link
+                          href="/"
+                          key={index}
+                          className={styles.platformsBtn}
+                        >
                           <div className="d-flex align-items-center">
                             <div className={styles.iconImg}>
                               <ImageCustom
@@ -112,19 +119,12 @@ const Discover = ({ props }) => {
                             <p>{subItems.Title} </p>
                           </div>
                           <Icons.ArrowUpRight />
-                        </div>
+                        </Link>
                       ))}
                     </div>
                   </div>
-            
-              
-              </Tab.Panel>
-
+                </Tab.Panel>
               ))}
-
-             
-             
-              
             </Tab.Panels>
           </Tab.Group>
         </div>
