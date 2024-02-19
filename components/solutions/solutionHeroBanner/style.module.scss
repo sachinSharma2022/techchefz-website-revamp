@@ -11,17 +11,18 @@
   }
 
   .contentSection {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 60% auto;
+    gap: 5rem;
     padding-inline: spacing(p-120);
     padding-block: 11.25rem 5rem;
-    gap: 8.938rem;
 
     @include desktop-hd {
       padding-inline: 0;
     }
 
     @include mobile-tablet-p {
+      display: flex;
       flex-direction: column;
       padding: 2rem 1.25rem;
       gap: 1.5rem;
@@ -70,7 +71,6 @@
   .leadText {
     font-size: text(lg);
     font-weight: 400;
-    max-width: 23.375rem;
     color: rgba(color(text-primary), 0.8);
     margin-bottom: 0;
 
