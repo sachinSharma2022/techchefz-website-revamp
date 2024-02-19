@@ -10,13 +10,14 @@
   }
 
   .flexContainer {
-    display: flex;
-    gap: 8.938rem;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 60% auto;
+    gap: 5rem;
 
     @include mobile-tablet-p {
+      display: flex;
       flex-direction: column;
-      gap: 0;
+      gap: 1.5rem;
     }
   }
 
@@ -33,7 +34,6 @@
     @include mobile-tablet-p {
       font-size: 2.75rem;
       line-height: 3.125rem;
-      margin-bottom: text(xl);
       word-break: break-word;
 
       br {
