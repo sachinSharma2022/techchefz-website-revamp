@@ -8,8 +8,9 @@ import { MyContext } from "@/context/theme";
 import SmoothDropdown from "@/components/ui/smoothDropdownButton";
 import { cn } from "@/lib/utils";
 
-const CareerPositionOverview = () => {
+const CareerPositionOverview = ({props}) => {
   const { theme, setTheme } = useContext(MyContext);
+  console.log(props,"pop")
 
   const options = [
     {
@@ -32,25 +33,19 @@ const CareerPositionOverview = () => {
     <div className={theme ? styles.jobPostDetail : styles.lightMode}>
       <div className={cn("primary-container", styles.flexContainer)}>
         <div className={styles.jobInfo}>
-          <h2>Mern Developer</h2>
+          <h2>{props[0].Title}</h2>
           <div className={styles.jobDetails}>
-            <div className={styles.detail}>
-              <Icons.TimerIcon size={24} />
-              <span>4-6 Years</span>
-            </div>
-            <div className={styles.detail}>
-              <Icons.LocationIcon size={24} />
-              <span>Work from Home</span>
-            </div>
-            <div className={styles.detail}>
-              <Icons.Specialization size={24} />
-              <span>Backend</span>
-            </div>
+            {props[0].Developerinner.map((data,index)=>{
+                   return( <div className={styles.detail}>
+                    <Icons.TimerIcon size={24} />
+                    <span>{data.Title}</span>
+                  </div>)
+            })}
           </div>
         </div>
         <div className={styles.applyButtons}>
           <Button variant={theme ? "blueBtnDark" : "blueBtn"} size="md">
-            Apply
+            {props[0].Button}
           </Button>
           <SmoothDropdown
             options={options}
