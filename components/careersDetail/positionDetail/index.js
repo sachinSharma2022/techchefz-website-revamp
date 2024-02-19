@@ -57,18 +57,15 @@ const PositionDescription = ({props}) => {
        
           <div className={styles.section}>
             <h2>{props[1]?.Title}</h2>
-            <ul>
-              {props[1]?.FullDescription?.split(",").map((point, idx) => (
-                <li key={idx}>{point}</li>
-              ))}
+            <ul dangerouslySetInnerHTML={{ __html: `${props[1]?.FullDescription}`}}>
             </ul>
           </div>
           <div className={styles.section}>
             <h2>{props[2]?.Title}</h2>
-            <ul>
-              {props[1]?.FullDescription?.split(",").map((point, idx) => (
+            <ul dangerouslySetInnerHTML={{ __html: `${props[2]?.FullDescription}`}}>
+              {/* {props[1]?.FullDescription?.split(",").map((point, idx) => (
                 <li key={idx}>{point}</li>
-              ))}
+              ))} */}
             </ul>
           </div>
 
