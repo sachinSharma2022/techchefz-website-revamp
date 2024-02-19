@@ -35,9 +35,9 @@ const FounderDesk = ({ props }) => {
             <div className={styles.teamCardBg}>
               <div className={styles.cardHead}>
                 <div>
-                  <h6
+                  <h4
                     dangerouslySetInnerHTML={{ __html: `${props?.name}` }}
-                  ></h6>
+                  ></h4>
                   <p
                     dangerouslySetInnerHTML={{
                       __html: `${props?.Designation}`,
@@ -52,18 +52,17 @@ const FounderDesk = ({ props }) => {
               >
                 <Icons.Linkedin width={34} height={34} />
               </Link>
-              <div className={styles.teamImg}>
-                <ImageCustom
-                  src={
-                    props?.ProfileImage?.data?.attributes?.url
-                      ? `${base_Uri}${props?.ProfileImage?.data?.attributes?.url}`
-                      : `${base_Uri}/`
-                  }
-                  width={240}
-                  height={320}
-                  alt="team-member"
-                />
-              </div>
+              <ImageCustom
+                src={
+                  props?.ProfileImage?.data?.attributes?.url
+                    ? `${base_Uri}${props?.ProfileImage?.data?.attributes?.url}`
+                    : `${base_Uri}/`
+                }
+                width={1000}
+                height={1000}
+                className={styles.teamImg}
+                alt="team-member"
+              />
             </div>
           </div>
 
