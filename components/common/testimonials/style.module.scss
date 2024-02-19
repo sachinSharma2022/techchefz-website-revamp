@@ -1,7 +1,7 @@
 @import "~/styles/partials/config";
 
 .testimonialsStyle {
-  padding: 8.75rem 0  0 7.5rem;
+  padding: 8.75rem 0 0 7.5rem;
   background-color: color(primary-white);
   overflow: hidden;
   position: relative;
@@ -67,15 +67,16 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    @include transition(0.5s);
 
-    @include mobile-tablet-p{
+    @include mobile-tablet-p {
       padding: text(lg);
-      border-radius: .75rem;
-      border: 0.14rem solid rgba(color(text-primary), 0.12)
     }
 
     .commaImg {
-      margin-bottom: text(lg);
+      margin-bottom: 1.25rem;
     }
     .customerText {
       font-size: text(xl);
@@ -83,6 +84,7 @@
       line-height: 2.25rem;
       margin-bottom: 2.5rem;
       @include truncate(9);
+      color: rgba(color(text-primary), 0.9);
 
       @include mobile-tablet-p {
         font-size: text(normal);
@@ -164,12 +166,11 @@
       }
     }
 
-
     .testimonialCardBox {
       background-color: color(text-primary);
 
-      @include mobile-tablet-p{
-        border-color: rgba(color(primary-white), 0.12);
+      .customerText {
+        color: rgba(color(primary-white), 0.9);
       }
     }
 
