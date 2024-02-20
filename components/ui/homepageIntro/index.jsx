@@ -13,6 +13,8 @@ const HomepageIntro = (props) => {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
+    const vh = (coef) => window.innerHeight * (coef/100);
+const vw = (coef) => window.innerWidth * (coef/100);
     videoRef.current.play();
     let ctx = gsap.context(() => {
       const tl = gsap.timeline({
@@ -29,12 +31,13 @@ const HomepageIntro = (props) => {
       ScrollTrigger.create({
         trigger: `.${styles.videocont}`,
         pin: true,
-        markers: false,
-        start: "top 12%",
+        markers: true,
+        start: "top "+vw(4),
         end: "+=" + (252 + window.innerHeight),
       });
       tl.to(`.${styles.video}`, {
         width: "100%",
+        height:"100%",
         duration: 4,
         borderRadius: "0%",
       })
