@@ -9,11 +9,13 @@ import { cn } from "@/lib/utils";
 import { Input } from "../inputCustom";
 import styles from "./style.module.scss";
 import { useMediaQuery } from "react-responsive";
+import { useRef } from "react";
 
 const CountryDropdown = (props) => {
   const { theme, setTheme } = useContext(MyContext);
   const [selectedOption, setSelectedOption] = useState(null);
   const isBigScreen = useMediaQuery({ query: "(min-width: 1024px)" });
+  const ref=useRef()
 
   const countries = [
     { value: "+91", label: "+91", image: "/images/flag.jpg" },
@@ -68,6 +70,11 @@ const CountryDropdown = (props) => {
       };
     },
   };
+  console.log(props,"Clearing")
+  if(props.clear){
+    
+    ref.current.clearValue();
+  }
 
   return (
     <div
@@ -84,10 +91,10 @@ const CountryDropdown = (props) => {
       >
         <Select
           onChange={(option)=> {
-            console.log(option,"changes");
-            props.setFieldValue("countyCode", option.value)
+            if(option)props.setFieldValue("countyCode", option.value)
   
           }}
+          ref={ref}
           options={countries}
           styles={controlStyle || styles}
           isSearchable={false}
