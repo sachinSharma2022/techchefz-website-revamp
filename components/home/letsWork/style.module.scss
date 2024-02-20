@@ -5,7 +5,7 @@
 
   @include mobile-tablet-p {
     padding: spacing(section-mob-padding);
-    padding-block: 3.75rem 3.75rem;
+    padding-block: 0 5rem;
   }
 
   .workArea {
@@ -76,11 +76,15 @@
         }
         .captchaImg {
           margin: 2.5rem 0 2.5rem 0;
+          max-width: 100%;
+          position: relative;
 
-          img {
-            border-radius: 0.5rem;
-            box-shadow: 0 0 0.25rem 0 rgba(0, 0, 0, 0.12);
-            cursor: pointer;
+          .reCaptcha div {
+            width: 100% !important;
+          }
+
+          iframe {
+            width: 100%;
           }
         }
 
@@ -91,6 +95,7 @@
 
           @include mobile-tablet-p {
             flex-direction: column;
+            gap: 2rem;
           }
 
           .policyText {
@@ -126,13 +131,14 @@
         display: flex;
         justify-content: flex-end;
         height: 100%;
+        position: relative;
 
         img {
           width: 100%;
-          max-width: 38rem;
           height: 100%;
           object-fit: cover;
           border-radius: 0.75rem;
+          position: absolute;
 
           @include mobile-tablet-p {
             display: none;
@@ -143,7 +149,7 @@
 
     .contactFormArea {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 50% auto;
       gap: 1.5rem;
 
       @include mobile-tablet-p {
