@@ -11,8 +11,6 @@ const InsightOverview = ({props, Insightinner, TechStackData}) => {
  
   const { theme, setTheme } = useContext(MyContext);
 
- 
-  console.log()
   return (
     <section
       className={theme ? styles.insightOverviewContainer : styles.lightMode}
