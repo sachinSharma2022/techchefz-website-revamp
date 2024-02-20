@@ -2,8 +2,6 @@
 
 .banner {
   .bannerContent {
-    display: flex;
-    gap: 8rem;
     padding: 10rem 7.5rem 5rem;
 
     @include desktop-hd {
@@ -11,9 +9,7 @@
     }
 
     @include mobile-tablet-p{
-      flex-direction: column;
       padding: 3rem 1.5rem;
-      gap: 1.5rem;
     }
 
     .bannerTitle {

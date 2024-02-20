@@ -17,7 +17,7 @@ const SolutionHeroBanner = ({ props }) => {
       }`}
     >
       <div className={cn("primary-container")}>
-        <div className={styles.contentSection}>
+        <div className={cn(styles.contentSection, "header-container")}>
           <h1
             className={cn(styles.title, "gradient-text")}
             dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}

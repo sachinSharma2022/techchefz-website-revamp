@@ -12,14 +12,20 @@ const AcceleratorBanner = ({ props }) => {
   return (
     <section className={`${styles.banner} ${theme ? styles.bannerDark : ""}`}>
       <div className={cn("primary-container")}>
-        <div className={styles.bannerContent}>
-          <h1 className={cn(styles.bannerTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}>
-          </h1>
+        <div className={cn(styles.bannerContent, "header-container")}>
+          <h1
+            className={cn(styles.bannerTitle, "gradient-text")}
+            dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+          ></h1>
           <div className={styles.bannerRight}>
-            <p dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
-             
-            </p>
-            <Button variant={theme ? "blueBtnDark" : "blueBtn"} className={styles.headerBtn} size="md">
+            <p
+              dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
+            ></p>
+            <Button
+              variant={theme ? "blueBtnDark" : "blueBtn"}
+              className={styles.headerBtn}
+              size="md"
+            >
               {props.Btn} <Icons.ArrowRight size={20} className="ms-2" />
             </Button>
           </div>

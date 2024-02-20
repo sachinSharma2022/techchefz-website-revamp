@@ -8,18 +8,7 @@
     padding: spacing(section-mob-padding);
     padding-block: 3.75rem 3.75rem;
   }
-
-  .flexContainer {
-    display: flex;
-    justify-content: space-between;
-    gap: 8.938rem;
-
-    @include mobile-tablet-p {
-      flex-direction: column;
-      gap: 0;
-    }
-  }
-
+  
   .title {
     font-size: 4rem;
     font-weight: 500;

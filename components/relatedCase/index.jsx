@@ -61,7 +61,6 @@ const RelatedCase = ({ props }) => {
     ],
   };
 
- 
   return (
     <section
       className={cn(
@@ -113,7 +112,11 @@ const RelatedCase = ({ props }) => {
               <div key={index}>
                 <CaptionCard
                   className={styles.cardStyle}
-                  imgSrc={data?.Image?.data?.attributes?.url?base_Uri+data?.Image?.data?.attributes?.url:`${base_Uri}/`}
+                  imgSrc={
+                    data?.Image?.data?.attributes?.url
+                      ? base_Uri + data?.Image?.data?.attributes?.url
+                      : `${base_Uri}/`
+                  }
                   title={data.Title}
                   textStyle={styles.textStyle}
                 />
