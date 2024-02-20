@@ -82,6 +82,8 @@
     width: 100%;
     border-left: 0.14rem solid rgba(color(text-primary), 0.12);
     padding-left: 2.5rem;
+    height: 32rem;
+    overflow-y: scroll;
 
     @include mobile-tablet-p {
       padding-left: 0;
