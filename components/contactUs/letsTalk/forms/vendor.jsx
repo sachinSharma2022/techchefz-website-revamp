@@ -140,6 +140,7 @@ const VendorForm = () => {
                     onBlur={handleBlur}
                     value={values.phone}
                     errorStatus={touched.phone && errors.phone}
+                    clear={inprogress}
                   />
                   {touched.phone && errors.phone && (
                     <Error>{errors.phone}</Error>
@@ -175,6 +176,7 @@ const VendorForm = () => {
                     }
                     className="custom-dropdown"
                     placeholder="Service Offered*"
+                    clear={inprogress}
                   />
                   {touched.serviceOffered && errors.serviceOffered && (
                     <Error>{errors.serviceOffered}</Error>

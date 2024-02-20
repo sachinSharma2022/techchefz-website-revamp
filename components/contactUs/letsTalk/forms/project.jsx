@@ -91,7 +91,6 @@ const ProjectForm = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.firstName}
-                  onKeyDown="return /[a-z]/i.test(event.key)"
                   
                 />
                 {touched.firstName && errors.firstName && (
@@ -136,7 +135,7 @@ const ProjectForm = () => {
                   setFieldValue={setFieldValue}
                   onBlur={handleBlur}
                   value={values.phone}
-                  value_code={values.countyCode}
+                  clear={inprogress}
                 />
                 {touched.phone && errors.phone && <Error>{errors.phone}</Error>}
               </div>
@@ -169,6 +168,7 @@ const ProjectForm = () => {
                   }
                   placeholder="Country*"
                   className="custom-dropdown"
+                  clear={inprogress}
                 />
                 {touched.countrySelection && errors.countrySelection && (
                   <Error>{errors.countrySelection}</Error>

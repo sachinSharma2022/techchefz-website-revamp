@@ -140,6 +140,7 @@ const ServicesForm = () => {
                     onBlur={handleBlur}
                     value={values.phone}
                     errorStatus={touched.phone && errors.phone}
+                    clear={inprogress}
                   />
                   {touched.phone && errors.phone && (
                     <Error>{errors.phone}</Error>
@@ -175,6 +176,7 @@ const ServicesForm = () => {
                     }
                     className="custom-dropdown"
                     placeholder="Service Required*"
+                    clear={inprogress}
                   />
                   {touched.serviceRequired && errors.serviceRequired && (
                     <Error>{errors.serviceRequired}</Error>

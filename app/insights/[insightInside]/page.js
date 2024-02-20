@@ -17,8 +17,8 @@ const InsightInside = async({params}) => {
   return (
     <>
       <InsightOverview props={data[index].attributes.InsightOverview} Insightinner={data[index].attributes.Insightinner} TechStackData={data[index].attributes.TechStackData}/>
-      <InsightDetail props={data[index].attributes.insightDetailData}/>
-      {/* <RelatedCase subTitle="INSIGHTS" title="Explore More of Our Insights" /> */}
+      <InsightDetail props={data[index].attributes.insightDetailData} BlockTitle={data[index].attributes.BlockTitle}/>
+      <RelatedCase subTitle="INSIGHTS" title="Explore More of Our Insights" props={data[index].attributes.CaseStudy} />
     </>
   );
 };
