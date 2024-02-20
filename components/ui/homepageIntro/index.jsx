@@ -27,7 +27,7 @@ const vw = (coef) => window.innerWidth * (coef/100);
             scrub: 1,
             start: "top 20%",
             end: "+=" + (272 + window.innerHeight),
-            markers: true,
+            markers: false,
             invalidateOnRefresh: true,
             anticipatePin: 1,
           },
@@ -35,7 +35,7 @@ const vw = (coef) => window.innerWidth * (coef/100);
         ScrollTrigger.create({
           trigger: `.${styles.videoCont}`,
           pin: true,
-          markers: true,
+          markers: false,
           start: "top "+vh(10),
           end: "+=" + (252 + window.innerHeight),
         });
