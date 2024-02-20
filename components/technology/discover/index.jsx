@@ -34,12 +34,16 @@ const Discover = ({ props }) => {
               dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
             ></h3>
           </div>
-
-          <Link href="/technology/cms">
-            <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
-              {props.Btn} <Icons.ArrowRight size={18} />
-            </Button>
-          </Link>
+          <div className={styles.buttonSec}>
+            <Link href="/technology/cms">
+              <Button
+                variant={theme ? "lightBlueOutline" : "outline"}
+                size="md"
+              >
+                {props.Btn} <Icons.ArrowRight size={18} />
+              </Button>
+            </Link>
+          </div>
         </div>
 
         <div className={styles.discoverTabSection}>

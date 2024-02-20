@@ -39,22 +39,20 @@ const OurTeam = ({ props }) => {
               <Tab.List className={styles.tabWrapper}>
                 <Tab>
                   {({ selected }) => (
-                    <span
-                      className={selected ? styles.btnActive : styles.btnIn}
-                    >
+                    <div className={selected ? styles.btnActive : styles.btnIn}>
                       {props[0]?.BoardOfDirector}
-                    </span>
+                    </div>
                   )}
                 </Tab>
                 <Tab>
                   {({ selected }) => (
-                    <span
+                    <div
                       className={
                         selected ? styles.btnActive : styles.btnInactive
                       }
                     >
                       {props[0]?.TeamMembers}
-                    </span>
+                    </div>
                   )}
                 </Tab>
               </Tab.List>
@@ -127,6 +125,8 @@ const OurTeam = ({ props }) => {
             </Tab.Panels>
           </Tab.Group>
         </div>
+
+        {/* Info Modal */}
         <LeftDrawer
           key={index}
           title="About"

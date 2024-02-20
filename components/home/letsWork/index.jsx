@@ -45,11 +45,11 @@ const LetsWork = ({ contact }) => {
     validationSchema: commonValidationSchema,
     onSubmit: (values, action) => {
       console.log(values);
-      setinprogress(true)
+      setinprogress(true);
       triggerMail({ content: JSON.stringify(values) });
-      action.resetForm()
+      action.resetForm();
       setTimeout(() => {
-        setinprogress(false)
+        setinprogress(false);
       }, 4000);
     },
   });
@@ -173,16 +173,11 @@ const LetsWork = ({ contact }) => {
                     </div>
                   </div>
                   <div className={styles.captchaImg}>
-                    {/* <ImageCustom
-                  src="/images/captcha.png"
-                  width={219}
-                  height={49}
-                  alt="captcha"
-                /> */}
                     <ReCAPTCHA
                       sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                       ref={recaptchaRef}
                       onChange={handleCaptchaSubmission}
+                      className={styles.reCaptcha}
                     />
                   </div>
                   <div className={styles.policyArea}>
@@ -195,13 +190,23 @@ const LetsWork = ({ contact }) => {
                     <div className={`${styles.buttonGrid}`}>
                       <Button
                         variant={theme ? "blueBtnDark" : "blueBtn"}
-                        size="lg"i
-                        disabled={(isVerified? false : true)?true:(inprogress?true:false)}
+                        size="md"
+                        i
+                        disabled={
+                          (isVerified ? false : true)
+                            ? true
+                            : inprogress
+                            ? true
+                            : false
+                        }
                         type="submit"
                       >
                         {contact?.Btn}
-                        {inprogress?<CircleLoader repeatCount={1} />:<Icons.ArrowRight size={18} />}
-                        
+                        {inprogress ? (
+                          <CircleLoader repeatCount={1} />
+                        ) : (
+                          <Icons.ArrowRight size={18} />
+                        )}
                       </Button>
                     </div>
                   </div>
@@ -209,18 +214,17 @@ const LetsWork = ({ contact }) => {
               </Form>
             </Formik>
 
-            <div className={styles.contactImg}>
-              <ImageCustom
-                src={
-                  contact?.Image?.data?.attributes?.url
-                    ? `${base_Uri}${contact?.Image?.data?.attributes?.url}`
-                    : `${base_Uri}/`
-                }
-                width={480}
-                height={616}
-                alt="contactImg"
-              />
-            </div>
+            <ImageCustom
+              src={
+                contact?.Image?.data?.attributes?.url
+                  ? `${base_Uri}${contact?.Image?.data?.attributes?.url}`
+                  : `${base_Uri}/`
+              }
+              width={480}
+              height={616}
+              alt="contactImg"
+              className={styles.contactImg}
+            />
           </div>
         </div>
       </div>
