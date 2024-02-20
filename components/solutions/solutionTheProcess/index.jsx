@@ -15,7 +15,7 @@ const SolutionTheProcess = ({ props }) => {
   const dashArray = radius * Math.PI * 2;
   const [dashOffset, setdashOffset] = useState(dashArray);
   const [prevdashOffset, prevsetdashOffset] = useState(dashArray);
- 
+  
   gsap.registerPlugin(ScrollTrigger);
   useEffect(() => {
     const changeDot = (i) => {
@@ -76,12 +76,12 @@ const SolutionTheProcess = ({ props }) => {
         ".circleFil",
         {
           strokeDashoffset: prevdashOffset,
-          duration: 3,
+          // duration: 3,
           ease: "power1.inOut",
         },
         {
           strokeDashoffset: dashOffset,
-          transition: "stroke-dashoffset 1.6s linear 0s",
+          // transition: "stroke-dashoffset 1.6s linear 0s",
           duration: 3,
           ease: "power1.inOut",
         }
@@ -104,7 +104,7 @@ const SolutionTheProcess = ({ props }) => {
               dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
             ></h6>
             <h3
-              className={styles.subHeading}
+              className={cn(styles.subHeading,"gradient-text")}
               dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
             ></h3>
           </div>
@@ -112,7 +112,7 @@ const SolutionTheProcess = ({ props }) => {
           <div className={styles.ourNumbersImg}>
             <div className={styles.circularStepperContainer}>
               <svg
-                width="470"
+                width="510"
                 height="510"
                 viewBox="0 0 470 510"
                 fill="none"
@@ -156,7 +156,7 @@ const SolutionTheProcess = ({ props }) => {
                 <g>
                   <circle
                     className="dot"
-                    id="6"
+                    id="4"
                     cx="235"
                     cy="20"
                     r="20"
@@ -178,26 +178,26 @@ const SolutionTheProcess = ({ props }) => {
                 <g>
                   <circle
                     className="dot"
-                    id="5"
-                    cx="31"
-                    cy="138"
+                    id="3"
+                    cx="5"
+                    cy="238"
                     r="20"
                     fill="white"
                     stroke-width="2"
                     stroke="#26A0F8"
                   />
                   <text
-                    x="31"
-                    y="138"
+                    x="5"
+                    y="235"
                     text-anchor="middle"
                     fill="white"
                     alignment-baseline="middle"
                     style={{}}
                   >
-                    6
+                    4
                   </text>
                 </g>
-                <g>
+                {/* <g>
                   <circle
                     className="dot"
                     id="4"
@@ -218,11 +218,11 @@ const SolutionTheProcess = ({ props }) => {
                   >
                     5
                   </text>
-                </g>
+                </g> */}
                 <g>
                   <circle
                     className="dot"
-                    id="3"
+                    id="2"
                     cx="235"
                     cy="490"
                     r="20"
@@ -238,10 +238,10 @@ const SolutionTheProcess = ({ props }) => {
                     alignment-baseline="middle"
                     style={{}}
                   >
-                    4
+                    3
                   </text>
                 </g>
-                <g>
+                {/* <g>
                   <circle
                     className="dot"
                     id="2"
@@ -262,21 +262,21 @@ const SolutionTheProcess = ({ props }) => {
                   >
                     3
                   </text>
-                </g>
+                </g> */}
                 <g>
                   <circle
                     className="dot"
                     id="1"
-                    cx="439"
-                    cy="138"
+                    cx="460"
+                    cy="235"
                     r="19"
                     fill="white"
                     stroke-width="2"
                     stroke="#26A0F8"
                   />
                   <text
-                    x="439"
-                    y="138"
+                    x="460"
+                    y="238"
                     text-anchor="middle"
                     fill="white"
                     alignment-baseline="middle"

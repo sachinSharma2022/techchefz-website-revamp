@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { useContext } from "react";
 import styles from "./style.module.scss";
 import { base_Url } from "@/lib/constants";
+import { base_Uri } from "@/lib/constants";
 
 const GridMarqueeGallery = ({props}) => {
   console.log("nnn", props);
@@ -26,8 +27,8 @@ const GridMarqueeGallery = ({props}) => {
                     <div className={cn(styles.galleryImage)}>
                       <ImageCustom
                         src={props[8]?.Image?.data?.attributes?.url
-                          ? `${base_Url}${props[8]?.Image?.data?.attributes?.url}`
-                          : `${base_Url}/`}
+                          ? `${base_Uri}${props[8]?.Image?.data?.attributes?.url}`
+                          : `${base_Uri}/`}
                         width={300}
                         height={300}
                         alt="gallery-img"
@@ -36,8 +37,8 @@ const GridMarqueeGallery = ({props}) => {
                     <div className={cn(styles.galleryImage)}>
                       <ImageCustom
                         src={props[9]?.Image?.data?.attributes?.url
-                          ? `${base_Url}${props[9]?.Image?.data?.attributes?.url}`
-                          : `${base_Url}/`}
+                          ? `${base_Uri}${props[9]?.Image?.data?.attributes?.url}`
+                          : `${base_Uri}/`}
                         width={300}
                         height={300}
                         alt="gallery-img"
@@ -48,8 +49,8 @@ const GridMarqueeGallery = ({props}) => {
                     <div className={cn(styles.galleryImage, styles.gridFull)}>
                       <ImageCustom
                         src={props[0]?.Image?.data?.attributes?.url
-                          ? `${base_Url}${props[0]?.Image?.data?.attributes?.url}`
-                          : `${base_Url}/`}
+                          ? `${base_Uri}${props[0]?.Image?.data?.attributes?.url}`
+                          : `${base_Uri}/`}
                         width={300}
                         height={300}
                         alt="gallery-img"
@@ -60,8 +61,8 @@ const GridMarqueeGallery = ({props}) => {
                     <div className={cn(styles.galleryImage)}>
                       <ImageCustom
                         src={props[1]?.Image?.data?.attributes?.url
-                          ? `${base_Url}${props[1]?.Image?.data?.attributes?.url}`
-                          : `${base_Url}/`}
+                          ? `${base_Uri}${props[1]?.Image?.data?.attributes?.url}`
+                          : `${base_Uri}/`}
                         width={300}
                         height={300}
                         alt="gallery-img"
@@ -70,8 +71,8 @@ const GridMarqueeGallery = ({props}) => {
                     <div className={cn(styles.galleryImage)}>
                       <ImageCustom
                         src={props[2]?.Image?.data?.attributes?.url
-                          ? `${base_Url}${props[2]?.Image?.data?.attributes?.url}`
-                          : `${base_Url}/`}
+                          ? `${base_Uri}${props[2]?.Image?.data?.attributes?.url}`
+                          : `${base_Uri}/`}
                         width={300}
                         height={300}
                         alt="gallery-img"
@@ -82,8 +83,8 @@ const GridMarqueeGallery = ({props}) => {
                     <div className={cn(styles.galleryImage, styles.gridHalf)}>
                       <ImageCustom
                         src={props[3]?.Image?.data?.attributes?.url
-                          ? `${base_Url}${props[3]?.Image?.data?.attributes?.url}`
-                          : `${base_Url}/`}
+                          ? `${base_Uri}${props[3]?.Image?.data?.attributes?.url}`
+                          : `${base_Uri}/`}
                         width={300}
                         height={300}
                         alt="gallery-img"
@@ -94,8 +95,8 @@ const GridMarqueeGallery = ({props}) => {
                         <div className={cn(styles.galleryImage)}>
                           <ImageCustom
                             src={props[4]?.Image?.data?.attributes?.url
-                              ? `${base_Url}${props[4]?.Image?.data?.attributes?.url}`
-                              : `${base_Url}/`}
+                              ? `${base_Uri}${props[4]?.Image?.data?.attributes?.url}`
+                              : `${base_Uri}/`}
                             width={300}
                             height={300}
                             alt="gallery-img"
@@ -106,8 +107,8 @@ const GridMarqueeGallery = ({props}) => {
                         <div className={cn(styles.galleryImage)}>
                           <ImageCustom
                             src={props[5]?.Image?.data?.attributes?.url
-                              ? `${base_Url}${props[5]?.Image?.data?.attributes?.url}`
-                              : `${base_Url}/`}
+                              ? `${base_Uri}${props[5]?.Image?.data?.attributes?.url}`
+                              : `${base_Uri}/`}
                             width={300}
                             height={300}
                             alt="gallery-img"
@@ -120,8 +121,8 @@ const GridMarqueeGallery = ({props}) => {
                     <div className={cn(styles.galleryImage)}>
                       <ImageCustom
                        src={props[6]?.Image?.data?.attributes?.url
-                        ? `${base_Url}${props[6]?.Image?.data?.attributes?.url}`
-                        : `${base_Url}/`}
+                        ? `${base_Uri}${props[6]?.Image?.data?.attributes?.url}`
+                        : `${base_Uri}/`}
                         width={300}
                         height={300}
                         alt="gallery-img"
@@ -130,8 +131,8 @@ const GridMarqueeGallery = ({props}) => {
                     <div className={cn(styles.galleryImage)}>
                       <ImageCustom
                         src={props[7]?.Image?.data?.attributes?.url
-                          ? `${base_Url}${props[7]?.Image?.data?.attributes?.url}`
-                          : `${base_Url}/`}
+                          ? `${base_Uri}${props[7]?.Image?.data?.attributes?.url}`
+                          : `${base_Uri}/`}
                         width={300}
                         height={300}
                         alt="gallery-img"
