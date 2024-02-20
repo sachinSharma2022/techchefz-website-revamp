@@ -12,6 +12,12 @@ import Curve from "@/components/ui/pageTransition";
 import { api_About_Page } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
 
+export const metadata = {
+  title: "About Us",
+  description:
+    "About TechChefz | Humanizing Digital Experiences",
+};
+
 const AboutPage = async () => {
   const data = await getData(api_About_Page);
 
@@ -29,7 +35,7 @@ const AboutPage = async () => {
         <OurResults props={data.Result} />
         <FounderDesk props={data.FounderDesk} />
         <OurTeam props={data.Team} />
-        <OurClients props={data.OurClient}/>
+        <OurClients props={data.OurClient} />
         <LetsWork contact={data.ContactUs} />
       </div>
     </Curve>

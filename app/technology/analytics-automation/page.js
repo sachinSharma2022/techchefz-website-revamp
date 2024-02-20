@@ -9,6 +9,7 @@ import WhyCms from "@/components/technology/cms/whyCms";
 import TechnologyValues from "@/components/technology/technologyValues";
 import { getData } from "@/lib/fetchData";
 import {api_analytics_automations_Page } from "@/lib/constants";
+import SolutionTheProcess from "@/components/solutions/solutionTheProcess";
 
 const Cms = async () => {
   const data = await getData(api_analytics_automations_Page);
@@ -21,10 +22,11 @@ const Cms = async () => {
           <WhyCms props={data.Why} />
           <CmsType props={data.Type} />
           <CmsDifference props={data.Difference} />
-          <TechnologyValues
+          {/* <TechnologyValues
             wrapperStyle="technology-cms-styles"
             props={data.Technology}
-          />
+          /> */}
+           <SolutionTheProcess props={data.OurProcess} />
           <RelatedCase sliderClassName="mb-0" props={data.CaseStudy} />
           <Faq props={data.Faq} />
           <LetsWork contact={data.ContactUs} />

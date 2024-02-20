@@ -6,19 +6,23 @@ import SolutionTechnologies from "@/components/solutions/solutionTechnologies";
 import SolutionTheProcess from "@/components/solutions/solutionTheProcess";
 import { api_Solutions_Page } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
-
 import styles from "./style.module.scss";
 
-const Solutions = async() => {
-  const data = await getData(api_Solutions_Page)
-return (
+export const metadata = {
+  title: "Solutions",
+  description: "Solutions | TechChefz  Digital",
+};
+
+const Solutions = async () => {
+  const data = await getData(api_Solutions_Page);
+  return (
     <div className={styles.solutionsPageStyle}>
       <SolutionHeroBanner props={data.Banner} />
       <SolutionOurValues props={data.ourValues} />
       <SolutionTheProcess props={data.OurProcess} />
       <SolutionTechnologies props={data.Technology} />
       <RelatedCase sliderClassName="mb-0" props={data.CaseStudy} />
-      <Faq props ={data.Faq} />
+      <Faq props={data.Faq} />
     </div>
   );
 };
