@@ -104,7 +104,7 @@ const SolutionTheProcess = ({ props }) => {
               dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
             ></h6>
             <h3
-              className={styles.subHeading}
+              className={cn(styles.subHeading,"gradient-text")}
               dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
             ></h3>
           </div>
