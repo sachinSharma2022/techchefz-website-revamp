@@ -163,6 +163,10 @@
       justify-content: flex-start;
       max-width: 270px;
       width: 100%;
+
+      @include mobile-tablet-p{
+        max-width: inherit;
+      }
     }
 
     button {
