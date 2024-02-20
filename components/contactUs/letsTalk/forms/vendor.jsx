@@ -49,10 +49,11 @@ const VendorForm = () => {
 
   return (
     <Formik
-      onSubmit={(values) => {
+      onSubmit={(values,action) => {
         console.log(values);
         setinprogress(true)
         triggerMail({ content: JSON.stringify(values) });
+        action.resetForm()
         setTimeout(() => {
           setinprogress(false)
         }, 4000);
@@ -89,7 +90,7 @@ const VendorForm = () => {
                     error={Boolean(touched.firstName && errors.firstName)}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    values={values.firstName}
+                    value={values.firstName}
                     errorStatus={touched.firstName && errors.firstName}
                   />
                   {touched.firstName && errors.firstName && (
@@ -106,7 +107,7 @@ const VendorForm = () => {
                     error={Boolean(touched.lastName && errors.lastName)}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    values={values.lastName}
+                    value={values.lastName}
                     errorStatus={touched.lastName && errors.lastName}
                   />
                   {touched.lastName && errors.lastName && (
@@ -123,7 +124,7 @@ const VendorForm = () => {
                     error={Boolean(touched.email && errors.email)}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    values={values.email}
+                    value={values.email}
                     errorStatus={touched.email && errors.email}
                   />
                   {touched.email && errors.email && (
@@ -137,7 +138,7 @@ const VendorForm = () => {
                     onChange={handleChange}
                     setFieldValue={setFieldValue}
                     onBlur={handleBlur}
-                    values={values.phone}
+                    value={values.phone}
                     errorStatus={touched.phone && errors.phone}
                   />
                   {touched.phone && errors.phone && (
@@ -154,7 +155,7 @@ const VendorForm = () => {
                     error={Boolean(touched.companyName && errors.companyName)}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    values={values.companyName}
+                    value={values.companyName}
                     errorStatus={touched.companyName && errors.companyName}
                   />
                   {touched.companyName && errors.companyName && (
@@ -167,7 +168,7 @@ const VendorForm = () => {
                     name="serviceOffered"
                     setFieldValue={setFieldValue}
                     onBlur={handleBlur}
-                    values={values.serviceOffered}
+                    value={values.serviceOffered}
                     options={dropdownData}
                     errorStatus={
                       touched.serviceOffered && errors.serviceOffered
@@ -192,7 +193,7 @@ const VendorForm = () => {
                     )}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    values={values.projectExplanation}
+                    value={values.projectExplanation}
                     errorStatus={
                       touched.projectExplanation && errors.projectExplanation
                     }

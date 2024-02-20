@@ -84,6 +84,7 @@ const CountryDropdown = (props) => {
       >
         <Select
           onChange={(option)=> {
+            console.log(option,"changes");
             props.setFieldValue("countyCode", option.value)
   
           }}
@@ -115,6 +116,7 @@ const CountryDropdown = (props) => {
           name={props.name}
           onChange={props.onChange}
           onBlur={props.onBlur}
+          {...props}
         />
       </div>
     </div>

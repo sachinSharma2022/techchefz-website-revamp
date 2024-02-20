@@ -47,6 +47,7 @@ const LetsWork = ({ contact }) => {
       console.log(values);
       setinprogress(true)
       triggerMail({ content: JSON.stringify(values) });
+      action.resetForm()
       setTimeout(() => {
         setinprogress(false)
       }, 4000);
@@ -94,7 +95,7 @@ const LetsWork = ({ contact }) => {
                         // error={Boolean(touched.fullName && errors.fullName)}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        values={values.fullName}
+                        value={values.fullName}
                         errorStatus={touched.fullName && errors.fullName}
                       />
                       {touched.fullName && errors.fullName && (
@@ -111,7 +112,7 @@ const LetsWork = ({ contact }) => {
                         error={Boolean(touched.email && errors.email)}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        values={values.email}
+                        value={values.email}
                       />
                       {touched.email && errors.email && (
                         <Error>{errors.email}</Error>
@@ -124,7 +125,7 @@ const LetsWork = ({ contact }) => {
                         onChange={handleChange}
                         setFieldValue={setFieldValue}
                         onBlur={handleBlur}
-                        values={values.phone}
+                        value={values.phone}
                       />
                       {touched.phone && errors.phone && (
                         <Error>{errors.phone}</Error>
@@ -142,7 +143,7 @@ const LetsWork = ({ contact }) => {
                         )}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        values={values.companyName}
+                        value={values.companyName}
                       />
                       {touched.companyName && errors.companyName && (
                         <Error>{errors.companyName}</Error>
@@ -162,7 +163,7 @@ const LetsWork = ({ contact }) => {
                         )}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        values={values.projectExplanation}
+                        value={values.projectExplanation}
                       />
                       {touched.projectExplanation &&
                         errors.projectExplanation && (

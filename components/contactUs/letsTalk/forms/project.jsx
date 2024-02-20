@@ -50,6 +50,7 @@ const ProjectForm = () => {
       console.log(values);
       setinprogress(true)
         triggerMail({ content: JSON.stringify(values) });
+        action.resetForm()
         setTimeout(() => {
           setinprogress(false)
         }, 4000);
@@ -89,7 +90,7 @@ const ProjectForm = () => {
                   error={Boolean(touched.firstName && errors.firstName)}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  values={values.firstName}
+                  value={values.firstName}
                   onKeyDown="return /[a-z]/i.test(event.key)"
                   
                 />
@@ -107,7 +108,7 @@ const ProjectForm = () => {
                   error={Boolean(touched.lastName && errors.lastName)}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  values={values.lastName}
+                  value={values.lastName}
                 />
                 {touched.lastName && errors.lastName && (
                   <Error>{errors.lastName}</Error>
@@ -123,7 +124,7 @@ const ProjectForm = () => {
                   error={Boolean(touched.email && errors.email)}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  values={values.email}
+                  value={values.email}
                 />
                 {touched.email && errors.email && <Error>{errors.email}</Error>}
               </div>
@@ -134,7 +135,8 @@ const ProjectForm = () => {
                   onChange={handleChange}
                   setFieldValue={setFieldValue}
                   onBlur={handleBlur}
-                  values={values.phone}
+                  value={values.phone}
+                  value_code={values.countyCode}
                 />
                 {touched.phone && errors.phone && <Error>{errors.phone}</Error>}
               </div>
@@ -148,7 +150,7 @@ const ProjectForm = () => {
                   error={Boolean(touched.companyName && errors.companyName)}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  values={values.companyName}
+                  value={values.companyName}
                 />
                 {touched.companyName && errors.companyName && (
                   <Error>{errors.companyName}</Error>
@@ -160,7 +162,7 @@ const ProjectForm = () => {
                   name="countrySelection"
                   setFieldValue={setFieldValue}
                   onBlur={handleBlur}
-                  values={values.countrySelection}
+                  value={values.countrySelection}
                   options={dropdownData}
                   errorStatus={
                     touched.countrySelection && errors.countrySelection
@@ -185,7 +187,7 @@ const ProjectForm = () => {
                   )}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  values={values.projectExplanation}
+                  value={values.projectExplanation}
                 />
                 {touched.projectExplanation && errors.projectExplanation && (
                   <Error>{errors.projectExplanation}</Error>
