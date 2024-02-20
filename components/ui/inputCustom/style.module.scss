@@ -4,8 +4,8 @@
   width: 100%;
   position: relative;
 
-  @include mobile-tablet-p{
-    margin-bottom: 0.625rem;
+  @include mobile-tablet-p {
+    margin-bottom: 0;
   }
 
   * {
@@ -155,7 +155,8 @@
       }
     }
 
-    input, textarea {
+    input,
+    textarea {
       color: color(primary-white);
     }
 
@@ -172,7 +173,7 @@
 .error {
   color: color(error);
   position: absolute;
-  font-size: .875rem;
+  font-size: 0.875rem;
   bottom: -22px;
   margin: 0;
 }

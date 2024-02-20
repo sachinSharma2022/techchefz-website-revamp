@@ -73,6 +73,7 @@
 
     @include mobile-tablet-p {
       padding: text(lg);
+      min-height: 28rem;
     }
 
     .commaImg {
