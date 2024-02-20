@@ -112,7 +112,7 @@
         > a,
         button {
           font-size: text(normal);
-          color: color(primary-white);
+          color: color(text-primary);
           font-weight: 500;
           display: inline-flex;
           align-items: center;
@@ -129,6 +129,7 @@
             padding: 7px 0 0;
             margin: 0;
             width: 100%;
+            color: color(primary-white);
           }
 
           &:hover {
