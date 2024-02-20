@@ -83,7 +83,7 @@ const Testimonials = ({ props }) => {
                             <Icons.Comma width={29} height={24} />
                           </div>
                           <p className={styles.customerText}>
-                            {data.CustomerText}
+                            {data.Description}
                           </p>
                         </div>
                         <div className={styles.customerProfile}>
@@ -99,9 +99,6 @@ const Testimonials = ({ props }) => {
                               alt="profileImg"
                             />
                           </div>
-                          <p className={styles.customerName}>
-                            {data.CustomerName}
-                          </p>
                           <p className={styles.customerRole}>
                             {data.CustomerRole}
                           </p>
