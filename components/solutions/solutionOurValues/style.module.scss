@@ -22,6 +22,9 @@
    .ourValuesHead {
       margin-bottom: 5rem;
       max-width: 373px;
+      position: sticky;
+      top: 14rem;
+      height: 27rem;
 
       @include mobile-tablet-p{
          margin-bottom: 0;

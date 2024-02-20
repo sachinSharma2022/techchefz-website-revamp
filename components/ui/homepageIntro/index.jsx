@@ -25,9 +25,9 @@ const vw = (coef) => window.innerWidth * (coef/100);
           scrollTrigger: {
             trigger: `.${styles.video}`,
             scrub: 1,
-            start: "top 30% ",
+            start: "top 20%",
             end: "+=" + (272 + window.innerHeight),
-            markers: false,
+            markers: true,
             invalidateOnRefresh: true,
             anticipatePin: 1,
           },
@@ -36,13 +36,13 @@ const vw = (coef) => window.innerWidth * (coef/100);
           trigger: `.${styles.videoCont}`,
           pin: true,
           markers: true,
-          start: "top "+vw(4),
+          start: "top "+vh(10),
           end: "+=" + (252 + window.innerHeight),
         });
         tl.to(`.${styles.video}`, {
           width: "100%",
           height:"100%",
-        duration: 4,
+        duration: 5,
           borderRadius: "0%",
         })
           .to(`.${styles.video}`, {
