@@ -129,6 +129,7 @@
             padding: 7px 0 0;
             margin: 0;
             width: 100%;
+            color: color(primary-white);
           }
 
           &:hover {
@@ -174,7 +175,7 @@
             height: 0.4rem;
             width: 0.4rem;
             border-style: solid;
-            border-color: color(text-primary);
+            border-color: color(primary-white);
             border-width: 0rem 0.1rem 0.1rem 0rem;
             transform: rotate(45deg);
             transition: border-width 150ms ease-in-out;
@@ -418,7 +419,7 @@
         border-bottom: none;
         font-weight: 500;
         font-size: text(normal);
-        color: color(text-primary);
+        color: color(primary-white);
         margin: 0;
         white-space: nowrap;
         transition: all 0.3s;

@@ -90,27 +90,35 @@
       padding: 0.25rem;
       justify-content: space-between;
       margin-bottom: 3.75rem;
+      gap: .5rem;
     }
 
-    button span {
-      padding: 0 2rem;
-      height: 2.375rem;
-      align-items: center;
-      justify-content: center;
-      border-radius: 0.5rem;
-      display: flex;
-      min-width: 176px;
-
+    button {
+      
       @include mobile-tablet-p {
-        font-size: text(normal);
-        line-height: text(normal);
-        min-width: auto;
-        padding: 0 1rem;
+       flex-grow: 1;
       }
 
-      &.btnActive {
-        background-color: color(info-blue);
-        color: color(primary-white);
+      > div {
+        padding: 0 2rem;
+        height: 2.375rem;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.5rem;
+        display: flex;
+        min-width: 176px;
+  
+        @include mobile-tablet-p {
+          font-size: text(normal);
+          line-height: text(normal);
+          min-width: 100%;
+          padding: 0 1rem;
+        }
+  
+        &.btnActive {
+          background-color: color(info-blue);
+          color: color(primary-white);
+        }
       }
     }
   }
@@ -223,7 +231,7 @@
     z-index: 1;
 
     @include mobile {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 48% 48%;
       gap: 1rem;
       margin-top: 0;
     }
@@ -243,7 +251,7 @@
       }
 
       @include mobile {
-        padding: 1rem;
+        padding: 0.5rem;
         gap: 1rem;
       }
     }
@@ -257,8 +265,8 @@
       @include truncate(2);
 
       @include mobile-tablet-p {
-        line-height: 1.3rem;
-        font-size: text(normal);
+        line-height: 1.1rem;
+        font-size:.875rem;
         margin-bottom: 0;
       }
     }
@@ -269,6 +277,11 @@
       position: relative;
       border-radius: 100%;
       overflow: hidden;
+
+      @include mobile-tablet-p {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
 
       img {
         width: 100%;

@@ -1,199 +1,222 @@
 @import "~/styles/partials/config";
 
 .solutionOurValuesStyle {
-   padding: spacing(section-primary-padding);
-   background-color: color(primary-background);
+  padding: spacing(section-primary-padding);
+  background-color: color(primary-background);
 
-   @include mobile-tablet-p{
-      padding:3.75rem 1.25rem;
-   }
+  @include mobile-tablet-p {
+    padding: 3.75rem 1.25rem;
+  }
 
-   .flexContainer {
-      display: flex;
-      justify-content: space-between;
-      gap: 8.938rem;
+  .flexContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 8.938rem;
 
-      @include mobile-tablet-p{
-         flex-direction: column;
-         gap: 2.25rem;
-      }
-   }
+    @include desktop-hd {
+      gap: 16rem;
+    }
 
-   .ourValuesHead {
-      margin-bottom: 5rem;
-      max-width: 373px;
-      position: sticky;
-      top: 14rem;
-      height: 27rem;
+    @include mobile-tablet-p {
+      flex-direction: column;
+      gap: 2.25rem;
+    }
+  }
 
-      @include mobile-tablet-p{
-         margin-bottom: 0;
-      }
+  .ourValuesHead {
+    margin-bottom: 5rem;
+    max-width: 373px;
+    position: sticky;
+    top: 14rem;
+    height: 27rem;
 
-      .ourValuesTitle {
-         color: color(text-primary);
-         text-transform: uppercase;
-         opacity: 0.8;
-         font-size: text(normal);
-         font-weight: 500;
-         line-height: 1.5rem;
-         letter-spacing: 0.2rem;
-      }
+    @include mobile-tablet-p {
+      margin-bottom: 0;
+    }
 
-      .ourValuesHeading {
-         font-size: text(larger);
-         margin-bottom: 2.75rem;
-
-         @include mobile-tablet-p{
-            margin-bottom: 1.25rem;
-            font-size: text(xxxl);
-            line-height: 2.5rem;
-         }
-
-         span {
-            font-size: text(larger);
-            color: color(heading-liner);
-            @include textGradient;
-
-            @include mobile-tablet-p{
-               font-size: text(xxxl)
-            }
-         }
-
-      }
-
-      .ourValuesText{
-         font-size: text(lg);
-         font-weight: 400;
-         opacity: 0.8;
-         line-height: 1.875rem;
-         margin-bottom: 0;
-         @include mobile{
-            margin-bottom: 0;
-            font-size: text(normal);
-            line-height: text(xl);
-         }
-      }
-   }
-
-   .ourValuesAccordion {
-      width: 100%;
-      border-top: 0.14rem solid rgba(color(text-primary), 0.12);
-
-      .accordionHead {
-         width: 100%;
-         font-size: text(xl);
-         padding: 2rem 0;
-         border-bottom: 0.14rem solid rgba(color(text-primary), 0.12);
-         display: flex;
-         justify-content: flex-start;
-      }
-   }
-
-   .accordionBody {
-      padding: 1.25rem 0;
-      display: flex;
-      gap: 2.5rem;
-
-      @include mobile-tablet-p{
-         flex-direction: column;
-      }
-   }
-
-   .iconBox {
-      width: 2.25rem;
-      height: 2.25rem;
-      background: color(primary-white);
-      border-radius: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-left: auto;
-   }
-
-   .imgBox div {
-      max-height: 10.25rem;
-      min-width:10.25rem;
-      position: relative;
-      overflow: hidden;
-      border-radius: 0.5rem;
-
-      @include mobile-tablet-p{
-         max-height: 20.938rem;
-         max-width: 20.938rem;
-      }
-
-      img {
-         width: 100%;
-         height: 100%;
-         object-fit: cover;
-      }
-   }
-
-   .title {
-      margin-left: 1.25rem;
-      font-size: text(xl);
+    .ourValuesTitle {
+      color: color(text-primary);
+      text-transform: uppercase;
+      opacity: 0.8;
+      font-size: text(normal);
       font-weight: 500;
+      line-height: 1.5rem;
+      letter-spacing: 0.2rem;
+    }
 
-      @include mobile-tablet-p{
-         text-align: left;
-         font-size: text(lg);
-         max-width: 70%;
+    .ourValuesHeading {
+      font-size: text(larger);
+      margin-bottom: 2.75rem;
+
+      @include mobile-tablet-p {
+        margin-bottom: 1.25rem;
+        font-size: text(xxxl);
+        line-height: 2.5rem;
       }
-   }
 
-   .accordionBodyContent {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-      color: rgba(color(text-primary), 0.8);
-   }
+      span {
+        font-size: text(larger);
+        color: color(heading-liner);
+        @include textGradient;
 
-   .listStyle {
-      list-style: none;
-      padding: 0;
+        @include mobile-tablet-p {
+          font-size: text(xxxl);
+        }
+      }
+    }
+
+    .ourValuesText {
+      font-size: text(lg);
+      font-weight: 400;
+      opacity: 0.8;
+      line-height: 1.875rem;
+      margin-bottom: 0;
+      @include mobile {
+        margin-bottom: 0;
+        font-size: text(normal);
+        line-height: text(xl);
+      }
+    }
+  }
+
+  .ourValuesAccordion {
+    width: 100%;
+    border-top: 0.14rem solid rgba(color(text-primary), 0.12);
+
+    .accordionHead {
+      width: 100%;
+      font-size: text(xl);
+      padding: 2rem 0;
+      border-bottom: 0.14rem solid rgba(color(text-primary), 0.12);
       display: flex;
+      justify-content: flex-start;
+    }
+  }
+
+  .accordionBody {
+    padding: 2.5rem 0;
+    display: flex;
+    gap: 2.5rem;
+    border-bottom: 0.14rem solid rgba(color(text-primary), 0.12);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    @include mobile-tablet-p {
       flex-direction: column;
+    }
+  }
+
+  .iconBox {
+    width: 2.25rem;
+    height: 2.25rem;
+    background: color(primary-white);
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+  }
+
+  .imgBox div {
+    max-height: 10.25rem;
+    min-width: 10.25rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+
+    @include mobile-tablet-p {
+      max-height: 20.938rem;
+      max-width: 20.938rem;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .title {
+    margin-left: 1.25rem;
+    font-size: text(xl);
+    font-weight: 500;
+
+    @include mobile-tablet-p {
+      text-align: left;
+      font-size: text(lg);
+      max-width: 70%;
+    }
+  }
+
+  .accordionBodyContent {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    color: rgba(color(text-primary), 0.8);
+    font-size: 1.125rem;
+    line-height: text(xl);
+
+    @include mobile-tablet-p {
+      font-size: text(normal);
+    }
+  }
+
+  .listStyle {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 0;
+
+    li {
+      display: flex;
+      align-items: flex-start;
       gap: 0.75rem;
+      font-size: 1.125rem;
+      line-height: text(xl);
 
-      li {
-         display: flex;
-         align-items: flex-start;
-         gap: 0.75rem;
-
-         svg {
-            position: relative;
-            top: 0.5rem;
-            min-width: 0.938rem;
-            height: 0.625rem;
-         }
+      @include mobile-tablet-p {
+        font-size: text(normal);
       }
-   }
 
-   //Dark mode style
-   &.solutionOurValuesDark {
-      background-color: color(dark-bg);
+      svg {
+        position: relative;
+        top: 0.5rem;
+        min-width: 0.938rem;
+        height: 0.625rem;
+      }
+    }
+  }
+
+  //Dark mode style
+  &.solutionOurValuesDark {
+    background-color: color(dark-bg);
+    color: color(primary-white);
+
+    .ourValuesTitle {
       color: color(primary-white);
-      
-      .ourValuesTitle{
+    }
+
+    .ourValuesAccordion {
+      border-color: rgba(color(primary-white), 0.12);
+      .accordionHead {
         color: color(primary-white);
+        border-color: rgba(color(primary-white), 0.12);
       }
-
-      .ourValuesAccordion{
-         border-color: rgba(color(primary-white), 0.12);
-        .accordionHead{
+      .accordionBody {
+        border-color: rgba(color(primary-white), 0.12);
+        .accordionBodyContent {
           color: color(primary-white);
-          border-color: rgba(color(primary-white), 0.12);
-        }
-        .accordionBody{
-          .accordionBodyContent{
-            color: color(primary-white);
-          }
+          opacity: 0.8;
         }
       }
+    }
 
-      .iconBox{
-        background-color: color(text-primary);
-      }
-   }
+    .iconBox {
+      background-color: color(text-primary);
+    }
+  }
 }

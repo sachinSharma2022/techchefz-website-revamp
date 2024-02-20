@@ -3,20 +3,23 @@ import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
+import { Dialog } from "@headlessui/react";
 import Link from "next/link";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import styles from "./style.module.scss";
 
-const Thankyou = () => {
+const ConfirmationPopup = (props) => {
   const { theme } = useContext(MyContext);
-
-  useEffect(() => {
-    document.querySelector("body").classList.add("thankyou-page");
-  });
-
   return (
-    <section className={cn(styles.thankyou, theme ? styles.thankyouDark : "")}>
-      <div className={cn("primary-container")}>
+    <Dialog open={props.open} onClose={props.onClose}>
+      <div className={styles.primaryOverlayStyle} />
+      <Dialog.Panel
+        className={cn(
+          styles.confirmationPopup,
+          theme ? styles.confirmationPopupDarkStyle : "",
+          props.className
+        )}
+      >
         <div className={styles.thankyouCenter}>
           <ImageCustom
             src={"/images/thankyou.svg"}
@@ -32,17 +35,18 @@ const Thankyou = () => {
 
           <Link href="/">
             <Button
-              variant={theme ? "blueBtnDark" : "blueBtn"}
+              variant={theme ? "lightBlueOutline" : "outline"}
               className={styles.thankyouBtn}
               size="lg"
+              onClick={props.onClose}
             >
               Continue
             </Button>
           </Link>
         </div>
-      </div>
-    </section>
+      </Dialog.Panel>
+    </Dialog>
   );
 };
 
-export default Thankyou;
+export default ConfirmationPopup;

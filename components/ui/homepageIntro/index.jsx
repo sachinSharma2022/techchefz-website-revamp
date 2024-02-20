@@ -15,8 +15,8 @@ const HomepageIntro = (props) => {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    const vh = (coef) => window.innerHeight * (coef/100);
-const vw = (coef) => window.innerWidth * (coef/100);
+    const vh = (coef) => window.innerHeight * (coef / 100);
+    const vw = (coef) => window.innerWidth * (coef / 100);
     videoRef.current.play();
 
     if (isBigScreen) {
@@ -27,6 +27,7 @@ const vw = (coef) => window.innerWidth * (coef/100);
             scrub: 1,
             start: "top 20%",
             end: "+=" + (272 + window.innerHeight),
+            markers: false,
             markers: false,
             invalidateOnRefresh: true,
             anticipatePin: 1,
@@ -41,8 +42,8 @@ const vw = (coef) => window.innerWidth * (coef/100);
         });
         tl.to(`.${styles.video}`, {
           width: "100%",
-          height:"100%",
-        duration: 5,
+          height: "100%",
+          duration: 5,
           borderRadius: "0%",
         })
           .to(`.${styles.video}`, {
