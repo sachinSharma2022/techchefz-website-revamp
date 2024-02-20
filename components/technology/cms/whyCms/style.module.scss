@@ -2,7 +2,7 @@
 
 .whyCmsStyle {
   padding: spacing(section-primary-padding);
-  padding-bottom: 0;
+  background-color: color(bg-soft);
 
   @include mobile-tablet-p {
     padding: spacing(section-mob-padding);
@@ -116,7 +116,7 @@
   //Dark mode style
   &.whyCmsDark {
     color: color(primary-white);
-    background-color: color(input-bg);
+    background-color: color(dark-bg);
 
     .ourValuesTitle {
       color: color(primary-white);

@@ -6,6 +6,7 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
+import { base_Url } from "@/lib/constants";
 
 const Solutions = ({props}) => {
 
@@ -26,7 +27,22 @@ const Solutions = ({props}) => {
             </p>
           </div>
         </div>
-
+        <div className={styles.goalsList}>
+              {props.Views.map((data, index) => (
+                <>
+                  <div key={index} className={styles.goalsTextWrapper}>
+                    <div className={styles.goalsIcons}>
+                      <ImageCustom
+                        src={data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data?.attributes?.url}`:`${base_Url}/`}
+                        width={27}
+                        height={16}
+                      />
+                    </div>
+                    <p className={styles.goalsText}>{data.Title}</p>
+                  </div>
+                </>
+              ))}
+            </div>
         <div className={styles.solutionImages}>
           <ImageCustom
             src= {props?.gallaryImages[0].Image?.data?.attributes?.url?`${base_Uri}${props?.gallaryImages[0].Image.data?.attributes.url}`:`${base_Uri}/`}

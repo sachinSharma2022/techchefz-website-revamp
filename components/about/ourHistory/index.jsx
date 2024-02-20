@@ -9,8 +9,7 @@ import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
 
-const OurHistory = ({props, OurHistory}) => {
- 
+const OurHistory = ({ props, OurHistory }) => {
   const { theme } = useContext(MyContext);
   const [oldSlide, setOldSlide] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
@@ -70,7 +69,6 @@ const OurHistory = ({props, OurHistory}) => {
     slidesToScroll: 1,
   };
 
- 
   return (
     <section
       className={`${styles.ourHistory} ${
@@ -79,10 +77,14 @@ const OurHistory = ({props, OurHistory}) => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.ourHistoryTop}>
-          <h6 className={cn(styles.ourHistoryTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}`}}>
-          </h6>
-          <h3 className={cn(styles.ourHistoryHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.SubTitle}`}}>
-          </h3>
+          <h6
+            className={cn(styles.ourHistoryTitle, "gradient-text")}
+            dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}` }}
+          ></h6>
+          <h3
+            className={cn(styles.ourHistoryHeading, "gradient-text")}
+            dangerouslySetInnerHTML={{ __html: `${props[0]?.SubTitle}` }}
+          ></h3>
         </div>
 
         <div className={cn(styles.sliderSection, "row")}>
@@ -92,8 +94,12 @@ const OurHistory = ({props, OurHistory}) => {
                 {OurHistory.map((data, index) => (
                   <div key={index} className={styles.cardStyle}>
                     <div className={styles.infoStyle}>
-                      <h4 className={styles.subHeading}>{data.OurHistoryCard.Title}</h4>
-                      <p className={styles.ourHistoryContent}>{data.OurHistoryCard.Description}</p>
+                      <h4 className={styles.subHeading}>
+                        {data.OurHistoryCard.Title}
+                      </h4>
+                      <p className={styles.ourHistoryContent}>
+                        {data.OurHistoryCard.Description}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -131,8 +137,11 @@ const OurHistory = ({props, OurHistory}) => {
                 <div key={index} className={styles.cardStyle}>
                   <div className={styles.OurHistoryImage}>
                     <ImageCustom
-                      src={data?.OurHistoryCard?.Image?.data?.attributes?.url?`${base_Uri}${data?.OurHistoryCard?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
-                      
+                      src={
+                        data?.OurHistoryCard?.Image?.data?.attributes?.url
+                          ? `${base_Uri}${data?.OurHistoryCard?.Image?.data?.attributes?.url}`
+                          : `${base_Uri}/`
+                      }
                       width={530}
                       height={397}
                       alt="slider-img"

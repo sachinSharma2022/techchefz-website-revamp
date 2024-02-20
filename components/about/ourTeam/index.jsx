@@ -18,7 +18,6 @@ const OurTeam = ({ props }) => {
   let [isOpen, setIsOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
-  
   return (
     <section className={cn(styles.ourTeam, theme ? styles.ourTeamDark : "")}>
       <div className={cn("primary-container")}>
@@ -69,8 +68,8 @@ const OurTeam = ({ props }) => {
                       <div
                         role="button"
                         onClick={() => {
-                          setIndex(index)
-                          setIsOpen(true)
+                          setIndex(index);
+                          setIsOpen(true);
                         }}
                         key={index}
                         className={styles.teamCardBg}
@@ -88,18 +87,17 @@ const OurTeam = ({ props }) => {
                         >
                           <Icons.Linkedin width={34} height={34} />
                         </Link>
-                        <div className={styles.teamImg}>
-                          <ImageCustom
-                            src={
-                              data?.Images?.data?.attributes?.url
-                                ? `${base_Uri}${data?.Images?.data?.attributes?.url}`
-                                : `${base_Uri}/`
-                            }
-                            width={240}
-                            height={320}
-                            alt="team-member"
-                          />
-                        </div>
+                        <ImageCustom
+                          src={
+                            data?.Images?.data?.attributes?.url
+                              ? `${base_Uri}${data?.Images?.data?.attributes?.url}`
+                              : `${base_Uri}/`
+                          }
+                          width={1000}
+                          height={1000}
+                          alt="team-member"
+                          className={styles.teamImg}
+                        />
                       </div>
                     ))}
                   </div>
@@ -129,62 +127,64 @@ const OurTeam = ({ props }) => {
             </Tab.Panels>
           </Tab.Group>
         </div>
-          <LeftDrawer
-            key={index}
-            title="About"
-            open={isOpen}
-            onClose={() => setIsOpen(false)}
+        <LeftDrawer
+          key={index}
+          title="About"
+          open={isOpen}
+          onClose={() => setIsOpen(false)}
+        >
+          <div
+            className={cn(styles.modalBody, theme ? styles.darkThemeStyle : "")}
           >
-            <div
-              className={cn(
-                styles.modalBody,
-                theme ? styles.darkThemeStyle : ""
-              )}
-            >
-              <div className={styles.modalInfo}>
-                <div className={styles.modalImg}>
-                  <ImageCustom
-                   
-                    src={
-                      props[0]?.ListofDirectors[index]?.Images?.data?.attributes?.url
-                        ? `${base_Uri}${props[0]?.ListofDirectors[index]?.Images?.data?.attributes?.url}`
-                        : `${base_Uri}/`
-                    }
-                    width={500}
-                    height={530}
-                    alt="profile"
-                  />
-                </div>
-                <h4 className={styles.teamName}>{props[0]?.ListofDirectors[index]?.Name}</h4>
-                <p className={styles.teamRole}>{props[0]?.ListofDirectors[index]?.Designation}</p>
+            <div className={styles.modalInfo}>
+              <div className={styles.modalImg}>
+                <ImageCustom
+                  src={
+                    props[0]?.ListofDirectors[index]?.Images?.data?.attributes
+                      ?.url
+                      ? `${base_Uri}${props[0]?.ListofDirectors[index]?.Images?.data?.attributes?.url}`
+                      : `${base_Uri}/`
+                  }
+                  width={500}
+                  height={530}
+                  alt="profile"
+                />
               </div>
+              <h4 className={styles.teamName}>
+                {props[0]?.ListofDirectors[index]?.Name}
+              </h4>
+              <p className={styles.teamRole}>
+                {props[0]?.ListofDirectors[index]?.Designation}
+              </p>
+            </div>
 
-              <div className={styles.infoSec}>
-                <p className={styles.modalContent}>{props[0]?.ListofDirectors[index]?.Description}</p>
-                <p className={styles.teamMail}>
-                  <Icons.MailIcon width={24} height={24} className="me-2" />
-                  {props[0]?.ListofDirectors[index]?.email}
-                </p>
+            <div className={styles.infoSec}>
+              <p className={styles.modalContent}>
+                {props[0]?.ListofDirectors[index]?.Description}
+              </p>
+              <p className={styles.teamMail}>
+                <Icons.MailIcon width={24} height={24} className="me-2" />
+                {props[0]?.ListofDirectors[index]?.email}
+              </p>
 
-                <div className={styles.socialSection}>
-                  <h6>Let’s Get Connect</h6>
-                  <div className={styles.modalIcons}>
-                    <Icons.Linkedin
-                      className={styles.linkdinIcon}
-                      width={34}
-                      height={34}
-                    />
-                    <Icons.twitter
-                      className={styles.twitter}
-                      width={34}
-                      height={34}
-                    />
-                  </div>
+              <div className={styles.socialSection}>
+                <h6>Let’s Get Connect</h6>
+                <div className={styles.modalIcons}>
+                  <Icons.Linkedin
+                    className={styles.linkdinIcon}
+                    width={34}
+                    height={34}
+                  />
+                  <Icons.twitter
+                    className={styles.twitter}
+                    width={34}
+                    height={34}
+                  />
                 </div>
               </div>
             </div>
-          </LeftDrawer>
-        
+          </div>
+        </LeftDrawer>
       </div>
     </section>
   );
