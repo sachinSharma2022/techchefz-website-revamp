@@ -53,6 +53,7 @@ const ServicesForm = () => {
       onSubmit={(values, action) => {
         setinprogress(true)
         triggerMail({ content: JSON.stringify(values) });
+        action.resetForm()
         setTimeout(() => {
           setinprogress(false)
         }, 4000);
@@ -89,7 +90,7 @@ const ServicesForm = () => {
                     error={Boolean(touched.firstName && errors.firstName)}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    values={values.firstName}
+                    value={values.firstName}
                     errorStatus={touched.firstName && errors.firstName}
                   />
                   {touched.firstName && errors.firstName && (
@@ -106,7 +107,7 @@ const ServicesForm = () => {
                     error={Boolean(touched.lastName && errors.lastName)}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    values={values.lastName}
+                    value={values.lastName}
                     errorStatus={touched.lastName && errors.lastName}
                   />
                   {touched.lastName && errors.lastName && (
@@ -123,7 +124,7 @@ const ServicesForm = () => {
                     error={Boolean(touched.email && errors.email)}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    values={values.email}
+                    value={values.email}
                     errorStatus={touched.email && errors.email}
                   />
                   {touched.email && errors.email && (
@@ -137,8 +138,9 @@ const ServicesForm = () => {
                     onChange={handleChange}
                     setFieldValue={setFieldValue}
                     onBlur={handleBlur}
-                    values={values.phone}
+                    value={values.phone}
                     errorStatus={touched.phone && errors.phone}
+                    clear={inprogress}
                   />
                   {touched.phone && errors.phone && (
                     <Error>{errors.phone}</Error>
@@ -154,7 +156,7 @@ const ServicesForm = () => {
                     error={Boolean(touched.companyName && errors.companyName)}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    values={values.companyName}
+                    value={values.companyName}
                     errorStatus={touched.companyName && errors.companyName}
                   />
                   {touched.companyName && errors.companyName && (
@@ -167,13 +169,14 @@ const ServicesForm = () => {
                     name="serviceRequired"
                     setFieldValue={setFieldValue}
                     onBlur={handleBlur}
-                    values={values.serviceRequired}
+                    value={values.serviceRequired}
                     options={dropdownData}
                     errorStatus={
                       touched.serviceRequired && errors.serviceRequired
                     }
                     className="custom-dropdown"
                     placeholder="Service Required*"
+                    clear={inprogress}
                   />
                   {touched.serviceRequired && errors.serviceRequired && (
                     <Error>{errors.serviceRequired}</Error>
@@ -192,7 +195,7 @@ const ServicesForm = () => {
                     )}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    values={values.projectExplanation}
+                    value={values.projectExplanation}
                     errorStatus={
                       touched.projectExplanation && errors.projectExplanation
                     }

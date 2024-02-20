@@ -48,6 +48,7 @@ const ContactSection = ({props}) => {
       console.log(values);
       setinprogress(true)
       triggerMail({ content: JSON.stringify(values) });
+      action.resetForm()
       setTimeout(() => {
         setinprogress(false)
       }, 4000);
@@ -107,7 +108,7 @@ const ContactSection = ({props}) => {
                       error={Boolean(touched.firstName && errors.firstName)}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      values={values.firstName}
+                      value={values.firstName}
                     />
                     {touched.firstName && errors.firstName && (
                   <Error>{errors.firstName}</Error>
@@ -124,7 +125,7 @@ const ContactSection = ({props}) => {
                       error={Boolean(touched.lastName && errors.lastName)}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      values={values.lastName}
+                      value={values.lastName}
                     />
                     {touched.lastName && errors.lastName && (
                   <Error>{errors.lastName}</Error>
@@ -141,7 +142,7 @@ const ContactSection = ({props}) => {
                       error={Boolean(touched.email && errors.email)}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      values={values.email}
+                      value={values.email}
                     />
                     {touched.email && errors.email && <Error>{errors.email}</Error>}
                   </div>
@@ -152,7 +153,8 @@ const ContactSection = ({props}) => {
                     onChange={handleChange}
                     setFieldValue={setFieldValue}
                     onBlur={handleBlur}
-                    values={values.phone}
+                    value={values.phone}
+                    clear={inprogress}
                     />
                     {touched.phone && errors.phone && (
                     <Error>{errors.phone}</Error>
@@ -168,7 +170,7 @@ const ContactSection = ({props}) => {
                       error={Boolean(touched.uploadCV && errors.uploadCV)}
                       setFieldValue={setFieldValue}
                       onBlur={handleBlur}
-                      values={values.uploadCV}
+                      value={values.uploadCV}
                       errorStatus={touched.uploadCV && errors.uploadCV}
                     />
                     {touched.uploadCV && errors.uploadCV && (
@@ -188,7 +190,7 @@ const ContactSection = ({props}) => {
                       )}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      values={values.portfolioLink}
+                      value={values.portfolioLink}
                       errorStatus={touched.portfolioLink && errors.portfolioLink}
                     />
                     {touched.portfolioLink && errors.portfolioLink && (
@@ -207,7 +209,7 @@ const ContactSection = ({props}) => {
                     )}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    values={values.projectExplanation}
+                    value={values.projectExplanation}
                     errorStatus={
                       touched.projectExplanation && errors.projectExplanation
                     }

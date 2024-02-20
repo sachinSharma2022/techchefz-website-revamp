@@ -47,7 +47,7 @@ const JobsForm = () => {
   }
   return (
     <Formik
-      onSubmit={(values) => {
+      onSubmit={(values,action) => {
         // const formdata = new FormData();
         // Object.entries(values).forEach(([key, value]) => {
         //     formdata.append(key, value);
@@ -55,6 +55,7 @@ const JobsForm = () => {
         console.log(values, "values");
         setinprogress(true)
         triggerMail({ content: JSON.stringify(values) });
+        action.resetForm()
         setTimeout(() => {
           setinprogress(false)
         }, 4000);
@@ -74,7 +75,7 @@ const JobsForm = () => {
         touched,
         values,
       }) => (
-        <Form>
+        <Form >
           <div className={styles.contactUsForm}>
             <p className={styles.formText}>
               Fill up few details so that we can contact your regarding an
@@ -92,7 +93,7 @@ const JobsForm = () => {
                     error={Boolean(touched.firstName && errors.firstName)}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    values={values.firstName}
+                    value={values.firstName}
                     errorStatus={touched.firstName && errors.firstName}
                   />
                   {touched.firstName && errors.firstName && (
@@ -109,7 +110,7 @@ const JobsForm = () => {
                     error={Boolean(touched.lastName && errors.lastName)}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    values={values.lastName}
+                    value={values.lastName}
                     errorStatus={touched.lastName && errors.lastName}
                   />
                   {touched.lastName && errors.lastName && (
@@ -126,7 +127,7 @@ const JobsForm = () => {
                     error={Boolean(touched.email && errors.email)}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    values={values.email}
+                    value={values.email}
                     errorStatus={touched.email && errors.email}
                   />
                   {touched.email && errors.email && (
@@ -140,8 +141,9 @@ const JobsForm = () => {
                     setFieldValue={setFieldValue}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    values={values.phone}
+                    value={values.phone}
                     errorStatus={touched.phone && errors.phone}
+                    clear={inprogress}
                   />
                   {touched.phone && errors.phone && (
                     <Error>{errors.phone}</Error>
@@ -158,7 +160,7 @@ const JobsForm = () => {
                     error={Boolean(touched.uploadCV && errors.uploadCV)}
                     setFieldValue={setFieldValue}
                     onBlur={handleBlur}
-                    values={values.uploadCV}
+                    value={values.uploadCV}
                     errorStatus={touched.uploadCV && errors.uploadCV}
                   />
                   {touched.uploadCV && errors.uploadCV && (
@@ -178,7 +180,7 @@ const JobsForm = () => {
                     )}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    values={values.portfolioLink}
+                    value={values.portfolioLink}
                     errorStatus={touched.portfolioLink && errors.portfolioLink}
                   />
                   {touched.portfolioLink && errors.portfolioLink && (
@@ -199,7 +201,7 @@ const JobsForm = () => {
                     )}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    values={values.projectExplanation}
+                    value={values.projectExplanation}
                     errorStatus={
                       touched.projectExplanation && errors.projectExplanation
                     }

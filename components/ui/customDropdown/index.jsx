@@ -1,7 +1,7 @@
 "use client";
 import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
-import React, { useContext } from "react";
+import React, { useContext,useRef } from "react";
 import Select, { components } from "react-select";
 
 import dropdownStyle from "./style.module.scss";
@@ -50,9 +50,11 @@ const CustomDropdown = ({
   styles,
   placeholder,
   setFieldValue,
-  name
+  name,
+  clear
 }) => {
   const { theme } = useContext(MyContext);
+  const ref=useRef()
 
   const controlStyle = {
     control: (styles) => ({
@@ -97,6 +99,10 @@ const CustomDropdown = ({
       };
     },
   };
+  if(clear){
+    
+    ref.current.clearValue();
+  }
 
   return (
     <div
@@ -111,8 +117,10 @@ const CustomDropdown = ({
       <Select
         onChange={(opt)=>{
 
-           setFieldValue(name,opt.value)
+           if(opt)setFieldValue(name,opt.value)
+           
         }}
+        ref={ref}
         options={options}
         classNamePrefix="react-select"
         styles={controlStyle || styles}
