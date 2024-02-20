@@ -3,7 +3,15 @@ import InsightFeatures from "@/components/insights/insightFeatures";
 import Innovation from "@/components/portfolio/innovation";
 import React from "react";
 import { getData ,getDataDynamic} from "@/lib/fetchData";
-import { api_insights_Page,api_insight_insides_Page } from "@/lib/constants";
+import { api_insights_Page, api_insight_insides_Page } from "@/lib/constants";
+
+
+export const metadata = {
+  title: "Insights",
+  description:
+    "Insights | TechChefz Digital",
+};
+
 
 const Insights = async () => {
   const data = await getData(api_insights_Page);

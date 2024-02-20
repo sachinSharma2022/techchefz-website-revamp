@@ -10,6 +10,12 @@ import TechnologyValues from "@/components/technology/technologyValues";
 import { api_Technology_Page } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
 
+export const metadata = {
+  title: "Technologies",
+  description:
+    "Explore Technologies | TechChefz Digital",
+};
+
 const Technology = async () => {
   const data = await getData(api_Technology_Page);
   return (

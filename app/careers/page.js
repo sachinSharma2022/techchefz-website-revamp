@@ -7,6 +7,14 @@ import { api_Career_Page,api_Career_detail_Page } from "@/lib/constants";
 import HomeTestimonials from "@/components/home/homeTestimonials";
 import TechnologyValues from "@/components/technology/technologyValues";
 
+
+export const metadata = {
+  title: "Careers",
+  description:
+    "Job Openings and Career Opportunities at TechChefz Digital",
+};
+
+
 const Career = async () => {
   const data = await getData(api_Career_Page);
   const data_career_details = await getDataDynamic(api_Career_detail_Page);
