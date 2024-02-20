@@ -126,6 +126,7 @@ const LetsWork = ({ contact }) => {
                         setFieldValue={setFieldValue}
                         onBlur={handleBlur}
                         value={values.phone}
+                        clear={inprogress}
                       />
                       {touched.phone && errors.phone && (
                         <Error>{errors.phone}</Error>
