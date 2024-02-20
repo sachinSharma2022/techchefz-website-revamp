@@ -8,9 +8,8 @@ import { cn } from "../lib/utils";
 import "../styles/globals.scss";
 
 export const metadata = {
-  title: "Home || Techchefz",
-  description:
-    "TechChefz Digital (TCZ Digital Private Ltd) is a new breed of innovative digital transformation agency, redefining storytelling for an always-on world.",
+  title: "Home",
+  description: "TechChefz Digital | Humanizing Digital Experiences",
 };
 
 export default function RootLayout({ children }) {

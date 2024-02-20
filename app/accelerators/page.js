@@ -6,6 +6,12 @@ import { getData } from "@/lib/fetchData";
 import { api_accelerators_Page } from "@/lib/constants";
 
 
+export const metadata = {
+  title: "Accelerators",
+  description:
+    "Accelerators | TechChefz Digital",
+};
+
 const Accelerators = async() => {
   const data = await getData(api_accelerators_Page)
 

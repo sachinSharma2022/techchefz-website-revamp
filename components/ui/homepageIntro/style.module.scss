@@ -1,21 +1,31 @@
 @import "~/styles/partials/config";
 
 .videoCustom {
-    height: 720px;
+  height: 720px;
   align-items: center;
-  .videocont{
+
+  @include mobile {
+    height: 250px;
+  }
+
+  .videoCont {
     display: flex;
-  justify-content: center;
+    justify-content: center;
     height: 100%;
     width: 100%;
     z-index: 99;
-  .video {
-    object-fit: cover;
-    width: 84%;
-    height: 84%;
-    
+
+    .video {
+      object-fit: cover;
+      width: 84%;
+      height: 84%;
+
+      @include mobile {
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
-}
 
   &.videoCustomDark {
     background-color: color(input-bg);

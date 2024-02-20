@@ -11,6 +11,14 @@ import HomepageIntro from "@/components/ui/homepageIntro";
 import Curve from "@/components/ui/pageTransition";
 import { api_Home_Page, base_Url } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
+import Head from "next/head";
+
+
+export const metadata = {
+  title: "Humanizing Digital Experiences",
+  description:
+    "TechChefz Digital (TCZ Digital Private Ltd) is a new breed of innovative digital transformation agency, redefining storytelling for an always-on world.",
+};
 
 const HomePage = async () => {
   const data = await getData(api_Home_Page);
@@ -19,6 +27,7 @@ const HomePage = async () => {
       <Curve>
         {data ? (
           <div>
+           
             <LandingBanner props={data.Banner} />
             <HomepageIntro
               src={
