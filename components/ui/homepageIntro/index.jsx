@@ -36,7 +36,7 @@ const HomepageIntro = (props) => {
           trigger: `.${styles.videoCont}`,
           pin: true,
           markers: true,
-          start: "top 9%",
+          start: "top 80rem" ,
           end: "+=" + (275 + window.innerHeight),
         });
         tl.to(`.${styles.video}`, {
