@@ -5,11 +5,7 @@
    display: flex;
    justify-content: space-between;
    gap: 2.5rem;
-   padding-inline: spacing(p-120);
 
-   @include desktop-hd {
-      padding-inline: 0;
-   }
 
    @include mobile-tablet-p {
       flex-direction: column;
@@ -33,7 +29,6 @@
 }
 
 .captionCardStyle {
-   padding-inline: spacing(p-120);
    display: grid;
    grid-gap: 2.5rem;
    grid-template-columns: repeat(2, 1fr);
@@ -79,6 +74,10 @@
       .cardImg {
          position: relative;
 
+         @include mobile-tablet-p {
+            overflow: hidden;
+         }
+
          .cardBadges {
             position: absolute;
             bottom: 2.25rem;
@@ -89,8 +88,9 @@
             @include mobile {
                left: 0.6rem;
                overflow-x: scroll;
-               width: 90%;
+               max-width: 100%;
                @include scrollHide;
+               padding-right: 20px;
             }
 
             .badges {
@@ -109,6 +109,7 @@
                @include mobile-tablet-p {
                   padding: 0.5rem 0.75rem;
                   font-size: 0.75rem;
+                  white-space: nowrap;
                }
             }
          }
@@ -141,6 +142,7 @@
             @include mobile-tablet-p {
                font-size: text(lg);
                line-height: 1.75rem;
+               padding-left: 0;
             }
          }
 
@@ -171,6 +173,10 @@
 
 .imageCaptionCard {
   padding: 0 7.5rem;
+
+  @include mobile-tablet-p {
+   padding: 0;
+  }
 
   &.darkStyle {
     background: color(input-bg);

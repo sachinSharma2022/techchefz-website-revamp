@@ -98,16 +98,7 @@
 
         .contactFormArea {
           .inputSpace {
-            margin-bottom: 2.25rem;
             position: relative;
-
-            @include mobile-tablet-p {
-              margin-bottom: 0;
-            }
-            
-            &:last-child {
-              margin-bottom: 0;
-            }
           }
           .textArea {
             padding-left: 1rem;
