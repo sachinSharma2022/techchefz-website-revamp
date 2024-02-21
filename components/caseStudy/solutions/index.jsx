@@ -8,8 +8,7 @@ import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 import { base_Url } from "@/lib/constants";
 
-const Solutions = ({props}) => {
-
+const Solutions = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section
@@ -17,23 +16,31 @@ const Solutions = ({props}) => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.contentSection}>
-          <h6 className={cn(styles.solutionTitle,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props.Title}` }}>
-          </h6>
+          <h6
+            className={cn(styles.solutionTitle, "gradient-text")}
+            dangerouslySetInnerHTML={{ __html: `${props.Title}` }}
+          ></h6>
           <div>
-            <h3 className={cn(styles.solutionHeading,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props.SubTitle}` }}>
-            </h3>
-            <p className={styles.solutionText} dangerouslySetInnerHTML={{ __html: `${props.Description}`}}>
-             
-            </p>
-          </div>
-        </div>
-        <div className={styles.goalsList}>
+            <h3
+              className={cn(styles.solutionHeading, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props.SubTitle}` }}
+            ></h3>
+            <p
+              className={styles.solutionText}
+              dangerouslySetInnerHTML={{ __html: `${props.Description}` }}
+            ></p>
+
+            <div className={styles.goalsList}>
               {props.Views.map((data, index) => (
                 <>
                   <div key={index} className={styles.goalsTextWrapper}>
                     <div className={styles.goalsIcons}>
                       <ImageCustom
-                        src={data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data?.attributes?.url}`:`${base_Url}/`}
+                        src={
+                          data?.Image?.data?.attributes?.url
+                            ? `${base_Url}${data?.Image?.data?.attributes?.url}`
+                            : `${base_Url}/`
+                        }
                         width={27}
                         height={16}
                       />
@@ -43,23 +50,38 @@ const Solutions = ({props}) => {
                 </>
               ))}
             </div>
+          </div>
+        </div>
+
         <div className={styles.solutionImages}>
           <ImageCustom
-            src= {props?.gallaryImages[0].Image?.data?.attributes?.url?`${base_Uri}${props?.gallaryImages[0].Image.data?.attributes.url}`:`${base_Uri}/`}
+            src={
+              props?.gallaryImages[0].Image?.data?.attributes?.url
+                ? `${base_Uri}${props?.gallaryImages[0].Image.data?.attributes.url}`
+                : `${base_Uri}/`
+            }
             width={1060}
             height={500}
             alt="content-img"
             className={styles.goalInnerImage}
           />
           <ImageCustom
-            src={props?.gallaryImages[1].Image.data?.attributes.url?`${base_Uri}${props?.gallaryImages[1].Image.data?.attributes.url}`:`${base_Uri}/`}
+            src={
+              props?.gallaryImages[1].Image.data?.attributes.url
+                ? `${base_Uri}${props?.gallaryImages[1].Image.data?.attributes.url}`
+                : `${base_Uri}/`
+            }
             width={500}
             height={400}
             alt="content-img"
             className={styles.goalInnerImage}
           />
           <ImageCustom
-             src={props?.gallaryImages[2].Image.data?.attributes.url?`${base_Uri}${props?.gallaryImages[2].Image.data?.attributes.url}`:`${base_Uri}/`}
+            src={
+              props?.gallaryImages[2].Image.data?.attributes.url
+                ? `${base_Uri}${props?.gallaryImages[2].Image.data?.attributes.url}`
+                : `${base_Uri}/`
+            }
             width={500}
             height={400}
             alt="content-img"
@@ -69,6 +91,6 @@ const Solutions = ({props}) => {
       </div>
     </section>
   );
-}
+};
 
 export default Solutions;

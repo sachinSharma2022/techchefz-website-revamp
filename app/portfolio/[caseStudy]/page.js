@@ -34,6 +34,7 @@ const CaseStudy = async ({ params }) => {
           <Results props={data[index].attributes.Results} />
           <RelatedCase
             sliderClassName="mb-0"
+            className="case-related-style"
             props={data[index].attributes.CaseStudy}
           />
           <LetsWork contact={data[index].attributes.LetsWork} />
