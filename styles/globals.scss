@@ -483,6 +483,10 @@ input:-webkit-autofill {
     display: flex !important;
     justify-content: space-between;
 
+    // @include mobile-tablet-p {
+    //   gap: 60px;
+    // }
+
     .yearCount {
       color: color(bg-gray);
       position: absolute;
@@ -509,7 +513,7 @@ input:-webkit-autofill {
     }
 
     li {
-      width: 2.125rem;
+      min-width: 2.125rem;
       height: 2.125rem;
       display: inline-flex;
       align-items: center;
@@ -1038,13 +1042,35 @@ html.lenis {
   display: grid;
   grid-template-columns: 55% auto;
   gap: 8.938rem;
+  padding-inline: 7.5rem;
+
+  @include desktop-hd {
+    padding-inline: 0;
+  }
 
   @include mobile-tablet-p {
     display: flex;
     flex-direction: column;
-    gap: 2rem 0;
+    gap: 1rem 0;
+    padding-inline: 1.25rem;
   }
+}
+
+.header-full-container {
+  display: flex;
+  width: 100%;
+  padding-inline: 0;
 }
 // =================================
 // Loader Animation End
 // =================================
+
+
+// Case Related Spacing
+.case-related-style {
+  padding-bottom: 0 !important;
+
+  @include mobile-tablet-p {
+    padding-block: 0rem 5rem !important;
+  }
+}

@@ -9,7 +9,7 @@ import Slider from "react-slick";
 import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
 
-const RelatedCase = ({ props }) => {
+const RelatedCase = ({ props, className, sliderClassName }) => {
   const [oldSlide, setOldSlide] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
   const [activeSlide2, setActiveSlide2] = useState(0);
@@ -65,8 +65,8 @@ const RelatedCase = ({ props }) => {
     <section
       className={cn(
         styles.relatedCase,
-        props.className,
-        theme ? styles.relatedCaseDark : ""
+        theme ? styles.relatedCaseDark : "",
+        className
       )}
     >
       <div className={cn("primary-container relative")}>
@@ -103,7 +103,7 @@ const RelatedCase = ({ props }) => {
         <div
           className={cn(
             styles.relatedCaseSlider,
-            props.sliderClassName,
+            sliderClassName,
             "related-case-slider"
           )}
         >

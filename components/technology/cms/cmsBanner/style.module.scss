@@ -1,11 +1,9 @@
 @import "~/styles/partials/config";
 
 .cmsBannerStyle {
-  padding-inline: spacing(p-120);
   padding-block: 10rem 8.75rem;
 
   @include mobile-tablet-p {
-    padding: spacing(section-mob-padding);
     padding-block: 3.75rem 3.75rem;
   }
 
@@ -41,7 +39,6 @@
     margin-top: 0.8rem;
 
     @include mobile-tablet-p {
-      max-width: 100%;
       margin: 0;
     }
   }
@@ -49,6 +46,13 @@
   .flexCol {
     display: flex;
     justify-content: flex-end;
+  }
+
+  .headerBtn {
+    margin-top: 4rem;
+    @include mobile-tablet-p {
+      margin-top: 1.875rem;
+    }
   }
 
   //Dark mode style

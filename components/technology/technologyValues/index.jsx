@@ -89,18 +89,17 @@ const TechnologyValues = ({ props, wrapperStyle }) => {
               <SwiperSlide key={index}>
                 <div className="progress-bar-animation" />
                 <div className={styles.infoSec}>
-                  <div className={styles.icons}>
-                    <ImageCustom
-                      height={100}
-                      width={100}
-                      src={
-                        data?.Images?.data?.attributes?.url
-                          ? `${base_Url}${data?.Images?.data?.attributes?.url}`
-                          : `${base_Url}/`
-                      }
-                    />
-                  </div>
-                  <h6 className={styles.subTitle}>{data?.Title}</h6>
+                  <ImageCustom
+                    height={100}
+                    width={100}
+                    className={styles.icons}
+                    src={
+                      data?.Images?.data?.attributes?.url
+                        ? `${base_Url}${data?.Images?.data?.attributes?.url}`
+                        : `${base_Url}/`
+                    }
+                  />
+                  <h4 className={styles.subTitle}>{data?.Title}</h4>
                   <p className={styles.content}>{data?.Description} </p>
                 </div>
               </SwiperSlide>

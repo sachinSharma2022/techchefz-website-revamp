@@ -11,12 +11,7 @@
   }
 
   .contentSection {
-    padding-inline: spacing(p-120);
     padding-block: 11.25rem 5rem;
-
-    @include desktop-hd {
-      padding-inline: 0;
-    }
 
     @include mobile-tablet-p {
       padding: 2rem 1.25rem;
@@ -30,6 +25,8 @@
 
     @include mobile-tablet-p {
       height: 11.75rem;
+      margin-bottom: 5rem;
+      margin-top: 2.5rem;
     }
 
     img {

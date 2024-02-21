@@ -12,37 +12,34 @@ const Industry = ({ props, CMSImplementation, Industryinner }) => {
   return (
     <section className={cn(styles.industry, theme ? styles.industryDark : "")}>
       <div className={cn("primary-container")}>
-        <div className="row justify-content-between">
-          <div className="col-md-4 col-lg-4">
-            <div className={styles.industryLeft}>
-              <div className="mb-4">
-                <h6>{props[0].Title}</h6>
-                <h5>{props[0].Description}</h5>
-              </div>
-              <div className="mb-4">
-                <h6> {props[0].SubTitle}</h6>
-                <h5>{props[0].Description2}</h5>
-              </div>
+        <div className={styles.contentSection}>
+          <div className={styles.industryLeft}>
+            <div className="mb-4">
+              <h6>{props[0].Title}</h6>
+              <h5>{props[0].Description}</h5>
+            </div>
+            <div className="mb-4">
+              <h6> {props[0].SubTitle}</h6>
+              <h5>{props[0].Description2}</h5>
+            </div>
 
-              <h6> {Industryinner[0].Title}</h6>
-              <div className={styles.serviceBtn}>
-                {Industryinner[0]?.techStacktags?.map((data, index) => (
-                  <button key={index} variant="outline" size="xs">
-                    {data?.Title}
-                  </button>
-                ))}
-              </div>
+            <h6>{Industryinner[0].Title}</h6>
+            <div className={styles.serviceBtn}>
+              {Industryinner[0]?.techStacktags?.map((data, index) => (
+                <button key={index} variant="outline" size="xs">
+                  {data?.Title}
+                </button>
+              ))}
             </div>
           </div>
-          <div className="col-md-7 col-lg-7">
-            <div className={styles.industryRight}>
-              <h3 className={styles.industryHeading}>
-                {CMSImplementation[0].Title}
-              </h3>
-              <p className={styles.industryText}>
-                {CMSImplementation[0].Description}
-              </p>
-            </div>
+
+          <div className={styles.industryRight}>
+            <h3 className={styles.industryHeading}>
+              {CMSImplementation[0].Title}
+            </h3>
+            <p className={styles.industryText}>
+              {CMSImplementation[0].Description}
+            </p>
           </div>
         </div>
 

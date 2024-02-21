@@ -1,16 +1,13 @@
 @import "~/styles/partials/config";
 
 .landingBannerStyle {
-  padding-inline: spacing(p-120);
   padding-block: 11.25rem 8.75rem;
 
   @include mobile-tablet-p {
-    padding: spacing(section-mob-padding);
     padding-block: 3.75rem 3.75rem;
   }
   
   .contentSec {
-    max-width: 500px;
     padding-top: 20px;
   }
 
@@ -45,6 +42,7 @@
   .leadText {
     font-size: text(lg);
     color: rgba(color(text-primary), 0.8);
+
     @include mobile-tablet-p {
       font-size: text(normal);
       font-weight: 400;
@@ -57,6 +55,7 @@
     display: flex;
     justify-content: flex-end;
   }
+  
   .headerBtn {
     margin-top: 4rem;
     @include mobile-tablet-p {

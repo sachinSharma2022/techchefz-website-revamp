@@ -160,7 +160,7 @@ const Projects = ({ project, brands }) => {
             <div className={styles.paraSec}>
               <p className={styles.aboutText}>{project[0]?.Description}</p>
 
-              <Link href="/portfolio">
+              <Link href={project[0]?.BtnLink}>
                 <Button
                   variant={!theme ? "lightBlueOutline" : "outline"}
                   size="md"

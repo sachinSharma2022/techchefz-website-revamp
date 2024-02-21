@@ -68,6 +68,10 @@
       justify-content: space-between;
       gap: 9rem;
 
+      @include desktop-hd {
+        gap: 14rem;
+      }
+
       @include mobile-tablet-p {
         display: inline;
       }
@@ -127,6 +131,10 @@
   .contactTabWrap {
     display: flex;
     gap: 9rem;
+
+    @include desktop-hd {
+      gap: 14rem;
+    }
 
     @include mobile-tablet-p {
       flex-direction: column;
@@ -193,6 +201,10 @@
           margin-bottom: 0;
         }
       }
+    }
+
+    .panelSection {
+      width: 100%;
     }
   }
   .policyArea {

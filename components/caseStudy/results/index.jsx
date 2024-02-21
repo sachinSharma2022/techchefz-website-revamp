@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 const Results = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   const isMobileScreen = useMediaQuery({ query: "(max-width: 767px)" });
- 
+
   return (
     <section className={cn(styles.results, theme ? styles.resultsDark : "")}>
       <div className={cn("primary-container")}>
@@ -27,7 +27,10 @@ const Results = ({ props }) => {
               className={cn(styles.resultHeading, "gradient-text")}
               dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
             ></h3>
-            <p className={styles.resultText} dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}></p>
+            <p
+              className={styles.resultText}
+              dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
+            ></p>
 
             <div className={styles.goalsList}>
               {props.Viewcard.map((data, index) => (
@@ -35,7 +38,11 @@ const Results = ({ props }) => {
                   <div key={index} className={styles.goalsTextWrapper}>
                     <div className={styles.goalsIcons}>
                       <ImageCustom
-                        src={data?.image?.data?.attributes?.url?`${base_Url}${data?.image?.data?.attributes?.url}`:`${base_Url}/`}
+                        src={
+                          data?.image?.data?.attributes?.url
+                            ? `${base_Url}${data?.image?.data?.attributes?.url}`
+                            : `${base_Url}/`
+                        }
                         width={27}
                         height={16}
                       />

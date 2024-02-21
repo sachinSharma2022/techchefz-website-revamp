@@ -8,6 +8,7 @@ import styles from "./style.module.scss";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { base_Uri } from "@/lib/constants";
+import Link from "next/link";
 
 const CmsDifference = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -32,9 +33,14 @@ const CmsDifference = ({ props }) => {
           </div>
 
           <div className={`${styles.careerBtn}`}>
-            <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
-              {props?.Button} <Icons.ArrowRight size={18} />
-            </Button>
+            <Link href={props?.ButtonLink}>
+              <Button
+                variant={theme ? "lightBlueOutline" : "outline"}
+                size="md"
+              >
+                {props?.Button} <Icons.ArrowRight size={18} />
+              </Button>
+            </Link>
           </div>
         </div>
 

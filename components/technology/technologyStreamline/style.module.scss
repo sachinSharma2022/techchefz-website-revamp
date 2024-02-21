@@ -141,11 +141,11 @@
         font-size: text(xxxl);
         font-weight: 500;
         line-height: 2.5rem;
-        margin-bottom: 1.25rem;
+        margin-bottom: 0;
+
         @include mobile-tablet-p {
           font-size: text(lg);
           line-height: 1.75rem;
-          margin-bottom: 0.75rem;
         }
       }
       .cardContent {
@@ -160,6 +160,12 @@
           line-height: text(xl);
           margin-bottom: 0;
         }
+      }
+
+      .contentSection {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
       }
 
       button {

@@ -11,8 +11,7 @@ import { base_Uri } from "@/lib/constants";
 
 const InsightFeatures = ({ props, feature }) => {
   const { theme, setTheme } = useContext(MyContext);
-  console.log(feature,"feat")
-
+  console.log(feature, "feat");
 
   return (
     <section className={!theme ? styles.insightFeatures : styles.darkMode}>
@@ -40,41 +39,51 @@ const InsightFeatures = ({ props, feature }) => {
             dangerouslySetInnerHTML={{ __html: `${feature[0].Title}` }}
           ></h6>
           <div className={styles.featureInsightCards}>
-            {feature.filter((data) =>  data?.attributes?.InsightOverview[0]?.Featured==true).map((data, index) => (
-              <PostCard
-                className={styles.featureInsightCard}
-                key={index}
-                imgSrc={
-                  data?.attributes?.InsightOverview[0]?.Image?.data?.attributes?.url
-                    ? `${base_Uri}${data?.attributes?.InsightOverview[0]?.Image?.data?.attributes?.url}`
-                    : `${base_Uri}/`
-                }
-                title={data?.attributes?.InsightOverview[0].Title}
-                date={data?.attributes?.updatedAt}
-                cardStyle={styles.featureImgBox}
-                theme={theme}
-                href={`/insights/${data?.id}`}
-              />
-            ))}
+            {feature
+              .filter(
+                (data) => data?.attributes?.InsightOverview[0]?.Featured == true
+              )
+              .map((data, index) => (
+                <PostCard
+                  className={styles.featureInsightCard}
+                  key={index}
+                  imgSrc={
+                    data?.attributes?.InsightOverview[0]?.Image?.data
+                      ?.attributes?.url
+                      ? `${base_Uri}${data?.attributes?.InsightOverview[0]?.Image?.data?.attributes?.url}`
+                      : `${base_Uri}/`
+                  }
+                  title={data?.attributes?.InsightOverview[0].Title}
+                  date={data?.attributes?.updatedAt}
+                  cardStyle={styles.featureImgBox}
+                  theme={theme}
+                  href={`/insights/${data?.id}`}
+                />
+              ))}
           </div>
         </div>
         <div className={styles.allInsight}>
           <h6 className={styles.insightSubHeading}>{feature[1].Title} </h6>
           <div className={styles.allInsightCards}>
-            {feature.filter((data) =>  data?.attributes?.InsightOverview[0]?.Featured!=true).map((data, index) => (
-              <PostCard
-                key={index}
-                imgSrc={
-                  data?.attributes?.InsightOverview[0]?.Image?.data?.attributes?.url
-                    ? `${base_Uri}${data?.attributes?.InsightOverview[0]?.Image?.data?.attributes?.url}`
-                    : `${base_Uri}/`
-                }
-                title={data?.attributes?.InsightOverview[0].Title}
-                date={data?.attributes?.updatedAt}
-                theme={theme}
-                href={`/insights/${data?.id}`}
-              />
-            ))}
+            {feature
+              .filter(
+                (data) => data?.attributes?.InsightOverview[0]?.Featured != true
+              )
+              .map((data, index) => (
+                <PostCard
+                  key={index}
+                  imgSrc={
+                    data?.attributes?.InsightOverview[0]?.Image?.data
+                      ?.attributes?.url
+                      ? `${base_Uri}${data?.attributes?.InsightOverview[0]?.Image?.data?.attributes?.url}`
+                      : `${base_Uri}/`
+                  }
+                  title={data?.attributes?.InsightOverview[0].Title}
+                  date={data?.attributes?.updatedAt}
+                  theme={theme}
+                  href={`/insights/${data?.id}`}
+                />
+              ))}
           </div>
 
           <div className={styles.insightButton}>
