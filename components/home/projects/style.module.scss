@@ -202,6 +202,7 @@
     margin-bottom: 5rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    align-items: flex-end;
     gap: 10px;
 
     @include mobile-tablet-p {
@@ -210,6 +211,8 @@
 
     .paraSec {
       min-width: 42.75rem;
+      position: relative;
+      top: 10px;
 
       @include mobile-tablet-p {
         min-width: auto;

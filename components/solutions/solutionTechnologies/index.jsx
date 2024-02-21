@@ -1,17 +1,15 @@
 "use client";
+import ServiceInfoCard from "@/components/common/serviceInfoCard";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
+import { base_Uri, base_Url } from "@/lib/constants";
 import { cn } from "@/lib/utils";
-import { useContext } from "react";
-import Slider from "react-slick";
-import { base_Uri } from "@/lib/constants";
 import Link from "next/link";
-import MobileSlider from "@/components/common/mobileSlider";
-import ServiceInfoCard from "@/components/common/serviceInfoCard";
+import { useContext } from "react";
 import styles from "./style.module.scss";
-import { base_Url } from "@/lib/constants";
+import MobileSlider from "@/components/common/mobileSlider";
 
 const SolutionTechnologies = ({ props }) => {
   console.log("neee", props);
@@ -77,11 +75,14 @@ const SolutionTechnologies = ({ props }) => {
           </div>
 
           <div className={`${styles.careerBtn}`}>
-          <Link href= {props.ButtonLink}>
-            <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
-              {props?.Button} <Icons.ArrowRight size={18} />
-            </Button>
-          </Link>
+            <Link href={props.ButtonLink}>
+              <Button
+                variant={theme ? "lightBlueOutline" : "outline"}
+                size="md"
+              >
+                {props?.Button} <Icons.ArrowRight size={18} />
+              </Button>
+            </Link>
           </div>
         </div>
 
@@ -108,7 +109,11 @@ const SolutionTechnologies = ({ props }) => {
             </div>
             <div className={styles.ourNumbersImg}>
               <ImageCustom
-                src={props?.image?.data?.attributes?.url?`${base_Uri}${props?.image?.data?.attributes?.url}`:`${base_Uri}/`}               
+                src={
+                  props?.image?.data?.attributes?.url
+                    ? `${base_Uri}${props?.image?.data?.attributes?.url}`
+                    : `${base_Uri}/`
+                }
                 width={1000}
                 height={100}
                 alt="bannerImg"
@@ -118,7 +123,22 @@ const SolutionTechnologies = ({ props }) => {
         </div>
       </div>
 
-      
+      <div className={`${styles.mobileSlider} ${styles.ourNumberOption} `}>
+        <MobileSlider slidesToShow={1.4}>
+          {props?.TechnologyInner?.map((data, index) => (
+            <ServiceInfoCard
+              key={index}
+              sbTitle={data.Title}
+              icon={
+                data?.Image?.data?.attributes?.url
+                  ? `${base_Url}${data?.Image?.data?.attributes?.url}`
+                  : `${base_Url}/`
+              }
+              sbText={data.Description}
+            />
+          ))}
+        </MobileSlider>
+      </div>
     </section>
   );
 };
