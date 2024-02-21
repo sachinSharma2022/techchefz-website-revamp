@@ -17,7 +17,7 @@ const CaseStudyBanner = ({ props }) => {
         theme ? styles.caseStudyDark : ""
       }`}
     >
-      <div className={cn("primary-container")}>
+      <div className={cn("primary-container", "header-full-container")}>
         <h1
           className={cn(styles.bannerTitle, "gradient-text")}
           dangerouslySetInnerHTML={{ __html: `${props?.CaseStudyTitle}` }}

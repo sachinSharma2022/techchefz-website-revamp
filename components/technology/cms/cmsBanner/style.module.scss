@@ -1,11 +1,9 @@
 @import "~/styles/partials/config";
 
 .cmsBannerStyle {
-  padding-inline: spacing(p-120);
   padding-block: 10rem 8.75rem;
 
   @include mobile-tablet-p {
-    padding: spacing(section-mob-padding);
     padding-block: 3.75rem 3.75rem;
   }
 
