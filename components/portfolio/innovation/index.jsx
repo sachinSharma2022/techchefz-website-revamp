@@ -12,7 +12,6 @@ import { base_Url } from "@/lib/constants";
 const Innovation = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
 
-  
   return (
     <section className={!theme ? styles.innovationSpacing : styles.darkMode}>
       <div className={cn("primary-container")}>

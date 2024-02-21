@@ -54,7 +54,6 @@ const Streamline = ({ props }) => {
     }
   }, []);
 
- 
   return (
     <div
       id="streamLineWrapper"
@@ -92,17 +91,19 @@ const Streamline = ({ props }) => {
                   }
                 />
               </div>
-              <h6 className={styles.cardTitle}>{data.Title} </h6>
-              <p className={styles.cardContent}>{data.Description}</p>
-              <div>
-              <Link href={data.BtnLink}>
-                <Button
-                  variant={theme ? "lightBlueOutline" : "outline"}
-                  size="md"
-                >
-                  {data.Btn} <Icons.ArrowRight size={18} />
-                </Button>
-              </Link>
+              <div className={styles.contentSection}>
+                <h4 className={styles.cardTitle}>{data.Title} </h4>
+                <p className={styles.cardContent}>{data.Description}</p>
+                <div>
+                  <Link href={data.BtnLink}>
+                    <Button
+                      variant={theme ? "lightBlueOutline" : "outline"}
+                      size="md"
+                    >
+                      {data.Btn} <Icons.ArrowRight size={18} />
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

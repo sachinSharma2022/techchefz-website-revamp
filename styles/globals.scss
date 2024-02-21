@@ -1064,3 +1064,13 @@ html.lenis {
 // =================================
 // Loader Animation End
 // =================================
+
+
+// Case Related Spacing
+.case-related-style {
+  padding-bottom: 0 !important;
+
+  @include mobile-tablet-p {
+    padding-block: 0rem 5rem !important;
+  }
+}
