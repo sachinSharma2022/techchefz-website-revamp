@@ -11,8 +11,6 @@ import HomepageIntro from "@/components/ui/homepageIntro";
 import Curve from "@/components/ui/pageTransition";
 import { api_Home_Page, base_Url } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
-import Head from "next/head";
-
 
 export const metadata = {
   title: "Humanizing Digital Experiences",
@@ -27,7 +25,6 @@ const HomePage = async () => {
       <Curve>
         {data ? (
           <div>
-           
             <LandingBanner props={data.Banner} />
             <HomepageIntro
               src={
