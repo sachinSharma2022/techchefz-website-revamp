@@ -1,13 +1,15 @@
 "use client";
 
+import MobileSlider from "@/components/common/mobileSlider";
 import ServiceInfoCard from "@/components/common/serviceInfoCard";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
+import TextRevel from "@/components/ui/sectionAnimation";
 import { MyContext } from "@/context/theme";
+import { base_Uri, base_Url } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { useContext } from "react";
-import Slider from "react-slick";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
 import TextRevel from "@/components/ui/sectionAnimation";

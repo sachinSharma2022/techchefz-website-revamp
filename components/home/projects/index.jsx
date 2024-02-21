@@ -174,7 +174,7 @@ const Projects = ({ project, brands }) => {
         {!isMobileScreen ? (
           <div ref={container} className={styles.cards}>
             {brands.map((project, i) => {
-              const targetScale = 1 - (projects.length - i) * 0.05;
+              const targetScale = 1 - (brands.length - i) * 0.05;
               return (
                 <Card
                   key={`p_${i}`}
