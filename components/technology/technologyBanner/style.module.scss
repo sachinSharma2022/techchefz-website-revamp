@@ -10,7 +10,6 @@
   }
   
   .contentSec {
-    max-width: 500px;
     padding-top: 20px;
   }
 
@@ -45,6 +44,7 @@
   .leadText {
     font-size: text(lg);
     color: rgba(color(text-primary), 0.8);
+
     @include mobile-tablet-p {
       font-size: text(normal);
       font-weight: 400;
@@ -57,6 +57,7 @@
     display: flex;
     justify-content: flex-end;
   }
+  
   .headerBtn {
     margin-top: 4rem;
     @include mobile-tablet-p {
