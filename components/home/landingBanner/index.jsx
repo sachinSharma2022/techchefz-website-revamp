@@ -35,22 +35,22 @@ const LandingBanner = ({ props }) => {
     >
       <div className={cn("primary-container")}>
         <h1 className={styles.title}>
-          {props.title} <br /> {props.description}
+          {props?.title} <br /> {props?.description}
           <div className={styles.contentContainer}>
-            <span>{props.SubTitle1} </span>
+            <span>{props?.SubTitle1} </span>
             <span className={styles.slider}>
               <Slider {...settings}>
-                <span className={styles.text}>{props.SubTitle2}</span>
-                <span className={styles.text}> {props.SubTitle3}</span>
-                <span className={styles.text}> {props.SubTitle4}</span>
+                <span className={styles.text}>{props?.SubTitle2}</span>
+                <span className={styles.text}> {props?.SubTitle3}</span>
+                <span className={styles.text}> {props?.SubTitle4}</span>
               </Slider>
             </span>
           </div>
         </h1>
 
-        <Link href= {props.BtnLink}>
+        <Link href={props?.BtnLink}>
           <Button variant={theme ? "blueBtnDark" : "blueBtn"} size="md">
-            {props.button} <Icons.ArrowRight size={18} />
+            {props?.button} <Icons.ArrowRight size={18} />
           </Button>
         </Link>
       </div>

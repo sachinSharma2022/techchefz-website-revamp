@@ -37,7 +37,7 @@ const HomepageIntro = (props) => {
           trigger: `.${styles.videoCont}`,
           pin: true,
           markers: false,
-          start: "top "+vh(10),
+          start: "top " + vh(10),
           end: "+=" + (252 + window.innerHeight),
         });
         tl.to(`.${styles.video}`, {

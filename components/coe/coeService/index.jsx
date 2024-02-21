@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { cn } from "@/lib/utils";
 import { base_Uri } from "@/lib/constants";
-
+import Link from "next/link";
 import styles from "./style.module.scss";
 
 const CoeService = ({props}) => {
@@ -35,9 +35,11 @@ const CoeService = ({props}) => {
             <p className={styles.coeServiceText}>
               {props[0]?.Description}
             </p>
+          <Link href={props[0].BtnLink}>
             <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
             {props[0]?.Btn} <Icons.ArrowRight size={18} />
             </Button>
+          </Link>
           </div>
         </div>
       </div>
