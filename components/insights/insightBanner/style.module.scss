@@ -1,89 +1,83 @@
 @import "~/styles/partials/config";
 
 @mixin landingBannerStyle() {
+  .contentSection {
+    padding: 10rem 7.5rem 4.75rem;
 
-   .contentSection {
-      padding: 10rem 7.5rem 4.75rem;
-      display: flex;
-      gap: 8rem;
+    @include mobile-tablet-p {
+      padding: spacing(section-mob-padding);
+    }
 
-      @include mobile-tablet-p {
-         padding: spacing(section-mob-padding);
-         flex-direction: column;
-         gap: 0;
-      }
+    @include desktop-hd {
+      padding-inline: 0;
+    }
+  }
+  .title {
+    font-size: text(xl-larger);
+    font-weight: 500;
+    margin-bottom: 0;
 
-      @include desktop-hd {
-         padding-inline: 0;
-      }
-   }
-   .title {
+    @include mobile-tablet-p {
+      font-size: 2.75rem;
+      line-height: 3.125rem;
+      margin-bottom: text(xl);
+      word-break: break-word;
+    }
+
+    span {
       font-size: text(xl-larger);
       font-weight: 500;
-      margin-bottom: 0;
+      @include textGradient;
 
       @include mobile-tablet-p {
-         font-size: 2.75rem;
-         line-height: 3.125rem;
-         margin-bottom: text(xl);
-         word-break: break-word;
+        font-size: 2.75rem;
+        line-height: 3.5rem;
       }
+    }
+  }
+  .contentRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2.75rem;
+    align-self: stretch;
+  }
 
-      span {
-         font-size: text(xl-larger);
-         font-weight: 500;
-         @include textGradient;
+  .leadText {
+    font-size: text(lg);
+    color: rgba(color(text-primary), 0.8);
+    line-height: 1.875rem;
+    opacity: 0.8;
+    margin-bottom: 0;
 
-         @include mobile-tablet-p {
-            font-size: 2.75rem;
-            line-height: 3.5rem;
-         }
-      }
-   }
-   .contentRight {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 2.75rem;
-      align-self: stretch;
-   }
+    @include mobile-tablet-p {
+      font-size: text(normal);
+      line-height: 1.5rem;
+      max-width: 100%;
+    }
+  }
 
-   .leadText {
-      font-size: text(lg);
-      color: rgba(color(text-primary), 0.8);
-      line-height: 1.875rem;
-      opacity: 0.8;
-      margin-bottom: 0;
-
-      @include mobile-tablet-p {
-         font-size: text(normal);
-         line-height: 1.5rem;
-         max-width: 100%;
-      }
-   }
-
-   .flexCol {
-      display: flex;
-      justify-content: flex-end;
-   }
+  .flexCol {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 
-.landingBannerStyle{
-   @include landingBannerStyle()
+.landingBannerStyle {
+  @include landingBannerStyle();
 }
 
 //light Mode
 
 .darkMode {
-   @include landingBannerStyle();
-   background-color: color(input-bg);
+  @include landingBannerStyle();
+  background-color: color(input-bg);
 
-   .title {
-      color: color(primary-white);
-   }
-   .leadText {
-      color: rgba(color(primary-white), 0.8);
-   }
- }
- 
+  .title {
+    color: color(primary-white);
+  }
+  .leadText {
+    color: rgba(color(primary-white), 0.8);
+  }
+}

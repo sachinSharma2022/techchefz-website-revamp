@@ -10,14 +10,10 @@
   .contentSection {
     padding-inline: spacing(p-120);
     padding-top: 10rem;
-    display: flex;
-    gap: 8rem;
 
     @include mobile-tablet-p {
       padding: spacing(section-mob-padding);
       padding-block: 3.75rem 0rem;
-      flex-direction: column;
-      gap: 0;
     }
 
     @include desktop-hd {
@@ -48,10 +44,6 @@
       }
     }
   }
-
-  .desc {
-   max-width: 23rem;
- }
 
   .leadText {
     font-size: text(lg);

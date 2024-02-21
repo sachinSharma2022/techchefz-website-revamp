@@ -12,7 +12,8 @@ import { useContext, useEffect, useState } from "react";
 import styles from "./style.module.scss";
 import AnimatedLogo from "@/components/common/animatedLogo";
 
-const NavigationDesktop = () => {
+const NavigationDesktop = ({props}) => {
+ 
   const pathname = usePathname();
   const { theme, setTheme } = useContext(MyContext);
   const [isScrolled, setIsScrolled] = useState(false);

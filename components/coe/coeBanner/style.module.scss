@@ -2,8 +2,6 @@
 
 .banner {
   .bannerContent {
-    display: flex;
-    justify-content: space-between;
     padding: 10rem 7.5rem 5rem;
     
     @include desktop-hd {
@@ -12,15 +10,12 @@
     
     @include mobile-tablet-p {
       padding:5rem 1.25rem 3.75rem;
-      flex-direction: column;
-      gap: 1.5rem;
     }
     
     .bannerTitle {
       font-size: text(xl-larger);
       font-weight: 500;
       line-height: 5rem;
-      max-width: 580px;
       
       @include mobile-tablet-p {
         font-size: text(larger);
@@ -43,7 +38,6 @@
       justify-content: center;
       align-items: flex-start;
       gap: 4rem;
-      max-width: 447px;
       p {
         font-size: text(lg);
         line-height: 1.875rem;

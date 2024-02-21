@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 import styles from "./style.module.scss";
 
-const CmsBanner = ({props}) => {
+const CmsBanner = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section
@@ -14,11 +14,15 @@ const CmsBanner = ({props}) => {
         theme ? styles.cmsBannerDark : ""
       }`}
     >
-      <div className={cn("primary-container", styles.flexContainer)}>
-        <h1 className={cn(styles.title,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.title}`}}>
-        </h1>
-        <p className={cn(styles.leadText,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props.subtitle}`}}>
-        </p>
+      <div className={cn("primary-container", "header-container")}>
+        <h1
+          className={cn(styles.title, "gradient-text")}
+          dangerouslySetInnerHTML={{ __html: `${props?.title}` }}
+        ></h1>
+        <p
+          className={cn(styles.leadText, "gradient-text")}
+          dangerouslySetInnerHTML={{ __html: `${props.subtitle}` }}
+        ></p>
       </div>
     </section>
   );

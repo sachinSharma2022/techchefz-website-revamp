@@ -1032,9 +1032,19 @@ html.lenis {
 }
 
 // =================================
-// Loader Animation
+// Header Common Style
 // =================================
+.header-container {
+  display: grid;
+  grid-template-columns: 55% auto;
+  gap: 8.938rem;
 
+  @include mobile-tablet-p {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem 0;
+  }
+}
 // =================================
 // Loader Animation End
 // =================================
