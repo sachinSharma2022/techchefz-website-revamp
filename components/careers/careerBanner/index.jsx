@@ -9,7 +9,7 @@ import Link from "next/link";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
 
-const CareerBanner = ({ props,gallary }) => {
+const CareerBanner = ({ props, gallary }) => {
   console.log("dataaa", props);
   const { theme, setTheme } = useContext(MyContext);
   return (
@@ -19,7 +19,7 @@ const CareerBanner = ({ props,gallary }) => {
       }`}
     >
       <div className={cn("primary-container")}>
-        <div className={styles.contentSection}>
+        <div className={cn(styles.contentSection, "header-container")}>
           <h1
             className={cn(styles.title, "gradient-text")}
             dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}` }}

@@ -16,7 +16,7 @@ const TechnologyBanner = ({ props }) => {
         theme ? styles.landingBannerDark : ""
       }`}
     >
-      <div className={cn("primary-container", styles.flexContainer)}>
+      <div className={cn("primary-container", "header-container")}>
         <h1
           className={cn(styles.title, "gradient-text")}
           dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}` }}

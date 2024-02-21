@@ -7,6 +7,10 @@
   border: 0.14rem solid rgba(color(text-primary), 0.12);
   border-radius: 1.25rem;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   @include transition(0.5s);
 
   @include mobile-tablet-p {
@@ -18,8 +22,10 @@
   }
 
   .cardImg {
+    width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 2.5rem;
 
     @include mobile-tablet-p {

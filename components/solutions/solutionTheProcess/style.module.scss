@@ -2,6 +2,7 @@
 
 .theProcessStyle {
   padding: 8.75rem 7.5rem 20rem;
+  //padding-top: 0;
 
   @include mobile-tablet-p {
     padding: 3.75rem 1.25rem;
@@ -28,6 +29,7 @@
 
   .headSection {
     margin-bottom: 5rem;
+    max-width: 50%;
 
     @include mobile-tablet-p {
       margin-bottom: 0;
@@ -66,7 +68,7 @@
     }
 
     .ourNumbersImg {
-      width: 32vw;
+width: 32vw;
 
       @include desktop-hd {
         width: 25vw;
@@ -80,6 +82,7 @@
 
     .circularStepperContainer {
       position: relative;
+      width: 510px;
 
       @include mobile-tablet-p {
         width: 100vw;
@@ -112,6 +115,7 @@
     flex-direction: column;
     gap: 2.5rem;
     margin-top: 12.75rem;
+    min-width: 50%;
 
     @include mobile {
       flex-direction: row;
