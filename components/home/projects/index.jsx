@@ -199,7 +199,7 @@ const Projects = ({ project, brands }) => {
               }}
             >
               {brands.map((project, i) => {
-                const targetScale = 1 - (brands.length - i) * 0.05;
+                const targetScale = 1 - (brands.length - i) * 0.1;
                 return (
                   <SwiperSlide key={`p_${i}`}>
                     <Card

@@ -64,9 +64,9 @@ const SolutionTheProcess = ({ props }) => {
           },
           scrollTrigger: {
             trigger: text,
-            start: "top 45%",
+            start: "top 35%",
             end: "center 20%",
-            markers: false,
+            markers: true,
             toggleActions: "play reset play reverse",
           },
           opacity: 1,

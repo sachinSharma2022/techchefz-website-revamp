@@ -25,9 +25,8 @@ const HomepageIntro = (props) => {
           scrollTrigger: {
             trigger: `.${styles.video}`,
             scrub: 1,
-            start: "top 20%",
-            end: "+=" + (272 + window.innerHeight),
-            markers: false,
+            start: "top 1%",
+            end: "+=" + (230 + window.innerHeight),
             markers: false,
             invalidateOnRefresh: true,
             anticipatePin: 1,
@@ -36,33 +35,34 @@ const HomepageIntro = (props) => {
         ScrollTrigger.create({
           trigger: `.${styles.videoCont}`,
           pin: true,
-          markers: false,
-          start: "top "+vh(10),
-          end: "+=" + (252 + window.innerHeight),
+          markers: true,
+          start: "top 9%",
+          end: "+=" + (275 + window.innerHeight),
         });
         tl.to(`.${styles.video}`, {
           width: "100%",
           height: "100%",
-          duration: 5,
-          borderRadius: "0%",
+          duration: 3,
+          borderRadius: "12px",
         })
           .to(`.${styles.video}`, {
-            width: "70%",
-            height: "70%",
-            duration: 4,
-            borderRadius: "0%",
+            width: "50%",
+            height: "40%",
+            duration: 6,
+            marginTop:20,
+            borderRadius: "12px",
           })
           .to(
             `.${styles.video}`,
             {
-              y: 50,
+              // y: -1,
+              x:-65,
               duration: 8,
-              width: "5%",
-              top: "10%",
-              height: "10%",
-              borderRadius: "10%",
+              width: "4%",
+              height: "8%",
+              borderRadius: "20%",
             },
-            ">8"
+            // ">1"
           )
           .to(`.${styles.video}`, { borderRadius: "50%", duration: 1 });
       });
