@@ -8,16 +8,11 @@
   }
 
   .contentSection {
-    padding-inline: spacing(p-120);
     padding-top: 10rem;
 
     @include mobile-tablet-p {
       padding: spacing(section-mob-padding);
       padding-block: 3.75rem 0rem;
-    }
-
-    @include desktop-hd {
-      padding-inline: 0;
     }
   }
   .title {

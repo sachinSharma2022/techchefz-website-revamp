@@ -26,10 +26,10 @@ const Cms = async () => {
             wrapperStyle="technology-cms-styles"
             props={data.Technology}
           /> */}
-           <SolutionTheProcess props={data.OurProcess} />
-           <Faq props={data.Faq} />
+          <SolutionTheProcess props={data.OurProcess} />
+          <Faq props={data.Faq} />
           <RelatedCase sliderClassName="mb-0" props={data.CaseStudy} />
-          
+
           <LetsWork contact={data.ContactUs} />
         </div>
       ) : (

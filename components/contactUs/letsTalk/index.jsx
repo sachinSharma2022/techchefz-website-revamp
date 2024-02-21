@@ -174,24 +174,26 @@ const LetsTalk = ({ props }) => {
                   )}
                 </Tab>
               </Tab.List>
-              <Tab.Panels>
-                <Tab.Panel>
-                  {/* Project Form */}
-                  <ProjectForm />
-                </Tab.Panel>
-                <Tab.Panel>
-                  {/* Services Form */}
-                  <ServicesForm />
-                </Tab.Panel>
-                <Tab.Panel>
-                  {/* Jobs Form */}
-                  <JobsForm />
-                </Tab.Panel>
-                <Tab.Panel>
-                  {/* Vendor Form */}
-                  <VendorForm />
-                </Tab.Panel>
-              </Tab.Panels>
+              <div className={styles.panelSection}>
+                <Tab.Panels>
+                  <Tab.Panel>
+                    {/* Project Form */}
+                    <ProjectForm />
+                  </Tab.Panel>
+                  <Tab.Panel>
+                    {/* Services Form */}
+                    <ServicesForm />
+                  </Tab.Panel>
+                  <Tab.Panel>
+                    {/* Jobs Form */}
+                    <JobsForm />
+                  </Tab.Panel>
+                  <Tab.Panel>
+                    {/* Vendor Form */}
+                    <VendorForm />
+                  </Tab.Panel>
+                </Tab.Panels>
+              </div>
             </Tab.Group>
           </div>
         </div>

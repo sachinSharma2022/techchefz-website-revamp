@@ -49,7 +49,7 @@
 
   // Dark Mode
   &.serviceBoxDark {
-    background-color: color(dark-bg);
+    background-color: color(text-primary);
     border-color: rgba(color(primary-white), 0.12);
 
     &:hover {

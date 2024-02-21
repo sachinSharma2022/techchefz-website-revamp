@@ -10,10 +10,8 @@ import { base_Uri } from "@/lib/constants";
 
 import styles from "./style.module.scss";
 
-const ImageCaptionCard = ({case_study}) => {
+const ImageCaptionCard = ({ case_study }) => {
   const { theme, setTheme } = useContext(MyContext);
-
- 
 
   const dataServices = [
     { value: "Data", label: "Data" },
@@ -36,7 +34,9 @@ const ImageCaptionCard = ({case_study}) => {
   ];
 
   return (
-    <section className={cn(theme ? styles.darkStyle : "")}>
+    <section
+      className={cn(styles.imageCaptionCard, theme ? styles.darkStyle : "")}
+    >
       <div className={cn("primary-container")}>
         <div
           className={cn(styles.dropdownStyle, theme ? styles.dropdownDark : "")}
@@ -74,27 +74,40 @@ const ImageCaptionCard = ({case_study}) => {
           )}
         >
           {case_study.map((data, index) => (
-            <Link href={`/portfolio/${data.id}`} key={index} className={`grid-${index}`}>
+            <Link
+              href={`/portfolio/${data.id}`}
+              key={index}
+              className={`grid-${index}`}
+            >
               <div className={`${styles.imageCard} card`}>
                 <div className={styles.cardImg}>
                   <div className={`${styles.imgBox} imgBox`}>
                     <ImageCustom
-                      src={data?.attributes?.Banner?.PortfolioImage?.data?.attributes?.url?`${base_Uri}${data?.attributes?.Banner?.PortfolioImage?.data?.attributes?.url}`:`${base_Uri}/`}
+                      src={
+                        data?.attributes?.Banner?.PortfolioImage?.data
+                          ?.attributes?.url
+                          ? `${base_Uri}${data?.attributes?.Banner?.PortfolioImage?.data?.attributes?.url}`
+                          : `${base_Uri}/`
+                      }
                       width={1500}
                       height={1500}
                       alt="captionImg"
                     />
                   </div>
                   <div className={styles.cardBadges}>
-                    {data?.attributes?.Industryinner[0]?.techStacktags?.map((badgeItem) => (
-                      <div key={badgeItem} className={styles.badges}>
-                        {badgeItem.Title}
-                      </div>
-                    ))}
+                    {data?.attributes?.Industryinner[0]?.techStacktags?.map(
+                      (badgeItem) => (
+                        <div key={badgeItem} className={styles.badges}>
+                          {badgeItem.Title}
+                        </div>
+                      )
+                    )}
                   </div>
                 </div>
                 <div className={styles.cardBody}>
-                  <h2 className={styles.cardText}>{data?.attributes?.Banner?.PortfolioTitle}</h2>
+                  <h2 className={styles.cardText}>
+                    {data?.attributes?.Banner?.PortfolioTitle}
+                  </h2>
                   <Icons.ArrowLongRight size={18} />
                 </div>
               </div>
