@@ -74,11 +74,11 @@ const RelatedCase = ({ props, className, sliderClassName }) => {
           <div>
             <h6
               className={cn(styles.relatedCaseTitle, "gradient-text")}
-              dangerouslySetInnerHTML={{ __html: `${props.Title}` }}
+              dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
             ></h6>
             <h3
               className={cn(styles.relatedCaseHeading, "gradient-text")}
-              dangerouslySetInnerHTML={{ __html: `${props.Description}` }}
+              dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
             ></h3>
           </div>
 
@@ -117,7 +117,7 @@ const RelatedCase = ({ props, className, sliderClassName }) => {
                       ? base_Uri + data?.Image?.data?.attributes?.url
                       : `${base_Uri}/`
                   }
-                  title={data.Title}
+                  title={data?.Title}
                   textStyle={styles.textStyle}
                 />
               </div>
