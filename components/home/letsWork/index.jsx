@@ -7,7 +7,7 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import { Error, Input, Textarea } from "@/components/ui/inputCustom";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
-
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
@@ -184,7 +184,7 @@ const LetsWork = ({ contact }) => {
                     <p className={styles.policyText}>
                       {contact?.policy}
                       <span className={styles.policyHighlight}>
-                        Privacy Policy
+                      <Link href={contact?.BtnLink}>Privacy Policy</Link>
                       </span>
                     </p>
                     <div className={`${styles.buttonGrid}`}>
