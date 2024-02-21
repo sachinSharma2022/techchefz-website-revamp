@@ -53,20 +53,14 @@
   .innovationCardsGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    gap: 4rem;
 
     @include desktop-hd {
       grid-template-columns: repeat(3, 1fr);
-      gap: 2.75rem;
     }
    
     @include mobile-tablet-p {
       grid-template-columns: repeat(2, 1fr);
-      gap: 2.7rem;
-    }
-
-    @include mobile {
-      grid-template-columns: repeat(1, 1fr);
       gap: 2.7rem;
     }
 
@@ -78,7 +72,7 @@
         color(bg-soft) 3.48%,
         rgba(241, 241, 241, 0) 121.7%
       );
-      padding: 3.75rem 0 1.875rem 0;
+      padding: 4rem 0;
       border-radius: text(xl);
       border: 0.125rem solid rgba(color(text-primary), 0.12);
       @include transition(0.5s);
@@ -89,7 +83,7 @@
 
       .bgImage div {
         width: 100%;
-        height: 150px;
+        height: 180px;
         @include transition(0.5s);
 
         img {
@@ -116,7 +110,7 @@
         padding: 0 0.625rem;
 
         .sbTitle {
-          font-size: 2rem;
+          font-size: 2.3rem;
           font-weight: 500;
           line-height: text(xxxl);
           margin-bottom: 0;
@@ -163,25 +157,6 @@
     }
   }
   .innovationCardsGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-
-    @include desktop-hd {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2.75rem;
-    }
-   
-    @include mobile-tablet-p {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2.7rem;
-    }
-
-    @include mobile {
-      grid-template-columns: repeat(1, 1fr);
-      gap: 2.7rem;
-    }
-
     .innovationBox {
       background: linear-gradient(
         0deg,

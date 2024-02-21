@@ -125,6 +125,10 @@
   .footLeftPanel {
     padding-right: 7rem;
 
+    @include desktop-hd {
+      padding-right: 12rem;
+    }
+
     @include tablet {
       padding-right: 0;
     }
