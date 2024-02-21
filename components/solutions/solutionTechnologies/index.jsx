@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import { useContext } from "react";
 import Slider from "react-slick";
 import { base_Uri } from "@/lib/constants";
-
+import Link from "next/link";
 import MobileSlider from "@/components/common/mobileSlider";
 import ServiceInfoCard from "@/components/common/serviceInfoCard";
 import styles from "./style.module.scss";
@@ -77,9 +77,11 @@ const SolutionTechnologies = ({ props }) => {
           </div>
 
           <div className={`${styles.careerBtn}`}>
+          <Link href= {props.ButtonLink}>
             <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
               {props?.Button} <Icons.ArrowRight size={18} />
             </Button>
+          </Link>
           </div>
         </div>
 

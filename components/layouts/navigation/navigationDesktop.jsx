@@ -108,7 +108,7 @@ const NavigationDesktop = ({props}) => {
                 href="/about"
                 className={pathname == "/about" ? styles.active : ""}
               >
-                About Us
+                About
               </Link>
             </li>
             <li className={styles.menuItem}>

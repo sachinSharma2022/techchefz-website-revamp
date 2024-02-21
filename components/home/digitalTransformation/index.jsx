@@ -79,7 +79,7 @@ const DigitalTransformation = ({ digital }) => {
             </div>
 
             <div className={`${styles.servicesBtn}`}>
-              <Link href="/solutions">
+              <Link href={digital[0]?.BtnLink}>
                 <Button
                   variant={theme ? "lightBlueOutline" : "outline"}
                   size="md"

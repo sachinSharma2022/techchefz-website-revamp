@@ -52,7 +52,7 @@ const WeAreFuture = ({ props }) => {
                 {props?.CompanyTechnology[0]?.description}
               </p>
 
-              <Link href="/about">
+              <Link href={props?.CompanyTechnology[0]?.BtnLink}>
                 <Button
                   variant={theme ? "lightBlueOutline" : "outline"}
                   size="md"
