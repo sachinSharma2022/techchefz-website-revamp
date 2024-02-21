@@ -56,7 +56,7 @@ const TechnologyStack = ({technology}) => {
                 </div>
               ))}
             </div>
-            <Link href="/technology">
+            <Link href={technology[0]?.BtnLink}>
               <Button
                 variant={theme ? "lightBlueOutline" : "outline"}
                 size="md"

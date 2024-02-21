@@ -26,7 +26,7 @@ const TechnologyBanner = ({ props }) => {
             className={styles.leadText}
             dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}` }}
           ></p>
-          <Link href="/contact-us">
+          <Link href={props[0]?.BtnLink}>
             <Button
               variant={theme ? "blueBtnDark" : "blueBtn"}
               className={styles.headerBtn}

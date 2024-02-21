@@ -23,6 +23,7 @@ const CmsBanner = ({ props }) => {
           className={cn(styles.leadText, "gradient-text")}
           dangerouslySetInnerHTML={{ __html: `${props.subtitle}` }}
         ></p>
+        
       </div>
     </section>
   );
