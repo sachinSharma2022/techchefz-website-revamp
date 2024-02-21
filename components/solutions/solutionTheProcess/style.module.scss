@@ -68,7 +68,7 @@
     }
 
     .ourNumbersImg {
-width: 32vw;
+      width: 32vw;
 
       @include desktop-hd {
         width: 25vw;
@@ -130,7 +130,9 @@ width: 32vw;
       border: 0.14rem solid rgba(color(text-primary), 0.12);
       max-width: 587px;
       opacity: 0.4;
-
+      p {
+        margin-bottom: 0;
+      }
       @include mobile {
         min-width: 100%;
       }
