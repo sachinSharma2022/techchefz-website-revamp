@@ -67,6 +67,16 @@ const OurHistory = ({ props, OurHistory }) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    centerMode: true,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
@@ -158,7 +168,7 @@ const OurHistory = ({ props, OurHistory }) => {
         <div className={cn("primary-container")}>
           <Slider asNavFor={nav1} ref={slider3} {...settingTimeline}>
             {OurHistory.map((index) => (
-              <div key={index} className={styles.cardStyle} />
+              <div key={index} />
             ))}
           </Slider>
         </div>

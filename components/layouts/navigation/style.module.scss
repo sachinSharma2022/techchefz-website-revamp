@@ -13,7 +13,6 @@
     display: flex;
     align-items: center;
     padding: 0px 1rem;
-    background-color: color(primary-white);
   }
 
   .headerContainer {
@@ -709,11 +708,7 @@
   // Dark Style here
   &.headerDarkStyle {
     border-bottom: 1px solid rgba(color(primary-white), 0.12);
-
-    @include mobile {
-      background-color: color(input-bg);
-    }
-
+    
     .navHamburger {
       span {
         background-color: color(primary-white);

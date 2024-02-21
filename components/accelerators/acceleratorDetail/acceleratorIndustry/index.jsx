@@ -7,10 +7,9 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import { Icons } from "@/components/icons";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
+import Link from "next/link";
 
-
-const AcceleratorIndustry = ({props}) => {
- 
+const AcceleratorIndustry = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section
@@ -24,7 +23,7 @@ const AcceleratorIndustry = ({props}) => {
               <h4 className={styles.heading}>{props?.SubTitle}</h4>
             </div>
 
-            <h6 >{props?.Description}</h6>
+            <h6>{props?.Description}</h6>
             <div className={styles.serviceBtn}>
               <button variant="outline" size="xs">
                 {props?.DescriptionInner[0].Tags}
@@ -33,26 +32,42 @@ const AcceleratorIndustry = ({props}) => {
           </div>
           <div>
             <div className={styles.industryRight}>
-              <h3 className={styles.industryHeading} dangerouslySetInnerHTML={{ __html: `${props?.DescriptionInner[0].Title}`}}>
-               
-              </h3>
-              <p className={styles.industryText} dangerouslySetInnerHTML={{ __html: `${props?.DescriptionInner[0].Description}`}}>
-                
-              </p>
-              <Button variant={theme ? "lightBlueOutline" : "outline"} className="info" size="md">
-                {props?.DescriptionInner[0].Btn} <Icons.ArrowRight size={18} />
-              </Button>
+              <h3
+                className={styles.industryHeading}
+                dangerouslySetInnerHTML={{
+                  __html: `${props?.DescriptionInner[0].Title}`,
+                }}
+              ></h3>
+              <p
+                className={styles.industryText}
+                dangerouslySetInnerHTML={{
+                  __html: `${props?.DescriptionInner[0].Description}`,
+                }}
+              ></p>
+              <Link href={props?.DescriptionInner[0].BtnLink}>
+                <Button
+                  variant={theme ? "lightBlueOutline" : "outline"}
+                  className="info"
+                  size="md"
+                >
+                  {props?.DescriptionInner[0].Btn}{" "}
+                  <Icons.ArrowRight size={18} />
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
 
         <div className={styles.industryImg}>
           <ImageCustom
-            src={props?.Image?.data?.attributes?.url?`${base_Uri}${props?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+            src={
+              props?.Image?.data?.attributes?.url
+                ? `${base_Uri}${props?.Image?.data?.attributes?.url}`
+                : `${base_Uri}/`
+            }
             width={1300}
             height={800}
             alt="website-img"
-            
           />
         </div>
       </div>
