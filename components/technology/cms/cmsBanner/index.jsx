@@ -27,17 +27,18 @@ const CmsBanner = ({ props }) => {
             className={cn(styles.leadText, "gradient-text")}
             dangerouslySetInnerHTML={{ __html: `${props.subtitle}` }}
           ></p>
-          <Link href="/contact-us">
+          <Link href={props?.BtnLink}>
             <Button
               variant={theme ? "blueBtnDark" : "blueBtn"}
               className={styles.headerBtn}
               size="md"
             >
-              {props[0]?.Button}
+              {props?.Btn}
               <Icons.ArrowRight size={20} className="ms-2" />
             </Button>
           </Link>
         </div>
+        
       </div>
     </section>
   );

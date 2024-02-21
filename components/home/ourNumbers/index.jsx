@@ -7,10 +7,15 @@ import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import TextRevel from "@/components/ui/sectionAnimation";
 import { MyContext } from "@/context/theme";
-import { base_Uri, base_Url } from "@/lib/constants";
+
 import { cn } from "@/lib/utils";
 import { useContext } from "react";
 import styles from "./style.module.scss";
+import { base_Uri } from "@/lib/constants";
+
+
+import { base_Url } from "@/lib/constants";
+import Link from "next/link";
 
 const OurNumbers = ({ carrer, experience }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -73,6 +78,7 @@ const OurNumbers = ({ carrer, experience }) => {
             </div>
 
             <div>
+            <Link href={carrer.BtnLink}>
               <Button
                 variant={theme ? "lightBlueOutline" : "outline"}
                 size="md"
@@ -80,6 +86,7 @@ const OurNumbers = ({ carrer, experience }) => {
                 {carrer.button}
                 <Icons.ArrowRight size={18} />
               </Button>
+            </Link>
             </div>
           </div>
         </TextRevel>

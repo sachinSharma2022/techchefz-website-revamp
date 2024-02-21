@@ -7,6 +7,7 @@ import { base_Uri } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { useContext } from "react";
 import styles from "./style.module.scss";
+import Link from "next/link";
 
 const Consistent = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -41,12 +42,14 @@ const Consistent = ({ props }) => {
                 className={cn(styles.consistentText, "gradient-text")}
                 dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
               ></p>
+            <Link href={props.BtnLink}>
               <Button
                 variant={theme ? "lightBlueOutline" : "outline"}
                 size="md"
               >
                 {props?.Btn} <Icons.ArrowRight size={18} />
               </Button>
+            </Link>
             </div>
           </div>
         </div>
