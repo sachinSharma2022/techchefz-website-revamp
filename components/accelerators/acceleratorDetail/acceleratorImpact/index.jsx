@@ -7,6 +7,7 @@ import { useContext } from "react";
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
+import Link from "next/link";
 
 const AcceleratorImpact = ({props}) => {
   console.log("ac",props);
@@ -35,9 +36,11 @@ const AcceleratorImpact = ({props}) => {
             <ul dangerouslySetInnerHTML={{ __html: `${props?.imagelinks[0].Description}`}}>
               
             </ul>
+            <Link href= {props?.imagelinks[0].Document}  target="_blank">
             <Button variant={theme ? "lightBlueOutline" : "outline"} size="lg">
               {props?.imagelinks[0].btn} <Icons.ArrowRight size={18} />
             </Button>
+            </Link>
           </div>
         </div>
         <div className={styles.impactTopSection}>
@@ -46,9 +49,11 @@ const AcceleratorImpact = ({props}) => {
             <p dangerouslySetInnerHTML={{ __html: `${props?.imagelinks[1].Description}`}}>
               
             </p>
+            <Link href= {props?.imagelinks[1].Document}  target="_blank">
             <Button variant={theme ? "lightBlueOutline" : "outline"} size="lg">
             {props?.imagelinks[1].btn} <Icons.ArrowRight size={18} />
             </Button>
+            </Link>
           </div>
           <div className={styles.impactImage}>
             <ImageCustom
@@ -73,9 +78,11 @@ const AcceleratorImpact = ({props}) => {
             <p dangerouslySetInnerHTML={{ __html: `${props?.imagelinks[2].Description}`}}>
               
             </p>
+            <Link href= {props?.imagelinks[2].Document}  target="_blank">
             <Button variant={theme ? "lightBlueOutline" : "outline"} size="lg">
             {props?.imagelinks[2].btn}  <Icons.ArrowRight size={18} />
             </Button>
+            </Link>
           </div>
         </div>
       </div>
