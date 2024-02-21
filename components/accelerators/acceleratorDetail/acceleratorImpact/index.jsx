@@ -36,11 +36,11 @@ const AcceleratorImpact = ({props}) => {
             <ul dangerouslySetInnerHTML={{ __html: `${props?.imagelinks[0].Description}`}}>
               
             </ul>
-            <Link href= {props?.imagelinks[0].Document}  target="_blank">
+            <a href={props?.imagelinks[0]?.Document?.data?.attributes?.url?`${base_Uri}${props?.imagelinks[0]?.Document?.data?.attributes?.url}`:`${base_Uri}/`}  target="_blank"  download>
             <Button variant={theme ? "lightBlueOutline" : "outline"} size="lg">
               {props?.imagelinks[0].btn} <Icons.ArrowRight size={18} />
             </Button>
-            </Link>
+            </a>
           </div>
         </div>
         <div className={styles.impactTopSection}>
@@ -49,11 +49,11 @@ const AcceleratorImpact = ({props}) => {
             <p dangerouslySetInnerHTML={{ __html: `${props?.imagelinks[1].Description}`}}>
               
             </p>
-            <Link href= {props?.imagelinks[1].Document}  target="_blank">
+            <a href={props?.imagelinks[1]?.Document?.data?.attributes?.url?`${base_Uri}${props?.imagelinks[0]?.Document?.data?.attributes?.url}`:`${base_Uri}/`} target="_blank" download>
             <Button variant={theme ? "lightBlueOutline" : "outline"} size="lg">
             {props?.imagelinks[1].btn} <Icons.ArrowRight size={18} />
             </Button>
-            </Link>
+            </a>
           </div>
           <div className={styles.impactImage}>
             <ImageCustom
@@ -78,11 +78,11 @@ const AcceleratorImpact = ({props}) => {
             <p dangerouslySetInnerHTML={{ __html: `${props?.imagelinks[2].Description}`}}>
               
             </p>
-            <Link href= {props?.imagelinks[2].Document}  target="_blank">
+            <a href={props?.imagelinks[2]?.Document?.data?.attributes?.url?`${base_Uri}${props?.imagelinks[0]?.Document?.data?.attributes?.url}`:`${base_Uri}/`} target="_blank"  download>
             <Button variant={theme ? "lightBlueOutline" : "outline"} size="lg">
             {props?.imagelinks[2].btn}  <Icons.ArrowRight size={18} />
             </Button>
-            </Link>
+            </a>
           </div>
         </div>
       </div>
