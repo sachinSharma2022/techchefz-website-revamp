@@ -19,6 +19,7 @@
       object-fit: cover;
       width: 84%;
       height: 84%;
+      border-radius: 0.75rem;
 
       @include mobile {
         width: 100%;

@@ -39,7 +39,7 @@ const SolutionTheProcess = ({ props }) => {
           trigger: `.${styles.headSection}`,
           scrub: 0.5,
           start: "top 11%",
-          end: "bottom +=500",
+          end: "bottom +=600",
 
           pin: true,
           markers: false,
@@ -64,8 +64,8 @@ const SolutionTheProcess = ({ props }) => {
           },
           scrollTrigger: {
             trigger: text,
-            start: "top 45%",
-            end: "center 20%",
+            start: "top 400rem",
+            end: "center 232rem",
             markers: false,
             toggleActions: "play reset play reverse",
           },
@@ -180,7 +180,7 @@ const SolutionTheProcess = ({ props }) => {
                     className="dot"
                     id="3"
                     cx="5"
-                    cy="238"
+                    cy="235"
                     r="20"
                     fill="white"
                     stroke-width="2"
@@ -276,7 +276,7 @@ const SolutionTheProcess = ({ props }) => {
                   />
                   <text
                     x="460"
-                    y="238"
+                    y="235"
                     text-anchor="middle"
                     fill="white"
                     alignment-baseline="middle"
