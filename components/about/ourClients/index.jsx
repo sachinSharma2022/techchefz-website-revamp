@@ -77,7 +77,7 @@ const OurClients = ({props}) => {
             <p className={styles.description} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
               
             </p>
-            <Link href="/contact-us">
+            <Link href={props?.BtnLink}>
               <Button
                 variant={theme ? "lightBlueOutline" : "outline"}
                 size="lg"

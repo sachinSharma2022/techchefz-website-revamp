@@ -8,6 +8,7 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
+import Link from "next/link";
 
 const DetailBanner = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -23,13 +24,15 @@ const DetailBanner = ({ props }) => {
             <p
               dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
             ></p>
-            <Button
-              variant={theme ? "blueBtnDark" : "blueBtn"}
-              className={styles.headerBtn}
-              size="md"
-            >
-              {props?.Btn} <Icons.ArrowRight size={20} className="ms-2" />
-            </Button>
+            <Link href={props?.BtnLink}>
+              <Button
+                variant={theme ? "blueBtnDark" : "blueBtn"}
+                className={styles.headerBtn}
+                size="md"
+              >
+                {props?.Btn} <Icons.ArrowRight size={20} className="ms-2" />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

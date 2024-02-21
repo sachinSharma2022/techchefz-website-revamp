@@ -23,7 +23,7 @@ const InsightBanner = ({ props }) => {
           ></h1>
           <div className={styles.contentRight}>
             <p className={styles.leadText}>{props.SubTitle}</p>
-            <Link href="/insight-inside">
+            <Link href={props?.BtnLink}>
               <Button
                 variant={theme ? "lightBlueBtn" : "blueBtn"}
                 className={styles.headerBtn}
