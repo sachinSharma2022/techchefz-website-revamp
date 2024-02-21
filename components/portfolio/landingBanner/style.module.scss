@@ -1,11 +1,9 @@
 @import "~/styles/partials/config";
 
 @mixin landingBannerStyle() {
-  padding-inline: spacing(p-120);
   padding-block: 11.25rem 8.75rem;
 
   @include mobile-tablet-p {
-    padding: spacing(section-mob-padding);
     padding-block: 3.75rem 3.75rem;
   }
   
@@ -37,7 +35,6 @@
   .leadText {
     font-size: text(lg);
     font-weight: 400;
-    max-width: 85%;
     color: rgba(color(text-primary), 0.8);
 
     @include mobile-tablet-p {

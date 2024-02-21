@@ -1038,12 +1038,19 @@ html.lenis {
   display: grid;
   grid-template-columns: 55% auto;
   gap: 8.938rem;
+  padding: 0 2.5rem;
 
   @include mobile-tablet-p {
     display: flex;
     flex-direction: column;
     gap: 2rem 0;
   }
+}
+
+.header-full-container {
+  display: flex;
+  width: 100%;
+  padding: 0 2.5rem;
 }
 // =================================
 // Loader Animation End

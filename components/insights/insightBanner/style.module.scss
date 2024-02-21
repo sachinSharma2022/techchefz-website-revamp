@@ -2,14 +2,10 @@
 
 @mixin landingBannerStyle() {
   .contentSection {
-    padding: 10rem 7.5rem 4.75rem;
+    padding-block: 10rem 4.75rem;
 
     @include mobile-tablet-p {
       padding: spacing(section-mob-padding);
-    }
-
-    @include desktop-hd {
-      padding-inline: 0;
     }
   }
   .title {

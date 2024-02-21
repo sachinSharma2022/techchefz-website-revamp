@@ -2,14 +2,10 @@
 
 .banner {
   .bannerContent {
-    padding: 10rem 7.5rem 5rem;
-
-    @include desktop-hd {
-      padding-inline: 0;
-    }
+    padding-block: 10rem 5rem;
 
     @include mobile-tablet-p{
-      padding: 3rem 1.5rem;
+      padding-block: 3rem 1.5rem;
     }
 
     .bannerTitle {

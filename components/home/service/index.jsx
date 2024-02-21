@@ -79,7 +79,7 @@ const Service = ({ props }) => {
               className={cn(styles.serviceTitle, "gradient-text")}
               dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}` }}
             ></h3>
-            <Link href="/solutions">
+            <Link href={props[0]?.BtnLink}>
               <Button
                 variant={theme ? "lightBlueOutline" : "outline"}
                 size="md"

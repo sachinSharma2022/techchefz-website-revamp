@@ -12,6 +12,7 @@ import { useMediaQuery } from "react-responsive";
 import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
 import { base_Url } from "@/lib/constants";
+import Link from "next/link";
 
 const Streamline = ({ props }) => {
   const isBigScreen = useMediaQuery({ minWidth: 1025 });
@@ -94,12 +95,14 @@ const Streamline = ({ props }) => {
               <h6 className={styles.cardTitle}>{data.Title} </h6>
               <p className={styles.cardContent}>{data.Description}</p>
               <div>
+              <Link href={data.BtnLink}>
                 <Button
                   variant={theme ? "lightBlueOutline" : "outline"}
                   size="md"
                 >
                   {data.Btn} <Icons.ArrowRight size={18} />
                 </Button>
+              </Link>
               </div>
             </div>
           </div>

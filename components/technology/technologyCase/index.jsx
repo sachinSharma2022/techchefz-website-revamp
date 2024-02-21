@@ -29,7 +29,7 @@ const TechnologyCase = ({props}) => {
             </h3>
           </div>
           <div className={styles.btnSection}>
-            <Link href="/case-study">
+            <Link href={props?.BtnLink}>
               <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
                 {props?.Button} <Icons.ArrowRight size={18} />
               </Button>

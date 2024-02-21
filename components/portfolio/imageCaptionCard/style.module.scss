@@ -169,6 +169,10 @@
    }
 }
 
-.darkStyle {
-   background: color(input-bg);
+.imageCaptionCard {
+  padding: 0 7.5rem;
+
+  &.darkStyle {
+    background: color(input-bg);
+  }
 }

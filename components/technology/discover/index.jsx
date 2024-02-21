@@ -35,7 +35,7 @@ const Discover = ({ props }) => {
             ></h3>
           </div>
           <div className={styles.buttonSec}>
-            <Link href="/technology/cms">
+            <Link href={props.BtnLink}>
               <Button
                 variant={theme ? "lightBlueOutline" : "outline"}
                 size="md"
