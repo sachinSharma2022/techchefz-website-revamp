@@ -66,7 +66,7 @@ const SolutionTheProcess = ({ props }) => {
             trigger: text,
             start: "top 400rem",
             end: "center 232rem",
-            markers: true,
+            markers: false,
             toggleActions: "play reset play reverse",
           },
           opacity: 1,
