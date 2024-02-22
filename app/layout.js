@@ -8,7 +8,7 @@ import { cn } from "../lib/utils";
 import "../styles/globals.scss";
 
 export const metadata = {
-  title: "Home",
+  title: "TechChefz Digital | Humanizing Digital Experiences",
   description: "TechChefz Digital | Humanizing Digital Experiences",
 };
 

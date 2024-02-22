@@ -6,7 +6,7 @@ import { getData,getDataDynamic } from "@/lib/fetchData";
 import { api_accelerators_Page,api_accelerators_details_Page } from "@/lib/constants";
 
 export const metadata = {
-  title: "Accelerators",
+  title: "Accelerators | TechChefz Digital",
   description: "Accelerators | TechChefz Digital",
 };
 

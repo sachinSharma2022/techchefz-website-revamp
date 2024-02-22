@@ -6,7 +6,7 @@ import { getData, getDataDynamic } from "@/lib/fetchData";
 import styles from "./style.module.scss";
 
 export const metadata = {
-  title: "Portfolio",
+  title: "Our Portfolio | TechChefz Digital",
   description: "Our Portfolio | TechChefz Digital",
 };
 

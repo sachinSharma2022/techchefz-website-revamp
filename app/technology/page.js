@@ -11,7 +11,7 @@ import { api_Technology_Page } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
 
 export const metadata = {
-  title: "Technologies",
+  title: "Explore Technologies | TechChefz Digital",
   description: "Explore Technologies | TechChefz Digital",
 };
 
