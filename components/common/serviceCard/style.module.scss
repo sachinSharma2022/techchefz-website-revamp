@@ -12,7 +12,6 @@
 
     &:hover {
       border: 0.125rem solid color(heading-liner);
-      cursor: pointer;
     }
 
     &:nth-child(even) {
@@ -70,7 +69,6 @@
 
       &:hover {
         border: 0.125rem solid color(heading-liner);
-        cursor: pointer;
       }
     }
   }
