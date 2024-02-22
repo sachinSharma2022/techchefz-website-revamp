@@ -9,7 +9,7 @@ import { getData } from "@/lib/fetchData";
 import styles from "./style.module.scss";
 
 export const metadata = {
-  title: "Solutions",
+  title: "Solutions | TechChefz  Digital",
   description: "Solutions | TechChefz  Digital",
 };
 
