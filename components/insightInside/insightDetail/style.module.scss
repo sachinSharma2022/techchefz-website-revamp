@@ -41,6 +41,9 @@
       gap: 2rem;
       position: sticky;
       top: 100px;
+      height: 30rem;
+    position: sticky;
+    top: 11rem;
 
       @include mobile-tablet-p {
         flex-direction: row;

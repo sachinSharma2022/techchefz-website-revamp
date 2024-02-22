@@ -323,16 +323,6 @@ input:-webkit-autofill {
         rgba(255, 255, 255, 0.5) 0.61%,
         #ffffff 61.29%
       ) !important;
-
-      @include desktop-hd {
-        display: none;
-      }
-    }
-  }
-
-  .swiper-wrapper {
-    @include desktop-hd {
-      margin-left: -25vw;
     }
   }
 
@@ -375,7 +365,7 @@ input:-webkit-autofill {
 
   .btn-arrow {
     background-color: color(primary-blue);
-    border-color: color(primary-blue);
+    border:0.14rem solid color(primary-blue);
 
     &:hover,
     &:focus {
@@ -924,21 +914,21 @@ input:-webkit-autofill {
 }
 
 // Smooth Scroll Style here
-html.lenis {
-  height: auto;
-}
-.lenis.lenis-smooth {
-  scroll-behavior: auto;
-}
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-.lenis.lenis-scrolling iframe {
-  pointer-events: none;
-}
+// html.lenis {
+//   height: auto;
+// }
+// .lenis.lenis-smooth {
+//   scroll-behavior: auto;
+// }
+// .lenis.lenis-smooth [data-lenis-prevent] {
+//   overscroll-behavior: contain;
+// }
+// .lenis.lenis-stopped {
+//   overflow: hidden;
+// }
+// .lenis.lenis-scrolling iframe {
+//   pointer-events: none;
+// }
 // Smooth Scroll Style End here
 
 // logo-animation
