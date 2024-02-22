@@ -323,16 +323,6 @@ input:-webkit-autofill {
         rgba(255, 255, 255, 0.5) 0.61%,
         #ffffff 61.29%
       ) !important;
-
-      @include desktop-hd {
-        display: none;
-      }
-    }
-  }
-
-  .swiper-wrapper {
-    @include desktop-hd {
-      margin-left: -25vw;
     }
   }
 
@@ -375,7 +365,7 @@ input:-webkit-autofill {
 
   .btn-arrow {
     background-color: color(primary-blue);
-    border-color: color(primary-blue);
+    border:0.14rem solid color(primary-blue);
 
     &:hover,
     &:focus {

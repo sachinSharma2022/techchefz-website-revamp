@@ -57,7 +57,7 @@
   }
 
   .contentSec {
-    max-width: 372px;
+    min-width: 300px;
 
     @include mobile-tablet-p {
       max-width: 100%;
@@ -92,7 +92,7 @@
   .logoAnimation {
     position: relative;
     overflow: hidden;
-    max-width: 77.8%;
+    max-width: 72.8%;
 
     @include mobile-tablet-p {
       max-width: 100%;
