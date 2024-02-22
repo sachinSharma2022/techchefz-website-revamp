@@ -14,14 +14,12 @@ const Goals = ({ props }) => {
   return (
     <section className={`${styles.goals} ${theme ? styles.goalsDark : ""}`}>
       <div className={cn("primary-container")}>
-        <div className="row justify-content-between">
-          <div className="col-md-3 col-lg-3">
-            <h5
-              className={cn(styles.goalsTitle, "gradient-text")}
-              dangerouslySetInnerHTML={{ __html: `${props[0].Title}` }}
-            ></h5>
-          </div>
-          <div className="col-md-7 col-lg-8">
+        <div className={styles.contentSection}>
+          <h5
+            className={cn(styles.goalsTitle, "gradient-text")}
+            dangerouslySetInnerHTML={{ __html: `${props[0].Title}` }}
+          ></h5>
+          <div>
             <h3
               className={cn(styles.goalsHeading, "gradient-text")}
               dangerouslySetInnerHTML={{ __html: `${props[0].SubTitle}` }}
@@ -37,7 +35,11 @@ const Goals = ({ props }) => {
                   <div key={index} className={styles.goalsTextWrapper}>
                     <div className={styles.goalsIcons}>
                       <ImageCustom
-                        src={data?.Image?.data?.attributes?.url?`${base_Url}${data?.Image?.data?.attributes?.url}`:`${base_Url}/`}
+                        src={
+                          data?.Image?.data?.attributes?.url
+                            ? `${base_Url}${data?.Image?.data?.attributes?.url}`
+                            : `${base_Url}/`
+                        }
                         width={27}
                         height={16}
                       />
@@ -62,28 +64,6 @@ const Goals = ({ props }) => {
             alt="content-img"
             className={styles.goalInnerImage}
           />
-          {/* <ImageCustom
-            src={
-              props[0].gallaryImages[1].Image?.data?.attributes?.url
-                ? `${base_Uri}${props[0].gallaryImages[1].Image?.data?.attributes.url}`
-                : `${base_Uri}/`
-            }
-            width={500}
-            height={400}
-            alt="content-img"
-            className={styles.goalInnerImage}
-          />
-          <ImageCustom
-            src={
-              props[0].gallaryImages[2].Image?.data?.attributes?.url
-                ? `${base_Uri}${props[0].gallaryImages[2].Image.data.attributes.url}`
-                : `${base_Uri}/`
-            }
-            width={500}
-            height={400}
-            alt="content-img"
-            className={styles.goalInnerImage}
-          /> */}
         </div>
       </div>
     </section>
