@@ -168,7 +168,7 @@ const OurTeam = ({ props }) => {
               </p>
 
               <div className={styles.socialSection}>
-                <h6>Let’s Get Connect</h6>
+                <h4>Let’s Get Connect</h4>
                 <div className={styles.modalIcons}>
                   <Icons.Linkedin
                     className={styles.linkdinIcon}

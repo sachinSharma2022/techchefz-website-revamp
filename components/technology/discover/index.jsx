@@ -90,7 +90,7 @@ const Discover = ({ props }) => {
                             </div>
                             <p>{subItems.Title} </p>
                           </div>
-                          <Icons.ArrowUpRight />
+                          {/* <Icons.ArrowUpRight /> */}
                         </Link>
                       ))}
                     </div>
@@ -122,7 +122,7 @@ const Discover = ({ props }) => {
                             </div>
                             <p>{subItems.Title} </p>
                           </div>
-                          <Icons.ArrowUpRight />
+                          {/* <Icons.ArrowUpRight /> */}
                         </Link>
                       ))}
                     </div>

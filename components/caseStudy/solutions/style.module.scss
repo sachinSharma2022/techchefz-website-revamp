@@ -99,7 +99,7 @@
       justify-content: flex-start;
       align-items: flex-start;
       border-bottom: 0.14rem solid rgba(color(text-primary), 0.12);
-      padding: 1rem 0;
+      padding: 1rem 0 1rem 0;
 
       &:last-child {
         border-bottom: none;
@@ -132,6 +132,7 @@
       line-height: 1.875rem;
       opacity: 0.6;
       padding: 0 0.4rem;
+      margin-bottom: 0;
 
       @include mobile-tablet-p {
         font-size: text(normal);

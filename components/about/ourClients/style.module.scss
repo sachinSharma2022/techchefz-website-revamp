@@ -33,8 +33,6 @@
   .subHeading {
     opacity: 0.6;
     font-weight: 400;
-    line-height: 1.875rem;
-    font-size: text(lg);
     text-transform: uppercase;
 
     @include mobile-tablet-p {
@@ -47,7 +45,7 @@
     opacity: 0.6;
     font-weight: 400;
     line-height: 1.875rem;
-    font-size: text(2);
+    font-size: 1.25rem;
     margin-bottom: 2.75rem;
 
     @include mobile-tablet-p {
@@ -80,7 +78,7 @@
     width: 100%;
 
     .description {
-      max-width: 50%;
+      max-width: 70%;
 
       @include mobile-tablet-p {
         max-width: 100%;
