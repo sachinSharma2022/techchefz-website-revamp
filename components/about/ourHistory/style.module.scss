@@ -28,7 +28,6 @@
     letter-spacing: 0.2rem;
 
     @include mobile-tablet-p {
-      margin-bottom: 0.75rem;
       font-weight: 400;
     }
   }
@@ -52,6 +51,7 @@
     @include mobile-tablet-p {
       font-size: text(lg);
       line-height: 1.75rem;
+      margin-bottom: 1.25rem;
     }
   }
   .ourHistoryContent {
@@ -63,7 +63,8 @@
 
     @include mobile-tablet-p {
       @include truncate(4);
-      margin-bottom: 0;
+      margin: 0;
+      font-size: text(normal);
     }
   }
 
@@ -148,7 +149,6 @@
   }
 
   .sliderSection {
-
     @include mobile-tablet-p {
       flex-direction: column-reverse;
     }
@@ -185,7 +185,6 @@
     }
 
     .sliderArrow {
-  
       .button {
         background-color: color(info-blue);
       }

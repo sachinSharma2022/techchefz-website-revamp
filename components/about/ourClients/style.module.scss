@@ -38,7 +38,6 @@
     text-transform: uppercase;
 
     @include mobile-tablet-p {
-      margin-bottom: 0;
       font-size: text(normal);
       line-height: text(xl);
     }
@@ -97,7 +96,6 @@
 
     @include mobile-tablet-p {
       max-width: 100%;
-      margin-left: 1.25rem;
     }
 
     &::after {
