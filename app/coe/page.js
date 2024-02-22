@@ -8,7 +8,7 @@ import { getData } from "@/lib/fetchData";
 import { api_Coe_Page } from "@/lib/constants";
 
 export const metadata = {
-  title: "Centre of Excellence",
+  title: "Centre of Excellence | TechChefz Digital",
   description: "Centre of Excellence | TechChefz Digital",
 };
 

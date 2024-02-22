@@ -5,11 +5,13 @@ import { cn } from "@/lib/utils";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useContext, useEffect, useState } from "react";
-import { base_Uri } from "@/lib/constants";
+import { base_Uri, base_Url } from "@/lib/constants";
+
 
 import styles from "./style.module.scss";
 
 const SolutionTheProcess = ({ props }) => {
+  console.log("ss",props);
   const { theme } = useContext(MyContext);
   const radius = 235;
   const dashArray = radius * Math.PI * 2;
@@ -395,7 +397,7 @@ const SolutionTheProcess = ({ props }) => {
 
               <div id="1-img" className={styles.stepperImg}>
                 <ImageCustom
-                  src="/images/shield.png"
+                  src={props?.images[0]?.Image?.data?.attributes?.url?`${base_Url}${props?.images[0]?.Image?.data?.attributes?.url}`:`${base_Url}/`}
                   width={258}
                   height={258}
                   alt="bannerImg"
@@ -407,7 +409,7 @@ const SolutionTheProcess = ({ props }) => {
                 style={{ display: "none" }}
               >
                 <ImageCustom
-                  src="/images/icon 4.svg"
+                  src={props?.images[1]?.Image?.data?.attributes?.url?`${base_Url}${props?.images[1]?.Image?.data?.attributes?.url}`:`${base_Url}/`}
                   width={258}
                   height={258}
                   alt="bannerImg"
@@ -419,7 +421,7 @@ const SolutionTheProcess = ({ props }) => {
                 style={{ display: "none" }}
               >
                 <ImageCustom
-                  src="/images/icon 5.svg"
+                  src={props?.images[2]?.Image?.data?.attributes?.url?`${base_Url}${props?.images[2]?.Image?.data?.attributes?.url}`:`${base_Url}/`}
                   width={258}
                   height={258}
                   alt="bannerImg"
@@ -431,7 +433,7 @@ const SolutionTheProcess = ({ props }) => {
                 style={{ display: "none" }}
               >
                 <ImageCustom
-                  src="/images/icon 4.svg"
+                  src={props?.images[3]?.Image?.data?.attributes?.url?`${base_Url}${props?.images[3]?.Image?.data?.attributes?.url}`:`${base_Url}/`}
                   width={258}
                   height={258}
                   alt="bannerImg"
@@ -443,7 +445,7 @@ const SolutionTheProcess = ({ props }) => {
                 style={{ display: "none" }}
               >
                 <ImageCustom
-                  src="/images/icon 5.svg"
+                  src={props?.images[4]?.Image?.data?.attributes?.url?`${base_Url}${props?.images[4]?.Image?.data?.attributes?.url}`:`${base_Url}/`}
                   width={258}
                   height={258}
                   alt="bannerImg"
@@ -455,7 +457,7 @@ const SolutionTheProcess = ({ props }) => {
                 style={{ display: "none" }}
               >
                 <ImageCustom
-                  src="/images/icon 4.svg"
+                  src={props?.images[5]?.Image?.data?.attributes?.url?`${base_Url}${props?.images[5]?.Image?.data?.attributes?.url}`:`${base_Url}/`}
                   width={258}
                   height={258}
                   alt="bannerImg"

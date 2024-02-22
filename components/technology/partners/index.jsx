@@ -10,43 +10,51 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import Link from "next/link";
 import { base_Uri } from "@/lib/constants";
 
-const Partners = ({props}) => {
-  
+const Partners = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   let [isOpen, setIsOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
- 
   return (
     <section className={`${styles.partner} ${theme ? styles.partnerDark : ""}`}>
       <div className={cn("primary-container", styles.flexContainer)}>
         <div className={styles.headSection}>
-          <h6 className={cn(styles.partnerTitle,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
-
-          </h6>
-          <h3 className={cn(styles.partnerHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
-            
-          </h3>
+          <h6
+            className={cn(styles.partnerTitle, "gradient-text")}
+            dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+          ></h6>
+          <h3
+            className={cn(styles.partnerHeading, "gradient-text")}
+            dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
+          ></h3>
         </div>
 
         <div className={styles.partnerCards}>
           {props?.Slider?.map((data, index) => (
             <PartnerCard
               key={index}
-              imgSrc={data?.Image?.data?.attributes?.url?`${base_Uri}${data?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
-              darkImgSrc={data?.Image?.data?.attributes?.url?`${base_Uri}${data?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+              imgSrc={
+                data?.Image?.data?.attributes?.url
+                  ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
+                  : `${base_Uri}/`
+              }
+              darkImgSrc={
+                data?.Image?.data?.attributes?.url
+                  ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
+                  : `${base_Uri}/`
+              }
               cardTitle={data.Title}
               cardContent={data.Description}
-              onClick={() =>{
-                setIsOpen(true)
-                setIndex(index)
-
+              onClick={() => {
+                setIsOpen(true);
+                setIndex(index);
               }}
+              arrowUp
             />
           ))}
         </div>
       </div>
-    
+
       <LeftDrawer
         title={props?.Slider[index]?.Title}
         open={isOpen}
@@ -57,9 +65,11 @@ const Partners = ({props}) => {
         >
           <div className={styles.cardImg}>
             <ImageCustom
-              src={props?.Slider[index]?.Image?.data?.attributes?.url
-                ? `${base_Uri}${props?.Slider[index]?.Image?.data?.attributes?.url}`
-                : `${base_Uri}/`}
+              src={
+                props?.Slider[index]?.Image?.data?.attributes?.url
+                  ? `${base_Uri}${props?.Slider[index]?.Image?.data?.attributes?.url}`
+                  : `${base_Uri}/`
+              }
               width={110}
               height={40}
               alt="partner-logo"
@@ -70,7 +80,7 @@ const Partners = ({props}) => {
             {props?.Slider[index]?.Description}
           </p>
           <Link href={props?.Slider[index]?.BtnLink} target="_blank">
-          {props?.Slider[index]?.BtnLink}
+            {props?.Slider[index]?.BtnLink}
           </Link>
         </div>
       </LeftDrawer>

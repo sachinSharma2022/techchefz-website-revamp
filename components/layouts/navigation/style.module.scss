@@ -600,6 +600,10 @@
           .overviewBtn {
             margin-top: 2rem;
 
+            button {
+              color: color(info-blue);
+            }
+
             @include mobile-tablet-p {
               width: 100%;
             }

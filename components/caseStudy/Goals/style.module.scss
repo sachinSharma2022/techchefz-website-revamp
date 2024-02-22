@@ -15,6 +15,9 @@
     opacity: 0.8;
     font-weight: 500;
     min-width: 16.875rem;
+    height: 20rem;
+    position: sticky;
+    top: 11rem;
     
     @include mobile-tablet-p {
       margin-bottom: 0.75rem;
@@ -54,7 +57,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     border-bottom: 0.14rem solid rgba(color(text-primary), 0.12);
-    padding: 1rem 0;
+    padding: 1rem 0 1rem 0;
 
     &:first-child {
       padding-top: 2.25rem;
@@ -91,6 +94,7 @@
     line-height: 1.875rem;
     opacity: 0.6;
     padding: 0 0.4rem;
+    margin-bottom: 0;
 
     @include mobile-tablet-p {
       font-size: text(normal);

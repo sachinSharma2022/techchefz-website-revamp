@@ -20,20 +20,20 @@ const WeAreFuture = ({ props }) => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.futureTitle}>
-          <p
+          <h6
             className={cn(styles.text, "gradient-text")}
             dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
-          ></p>
+          ></h6>
           <h2 className={styles.title}>
             {props?.SubTitle}
             <span className={styles.globalText}>
               {props?.Description}
-              <ImageCustom
+              {/* <ImageCustom
                 src="/global.png"
                 width="60"
                 height="60"
                 alt="global-img"
-              />
+              /> */}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               {props?.SubTitle2}
             </span>
             <span className={styles.titleHighlight}>{props?.SubTitle3}</span>

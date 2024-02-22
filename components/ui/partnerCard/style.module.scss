@@ -72,7 +72,7 @@
   &.partnerCardDark {
     background-color: color(text-primary);
     color: color(primary-white);
-    border: 0.14rem solid color(text-primary);
+    border-color: rgba(color(primary-white), 0.12);
 
 
     &:hover {
