@@ -69,12 +69,12 @@ const BrowserAccelerator = ({props}) => {
           {props?.map((item, index) => (
             <BadgeInfoCard
               key={index}
-              icons={item?.Image?.data?.attributes?.url?`${base_Url}${item?.Image?.data.attributes.url}`:`${base_Url}/`} 
-              subHeading={item.Title}
-              heading={item.SubTitle}
-              description={item.Description}
-              href="/accelerators/accelerators-details"
-              options={["Automobile", "Trending", "New"]}
+              icons={item?.attributes?.BrowserAccelerator?.Image?.data?.attributes?.url?`${base_Url}${item?.attributes?.BrowserAccelerator?.Image?.data.attributes.url}`:`${base_Url}/`} 
+              subHeading={item?.attributes?.BrowserAccelerator?.Title}
+              heading={item?.attributes?.BrowserAccelerator?.Heading}
+              description={item?.attributes?.BrowserAccelerator?.Description}
+              href={`/accelerators/${item.id}`}
+              options={item?.attributes?.BrowserAccelerator?.TitleWithLinks.map((x)=>x.Title)}
             />
           ))}
         </div>
