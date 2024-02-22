@@ -13,7 +13,7 @@ import { api_Home_Page, base_Url } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
 
 export const metadata = {
-  title: "Humanizing Digital Experiences",
+  title: "TechChefz Digital (TCZ Digital Private Ltd) is a new breed of innovative digital transformation agency, redefining storytelling for an always-on world.",
   description:
     "TechChefz Digital (TCZ Digital Private Ltd) is a new breed of innovative digital transformation agency, redefining storytelling for an always-on world.",
 };
