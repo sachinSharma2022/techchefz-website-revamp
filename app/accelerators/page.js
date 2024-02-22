@@ -6,7 +6,7 @@ import { getData } from "@/lib/fetchData";
 import { api_accelerators_Page } from "@/lib/constants";
 
 export const metadata = {
-  title: "Accelerators",
+  title: "Accelerators | TechChefz Digital",
   description: "Accelerators | TechChefz Digital",
 };
 

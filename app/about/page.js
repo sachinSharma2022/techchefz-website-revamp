@@ -13,7 +13,7 @@ import { api_About_Page } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
 
 export const metadata = {
-  title: "About Us",
+  title: "About TechChefz | Humanizing Digital Experiences",
   description: "About TechChefz | Humanizing Digital Experiences",
 };
 

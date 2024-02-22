@@ -8,7 +8,7 @@ import HomeTestimonials from "@/components/home/homeTestimonials";
 import TechnologyValues from "@/components/technology/technologyValues";
 
 export const metadata = {
-  title: "Careers",
+  title: "Job Openings and Career Opportunities at TechChefz Digital",
   description: "Job Openings and Career Opportunities at TechChefz Digital",
 };
 
