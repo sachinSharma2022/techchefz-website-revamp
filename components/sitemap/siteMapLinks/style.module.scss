@@ -52,6 +52,11 @@
 
   a {
    color: color(text-primary);
+   @include transition(0.5s);
+
+   &:hover {
+      color: color(heading-liner)
+   }
  }
 
   //    Dark mode style
@@ -61,6 +66,10 @@
 
     a {
       color: color(primary-white);
+
+      &:hover {
+         color: color(heading-liner)
+      }
     }
   }
 }
