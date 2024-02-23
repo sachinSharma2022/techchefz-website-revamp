@@ -127,7 +127,7 @@
     font-weight: 500;
     color: color(primary-white);
     margin-bottom: text(lg);
-    width: 50%;
+    width: 80%;
 
     &:nth-of-type(1) {
       line-height: 40px;
@@ -197,7 +197,6 @@
     }
 
     .brandFromText {
-      max-width: 40%;
 
       @include mobile {
         max-width: 100%;

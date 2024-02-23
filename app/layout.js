@@ -7,10 +7,10 @@ import { cn } from "../lib/utils";
 
 import "../styles/globals.scss";
 
-// export const metadata = {
-//   title: "TechChefz Digital | Humanizing Digital Experiences",
-//   description: "TechChefz Digital | Humanizing Digital Experiences",
-// };
+export const metadata = {
+  title: "TechChefz Digital | Humanizing Digital Experiences",
+  description: "TechChefz Digital | Humanizing Digital Experiences",
+};
 
 export default function RootLayout({ children }) {
   return (
