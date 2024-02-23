@@ -28,12 +28,7 @@ const WeAreFuture = ({ props }) => {
             {props?.SubTitle}
             <span className={styles.globalText}>
               {props?.Description}
-              {/* <ImageCustom
-                src="/global.png"
-                width="60"
-                height="60"
-                alt="global-img"
-              /> */}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <div className={styles.space} />
               {props?.SubTitle2}
             </span>
             <span className={styles.titleHighlight}>{props?.SubTitle3}</span>

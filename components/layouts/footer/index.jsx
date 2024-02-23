@@ -40,7 +40,7 @@ const Footer = () => {
         </div>
 
         <div className="row">
-          <div className="col-md-12 col-lg-6">
+          <div className="col-12 col-lg-6">
             <div className={styles.footLeftPanel}>
               <p className={styles.description}>
                 Stay at the forefront of innovation, trends, and industry
@@ -92,7 +92,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-12 col-lg-6">
+          <div className="col-12 col-lg-6">
             <div className={styles.footSocial}>
               <h4 className="mb-3">Follow Us on Social Media</h4>
               <div className={styles.footSocialLinks}>

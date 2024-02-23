@@ -151,8 +151,8 @@
       display: grid;
       grid-template-columns: 50% auto;
       gap: 2rem;
-
-      @include mobile-tablet-p {
+      
+      @include mobile {
         display: flex;
         flex-direction: column;
       }

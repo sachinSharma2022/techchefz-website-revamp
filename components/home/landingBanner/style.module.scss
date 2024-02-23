@@ -43,7 +43,7 @@ $border-radius: 5px;
   }
 
   @include mobile-tablet-p {
-    padding: 5rem 1.25rem;
+    padding: 8rem 1.25rem;
 
     &::after, &::before {
       width: 20rem;
@@ -52,14 +52,23 @@ $border-radius: 5px;
     }
   }
 
+  @include mobile {
+    padding: 5rem 1.25rem;
+  }
+
   .title {
     font-size: text(xxl-larger);
     font-weight: 500;
     margin: 0 0 5rem;
   
     @include mobile-tablet-p {
-      font-size: text(larger);
+      font-size: text(xl-larger);
+      line-height: 70px;
       margin: 0 0 2.188rem;
+    }
+
+    @include mobile {
+      font-size: text(larger);
       line-height: 50px;
     }
     
@@ -82,6 +91,10 @@ $border-radius: 5px;
       font-size: text(xxl-larger);
       font-weight: 500;
 
+      @include mobile-tablet-p{
+        font-size: text(xl-larger);
+      }
+
       @include mobile{
         font-size: text(larger);
       }
@@ -96,7 +109,11 @@ $border-radius: 5px;
       color: color(heading-liner);
       @include textGradient;
       
-      @include mobile-tablet-p {
+      @include mobile-tablet-p{
+        font-size: text(xl-larger);
+      }
+
+      @include mobile{
         font-size: text(larger);
         line-height: normal;
       }

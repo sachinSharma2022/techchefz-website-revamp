@@ -21,6 +21,15 @@
     }
   }
 
+  .space {
+    width: 60px;
+    height: 60px;
+
+    @include mobile-tablet-p {
+     display: none;
+    }
+  }
+
   .futureTitle {
     display: flex;
     justify-content: center;
@@ -120,6 +129,10 @@
     max-width: 32rem;
     color: rgba(color(text-primary), 0.8);
 
+    @include mobile-tablet-p {
+      max-width: 100%; 
+    }
+
     @include mobile {
       font-size: text(xl);
       line-height: 1.875rem;
@@ -135,6 +148,10 @@
     color: color(text-primary);
     max-width: 37rem;
     margin-top: 0.5rem;
+
+    @include mobile-tablet-p {
+      max-width: 100%; 
+    }
 
     @include mobile {
       font-size: text(lg);

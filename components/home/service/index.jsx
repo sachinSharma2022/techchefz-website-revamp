@@ -7,59 +7,16 @@ import { Button } from "@/components/ui/button";
 import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { base_Uri } from "@/lib/constants";
 import { useContext } from "react";
 import { useMediaQuery } from "react-responsive";
 
-import styles from "./style.module.scss";
 import { base_Url } from "@/lib/constants";
-import { ImageCustom } from "@/components/ui/imageCustom";
+import styles from "./style.module.scss";
 
 const Service = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   const isBigScreen = useMediaQuery({ query: "(min-width: 1024px)" });
-
-  const settings = {
-    className: "center",
-    centerPadding: "0px",
-    centerMode: true,
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    nextArrow: (
-      <div>
-        <Icons.SliderArrow width="15" height="15" />
-      </div>
-    ),
-    prevArrow: (
-      <div>
-        <Icons.SliderArrow width="15" height="15" />
-      </div>
-    ),
-
-    responsive: [
-      {
-        breakpoint: 1199,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          centerMode: false,
-          arrows: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: true,
-          centerPadding: "15px",
-        },
-      },
-    ],
-  };
+  const isTabletScreen = useMediaQuery({ query: "(min-width: 768px)" });
 
   return (
     <section
@@ -108,7 +65,7 @@ const Service = ({ props }) => {
         </div>
 
         <div className={cn(styles.mobileCards)}>
-          <MobileSlider slidesToShow={1.3}>
+          <MobileSlider slidesToShow={isTabletScreen ? 2.1 : 1.3}>
             {props[0]?.Service.map((data, index) => (
               <ServiceCard
                 key={index}

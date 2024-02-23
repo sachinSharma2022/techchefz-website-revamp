@@ -5,15 +5,15 @@ import LetsTalk from "@/components/contactUs/letsTalk";
 import { api_contact_us_Page } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
 
-const ContactUs = async() =>{
-  const data = await getData(api_contact_us_Page)
+const ContactUs = async () => {
+  const data = await getData(api_contact_us_Page);
 
   return (
     <div>
       <ContactHeroBanner props={data.Banner} />
-      <LetsTalk props={data.Connect}/>
-      <GlobalPresence props={data.Presence}/>
-      <DistinctLocations props={data.DistinctLocations}/>
+      <LetsTalk props={data.Connect} />
+      <GlobalPresence props={data.Presence} />
+      <DistinctLocations props={data.DistinctLocations} />
     </div>
   );
 };

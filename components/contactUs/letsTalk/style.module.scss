@@ -7,8 +7,14 @@
     padding-inline: 0;
   }
 
-  @include mobile-tablet-p {
+  @include tablet {
     padding: 0;
+    margin: -80px 20px 50px;
+  }
+
+  @include mobile {
+    padding: 0;
+    margin: -80px 10px 50px;
   }
 
   .workArea {
@@ -36,7 +42,6 @@
         line-height: text(xl);
         margin-bottom: text(normal);
         opacity: 0.6;
-        
       }
       select {
         padding: 0;
@@ -172,8 +177,6 @@
         background-color: rgba(color(primary-white), 1);
       }
 
-
-
       .icon {
         animation: slide-in 0.5s forwards;
       }
@@ -246,15 +249,14 @@
     }
   }
 
-
-// Dark Mode
+  // Dark Mode
   &.letsContactStyleDark {
     background-color: color(dark-gray);
 
     .workArea {
       background-color: color(text-primary);
       color: color(primary-white);
-      
+
       .tabDropdownMob {
         background-color: color(dark-gray);
       }
@@ -266,19 +268,17 @@
       }
 
       .contactInnerFlex {
-        background-color:rgba(color(input-bg), 0.8);
+        background-color: rgba(color(input-bg), 0.8);
         color: color(primary-white);
 
         &:hover {
-          background-color:rgba(color(input-bg), 1);
+          background-color: rgba(color(input-bg), 1);
         }
 
         &.buttonActive {
-          background-color:rgba(color(input-bg), 1);
+          background-color: rgba(color(input-bg), 1);
         }
-  
       }
     }
   }
-
 }

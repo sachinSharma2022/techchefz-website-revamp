@@ -10,7 +10,11 @@
       padding-inline: 0;
     }
   
-    @include mobile-tablet-p {
+    @include tablet {
+      padding-inline: 1.25rem;
+    }
+
+    @include mobile {
       padding: spacing(section-mob-padding);
       padding-block: 3.75rem 3.75rem;
       flex-direction: column;
@@ -23,7 +27,10 @@
     position: relative;
   
     @include mobile-tablet-p {
-      height: 11.75rem;
+      height: 18.75rem;
+    }
+    @include mobile {
+      height: 14.75rem;
     }
   
     img {

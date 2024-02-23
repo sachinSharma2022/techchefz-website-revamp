@@ -2,8 +2,8 @@
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
-import React, { useContext } from "react";
 import { base_Uri } from "@/lib/constants";
+import React, { useContext } from "react";
 
 // import required modules
 import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
@@ -13,6 +13,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import { cn } from "@/lib/utils";
+import { useMediaQuery } from "react-responsive";
 import "swiper/css";
 import "swiper/css/navigation";
 import styles from "./style.module.scss";
@@ -21,6 +22,7 @@ const Testimonials = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
+  const isTabletScreen = useMediaQuery({ query: "(min-width: 768px)" });
 
   return (
     <section
@@ -34,7 +36,7 @@ const Testimonials = ({ props }) => {
     >
       <div className={cn("primary-container", styles.testimonialContainer)}>
         <div className="row">
-          <div className="col-12 col-sm-3">
+          <div className="col-12 col-lg-3">
             <div className={styles.infoSection}>
               <div className={styles.testimonialsLeft}>
                 <h6
@@ -59,7 +61,7 @@ const Testimonials = ({ props }) => {
               <div className={styles.mobileSlider}>
                 <Swiper
                   spaceBetween={5}
-                  slidesPerView={1}
+                  slidesPerView={isTabletScreen ? 2 : 1}
                   navigation={{
                     prevEl: navigationPrevRef.current,
                     nextEl: navigationNextRef.current,
