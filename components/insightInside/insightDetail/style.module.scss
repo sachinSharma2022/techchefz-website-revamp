@@ -1,219 +1,220 @@
 @import "~/styles/partials/config";
 
 @mixin insightDetailStyles() {
-  padding: spacing(section-primary-padding);
-  padding-bottom: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  background-color: color(input-bg);
+   padding: spacing(section-primary-padding);
+   padding-bottom: 0;
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-end;
+   background-color: color(input-bg);
 
-  @include mobile-tablet-p {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 4.75rem 2.5rem;
-  }
-
-  @include mobile {
-    padding-inline: 1.5rem;
-    padding-block: 3rem 3.75rem;
-  }
-
-  .insightDetailFlex {
-    display: flex;
-    justify-content: space-between;
-    gap: 8rem;
-    margin-top: 5rem;
-
-    @include mobile-tablet-p {
+   @include mobile-tablet-p {
       flex-direction: column;
-      margin-top: 0;
-    }
-    @include mobile {
-      flex-direction: column;
-      margin-top: 0;
-    }
+      justify-content: center;
+      align-items: center;
+      padding: 4.75rem 2.5rem;
+   }
 
-    .socialMediaFlex {
+   @include mobile {
+      padding-inline: 1.5rem;
+      padding-block: 3rem 3.75rem;
+   }
+
+   .insightDetailFlex {
       display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      position: sticky;
-      top: 100px;
-      height: 30rem;
-    position: sticky;
-    top: 11rem;
+      justify-content: space-between;
+      gap: 8rem;
+      margin-top: 5rem;
 
       @include mobile-tablet-p {
-        flex-direction: row;
+         flex-direction: column;
+         margin-top: 0;
+         gap: 3rem;
       }
-
       @include mobile {
-        gap: 1rem;
+         flex-direction: column;
+         margin-top: 0;
       }
 
-      .iconDiv {
-        cursor: pointer;
-        border-radius: 1.8rem;
-        border: 0.1rem solid rgba(255, 255, 255, 0.4);
-        padding: 1rem;
+      .socialMediaFlex {
+         display: flex;
+         flex-direction: column;
+         gap: 2rem;
+         height: 30rem;
+         position: sticky;
+         top: 11rem;
 
-        img{
-          width: 100%;
-          height: 100%;
-        }
-      }
-    }
+         @include mobile-tablet-p {
+            flex-direction: row;
+            position: relative;
+            top: 0;
+            height: 3.5rem;
+         }
 
-    .insightDetailPara {
-      width: 100%;
-      padding-right: 26%;
+         @include mobile {
+            gap: 1rem;
+         }
 
-      @include mobile-tablet-p {
-        padding: 0;
-      }
+         .iconDiv {
+            cursor: pointer;
+            border-radius: 1.8rem;
+            border: 0.1rem solid rgba(255, 255, 255, 0.4);
+            padding: 1rem;
 
-      h3 {
-        font-weight: 500;
-        font-size: text(xxxl);
-        color: color(primary-white);
-        line-height: 2.5rem;
-        padding-bottom: 2rem;
-
-        @include mobile {
-          font-size: text(lg);
-        }
-      }
-
-      p {
-        font-weight: 400;
-        font-size: text(lg);
-        color: color(primary-white);
-        line-height: 1.8rem;
-        opacity: 0.8;
-
-        @include mobile {
-          font-size: text(normal);
-        }
+            img {
+               width: 100%;
+               height: 100%;
+            }
+         }
       }
 
-      .insightImageDiv {
-        margin-block: 3.8rem;
-        height: 24.125rem;
-        width: 100%;
-        border-radius: 0.6rem;
-        overflow: hidden;
+      .insightDetailPara {
+         width: 100%;
+        //  padding-right: 26%;
 
-        @include mobile{
-          height: 10rem;
-        }
+         @include mobile-tablet-p {
+            padding: 0;
+         }
 
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-      }
+         h3 {
+            font-weight: 500;
+            font-size: text(xxxl);
+            color: color(primary-white);
+            line-height: 2.5rem;
+            padding-bottom: 2rem;
 
-      .insightSection {
-        .heading {
-          font-weight: 500;
-          font-size: text(xl);
-          color: color(primary-white);
-          line-height: 2rem;
-          padding-bottom: 1rem;
-          padding-top: 1rem;
+            @include mobile {
+               font-size: text(lg);
+            }
+         }
 
-          @include mobile {
-            font-size: text(lg);
-          }
-        }
-        p {
-          font-weight: 400;
-          font-size: text(lg);
-          color: color(primary-white);
-          line-height: 1.8rem;
-          opacity: 0.8;
-          padding-bottom: 1rem;
-          margin: 0;
-
-          @include mobile {
-            font-size: text(normal);
+         p {
             font-weight: 400;
-          }
-        }
-        
-        img {
-          border-radius: 0.6rem;
-          width: 100%;
-          height: 100%;
-        }
-        ul {
-          list-style-type: square;
-        }
-        li {
-          font-weight: 400;
-          font-size: text(lg);
-          color: color(primary-white);
-          line-height: 1.8rem;
-          opacity: 0.8;
-          padding-bottom: 0.2rem;
-          margin: 0;
+            font-size: text(lg);
+            color: color(primary-white);
+            line-height: 1.8rem;
+            opacity: 0.8;
 
-          @include mobile {
-            font-size: text(normal);
-          }
-        }
-        b {
-          font-size: text(lg);
-        }
+            @include mobile {
+               font-size: text(normal);
+            }
+         }
+
+         .insightImageDiv {
+            margin-block: 3.8rem;
+            height: 24.125rem;
+            width: 100%;
+            border-radius: 0.6rem;
+            overflow: hidden;
+
+            @include mobile {
+               height: 10rem;
+            }
+
+            img {
+               width: 100%;
+               height: 100%;
+               object-fit: cover;
+            }
+         }
+
+         .insightSection {
+            .heading {
+               font-weight: 500;
+               font-size: text(xl);
+               color: color(primary-white);
+               line-height: 2rem;
+               padding-bottom: 1rem;
+               padding-top: 1rem;
+
+               @include mobile {
+                  font-size: text(lg);
+               }
+            }
+            p {
+               font-weight: 400;
+               font-size: text(lg);
+               color: color(primary-white);
+               line-height: 1.8rem;
+               opacity: 0.8;
+               padding-bottom: 1rem;
+               margin: 0;
+
+               @include mobile {
+                  font-size: text(normal);
+                  font-weight: 400;
+               }
+            }
+
+            img {
+               border-radius: 0.6rem;
+               width: 100%;
+               height: 100%;
+            }
+            ul {
+               list-style-type: square;
+            }
+            li {
+               font-weight: 400;
+               font-size: text(lg);
+               color: color(primary-white);
+               line-height: 1.8rem;
+               opacity: 0.8;
+               padding-bottom: 0.2rem;
+               margin: 0;
+
+               @include mobile {
+                  font-size: text(normal);
+               }
+            }
+            b {
+               font-size: text(lg);
+            }
+         }
       }
-    }
-  }
+   }
 }
 
 .insightDetailContainer {
-  @include insightDetailStyles();
+   @include insightDetailStyles();
 }
 
 //light Mode
 .lightMode {
-  @include insightDetailStyles();
-  background-color: color(primary-white);
+   @include insightDetailStyles();
+   background-color: color(primary-white);
 
-  .insightDetailFlex {
-    .socialMediaFlex {
-      .iconDiv {
-        border: 0.06rem solid rgba(color(text-primary), 0.40);
-      }
-    }
-
-    .insightDetailPara {
-      h3 {
-        color: color(text-primary);
+   .insightDetailFlex {
+      .socialMediaFlex {
+         .iconDiv {
+            border: 0.06rem solid rgba(color(text-primary), 0.4);
+         }
       }
 
-      p {
-        color: color(text-primary);
-        opacity: 0.8;
+      .insightDetailPara {
+         h3 {
+            color: color(text-primary);
+         }
+
+         p {
+            color: color(text-primary);
+            opacity: 0.8;
+         }
+
+         .insightSection {
+            .heading {
+               color: color(text-primary);
+            }
+
+            p {
+               color: color(text-primary);
+               opacity: 0.8;
+            }
+            li {
+               color: color(text-primary);
+               opacity: 0.8;
+            }
+         }
       }
-
-      .insightSection {
-
-        .heading {
-          color: color(text-primary);
-        }
-
-        p {
-          color: color(text-primary);
-          opacity: 0.8;
-        }
-        li {
-          color: color(text-primary);
-          opacity: 0.8;
-        }
-      }
-    }
-  }
+   }
 }
