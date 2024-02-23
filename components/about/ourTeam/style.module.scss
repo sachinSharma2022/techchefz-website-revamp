@@ -337,16 +337,18 @@
     margin-bottom: 2.5rem;
   }
 
-  h6 {
-    font-size: text(lg);
-    font-weight: 500;
-    line-height: 1.75rem;
-    margin-bottom: 1.5rem;
-  }
+
 
   .socialSection {
     margin-top: 2.5rem;
 
+    h4 {
+      font-size: text(lg);
+      font-weight: 500;
+      line-height: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+    
     .modalIcons {
       display: flex;
       gap: 0 1.25rem;

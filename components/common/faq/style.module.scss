@@ -19,6 +19,7 @@
       font-weight: 500;
       line-height: 1.5rem;
       margin-bottom: 1rem;
+      letter-spacing: 0.2rem;
     }
     .title {
       font-size: text(larger);
@@ -49,7 +50,7 @@
       .faqNumber {
         font-weight: 500;
         margin-bottom: 0;
-        font-size: text(xl);
+        font-size: 1.2rem;
 
         @include mobile {
           font-weight: 500;
@@ -73,7 +74,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-size: text(xl);
+        font-size: 1.2rem;
         font-weight: 500;
         color: color(text-primary);
         padding: text(xl);
@@ -93,11 +94,16 @@
       [aria-expanded="true"] {
         &.accordionHead {
           @include textGradient;
+          font-weight: 700;
         }
       }
 
       .accordionBody {
         padding: 0 1.5rem 1.5rem 1.5rem;
+        opacity: 0.8;
+        max-width: 94%;
+    margin-left: 0;
+    margin-right: auto;
       }
     }
   }

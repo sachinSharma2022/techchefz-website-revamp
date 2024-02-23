@@ -19,7 +19,7 @@
 
     .workGrid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 55% auto;
       gap: 3.75rem;
 
       @include mobile-tablet-p {

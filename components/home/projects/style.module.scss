@@ -73,7 +73,7 @@
     opacity: 0.6;
     margin-bottom: text(larger);
     color: color(primary-white);
-    line-height: 1.5rem;
+    line-height: 1.875rem;
 
     @include mobile {
       font-size: text(normal);
@@ -127,6 +127,7 @@
     font-weight: 500;
     color: color(primary-white);
     margin-bottom: text(lg);
+    width: 50%;
 
     &:nth-of-type(1) {
       line-height: 40px;

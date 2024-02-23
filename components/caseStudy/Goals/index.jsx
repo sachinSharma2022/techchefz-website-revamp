@@ -40,8 +40,8 @@ const Goals = ({ props }) => {
                             ? `${base_Url}${data?.Image?.data?.attributes?.url}`
                             : `${base_Url}/`
                         }
-                        width={27}
-                        height={16}
+                        width={40}
+                        height={28}
                       />
                     </div>
                     <p className={styles.goalsText}>{data.Title}</p>
