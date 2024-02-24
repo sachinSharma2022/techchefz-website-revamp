@@ -6,6 +6,7 @@ import { Disclosure } from "@headlessui/react";
 import { useState } from "react";
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
+import { motion ,AnimatePresence} from "framer-motion";
 
 const Faq = ({props}) => {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
@@ -50,12 +51,13 @@ const Faq = ({props}) => {
                 {(panel) => {
                   const { open, close } = panel;
                   return (
-                    <div className={styles.faqSecMain}>
+                   
+                           <div  className={styles.faqSecMain}>
                       <div className={styles.numberSec}>
                         <h2 className={styles.faqNumber}>{data.Title}</h2>
                       </div>
 
-                      <div className={styles.faqList}>
+                      <div  className={styles.faqList}>
                         <Disclosure.Button
                           className={styles.accordionHead}
                           onClick={() => {
@@ -68,11 +70,18 @@ const Faq = ({props}) => {
                           {data.title}{data.Description}
                           {!open ? <Icons.IconPlus /> : <Icons.IconMinus />}
                         </Disclosure.Button>
-                        <Disclosure.Panel className={styles.accordionBody}>
+                        <Disclosure.Panel as={motion.div} initial={{ y: -20, opacity: 0.2 }}
+    animate={{ y: 0, opacity: 1, }} transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }} exit={{
+       y: -20, opacity: 0.2 ,
+      transition: { duration: 0.4 },
+    }} className={styles.accordionBody}>
                         {data.FullDescription}
                         </Disclosure.Panel>
                       </div>
                     </div>
+                    
+
+                   
                   );
                 }}
               </Disclosure>
