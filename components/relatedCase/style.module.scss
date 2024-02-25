@@ -22,15 +22,15 @@
     align-items: flex-end;
     margin-bottom: 5rem;
 
-    @include desktop-hd {
-      padding-inline: 0;
-    }
-
     @include mobile-tablet-p {
       padding: 0;
-      flex-direction: column;
+      display: flex;
       justify-content: flex-start;
       margin-bottom: 2rem;
+    }
+
+    @include desktop-hd {
+      padding-inline: 0;
     }
   }
 

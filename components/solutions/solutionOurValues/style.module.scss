@@ -31,6 +31,8 @@
     height: 27rem;
 
     @include mobile-tablet-p {
+      top: 0;
+      position: static;
       margin-bottom: 0;
       height: auto;
     }

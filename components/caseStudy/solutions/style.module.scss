@@ -19,6 +19,12 @@
     height: 20rem;
     position: sticky;
     top: 11rem;
+
+    @include mobile-tablet-p {
+      height: auto;
+      top: 0;
+      position: relative;
+    }
   }
 
   .solutionHeading {
@@ -54,6 +60,11 @@
     gap: 2.5rem;
 
     @include mobile-tablet-p {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 3.75rem 0 0;
+    }
+
+    @include mobile {
       padding: 3.75rem 0 0 0;
       grid-template-columns: repeat(1, 1fr);
     }

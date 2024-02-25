@@ -4,7 +4,7 @@
   padding: 0 7.5rem 0;
 
   @include mobile-tablet-p {
-    padding: 0 0 5rem 1.25rem;
+    padding: 0 1.25rem 3.75rem 1.25rem;
   }
 
   .resultTitle {
@@ -18,6 +18,12 @@
     height: 20rem;
     position: sticky;
     top: 11rem;
+
+    @include mobile-tablet-p{
+      height: auto;
+      position: unset;
+      top: 0;
+    }
   }
 
   .resultHeading {
@@ -51,9 +57,11 @@
     margin-top: 3.8rem;
 
     @include mobile-tablet-p {
-      display: block;
+    
       gap: text(lg);
+      grid-template-columns: repeat(2, 1fr);
     }
+    
 
     .resultCard {
       width: 100%;
@@ -116,7 +124,8 @@
     gap: 3.75rem 8.875rem;
 
     @include mobile-tablet-p {
-      flex-direction: column-reverse;
+      flex-direction: column;
+      gap: 0;
     }
   }
 
