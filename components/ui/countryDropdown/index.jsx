@@ -40,7 +40,15 @@ const CountryDropdown = (props) => {
       },
       flexWrap: "nowrap",
       boxShadow: "none",
+      fontFamily: "../public/fonts/Aeonik-Regular.otf",
     }),
+    placeholder: (defaultStyles) => {
+      return {
+        ...defaultStyles,
+        color: "#8d8d8d",
+        fontSize: "1rem",
+      };
+    },
     menu: (css) => ({
       ...css,
       width: "auto",

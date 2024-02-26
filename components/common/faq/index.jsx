@@ -2,10 +2,11 @@
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 import { Icons } from "@/components/icons";
-import { Disclosure } from "@headlessui/react";
+import { Disclosure,Transition } from "@headlessui/react";
 import { useState } from "react";
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
+import { motion ,AnimatePresence} from "framer-motion";
 
 const Faq = ({props}) => {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
@@ -50,12 +51,14 @@ const Faq = ({props}) => {
                 {(panel) => {
                   const { open, close } = panel;
                   return (
-                    <div className={styles.faqSecMain}>
+                   
+                           <div  className={styles.faqSecMain}>
                       <div className={styles.numberSec}>
                         <h2 className={styles.faqNumber}>{data.Title}</h2>
                       </div>
 
-                      <div className={styles.faqList}>
+                      <div  className={styles.faqList}>
+                        
                         <Disclosure.Button
                           className={styles.accordionHead}
                           onClick={() => {
@@ -68,11 +71,21 @@ const Faq = ({props}) => {
                           {data.title}{data.Description}
                           {!open ? <Icons.IconPlus /> : <Icons.IconMinus />}
                         </Disclosure.Button>
+                        <Transition  show={open} enter= "enter"
+    enterFrom="enterFrom"
+    enterTo="enterTo"
+    leave="leave"
+    leaveFrom="leaveFrom"
+    leaveTo="leaveTo" >
                         <Disclosure.Panel className={styles.accordionBody}>
                         {data.FullDescription}
                         </Disclosure.Panel>
+                        </Transition>
                       </div>
                     </div>
+                    
+
+                   
                   );
                 }}
               </Disclosure>
