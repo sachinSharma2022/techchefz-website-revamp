@@ -5,6 +5,11 @@
   padding-block: 9rem 4.75rem;
   background-color: color(text-primary);
 
+  @include tablet {
+    padding-inline: 1.5rem;
+    padding-block: 3rem 3.75rem;
+  }
+
   @include mobile {
     padding-inline: 1.5rem;
     padding-block: 3rem 3.75rem;
@@ -18,7 +23,7 @@
     @include mobile-tablet-p {
       flex-direction: column;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
     }
   }
 
