@@ -187,8 +187,8 @@ const LetsWork = ({ contact }) => {
                     </div>
                     <div className={`${styles.inputSpace}`}>
                       <Textarea
-                        label="Message*"
-                        placeholder="Message*"
+                        label="Project Explanation*"
+                        placeholder="Project Explanation*"
                         type="textarea"
                         rows="4"
                         id="projectExplanation"

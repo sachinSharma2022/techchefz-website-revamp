@@ -9,8 +9,8 @@ import { MyContext } from "@/context/theme";
 import { projectValidationSchema } from "@/lib/FormSchema";
 import { triggerMail } from "@/lib/triggerMail";
 import { Form, Formik, useFormik } from "formik";
-import { useContext,useState,useRef } from "react";
-import ReCAPTCHA from "react-google-recaptcha"
+import { useContext, useState, useRef } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import { verifyCaptcha } from "@/lib/ServerActions";
 import CircleLoader from "@/components/ui/circleLoader";
 
@@ -21,8 +21,8 @@ import styles from "./style.module.scss";
 
 const ProjectForm = () => {
   const { theme } = useContext(MyContext);
-  const recaptchaRef = useRef(null)
-  const [isVerified, setIsverified] = useState(false)
+  const recaptchaRef = useRef(null);
+  const [isVerified, setIsverified] = useState(false);
   const [inprogress, setinprogress] = useState(false);
   const formInitialSchema = {
     firstName: "",
@@ -48,12 +48,12 @@ const ProjectForm = () => {
     validationSchema: projectValidationSchema,
     onSubmit: (values, action) => {
       console.log(values);
-      setinprogress(true)
-        triggerMail({ content: JSON.stringify(values) });
-        action.resetForm()
-        setTimeout(() => {
-          setinprogress(false)
-        }, 4000);
+      setinprogress(true);
+      triggerMail({ content: JSON.stringify(values) });
+      action.resetForm();
+      setTimeout(() => {
+        setinprogress(false);
+      }, 4000);
     },
   });
 
@@ -67,7 +67,7 @@ const ProjectForm = () => {
     // Server function to verify captcha
     await verifyCaptcha(token)
       .then(() => setIsverified(true))
-      .catch(() => setIsverified(false))
+      .catch(() => setIsverified(false));
   }
 
   return (
@@ -91,7 +91,6 @@ const ProjectForm = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.firstName}
-                  
                 />
                 {touched.firstName && errors.firstName && (
                   <Error>{errors.firstName}</Error>
@@ -196,11 +195,11 @@ const ProjectForm = () => {
             </div>
           </div>
           <div className={styles.captchaImg}>
-          <ReCAPTCHA
-            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-            ref={recaptchaRef}
-            onChange={handleCaptchaSubmission}
-          />
+            <ReCAPTCHA
+              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+              ref={recaptchaRef}
+              onChange={handleCaptchaSubmission}
+            />
           </div>
           <div className={styles.policyArea}>
             <div className={styles.policyText}>
@@ -209,10 +208,21 @@ const ProjectForm = () => {
               <span className={styles.policyHighlight}>Privacy Policy</span>
             </div>
             <div className={`${styles.buttonGrid}`}>
-            <Button  variant={theme ? "blueBtnDark" : "blueBtn"} size="lg" disabled={(isVerified? false : true)?true:(inprogress?true:false)} type="submit">
-                Send a Message 
-                {inprogress?<CircleLoader repeatCount={1} />:<Icons.ArrowRight size={18} />}
-                  </Button>
+              <Button
+                variant={theme ? "blueBtnDark" : "blueBtn"}
+                size="lg"
+                disabled={
+                  (isVerified ? false : true) ? true : inprogress ? true : false
+                }
+                type="submit"
+              >
+                Send a Message
+                {inprogress ? (
+                  <CircleLoader repeatCount={1} />
+                ) : (
+                  <Icons.ArrowRight size={18} />
+                )}
+              </Button>
             </div>
           </div>
         </div>

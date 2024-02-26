@@ -3,12 +3,13 @@
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
-import { Disclosure } from "@headlessui/react";
+import { Disclosure,Transition } from "@headlessui/react";
 import { useContext, useState } from "react";
 
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
+import { motion ,AnimatePresence} from "framer-motion";
 
 const OurValues = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -82,12 +83,34 @@ const OurValues = ({ props }) => {
                           >
                             {data.Title}
                             <div className={styles.iconBox}>
-                              {!open ? <Icons.ArrowDown /> : <Icons.ArrowUp />}
+                            <motion.span
+              initial={{ backgroundColor: "transparent" }}
+              animate={{ rotate: open ? 180 : 0 }}
+              transition={{
+                duration: 0.15,
+                type: "tween",
+              }}>
+              <Icons.ArrowDown /> 
+              </motion.span>
+                              
                             </div>
                           </Disclosure.Button>
-                          <Disclosure.Panel className={styles.accordionBody}>
+                          <Transition  show={open} enter= "enter"
+    enterFrom="enterFrom"
+    enterTo="enterTo"
+    leave="leave"
+    leaveFrom="leaveFrom"
+    leaveTo="leaveTo" >
+                          <Disclosure.Panel  className={styles.accordionBody}>
                             {data.Description}
                           </Disclosure.Panel>
+                          </Transition>
+                         
+                              
+                          
+                          
+                          
+                          
                         </>
                       );
                     }}

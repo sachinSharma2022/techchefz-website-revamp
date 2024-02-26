@@ -1,9 +1,9 @@
 "use client";
 import { MyContext } from "@/context/theme";
-import { useContext } from "react";
+import { useContext,useState } from "react";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
-import { Tab } from "@headlessui/react";
+import { Tab,Transition } from "@headlessui/react";
 import { ImageCustom } from "@/components/ui/imageCustom";
 
 import styles from "./style.module.scss";
@@ -15,7 +15,8 @@ import { base_Url } from "@/lib/constants";
 const Discover = ({ props }) => {
   console.log("tt", props);
   const { theme, setTheme } = useContext(MyContext);
-
+  const [tabIndex, setTabIndex] = useState(0);
+ //console.log(tabIndex,"tab")
   return (
     <section
       className={`${styles.discoverSection} ${
@@ -47,7 +48,7 @@ const Discover = ({ props }) => {
         </div>
 
         <div className={styles.discoverTabSection}>
-          <Tab.Group vertical defaultIndex={0}>
+          <Tab.Group vertical defaultIndex={0} onChange={setTabIndex}>
             <Tab.List className={styles.discoverLeft}>
               {props?.techStack?.map((data, index) => (
                 <Tab key={index}>
@@ -58,10 +59,20 @@ const Discover = ({ props }) => {
                 </Tab>
               ))}
             </Tab.List>
-
+           
+       
             <Tab.Panels className={styles.platformsButtons}>
+            
               {props?.techStack?.map((item, index) => (
-                <Tab.Panel key={index}>
+             
+                <Tab.Panel static={true} key={index}>
+                   <Transition  show={tabIndex === index}  enter= "enterTech"
+              enterFrom="enterFromTech"
+              enterTo="enterToTech"
+              leave="leaveTech"
+              leaveFrom="leaveFromTech"
+              leaveTo="leaveToTech" >
+                    {console.log(tabIndex === index,"ind")}
                   <div className={styles.dataSection}>
                     <h6 className={styles.subTitle}>
                       {item.TechDetail[0]?.Heading}
@@ -127,9 +138,14 @@ const Discover = ({ props }) => {
                       ))}
                     </div>
                   </div>
+                  </Transition>
                 </Tab.Panel>
+                
+                
               ))}
+             
             </Tab.Panels>
+             
           </Tab.Group>
         </div>
       </div>

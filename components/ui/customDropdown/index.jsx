@@ -68,6 +68,10 @@ const CustomDropdown = ({
         borderColor: "#05bed7",
       },
       boxShadow: "none",
+      fontWeight: 400,
+      fontFamily: "../public/fonts/Aeonik-Regular.otf",
+      fontSize: "1rem",
+      color: "#000000",
     }),
     singleValue: () => ({
       color: theme ? "white" : "#111",
@@ -88,6 +92,8 @@ const CustomDropdown = ({
       left: -2,
       transition: "top 0.1s, font-size 0.1s",
       fontSize: (state.hasValue || state.selectProps.inputValue) && 13,
+      color: "#8d8d8d",
+      fontWeight: 400,
     }),
     option: (styles, { isFocused }) => {
       return {

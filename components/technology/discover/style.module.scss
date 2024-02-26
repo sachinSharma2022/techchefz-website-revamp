@@ -85,7 +85,7 @@
     padding-inline: 2.5rem;
     height: 32rem;
     overflow-y: scroll;
-
+   
     @include mobile-tablet-p {
       padding-left: 0;
       border-left: 0;
@@ -103,6 +103,7 @@
       border: 1px solid transparent;
       @include transition(0.5s);
       color: color(text-primary);
+      
 
       &:hover {
         border: 1px solid color(heading-liner);
@@ -136,6 +137,7 @@
         }
       }
     }
+    
   }
 
   .buttonSection {
@@ -262,4 +264,32 @@
       color: rgba(color(primary-white), 0.6);
     }
   }
+  
 }
+.enter {
+  transition: opacity 300ms, transform 300ms;
+}
+
+.enterFrom {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.enterTo {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.leave {
+  transition: opacity 300ms, transform 300ms;
+}
+
+.leaveFrom {
+  opacity: 1;
+}
+
+.leaveTo {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
