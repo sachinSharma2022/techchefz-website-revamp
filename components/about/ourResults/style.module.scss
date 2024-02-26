@@ -56,9 +56,17 @@
     justify-content: center;
     gap: 2.5rem;
 
+    @include tablet {
+      padding-inline: 1.25rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
     @include mobile-tablet-p {
       gap: text(lg);
     }
+
+ 
   }
   .resultCard {
     border: 0.14rem solid rgba(color(text-primary), 12%);
@@ -68,7 +76,7 @@
     background-color: color(bg-soft);
     border-radius: 1.25rem;
 
-    @include mobile-tablet-p {
+    @include mobile {
       padding: text(lg);
       max-width: 90%;
     }

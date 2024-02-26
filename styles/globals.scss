@@ -30,7 +30,7 @@ body {
 
 // main-container
 .main-container {
-  @include mobile {
+  @include mobile-tablet-p {
     overflow-x: hidden;
     padding-top: 70px;
   }

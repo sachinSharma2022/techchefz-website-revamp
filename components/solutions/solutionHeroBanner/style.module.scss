@@ -14,19 +14,19 @@
     padding-block: 11.25rem 5rem;
 
     @include mobile-tablet-p {
-      padding: 2rem 1.25rem;
+      padding-block: 3.75rem 3.75rem;
     }
   }
 
   .landingPlayerStyle div {
     position: relative;
-    height: 31.25rem;    
+    height: 31.25rem;
     width: 100%;
 
     @include mobile-tablet-p {
-      height: 11.75rem;
+      height: 18.75rem;
       margin-bottom: 5rem;
-      margin-top: 2.5rem;
+      margin-top: 0;
     }
 
     img {

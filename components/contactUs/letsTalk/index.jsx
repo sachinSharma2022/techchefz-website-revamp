@@ -45,7 +45,7 @@ const LetsTalk = ({ props }) => {
             ></p>
           </div>
 
-          <div className={`${styles.tabDropdownMob} col-md-6 col-12`}>
+          <div className={`${styles.tabDropdownMob}`}>
             <h3 className={styles.tabDropLabel}>Choose Purpose</h3>
             <CustomDropdown
               placeholder="Select Projects"

@@ -176,8 +176,8 @@ const ProjectForm = () => {
               </div>
               <div className={cn(styles.inputSpace, "input-item")}>
                 <Textarea
-                  label="Brief Explanation of your project**"
-                  placeholder="Brief Explanation of your project**"
+                  label="Brief Explanation of your project*"
+                  placeholder="Brief Explanation of your project*"
                   type="textarea"
                   rows="4"
                   id="projectExplanation"
