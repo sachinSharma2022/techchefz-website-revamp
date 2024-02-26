@@ -84,7 +84,12 @@
     border-radius: 0.5rem;
     overflow: hidden;
 
-    @include mobile-tablet-p {
+    @include tablet {
+      height: 20rem;
+      margin-bottom: 3.5rem;
+    }
+
+    @include mobile {
       height: 14.375rem;
       margin-bottom: 3.5rem;
     }
