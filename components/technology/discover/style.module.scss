@@ -25,10 +25,7 @@
   }
 
   .tabContainer {
-
-    @include mobile-tablet-p {
-      width: 100%;
-    }
+    width: 100%;
   }
 
   .discoverTitle {
