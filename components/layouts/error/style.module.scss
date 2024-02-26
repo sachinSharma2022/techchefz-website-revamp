@@ -12,8 +12,12 @@
       padding-inline: 0;
    }
 
+   @include tablet {
+      padding:3.75rem 1.25rem;
+   }
 
-   @include mobile-tablet-p {
+
+   @include mobile {
       padding:3.75rem 1.25rem;
       gap: 3rem;
       height: auto;
