@@ -102,6 +102,8 @@
             font-size: text(xxs);
             font-weight: 400;
             line-height: text(lg);
+            width: 100%;
+            margin: 0;
 
             @include mobile-tablet-p {
               margin-bottom: text(lg);

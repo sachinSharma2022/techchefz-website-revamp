@@ -55,7 +55,11 @@
     gap: 8.938rem;
     padding: 2.5rem 0;
 
-    @include mobile-tablet-p {
+    @include tablet {
+      gap: 3.75rem;
+    }
+
+    @include mobile {
       grid-template-columns: repeat(1, 1fr);
       gap: 3.75rem;
     }
@@ -68,7 +72,7 @@
       border-radius: 0.5rem;
       overflow: hidden;
 
-      @include mobile-tablet-p {
+      @include mobile {
         height: 18.813rem;
       }
 

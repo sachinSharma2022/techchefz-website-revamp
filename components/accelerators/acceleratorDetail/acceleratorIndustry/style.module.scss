@@ -100,7 +100,11 @@
          border-radius: 0.5rem;
          overflow: hidden;
 
-         @include mobile-tablet-p{
+         @include tablet{
+            height: 20rem;
+         }
+
+         @include mobile{
             height: 11.75rem;
          }
 

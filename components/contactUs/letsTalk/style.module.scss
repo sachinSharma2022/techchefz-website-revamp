@@ -35,6 +35,12 @@
       padding: 1rem 0.75rem;
       margin-bottom: text(lg);
       border-radius: 0.75rem;
+      position: relative;
+      z-index: 99;
+  
+      @include desktop {
+        display: none;
+      }
 
       .tabDropLabel {
         font-size: 0.875rem;
@@ -62,9 +68,6 @@
         color: color(text-primary);
       }
 
-      @include tablet-desktop-full {
-        display: none;
-      }
     }
 
     .headingMain {
