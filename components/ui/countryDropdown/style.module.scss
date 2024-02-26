@@ -5,11 +5,6 @@
   position: relative;
   z-index: 10;
 
-  &:hover,
-  &:focus {
-    border-color: color(heading-liner);
-  }
-
   .countryDropdown {
     display: flex;
     align-items: center;
@@ -20,6 +15,11 @@
     gap: .625rem;
     padding: 0 0 0 1rem;
     background-color: color(primary-white);
+
+    &:hover,
+    &:focus {
+      border-color: color(heading-liner);
+    }
 
     @include mobile-tablet-p{
       margin: 0.5rem 0;
@@ -87,6 +87,12 @@
     .countryDropdown {
       border-color: rgba(color(primary-white), 0.12);
       background-color: color(dark-gray);
+
+
+    &:hover,
+    &:focus {
+      border-color: color(heading-liner);
+    }
 
       &.inputErrorStyle {
         border-color: color(error);
