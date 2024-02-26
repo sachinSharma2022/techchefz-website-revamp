@@ -1,5 +1,5 @@
 "use client";
-import { Disclosure } from "@headlessui/react";
+import { Disclosure,Transition } from "@headlessui/react";
 import { useState } from "react";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
@@ -12,7 +12,6 @@ import { base_Url } from "@/lib/constants";
 import { motion ,AnimatePresence} from "framer-motion";
 
 const SolutionOurValues = ({ props }) => {
-  console.log("mmm", props);
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
   const { theme, setTheme } = useContext(MyContext);
 
@@ -94,12 +93,13 @@ const SolutionOurValues = ({ props }) => {
               </motion.span>
                       </div>
                     </Disclosure.Button>
-                    <AnimatePresence >
-                    <Disclosure.Panel  as={motion.div} initial={{ y: -20, opacity: 0.2 }}
-    animate={{ y: 0, opacity: 1, }} transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }} exit={{
-       y: -20, opacity: 0.2 ,
-      transition: { duration: 0.4 },
-    }} className={styles.accordionBody}>
+                    <Transition  show={open} enter= "enter"
+    enterFrom="enterFrom"
+    enterTo="enterTo"
+    leave="leave"
+    leaveFrom="leaveFrom"
+    leaveTo="leaveTo" >
+                    <Disclosure.Panel  className={styles.accordionBody}>
                       <div className={styles.imgBox}>
                         <ImageCustom
                           src={
@@ -126,8 +126,8 @@ const SolutionOurValues = ({ props }) => {
                         </ul>
                       </div>
                     </Disclosure.Panel>
-                    </AnimatePresence>
-                    
+                   
+                    </Transition>
                   </>
                 );
               }}

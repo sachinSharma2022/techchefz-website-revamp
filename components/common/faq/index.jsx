@@ -2,7 +2,7 @@
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 import { Icons } from "@/components/icons";
-import { Disclosure } from "@headlessui/react";
+import { Disclosure,Transition } from "@headlessui/react";
 import { useState } from "react";
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
@@ -58,6 +58,7 @@ const Faq = ({props}) => {
                       </div>
 
                       <div  className={styles.faqList}>
+                        
                         <Disclosure.Button
                           className={styles.accordionHead}
                           onClick={() => {
@@ -70,13 +71,16 @@ const Faq = ({props}) => {
                           {data.title}{data.Description}
                           {!open ? <Icons.IconPlus /> : <Icons.IconMinus />}
                         </Disclosure.Button>
-                        <Disclosure.Panel as={motion.div} initial={{ y: -20, opacity: 0.2 }}
-    animate={{ y: 0, opacity: 1, }} transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }} exit={{
-       y: -20, opacity: 0.2 ,
-      transition: { duration: 0.4 },
-    }} className={styles.accordionBody}>
+                        <Transition  show={open} enter= "enter"
+    enterFrom="enterFrom"
+    enterTo="enterTo"
+    leave="leave"
+    leaveFrom="leaveFrom"
+    leaveTo="leaveTo" >
+                        <Disclosure.Panel className={styles.accordionBody}>
                         {data.FullDescription}
                         </Disclosure.Panel>
+                        </Transition>
                       </div>
                     </div>
                     

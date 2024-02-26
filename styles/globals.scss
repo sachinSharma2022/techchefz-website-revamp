@@ -927,8 +927,8 @@ input:-webkit-autofill {
 html.lenis {
   height: auto;
 }
-.lenis.lenis-smooth {
-  scroll-behavior: auto;
+.lenis.lenis-smooth{
+  scroll-behavior: auto !important;
 }
 .lenis.lenis-smooth [data-lenis-prevent] {
   overscroll-behavior: contain;
@@ -1073,4 +1073,59 @@ html.lenis {
   @include mobile-tablet-p {
     padding-block: 0rem 5rem !important;
   }
+}
+.enter {
+  transition: opacity 300ms, transform 400ms;
+}
+
+.enterFrom {
+  // opacity: 0;
+  transform: translateY(-20px);
+}
+
+.enterTo {
+  transform: translateY(0px);
+  // opacity: 0.6;
+}
+
+.leave {
+  transition: opacity 300ms, transform 200ms;
+}
+
+.leaveFrom {
+  // opacity: 0.6;
+  transform: translateY(0px);
+}
+
+.leaveTo {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+
+.enterTech {
+  transition: opacity 300ms, transform 400ms;
+}
+
+.enterFromTech {
+  opacity: 0;
+  // transform: scale(0.9);
+}
+
+.enterToTech {
+  // transform: translateX(0);
+  opacity: 1;
+}
+
+.leaveTech {
+  transition: opacity 300ms, transform 400ms;
+}
+
+.leaveFromTech {
+  opacity: 1;
+}
+
+.leaveToTech {
+  opacity: 0;
+  // transform: scale(0.9);
 }

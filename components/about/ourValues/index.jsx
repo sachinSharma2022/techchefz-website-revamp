@@ -3,7 +3,7 @@
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
-import { Disclosure } from "@headlessui/react";
+import { Disclosure,Transition } from "@headlessui/react";
 import { useContext, useState } from "react";
 
 import { cn } from "@/lib/utils";
@@ -95,16 +95,19 @@ const OurValues = ({ props }) => {
                               
                             </div>
                           </Disclosure.Button>
-                         
-                          <AnimatePresence >
-                              <Disclosure.Panel  as={motion.div} initial={{ y: -20, opacity: 0.2 }}
-    animate={{ y: 0, opacity: 1, }} transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }} exit={{
-       y: -20, opacity: 0.2 ,
-      transition: { duration: 0.4 },
-    }} className={styles.accordionBody}>
+                          <Transition  show={open} enter= "enter"
+    enterFrom="enterFrom"
+    enterTo="enterTo"
+    leave="leave"
+    leaveFrom="leaveFrom"
+    leaveTo="leaveTo" >
+                          <Disclosure.Panel  className={styles.accordionBody}>
                             {data.Description}
                           </Disclosure.Panel>
-                          </AnimatePresence>
+                          </Transition>
+                         
+                              
+                          
                           
                           
                           

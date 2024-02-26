@@ -13,6 +13,7 @@ import styles from "./style.module.scss";
 import AnimatedLogo from "@/components/common/animatedLogo";
 
 const NavigationDesktop = ({props}) => {
+  console.log(props,"header")
  
   const pathname = usePathname();
   const { theme, setTheme } = useContext(MyContext);
