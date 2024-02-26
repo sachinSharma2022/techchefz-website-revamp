@@ -49,7 +49,7 @@
   .subHeading {
     font-size: 1.125rem;
     font-weight: 500;
-    margin: 0;
+    margin-bottom: .625rem;
     color: rgba(color(text-primary), 0.6);
   }
 
@@ -82,6 +82,7 @@
     width: 100%;
     border-left: 0.14rem solid rgba(color(text-primary), 0.12);
     padding-left: 2.5rem;
+    padding-inline: 2.5rem;
     height: 32rem;
     overflow-y: scroll;
    
@@ -124,7 +125,7 @@
       }
 
       p {
-        padding-left: 0.75rem;
+        padding-left: 1rem;
         margin: 0;
         font-size: text(lg);
         font-weight: 400;

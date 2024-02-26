@@ -1,58 +1,75 @@
 @import "~/styles/partials/config";
 
 .sitemapPages {
-   padding: spacing(section-primary-padding);
-   background-color: color(bg-soft);
-   padding-block: 5rem;
+  padding: spacing(section-primary-padding);
+  background-color: color(bg-soft);
+  padding-block: 5rem;
 
-   .flexContainer {
-      display: flex;
-      gap: 3.75rem;
+  .flexContainer {
+    display: flex;
+    gap: 3.75rem;
 
-      @include mobile {
-         flex-direction: column;
-      }
-   }
-
-   @include mobile-tablet-p {
-      padding: 2rem;
-   }
-
-   .sitemapPage {
-      width: 360px;
-      display: flex;
+    @include mobile {
       flex-direction: column;
-      gap: 1.25rem;
+    }
+  }
 
-      h6 {
-         font-size: text(xl);
-         font-weight: 500;
-         line-height: 2rem;
-         margin-bottom: 0;
-      }
+  @include mobile-tablet-p {
+    padding: 2rem;
+  }
+
+  .sitemapPage {
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    h6 {
+      font-size: text(xl);
+      font-weight: 500;
+      line-height: 2rem;
+      margin-bottom: 0;
+    }
+  }
+  .sitemapContent {
+    width: 360px;
+
+    h6 {
+      font-size: text(xl);
+      font-weight: 500;
+      line-height: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: text(lg);
+      font-weight: 400;
+      line-height: 1.875rem;
+      opacity: 0.8;
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  a {
+   color: color(text-primary);
+   @include transition(0.5s);
+
+   &:hover {
+      color: color(heading-liner)
    }
-   .sitemapContent {
-      width: 360px;
+ }
 
-      h6 {
-         font-size: text(xl);
-         font-weight: 500;
-         line-height: 2rem;
-         margin-bottom: 1.5rem;
-      }
+  //    Dark mode style
+  &.sitemapPagesDark {
+    background-color: color(dark-bg);
+    color: color(primary-white);
 
-      p {
-         font-size: text(lg);
-         font-weight: 400;
-         line-height: 1.875rem;
-         opacity: 0.8;
-         margin-bottom: 0.75rem;
-      }
-   }
-
-   //    Dark mode style
-   &.sitemapPagesDark {
-      background-color: color(dark-bg);
+    a {
       color: color(primary-white);
-   }
+
+      &:hover {
+         color: color(heading-liner)
+      }
+    }
+  }
 }

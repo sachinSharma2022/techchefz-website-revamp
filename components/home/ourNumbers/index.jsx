@@ -8,57 +8,19 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import TextRevel from "@/components/ui/sectionAnimation";
 import { MyContext } from "@/context/theme";
 
+import { base_Uri } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { useContext } from "react";
 import styles from "./style.module.scss";
-import { base_Uri } from "@/lib/constants";
-
 
 import { base_Url } from "@/lib/constants";
 import Link from "next/link";
+import { useMediaQuery } from "react-responsive";
 
 const OurNumbers = ({ carrer, experience }) => {
   const { theme, setTheme } = useContext(MyContext);
-  const settings = {
-    className: "center",
-    centerPadding: "0px",
-    centerMode: true,
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    nextArrow: (
-      <div>
-        <Icons.SliderArrow width="15" height="15" />
-      </div>
-    ),
-    prevArrow: (
-      <div>
-        <Icons.SliderArrow width="15" height="15" />
-      </div>
-    ),
+  const isTabletScreen = useMediaQuery({ query: "(min-width: 768px)" });
 
-    responsive: [
-      {
-        breakpoint: 1199,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          centerMode: false,
-          arrows: true,
-        },
-      },
-      {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 1.3,
-          slidesToScroll: 1,
-          arrows: true,
-        },
-      },
-    ],
-  };
   return (
     <section
       className={`${styles.numberStyle} ${theme ? styles.numberStyleDark : ""}`}
@@ -78,15 +40,15 @@ const OurNumbers = ({ carrer, experience }) => {
             </div>
 
             <div>
-            <Link href={carrer.BtnLink}>
-              <Button
-                variant={theme ? "lightBlueOutline" : "outline"}
-                size="md"
-              >
-                {carrer.button}
-                <Icons.ArrowRight size={18} />
-              </Button>
-            </Link>
+              <Link href={carrer.BtnLink}>
+                <Button
+                  variant={theme ? "lightBlueOutline" : "outline"}
+                  size="md"
+                >
+                  {carrer.button}
+                  <Icons.ArrowRight size={18} />
+                </Button>
+              </Link>
             </div>
           </div>
         </TextRevel>
@@ -126,7 +88,7 @@ const OurNumbers = ({ carrer, experience }) => {
           </div>
 
           <div className={cn(styles.mobileCards, styles.ourNumberOption)}>
-            <MobileSlider slidesToShow={1.3}>
+            <MobileSlider slidesToShow={isTabletScreen ? 2.1 : 1.3}>
               {experience.Vews.map((data, index) => (
                 <ServiceInfoCard
                   key={index}

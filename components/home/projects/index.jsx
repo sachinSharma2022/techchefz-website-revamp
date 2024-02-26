@@ -101,7 +101,7 @@ const Card = ({ ...props }) => {
 };
 
 const Projects = ({ project, brands }) => {
-  const isMobileScreen = useMediaQuery({ query: "(max-width: 767px)" });
+  const isMobileScreen = useMediaQuery({ query: "(max-width: 1199px)" });
   const { theme, setTheme } = useContext(MyContext);
   const container = useRef(null);
   const { scrollYProgress } = useScroll({

@@ -57,7 +57,6 @@
       line-height: 1.5rem;
       @include mobile-tablet-p {
         font-weight: 400;
-        margin-bottom: 0.75rem;
       }
     }
     .ourTeamHeading {
@@ -65,7 +64,6 @@
       @include mobile-tablet-p {
         font-size: 2rem;
         line-height: 2.5rem;
-        margin-bottom: 3.75rem;
       }
     }
   }
@@ -339,16 +337,18 @@
     margin-bottom: 2.5rem;
   }
 
-  h6 {
-    font-size: text(lg);
-    font-weight: 500;
-    line-height: 1.75rem;
-    margin-bottom: 1.5rem;
-  }
+
 
   .socialSection {
     margin-top: 2.5rem;
 
+    h4 {
+      font-size: text(lg);
+      font-weight: 500;
+      line-height: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+    
     .modalIcons {
       display: flex;
       gap: 0 1.25rem;

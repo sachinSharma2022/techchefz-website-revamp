@@ -15,7 +15,7 @@ const CountryDropdown = (props) => {
   const { theme, setTheme } = useContext(MyContext);
   const [selectedOption, setSelectedOption] = useState(null);
   const isBigScreen = useMediaQuery({ query: "(min-width: 1024px)" });
-  const ref=useRef()
+  const ref = useRef();
 
   const countries = [
     { value: "+91", label: "+91", image: "/images/flag.jpg" },
@@ -67,12 +67,12 @@ const CountryDropdown = (props) => {
         fontSize: "1rem",
         borderColor: isFocused ? "#05bed7" : "#05bed7",
         minWidth: isBigScreen ? "20vw" : "50vw",
+        cursor: "pointer",
       };
     },
   };
-  console.log(props,"Clearing")
-  if(props.clear){
-    
+  console.log(props, "Clearing");
+  if (props.clear) {
     ref.current.clearValue();
   }
 
@@ -90,9 +90,8 @@ const CountryDropdown = (props) => {
         )}
       >
         <Select
-          onChange={(option)=> {
-            if(option)props.setFieldValue("countyCode", option.value)
-  
+          onChange={(option) => {
+            if (option) props.setFieldValue("countyCode", option.value);
           }}
           ref={ref}
           options={countries}

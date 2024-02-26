@@ -132,6 +132,7 @@
       opacity: 0.4;
       p {
         margin-bottom: 0;
+        opacity: 0.8;
       }
       @include mobile {
         min-width: 100%;
@@ -150,12 +151,14 @@
     background-color: color(input-bg);
     color: color(primary-white);
 
+
     .heading {
       color: color(primary-white);
     }
 
     .processCard {
       background-color: color(text-primary);
+      border: 0.14rem solid rgba(color(primary-white), 0.12);
     }
   }
 }

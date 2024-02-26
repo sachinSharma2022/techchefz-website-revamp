@@ -18,6 +18,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { verifyCaptcha } from "@/lib/ServerActions";
 import { useRef, useState } from "react";
 import CircleLoader from "@/components/ui/circleLoader";
+import CustomDropdown from "@/components/ui/customDropdown";
 
 const LetsWork = ({ contact }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -64,6 +65,13 @@ const LetsWork = ({ contact }) => {
       .catch(() => setIsverified(false));
   }
 
+  const dropdownData = [
+    { value: "Project", label: "Project" },
+    { value: "Job", label: "Job" },
+    { value: "Services", label: "Services" },
+    { value: "Vendor", label: "Vendor" },
+  ];
+
   return (
     <section
       className={cn(
@@ -87,11 +95,11 @@ const LetsWork = ({ contact }) => {
                   <div className={styles.contactFormArea}>
                     <div className={`${styles.inputSpace}`}>
                       <Input
-                        label="Full Name*"
-                        placeholder="Full Name*"
+                        label="First Name*"
+                        placeholder="First Name*"
                         type="name"
-                        id="fullName"
-                        name="fullName"
+                        id="firstName"
+                        name="firstName"
                         // error={Boolean(touched.fullName && errors.fullName)}
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -100,6 +108,37 @@ const LetsWork = ({ contact }) => {
                       />
                       {touched.fullName && errors.fullName && (
                         <Error>{errors.fullName}</Error>
+                      )}
+                    </div>
+                    <div className={`${styles.inputSpace}`}>
+                      <Input
+                        label="Last Name*"
+                        placeholder="Last Name*"
+                        type="name"
+                        id="LastName"
+                        name="LastName"
+                        // error={Boolean(touched.fullName && errors.fullName)}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.fullName}
+                        errorStatus={touched.fullName && errors.fullName}
+                      />
+                      {touched.fullName && errors.fullName && (
+                        <Error>{errors.fullName}</Error>
+                      )}
+                    </div>
+                    <div className={`${styles.inputSpace}`}>
+                      <CountryDropdown
+                        id="phone"
+                        name="phone"
+                        onChange={handleChange}
+                        setFieldValue={setFieldValue}
+                        onBlur={handleBlur}
+                        value={values.phone}
+                        clear={inprogress}
+                      />
+                      {touched.phone && errors.phone && (
+                        <Error>{errors.phone}</Error>
                       )}
                     </div>
                     <div className={`${styles.inputSpace}`}>
@@ -119,14 +158,10 @@ const LetsWork = ({ contact }) => {
                       )}
                     </div>
                     <div className={`${styles.inputSpace}`}>
-                      <CountryDropdown
-                        id="phone"
-                        name="phone"
-                        onChange={handleChange}
-                        setFieldValue={setFieldValue}
-                        onBlur={handleBlur}
-                        value={values.phone}
-                        clear={inprogress}
+                      <CustomDropdown
+                        placeholder="Select Purpose*"
+                        title="Select Purpose*"
+                        options={dropdownData}
                       />
                       {touched.phone && errors.phone && (
                         <Error>{errors.phone}</Error>
@@ -184,7 +219,7 @@ const LetsWork = ({ contact }) => {
                     <p className={styles.policyText}>
                       {contact?.policy}
                       <span className={styles.policyHighlight}>
-                      <Link href={contact?.BtnLink}>Privacy Policy</Link>
+                        <Link href={contact?.BtnLink}>Privacy Policy</Link>
                       </span>
                     </p>
                     <div className={`${styles.buttonGrid}`}>

@@ -131,7 +131,7 @@
   .imageDiv {
     position: absolute;
     right: 0;
-    top: 12rem;
+    top: 15rem;
 
     @include mobile-tablet-p{
       position: relative;
@@ -139,7 +139,7 @@
     }
 
     div {
-      width: 100%;
+      width: 60%;
       height: 38.5625rem;
       border-radius: 0.6rem 0 0 0.6rem;
       overflow: hidden;

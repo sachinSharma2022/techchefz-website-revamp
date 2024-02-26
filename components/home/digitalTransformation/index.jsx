@@ -10,7 +10,7 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import { Icons } from "@/components/icons";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { base_Uri } from "@/lib/constants";
+import { base_Uri, base_Url } from "@/lib/constants";
 import TextRevel from "@/components/ui/sectionAnimation";
 
 const DigitalTransformation = ({ digital }) => {
@@ -100,8 +100,8 @@ const DigitalTransformation = ({ digital }) => {
                     <ImageCustom
                       src={
                         data?.Image?.data?.attributes?.url
-                          ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
-                          : `${base_Uri}/`
+                          ? `${base_Url}${data?.Image?.data?.attributes?.url}`
+                          : `${base_Url}/`
                       }
                       width={421}
                       height={318}

@@ -18,13 +18,13 @@
       background-color: color(text-primary);
       color: color(primary-white);
    }
-   
-   .impactContainer{
+
+   .impactContainer {
       display: flex;
       flex-direction: column;
       gap: 5rem;
 
-      @include mobile-tablet-p{
+      @include mobile-tablet-p {
          gap: 3.75rem;
       }
    }
@@ -39,7 +39,7 @@
       opacity: 0.8;
       margin-bottom: 1rem;
 
-      @include mobile {
+      @include mobile-tablet-p {
          text-align: start;
          margin-bottom: 0.5rem;
       }
@@ -49,7 +49,7 @@
       font-weight: 500;
       line-height: 3.375rem;
 
-      @include mobile {
+      @include mobile-tablet-p {
          font-size: text(xxxl);
          line-height: 2.5rem;
          text-align: start;
@@ -74,6 +74,10 @@
 
          @include mobile-tablet-p {
             width: 100%;
+            height: auto;
+         }
+
+         @include mobile {
             height: 18.813rem;
          }
 
@@ -98,7 +102,7 @@
             max-width: 90%;
             margin-bottom: 0.75rem;
 
-            @include mobile{
+            @include mobile-tablet-p {
                font-size: text(xl);
                line-height: 1.875rem;
                max-width: 100%;
@@ -114,7 +118,7 @@
                line-height: 1.875rem;
                opacity: 0.6;
 
-               @include mobile-tablet-p{
+               @include mobile-tablet-p {
                   font-size: text(normal);
                   line-height: 1.5rem;
                }
@@ -127,7 +131,7 @@
             line-height: 1.875rem;
             opacity: 0.6;
 
-            @include mobile-tablet-p{
+            @include mobile-tablet-p {
                font-size: text(normal);
                line-height: 1.5rem;
             }

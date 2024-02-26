@@ -62,8 +62,8 @@ const BrowserAccelerator = ({props}) => {
           </div>
         </div>
         <hr className={styles.breakLine} />
-        <h5 className={cn(styles.browserAcceleratorHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props[0]?.Heading}`}}>
-         
+        <h5 className={cn(styles.browserAcceleratorHeading, "gradient-text")} >
+        {props[0]?.attributes?.BrowserAccelerator?.SubTitle}
         </h5>
         <div className={styles.browserAcceleratorCards}>
           {props?.map((item, index) => (

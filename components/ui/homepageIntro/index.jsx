@@ -36,7 +36,7 @@ const HomepageIntro = (props) => {
           trigger: `.${styles.videoCont}`,
           pin: true,
           markers: false,
-          start: "top 80rem" ,
+          start: "top 80rem",
           end: "+=" + (271 + window.innerHeight),
         });
         tl.to(`.${styles.video}`, {
@@ -49,19 +49,19 @@ const HomepageIntro = (props) => {
             width: "50%",
             height: "40%",
             duration: 6,
-            marginTop:20,
+            marginTop: 20,
             borderRadius: "12px",
           })
           .to(
             `.${styles.video}`,
             {
               // y: -1,
-              x:-65,
+              x: -65,
               duration: 8,
               width: "4%",
               height: "8%",
               borderRadius: "20%",
-            },
+            }
             // ">1"
           )
           .to(`.${styles.video}`, { borderRadius: "50%", duration: 1 });

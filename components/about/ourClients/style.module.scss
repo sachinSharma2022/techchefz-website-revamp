@@ -33,12 +33,9 @@
   .subHeading {
     opacity: 0.6;
     font-weight: 400;
-    line-height: 1.875rem;
-    font-size: text(lg);
     text-transform: uppercase;
 
     @include mobile-tablet-p {
-      margin-bottom: 0;
       font-size: text(normal);
       line-height: text(xl);
     }
@@ -48,7 +45,7 @@
     opacity: 0.6;
     font-weight: 400;
     line-height: 1.875rem;
-    font-size: text(2);
+    font-size: 1.25rem;
     margin-bottom: 2.75rem;
 
     @include mobile-tablet-p {
@@ -58,7 +55,7 @@
   }
 
   .contentSec {
-    max-width: 372px;
+    min-width: 300px;
 
     @include mobile-tablet-p {
       max-width: 100%;
@@ -81,7 +78,7 @@
     width: 100%;
 
     .description {
-      max-width: 50%;
+      max-width: 70%;
 
       @include mobile-tablet-p {
         max-width: 100%;
@@ -93,11 +90,10 @@
   .logoAnimation {
     position: relative;
     overflow: hidden;
-    max-width: 77.8%;
+    max-width: 72.8%;
 
     @include mobile-tablet-p {
       max-width: 100%;
-      margin-left: 1.25rem;
     }
 
     &::after {

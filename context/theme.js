@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 export const MyContext = createContext(null);
 
 export default function ThemeProvider({ children }) {

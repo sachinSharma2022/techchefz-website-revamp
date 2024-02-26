@@ -12,9 +12,7 @@ import { useContext, useEffect, useState } from "react";
 import styles from "./style.module.scss";
 import AnimatedLogo from "@/components/common/animatedLogo";
 
-const NavigationDesktop = ({props}) => {
-  console.log(props,"header")
- 
+const NavigationDesktop = ({ props }) => {
   const pathname = usePathname();
   const { theme, setTheme } = useContext(MyContext);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -128,7 +126,7 @@ const NavigationDesktop = ({props}) => {
                 Technology <div className={styles.arrow} />
               </Link>
               <ul className={cn(styles.subMenu)}>
-                <section className={styles.subsection}>
+                <div className={styles.subsection}>
                   {LatestTech()}
 
                   <div className={cn(styles.overviewTech)}>
@@ -244,7 +242,7 @@ const NavigationDesktop = ({props}) => {
                       </div>
                     </div>
                   </div>
-                </section>
+                </div>
               </ul>
             </li>
             <li className={styles.menuItem}>

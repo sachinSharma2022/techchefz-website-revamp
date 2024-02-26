@@ -12,7 +12,7 @@ import Slider from "react-slick";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
 
-const OurClients = ({props}) => {
+const OurClients = ({ props }) => {
   console.log("aa", props);
   const { theme } = useContext(MyContext);
   const sliderLeft = {
@@ -62,7 +62,6 @@ const OurClients = ({props}) => {
     ],
   };
 
-  
   return (
     <section
       className={cn(styles.ourClients, theme ? styles.ourClientsDark : "")}
@@ -70,13 +69,18 @@ const OurClients = ({props}) => {
       <div className={cn("primary-container")}>
         <div className={cn(styles.flexContainer)}>
           <div className={styles.contentSec}>
-            <h6 className={styles.subHeading} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}></h6>
-            <h3 className={styles.heading} dangerouslySetInnerHTML={{ __html: `${props?.subTitle}`}}>
-             
-            </h3>
-            <p className={styles.description} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
-              
-            </p>
+            <h6
+              className={styles.subHeading}
+              dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+            ></h6>
+            <h3
+              className={styles.heading}
+              dangerouslySetInnerHTML={{ __html: `${props?.subTitle}` }}
+            ></h3>
+            <p
+              className={styles.description}
+              dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
+            ></p>
             <Link href={props?.BtnLink}>
               <Button
                 variant={theme ? "lightBlueOutline" : "outline"}
@@ -88,9 +92,10 @@ const OurClients = ({props}) => {
           </div>
 
           <div className={styles.clientSection}>
-            <p className={styles.description} dangerouslySetInnerHTML={{ __html: `${props?.SubDescription}`}}>
-             
-            </p>
+            <p
+              className={styles.description}
+              dangerouslySetInnerHTML={{ __html: `${props?.SubDescription}` }}
+            ></p>
 
             <div className={cn(styles.logoAnimation, "logo-animation")}>
               <div className={styles.logoSection}>
@@ -98,7 +103,11 @@ const OurClients = ({props}) => {
                   {props?.clientlogo?.map((item, index) => (
                     <div key={index} className={styles.teamImg}>
                       <ImageCustom
-                        src={item?.Image?.data?.attributes?.url?`${base_Uri}${item?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+                        src={
+                          item?.Image?.data?.attributes?.url
+                            ? `${base_Uri}${item?.Image?.data?.attributes?.url}`
+                            : `${base_Uri}/`
+                        }
                         width={240}
                         height={320}
                         alt="team-member"
@@ -112,7 +121,11 @@ const OurClients = ({props}) => {
                   {props?.clientlogo?.map((item, index) => (
                     <div key={index} className={styles.teamImg}>
                       <ImageCustom
-                        src={item?.Image?.data?.attributes?.url?`${base_Uri}${item?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+                        src={
+                          item?.Image?.data?.attributes?.url
+                            ? `${base_Uri}${item?.Image?.data?.attributes?.url}`
+                            : `${base_Uri}/`
+                        }
                         width={240}
                         height={320}
                         alt="team-member"
@@ -126,7 +139,11 @@ const OurClients = ({props}) => {
                   {props?.clientlogo?.map((item, index) => (
                     <div key={index} className={styles.teamImg}>
                       <ImageCustom
-                        src={item?.Image?.data?.attributes?.url?`${base_Uri}${item?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+                        src={
+                          item?.Image?.data?.attributes?.url
+                            ? `${base_Uri}${item?.Image?.data?.attributes?.url}`
+                            : `${base_Uri}/`
+                        }
                         width={240}
                         height={320}
                         alt="team-member"

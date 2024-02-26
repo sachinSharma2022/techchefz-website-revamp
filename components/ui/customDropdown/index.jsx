@@ -1,7 +1,7 @@
 "use client";
 import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
-import React, { useContext,useRef } from "react";
+import React, { useContext, useRef } from "react";
 import Select, { components } from "react-select";
 
 import dropdownStyle from "./style.module.scss";
@@ -51,10 +51,10 @@ const CustomDropdown = ({
   placeholder,
   setFieldValue,
   name,
-  clear
+  clear,
 }) => {
   const { theme } = useContext(MyContext);
-  const ref=useRef()
+  const ref = useRef();
 
   const controlStyle = {
     control: (styles) => ({
@@ -96,11 +96,11 @@ const CustomDropdown = ({
         color: isFocused ? "white" : "#111",
         fontSize: "1rem",
         borderColor: isFocused ? "#05bed7" : "#05bed7",
+        cursor: "pointer",
       };
     },
   };
-  if(clear){
-    
+  if (clear) {
     ref.current.clearValue();
   }
 
@@ -115,10 +115,8 @@ const CustomDropdown = ({
       )}
     >
       <Select
-        onChange={(opt)=>{
-
-           if(opt)setFieldValue(name,opt.value)
-           
+        onChange={(opt) => {
+          if (opt) setFieldValue(name, opt.value);
         }}
         ref={ref}
         options={options}
