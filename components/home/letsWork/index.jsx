@@ -20,16 +20,20 @@ import { useRef, useState } from "react";
 import CircleLoader from "@/components/ui/circleLoader";
 import CustomDropdown from "@/components/ui/customDropdown";
 import { countryList } from "@/lib/country";
+import ConfirmationPopup from "@/components/ui/confirmationPopup";
 
 const LetsWork = ({ contact }) => {
   const { theme, setTheme } = useContext(MyContext);
   const [inprogress, setinprogress] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   const formInitialSchema = {
-    fullName: "",
+    firstName: "",
+    lastName:"",
     email: "",
     phone: "",
     countyCode: "",
+    selectPurpose:"",
     companyName: "",
     projectExplanation: "",
   };
@@ -47,6 +51,7 @@ const LetsWork = ({ contact }) => {
     validationSchema: commonValidationSchema,
     onSubmit: (values, action) => {
       console.log(values);
+      dialogOpen()
       setinprogress(true);
       triggerMail({ content: JSON.stringify(values) });
       action.resetForm();
@@ -65,6 +70,8 @@ const LetsWork = ({ contact }) => {
       .then(() => setIsverified(true))
       .catch(() => setIsverified(false));
   }
+  const dialogOpen=()=>setIsOpen(true)
+  const dialogClose=()=>setIsOpen(false)
 
   return (
     <section
@@ -76,6 +83,8 @@ const LetsWork = ({ contact }) => {
       <div className={cn("primary-container")}>
         <div className={styles.workArea}>
           <div className={styles.workGrid}>
+          <ConfirmationPopup open={isOpen} onClose={dialogClose} />
+
             <Formik>
               <Form onSubmit={handleSubmit}>
                 <div className={styles.contactUsForm}>
@@ -97,11 +106,11 @@ const LetsWork = ({ contact }) => {
                         // error={Boolean(touched.fullName && errors.fullName)}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        value={values.fullName}
-                        errorStatus={touched.fullName && errors.fullName}
+                        value={values.firstName}
+                        errorStatus={touched.firstName && errors.firstName}
                       />
-                      {touched.fullName && errors.fullName && (
-                        <Error>{errors.fullName}</Error>
+                      {touched.firstName && errors.firstName && (
+                        <Error>{errors.firstName}</Error>
                       )}
                     </div>
                     <div className={`${styles.inputSpace}`}>
@@ -109,16 +118,16 @@ const LetsWork = ({ contact }) => {
                         label="Last Name*"
                         placeholder="Last Name*"
                         type="name"
-                        id="LastName"
-                        name="LastName"
+                        id="lastName"
+                        name="lastName"
                         // error={Boolean(touched.fullName && errors.fullName)}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        value={values.fullName}
-                        errorStatus={touched.fullName && errors.fullName}
+                        value={values.lastName}
+                        errorStatus={touched.lastName && errors.lastName}
                       />
-                      {touched.fullName && errors.fullName && (
-                        <Error>{errors.fullName}</Error>
+                      {touched.lastName && errors.lastName && (
+                        <Error>{errors.lastName}</Error>
                       )}
                     </div>
                     <div className={`${styles.inputSpace}`}>
@@ -155,10 +164,19 @@ const LetsWork = ({ contact }) => {
                       <CustomDropdown
                         placeholder="Select Purpose*"
                         title="Select Purpose*"
+                        name="selectPurpose"
+                        setFieldValue={setFieldValue}
+                        onBlur={handleBlur}
+                        value={values.selectPurpose}
                         options={countryList}
+                        errorStatus={
+                          touched.selectPurpose && errors.selectPurpose
+                        }
+                        className="custom-dropdown"
+                        clear={inprogress}
                       />
-                      {touched.phone && errors.phone && (
-                        <Error>{errors.phone}</Error>
+                      {touched.selectPurpose && errors.selectPurpose && (
+                        <Error>{errors.selectPurpose}</Error>
                       )}
                     </div>
                     <div className={`${styles.inputSpace}`}>
@@ -229,6 +247,10 @@ const LetsWork = ({ contact }) => {
                             : false
                         }
                         type="submit"
+                        onClick={()=>{
+                         
+                        }}
+
                       >
                         {contact?.Btn}
                         {inprogress ? (

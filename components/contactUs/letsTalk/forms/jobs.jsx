@@ -13,6 +13,7 @@ import { useContext, useState, useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { verifyCaptcha } from "@/lib/ServerActions";
 import CircleLoader from "@/components/ui/circleLoader";
+import ConfirmationPopup from "@/components/ui/confirmationPopup";
 
 
 import { cn } from "@/lib/utils";
@@ -23,6 +24,7 @@ const JobsForm = () => {
   const recaptchaRef = useRef(null);
   const [isVerified, setIsverified] = useState(false);
   const [inprogress, setinprogress] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
   const formInitialSchema = {
     firstName: "",
     lastName: "",
@@ -46,14 +48,18 @@ const JobsForm = () => {
       .then(() => setIsverified(true))
       .catch(() => setIsverified(false));
   }
+  const dialogOpen=()=>setIsOpen(true)
+  const dialogClose=()=>setIsOpen(false)
   return (
+    <>
+    <ConfirmationPopup open={isOpen} onClose={dialogClose} />
     <Formik
       onSubmit={(values, action) => {
         // const formdata = new FormData();
         // Object.entries(values).forEach(([key, value]) => {
         //     formdata.append(key, value);
         // });
-        console.log(values, "values");
+        dialogOpen()
         setinprogress(true);
         triggerMail({ content: JSON.stringify(values) });
         action.resetForm();
@@ -238,6 +244,7 @@ const JobsForm = () => {
                       : false
                   }
                   type="submit"
+                 
                 >
                   Send a Message
                   {inprogress ? (
@@ -252,6 +259,8 @@ const JobsForm = () => {
         </Form>
       )}
     </Formik>
+    </>
+   
   );
 };
 

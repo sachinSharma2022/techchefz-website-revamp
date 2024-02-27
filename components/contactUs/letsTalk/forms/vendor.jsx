@@ -14,6 +14,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { verifyCaptcha } from "@/lib/ServerActions";
 import CircleLoader from "@/components/ui/circleLoader";
 import { countryList } from "@/lib/country";
+import ConfirmationPopup from "@/components/ui/confirmationPopup";
 
 import CustomDropdown from "@/components/ui/customDropdown";
 
@@ -25,6 +26,7 @@ const VendorForm = () => {
   const recaptchaRef = useRef(null);
   const [isVerified, setIsverified] = useState(false);
   const [inprogress, setinprogress] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
   const formInitialSchema = {
     firstName: "",
     lastName: "",
@@ -47,11 +49,15 @@ const VendorForm = () => {
       .then(() => setIsverified(true))
       .catch(() => setIsverified(false));
   }
+  const dialogOpen=()=>setIsOpen(true)
+  const dialogClose=()=>setIsOpen(false)
 
   return (
-    <Formik
+    <>
+     <ConfirmationPopup open={isOpen} onClose={dialogClose} />
+     <Formik
       onSubmit={(values, action) => {
-        console.log(values);
+        dialogOpen()
         setinprogress(true);
         triggerMail({ content: JSON.stringify(values) });
         action.resetForm();
@@ -232,6 +238,7 @@ const VendorForm = () => {
                       : false
                   }
                   type="submit"
+                 
                 >
                   Send a Message
                   {inprogress ? (
@@ -246,6 +253,8 @@ const VendorForm = () => {
         </Form>
       )}
     </Formik>
+    </>
+   
   );
 };
 

@@ -13,6 +13,7 @@ import { useContext, useState, useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { verifyCaptcha } from "@/lib/ServerActions";
 import CircleLoader from "@/components/ui/circleLoader";
+import ConfirmationPopup from "@/components/ui/confirmationPopup";
 
 import CustomDropdown from "@/components/ui/customDropdown";
 
@@ -25,6 +26,7 @@ const ProjectForm = () => {
   const recaptchaRef = useRef(null);
   const [isVerified, setIsverified] = useState(false);
   const [inprogress, setinprogress] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
     const formInitialSchema = {
     firstName: "",
     lastName: "",
@@ -48,7 +50,7 @@ const ProjectForm = () => {
     initialValues: formInitialSchema,
     validationSchema: projectValidationSchema,
     onSubmit: (values, action) => {
-      console.log(values);
+      dialogOpen()
       setinprogress(true);
       triggerMail({ content: JSON.stringify(values) });
       action.resetForm();
@@ -70,8 +72,12 @@ const ProjectForm = () => {
       .then(() => setIsverified(true))
       .catch(() => setIsverified(false));
   }
+  const dialogOpen=()=>setIsOpen(true)
+  const dialogClose=()=>setIsOpen(false)
   
   return (
+    <>
+    <ConfirmationPopup open={isOpen} onClose={dialogClose} />
     <Formik>
       <Form onSubmit={handleSubmit}>
         <div className={styles.contactUsForm}>
@@ -216,6 +222,7 @@ const ProjectForm = () => {
                   (isVerified ? false : true) ? true : inprogress ? true : false
                 }
                 type="submit"
+                
               >
                 Send a Message
                 {inprogress ? (
@@ -230,6 +237,8 @@ const ProjectForm = () => {
       </Form>
       {/* //   )} */}
     </Formik>
+    </>
+    
   );
 };
 
