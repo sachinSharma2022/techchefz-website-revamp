@@ -28,8 +28,11 @@ const Cms = async () => {
           /> */}
           <SolutionTheProcess props={data.OurProcess} />
           <Faq props={data.Faq} />
-          <RelatedCase sliderClassName="mb-0" props={data.CaseStudy} />
-
+          <RelatedCase
+            sliderClassName="mb-0"
+            className="cms-related"
+            props={data.CaseStudy}
+          />
           <LetsWork contact={data.ContactUs} />
         </div>
       ) : (

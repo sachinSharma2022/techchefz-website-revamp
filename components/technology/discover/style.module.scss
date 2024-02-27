@@ -14,7 +14,6 @@
     display: grid;
     grid-template-columns: 70% auto;
     align-items: flex-end;
-    gap: 8.9375rem;
 
     @include mobile-tablet-p {
       display: flex;
@@ -24,6 +23,11 @@
       gap: 1.5rem;
     }
   }
+
+  .tabContainer {
+    width: 100%;
+  }
+
   .discoverTitle {
     font-size: text(normal);
     font-weight: 500;
@@ -49,7 +53,7 @@
   .subHeading {
     font-size: 1.125rem;
     font-weight: 500;
-    margin-bottom: .625rem;
+    margin-bottom: 0.625rem;
     color: rgba(color(text-primary), 0.6);
   }
 
@@ -78,17 +82,17 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    gap: 3.75rem;
     width: 100%;
-    border-left: 0.14rem solid rgba(color(text-primary), 0.12);
-    padding-left: 2.5rem;
-    padding-inline: 2.5rem;
     height: 32rem;
+    padding: 0 2.5rem;
+    overflow: hidden;
     overflow-y: scroll;
-   
+
     @include mobile-tablet-p {
+      display: block;
       padding-left: 0;
       border-left: 0;
+      height: auto;
     }
 
     .platformsBtn {
@@ -103,7 +107,6 @@
       border: 1px solid transparent;
       @include transition(0.5s);
       color: color(text-primary);
-      
 
       &:hover {
         border: 1px solid color(heading-liner);
@@ -130,6 +133,7 @@
         font-size: text(lg);
         font-weight: 400;
         line-height: 1.875rem;
+        @include truncate(2);
 
         @include mobile-tablet-p {
           font-size: text(normal);
@@ -137,7 +141,6 @@
         }
       }
     }
-    
   }
 
   .buttonSection {
@@ -145,7 +148,14 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 1.25rem 2.5rem;
 
+    @include mobile-tablet-p {
+      display: block;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
     @include mobile {
+      display: grid;
       grid-template-columns: repeat(1, 1fr);
     }
   }
@@ -153,7 +163,6 @@
   .discoverTabSection {
     display: flex;
     justify-content: space-between;
-    gap: 2.5rem;
 
     @include mobile-tablet-p {
       flex-direction: column;
@@ -164,11 +173,18 @@
       flex-direction: column;
       align-items: flex-start;
       justify-content: flex-start;
-      max-width: 270px;
+      max-width: 300px;
       width: 100%;
+      border-right: 0.14rem solid rgba(color(text-primary), 0.12);
+      padding-right: 2.5rem;
 
-      @include mobile-tablet-p{
+      @include mobile-tablet-p {
         max-width: inherit;
+        align-items: center;
+        border: none;
+        flex-direction: row;
+        padding-right: 0;
+        border-top: 0.14rem solid rgba(color(text-primary), 0.12);
       }
     }
 
@@ -177,7 +193,10 @@
 
       &:first-child {
         .discoverHead {
-          padding-top: 0;
+
+          @include desktop {
+            padding-top: 0;
+          }
         }
       }
     }
@@ -187,6 +206,11 @@
       border-bottom: 0.14rem solid rgba(color(text-primary), 0.12);
       width: 100%;
       padding: 1rem 0;
+
+      @include mobile-tablet-p {
+        border-bottom: none;
+        padding: 1.5rem 0;
+      }
     }
 
     .dataSection {
@@ -218,15 +242,27 @@
     justify-content: flex-end;
   }
 
-  //dark mode style
+  .iconBox {
+    min-width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 100%;
+    background: color(bg-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
+
+  //dark mode style
   &.discoverSectionDark {
     background-color: color(input-bg);
     color: color(primary-white);
 
-    .platformsButtons {
-      border-color: rgba(color(primary-white), 0.12);
+    .iconBox {
+      background-color: rgba(color(text-primary), 0.8);
+    }
 
+    .platformsButtons {
       .platformsBtn {
         background-color: color(text-primary);
         color: color(primary-white);
@@ -241,6 +277,10 @@
       .subHeading {
         color: color(primary-white);
       }
+    }
+
+    .discoverLeft {
+      border-color: rgba(color(primary-white), 0.12);
     }
 
     .discoverHead {
@@ -262,10 +302,14 @@
 
     .subHeading {
       color: rgba(color(primary-white), 0.6);
+
+      @include mobile-tablet-p {
+        margin: 0;
+      }
     }
   }
-  
 }
+
 .enter {
   transition: opacity 300ms, transform 300ms;
 }
@@ -292,4 +336,3 @@
   opacity: 0;
   transform: scale(0.9);
 }
-

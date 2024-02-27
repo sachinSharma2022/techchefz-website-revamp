@@ -97,7 +97,7 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 2.5rem;
 
-        @include mobile-tablet-p {
+        @include mobile {
           display: none;
         }
       }
@@ -173,7 +173,7 @@
   .mobileSlider {
     display: none;
 
-    @include mobile-tablet-p {
+    @include mobile {
       display: block;
       padding-left: 1.25rem;
     }

@@ -1,8 +1,16 @@
 @import "~/styles/partials/config";
 
-.landingPlayerStyle div {
+.landingPlayerStyle {
   height: 31.25rem;
   width: 100%;
+
+  @include tablet {
+    height: 21.25rem;
+  }
+
+  @include mobile {
+    height: 15rem;
+  }
 
   img {
     width: 100%;

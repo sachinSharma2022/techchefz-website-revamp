@@ -28,7 +28,11 @@
       position: absolute;
       right: 0;
 
-      @include mobile-tablet-p {
+      @include tablet {
+        margin-top: 3.75rem;
+      }
+
+      @include mobile {
         position: relative;
         margin-top: 3.75rem;
         padding-left: 2.25rem;
