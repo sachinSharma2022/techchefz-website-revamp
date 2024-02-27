@@ -49,7 +49,7 @@ const Footer = () => {
 
               <Link href="/contact-us" className={styles.partnerCard}>
                 <div className={styles.partnerCols}>
-                  <Link href="/">
+                  <Link href="/contact-us">
                     Become our Partner <Icons.ArrowRight size={16} />
                   </Link>
                   <p>Join our partnership network now!</p>
@@ -121,7 +121,7 @@ const Footer = () => {
                     <Link href="/portfolio">Portfolio</Link>
                   </li>
                   <li>
-                    <Link href="/">Contact Us</Link>
+                    <Link href="/contact-us">Contact Us</Link>
                   </li>
                 </ul>
               </div>
@@ -134,19 +134,19 @@ const Footer = () => {
                     <Link href="/technology/cms">CMS</Link>
                   </li>
                   <li>
-                    <Link href="/">Commerce</Link>
+                    <Link href="/technology/commerce">Commerce</Link>
                   </li>
                   <li>
-                    <Link href="/">Microservices</Link>
+                    <Link href="/technology/microservices">Microservices</Link>
                   </li>
                   <li>
-                    <Link href="/">Cloud & DevSecOps</Link>
+                    <Link href="/technology/cloud-devsec-ops">Cloud & DevSecOps</Link>
                   </li>
                   <li>
-                    <Link href="/">Data Intelligence</Link>
+                    <Link href="/technology/data-intelligence">Data Intelligence</Link>
                   </li>
                   <li>
-                    <Link href="/">Analysis Automation</Link>
+                    <Link href="/technology/analytics-automation">Analysis Automation</Link>
                   </li>
                 </ul>
               </div>
@@ -157,13 +157,13 @@ const Footer = () => {
                     <Link href="/careers">Careers</Link>
                   </li>
                   <li>
-                    <Link href="/">Insights</Link>
+                    <Link href="/insights">Insights</Link>
                   </li>
                   <li>
-                    <Link href="/">Center of Excellence</Link>
+                    <Link href="/coe">Center of Excellence</Link>
                   </li>
                   <li>
-                    <Link href="/">Accelerators</Link>
+                    <Link href="/accelerators">Accelerators</Link>
                   </li>
                 </ul>
               </div>
