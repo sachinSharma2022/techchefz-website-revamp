@@ -1,19 +1,18 @@
 "use client";
 
 import { Icons } from "@/components/icons";
+import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
+import { base_Url } from "@/lib/constants";
+import { cn } from "@/lib/utils";
 import { Tab } from "@headlessui/react";
 import { useContext } from "react";
-import CustomDropdown from "@/components/ui/customDropdown";
-import { cn } from "@/lib/utils";
-import styles from "./style.module.scss";
+import Select from "react-select";
 import JobsForm from "./forms/jobs";
 import ProjectForm from "./forms/project";
 import ServicesForm from "./forms/services";
 import VendorForm from "./forms/vendor";
-import { base_Uri } from "@/lib/constants";
-import { base_Url } from "@/lib/constants";
-import { ImageCustom } from "@/components/ui/imageCustom";
+import styles from "./style.module.scss";
 
 const LetsTalk = ({ props }) => {
   const { theme } = useContext(MyContext);
@@ -24,6 +23,59 @@ const LetsTalk = ({ props }) => {
     { value: "Services", label: "Services" },
     { value: "Vendor", label: "Vendor" },
   ];
+
+  const controlStyle = {
+    control: (styles) => ({
+      ...styles,
+      height: 40,
+      borderRadius: 0,
+      backgroundColor: "transparent",
+      borderWidth: 0,
+      borderColor: "transparent",
+      "&:hover": {
+        borderColor: "#05bed7",
+      },
+      boxShadow: "none",
+      fontWeight: 400,
+      fontFamily: "../public/fonts/Aeonik-Regular.otf",
+      fontSize: "1.2rem",
+      color: "#000000",
+    }),
+    singleValue: () => ({
+      color: theme ? "white" : "#111",
+      fontSize: "1.125rem",
+    }),
+    indicatorSeparator: () => ({ display: "none" }),
+    valueContainer: (provided) => ({
+      ...provided,
+      overflow: "visible",
+      top: 0,
+      position: "relative",
+      left: 0,
+      display: "flex",
+      padding: 0,
+    }),
+    placeholder: (provided, state) => ({
+      ...provided,
+      position: "absolute",
+      top: state.hasValue || state.selectProps.inputValue ? 0 : "0",
+      left: -2,
+      transition: "top 0.1s, font-size 0.1s",
+      fontSize: (state.hasValue || state.selectProps.inputValue) && 13,
+      color: "#8d8d8d",
+      fontWeight: 400,
+    }),
+    option: (styles, { isFocused }) => {
+      return {
+        ...styles,
+        backgroundColor: isFocused ? "#0066CC" : null,
+        color: isFocused ? "white" : "#111",
+        fontSize: "1.125rem",
+        borderColor: isFocused ? "#05bed7" : "#05bed7",
+        cursor: "pointer",
+      };
+    },
+  };
 
   return (
     <section className={cn("primary-container")}>
@@ -47,10 +99,11 @@ const LetsTalk = ({ props }) => {
 
           <div className={`${styles.tabDropdownMob}`}>
             <h3 className={styles.tabDropLabel}>Choose Purpose</h3>
-            <CustomDropdown
-              placeholder="Select Projects"
-              title="Projects"
+            <Select
+              isSearchable={false}
               options={dropdownData}
+              styles={controlStyle}
+              defaultValue={{ label: "Project", value: "Project" }}
             />
           </div>
 

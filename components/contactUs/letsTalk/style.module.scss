@@ -37,6 +37,7 @@
       border-radius: 0.75rem;
       position: relative;
       z-index: 99;
+      padding-left: 20px;
   
       @include desktop {
         display: none;
@@ -46,28 +47,9 @@
         font-size: 0.875rem;
         font-weight: 400;
         line-height: text(xl);
-        margin-bottom: text(normal);
         opacity: 0.6;
+        margin: 0;
       }
-      select {
-        padding: 0;
-        border: none;
-        font-size: 0.875rem;
-        border: transparent;
-
-        &:focus {
-          border: none;
-        }
-      }
-      label {
-        padding: 0;
-        height: auto;
-        font-size: 1.125rem;
-        font-weight: 500;
-        font-family: font(primary);
-        color: color(text-primary);
-      }
-
     }
 
     .headingMain {
