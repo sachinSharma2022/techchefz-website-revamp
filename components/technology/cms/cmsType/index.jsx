@@ -10,8 +10,7 @@ import { useContext, useState } from "react";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
 
-const CmsType = ({props}) => {
- 
+const CmsType = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   let [isOpen, setIsOpen] = useState(false);
   const [index, setIndex] = useState(0);
@@ -67,28 +66,37 @@ const CmsType = ({props}) => {
     >
       <div className={cn("primary-container")}>
         <div className={styles.careerRow}>
-          <h6 className={cn(styles.projectHighlight,"gradient-text")}dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}> 
-          </h6>
-          <h2 className={cn(styles.datingText,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
-          </h2>
+          <h6
+            className={cn(styles.projectHighlight, "gradient-text")}
+            dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+          ></h6>
+          <h2
+            className={cn(styles.datingText, "gradient-text")}
+            dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
+          ></h2>
         </div>
 
         <div className={`${styles.cmsGridCards} `}>
           {props?.Slider?.map((data, index) => (
             <PartnerCard
               key={index}
-              imgSrc={data?.Image?.data?.attributes?.url?`${base_Uri}${data?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
-              darkImgSrc={data?.Image?.data?.attributes?.url?`${base_Uri}${data?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+              imgSrc={
+                data?.Image?.data?.attributes?.url
+                  ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
+                  : `${base_Uri}/`
+              }
+              darkImgSrc={
+                data?.Image?.data?.attributes?.url
+                  ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
+                  : `${base_Uri}/`
+              }
               cardTitle={data.Title}
               cardContent={data.Description}
               arrowUp
-              onClick={() =>{
-
-               setIsOpen(true)
-               setIndex(index)
-              }
-              
-              }
+              onClick={() => {
+                setIsOpen(true);
+                setIndex(index);
+              }}
             />
           ))}
         </div>
@@ -104,9 +112,11 @@ const CmsType = ({props}) => {
         >
           <div className={styles.cardImg}>
             <ImageCustom
-              src={props?.Slider[index]?.Image?.data?.attributes?.url
-                ? `${base_Uri}${props?.Slider[index]?.Image?.data?.attributes?.url}`
-                : `${base_Uri}/`}
+              src={
+                props?.Slider[index]?.Image?.data?.attributes?.url
+                  ? `${base_Uri}${props?.Slider[index]?.Image?.data?.attributes?.url}`
+                  : `${base_Uri}/`
+              }
               width={110}
               height={40}
               alt="partner-logo"
@@ -114,10 +124,10 @@ const CmsType = ({props}) => {
             />
           </div>
           <p className={styles.modalContent}>
-          {props?.Slider[index]?.Description}
+            {props?.Slider[index]?.Description}
           </p>
           <Link href={props?.Slider[index]?.BtnLink} target="_blank">
-          {props?.Slider[index]?.BtnLink}
+            {props?.Slider[index]?.BtnLink}
           </Link>
         </div>
       </LeftDrawer>

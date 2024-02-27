@@ -8,7 +8,7 @@ import { useContext, useRef, useState } from "react";
 import Slider from "react-slick";
 import styles from "./style.module.scss";
 
-const MoreJobs = ({props}) => {
+const MoreJobs = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   const [oldSlide, setOldSlide] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
@@ -36,14 +36,14 @@ const MoreJobs = ({props}) => {
         },
       },
       {
-        breakpoint: 767,
+        breakpoint: 1199,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 767,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,

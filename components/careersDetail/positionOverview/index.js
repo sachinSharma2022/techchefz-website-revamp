@@ -8,9 +8,9 @@ import { MyContext } from "@/context/theme";
 import SmoothDropdown from "@/components/ui/smoothDropdownButton";
 import { cn } from "@/lib/utils";
 
-const CareerPositionOverview = ({props}) => {
+const CareerPositionOverview = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
-  console.log(props,"pop")
+  console.log(props, "pop");
 
   const options = [
     {
@@ -35,11 +35,13 @@ const CareerPositionOverview = ({props}) => {
         <div className={styles.jobInfo}>
           <h2>{props[0].Title}</h2>
           <div className={styles.jobDetails}>
-            {props[0].Developerinner.map((data,index)=>{
-                   return( <div className={styles.detail}>
-                    <Icons.TimerIcon size={24} />
-                    <span>{data.Title}</span>
-                  </div>)
+            {props[0].Developerinner.map((data, index) => {
+              return (
+                <div className={styles.detail} key={index}>
+                  <Icons.TimerIcon size={24} />
+                  <span>{data.Title}</span>
+                </div>
+              );
             })}
           </div>
         </div>

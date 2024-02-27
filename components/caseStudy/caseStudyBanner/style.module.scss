@@ -43,7 +43,11 @@
     width: 100%;
     position: relative;
 
-    @include mobile-tablet-p {
+    @include tablet {
+      height: 20rem;
+    }
+
+    @include mobile {
       height: 11.343rem;
     }
 

@@ -10,6 +10,7 @@ import { Input } from "../inputCustom";
 import styles from "./style.module.scss";
 import { useMediaQuery } from "react-responsive";
 import { useRef } from "react";
+import { countryList } from "@/lib/country";
 
 const CountryDropdown = (props) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -102,17 +103,13 @@ const CountryDropdown = (props) => {
             if (option) props.setFieldValue("countyCode", option.value);
           }}
           ref={ref}
-          options={countries}
+          options={countryList.map(item => ({ label: item?.dial_code, value: item?.name ,image:item?.flag}))}
           styles={controlStyle || styles}
           isSearchable={false}
           formatOptionLabel={(country) => (
+           
             <div className={styles.countryOption}>
-              <ImageCustom
-                width={24}
-                height={15}
-                src={country.image}
-                alt="country-image"
-              />
+              {country.image}
               <span>{country.label}</span>
             </div>
           )}

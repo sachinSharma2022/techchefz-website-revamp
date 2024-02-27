@@ -33,7 +33,7 @@ const ConfirmationPopup = (props) => {
             possible.
           </p>
 
-          <Link href="/">
+          {/* <Link href="/"> */}
             <Button
               variant={theme ? "lightBlueOutline" : "outline"}
               className={styles.thankyouBtn}
@@ -42,7 +42,7 @@ const ConfirmationPopup = (props) => {
             >
               Continue
             </Button>
-          </Link>
+          {/* </Link> */}
         </div>
       </Dialog.Panel>
     </Dialog>

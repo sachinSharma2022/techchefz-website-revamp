@@ -26,7 +26,7 @@ const CareerBanner = ({ props, gallary }) => {
           ></h1>
           <div className={styles.desc}>
             <p className={styles.leadText}>{props[0]?.Description}</p>
-            <Link href="/careers-detail">
+            <Link href="/careers/career-details">
               <Button
                 variant={theme ? "blueBtnDark" : "blueBtn"}
                 className={styles.headerBtn}

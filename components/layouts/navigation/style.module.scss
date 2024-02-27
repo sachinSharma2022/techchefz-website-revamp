@@ -22,7 +22,7 @@
   }
 
   .logo {
-    @include mobile {
+    @include mobile-tablet-p {
       scale: 0.8;
       left: -11px;
       top: 4px;
@@ -101,7 +101,7 @@
             position: relative;
             top: 0.063rem;
 
-            @include mobile {
+            @include mobile-tablet-p {
               transform: rotate(-45deg);
               border-color: color(foreground);
             }
@@ -181,7 +181,7 @@
             margin-left: 0.5rem;
             transition: all 0.5s;
 
-            @include mobile {
+            @include mobile-tablet-p {
               transform: rotate(-45deg);
               height: 0.8rem;
               width: 0.8rem;
@@ -230,7 +230,7 @@
   }
 
   .dotIcon {
-    @include mobile {
+    @include mobile-tablet-p {
       display: none;
     }
   }
@@ -295,7 +295,7 @@
     }
   }
 
-  @include mobile {
+  @include mobile-tablet-p {
     .estimateSection {
       padding: 2rem 1.5rem 5rem;
 
@@ -470,7 +470,16 @@
         background-color: color(dark-gray);
         padding: 3rem;
 
-        @include mobile-tablet-p {
+        @include tablet {
+          max-width: 100%;
+
+          > div {
+            display: flex;
+            gap: 1.25rem;
+          }
+        }
+
+        @include mobile {
           padding: 1.25rem;
           min-width: auto;
           max-width: 100%;
@@ -566,7 +575,14 @@
           justify-content: space-between;
           align-items: center;
 
-          @include mobile-tablet-p {
+          @include tablet {
+            display: grid;
+            grid-template-columns: auto 30%;
+            gap: 10px;
+            margin-bottom: 3rem;
+          }
+
+          @include mobile {
             flex-direction: column;
             margin-bottom: 2rem;
           }
@@ -574,10 +590,6 @@
           .overviewSubFlex {
             display: flex;
             gap: 1.5rem;
-
-            @include mobile-tablet-p {
-              // flex-direction: column;
-            }
           }
 
           h1 {

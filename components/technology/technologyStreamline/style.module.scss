@@ -79,18 +79,18 @@
   .streamLineCards {
     display: flex;
 
-    @include mobile-tablet-p {
+    @include tablet {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
       padding: spacing(section-mob-padding);
-      padding-block: 0rem 3.75rem;
-      padding-bottom: 0;
+      padding-block: 0 5rem;
     }
 
     @include mobile {
       display: flex;
       flex-direction: column;
+      padding-bottom: 0;
     }
 
     .streamlineCard {

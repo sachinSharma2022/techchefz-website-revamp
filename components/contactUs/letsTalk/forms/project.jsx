@@ -14,17 +14,21 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { verifyCaptcha } from "@/lib/ServerActions";
 import CircleLoader from "@/components/ui/circleLoader";
 import Link from "next/link";
+import ConfirmationPopup from "@/components/ui/confirmationPopup";
+
 import CustomDropdown from "@/components/ui/customDropdown";
 
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
+import { countryList } from "@/lib/country";
 
 const ProjectForm = () => {
   const { theme } = useContext(MyContext);
   const recaptchaRef = useRef(null);
   const [isVerified, setIsverified] = useState(false);
   const [inprogress, setinprogress] = useState(false);
-  const formInitialSchema = {
+  const [isOpen, setIsOpen] = useState(false)
+    const formInitialSchema = {
     firstName: "",
     lastName: "",
     email: "",
@@ -47,7 +51,7 @@ const ProjectForm = () => {
     initialValues: formInitialSchema,
     validationSchema: projectValidationSchema,
     onSubmit: (values, action) => {
-      console.log(values);
+      dialogOpen()
       setinprogress(true);
       triggerMail({ content: JSON.stringify(values) });
       action.resetForm();
@@ -57,20 +61,24 @@ const ProjectForm = () => {
     },
   });
 
-  const dropdownData = [
-    { value: "Country", label: "Country" },
-    { value: "India", label: "India" },
-    { value: "united State", label: "united State" },
-    { value: "New York", label: "New York" },
-  ];
+  // const dropdownData = [
+  //   { value: "Country", label: "Country" },
+  //   { value: "India", label: "India" },
+  //   { value: "united State", label: "united State" },
+  //   { value: "New York", label: "New York" },
+  // ];
   async function handleCaptchaSubmission(token) {
     // Server function to verify captcha
     await verifyCaptcha(token)
       .then(() => setIsverified(true))
       .catch(() => setIsverified(false));
   }
-
+  const dialogOpen=()=>setIsOpen(true)
+  const dialogClose=()=>setIsOpen(false)
+  
   return (
+    <>
+    <ConfirmationPopup open={isOpen} onClose={dialogClose} />
     <Formik>
       <Form onSubmit={handleSubmit}>
         <div className={styles.contactUsForm}>
@@ -161,7 +169,7 @@ const ProjectForm = () => {
                   setFieldValue={setFieldValue}
                   onBlur={handleBlur}
                   value={values.countrySelection}
-                  options={dropdownData}
+                  options={countryList}
                   errorStatus={
                     touched.countrySelection && errors.countrySelection
                   }
@@ -215,6 +223,7 @@ const ProjectForm = () => {
                   (isVerified ? false : true) ? true : inprogress ? true : false
                 }
                 type="submit"
+                
               >
                 Send a Message
                 {inprogress ? (
@@ -229,6 +238,8 @@ const ProjectForm = () => {
       </Form>
       {/* //   )} */}
     </Formik>
+    </>
+    
   );
 };
 

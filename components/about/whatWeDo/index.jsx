@@ -14,7 +14,7 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 
 const WhatWeDo = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
-  const isBigScreen = useMediaQuery({ query: "(min-width: 1025px)" });
+  const isBigScreen = useMediaQuery({ query: "(min-width: 768px)" });
 
   return (
     <section

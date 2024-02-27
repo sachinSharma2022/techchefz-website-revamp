@@ -6,6 +6,7 @@
 
   @include mobile-tablet-p {
     padding-inline: 2.5rem;
+    padding-block: 5rem;
   }
   @include mobile {
     padding: 1.5rem;
