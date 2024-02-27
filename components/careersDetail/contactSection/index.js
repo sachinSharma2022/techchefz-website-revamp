@@ -15,12 +15,14 @@ import { careerValidationSchema } from "@/lib/FormSchema";
 import { Form, Formik, useFormik } from "formik";
 import { triggerMail } from "@/lib/triggerMail";
 import CircleLoader from "@/components/ui/circleLoader";
+import ConfirmationPopup from "@/components/ui/confirmationPopup";
 
 const ContactSection = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   const recaptchaRef = useRef(null);
   const [isVerified, setIsverified] = useState(false);
   const [inprogress, setinprogress] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
   const formInitialSchema = {
     firstName: "",
     lastName: "",
@@ -45,7 +47,7 @@ const ContactSection = ({ props }) => {
     initialValues: formInitialSchema,
     validationSchema: careerValidationSchema,
     onSubmit: (values, action) => {
-      console.log(values);
+      dialogOpen()
       setinprogress(true);
       triggerMail({ content: JSON.stringify(values) });
       action.resetForm();
@@ -61,6 +63,8 @@ const ContactSection = ({ props }) => {
       .then(() => setIsverified(true))
       .catch(() => setIsverified(false));
   }
+  const dialogOpen=()=>setIsOpen(true)
+  const dialogClose=()=>setIsOpen(false)
 
   return (
     <section
@@ -86,6 +90,7 @@ const ContactSection = ({ props }) => {
                 </li>
               </ul>
             </div>
+            <ConfirmationPopup open={isOpen} onClose={dialogClose} />
             <Formik>
               <Form onSubmit={handleSubmit}>
                 <div className={styles.contactUsForm}>
@@ -249,6 +254,7 @@ const ContactSection = ({ props }) => {
                           : false
                       }
                       type="submit"
+                     
                     >
                       Send a Message
                       {inprogress ? (

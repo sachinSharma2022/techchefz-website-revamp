@@ -13,6 +13,9 @@ import { useContext, useState, useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { verifyCaptcha } from "@/lib/ServerActions";
 import CircleLoader from "@/components/ui/circleLoader";
+import Link from "next/link";
+import { countryList } from "@/lib/country";
+import ConfirmationPopup from "@/components/ui/confirmationPopup";
 
 import CustomDropdown from "@/components/ui/customDropdown";
 
@@ -24,6 +27,7 @@ const ServicesForm = () => {
   const recaptchaRef = useRef(null);
   const [isVerified, setIsverified] = useState(false);
   const [inprogress, setinprogress] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
   const formInitialSchema = {
     firstName: "",
     lastName: "",
@@ -35,22 +39,21 @@ const ServicesForm = () => {
     projectExplanation: "",
   };
 
-  const dropdownData = [
-    { value: "Country", label: "Country" },
-    { value: "India", label: "India" },
-    { value: "united State", label: "united State" },
-    { value: "New York", label: "New York" },
-  ];
   async function handleCaptchaSubmission(token) {
     // Server function to verify captcha
     await verifyCaptcha(token)
       .then(() => setIsverified(true))
       .catch(() => setIsverified(false));
   }
+  const dialogOpen=()=>setIsOpen(true)
+  const dialogClose=()=>setIsOpen(false)
 
   return (
+    <>
+    <ConfirmationPopup open={isOpen} onClose={dialogClose} />
     <Formik
       onSubmit={(values, action) => {
+        dialogOpen()
         setinprogress(true);
         triggerMail({ content: JSON.stringify(values) });
         action.resetForm();
@@ -170,7 +173,7 @@ const ServicesForm = () => {
                     setFieldValue={setFieldValue}
                     onBlur={handleBlur}
                     value={values.serviceRequired}
-                    options={dropdownData}
+                    options={countryList}
                     errorStatus={
                       touched.serviceRequired && errors.serviceRequired
                     }
@@ -217,7 +220,7 @@ const ServicesForm = () => {
               <div className={styles.policyText}>
                 I understand and consent to my personal data being processed in
                 accordance with TechChefz&apos;s
-                <span className={styles.policyHighlight}>Privacy Policy</span>
+                <span className={styles.policyHighlight}><Link href="/privacy-policy">Privacy Policy</Link></span>
               </div>
               <div className={`${styles.buttonGrid}`}>
                 <Button
@@ -231,6 +234,7 @@ const ServicesForm = () => {
                       : false
                   }
                   type="submit"
+                 
                 >
                   Send a Message
                   {inprogress ? (
@@ -245,6 +249,8 @@ const ServicesForm = () => {
         </Form>
       )}
     </Formik>
+    </>
+   
   );
 };
 
