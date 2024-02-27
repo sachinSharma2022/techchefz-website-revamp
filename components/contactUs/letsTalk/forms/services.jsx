@@ -13,6 +13,7 @@ import { useContext, useState, useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { verifyCaptcha } from "@/lib/ServerActions";
 import CircleLoader from "@/components/ui/circleLoader";
+import { countryList } from "@/lib/country";
 
 import CustomDropdown from "@/components/ui/customDropdown";
 
@@ -170,7 +171,7 @@ const ServicesForm = () => {
                     setFieldValue={setFieldValue}
                     onBlur={handleBlur}
                     value={values.serviceRequired}
-                    options={dropdownData}
+                    options={countryList}
                     errorStatus={
                       touched.serviceRequired && errors.serviceRequired
                     }

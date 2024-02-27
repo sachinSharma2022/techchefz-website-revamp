@@ -18,13 +18,14 @@ import CustomDropdown from "@/components/ui/customDropdown";
 
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
+import { countryList } from "@/lib/country";
 
 const ProjectForm = () => {
   const { theme } = useContext(MyContext);
   const recaptchaRef = useRef(null);
   const [isVerified, setIsverified] = useState(false);
   const [inprogress, setinprogress] = useState(false);
-  const formInitialSchema = {
+    const formInitialSchema = {
     firstName: "",
     lastName: "",
     email: "",
@@ -57,19 +58,19 @@ const ProjectForm = () => {
     },
   });
 
-  const dropdownData = [
-    { value: "Country", label: "Country" },
-    { value: "India", label: "India" },
-    { value: "united State", label: "united State" },
-    { value: "New York", label: "New York" },
-  ];
+  // const dropdownData = [
+  //   { value: "Country", label: "Country" },
+  //   { value: "India", label: "India" },
+  //   { value: "united State", label: "united State" },
+  //   { value: "New York", label: "New York" },
+  // ];
   async function handleCaptchaSubmission(token) {
     // Server function to verify captcha
     await verifyCaptcha(token)
       .then(() => setIsverified(true))
       .catch(() => setIsverified(false));
   }
-
+  
   return (
     <Formik>
       <Form onSubmit={handleSubmit}>
@@ -161,7 +162,7 @@ const ProjectForm = () => {
                   setFieldValue={setFieldValue}
                   onBlur={handleBlur}
                   value={values.countrySelection}
-                  options={dropdownData}
+                  options={countryList}
                   errorStatus={
                     touched.countrySelection && errors.countrySelection
                   }

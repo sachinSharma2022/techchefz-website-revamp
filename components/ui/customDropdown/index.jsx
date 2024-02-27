@@ -125,7 +125,7 @@ const CustomDropdown = ({
           if (opt) setFieldValue(name, opt.value);
         }}
         ref={ref}
-        options={options}
+        options={options.map(item => ({ label: item?.name, value: item?.name }))}
         classNamePrefix="react-select"
         styles={controlStyle || styles}
         isSearchable={false}

@@ -19,6 +19,7 @@ import { verifyCaptcha } from "@/lib/ServerActions";
 import { useRef, useState } from "react";
 import CircleLoader from "@/components/ui/circleLoader";
 import CustomDropdown from "@/components/ui/customDropdown";
+import { countryList } from "@/lib/country";
 
 const LetsWork = ({ contact }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -64,13 +65,6 @@ const LetsWork = ({ contact }) => {
       .then(() => setIsverified(true))
       .catch(() => setIsverified(false));
   }
-
-  const dropdownData = [
-    { value: "Project", label: "Project" },
-    { value: "Job", label: "Job" },
-    { value: "Services", label: "Services" },
-    { value: "Vendor", label: "Vendor" },
-  ];
 
   return (
     <section
@@ -161,7 +155,7 @@ const LetsWork = ({ contact }) => {
                       <CustomDropdown
                         placeholder="Select Purpose*"
                         title="Select Purpose*"
-                        options={dropdownData}
+                        options={countryList}
                       />
                       {touched.phone && errors.phone && (
                         <Error>{errors.phone}</Error>
