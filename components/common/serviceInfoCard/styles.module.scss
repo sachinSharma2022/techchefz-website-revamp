@@ -13,7 +13,7 @@
     border-color: color(heading-liner);
   }
 
-  @include mobile-tablet-p {
+  @include mobile {
     min-height: 12.25rem;
     padding: 1.25rem;
     border-radius: text(xl);

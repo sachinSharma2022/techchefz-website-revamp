@@ -14,7 +14,6 @@ const CareerDetail = async ({ params }) => {
       index = i;
     }
   }
-
   return (
     <>
       <CareerPositionOverview props={data[index].attributes.DeveloperApply} />

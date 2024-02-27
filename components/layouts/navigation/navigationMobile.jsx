@@ -70,28 +70,30 @@ const NavigationMobile = () => {
     return (
       <div className={cn(styles.latestTech)}>
         <h1>Latest from technology</h1>
-        <Link href="/technology" className={styles.imageTech}>
-          <div className={styles.imgBox}>
-            <ImageCustom
-              src="/images/img/nav-img.png"
-              width={300}
-              height={300}
-              alt="nav-image"
-            />
-          </div>
-          <div className={styles.infoBox}>
-            <p className={styles.description}>
-              Learn more about the latest Drupal Updates
-            </p>
-            <Icons.ArrowRight size={16} />
-          </div>
-        </Link>
-        <div className={styles.imageTech}>
-          <div className={styles.infoBox}>
-            <p className={styles.description}>
-              CMS has been the game changer of 2023 website trends
-            </p>
-            <Icons.ArrowRight size={16} />
+        <div>
+          <Link href="/technology" className={styles.imageTech}>
+            <div className={styles.imgBox}>
+              <ImageCustom
+                src="/images/img/nav-img.png"
+                width={300}
+                height={300}
+                alt="nav-image"
+              />
+            </div>
+            <div className={styles.infoBox}>
+              <p className={styles.description}>
+                Learn more about the latest Drupal Updates
+              </p>
+              <Icons.ArrowRight size={16} />
+            </div>
+          </Link>
+          <div className={styles.imageTech}>
+            <div className={styles.infoBox}>
+              <p className={styles.description}>
+                CMS has been the game changer of 2023 website trends
+              </p>
+              <Icons.ArrowRight size={16} />
+            </div>
           </div>
         </div>
       </div>

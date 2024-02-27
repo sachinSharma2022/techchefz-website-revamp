@@ -122,9 +122,12 @@
       border-radius: 0.75rem;
       overflow: hidden;
 
-      @include mobile-tablet-p {
-        aspect-ratio: 1;
-        height: 11.6875rem;
+      @include tablet {
+        height: 20rem;
+      }
+  
+      @include mobile {
+        height: 11.343rem;
       }
 
       &:nth-child(1) {

@@ -48,7 +48,7 @@
       grid-template-columns: repeat(4, 1fr);
     }
 
-    @include mobile-tablet-p {
+    @include tablet {
       grid-template-columns: repeat(2, 1fr);
       padding: 1.25rem;
     }
@@ -61,9 +61,10 @@
   .workCardMain {
     height: 19.25rem;
 
-    @include mobile-tablet-p {
+    @include mobile {
       max-width: 90%;
     }
+
 
     .workCard {
       transition: transform 1s;
