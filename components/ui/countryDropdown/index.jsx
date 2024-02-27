@@ -120,7 +120,7 @@ const CountryDropdown = (props) => {
           placeholder="Phone Number*"
           type="tel"
           pattern="[0-9]{}"
-          maxLength="12"
+          maxLength="15"
           inputContainerStyle={styles.inputContainerStyle}
           inputFloatingStyle={styles.inputFloatingStyle}
           id={props.id}
