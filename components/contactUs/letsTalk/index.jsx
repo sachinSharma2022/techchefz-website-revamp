@@ -20,10 +20,10 @@ const LetsTalk = ({ props }) => {
   
 
   const dropdownData = [
-    { value: "Project", label: "Project" },
-    { value: "Job", label: "Job" },
+    { value: "Projects", label: "Projects" },
+    { value: "Careers", label: "Careers" },
     { value: "Services", label: "Services" },
-    { value: "Vendor", label: "Vendor" },
+    { value: "Vendors", label: "Vendors" },
   ];
   const [form, setForm] = useState(dropdownData[0].value);
   const controlStyle = {
@@ -258,10 +258,10 @@ const LetsTalk = ({ props }) => {
               }}
             />
           </div>
-         {form==="Project" && <ProjectForm />}
+         {form==="Projects" && <ProjectForm />}
          {form==="Services" && <ServicesForm />}
-         {form==="Job" && <JobsForm />}
-         {form==="Vendor" && <VendorForm />}
+         {form==="Careers" && <JobsForm />}
+         {form==="Vendors" && <VendorForm />}
          
 
           
