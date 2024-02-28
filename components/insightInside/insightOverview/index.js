@@ -23,11 +23,11 @@ const InsightOverview = ({props, Insightinner, TechStackData}) => {
           <div className={styles.publishDiv}>
             <div className={styles.publishFlex}>
               <p>{Insightinner[0].Title}</p>
-              <h4>{Insightinner[0].Description}</h4>
+              <h6>{Insightinner[0].Description}</h6>
             </div>
             <div className={styles.publishFlex}>
             <p>{Insightinner[1].Title}</p>
-              <h4>{Insightinner[1].Description}</h4>
+              <h6>{Insightinner[1].Description}</h6>
             </div>
           </div>
           <div className={styles.serviceDiv}>
@@ -42,7 +42,6 @@ const InsightOverview = ({props, Insightinner, TechStackData}) => {
           </div>
         </div>
       </div>
-
       <div className={styles.imageDiv}>
         <ImageCustom
           src={props[0]?.Image?.data?.attributes?.url?`${base_Uri}${props[0]?.Image?.data?.attributes?.url}`:`${base_Uri}/`}

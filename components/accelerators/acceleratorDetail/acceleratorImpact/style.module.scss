@@ -1,28 +1,78 @@
 @import "~/styles/partials/config";
 
 .impact {
-   padding: spacing(section-primary-padding);
-   background-color: color(bg-soft);
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   gap: 5rem;
+  padding: spacing(section-primary-padding);
+  background-color: color(bg-soft);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
 
-   @include mobile-tablet-p {
-      padding: 3.75rem 1.5rem;
+  @include mobile-tablet-p {
+    padding: 3.75rem 1.5rem;
+    gap: 3.75rem;
+  }
+
+  &.impactDark {
+    background-color: color(text-primary);
+    color: color(primary-white);
+  }
+
+  .impactContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+
+    @include mobile-tablet-p {
       gap: 3.75rem;
-   }
+    }
+  }
 
-   &.impactDark {
-      background-color: color(text-primary);
-      color: color(primary-white);
-   }
+  .subHeading {
+    font-size: text(normal);
+    font-family: font(secondary);
+    font-weight: 500;
+    line-height: 1.5rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-bottom: 1rem;
 
-   .impactContainer {
+    @include mobile-tablet-p {
+      text-align: start;
+      margin-bottom: 0.5rem;
+    }
+  }
+  .impactHeading {
+    font-size: text(larger);
+    font-weight: 500;
+    line-height: 3.375rem;
+
+    @include mobile-tablet-p {
+      font-size: text(xxxl);
+      line-height: 2.5rem;
+      text-align: start;
+    }
+  }
+
+  .impactTopSection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8.9375rem;
+    padding: 2.5rem 0;
+
+    @include mobile-tablet-p {
+      gap: 3.75rem;
+      padding: 0;
+    }
+
+    @include mobile {
       display: flex;
       flex-direction: column;
-      gap: 5rem;
+      gap: 3.75rem;
+      padding: 0;
+    }
 
       @include mobile-tablet-p {
          gap: 3.75rem;
@@ -31,8 +81,7 @@
 
    .subHeading {
       font-size: text(normal);
-      font-family: font(secondary);
-      font-weight: 500;
+      font-weight: 700;
       line-height: 1.5rem;
       letter-spacing: 0.2rem;
       text-transform: uppercase;
@@ -40,108 +89,71 @@
       margin-bottom: 1rem;
 
       @include mobile-tablet-p {
-         text-align: start;
-         margin-bottom: 0.5rem;
-      }
-   }
-   .impactHeading {
-      font-size: text(larger);
-      font-weight: 500;
-      line-height: 3.375rem;
-
-      @include mobile-tablet-p {
-         font-size: text(xxxl);
-         line-height: 2.5rem;
-         text-align: start;
-      }
-   }
-
-   .impactTopSection {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 8.9375rem;
-      padding: 2.5rem 0;
-
-      @include mobile-tablet-p {
-         gap: 3.75rem;
-         padding: 0;
+        height: auto;
       }
 
       @include mobile {
-         display: flex;
-         flex-direction: column;
-         gap: 3.75rem;
-         padding: 0;
+        height: 18.813rem;
       }
 
-      .impactImage {
-         width: 100%;
-         height: 32.5rem;
-         border-radius: 0.5rem;
-         overflow: hidden;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
 
-         @include mobile-tablet-p {
-            height: auto;
-         }
+    .topSectionRight {
+      width: 100%;
 
-         @include mobile {
-            height: 18.813rem;
-         }
+      h4 {
+        font-size: text(xxxl);
+        font-weight: 500;
+        line-height: 2.5rem;
+        max-width: 90%;
+        margin-bottom: 0.75rem;
 
-         img {
-            width: 100%;
-            height: auto;
-         }
+        @include mobile-tablet-p {
+          font-size: text(xl);
+          line-height: 1.875rem;
+          max-width: 100%;
+        }
       }
 
-      .topSectionRight {
-         width: 100%;
-
-         h4 {
-            font-size: text(xxxl);
-            font-weight: 500;
-            line-height: 2.5rem;
-            max-width: 90%;
-            margin-bottom: 0.75rem;
-
-            @include mobile-tablet-p {
-               font-size: text(xl);
-               line-height: 1.875rem;
-               max-width: 100%;
-            }
-         }
-
-         ul {
-            list-style: square;
-
-            li {
-               font-size: text(lg);
-               font-weight: 400;
-               line-height: 1.875rem;
-               opacity: 0.6;
-
-               @include mobile-tablet-p {
-                  font-size: text(normal);
-                  line-height: 1.5rem;
-               }
-            }
-         }
-
-         p {
-            font-size: text(lg);
-            font-weight: 400;
-            line-height: 1.875rem;
-            opacity: 0.6;
-
-            @include mobile-tablet-p {
-               font-size: text(normal);
-               line-height: 1.5rem;
-            }
-         }
-
-         button {
-            margin: 2.5rem 0;
-         }
+      p {
+        margin-bottom: 0;
       }
-   }
-}
+
+      ul {
+        list-style: square;
+
+        li {
+          font-size: text(lg);
+          font-weight: 400;
+          line-height: 1.875rem;
+          opacity: 0.6;
+          margin-bottom: 0;
+          @include mobile-tablet-p {
+            font-size: text(normal);
+            line-height: 1.5rem;
+          }
+        }
+      }
+
+      p {
+        font-size: text(lg);
+        font-weight: 400;
+        line-height: 1.875rem;
+        opacity: 0.6;
+
+        @include mobile-tablet-p {
+          font-size: text(normal);
+          line-height: 1.5rem;
+        }
+      }
+
+      button {
+        margin: 2.5rem 0;
+      }
+    }
+  }
+

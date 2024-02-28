@@ -36,7 +36,7 @@
       font-weight: 500;
       font-size: text(larger);
       color: color(primary-white);
-      line-height: 3.7rem;
+      line-height: 3.375rem;
       padding-bottom: 3rem;
 
       @include mobile {
@@ -62,10 +62,11 @@
 
         p {
           font-weight: 400;
-          font-size: text(lg);
+          font-size: text(normal);
           color: color(primary-white);
           opacity: 0.6;
           margin: 0;
+          line-height: 1rem;
 
           @include mobile {
             font-size: text(normal);
@@ -73,8 +74,8 @@
           }
         }
 
-        h4 {
-          font-weight: 500;
+        h6 {
+          font-weight: 700;
           font-size: text(xl);
           color: color(primary-white);
           line-height: 2rem;
@@ -92,9 +93,10 @@
     .serviceDiv {
       p {
         font-weight: 400;
-        font-size: text(lg);
+        font-size: text(normal);
         color: color(primary-white);
         opacity: 0.6;
+        line-height: 1rem;
 
         @include mobile {
           font-size: text(normal);

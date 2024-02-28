@@ -34,10 +34,10 @@ const InsightFeatures = ({ props, feature }) => {
           </div>
         </div>
         <div className={styles.featureInsight}>
-          <h6
+          <h5
             className={cn(styles.insightSubHeading, "gradient-text")}
             dangerouslySetInnerHTML={{ __html: `${feature[0].Title}` }}
-          ></h6>
+          ></h5>
           <div className={styles.featureInsightCards}>
             {feature
               .filter(
