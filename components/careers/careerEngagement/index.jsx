@@ -21,9 +21,11 @@ import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import { useMediaQuery } from "react-responsive";
 import styles from "./style.module.scss";
 
 const CareerEngagement = () => {
+  const isBigScreen = useMediaQuery({ query: "(min-width: 768px)" });
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const { theme, setTheme } = useContext(MyContext);
   const valueData = [
@@ -106,7 +108,7 @@ const CareerEngagement = () => {
           <Swiper
             onSwiper={setThumbsSwiper}
             spaceBetween={10}
-            slidesPerView={4}
+            slidesPerView={isBigScreen ? 4 : 1}
             freeMode={true}
             watchSlidesProgress={true}
             modules={[FreeMode, Navigation, Thumbs]}
