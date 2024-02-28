@@ -18,13 +18,6 @@ const CountryDropdown = (props) => {
   const isBigScreen = useMediaQuery({ query: "(min-width: 1024px)" });
   const ref = useRef();
 
-  const countries = [
-    { value: "+91", label: "+91", image: "/images/flag.jpg" },
-    { value: "+93", label: "+93", image: "/images/flag.jpg" },
-    { value: "+244", label: "+244", image: "/images/flag.jpg" },
-    { value: "+672", label: "+672", image: "/images/flag.jpg" },
-  ];
-
   const controlStyle = {
     control: (styles) => ({
       ...styles,
@@ -80,7 +73,6 @@ const CountryDropdown = (props) => {
       };
     },
   };
-  console.log(props, "Clearing");
   if (props.clear) {
     ref.current.clearValue();
   }
@@ -103,13 +95,19 @@ const CountryDropdown = (props) => {
             if (option) props.setFieldValue("countyCode", option.value);
           }}
           ref={ref}
-          options={countryList.map(item => ({ label: item?.dial_code, value: item?.name ,image:item?.flag}))}
+          options={countryList.map(item => ({ label: item?.dial_code, value: item?.name ,image:item?.flag,code:item?.code}))}
           styles={controlStyle || styles}
           isSearchable={false}
           formatOptionLabel={(country) => (
            
             <div className={styles.countryOption}>
-              {country.image}
+              {/* {country.image} */}
+              <ImageCustom
+                width={24}
+                height={15}
+                src={`https://flagcdn.com/${country.code.toLowerCase()}.svg`}
+                alt="country-image"
+              />
               <span>{country.label}</span>
             </div>
           )}
@@ -120,7 +118,7 @@ const CountryDropdown = (props) => {
           placeholder="Phone Number*"
           type="tel"
           pattern="[0-9]{}"
-          maxLength="12"
+          maxLength="15"
           inputContainerStyle={styles.inputContainerStyle}
           inputFloatingStyle={styles.inputFloatingStyle}
           id={props.id}

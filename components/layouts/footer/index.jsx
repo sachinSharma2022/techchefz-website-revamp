@@ -96,10 +96,10 @@ const Footer = () => {
             <div className={styles.footSocial}>
               <h4 className="mb-3">Follow Us on Social Media</h4>
               <div className={styles.footSocialLinks}>
-                <Link href="/">
+                <Link href="https://www.linkedin.com/company/techchefz/">
                 <Icons.linkedin size={16} /> <span>Linkedin</span>
                 </Link>
-                <Link href="/">
+                <Link href="https://www.facebook.com/techchefz">
                  <Icons.facebook size={16} /> <span>Facebook</span>
                 </Link>
                 <Link href="/">
