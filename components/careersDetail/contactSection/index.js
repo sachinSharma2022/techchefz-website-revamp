@@ -49,7 +49,7 @@ const ContactSection = ({ props }) => {
     onSubmit: (values, action) => {
       dialogOpen()
       setinprogress(true);
-      triggerMail({ content: JSON.stringify(values) });
+      triggerMail({ content: JSON.stringify(values), formType:"Job"});
       action.resetForm();
       setTimeout(() => {
         setinprogress(false);
