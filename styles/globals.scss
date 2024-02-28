@@ -741,9 +741,6 @@ input:-webkit-autofill {
 
     .swiper-wrapper {
       @include mobile-tablet-p {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
 
         .swiper-slide {
           width: 100% !important;
