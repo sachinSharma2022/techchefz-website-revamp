@@ -13,17 +13,19 @@ import ProjectForm from "./forms/project";
 import ServicesForm from "./forms/services";
 import VendorForm from "./forms/vendor";
 import styles from "./style.module.scss";
+import { useState } from "react";
 
 const LetsTalk = ({ props }) => {
   const { theme } = useContext(MyContext);
+  
 
   const dropdownData = [
-    { value: "Project", label: "Project" },
-    { value: "Job", label: "Job" },
+    { value: "Projects", label: "Projects" },
+    { value: "Careers", label: "Careers" },
     { value: "Services", label: "Services" },
-    { value: "Vendor", label: "Vendor" },
+    { value: "Vendors", label: "Vendors" },
   ];
-
+  const [form, setForm] = useState(dropdownData[0].value);
   const controlStyle = {
     control: (styles) => ({
       ...styles,
@@ -96,17 +98,7 @@ const LetsTalk = ({ props }) => {
               dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
             ></p>
           </div>
-
-          <div className={`${styles.tabDropdownMob}`}>
-            <h3 className={styles.tabDropLabel}>Choose Purpose</h3>
-            <Select
-              isSearchable={false}
-              options={dropdownData}
-              styles={controlStyle}
-              defaultValue={{ label: "Project", value: "Project" }}
-            />
-          </div>
-
+          {/* For desktop */}
           <div className={styles.contactTabWrap}>
             <Tab.Group vertical>
               <Tab.List>
@@ -118,6 +110,7 @@ const LetsTalk = ({ props }) => {
                         selected && styles.buttonActive
                       )}
                     >
+                      {console.log(selected,"selected")}
                       <div className={styles.highlightIcon}>
                         <ImageCustom
                           height={40}
@@ -249,7 +242,33 @@ const LetsTalk = ({ props }) => {
               </div>
             </Tab.Group>
           </div>
+           
+           {/* For mobile */}
+           <div className={`${styles.mobileTabContainer}`}>
+
+           <div className={`${styles.tabDropdownMob}`}>
+            <h3 className={styles.tabDropLabel}>Choose Purpose</h3>
+            <Select
+              isSearchable={false}
+              options={dropdownData}
+              styles={controlStyle}
+              defaultValue={{ label: "Project", value: "Project" }}
+              onChange={(option)=>{
+                setForm(option.value)
+              }}
+            />
+          </div>
+         {form==="Projects" && <ProjectForm />}
+         {form==="Services" && <ServicesForm />}
+         {form==="Careers" && <JobsForm />}
+         {form==="Vendors" && <VendorForm />}
+         
+
+          
         </div>
+
+           </div>
+         
       </div>
     </section>
   );

@@ -28,29 +28,34 @@
       margin-top: 1.25rem;
       padding: 1.75rem text(lg);
     }
-
-    .tabDropdownMob {
-      border: 0.14rem solid rgba(color(text-primary), 0.12);
-      background-color: color(primary-white);
-      padding: 1rem 0.75rem;
-      margin-bottom: text(lg);
-      border-radius: 0.75rem;
-      position: relative;
-      z-index: 99;
-      padding-left: 20px;
-  
+    .mobileTabContainer{
       @include desktop {
         display: none;
       }
-
-      .tabDropLabel {
-        font-size: 0.875rem;
-        font-weight: 400;
-        line-height: text(xl);
-        opacity: 0.6;
-        margin: 0;
+      .tabDropdownMob {
+        border: 0.14rem solid rgba(color(text-primary), 0.12);
+        background-color: color(primary-white);
+        padding: 1rem 0.75rem;
+        margin-bottom: text(lg);
+        border-radius: 0.75rem;
+        position: relative;
+        z-index: 99;
+        padding-left: 20px;
+    
+       
+  
+        .tabDropLabel {
+          font-size: 0.875rem;
+          font-weight: 400;
+          line-height: text(xl);
+          opacity: 0.6;
+          margin: 0;
+        }
       }
+
     }
+
+   
 
     .headingMain {
       margin-bottom: 5rem;
@@ -127,7 +132,8 @@
     }
 
     @include mobile-tablet-p {
-      flex-direction: column;
+      //flex-direction: column;
+      display: none;
     }
 
     [aria-orientation="vertical"] {

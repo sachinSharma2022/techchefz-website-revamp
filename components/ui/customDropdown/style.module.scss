@@ -7,6 +7,11 @@
   &.inputErrorStyle {
     border-color: color(error);
   }
+  .countryOption {
+    display: flex;
+    align-items: center;
+    gap: .625rem;
+  }
 
   &.darkThemeStyle {
 
