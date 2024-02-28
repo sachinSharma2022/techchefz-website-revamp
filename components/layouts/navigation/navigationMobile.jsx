@@ -8,10 +8,11 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
+import { base_Uri } from "@/lib/constants";
 
 import styles from "./style.module.scss";
 
-const NavigationMobile = () => {
+const NavigationMobile = ({props}) => {
   const pathname = usePathname();
   const [mobileMenuShow, setMobileMenuShow] = useState(false);
   const [isTechMenu, setTechMenu] = useState(false);
@@ -35,17 +36,17 @@ const NavigationMobile = () => {
     return (
       <div className={styles.estimateSection}>
         <p className={styles.description}>
-          Provide us with details about your vision, and let our experts tailor
-          a comprehensive plan, outlining timelines, scopes, and budgets
-          uniquely crafted to bring your ideas to life.
+          {props[5]?.DropDown[0]?.Description}
         </p>
+        <Link href= {props[5]?.Link}>
         <Button
           variant={theme ? "blueBtnDark" : "blueBtn"}
           className={styles.headerBtn}
           size="sm"
         >
-          Estimate Project
+          {props[5]?.Title}
         </Button>
+        </Link>
       </div>
     );
   }
@@ -69,12 +70,12 @@ const NavigationMobile = () => {
   function LatestTech() {
     return (
       <div className={cn(styles.latestTech)}>
-        <h1>Latest from technology</h1>
+        <h1>{props[2]?.DropDown[8]?.Title}</h1>
         <div>
           <Link href="/technology" className={styles.imageTech}>
             <div className={styles.imgBox}>
               <ImageCustom
-                src="/images/img/nav-img.png"
+                src={props[2]?.DropDown[8]?.Image?.data?.attributes?.url?`${base_Uri}${props[2]?.DropDown[8]?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
                 width={300}
                 height={300}
                 alt="nav-image"
@@ -82,7 +83,7 @@ const NavigationMobile = () => {
             </div>
             <div className={styles.infoBox}>
               <p className={styles.description}>
-                Learn more about the latest Drupal Updates
+                {props[2]?.DropDown[8]?.Description}
               </p>
               <Icons.ArrowRight size={16} />
             </div>
@@ -90,7 +91,7 @@ const NavigationMobile = () => {
           <div className={styles.imageTech}>
             <div className={styles.infoBox}>
               <p className={styles.description}>
-                CMS has been the game changer of 2023 website trends
+                {props[2]?.DropDown[9]?.Description}
               </p>
               <Icons.ArrowRight size={16} />
             </div>
@@ -105,19 +106,22 @@ const NavigationMobile = () => {
       <div className={styles.overviewFlex}>
         <div className={styles.overviewSubFlex}>
           <div>
-            <Icons.MarketPlace width={56} height={56} />
+          <ImageCustom
+                src={props[2]?.DropDown[0]?.Image?.data?.attributes?.url?`${base_Uri}${props[2]?.DropDown[0]?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+                width={56}
+                height={56}
+                alt="nav-image"
+              />
           </div>
           <div className={styles.overviewTitle}>
-            <h1>Technology Overview</h1>
-            <p>
-              Be a partner for industry verticals on the inevitable
-              <br />
-              journey towards enterprise.
+            <h1>{props[2]?.DropDown[0]?.Title}</h1>
+            <p dangerouslySetInnerHTML={{ __html: `${props[2]?.DropDown[0]?.Description}`}}>
+              
             </p>
           </div>
         </div>
         <div className={styles.overviewBtn}>
-          <Link href="/technology">
+          <Link href={props[2]?.DropDown[0]?.Links}>
             <Button variant="outline" size="sm">
               Overview <Icons.ArrowRight size={18} />
             </Button>
@@ -162,20 +166,20 @@ const NavigationMobile = () => {
           <ul>
             <li className={styles.menuItem}>
               <Link
-                href="/about"
+                href={props[0]?.Link}
                 onClick={closeMenu}
                 className={pathname == "/about" ? styles.active : ""}
               >
-                About Us
+                {props[0]?.Title}
               </Link>
             </li>
             <li className={styles.menuItem}>
               <Link
-                href="/solutions"
+                href= {props[1]?.Link}
                 onClick={closeMenu}
                 className={pathname == "/solutions" ? styles.active : ""}
               >
-                Solutions
+                {props[1]?.Title}
               </Link>
             </li>
             <li className={styles.dropDown}>
@@ -183,7 +187,7 @@ const NavigationMobile = () => {
                 className={cn(styles.linkButton)}
                 onClick={technologyToggle}
               >
-                Technology <div className={styles.arrow} />
+                {props[2]?.Title} <div className={styles.arrow} />
               </button>
 
               {isTechMenu && (
@@ -202,108 +206,101 @@ const NavigationMobile = () => {
                         <div className="row">
                           <div className="col-sm-6">
                             <Link
-                              href="/technology/cms"
+                              href={props[2]?.DropDown[1]?.Links}
                               onClick={closeMenu}
                               className={cn(styles.hrefInnerFlex)}
                             >
                               <div className={styles.head}>
-                                <h4 className={styles.linkTitle}>CMS</h4>
+                                <h4 className={styles.linkTitle}>{props[2]?.DropDown[1]?.Title}</h4>
                                 <Icons.ArrowForward />
                               </div>
                               <p className={styles.excepPara}>
-                                Be a partner for industry verticals on the
-                                inevitable journey towards enterprise.
+                              {props[2]?.DropDown[1]?.Description}
                               </p>
                             </Link>
                             <Link
-                              href="/technology/commerce"
+                              href={props[2]?.DropDown[2]?.Links}
                               className={cn(styles.hrefInnerFlex)}
                             >
                               <div className={styles.head}>
-                                <h4 className={styles.linkTitle}>Commerce</h4>
+                                <h4 className={styles.linkTitle}>{props[2]?.DropDown[2]?.Title}</h4>
                                 <Icons.ArrowForward />
                               </div>
                               <p className={styles.excepPara}>
-                                Be a partner for industry verticals on the
-                                inevitable journey towards enterprise.
+                              {props[2]?.DropDown[2]?.Description}
                               </p>
                             </Link>
                             <Link
-                              href="/technology/microservices"
-                              className={cn(styles.hrefInnerFlex)}
-                            >
-                              <div className={styles.head}>
-                                <h4 className={styles.linkTitle}>
-                                  Microservices
-                                </h4>
-                                <Icons.ArrowForward />
-                              </div>
-                              <p className={styles.excepPara}>
-                                Be a partner for industry verticals on the
-                                inevitable journey towards enterprise.
-                              </p>
-                            </Link>
-                            <Link
-                              href="/technology/cloud-devsec-ops"
+                              href={props[2]?.DropDown[3]?.Links}
                               className={cn(styles.hrefInnerFlex)}
                             >
                               <div className={styles.head}>
                                 <h4 className={styles.linkTitle}>
-                                  Cloud & DevSecOps
+                                {props[2]?.DropDown[3]?.Title}
                                 </h4>
                                 <Icons.ArrowForward />
                               </div>
                               <p className={styles.excepPara}>
-                                Be a partner for industry verticals on the
-                                inevitable journey towards enterprise.
+                              {props[2]?.DropDown[3]?.Description}
+                              </p>
+                            </Link>
+                            <Link
+                              href={props[2]?.DropDown[4]?.Links}
+                              className={cn(styles.hrefInnerFlex)}
+                            >
+                              <div className={styles.head}>
+                                <h4 className={styles.linkTitle}>
+                                {props[2]?.DropDown[4]?.Title}
+                                </h4>
+                                <Icons.ArrowForward />
+                              </div>
+                              <p className={styles.excepPara}>
+                              {props[2]?.DropDown[4]?.Description}
                               </p>
                             </Link>
                           </div>
 
                           <div className="col-sm-6">
                             <Link
-                              href="/technology/data-intelligence"
+                              href={props[2]?.DropDown[5]?.Links}
                               className={cn(styles.hrefInnerFlex)}
                             >
                               <div className={styles.head}>
                                 <h4 className={styles.linkTitle}>
-                                  Data Intelligence
+                                {props[2]?.DropDown[5]?.Title}
                                 </h4>
                                 <Icons.ArrowForward />
                               </div>
                               <p className={styles.excepPara}>
-                                Be a partner for industry verticals on the
-                                inevitable journey towards enterprise.
+                              {props[2]?.DropDown[5]?.Description}
                               </p>
                             </Link>
                             <Link
-                              href="/technology/custom-development"
+                              href={props[2]?.DropDown[6]?.Links}
                               className={cn(styles.hrefInnerFlex)}
                             >
                               <div className={styles.head}>
                                 <h4 className={styles.linkTitle}>
-                                  Custom Development
+                                {props[2]?.DropDown[6]?.Title}
                                 </h4>
                                 <Icons.ArrowForward />
                               </div>
                               <p className={styles.excepPara}>
-                                Be a partner for industry verticals on the
-                                inevitable journey towards enterprise.
+                              {props[2]?.DropDown[6]?.Description}
                               </p>
                             </Link>
                             <Link
-                              href="/technology/analytics-automation"
+                              href={props[2]?.DropDown[7]?.Links}
                               className={cn(styles.hrefInnerFlex)}
                             >
                               <div className={styles.head}>
                                 <h4 className={styles.linkTitle}>
-                                  Analytics Automation
+                                {props[2]?.DropDown[7]?.Title}
                                 </h4>
                                 <Icons.ArrowForward />
                               </div>
                               <p className={styles.excepPara}>
-                                Be a partner for industry verticals on the
-                                inevitable journey towards enterprise.
+                              {props[2]?.DropDown[7]?.Description}
                               </p>
                             </Link>
                           </div>
@@ -318,11 +315,11 @@ const NavigationMobile = () => {
             </li>
             <li className={styles.menuItem}>
               <Link
-                href="/portfolio"
+                href= {props[3].Link}
                 onClick={closeMenu}
                 className={pathname == "/portfolio" ? styles.active : ""}
               >
-                Portfolio
+                {props[3].Title}
               </Link>
             </li>
             <li className={styles.dropDown}>
@@ -335,7 +332,7 @@ const NavigationMobile = () => {
                   width={4}
                   height={14}
                 />
-                More
+                {props[4]?.Title}
                 <div className={cn(styles.arrow, styles.hideDesktopIcon)} />
               </button>
 
@@ -355,77 +352,72 @@ const NavigationMobile = () => {
                         <div className="row">
                           <div className="col-sm-12">
                             <Link
-                              href="/careers"
+                              href={props[4]?.DropDown[0]?.Links}
                               onClick={closeMenu}
                               className={cn(styles.hrefInnerFlex)}
                             >
                               <div className={styles.head}>
-                                <h4 className={styles.linkTitle}>Careers</h4>
+                                <h4 className={styles.linkTitle}>{props[4]?.DropDown[0]?.Title}</h4>
                                 <Icons.ArrowForward />
                               </div>
                               <p className={styles.excepPara}>
-                                Be a partner for industry verticals on the
-                                inevitable journey towards enterprise.
+                              {props[4]?.DropDown[0]?.Description}
                               </p>
                             </Link>
                             <Link
-                              href="/insights"
+                              href={props[4]?.DropDown[1]?.Links}
                               onClick={closeMenu}
                               className={cn(styles.hrefInnerFlex)}
                             >
                               <div className={styles.head}>
-                                <h4 className={styles.linkTitle}>Insights</h4>
+                                <h4 className={styles.linkTitle}>{props[4]?.DropDown[1]?.Title}</h4>
                                 <Icons.ArrowForward />
                               </div>
                               <p className={styles.excepPara}>
-                                Be a partner for industry verticals on the
-                                inevitable journey towards enterprise.
+                              {props[4]?.DropDown[1]?.Description}
                               </p>
                             </Link>
                             <Link
-                              href="/coe"
+                              href={props[4]?.DropDown[2]?.Links}
                               onClick={closeMenu}
                               className={cn(styles.hrefInnerFlex)}
                             >
                               <div className={styles.head}>
                                 <h4 className={styles.linkTitle}>
-                                  Centre of Excellence
+                                {props[4]?.DropDown[2]?.Title}
                                 </h4>
                                 <Icons.ArrowForward />
                               </div>
                               <p className={styles.excepPara}>
-                                Be a partner for industry verticals on the
-                                inevitable journey towards enterprise.
+                              {props[4]?.DropDown[2]?.Description}
                               </p>
                             </Link>
                             <Link
-                              href="/accelerators"
+                              href={props[4]?.DropDown[3]?.Links}
                               onClick={closeMenu}
                               className={cn(styles.hrefInnerFlex)}
                             >
                               <div className={styles.head}>
                                 <h4 className={styles.linkTitle}>
-                                  Accelerators
+                                {props[4]?.DropDown[3]?.Title}
                                 </h4>
                                 <Icons.ArrowForward />
                               </div>
                               <p className={styles.excepPara}>
-                                Be a partner for industry verticals on the
-                                inevitable journey towards enterprise.
+                              {props[4]?.DropDown[3]?.Description}
                               </p>
                             </Link>
                             <Link
-                              href="/contact-us"
+                              href={props[4]?.DropDown[4]?.Links}
                               onClick={closeMenu}
                               className={cn(styles.hrefInnerFlex)}
                             >
                               <div className={styles.head}>
-                                <h4 className={styles.linkTitle}>Contact us</h4>
+                                <h4 className={styles.linkTitle}> {props[4]?.DropDown[4]?.Title}</h4>
                                 <Icons.ArrowForward />
                               </div>
                               <p className={styles.excepPara}>
-                                Be a partner for industry verticals on the
-                                inevitable journey towards enterprise.
+                              {props[4]?.DropDown[4]?.Description}
                               </p>
                             </Link>
                           </div>
