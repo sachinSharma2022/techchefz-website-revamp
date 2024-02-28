@@ -46,11 +46,13 @@ const AcceleratorImpact = ({ props }) => {
                 __html: `${props?.imagelinks[0].Title}`,
               }}
             ></h4>
-            <ul
-              dangerouslySetInnerHTML={{
-                __html: `${props?.imagelinks[0].Description}`,
-              }}
-            ></ul>
+            <ul>
+              <li
+                dangerouslySetInnerHTML={{
+                  __html: `${props?.imagelinks[0].Description}`,
+                }}
+              ></li>
+            </ul>
             <a
               href={
                 props?.imagelinks[0]?.Document?.data?.attributes?.url
@@ -60,12 +62,12 @@ const AcceleratorImpact = ({ props }) => {
               target="_blank"
               download
             >
-              <Button
+              {/* <Button
                 variant={theme ? "lightBlueOutline" : "outline"}
                 size="lg"
               >
                 {props?.imagelinks[0].btn} <Icons.ArrowRight size={18} />
-              </Button>
+              </Button> */}
             </a>
           </div>
         </div>
@@ -91,12 +93,12 @@ const AcceleratorImpact = ({ props }) => {
               target="_blank"
               download
             >
-              <Button
+              {/* <Button
                 variant={theme ? "lightBlueOutline" : "outline"}
                 size="lg"
               >
                 {props?.imagelinks[1].btn} <Icons.ArrowRight size={18} />
-              </Button>
+              </Button> */}
             </a>
           </div>
           <div className={styles.impactImage}>
@@ -145,12 +147,12 @@ const AcceleratorImpact = ({ props }) => {
               target="_blank"
               download
             >
-              <Button
+              {/* <Button
                 variant={theme ? "lightBlueOutline" : "outline"}
                 size="lg"
               >
                 {props?.imagelinks[2].btn} <Icons.ArrowRight size={18} />
-              </Button>
+              </Button> */}
             </a>
           </div>
         </div>
