@@ -120,6 +120,10 @@
         font-weight: 400;
         line-height: 1.875rem;
         margin-bottom: 3.75rem;
+
+        @include mobile {
+          font-size: text(normal);
+        }
       }
       .partnerCounter {
         display: flex;
@@ -129,8 +133,9 @@
         margin-bottom: 3.75rem;
 
         @include mobile-tablet-p {
-          gap: 0 1rem;
+          gap: 1rem 1rem;
           margin-bottom: 3rem;
+          flex-wrap: wrap;
         }
 
         .counterCard {
@@ -150,12 +155,20 @@
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+
+            @include mobile-tablet-p {
+              font-size: text(xl);
+            }
           }
           .countsText {
             font-size: 1.25rem;
             font-weight: 400;
             line-height: text(xl);
             margin-bottom: 0;
+
+            @include mobile-tablet-p {
+              font-size: text(normal);
+            }
           }
         }
       }

@@ -24,10 +24,11 @@
       margin-bottom: 1rem;
       text-transform: uppercase;
       font-size: text(normal);
-      font-weight: 500;
+      font-weight: 700;
       color: color(text-primary);
       opacity: 0.6;
       letter-spacing: 0.2rem;
+      line-height: 1.5rem;
 
       @include mobile-tablet-p {
         margin-bottom: 0.75rem;
@@ -53,7 +54,7 @@
   .innovationCardsGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 4rem;
+    gap: 2.5rem;
 
     @include desktop-hd {
       grid-template-columns: repeat(3, 1fr);
@@ -115,9 +116,9 @@
         padding: 0 0.625rem;
 
         .sbTitle {
-          font-size: 2.3rem;
+          font-size: text(larger);
           font-weight: 500;
-          line-height: text(xxxl);
+          line-height: 3.375rem;
           margin-bottom: 0;
           text-align: center;
           color: color(primary-blue);
@@ -128,13 +129,14 @@
           }
         }
         .sbSubtitle {
-          font-weight: 500;
+          font-weight: 700;
           font-size: text(normal);
           color: rgba(color(text-primary), 0.8);
           letter-spacing: 0.2rem;
           text-transform: uppercase;
           opacity: 0.6;
           text-align: center;
+          line-height: 1.5rem;
           @include mobile-tablet-p {
             font-size: text(normal);
             margin-bottom: 0.25rem;

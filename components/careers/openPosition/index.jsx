@@ -173,12 +173,12 @@ const OpenPosition = ({ props }) => {
                                                       <div className={styles.btnSection}>
                                                          <Link href={`/careers/${item?.id}`}>
                                                             <Button variant={theme ? "blueBtnDark" : "blueBtn"} size="md">
-                                                               {/* {subItem?.button} */}Not integrated
+                                                               {/* {subItem?.button} */}More Info
                                                             </Button>
                                                          </Link>
                                                          <SmoothDropdown
                                                             options={options}
-                                                            buttonLabel="Apply through"
+                                                            buttonLabel="Apply Through"
                                                             variant={theme ? "lightBlueOutline" : "outline"}
                                                             size="md"
                                                          />

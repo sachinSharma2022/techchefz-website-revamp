@@ -81,7 +81,11 @@ const TechnologyValues = ({ props, wrapperStyle }) => {
           <Swiper
             onSwiper={setThumbsSwiper}
             spaceBetween={10}
+<<<<<<< HEAD
+            slidesPerView={4}
+=======
             slidesPerView={isBigScreen ? 3 : 1}
+>>>>>>> baef958d99023b05e08c4fecf87c36a29feea2bc
             freeMode={true}
             watchSlidesProgress={true}
             modules={[FreeMode, Navigation, Thumbs]}
