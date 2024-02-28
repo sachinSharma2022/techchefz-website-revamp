@@ -16,7 +16,6 @@ const NavigationDesktop = ({ props }) => {
   const pathname = usePathname();
   const { theme, setTheme } = useContext(MyContext);
   const [isScrolled, setIsScrolled] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       const scrolled = window.scrollY > 0;
