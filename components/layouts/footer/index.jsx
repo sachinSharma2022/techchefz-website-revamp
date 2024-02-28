@@ -102,7 +102,7 @@ const Footer = () => {
                 <Link href="https://www.facebook.com/techchefz">
                  <Icons.facebook size={16} /> <span>Facebook</span>
                 </Link>
-                <Link href="https://www.instagram.com/techchefz">
+                <Link href="/">
                   <Icons.twitter size={16} /> <span>Twitter</span>
                 </Link>
               </div>
