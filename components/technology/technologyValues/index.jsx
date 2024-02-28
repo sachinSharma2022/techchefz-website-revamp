@@ -19,12 +19,14 @@ import {
 
 import { cn } from "@/lib/utils";
 import { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./style.module.scss";
 
 const TechnologyValues = ({ props, wrapperStyle }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const { theme, setTheme } = useContext(MyContext);
+  const isBigScreen = useMediaQuery({ query: "(min-width: 768px)" });
 
   return (
     <section
@@ -79,7 +81,7 @@ const TechnologyValues = ({ props, wrapperStyle }) => {
           <Swiper
             onSwiper={setThumbsSwiper}
             spaceBetween={10}
-            slidesPerView={3}
+            slidesPerView={isBigScreen ? 3 : 1}
             freeMode={true}
             watchSlidesProgress={true}
             modules={[FreeMode, Navigation, Thumbs]}
