@@ -92,7 +92,7 @@ const CountryDropdown = (props) => {
       >
         <Select
           onChange={(option) => {
-            if (option) props.setFieldValue("countyCode", option.value);
+            if (option) props.setFieldValue("countyCode", option.label);
           }}
           ref={ref}
           options={countryList.map(item => ({ label: item?.dial_code, value: item?.name ,image:item?.flag,code:item?.code}))}
