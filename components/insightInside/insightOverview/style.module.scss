@@ -108,7 +108,7 @@
         display: flex;
         gap: 1rem;
 
-        @include mobile-tablet-p{
+        @include mobile-tablet-p {
           flex-wrap: wrap;
         }
 
@@ -135,7 +135,7 @@
     right: 0;
     top: 15rem;
 
-    @include mobile-tablet-p{
+    @include mobile-tablet-p {
       position: relative;
       top: 0;
     }
@@ -156,7 +156,7 @@
         height: 20rem;
       }
 
-      @include mobile{
+      @include mobile {
         width: 100%;
       }
 
@@ -197,7 +197,7 @@
           opacity: 0.6;
         }
 
-        h4 {
+        h5 {
           color: color(text-primary);
         }
       }
