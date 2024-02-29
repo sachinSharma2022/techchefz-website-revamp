@@ -47,8 +47,8 @@ const NavigationDesktop = ({ props }) => {
             <ImageCustom
               src={
                 props[2]?.DropDown[8]?.Image?.data?.attributes?.url
-                  ? `${base_Uri}${props[2]?.DropDown[8]?.Image?.data?.attributes?.url}`
-                  : `${base_Uri}/`
+                  ? `${base_Url}${props[2]?.DropDown[8]?.Image?.data?.attributes?.url}`
+                  : `${base_Url}/`
               }
               width={300}
               height={300}
