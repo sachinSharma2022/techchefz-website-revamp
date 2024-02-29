@@ -18,8 +18,6 @@ const NavigationDesktop = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuShow, setMobileMenuShow] = useState(false);
-  const [isTechMenu, setTechMenu] = useState(false);
-  const [isMoreMenu, setMoreMenu] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,20 +32,10 @@ const NavigationDesktop = ({ props }) => {
     };
   }, []);
 
-  const mobileMenuToggle = () => {
-    setMobileMenuShow(!mobileMenuShow);
-    setTechMenu(false);
-    setMoreMenu(false);
-  };
-
   const closeMenu = () => {
     setMobileMenuShow(!mobileMenuShow);
     setTechMenu(false);
     setMoreMenu(false);
-  };
-
-  const technologyToggle = () => {
-    setTechMenu(true);
   };
 
   function LatestTech() {
@@ -59,8 +47,8 @@ const NavigationDesktop = ({ props }) => {
             <ImageCustom
               src={
                 props[2]?.DropDown[8]?.Image?.data?.attributes?.url
-                  ? `${base_Uri}${props[2]?.DropDown[8]?.Image?.data?.attributes?.url}`
-                  : `${base_Uri}/`
+                  ? `${base_Url}${props[2]?.DropDown[8]?.Image?.data?.attributes?.url}`
+                  : `${base_Url}/`
               }
               width={300}
               height={300}

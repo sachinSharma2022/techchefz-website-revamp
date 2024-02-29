@@ -230,7 +230,7 @@ const LetsWork = ({ contact }) => {
                     <p className={styles.policyText}>
                       {contact?.policy}
                       <span className={styles.policyHighlight}>
-                        <Link href={contact?.BtnLink}>Privacy Policy</Link>
+                        <Link href={contact?.BtnLink} target="_blank">Privacy Policy</Link>
                       </span>
                     </p>
                     <div className={`${styles.buttonGrid}`}>

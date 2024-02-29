@@ -10,6 +10,7 @@ import styles from "./style.module.scss";
 import { Form, Formik, useFormik } from "formik";
 import { footerValidationSchema } from "@/lib/FormSchema";
 import { triggerMail } from "@/lib/triggerMail";
+import AnimatedLogo from "@/components/common/animatedLogo";
 
 const Footer = () => {
   const formInitialSchema = {
@@ -28,14 +29,7 @@ const Footer = () => {
     <footer className={styles.footerSection}>
       <div className={cn("primary-container")}>
         <div className={styles.footLogoFlex}>
-          <div className={styles.footLogo}>
-            <ImageCustom
-              src="/images/logo-white.svg"
-              width={143}
-              height={48}
-              alt="tcz logo"
-            />
-          </div>
+          <AnimatedLogo />
           <ScrollToTopButton />
         </div>
 

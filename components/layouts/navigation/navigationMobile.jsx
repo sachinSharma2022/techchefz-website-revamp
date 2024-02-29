@@ -11,6 +11,7 @@ import { useContext, useEffect, useState } from "react";
 import { base_Uri } from "@/lib/constants";
 
 import styles from "./style.module.scss";
+import AnimatedLogo from "@/components/common/animatedLogo";
 
 const NavigationMobile = ({ props }) => {
   const pathname = usePathname();
@@ -153,24 +154,7 @@ const NavigationMobile = ({ props }) => {
       )}
     >
       <div className={cn(styles.headerContainer, "primary-container")}>
-        <div className={styles.logo}>
-          <Link href="/" className={styles.lightLogo}>
-            <ImageCustom
-              src="/images/logo.svg"
-              width={153}
-              height={40}
-              alt="header-logo"
-            />
-          </Link>
-          <Link href="/" className={styles.darkLogo}>
-            <ImageCustom
-              src="/images/white-logo.svg"
-              width={153}
-              height={40}
-              alt="dark-logo"
-            />
-          </Link>
-        </div>
+        <AnimatedLogo />
         <nav className={mobileMenuShow ? styles.showNav : styles.hideNav}>
           <h4 className={styles.mobileTitle}>Menu</h4>
           <ul>
@@ -289,7 +273,7 @@ const NavigationMobile = ({ props }) => {
                                 {props[2]?.DropDown[5]?.Description}
                               </p>
                             </Link>
-                            {/* <Link
+                            <Link
                               href={props[2]?.DropDown[6]?.Links}
                               className={cn(styles.hrefInnerFlex)}
                             >
@@ -302,7 +286,7 @@ const NavigationMobile = ({ props }) => {
                               <p className={styles.excepPara}>
                                 {props[2]?.DropDown[6]?.Description}
                               </p>
-                            </Link> */}
+                            </Link>
                             <Link
                               href={props[2]?.DropDown[7]?.Links}
                               className={cn(styles.hrefInnerFlex)}
@@ -410,7 +394,7 @@ const NavigationMobile = ({ props }) => {
                                 {props[4]?.DropDown[2]?.Description}
                               </p>
                             </Link>
-                            <Link
+                            {/* <Link
                               href={props[4]?.DropDown[3]?.Links}
                               onClick={closeMenu}
                               className={cn(styles.hrefInnerFlex)}
@@ -424,7 +408,7 @@ const NavigationMobile = ({ props }) => {
                               <p className={styles.excepPara}>
                                 {props[4]?.DropDown[3]?.Description}
                               </p>
-                            </Link>
+                            </Link> */}
                             <Link
                               href={props[4]?.DropDown[4]?.Links}
                               onClick={closeMenu}

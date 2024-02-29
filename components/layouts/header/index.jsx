@@ -9,7 +9,7 @@ const Header = async () => {
   return (
     <>
       {/* For Mobile */}
-      <NavigationMobile props={data?.attributes?.HeaderMenu}/>
+      <NavigationMobile props={data?.attributes?.HeaderMenu} />
 
       {/* For Desktop */}
       <NavigationDesktop props={data?.attributes?.HeaderMenu} />

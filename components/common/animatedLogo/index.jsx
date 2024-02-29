@@ -24,7 +24,7 @@ const AnimatedLogo = (props) => {
           height={40}
           alt="header-logo"
         />
-        <div className={styles.character} />
+        <h4 className={styles.header}>digital</h4>
       </div>
     </Link>
   );

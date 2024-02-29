@@ -63,7 +63,8 @@
     }
 
     @include mobile {
-      grid-template-columns: repeat(1, 1fr);
+      display: flex;
+      flex-direction: column;
       gap: 3.75rem;
       padding: 0;
     }
@@ -120,6 +121,16 @@
 
       button {
         margin-top: 2.5rem;
+      }
+    }
+  }
+
+  .cardSection {
+
+    .impactTopSection {
+      &:nth-child(2) {
+        flex-direction: column-reverse;
+        margin: 3rem 0;
       }
     }
   }
