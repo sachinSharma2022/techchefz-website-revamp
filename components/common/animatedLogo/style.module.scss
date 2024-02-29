@@ -11,24 +11,42 @@
     .darkLogo {
       display: none;
     }
+
+    @include mobile {
+      width: 130px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
   }
 
-  .character {
-    width: 145px;
-    height: 60px;
+  .header {
     position: absolute;
-    top: 5px;
-    right: -44px;
-    scale: 0.4;
-    background: url('/images/sprite-logo.png') left center no-repeat;
-    animation: play 10s steps(300) infinite;
-    background-size: cover;
-  }
+    font-size: 1rem;
+    top: 25px;
+    right: 0;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-align: center;
+    @include textGradient;
+    -webkit-animation: hue 5s infinite linear;
 
-  @keyframes play {
-    100% { background-position: -45000px; }
+    @include mobile {
+      top: 18px;
+    }
+}
+  
+  @keyframes hue {
+    from {
+      -webkit-filter: hue-rotate(0deg);
+    }
+    to {
+      -webkit-filter: hue-rotate(-360deg);
+    }
   }
-
 
   // Dark Mode
   &.animatedLogoDark {
