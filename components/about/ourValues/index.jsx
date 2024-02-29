@@ -95,16 +95,19 @@ const OurValues = ({ props }) => {
                               
                             </div>
                           </Disclosure.Button>
-                          <Transition  show={open} enter= "enter"
-    enterFrom="enterFrom"
-    enterTo="enterTo"
-    leave="leave"
-    leaveFrom="leaveFrom"
-    leaveTo="leaveTo" >
-                          <Disclosure.Panel  className={styles.accordionBody}>
+                          <AnimatePresence >
+                          <Disclosure.Panel as={motion.div} initial={{ y: -20, opacity: 0.2 }}
+    animate={{ y: 0, opacity: 1, }} transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }} exit={{
+       y: -20, opacity: 0.2 ,
+      transition: { duration: 0.4 },
+    }} className={styles.accordionBody}>
                             {data.Description}
                           </Disclosure.Panel>
-                          </Transition>
+
+                          </AnimatePresence>
+                        
+                         
+                          
                          
                               
                           

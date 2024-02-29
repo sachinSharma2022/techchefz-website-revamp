@@ -27,7 +27,7 @@ const HomepageIntro = (props) => {
             scrub: 1,
             start: "top 1%",
             end: "+=" + (230 + window.innerHeight),
-            markers: false,
+            markers: true,
             invalidateOnRefresh: true,
             anticipatePin: 1,
           },
@@ -35,7 +35,7 @@ const HomepageIntro = (props) => {
         ScrollTrigger.create({
           trigger: `.${styles.videoCont}`,
           pin: true,
-          markers: false,
+          markers: true,
           start: "top 80rem",
           end: "+=" + (271 + window.innerHeight),
         });
@@ -52,6 +52,7 @@ const HomepageIntro = (props) => {
             marginTop: 20,
             borderRadius: "12px",
           })
+         
           .to(
             `.${styles.video}`,
             {
@@ -64,6 +65,7 @@ const HomepageIntro = (props) => {
             }
             // ">1"
           )
+        
           .to(`.${styles.video}`, { borderRadius: "50%", duration: 1 });
       });
       return () => ctx.revert();

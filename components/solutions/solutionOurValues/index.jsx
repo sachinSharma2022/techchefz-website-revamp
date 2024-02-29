@@ -93,14 +93,13 @@ const SolutionOurValues = ({ props }) => {
               </motion.span>
                       </div>
                     </Disclosure.Button>
-                    <Transition  show={open} enter= "enter"
-    enterFrom="enterFrom"
-    enterTo="enterTo"
-    leave="leave"
-    leaveFrom="leaveFrom"
-    leaveTo="leaveTo" >
-                    <Disclosure.Panel  className={styles.accordionBody}>
-                      {/* <div className={styles.imgBox}>
+                    <AnimatePresence>
+                    <Disclosure.Panel as={motion.div} initial={{ y: -20, opacity: 0.2 }}
+    animate={{ y: 0, opacity: 1, }} transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }} exit={{
+       y: -20, opacity: 0.2 ,
+      transition: { duration: 0.4 },
+    }} className={styles.accordionBody}>
+                      <div className={styles.imgBox}>
                         <ImageCustom
                           src={
                             data.img.data.attributes.url
@@ -111,7 +110,7 @@ const SolutionOurValues = ({ props }) => {
                           height={200}
                           alt="bannerImg"
                         />
-                      </div> */}
+                      </div> 
                       <div className={styles.accordionBodyContent}>
                         {data.Description}
                         <ul className={styles.listStyle}>
@@ -126,8 +125,9 @@ const SolutionOurValues = ({ props }) => {
                         </ul>
                       </div>
                     </Disclosure.Panel>
+                    </AnimatePresence>
+                    
                    
-                    </Transition>
                   </>
                 );
               }}
