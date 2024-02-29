@@ -71,16 +71,15 @@ const Faq = ({props}) => {
                           {data.title}{data.Description}
                           {!open ? <Icons.IconPlus /> : <Icons.IconMinus />}
                         </Disclosure.Button>
-                        <Transition  show={open} enter= "enter"
-    enterFrom="enterFrom"
-    enterTo="enterTo"
-    leave="leave"
-    leaveFrom="leaveFrom"
-    leaveTo="leaveTo" >
-                        <Disclosure.Panel className={styles.accordionBody}>
+                       
+                        <Disclosure.Panel as={motion.div} initial={{ y: -20, opacity: 0.2 }}
+    animate={{ y: 0, opacity: 1, }} transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }} exit={{
+       y: -20, opacity: 0.2 ,
+      transition: { duration: 0.4 },
+    }} className={styles.accordionBody}>
                         {data.FullDescription}
                         </Disclosure.Panel>
-                        </Transition>
+                        
                       </div>
                     </div>
                     
