@@ -50,13 +50,13 @@ const LetsWork = ({ contact }) => {
     initialValues: formInitialSchema,
     validationSchema: commonValidationSchema,
     onSubmit: (values, action) => {
-      console.log(values);
-      dialogOpen()
       setinprogress(true);
       triggerMail({ content: JSON.stringify(values) });
-      action.resetForm();
       setTimeout(() => {
+        action.resetForm();
+        recaptchaRef.current.reset()
         setinprogress(false);
+        dialogOpen();
       }, 4000);
     },
   });
@@ -224,7 +224,6 @@ const LetsWork = ({ contact }) => {
                       sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                       ref={recaptchaRef}
                       onChange={handleCaptchaSubmission}
-                      className={styles.reCaptcha}
                     />
                   </div>
                   <div className={styles.policyArea}>

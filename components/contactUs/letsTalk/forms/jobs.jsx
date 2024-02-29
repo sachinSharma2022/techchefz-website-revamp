@@ -60,13 +60,14 @@ const JobsForm = () => {
         // Object.entries(values).forEach(([key, value]) => {
         //     formdata.append(key, value);
         // });
-        dialogOpen()
         setinprogress(true);
-        
         triggerMail({ content: JSON.stringify(values),formType:"Job"});
-        action.resetForm();
+        
         setTimeout(() => {
+          action.resetForm();
+          recaptchaRef.current.reset()
           setinprogress(false);
+          dialogOpen();
         }, 4000);
       }}
       initialValues={formInitialSchema}
