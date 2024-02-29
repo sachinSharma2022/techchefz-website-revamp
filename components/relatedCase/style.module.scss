@@ -1,18 +1,24 @@
 @import "~/styles/partials/config";
 
 .relatedCase {
-  padding-block: 8.75rem;
   position: relative;
 
   @include desktop-hd {
     min-height: 31.25rem;
-    margin-block: 8.75rem;
-    padding-block: 0;
   }
 
-  @include mobile-tablet-p {
-    padding: spacing(section-mob-padding);
-    padding-block: 3.75rem 3.75rem;
+  // For Space
+  &.spaceStyle {
+    margin-block: 8.75rem 11rem;
+
+    @include desktop-hd {
+      padding-block: 0;
+    }
+  
+    @include mobile-tablet-p {
+      padding-inline: 1.25rem;
+      margin-block: 5rem 7rem;
+    }
   }
 
   .headSection {

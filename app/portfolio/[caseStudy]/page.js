@@ -13,7 +13,7 @@ import { api_Case_study_Page } from "@/lib/constants";
 const CaseStudy = async ({ params }) => {
   const data = await getDataDynamic(api_Case_study_Page);
   let index = 0;
-  console.log(params,"-----------------")
+  console.log(params, "-----------------");
   for (const i in data) {
     if (data[i].id == params.caseStudy) {
       index = i;
@@ -34,7 +34,6 @@ const CaseStudy = async ({ params }) => {
           <Solutions props={data[index].attributes.Solutions} />
           <Results props={data[index].attributes.Results} />
           <RelatedCase
-            sliderClassName="mb-0"
             className="case-related-style"
             props={data}
             params={params}
