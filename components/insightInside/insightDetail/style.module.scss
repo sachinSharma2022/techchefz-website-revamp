@@ -52,7 +52,7 @@
          }
 
          @include mobile {
-            gap: 1rem;
+            gap: .625rem;
          }
 
          .iconDiv {
@@ -60,6 +60,8 @@
             border-radius: 50%;
             border: 0.14rem solid rgba(255, 255, 255, 0.4);
             padding: 1rem;
+            display: flex;
+            align-items: center;
 
             &:hover{
                background-color: color(dark-bg);
