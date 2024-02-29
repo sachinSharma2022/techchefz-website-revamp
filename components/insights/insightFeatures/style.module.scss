@@ -4,7 +4,7 @@
   padding: 5rem 7.5rem 0;
 
   @include mobile-tablet-p {
-    padding: 2rem;
+    padding: 2rem 1.25rem;
   }
 
   .insightHeader {
@@ -69,8 +69,13 @@
       gap: 2.5rem;
       grid-template-columns: auto auto;
 
-      @include mobile-tablet-p {
+      @include tablet {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include mobile {
+        display: flex;
+        flex-direction: column;
       }
 
       .featureInsightCard {

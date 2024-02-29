@@ -1,11 +1,11 @@
 "use client";
-import React from "react";
-import { ImageCustom } from "../imageCustom";
 import { Icons } from "@/components/icons";
-import Link from "next/link";
 import { MyContext } from "@/context/theme";
+import Link from "next/link";
 import { useContext } from "react";
+import { ImageCustom } from "../imageCustom";
 
+import { cn } from "@/lib/utils";
 import styles from "./styles.module.scss";
 
 const CaptionCard = (props) => {

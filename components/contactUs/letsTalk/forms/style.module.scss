@@ -19,7 +19,6 @@
   }
 
   .contactFormArea {
-    
     .inputSpace {
       position: relative;
     }
@@ -61,9 +60,19 @@
         margin-left: 3px;
       }
     }
+
+    .buttonGrid {
+      display: flex;
+      justify-content: flex-end;
+
+      @include mobile {
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+      }
+    }
   }
 }
-
 
 // Attach Style
 .attachStyle {

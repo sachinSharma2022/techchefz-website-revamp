@@ -12,7 +12,7 @@ import { base_Uri } from "@/lib/constants";
 
 import styles from "./style.module.scss";
 
-const NavigationMobile = ({props}) => {
+const NavigationMobile = ({ props }) => {
   const pathname = usePathname();
   const [mobileMenuShow, setMobileMenuShow] = useState(false);
   const [isTechMenu, setTechMenu] = useState(false);
@@ -38,14 +38,14 @@ const NavigationMobile = ({props}) => {
         <p className={styles.description}>
           {props[5]?.DropDown[0]?.Description}
         </p>
-        <Link href= {props[5]?.Link}>
-        <Button
-          variant={theme ? "blueBtnDark" : "blueBtn"}
-          className={styles.headerBtn}
-          size="sm"
-        >
-          {props[5]?.Title}
-        </Button>
+        <Link href={props[5]?.Link}>
+          <Button
+            variant={theme ? "blueBtnDark" : "blueBtn"}
+            className={styles.headerBtn}
+            size="lg"
+          >
+            {props[5]?.Title}
+          </Button>
         </Link>
       </div>
     );
@@ -75,7 +75,11 @@ const NavigationMobile = ({props}) => {
           <Link href="/technology" className={styles.imageTech}>
             <div className={styles.imgBox}>
               <ImageCustom
-                src={props[2]?.DropDown[8]?.Image?.data?.attributes?.url?`${base_Uri}${props[2]?.DropDown[8]?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+                src={
+                  props[2]?.DropDown[8]?.Image?.data?.attributes?.url
+                    ? `${base_Uri}${props[2]?.DropDown[8]?.Image?.data?.attributes?.url}`
+                    : `${base_Uri}/`
+                }
                 width={300}
                 height={300}
                 alt="nav-image"
@@ -106,23 +110,29 @@ const NavigationMobile = ({props}) => {
       <div className={styles.overviewFlex}>
         <div className={styles.overviewSubFlex}>
           <div>
-          <ImageCustom
-                src={props[2]?.DropDown[0]?.Image?.data?.attributes?.url?`${base_Uri}${props[2]?.DropDown[0]?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
-                width={56}
-                height={56}
-                alt="nav-image"
-              />
+            <ImageCustom
+              src={
+                props[2]?.DropDown[0]?.Image?.data?.attributes?.url
+                  ? `${base_Uri}${props[2]?.DropDown[0]?.Image?.data?.attributes?.url}`
+                  : `${base_Uri}/`
+              }
+              width={56}
+              height={56}
+              alt="nav-image"
+            />
           </div>
           <div className={styles.overviewTitle}>
             <h1>{props[2]?.DropDown[0]?.Title}</h1>
-            <p dangerouslySetInnerHTML={{ __html: `${props[2]?.DropDown[0]?.Description}`}}>
-              
-            </p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: `${props[2]?.DropDown[0]?.Description}`,
+              }}
+            ></p>
           </div>
         </div>
         <div className={styles.overviewBtn}>
           <Link href={props[2]?.DropDown[0]?.Links}>
-            <Button variant="outline" size="sm">
+            <Button onClick={closeMenu} variant="outline" size="sm">
               Overview <Icons.ArrowRight size={18} />
             </Button>
           </Link>
@@ -175,7 +185,7 @@ const NavigationMobile = ({props}) => {
             </li>
             <li className={styles.menuItem}>
               <Link
-                href= {props[1]?.Link}
+                href={props[1]?.Link}
                 onClick={closeMenu}
                 className={pathname == "/solutions" ? styles.active : ""}
               >
@@ -211,11 +221,13 @@ const NavigationMobile = ({props}) => {
                               className={cn(styles.hrefInnerFlex)}
                             >
                               <div className={styles.head}>
-                                <h4 className={styles.linkTitle}>{props[2]?.DropDown[1]?.Title}</h4>
+                                <h4 className={styles.linkTitle}>
+                                  {props[2]?.DropDown[1]?.Title}
+                                </h4>
                                 <Icons.ArrowForward />
                               </div>
                               <p className={styles.excepPara}>
-                              {props[2]?.DropDown[1]?.Description}
+                                {props[2]?.DropDown[1]?.Description}
                               </p>
                             </Link>
                             <Link
@@ -223,11 +235,13 @@ const NavigationMobile = ({props}) => {
                               className={cn(styles.hrefInnerFlex)}
                             >
                               <div className={styles.head}>
-                                <h4 className={styles.linkTitle}>{props[2]?.DropDown[2]?.Title}</h4>
+                                <h4 className={styles.linkTitle}>
+                                  {props[2]?.DropDown[2]?.Title}
+                                </h4>
                                 <Icons.ArrowForward />
                               </div>
                               <p className={styles.excepPara}>
-                              {props[2]?.DropDown[2]?.Description}
+                                {props[2]?.DropDown[2]?.Description}
                               </p>
                             </Link>
                             <Link
@@ -236,12 +250,12 @@ const NavigationMobile = ({props}) => {
                             >
                               <div className={styles.head}>
                                 <h4 className={styles.linkTitle}>
-                                {props[2]?.DropDown[3]?.Title}
+                                  {props[2]?.DropDown[3]?.Title}
                                 </h4>
                                 <Icons.ArrowForward />
                               </div>
                               <p className={styles.excepPara}>
-                              {props[2]?.DropDown[3]?.Description}
+                                {props[2]?.DropDown[3]?.Description}
                               </p>
                             </Link>
                             <Link
@@ -250,12 +264,12 @@ const NavigationMobile = ({props}) => {
                             >
                               <div className={styles.head}>
                                 <h4 className={styles.linkTitle}>
-                                {props[2]?.DropDown[4]?.Title}
+                                  {props[2]?.DropDown[4]?.Title}
                                 </h4>
                                 <Icons.ArrowForward />
                               </div>
                               <p className={styles.excepPara}>
-                              {props[2]?.DropDown[4]?.Description}
+                                {props[2]?.DropDown[4]?.Description}
                               </p>
                             </Link>
                           </div>
@@ -267,40 +281,40 @@ const NavigationMobile = ({props}) => {
                             >
                               <div className={styles.head}>
                                 <h4 className={styles.linkTitle}>
-                                {props[2]?.DropDown[5]?.Title}
+                                  {props[2]?.DropDown[5]?.Title}
                                 </h4>
                                 <Icons.ArrowForward />
                               </div>
                               <p className={styles.excepPara}>
-                              {props[2]?.DropDown[5]?.Description}
+                                {props[2]?.DropDown[5]?.Description}
                               </p>
                             </Link>
-                            <Link
+                            {/* <Link
                               href={props[2]?.DropDown[6]?.Links}
                               className={cn(styles.hrefInnerFlex)}
                             >
                               <div className={styles.head}>
                                 <h4 className={styles.linkTitle}>
-                                {props[2]?.DropDown[6]?.Title}
+                                  {props[2]?.DropDown[6]?.Title}
                                 </h4>
                                 <Icons.ArrowForward />
                               </div>
                               <p className={styles.excepPara}>
-                              {props[2]?.DropDown[6]?.Description}
+                                {props[2]?.DropDown[6]?.Description}
                               </p>
-                            </Link>
+                            </Link> */}
                             <Link
                               href={props[2]?.DropDown[7]?.Links}
                               className={cn(styles.hrefInnerFlex)}
                             >
                               <div className={styles.head}>
                                 <h4 className={styles.linkTitle}>
-                                {props[2]?.DropDown[7]?.Title}
+                                  {props[2]?.DropDown[7]?.Title}
                                 </h4>
                                 <Icons.ArrowForward />
                               </div>
                               <p className={styles.excepPara}>
-                              {props[2]?.DropDown[7]?.Description}
+                                {props[2]?.DropDown[7]?.Description}
                               </p>
                             </Link>
                           </div>
@@ -315,7 +329,7 @@ const NavigationMobile = ({props}) => {
             </li>
             <li className={styles.menuItem}>
               <Link
-                href= {props[3].Link}
+                href={props[3].Link}
                 onClick={closeMenu}
                 className={pathname == "/portfolio" ? styles.active : ""}
               >
@@ -357,11 +371,13 @@ const NavigationMobile = ({props}) => {
                               className={cn(styles.hrefInnerFlex)}
                             >
                               <div className={styles.head}>
-                                <h4 className={styles.linkTitle}>{props[4]?.DropDown[0]?.Title}</h4>
+                                <h4 className={styles.linkTitle}>
+                                  {props[4]?.DropDown[0]?.Title}
+                                </h4>
                                 <Icons.ArrowForward />
                               </div>
                               <p className={styles.excepPara}>
-                              {props[4]?.DropDown[0]?.Description}
+                                {props[4]?.DropDown[0]?.Description}
                               </p>
                             </Link>
                             <Link
@@ -370,11 +386,13 @@ const NavigationMobile = ({props}) => {
                               className={cn(styles.hrefInnerFlex)}
                             >
                               <div className={styles.head}>
-                                <h4 className={styles.linkTitle}>{props[4]?.DropDown[1]?.Title}</h4>
+                                <h4 className={styles.linkTitle}>
+                                  {props[4]?.DropDown[1]?.Title}
+                                </h4>
                                 <Icons.ArrowForward />
                               </div>
                               <p className={styles.excepPara}>
-                              {props[4]?.DropDown[1]?.Description}
+                                {props[4]?.DropDown[1]?.Description}
                               </p>
                             </Link>
                             <Link
@@ -384,12 +402,12 @@ const NavigationMobile = ({props}) => {
                             >
                               <div className={styles.head}>
                                 <h4 className={styles.linkTitle}>
-                                {props[4]?.DropDown[2]?.Title}
+                                  {props[4]?.DropDown[2]?.Title}
                                 </h4>
                                 <Icons.ArrowForward />
                               </div>
                               <p className={styles.excepPara}>
-                              {props[4]?.DropDown[2]?.Description}
+                                {props[4]?.DropDown[2]?.Description}
                               </p>
                             </Link>
                             <Link
@@ -399,12 +417,12 @@ const NavigationMobile = ({props}) => {
                             >
                               <div className={styles.head}>
                                 <h4 className={styles.linkTitle}>
-                                {props[4]?.DropDown[3]?.Title}
+                                  {props[4]?.DropDown[3]?.Title}
                                 </h4>
                                 <Icons.ArrowForward />
                               </div>
                               <p className={styles.excepPara}>
-                              {props[4]?.DropDown[3]?.Description}
+                                {props[4]?.DropDown[3]?.Description}
                               </p>
                             </Link>
                             <Link
@@ -413,11 +431,14 @@ const NavigationMobile = ({props}) => {
                               className={cn(styles.hrefInnerFlex)}
                             >
                               <div className={styles.head}>
-                                <h4 className={styles.linkTitle}> {props[4]?.DropDown[4]?.Title}</h4>
+                                <h4 className={styles.linkTitle}>
+                                  {" "}
+                                  {props[4]?.DropDown[4]?.Title}
+                                </h4>
                                 <Icons.ArrowForward />
                               </div>
                               <p className={styles.excepPara}>
-                              {props[4]?.DropDown[4]?.Description}
+                                {props[4]?.DropDown[4]?.Description}
                               </p>
                             </Link>
                           </div>

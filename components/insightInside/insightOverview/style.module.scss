@@ -58,7 +58,7 @@
       .publishFlex {
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.4rem;
 
         p {
           font-weight: 400;
@@ -74,9 +74,9 @@
           }
         }
 
-        h6 {
-          font-weight: 700;
-          font-size: text(xl);
+        h5 {
+          font-weight: 400;
+          font-size: text(lg);
           color: color(primary-white);
           line-height: 2rem;
           margin: 0;

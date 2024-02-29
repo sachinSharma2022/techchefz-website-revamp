@@ -13,10 +13,14 @@ import styles from "./style.module.scss";
 import AnimatedLogo from "@/components/common/animatedLogo";
 
 const NavigationDesktop = ({ props }) => {
-  console.log("header",props);
+  console.log("header", props);
   const pathname = usePathname();
   const { theme, setTheme } = useContext(MyContext);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuShow, setMobileMenuShow] = useState(false);
+  const [isTechMenu, setTechMenu] = useState(false);
+  const [isMoreMenu, setMoreMenu] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       const scrolled = window.scrollY > 0;
@@ -30,6 +34,22 @@ const NavigationDesktop = ({ props }) => {
     };
   }, []);
 
+  const mobileMenuToggle = () => {
+    setMobileMenuShow(!mobileMenuShow);
+    setTechMenu(false);
+    setMoreMenu(false);
+  };
+
+  const closeMenu = () => {
+    setMobileMenuShow(!mobileMenuShow);
+    setTechMenu(false);
+    setMoreMenu(false);
+  };
+
+  const technologyToggle = () => {
+    setTechMenu(true);
+  };
+
   function LatestTech() {
     return (
       <div className={cn(styles.latestTech)}>
@@ -37,7 +57,11 @@ const NavigationDesktop = ({ props }) => {
         <Link href="/" className={styles.imageTech}>
           <div className={styles.imgBox}>
             <ImageCustom
-              src={props[2]?.DropDown[8]?.Image?.data?.attributes?.url?`${base_Uri}${props[2]?.DropDown[8]?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+              src={
+                props[2]?.DropDown[8]?.Image?.data?.attributes?.url
+                  ? `${base_Uri}${props[2]?.DropDown[8]?.Image?.data?.attributes?.url}`
+                  : `${base_Uri}/`
+              }
               width={300}
               height={300}
               alt="nav-image"
@@ -45,7 +69,7 @@ const NavigationDesktop = ({ props }) => {
           </div>
           <div className={styles.infoBox}>
             <p className={styles.description}>
-            {props[2]?.DropDown[8]?.Description}
+              {props[2]?.DropDown[8]?.Description}
             </p>
             <Icons.ArrowRight size={16} />
           </div>
@@ -53,7 +77,7 @@ const NavigationDesktop = ({ props }) => {
         <div className={styles.imageTech}>
           <div className={styles.infoBox}>
             <p className={styles.description}>
-            {props[2]?.DropDown[9]?.Description}
+              {props[2]?.DropDown[9]?.Description}
             </p>
             <Icons.ArrowRight size={16} />
           </div>
@@ -67,29 +91,31 @@ const NavigationDesktop = ({ props }) => {
       <div className={styles.overviewFlex}>
         <div className={styles.overviewSubFlex}>
           <div>
-          <ImageCustom
-          src={
-            props[2]?.DropDown[0]?.Image?.data?.attributes?.url
-              ? `${base_Url}${props[2]?.DropDown[0]?.Image?.data?.attributes?.url}`
-              : `${base_Url}/`
-          }
-          width={56}
-          height={56}
-          alt="bannerImg"
-        />
+            <ImageCustom
+              src={
+                props[2]?.DropDown[0]?.Image?.data?.attributes?.url
+                  ? `${base_Url}${props[2]?.DropDown[0]?.Image?.data?.attributes?.url}`
+                  : `${base_Url}/`
+              }
+              width={56}
+              height={56}
+              alt="bannerImg"
+            />
           </div>
           <div className={styles.overviewTitle}>
             <h1>{props[2]?.DropDown[0]?.Title}</h1>
-            <p dangerouslySetInnerHTML={{ __html: `${props[2]?.DropDown[0]?.Description}`}}>
-             
-            </p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: `${props[2]?.DropDown[0]?.Description}`,
+              }}
+            ></p>
           </div>
         </div>
         <div className={styles.overviewBtn}>
-         <Link href={props[2]?.DropDown[0]?.Links}>
-          <Button variant="outline" size="sm">
-            Overview <Icons.ArrowRight size={18} />
-          </Button>
+          <Link href={props[2]?.DropDown[0]?.Links}>
+            <Button onClick={closeMenu} variant="outline" size="sm">
+              Overview <Icons.ArrowRight size={18} />
+            </Button>
           </Link>
         </div>
       </div>
@@ -116,7 +142,7 @@ const NavigationDesktop = ({ props }) => {
                 href={props[0].Link}
                 className={pathname == "/about" ? styles.active : ""}
               >
-               {props[0].Title}
+                {props[0].Title}
               </Link>
             </li>
             <li className={styles.menuItem}>
@@ -132,7 +158,7 @@ const NavigationDesktop = ({ props }) => {
                 href={props[2].Link}
                 className={pathname == "/technology" ? styles.active : ""}
               >
-                  {props[2].Title} <div className={styles.arrow} />
+                {props[2].Title} <div className={styles.arrow} />
               </Link>
               <ul className={cn(styles.subMenu)}>
                 <div className={styles.subsection}>
@@ -146,53 +172,61 @@ const NavigationDesktop = ({ props }) => {
                           <Link
                             href={props[2]?.DropDown[1]?.Links}
                             className={cn(styles.hrefInnerFlex)}
+                            onClick={closeMenu}
                           >
                             <div className={styles.head}>
-                              <h4 className={styles.linkTitle}>{props[2]?.DropDown[1]?.Title}</h4>
+                              <h4 className={styles.linkTitle}>
+                                {props[2]?.DropDown[1]?.Title}
+                              </h4>
                               <Icons.ArrowForward />
                             </div>
                             <p className={styles.excepPara}>
-                            {props[2]?.DropDown[1]?.Description}
+                              {props[2]?.DropDown[1]?.Description}
                             </p>
                           </Link>
                           <Link
                             href={props[2]?.DropDown[2]?.Links}
                             className={cn(styles.hrefInnerFlex)}
+                            onClick={closeMenu}
                           >
                             <div className={styles.head}>
-                              <h4 className={styles.linkTitle}>{props[2]?.DropDown[2]?.Title}</h4>
+                              <h4 className={styles.linkTitle}>
+                                {props[2]?.DropDown[2]?.Title}
+                              </h4>
                               <Icons.ArrowForward />
                             </div>
                             <p className={styles.excepPara}>
-                            {props[2]?.DropDown[2]?.Description}
+                              {props[2]?.DropDown[2]?.Description}
                             </p>
                           </Link>
                           <Link
                             href={props[2]?.DropDown[3]?.Links}
                             className={cn(styles.hrefInnerFlex)}
+                            onClick={closeMenu}
                           >
                             <div className={styles.head}>
                               <h4 className={styles.linkTitle}>
-                              {props[2]?.DropDown[3]?.Title}
+                                {props[2]?.DropDown[3]?.Title}
                               </h4>
                               <Icons.ArrowForward />
                             </div>
                             <p className={styles.excepPara}>
-                            {props[2]?.DropDown[3]?.Description}
+                              {props[2]?.DropDown[3]?.Description}
                             </p>
                           </Link>
                           <Link
                             href={props[2]?.DropDown[4]?.Links}
                             className={cn(styles.hrefInnerFlex)}
+                            onClick={closeMenu}
                           >
                             <div className={styles.head}>
                               <h4 className={styles.linkTitle}>
-                              {props[2]?.DropDown[4]?.Title}
+                                {props[2]?.DropDown[4]?.Title}
                               </h4>
                               <Icons.ArrowForward />
                             </div>
                             <p className={styles.excepPara}>
-                            {props[2]?.DropDown[4]?.Description}
+                              {props[2]?.DropDown[4]?.Description}
                             </p>
                           </Link>
                         </div>
@@ -201,43 +235,46 @@ const NavigationDesktop = ({ props }) => {
                           <Link
                             href={props[2]?.DropDown[5]?.Links}
                             className={cn(styles.hrefInnerFlex)}
+                            onClick={closeMenu}
                           >
                             <div className={styles.head}>
                               <h4 className={styles.linkTitle}>
-                              {props[2]?.DropDown[5]?.Title}
+                                {props[2]?.DropDown[5]?.Title}
                               </h4>
                               <Icons.ArrowForward />
                             </div>
                             <p className={styles.excepPara}>
-                            {props[2]?.DropDown[5]?.Description}
+                              {props[2]?.DropDown[5]?.Description}
                             </p>
                           </Link>
                           <Link
                             href={props[2]?.DropDown[6]?.Links}
                             className={cn(styles.hrefInnerFlex)}
+                            onClick={closeMenu}
                           >
                             <div className={styles.head}>
                               <h4 className={styles.linkTitle}>
-                              {props[2]?.DropDown[6]?.Title}
+                                {props[2]?.DropDown[6]?.Title}
                               </h4>
                               <Icons.ArrowForward />
                             </div>
                             <p className={styles.excepPara}>
-                            {props[2]?.DropDown[6]?.Description}
+                              {props[2]?.DropDown[6]?.Description}
                             </p>
                           </Link>
                           <Link
                             href={props[2]?.DropDown[7]?.Links}
                             className={cn(styles.hrefInnerFlex)}
+                            onClick={closeMenu}
                           >
                             <div className={styles.head}>
                               <h4 className={styles.linkTitle}>
-                              {props[2]?.DropDown[7]?.Title}
+                                {props[2]?.DropDown[7]?.Title}
                               </h4>
                               <Icons.ArrowForward />
                             </div>
                             <p className={styles.excepPara}>
-                            {props[2]?.DropDown[7]?.Description}
+                              {props[2]?.DropDown[7]?.Description}
                             </p>
                           </Link>
                         </div>
@@ -275,63 +312,76 @@ const NavigationDesktop = ({ props }) => {
                           <Link
                             href={props[4]?.DropDown[0]?.Links}
                             className={cn(styles.hrefInnerFlex)}
+                            onClick={closeMenu}
                           >
                             <div className={styles.head}>
-                              <h4 className={styles.linkTitle}>{props[4]?.DropDown[0]?.Title}</h4>
+                              <h4 className={styles.linkTitle}>
+                                {props[4]?.DropDown[0]?.Title}
+                              </h4>
                               <Icons.ArrowForward />
                             </div>
                             <p className={styles.excepPara}>
-                            {props[4]?.DropDown[0]?.Description}
+                              {props[4]?.DropDown[0]?.Description}
                             </p>
                           </Link>
                           <Link
                             href={props[4]?.DropDown[1]?.Links}
                             className={cn(styles.hrefInnerFlex)}
+                            onClick={closeMenu}
                           >
                             <div className={styles.head}>
-                              <h4 className={styles.linkTitle}>{props[4]?.DropDown[1]?.Title}</h4>
+                              <h4 className={styles.linkTitle}>
+                                {props[4]?.DropDown[1]?.Title}
+                              </h4>
                               <Icons.ArrowForward />
                             </div>
                             <p className={styles.excepPara}>
-                            {props[4]?.DropDown[1]?.Description}
+                              {props[4]?.DropDown[1]?.Description}
                             </p>
                           </Link>
                           <Link
                             href={props[4]?.DropDown[2]?.Links}
                             className={cn(styles.hrefInnerFlex)}
+                            onClick={closeMenu}
                           >
                             <div className={styles.head}>
                               <h4 className={styles.linkTitle}>
-                              {props[4]?.DropDown[2]?.Title}
+                                {props[4]?.DropDown[2]?.Title}
                               </h4>
                               <Icons.ArrowForward />
                             </div>
                             <p className={styles.excepPara}>
-                            {props[4]?.DropDown[2]?.Description}
+                              {props[4]?.DropDown[2]?.Description}
                             </p>
                           </Link>
-                          <Link
+                          {/* <Link
                             href={props[4]?.DropDown[3]?.Links}
                             className={cn(styles.hrefInnerFlex)}
+                            onClick={closeMenu}
                           >
                             <div className={styles.head}>
-                              <h4 className={styles.linkTitle}>{props[4]?.DropDown[3]?.Title}</h4>
+                              <h4 className={styles.linkTitle}>
+                                {props[4]?.DropDown[3]?.Title}
+                              </h4>
                               <Icons.ArrowForward />
                             </div>
                             <p className={styles.excepPara}>
-                            {props[4]?.DropDown[3]?.Description}
+                              {props[4]?.DropDown[3]?.Description}
                             </p>
-                          </Link>
+                          </Link> */}
                           <Link
                             href={props[4]?.DropDown[4]?.Links}
                             className={cn(styles.hrefInnerFlex)}
+                            onClick={closeMenu}
                           >
                             <div className={styles.head}>
-                              <h4 className={styles.linkTitle}>{props[4]?.DropDown[4]?.Title}</h4>
+                              <h4 className={styles.linkTitle}>
+                                {props[4]?.DropDown[4]?.Title}
+                              </h4>
                               <Icons.ArrowForward />
                             </div>
                             <p className={styles.excepPara}>
-                            {props[4]?.DropDown[4]?.Description}
+                              {props[4]?.DropDown[4]?.Description}
                             </p>
                           </Link>
                         </div>

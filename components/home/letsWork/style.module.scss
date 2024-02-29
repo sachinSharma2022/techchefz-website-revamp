@@ -121,7 +121,9 @@
             display: flex;
             justify-content: flex-end;
             width: 100%;
-
+            @include mobile {
+              flex-direction: column;
+            }
             @include mobile-tablet-p {
               justify-content: flex-start;
             }
@@ -153,7 +155,7 @@
       display: grid;
       grid-template-columns: 50% auto;
       gap: 2rem;
-      
+
       @include mobile {
         display: flex;
         flex-direction: column;

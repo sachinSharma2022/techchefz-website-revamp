@@ -14,8 +14,9 @@
       border-color: color(heading-liner);
    }
 
-   @include mobile {
+   @include mobile-tablet-p {
       margin-right: 0;
+      width: 92%;
    }
 
    .cardImg div {
@@ -25,6 +26,10 @@
       border-radius: 0.5rem;
       margin-bottom: text(lg);
       overflow: hidden;
+
+      @include mobile-tablet-p {
+         height: 200px;
+      }
      
       @include desktop-hd {
          aspect-ratio: 2/1.3;

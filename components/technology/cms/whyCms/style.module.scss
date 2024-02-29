@@ -96,6 +96,10 @@
         display: flex;
         justify-content: space-between;
         font-family: font(primary);
+
+        @include mobile-tablet-p {
+          font-size: text(lg);
+        }
       }
       .accordionBody {
         padding: 1.25rem 0;

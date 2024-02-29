@@ -9,7 +9,7 @@ import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 import { base_Uri } from "@/lib/constants";
 
-const InsightFeatures = ({ props,featureInsight, feature }) => {
+const InsightFeatures = ({ props, featureInsight, feature }) => {
   const { theme, setTheme } = useContext(MyContext);
   console.log(feature, "feat");
 
@@ -87,12 +87,16 @@ const InsightFeatures = ({ props,featureInsight, feature }) => {
                 />
               ))}
           </div>
-        {feature.length>9 && <div className={styles.insightButton}>
-            <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
-              {feature[1].Button}
-            </Button>
-          </div>}
-         
+          {feature.length > 9 && (
+            <div className={styles.insightButton}>
+              <Button
+                variant={theme ? "lightBlueOutline" : "outline"}
+                size="md"
+              >
+                {feature[1].Button}
+              </Button>
+            </div>
+          )}
         </div>
       </div>
     </section>

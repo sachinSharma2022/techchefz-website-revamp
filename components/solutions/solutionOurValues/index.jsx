@@ -110,7 +110,7 @@ const SolutionOurValues = ({ props }) => {
                           height={200}
                           alt="bannerImg"
                         />
-                      </div>
+                      </div> */}
                       <div className={styles.accordionBodyContent}>
                         {data.Description}
                         <ul className={styles.listStyle}>
@@ -118,7 +118,7 @@ const SolutionOurValues = ({ props }) => {
                             ?.split(",")
                             .map((items, index) => (
                               <li key={index}>
-                                <Icons.CheckIcon />
+                                {/* <Icons.CheckIcon /> */}
                                 {items}
                               </li>
                             ))}

@@ -62,7 +62,6 @@ const TczLife = ({ props }) => {
     ],
   };
 
-  
   return (
     <section
       className={`${styles.tczLife} ${theme ? styles.tczLifeDark : ""} `}

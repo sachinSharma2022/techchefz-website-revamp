@@ -38,7 +38,7 @@ const ImageCaptionCard = ({ case_study }) => {
       className={cn(styles.imageCaptionCard, theme ? styles.darkStyle : "")}
     >
       <div className={cn("primary-container")}>
-        <div
+        {/* <div
           className={cn(styles.dropdownStyle, theme ? styles.dropdownDark : "")}
         >
           <div className={`${styles.inputDropPadding}`}>
@@ -65,7 +65,8 @@ const ImageCaptionCard = ({ case_study }) => {
               placeholder="Select Technology"
             />
           </div>
-        </div>
+        </div> */}
+
         <div
           className={cn(
             styles.captionCardStyle,

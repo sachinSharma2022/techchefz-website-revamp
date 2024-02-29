@@ -7,7 +7,6 @@
   @include mobile-tablet-p {
     padding: spacing(section-mob-padding);
     padding-block: 3.75rem 3.75rem;
-    padding: 2rem;
   }
 
   .openPositionHeader {
@@ -17,7 +16,7 @@
 
     @include mobile-tablet-p {
       flex-direction: column;
-      margin-bottom: 3.5rem;
+      margin-bottom: 2.5rem;
     }
 
     .openPositionHeading {
@@ -25,7 +24,7 @@
       font-weight: 500;
       line-height: 54px;
       opacity: 0.8;
-      
+
       @include mobile-tablet-p {
         margin-bottom: 2.5rem;
         font-size: 2rem;
@@ -69,7 +68,7 @@
       white-space: nowrap;
 
       @include mobile-tablet-p {
-        margin:0.25rem;
+        margin: 0.25rem;
 
         &:last-child {
           margin-bottom: 0;
@@ -140,6 +139,7 @@
         background: color(primary-white);
         padding: 2rem;
         border: 0.14rem solid transparent;
+        cursor: pointer;
 
         &:hover {
           border: 0.14rem solid color(heading-liner);
@@ -205,6 +205,7 @@
           font-weight: 500;
           line-height: 2rem;
           margin-bottom: 1rem;
+
           @include mobile-tablet-p {
             margin-bottom: 0.5rem;
           }
@@ -286,7 +287,11 @@
       .accordionBody {
         background-color: color(text-primary);
       }
-
+      .openPositionTitle {
+        .title {
+          opacity: 0.8;
+        }
+      }
       .accordionButton {
         color: color(primary-white);
 

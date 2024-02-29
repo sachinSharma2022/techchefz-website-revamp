@@ -1,19 +1,22 @@
 "use client";
 import PartnerCard from "@/components/ui/partnerCard";
 import { MyContext } from "@/context/theme";
-import { useContext, useState } from "react";
 import { cn } from "@/lib/utils";
+import { useContext, useState } from "react";
 
-import styles from "./style.module.scss";
 import LeftDrawer from "@/components/common/leftDrawer";
+import MobileSlider from "@/components/common/mobileSlider";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import Link from "next/link";
 import { base_Uri } from "@/lib/constants";
+import Link from "next/link";
+import { useMediaQuery } from "react-responsive";
+import styles from "./style.module.scss";
 
 const Partners = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   let [isOpen, setIsOpen] = useState(false);
   const [index, setIndex] = useState(0);
+  const isBigScreen = useMediaQuery({ query: "(min-width: 1199px)" });
 
   return (
     <section className={`${styles.partner} ${theme ? styles.partnerDark : ""}`}>
@@ -29,30 +32,59 @@ const Partners = ({ props }) => {
           ></h3>
         </div>
 
-        <div className={styles.partnerCards}>
-          {props?.Slider?.map((data, index) => (
-            <PartnerCard
-              key={index}
-              imgSrc={
-                data?.Image?.data?.attributes?.url
-                  ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
-                  : `${base_Uri}/`
-              }
-              darkImgSrc={
-                data?.Image?.data?.attributes?.url
-                  ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
-                  : `${base_Uri}/`
-              }
-              cardTitle={data.Title}
-              cardContent={data.Description}
-              onClick={() => {
-                setIsOpen(true);
-                setIndex(index);
-              }}
-              arrowUp
-            />
-          ))}
-        </div>
+        {isBigScreen ? (
+          <div className={styles.partnerCards}>
+            {props?.Slider?.map((data, index) => (
+              <PartnerCard
+                key={index}
+                imgSrc={
+                  data?.Image?.data?.attributes?.url
+                    ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
+                    : `${base_Uri}/`
+                }
+                darkImgSrc={
+                  data?.Image?.data?.attributes?.url
+                    ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
+                    : `${base_Uri}/`
+                }
+                cardTitle={data.Title}
+                cardContent={data.Description}
+                onClick={() => {
+                  setIsOpen(true);
+                  setIndex(index);
+                }}
+                arrowUp
+              />
+            ))}
+          </div>
+        ) : (
+          <div className={styles.mobileSlider}>
+            <MobileSlider slidesToShow={1.4}>
+              {props?.Slider?.map((data, index) => (
+                <PartnerCard
+                  key={index}
+                  imgSrc={
+                    data?.Image?.data?.attributes?.url
+                      ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
+                      : `${base_Uri}/`
+                  }
+                  darkImgSrc={
+                    data?.Image?.data?.attributes?.url
+                      ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
+                      : `${base_Uri}/`
+                  }
+                  cardTitle={data.Title}
+                  cardContent={data.Description}
+                  onClick={() => {
+                    setIsOpen(true);
+                    setIndex(index);
+                  }}
+                  arrowUp
+                />
+              ))}
+            </MobileSlider>
+          </div>
+        )}
       </div>
 
       <LeftDrawer

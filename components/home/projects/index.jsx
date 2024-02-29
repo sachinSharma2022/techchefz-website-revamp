@@ -84,7 +84,7 @@ const Card = ({ ...props }) => {
             );
           })}
         </p>
-        <motion.div
+        {/* <motion.div
           variants={opacity}
           animate={isInView ? "open" : "closed"}
           className={styles.projectBtn}
@@ -94,7 +94,7 @@ const Card = ({ ...props }) => {
               {tagItem.Title}
             </Link>
           ))}
-        </motion.div>
+        </motion.div> */}
       </div>
     </motion.div>
   );

@@ -99,10 +99,11 @@
         text-align: center;
         background-color: color(primary-white);
         padding: 2.5rem 1.25rem 1.25rem;
-        border-radius: text(xl);
+        border-radius: 1.25rem;
         border: 0.125rem solid color(primary-white);
-        cursor: pointer;
+        // cursor: pointer;
         position: relative;
+        height: 100%;
 
         @include mobile-tablet-p {
           padding: text(xl);
@@ -163,6 +164,8 @@
       .differenceCmsBox {
         background-color: color(text-primary);
         border-color: color(text-primary);
+        height: 100%;
+        
       }
     }
   }
