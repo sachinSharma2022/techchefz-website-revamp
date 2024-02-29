@@ -32,7 +32,7 @@ const CmsDifference = ({ props }) => {
             ></h2>
           </div>
 
-          <div className={`${styles.careerBtn}`}>
+          {/* <div className={`${styles.careerBtn}`}>
             <Link href={props?.ButtonLink}>
               <Button
                 variant={theme ? "lightBlueOutline" : "outline"}
@@ -41,7 +41,7 @@ const CmsDifference = ({ props }) => {
                 {props?.Button} <Icons.ArrowRight size={18} />
               </Button>
             </Link>
-          </div>
+          </div> */}
         </div>
 
         <div className={styles.gridNumberMain}>

@@ -9,6 +9,10 @@
     padding:3.75rem 1.5rem;
   }
 
+  @include mobile{
+    margin-top: 3.75rem;
+  }
+
   &.coeServiceDark{
     background-color: color(dark-bg);
     color: color(primary-white);

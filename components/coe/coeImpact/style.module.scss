@@ -23,6 +23,10 @@
     @include mobile-tablet-p {
       align-items: start;
     }
+
+    @include mobile{
+      margin-bottom: 3.75rem;
+    }
   }
 
   .subHeading {
@@ -61,6 +65,7 @@
     @include mobile {
       grid-template-columns: repeat(1, 1fr);
       gap: 3.75rem;
+      padding: 0;
     }
 
     .impactImage div {
