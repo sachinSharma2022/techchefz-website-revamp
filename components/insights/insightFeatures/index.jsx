@@ -18,10 +18,10 @@ const InsightFeatures = ({ props, featureInsight, feature }) => {
       <div className={cn("primary-container", styles.flexContainer)}>
         <div className={styles.insightHeader}>
           <div className={styles.searchButton}>
-            <SearchInput theme={theme} />
+            {/* <SearchInput theme={theme} /> */}
           </div>
           <div className={styles.serviceBtn}>
-            {props.map((buttonItem) => (
+            {/* {props.map((buttonItem) => (
               <button
                 variant="outline"
                 size="sm"
@@ -30,7 +30,7 @@ const InsightFeatures = ({ props, featureInsight, feature }) => {
               >
                 {buttonItem.Title}
               </button>
-            ))}
+            ))} */}
           </div>
         </div>
         <div className={styles.featureInsight}>

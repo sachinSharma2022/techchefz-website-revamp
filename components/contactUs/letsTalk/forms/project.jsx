@@ -218,7 +218,7 @@ const ProjectForm = () => {
                 I understand and consent to my personal data being processed in
                 accordance with TechChefz&apos;s
                 <span className={styles.policyHighlight}>
-                  <Link href="/privacy-policy">Privacy Policy</Link>
+                  <Link href="/privacy-policy" target="_blank">Privacy Policy</Link>
                 </span>
               </div>
               <div className={`${styles.buttonGrid}`}>
