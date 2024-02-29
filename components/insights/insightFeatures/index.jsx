@@ -80,18 +80,19 @@ const InsightFeatures = ({ props,featureInsight, feature }) => {
                       : `${base_Uri}/`
                   }
                   title={data?.attributes?.InsightOverview[0].Title}
-                  date={data?.attributes?.updatedAt}
+                  date={data?.attributes?.InsightOverview[0]?.Date}
+                  readTime={data?.attributes?.InsightOverview[0]?.ReadingTime}
                   theme={theme}
                   href={`/insights/${data?.id}`}
                 />
               ))}
           </div>
-
-          <div className={styles.insightButton}>
+        {feature.length>9 && <div className={styles.insightButton}>
             <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
               {feature[1].Button}
             </Button>
-          </div>
+          </div>}
+         
         </div>
       </div>
     </section>
