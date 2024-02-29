@@ -47,12 +47,13 @@ const ContactSection = ({ props, id }) => {
     initialValues: formInitialSchema,
     validationSchema: careerValidationSchema,
     onSubmit: (values, action) => {
-      dialogOpen();
       setinprogress(true);
       triggerMail({ content: JSON.stringify(values), formType: "Job" });
-      action.resetForm();
       setTimeout(() => {
+        action.resetForm();
+        recaptchaRef.current.reset()
         setinprogress(false);
+        dialogOpen();
       }, 4000);
     },
   });
@@ -233,6 +234,7 @@ const ContactSection = ({ props, id }) => {
                       sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                       ref={recaptchaRef}
                       onChange={handleCaptchaSubmission}
+
                     />
                   </div>
                   <div className={styles.policyArea}>

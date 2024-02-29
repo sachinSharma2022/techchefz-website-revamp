@@ -9,14 +9,14 @@ import { useContext } from "react";
 import styles from "./style.module.scss";
 
 const ConfirmationPopup = (props) => {
-  const { theme } = useContext(MyContext);
+  //const { theme } = useContext(MyContext);
   return (
     <Dialog open={props.open} onClose={props.onClose}>
       <div className={styles.primaryOverlayStyle} />
       <Dialog.Panel
         className={cn(
           styles.confirmationPopup,
-          theme ? styles.confirmationPopupDarkStyle : "",
+          props.theme ? styles.confirmationPopupDarkStyle : "",
           props.className
         )}
       >
@@ -35,7 +35,7 @@ const ConfirmationPopup = (props) => {
 
           {/* <Link href="/"> */}
             <Button
-              variant={theme ? "lightBlueOutline" : "outline"}
+              variant={props.theme ? "lightBlueOutline" : "outline"}
               className={styles.thankyouBtn}
               size="lg"
               onClick={props.onClose}

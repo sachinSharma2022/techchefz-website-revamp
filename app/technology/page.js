@@ -7,8 +7,9 @@ import TechnologyBanner from "@/components/technology/technologyBanner";
 import TechnologyCase from "@/components/technology/technologyCase";
 import Streamline from "@/components/technology/technologyStreamline";
 import TechnologyValues from "@/components/technology/technologyValues";
-import { api_Technology_Page } from "@/lib/constants";
-import { getData } from "@/lib/fetchData";
+import { api_Technology_Page,api_Case_study_Page } from "@/lib/constants";
+import { getData,getDataDynamic } from "@/lib/fetchData";
+import RelatedCase from "@/components/relatedCase";
 
 export const metadata = {
   title: "Explore Technologies | TechChefz Digital",
@@ -17,6 +18,7 @@ export const metadata = {
 
 const Technology = async () => {
   const data = await getData(api_Technology_Page);
+  const data_related_cases = await getDataDynamic(api_Case_study_Page);
   return (
     <>
       {data ? (
@@ -31,7 +33,7 @@ const Technology = async () => {
           />
           <OurNumbers carrer={data.carrer} experience={data.ourExperience} />
           <Discover props={data.DiscoverTech} />
-          <TechnologyCase props={data.TechnologyCase} />
+          <RelatedCase  props={data_related_cases} />
           <LetsWork contact={data.LetsWork} />
         </div>
       ) : (

@@ -15,8 +15,8 @@ const nextConfig = {
     NODEMAILER_FROM_EMAIL: "manoj.yadav@techchefz.com",
     NODEMAILER_TO_EMAIL: "khalid.ansari@techchefz.com",
     NODEMAILER_PW: "ucpw vzze prbs wooi",
-    NEXT_PUBLIC_RECAPTCHA_SITE_KEY: "6Lf9PHIpAAAAADV0YdvKjHZFuq2bNPnTttD8x7JP",
-    RECAPTCHA_SECRET_KEY: "6Lf9PHIpAAAAACHATjXYUbLtFJIQtZLoDaaCOWKa",
+    NEXT_PUBLIC_RECAPTCHA_SITE_KEY: "6LcmhoQpAAAAAIwjH8R1VFF6bfJW9yXyiUMFPDlF",
+    RECAPTCHA_SECRET_KEY: "6LcmhoQpAAAAAHPLccD_GcVT879yK1R6tBG3hzpI",
   },
 };
 
