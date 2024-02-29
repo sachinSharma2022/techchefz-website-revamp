@@ -34,26 +34,24 @@ const InsightDetail = ({ props, BlockTitle }) => {
           </div>
 
           <div className={styles.insightDetailPara}>
-            <h3
-              dangerouslySetInnerHTML={{ __html: `${BlockTitle?.Title}` }}
-            ></h3>
-            <p
-              dangerouslySetInnerHTML={{ __html: `${BlockTitle?.Description}` }}
-            ></p>
+            <h3> {BlockTitle?.Title}</h3>
+            <p> {BlockTitle?.Description}</p>
 
-            <div className={styles.insightImageDiv}>
-              <ImageCustom
-                src={
-                  BlockTitle?.Image?.data?.attributes?.url
-                    ? `${base_Uri}${BlockTitle?.Image?.data?.attributes?.url}`
-                    : `${base_Uri}/`
-                }
-                width={850}
-                height={445}
-                alt="insight-img"
-              />
-            </div>
-
+            {BlockTitle?.Image?.data?.attributes?.url !== undefined &&
+              BlockTitle?.Image?.data?.attributes?.url !== "" && (
+                <div className={styles.insightImageDiv}>
+                  <ImageCustom
+                    src={
+                      BlockTitle?.Image?.data?.attributes?.url
+                        ? `${base_Uri}${BlockTitle?.Image?.data?.attributes?.url}`
+                        : `${base_Uri}/`
+                    }
+                    width={850}
+                    height={445}
+                    alt="insight-img"
+                  />
+                </div>
+              )}
             {props?.map((value, index) => (
               <div className={styles.insightSection} key={index}>
                 <h3
@@ -64,18 +62,21 @@ const InsightDetail = ({ props, BlockTitle }) => {
                   dangerouslySetInnerHTML={{ __html: `${value.Description}` }}
                 ></p>
 
-                <div className={styles.insightImageDiv}>
-                  <ImageCustom
-                    src={
-                      value?.Image?.data?.attributes?.url
-                        ? `${base_Uri}${value?.Image?.data?.attributes?.url}`
-                        : `${base_Uri}/`
-                    }
-                    width={690}
-                    height={480}
-                    alt="insight-img"
-                  />
-                </div>
+                {value?.Image?.data?.attributes?.url !== undefined &&
+                  value?.Image?.data?.attributes?.url !== "" && (
+                    <div className={styles.insightImageDiv}>
+                      <ImageCustom
+                        src={
+                          value?.Image?.data?.attributes?.url
+                            ? `${base_Uri}${value?.Image?.data?.attributes?.url}`
+                            : `${base_Uri}/`
+                        }
+                        width={690}
+                        height={480}
+                        alt="insight-img"
+                      />
+                    </div>
+                  )}
               </div>
             ))}
           </div>
