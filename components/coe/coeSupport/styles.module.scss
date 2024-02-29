@@ -41,6 +41,7 @@
       @include mobile-tablet-p {
          grid-template-columns: repeat(2, 1fr);
          padding-top: 3.75rem;
+         padding-bottom: 0;
       }
 
       @include mobile {
