@@ -23,33 +23,33 @@
     }
   }
 
-  .projectBtn {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    justify-content: flex-end;
+  // .projectBtn {
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   gap: 0.75rem;
+  //   justify-content: flex-end;
 
-    @include mobile-tablet-p {
-      justify-content: flex-start;
-    }
+  //   @include mobile-tablet-p {
+  //     justify-content: flex-start;
+  //   }
 
-    .badgeStyle {
-      display: flex;
-      padding-inline: 0.75rem;
-      align-items: center;
-      justify-content: center;
-      height: 35px;
-      border-radius: 0.5rem;
-      border: 0.14rem solid rgba(color(primary-white), 0.4);
-      color: color(primary-white);
-      transition: all 0.5s ease-in-out;
+  //   .badgeStyle {
+  //     display: flex;
+  //     padding-inline: 0.75rem;
+  //     align-items: center;
+  //     justify-content: center;
+  //     height: 35px;
+  //     border-radius: 0.5rem;
+  //     border: 0.14rem solid rgba(color(primary-white), 0.4);
+  //     color: color(primary-white);
+  //     transition: all 0.5s ease-in-out;
 
-      &:hover {
-        background-color: color(primary-white);
-        color: color(text-primary);
-      }
-    }
-  }
+  //     &:hover {
+  //       background-color: color(primary-white);
+  //       color: color(text-primary);
+  //     }
+  //   }
+  // }
 
   .datingText {
     font-size: 2.75rem;
@@ -135,7 +135,7 @@
     font-weight: 500;
     color: color(primary-white);
     margin-bottom: text(lg);
-    width: 80%;
+    width: 40%;
 
     @include mobile-tablet-p {
       width: 100%;

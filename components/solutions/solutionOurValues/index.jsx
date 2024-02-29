@@ -100,7 +100,7 @@ const SolutionOurValues = ({ props }) => {
     leaveFrom="leaveFrom"
     leaveTo="leaveTo" >
                     <Disclosure.Panel  className={styles.accordionBody}>
-                      <div className={styles.imgBox}>
+                      {/* <div className={styles.imgBox}>
                         <ImageCustom
                           src={
                             data.img.data.attributes.url
@@ -111,7 +111,7 @@ const SolutionOurValues = ({ props }) => {
                           height={200}
                           alt="bannerImg"
                         />
-                      </div>
+                      </div> */}
                       <div className={styles.accordionBodyContent}>
                         {data.Description}
                         <ul className={styles.listStyle}>
@@ -119,7 +119,7 @@ const SolutionOurValues = ({ props }) => {
                             ?.split(",")
                             .map((items, index) => (
                               <li key={index}>
-                                <Icons.CheckIcon />
+                                {/* <Icons.CheckIcon /> */}
                                 {items}
                               </li>
                             ))}

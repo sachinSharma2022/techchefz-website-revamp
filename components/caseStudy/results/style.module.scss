@@ -69,7 +69,7 @@
       padding: 2rem;
       border: 0.14rem solid rgba(color(text-primary), 0.12);
       background: color(bg-soft);
-      border-radius: 0.5rem;
+      border-radius: 1.5rem;
       @include transition(0.5s);
       
       @include mobile-tablet-p {
@@ -118,7 +118,7 @@
       .resultCard {
         padding: 1.25rem;
         max-width: 90%;
-        height: auto;
+        height: 15rem;
 
         h4 {
           max-width: 100%;

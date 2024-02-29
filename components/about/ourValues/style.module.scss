@@ -35,6 +35,7 @@
       max-width: 60%;
       @include mobile-tablet-p {
         font-size: 2rem;
+        max-width: 90%;
         line-height: 2.5rem;
       }
     }

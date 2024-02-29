@@ -23,11 +23,11 @@ const InsightOverview = ({props, Insightinner, TechStackData}) => {
           <div className={styles.publishDiv}>
             <div className={styles.publishFlex}>
               <p>{Insightinner[0].Title}</p>
-              <h6>{Insightinner[0].Description}</h6>
+              <h5>{Insightinner[0].Description}</h5>
             </div>
             <div className={styles.publishFlex}>
             <p>{Insightinner[1].Title}</p>
-              <h6>{Insightinner[1].Description}</h6>
+              <h5>{Insightinner[1].Description}</h5>
             </div>
           </div>
           <div className={styles.serviceDiv}>
