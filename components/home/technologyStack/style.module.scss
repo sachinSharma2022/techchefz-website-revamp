@@ -133,7 +133,7 @@
         margin-bottom: 3.75rem;
 
         @include mobile-tablet-p {
-          gap: 1rem 1rem;
+          gap: 1rem 0rem;
           margin-bottom: 3rem;
           flex-wrap: wrap;
         }

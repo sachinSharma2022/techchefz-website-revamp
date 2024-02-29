@@ -26,7 +26,11 @@ const PostCard = (props) => {
       <div className={styles.cardBody}>
         <h5 className={styles.cardTitle}>{props.title}</h5>
         <div className="d-flex justify-content-between align-items-center">
+          <div className="d-flex">
           <p className={styles.cardDate}>{props.date} </p>
+          <p className={styles.cardDate}>{props.readTime} </p>
+          </div>
+          
           <div className={styles.arrowIcon}>
             <Icons.ArrowLongRight size={18} />
           </div>
