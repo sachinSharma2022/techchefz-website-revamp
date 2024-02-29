@@ -289,7 +289,7 @@ const NavigationMobile = ({ props }) => {
                                 {props[2]?.DropDown[5]?.Description}
                               </p>
                             </Link>
-                            {/* <Link
+                            <Link
                               href={props[2]?.DropDown[6]?.Links}
                               className={cn(styles.hrefInnerFlex)}
                             >
@@ -302,7 +302,7 @@ const NavigationMobile = ({ props }) => {
                               <p className={styles.excepPara}>
                                 {props[2]?.DropDown[6]?.Description}
                               </p>
-                            </Link> */}
+                            </Link>
                             <Link
                               href={props[2]?.DropDown[7]?.Links}
                               className={cn(styles.hrefInnerFlex)}
@@ -410,7 +410,7 @@ const NavigationMobile = ({ props }) => {
                                 {props[4]?.DropDown[2]?.Description}
                               </p>
                             </Link>
-                            <Link
+                            {/* <Link
                               href={props[4]?.DropDown[3]?.Links}
                               onClick={closeMenu}
                               className={cn(styles.hrefInnerFlex)}
@@ -424,7 +424,7 @@ const NavigationMobile = ({ props }) => {
                               <p className={styles.excepPara}>
                                 {props[4]?.DropDown[3]?.Description}
                               </p>
-                            </Link>
+                            </Link> */}
                             <Link
                               href={props[4]?.DropDown[4]?.Links}
                               onClick={closeMenu}
