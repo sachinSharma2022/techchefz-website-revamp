@@ -55,6 +55,10 @@
     font-weight: 500;
     margin-bottom: 0.625rem;
     color: rgba(color(text-primary), 0.6);
+
+    @include mobile-tablet-p {
+      max-width: 90%;
+    }
   }
 
   .subContent {

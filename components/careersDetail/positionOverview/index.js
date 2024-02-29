@@ -7,8 +7,9 @@ import { Button } from "@/components/ui/button";
 import { MyContext } from "@/context/theme";
 import SmoothDropdown from "@/components/ui/smoothDropdownButton";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
-const CareerPositionOverview = ({ props }) => {
+const CareerPositionOverview = ({ props, href }) => {
   const { theme, setTheme } = useContext(MyContext);
   console.log(props, "pop");
 
@@ -46,9 +47,12 @@ const CareerPositionOverview = ({ props }) => {
           </div>
         </div>
         <div className={styles.applyButtons}>
-          <Button variant={theme ? "blueBtnDark" : "blueBtn"} size="md">
-            {props[0].Button}
-          </Button>
+          <Link href={href}>
+            <Button variant={theme ? "blueBtnDark" : "blueBtn"} size="md">
+              {props[0].Button}
+            </Button>
+          </Link>
+
           <SmoothDropdown
             options={options}
             buttonLabel="Apply through"

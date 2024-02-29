@@ -47,7 +47,7 @@ const Footer = () => {
                 insights by subscribing to our newsletter.
               </p>
 
-              <Link href="/contact-us" className={styles.partnerCard}>
+              {/* <Link href="/contact-us" className={styles.partnerCard}>
                 <div className={styles.partnerCols}>
                   <Link href="/contact-us">
                     Become our Partner <Icons.ArrowRight size={16} />
@@ -60,7 +60,7 @@ const Footer = () => {
                   height={198}
                   alt="partner-img"
                 />
-              </Link>
+              </Link> */}
 
               <div className={styles.subscribe}>
                 <h4 className="mb-3">Stay Ahead of the Tech Curve</h4>
@@ -97,10 +97,10 @@ const Footer = () => {
               <h4 className="mb-3">Follow Us on Social Media</h4>
               <div className={styles.footSocialLinks}>
                 <Link href="https://www.linkedin.com/company/techchefz/">
-                <Icons.linkedin size={16} /> <span>Linkedin</span>
+                  <Icons.linkedin size={16} /> <span>Linkedin</span>
                 </Link>
                 <Link href="https://www.facebook.com/techchefz">
-                 <Icons.facebook size={16} /> <span>Facebook</span>
+                  <Icons.facebook size={16} /> <span>Facebook</span>
                 </Link>
                 <Link href="/">
                   <Icons.twitter size={16} /> <span>Twitter</span>
@@ -140,13 +140,19 @@ const Footer = () => {
                     <Link href="/technology/microservices">Microservices</Link>
                   </li>
                   <li>
-                    <Link href="/technology/cloud-devsec-ops">Cloud & DevSecOps</Link>
+                    <Link href="/technology/cloud-devsec-ops">
+                      Cloud & DevSecOps
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/technology/data-intelligence">Data Intelligence</Link>
+                    <Link href="/technology/data-intelligence">
+                      Data Intelligence
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/technology/analytics-automation">Analysis Automation</Link>
+                    <Link href="/technology/analytics-automation">
+                      Analysis Automation
+                    </Link>
                   </li>
                 </ul>
               </div>

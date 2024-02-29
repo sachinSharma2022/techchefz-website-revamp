@@ -16,9 +16,15 @@ const CareerDetail = async ({ params }) => {
   }
   return (
     <>
-      <CareerPositionOverview props={data[index].attributes.DeveloperApply} />
+      <CareerPositionOverview
+        href="#contactSection"
+        props={data[index].attributes.DeveloperApply}
+      />
       <PositionDescription props={data[index].attributes.DeveloperDetail} />
-      <ContactSection props={data[index].attributes.Developercontact} />
+      <ContactSection
+        id="contactSection"
+        props={data[index].attributes.Developercontact}
+      />
       <MoreJobs props={data[index].attributes.MoreDetail} />
     </>
   );

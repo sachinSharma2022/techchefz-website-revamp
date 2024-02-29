@@ -437,4 +437,12 @@
   .fadeLink {
     opacity: 0.8;
   }
+
+  .subscribe {
+    margin-top: 5rem;
+
+    @include mobile-tablet-p {
+      margin-top: 3rem;
+    }
+  }
 }

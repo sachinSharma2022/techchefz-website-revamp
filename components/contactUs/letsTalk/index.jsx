@@ -17,7 +17,6 @@ import { useState } from "react";
 
 const LetsTalk = ({ props }) => {
   const { theme } = useContext(MyContext);
-  
 
   const dropdownData = [
     { value: "Projects", label: "Projects" },
@@ -98,6 +97,7 @@ const LetsTalk = ({ props }) => {
               dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
             ></p>
           </div>
+
           {/* For desktop */}
           <div className={styles.contactTabWrap}>
             <Tab.Group vertical>
@@ -110,7 +110,7 @@ const LetsTalk = ({ props }) => {
                         selected && styles.buttonActive
                       )}
                     >
-                      {console.log(selected,"selected")}
+                      {console.log(selected, "selected")}
                       <div className={styles.highlightIcon}>
                         <ImageCustom
                           height={40}
@@ -242,33 +242,27 @@ const LetsTalk = ({ props }) => {
               </div>
             </Tab.Group>
           </div>
-           
-           {/* For mobile */}
-           <div className={`${styles.mobileTabContainer}`}>
 
-           <div className={`${styles.tabDropdownMob}`}>
-            <h3 className={styles.tabDropLabel}>Choose Purpose</h3>
-            <Select
-              isSearchable={false}
-              options={dropdownData}
-              styles={controlStyle}
-              defaultValue={{ label: "Project", value: "Project" }}
-              onChange={(option)=>{
-                setForm(option.value)
-              }}
-            />
+          {/* For mobile */}
+          <div className={`${styles.mobileTabContainer}`}>
+            <div className={`${styles.tabDropdownMob}`}>
+              <h3 className={styles.tabDropLabel}>Choose Purpose</h3>
+              <Select
+                isSearchable={false}
+                options={dropdownData}
+                styles={controlStyle}
+                defaultValue={{ label: "Project", value: "Project" }}
+                onChange={(option) => {
+                  setForm(option.value);
+                }}
+              />
+            </div>
+            {form === "Projects" && <ProjectForm />}
+            {form === "Services" && <ServicesForm />}
+            {form === "Careers" && <JobsForm />}
+            {form === "Vendors" && <VendorForm />}
           </div>
-         {form==="Projects" && <ProjectForm />}
-         {form==="Services" && <ServicesForm />}
-         {form==="Careers" && <JobsForm />}
-         {form==="Vendors" && <VendorForm />}
-         
-
-          
         </div>
-
-           </div>
-         
       </div>
     </section>
   );
