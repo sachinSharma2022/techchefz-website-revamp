@@ -27,6 +27,11 @@
       font-size: text(larger);
       margin-bottom: 2.75rem;
       @include textGradient;
+      @include mobile-tablet-p {
+        font-size: 2rem;
+        line-height: 2.5rem;
+        margin-bottom: text(lg);
+      }
     }
   }
 

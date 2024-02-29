@@ -55,7 +55,7 @@ const ServicesForm = () => {
       onSubmit={(values, action) => {
         dialogOpen()
         setinprogress(true);
-        triggerMail({ content: JSON.stringify(values) });
+        triggerMail({ content: JSON.stringify(values),formType:"Services"  });
         action.resetForm();
         setTimeout(() => {
           setinprogress(false);

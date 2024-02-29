@@ -60,7 +60,7 @@ const VendorForm = () => {
       onSubmit={(values, action) => {
         dialogOpen()
         setinprogress(true);
-        triggerMail({ content: JSON.stringify(values) });
+        triggerMail({ content: JSON.stringify(values),formType:"Vendor"  });
         action.resetForm();
         setTimeout(() => {
           setinprogress(false);

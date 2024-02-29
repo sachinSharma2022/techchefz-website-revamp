@@ -70,7 +70,7 @@ const handler = async (req, res) => {
       const { method,body } = req;
       switch (method) {
         case "POST": {
-          const content=prepEmailTemplate(body["content"])
+          const content=prepEmailTemplate(body["content"],body["formType"])
          const response= await sendMail(
           content
           );

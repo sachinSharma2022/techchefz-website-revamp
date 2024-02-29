@@ -34,7 +34,8 @@ const CountryDropdown = (props) => {
       },
       flexWrap: "nowrap",
       boxShadow: "none",
-      fontFamily: "../public/fonts/Aeonik-Regular.otf",
+      // fontFamily: "../public/fonts/Aeonik-Regular.otf",
+      fontFamily: "arial",
     }),
     placeholder: (defaultStyles) => {
       return {
@@ -92,14 +93,18 @@ const CountryDropdown = (props) => {
       >
         <Select
           onChange={(option) => {
-            if (option) props.setFieldValue("countyCode", option.value);
+            if (option) props.setFieldValue("countyCode", option.label);
           }}
           ref={ref}
-          options={countryList.map(item => ({ label: item?.dial_code, value: item?.name ,image:item?.flag,code:item?.code}))}
+          options={countryList.map((item) => ({
+            label: item?.dial_code,
+            value: item?.name,
+            image: item?.flag,
+            code: item?.code,
+          }))}
           styles={controlStyle || styles}
           isSearchable={false}
           formatOptionLabel={(country) => (
-           
             <div className={styles.countryOption}>
               {/* {country.image} */}
               <ImageCustom

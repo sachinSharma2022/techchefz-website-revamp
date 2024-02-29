@@ -17,7 +17,7 @@ const Insights = async () => {
   return (
     <div>
       <InsightBanner props={data.InsightBanner} />
-      <InsightFeatures props={data.InsightFeatures} feature={data_inside} />
+      <InsightFeatures props={data.InsightFeatures} featureInsight={data.featureInsight} feature={data_inside} />
       <Innovation props={data.ourInnvotion} />
     </div>
   );

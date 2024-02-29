@@ -78,6 +78,12 @@
     }
   }
 
+  .mobileSlider {
+    @include mobile-tablet-p {
+      margin-right: -20px;
+    }
+  }
+
   // Dark Mode
   &.technologyCaseDark {
     background-color: color(input-bg);

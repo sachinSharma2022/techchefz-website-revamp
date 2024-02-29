@@ -19,9 +19,13 @@ const Career = async () => {
     <>
       {data ? (
         <div>
-          <CareerBanner props={data.CareerBanner} gallary={data.gallary} />
+          <CareerBanner
+            href="#OpenPosition"
+            props={data.CareerBanner}
+            gallary={data.gallary}
+          />
           <TczLife props={data.Lifeattechchefz} />
-          <OpenPosition props={data_career_details} />
+          <OpenPosition id="OpenPosition" props={data_career_details} />
           <HomeTestimonials testimonials={data.Testimonials} />
           <TechnologyValues
             wrapperStyle="technology-career-style"

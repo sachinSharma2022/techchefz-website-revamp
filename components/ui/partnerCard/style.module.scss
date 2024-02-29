@@ -15,10 +15,9 @@
 
   @include mobile-tablet-p {
     padding: 1.5rem;
+    width: 92%;
+    min-height: 290px;
   }
-
-  
-  
 
   .cardImg {
     width: 100%;
@@ -26,22 +25,26 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2.5rem;
-    .iconContainer{
+    .iconContainer {
       display: flex;
       flex-direction: column;
       width: 2rem;
       height: 2rem;
       overflow: hidden;
-      .iconAnimateOne>svg{
-        transition: transform 0.4s ease 0.2s,opacity 0.3s ease 0.2s;
-        
+
+      @include mobile-tablet-p {
+        width: auto;
       }
-      .iconAnimate>svg{
+
+      .iconAnimateOne > svg {
+        transition: transform 0.4s ease 0.2s, opacity 0.3s ease 0.2s;
+      }
+      .iconAnimate > svg {
         position: relative;
-    top: -0.7rem;
-    left: -0.8rem;
+        top: -0.7rem;
+        left: -0.8rem;
         opacity: 0;
-        transition: transform 0.4s ease 0.2s,opacity 0.3s ease 0.2s;
+        transition: transform 0.4s ease 0.2s, opacity 0.3s ease 0.2s;
       }
     }
 
@@ -84,38 +87,38 @@
     line-height: 1.5rem;
     opacity: 0.8;
     margin-bottom: 0;
+    @include truncate(5);
   }
 
   &:hover {
     border-color: color(heading-liner);
-   
-    .cardImg .iconAnimateOne svg{
-      transform: translate(100%,-100%);
+
+    .cardImg .iconAnimateOne svg {
+      transform: translate(100%, -100%);
       opacity: 0;
-  
     }
-    .cardImg .iconAnimate svg{
+    .cardImg .iconAnimate svg {
       transform: translate(90%, -90%);
       opacity: 1;
-  
     }
     // &:hover>.cardImg>.iconContainer>.iconAnimateOne>svg{
     //   transform: translate(100%,-100%);
     //   opacity: 0;
-  
+
     // }
     // &:hover>.cardImg>.iconContainer>.iconAnimate>svg{
     //   transform: translate(90%, -90%);
     //   opacity: 1;
-  
+
     // }
   }
 
+
+  // Dark Theme
   &.partnerCardDark {
     background-color: color(text-primary);
     color: color(primary-white);
     border-color: rgba(color(primary-white), 0.12);
-
 
     &:hover {
       border-color: color(heading-liner);
@@ -134,5 +137,4 @@
       }
     }
   }
-
 }

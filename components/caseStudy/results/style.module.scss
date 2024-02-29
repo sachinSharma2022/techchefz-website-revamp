@@ -71,6 +71,10 @@
       background: color(bg-soft);
       border-radius: 1.5rem;
       @include transition(0.5s);
+      
+      @include mobile-tablet-p {
+        min-height: 220px;
+      }
 
       &:hover {
         border-color: color(heading-liner);
@@ -98,13 +102,16 @@
         @include mobile-tablet-p {
           max-width: 100%;
           font-size: text(normal);
-          line-height: 1.5rem;
+          line-height: 1.4rem;
+          @include truncate(3);
         }
       }
     }
   }
 
   .mobileSliderCard {
+    margin-right: -20px;
+    
     .resultCards {
       display: block;
       

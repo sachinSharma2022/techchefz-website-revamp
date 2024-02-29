@@ -9,7 +9,7 @@ import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 import { base_Uri } from "@/lib/constants";
 
-const InsightFeatures = ({ props, feature }) => {
+const InsightFeatures = ({ props, featureInsight, feature }) => {
   const { theme, setTheme } = useContext(MyContext);
   console.log(feature, "feat");
 
@@ -36,7 +36,7 @@ const InsightFeatures = ({ props, feature }) => {
         <div className={styles.featureInsight}>
           <h5
             className={cn(styles.insightSubHeading, "gradient-text")}
-            dangerouslySetInnerHTML={{ __html: `${feature[0].Title}` }}
+            dangerouslySetInnerHTML={{ __html: `${featureInsight[0].Title}` }}
           ></h5>
           <div className={styles.featureInsightCards}>
             {feature
@@ -54,7 +54,8 @@ const InsightFeatures = ({ props, feature }) => {
                       : `${base_Uri}/`
                   }
                   title={data?.attributes?.InsightOverview[0].Title}
-                  date={data?.attributes?.updatedAt}
+                  date={data?.attributes?.InsightOverview[0]?.Date}
+                  readTime={data?.attributes?.InsightOverview[0]?.ReadingTime}
                   cardStyle={styles.featureImgBox}
                   theme={theme}
                   href={`/insights/${data?.id}`}
@@ -79,18 +80,23 @@ const InsightFeatures = ({ props, feature }) => {
                       : `${base_Uri}/`
                   }
                   title={data?.attributes?.InsightOverview[0].Title}
-                  date={data?.attributes?.updatedAt}
+                  date={data?.attributes?.InsightOverview[0]?.Date}
+                  readTime={data?.attributes?.InsightOverview[0]?.ReadingTime}
                   theme={theme}
                   href={`/insights/${data?.id}`}
                 />
               ))}
           </div>
-
-          <div className={styles.insightButton}>
-            <Button variant={theme ? "lightBlueOutline" : "outline"} size="md">
-              {feature[1].Button}
-            </Button>
-          </div>
+          {feature.length > 9 && (
+            <div className={styles.insightButton}>
+              <Button
+                variant={theme ? "lightBlueOutline" : "outline"}
+                size="md"
+              >
+                {feature[1].Button}
+              </Button>
+            </div>
+          )}
         </div>
       </div>
     </section>

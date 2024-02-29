@@ -9,7 +9,7 @@ import Link from "next/link";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
 
-const CareerBanner = ({ props, gallary }) => {
+const CareerBanner = ({ props, gallary, href }) => {
   console.log("dataaa", props);
   const { theme, setTheme } = useContext(MyContext);
   return (
@@ -26,7 +26,7 @@ const CareerBanner = ({ props, gallary }) => {
           ></h1>
           <div className={styles.desc}>
             <p className={styles.leadText}>{props[0]?.Description}</p>
-            <Link href="/careers/career-details">
+            <Link href={href}>
               <Button
                 variant={theme ? "blueBtnDark" : "blueBtn"}
                 className={styles.headerBtn}

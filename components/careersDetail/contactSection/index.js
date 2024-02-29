@@ -17,12 +17,12 @@ import { triggerMail } from "@/lib/triggerMail";
 import CircleLoader from "@/components/ui/circleLoader";
 import ConfirmationPopup from "@/components/ui/confirmationPopup";
 
-const ContactSection = ({ props }) => {
+const ContactSection = ({ props, id }) => {
   const { theme, setTheme } = useContext(MyContext);
   const recaptchaRef = useRef(null);
   const [isVerified, setIsverified] = useState(false);
   const [inprogress, setinprogress] = useState(false);
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
   const formInitialSchema = {
     firstName: "",
     lastName: "",
@@ -47,9 +47,9 @@ const ContactSection = ({ props }) => {
     initialValues: formInitialSchema,
     validationSchema: careerValidationSchema,
     onSubmit: (values, action) => {
-      dialogOpen()
+      dialogOpen();
       setinprogress(true);
-      triggerMail({ content: JSON.stringify(values) });
+      triggerMail({ content: JSON.stringify(values), formType: "Job" });
       action.resetForm();
       setTimeout(() => {
         setinprogress(false);
@@ -63,14 +63,15 @@ const ContactSection = ({ props }) => {
       .then(() => setIsverified(true))
       .catch(() => setIsverified(false));
   }
-  const dialogOpen=()=>setIsOpen(true)
-  const dialogClose=()=>setIsOpen(false)
+  const dialogOpen = () => setIsOpen(true);
+  const dialogClose = () => setIsOpen(false);
 
   return (
     <section
       className={`${styles.contactSectionStyle} ${
         theme ? styles.contactSectionStyleDark : ""
       }`}
+      id={id}
     >
       <div className={cn("primary-container")}>
         <div className={styles.workArea}>
@@ -254,7 +255,6 @@ const ContactSection = ({ props }) => {
                           : false
                       }
                       type="submit"
-                     
                     >
                       Send a Message
                       {inprogress ? (
