@@ -105,6 +105,12 @@
     }
   }
 
+  .mobileSlider {
+    @include mobile-tablet-p {
+      margin-right: -20px;
+    }
+  }
+
   //Dark mode style
   &.cmsTypeDark {
     color: color(primary-white);

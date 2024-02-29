@@ -7,7 +7,6 @@
   @include mobile-tablet-p {
     padding: spacing(section-mob-padding);
     padding-block: 3.75rem 3.75rem;
-    padding: 2rem;
   }
 
   .openPositionHeader {
@@ -17,7 +16,7 @@
 
     @include mobile-tablet-p {
       flex-direction: column;
-      margin-bottom: 3.5rem;
+      margin-bottom: 1rem;
     }
 
     .openPositionHeading {
@@ -205,6 +204,7 @@
           font-weight: 500;
           line-height: 2rem;
           margin-bottom: 1rem;
+
           @include mobile-tablet-p {
             margin-bottom: 0.5rem;
           }

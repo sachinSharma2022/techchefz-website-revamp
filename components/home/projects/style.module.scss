@@ -126,6 +126,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      @include transition(0.5s);
     }
   }
 

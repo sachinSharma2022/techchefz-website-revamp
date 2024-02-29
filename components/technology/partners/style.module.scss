@@ -61,6 +61,14 @@
       grid-template-columns: repeat(1, 1fr);
     }
   }
+
+  // mobileSlider
+  .mobileSlider {
+
+    @include mobile-tablet-p {
+      margin-right: -20px;
+    }
+  }
 }
 
 // Modal Body Content section
