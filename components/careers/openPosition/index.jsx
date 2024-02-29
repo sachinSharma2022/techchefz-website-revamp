@@ -72,7 +72,7 @@ const OpenPosition = ({ props }) => {
                <h4 className={cn(styles.openPositionHeading, "gradient-text")}>
                   <span>{props.length}</span> Open Position
                </h4>
-               <SearchInput />
+               {/* <SearchInput /> */}
             </div>
 
             <div className={styles.serviceBtn}>
