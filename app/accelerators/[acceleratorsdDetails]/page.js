@@ -23,7 +23,7 @@ const AcceleratorDetails = async ({params}) => {
           <AcceleratorIndustry props={data[index].attributes.Media} />
           <Impact props={data[index].attributes.Impact} />
           <FeatureCard props={data[index].attributes.Challanges} />
-          <RelatedCase className="mt-0 mb-5 pt-5 pb-0" props={data[index].attributes.CaseStudy} />
+          <RelatedCase className="mt-0 mb-5 pt-5 pb-0" props={data} />
           <LetsWork contact={data[index].attributes.LetsWork} />
         </div>
       ) : (

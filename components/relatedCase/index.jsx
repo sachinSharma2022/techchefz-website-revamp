@@ -9,7 +9,7 @@ import Slider from "react-slick";
 import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
 
-const RelatedCase = ({ props, className, sliderClassName }) => {
+const RelatedCase = ({ props, className, sliderClassName,params }) => {
   const [oldSlide, setOldSlide] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
   const [activeSlide2, setActiveSlide2] = useState(0);
@@ -74,11 +74,11 @@ const RelatedCase = ({ props, className, sliderClassName }) => {
           <div>
             <h6
               className={cn(styles.relatedCaseTitle, "gradient-text")}
-              dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+              dangerouslySetInnerHTML={{ __html: `${props[0]?.attributes?.CaseStudy?.Title}` }}
             ></h6>
             <h3
               className={cn(styles.relatedCaseHeading, "gradient-text")}
-              dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
+              dangerouslySetInnerHTML={{ __html: `${props[0]?.attributes?.CaseStudy?.Description}` }}
             ></h3>
           </div>
 
@@ -108,17 +108,19 @@ const RelatedCase = ({ props, className, sliderClassName }) => {
           )}
         >
           <Slider {...settings} ref={slider}>
-            {props?.CaseStudyCard?.map((data, index) => (
+            {props.map((data, index) => (
               <div key={index}>
                 <CaptionCard
                   className={styles.cardStyle}
                   imgSrc={
-                    data?.Image?.data?.attributes?.url
-                      ? base_Uri + data?.Image?.data?.attributes?.url
+                    data?.attributes?.Banner?.PortfolioImage?.data?.attributes?.url
+                      ? base_Uri + data?.attributes?.Banner?.PortfolioImage?.data?.attributes?.url
                       : `${base_Uri}/`
                   }
-                  title={data?.Title}
+                  title={ data?.attributes?.Banner?.PortfolioTitle}
+                  redirect={data.id}
                   textStyle={styles.textStyle}
+                  params={params}
                 />
               </div>
             ))}
