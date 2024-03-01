@@ -19,6 +19,7 @@ import "swiper/css/navigation";
 import styles from "./style.module.scss";
 
 const Testimonials = ({ props }) => {
+ 
   const { theme, setTheme } = useContext(MyContext);
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
@@ -102,8 +103,11 @@ const Testimonials = ({ props }) => {
                             />
                           </div>
                           <p className={styles.customerRole}>
-                            {data.CustomerRole}
+                            {data.ProfileName}
                           </p>
+                          <p className={styles.customerRole}>
+                          {data?.Designation}
+                        </p>
                         </div>
                       </div>
                     </SwiperSlide>
@@ -189,10 +193,10 @@ const Testimonials = ({ props }) => {
                           />
                         </div>
                         <p className={styles.customerName}>
-                          {data.ProfileName}
+                          {data?.ProfileName}
                         </p>
                         <p className={styles.customerRole}>
-                          {data.Designation}
+                          {data?.Designation}
                         </p>
                       </div>
                     </div>

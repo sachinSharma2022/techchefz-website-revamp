@@ -138,7 +138,17 @@ const OpenPosition = ({ props, id }) => {
                                           ?.Title
                                       }{" "}
                                     </h4>
-                                    <p>{item?.Location}</p>
+                                    <p>
+                                      {
+                                        item?.attributes?.DeveloperDetail[5]
+                                          ?.Title
+                                      }
+                                    </p>
+                                    <ul
+                                      dangerouslySetInnerHTML={{
+                                        __html: `${item?.attributes?.DeveloperDetail[5]?.FullDescription}`,
+                                      }}
+                                    ></ul>
                                   </div>
                                   <div className={styles.buttonIcon}>
                                     <Icons.ArrowDown />
@@ -150,51 +160,48 @@ const OpenPosition = ({ props, id }) => {
                                   <div className={styles.accordionContent}>
                                     <h6
                                       dangerouslySetInnerHTML={{
-                                        __html: `${item?.attributes?.DeveloperDetail[0]?.FullDescription}`,
+                                        __html: `${item?.attributes?.DeveloperDetail[0]?.Title}`,
                                       }}
                                     ></h6>
-                                    {/* <p>
-                            Your specific duties will be based upon your
-                            experience as a UI/UX Designer. In this role, you
-                            will be responsible for designing and delivering
-                            UI/UX for products in accordance with WonderBotz
-                            standards practices. You will work closely
-                            together with our enthusiastic team of both
-                            business and technical specialists. You will be
-                            part of a fast-growing and successful team that
-                            helps our clients get the maximum benefits.
-                          </p>
-                          <h6>Required Skills</h6>
-                          <ul>
-                            <li>Design and update job descriptions.</li>
-                            <li>
-                              Source potential candidates from various online
-                              channels (e.g. social media and professional
-                              platforms).
-                            </li>
-                            <li>
-                              Craft recruiting emails to attract passive
-                              candidates.
-                            </li>
-                            <li>
-                              Screen incoming resumes and application forms.
-                            </li>
-                            <li>
-                              Interview candidates (via phone, video and
-                              in-person).
-                            </li>
-                          </ul>
-                          <h6>Qualifications</h6>
-                          <ul>
-                            <li>
-                              6+ Years of Experience in a Service based
-                              Company
-                            </li>
-                          </ul>
-                          <h6>Location</h6>
-                          <ul>
-                            <li>Remote</li>
-                          </ul> */}
+                                    <p>
+                                      {
+                                        item?.attributes?.DeveloperDetail[0]
+                                          ?.FullDescription
+                                      }
+                                    </p>
+                                    <h6>
+                                      {
+                                        item?.attributes?.DeveloperDetail[2]
+                                          ?.Title
+                                      }{" "}
+                                    </h6>
+                                    <ul
+                                      dangerouslySetInnerHTML={{
+                                        __html: `${item?.attributes?.DeveloperDetail[2]?.FullDescription}`,
+                                      }}
+                                    ></ul>
+                                    <h6>
+                                      {
+                                        item?.attributes?.DeveloperDetail[4]
+                                          ?.Title
+                                      }
+                                    </h6>
+                                    <ul
+                                      dangerouslySetInnerHTML={{
+                                        __html: `${item?.attributes?.DeveloperDetail[4]?.FullDescription}`,
+                                      }}
+                                    ></ul>
+                                    <h6>
+                                      {
+                                        item?.attributes?.DeveloperDetail[5]
+                                          ?.Title
+                                      }
+                                    </h6>
+                                    <ul
+                                      dangerouslySetInnerHTML={{
+                                        __html: `${item?.attributes?.DeveloperDetail[5]?.FullDescription}`,
+                                      }}
+                                    ></ul>
 
                                     <div className={styles.btnSection}>
                                       <Link href={`/careers/${item?.id}`}>
