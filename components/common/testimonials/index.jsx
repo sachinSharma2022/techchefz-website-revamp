@@ -96,8 +96,8 @@ const Testimonials = ({ props }) => {
                                   ? `${base_Uri}${data?.ProfileImage?.data?.attributes?.url}`
                                   : `${base_Uri}/`
                               }
-                              width={100}
-                              height={100}
+                              width={88}
+                              height={88}
                               alt="profileImg"
                             />
                           </div>
