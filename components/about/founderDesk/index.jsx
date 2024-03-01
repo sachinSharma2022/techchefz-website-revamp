@@ -67,10 +67,8 @@ const FounderDesk = ({ props }) => {
           </div>
 
           <div className={styles.paraSection}>
-            <div className={styles.textWrapper}>
-              <p
-                dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
-              ></p>
+            <div className={styles.textWrapper} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
+           
             </div>
             <div className={styles.buttonSection}>
               <Button>Read More</Button>
