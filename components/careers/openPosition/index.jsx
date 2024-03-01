@@ -138,13 +138,14 @@ const OpenPosition = ({ props, id }) => {
                                           ?.Title
                                       }{" "}
                                     </h4>
-                                    <p>
+                                    {/* <p>
                                       {
                                         item?.attributes?.DeveloperDetail[5]
                                           ?.Title
                                       }
-                                    </p>
+                                    </p> */}
                                     <ul
+                                  
                                       dangerouslySetInnerHTML={{
                                         __html: `${item?.attributes?.DeveloperDetail[5]?.FullDescription}`,
                                       }}
