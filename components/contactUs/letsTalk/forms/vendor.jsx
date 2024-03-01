@@ -58,12 +58,13 @@ const VendorForm = () => {
      <ConfirmationPopup open={isOpen} onClose={dialogClose} />
      <Formik
       onSubmit={(values, action) => {
-        dialogOpen()
         setinprogress(true);
         triggerMail({ content: JSON.stringify(values),formType:"Vendor"  });
-        action.resetForm();
         setTimeout(() => {
+          action.resetForm();
+          recaptchaRef.current.reset()
           setinprogress(false);
+          dialogOpen();
         }, 4000);
       }}
       initialValues={formInitialSchema}

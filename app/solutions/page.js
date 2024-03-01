@@ -4,8 +4,8 @@ import SolutionHeroBanner from "@/components/solutions/solutionHeroBanner";
 import SolutionOurValues from "@/components/solutions/solutionOurValues";
 import SolutionTechnologies from "@/components/solutions/solutionTechnologies";
 import SolutionTheProcess from "@/components/solutions/solutionTheProcess";
-import { api_Solutions_Page,api_Case_study_Page } from "@/lib/constants";
-import { getData,getDataDynamic } from "@/lib/fetchData";
+import { api_Solutions_Page, api_Case_study_Page } from "@/lib/constants";
+import { getData, getDataDynamic } from "@/lib/fetchData";
 import styles from "./style.module.scss";
 
 export const metadata = {
@@ -22,7 +22,7 @@ const Solutions = async () => {
       <SolutionOurValues props={data.ourValues} />
       <SolutionTheProcess props={data.OurProcess} />
       <SolutionTechnologies props={data.Technology} />
-      <RelatedCase sliderClassName="mb-0" props={data_related_cases} />
+      <RelatedCase props={data_related_cases} />
       <Faq props={data.Faq} />
     </div>
   );

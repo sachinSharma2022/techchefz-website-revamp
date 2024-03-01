@@ -9,7 +9,7 @@ import Slider from "react-slick";
 import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
 
-const RelatedCase = ({ props, className, sliderClassName,params }) => {
+const RelatedCase = ({ props, className, sliderClassName, params }) => {
   const [oldSlide, setOldSlide] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
   const [activeSlide2, setActiveSlide2] = useState(0);
@@ -66,7 +66,7 @@ const RelatedCase = ({ props, className, sliderClassName,params }) => {
       className={cn(
         styles.relatedCase,
         theme ? styles.relatedCaseDark : "",
-        className
+        className ? className : styles.spaceStyle
       )}
     >
       <div className={cn("primary-container relative")}>
@@ -74,11 +74,15 @@ const RelatedCase = ({ props, className, sliderClassName,params }) => {
           <div>
             <h6
               className={cn(styles.relatedCaseTitle, "gradient-text")}
-              dangerouslySetInnerHTML={{ __html: `${props[0]?.attributes?.CaseStudy?.Title}` }}
+              dangerouslySetInnerHTML={{
+                __html: `${props[0]?.attributes?.CaseStudy?.Title}`,
+              }}
             ></h6>
             <h3
               className={cn(styles.relatedCaseHeading, "gradient-text")}
-              dangerouslySetInnerHTML={{ __html: `${props[0]?.attributes?.CaseStudy?.Description}` }}
+              dangerouslySetInnerHTML={{
+                __html: `${props[0]?.attributes?.CaseStudy?.Description}`,
+              }}
             ></h3>
           </div>
 
@@ -113,11 +117,14 @@ const RelatedCase = ({ props, className, sliderClassName,params }) => {
                 <CaptionCard
                   className={styles.cardStyle}
                   imgSrc={
-                    data?.attributes?.Banner?.PortfolioImage?.data?.attributes?.url
-                      ? base_Uri + data?.attributes?.Banner?.PortfolioImage?.data?.attributes?.url
+                    data?.attributes?.Banner?.PortfolioImage?.data?.attributes
+                      ?.url
+                      ? base_Uri +
+                        data?.attributes?.Banner?.PortfolioImage?.data
+                          ?.attributes?.url
                       : `${base_Uri}/`
                   }
-                  title={ data?.attributes?.Banner?.PortfolioTitle}
+                  title={data?.attributes?.Banner?.PortfolioTitle}
                   redirect={data.id}
                   textStyle={styles.textStyle}
                   params={params}

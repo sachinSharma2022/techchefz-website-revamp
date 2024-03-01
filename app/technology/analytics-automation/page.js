@@ -7,8 +7,11 @@ import CmsDifference from "@/components/technology/cms/cmsDifference";
 import CmsPlayer from "@/components/technology/cms/cmsPlayer";
 import CmsType from "@/components/technology/cms/cmsType";
 import WhyCms from "@/components/technology/cms/whyCms";
-import { api_analytics_automations_Page,api_Case_study_Page } from "@/lib/constants";
-import { getData ,getDataDynamic} from "@/lib/fetchData";
+import {
+  api_analytics_automations_Page,
+  api_Case_study_Page,
+} from "@/lib/constants";
+import { getData, getDataDynamic } from "@/lib/fetchData";
 
 const Cms = async () => {
   const data = await getData(api_analytics_automations_Page);
@@ -28,7 +31,10 @@ const Cms = async () => {
           /> */}
           <SolutionTheProcess props={data.OurProcess} />
           <Faq props={data.Faq} />
-          <RelatedCase sliderClassName="mb-0" props={data_related_cases} />
+          <RelatedCase
+            className="case-related-style"
+            props={data_related_cases}
+          />
 
           <LetsWork contact={data.ContactUs} />
         </div>

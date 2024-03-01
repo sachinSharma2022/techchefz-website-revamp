@@ -2,7 +2,7 @@ import InsightDetail from "@/components/insightInside/insightDetail";
 import InsightOverview from "@/components/insightInside/insightOverview";
 import RelatedCase from "@/components/relatedCase";
 import { getDataDynamic } from "@/lib/fetchData";
-import { api_insight_insides_Page,api_Case_study_Page } from "@/lib/constants";
+import { api_insight_insides_Page, api_Case_study_Page } from "@/lib/constants";
 
 const InsightInside = async ({ params }) => {
   const data = await getDataDynamic(api_insight_insides_Page);
@@ -25,11 +25,7 @@ const InsightInside = async ({ params }) => {
         props={data[index].attributes.insightDetailData}
         BlockTitle={data[index].attributes.BlockTitle}
       />
-      <RelatedCase
-        subTitle="INSIGHTS"
-        title="Explore More of Our Insights"
-        props={data_related_cases}
-      />
+      <RelatedCase props={data_related_cases} />
     </>
   );
 };

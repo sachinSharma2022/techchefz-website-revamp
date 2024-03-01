@@ -279,10 +279,6 @@
   font-size: text(normal);
   border-radius: 0.5rem;
   font-weight: 500;
-
-  @include mobile {
-    height: 2.75rem;
-  }
 }
 
 .size_xs {

@@ -1067,12 +1067,23 @@ html.lenis {
 
 // Case Related Spacing
 .case-related-style {
-  padding-bottom: 0 !important;
+  margin-block: 8.75rem 0;
 
   @include mobile-tablet-p {
-    padding-block: 0rem 5rem !important;
+    margin-block: 2.5rem 6rem;
+    padding-inline: 1.25rem;
   }
 }
+
+.tech-related-style {
+  margin: 0;
+
+  @include mobile-tablet-p {
+    margin-block: 2.5rem 6rem;
+    padding-inline: 1.25rem;
+  }
+}
+
 .enter {
   transition: opacity 300ms, transform 400ms;
 }

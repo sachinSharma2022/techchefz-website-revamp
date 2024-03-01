@@ -25,15 +25,15 @@ import ConfirmationPopup from "@/components/ui/confirmationPopup";
 const LetsWork = ({ contact }) => {
   const { theme, setTheme } = useContext(MyContext);
   const [inprogress, setinprogress] = useState(false);
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   const formInitialSchema = {
     firstName: "",
-    lastName:"",
+    lastName: "",
     email: "",
     phone: "",
     countyCode: "",
-    selectPurpose:"",
+    selectPurpose: "",
     companyName: "",
     projectExplanation: "",
   };
@@ -50,13 +50,13 @@ const LetsWork = ({ contact }) => {
     initialValues: formInitialSchema,
     validationSchema: commonValidationSchema,
     onSubmit: (values, action) => {
-      console.log(values);
-      dialogOpen()
       setinprogress(true);
       triggerMail({ content: JSON.stringify(values) });
-      action.resetForm();
       setTimeout(() => {
+        action.resetForm();
+        recaptchaRef.current.reset();
         setinprogress(false);
+        dialogOpen();
       }, 4000);
     },
   });
@@ -70,8 +70,8 @@ const LetsWork = ({ contact }) => {
       .then(() => setIsverified(true))
       .catch(() => setIsverified(false));
   }
-  const dialogOpen=()=>setIsOpen(true)
-  const dialogClose=()=>setIsOpen(false)
+  const dialogOpen = () => setIsOpen(true);
+  const dialogClose = () => setIsOpen(false);
 
   return (
     <section
@@ -83,7 +83,7 @@ const LetsWork = ({ contact }) => {
       <div className={cn("primary-container")}>
         <div className={styles.workArea}>
           <div className={styles.workGrid}>
-          <ConfirmationPopup open={isOpen} onClose={dialogClose} />
+            <ConfirmationPopup open={isOpen} onClose={dialogClose} />
 
             <Formik>
               <Form onSubmit={handleSubmit}>
@@ -224,14 +224,15 @@ const LetsWork = ({ contact }) => {
                       sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                       ref={recaptchaRef}
                       onChange={handleCaptchaSubmission}
-                      className={styles.reCaptcha}
                     />
                   </div>
                   <div className={styles.policyArea}>
                     <p className={styles.policyText}>
                       {contact?.policy}
                       <span className={styles.policyHighlight}>
-                        <Link href={contact?.BtnLink} target="_blank">Privacy Policy</Link>
+                        <Link href={contact?.BtnLink} target="_blank">
+                          Privacy Policy
+                        </Link>
                       </span>
                     </p>
                     <div className={`${styles.buttonGrid}`}>
@@ -247,10 +248,7 @@ const LetsWork = ({ contact }) => {
                             : false
                         }
                         type="submit"
-                        onClick={()=>{
-                         
-                        }}
-
+                        onClick={() => {}}
                       >
                         {contact?.Btn}
                         {inprogress ? (

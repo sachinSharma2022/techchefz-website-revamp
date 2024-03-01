@@ -27,7 +27,7 @@ const HomepageIntro = (props) => {
             scrub: 1,
             start: "top 1%",
             end: "+=" + (230 + window.innerHeight),
-            markers: true,
+            markers: false,
             invalidateOnRefresh: true,
             anticipatePin: 1,
           },
@@ -35,7 +35,7 @@ const HomepageIntro = (props) => {
         ScrollTrigger.create({
           trigger: `.${styles.videoCont}`,
           pin: true,
-          markers: true,
+          markers: false,
           start: "top 80rem",
           end: "+=" + (271 + window.innerHeight),
         });

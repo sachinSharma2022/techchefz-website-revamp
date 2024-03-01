@@ -9,7 +9,7 @@ import { MyContext } from "@/context/theme";
 import { projectValidationSchema } from "@/lib/FormSchema";
 import { triggerMail } from "@/lib/triggerMail";
 import { Form, Formik, useFormik } from "formik";
-import { useContext, useState, useRef } from "react";
+import { useContext, useState, useRef,useEffect } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { verifyCaptcha } from "@/lib/ServerActions";
 import CircleLoader from "@/components/ui/circleLoader";
@@ -51,12 +51,15 @@ const ProjectForm = () => {
     initialValues: formInitialSchema,
     validationSchema: projectValidationSchema,
     onSubmit: (values, action) => {
-      dialogOpen();
+      
       setinprogress(true);
       triggerMail({ content: JSON.stringify(values), formType: "Project" });
-      action.resetForm();
+      
       setTimeout(() => {
+        action.resetForm();
+        recaptchaRef.current.reset()
         setinprogress(false);
+        dialogOpen();
       }, 4000);
     },
   });
@@ -78,7 +81,7 @@ const ProjectForm = () => {
 
   return (
     <>
-      <ConfirmationPopup open={isOpen} onClose={dialogClose} />
+      <ConfirmationPopup open={isOpen} onClose={dialogClose} theme={theme} />
       <Formik>
         <Form onSubmit={handleSubmit}>
           <div className={styles.contactUsForm}>
@@ -211,6 +214,7 @@ const ProjectForm = () => {
                 sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                 ref={recaptchaRef}
                 onChange={handleCaptchaSubmission}
+                theme={"dark"}
               />
             </div>
             <div className={styles.policyArea}>
