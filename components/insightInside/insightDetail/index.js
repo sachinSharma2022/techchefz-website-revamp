@@ -35,7 +35,7 @@ const InsightDetail = ({ props, BlockTitle }) => {
 
           <div className={styles.insightDetailPara}>
             <h3> {BlockTitle?.Title}</h3>
-            <p> {BlockTitle?.Description}</p>
+            <p dangerouslySetInnerHTML={{ __html: `${BlockTitle?.Description}`}}></p>
 
             {BlockTitle?.Image?.data?.attributes?.url !== undefined &&
               BlockTitle?.Image?.data?.attributes?.url !== "" && (
