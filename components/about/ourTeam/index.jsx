@@ -170,14 +170,14 @@ const OurTeam = ({ props }) => {
               <div className={styles.socialSection}>
                 <h4>Let’s Get Connect</h4>
                 <div className={styles.modalIcons}>
-                <Link href={props[0]?.ListofDirectors[index]?.LinkedinLink}>
+                <Link href={props[0]?.ListofDirectors[index]?.LinkedinLink} target="_blank">
                   <Icons.Linkedin
                     className={styles.linkdinIcon}
                     width={34}
                     height={34}
                   />
                   </Link>
-                  <Link href={props[0]?.ListofDirectors[index]?.twitterlink}>
+                  <Link href={props[0]?.ListofDirectors[index]?.twitterlink} target="_blank">
                   <Icons.twitter
                     className={styles.twitter}
                     width={34}
