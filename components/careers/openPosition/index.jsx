@@ -138,7 +138,17 @@ const OpenPosition = ({ props, id }) => {
                                           ?.Title
                                       }{" "}
                                     </h4>
-                                    <p>{item?.Location}</p>
+                                    <p>
+                                      {
+                                        item?.attributes?.DeveloperDetail[5]
+                                          ?.Title
+                                      }
+                                    </p>
+                                    <ul
+                                      dangerouslySetInnerHTML={{
+                                        __html: `${item?.attributes?.DeveloperDetail[5]?.FullDescription}`,
+                                      }}
+                                    ></ul>
                                   </div>
                                   <div className={styles.buttonIcon}>
                                     <Icons.ArrowDown />
@@ -154,25 +164,44 @@ const OpenPosition = ({ props, id }) => {
                                       }}
                                     ></h6>
                                     <p>
-                                    {item?.attributes?.DeveloperDetail[0]?.FullDescription} 
-                          </p>
-                          <h6>{item?.attributes?.DeveloperDetail[2]?.Title} </h6>
-                          <ul dangerouslySetInnerHTML={{
+                                      {
+                                        item?.attributes?.DeveloperDetail[0]
+                                          ?.FullDescription
+                                      }
+                                    </p>
+                                    <h6>
+                                      {
+                                        item?.attributes?.DeveloperDetail[2]
+                                          ?.Title
+                                      }{" "}
+                                    </h6>
+                                    <ul
+                                      dangerouslySetInnerHTML={{
                                         __html: `${item?.attributes?.DeveloperDetail[2]?.FullDescription}`,
-                                      }}>
-                            
-                          </ul>
-                          <h6>Qualifications</h6>
-                          <ul>
-                            <li>
-                              6+ Years of Experience in a Service based
-                              Company
-                            </li>
-                          </ul>
-                          <h6>Location</h6>
-                          <ul>
-                            <li>Remote</li>
-                          </ul>
+                                      }}
+                                    ></ul>
+                                    <h6>
+                                      {
+                                        item?.attributes?.DeveloperDetail[4]
+                                          ?.Title
+                                      }
+                                    </h6>
+                                    <ul
+                                      dangerouslySetInnerHTML={{
+                                        __html: `${item?.attributes?.DeveloperDetail[4]?.FullDescription}`,
+                                      }}
+                                    ></ul>
+                                    <h6>
+                                      {
+                                        item?.attributes?.DeveloperDetail[5]
+                                          ?.Title
+                                      }
+                                    </h6>
+                                    <ul
+                                      dangerouslySetInnerHTML={{
+                                        __html: `${item?.attributes?.DeveloperDetail[5]?.FullDescription}`,
+                                      }}
+                                    ></ul>
 
                                     <div className={styles.btnSection}>
                                       <Link href={`/careers/${item?.id}`}>
