@@ -169,6 +169,7 @@
             font-size: text(xl);
             font-weight: 500;
             line-height: 2rem;
+            margin-bottom: 0;
 
             @include mobile-tablet-p {
               font-size: text(normal);
@@ -291,6 +292,12 @@
         .title {
           opacity: 0.8;
         }
+      }
+
+      .accordionPanel {
+        border-top: 0.14rem solid rgba(color(primary-white), 0.12);
+        padding-top: 2.5rem;
+        margin-top: 2.5rem;
       }
       .accordionButton {
         color: color(primary-white);

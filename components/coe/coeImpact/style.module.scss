@@ -24,7 +24,7 @@
       align-items: start;
     }
 
-    @include mobile{
+    @include mobile {
       margin-bottom: 3.75rem;
     }
   }
@@ -42,6 +42,7 @@
     font-size: text(larger);
     font-weight: 500;
     line-height: 3.375rem;
+    text-align: center;
 
     @include mobile-tablet-p {
       font-size: text(xxxl);
@@ -96,9 +97,9 @@
         max-width: 90%;
         margin-bottom: 0.75rem;
 
-				@include mobile {
-					max-width: 100%;
-				}
+        @include mobile {
+          max-width: 100%;
+        }
       }
 
       ul {
@@ -126,7 +127,6 @@
   }
 
   .cardSection {
-
     .impactTopSection {
       &:nth-child(2) {
         flex-direction: column-reverse;
