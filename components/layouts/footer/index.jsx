@@ -90,13 +90,13 @@ const Footer = () => {
             <div className={styles.footSocial}>
               <h4 className="mb-3">Follow Us on Social Media</h4>
               <div className={styles.footSocialLinks}>
-                <Link href="https://www.linkedin.com/company/techchefz/">
+                <Link href="https://www.linkedin.com/company/techchefz/" target="_blank">
                   <Icons.linkedin size={16} /> <span>Linkedin</span>
                 </Link>
-                <Link href="https://www.facebook.com/techchefz">
+                <Link href="https://www.facebook.com/techchefz" target="_blank">
                   <Icons.facebook size={16} /> <span>Facebook</span>
                 </Link>
-                <Link href="/">
+                <Link href="/" target="_blank">
                   <Icons.twitter size={16} /> <span>Twitter</span>
                 </Link>
               </div>
@@ -162,9 +162,9 @@ const Footer = () => {
                   <li>
                     <Link href="/coe">Center of Excellence</Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link href="/accelerators">Accelerators</Link>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             </div>

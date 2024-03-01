@@ -7,8 +7,8 @@ import TechnologyBanner from "@/components/technology/technologyBanner";
 import TechnologyCase from "@/components/technology/technologyCase";
 import Streamline from "@/components/technology/technologyStreamline";
 import TechnologyValues from "@/components/technology/technologyValues";
-import { api_Technology_Page,api_Case_study_Page } from "@/lib/constants";
-import { getData,getDataDynamic } from "@/lib/fetchData";
+import { api_Technology_Page, api_Case_study_Page } from "@/lib/constants";
+import { getData, getDataDynamic } from "@/lib/fetchData";
 import RelatedCase from "@/components/relatedCase";
 
 export const metadata = {
@@ -33,7 +33,10 @@ const Technology = async () => {
           />
           <OurNumbers carrer={data.carrer} experience={data.ourExperience} />
           <Discover props={data.DiscoverTech} />
-          <RelatedCase  props={data_related_cases} />
+          <RelatedCase
+            className="tech-related-style"
+            props={data_related_cases}
+          />
           <LetsWork contact={data.LetsWork} />
         </div>
       ) : (

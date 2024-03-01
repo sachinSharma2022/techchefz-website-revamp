@@ -8,8 +8,11 @@ import Faq from "@/components/common/faq";
 import WhyCms from "@/components/technology/cms/whyCms";
 import TechnologyValues from "@/components/technology/technologyValues";
 import SolutionTheProcess from "@/components/solutions/solutionTheProcess";
-import { getData ,getDataDynamic} from "@/lib/fetchData";
-import { api_cms_technologies_Page ,api_Case_study_Page} from "@/lib/constants";
+import { getData, getDataDynamic } from "@/lib/fetchData";
+import {
+  api_cms_technologies_Page,
+  api_Case_study_Page,
+} from "@/lib/constants";
 
 const Cms = async () => {
   const data = await getData(api_cms_technologies_Page);
@@ -30,8 +33,7 @@ const Cms = async () => {
           <SolutionTheProcess props={data.OurProcess} />
           <Faq props={data.Faq} />
           <RelatedCase
-            sliderClassName="mb-0"
-            className="cms-related"
+            className="case-related-style"
             props={data_related_cases}
           />
           <LetsWork contact={data.ContactUs} />
