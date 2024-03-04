@@ -121,14 +121,16 @@ const InputFile = React.forwardRef(
       inputStyle,
       inputFloatingStyle,
       inputContainerStyle,
+      setfilename,
+      filename,
       ...props
     },
     ref
   ) => {
     const { theme } = useContext(MyContext);
-    const [fileName, setFileName] = useState("");
+    // const [fileName, setFileName] = useState("");
     const handleFile = (file) => {
-      setFileName(file.name);
+      setfilename(file.name);
     };
 
     return (
@@ -146,15 +148,15 @@ const InputFile = React.forwardRef(
           )}
         >
           <FileUploader handleFile={handleFile} props={props} />
-          {fileName ? (
-            <p className={styles.filePath}>Uploaded file: {fileName}</p>
+          {filename ? (
+            <p className={styles.filePath}>Uploaded file: {filename}</p>
           ) : null}
 
           {label && (
             <label
               className={cn(
                 styles.labelCustom,
-                fileName && styles.labelCustomFloat
+                filename && styles.labelCustomFloat
               )}
               for="floatingInput"
             >
