@@ -4,9 +4,9 @@ import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import { base_Uri } from "@/lib/constants";
 import { useContext } from "react";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 import styles from "./style.module.scss";
-import TextRevel from "@/components/ui/sectionAnimation";
 
 const Industry = ({ props, CMSImplementation, Industryinner }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -45,19 +45,21 @@ const Industry = ({ props, CMSImplementation, Industryinner }) => {
           </div>
         </div>
         </TextRevel>
-      
-
-        <ImageCustom
-          src={
-            CMSImplementation[0]?.Image?.data?.attributes?.url
-              ? `${base_Uri}${CMSImplementation[0]?.Image?.data?.attributes?.url}`
-              : `${base_Uri}/`
-          }
-          width={1300}
-          height={500}
-          alt="website-img"
-          className={styles.industryImg}
-        />
+       
+        {CMSImplementation[0]?.Image?.data?.attributes?.url !== undefined &&
+          CMSImplementation[0]?.Image?.data?.attributes?.url !== "" && (
+            <ImageCustom
+              src={
+                CMSImplementation[0]?.Image?.data?.attributes?.url
+                  ? `${base_Uri}${CMSImplementation[0]?.Image?.data?.attributes?.url}`
+                  : `${base_Uri}/`
+              }
+              width={1300}
+              height={500}
+              alt="website-img"
+              className={styles.industryImg}
+            />
+          )}
       </div>
     </section>
   );

@@ -263,18 +263,20 @@ const LetsWork = ({ contact }) => {
                 </div>
               </Form>
             </Formik>
-
-            <ImageCustom
-              src={
-                contact?.Image?.data?.attributes?.url
-                  ? `${base_Uri}${contact?.Image?.data?.attributes?.url}`
-                  : `${base_Uri}/`
-              }
-              width={480}
-              height={616}
-              alt="contactImg"
-              className={styles.contactImg}
-            />
+            { contact?.Image?.data?.attributes?.url !== undefined &&
+               contact?.Image?.data?.attributes?.url !== "" && (
+                <ImageCustom
+                  src={
+                    contact?.Image?.data?.attributes?.url
+                      ? `${base_Uri}${contact?.Image?.data?.attributes?.url}`
+                      : `${base_Uri}/`
+                  }
+                  width={480}
+                  height={616}
+                  alt="contactImg"
+                  className={styles.contactImg}
+                />
+              )}
           </div>
         </div>
       </div>

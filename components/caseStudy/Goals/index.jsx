@@ -33,17 +33,20 @@ const Goals = ({ props }) => {
               {props[0].Views.map((data, index) => (
                 <>
                   <div key={index} className={styles.goalsTextWrapper}>
-                    <div className={styles.goalsIcons}>
-                      <ImageCustom
-                        src={
-                          data?.Image?.data?.attributes?.url
-                            ? `${base_Url}${data?.Image?.data?.attributes?.url}`
-                            : `${base_Url}/`
-                        }
-                        width={40}
-                        height={28}
-                      />
-                    </div>
+                    {data?.Image?.data?.attributes?.url !== undefined &&
+                      data?.Image?.data?.attributes?.url !== "" && (
+                        <div className={styles.goalsIcons}>
+                          <ImageCustom
+                            src={
+                              data?.Image?.data?.attributes?.url
+                                ? `${base_Url}${data?.Image?.data?.attributes?.url}`
+                                : `${base_Url}/`
+                            }
+                            width={40}
+                            height={28}
+                          />
+                        </div>
+                      )}
                     <p className={styles.goalsText}>{data.Title}</p>
                   </div>
                 </>
@@ -51,7 +54,8 @@ const Goals = ({ props }) => {
             </div>
           </div>
         </div>
-
+        {props[0]?.gallaryImages[0]?.Image?.data?.attributes?.url !== undefined &&
+         props[0]?.gallaryImages[0]?.Image?.data?.attributes?.url !== "" && (
         <div className={styles.goalImage}>
           <ImageCustom
             src={
@@ -65,6 +69,7 @@ const Goals = ({ props }) => {
             className={styles.goalInnerImage}
           />
         </div>
+         )}
       </div>
     </section>
   );
