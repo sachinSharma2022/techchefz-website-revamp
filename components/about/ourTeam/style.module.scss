@@ -89,13 +89,12 @@
       padding: 0.25rem;
       justify-content: space-between;
       margin-bottom: 3.75rem;
-      gap: .5rem;
+      gap: 0.5rem;
     }
 
     button {
-      
       @include mobile-tablet-p {
-       flex-grow: 1;
+        flex-grow: 1;
       }
 
       > div {
@@ -106,14 +105,14 @@
         border-radius: 0.5rem;
         display: flex;
         min-width: 176px;
-  
+
         @include mobile-tablet-p {
           font-size: text(normal);
           line-height: text(normal);
           min-width: 100%;
           padding: 0 1rem;
         }
-  
+
         &.btnActive {
           background-color: color(info-blue);
           color: color(primary-white);
@@ -216,6 +215,21 @@
         bottom: 1rem;
         left: 1rem;
         z-index: 1;
+        display: block;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include transition(0.2s);
+      }
+      
+      &:hover {
+        .linkedInIcon {
+          box-shadow: 10px 10px 50px rgba(color(primary-black), 0.8);
+          overflow: hidden;
+        }
       }
     }
   }
@@ -265,7 +279,7 @@
 
       @include mobile-tablet-p {
         line-height: 1.1rem;
-        font-size:.875rem;
+        font-size: 0.875rem;
         margin-bottom: 0;
       }
     }
@@ -338,8 +352,6 @@
     margin-bottom: 2.5rem;
   }
 
-
-
   .socialSection {
     margin-top: 2.5rem;
 
@@ -349,7 +361,7 @@
       line-height: 1.75rem;
       margin-bottom: 1.5rem;
     }
-    
+
     .modalIcons {
       display: flex;
       gap: 0 1.25rem;

@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { base_Uri } from "@/lib/constants";
 
 import styles from "./style.module.scss";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const SolutionHeroBanner = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -17,14 +18,16 @@ const SolutionHeroBanner = ({ props }) => {
       }`}
     >
       <div className={cn("primary-container")}>
-        <div className={cn(styles.contentSection, "header-container")}>
-          <h1
-            className={cn(styles.title, "gradient-text")}
-            dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
-          ></h1>
+        <TextRevel>
+          <div className={cn(styles.contentSection, "header-container")}>
+            <h1
+              className={cn(styles.title, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+            ></h1>
 
-          <p className={styles.leadText}>{props?.Description}</p>
-        </div>
+            <p className={styles.leadText}>{props?.Description}</p>
+          </div>
+        </TextRevel>
       </div>
 
       <div className={styles.landingPlayerStyle}>

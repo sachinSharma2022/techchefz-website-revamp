@@ -11,26 +11,29 @@ import Image from "next/image";
 import { base_Uri } from "@/lib/constants";
 import { base_Url } from "@/lib/constants";
 import { ImageCustom } from "@/components/ui/imageCustom";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const WhatWeDo = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
-  const isBigScreen = useMediaQuery({ query: "(min-width: 768px)" });
+  const isBigScreen = useMediaQuery({ query: "(min-width: 48rem)" });
 
   return (
     <section
       className={`${styles.whatWeDo} ${theme ? styles.whatWeDoDark : ""}`}
     >
       <div className={cn("primary-container")}>
-        <div className={cn(styles.flexContainer)}>
-          <h6
-            className={cn(styles.weDoTitle, "gradient-text")}
-            dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}` }}
-          ></h6>
-          <h3
-            className={cn(styles.weDoHeading, "gradient-text")}
-            dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}` }}
-          ></h3>
-        </div>
+        <TextRevel>
+          <div className={cn(styles.flexContainer)}>
+            <h6
+              className={cn(styles.weDoTitle, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}` }}
+            ></h6>
+            <h3
+              className={cn(styles.weDoHeading, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}` }}
+            ></h3>
+          </div>
+        </TextRevel>
 
         {isBigScreen && (
           <div className={styles.workCardWrapper}>

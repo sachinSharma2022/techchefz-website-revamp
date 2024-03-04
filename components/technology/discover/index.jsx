@@ -12,6 +12,7 @@ import Link from "next/link";
 import { base_Uri } from "@/lib/constants";
 import { base_Url } from "@/lib/constants";
 import { useMediaQuery } from "react-responsive";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const Discover = ({ props }) => {
   const isBigScreen = useMediaQuery({ query: "(min-width: 1199px)" });
@@ -26,6 +27,7 @@ const Discover = ({ props }) => {
       }`}
     >
       <div className={cn("primary-container")}>
+        <TextRevel>
         <div className={styles.discoverTop}>
           <div>
             <h6
@@ -48,6 +50,7 @@ const Discover = ({ props }) => {
             </Link>
           </div>
         </div>
+        </TextRevel> 
 
         <div className={styles.discoverTabSection}>
           {isBigScreen ? (
@@ -65,11 +68,12 @@ const Discover = ({ props }) => {
               <Tab.Panels className={cn(styles.platformsButtons)}>
                 {props?.techStack?.map((item, index) => (
                   <Tab.Panel
-                    static={true}
+                    // static={true}
+
                     key={index}
-                    className={styles.tabContainer}
+                    className={cn(styles.tabContainer, "fadeinout")}
                   >
-                    <Transition
+                    {/* <Transition
                       show={tabIndex === index}
                       enter="enterTech"
                       enterFrom="enterFromTech"
@@ -77,74 +81,73 @@ const Discover = ({ props }) => {
                       leave="leaveTech"
                       leaveFrom="leaveFromTech"
                       leaveTo="leaveToTech"
-                    >
-                      {console.log(tabIndex === index, "ind")}
-                      <div className={styles.dataSection}>
-                        <h6 className={styles.subTitle}>
-                          {item.TechDetail[0]?.Heading}
-                        </h6>
+                    > */}
+                    <div className={styles.dataSection}>
+                      <h6 className={styles.subTitle}>
+                        {item.TechDetail[0]?.Heading}
+                      </h6>
 
-                        {/* Sub Section */}
-                        <div className={styles.buttonSection}>
-                          {item?.TechDetail?.map((subItems, index) => (
-                            <Link
-                              href="/"
-                              key={index}
-                              className={styles.platformsBtn}
-                            >
-                              <div className="d-flex align-items-center">
-                                <div className={styles.iconImg}>
-                                  <ImageCustom
-                                    src={
-                                      subItems?.Images?.data?.attributes?.url
-                                        ? `${base_Url}${subItems?.Images?.data?.attributes?.url}`
-                                        : `${base_Url}/`
-                                    }
-                                    width={28}
-                                    height={28}
-                                    alt="image"
-                                  />
-                                </div>
-                                <p>{subItems.Title} </p>
+                      {/* Sub Section */}
+                      <div className={styles.buttonSection}>
+                        {item?.TechDetail?.map((subItems, index) => (
+                          <Link
+                            href="/"
+                            key={index}
+                            className={styles.platformsBtn}
+                          >
+                            <div className="d-flex align-items-center">
+                              <div className={styles.iconImg}>
+                                <ImageCustom
+                                  src={
+                                    subItems?.Images?.data?.attributes?.url
+                                      ? `${base_Url}${subItems?.Images?.data?.attributes?.url}`
+                                      : `${base_Url}/`
+                                  }
+                                  width={28}
+                                  height={28}
+                                  alt="image"
+                                />
                               </div>
-                              {/* <Icons.ArrowUpRight /> */}
-                            </Link>
-                          ))}
-                        </div>
+                              <p>{subItems.Title} </p>
+                            </div>
+                            {/* <Icons.ArrowUpRight /> */}
+                          </Link>
+                        ))}
                       </div>
+                    </div>
 
-                      <div className={styles.dataSection}>
-                        <h6 className={styles.subTitle}>
-                          {item.multipletech2[0]?.Heading}
-                        </h6>
-                        <div className={styles.buttonSection}>
-                          {item?.multipletech2?.map((subItems, index) => (
-                            <Link
-                              href="/"
-                              key={index}
-                              className={styles.platformsBtn}
-                            >
-                              <div className="d-flex align-items-center">
-                                <div className={styles.iconImg}>
-                                  <ImageCustom
-                                    src={
-                                      subItems?.Images?.data?.attributes?.url
-                                        ? `${base_Url}${subItems?.Images?.data?.attributes?.url}`
-                                        : `${base_Url}/`
-                                    }
-                                    width={24}
-                                    height={22}
-                                    alt="image"
-                                  />
-                                </div>
-                                <p>{subItems.Title} </p>
+                    <div className={styles.dataSection}>
+                      <h6 className={styles.subTitle}>
+                        {item.multipletech2[0]?.Heading}
+                      </h6>
+                      <div className={styles.buttonSection}>
+                        {item?.multipletech2?.map((subItems, index) => (
+                          <Link
+                            href="/"
+                            key={index}
+                            className={styles.platformsBtn}
+                          >
+                            <div className="d-flex align-items-center">
+                              <div className={styles.iconImg}>
+                                <ImageCustom
+                                  src={
+                                    subItems?.Images?.data?.attributes?.url
+                                      ? `${base_Url}${subItems?.Images?.data?.attributes?.url}`
+                                      : `${base_Url}/`
+                                  }
+                                  width={24}
+                                  height={22}
+                                  alt="image"
+                                />
                               </div>
-                              {/* <Icons.ArrowUpRight /> */}
-                            </Link>
-                          ))}
-                        </div>
+                              <p>{subItems.Title} </p>
+                            </div>
+                            {/* <Icons.ArrowUpRight /> */}
+                          </Link>
+                        ))}
                       </div>
-                    </Transition>
+                    </div>
+                    {/* </Transition> */}
                   </Tab.Panel>
                 ))}
               </Tab.Panels>

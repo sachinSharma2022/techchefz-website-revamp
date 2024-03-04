@@ -10,6 +10,7 @@ import Link from "next/link";
 import styles from "./style.module.scss";
 import { Button } from "@/components/ui/button";
 import { base_Uri } from "@/lib/constants";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const FounderDesk = ({ props }) => {
   const { theme } = useContext(MyContext);
@@ -19,16 +20,18 @@ const FounderDesk = ({ props }) => {
       className={cn(styles.founderDesk, theme ? styles.founderDeskDark : "")}
     >
       <div className={cn("primary-container")}>
-        <div className={cn(styles.flexContainer)}>
-          <h6
-            className={cn(styles.subHeading, "gradient-text")}
-            dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
-          ></h6>
-          <h3
-            className={cn(styles.heading, "gradient-text")}
-            dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
-          ></h3>
-        </div>
+        <TextRevel>
+          <div className={cn(styles.flexContainer)}>
+            <h6
+              className={cn(styles.subHeading, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+            ></h6>
+            <h3
+              className={cn(styles.heading, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
+            ></h3>
+          </div>
+        </TextRevel>
 
         <div className={styles.contentSec}>
           <div className={styles.teamCards}>
@@ -67,12 +70,15 @@ const FounderDesk = ({ props }) => {
           </div>
 
           <div className={styles.paraSection}>
-            <div className={styles.textWrapper} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
-           
-            </div>
-            <div className={styles.buttonSection}>
-              <Button>Read More</Button>
-            </div>
+            <TextRevel>
+              <div
+                className={styles.textWrapper}
+                dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
+              ></div>
+              <div className={styles.buttonSection}>
+                <Button>Read More</Button>
+              </div>
+            </TextRevel>
           </div>
         </div>
       </div>

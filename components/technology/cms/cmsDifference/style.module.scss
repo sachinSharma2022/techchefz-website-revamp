@@ -80,9 +80,9 @@
       .differenceCmsBox {
         text-align: center;
         background-color: color(primary-white);
-        padding: 2.5rem 1.25rem 2.5rem 1.25rem;
+        padding: 2.5rem;
         border-radius: 1.25rem;
-        border: 0.125rem solid color(primary-white);
+        border: 0.14rem solid rgba(color(text-primary), 0.12);
         position: relative;
         height: 100%;
 
@@ -148,7 +148,7 @@
     .differenceGridCards {
       .differenceCmsBox {
         background-color: color(text-primary);
-        border-color: color(text-primary);
+        border: 0.14rem solid rgba(color(primary-white), 0.12);
         height: 100%;
       }
     }
