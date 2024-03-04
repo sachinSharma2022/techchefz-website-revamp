@@ -15,7 +15,7 @@ import TextRevel from "@/components/ui/sectionAnimation";
 
 const WhatWeDo = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
-  const isBigScreen = useMediaQuery({ query: "(min-width: 768px)" });
+  const isBigScreen = useMediaQuery({ query: "(min-width: 48rem)" });
 
   return (
     <section

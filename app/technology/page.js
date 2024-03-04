@@ -4,7 +4,6 @@ import Consistent from "@/components/technology/consistent";
 import Discover from "@/components/technology/discover";
 import Partners from "@/components/technology/partners";
 import TechnologyBanner from "@/components/technology/technologyBanner";
-import TechnologyCase from "@/components/technology/technologyCase";
 import Streamline from "@/components/technology/technologyStreamline";
 import TechnologyValues from "@/components/technology/technologyValues";
 import { api_Technology_Page, api_Case_study_Page } from "@/lib/constants";

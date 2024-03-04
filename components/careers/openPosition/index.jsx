@@ -9,6 +9,7 @@ import { useContext, useState } from "react";
 
 import SmoothDropdown from "@/components/ui/smoothDropdownButton";
 import styles from "./style.module.scss";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const OpenPosition = ({ props, id }) => {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
@@ -74,12 +75,15 @@ const OpenPosition = ({ props, id }) => {
       id={id}
     >
       <div className={cn("primary-container")}>
+        <TextRevel>
         <div className={styles.openPositionHeader}>
           <h4 className={cn(styles.openPositionHeading, "gradient-text")}>
             <span>{props.length}</span> Open Position
           </h4>
           {/* <SearchInput /> */}
         </div>
+        </TextRevel>
+        
 
         <div className={styles.serviceBtn}>
           {jobCatogery?.map((buttonItem) => (

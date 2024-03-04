@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { useContext, useRef, useState } from "react";
 import Slider from "react-slick";
 import styles from "./style.module.scss";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const MoreJobs = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -105,12 +106,15 @@ const MoreJobs = ({ props }) => {
         )}
       >
         <div className={cn("primary-container", styles.containerStyle)}>
+          <TextRevel>
           <div className={styles.titleSection}>
             <div>
               <h6>{props[0]?.Title}</h6>
               <h3>{props[0]?.SubTitle}</h3>
             </div>
           </div>
+          </TextRevel>
+          
 
           <div className={cn(styles.sliderSection)}>
             <Slider {...settings} ref={slider}>

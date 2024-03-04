@@ -14,9 +14,9 @@ const InsightDetail = ({ props, BlockTitle }) => {
   const iconMediaData = [
     { iconPath: <Icons.Linkedin size={30} /> },
     { iconPath: <Icons.facebookInsight size={30} /> },
-    { iconPath: <Icons.twitter color="#000000" size={30} /> },
-    { iconPath: <Icons.MailIcon size={30} /> },
-    { iconPath: <Icons.chat size={30} /> },
+    { iconPath: <Icons.twitter color="#000000" size={26} /> },
+    { iconPath: <Icons.MailIcon size={27} /> },
+    { iconPath: <Icons.chat size={27} /> },
   ];
 
   return (
@@ -35,7 +35,9 @@ const InsightDetail = ({ props, BlockTitle }) => {
 
           <div className={styles.insightDetailPara}>
             <h3> {BlockTitle?.Title}</h3>
-            <p dangerouslySetInnerHTML={{ __html: `${BlockTitle?.Description}`}}></p>
+            <p
+              dangerouslySetInnerHTML={{ __html: `${BlockTitle?.Description}` }}
+            ></p>
 
             {BlockTitle?.Image?.data?.attributes?.url !== undefined &&
               BlockTitle?.Image?.data?.attributes?.url !== "" && (

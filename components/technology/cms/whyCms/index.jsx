@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import { base_Uri } from "@/lib/constants";
 
 import styles from "./style.module.scss";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const WhyCms = ({props}) => {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
@@ -34,12 +35,15 @@ const WhyCms = ({props}) => {
   return (
     <section className={`${styles.whyCmsStyle} ${theme ? styles.whyCmsDark : ""}`}>
       <div className={cn("primary-container")}>
+        <TextRevel>
         <div className={styles.ourValuesHead}>
           <h6 className={cn(styles.ourValuesTitle,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
           </h6>
           <h3 className={cn(styles.ourValuesHeading,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}`}}>
           </h3>
         </div>
+        </TextRevel>
+        
 
         <div className={styles.ourValuesContent}>
           <div className={styles.ourValueImg}>

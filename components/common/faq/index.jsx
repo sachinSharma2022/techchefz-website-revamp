@@ -7,6 +7,7 @@ import { useState } from "react";
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 import { motion ,AnimatePresence} from "framer-motion";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const Faq = ({props}) => {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
@@ -37,12 +38,15 @@ const Faq = ({props}) => {
       )}
     >
       <div className={cn("primary-container")}>
+        <TextRevel>
         <div className={styles.faqHead}>
           <h6 className={cn(styles.projectHighlight,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
             </h6>
           <h4 className={cn(styles.title,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
             </h4>
         </div>
+        </TextRevel>
+       
 
         <div className={styles.faqValuesContent}>
           <div className={styles.faqAccordion}>
