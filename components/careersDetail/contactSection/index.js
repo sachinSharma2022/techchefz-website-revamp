@@ -11,9 +11,9 @@ import { useContext, useState, useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { verifyCaptcha } from "@/lib/ServerActions";
 import styles from "./style.module.scss";
-import { careerValidationSchema } from "@/lib/FormSchema";
+import { jobsValidationSchema } from "@/lib/FormSchema";
 import { Form, Formik, useFormik } from "formik";
-import { triggerMail } from "@/lib/triggerMail";
+import { triggerMailWithFile } from "@/lib/triggerMail";
 import CircleLoader from "@/components/ui/circleLoader";
 import ConfirmationPopup from "@/components/ui/confirmationPopup";
 import Link from "next/link";
@@ -23,6 +23,7 @@ const ContactSection = ({ props, id }) => {
   const recaptchaRef = useRef(null);
   const [isVerified, setIsverified] = useState(false);
   const [inprogress, setinprogress] = useState(false);
+  const [fileName, setFileName] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const formInitialSchema = {
     firstName: "",
@@ -43,16 +44,22 @@ const ContactSection = ({ props, id }) => {
     handleChange,
     handleSubmit,
     setFieldValue,
-    handleReset,
+    setTouched,
   } = useFormik({
     initialValues: formInitialSchema,
-    validationSchema: careerValidationSchema,
+    validationSchema: jobsValidationSchema,
     onSubmit: (values, action) => {
+      const formdata = new FormData();
+      Object.entries(values).forEach(([key, value]) => {
+        formdata.append(key, value);
+      });
+      formdata.append("formType", "Job");
       setinprogress(true);
-      triggerMail({ content: JSON.stringify(values), formType: "Job" });
+      triggerMailWithFile(formdata);
       setTimeout(() => {
         action.resetForm();
-        recaptchaRef.current.reset()
+        setFileName("");
+        recaptchaRef.current.reset();
         setinprogress(false);
         dialogOpen();
       }, 4000);
@@ -175,7 +182,10 @@ const ContactSection = ({ props, id }) => {
                           error={Boolean(touched.uploadCV && errors.uploadCV)}
                           setFieldValue={setFieldValue}
                           onBlur={handleBlur}
-                          value={values.uploadCV}
+                          settouched={setTouched}
+                          touched={touched}
+                          setfilename={setFileName}
+                          filename={fileName}
                           errorStatus={touched.uploadCV && errors.uploadCV}
                         />
                         {touched.uploadCV && errors.uploadCV && (
@@ -235,7 +245,7 @@ const ContactSection = ({ props, id }) => {
                       sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                       ref={recaptchaRef}
                       onChange={handleCaptchaSubmission}
-
+                      theme={"dark"}
                     />
                   </div>
                   <div className={styles.policyArea}>
