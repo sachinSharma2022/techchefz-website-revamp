@@ -6,6 +6,22 @@ import styles from "./style.module.scss";
 import Link from "next/link";
 
 const PostCard = (props) => {
+  const date = new Date(props.date);
+  var monthNames = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
   return (
     <Link
       href={props.href}
@@ -27,10 +43,14 @@ const PostCard = (props) => {
         <h5 className={styles.cardTitle}>{props.title}</h5>
         <div className="d-flex justify-content-between align-items-center">
           <div className={styles.cardDateText}>
-          <p className={styles.cardDate}>{props.date} </p>
-          <p className={styles.cardDate}>{props.readTime} </p>
+            <p className={styles.cardDate}>
+              {`${
+                monthNames[date.getMonth()]
+              } ${date.getDate()}, ${date.getFullYear()}`}
+            </p>
+            <p className={styles.cardDate}>{props.readTime} </p>
           </div>
-          
+
           <div className={styles.arrowIcon}>
             <Icons.ArrowLongRight size={18} />
           </div>
