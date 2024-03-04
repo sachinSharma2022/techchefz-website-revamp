@@ -8,6 +8,7 @@ import VideoCustom from "@/components/ui/videoCustom";
 import { cn } from "@/lib/utils";
 import { base_Uri } from "@/lib/constants";
 import { base_Url } from "@/lib/constants";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const OurVision = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -16,23 +17,27 @@ const OurVision = ({ props }) => {
       className={`${styles.ourVision} ${theme ? styles.ourVisionDark : ""}`}
     >
       <div className={cn("primary-container")}>
-        <div className={cn(styles.flexContainer)}>
-          <h3
-            className={cn(styles.aboutHeading, "gradient-text")}
-            dangerouslySetInnerHTML={{ __html: `${props[0]?.title}` }}
-          ></h3>
-          <div className={styles.contentSec}>
-            {props &&
-              props[0].OurVisionMissioninner.map((item, index) => {
-                return (
-                  <div key={index}>
-                    <h6 className={styles.aboutSubHeading}>{item.title}</h6>
-                    <p className={styles.aboutParagraph}>{item.description}</p>
-                  </div>
-                );
-              })}
+        <TextRevel>
+          <div className={cn(styles.flexContainer)}>
+            <h3
+              className={cn(styles.aboutHeading, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props[0]?.title}` }}
+            ></h3>
+            <div className={styles.contentSec}>
+              {props &&
+                props[0].OurVisionMissioninner.map((item, index) => {
+                  return (
+                    <div key={index}>
+                      <h6 className={styles.aboutSubHeading}>{item.title}</h6>
+                      <p className={styles.aboutParagraph}>
+                        {item.description}
+                      </p>
+                    </div>
+                  );
+                })}
+            </div>
           </div>
-        </div>
+        </TextRevel>
 
         <div className={styles.videoWrapper}>
           <VideoCustom

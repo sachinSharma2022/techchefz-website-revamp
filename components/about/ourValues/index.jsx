@@ -3,13 +3,14 @@
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
-import { Disclosure,Transition } from "@headlessui/react";
+import { Disclosure, Transition } from "@headlessui/react";
 import { useContext, useState } from "react";
 
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
-import { motion ,AnimatePresence} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const OurValues = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -36,16 +37,18 @@ const OurValues = ({ props }) => {
       className={`${styles.ourValues} ${theme ? styles.ourValuesDark : ""}`}
     >
       <div className={cn("primary-container")}>
-        <div className={styles.ourValuesHead}>
-          <h6
-            className={cn(styles.ourValuesTitle, "gradient-text")}
-            dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
-          ></h6>
-          <h3
-            className={cn(styles.ourValuesHeading, "gradient-text")}
-            dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
-          ></h3>
-        </div>
+        <TextRevel>
+          <div className={styles.ourValuesHead}>
+            <h6
+              className={cn(styles.ourValuesTitle, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+            ></h6>
+            <h3
+              className={cn(styles.ourValuesHeading, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
+            ></h3>
+          </div>
+        </TextRevel>
 
         <div className={styles.ourValuesContent}>
           <div className="row justify-content-between">
@@ -83,37 +86,37 @@ const OurValues = ({ props }) => {
                           >
                             {data.Title}
                             <div className={styles.iconBox}>
-                            <motion.span
-              initial={{ backgroundColor: "transparent" }}
-              animate={{ rotate: open ? 180 : 0 }}
-              transition={{
-                duration: 0.15,
-                type: "tween",
-              }}>
-              <Icons.ArrowDown /> 
-              </motion.span>
-                              
+                              <motion.span
+                                initial={{ backgroundColor: "transparent" }}
+                                animate={{ rotate: open ? 180 : 0 }}
+                                transition={{
+                                  duration: 0.15,
+                                  type: "tween",
+                                }}
+                              >
+                                <Icons.ArrowDown />
+                              </motion.span>
                             </div>
                           </Disclosure.Button>
-                          <AnimatePresence >
-                          <Disclosure.Panel as={motion.div} initial={{ y: -20, opacity: 0.2 }}
-    animate={{ y: 0, opacity: 1, }} transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }} exit={{
-       y: -20, opacity: 0.2 ,
-      transition: { duration: 0.4 },
-    }} className={styles.accordionBody}>
-                            {data.Description}
-                          </Disclosure.Panel>
-
+                          <AnimatePresence>
+                            <Disclosure.Panel
+                              as={motion.div}
+                              initial={{ y: -20, opacity: 0.2 }}
+                              animate={{ y: 0, opacity: 1 }}
+                              transition={{
+                                duration: 0.4,
+                                ease: [0.04, 0.62, 0.23, 0.98],
+                              }}
+                              exit={{
+                                y: -20,
+                                opacity: 0.2,
+                                transition: { duration: 0.4 },
+                              }}
+                              className={styles.accordionBody}
+                            >
+                              {data.Description}
+                            </Disclosure.Panel>
                           </AnimatePresence>
-                        
-                         
-                          
-                         
-                              
-                          
-                          
-                          
-                          
                         </>
                       );
                     }}

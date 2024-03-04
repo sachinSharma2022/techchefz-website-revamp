@@ -11,6 +11,7 @@ import MobileSlider from "@/components/common/mobileSlider";
 import { useMediaQuery } from "react-responsive";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { base_Url } from "@/lib/constants";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const OurResults = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -21,17 +22,19 @@ const OurResults = ({ props }) => {
       className={`${styles.ourResults} ${theme ? styles.ourResultsDark : ""}`}
     >
       <div className={cn("primary-container")}>
-        <div className={cn(styles.flexContainer)}>
-          <h6
-            className={cn(styles.ourResultsTitle, "gradient-text")}
-            dangerouslySetInnerHTML={{ __html: `${props[0].Title}` }}
-          ></h6>
-          <h3
-            className={cn(styles.ourResultsHeading, "gradient-text")}
-            dangerouslySetInnerHTML={{ __html: `${props[0].SubTitle}` }}
-          ></h3>
-          <p className={styles.ourResultsText}>{props[0].Description}</p>
-        </div>
+        <TextRevel>
+          <div className={cn(styles.flexContainer)}>
+            <h6
+              className={cn(styles.ourResultsTitle, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props[0].Title}` }}
+            ></h6>
+            <h3
+              className={cn(styles.ourResultsHeading, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props[0].SubTitle}` }}
+            ></h3>
+            <p className={styles.ourResultsText}>{props[0].Description}</p>
+          </div>
+        </TextRevel>
         {!isMobileScreen && (
           <div className={styles.resultCardWrapper}>
             {props[0]?.Views?.map((data, index) => (
