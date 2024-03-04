@@ -69,7 +69,7 @@ const PositionDescription = ({ props }) => {
         </div>
 
         <div className={styles.section}>
-          <h2 className={styles.gradientHead}>{props[3]?.Title}</h2>
+          <h2>{props[3]?.Title}</h2>
           <p>{props[3].FullDescription}</p>
         </div>
       </div>
