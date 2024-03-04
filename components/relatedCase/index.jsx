@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import Slider from "react-slick";
 import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
+import TextRevel from "../ui/sectionAnimation";
 
 const RelatedCase = ({ props, className, sliderClassName, params }) => {
   const [oldSlide, setOldSlide] = useState(0);
@@ -70,39 +71,41 @@ const RelatedCase = ({ props, className, sliderClassName, params }) => {
       )}
     >
       <div className={cn("primary-container relative")}>
-        <div className={styles.headSection}>
-          <div>
-            <h6
-              className={cn(styles.relatedCaseTitle, "gradient-text")}
-              dangerouslySetInnerHTML={{
-                __html: `${props[0]?.attributes?.CaseStudy?.Title}`,
-              }}
-            ></h6>
-            <h3
-              className={cn(styles.relatedCaseHeading, "gradient-text")}
-              dangerouslySetInnerHTML={{
-                __html: `${props[0]?.attributes?.CaseStudy?.Description}`,
-              }}
-            ></h3>
-          </div>
+        <TextRevel>
+          <div className={styles.headSection}>
+            <div>
+              <h6
+                className={cn(styles.relatedCaseTitle, "gradient-text")}
+                dangerouslySetInnerHTML={{
+                  __html: `${props[0]?.attributes?.CaseStudy?.Title}`,
+                }}
+              ></h6>
+              <h3
+                className={cn(styles.relatedCaseHeading, "gradient-text")}
+                dangerouslySetInnerHTML={{
+                  __html: `${props[0]?.attributes?.CaseStudy?.Description}`,
+                }}
+              ></h3>
+            </div>
 
-          <div className={styles.sliderArrow}>
-            <button
-              className={
-                activeSlide === 0 ? styles.arrowDisabled : styles.button
-              }
-              onClick={() => slider?.current?.slickPrev()}
-            >
-              <Icons.ArrowLeft />
-            </button>
-            <button
-              className={styles.button}
-              onClick={() => slider?.current?.slickNext()}
-            >
-              <Icons.ArrowRight fill="black" stroke="black" />
-            </button>
+            <div className={styles.sliderArrow}>
+              <button
+                className={
+                  activeSlide === 0 ? styles.arrowDisabled : styles.button
+                }
+                onClick={() => slider?.current?.slickPrev()}
+              >
+                <Icons.ArrowLeft />
+              </button>
+              <button
+                className={styles.button}
+                onClick={() => slider?.current?.slickNext()}
+              >
+                <Icons.ArrowRight fill="black" stroke="black" />
+              </button>
+            </div>
           </div>
-        </div>
+        </TextRevel>
 
         <div
           className={cn(

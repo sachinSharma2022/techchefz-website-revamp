@@ -17,9 +17,9 @@ import { useMediaQuery } from "react-responsive";
 import "swiper/css";
 import "swiper/css/navigation";
 import styles from "./style.module.scss";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const Testimonials = ({ props }) => {
- 
   const { theme, setTheme } = useContext(MyContext);
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
@@ -39,24 +39,26 @@ const Testimonials = ({ props }) => {
         <div className="row">
           <div className="col-12 col-lg-3">
             <div className={styles.infoSection}>
-              <div className={styles.testimonialsLeft}>
-                <h6
-                  className={cn(styles.projectHighlight, "gradient-text")}
-                  dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}` }}
-                ></h6>
-                <div
-                  className={cn(styles.testimonialsHeading, "gradient-text")}
-                >
-                  <h3
-                    dangerouslySetInnerHTML={{
-                      __html: `${props[0]?.SubTitle}`,
-                    }}
-                  ></h3>
+              <TextRevel>
+                <div className={styles.testimonialsLeft}>
+                  <h6
+                    className={cn(styles.projectHighlight, "gradient-text")}
+                    dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}` }}
+                  ></h6>
+                  <div
+                    className={cn(styles.testimonialsHeading, "gradient-text")}
+                  >
+                    <h3
+                      dangerouslySetInnerHTML={{
+                        __html: `${props[0]?.SubTitle}`,
+                      }}
+                    ></h3>
+                  </div>
+                  <p className={styles.testimonialsText}>
+                    {props[0]?.Description}
+                  </p>
                 </div>
-                <p className={styles.testimonialsText}>
-                  {props[0]?.Description}
-                </p>
-              </div>
+              </TextRevel>
 
               {/* Mobile Slider */}
               <div className={styles.mobileSlider}>
@@ -106,8 +108,8 @@ const Testimonials = ({ props }) => {
                             {data.ProfileName}
                           </p>
                           <p className={styles.customerRole}>
-                          {data?.Designation}
-                        </p>
+                            {data?.Designation}
+                          </p>
                         </div>
                       </div>
                     </SwiperSlide>

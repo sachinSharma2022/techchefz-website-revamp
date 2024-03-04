@@ -51,7 +51,7 @@ h6 {
   margin-bottom: 2rem;
 
   @include mobile-tablet-p {
-    margin-bottom: .75rem;
+    margin-bottom: 0.75rem;
   }
 }
 
@@ -365,7 +365,7 @@ input:-webkit-autofill {
 
   .btn-arrow {
     background-color: color(primary-blue);
-    border:0.14rem solid color(primary-blue);
+    border: 0.14rem solid color(primary-blue);
 
     &:hover,
     &:focus {
@@ -740,7 +740,6 @@ input:-webkit-autofill {
 
     .swiper-wrapper {
       @include mobile-tablet-p {
-
         .swiper-slide {
           width: 100% !important;
         }
@@ -913,7 +912,7 @@ input:-webkit-autofill {
 html.lenis {
   height: auto;
 }
-.lenis.lenis-smooth{
+.lenis.lenis-smooth {
   scroll-behavior: auto !important;
 }
 .lenis.lenis-smooth [data-lenis-prevent] {
@@ -1016,7 +1015,7 @@ html.lenis {
 
   .input-item {
     position: relative;
-    
+
     &:last-child {
       grid-column: 1 / 3;
     }
@@ -1053,7 +1052,6 @@ html.lenis {
 // Loader Animation End
 // =================================
 
-
 .cms-related {
   padding-bottom: 0;
 
@@ -1062,7 +1060,6 @@ html.lenis {
     margin-bottom: 2rem;
   }
 }
-
 
 // Case Related Spacing
 .case-related-style {
@@ -1083,58 +1080,15 @@ html.lenis {
   }
 }
 
-.enter {
-  transition: opacity 300ms, transform 400ms;
+.fadeinout {
+  animation: fadeinout 1s ease-in-out;
 }
 
-.enterFrom {
-  // opacity: 0;
-  transform: translateY(-20px);
-}
-
-.enterTo {
-  transform: translateY(0px);
-  // opacity: 0.6;
-}
-
-.leave {
-  transition: opacity 300ms, transform 200ms;
-}
-
-.leaveFrom {
-  // opacity: 0.6;
-  transform: translateY(0px);
-}
-
-.leaveTo {
-  opacity: 0;
-  transform: translateY(-20px);
-}
-
-
-.enterTech {
-  transition: opacity 300ms, transform 400ms;
-}
-
-.enterFromTech {
-  opacity: 0;
-  // transform: scale(0.9);
-}
-
-.enterToTech {
-  // transform: translateX(0);
-  opacity: 1;
-}
-
-.leaveTech {
-  transition: opacity 300ms, transform 400ms;
-}
-
-.leaveFromTech {
-  opacity: 1;
-}
-
-.leaveToTech {
-  opacity: 0;
-  // transform: scale(0.9);
+@keyframes fadeinout {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

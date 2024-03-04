@@ -17,7 +17,6 @@ const CountryDropdown = (props) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const isBigScreen = useMediaQuery({ query: "(min-width: 1024px)" });
   const ref = useRef();
-
   const controlStyle = {
     control: (styles) => ({
       ...styles,

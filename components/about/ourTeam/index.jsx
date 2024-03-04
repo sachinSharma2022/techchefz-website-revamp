@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const OurTeam = ({ props }) => {
   console.log("aa", props);
@@ -23,40 +24,45 @@ const OurTeam = ({ props }) => {
       <div className={cn("primary-container")}>
         <div className="tab">
           <Tab.Group>
-            <div className={styles.ourTeamHead}>
-              <div className={styles.titleWrapper}>
-                <h6
-                  className={cn(styles.ourTeamTitle, "gradient-text")}
-                  dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}` }}
-                ></h6>
-                <h3
-                  className={cn(styles.ourTeamHeading, "gradient-text")}
-                  dangerouslySetInnerHTML={{
-                    __html: `${props[0]?.Description}`,
-                  }}
-                ></h3>
+            <TextRevel>
+              <div className={styles.ourTeamHead}>
+                <div className={styles.titleWrapper}>
+                  <h6
+                    className={cn(styles.ourTeamTitle, "gradient-text")}
+                    dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}` }}
+                  ></h6>
+                  <h3
+                    className={cn(styles.ourTeamHeading, "gradient-text")}
+                    dangerouslySetInnerHTML={{
+                      __html: `${props[0]?.Description}`,
+                    }}
+                  ></h3>
+                </div>
+
+                <Tab.List className={styles.tabWrapper}>
+                  <Tab>
+                    {({ selected }) => (
+                      <div
+                        className={selected ? styles.btnActive : styles.btnIn}
+                      >
+                        {props[0]?.BoardOfDirector}
+                      </div>
+                    )}
+                  </Tab>
+                  <Tab>
+                    {({ selected }) => (
+                      <div
+                        className={
+                          selected ? styles.btnActive : styles.btnInactive
+                        }
+                      >
+                        {props[0]?.TeamMembers}
+                      </div>
+                    )}
+                  </Tab>
+                </Tab.List>
               </div>
-              <Tab.List className={styles.tabWrapper}>
-                <Tab>
-                  {({ selected }) => (
-                    <div className={selected ? styles.btnActive : styles.btnIn}>
-                      {props[0]?.BoardOfDirector}
-                    </div>
-                  )}
-                </Tab>
-                <Tab>
-                  {({ selected }) => (
-                    <div
-                      className={
-                        selected ? styles.btnActive : styles.btnInactive
-                      }
-                    >
-                      {props[0]?.TeamMembers}
-                    </div>
-                  )}
-                </Tab>
-              </Tab.List>
-            </div>
+            </TextRevel>
 
             <Tab.Panels className={styles.contentWrapper}>
               <Tab.Panel>
@@ -170,20 +176,26 @@ const OurTeam = ({ props }) => {
               <div className={styles.socialSection}>
                 <h4>Let’s Get Connect</h4>
                 <div className={styles.modalIcons}>
-                <Link href={props[0]?.ListofDirectors[index]?.LinkedinLink} target="_blank">
-                  <Icons.Linkedin
-                    className={styles.linkdinIcon}
-                    width={34}
-                    height={34}
-                  />
+                  <Link
+                    href={props[0]?.ListofDirectors[index]?.LinkedinLink}
+                    target="_blank"
+                  >
+                    <Icons.Linkedin
+                      className={styles.linkdinIcon}
+                      width={34}
+                      height={34}
+                    />
                   </Link>
-                  <Link href={props[0]?.ListofDirectors[index]?.twitterlink} target="_blank">
-                  <Icons.twitter
-                    className={styles.twitter}
-                    width={34}
-                    height={34}
-                  />
-                </Link>
+                  <Link
+                    href={props[0]?.ListofDirectors[index]?.twitterlink}
+                    target="_blank"
+                  >
+                    <Icons.twitter
+                      className={styles.twitter}
+                      width={34}
+                      height={34}
+                    />
+                  </Link>
                 </div>
               </div>
             </div>
