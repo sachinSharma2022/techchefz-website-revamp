@@ -7,12 +7,14 @@ import { base_Uri } from "@/lib/constants";
 
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const CoeBanner = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section className={cn(styles.banner, theme ? styles.bannerDark : "")}>
       <div className="primary-container">
+        <TextRevel>
         <div className={cn(styles.bannerContent, "header-container")}>
           <h1
             className={cn(styles.bannerTitle, "gradient-text")}
@@ -25,6 +27,7 @@ const CoeBanner = ({ props }) => {
             ></p>
           </div>
         </div>
+        </TextRevel>       
       </div>
 
       <div className={styles.imgBox}>

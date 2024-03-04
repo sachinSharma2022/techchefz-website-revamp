@@ -7,6 +7,7 @@ import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 import Link from "next/link";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const InsightBanner = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -16,6 +17,7 @@ const InsightBanner = ({ props }) => {
       className={cn(!theme ? styles.landingBannerStyle : styles.darkMode)}
     >
       <div className={cn("primary-container")}>
+        <TextRevel>
         <div className={cn(styles.contentSection, "header-container")}>
           <h1
             className={cn(styles.title, "gradient-text")}
@@ -35,6 +37,8 @@ const InsightBanner = ({ props }) => {
             </Link>
           </div>
         </div>
+        </TextRevel>
+        
       </div>
     </section>
   );

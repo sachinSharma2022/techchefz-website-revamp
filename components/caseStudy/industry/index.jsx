@@ -6,12 +6,14 @@ import { base_Uri } from "@/lib/constants";
 import { useContext } from "react";
 
 import styles from "./style.module.scss";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const Industry = ({ props, CMSImplementation, Industryinner }) => {
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section className={cn(styles.industry, theme ? styles.industryDark : "")}>
       <div className={cn("primary-container")}>
+        <TextRevel>
         <div className={styles.contentSection}>
           <div className={styles.industryLeft}>
             <div className="mb-4">
@@ -42,6 +44,8 @@ const Industry = ({ props, CMSImplementation, Industryinner }) => {
             </p>
           </div>
         </div>
+        </TextRevel>
+      
 
         <ImageCustom
           src={
