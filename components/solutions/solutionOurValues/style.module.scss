@@ -26,6 +26,7 @@
   .ourValuesHead {
     margin-bottom: 5rem;
     max-width: 373px;
+    min-width: 373px;
     position: sticky;
     top: 14rem;
     height: 27rem;
@@ -36,6 +37,7 @@
       margin-bottom: 0;
       height: auto;
       max-width: 100%;
+      min-width: 100%;
     }
 
     .ourValuesTitle {

@@ -12,6 +12,7 @@ import Link from "next/link";
 import { base_Uri } from "@/lib/constants";
 import { base_Url } from "@/lib/constants";
 import { useMediaQuery } from "react-responsive";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const Discover = ({ props }) => {
   const isBigScreen = useMediaQuery({ query: "(min-width: 1199px)" });
@@ -26,6 +27,7 @@ const Discover = ({ props }) => {
       }`}
     >
       <div className={cn("primary-container")}>
+        <TextRevel>
         <div className={styles.discoverTop}>
           <div>
             <h6
@@ -48,6 +50,7 @@ const Discover = ({ props }) => {
             </Link>
           </div>
         </div>
+        </TextRevel> 
 
         <div className={styles.discoverTabSection}>
           {isBigScreen ? (

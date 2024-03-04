@@ -11,6 +11,7 @@ import { useContext } from "react";
 import { useMediaQuery } from "react-responsive";
 import styles from "./styles.module.scss";
 import MobileSlider from "@/components/common/mobileSlider";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const TechnologyCase = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -23,6 +24,7 @@ const TechnologyCase = ({ props }) => {
       }`}
     >
       <div className={cn("primary-container")}>
+        <TextRevel>
         <div className={styles.headSection}>
           <div className={styles.caseTop}>
             <h4
@@ -45,7 +47,7 @@ const TechnologyCase = ({ props }) => {
             </Link>
           </div>
         </div>
-
+        </TextRevel>  
         {isBigScreen ? (
           <div className={styles.technologyCaseCards}>
             {props?.CaseStudyCard?.map((data, index) => (

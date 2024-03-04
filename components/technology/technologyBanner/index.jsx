@@ -7,6 +7,7 @@ import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 
 import styles from "./style.module.scss";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const TechnologyBanner = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -16,28 +17,30 @@ const TechnologyBanner = ({ props }) => {
         theme ? styles.landingBannerDark : ""
       }`}
     >
-      <div className={cn("primary-container", "header-container")}>
-        <h1
-          className={cn(styles.title, "gradient-text")}
-          dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}` }}
-        ></h1>
-        <div className={styles.contentSec}>
-          <p
-            className={styles.leadText}
-            dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}` }}
-          ></p>
-          <Link href={props[0]?.BtnLink}>
-            <Button
-              variant={theme ? "blueBtnDark" : "blueBtn"}
-              className={styles.headerBtn}
-              size="md"
-            >
-              {props[0]?.Button}
-              <Icons.ArrowRight size={20} className="ms-2" />
-            </Button>
-          </Link>
+      <TextRevel>
+        <div className={cn("primary-container", "header-container")}>
+          <h1
+            className={cn(styles.title, "gradient-text")}
+            dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}` }}
+          ></h1>
+          <div className={styles.contentSec}>
+            <p
+              className={styles.leadText}
+              dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}` }}
+            ></p>
+            <Link href={props[0]?.BtnLink}>
+              <Button
+                variant={theme ? "blueBtnDark" : "blueBtn"}
+                className={styles.headerBtn}
+                size="md"
+              >
+                {props[0]?.Button}
+                <Icons.ArrowRight size={20} className="ms-2" />
+              </Button>
+            </Link>
+          </div>
         </div>
-      </div>
+      </TextRevel>
     </section>
   );
 };

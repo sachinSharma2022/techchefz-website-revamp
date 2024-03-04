@@ -7,6 +7,7 @@ import { useContext } from "react";
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 import { base_Uri } from "@/lib/constants";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const DistinctLocations = ({props}) => {
   console.log("us",props);
@@ -21,6 +22,7 @@ const DistinctLocations = ({props}) => {
       }`}
     >
       <div className={cn("primary-container")}>
+        <TextRevel>
         <div className={styles.careerRow}>
           <h6 className={cn(styles.projectHighlight, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}></h6>
           <h2 className={cn(styles.datingText, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}`}}></h2>
@@ -28,7 +30,7 @@ const DistinctLocations = ({props}) => {
            
           </p>
         </div>
-
+        </TextRevel>
         <div className={styles.gridNumberMain}>
           <div className={`${styles.locationGridCards} `}>
             {props?.slider?.map((data, index) => (

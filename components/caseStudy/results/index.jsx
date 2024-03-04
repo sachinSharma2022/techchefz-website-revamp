@@ -36,17 +36,20 @@ const Results = ({ props }) => {
               {props.Viewcard.map((data, index) => (
                 <>
                   <div key={index} className={styles.goalsTextWrapper}>
-                    <div className={styles.goalsIcons}>
-                      <ImageCustom
-                        src={
-                          data?.image?.data?.attributes?.url
-                            ? `${base_Url}${data?.image?.data?.attributes?.url}`
-                            : `${base_Url}/`
-                        }
-                        width={40}
-                        height={28}
-                      />
-                    </div>
+                    {data?.image?.data?.attributes?.url !== undefined &&
+                      data?.image?.data?.attributes?.url !== "" && (
+                        <div className={styles.goalsIcons}>
+                          <ImageCustom
+                            src={
+                              data?.image?.data?.attributes?.url
+                                ? `${base_Url}${data?.image?.data?.attributes?.url}`
+                                : `${base_Url}/`
+                            }
+                            width={40}
+                            height={28}
+                          />
+                        </div>
+                      )}
                     <p className={styles.goalsText}>{data.title}</p>
                   </div>
                 </>

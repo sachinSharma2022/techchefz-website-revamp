@@ -11,6 +11,7 @@ import Link from "next/link";
 import Slider from "react-slick";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const OurClients = ({ props }) => {
   console.log("aa", props);
@@ -68,34 +69,38 @@ const OurClients = ({ props }) => {
     >
       <div className={cn("primary-container")}>
         <div className={cn(styles.flexContainer)}>
-          <div className={styles.contentSec}>
-            <h6
-              className={styles.subHeading}
-              dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
-            ></h6>
-            <h3
-              className={styles.heading}
-              dangerouslySetInnerHTML={{ __html: `${props?.subTitle}` }}
-            ></h3>
-            <p
-              className={styles.description}
-              dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
-            ></p>
-            <Link href={props?.BtnLink}>
-              <Button
-                variant={theme ? "lightBlueOutline" : "outline"}
-                size="lg"
-              >
-                {props?.Btn} <Icons.ArrowRight size={18} />
-              </Button>
-            </Link>
-          </div>
+          <TextRevel>
+            <div className={styles.contentSec}>
+              <h6
+                className={styles.subHeading}
+                dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+              ></h6>
+              <h3
+                className={styles.heading}
+                dangerouslySetInnerHTML={{ __html: `${props?.subTitle}` }}
+              ></h3>
+              <p
+                className={styles.description}
+                dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
+              ></p>
+              <Link href={props?.BtnLink}>
+                <Button
+                  variant={theme ? "lightBlueOutline" : "outline"}
+                  size="lg"
+                >
+                  {props?.Btn} <Icons.ArrowRight size={18} />
+                </Button>
+              </Link>
+            </div>
+          </TextRevel>
 
           <div className={styles.clientSection}>
-            <p
-              className={styles.description}
-              dangerouslySetInnerHTML={{ __html: `${props?.SubDescription}` }}
-            ></p>
+            <TextRevel>
+              <p
+                className={styles.description}
+                dangerouslySetInnerHTML={{ __html: `${props?.SubDescription}` }}
+              ></p>
+            </TextRevel>
 
             <div className={cn(styles.logoAnimation, "logo-animation")}>
               <div className={styles.logoSection}>

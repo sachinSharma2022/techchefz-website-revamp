@@ -23,18 +23,21 @@ const CaseStudyBanner = ({ props }) => {
           dangerouslySetInnerHTML={{ __html: `${props?.CaseStudyTitle}` }}
         ></h1>
       </div>
-      <div className={styles.bannerImg}>
-        <ImageCustom
-          src={
-            props?.CaseStudyImage?.data?.attributes?.url
-              ? `${base_Uri}${props?.CaseStudyImage?.data?.attributes?.url}`
-              : `${base_Uri}/`
-          }
-          width={1360}
-          height={500}
-          alt="banner-img"
-        />
-      </div>
+      {props?.CaseStudyImage?.data?.attributes?.url !== undefined &&
+        props?.CaseStudyImage?.data?.attributes?.url !== "" && (
+          <div className={styles.bannerImg}>
+            <ImageCustom
+              src={
+                props?.CaseStudyImage?.data?.attributes?.url
+                  ? `${base_Uri}${props?.CaseStudyImage?.data?.attributes?.url}`
+                  : `${base_Uri}/`
+              }
+              width={1360}
+              height={500}
+              alt="banner-img"
+            />
+          </div>
+        )}
     </section>
   );
 };
