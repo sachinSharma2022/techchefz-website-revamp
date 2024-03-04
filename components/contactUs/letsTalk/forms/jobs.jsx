@@ -161,6 +161,9 @@ const JobsForm = () => {
                     {touched.phone && errors.phone && (
                       <Error>{errors.phone}</Error>
                     )}
+                    {touched.countyCode && errors.countyCode && (
+                      <Error>{errors.countyCode}</Error>
+                    )}
                   </div>
 
                   <div className={cn(styles.inputSpace, "input-item")}>
