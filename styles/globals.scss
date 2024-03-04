@@ -1066,7 +1066,7 @@ html.lenis {
 
 // Case Related Spacing
 .case-related-style {
-  margin-block: 8.75rem 0;
+  margin-block: 8.75rem 3.125rem;
 
   @include mobile-tablet-p {
     margin-block: 2.5rem 6rem;
@@ -1075,7 +1075,7 @@ html.lenis {
 }
 
 .tech-related-style {
-  margin: 0;
+  margin: 0 0 4rem;
 
   @include mobile-tablet-p {
     margin-block: 2.5rem 6rem;
