@@ -8,6 +8,7 @@ import Slider from "react-slick";
 import PrimaryModal from "@/components/ui/primaryModal";
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const TczLife = ({ props }) => {
   console.log("rr", props);
@@ -68,16 +69,18 @@ const TczLife = ({ props }) => {
     >
       <div className={cn(styles.tczLifeSliderSection, "row")}>
         <div className={cn(styles.tczActionSection, "col-sm-6")}>
-          <div>
-            <h6
-              className={cn(styles.tczLifeTitle, "gradient-text")}
-              dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
-            ></h6>
-            <h3
-              className={cn(styles.tczLifeHeading, "gradient-text")}
-              dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
-            ></h3>
-          </div>
+          <TextRevel>
+            <div>
+              <h6
+                className={cn(styles.tczLifeTitle, "gradient-text")}
+                dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+              ></h6>
+              <h3
+                className={cn(styles.tczLifeHeading, "gradient-text")}
+                dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
+              ></h3>
+            </div>
+          </TextRevel>
 
           <div className={styles.sliderArrow}>
             <button
@@ -155,9 +158,11 @@ const TczLife = ({ props }) => {
         </PrimaryModal>
       </div>
 
-      <div className={styles.tczLifeContent}>
-        <p>{props?.Description}</p>
-      </div>
+      <TextRevel>
+        <div className={styles.tczLifeContent}>
+          <p>{props?.Description}</p>
+        </div>
+      </TextRevel>
     </section>
   );
 };
