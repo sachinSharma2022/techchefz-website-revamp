@@ -16,6 +16,7 @@ import { Form, Formik, useFormik } from "formik";
 import { triggerMailWithFile } from "@/lib/triggerMail";
 import CircleLoader from "@/components/ui/circleLoader";
 import ConfirmationPopup from "@/components/ui/confirmationPopup";
+import Link from "next/link";
 
 const ContactSection = ({ props, id }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -252,7 +253,7 @@ const ContactSection = ({ props, id }) => {
                       I understand and consent to my personal data being
                       processed in accordance with TechChefz&apos;s
                       <span className={styles.policyHighlight}>
-                        Privacy Policy
+                      <Link href="/privacy-policy" target="_blank"> Privacy Policy</Link>
                       </span>
                     </div>
 

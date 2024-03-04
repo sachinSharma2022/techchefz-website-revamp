@@ -2,7 +2,7 @@
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import { Input, Error } from "@/components/ui/inputCustom";
+import { Input, Error, Success } from "@/components/ui/inputCustom";
 import ScrollToTopButton from "@/components/ui/scrollToTopButton";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -75,6 +75,9 @@ const Footer = () => {
                       {touched.email && errors.email && (
                         <Error>{errors.email}</Error>
                       )}
+
+                      <Success>You have been successfully subscribed</Success>
+                      
                       <div className="d-flex align-items-center">
                         <Button variant="lightBlueBtn" size="lg">
                           Subscribe <Icons.ArrowRight size={15} />

@@ -173,5 +173,8 @@ InputFile.displayName = "InputFIle";
 const Error = ({ className, children }) => (
   <p className={cn(styles.error, className)}>{children}</p>
 );
+const Success = ({ className, children }) => (
+  <p className={cn(styles.success, className)}>{children}</p>
+);
 
-export { Error, Input, InputFile, Textarea };
+export { Error,Success ,Input, InputFile, Textarea };

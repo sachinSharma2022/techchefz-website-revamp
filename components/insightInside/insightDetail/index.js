@@ -12,11 +12,11 @@ const InsightDetail = ({ props, BlockTitle }) => {
   const { theme, setTheme } = useContext(MyContext);
 
   const iconMediaData = [
-    { iconPath: <Icons.Linkedin size={25} /> },
-    { iconPath: <Icons.facebookInsight /> },
-    { iconPath: <Icons.twitter color="#000000" size={25} /> },
-    { iconPath: <Icons.MailIcon size={25} /> },
-    { iconPath: <Icons.chat /> },
+    { iconPath: <Icons.Linkedin size={30} /> },
+    { iconPath: <Icons.facebookInsight size={30} /> },
+    { iconPath: <Icons.twitter color="#000000" size={30} /> },
+    { iconPath: <Icons.MailIcon size={30} /> },
+    { iconPath: <Icons.chat size={30} /> },
   ];
 
   return (

@@ -183,6 +183,13 @@
             line-height: 1.5rem;
             opacity: 0.8;
           }
+
+          ul {
+            margin-bottom: 0;
+            padding-left: 0;
+            font-size: text(normal);
+            line-height: text(xl);
+          }
         }
         .buttonIcon {
           width: 36px;
@@ -292,12 +299,28 @@
           opacity: 0.8;
         }
       }
+
+      .accordionPanel {
+        border-top: 0.14rem solid rgba(color(primary-white), 0.12);
+        padding-top: 2.5rem;
+        margin-top: 2.5rem;
+      }
       .accordionButton {
         color: color(primary-white);
 
         .buttonIcon {
           background: color(dark-bg);
         }
+      }
+
+      .buttonTitle {
+        ul {
+          color: color(primary-white);
+          opacity: 0.8;
+        }
+      }
+      .btnSection {
+        border-top: 0.14rem solid rgba(color(primary-white), 0.12);
       }
     }
   }

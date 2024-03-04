@@ -84,7 +84,6 @@
 
   .platformsButtons {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     width: 100%;
     height: 32rem;
@@ -111,6 +110,7 @@
       border: 1px solid transparent;
       @include transition(0.5s);
       color: color(text-primary);
+      cursor: default;
 
       &:hover {
         border: 1px solid color(heading-liner);
