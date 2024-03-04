@@ -31,7 +31,7 @@ const JobsForm = () => {
     lastName: "",
     email: "",
     phone: "",
-    countyCode: "",
+    countyCode: "+91",
     portfolioLink: "",
     uploadCV: "",
     projectExplanation: "",

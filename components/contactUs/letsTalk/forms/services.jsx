@@ -33,7 +33,7 @@ const ServicesForm = () => {
     lastName: "",
     email: "",
     phone: "",
-    countyCode: "",
+    countyCode: "+91",
     companyName: "",
     serviceRequired: "",
     projectExplanation: "",

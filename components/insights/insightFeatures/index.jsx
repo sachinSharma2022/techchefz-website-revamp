@@ -11,11 +11,6 @@ import { base_Uri } from "@/lib/constants";
 
 const InsightFeatures = ({ props, featureInsight, feature }) => {
   const { theme, setTheme } = useContext(MyContext);
-  console.log(
-    new Date(feature[0].attributes?.InsightOverview[0]?.Date).toString(),
-
-    "feat"
-  );
 
   return (
     <section className={!theme ? styles.insightFeatures : styles.darkMode}>
