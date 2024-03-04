@@ -42,18 +42,20 @@ const Industry = ({ props, CMSImplementation, Industryinner }) => {
             </p>
           </div>
         </div>
-
-        <ImageCustom
-          src={
-            CMSImplementation[0]?.Image?.data?.attributes?.url
-              ? `${base_Uri}${CMSImplementation[0]?.Image?.data?.attributes?.url}`
-              : `${base_Uri}/`
-          }
-          width={1300}
-          height={500}
-          alt="website-img"
-          className={styles.industryImg}
-        />
+        {CMSImplementation[0]?.Image?.data?.attributes?.url !== undefined &&
+          CMSImplementation[0]?.Image?.data?.attributes?.url !== "" && (
+            <ImageCustom
+              src={
+                CMSImplementation[0]?.Image?.data?.attributes?.url
+                  ? `${base_Uri}${CMSImplementation[0]?.Image?.data?.attributes?.url}`
+                  : `${base_Uri}/`
+              }
+              width={1300}
+              height={500}
+              alt="website-img"
+              className={styles.industryImg}
+            />
+          )}
       </div>
     </section>
   );
