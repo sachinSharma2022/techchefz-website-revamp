@@ -8,6 +8,7 @@ import { useContext } from "react";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
 import { base_Url } from "@/lib/constants";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const Innovation = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -15,6 +16,7 @@ const Innovation = ({ props }) => {
   return (
     <section className={!theme ? styles.innovationSpacing : styles.darkMode}>
       <div className={cn("primary-container")}>
+        <TextRevel>
         <div className={styles.innovationMain}>
           <p
             className={cn(styles.text, "gradient-text")}
@@ -25,6 +27,8 @@ const Innovation = ({ props }) => {
             dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
           ></h3>
         </div>
+        </TextRevel>
+        
 
         <div className={`${styles.innovationCardsGrid}`}>
           {props?.Views?.map((data, index) => (

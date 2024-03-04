@@ -11,6 +11,7 @@ import { base_Uri } from "@/lib/constants";
 import Link from "next/link";
 import { useMediaQuery } from "react-responsive";
 import styles from "./style.module.scss";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const Partners = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -21,6 +22,7 @@ const Partners = ({ props }) => {
   return (
     <section className={`${styles.partner} ${theme ? styles.partnerDark : ""}`}>
       <div className={cn("primary-container", styles.flexContainer)}>
+        <TextRevel>
         <div className={styles.headSection}>
           <h6
             className={cn(styles.partnerTitle, "gradient-text")}
@@ -31,7 +33,7 @@ const Partners = ({ props }) => {
             dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
           ></h3>
         </div>
-
+        </TextRevel>       
         {isBigScreen ? (
           <div className={styles.partnerCards}>
             {props?.Slider?.map((data, index) => (

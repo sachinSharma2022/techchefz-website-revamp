@@ -10,6 +10,7 @@ import Link from "next/link";
 import styles from "./style.module.scss";
 import { Button } from "@/components/ui/button";
 import { base_Uri } from "@/lib/constants";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const FounderDesk = ({ props }) => {
   const { theme } = useContext(MyContext);
@@ -19,6 +20,7 @@ const FounderDesk = ({ props }) => {
       className={cn(styles.founderDesk, theme ? styles.founderDeskDark : "")}
     >
       <div className={cn("primary-container")}>
+        <TextRevel>
         <div className={cn(styles.flexContainer)}>
           <h6
             className={cn(styles.subHeading, "gradient-text")}
@@ -29,7 +31,7 @@ const FounderDesk = ({ props }) => {
             dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
           ></h3>
         </div>
-
+        </TextRevel>
         <div className={styles.contentSec}>
           <div className={styles.teamCards}>
             <div className={styles.teamCardBg}>

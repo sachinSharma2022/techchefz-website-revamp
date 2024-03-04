@@ -8,6 +8,7 @@ import Slider from "react-slick";
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const OurHistory = ({ props, OurHistory }) => {
   const { theme } = useContext(MyContext);
@@ -86,6 +87,7 @@ const OurHistory = ({ props, OurHistory }) => {
       }`}
     >
       <div className={cn("primary-container")}>
+        <TextRevel>
         <div className={styles.ourHistoryTop}>
           <h6
             className={cn(styles.ourHistoryTitle, "gradient-text")}
@@ -96,6 +98,8 @@ const OurHistory = ({ props, OurHistory }) => {
             dangerouslySetInnerHTML={{ __html: `${props[0]?.SubTitle}` }}
           ></h3>
         </div>
+        </TextRevel>
+        
 
         <div className={cn(styles.sliderSection, "row")}>
           <div className="col-12 col-lg-6">
