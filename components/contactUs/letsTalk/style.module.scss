@@ -9,12 +9,12 @@
 
   @include tablet {
     padding: 0;
-    margin: -80px 20px 50px;
+    margin: -80px spacing(tablet-padding) 50px;
   }
 
   @include mobile {
     padding: 0;
-    margin: -80px 10px 50px;
+    margin: -80px spacing(mobile-padding) 50px;
   }
 
   .workArea {
