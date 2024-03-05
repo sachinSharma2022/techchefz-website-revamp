@@ -21,7 +21,7 @@ const OurTeam = ({ props }) => {
 
   return (
     <section className={cn(styles.ourTeam, theme ? styles.ourTeamDark : "")}>
-      <div className={cn("primary-container")}>
+      <div className={cn("primary-container", styles.dataSection)}>
         <div className="tab">
           <Tab.Group>
             <TextRevel>

@@ -60,7 +60,8 @@ const InsightDetail = ({ props, BlockTitle }) => {
                   className={styles.heading}
                   dangerouslySetInnerHTML={{ __html: `${value.Title}` }}
                 ></h3>
-                <p
+
+                <p className={styles.linkTag}
                   dangerouslySetInnerHTML={{ __html: `${value.Description}` }}
                 ></p>
 
