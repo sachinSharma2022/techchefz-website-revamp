@@ -3,9 +3,12 @@
 .technologyValues {
   padding: spacing(section-primary-padding);
 
-  @include mobile-tablet-p {
-    padding: spacing(section-mob-padding);
-    padding-block: 3.75rem 3.75rem;
+  @include tablet {
+    padding: 3.75rem  spacing(tablet-padding);
+  }
+
+  @include mobile {
+    padding: 3.75rem  spacing(mobile-padding);
   }
 
   .valuesTitle {
@@ -54,7 +57,12 @@
     border-radius: 0.6rem;
     overflow: hidden;
 
-    @include mobile-tablet-p {
+    @include tablet {
+      height: 465px;
+      margin: 1rem 0;
+    }
+
+    @include mobile {
       height: 265px;
       margin: 1rem 0;
     }
