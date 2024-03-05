@@ -42,12 +42,16 @@
     opacity: 0.2;
   }
 
+  .dataSection {
+    position: relative;
+    z-index: 99;
+  }
+
   .ourTeamHead {
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    z-index: 99;
     @include mobile-tablet-p {
       flex-direction: column;
     }
