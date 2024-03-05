@@ -3,10 +3,14 @@
 @mixin innovationSpacingStyle {
   padding: spacing(section-primary-padding);
 
-  @include mobile-tablet-p {
-    padding: spacing(section-mob-padding);
-    padding-block: 3.75rem 3.75rem;
+  @include tablet {
+    padding: 3.75rem spacing(tablet-padding);
   }
+
+  @include mobile {
+    padding: 3.75rem spacing(mobile-padding);
+  }
+
   .innovationMain {
     display: flex;
     justify-content: center;

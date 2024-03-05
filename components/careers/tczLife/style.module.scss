@@ -7,8 +7,15 @@
   overflow: hidden;
   position: relative;
 
-  @include mobile-tablet-p {
-    padding: 0 0 3.75rem;
+  @include tablet{
+    padding: 0 0 spacing(tablet-padding);
+  }
+  // @include tablet{
+  //   padding: 0 0 3.75rem;
+  // }
+  
+  @include mobile {
+    padding: 0 0 spacing(mobile-padding);
   }
 
   @include desktop-hd {
@@ -35,7 +42,7 @@
       @include mobile {
         position: relative;
         margin-top: 3.75rem;
-        padding-left: 2.25rem;
+        padding-left: spacing(mobile-padding);
         padding-right: 0;
       }
     }
