@@ -17,18 +17,17 @@ const Innovation = ({ props }) => {
     <section className={!theme ? styles.innovationSpacing : styles.darkMode}>
       <div className={cn("primary-container")}>
         <TextRevel>
-        <div className={styles.innovationMain}>
-          <p
-            className={cn(styles.text, "gradient-text")}
-            dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
-          ></p>
-          <h3
-            className={cn(styles.title, "gradient-text")}
-            dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
-          ></h3>
-        </div>
+          <div className={styles.innovationMain}>
+            <p
+              className={cn(styles.text, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+            ></p>
+            <h3
+              className={cn(styles.title, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
+            ></h3>
+          </div>
         </TextRevel>
-        
 
         <div className={`${styles.innovationCardsGrid}`}>
           {props?.Views?.map((data, index) => (

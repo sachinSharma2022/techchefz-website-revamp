@@ -18,27 +18,26 @@ const InsightBanner = ({ props }) => {
     >
       <div className={cn("primary-container")}>
         <TextRevel>
-        <div className={cn(styles.contentSection, "header-container")}>
-          <h1
-            className={cn(styles.title, "gradient-text")}
-            dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
-          ></h1>
-          <div className={styles.contentRight}>
-            <p className={styles.leadText}>{props.SubTitle}</p>
-            <Link href={props?.BtnLink}>
-              <Button
-                variant={theme ? "lightBlueBtn" : "blueBtn"}
-                className={styles.headerBtn}
-                size="md"
-              >
-                {props?.Btn}
-                <Icons.ArrowRight size={20} className="ms-2" />
-              </Button>
-            </Link>
+          <div className={cn(styles.contentSection, "header-container")}>
+            <h1
+              className={cn(styles.title, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+            ></h1>
+            <div className={styles.contentRight}>
+              <p className={styles.leadText}>{props.SubTitle}</p>
+              <Link href={props?.BtnLink}>
+                <Button
+                  variant={theme ? "lightBlueBtn" : "blueBtn"}
+                  className={styles.headerBtn}
+                  size="md"
+                >
+                  {props?.Btn}
+                  <Icons.ArrowRight size={20} className="ms-2" />
+                </Button>
+              </Link>
+            </div>
           </div>
-        </div>
         </TextRevel>
-        
       </div>
     </section>
   );
