@@ -4,10 +4,12 @@
   padding: spacing(section-primary-padding);
   padding-bottom: 0;
 
-  @include mobile-tablet-p {
-    padding: spacing(section-mob-padding);
-    padding-block: 3.75rem 3.75rem;
-    padding-bottom: 0;
+  @include tablet {
+    padding: 3.75rem spacing(tablet-padding) 0;
+  }
+
+  @include mobile {
+    padding: 3.75rem spacing(mobile-padding) 0;
   }
 
   .industryLeft {
@@ -20,7 +22,7 @@
       opacity: 0.6;
       margin-bottom: 0.2rem;
     }
-    
+
     h5 {
       font-weight: 500;
       line-height: 2rem;
@@ -36,7 +38,7 @@
       gap: 1rem;
 
       @include mobile-tablet-p {
-        margin-top: .625rem;
+        margin-top: 0.625rem;
       }
 
       button {
@@ -94,15 +96,15 @@
 
     @include mobile-tablet-p {
       height: 20rem;
-      margin:5rem 0rem;
+      margin: 5rem 0rem;
       padding: 0rem;
-      border-radius: .75rem;
+      border-radius: 0.75rem;
       overflow: hidden;
     }
 
     @include mobile {
       height: 11.343rem;
-      margin:3rem 0rem;
+      margin: 3rem 0rem;
     }
 
     img {
