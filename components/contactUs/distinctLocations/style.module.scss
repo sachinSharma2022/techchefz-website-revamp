@@ -4,9 +4,12 @@
   padding-inline: spacing(p-120);
   padding-block: 8.75rem 8.75rem;
 
-  @include mobile-tablet-p {
-    padding: spacing(section-mob-padding);
-    padding-block: 3.75rem 3.75rem;
+  @include tablet {
+    padding: 3.75rem spacing(tablet-padding) ;
+  }
+
+  @include mobile {
+    padding: 3.75rem spacing(mobile-padding);
   }
 
   .careerRow {
@@ -91,8 +94,10 @@
           border-radius: 1.25rem;
           overflow: hidden;
           width: 100%;
+
           @include mobile-tablet-p {
             height: 10.75rem;
+            border-radius: .75rem;
           }
 
           img {
