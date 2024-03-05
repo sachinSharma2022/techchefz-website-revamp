@@ -16,7 +16,7 @@
   }
 
   @include mobile {
-    padding: 3rem spacing(mobile-padding) 3.75rem ;
+    padding: 3rem spacing(mobile-padding) 3.75rem;
   }
 
   .insightDetailFlex {
@@ -152,7 +152,7 @@
           font-size: text(lg);
           color: color(primary-white);
           line-height: 1.8rem;
-          opacity: 0.8;
+
           padding-bottom: 1rem;
           margin: 0;
 
@@ -162,6 +162,16 @@
           }
         }
 
+        .linkTag {
+          a {
+            font-size: text(lg);
+            color: color(info-blue);
+            &:hover {
+              text-decoration: underline;
+              color: color(info-blue);
+            }
+          }
+        }
         img {
           border-radius: 0.6rem;
           width: 100%;
@@ -183,8 +193,10 @@
             font-size: text(normal);
           }
         }
+
         b {
           font-size: text(lg);
+          font-weight: 400;
         }
       }
     }
