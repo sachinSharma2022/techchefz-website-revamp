@@ -11,7 +11,11 @@ const AnimatedLogo = (props) => {
   return (
     <Link
       href={props.href || "/"}
-      className={cn(styles.animatedLogo, theme ? styles.animatedLogoDark : "")}
+      className={cn(
+        styles.animatedLogo,
+        theme ? styles.animatedLogoDark : "",
+        props.className
+      )}
     >
       <div className={styles.logo}>
         <ImageCustom

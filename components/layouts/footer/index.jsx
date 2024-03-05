@@ -13,6 +13,7 @@ import { triggerMail } from "@/lib/triggerMail";
 import AnimatedLogo from "@/components/common/animatedLogo";
 import { useState } from "react";
 import CircleLoader from "@/components/ui/circleLoader";
+import AnimatedFooterLogo from "@/components/common/animatedFooterLogo";
 
 const Footer = () => {
   const [inprogress, setinprogress] = useState(false);
@@ -42,7 +43,7 @@ const Footer = () => {
     <footer className={styles.footerSection}>
       <div className={cn("primary-container")}>
         <div className={styles.footLogoFlex}>
-          <AnimatedLogo />
+          <AnimatedFooterLogo />
           <ScrollToTopButton />
         </div>
 
