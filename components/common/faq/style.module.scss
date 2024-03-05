@@ -1,157 +1,161 @@
 @import "~/styles/partials/config";
 
 .cmsFaqSection {
-   padding: spacing(section-primary-padding);
-   background-color: color(bg-soft);
+  padding: spacing(section-primary-padding);
+  background-color: color(bg-soft);
 
-   @include mobile-tablet-p {
-      padding: spacing(section-mob-padding);
-   }
+  @include tablet {
+    padding: spacing(tablet-padding);
+  }
 
-   .faqHead {
+  @include mobile {
+    padding: spacing(mobile-padding);
+  }
+
+  .faqHead {
+    margin-bottom: 5rem;
+
+    .projectHighlight {
+      color: color(text-primary);
+      text-transform: uppercase;
+      opacity: 0.8;
+      font-size: text(normal);
+      font-weight: 500;
+      line-height: 1.5rem;
+      margin-bottom: 1rem;
+      letter-spacing: 0.2rem;
+    }
+    .title {
+      font-size: text(larger);
       margin-bottom: 5rem;
 
-      .projectHighlight {
-         color: color(text-primary);
-         text-transform: uppercase;
-         opacity: 0.8;
-         font-size: text(normal);
-         font-weight: 500;
-         line-height: 1.5rem;
-         margin-bottom: 1rem;
-         letter-spacing: 0.2rem;
+      @include mobile-tablet-p {
+        font-size: text(xxxl);
       }
-      .title {
-         font-size: text(larger);
-         margin-bottom: 5rem;
+    }
+  }
 
-         @include mobile-tablet-p {
-            font-size: text(xxxl);
-         }
+  .faqValuesContent {
+    .faqList {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .numberSec {
+      background: rgba(38, 160, 248, 0.12);
+      padding: text(xl);
+      min-width: 4rem;
+      max-width: 4rem;
+      display: flex;
+      justify-content: center;
+
+      .faqNumber {
+        font-weight: 500;
+        margin-bottom: 0;
+        font-size: 1.2rem;
+
+        @include mobile {
+          font-weight: 500;
+          font-size: text(lg);
+        }
       }
-   }
+    }
 
-   .faqValuesContent {
-      .faqList {
-         display: flex;
-         align-items: center;
-         flex-direction: column;
-         width: 100%;
+    .faqSecMain {
+      display: flex;
+      border-top: 0.063rem solid rgba(color(text-primary), 0.12);
+    }
+
+    .faqAccordion {
+      background-color: color(primary-white);
+      border-bottom: 0.063rem solid rgba(color(text-primary), 0.12);
+
+      .accordionHead {
+        width: 100%;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: color(text-primary);
+        padding: 1.4rem;
+
+        @include mobile-tablet-p {
+          font-size: text(lg);
+          padding: text(normal);
+
+          svg {
+            min-width: 30px;
+            min-height: 30px;
+            margin-left: 20px;
+          }
+        }
       }
 
-      .numberSec {
-         background: rgba(38, 160, 248, 0.12);
-         padding: text(xl);
-         min-width: 4rem;
-         max-width: 4rem;
-         display: flex;
-         justify-content: center;
-
-         .faqNumber {
-            font-weight: 500;
-            margin-bottom: 0;
-            font-size: 1.2rem;
-
-            @include mobile {
-               font-weight: 500;
-               font-size: text(lg);
-            }
-         }
+      [aria-expanded="true"] {
+        &.accordionHead {
+          font-weight: 500;
+          color: color(heading-liner);
+        }
       }
 
+      .accordionBody {
+        padding: 0 1.5rem 1.5rem 1.5rem;
+        opacity: 0.8;
+        max-width: 94%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+    }
+  }
+
+  //Dark mode style
+  &.cmsFaqSectionDark {
+    background-color: color(dark-bg);
+
+    .faqHead {
+      color: color(primary-white);
+
+      h6 {
+        color: color(primary-white);
+      }
+    }
+
+    .faqValuesContent {
       .faqSecMain {
-         display: flex;
-         border-top: 0.063rem solid rgba(color(text-primary), 0.12);
+        border: 0.063rem solid rgba(color(primary-white), 0.12);
+      }
+
+      .faqNumber {
+        color: color(primary-white);
       }
 
       .faqAccordion {
-         background-color: color(primary-white);
-         border-bottom: 0.063rem solid rgba(color(text-primary), 0.12);
+        background: none;
+        border: none;
 
-         .accordionHead {
-            width: 100%;
-            text-align: left;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1.2rem;
+        .numberSec {
+          background-color: rgba(38, 160, 248, 0.12);
+        }
+        .accordionHead {
+          background-color: none;
+          color: color(primary-white);
+        }
+        [aria-expanded="true"] {
+          &.accordionHead {
             font-weight: 500;
-            color: color(text-primary);
-            padding: 1.4rem;
+            color: color(heading-liner);
+          }
+        }
 
-            @include mobile-tablet-p {
-               font-size: text(lg);
-               padding: text(normal);
-
-               svg {
-                  min-width: 30px;
-                  min-height: 30px;
-                  margin-left: 20px;
-               }
-            }
-         }
-
-         [aria-expanded="true"] {
-            &.accordionHead {
-               font-weight: 500;
-               color: color(heading-liner);
-            }
-         }
-
-         .accordionBody {
-            padding: 0 1.5rem 1.5rem 1.5rem;
-            opacity: 0.8;
-            max-width: 94%;
-            margin-left: 0;
-            margin-right: auto;
-         }
+        .accordionBody {
+          background-color: none;
+          color: color(primary-white);
+        }
       }
-   }
-
-   //Dark mode style
-   &.cmsFaqSectionDark {
-      background-color: color(dark-bg);
-
-      .faqHead {
-         color: color(primary-white);
-
-         h6 {
-            color: color(primary-white);
-         }
-      }
-
-      .faqValuesContent {
-         .faqSecMain {
-            border: 0.063rem solid rgba(color(primary-white), 0.12);
-         }
-
-         .faqNumber {
-            color: color(primary-white);
-         }
-
-         .faqAccordion {
-            background: none;
-            border: none;
-
-            .numberSec {
-               background-color: rgba(38, 160, 248, 0.12);
-            }
-            .accordionHead {
-               background-color: none;
-               color: color(primary-white);
-            }
-            [aria-expanded="true"] {
-               &.accordionHead {
-                  font-weight: 500;
-                  color: color(heading-liner);
-               }
-            }
-
-            .accordionBody {
-               background-color: none;
-               color: color(primary-white);
-            }
-         }
-      }
-   }
+    }
+  }
 }

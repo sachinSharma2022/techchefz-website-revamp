@@ -36,13 +36,15 @@
     padding-inline: 0;
   }
 
-  @include mobile-tablet-p {
-    padding: spacing(section-mob-padding-Left-Right);
+  @include tablet {
+    padding: spacing(tablet-padding);
     grid-template-columns: repeat(2, 1fr);
     gap: 2.7rem;
   }
+
   @include mobile {
     grid-template-columns: repeat(1, 1fr);
+    padding: spacing(mobile-padding);
   }
 
   .imageCard {

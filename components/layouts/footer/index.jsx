@@ -11,8 +11,12 @@ import { Form, Formik, useFormik } from "formik";
 import { footerValidationSchema } from "@/lib/FormSchema";
 import { triggerMail } from "@/lib/triggerMail";
 import AnimatedLogo from "@/components/common/animatedLogo";
+import { useState } from "react";
+import CircleLoader from "@/components/ui/circleLoader";
 
 const Footer = () => {
+  const [inprogress, setinprogress] = useState(false);
+  const [success, setsuccess] = useState(false);
   const formInitialSchema = {
     email: "",
   };
@@ -22,7 +26,16 @@ const Footer = () => {
       validationSchema: footerValidationSchema,
       onSubmit: (values, action) => {
         console.log(values);
-        triggerMail({ content: JSON.stringify(values) });
+        setinprogress(true);
+        triggerMail({
+          content: JSON.stringify(values),
+          formType: "Subscribe",
+        });
+        setTimeout(() => {
+          setsuccess(true);
+          action.resetForm();
+          setinprogress(false);
+        }, 2000);
       },
     });
   return (
@@ -70,17 +83,27 @@ const Footer = () => {
                         error={Boolean(touched.email && errors.email)}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        values={values.email}
+                        value={values.email}
                       />
                       {touched.email && errors.email && (
                         <Error>{errors.email}</Error>
                       )}
-
-                      <Success>You have been successfully subscribed</Success>
+                      {success && (
+                        <Success>You have been successfully subscribed</Success>
+                      )}
 
                       <div className="d-flex align-items-center">
-                        <Button variant="lightBlueBtn" size="lg">
-                          Subscribe <Icons.ArrowRight size={15} />
+                        <Button
+                          variant="lightBlueBtn"
+                          size="lg"
+                          disabled={inprogress ? true : false}
+                        >
+                          Subscribe
+                          {inprogress ? (
+                            <CircleLoader repeatCount={1} />
+                          ) : (
+                            <Icons.ArrowRight size={18} />
+                          )}
                         </Button>
                       </div>
                     </div>
