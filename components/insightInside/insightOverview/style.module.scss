@@ -1,221 +1,220 @@
 @import "~/styles/partials/config";
 
 @mixin insightOverviewStyles() {
-  padding: spacing(section-primary-padding);
-  padding-top: 11.25rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  background-color: color(text-primary);
+   padding: spacing(section-primary-padding);
+   padding-top: 11.25rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-end;
+   background-color: color(text-primary);
 
-  @include mobile-tablet-p {
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    padding: 4.75rem 2.5rem;
-    gap: 1.5rem;
-  }
-  @include mobile {
-    padding-inline: 1.5rem;
-    padding-block: 3rem 3.75rem;
-  }
+   @include mobile-tablet-p {
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      padding: 4.75rem spacing(tablet-padding);
+      gap: 1.5rem;
+   }
+   @include mobile {
+      padding: 3rem spacing(mobile-padding) 3.75rem;
+   }
 
-  .flexContainer {
-    display: flex;
-    gap: 0 8.8125rem;
-  }
-
-  .textContainer {
-    max-width: 50%;
-
-    @include mobile-tablet-p {
-      max-width: 100%;
-    }
-
-    h1 {
-      font-weight: 500;
-      font-size: text(larger);
-      color: color(primary-white);
-      line-height: 3.375rem;
-      padding-bottom: 3rem;
-
-      @include mobile {
-        font-size: text(xxxl);
-        line-height: 2.7rem;
-      }
-    }
-
-    .publishDiv {
+   .flexContainer {
       display: flex;
-      align-items: flex-start;
-      gap: 4rem;
+      gap: 0 8.8125rem;
+   }
 
-      @include mobile {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .publishFlex {
-        display: flex;
-        flex-direction: column;
-        gap: 0.4rem;
-
-        p {
-          font-weight: 400;
-          font-size: text(normal);
-          color: color(primary-white);
-          opacity: 0.6;
-          margin: 0;
-          line-height: 1rem;
-
-          @include mobile {
-            font-size: text(normal);
-            font-weight: 500;
-          }
-        }
-
-        h5 {
-          font-weight: 400;
-          font-size: text(lg);
-          color: color(primary-white);
-          line-height: 2rem;
-          margin: 0;
-          padding-bottom: 2rem;
-
-          @include mobile {
-            font-size: text(normal);
-            font-weight: 500;
-          }
-        }
-      }
-    }
-
-    .serviceDiv {
-      p {
-        font-weight: 400;
-        font-size: text(normal);
-        color: color(primary-white);
-        opacity: 0.6;
-        line-height: 1rem;
-
-        @include mobile {
-          font-size: text(normal);
-          font-weight: 500;
-        }
-      }
-
-      .techStackDiv {
-        display: flex;
-        gap: 1rem;
-
-        @include mobile-tablet-p {
-          flex-wrap: wrap;
-        }
-
-        .techBtn {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          padding: 0.75rem;
-          cursor: default;
-          border-radius: 0.6rem;
-          border: 0.14rem solid rgba(255, 255, 255, 0.4);
-          font-weight: 400;
-          font-size: text(normal);
-          color: color(primary-white);
-          line-height: 1.8rem;
-          height: 2.1875rem;
-        }
-      }
-    }
-  }
-
-  .imageDiv {
-    position: absolute;
-    right: 0;
-    top: 11rem;
-
-    @include mobile-tablet-p {
-      position: relative;
-      top: 0;
-    }
-
-    div {
-      width: 75%;
-      height: 38.5625rem;
-      border-radius: 0.6rem 0 0 0.6rem;
-      overflow: hidden;
-      position: relative;
-      margin-right: 0;
-      margin-left: auto;
+   .textContainer {
+      max-width: 50%;
 
       @include mobile-tablet-p {
-        // max-width: 601px;
-        // max-height: 441px;
-        width: 47rem;
-        height: 20rem;
+         max-width: 100%;
       }
 
-      @include mobile {
-        width: 100%;
+      h1 {
+         font-weight: 500;
+         font-size: text(larger);
+         color: color(primary-white);
+         line-height: 3.375rem;
+         padding-bottom: 3rem;
+
+         @include mobile {
+            font-size: text(xxxl);
+            line-height: 2.7rem;
+         }
       }
 
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      .publishDiv {
+         display: flex;
+         align-items: flex-start;
+         gap: 4rem;
+
+         @include mobile {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+         }
+
+         .publishFlex {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+
+            p {
+               font-weight: 400;
+               font-size: text(normal);
+               color: color(primary-white);
+               opacity: 0.6;
+               margin: 0;
+               line-height: 1rem;
+
+               @include mobile {
+                  font-size: text(normal);
+                  font-weight: 500;
+               }
+            }
+
+            h5 {
+               font-weight: 400;
+               font-size: text(lg);
+               color: color(primary-white);
+               line-height: 2rem;
+               margin: 0;
+               padding-bottom: 2rem;
+
+               @include mobile {
+                  font-size: text(normal);
+                  font-weight: 500;
+               }
+            }
+         }
       }
-    }
-  }
+
+      .serviceDiv {
+         p {
+            font-weight: 400;
+            font-size: text(normal);
+            color: color(primary-white);
+            opacity: 0.6;
+            line-height: 1rem;
+
+            @include mobile {
+               font-size: text(normal);
+               font-weight: 500;
+            }
+         }
+
+         .techStackDiv {
+            display: flex;
+            gap: 1rem;
+
+            @include mobile-tablet-p {
+               flex-wrap: wrap;
+            }
+
+            .techBtn {
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               text-align: center;
+               padding: 0.75rem;
+               cursor: default;
+               border-radius: 0.6rem;
+               border: 0.14rem solid rgba(255, 255, 255, 0.4);
+               font-weight: 400;
+               font-size: text(normal);
+               color: color(primary-white);
+               line-height: 1.8rem;
+               height: 2.1875rem;
+            }
+         }
+      }
+   }
+
+   .imageDiv {
+      position: absolute;
+      right: 0;
+      top: 11rem;
+
+      @include mobile-tablet-p {
+         position: relative;
+         top: 0;
+      }
+
+      div {
+         width: 75%;
+         height: 38.5625rem;
+         border-radius: 0.6rem 0 0 0.6rem;
+         overflow: hidden;
+         position: relative;
+         margin-right: 0;
+         margin-left: auto;
+
+         @include mobile-tablet-p {
+            // max-width: 601px;
+            // max-height: 441px;
+            width: 47rem;
+            height: 20rem;
+         }
+
+         @include mobile {
+            width: 100%;
+         }
+
+         img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+         }
+      }
+   }
 }
 
 .insightOverviewContainer {
-  @include insightOverviewStyles();
+   @include insightOverviewStyles();
 }
 
 //light Mode
 .lightMode {
-  @include insightOverviewStyles();
-  background-color: color(primary-background);
+   @include insightOverviewStyles();
+   background-color: color(primary-background);
 
-  @include mobile-tablet-p {
-    background-color: color(primary-white);
-  }
-  @include mobile {
-    background-color: color(primary-white);
-  }
+   @include mobile-tablet-p {
+      background-color: color(primary-white);
+   }
+   @include mobile {
+      background-color: color(primary-white);
+   }
 
-  .textContainer {
-    h1 {
-      color: color(text-primary);
-    }
-
-    .publishDiv {
-      .publishFlex {
-        p {
-          color: color(text-primary);
-          opacity: 0.6;
-        }
-
-        h5 {
-          color: color(text-primary);
-        }
-      }
-    }
-
-    .serviceDiv {
-      p {
-        color: color(text-primary);
-        opacity: 0.6;
+   .textContainer {
+      h1 {
+         color: color(text-primary);
       }
 
-      .techStackDiv {
-        .techBtn {
-          border: 0.06rem solid rgba(color(text-primary), 0.4);
-          color: color(text-primary);
-        }
+      .publishDiv {
+         .publishFlex {
+            p {
+               color: color(text-primary);
+               opacity: 0.6;
+            }
+
+            h5 {
+               color: color(text-primary);
+            }
+         }
       }
-    }
-  }
+
+      .serviceDiv {
+         p {
+            color: color(text-primary);
+            opacity: 0.6;
+         }
+
+         .techStackDiv {
+            .techBtn {
+               border: 0.06rem solid rgba(color(text-primary), 0.4);
+               color: color(text-primary);
+            }
+         }
+      }
+   }
 }

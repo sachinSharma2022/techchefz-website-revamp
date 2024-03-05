@@ -12,12 +12,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 4.75rem 2.5rem;
+    padding: 4.75rem spacing(tablet-padding);
   }
 
   @include mobile {
-    padding-inline: 1.5rem;
-    padding-block: 3rem 3.75rem;
+    padding: 3rem spacing(mobile-padding) 3.75rem ;
   }
 
   .insightDetailFlex {
@@ -64,15 +63,23 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        width: 60px;
+        height: 60px;
+
+        @include mobile-tablet-p {
+          width: 40px;
+          height: 40px;
+        }
 
         &:hover {
           background-color: color(dark-bg);
           border-color: color(info-blue);
         }
 
-        img {
-          width: 100%;
-          height: 100%;
+        svg {
+          @include mobile {
+            scale: 0.8;
+          }
         }
       }
     }

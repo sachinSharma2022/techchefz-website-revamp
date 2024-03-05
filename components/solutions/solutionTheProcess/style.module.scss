@@ -4,8 +4,12 @@
   padding: 8.75rem 7.5rem 20rem;
   //padding-top: 0;
 
-  @include mobile-tablet-p {
-    padding: 3.75rem 1.25rem;
+  @include tablet {
+    padding: 3.75rem spacing(tablet-padding) 1.25rem;
+  }
+
+  @include mobile {
+    padding: 3.75rem spacing(mobile-padding) 1.25rem;
   }
 
   .flexContainer {
@@ -150,7 +154,6 @@
   &.theProcessDark {
     background-color: color(input-bg);
     color: color(primary-white);
-
 
     .heading {
       color: color(primary-white);

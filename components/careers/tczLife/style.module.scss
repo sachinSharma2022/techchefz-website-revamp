@@ -8,14 +8,11 @@
   position: relative;
 
   @include tablet{
-    padding: 0 0 spacing(tablet-padding);
+    padding: 0 0 5rem;
   }
-  // @include tablet{
-  //   padding: 0 0 3.75rem;
-  // }
-  
+
   @include mobile {
-    padding: 0 0 spacing(mobile-padding);
+    padding: 0 0 5rem;
   }
 
   @include desktop-hd {
@@ -53,8 +50,13 @@
       justify-content: space-between;
       min-width: 23.25rem;
 
-      @include mobile-tablet-p {
-        margin: 3.75rem 1.25rem 0;
+      @include tablet {
+        margin: 3.75rem spacing(tablet-padding) 0;
+        min-width: auto;
+      }
+
+      @include mobile {
+        margin: 3.75rem spacing(mobile-padding) 0;
         min-width: auto;
       }
     }
@@ -155,7 +157,11 @@
     @include mobile-tablet-p {
       margin-top: 3.75rem;
       min-width: 100%;
-      padding: 0 1.25rem;
+      padding: 0 spacing(tablet-padding);
+    }
+
+    @include mobile {
+      padding: 0 spacing(mobile-padding);
     }
 
     p {

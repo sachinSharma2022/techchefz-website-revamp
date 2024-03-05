@@ -89,9 +89,18 @@
   }
 
   .cardStyle {
-    width: auto;
     max-width: 580px;
+    width: auto;
+
+    @include tablet {
+      width: 90%;
+    }
+
+    @include mobile {
+      width: auto;
+    }
   }
+
   .textStyle {
     max-width: 80%;
   }

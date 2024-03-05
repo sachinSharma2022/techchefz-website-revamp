@@ -6,7 +6,11 @@
   background: color(dark-gray);
 
   @include tablet {
-    padding: spacing(tablet-padding);
+    padding: 5rem spacing(tablet-padding);
+  }
+
+  @include mobile {
+    padding:5rem spacing(mobile-padding);
   }
 
   .projectHighlight {

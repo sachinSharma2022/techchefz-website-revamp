@@ -123,7 +123,7 @@ const OurClients = ({ props }) => {
               </div>
               <div className={styles.logoSection}>
                 <Slider {...sliderRight}>
-                  {props?.clientlogo?.map((item, index) => (
+                  {props?.clientlogo2?.map((item, index) => (
                     <div key={index} className={styles.teamImg}>
                       <ImageCustom
                         src={
@@ -141,7 +141,7 @@ const OurClients = ({ props }) => {
               </div>
               <div className={styles.logoSection}>
                 <Slider {...sliderLeft}>
-                  {props?.clientlogo?.map((item, index) => (
+                  {props?.clientlogo3?.map((item, index) => (
                     <div key={index} className={styles.teamImg}>
                       <ImageCustom
                         src={
