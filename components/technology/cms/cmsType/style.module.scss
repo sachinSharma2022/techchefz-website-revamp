@@ -3,10 +3,15 @@
 .cmsTypeStyle {
   padding: spacing(section-primary-padding);
 
-  @include mobile-tablet-p {
-    padding: spacing(section-mob-padding);
-    padding-block: 3.75rem 3.75rem;
+  @include tablet {
+    padding: 3.75rem spacing(tablet-padding);
+    margin-right: -3rem;
   }
+
+  @include mobile {
+    padding: 3.75rem spacing(mobile-padding);
+  }
+
   .careerRow {
     margin-bottom: 5rem;
     max-width: 49.1875rem;
@@ -22,7 +27,7 @@
     color: color(text-primary);
     text-transform: uppercase;
     letter-spacing: 0.2rem;
-    
+
     @include mobile-tablet-p {
       font-weight: 400;
     }
