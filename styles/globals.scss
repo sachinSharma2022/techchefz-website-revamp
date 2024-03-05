@@ -760,11 +760,19 @@ input:-webkit-autofill {
   /* the slides */
   .slick-slide {
     margin: 0 15px;
+
+    @include mobile-tablet-p {
+      margin: 0 5px;
+    }
   }
 
   /* the parent */
   .slick-list {
     margin: 0 -15px;
+
+    @include mobile-tablet-p {
+      margin: 0 -5px;
+    }
   }
 
   .slick-disabled {
@@ -1069,18 +1077,24 @@ html.lenis {
 .case-related-style {
   margin-block: 8.75rem 3.125rem;
 
-  @include mobile-tablet-p {
-    margin-block: 2.5rem 6rem;
-    padding-inline: 1.25rem;
+  @include tablet {
+    padding: 2.5rem spacing(tablet-padding) 6rem;
+  }
+
+  @include mobile {
+    padding: 2.5rem spacing(mobile-padding) 6rem;
   }
 }
 
 .tech-related-style {
   margin: 0 0 4rem;
 
-  @include mobile-tablet-p {
-    margin-block: 2.5rem 6rem;
-    padding-inline: 1.25rem;
+  @include tablet {
+    padding: 2.5rem spacing(tablet-padding) 6rem;
+  }
+
+  @include mobile {
+    padding: 2.5rem spacing(mobile-padding) 6rem;
   }
 }
 
