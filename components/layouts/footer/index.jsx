@@ -77,7 +77,7 @@ const Footer = () => {
                       )}
 
                       <Success>You have been successfully subscribed</Success>
-                      
+
                       <div className="d-flex align-items-center">
                         <Button variant="lightBlueBtn" size="lg">
                           Subscribe <Icons.ArrowRight size={15} />
@@ -93,7 +93,10 @@ const Footer = () => {
             <div className={styles.footSocial}>
               <h4 className="mb-3">Follow Us on Social Media</h4>
               <div className={styles.footSocialLinks}>
-                <Link href="https://www.linkedin.com/company/techchefz/" target="_blank">
+                <Link
+                  href="https://www.linkedin.com/company/techchefz/"
+                  target="_blank"
+                >
                   <Icons.linkedin size={16} /> <span>Linkedin</span>
                 </Link>
                 <Link href="https://www.facebook.com/techchefz" target="_blank">

@@ -144,6 +144,10 @@
   .testimonialsDesktopSlider {
     position: relative;
 
+    @include desktop-hd {
+      padding-left: 5vw;
+    }
+
     @include mobile-tablet-p {
       display: none;
     }

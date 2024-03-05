@@ -4,8 +4,12 @@
   padding: spacing(section-primary-padding);
 
   @include mobile-tablet-p {
-    padding: spacing(section-mob-padding);
+    padding-inline: spacing(tablet-padding);
     padding-block: 0 5rem;
+  }
+  
+  @include mobile {
+    padding-inline: spacing(mobile-padding);
   }
 
   .workArea {
