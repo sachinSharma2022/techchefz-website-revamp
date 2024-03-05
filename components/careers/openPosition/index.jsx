@@ -76,14 +76,13 @@ const OpenPosition = ({ props, id }) => {
     >
       <div className={cn("primary-container")}>
         <TextRevel>
-        <div className={styles.openPositionHeader}>
-          <h4 className={cn(styles.openPositionHeading, "gradient-text")}>
-            <span>{props.length}</span> Open Position
-          </h4>
-          {/* <SearchInput /> */}
-        </div>
+          <div className={styles.openPositionHeader}>
+            <h4 className={cn(styles.openPositionHeading, "gradient-text")}>
+              <span>{props.length}</span> Open Position
+            </h4>
+            {/* <SearchInput /> */}
+          </div>
         </TextRevel>
-        
 
         <div className={styles.serviceBtn}>
           {jobCatogery?.map((buttonItem) => (
@@ -149,7 +148,6 @@ const OpenPosition = ({ props, id }) => {
                                       }
                                     </p> */}
                                     <ul
-                                  
                                       dangerouslySetInnerHTML={{
                                         __html: `${item?.attributes?.DeveloperDetail[5]?.FullDescription}`,
                                       }}

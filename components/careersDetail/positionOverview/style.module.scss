@@ -79,6 +79,12 @@
       flex-direction: column;
       width: 100%;
     }
+
+    a, button {
+      @include mobile-tablet-p {
+        width: 100%;
+      }
+    }
   }
 }
 
