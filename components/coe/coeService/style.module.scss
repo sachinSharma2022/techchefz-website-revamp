@@ -3,7 +3,6 @@
 .coeService {
   background-color: color(bg-soft);
   padding: spacing(section-primary-padding);
-  margin-top: 8.75rem;
 
   @include tablet {
     padding:3.75rem spacing(tablet-padding);
