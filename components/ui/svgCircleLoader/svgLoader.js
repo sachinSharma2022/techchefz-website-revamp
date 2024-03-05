@@ -70,7 +70,7 @@ export const SvgLoader = (props) => {
             className="dot"
             id="3"
             cx="5"
-            cy="235"
+            cy="250"
             r="20"
             fill="white"
             stroke-width="2"
@@ -78,7 +78,7 @@ export const SvgLoader = (props) => {
           />
           <text
             x="5"
-            y="235"
+            y="250"
             text-anchor="middle"
             fill="white"
             alignment-baseline="middle"
@@ -158,7 +158,7 @@ export const SvgLoader = (props) => {
             className="dot"
             id="1"
             cx="460"
-            cy="235"
+            cy="250"
             r="19"
             fill="white"
             stroke-width="2"
@@ -166,7 +166,7 @@ export const SvgLoader = (props) => {
           />
           <text
             x="460"
-            y="235"
+            y="250"
             text-anchor="middle"
             fill="white"
             alignment-baseline="middle"
@@ -325,7 +325,7 @@ export const SvgLoader = (props) => {
         <g>
           <circle
             className="dot"
-            id="4"
+            id="5"
             cx="235"
             cy="20"
             r="20"
@@ -347,7 +347,7 @@ export const SvgLoader = (props) => {
         <g>
           <circle
             className="dot"
-            id="3"
+            id="4"
             cx="20"
             cy="182"
             r="20"
@@ -369,7 +369,7 @@ export const SvgLoader = (props) => {
         <g>
           <circle
             className="dot"
-            id="4"
+            id="3"
             cx="108"
             cy="440"
             r="20"
@@ -413,7 +413,7 @@ export const SvgLoader = (props) => {
         <g>
           <circle
             className="dot"
-            id="2"
+            id="1"
             cx="460"
             cy="183"
             r="20"
@@ -582,7 +582,7 @@ export const SvgLoader = (props) => {
         <g>
           <circle
             className="dot"
-            id="4"
+            id="6"
             cx="235"
             cy="20"
             r="20"
@@ -604,7 +604,7 @@ export const SvgLoader = (props) => {
         <g>
           <circle
             className="dot"
-            id="3"
+            id="5"
             cx="31"
             cy="138"
             r="20"
@@ -648,7 +648,7 @@ export const SvgLoader = (props) => {
         <g>
           <circle
             className="dot"
-            id="2"
+            id="3"
             cx="235"
             cy="490"
             r="20"
