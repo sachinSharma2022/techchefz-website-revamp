@@ -33,7 +33,7 @@ const VendorForm = () => {
     lastName: "",
     email: "",
     phone: "",
-    countyCode: "",
+    countyCode: "+91",
     companyName: "",
     serviceOffered: "",
     projectExplanation: "",

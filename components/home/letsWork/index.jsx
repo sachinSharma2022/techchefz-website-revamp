@@ -32,8 +32,8 @@ const LetsWork = ({ contact }) => {
     lastName: "",
     email: "",
     phone: "",
-    countyCode: "",
-    selectPurpose: "",
+    countyCode: "+91",
+    selectPurpose: "India",
     companyName: "",
     projectExplanation: "",
   };
@@ -263,8 +263,8 @@ const LetsWork = ({ contact }) => {
                 </div>
               </Form>
             </Formik>
-            { contact?.Image?.data?.attributes?.url !== undefined &&
-               contact?.Image?.data?.attributes?.url !== "" && (
+            {contact?.Image?.data?.attributes?.url !== undefined &&
+              contact?.Image?.data?.attributes?.url !== "" && (
                 <ImageCustom
                   src={
                     contact?.Image?.data?.attributes?.url

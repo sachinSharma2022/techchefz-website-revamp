@@ -126,7 +126,18 @@ const CustomDropdown = ({
           if (opt) setFieldValue(name, opt.value);
         }}
         ref={ref}
-        options={options.map((item) => ({value: item?.name, label: item?.name ,image:item?.flag,code:item?.code}))}
+        defaultValue={{
+          value: options[0].name,
+          label: options[0].name,
+          image: options[0].flag,
+          code: options[0].code,
+        }}
+        options={options.map((item) => ({
+          value: item?.name,
+          label: item?.name,
+          image: item?.flag,
+          code: item?.code,
+        }))}
         classNamePrefix="react-select"
         styles={controlStyle || styles}
         isSearchable={false}
@@ -134,17 +145,17 @@ const CustomDropdown = ({
         components={{
           ValueContainer: CustomValueContainer,
         }}
-         formatOptionLabel={(country) => (
-           
-            <div className={dropdownStyle.countryOption}>
-              <ImageCustom
-                width={24}
-                height={15}
-                src={`https://flagcdn.com/${country.code.toLowerCase()}.svg`}
-                alt="country-image"
-              />
-               <span>{country.value}</span>
-            </div>)}
+        formatOptionLabel={(country) => (
+          <div className={dropdownStyle.countryOption}>
+            <ImageCustom
+              width={24}
+              height={15}
+              src={`https://flagcdn.com/${country.code.toLowerCase()}.svg`}
+              alt="country-image"
+            />
+            <span>{country.value}</span>
+          </div>
+        )}
       />
     </div>
   );

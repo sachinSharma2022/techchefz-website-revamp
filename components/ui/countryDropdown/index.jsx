@@ -95,6 +95,12 @@ const CountryDropdown = (props) => {
             if (option) props.setFieldValue("countyCode", option.label);
           }}
           ref={ref}
+          defaultValue={{
+            value: countryList[0].name,
+            label: countryList[0].dial_code,
+            image: countryList[0].flag,
+            code: countryList[0].code,
+          }}
           options={countryList.map((item) => ({
             label: item?.dial_code,
             value: item?.name,

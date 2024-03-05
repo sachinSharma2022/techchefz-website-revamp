@@ -9,7 +9,7 @@ import { MyContext } from "@/context/theme";
 import { projectValidationSchema } from "@/lib/FormSchema";
 import { triggerMail } from "@/lib/triggerMail";
 import { Form, Formik, useFormik } from "formik";
-import { useContext, useState, useRef,useEffect } from "react";
+import { useContext, useState, useRef, useEffect } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { verifyCaptcha } from "@/lib/ServerActions";
 import CircleLoader from "@/components/ui/circleLoader";
@@ -33,9 +33,9 @@ const ProjectForm = () => {
     lastName: "",
     email: "",
     phone: "",
-    countyCode: "",
+    countyCode: "+91",
     companyName: "",
-    countrySelection: "",
+    countrySelection: "India",
     projectExplanation: "",
   };
   const {
@@ -51,13 +51,12 @@ const ProjectForm = () => {
     initialValues: formInitialSchema,
     validationSchema: projectValidationSchema,
     onSubmit: (values, action) => {
-      
       setinprogress(true);
       triggerMail({ content: JSON.stringify(values), formType: "Project" });
-      
+
       setTimeout(() => {
         action.resetForm();
-        recaptchaRef.current.reset()
+        recaptchaRef.current.reset();
         setinprogress(false);
         dialogOpen();
       }, 4000);
@@ -222,7 +221,9 @@ const ProjectForm = () => {
                 I understand and consent to my personal data being processed in
                 accordance with TechChefz&apos;s
                 <span className={styles.policyHighlight}>
-                  <Link href="/privacy-policy" target="_blank">Privacy Policy</Link>
+                  <Link href="/privacy-policy" target="_blank">
+                    Privacy Policy
+                  </Link>
                 </span>
               </div>
               <div className={`${styles.buttonGrid}`}>

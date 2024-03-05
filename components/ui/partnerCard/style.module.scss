@@ -28,6 +28,7 @@
     .iconContainer {
       display: flex;
       flex-direction: column;
+      align-items: center;
       width: 2rem;
       height: 2rem;
       overflow: hidden;
@@ -36,7 +37,8 @@
         width: auto;
       }
 
-      .iconAnimateOne , .iconAnimate{
+      .iconAnimateOne,
+      .iconAnimate {
         text-align: right;
       }
 
@@ -116,7 +118,6 @@
 
     // }
   }
-
 
   // Dark Theme
   &.partnerCardDark {
