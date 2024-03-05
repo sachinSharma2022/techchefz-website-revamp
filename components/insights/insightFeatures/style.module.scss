@@ -1,7 +1,8 @@
 @import "~/styles/partials/config";
 
 @mixin insightFeatures() {
-  padding: 5rem 7.5rem 0;
+  padding: 0rem 7.5rem 0;
+
 
   @include tablet {
     padding: 2rem spacing(tablet-padding);
@@ -14,7 +15,7 @@
     display: flex;
     justify-content: space-between;
     border-bottom: 0.14rem solid rgba(color(text-primary), 0.12);
-    padding-bottom: 2.5rem;
+    // padding-bottom: 2.5rem;
     text-align: left;
     align-items: center;
     gap: 5rem;

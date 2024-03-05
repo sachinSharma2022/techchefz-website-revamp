@@ -24,11 +24,13 @@
     justify-content: space-between;
     gap: 8rem;
     margin-top: 5rem;
+    padding-right: 12rem;
 
     @include mobile-tablet-p {
       flex-direction: column;
       margin-top: 0;
       gap: 3rem;
+      padding-right: 0;
     }
     @include mobile {
       flex-direction: column;
