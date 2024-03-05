@@ -5,11 +5,11 @@
   background: color(primary-background);
 
   @include tablet {
-    padding: spacing(tablet-padding);
+    padding:5rem spacing(tablet-padding);
   }
 
   @include mobile {
-    padding: spacing(mobile-padding);
+    padding: 5rem spacing(mobile-padding);
   }
 
   .serviceRow {
