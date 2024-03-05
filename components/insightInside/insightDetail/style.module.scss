@@ -12,12 +12,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 4.75rem 2.5rem;
+    padding: 4.75rem spacing(tablet-padding);
   }
 
   @include mobile {
-    padding-inline: 1.5rem;
-    padding-block: 3rem 3.75rem;
+    padding: 3rem spacing(mobile-padding) 3.75rem ;
   }
 
   .insightDetailFlex {
