@@ -1050,7 +1050,7 @@ html.lenis {
     padding-inline: spacing(tablet-padding);
   }
 
-  @include mobile{
+  @include mobile {
     padding-inline: spacing(mobile-padding);
   }
 }

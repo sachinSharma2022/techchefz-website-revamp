@@ -28,8 +28,8 @@
       margin-top: 1.25rem;
       padding: 1.75rem text(lg);
     }
-    
-    .mobileTabContainer{
+
+    .mobileTabContainer {
       @include desktop {
         display: none;
       }
@@ -43,9 +43,7 @@
         position: relative;
         z-index: 99;
         padding-left: 20px;
-    
-       
-  
+
         .tabDropLabel {
           font-size: 0.875rem;
           font-weight: 400;
@@ -54,10 +52,7 @@
           margin: 0;
         }
       }
-
     }
-
-   
 
     .headingMain {
       margin-bottom: 5rem;
@@ -274,5 +269,20 @@
         }
       }
     }
+  }
+}
+
+.tabPanel {
+  animation: tabPanel 0.6s ease-in-out;
+}
+
+@keyframes tabPanel {
+  0% {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
   }
 }
