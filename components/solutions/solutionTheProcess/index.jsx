@@ -12,7 +12,6 @@ import styles from "./style.module.scss";
 import TextRevel from "@/components/ui/sectionAnimation";
 
 const SolutionTheProcess = ({ props }) => {
-  console.log("ss", props);
   const { theme } = useContext(MyContext);
   const radius = 235;
   const dashArray = radius * Math.PI * 2;
@@ -63,11 +62,12 @@ const SolutionTheProcess = ({ props }) => {
             setdashOffset((prev) => {
               prevsetdashOffset(prev);
               return dashArray - (dashArray / titles.length) * (i + 1);
+              //return (100 / titles.length) * (i + 1);
             });
           },
           scrollTrigger: {
             trigger: text,
-            start: "top 400rem",
+            start: "top 390rem",
             end: "center 232rem",
             markers: false,
             toggleActions: "play reset play reverse",
@@ -75,19 +75,31 @@ const SolutionTheProcess = ({ props }) => {
           opacity: 1,
         });
       });
+      console.log(dashOffset, prevdashOffset, "dashofsett");
+
       gsap.fromTo(
         ".circleFil",
         {
           strokeDashoffset: prevdashOffset,
-          // duration: 3,
-          ease: "power1.inOut",
-        },
-        {
-          strokeDashoffset: dashOffset,
-          // transition: "stroke-dashoffset 1.6s linear 0s",
           duration: 3,
           ease: "power1.inOut",
+        },
+        //   {
+        //     "--p": `${dashOffset}%`,
+        //     //  duration: 4,
+        //     //  ease: "expo.out",
+        //   }
+        {
+          strokeDashoffset: dashOffset,
+          transition: "stroke-dashoffset 1.6s linear 0s",
+          duration: 9,
+          ease: "power1.inOut",
         }
+        //   {
+        //     "--p": `${dashOffset}%`,
+        //     duration: 4,
+        //     ease: "expo.out",
+        //   }
       );
     });
     return () => ctx.revert();
@@ -121,8 +133,11 @@ const SolutionTheProcess = ({ props }) => {
                 theme={theme}
                 dashArray={dashArray}
               />
+              {/* <div class="circular-pbar">
+                <span class="_circle_inner"></span>
+              </div> */}
 
-              <div id="1-img" className={styles.stepperImg}>
+              <div id="1-img" className={cn(styles.stepperImg, "fadeinout")}>
                 <ImageCustom
                   src={
                     props?.images[0]?.Image?.data?.attributes?.url
@@ -136,7 +151,7 @@ const SolutionTheProcess = ({ props }) => {
               </div>
               <div
                 id="2-img"
-                className={styles.stepperImg}
+                className={cn(styles.stepperImg, "fadeinout")}
                 style={{ display: "none" }}
               >
                 <ImageCustom
@@ -152,7 +167,7 @@ const SolutionTheProcess = ({ props }) => {
               </div>
               <div
                 id="3-img"
-                className={styles.stepperImg}
+                className={cn(styles.stepperImg, "fadeinout")}
                 style={{ display: "none" }}
               >
                 <ImageCustom
@@ -168,7 +183,7 @@ const SolutionTheProcess = ({ props }) => {
               </div>
               <div
                 id="4-img"
-                className={styles.stepperImg}
+                className={cn(styles.stepperImg, "fadeinout")}
                 style={{ display: "none" }}
               >
                 <ImageCustom
@@ -184,7 +199,7 @@ const SolutionTheProcess = ({ props }) => {
               </div>
               <div
                 id="5-img"
-                className={styles.stepperImg}
+                className={cn(styles.stepperImg, "fadeinout")}
                 style={{ display: "none" }}
               >
                 <ImageCustom
@@ -200,7 +215,7 @@ const SolutionTheProcess = ({ props }) => {
               </div>
               <div
                 id="6-img"
-                className={styles.stepperImg}
+                className={cn(styles.stepperImg, "fadeinout")}
                 style={{ display: "none" }}
               >
                 <ImageCustom
