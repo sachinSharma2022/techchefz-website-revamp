@@ -24,11 +24,15 @@
       position: sticky;
       top: 14rem;
 
-      @include tablet {
+      @include mobile-tablet-p {
         margin-bottom: 3.75rem;
         position: static;
         height: 100%;
-        padding: 0 1.25rem;
+        padding: 0 spacing(tablet-padding);
+      }
+
+      @include mobile {
+        padding: 0 spacing(mobile-padding);
       }
 
       .serviceText {
@@ -75,6 +79,10 @@
 
   .mobileCards {
     padding-left: 1.25rem;
+
+    @include tablet {
+      padding-left: spacing(tablet-padding);
+    }
     
     @include desktop {
       display: none;

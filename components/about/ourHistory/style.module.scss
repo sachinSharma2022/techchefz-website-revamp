@@ -5,8 +5,12 @@
   padding-bottom: 0;
 
   @include mobile-tablet-p {
-    padding: spacing(section-mob-padding);
+    padding-inline:spacing(tablet-padding);
     padding-block: 3.75rem 3.75rem;
+  }
+
+  @include mobile {
+    padding-inline: spacing(mobile-padding);
   }
 
   .ourHistoryTop {

@@ -5,6 +5,10 @@
   background-color: color(bg-soft);
 
   @include mobile-tablet-p {
+    padding: 5rem spacing(tablet-padding);
+  }
+
+  @include mobile {
     padding: 5rem 1.25rem;
   }
 

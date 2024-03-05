@@ -104,9 +104,10 @@ const Testimonials = ({ props }) => {
                               alt="profileImg"
                             />
                           </div>
-                          <p className={styles.customerRole}>
+                          <p className={styles.customerName}>
                             {data.ProfileName}
                           </p>
+
                           <p className={styles.customerRole}>
                             {data?.Designation}
                           </p>
@@ -135,7 +136,7 @@ const Testimonials = ({ props }) => {
             </div>
           </div>
 
-          <div className="col-sm-9">
+          <div className="col-12 col-lg-9">
             <div
               className={cn(
                 styles.testimonialsDesktopSlider,

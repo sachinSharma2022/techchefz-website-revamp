@@ -3,8 +3,11 @@
 @mixin insightFeatures() {
   padding: 5rem 7.5rem 0;
 
-  @include mobile-tablet-p {
-    padding: 2rem 1.25rem;
+  @include tablet {
+    padding: 2rem spacing(tablet-padding);
+  }
+  @include mobile {
+    padding: 2rem spacing(mobile-padding);
   }
 
   .insightHeader {

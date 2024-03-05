@@ -12,15 +12,18 @@
     font-size: text(xl-larger);
     margin-bottom: 0;
 
-    @include mobile-tablet-p {
-      padding: spacing(section-mob-padding);
-      padding-block: 3.75rem 3.75rem;
+    @include tablet {
+      padding: 3.75rem spacing(tablet-padding);
       font-size: 2.75rem;
       line-height: 3.125rem;
 
       br {
         display: none;
       }
+    }
+
+    @include mobile {
+      padding: 3.75rem spacing(mobile-padding);
     }
 
     @include desktop-hd {
