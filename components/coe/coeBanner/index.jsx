@@ -15,19 +15,19 @@ const CoeBanner = ({ props }) => {
     <section className={cn(styles.banner, theme ? styles.bannerDark : "")}>
       <div className="primary-container">
         <TextRevel>
-        <div className={cn(styles.bannerContent, "header-container")}>
-          <h1
-            className={cn(styles.bannerTitle, "gradient-text")}
-            dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
-          ></h1>
+          <div className={cn(styles.bannerContent, "header-container")}>
+            <h1
+              className={cn(styles.bannerTitle, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+            ></h1>
 
-          <div className={styles.bannerRight}>
-            <p
-              dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
-            ></p>
+            <div className={styles.bannerRight}>
+              <p
+                dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
+              ></p>
+            </div>
           </div>
-        </div>
-        </TextRevel>       
+        </TextRevel>
       </div>
 
       <div className={styles.imgBox}>
