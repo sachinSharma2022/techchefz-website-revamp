@@ -1078,11 +1078,13 @@ html.lenis {
   margin-block: 8.75rem 3.125rem;
 
   @include tablet {
-    padding: 2.5rem spacing(tablet-padding) 6rem;
+    margin-block: 3.125rem 4rem;
+    padding: 0 0 0 spacing(tablet-padding);
   }
 
   @include mobile {
-    padding: 2.5rem spacing(mobile-padding) 6rem;
+    margin-block: 2rem 0;
+    padding: spacing(mobile-padding);
   }
 }
 
@@ -1090,11 +1092,13 @@ html.lenis {
   margin: 0 0 4rem;
 
   @include tablet {
-    padding: 2.5rem spacing(tablet-padding) 6rem;
+    margin-block: 3.125rem 4rem;
+    padding: 0 0 0 spacing(tablet-padding);
   }
 
   @include mobile {
-    padding: 2.5rem spacing(mobile-padding) 6rem;
+    margin-block:4rem 0rem;
+    padding: spacing(mobile-padding);
   }
 }
 
