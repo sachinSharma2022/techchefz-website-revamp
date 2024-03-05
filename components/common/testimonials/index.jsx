@@ -37,7 +37,7 @@ const Testimonials = ({ props }) => {
     >
       <div className={cn("primary-container", styles.testimonialContainer)}>
         <div className="row">
-          <div className="col-12 col-md-3">
+          <div className="col-12 col-lg-3">
             <div className={styles.infoSection}>
               <TextRevel>
                 <div className={styles.testimonialsLeft}>
@@ -135,7 +135,7 @@ const Testimonials = ({ props }) => {
             </div>
           </div>
 
-          <div className="col-12 col-md-9">
+          <div className="col-12 col-lg-9">
             <div
               className={cn(
                 styles.testimonialsDesktopSlider,
