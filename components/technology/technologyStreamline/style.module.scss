@@ -83,8 +83,7 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
-      padding: spacing(section-mob-padding);
-      padding-block: 0 5rem;
+      padding: 0 spacing(tablet-padding) 5rem;
     }
 
     @include mobile {

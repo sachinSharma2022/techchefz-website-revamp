@@ -4,8 +4,13 @@
   .contentSection {
     padding-block: 10rem 4.75rem;
 
-    @include mobile-tablet-p {
-      padding: spacing(section-mob-padding);
+    @include tablet {
+      padding: spacing(tablet-padding);
+      padding-bottom: 1.25rem;
+    }
+
+    @include mobile {
+      padding: spacing(mobile-padding);
       padding-bottom: 1.25rem;
     }
   }

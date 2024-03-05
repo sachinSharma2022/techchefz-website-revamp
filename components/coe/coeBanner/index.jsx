@@ -7,24 +7,27 @@ import { base_Uri } from "@/lib/constants";
 
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const CoeBanner = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section className={cn(styles.banner, theme ? styles.bannerDark : "")}>
       <div className="primary-container">
-        <div className={cn(styles.bannerContent, "header-container")}>
-          <h1
-            className={cn(styles.bannerTitle, "gradient-text")}
-            dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
-          ></h1>
+        <TextRevel>
+          <div className={cn(styles.bannerContent, "header-container")}>
+            <h1
+              className={cn(styles.bannerTitle, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+            ></h1>
 
-          <div className={styles.bannerRight}>
-            <p
-              dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
-            ></p>
+            <div className={styles.bannerRight}>
+              <p
+                dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
+              ></p>
+            </div>
           </div>
-        </div>
+        </TextRevel>
       </div>
 
       <div className={styles.imgBox}>

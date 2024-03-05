@@ -9,8 +9,12 @@
   background-color: color(bg-soft);
 
   @include mobile-tablet-p {
-    padding: spacing(section-mob-padding);
+    padding: spacing(tablet-padding);
     padding-block: 3.75rem 3.75rem;
+  }
+
+  @include mobile {
+    padding: spacing(section-mob-padding);
   }
 
   .flexContainer {
@@ -47,7 +51,7 @@
 
   .subHeading {
     opacity: 0.6;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 1.5rem;
     font-size: text(normal);
     text-transform: uppercase;

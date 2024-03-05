@@ -3,9 +3,12 @@
 .lestWorkStyle {
   padding: spacing(section-primary-padding);
 
-  @include mobile-tablet-p {
-    padding: spacing(section-mob-padding);
-    padding-block: 0 5rem;
+  @include tablet {
+    padding:5rem spacing(tablet-padding);
+  }
+  
+  @include mobile {
+    padding:3rem spacing(mobile-padding);
   }
 
   .workArea {

@@ -4,8 +4,12 @@
   padding: spacing(section-primary-padding);
   background: color(primary-background);
 
-  @include mobile-tablet-p {
-    padding: spacing(section-mob-padding);
+  @include tablet {
+    padding: spacing(tablet-padding);
+  }
+
+  @include mobile {
+    padding: spacing(mobile-padding);
   }
 
   .serviceRow {

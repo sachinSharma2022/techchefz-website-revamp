@@ -4,6 +4,7 @@ import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import { base_Uri } from "@/lib/constants";
 import { useContext } from "react";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 import styles from "./style.module.scss";
 
@@ -12,6 +13,7 @@ const Industry = ({ props, CMSImplementation, Industryinner }) => {
   return (
     <section className={cn(styles.industry, theme ? styles.industryDark : "")}>
       <div className={cn("primary-container")}>
+        <TextRevel>
         <div className={styles.contentSection}>
           <div className={styles.industryLeft}>
             <div className="mb-4">
@@ -42,6 +44,8 @@ const Industry = ({ props, CMSImplementation, Industryinner }) => {
             </p>
           </div>
         </div>
+        </TextRevel>
+       
         {CMSImplementation[0]?.Image?.data?.attributes?.url !== undefined &&
           CMSImplementation[0]?.Image?.data?.attributes?.url !== "" && (
             <ImageCustom

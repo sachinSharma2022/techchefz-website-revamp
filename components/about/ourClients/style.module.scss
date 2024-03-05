@@ -65,7 +65,10 @@
     @include mobile-tablet-p {
       max-width: 100%;
       width: 100%;
-      padding-inline: 1.25rem;
+      padding-inline: spacing(tablet-padding);
+    }
+    @include mobile {
+      padding-inline: spacing(mobile-padding);
     }
   }
 
@@ -82,13 +85,19 @@
   .clientSection {
     width: 100%;
 
+
     .description {
       max-width: 70%;
 
       @include mobile-tablet-p {
         max-width: 100%;
+        padding-inline: spacing(tablet-padding);
+      }
+
+      @include mobile {
         padding-inline: 1.25rem;
       }
+  
     }
   }
 

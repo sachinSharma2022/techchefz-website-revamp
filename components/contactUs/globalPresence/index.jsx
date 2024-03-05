@@ -10,6 +10,7 @@ import { useMediaQuery } from "react-responsive";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
 import { base_Url } from "@/lib/constants";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const GlobalPresence = ({props}) => {
  
@@ -25,11 +26,14 @@ const GlobalPresence = ({props}) => {
       }`}
     >
       <div className={styles.globalStackBox}>
+        <TextRevel>
         <div className={cn("primary-container", styles.globalRow)}>
           <h2 className={cn(styles.globalHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}></h2>
           <p className={cn(styles.globalText, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
           </p>
         </div>
+        </TextRevel>
+       
 
         <Popover className={cn(styles.popoverContainer)}>
           <Popover.Button>
@@ -67,7 +71,7 @@ const GlobalPresence = ({props}) => {
       {isMobileScreen && (
         <div className={styles.popoverCardMobile}>
           {props?.DescriptionInner?.map((data, index) => (
-            <div className={styles.locationPopoverCard}>
+            <div key={index} className={styles.locationPopoverCard}>
               <div className={styles.popoverMapIcon}>
                 <ImageCustom
                   src={data?.Images?.data?.attributes?.url?`${base_Url}${data?.Images?.data?.attributes?.url}`:`${base_Url}/`}

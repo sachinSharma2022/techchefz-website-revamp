@@ -11,8 +11,12 @@
     max-width: 48rem;
 
     @include mobile-tablet-p {
-      padding: 5rem 1.25rem;
+      padding: 5rem spacing(tablet-padding);
       max-width: 100%;
+    }
+
+    @include mobile {
+      padding: 5rem 1.25rem
     }
   }
 
@@ -38,6 +42,7 @@
       margin-bottom: text(lg);
     }
   }
+  
   .ourResultsText {
     opacity: 0.6;
     font-weight: 400;
@@ -57,7 +62,7 @@
     gap: 2.5rem;
 
     @include tablet {
-      padding-inline: 1.25rem;
+      padding-inline: spacing(tablet-padding);
       display: grid;
       grid-template-columns: repeat(2, 1fr);
     }

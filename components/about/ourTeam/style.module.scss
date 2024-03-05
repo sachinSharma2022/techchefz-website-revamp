@@ -8,8 +8,12 @@
   position: relative;
 
   @include mobile-tablet-p {
-    padding: spacing(section-mob-padding);
+    padding: spacing(tablet-padding);
     padding-block: 3.75rem 3.75rem;
+  }
+
+  @include mobile {
+    padding: spacing(section-mob-padding);
   }
 
   &::before {

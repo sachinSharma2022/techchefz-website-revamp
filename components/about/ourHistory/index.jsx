@@ -75,6 +75,7 @@ const OurHistory = ({ props, OurHistory }) => {
         settings: {
           slidesToShow: 5,
           slidesToScroll: 1,
+          centerPadding: "60px",
         },
       },
     ],

@@ -8,6 +8,7 @@ import styles from "./style.module.scss";
 import Link from "next/link";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const CmsBanner = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -17,6 +18,7 @@ const CmsBanner = ({ props }) => {
         theme ? styles.cmsBannerDark : ""
       }`}
     >
+      <TextRevel>
       <div className={cn("primary-container", "header-container")}>
         <h1
           className={cn(styles.title, "gradient-text")}
@@ -40,6 +42,8 @@ const CmsBanner = ({ props }) => {
         </div>
         
       </div>
+      </TextRevel>
+      
     </section>
   );
 };

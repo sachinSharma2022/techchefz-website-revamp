@@ -317,6 +317,15 @@ $desktop-4k: 2000px;
   text-fill-color: transparent;
 }
 
+@mixin logoGradient {
+  background: linear-gradient(92deg, #0B9DEB 100%, #FFC43B 100%, #C17911 100%, #AC29CB 100%, #6413F0 100%, #3651F0 100%, #00A3FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+
 
 @mixin truncate($line) {
   display: -webkit-box;

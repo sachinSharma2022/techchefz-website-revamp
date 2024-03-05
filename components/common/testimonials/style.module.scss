@@ -6,9 +6,12 @@
   overflow: hidden;
   position: relative;
 
-  @include mobile-tablet-p {
-    padding: spacing(section-mob-padding);
-    padding-block: 3.75rem 3.75rem;
+  @include tablet {
+    padding:3.75rem spacing(tablet-padding);
+  }
+
+  @include mobile {
+    padding:3.75rem spacing(mobile-padding);
   }
 
   @include desktop-hd {
@@ -143,6 +146,10 @@
 
   .testimonialsDesktopSlider {
     position: relative;
+
+    @include desktop-hd {
+      padding-left: 5vw;
+    }
 
     @include mobile-tablet-p {
       display: none;

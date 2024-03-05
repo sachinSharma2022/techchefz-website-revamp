@@ -8,6 +8,7 @@ import Image from "next/image";
 import { base_Uri } from "@/lib/constants";
 
 import styles from "./style.module.scss";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const CaseStudyBanner = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -17,12 +18,15 @@ const CaseStudyBanner = ({ props }) => {
         theme ? styles.caseStudyDark : ""
       }`}
     >
+      <TextRevel>
       <div className={cn("primary-container", "header-full-container")}>
         <h1
           className={cn(styles.bannerTitle, "gradient-text")}
           dangerouslySetInnerHTML={{ __html: `${props?.CaseStudyTitle}` }}
         ></h1>
       </div>
+      </TextRevel>
+      
       {props?.CaseStudyImage?.data?.attributes?.url !== undefined &&
         props?.CaseStudyImage?.data?.attributes?.url !== "" && (
           <div className={styles.bannerImg}>

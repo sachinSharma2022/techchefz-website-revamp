@@ -7,6 +7,7 @@ import { useContext } from "react";
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 import { base_Uri } from "@/lib/constants";
+import TextRevel from "@/components/ui/sectionAnimation";
 
 const ContactHeroBanner = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -17,12 +18,14 @@ const ContactHeroBanner = ({ props }) => {
       }`}
     >
       <div className={cn("primary-container", styles.globalRow)}>
-        <div className={styles.contentSection}>
-          <h1
-            className={cn(styles.title, "gradient-text")}
-            dangerouslySetInnerHTML={{ __html: `${props?.title}` }}
-          ></h1>
-        </div>
+        <TextRevel>
+          <div className={styles.contentSection}>
+            <h1
+              className={cn(styles.title, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props?.title}` }}
+            ></h1>
+          </div>
+        </TextRevel>
       </div>
 
       <div className={styles.landingPlayerStyle}>

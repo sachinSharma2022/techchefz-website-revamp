@@ -28,7 +28,7 @@
         margin-bottom: 3.75rem;
         position: static;
         height: 100%;
-        padding: 0 1.25rem;
+        padding: 0 spacing(tablet-padding);
       }
 
       .serviceText {
@@ -75,6 +75,10 @@
 
   .mobileCards {
     padding-left: 1.25rem;
+
+    @include tablet {
+      padding-left: spacing(tablet-padding);
+    }
     
     @include desktop {
       display: none;

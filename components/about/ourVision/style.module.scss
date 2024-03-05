@@ -5,9 +5,12 @@
   padding-bottom: 0rem;
 
   @include mobile-tablet-p {
-    padding: spacing(section-mob-padding);
-    padding-block: 3.75rem 3.75rem;
-    padding-bottom: 0rem;
+    padding-inline: spacing(tablet-padding);
+    padding-block: 3.75rem 0rem;
+  }
+
+  @include mobile {
+    padding-inline: spacing(mobile-padding);
   }
 
   &.ourVisionDark {

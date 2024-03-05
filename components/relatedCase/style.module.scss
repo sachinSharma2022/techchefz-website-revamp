@@ -16,8 +16,13 @@
     }
   
     @include mobile-tablet-p {
-      padding-inline: 1.25rem;
-      margin-block: 5rem 7rem;
+      margin-block: 2rem 11rem;
+      padding: 0 spacing(tablet-padding);
+    }
+
+    @include mobile {
+      margin-block: 0rem 8rem;
+      padding: 0 spacing(mobile-padding);
     }
   }
 
