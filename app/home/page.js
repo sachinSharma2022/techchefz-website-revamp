@@ -21,32 +21,30 @@ export const metadata = {
 const HomePage = async () => {
   const data = await getData(api_Home_Page);
   return (
-    <>
-      <Curve>
-        {data ? (
-          <div>
-            <LandingBanner props={data.Banner} />
-            <HomepageIntro
-              src={
-                data?.Technology?.Video?.data?.attributes?.url
-                  ? `${base_Url}${data?.Technology?.Video?.data?.attributes?.url}`
-                  : `${base_Url}/`
-              }
-            />
-            <WeAreFuture props={data.Technology} />
-            <Service props={data.Services} />
-            <Projects project={data.Project} brands={data.Brands} />
-            <OurNumbers carrer={data.carrer} experience={data.ourExperience} />
-            <TechnologyStack technology={data.Technologys} />
-            <DigitalTransformation digital={data.digitalTransform} />
-            <HomeTestimonials testimonials={data.Testimonials} />
-            <LetsWork contact={data.ContactUs} />
-          </div>
-        ) : (
-          <>{/* {"API fail fallback"} */}</>
-        )}
-      </Curve>
-    </>
+    <Curve>
+      {data ? (
+        <div>
+          <LandingBanner props={data.Banner} />
+          <HomepageIntro
+            src={
+              data?.Technology?.Video?.data?.attributes?.url
+                ? `${base_Url}${data?.Technology?.Video?.data?.attributes?.url}`
+                : `${base_Url}/`
+            }
+          />
+          <WeAreFuture props={data.Technology} />
+          <Service props={data.Services} />
+          <Projects project={data.Project} brands={data.Brands} />
+          <OurNumbers carrer={data.carrer} experience={data.ourExperience} />
+          <TechnologyStack technology={data.Technologys} />
+          <DigitalTransformation digital={data.digitalTransform} />
+          <HomeTestimonials testimonials={data.Testimonials} />
+          <LetsWork contact={data.ContactUs} />
+        </div>
+      ) : (
+        <>{/* {"API fail fallback"} */}</>
+      )}
+    </Curve>
   );
 };
 

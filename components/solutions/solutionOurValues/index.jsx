@@ -10,7 +10,6 @@ import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
 import { base_Url } from "@/lib/constants";
 import { motion, AnimatePresence } from "framer-motion";
-import TextRevel from "@/components/ui/sectionAnimation";
 
 const SolutionOurValues = ({ props }) => {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
@@ -39,7 +38,6 @@ const SolutionOurValues = ({ props }) => {
       }`}
     >
       <div className={cn("primary-container", styles.flexContainer)}>
-        <TextRevel>
           <div className={styles.ourValuesHead}>
             <h6
               className={cn(styles.ourValuesTitle, "gradient-text")}
@@ -51,7 +49,6 @@ const SolutionOurValues = ({ props }) => {
             ></h3>
             <p className={styles.ourValuesText}>{props?.Description}</p>
           </div>
-        </TextRevel>
 
         <div className={styles.ourValuesAccordion}>
           {props?.Views.map((data, index) => (
