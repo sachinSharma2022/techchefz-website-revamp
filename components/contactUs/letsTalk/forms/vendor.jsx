@@ -102,6 +102,14 @@ const VendorForm = () => {
                       onBlur={handleBlur}
                       value={values.firstName}
                       errorStatus={touched.firstName && errors.firstName}
+                      onKeyDown={(event) => {
+                        console.log(event.keyCode, "keycode");
+                        var regex = new RegExp("^[a-zA-Z]*$");
+                        if (!regex.test(event.key) && !(event.key === "'")) {
+                          event.preventDefault();
+                          return false;
+                        }
+                      }}
                     />
                     {touched.firstName && errors.firstName && (
                       <Error>{touched.firstName && errors.firstName}</Error>
@@ -119,6 +127,18 @@ const VendorForm = () => {
                       onBlur={handleBlur}
                       value={values.lastName}
                       errorStatus={touched.lastName && errors.lastName}
+                      onKeyDown={(event) => {
+                        console.log(event.keyCode, "keycode");
+                        var regex = new RegExp("^[a-zA-Z]*$");
+                        if (
+                          !regex.test(event.key) &&
+                          !(event.key === "-") &&
+                          !(event.key === " ")
+                        ) {
+                          event.preventDefault();
+                          return false;
+                        }
+                      }}
                     />
                     {touched.lastName && errors.lastName && (
                       <Error>{errors.lastName}</Error>
@@ -150,6 +170,19 @@ const VendorForm = () => {
                       onBlur={handleBlur}
                       value={values.phone}
                       errorStatus={touched.phone && errors.phone}
+                      onKeyDown={(event) => {
+                        console.log(event.key, "keycode");
+                        var regex = new RegExp("^[0-9]*$");
+                        if (
+                          !regex.test(event.key) &&
+                          !(event.key == "Backspace") &&
+                          !(event.key == "ArrowRight") &&
+                          !(event.key == "ArrowLeft")
+                        ) {
+                          event.preventDefault();
+                          return false;
+                        }
+                      }}
                     />
                     {touched.phone && errors.phone && (
                       <Error>{errors.phone}</Error>
@@ -167,6 +200,14 @@ const VendorForm = () => {
                       onBlur={handleBlur}
                       value={values.companyName}
                       errorStatus={touched.companyName && errors.companyName}
+                      onKeyDown={(event) => {
+                        console.log(event.keyCode, "keycode");
+                        var regex = new RegExp("^[a-zA-Z 0-9]*$");
+                        if (!regex.test(event.key)) {
+                          event.preventDefault();
+                          return false;
+                        }
+                      }}
                     />
                     {touched.companyName && errors.companyName && (
                       <Error>{errors.companyName}</Error>
