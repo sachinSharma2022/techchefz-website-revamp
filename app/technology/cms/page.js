@@ -31,11 +31,8 @@ const Cms = async () => {
             props={data.Technology}
           /> */}
           <SolutionTheProcess props={data.OurProcess} />
+          <RelatedCase props={data_related_cases} />
           <Faq props={data.Faq} />
-          <RelatedCase
-            className="case-related-style"
-            props={data_related_cases}
-          />
           <LetsWork contact={data.ContactUs} />
         </div>
       ) : (
