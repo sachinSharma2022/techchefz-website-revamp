@@ -94,7 +94,7 @@ const CustomDropdown = ({
       transition: "top 0.1s, font-size 0.1s",
       fontSize: (state.hasValue || state.selectProps.inputValue) && 13,
       color: "#8d8d8d",
-      fontWeight: 400,
+      fontWeight: 900,
     }),
     option: (styles, { isFocused }) => {
       return {

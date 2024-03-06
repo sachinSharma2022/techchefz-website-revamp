@@ -15,7 +15,8 @@ import { useState } from "react";
 import CircleLoader from "@/components/ui/circleLoader";
 import AnimatedFooterLogo from "@/components/common/animatedFooterLogo";
 
-const Footer = () => {
+const Footer = ({ props, Subscribe, SocialMedia, footerinner, Reserved }) => {
+  console.log("ff", Reserved);
   const [inprogress, setinprogress] = useState(false);
   const [success, setsuccess] = useState(false);
   const formInitialSchema = {
@@ -50,10 +51,7 @@ const Footer = () => {
         <div className="row">
           <div className="col-12 col-lg-6">
             <div className={styles.footLeftPanel}>
-              <p className={styles.description}>
-                Stay at the forefront of innovation, trends, and industry
-                insights by subscribing to our newsletter.
-              </p>
+              <p className={styles.description}>{props[0]?.Description}</p>
 
               {/* <Link href="/contact-us" className={styles.partnerCard}>
                 <div className={styles.partnerCols}>
@@ -71,7 +69,7 @@ const Footer = () => {
               </Link> */}
 
               <div className={styles.subscribe}>
-                <h4 className="mb-3">Stay Ahead of the Tech Curve</h4>
+                <h4 className="mb-3">{Subscribe[0]?.Title}</h4>
                 <Formik>
                   <Form onSubmit={handleSubmit}>
                     <div className={styles.formFlex}>
@@ -89,9 +87,7 @@ const Footer = () => {
                       {touched.email && errors.email && (
                         <Error>{errors.email}</Error>
                       )}
-                      {success && (
-                        <Success>You have been successfully subscribed</Success>
-                      )}
+                      {success && <Success>{Subscribe[0]?.Link}</Success>}
 
                       <div className="d-flex align-items-center">
                         <Button
@@ -99,7 +95,7 @@ const Footer = () => {
                           size="lg"
                           disabled={inprogress ? true : false}
                         >
-                          Subscribe
+                          {Subscribe[0]?.button}
                           {inprogress ? (
                             <CircleLoader repeatCount={1} />
                           ) : (
@@ -115,101 +111,80 @@ const Footer = () => {
           </div>
           <div className="col-12 col-lg-6">
             <div className={styles.footSocial}>
-              <h4 className="mb-3">Follow Us on Social Media</h4>
+              <h4 className="mb-3">{SocialMedia[0].Title}</h4>
               <div className={styles.footSocialLinks}>
                 <Link
-                  href="https://www.linkedin.com/company/techchefz/"
+                  href={SocialMedia[0]?.SocialMediaInner[0]?.Link}
                   target="_blank"
                 >
-                  <Icons.linkedin size={16} /> <span>Linkedin</span>
+                  <Icons.linkedin size={16} />{" "}
+                  <span>{SocialMedia[0]?.SocialMediaInner[0]?.Title}</span>
                 </Link>
-                <Link href="https://www.facebook.com/techchefz" target="_blank">
-                  <Icons.facebook size={16} /> <span>Facebook</span>
+                <Link
+                  href={SocialMedia[0]?.SocialMediaInner[1]?.Link}
+                  target="_blank"
+                >
+                  <Icons.facebook size={16} />{" "}
+                  <span>{SocialMedia[0]?.SocialMediaInner[1]?.Title}</span>
                 </Link>
-                <Link href="/" target="_blank">
-                  <Icons.twitter size={16} /> <span>Twitter</span>
+                <Link
+                  href={SocialMedia[0]?.SocialMediaInner[2]?.Link}
+                  target="_blank"
+                >
+                  <Icons.twitter size={16} />{" "}
+                  <span>{SocialMedia[0]?.SocialMediaInner[2]?.Title}</span>
                 </Link>
               </div>
             </div>
 
             <div className={styles.footerBox}>
               <div className={styles.footerCols}>
-                <ul>
-                  <li>
-                    <Link href="/about">About us</Link>
-                  </li>
-                  <li>
-                    <Link href="/solutions">Solutions</Link>
-                  </li>
-                  <li>
-                    <Link href="/portfolio">Portfolio</Link>
-                  </li>
-                  <li>
-                    <Link href="/contact-us">Contact Us</Link>
-                  </li>
-                </ul>
+                {footerinner[0]?.menuinner?.map((data, index) => (
+                  <ul key={index}>
+                    <li>
+                      <Link href={data.Link}>{data.Title}</Link>
+                    </li>
+                  </ul>
+                ))}
               </div>
+
               <div className={styles.footerCols}>
                 <h5>
-                  <Link href="/technology">Technology</Link>
+                  <Link href={footerinner[1]?.Link}>
+                    {footerinner[1]?.Heading}
+                  </Link>
                 </h5>
-                <ul className={styles.fadeLink}>
-                  <li>
-                    <Link href="/technology/cms">CMS</Link>
-                  </li>
-                  <li>
-                    <Link href="/technology/commerce">Commerce</Link>
-                  </li>
-                  <li>
-                    <Link href="/technology/microservices">Microservices</Link>
-                  </li>
-                  <li>
-                    <Link href="/technology/cloud-devsec-ops">
-                      Cloud & DevSecOps
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/technology/data-intelligence">
-                      Data Intelligence
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/technology/analytics-automation">
-                      Analysis Automation
-                    </Link>
-                  </li>
-                </ul>
+                {footerinner[1]?.menuinner?.map((data, index) => (
+                  <ul className={styles.fadeLink} key={index}>
+                    <li>
+                      <Link href={data.Link}>{data.Title}</Link>
+                    </li>
+                  </ul>
+                ))}
               </div>
+
               <div className={styles.footerCols}>
                 <h5>More</h5>
-                <ul className={styles.fadeLink}>
-                  <li>
-                    <Link href="/careers">Careers</Link>
-                  </li>
-                  <li>
-                    <Link href="/insights">Insights</Link>
-                  </li>
-                  <li>
-                    <Link href="/coe">Center of Excellence</Link>
-                  </li>
-                  {/* <li>
-                    <Link href="/accelerators">Accelerators</Link>
-                  </li> */}
-                </ul>
+                {footerinner[2]?.menuinner?.map((data, index) => (
+                  <ul className={styles.fadeLink} key={index}>
+                    <li>
+                      <Link href={data.Link}>{data.Title}</Link>
+                    </li>
+                  </ul>
+                ))}
               </div>
             </div>
           </div>
         </div>
 
         <div className={styles.footCopyright}>
-          <p>© 2023 TCZ Digital Pvt. Ltd. All rights reserved.</p>
+          <p>{Reserved[0].Title}</p>
           <ul>
-            <li>
-              <Link href="/privacy-policy">Privacy Policy</Link>
-            </li>
-            <li>
-              <Link href="/sitemap">Sitemap</Link>
-            </li>
+            {Reserved[0]?.PrivacyPolicy?.map((data, index) => (
+              <li key={index}>
+                <Link href={data.Link}>{data.Title}</Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

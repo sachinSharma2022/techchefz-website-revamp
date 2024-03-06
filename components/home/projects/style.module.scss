@@ -95,7 +95,7 @@
     position: sticky;
     height: 82dvh;
     border-radius: 12px;
-    overflow: hidden;
+    // overflow: hidden;
 
     @include mobile-tablet-p {
       margin-bottom: 60px;
@@ -172,12 +172,11 @@
   }
 
   .brandFromText {
-    font-size: text(lg);
+    font-size: text(xl);
     color: rgba(color(primary-white), 0.8);
     line-height: 1.5rem;
     max-width: 50%;
     margin: 0px;
-    scale: 1.1;
 
     @include tablet {
       max-width: 90%;

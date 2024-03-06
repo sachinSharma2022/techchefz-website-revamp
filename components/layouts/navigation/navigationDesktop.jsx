@@ -281,7 +281,7 @@ const NavigationDesktop = ({ props }) => {
               </Link>
             </li>
             <li className={styles.dropDown}>
-              <Link href="/">
+              <div className={styles.more} >
                 <Icons.MoreDotIcon
                   className={styles.dotIcon}
                   width={4}
@@ -289,7 +289,7 @@ const NavigationDesktop = ({ props }) => {
                 />
                 {props[4].Title}
                 <div className={cn(styles.arrow, styles.hideDesktopIcon)} />
-              </Link>
+              </div>
               <ul className={cn(styles.subMenu, styles.singleLayout)}>
                 <div className={styles.subsection}>
                   {LatestTech()}

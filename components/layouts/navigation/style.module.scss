@@ -808,10 +808,44 @@
       ul {
         li {
           &.dropDown {
-            > a {
-              &.active {
-                .arrow {
-                  border-color: color(info-blue);
+            .more {
+              color: white;
+              font-weight: 500;
+              padding: 0.4rem 0.7rem;
+              margin: 0 0.5rem;
+              cursor: pointer;
+              @include desktop {
+                &::before {
+                  content: "";
+                  width: 0px;
+                  height: 0px;
+                  border-style: solid;
+                  border-width: 0 10px 10px 10px;
+                  border-color: transparent transparent color(primary-blue)
+                    transparent;
+                  transform: rotate(0deg);
+                  position: absolute;
+                  top: 4.4rem;
+                  left: 50%;
+                  transform: translate(-50%);
+                  opacity: 0;
+                  transition: all 0.5s;
+                }
+                &:hover {
+                  &::before {
+                    opacity: 1;
+                  }
+                  .arrow {
+                    border-color: color(primary-blue);
+                  }
+                }
+              }
+
+              > a {
+                &.active {
+                  .arrow {
+                    border-color: color(info-blue);
+                  }
                 }
               }
             }
@@ -820,7 +854,6 @@
           .linkButton,
           button {
             color: color(primary-white);
-
             &::after {
               background-color: color(primary-white);
             }
