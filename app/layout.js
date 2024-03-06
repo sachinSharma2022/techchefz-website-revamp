@@ -1,4 +1,5 @@
 import Footer from "@/components/layouts/footer";
+import { FooterContainer } from "@/components/layouts/footer/footerContainer";
 import ThemeProvider from "@/context/theme";
 import "bootstrap/dist/css/bootstrap.css";
 import Header from "../components/layouts/header";
@@ -23,7 +24,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider>
           <Header />
           <div className={cn("main-style")}>{children}</div>
-          <Footer />
+          <FooterContainer />
         </ThemeProvider>
       </body>
     </html>

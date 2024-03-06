@@ -8,11 +8,14 @@ const Header = async () => {
   const data = await getDataDynamic(api_header_Page);
   return (
     <>
-      {/* For Mobile */}
-      <NavigationMobile props={data?.attributes?.HeaderMenu} />
-
-      {/* For Desktop */}
-      <NavigationDesktop props={data?.attributes?.HeaderMenu} />
+      {data ? (
+        <>
+          <NavigationMobile props={data?.attributes?.HeaderMenu} />
+          <NavigationDesktop props={data?.attributes?.HeaderMenu} />
+        </>
+      ) : (
+        <></>
+      )}
     </>
   );
 };
