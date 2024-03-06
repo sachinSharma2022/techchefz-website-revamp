@@ -1,7 +1,7 @@
 @import "~/styles/partials/config";
 
 .results {
-  padding: 0 7.5rem 0;
+  padding: 0 7.5rem 7.5rem;
 
   @include tablet {
     padding: 0 spacing(tablet-padding) 3.75rem;

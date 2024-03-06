@@ -17,7 +17,7 @@ import Link from "next/link";
 import { countryList } from "@/lib/country";
 import ConfirmationPopup from "@/components/ui/confirmationPopup";
 
-import CustomDropdown from "@/components/ui/customDropdown";
+import { ServiceDropdown } from "@/components/ui/customDropdown";
 
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
@@ -39,10 +39,11 @@ const VendorForm = () => {
     projectExplanation: "",
   };
 
-  const dropdownData = [
-    { value: "India", label: "India" },
-    { value: "united State", label: "united State" },
-    { value: "New York", label: "New York" },
+  const options = [
+    { name: "Frontend" },
+    { name: "Backend" },
+    { name: "CMS" },
+    { name: "Animation" },
   ];
   async function handleCaptchaSubmission(token) {
     // Server function to verify captcha
@@ -149,7 +150,6 @@ const VendorForm = () => {
                       onBlur={handleBlur}
                       value={values.phone}
                       errorStatus={touched.phone && errors.phone}
-                      clear={inprogress}
                     />
                     {touched.phone && errors.phone && (
                       <Error>{errors.phone}</Error>
@@ -173,19 +173,18 @@ const VendorForm = () => {
                     )}
                   </div>
                   <div className={cn(styles.inputSpace, "input-item")}>
-                    <CustomDropdown
+                    <ServiceDropdown
                       label="Service Offered"
                       name="serviceOffered"
                       setFieldValue={setFieldValue}
                       onBlur={handleBlur}
                       value={values.serviceOffered}
-                      options={countryList}
+                      options={options}
                       errorStatus={
                         touched.serviceOffered && errors.serviceOffered
                       }
                       className="custom-dropdown"
                       placeholder="Service Offered*"
-                      clear={inprogress}
                     />
                     {touched.serviceOffered && errors.serviceOffered && (
                       <Error>{errors.serviceOffered}</Error>

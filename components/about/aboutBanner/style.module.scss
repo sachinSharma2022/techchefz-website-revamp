@@ -32,9 +32,9 @@
 
     span {
       color: color(heading-liner);
-      @include textGradient;
       font-size: text(xl-larger);
       @include textGradient;
+      
       @include mobile-tablet-p {
         font-size: 2.75rem;
       }
