@@ -156,7 +156,7 @@ const JobsForm = () => {
                       onBlur={handleBlur}
                       value={values.phone}
                       errorStatus={touched.phone && errors.phone}
-                      clear={inprogress}
+                      valueCountryCode={values.countyCode}
                     />
                     {touched.phone && errors.phone && (
                       <Error>{errors.phone}</Error>
