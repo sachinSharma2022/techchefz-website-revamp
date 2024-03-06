@@ -138,17 +138,15 @@ const Footer = ({ props, Subscribe, SocialMedia, footerinner, Reserved }) => {
             </div>
 
             <div className={styles.footerBox}>
-             
-                <div className={styles.footerCols}>
+              <div className={styles.footerCols}>
                 {footerinner[0]?.menuinner?.map((data, index) => (
                   <ul key={index}>
                     <li>
                       <Link href={data.Link}>{data.Title}</Link>
                     </li>
                   </ul>
-                    ))}
-                </div>
-            
+                ))}
+              </div>
 
               <div className={styles.footerCols}>
                 <h5>
@@ -157,7 +155,7 @@ const Footer = ({ props, Subscribe, SocialMedia, footerinner, Reserved }) => {
                   </Link>
                 </h5>
                 {footerinner[1]?.menuinner?.map((data, index) => (
-                  <ul className={styles.fadeLink}>
+                  <ul className={styles.fadeLink} key={index}>
                     <li>
                       <Link href={data.Link}>{data.Title}</Link>
                     </li>
@@ -168,7 +166,7 @@ const Footer = ({ props, Subscribe, SocialMedia, footerinner, Reserved }) => {
               <div className={styles.footerCols}>
                 <h5>More</h5>
                 {footerinner[2]?.menuinner?.map((data, index) => (
-                  <ul className={styles.fadeLink}>
+                  <ul className={styles.fadeLink} key={index}>
                     <li>
                       <Link href={data.Link}>{data.Title}</Link>
                     </li>
@@ -181,14 +179,13 @@ const Footer = ({ props, Subscribe, SocialMedia, footerinner, Reserved }) => {
 
         <div className={styles.footCopyright}>
           <p>{Reserved[0].Title}</p>
-          {Reserved[0]?.PrivacyPolicy?.map((data, index) => (
           <ul>
-            <li>
-              <Link href={data.Link}>{data.Title}</Link>
-            </li>
-           
+            {Reserved[0]?.PrivacyPolicy?.map((data, index) => (
+              <li key={index}>
+                <Link href={data.Link}>{data.Title}</Link>
+              </li>
+            ))}
           </ul>
-           ))}
         </div>
       </div>
     </footer>
