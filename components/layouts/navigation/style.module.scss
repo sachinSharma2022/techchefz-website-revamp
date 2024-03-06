@@ -71,7 +71,12 @@
       padding: 0;
       margin: 0;
 
-      @include mobile-tablet-p {
+      @include tablet {
+        flex-wrap: wrap;
+        padding: 2rem spacing(tablet-padding);
+      }
+
+      @include mobile {
         flex-wrap: wrap;
         padding: 2rem 1rem;
       }
@@ -248,9 +253,13 @@
   .mobileTitle {
     color: #e3e3e3;
     font-size: 1rem;
-    padding: 24px 20px 0;
+    padding: 24px 3rem 0;
     margin-bottom: 0;
     opacity: 0.6;
+
+    @include mobile {
+      padding: 24px 20px 0;
+    }
 
     @include desktop {
       display: none;
@@ -303,7 +312,7 @@
 
   @include mobile-tablet-p {
     .estimateSection {
-      padding: 2rem 1.5rem 5rem;
+      padding: 2rem spacing(tablet-padding) 5rem;
 
       .description {
         color: color(primary-white);
@@ -318,6 +327,12 @@
           font-size: 20px;
         }
       }
+    }
+  }
+
+  @include mobile {
+    .estimateSection {
+      padding: 2rem spacing(mobile-padding) 5rem;
     }
   }
 
@@ -581,9 +596,13 @@
 
         @include mobile-tablet-p {
           max-width: 100%;
-          padding: 1.25rem;
+          padding: 1rem spacing(tablet-padding);
           min-height: 100%;
           max-height: 100%;
+        }
+
+        @include mobile {
+          padding: spacing(mobile-padding);
         }
 
         .overviewFlex {
@@ -731,7 +750,11 @@
     display: flex;
     justify-content: flex-start;
     gap: 0.75rem;
-    padding: 1.625rem 1.5rem;
+    padding: 1.625rem spacing(tablet-padding);
+
+    @include mobile {
+      padding: 1.625rem spacing(mobile-padding);
+    }
 
     svg path {
       stroke: color(primary-white);
