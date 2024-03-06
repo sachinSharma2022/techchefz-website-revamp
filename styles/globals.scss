@@ -1106,10 +1106,27 @@ html.lenis {
   }
 }
 
+.cms-related-style {
+  min-height: 45rem;
+  padding-top: 0;
+  background-color: color(bg-soft);
+
+  @include tablet {
+    min-height: auto;
+    padding-block: 5rem 6rem;
+    padding-inline: spacing(tablet-padding);
+  }
+
+  @include mobile {
+    padding-block: 4rem 4rem;
+    padding-inline: spacing(mobile-padding);
+  }
+}
+
 // dark Style
 .dark {
 
-  .tech-related-style, .case-related-style {
+  .tech-related-style, .case-related-style, .cms-related-style {
     background-color: color(dark-bg);
   }
 }
