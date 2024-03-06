@@ -42,7 +42,7 @@ $border-radius: 5px;
   }
 
   @include mobile-tablet-p {
-    padding: 8rem spacing(tablet-padding);
+    padding:7.5rem spacing(tablet-padding) 8rem;
 
     &::after, &::before {
       width: 20rem;
@@ -62,7 +62,7 @@ $border-radius: 5px;
   
     @include mobile-tablet-p {
       font-size: text(xl-larger);
-      line-height: 70px;
+      line-height: 90px;
       margin: 0 0 2.188rem;
     }
 
@@ -81,8 +81,12 @@ $border-radius: 5px;
         flex-wrap: wrap;
         font-size: text(larger);
         margin: 0 0 2.188rem;
-        line-height: 55px;
+        line-height: 80px;
         gap: 0;
+      }
+
+      @include mobile {
+        line-height: 55px;
       }
       
     }

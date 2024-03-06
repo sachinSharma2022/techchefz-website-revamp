@@ -9,7 +9,7 @@
   height: 100vh;
   background-size: 150vw;
 
-  @include mobile {
+  @include mobile-tablet-p {
     padding: 6rem 1.25rem;
     height: auto;
     background-size: cover;

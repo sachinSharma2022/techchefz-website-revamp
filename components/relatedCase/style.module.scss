@@ -3,16 +3,13 @@
 .relatedCase {
   position: relative;
 
-  @include desktop-hd {
-    min-height: 31.25rem;
-  }
-
   // For Space
   &.spaceStyle {
     margin-block: 8.75rem 11rem;
 
     @include desktop-hd {
       padding-block: 0;
+      min-height: 31.25rem;
     }
   
     @include mobile-tablet-p {
@@ -154,8 +151,11 @@
 
   // Dark theme style
   &.relatedCaseDark {
-    background-color: color(input-bg);
     color: color(primary-white);
+
+    &.spaceStyle {
+      background-color: color(input-bg);
+    }
 
     .arrowDisabled {
       border: 0.14rem solid rgba(color(primary-white), 0.2);
