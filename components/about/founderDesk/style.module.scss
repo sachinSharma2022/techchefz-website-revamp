@@ -51,10 +51,11 @@
 
   .subHeading {
     opacity: 0.6;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.5rem;
     font-size: text(normal);
     text-transform: uppercase;
+    letter-spacing: 0.2rem;
 
     @include mobile-tablet-p {
       font-size: text(normal);

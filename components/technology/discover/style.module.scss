@@ -95,9 +95,10 @@
 
     @include mobile-tablet-p {
       display: block;
-      padding-left: 0;
+      padding: 0;
       border-left: 0;
       height: auto;
+      overflow-y: hidden;
     }
 
     .platformsBtn {

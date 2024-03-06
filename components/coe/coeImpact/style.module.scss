@@ -75,6 +75,10 @@
       padding: 0;
     }
 
+    .impactImage{
+      width: 100%;
+    }
+
     .impactImage div {
       // max-width: 32.5rem;
       width: 100%;
@@ -89,6 +93,7 @@
 
       @include mobile {
         height: 18.813rem;
+        width: 100%;
       }
 
       img {
