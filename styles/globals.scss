@@ -48,7 +48,7 @@ h5 {
 h6 {
   font-family: font(secondary);
   letter-spacing: 1.5px;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 
   @include mobile-tablet-p {
     margin-bottom: 0.75rem;
@@ -1075,7 +1075,9 @@ html.lenis {
 
 // Case Related Spacing
 .case-related-style {
-  margin-block: 8.75rem 3.125rem;
+  min-height: 51.25rem;
+  padding-top: 8rem;
+  background-color: color(bg-soft);
 
   @include tablet {
     margin-block: 3.125rem 4rem;
@@ -1089,16 +1091,26 @@ html.lenis {
 }
 
 .tech-related-style {
-  margin: 0 0 4rem;
+  min-height: 51.25rem;
+  padding-top: 8rem;
+  background-color: color(bg-soft);
 
   @include tablet {
     margin-block: 3.125rem 4rem;
-    padding: 0 0 0 spacing(tablet-padding);
+    padding-inline: spacing(tablet-padding);
   }
 
   @include mobile {
     margin-block: 4rem 0rem;
     padding: spacing(mobile-padding);
+  }
+}
+
+// dark Style
+.dark {
+
+  .tech-related-style, .case-related-style {
+    background-color: color(dark-bg);
   }
 }
 
@@ -1114,26 +1126,5 @@ html.lenis {
     opacity: 1;
   }
 }
-//Circle progress bar
-// .circular-pbar {
-//   height: 400px;
-//   width: 400px;
-//   border-radius: 50%;
-//   --p: 0;
-//   background: conic-gradient(grey var(--p, 0), 0, darkred);
-//   z-index: 1;
-//   position: relative;
-//   transition: all 2s ease-in-out;
-// }
 
-// ._circle_inner {
-//   background: #fff;
-//   display: block;
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   height: calc(100% - 20px);
-//   width: calc(100% - 20px);
-//   border-radius: 50%;
-// }
+

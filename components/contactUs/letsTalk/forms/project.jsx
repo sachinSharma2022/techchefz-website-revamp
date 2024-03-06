@@ -147,6 +147,7 @@ const ProjectForm = () => {
                     onBlur={handleBlur}
                     value={values.phone}
                     clear={inprogress}
+                    valueCountryCode={values.countyCode}
                   />
                   {touched.phone && errors.phone && (
                     <Error>{errors.phone}</Error>
@@ -181,7 +182,7 @@ const ProjectForm = () => {
                     }
                     placeholder="Country*"
                     className="custom-dropdown"
-                    clear={inprogress}
+                    valueCountry={values.countrySelection}
                   />
                   {touched.countrySelection && errors.countrySelection && (
                     <Error>{errors.countrySelection}</Error>

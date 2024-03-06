@@ -166,7 +166,7 @@ const ContactSection = ({ props, id }) => {
                           setFieldValue={setFieldValue}
                           onBlur={handleBlur}
                           value={values.phone}
-                          clear={inprogress}
+                          valueCountryCode={values.countyCode}
                         />
                         {touched.phone && errors.phone && (
                           <Error>{errors.phone}</Error>
