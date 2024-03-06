@@ -185,7 +185,7 @@ const NavigationMobile = ({ props }) => {
               </button>
 
               {isTechMenu && (
-                <ul className={cn(styles.subMenu)}>
+                <ul className={cn(styles.subMenu, styles.slideinout)}>
                   <section className={styles.subsection}>
                     <button
                       className={styles.backButton}
@@ -335,7 +335,13 @@ const NavigationMobile = ({ props }) => {
               </button>
 
               {isMoreMenu && (
-                <ul className={cn(styles.subMenu, styles.singleLayout)}>
+                <ul
+                  className={cn(
+                    styles.subMenu,
+                    styles.singleLayout,
+                    styles.slideinout
+                  )}
+                >
                   <div className={styles.subsection}>
                     <button
                       className={styles.backButton}
