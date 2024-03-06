@@ -101,6 +101,14 @@ const ProjectForm = () => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.firstName}
+                    onKeyDown={(event) => {
+                      console.log(event.keyCode, "keycode");
+                      var regex = new RegExp("^[a-zA-Z]*$");
+                      if (!regex.test(event.key) && !(event.key === "'")) {
+                        event.preventDefault();
+                        return false;
+                      }
+                    }}
                   />
                   {touched.firstName && errors.firstName && (
                     <Error>{errors.firstName}</Error>
@@ -117,6 +125,18 @@ const ProjectForm = () => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.lastName}
+                    onKeyDown={(event) => {
+                      console.log(event.keyCode, "keycode");
+                      var regex = new RegExp("^[a-zA-Z]*$");
+                      if (
+                        !regex.test(event.key) &&
+                        !(event.key === "-") &&
+                        !(event.key === " ")
+                      ) {
+                        event.preventDefault();
+                        return false;
+                      }
+                    }}
                   />
                   {touched.lastName && errors.lastName && (
                     <Error>{errors.lastName}</Error>
@@ -148,6 +168,19 @@ const ProjectForm = () => {
                     value={values.phone}
                     clear={inprogress}
                     valueCountryCode={values.countyCode}
+                    onKeyDown={(event) => {
+                      console.log(event.key, "keycode");
+                      var regex = new RegExp("^[0-9]*$");
+                      if (
+                        !regex.test(event.key) &&
+                        !(event.key == "Backspace") &&
+                        !(event.key == "ArrowRight") &&
+                        !(event.key == "ArrowLeft")
+                      ) {
+                        event.preventDefault();
+                        return false;
+                      }
+                    }}
                   />
                   {touched.phone && errors.phone && (
                     <Error>{errors.phone}</Error>
@@ -164,6 +197,14 @@ const ProjectForm = () => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.companyName}
+                    onKeyDown={(event) => {
+                      console.log(event.keyCode, "keycode");
+                      var regex = new RegExp("^[a-zA-Z 0-9]*$");
+                      if (!regex.test(event.key)) {
+                        event.preventDefault();
+                        return false;
+                      }
+                    }}
                   />
                   {touched.companyName && errors.companyName && (
                     <Error>{errors.companyName}</Error>

@@ -37,12 +37,6 @@ const JobsForm = () => {
     projectExplanation: "",
   };
 
-  const dropdownData = [
-    { value: "Country", label: "Country" },
-    { value: "India", label: "India" },
-    { value: "united State", label: "united State" },
-    { value: "New York", label: "New York" },
-  ];
   async function handleCaptchaSubmission(token) {
     // Server function to verify captcha
     await verifyCaptcha(token)
@@ -108,6 +102,14 @@ const JobsForm = () => {
                       onBlur={handleBlur}
                       value={values.firstName}
                       errorStatus={touched.firstName && errors.firstName}
+                      onKeyDown={(event) => {
+                        console.log(event.keyCode, "keycode");
+                        var regex = new RegExp("^[a-zA-Z]*$");
+                        if (!regex.test(event.key) && !(event.key === "'")) {
+                          event.preventDefault();
+                          return false;
+                        }
+                      }}
                     />
                     {touched.firstName && errors.firstName && (
                       <Error>{touched.firstName && errors.firstName}</Error>
@@ -125,6 +127,18 @@ const JobsForm = () => {
                       onBlur={handleBlur}
                       value={values.lastName}
                       errorStatus={touched.lastName && errors.lastName}
+                      onKeyDown={(event) => {
+                        console.log(event.keyCode, "keycode");
+                        var regex = new RegExp("^[a-zA-Z]*$");
+                        if (
+                          !regex.test(event.key) &&
+                          !(event.key === "-") &&
+                          !(event.key === " ")
+                        ) {
+                          event.preventDefault();
+                          return false;
+                        }
+                      }}
                     />
                     {touched.lastName && errors.lastName && (
                       <Error>{errors.lastName}</Error>
@@ -157,6 +171,19 @@ const JobsForm = () => {
                       value={values.phone}
                       errorStatus={touched.phone && errors.phone}
                       valueCountryCode={values.countyCode}
+                      onKeyDown={(event) => {
+                        console.log(event.key, "keycode");
+                        var regex = new RegExp("^[0-9]*$");
+                        if (
+                          !regex.test(event.key) &&
+                          !(event.key == "Backspace") &&
+                          !(event.key == "ArrowRight") &&
+                          !(event.key == "ArrowLeft")
+                        ) {
+                          event.preventDefault();
+                          return false;
+                        }
+                      }}
                     />
                     {touched.phone && errors.phone && (
                       <Error>{errors.phone}</Error>
