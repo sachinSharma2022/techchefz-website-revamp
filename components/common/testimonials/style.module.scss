@@ -78,6 +78,10 @@
       padding: text(lg);
       min-height: 28rem;
     }
+    
+    @include tablet {
+      min-height: 32rem;
+    }
 
     .commaImg {
       margin-bottom: 1.25rem;

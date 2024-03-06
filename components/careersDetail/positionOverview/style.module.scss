@@ -6,13 +6,11 @@
   background-color: color(text-primary);
 
   @include tablet {
-    padding-inline: 1.5rem;
-    padding-block: 3rem 3.75rem;
+    padding: 3rem spacing(tablet-padding) 3.75rem;
   }
 
   @include mobile {
-    padding-inline: 1.5rem;
-    padding-block: 3rem 3.75rem;
+    padding: 3rem spacing(mobile-padding) 3.75rem;
   }
 
   .flexContainer {
@@ -26,7 +24,6 @@
       align-items: flex-start;
     }
   }
-
 
   .jobInfo {
     h2 {
@@ -80,7 +77,8 @@
       width: 100%;
     }
 
-    a, button {
+    a,
+    button {
       @include mobile-tablet-p {
         width: 100%;
       }
