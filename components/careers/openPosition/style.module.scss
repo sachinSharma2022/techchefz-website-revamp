@@ -267,6 +267,12 @@
                flex-direction: column;
             }
 
+            a {
+               @include mobile-tablet-p {
+                  width: 100%;
+               }
+            }
+
             button {
                @include mobile-tablet-p {
                   width: 100%;

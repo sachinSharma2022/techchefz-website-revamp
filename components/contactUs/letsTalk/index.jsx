@@ -222,19 +222,19 @@ const LetsTalk = ({ props }) => {
               </Tab.List>
               <div className={styles.panelSection}>
                 <Tab.Panels>
-                  <Tab.Panel>
+                  <Tab.Panel className={styles.tabPanel}>
                     {/* Project Form */}
                     <ProjectForm />
                   </Tab.Panel>
-                  <Tab.Panel>
+                  <Tab.Panel className={styles.tabPanel}>
                     {/* Services Form */}
                     <ServicesForm />
                   </Tab.Panel>
-                  <Tab.Panel>
+                  <Tab.Panel className={styles.tabPanel}>
                     {/* Jobs Form */}
                     <JobsForm />
                   </Tab.Panel>
-                  <Tab.Panel>
+                  <Tab.Panel className={styles.tabPanel}>
                     {/* Vendor Form */}
                     <VendorForm />
                   </Tab.Panel>

@@ -1050,7 +1050,7 @@ html.lenis {
     padding-inline: spacing(tablet-padding);
   }
 
-  @include mobile{
+  @include mobile {
     padding-inline: spacing(mobile-padding);
   }
 }
@@ -1097,7 +1097,7 @@ html.lenis {
   }
 
   @include mobile {
-    margin-block:4rem 0rem;
+    margin-block: 4rem 0rem;
     padding: spacing(mobile-padding);
   }
 }
@@ -1114,3 +1114,26 @@ html.lenis {
     opacity: 1;
   }
 }
+//Circle progress bar
+// .circular-pbar {
+//   height: 400px;
+//   width: 400px;
+//   border-radius: 50%;
+//   --p: 0;
+//   background: conic-gradient(grey var(--p, 0), 0, darkred);
+//   z-index: 1;
+//   position: relative;
+//   transition: all 2s ease-in-out;
+// }
+
+// ._circle_inner {
+//   background: #fff;
+//   display: block;
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   height: calc(100% - 20px);
+//   width: calc(100% - 20px);
+//   border-radius: 50%;
+// }

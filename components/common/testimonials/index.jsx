@@ -39,26 +39,24 @@ const Testimonials = ({ props }) => {
         <div className="row">
           <div className="col-12 col-lg-3">
             <div className={styles.infoSection}>
-              <TextRevel>
-                <div className={styles.testimonialsLeft}>
-                  <h6
-                    className={cn(styles.projectHighlight, "gradient-text")}
-                    dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}` }}
-                  ></h6>
-                  <div
-                    className={cn(styles.testimonialsHeading, "gradient-text")}
-                  >
-                    <h3
-                      dangerouslySetInnerHTML={{
-                        __html: `${props[0]?.SubTitle}`,
-                      }}
-                    ></h3>
-                  </div>
-                  <p className={styles.testimonialsText}>
-                    {props[0]?.Description}
-                  </p>
+              <div className={styles.testimonialsLeft}>
+                <h6
+                  className={cn(styles.projectHighlight, "gradient-text")}
+                  dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}` }}
+                ></h6>
+                <div
+                  className={cn(styles.testimonialsHeading, "gradient-text")}
+                >
+                  <h3
+                    dangerouslySetInnerHTML={{
+                      __html: `${props[0]?.SubTitle}`,
+                    }}
+                  ></h3>
                 </div>
-              </TextRevel>
+                <p className={styles.testimonialsText}>
+                  {props[0]?.Description}
+                </p>
+              </div>
 
               {/* Mobile Slider */}
               <div className={styles.mobileSlider}>
