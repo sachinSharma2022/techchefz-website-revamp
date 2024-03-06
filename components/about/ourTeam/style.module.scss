@@ -224,7 +224,7 @@
         left: 1rem;
         z-index: 1;
         display: block;
-        border-radius: 50%;
+        // border-radius: 50%;
         width: 35px;
         height: 35px;
         display: flex;
@@ -235,7 +235,7 @@
       
       &:hover {
         .linkedInIcon {
-          box-shadow: 10px 10px 50px rgba(color(primary-black), 0.8);
+          box-shadow: 10px 10px 50px rgba(color(primary-black), 0.9);
           overflow: hidden;
         }
       }

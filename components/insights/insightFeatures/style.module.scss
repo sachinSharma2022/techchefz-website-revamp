@@ -9,6 +9,7 @@
   }
   @include mobile {
     padding: 2rem spacing(mobile-padding);
+    padding-bottom: 0;
   }
 
   .insightHeader {

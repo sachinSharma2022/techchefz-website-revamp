@@ -139,13 +139,13 @@ const Footer = ({ props, Subscribe, SocialMedia, footerinner, Reserved }) => {
 
             <div className={styles.footerBox}>
               <div className={styles.footerCols}>
+                <ul >
                 {footerinner[0]?.menuinner?.map((data, index) => (
-                  <ul key={index}>
-                    <li>
+                    <li key={index}>
                       <Link href={data.Link}>{data.Title}</Link>
                     </li>
-                  </ul>
                 ))}
+                  </ul>
               </div>
 
               <div className={styles.footerCols}>
@@ -154,24 +154,24 @@ const Footer = ({ props, Subscribe, SocialMedia, footerinner, Reserved }) => {
                     {footerinner[1]?.Heading}
                   </Link>
                 </h5>
+                <ul className={styles.fadeLink} >
                 {footerinner[1]?.menuinner?.map((data, index) => (
-                  <ul className={styles.fadeLink} key={index}>
-                    <li>
+                    <li key={index}>
                       <Link href={data.Link}>{data.Title}</Link>
                     </li>
-                  </ul>
                 ))}
+                </ul>
               </div>
 
               <div className={styles.footerCols}>
                 <h5>More</h5>
+                <ul className={styles.fadeLink} >
                 {footerinner[2]?.menuinner?.map((data, index) => (
-                  <ul className={styles.fadeLink} key={index}>
-                    <li>
+                    <li key={index}>
                       <Link href={data.Link}>{data.Title}</Link>
                     </li>
-                  </ul>
                 ))}
+                </ul>
               </div>
             </div>
           </div>

@@ -78,7 +78,7 @@
 
       @include mobile {
         flex-wrap: wrap;
-        padding: 2rem 1rem;
+        padding: 2rem 2rem;
       }
 
       li {
@@ -102,6 +102,8 @@
             border-bottom: 1px solid rgba(color(primary-white), 0.06);
           }
         }
+
+        
 
         &:hover {
           .arrow {
@@ -253,12 +255,12 @@
   .mobileTitle {
     color: #e3e3e3;
     font-size: 1rem;
-    padding: 24px 3rem 0;
+    padding: 1.5rem 3rem 0;
     margin-bottom: 0;
     opacity: 0.6;
 
     @include mobile {
-      padding: 24px 20px 0;
+      padding: 24px 2rem 0;
     }
 
     @include desktop {
@@ -312,11 +314,12 @@
 
   @include mobile-tablet-p {
     .estimateSection {
-      padding: 2rem spacing(tablet-padding) 5rem;
+      padding: 2rem 2rem 5rem;
 
       .description {
         color: color(primary-white);
-        font-size: 0.875rem;
+        font-size: 1rem;
+        opacity: 0.8;
       }
 
       .headerBtn {

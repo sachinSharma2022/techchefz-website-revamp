@@ -96,6 +96,7 @@
       border-bottom: 0.14rem solid rgba(color(text-primary), 0.12);
       display: flex;
       justify-content: flex-start;
+      align-items: center;
     }
   }
 
@@ -153,6 +154,7 @@
       text-align: left;
       font-size: text(lg);
       max-width: 70%;
+      margin-bottom: 0;
     }
   }
 

@@ -75,10 +75,9 @@
 
       .locationBox {
         background-color: color(bg-soft);
-        padding: text(lg);
+        padding: 2rem;
         border-radius: text(xl);
         border: 0.14rem solid rgba(color(text-primary), 0.12);
-        cursor: pointer;
         @include transition(0.5s);
 
         &:hover {
