@@ -76,7 +76,7 @@ const ServicesForm = () => {
           success: false,
           successMsg: "",
         }}
-        // validationSchema={serviceValidationSchema}
+        validationSchema={serviceValidationSchema}
       >
         {({
           errors,
@@ -241,13 +241,13 @@ const ServicesForm = () => {
                   <Button
                     variant={theme ? "blueBtnDark" : "blueBtn"}
                     size="lg"
-                    // disabled={
-                    //   (isVerified ? false : true)
-                    //     ? true
-                    //     : inprogress
-                    //     ? true
-                    //     : false
-                    // }
+                    disabled={
+                      (isVerified ? false : true)
+                        ? true
+                        : inprogress
+                        ? true
+                        : false
+                    }
                     type="submit"
                   >
                     Send a Message
