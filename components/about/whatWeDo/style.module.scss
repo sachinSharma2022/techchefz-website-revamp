@@ -54,12 +54,10 @@
 
     @include tablet {
       grid-template-columns: repeat(2, 1fr);
-      padding:0 spacing(tablet-padding);
-      
+      padding: 0 spacing(tablet-padding);
     }
 
     @include mobile {
-      
       grid-template-columns: repeat(1, 1fr);
     }
   }
@@ -70,7 +68,6 @@
     @include mobile {
       max-width: 90%;
     }
-
 
     .workCard {
       transition: transform 1s;
@@ -90,7 +87,7 @@
         @include mobile-tablet-p {
           min-width: 100%;
           max-width: 90vw;
-          padding: 2rem 1rem;
+          padding: 2.5rem 2.5rem;
         }
       }
 

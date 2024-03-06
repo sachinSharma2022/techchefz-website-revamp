@@ -41,7 +41,7 @@ const WhatWeDo = ({ props }) => {
               <div key={index} className={styles.workCardMain}>
                 <div className={styles.workCard}>
                   <div className={`${styles.frontCard} ${styles.workCols}`}>
-                    {/* {data.icon} */}
+                  <div className={styles.imgBox}>
                     <ImageCustom
                       height={100}
                       width={100}
@@ -51,6 +51,7 @@ const WhatWeDo = ({ props }) => {
                           : `${base_Url}/`
                       }
                     />
+                    </div>
 
                     <h3>{data.Title}</h3>
                   </div>
