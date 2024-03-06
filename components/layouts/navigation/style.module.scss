@@ -396,7 +396,7 @@
   .subMenu {
     display: none;
     position: absolute;
-    left: 50%;
+    //left: 50%;
     top: calc(100% + 0rem);
     transform: translate(-50%);
     background-color: color(dark-gray);
@@ -407,10 +407,10 @@
     border: 0.063rem solid rgba(color(text-primary), 0.2);
     border-radius: 0.5rem;
     box-shadow: 0 5px 32px rgba(color(text-primary), 0.2);
-
+    background: red;
     @include mobile-tablet-p {
       display: block;
-      left: 0;
+      //left: 0;
       transform: inherit;
       top: 70px;
       min-width: auto;
@@ -904,15 +904,28 @@
     display: none;
   }
 }
-.slideinout {
-  animation: slideinout 0.5s ease-in-out;
+.slideIn {
+  animation: slideIn 0.5s ease-in-out;
 }
 
-@keyframes slideinout {
+@keyframes slideIn {
   0% {
     left: -100%;
   }
   100% {
     left: 0%;
+  }
+}
+.slideOut {
+  left: -100%;
+  animation: slideOut 0.5s ease-in-out;
+}
+
+@keyframes slideOut {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: -100%;
   }
 }
