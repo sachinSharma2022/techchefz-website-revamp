@@ -27,7 +27,7 @@ const InsightInside = async ({ params }) => {
         BlockTitle={data[index].attributes.BlockTitle}
       />
       <RelatedCase props={data_related_cases} />
-      <Innovation  />
+      
       
     </>
   );
