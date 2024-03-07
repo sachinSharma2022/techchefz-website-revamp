@@ -12,7 +12,7 @@ const AboutBanner = ({ props }) => {
 
   return (
     <section
-      className={`${styles.aboutBanner} ${theme ? styles.aboutBannerDark : ""}`}
+      className={cn(styles.aboutBanner, theme ? styles.aboutBannerDark : "")}
     >
       <div className={cn("primary-container", "header-full-container")}>
         <h1

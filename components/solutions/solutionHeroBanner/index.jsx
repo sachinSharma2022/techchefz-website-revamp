@@ -17,8 +17,8 @@ const SolutionHeroBanner = ({ props }) => {
         theme ? styles.solutionHeroBannerDark : ""
       }`}
     >
-      <div className={cn("primary-container")}>
-        <TextRevel>
+      <TextRevel>
+        <div className={cn("primary-container")}>
           <div className={cn(styles.contentSection, "header-container")}>
             <h1
               className={cn(styles.title, "gradient-text")}
@@ -27,8 +27,8 @@ const SolutionHeroBanner = ({ props }) => {
 
             <p className={styles.leadText}>{props?.Description}</p>
           </div>
-        </TextRevel>
-      </div>
+        </div>
+      </TextRevel>
 
       <div className={styles.landingPlayerStyle}>
         <ImageCustom

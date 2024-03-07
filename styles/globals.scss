@@ -1016,17 +1016,12 @@ html.lenis {
    display: grid;
    grid-template-columns: 55% auto;
    gap: 8.938rem;
-   padding-inline: 7.5rem;
-
-   @include desktop-hd {
-      padding-inline: 0;
-   }
+   padding-inline: 0;
 
    @include mobile-tablet-p {
       display: flex;
       flex-direction: column;
       gap: 1rem 0;
-      padding-inline: spacing(tablet-padding);
    }
 
    @include mobile {
@@ -1038,7 +1033,12 @@ html.lenis {
    display: flex;
    width: 100%;
    padding-inline: 0;
+
+   @include tablet {
+      padding: 0px 3rem;
+   }
 }
+
 // =================================
 // Loader Animation End
 // =================================
