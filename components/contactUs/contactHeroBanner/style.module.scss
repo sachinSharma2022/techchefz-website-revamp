@@ -4,9 +4,14 @@
   .contentSection {
     display: flex;
     padding-block: 8.75rem 5.25rem;
+
+    @include tablet-p {
+      padding-block: 5.25rem;
+    }
   
     @include mobile {
       flex-direction: column;
+      padding-block: 5.25rem;
     }
   }
   

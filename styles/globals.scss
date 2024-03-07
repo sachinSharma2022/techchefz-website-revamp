@@ -1074,11 +1074,11 @@ html.lenis {
 
 .tech-related-style {
    padding-block: 8.75rem;
-   min-height: 70vh;
+   min-height: 84vh;
 
   @include tablet {
    min-height: auto;
-    margin-block: 3.125rem 4rem;
+    margin-block: 3.125rem 0;
     padding: 4rem 0 5rem spacing(tablet-padding);
   }
 
@@ -1126,3 +1126,12 @@ html.lenis {
 }
 
 
+// career-page
+.career-page {
+
+   .testimonial-style {
+      @include mobile-tablet-p {
+         padding-bottom: 5rem;
+      }
+   }
+}

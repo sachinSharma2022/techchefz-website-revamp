@@ -14,7 +14,8 @@
   
     @include mobile-tablet-p {
       margin-block: 2rem 11rem;
-      padding: 0 spacing(tablet-padding);
+      padding: 5rem spacing(tablet-padding) 0;
+      margin-right: -3rem;
     }
 
     @include mobile {

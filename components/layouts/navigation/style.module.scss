@@ -73,7 +73,7 @@
 
       @include tablet {
         flex-wrap: wrap;
-        padding: 2rem spacing(tablet-padding);
+        padding: 2rem 2rem;
       }
 
       @include mobile {
@@ -407,6 +407,7 @@
     min-width: 70rem;
     z-index: 99;
     margin: 0;
+    margin-left: -2rem;
     border: 0.063rem solid rgba(color(text-primary), 0.2);
     border-radius: 0.5rem;
     box-shadow: 0 5px 32px rgba(color(text-primary), 0.2);
@@ -715,8 +716,13 @@
             margin-top: 1rem;
             @include truncate(3);
             opacity: 0.8;
+
+            @include mobile-tablet-p {
+              display: none;
+            }
           }
 
+         @include desktop {
           &:hover {
             height: 128px;
             border: 0.125rem solid color(heading-liner);
@@ -726,6 +732,7 @@
               opacity: 0.8;
             }
           }
+         }
         }
         .multiMoreHrefs {
           @extend .multiHrefs;

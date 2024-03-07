@@ -86,6 +86,7 @@
       position: relative;
       border-radius: 0.5rem;
       overflow: hidden;
+      background: color(dark-bg);
 
       @include tablet {
         height: 15.813rem;
