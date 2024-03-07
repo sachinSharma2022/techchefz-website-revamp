@@ -5,7 +5,6 @@
 
   @include tablet {
     padding: 3.75rem spacing(tablet-padding);
-    margin-right: -3rem;
   }
 
   @include mobile {
@@ -111,8 +110,12 @@
   }
 
   .mobileSlider {
-    @include mobile-tablet-p {
-      margin-right: -20px;
+    @include tablet-p {
+      margin-right: -3rem;
+    }
+    
+    @include mobile {
+      margin-right: -1.25rem;
     }
   }
 

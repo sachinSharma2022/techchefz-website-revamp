@@ -5,7 +5,7 @@
 
   // For Space
   &.spaceStyle {
-    margin-block: 8.75rem 11rem;
+    margin-block: 8.75rem;
 
     @include desktop-hd {
       padding-block: 0;
@@ -14,12 +14,13 @@
   
     @include mobile-tablet-p {
       margin-block: 2rem 11rem;
-      padding: 0 spacing(tablet-padding);
+      padding: 5rem spacing(tablet-padding) 0;
+      margin-right: -3rem;
     }
 
     @include mobile {
-      margin-block: 0rem 8rem;
-      padding: 0 spacing(mobile-padding);
+      margin-block: 0rem 5rem;
+      padding: 5rem spacing(mobile-padding) 0;
     }
   }
 

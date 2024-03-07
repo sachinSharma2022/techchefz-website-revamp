@@ -68,7 +68,11 @@
   // mobileSlider
   .mobileSlider {
 
-    @include mobile-tablet-p {
+    @include tablet {
+      margin-right: -3rem;
+    }
+
+    @include mobile {
       margin-right: -20px;
     }
   }

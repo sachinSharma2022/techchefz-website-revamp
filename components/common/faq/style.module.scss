@@ -5,11 +5,11 @@
   background-color: color(bg-soft);
 
   @include tablet {
-    padding: spacing(tablet-padding);
+    padding:4rem spacing(tablet-padding);
   }
 
   @include mobile {
-    padding: spacing(mobile-padding);
+    padding:4rem spacing(mobile-padding);
   }
 
   .faqHead {
