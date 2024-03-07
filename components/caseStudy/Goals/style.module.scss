@@ -133,6 +133,10 @@
       @include mobile {
         height: 11.343rem;
       }
+      
+      @include samsung-fold{
+        height: 16rem;
+      }
 
       &:nth-child(1) {
         @include desktop {
