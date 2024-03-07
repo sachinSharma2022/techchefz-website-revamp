@@ -83,7 +83,9 @@
         aspect-ratio: 1;
         height: 11.6875rem;
       }
-
+      @include samsung-fold{
+        height: 16rem;
+      }
       &:nth-child(1) {
         @include desktop {
           grid-column: 1 / 3;
