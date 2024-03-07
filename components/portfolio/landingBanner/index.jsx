@@ -13,13 +13,15 @@ const LandingBanner = ({ props }) => {
   return (
     <section className={!theme ? styles.landingBannerStyle : styles.darkMode}>
       <TextRevel>
-        <div className={cn("primary-container", "header-container")}>
-          <h1
-            className={cn(styles.title, "gradient-text")}
-            dangerouslySetInnerHTML={{ __html: `${props[0]?.title}` }}
-          ></h1>
+        <div className={cn("header-container")}>
+          <div className="primary-container grid-col-2">
+            <h1
+              className={cn(styles.title, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props[0]?.title}` }}
+            ></h1>
 
-          <p className={styles.leadText}>{props[0]?.subtitle}</p>
+            <p className={styles.leadText}>{props[0]?.subtitle}</p>
+          </div>
         </div>
       </TextRevel>
     </section>

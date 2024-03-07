@@ -30,7 +30,7 @@ const Cms = async () => {
           <SolutionTheProcess props={data.OurProcess} />
           <Faq props={data.Faq} />
           <RelatedCase
-            className="case-related-style"
+            className="cms-related-style"
             props={data_related_cases}
           />
 

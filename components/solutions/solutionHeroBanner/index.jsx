@@ -18,8 +18,8 @@ const SolutionHeroBanner = ({ props }) => {
       }`}
     >
       <TextRevel>
-        <div className={cn("primary-container")}>
-          <div className={cn(styles.contentSection, "header-container")}>
+        <div className={cn(styles.contentSection, "header-container")}>
+          <div className="primary-container grid-col-2">
             <h1
               className={cn(styles.title, "gradient-text")}
               dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}

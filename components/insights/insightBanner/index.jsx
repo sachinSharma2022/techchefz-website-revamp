@@ -16,9 +16,9 @@ const InsightBanner = ({ props }) => {
     <section
       className={cn(!theme ? styles.landingBannerStyle : styles.darkMode)}
     >
-      <div className={cn("primary-container")}>
-        <TextRevel>
-          <div className={cn(styles.contentSection, "header-container")}>
+      <TextRevel>
+        <div className={cn(styles.contentSection, "header-container")}>
+          <div className="primary-container grid-col-2">
             <h1
               className={cn(styles.title, "gradient-text")}
               dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
@@ -37,8 +37,8 @@ const InsightBanner = ({ props }) => {
               </Link>
             </div>
           </div>
-        </TextRevel>
-      </div>
+        </div>
+      </TextRevel>
     </section>
   );
 };

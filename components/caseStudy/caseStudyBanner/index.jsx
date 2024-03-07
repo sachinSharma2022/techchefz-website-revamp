@@ -19,11 +19,13 @@ const CaseStudyBanner = ({ props }) => {
       }`}
     >
       <TextRevel>
-        <div className={cn("primary-container", "header-container")}>
-          <h1
-            className={cn(styles.bannerTitle, "gradient-text")}
-            dangerouslySetInnerHTML={{ __html: `${props?.CaseStudyTitle}` }}
-          ></h1>
+        <div className={cn("header-container")}>
+          <div className="primary-container">
+            <h1
+              className={cn(styles.bannerTitle, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props?.CaseStudyTitle}` }}
+            ></h1>
+          </div>
         </div>
       </TextRevel>
 

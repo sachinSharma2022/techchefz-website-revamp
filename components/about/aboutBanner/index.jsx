@@ -14,11 +14,13 @@ const AboutBanner = ({ props }) => {
     <section
       className={cn(styles.aboutBanner, theme ? styles.aboutBannerDark : "")}
     >
-      <div className={cn("primary-container", "header-full-container")}>
-        <h1
-          className={cn(styles.bannerTitle, "gradient-text")}
-          dangerouslySetInnerHTML={{ __html: `${props[0]?.title}` }}
-        ></h1>
+      <div className={cn("header-container", "full")}>
+        <div className={cn("primary-container")}>
+          <h1
+            className={cn(styles.bannerTitle, "gradient-text")}
+            dangerouslySetInnerHTML={{ __html: `${props[0]?.title}` }}
+          ></h1>
+        </div>
       </div>
 
       <div className={styles.bannerImg}>

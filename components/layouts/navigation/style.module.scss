@@ -410,7 +410,7 @@
     border: 0.063rem solid rgba(color(text-primary), 0.2);
     border-radius: 0.5rem;
     box-shadow: 0 5px 32px rgba(color(text-primary), 0.2);
-    background: red;
+
     @include mobile-tablet-p {
       display: block;
       //left: 0;
