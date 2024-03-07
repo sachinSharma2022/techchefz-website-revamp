@@ -75,6 +75,10 @@
       padding: 0;
     }
 
+    .impactImage{
+      width: 100%;
+    }
+
     .impactImage div {
       // max-width: 32.5rem;
       width: 100%;
@@ -82,6 +86,7 @@
       position: relative;
       border-radius: 0.5rem;
       overflow: hidden;
+      background: color(dark-bg);
 
       @include tablet {
         height: 15.813rem;
@@ -89,6 +94,7 @@
 
       @include mobile {
         height: 18.813rem;
+        width: 100%;
       }
 
       img {

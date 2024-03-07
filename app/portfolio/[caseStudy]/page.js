@@ -34,7 +34,7 @@ const CaseStudy = async ({ params }) => {
           <Solutions props={data[index].attributes.Solutions} />
           <Results props={data[index].attributes.Results} />
           <RelatedCase
-            className="case-related-style"
+            className="tech-related-style"
             props={data}
             params={params}
           />

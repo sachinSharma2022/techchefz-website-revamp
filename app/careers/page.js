@@ -18,7 +18,7 @@ const Career = async () => {
   return (
     <>
       {data ? (
-        <div>
+        <div className="career-page">
           <CareerBanner
             href="#OpenPosition"
             props={data.CareerBanner}

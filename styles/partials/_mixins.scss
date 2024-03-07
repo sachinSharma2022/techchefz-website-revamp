@@ -23,7 +23,7 @@
 // Media Query Mixin
 // ----------------------------------
 $iphone5-width: 320px;
-$iphone6-width: 375px;
+$samsung-fold-width: 600px;
 $tablet-width: 768px;
 $tablet-p-width: 991px;
 $desktop-width: 1024px;
@@ -40,8 +40,8 @@ $desktop-4k: 2000px;
 }
 
 // iPhone6 Mixin
-@mixin iphone6 {
-  @media (min-width: #{$iphone6-width}) and (max-width: #{$tablet-width - 1px}) {
+@mixin samsung-fold {
+  @media (min-width: #{$samsung-fold-width}) and (max-width: #{$tablet-width - 1px}) {
     @content;
   }
 }

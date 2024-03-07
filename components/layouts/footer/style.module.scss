@@ -35,7 +35,7 @@
     }
 
     a {
-      color: rgba(color(primary-white), 0.8);
+      color: rgba(color(primary-white), 1);
       font-size: text(lg);
 
       &:hover {
@@ -59,6 +59,10 @@
         display: block;
         font-size: text(normal);
         transition: all 0.5s;
+
+        @include mobile{
+          margin-bottom: 0;
+        }
 
         &:hover {
           color: color(info-blue);
@@ -91,7 +95,7 @@
 
 
           @include mobile {
-            gap: 1rem;
+            gap: 1.25rem;
           }
         }
 

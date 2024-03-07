@@ -122,6 +122,10 @@
       height: 11.75rem;
     }
 
+    @include samsung-fold{
+      height: 16rem;
+    }
+
     &:hover {
       border-color: color(heading-liner);
     }

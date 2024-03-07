@@ -38,17 +38,17 @@ const SolutionOurValues = ({ props }) => {
       }`}
     >
       <div className={cn("primary-container", styles.flexContainer)}>
-          <div className={styles.ourValuesHead}>
-            <h6
-              className={cn(styles.ourValuesTitle, "gradient-text")}
-              dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
-            ></h6>
-            <h3
-              className={cn(styles.ourValuesHeading, "gradient-text")}
-              dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
-            ></h3>
-            <p className={styles.ourValuesText}>{props?.Description}</p>
-          </div>
+        <div className={styles.ourValuesHead}>
+          <h6
+            className={cn(styles.ourValuesTitle, "gradient-text")}
+            dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+          ></h6>
+          <h3
+            className={cn(styles.ourValuesHeading, "gradient-text")}
+            dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
+          ></h3>
+          <p className={styles.ourValuesText}>{props?.Description}</p>
+        </div>
 
         <div className={styles.ourValuesAccordion}>
           {props?.Views.map((data, index) => (
