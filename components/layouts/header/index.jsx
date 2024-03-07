@@ -11,7 +11,7 @@ const Header = async () => {
       {data ? (
         <>
           <NavigationMobile props={data?.attributes?.HeaderMenu} />
-          <NavigationDesktop props={data?.attributes?.HeaderMenu} />
+          <NavigationDesktop props={data?.attributes?.HeaderMenu} featureArticle={data_inside}/>
         </>
       ) : (
         <></>
