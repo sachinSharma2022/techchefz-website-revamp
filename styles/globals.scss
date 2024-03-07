@@ -1013,19 +1013,13 @@ html.lenis {
 // Header Common Style
 // =================================
 .header-container {
-   display: grid;
-   grid-template-columns: 55% auto;
-   gap: 8.938rem;
-   padding-inline: 7.5rem;
+   padding-inline: spacing(p-120);
 
-   @include desktop-hd {
-      padding-inline: 0;
+   &.full {
+      grid-template-columns: 100%;
    }
 
    @include mobile-tablet-p {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem 0;
       padding-inline: spacing(tablet-padding);
    }
 
@@ -1034,11 +1028,20 @@ html.lenis {
    }
 }
 
-.header-full-container {
-   display: flex;
-   width: 100%;
-   padding-inline: 0;
+
+// Grid Col 2
+.grid-col-2 {
+   display: grid;
+   grid-template-columns: 55% auto;
+   gap: 2rem 8.938rem;
+
+   @include mobile-tablet-p {
+      display: flex;
+      flex-direction: column;
+   }
+
 }
+
 // =================================
 // Loader Animation End
 // =================================
@@ -1054,7 +1057,9 @@ html.lenis {
 
 // Case Related Spacing
 .case-related-style {
-  margin-block: 8.75rem 3.125rem;
+   margin-block: 0 3.125rem;
+   min-height: 70vh;
+   padding-top: 0rem;
 
    @include tablet {
       margin-block: 3.125rem 4rem;
@@ -1068,16 +1073,18 @@ html.lenis {
 }
 
 .tech-related-style {
-  margin: 0 0 4rem;
+   padding-block: 8.75rem;
+   min-height: 70vh;
 
   @include tablet {
+   min-height: auto;
     margin-block: 3.125rem 4rem;
-    padding: 0 0 0 spacing(tablet-padding);
+    padding: 4rem 0 5rem spacing(tablet-padding);
   }
 
    @include mobile {
       margin-block: 4rem 0rem;
-      padding: spacing(mobile-padding);
+      padding:4rem spacing(mobile-padding) 3rem;
    }
 }
 
@@ -1088,8 +1095,7 @@ html.lenis {
 
   @include tablet {
     min-height: auto;
-    padding-block: 5rem 6rem;
-    padding-inline: spacing(tablet-padding);
+    padding: 4rem 0 5rem spacing(tablet-padding);
   }
 
   @include mobile {

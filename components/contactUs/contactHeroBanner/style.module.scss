@@ -3,19 +3,9 @@
 .contactHeroBannerStyle {
   .contentSection {
     display: flex;
-    padding-inline: spacing(p-120);
     padding-block: 8.75rem 5.25rem;
   
-    @include desktop-hd {
-      padding-inline: 0;
-    }
-  
-    @include tablet {
-      padding: 3.75rem spacing(tablet-padding);
-    }
-
     @include mobile {
-      padding: 3.75rem spacing(mobile-padding);
       flex-direction: column;
     }
   }
