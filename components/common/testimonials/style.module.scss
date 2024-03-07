@@ -11,7 +11,7 @@
   }
 
   @include mobile {
-    padding:3.75rem spacing(mobile-padding);
+    padding:3.75rem spacing(mobile-padding) 1rem;
   }
 
   @include desktop-hd {
