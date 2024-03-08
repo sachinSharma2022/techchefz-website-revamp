@@ -349,7 +349,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 1.5rem 0;
-    border-top: 0.14rem solid rgba(color(primary-white), 0.2);
+    border-top: 0.14rem solid rgba(color(primary-white), 0.05);
 
     @include mobile {
       flex-wrap: wrap;
