@@ -35,8 +35,8 @@ const ContactHeroBanner = ({ props }) => {
               ? `${base_Uri}${props?.image?.data?.attributes?.url}`
               : `${base_Uri}/`
           }
-          width={1440}
-          height={650}
+          width={2560}
+          height={1068}
           alt="contactBannerImg"
         />
       </div>

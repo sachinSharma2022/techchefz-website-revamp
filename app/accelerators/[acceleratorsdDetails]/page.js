@@ -6,6 +6,7 @@ import LetsWork from "@/components/home/letsWork";
 import RelatedCase from "@/components/relatedCase";
 import { getData,getDataDynamic } from "@/lib/fetchData";
 import { api_accelerators_details_Page } from "@/lib/constants";
+import NotFound from "@/app/not-found";
 
 const AcceleratorDetails = async ({params}) => {
   const data = await getDataDynamic(api_accelerators_details_Page);
@@ -27,7 +28,7 @@ const AcceleratorDetails = async ({params}) => {
           <LetsWork contact={data[index].attributes.LetsWork} />
         </div>
       ) : (
-        <></>
+        <><NotFound /></>
       )}
     </>
   );

@@ -7,6 +7,7 @@ import SolutionTheProcess from "@/components/solutions/solutionTheProcess";
 import { api_Solutions_Page, api_Case_study_Page } from "@/lib/constants";
 import { getData, getDataDynamic } from "@/lib/fetchData";
 import styles from "./style.module.scss";
+import NotFound from "../not-found";
 
 export const metadata = {
   title: "Solutions | TechChefz  Digital",
@@ -17,14 +18,22 @@ const Solutions = async () => {
   const data = await getData(api_Solutions_Page);
   const data_related_cases = await getDataDynamic(api_Case_study_Page);
   return (
-    <div className={styles.solutionsPageStyle}>
-      <SolutionHeroBanner props={data.Banner} />
-      <SolutionOurValues props={data.ourValues} />
-      <SolutionTheProcess props={data.OurProcess} />
-      <SolutionTechnologies props={data.Technology} />
-      <RelatedCase props={data_related_cases} />
-      <Faq props={data.Faq} />
-    </div>
+    <>
+      {data ? (
+        <div className={styles.solutionsPageStyle}>
+          <SolutionHeroBanner props={data.Banner} />
+          <SolutionOurValues props={data.ourValues} />
+          <SolutionTheProcess props={data.OurProcess} />
+          <SolutionTechnologies props={data.Technology} />
+          <RelatedCase props={data_related_cases} />
+          <Faq props={data.Faq} />
+        </div>
+      ) : (
+        <>
+          <NotFound />
+        </>
+      )}
+    </>
   );
 };
 

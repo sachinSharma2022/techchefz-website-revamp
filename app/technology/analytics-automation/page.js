@@ -6,6 +6,7 @@ import CmsBanner from "@/components/technology/cms/cmsBanner";
 import CmsDifference from "@/components/technology/cms/cmsDifference";
 import CmsPlayer from "@/components/technology/cms/cmsPlayer";
 import CmsType from "@/components/technology/cms/cmsType";
+import NotFound from "@/app/not-found";
 import WhyCms from "@/components/technology/cms/whyCms";
 import {
   api_analytics_automations_Page,
@@ -39,7 +40,7 @@ const Cms = async () => {
           <LetsWork contact={data.ContactUs} />
         </div>
       ) : (
-        <></>
+        <><NotFound /></>
       )}
     </>
   );
