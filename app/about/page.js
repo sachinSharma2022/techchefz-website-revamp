@@ -9,8 +9,10 @@ import OurVision from "@/components/about/ourVision";
 import WhatWeDo from "@/components/about/whatWeDo";
 import LetsWork from "@/components/home/letsWork";
 import Curve from "@/components/ui/pageTransition";
+import NotFound from "../not-found";
 import { api_About_Page } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
+
 
 export const metadata = {
   title: "About TechChefz | Humanizing Digital Experiences",
@@ -39,7 +41,7 @@ const AboutPage = async () => {
           <LetsWork contact={data.ContactUs} />
         </div>
       ) : (
-        <></>
+        <><NotFound /></>
       )}
     </Curve>
   );

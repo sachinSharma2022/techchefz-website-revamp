@@ -7,6 +7,7 @@ import CmsType from "@/components/technology/cms/cmsType";
 import Faq from "@/components/common/faq";
 import WhyCms from "@/components/technology/cms/whyCms";
 import TechnologyValues from "@/components/technology/technologyValues";
+import NotFound from "@/app/not-found";
 import { getData, getDataDynamic } from "@/lib/fetchData";
 import {
   api_data_intelligences_Page,
@@ -40,7 +41,7 @@ const Cms = async () => {
           <LetsWork contact={data.ContactUs} />
         </div>
       ) : (
-        <></>
+        <><NotFound /></>
       )}
     </>
   );

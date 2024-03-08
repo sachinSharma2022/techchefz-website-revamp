@@ -6,6 +6,7 @@ import { getData, getDataDynamic } from "@/lib/fetchData";
 import { api_Career_Page, api_Career_detail_Page } from "@/lib/constants";
 import HomeTestimonials from "@/components/home/homeTestimonials";
 import TechnologyValues from "@/components/technology/technologyValues";
+import NotFound from "../not-found";
 
 export const metadata = {
   title: "Job Openings and Career Opportunities at TechChefz Digital",
@@ -34,7 +35,7 @@ const Career = async () => {
           <Innovation props={data.ourInnvotion} />
         </div>
       ) : (
-        <></>
+        <><NotFound /></>
       )}
     </>
   );
