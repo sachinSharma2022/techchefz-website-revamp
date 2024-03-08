@@ -17,7 +17,6 @@ const OurVision = ({ props }) => {
       className={`${styles.ourVision} ${theme ? styles.ourVisionDark : ""}`}
     >
       <div className={cn("primary-container")}>
-        <TextRevel>
           <div className={cn(styles.flexContainer)}>
             <h3
               className={cn(styles.aboutHeading, "gradient-text")}
@@ -37,7 +36,6 @@ const OurVision = ({ props }) => {
                 })}
             </div>
           </div>
-        </TextRevel>
 
         <div className={styles.videoWrapper}>
           <VideoCustom
