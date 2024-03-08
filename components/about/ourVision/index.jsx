@@ -8,7 +8,6 @@ import VideoCustom from "@/components/ui/videoCustom";
 import { cn } from "@/lib/utils";
 import { base_Uri } from "@/lib/constants";
 import { base_Url } from "@/lib/constants";
-import TextRevel from "@/components/ui/sectionAnimation";
 
 const OurVision = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
