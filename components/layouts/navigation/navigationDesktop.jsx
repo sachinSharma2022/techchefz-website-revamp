@@ -12,12 +12,22 @@ import { base_Url, base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
 import AnimatedLogo from "@/components/common/animatedLogo";
 
-const NavigationDesktop = ({ props }) => {
-  console.log("header", props);
+const NavigationDesktop = ({ props, featureArticle }) => {
+
   const pathname = usePathname();
   const { theme, setTheme } = useContext(MyContext);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuShow, setMobileMenuShow] = useState(false);
+
+  const feartureTech = featureArticle
+  .filter(
+    (data) => data?.attributes?.InsightOverview[0]?.TechMenuFeatured == true
+  )
+
+  const feartureMore = featureArticle
+  .filter(
+    (data) => data?.attributes?.InsightOverview[0]?.MoreMenuFeatured == true
+  )
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,18 +47,22 @@ const NavigationDesktop = ({ props }) => {
     setTechMenu(false);
     setMoreMenu(false);
   };
+  
 
-  function LatestTech() {
+  function LatestTech(feartureArray) {
+ 
     return (
+      <>     
+       
       <div className={cn(styles.latestTech)}>
         <h1>{props[2]?.DropDown[8]?.Title}</h1>
-        <Link href="/" className={styles.imageTech}>
+        <Link href={`/insights/${feartureArray[0]?.id}`} className={styles.imageTech}>
           <div className={styles.imgBox}>
             <ImageCustom
-              src={
-                props[2]?.DropDown[8]?.Image?.data?.attributes?.url
-                  ? `${base_Url}${props[2]?.DropDown[8]?.Image?.data?.attributes?.url}`
-                  : `${base_Url}/`
+              src={feartureArray[0]?.attributes?.InsightOverview[0]?.Image?.data
+                ?.attributes?.url
+                ? `${base_Uri}${feartureArray[0]?.attributes?.InsightOverview[0]?.Image?.data?.attributes?.url}`
+                : `${base_Uri}/`
               }
               width={300}
               height={300}
@@ -57,20 +71,24 @@ const NavigationDesktop = ({ props }) => {
           </div>
           <div className={styles.infoBox}>
             <p className={styles.description}>
-              {props[2]?.DropDown[8]?.Description}
+              {feartureArray[0]?.attributes?.InsightOverview[0].Title}
             </p>
             <Icons.ArrowRight size={16} />
           </div>
         </Link>
+        <Link href={`/insights/${feartureArray[1]?.id}`}>
         <div className={styles.imageTech}>
           <div className={styles.infoBox}>
             <p className={styles.description}>
-              {props[2]?.DropDown[9]?.Description}
+            {feartureArray[1]?.attributes?.InsightOverview[0].Title}
             </p>
             <Icons.ArrowRight size={16} />
           </div>
         </div>
+        </Link>
       </div>
+     
+       </>
     );
   }
 
@@ -150,7 +168,7 @@ const NavigationDesktop = ({ props }) => {
               </Link>
               <ul className={cn(styles.subMenu)}>
                 <div className={styles.subsection}>
-                  {LatestTech()}
+                  {LatestTech(feartureTech) }
 
                   <div className={cn(styles.overviewTech)}>
                     {OverTech()}
@@ -281,7 +299,7 @@ const NavigationDesktop = ({ props }) => {
               </Link>
             </li>
             <li className={styles.dropDown}>
-              <div className={styles.more} >
+              <Link href="/">
                 <Icons.MoreDotIcon
                   className={styles.dotIcon}
                   width={4}
@@ -289,10 +307,10 @@ const NavigationDesktop = ({ props }) => {
                 />
                 {props[4].Title}
                 <div className={cn(styles.arrow, styles.hideDesktopIcon)} />
-              </div>
+              </Link>
               <ul className={cn(styles.subMenu, styles.singleLayout)}>
                 <div className={styles.subsection}>
-                  {LatestTech()}
+                  {LatestTech(feartureMore)}
                   <div className={cn(styles.overviewTech)}>
                     <div className={cn(styles.multiHrefs)}>
                       <div className="row">

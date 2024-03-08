@@ -13,9 +13,9 @@ const CoeBanner = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section className={cn(styles.banner, theme ? styles.bannerDark : "")}>
-      <div className="primary-container">
-        <TextRevel>
-          <div className={cn(styles.bannerContent, "header-container")}>
+      <TextRevel>
+        <div className={cn(styles.bannerContent, "header-container")}>
+          <div className="primary-container grid-col-2">
             <h1
               className={cn(styles.bannerTitle, "gradient-text")}
               dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
@@ -27,8 +27,8 @@ const CoeBanner = ({ props }) => {
               ></p>
             </div>
           </div>
-        </TextRevel>
-      </div>
+        </div>
+      </TextRevel>
 
       <div className={styles.imgBox}>
         <ImageCustom
@@ -37,8 +37,8 @@ const CoeBanner = ({ props }) => {
               ? `${base_Uri}${props?.Image?.data?.attributes?.url}`
               : `${base_Uri}/`
           }
-          width={1920}
-          height={1080}
+          width={2560}
+          height={1068}
           alt="banner-img"
         />
       </div>

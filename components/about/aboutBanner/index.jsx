@@ -12,13 +12,15 @@ const AboutBanner = ({ props }) => {
 
   return (
     <section
-      className={`${styles.aboutBanner} ${theme ? styles.aboutBannerDark : ""}`}
+      className={cn(styles.aboutBanner, theme ? styles.aboutBannerDark : "")}
     >
-      <div className={cn("primary-container", "header-full-container")}>
-        <h1
-          className={cn(styles.bannerTitle, "gradient-text")}
-          dangerouslySetInnerHTML={{ __html: `${props[0]?.title}` }}
-        ></h1>
+      <div className={cn("header-container", "full")}>
+        <div className={cn("primary-container")}>
+          <h1
+            className={cn(styles.bannerTitle, "gradient-text")}
+            dangerouslySetInnerHTML={{ __html: `${props[0]?.title}` }}
+          ></h1>
+        </div>
       </div>
 
       <div className={styles.bannerImg}>
@@ -28,8 +30,8 @@ const AboutBanner = ({ props }) => {
               ? `${base_Uri}${props[0]?.image?.data?.attributes?.url}`
               : `${base_Uri}/`
           }
-          width={1360}
-          height={450}
+          width={2560}
+          height={1068}
           alt="bannerImg"
         />
       </div>

@@ -113,6 +113,14 @@ const LetsWork = ({ contact }) => {
                         onBlur={handleBlur}
                         value={values.firstName}
                         errorStatus={touched.firstName && errors.firstName}
+                        onKeyDown={(event) => {
+                          console.log(event.keyCode, "keycode");
+                          var regex = new RegExp("^[a-zA-Z]*$");
+                          if (!regex.test(event.key) && !(event.key === "'")) {
+                            event.preventDefault();
+                            return false;
+                          }
+                        }}
                       />
                       {touched.firstName && errors.firstName && (
                         <Error>{errors.firstName}</Error>
@@ -130,6 +138,18 @@ const LetsWork = ({ contact }) => {
                         onBlur={handleBlur}
                         value={values.lastName}
                         errorStatus={touched.lastName && errors.lastName}
+                        onKeyDown={(event) => {
+                          console.log(event.keyCode, "keycode");
+                          var regex = new RegExp("^[a-zA-Z]*$");
+                          if (
+                            !regex.test(event.key) &&
+                            !(event.key === "-") &&
+                            !(event.key === " ")
+                          ) {
+                            event.preventDefault();
+                            return false;
+                          }
+                        }}
                       />
                       {touched.lastName && errors.lastName && (
                         <Error>{errors.lastName}</Error>
@@ -144,6 +164,19 @@ const LetsWork = ({ contact }) => {
                         onBlur={handleBlur}
                         value={values.phone}
                         valueCountryCode={values.countyCode}
+                        onKeyDown={(event) => {
+                          console.log(event.key, "keycode");
+                          var regex = new RegExp("^[0-9]*$");
+                          if (
+                            !regex.test(event.key) &&
+                            !(event.key == "Backspace") &&
+                            !(event.key == "ArrowRight") &&
+                            !(event.key == "ArrowLeft")
+                          ) {
+                            event.preventDefault();
+                            return false;
+                          }
+                        }}
                       />
                       {touched.phone && errors.phone && (
                         <Error>{errors.phone}</Error>

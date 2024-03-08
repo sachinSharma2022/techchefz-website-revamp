@@ -13,8 +13,8 @@ const CmsPlayer = ({ props }) => {
           ? `${base_Uri}${props?.Image?.data?.attributes?.url}`
           : `${base_Uri}/`
       }
-      width={1440}
-      height={650}
+      width={2560}
+      height={1068}
       alt="bannerImg"
       className={styles.landingPlayerStyle}
     />

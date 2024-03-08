@@ -73,8 +73,8 @@ const TechnologyValues = ({ props, wrapperStyle }) => {
                       ? `${base_Uri}${data?.SliderImage?.data.attributes.url}`
                       : `${base_Uri}/`
                   }
-                  width={1000}
-                  height={1000}
+                  width={2560}
+                  height={1068}
                   alt="img"
                 />
               </SwiperSlide>

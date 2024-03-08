@@ -1,7 +1,9 @@
 import InsightDetail from "@/components/insightInside/insightDetail";
 import InsightOverview from "@/components/insightInside/insightOverview";
 import RelatedCase from "@/components/relatedCase";
+import Innovation from "@/components/portfolio/innovation";
 import { getDataDynamic } from "@/lib/fetchData";
+import NotFound from "@/app/not-found";
 import { api_insight_insides_Page, api_Case_study_Page } from "@/lib/constants";
 
 const InsightInside = async ({ params }) => {
@@ -16,16 +18,25 @@ const InsightInside = async ({ params }) => {
 
   return (
     <>
-      <InsightOverview
-        props={data[index].attributes.InsightOverview}
-        Insightinner={data[index].attributes.Insightinner}
-        TechStackData={data[index].attributes.TechStackData}
-      />
-      <InsightDetail
-        props={data[index].attributes.insightDetailData}
-        BlockTitle={data[index].attributes.BlockTitle}
-      />
-      <RelatedCase props={data_related_cases} />
+      {data ? (
+        <>
+          <InsightOverview
+            props={data[index].attributes.InsightOverview}
+            Insightinner={data[index].attributes.Insightinner}
+            TechStackData={data[index].attributes.TechStackData}
+          />
+          <InsightDetail
+            props={data[index].attributes.insightDetailData}
+            BlockTitle={data[index].attributes.BlockTitle}
+          />
+          <RelatedCase props={data_related_cases} />
+          <Innovation props={data[index].attributes.ourInnvotion} />
+        </>
+      ) : (
+        <>
+          <NotFound />
+        </>
+      )}
     </>
   );
 };

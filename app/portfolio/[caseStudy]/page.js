@@ -7,6 +7,7 @@ import Results from "@/components/caseStudy/results";
 import Solutions from "@/components/caseStudy/solutions";
 import LetsWork from "@/components/home/letsWork";
 import React from "react";
+import NotFound from "@/app/not-found";
 import { getDataDynamic } from "@/lib/fetchData";
 import { api_Case_study_Page } from "@/lib/constants";
 
@@ -34,14 +35,14 @@ const CaseStudy = async ({ params }) => {
           <Solutions props={data[index].attributes.Solutions} />
           <Results props={data[index].attributes.Results} />
           <RelatedCase
-            className="case-related-style"
+            className="tech-related-style"
             props={data}
             params={params}
           />
           <LetsWork contact={data[index].attributes.LetsWork} />
         </div>
       ) : (
-        <></>
+        <><NotFound /></>
       )}
     </>
   );

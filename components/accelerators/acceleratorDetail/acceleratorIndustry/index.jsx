@@ -65,8 +65,8 @@ const AcceleratorIndustry = ({ props }) => {
                 ? `${base_Uri}${props?.Image?.data?.attributes?.url}`
                 : `${base_Uri}/`
             }
-            width={1300}
-            height={800}
+            width={2560}
+            height={1068}
             alt="website-img"
           />
         </div>

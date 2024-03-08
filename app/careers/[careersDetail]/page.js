@@ -4,6 +4,7 @@ import PositionDescription from "@/components/careersDetail/positionDetail";
 import ContactSection from "@/components/careersDetail/contactSection";
 import MoreJobs from "@/components/careersDetail/moreJobs";
 import { api_Career_detail_Page } from "@/lib/constants";
+import NotFound from "@/app/not-found";
 import { getData, getDataDynamic } from "@/lib/fetchData";
 
 const CareerDetail = async ({ params }) => {
@@ -16,16 +17,24 @@ const CareerDetail = async ({ params }) => {
   }
   return (
     <>
-      <CareerPositionOverview
-        href="#contactSection"
-        props={data[index].attributes.DeveloperApply}
-      />
-      <PositionDescription props={data[index].attributes.DeveloperDetail} />
-      <ContactSection
-        id="contactSection"
-        props={data[index].attributes.Developercontact}
-      />
-      <MoreJobs props={data[index].attributes.MoreDetail} />
+      {data ? (
+        <>
+          <CareerPositionOverview
+            href="#contactSection"
+            props={data[index].attributes.DeveloperApply}
+          />
+          <PositionDescription props={data[index].attributes.DeveloperDetail} />
+          <ContactSection
+            id="contactSection"
+            props={data[index].attributes.Developercontact}
+          />
+          <MoreJobs props={data[index].attributes.MoreDetail} />
+        </>
+      ) : (
+        <>
+          <NotFound />
+        </>
+      )}
     </>
   );
 };

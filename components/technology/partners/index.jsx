@@ -23,17 +23,17 @@ const Partners = ({ props }) => {
     <section className={`${styles.partner} ${theme ? styles.partnerDark : ""}`}>
       <div className={cn("primary-container", styles.flexContainer)}>
         <TextRevel>
-        <div className={styles.headSection}>
-          <h6
-            className={cn(styles.partnerTitle, "gradient-text")}
-            dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
-          ></h6>
-          <h3
-            className={cn(styles.partnerHeading, "gradient-text")}
-            dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
-          ></h3>
-        </div>
-        </TextRevel>       
+          <div className={styles.headSection}>
+            <h6
+              className={cn(styles.partnerTitle, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+            ></h6>
+            <h3
+              className={cn(styles.partnerHeading, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
+            ></h3>
+          </div>
+        </TextRevel>
         {isBigScreen ? (
           <div className={styles.partnerCards}>
             {props?.Slider?.map((data, index) => (

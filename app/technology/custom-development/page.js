@@ -7,6 +7,7 @@ import CmsType from "@/components/technology/cms/cmsType";
 import Faq from "@/components/common/faq";
 import WhyCms from "@/components/technology/cms/whyCms";
 import TechnologyValues from "@/components/technology/technologyValues";
+import NotFound from "@/app/not-found";
 import { getData, getDataDynamic } from "@/lib/fetchData";
 import {
   api_custom_developments_Page,
@@ -33,14 +34,14 @@ const Cms = async () => {
           <SolutionTheProcess props={data.OurProcess} />
           <Faq props={data.Faq} />
           <RelatedCase
-            className="case-related-style"
+            className="cms-related-style"
             props={data_related_cases}
           />
 
           <LetsWork contact={data.ContactUs} />
         </div>
       ) : (
-        <></>
+        <><NotFound /></>
       )}
     </>
   );

@@ -11,6 +11,7 @@ import { base_Url } from "@/lib/constants";
 import TextRevel from "@/components/ui/sectionAnimation";
 
 const Innovation = ({ props }) => {
+  console.log("pp", props);
   const { theme, setTheme } = useContext(MyContext);
 
   return (

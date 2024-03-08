@@ -60,6 +60,10 @@
     @include mobile{
       height: 12.188rem;
     }
+
+    @include samsung-fold{
+      height: 16rem;
+    }
     
     img {
       width: 100%;

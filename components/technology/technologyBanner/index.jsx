@@ -18,26 +18,28 @@ const TechnologyBanner = ({ props }) => {
       }`}
     >
       <TextRevel>
-        <div className={cn("primary-container", "header-container")}>
-          <h1
-            className={cn(styles.title, "gradient-text")}
-            dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}` }}
-          ></h1>
-          <div className={styles.contentSec}>
-            <p
-              className={styles.leadText}
-              dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}` }}
-            ></p>
-            <Link href={props[0]?.BtnLink}>
-              <Button
-                variant={theme ? "blueBtnDark" : "blueBtn"}
-                className={styles.headerBtn}
-                size="md"
-              >
-                {props[0]?.Button}
-                <Icons.ArrowRight size={20} className="ms-2" />
-              </Button>
-            </Link>
+        <div className={cn("header-container")}>
+          <div className="primary-container grid-col-2">
+            <h1
+              className={cn(styles.title, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props[0]?.Title}` }}
+            ></h1>
+            <div className={styles.contentSec}>
+              <p
+                className={styles.leadText}
+                dangerouslySetInnerHTML={{ __html: `${props[0]?.Description}` }}
+              ></p>
+              <Link href={props[0]?.BtnLink}>
+                <Button
+                  variant={theme ? "blueBtnDark" : "blueBtn"}
+                  className={styles.headerBtn}
+                  size="md"
+                >
+                  {props[0]?.Button}
+                  <Icons.ArrowRight size={20} className="ms-2" />
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </TextRevel>

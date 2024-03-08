@@ -13,7 +13,7 @@ import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
 import AnimatedLogo from "@/components/common/animatedLogo";
 
-const NavigationMobile = ({ props }) => {
+const NavigationMobile = ({ props, featureArticle }) => {
   const pathname = usePathname();
   const [mobileMenuShow, setMobileMenuShow] = useState(false);
   const [isTechMenu, setTechMenu] = useState(false);
@@ -21,6 +21,16 @@ const NavigationMobile = ({ props }) => {
 
   const { theme, setTheme } = useContext(MyContext);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const feartureTech = featureArticle
+  .filter(
+    (data) => data?.attributes?.InsightOverview[0]?.TechMenuFeatured == true
+  )
+
+  const feartureMore = featureArticle
+  .filter(
+    (data) => data?.attributes?.InsightOverview[0]?.MoreMenuFeatured == true
+  )
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,8 +77,7 @@ const NavigationMobile = ({ props }) => {
   const technologyToggle = () => {
     setTechMenu(true);
   };
-
-  function LatestTech() {
+  function LatestTech(feartureArray) {
     return (
       <div className={cn(styles.latestTech)}>
         <h1>{props[2]?.DropDown[8]?.Title}</h1>
@@ -77,8 +86,9 @@ const NavigationMobile = ({ props }) => {
             <div className={styles.imgBox}>
               <ImageCustom
                 src={
-                  props[2]?.DropDown[8]?.Image?.data?.attributes?.url
-                    ? `${base_Uri}${props[2]?.DropDown[8]?.Image?.data?.attributes?.url}`
+                  feartureArray[0]?.attributes?.InsightOverview[0]?.Image?.data
+                    ?.attributes?.url
+                    ? `${base_Uri}${feartureArray[0]?.attributes?.InsightOverview[0]?.Image?.data?.attributes?.url}`
                     : `${base_Uri}/`
                 }
                 width={300}
@@ -88,7 +98,7 @@ const NavigationMobile = ({ props }) => {
             </div>
             <div className={styles.infoBox}>
               <p className={styles.description}>
-                {props[2]?.DropDown[8]?.Description}
+              {feartureArray[0]?.attributes?.InsightOverview[0].Title}
               </p>
               <Icons.ArrowRight size={16} />
             </div>
@@ -96,7 +106,7 @@ const NavigationMobile = ({ props }) => {
           <div className={styles.imageTech}>
             <div className={styles.infoBox}>
               <p className={styles.description}>
-                {props[2]?.DropDown[9]?.Description}
+              {feartureArray[1]?.attributes?.InsightOverview[0].Title}
               </p>
               <Icons.ArrowRight size={16} />
             </div>
@@ -141,7 +151,7 @@ const NavigationMobile = ({ props }) => {
       </div>
     );
   }
-
+  console.log(isTechMenu, isMoreMenu, "menuname");
   return (
     <header
       className={cn(
@@ -184,132 +194,135 @@ const NavigationMobile = ({ props }) => {
                 {props[2]?.Title} <div className={styles.arrow} />
               </button>
 
-              {isTechMenu && (
-                <ul className={cn(styles.subMenu, styles.slideinout)}>
-                  <section className={styles.subsection}>
-                    <button
-                      className={styles.backButton}
-                      onClick={() => setTechMenu(false)}
-                    >
-                      <Icons.ArrowLeft />
-                      Go Back
-                    </button>
-                    <div className={cn(styles.overviewTech)}>
-                      {OverTech()}
-                      <div className={cn(styles.multiHrefs)}>
-                        <div className="row">
-                          <div className="col-sm-6">
-                            <Link
-                              href={props[2]?.DropDown[1]?.Links}
-                              onClick={closeMenu}
-                              className={cn(styles.hrefInnerFlex)}
-                            >
-                              <div className={styles.head}>
-                                <h4 className={styles.linkTitle}>
-                                  {props[2]?.DropDown[1]?.Title}
-                                </h4>
-                                <Icons.ArrowForward />
-                              </div>
-                              <p className={styles.excepPara}>
-                                {props[2]?.DropDown[1]?.Description}
-                              </p>
-                            </Link>
-                            <Link
-                              href={props[2]?.DropDown[2]?.Links}
-                              className={cn(styles.hrefInnerFlex)}
-                            >
-                              <div className={styles.head}>
-                                <h4 className={styles.linkTitle}>
-                                  {props[2]?.DropDown[2]?.Title}
-                                </h4>
-                                <Icons.ArrowForward />
-                              </div>
-                              <p className={styles.excepPara}>
-                                {props[2]?.DropDown[2]?.Description}
-                              </p>
-                            </Link>
-                            <Link
-                              href={props[2]?.DropDown[3]?.Links}
-                              className={cn(styles.hrefInnerFlex)}
-                            >
-                              <div className={styles.head}>
-                                <h4 className={styles.linkTitle}>
-                                  {props[2]?.DropDown[3]?.Title}
-                                </h4>
-                                <Icons.ArrowForward />
-                              </div>
-                              <p className={styles.excepPara}>
-                                {props[2]?.DropDown[3]?.Description}
-                              </p>
-                            </Link>
-                            <Link
-                              href={props[2]?.DropDown[4]?.Links}
-                              className={cn(styles.hrefInnerFlex)}
-                            >
-                              <div className={styles.head}>
-                                <h4 className={styles.linkTitle}>
-                                  {props[2]?.DropDown[4]?.Title}
-                                </h4>
-                                <Icons.ArrowForward />
-                              </div>
-                              <p className={styles.excepPara}>
-                                {props[2]?.DropDown[4]?.Description}
-                              </p>
-                            </Link>
-                          </div>
+              <ul
+                className={cn(
+                  styles.subMenu,
+                  isTechMenu ? styles.slideIn : styles.slideOut
+                )}
+              >
+                <section className={styles.subsection}>
+                  <button
+                    className={styles.backButton}
+                    onClick={() => setTechMenu(false)}
+                  >
+                    <Icons.ArrowLeft />
+                    Go Back
+                  </button>
+                  <div className={cn(styles.overviewTech)}>
+                    {OverTech()}
+                    <div className={cn(styles.multiHrefs)}>
+                      <div className="row">
+                        <div className="col-sm-6">
+                          <Link
+                            href={props[2]?.DropDown[1]?.Links}
+                            onClick={closeMenu}
+                            className={cn(styles.hrefInnerFlex)}
+                          >
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>
+                                {props[2]?.DropDown[1]?.Title}
+                              </h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              {props[2]?.DropDown[1]?.Description}
+                            </p>
+                          </Link>
+                          <Link
+                            href={props[2]?.DropDown[2]?.Links}
+                            className={cn(styles.hrefInnerFlex)}
+                          >
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>
+                                {props[2]?.DropDown[2]?.Title}
+                              </h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              {props[2]?.DropDown[2]?.Description}
+                            </p>
+                          </Link>
+                          <Link
+                            href={props[2]?.DropDown[3]?.Links}
+                            className={cn(styles.hrefInnerFlex)}
+                          >
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>
+                                {props[2]?.DropDown[3]?.Title}
+                              </h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              {props[2]?.DropDown[3]?.Description}
+                            </p>
+                          </Link>
+                          <Link
+                            href={props[2]?.DropDown[4]?.Links}
+                            className={cn(styles.hrefInnerFlex)}
+                          >
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>
+                                {props[2]?.DropDown[4]?.Title}
+                              </h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              {props[2]?.DropDown[4]?.Description}
+                            </p>
+                          </Link>
+                        </div>
 
-                          <div className="col-sm-6">
-                            <Link
-                              href={props[2]?.DropDown[5]?.Links}
-                              className={cn(styles.hrefInnerFlex)}
-                            >
-                              <div className={styles.head}>
-                                <h4 className={styles.linkTitle}>
-                                  {props[2]?.DropDown[5]?.Title}
-                                </h4>
-                                <Icons.ArrowForward />
-                              </div>
-                              <p className={styles.excepPara}>
-                                {props[2]?.DropDown[5]?.Description}
-                              </p>
-                            </Link>
-                            <Link
-                              href={props[2]?.DropDown[6]?.Links}
-                              className={cn(styles.hrefInnerFlex)}
-                            >
-                              <div className={styles.head}>
-                                <h4 className={styles.linkTitle}>
-                                  {props[2]?.DropDown[6]?.Title}
-                                </h4>
-                                <Icons.ArrowForward />
-                              </div>
-                              <p className={styles.excepPara}>
-                                {props[2]?.DropDown[6]?.Description}
-                              </p>
-                            </Link>
-                            <Link
-                              href={props[2]?.DropDown[7]?.Links}
-                              className={cn(styles.hrefInnerFlex)}
-                            >
-                              <div className={styles.head}>
-                                <h4 className={styles.linkTitle}>
-                                  {props[2]?.DropDown[7]?.Title}
-                                </h4>
-                                <Icons.ArrowForward />
-                              </div>
-                              <p className={styles.excepPara}>
-                                {props[2]?.DropDown[7]?.Description}
-                              </p>
-                            </Link>
-                          </div>
+                        <div className="col-sm-6">
+                          <Link
+                            href={props[2]?.DropDown[5]?.Links}
+                            className={cn(styles.hrefInnerFlex)}
+                          >
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>
+                                {props[2]?.DropDown[5]?.Title}
+                              </h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              {props[2]?.DropDown[5]?.Description}
+                            </p>
+                          </Link>
+                          <Link
+                            href={props[2]?.DropDown[6]?.Links}
+                            className={cn(styles.hrefInnerFlex)}
+                          >
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>
+                                {props[2]?.DropDown[6]?.Title}
+                              </h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              {props[2]?.DropDown[6]?.Description}
+                            </p>
+                          </Link>
+                          <Link
+                            href={props[2]?.DropDown[7]?.Links}
+                            className={cn(styles.hrefInnerFlex)}
+                          >
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>
+                                {props[2]?.DropDown[7]?.Title}
+                              </h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              {props[2]?.DropDown[7]?.Description}
+                            </p>
+                          </Link>
                         </div>
                       </div>
                     </div>
+                  </div>
 
-                    {LatestTech()}
-                  </section>
-                </ul>
-              )}
+                  {LatestTech(feartureTech)}
+                </section>
+              </ul>
             </li>
             <li className={styles.menuItem}>
               <Link
@@ -334,73 +347,72 @@ const NavigationMobile = ({ props }) => {
                 <div className={cn(styles.arrow, styles.hideDesktopIcon)} />
               </button>
 
-              {isMoreMenu && (
-                <ul
-                  className={cn(
-                    styles.subMenu,
-                    styles.singleLayout,
-                    styles.slideinout
-                  )}
-                >
-                  <div className={styles.subsection}>
-                    <button
-                      className={styles.backButton}
-                      onClick={() => setMoreMenu(false)}
-                    >
-                      <Icons.ArrowLeft />
-                      Go Back
-                    </button>
+              <ul
+                className={cn(
+                  styles.subMenu,
+                  styles.singleLayout,
+                  isMoreMenu ? styles.slideIn : styles.slideOut
+                )}
+              >
+                <div className={styles.subsection}>
+                  <button
+                    className={styles.backButton}
+                    onClick={() => setMoreMenu(false)}
+                  >
+                    <Icons.ArrowLeft />
+                    Go Back
+                  </button>
 
-                    <div className={cn(styles.overviewTech)}>
-                      <div className={cn(styles.multiHrefs)}>
-                        <div className="row">
-                          <div className="col-sm-12">
-                            <Link
-                              href={props[4]?.DropDown[0]?.Links}
-                              onClick={closeMenu}
-                              className={cn(styles.hrefInnerFlex)}
-                            >
-                              <div className={styles.head}>
-                                <h4 className={styles.linkTitle}>
-                                  {props[4]?.DropDown[0]?.Title}
-                                </h4>
-                                <Icons.ArrowForward />
-                              </div>
-                              <p className={styles.excepPara}>
-                                {props[4]?.DropDown[0]?.Description}
-                              </p>
-                            </Link>
-                            <Link
-                              href={props[4]?.DropDown[1]?.Links}
-                              onClick={closeMenu}
-                              className={cn(styles.hrefInnerFlex)}
-                            >
-                              <div className={styles.head}>
-                                <h4 className={styles.linkTitle}>
-                                  {props[4]?.DropDown[1]?.Title}
-                                </h4>
-                                <Icons.ArrowForward />
-                              </div>
-                              <p className={styles.excepPara}>
-                                {props[4]?.DropDown[1]?.Description}
-                              </p>
-                            </Link>
-                            <Link
-                              href={props[4]?.DropDown[2]?.Links}
-                              onClick={closeMenu}
-                              className={cn(styles.hrefInnerFlex)}
-                            >
-                              <div className={styles.head}>
-                                <h4 className={styles.linkTitle}>
-                                  {props[4]?.DropDown[2]?.Title}
-                                </h4>
-                                <Icons.ArrowForward />
-                              </div>
-                              <p className={styles.excepPara}>
-                                {props[4]?.DropDown[2]?.Description}
-                              </p>
-                            </Link>
-                            {/* <Link
+                  <div className={cn(styles.overviewTech)}>
+                    <div className={cn(styles.multiHrefs)}>
+                      <div className="row">
+                        <div className="col-sm-12">
+                          <Link
+                            href={props[4]?.DropDown[0]?.Links}
+                            onClick={closeMenu}
+                            className={cn(styles.hrefInnerFlex)}
+                          >
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>
+                                {props[4]?.DropDown[0]?.Title}
+                              </h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              {props[4]?.DropDown[0]?.Description}
+                            </p>
+                          </Link>
+                          <Link
+                            href={props[4]?.DropDown[1]?.Links}
+                            onClick={closeMenu}
+                            className={cn(styles.hrefInnerFlex)}
+                          >
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>
+                                {props[4]?.DropDown[1]?.Title}
+                              </h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              {props[4]?.DropDown[1]?.Description}
+                            </p>
+                          </Link>
+                          <Link
+                            href={props[4]?.DropDown[2]?.Links}
+                            onClick={closeMenu}
+                            className={cn(styles.hrefInnerFlex)}
+                          >
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>
+                                {props[4]?.DropDown[2]?.Title}
+                              </h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              {props[4]?.DropDown[2]?.Description}
+                            </p>
+                          </Link>
+                          {/* <Link
                               href={props[4]?.DropDown[3]?.Links}
                               onClick={closeMenu}
                               className={cn(styles.hrefInnerFlex)}
@@ -415,30 +427,29 @@ const NavigationMobile = ({ props }) => {
                                 {props[4]?.DropDown[3]?.Description}
                               </p>
                             </Link> */}
-                            <Link
-                              href={props[4]?.DropDown[4]?.Links}
-                              onClick={closeMenu}
-                              className={cn(styles.hrefInnerFlex)}
-                            >
-                              <div className={styles.head}>
-                                <h4 className={styles.linkTitle}>
-                                  {" "}
-                                  {props[4]?.DropDown[4]?.Title}
-                                </h4>
-                                <Icons.ArrowForward />
-                              </div>
-                              <p className={styles.excepPara}>
-                                {props[4]?.DropDown[4]?.Description}
-                              </p>
-                            </Link>
-                          </div>
+                          <Link
+                            href={props[4]?.DropDown[4]?.Links}
+                            onClick={closeMenu}
+                            className={cn(styles.hrefInnerFlex)}
+                          >
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>
+                                {" "}
+                                {props[4]?.DropDown[4]?.Title}
+                              </h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              {props[4]?.DropDown[4]?.Description}
+                            </p>
+                          </Link>
                         </div>
                       </div>
                     </div>
-                    {LatestTech()}
                   </div>
-                </ul>
-              )}
+                  {LatestTech(feartureMore)}
+                </div>
+              </ul>
             </li>
           </ul>
 

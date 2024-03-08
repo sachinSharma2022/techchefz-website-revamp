@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { Disclosure } from "@headlessui/react";
 import Link from "next/link";
 import { useContext, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 import SmoothDropdown from "@/components/ui/smoothDropdownButton";
 import styles from "./style.module.scss";
@@ -154,11 +155,34 @@ const OpenPosition = ({ props, id }) => {
                                     ></ul>
                                   </div>
                                   <div className={styles.buttonIcon}>
-                                    <Icons.ArrowDown />
+                                    <motion.span
+                                      initial={{
+                                        backgroundColor: "transparent",
+                                      }}
+                                      animate={{ rotate: open ? 180 : 0 }}
+                                      transition={{
+                                        duration: 0.15,
+                                        type: "tween",
+                                      }}
+                                    >
+                                      <Icons.ArrowDown />
+                                    </motion.span>
                                   </div>
                                 </Disclosure.Button>
                                 <Disclosure.Panel
-                                  className={styles.accordionPanel}
+                                  as={motion.div}
+                                  initial={{ y: -20, opacity: 0 }}
+                                  animate={{ y: 0, opacity: 1 }}
+                                  transition={{
+                                    duration: 0.4,
+                                    ease: [0.04, 0.62, 0.23, 0.98],
+                                  }}
+                                  exit={{
+                                    y: -20,
+                                    opacity: 0.2,
+                                    transition: { duration: 0.4 },
+                                  }}
+                                  className={cn(styles.accordionPanel)}
                                 >
                                   <div className={styles.accordionContent}>
                                     <h6
