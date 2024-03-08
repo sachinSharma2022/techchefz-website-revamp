@@ -30,8 +30,8 @@ const AboutBanner = ({ props }) => {
               ? `${base_Uri}${props[0]?.image?.data?.attributes?.url}`
               : `${base_Uri}/`
           }
-          width={1360}
-          height={450}
+          width={2560}
+          height={1068}
           alt="bannerImg"
         />
       </div>

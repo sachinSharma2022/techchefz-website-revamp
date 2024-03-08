@@ -37,8 +37,8 @@ const CoeBanner = ({ props }) => {
               ? `${base_Uri}${props?.Image?.data?.attributes?.url}`
               : `${base_Uri}/`
           }
-          width={1920}
-          height={1080}
+          width={2560}
+          height={1068}
           alt="banner-img"
         />
       </div>
