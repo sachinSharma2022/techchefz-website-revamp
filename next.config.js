@@ -8,6 +8,7 @@ const nextConfig = {
       "122.176.75.250",
       "104.211.93.217",
       "demo.techchefz.com",
+      "cms-strapi.techchefz.com"
     ],
   },
   eslint: {
