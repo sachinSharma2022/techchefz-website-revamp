@@ -120,7 +120,6 @@ const ContactSection = ({ props, id }) => {
                           onBlur={handleBlur}
                           value={values.firstName}
                           onKeyDown={(event) => {
-                            console.log(event.keyCode, "keycode");
                             var regex = new RegExp("^[a-zA-Z]*$");
                             if (
                               !regex.test(event.key) &&
