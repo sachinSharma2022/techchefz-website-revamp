@@ -22,21 +22,25 @@ const AboutPage = async () => {
 
   return (
     <Curve>
-      <div className="overflow-hidden">
-        <AboutBanner props={data.BannerComponent} />
-        <OurVision props={data.OurVisionMissionComponent} />
-        <OurHistory
-          props={data.OurHistoryComponent}
-          OurHistory={data.OurHistory}
-        />
-        <WhatWeDo props={data.WhatWeDoComponent} />
-        <OurValues props={data.Ourvaluesection} />
-        <OurResults props={data.Result} />
-        <FounderDesk props={data.FounderDesk} />
-        <OurTeam props={data.Team} />
-        <OurClients props={data.OurClient} />
-        <LetsWork contact={data.ContactUs} />
-      </div>
+      {data ? (
+        <div className="overflow-hidden">
+          <AboutBanner props={data.BannerComponent} />
+          <OurVision props={data.OurVisionMissionComponent} />
+          <OurHistory
+            props={data.OurHistoryComponent}
+            OurHistory={data.OurHistory}
+          />
+          <WhatWeDo props={data.WhatWeDoComponent} />
+          <OurValues props={data.Ourvaluesection} />
+          <OurResults props={data.Result} />
+          <FounderDesk props={data.FounderDesk} />
+          <OurTeam props={data.Team} />
+          <OurClients props={data.OurClient} />
+          <LetsWork contact={data.ContactUs} />
+        </div>
+      ) : (
+        <></>
+      )}
     </Curve>
   );
 };

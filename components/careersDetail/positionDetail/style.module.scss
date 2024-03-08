@@ -12,9 +12,7 @@
     padding: 1.5rem;
   }
 
-  @include desktop-hd {
-    padding-inline: 0;
-  }
+  
   .section {
     margin-bottom: 2rem;
     @include mobile {

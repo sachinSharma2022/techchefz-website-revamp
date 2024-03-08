@@ -2,8 +2,8 @@
 
 import Testimonials from "@/components/common/testimonials";
 
-const HomeTestimonials = ({ testimonials }) => {
-  return <Testimonials props={testimonials} />;
+const HomeTestimonials = ({ testimonials, className }) => {
+  return <Testimonials className={className} props={testimonials} />;
 };
 
 export default HomeTestimonials;

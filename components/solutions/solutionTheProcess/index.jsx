@@ -10,8 +10,12 @@ import { SvgLoader } from "@/components/ui/svgCircleLoader/svgLoader";
 
 import styles from "./style.module.scss";
 import TextRevel from "@/components/ui/sectionAnimation";
+import { useMediaQuery } from "react-responsive";
+import MobileSlider from "@/components/common/mobileSlider";
 
 const SolutionTheProcess = ({ props }) => {
+  const isBigScreen = useMediaQuery({ query: "(min-width: 1200px)" });
+  const isMobileScreen = useMediaQuery({ query: "(max-width: 767px)" });
   const { theme } = useContext(MyContext);
   const radius = 235;
   const dashArray = radius * Math.PI * 2;
@@ -20,89 +24,91 @@ const SolutionTheProcess = ({ props }) => {
 
   gsap.registerPlugin(ScrollTrigger);
   useEffect(() => {
-    const changeDot = (i) => {
-      const ele = document.getElementsByClassName("dot");
-      for (let i = 0; i < ele.length; i++) {
-        ele[i].style.fill = "white";
-      }
-      document.getElementById(i).style.fill = "#26A0F8";
-    };
-    const changeImg = (i) => {
-      const ele = document.getElementsByClassName(styles.stepperImg);
-      for (let i = 0; i < ele.length; i++) {
-        ele[i].style.display = "none";
-      }
-
-      document.getElementById(`${i}-img`).style.display = "block";
-    };
-    let ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: `.${styles.headSection}`,
-          scrub: 0.5,
-          start: "top 11%",
-          end: "bottom +=600",
-
-          pin: true,
-          markers: false,
-          invalidateOnRefresh: true,
-          anticipatePin: 1,
-        },
-      });
-      const titles = gsap.utils.toArray(`.${styles.processCard}`);
-
-      titles.forEach((text, i) => {
-        gsap.to(text, {
-          onStart: function () {
-            setTimeout(() => {
-              changeDot(i + 1);
-              changeImg(i + 1);
-            }, 100);
-
-            setdashOffset((prev) => {
-              prevsetdashOffset(prev);
-              return dashArray - (dashArray / titles.length) * (i + 1);
-              //return (100 / titles.length) * (i + 1);
-            });
-          },
-          scrollTrigger: {
-            trigger: text,
-            start: "top 390rem",
-            end: "center 232rem",
-            markers: false,
-            toggleActions: "play reset play reverse",
-          },
-          opacity: 1,
-        });
-      });
-      console.log(dashOffset, prevdashOffset, "dashofsett");
-
-      gsap.fromTo(
-        ".circleFil",
-        {
-          strokeDashoffset: prevdashOffset,
-          duration: 3,
-          ease: "power1.inOut",
-        },
-        //   {
-        //     "--p": `${dashOffset}%`,
-        //     //  duration: 4,
-        //     //  ease: "expo.out",
-        //   }
-        {
-          strokeDashoffset: dashOffset,
-          transition: "stroke-dashoffset 1.6s linear 0s",
-          duration: 9,
-          ease: "power1.inOut",
+    if (isBigScreen) {
+      const changeDot = (i) => {
+        const ele = document.getElementsByClassName("dot");
+        for (let i = 0; i < ele.length; i++) {
+          ele[i].style.fill = "white";
         }
-        //   {
-        //     "--p": `${dashOffset}%`,
-        //     duration: 4,
-        //     ease: "expo.out",
-        //   }
-      );
-    });
-    return () => ctx.revert();
+        document.getElementById(i).style.fill = "#26A0F8";
+      };
+      const changeImg = (i) => {
+        const ele = document.getElementsByClassName(styles.stepperImg);
+        for (let i = 0; i < ele.length; i++) {
+          ele[i].style.display = "none";
+        }
+
+        document.getElementById(`${i}-img`).style.display = "block";
+      };
+      let ctx = gsap.context(() => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: `.${styles.headSection}`,
+            scrub: 0.5,
+            start: "top 11%",
+            end: "bottom +=600",
+
+            pin: true,
+            markers: false,
+            invalidateOnRefresh: true,
+            anticipatePin: 1,
+          },
+        });
+        const titles = gsap.utils.toArray(`.${styles.processCard}`);
+
+        titles.forEach((text, i) => {
+          gsap.to(text, {
+            onStart: function () {
+              setTimeout(() => {
+                changeDot(i + 1);
+                changeImg(i + 1);
+              }, 100);
+
+              setdashOffset((prev) => {
+                prevsetdashOffset(prev);
+                return dashArray - (dashArray / titles.length) * (i + 1);
+                //return (100 / titles.length) * (i + 1);
+              });
+            },
+            scrollTrigger: {
+              trigger: text,
+              start: "top 390rem",
+              end: "center 232rem",
+              markers: false,
+              toggleActions: "play reset play reverse",
+            },
+            opacity: 1,
+          });
+        });
+        console.log(dashOffset, prevdashOffset, "dashofsett");
+
+        gsap.fromTo(
+          ".circleFil",
+          {
+            strokeDashoffset: prevdashOffset,
+            duration: 3,
+            ease: "power1.inOut",
+          },
+          //   {
+          //     "--p": `${dashOffset}%`,
+          //     //  duration: 4,
+          //     //  ease: "expo.out",
+          //   }
+          {
+            strokeDashoffset: dashOffset,
+            transition: "stroke-dashoffset 1.6s linear 0s",
+            duration: 9,
+            ease: "power1.inOut",
+          }
+          //   {
+          //     "--p": `${dashOffset}%`,
+          //     duration: 4,
+          //     ease: "expo.out",
+          //   }
+        );
+      });
+      return () => ctx.revert();
+    }
   }, [dashOffset, prevdashOffset]);
 
   return (
@@ -233,18 +239,39 @@ const SolutionTheProcess = ({ props }) => {
           </div>
         </div>
 
-        <div className={`${styles.processCardSection}`}>
-          {props?.ITSolutionsCards?.map((data, index) => (
-            <div
-              key={index}
-              className={`${styles.processCard} ${data.current}`}
-            >
-              <div className={styles.textGradient}>{data.Title}</div>
-              <h4 className={styles.title}>{data?.Description}</h4>
-              <p className={styles.description}>{data.secoundDescription}</p>
-            </div>
-          ))}
-        </div>
+        {!isMobileScreen && (
+          <div className={`${styles.processCardSection}`}>
+            {props?.ITSolutionsCards?.map((data, index) => (
+              <div
+                key={index}
+                className={`${styles.processCard} ${data.current}`}
+              >
+                <div className={styles.textGradient}>{data.Title}</div>
+                <h4 className={styles.title}>{data?.Description}</h4>
+                <p className={styles.description}>{data.secoundDescription}</p>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {isMobileScreen && (
+          <div className={`${styles.processCardSection}`}>
+            <MobileSlider slidesToShow={1}>
+              {props?.ITSolutionsCards?.map((data, index) => (
+                <div
+                  key={index}
+                  className={`${styles.processCard} ${data.current}`}
+                >
+                  <div className={styles.textGradient}>{data.Title}</div>
+                  <h4 className={styles.title}>{data?.Description}</h4>
+                  <p className={styles.description}>
+                    {data.secoundDescription}
+                  </p>
+                </div>
+              ))}
+            </MobileSlider>
+          </div>
+        )}
       </div>
     </section>
   );

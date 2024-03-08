@@ -73,9 +73,10 @@ const CountryDropdown = (props) => {
       };
     },
   };
-  if (props.clear) {
-    ref.current.clearValue();
-  }
+  console.log(props.clear, "selectClear");
+  // if (props.clear) {
+  //   ref.current.clearValue();
+  // }
 
   return (
     <div
@@ -107,6 +108,23 @@ const CountryDropdown = (props) => {
             image: item?.flag,
             code: item?.code,
           }))}
+          value={
+            countryList.map((item) => ({
+              label: item?.dial_code,
+              value: item?.name,
+              image: item?.flag,
+              code: item?.code,
+            }))
+              ? countryList
+                  .map((item) => ({
+                    label: item?.dial_code,
+                    value: item?.name,
+                    image: item?.flag,
+                    code: item?.code,
+                  }))
+                  .find((option) => option.label === props.valueCountryCode)
+              : ""
+          }
           styles={controlStyle || styles}
           isSearchable={false}
           formatOptionLabel={(country) => (

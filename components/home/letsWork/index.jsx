@@ -18,7 +18,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { verifyCaptcha } from "@/lib/ServerActions";
 import { useRef, useState } from "react";
 import CircleLoader from "@/components/ui/circleLoader";
-import CustomDropdown from "@/components/ui/customDropdown";
+import { ServiceDropdown } from "@/components/ui/customDropdown";
 import { countryList } from "@/lib/country";
 import ConfirmationPopup from "@/components/ui/confirmationPopup";
 
@@ -26,7 +26,12 @@ const LetsWork = ({ contact }) => {
   const { theme, setTheme } = useContext(MyContext);
   const [inprogress, setinprogress] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-
+  const options = [
+    { name: "Frontend" },
+    { name: "Backend" },
+    { name: "CMS" },
+    { name: "Animation" },
+  ];
   const formInitialSchema = {
     firstName: "",
     lastName: "",
@@ -108,6 +113,14 @@ const LetsWork = ({ contact }) => {
                         onBlur={handleBlur}
                         value={values.firstName}
                         errorStatus={touched.firstName && errors.firstName}
+                        onKeyDown={(event) => {
+                          console.log(event.keyCode, "keycode");
+                          var regex = new RegExp("^[a-zA-Z]*$");
+                          if (!regex.test(event.key) && !(event.key === "'")) {
+                            event.preventDefault();
+                            return false;
+                          }
+                        }}
                       />
                       {touched.firstName && errors.firstName && (
                         <Error>{errors.firstName}</Error>
@@ -125,6 +138,18 @@ const LetsWork = ({ contact }) => {
                         onBlur={handleBlur}
                         value={values.lastName}
                         errorStatus={touched.lastName && errors.lastName}
+                        onKeyDown={(event) => {
+                          console.log(event.keyCode, "keycode");
+                          var regex = new RegExp("^[a-zA-Z]*$");
+                          if (
+                            !regex.test(event.key) &&
+                            !(event.key === "-") &&
+                            !(event.key === " ")
+                          ) {
+                            event.preventDefault();
+                            return false;
+                          }
+                        }}
                       />
                       {touched.lastName && errors.lastName && (
                         <Error>{errors.lastName}</Error>
@@ -138,7 +163,20 @@ const LetsWork = ({ contact }) => {
                         setFieldValue={setFieldValue}
                         onBlur={handleBlur}
                         value={values.phone}
-                        clear={inprogress}
+                        valueCountryCode={values.countyCode}
+                        onKeyDown={(event) => {
+                          console.log(event.key, "keycode");
+                          var regex = new RegExp("^[0-9]*$");
+                          if (
+                            !regex.test(event.key) &&
+                            !(event.key == "Backspace") &&
+                            !(event.key == "ArrowRight") &&
+                            !(event.key == "ArrowLeft")
+                          ) {
+                            event.preventDefault();
+                            return false;
+                          }
+                        }}
                       />
                       {touched.phone && errors.phone && (
                         <Error>{errors.phone}</Error>
@@ -161,19 +199,18 @@ const LetsWork = ({ contact }) => {
                       )}
                     </div>
                     <div className={`${styles.inputSpace}`}>
-                      <CustomDropdown
+                      <ServiceDropdown
                         placeholder="Select Purpose*"
                         title="Select Purpose*"
                         name="selectPurpose"
                         setFieldValue={setFieldValue}
                         onBlur={handleBlur}
                         value={values.selectPurpose}
-                        options={countryList}
+                        options={options}
                         errorStatus={
                           touched.selectPurpose && errors.selectPurpose
                         }
                         className="custom-dropdown"
-                        clear={inprogress}
                       />
                       {touched.selectPurpose && errors.selectPurpose && (
                         <Error>{errors.selectPurpose}</Error>

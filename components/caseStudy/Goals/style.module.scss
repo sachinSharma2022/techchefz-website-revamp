@@ -1,7 +1,7 @@
 @import "~/styles/partials/config";
 
 .goals {
-  padding: 0 7.5rem;
+  padding: 5rem 7.5rem;
 
   @include tablet {
     padding: 0 spacing(tablet-padding);
@@ -79,7 +79,7 @@
       position: relative;
       width: 100%;
       height: auto;
-      margin-right: 0.5rem;
+      margin-right: 0.8rem;
       max-width: 2rem;
       top: 8px;
 
@@ -132,6 +132,10 @@
 
       @include mobile {
         height: 11.343rem;
+      }
+      
+      @include samsung-fold{
+        height: 16rem;
       }
 
       &:nth-child(1) {

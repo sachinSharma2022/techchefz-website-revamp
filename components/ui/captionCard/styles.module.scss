@@ -4,7 +4,7 @@
    padding: 1.8rem;
    border-radius: text(lg);
    border: 0.14rem solid rgba(color(text-primary), 0.12);
-   background: color(bg-soft);
+   background: color(primary-white);
    margin-right: 2.5rem;
    width: 100%;
    @include transition(0.5s);
@@ -36,7 +36,7 @@
       }
      
       @include desktop-hd {
-         width: 410px;
+         width: 20vw;
          height: 250px;
       }
 

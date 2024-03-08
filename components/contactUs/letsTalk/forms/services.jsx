@@ -3,6 +3,7 @@
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import CountryDropdown from "@/components/ui/countryDropdown";
+import { ServiceDropdown } from "@/components/ui/customDropdown";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { Error, Input, Textarea } from "@/components/ui/inputCustom";
 import { MyContext } from "@/context/theme";
@@ -14,7 +15,6 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { verifyCaptcha } from "@/lib/ServerActions";
 import CircleLoader from "@/components/ui/circleLoader";
 import Link from "next/link";
-import { countryList } from "@/lib/country";
 import ConfirmationPopup from "@/components/ui/confirmationPopup";
 
 import CustomDropdown from "@/components/ui/customDropdown";
@@ -28,6 +28,12 @@ const ServicesForm = () => {
   const [isVerified, setIsverified] = useState(false);
   const [inprogress, setinprogress] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const options = [
+    { name: "Frontend" },
+    { name: "Backend" },
+    { name: "CMS" },
+    { name: "Animation" },
+  ];
   const formInitialSchema = {
     firstName: "",
     lastName: "",
@@ -99,6 +105,14 @@ const ServicesForm = () => {
                       onBlur={handleBlur}
                       value={values.firstName}
                       errorStatus={touched.firstName && errors.firstName}
+                      onKeyDown={(event) => {
+                        console.log(event.keyCode, "keycode");
+                        var regex = new RegExp("^[a-zA-Z]*$");
+                        if (!regex.test(event.key) && !(event.key === "'")) {
+                          event.preventDefault();
+                          return false;
+                        }
+                      }}
                     />
                     {touched.firstName && errors.firstName && (
                       <Error>{touched.firstName && errors.firstName}</Error>
@@ -116,6 +130,18 @@ const ServicesForm = () => {
                       onBlur={handleBlur}
                       value={values.lastName}
                       errorStatus={touched.lastName && errors.lastName}
+                      onKeyDown={(event) => {
+                        console.log(event.keyCode, "keycode");
+                        var regex = new RegExp("^[a-zA-Z]*$");
+                        if (
+                          !regex.test(event.key) &&
+                          !(event.key === "-") &&
+                          !(event.key === " ")
+                        ) {
+                          event.preventDefault();
+                          return false;
+                        }
+                      }}
                     />
                     {touched.lastName && errors.lastName && (
                       <Error>{errors.lastName}</Error>
@@ -147,7 +173,20 @@ const ServicesForm = () => {
                       onBlur={handleBlur}
                       value={values.phone}
                       errorStatus={touched.phone && errors.phone}
-                      clear={inprogress}
+                      valueCountryCode={values.countyCode}
+                      onKeyDown={(event) => {
+                        console.log(event.key, "keycode");
+                        var regex = new RegExp("^[0-9]*$");
+                        if (
+                          !regex.test(event.key) &&
+                          !(event.key == "Backspace") &&
+                          !(event.key == "ArrowRight") &&
+                          !(event.key == "ArrowLeft")
+                        ) {
+                          event.preventDefault();
+                          return false;
+                        }
+                      }}
                     />
                     {touched.phone && errors.phone && (
                       <Error>{errors.phone}</Error>
@@ -165,25 +204,32 @@ const ServicesForm = () => {
                       onBlur={handleBlur}
                       value={values.companyName}
                       errorStatus={touched.companyName && errors.companyName}
+                      onKeyDown={(event) => {
+                        console.log(event.keyCode, "keycode");
+                        var regex = new RegExp("^[a-zA-Z 0-9]*$");
+                        if (!regex.test(event.key)) {
+                          event.preventDefault();
+                          return false;
+                        }
+                      }}
                     />
                     {touched.companyName && errors.companyName && (
                       <Error>{errors.companyName}</Error>
                     )}
                   </div>
                   <div className={cn(styles.inputSpace, "input-item")}>
-                    <CustomDropdown
+                    <ServiceDropdown
                       label="Service Required*"
                       name="serviceRequired"
                       setFieldValue={setFieldValue}
                       onBlur={handleBlur}
                       value={values.serviceRequired}
-                      options={countryList}
+                      options={options}
                       errorStatus={
                         touched.serviceRequired && errors.serviceRequired
                       }
                       className="custom-dropdown"
                       placeholder="Service Required*"
-                      clear={inprogress}
                     />
                     {touched.serviceRequired && errors.serviceRequired && (
                       <Error>{errors.serviceRequired}</Error>

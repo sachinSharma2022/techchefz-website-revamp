@@ -56,6 +56,7 @@ const Input = React.forwardRef(
               inputStyle,
               "form-control"
             )}
+            maxLength={50}
             ref={ref}
             {...props}
           />
@@ -177,4 +178,4 @@ const Success = ({ className, children }) => (
   <p className={cn(styles.success, className)}>{children}</p>
 );
 
-export { Error,Success ,Input, InputFile, Textarea };
+export { Error, Success, Input, InputFile, Textarea };

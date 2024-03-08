@@ -19,31 +19,31 @@ const CmsBanner = ({ props }) => {
       }`}
     >
       <TextRevel>
-      <div className={cn("primary-container", "header-container")}>
-        <h1
-          className={cn(styles.title, "gradient-text")}
-          dangerouslySetInnerHTML={{ __html: `${props?.title}` }}
-        ></h1>
-        <div className={styles.contentSec}>
-          <p
-            className={cn(styles.leadText, "gradient-text")}
-            dangerouslySetInnerHTML={{ __html: `${props.subtitle}` }}
-          ></p>
-          <Link href={props?.BtnLink}>
-            <Button
-              variant={theme ? "blueBtnDark" : "blueBtn"}
-              className={styles.headerBtn}
-              size="md"
-            >
-              {props?.Btn}
-              <Icons.ArrowRight size={20} className="ms-2" />
-            </Button>
-          </Link>
+        <div className={cn("header-container")}>
+          <div className="primary-container grid-col-2">
+            <h1
+              className={cn(styles.title, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props?.title}` }}
+            ></h1>
+            <div className={styles.contentSec}>
+              <p
+                className={cn(styles.leadText, "gradient-text")}
+                dangerouslySetInnerHTML={{ __html: `${props.subtitle}` }}
+              ></p>
+              <Link href={props?.BtnLink}>
+                <Button
+                  variant={theme ? "blueBtnDark" : "blueBtn"}
+                  className={styles.headerBtn}
+                  size="md"
+                >
+                  {props?.Btn}
+                  <Icons.ArrowRight size={20} className="ms-2" />
+                </Button>
+              </Link>
+            </div>
+          </div>
         </div>
-        
-      </div>
       </TextRevel>
-      
     </section>
   );
 };

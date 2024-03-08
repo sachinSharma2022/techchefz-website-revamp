@@ -17,7 +17,7 @@ import Link from "next/link";
 import { countryList } from "@/lib/country";
 import ConfirmationPopup from "@/components/ui/confirmationPopup";
 
-import CustomDropdown from "@/components/ui/customDropdown";
+import { ServiceDropdown } from "@/components/ui/customDropdown";
 
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
@@ -39,10 +39,11 @@ const VendorForm = () => {
     projectExplanation: "",
   };
 
-  const dropdownData = [
-    { value: "India", label: "India" },
-    { value: "united State", label: "united State" },
-    { value: "New York", label: "New York" },
+  const options = [
+    { name: "Frontend" },
+    { name: "Backend" },
+    { name: "CMS" },
+    { name: "Animation" },
   ];
   async function handleCaptchaSubmission(token) {
     // Server function to verify captcha
@@ -101,6 +102,14 @@ const VendorForm = () => {
                       onBlur={handleBlur}
                       value={values.firstName}
                       errorStatus={touched.firstName && errors.firstName}
+                      onKeyDown={(event) => {
+                        console.log(event.keyCode, "keycode");
+                        var regex = new RegExp("^[a-zA-Z]*$");
+                        if (!regex.test(event.key) && !(event.key === "'")) {
+                          event.preventDefault();
+                          return false;
+                        }
+                      }}
                     />
                     {touched.firstName && errors.firstName && (
                       <Error>{touched.firstName && errors.firstName}</Error>
@@ -118,6 +127,18 @@ const VendorForm = () => {
                       onBlur={handleBlur}
                       value={values.lastName}
                       errorStatus={touched.lastName && errors.lastName}
+                      onKeyDown={(event) => {
+                        console.log(event.keyCode, "keycode");
+                        var regex = new RegExp("^[a-zA-Z]*$");
+                        if (
+                          !regex.test(event.key) &&
+                          !(event.key === "-") &&
+                          !(event.key === " ")
+                        ) {
+                          event.preventDefault();
+                          return false;
+                        }
+                      }}
                     />
                     {touched.lastName && errors.lastName && (
                       <Error>{errors.lastName}</Error>
@@ -149,7 +170,19 @@ const VendorForm = () => {
                       onBlur={handleBlur}
                       value={values.phone}
                       errorStatus={touched.phone && errors.phone}
-                      clear={inprogress}
+                      onKeyDown={(event) => {
+                        console.log(event.key, "keycode");
+                        var regex = new RegExp("^[0-9]*$");
+                        if (
+                          !regex.test(event.key) &&
+                          !(event.key == "Backspace") &&
+                          !(event.key == "ArrowRight") &&
+                          !(event.key == "ArrowLeft")
+                        ) {
+                          event.preventDefault();
+                          return false;
+                        }
+                      }}
                     />
                     {touched.phone && errors.phone && (
                       <Error>{errors.phone}</Error>
@@ -167,25 +200,32 @@ const VendorForm = () => {
                       onBlur={handleBlur}
                       value={values.companyName}
                       errorStatus={touched.companyName && errors.companyName}
+                      onKeyDown={(event) => {
+                        console.log(event.keyCode, "keycode");
+                        var regex = new RegExp("^[a-zA-Z 0-9]*$");
+                        if (!regex.test(event.key)) {
+                          event.preventDefault();
+                          return false;
+                        }
+                      }}
                     />
                     {touched.companyName && errors.companyName && (
                       <Error>{errors.companyName}</Error>
                     )}
                   </div>
                   <div className={cn(styles.inputSpace, "input-item")}>
-                    <CustomDropdown
+                    <ServiceDropdown
                       label="Service Offered"
                       name="serviceOffered"
                       setFieldValue={setFieldValue}
                       onBlur={handleBlur}
                       value={values.serviceOffered}
-                      options={countryList}
+                      options={options}
                       errorStatus={
                         touched.serviceOffered && errors.serviceOffered
                       }
                       className="custom-dropdown"
                       placeholder="Service Offered*"
-                      clear={inprogress}
                     />
                     {touched.serviceOffered && errors.serviceOffered && (
                       <Error>{errors.serviceOffered}</Error>

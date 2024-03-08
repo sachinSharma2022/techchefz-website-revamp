@@ -35,9 +35,10 @@ const ConfirmationPopup = (props) => {
 
           {/* <Link href="/"> */}
             <Button
-              variant={props.theme ? "lightBlueOutline" : "outline"}
+              // variant={props.theme ? "lightBlueOutline" : "outline"}
+              variant="lightBlueBtn"
               className={styles.thankyouBtn}
-              size="lg"
+              size="md"
               onClick={props.onClose}
             >
               Continue

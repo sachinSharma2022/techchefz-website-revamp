@@ -10,10 +10,10 @@ import styles from "./styles.module.scss";
 
 const CaptionCard = (props) => {
   const { theme, setTheme } = useContext(MyContext);
-  console.log(props,"caption")
+  console.log(props, "caption");
   return (
     <Link
-      href={props.params?`${props.redirect}`:`/portfolio/${props.redirect}`}
+      href={props.params ? `${props.redirect}` : `/portfolio/${props.redirect}`}
       className={`${styles.captionCard} ${props.className} ${
         theme ? styles.captionCardDark : ""
       } card`}

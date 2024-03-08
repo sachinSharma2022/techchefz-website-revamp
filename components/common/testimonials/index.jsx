@@ -17,7 +17,6 @@ import { useMediaQuery } from "react-responsive";
 import "swiper/css";
 import "swiper/css/navigation";
 import styles from "./style.module.scss";
-import TextRevel from "@/components/ui/sectionAnimation";
 
 const Testimonials = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -62,7 +61,7 @@ const Testimonials = ({ props }) => {
               <div className={styles.mobileSlider}>
                 <Swiper
                   spaceBetween={isTabletScreen ? 25 : 5}
-                  slidesPerView={isTabletScreen ? 2 : 1}
+                  slidesPerView={isTabletScreen ? 1.5 : 1}
                   navigation={{
                     prevEl: navigationPrevRef.current,
                     nextEl: navigationNextRef.current,

@@ -3,9 +3,9 @@ import { MyContext } from "@/context/theme";
 import { useContext, useState } from "react";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
-import { Tab, Transition, Disclosure } from "@headlessui/react";
+import { Tab, Disclosure } from "@headlessui/react";
 import { ImageCustom } from "@/components/ui/imageCustom";
-
+import { motion } from "framer-motion";
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -28,29 +28,29 @@ const Discover = ({ props }) => {
     >
       <div className={cn("primary-container")}>
         <TextRevel>
-        <div className={styles.discoverTop}>
-          <div>
-            <h6
-              className={cn(styles.discoverTitle, "gradient-text")}
-              dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
-            ></h6>
-            <h3
-              className={cn(styles.discoverHeading, "gradient-text")}
-              dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
-            ></h3>
+          <div className={styles.discoverTop}>
+            <div>
+              <h6
+                className={cn(styles.discoverTitle, "gradient-text")}
+                dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+              ></h6>
+              <h3
+                className={cn(styles.discoverHeading, "gradient-text")}
+                dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
+              ></h3>
+            </div>
+            <div className={styles.buttonSec}>
+              <Link href={props.BtnLink}>
+                <Button
+                  variant={theme ? "lightBlueOutline" : "outline"}
+                  size="md"
+                >
+                  {props.Btn} <Icons.ArrowRight size={18} />
+                </Button>
+              </Link>
+            </div>
           </div>
-          <div className={styles.buttonSec}>
-            <Link href={props.BtnLink}>
-              <Button
-                variant={theme ? "lightBlueOutline" : "outline"}
-                size="md"
-              >
-                {props.Btn} <Icons.ArrowRight size={18} />
-              </Button>
-            </Link>
-          </div>
-        </div>
-        </TextRevel> 
+        </TextRevel>
 
         <div className={styles.discoverTabSection}>
           {isBigScreen ? (
@@ -73,15 +73,6 @@ const Discover = ({ props }) => {
                     key={index}
                     className={cn(styles.tabContainer, "fadeinout")}
                   >
-                    {/* <Transition
-                      show={tabIndex === index}
-                      enter="enterTech"
-                      enterFrom="enterFromTech"
-                      enterTo="enterToTech"
-                      leave="leaveTech"
-                      leaveFrom="leaveFromTech"
-                      leaveTo="leaveToTech"
-                    > */}
                     <div className={styles.dataSection}>
                       <h6 className={styles.subTitle}>
                         {item.TechDetail[0]?.Heading}
@@ -168,89 +159,90 @@ const Discover = ({ props }) => {
                           </p>
                         </div>
                         <div className={styles.iconBox}>
-                          {open ? <Icons.ArrowDown /> : <Icons.ArrowUp />}
+                          <motion.span
+                            initial={{ backgroundColor: "transparent" }}
+                            animate={{ rotate: open ? 180 : 0 }}
+                            transition={{
+                              duration: 0.15,
+                              type: "tween",
+                            }}
+                          >
+                            <Icons.ArrowDown />
+                          </motion.span>
                         </div>
                       </Disclosure.Button>
-                      <Disclosure.Panel className={cn(styles.platformsButtons)}>
+                      <Disclosure.Panel
+                        className={cn(styles.platformsButtons, "fadeinout")}
+                      >
                         <div className={styles.tabContainer}>
-                          <Transition
-                            show={tabIndex === index}
-                            enter="enterTech"
-                            enterFrom="enterFromTech"
-                            enterTo="enterToTech"
-                            leave="leaveTech"
-                            leaveFrom="leaveFromTech"
-                            leaveTo="leaveToTech"
-                          >
-                            {console.log(tabIndex === index, "ind")}
-                            <div className={styles.dataSection}>
-                              <h6 className={styles.subTitle}>
-                                {item.TechDetail[0]?.Heading}
-                              </h6>
+                          {console.log(tabIndex === index, "ind")}
+                          <div className={styles.dataSection}>
+                            <h6 className={styles.subTitle}>
+                              {item.TechDetail[0]?.Heading}
+                            </h6>
 
-                              {/* Sub Section */}
-                              <div className={styles.buttonSection}>
-                                {item?.TechDetail?.map((subItems, index) => (
-                                  <Link
-                                    href="/"
-                                    key={index}
-                                    className={styles.platformsBtn}
-                                  >
-                                    <div className="d-flex align-items-center">
-                                      <div className={styles.iconImg}>
-                                        <ImageCustom
-                                          src={
-                                            subItems?.Images?.data?.attributes
-                                              ?.url
-                                              ? `${base_Url}${subItems?.Images?.data?.attributes?.url}`
-                                              : `${base_Url}/`
-                                          }
-                                          width={28}
-                                          height={28}
-                                          alt="image"
-                                        />
-                                      </div>
-                                      <p>{subItems.Title} </p>
+                            {/* Sub Section */}
+                            <div className={styles.buttonSection}>
+                              {item?.TechDetail?.map((subItems, index) => (
+                                <Link
+                                  href="/"
+                                  key={index}
+                                  className={styles.platformsBtn}
+                                >
+                                  <div className="d-flex align-items-center">
+                                    <div className={styles.iconImg}>
+                                      <ImageCustom
+                                        src={
+                                          subItems?.Images?.data?.attributes
+                                            ?.url
+                                            ? `${base_Url}${subItems?.Images?.data?.attributes?.url}`
+                                            : `${base_Url}/`
+                                        }
+                                        width={28}
+                                        height={28}
+                                        alt="image"
+                                      />
                                     </div>
-                                    {/* <Icons.ArrowUpRight /> */}
-                                  </Link>
-                                ))}
-                              </div>
+                                    <p>{subItems.Title} </p>
+                                  </div>
+                                  {/* <Icons.ArrowUpRight /> */}
+                                </Link>
+                              ))}
                             </div>
+                          </div>
 
-                            <div className={styles.dataSection}>
-                              <h6 className={styles.subTitle}>
-                                {item.multipletech2[0]?.Heading}
-                              </h6>
-                              <div className={styles.buttonSection}>
-                                {item?.multipletech2?.map((subItems, index) => (
-                                  <Link
-                                    href="/"
-                                    key={index}
-                                    className={styles.platformsBtn}
-                                  >
-                                    <div className="d-flex align-items-center">
-                                      <div className={styles.iconImg}>
-                                        <ImageCustom
-                                          src={
-                                            subItems?.Images?.data?.attributes
-                                              ?.url
-                                              ? `${base_Url}${subItems?.Images?.data?.attributes?.url}`
-                                              : `${base_Url}/`
-                                          }
-                                          width={24}
-                                          height={22}
-                                          alt="image"
-                                        />
-                                      </div>
-                                      <p>{subItems.Title} </p>
+                          <div className={styles.dataSection}>
+                            <h6 className={styles.subTitle}>
+                              {item.multipletech2[0]?.Heading}
+                            </h6>
+                            <div className={styles.buttonSection}>
+                              {item?.multipletech2?.map((subItems, index) => (
+                                <Link
+                                  href="/"
+                                  key={index}
+                                  className={styles.platformsBtn}
+                                >
+                                  <div className="d-flex align-items-center">
+                                    <div className={styles.iconImg}>
+                                      <ImageCustom
+                                        src={
+                                          subItems?.Images?.data?.attributes
+                                            ?.url
+                                            ? `${base_Url}${subItems?.Images?.data?.attributes?.url}`
+                                            : `${base_Url}/`
+                                        }
+                                        width={24}
+                                        height={22}
+                                        alt="image"
+                                      />
                                     </div>
-                                    {/* <Icons.ArrowUpRight /> */}
-                                  </Link>
-                                ))}
-                              </div>
+                                    <p>{subItems.Title} </p>
+                                  </div>
+                                  {/* <Icons.ArrowUpRight /> */}
+                                </Link>
+                              ))}
                             </div>
-                          </Transition>
+                          </div>
                         </div>
                       </Disclosure.Panel>
                     </>

@@ -7,11 +7,11 @@
   position: relative;
 
   @include tablet {
-    padding:3.75rem spacing(tablet-padding);
+    padding:3.75rem spacing(tablet-padding) 1rem;
   }
 
   @include mobile {
-    padding:3.75rem spacing(mobile-padding);
+    padding:3.75rem spacing(mobile-padding) 1rem;
   }
 
   @include desktop-hd {
@@ -78,6 +78,10 @@
       padding: text(lg);
       min-height: 28rem;
     }
+    
+    @include tablet {
+      min-height: 32rem;
+    }
 
     .commaImg {
       margin-bottom: 1.25rem;
@@ -138,6 +142,14 @@
 
   .mobileSlider {
     margin: 2.5rem 0;
+
+    @include tablet {
+      margin: 2.5rem -4rem 4rem 0px;
+    }
+
+    @include mobile {
+      margin: 2.5rem 0rem 4rem 0px;
+    }
 
     @include desktop {
       display: none;

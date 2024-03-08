@@ -17,9 +17,9 @@ const SolutionHeroBanner = ({ props }) => {
         theme ? styles.solutionHeroBannerDark : ""
       }`}
     >
-      <div className={cn("primary-container")}>
-        <TextRevel>
-          <div className={cn(styles.contentSection, "header-container")}>
+      <TextRevel>
+        <div className={cn(styles.contentSection, "header-container")}>
+          <div className="primary-container grid-col-2">
             <h1
               className={cn(styles.title, "gradient-text")}
               dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
@@ -27,8 +27,8 @@ const SolutionHeroBanner = ({ props }) => {
 
             <p className={styles.leadText}>{props?.Description}</p>
           </div>
-        </TextRevel>
-      </div>
+        </div>
+      </TextRevel>
 
       <div className={styles.landingPlayerStyle}>
         <ImageCustom
