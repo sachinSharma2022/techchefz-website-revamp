@@ -13,7 +13,7 @@ import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
 import AnimatedLogo from "@/components/common/animatedLogo";
 
-const NavigationMobile = ({ props }) => {
+const NavigationMobile = ({ props, featureArticle }) => {
   const pathname = usePathname();
   const [mobileMenuShow, setMobileMenuShow] = useState(false);
   const [isTechMenu, setTechMenu] = useState(false);
@@ -21,6 +21,16 @@ const NavigationMobile = ({ props }) => {
 
   const { theme, setTheme } = useContext(MyContext);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const feartureTech = featureArticle
+  .filter(
+    (data) => data?.attributes?.InsightOverview[0]?.TechMenuFeatured == true
+  )
+
+  const feartureMore = featureArticle
+  .filter(
+    (data) => data?.attributes?.InsightOverview[0]?.MoreMenuFeatured == true
+  )
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,7 +77,7 @@ const NavigationMobile = ({ props }) => {
   const technologyToggle = () => {
     setTechMenu(true);
   };
-  function LatestTech() {
+  function LatestTech(feartureArray) {
     return (
       <div className={cn(styles.latestTech)}>
         <h1>{props[2]?.DropDown[8]?.Title}</h1>
@@ -76,8 +86,9 @@ const NavigationMobile = ({ props }) => {
             <div className={styles.imgBox}>
               <ImageCustom
                 src={
-                  props[2]?.DropDown[8]?.Image?.data?.attributes?.url
-                    ? `${base_Uri}${props[2]?.DropDown[8]?.Image?.data?.attributes?.url}`
+                  feartureArray[0]?.attributes?.InsightOverview[0]?.Image?.data
+                    ?.attributes?.url
+                    ? `${base_Uri}${feartureArray[0]?.attributes?.InsightOverview[0]?.Image?.data?.attributes?.url}`
                     : `${base_Uri}/`
                 }
                 width={300}
@@ -87,7 +98,7 @@ const NavigationMobile = ({ props }) => {
             </div>
             <div className={styles.infoBox}>
               <p className={styles.description}>
-                {props[2]?.DropDown[8]?.Description}
+              {feartureArray[0]?.attributes?.InsightOverview[0].Title}
               </p>
               <Icons.ArrowRight size={16} />
             </div>
@@ -95,7 +106,7 @@ const NavigationMobile = ({ props }) => {
           <div className={styles.imageTech}>
             <div className={styles.infoBox}>
               <p className={styles.description}>
-                {props[2]?.DropDown[9]?.Description}
+              {feartureArray[1]?.attributes?.InsightOverview[0].Title}
               </p>
               <Icons.ArrowRight size={16} />
             </div>
@@ -309,7 +320,7 @@ const NavigationMobile = ({ props }) => {
                     </div>
                   </div>
 
-                  {LatestTech()}
+                  {LatestTech(feartureTech)}
                 </section>
               </ul>
             </li>
@@ -436,7 +447,7 @@ const NavigationMobile = ({ props }) => {
                       </div>
                     </div>
                   </div>
-                  {LatestTech()}
+                  {LatestTech(feartureMore)}
                 </div>
               </ul>
             </li>
