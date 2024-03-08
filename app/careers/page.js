@@ -44,7 +44,9 @@ const Career = async () => {
           <Innovation props={data.ourInnvotion} />
         </div>
       ) : (
-        <><NotFound /></>
+        <>
+          <NotFound />
+        </>
       )}
     </>
   );
