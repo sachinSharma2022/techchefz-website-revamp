@@ -12,19 +12,29 @@ import Link from "next/link";
 import TextRevel from "@/components/ui/sectionAnimation";
 
 const CmsDifference = ({ props }) => {
-   const { theme, setTheme } = useContext(MyContext);
+  const { theme, setTheme } = useContext(MyContext);
 
-   return (
-      <section className={`${styles.cmsDifferenceStyle} ${theme ? styles.cmsDifferenceDark : ""}`}>
-         <div className={cn("primary-container")}>
-            <TextRevel>
-               <div className={styles.careerRow}>
-                  <div>
-                     <h6 className={cn(styles.projectHighlight, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}></h6>
-                     <h2 className={cn(styles.datingText, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}></h2>
-                  </div>
+  return (
+    <section
+      className={`${styles.cmsDifferenceStyle} ${
+        theme ? styles.cmsDifferenceDark : ""
+      }`}
+    >
+      <div className={cn("primary-container")}>
+        <TextRevel>
+          <div className={styles.careerRow}>
+            <div>
+              <h6
+                className={cn(styles.projectHighlight, "gradient-text")}
+                dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+              ></h6>
+              <h2
+                className={cn(styles.datingText, "gradient-text")}
+                dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
+              ></h2>
+            </div>
 
-                  {/* <div className={`${styles.careerBtn}`}>
+            {/* <div className={`${styles.careerBtn}`}>
             <Link href={props?.ButtonLink}>
               <Button
                 variant={theme ? "lightBlueOutline" : "outline"}
@@ -34,32 +44,36 @@ const CmsDifference = ({ props }) => {
               </Button>
             </Link>
           </div> */}
-               </div>
-            </TextRevel>
+          </div>
+        </TextRevel>
 
-            <div className={styles.gridNumberMain}>
-               <div className={`${styles.differenceGridCards} `}>
-                  {props?.TechnologyInner.map((data, index) => (
-                     <div key={index} className={styles.cardStyle}>
-                        <div className={styles.differenceCmsBox}>
-                           <h2 className={styles.sbTitle}>{data?.Title}</h2>
-                           <p className={styles.sbText}>{data?.Description}</p>
-                           <div className={styles.backgroundImg}>
-                              <ImageCustom
-                                 src={data?.Image.data.attributes.url ? `${base_Uri}${data?.Image.data.attributes.url}` : `${base_Uri}/`}
-                                 width={330}
-                                 height={162}
-                                 alt="image"
-                              />
-                           </div>
-                        </div>
-                     </div>
-                  ))}
-               </div>
-            </div>
-         </div>
-      </section>
-   );
+        <div className={styles.gridNumberMain}>
+          <div className={`${styles.differenceGridCards} `}>
+            {props?.TechnologyInner.map((data, index) => (
+              <div key={index} className={styles.cardStyle}>
+                <div className={styles.differenceCmsBox}>
+                  <h2 className={styles.sbTitle}>{data?.Title}</h2>
+                  <p className={styles.sbText}>{data?.Description}</p>
+                  <div className={styles.backgroundImg}>
+                    <ImageCustom
+                      src={
+                        data?.Image.data.attributes.url
+                          ? `${base_Uri}${data?.Image.data.attributes.url}`
+                          : `${base_Uri}/`
+                      }
+                      width={330}
+                      height={162}
+                      alt="image"
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default CmsDifference;

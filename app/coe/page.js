@@ -4,6 +4,7 @@ import CoeImpact from "@/components/coe/coeImpact";
 import CoeService from "@/components/coe/coeService";
 import CoeSupport from "@/components/coe/coeSupport";
 import LetsWork from "@/components/home/letsWork";
+import NotFound from "../not-found";
 import { getData } from "@/lib/fetchData";
 import { api_Coe_Page } from "@/lib/constants";
 
@@ -26,7 +27,7 @@ const Coe = async () => {
           <LetsWork contact={data.ContactUs} />
         </div>
       ) : (
-        <></>
+        <><NotFound /></>
       )}
     </>
   );

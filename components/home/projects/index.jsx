@@ -44,8 +44,8 @@ const Card = ({ ...props }) => {
               ? `${base_Uri}${props?.project?.Image?.data?.attributes?.url}`
               : `${base_Uri}/`
           }
-          width={1360}
-          height={300}
+          width={1440}
+          height={900}
           alt="projectImg"
         />
       </Link>

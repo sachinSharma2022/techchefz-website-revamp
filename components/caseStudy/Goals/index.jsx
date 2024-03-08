@@ -54,22 +54,23 @@ const Goals = ({ props }) => {
             </div>
           </div>
         </div>
-        {props[0]?.gallaryImages[0]?.Image?.data?.attributes?.url !== undefined &&
-         props[0]?.gallaryImages[0]?.Image?.data?.attributes?.url !== "" && (
-        <div className={styles.goalImage}>
-          <ImageCustom
-            src={
-              props[0]?.gallaryImages[0]?.Image?.data?.attributes?.url
-                ? `${base_Uri}${props[0].gallaryImages[0].Image.data?.attributes.url}`
-                : `${base_Uri}/`
-            }
-            width={1060}
-            height={500}
-            alt="content-img"
-            className={styles.goalInnerImage}
-          />
-        </div>
-         )}
+        {props[0]?.gallaryImages[0]?.Image?.data?.attributes?.url !==
+          undefined &&
+          props[0]?.gallaryImages[0]?.Image?.data?.attributes?.url !== "" && (
+            <div className={styles.goalImage}>
+              <ImageCustom
+                src={
+                  props[0]?.gallaryImages[0]?.Image?.data?.attributes?.url
+                    ? `${base_Uri}${props[0].gallaryImages[0].Image.data?.attributes.url}`
+                    : `${base_Uri}/`
+                }
+                width={2560}
+                height={1068}
+                alt="content-img"
+                className={styles.goalInnerImage}
+              />
+            </div>
+          )}
       </div>
     </section>
   );

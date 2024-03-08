@@ -108,6 +108,7 @@
     opacity: 0.6;
     max-width: 80%;
     margin-bottom: 0;
+    font-size: text(lg);
 
     @include mobile-tablet-p {
       max-width: 100%;

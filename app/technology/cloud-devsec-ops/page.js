@@ -7,6 +7,7 @@ import CmsType from "@/components/technology/cms/cmsType";
 import Faq from "@/components/common/faq";
 import WhyCms from "@/components/technology/cms/whyCms";
 import TechnologyValues from "@/components/technology/technologyValues";
+import NotFound from "@/app/not-found";
 import { getData, getDataDynamic } from "@/lib/fetchData";
 import { api_devsec_ops_Page, api_Case_study_Page } from "@/lib/constants";
 import SolutionTheProcess from "@/components/solutions/solutionTheProcess";
@@ -37,7 +38,7 @@ const Cms = async () => {
           <LetsWork contact={data.ContactUs} />
         </div>
       ) : (
-        <></>
+        <><NotFound /></>
       )}
     </>
   );

@@ -38,8 +38,8 @@ const CaseStudyBanner = ({ props }) => {
                   ? `${base_Uri}${props?.CaseStudyImage?.data?.attributes?.url}`
                   : `${base_Uri}/`
               }
-              width={1360}
-              height={500}
+              width={2560}
+              height={1068}
               alt="banner-img"
             />
           </div>

@@ -2,7 +2,6 @@
 
 import React, { useContext } from "react";
 import { MyContext } from "@/context/theme";
-import { Icons } from "@/components/icons";
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 import TextRevel from "@/components/ui/sectionAnimation";

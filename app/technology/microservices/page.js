@@ -6,6 +6,7 @@ import CmsPlayer from "@/components/technology/cms/cmsPlayer";
 import CmsType from "@/components/technology/cms/cmsType";
 import Faq from "@/components/common/faq";
 import WhyCms from "@/components/technology/cms/whyCms";
+import NotFound from "@/app/not-found";
 import TechnologyValues from "@/components/technology/technologyValues";
 import { getData, getDataDynamic } from "@/lib/fetchData";
 import {
@@ -40,7 +41,7 @@ const Cms = async () => {
           <LetsWork contact={data.ContactUs} />
         </div>
       ) : (
-        <></>
+        <><NotFound /></>
       )}
     </>
   );

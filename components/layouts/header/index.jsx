@@ -1,7 +1,7 @@
 
 import NavigationDesktop from "../navigation/navigationDesktop";
 import NavigationMobile from "../navigation/navigationMobile";
-
+import NotFound from "@/app/not-found";
 import { api_header_Page, api_insight_insides_Page } from "@/lib/constants";
 import { getDataDynamic } from "@/lib/fetchData";
 
@@ -12,11 +12,11 @@ const Header = async () => {
     <>
       {data ? (
         <>
-          <NavigationMobile props={data?.attributes?.HeaderMenu} />
+          <NavigationMobile props={data?.attributes?.HeaderMenu} featureArticle={data_inside}/>
           <NavigationDesktop props={data?.attributes?.HeaderMenu} featureArticle={data_inside}/>
         </>
       ) : (
-        <></>
+        <><NotFound /></>
       )}
     </>
   );

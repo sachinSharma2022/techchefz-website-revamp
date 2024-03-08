@@ -9,6 +9,7 @@ import TechnologyValues from "@/components/technology/technologyValues";
 import { api_Technology_Page, api_Case_study_Page } from "@/lib/constants";
 import { getData, getDataDynamic } from "@/lib/fetchData";
 import RelatedCase from "@/components/relatedCase";
+import NotFound from "../not-found";
 
 export const metadata = {
   title: "Explore Technologies | TechChefz Digital",
@@ -39,7 +40,7 @@ const Technology = async () => {
           <LetsWork contact={data.LetsWork} />
         </div>
       ) : (
-        <>{/* {"API fail fallback"} */}</>
+        <><NotFound /></>
       )}
     </>
   );

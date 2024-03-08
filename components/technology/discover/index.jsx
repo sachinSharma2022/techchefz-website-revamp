@@ -16,7 +16,6 @@ import TextRevel from "@/components/ui/sectionAnimation";
 
 const Discover = ({ props }) => {
   const isBigScreen = useMediaQuery({ query: "(min-width: 1199px)" });
-  console.log("tt", props);
   const { theme, setTheme } = useContext(MyContext);
   const [tabIndex, setTabIndex] = useState(0);
   //console.log(tabIndex,"tab")
@@ -60,7 +59,9 @@ const Discover = ({ props }) => {
                   <Tab key={index}>
                     <div className={styles.discoverHead}>
                       <h5 className={`${styles.subHeading}`}>{data.Title}</h5>
-                      <p className={styles.subContent}>{data.Description}</p>
+                      <p className={cn(styles.subContent, styles.fadeout)}>
+                        {data.Description}
+                      </p>
                     </div>
                   </Tab>
                 ))}

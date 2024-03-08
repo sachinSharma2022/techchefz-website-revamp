@@ -2,6 +2,7 @@ import InsightBanner from "@/components/insights/insightBanner";
 import InsightFeatures from "@/components/insights/insightFeatures";
 import Innovation from "@/components/portfolio/innovation";
 import React from "react";
+import NotFound from "../not-found";
 import { getData, getDataDynamic } from "@/lib/fetchData";
 import { api_insights_Page, api_insight_insides_Page } from "@/lib/constants";
 
@@ -15,15 +16,23 @@ const Insights = async () => {
   const data_inside = await getDataDynamic(api_insight_insides_Page);
 
   return (
-    <div>
-      <InsightBanner props={data.InsightBanner} />
-      <InsightFeatures
-        props={data.InsightFeatures}
-        featureInsight={data.featureInsight}
-        feature={data_inside}
-      />
-      <Innovation props={data.ourInnvotion} />
-    </div>
+    <>
+      {data ? (
+        <div>
+          <InsightBanner props={data.InsightBanner} />
+          <InsightFeatures
+            props={data.InsightFeatures}
+            featureInsight={data.featureInsight}
+            feature={data_inside}
+          />
+          <Innovation props={data.ourInnvotion} />
+        </div>
+      ) : (
+        <>
+          <NotFound />
+        </>
+      )}
+    </>
   );
 };
 

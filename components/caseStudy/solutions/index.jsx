@@ -68,8 +68,8 @@ const Solutions = ({ props }) => {
                     ? `${base_Uri}${props?.gallaryImages[0].Image.data?.attributes.url}`
                     : `${base_Uri}/`
                 }
-                width={1060}
-                height={500}
+                width={2560}
+                height={1068}
                 alt="content-img"
                 className={styles.goalInnerImage}
               />
