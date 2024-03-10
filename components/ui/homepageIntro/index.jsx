@@ -16,8 +16,6 @@ const HomepageIntro = (props) => {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    const vh = (coef) => window.innerHeight * (coef / 100);
-    const vw = (coef) => window.innerWidth * (coef / 100);
     videoRef.current.play();
 
     if (isBigScreen) {
@@ -27,15 +25,14 @@ const HomepageIntro = (props) => {
           pin: true,
           markers: false,
           start: "top 80rem",
-          end: "400rem ",
+          end: "400rem",
         });
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: `.${styles.video}`,
             scrub: 1,
             start: "top 500rem",
-            // end: "+=" + (230 + window.innerHeight),
-            markers: true,
+            markers: false,
             invalidateOnRefresh: true,
             anticipatePin: 1,
           },

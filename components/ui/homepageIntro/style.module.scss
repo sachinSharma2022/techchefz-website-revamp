@@ -19,18 +19,12 @@
     width: 100%;
 
     z-index: 99;
-    // margin: 0 auto;
-    // overflow: hidden;
-    // background: red;
     @include desktop-hd {
       height: 80%;
     }
 
     .video {
       object-fit: cover;
-      // width: 84%;
-      // height: 84%;
-
       padding-inline: 7.5rem;
       max-width: 1440px;
       @include desktop-hd {
