@@ -4,6 +4,7 @@ import { MyContext } from "@/context/theme";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useContext, useEffect, useRef } from "react";
+import { cn } from "@/lib/utils";
 
 import { useMediaQuery } from "react-responsive";
 import styles from "./style.module.scss";
@@ -21,52 +22,40 @@ const HomepageIntro = (props) => {
 
     if (isBigScreen) {
       let ctx = gsap.context(() => {
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: `.${styles.video}`,
-            scrub: 1,
-            start: "top 1%",
-            end: "+=" + (230 + window.innerHeight),
-            markers: false,
-            invalidateOnRefresh: true,
-            anticipatePin: 1,
-          },
-        });
         ScrollTrigger.create({
           trigger: `.${styles.videoCont}`,
           pin: true,
           markers: false,
           start: "top 80rem",
-          end: "+=" + (271 + window.innerHeight),
+          end: "400rem ",
+        });
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: `.${styles.video}`,
+            scrub: 1,
+            start: "top 500rem",
+            // end: "+=" + (230 + window.innerHeight),
+            markers: true,
+            invalidateOnRefresh: true,
+            anticipatePin: 1,
+          },
         });
         tl.to(`.${styles.video}`, {
           width: "100%",
           height: "100%",
-          duration: 3,
-          borderRadius: "12px",
-        })
-          .to(`.${styles.video}`, {
-            width: "50%",
-            height: "40%",
-            duration: 6,
-            marginTop: 20,
-            borderRadius: "12px",
-          })
-         
-          .to(
-            `.${styles.video}`,
-            {
-              // y: -1,
-              x: -65,
-              duration: 8,
-              width: "4%",
-              height: "8%",
-              borderRadius: "20%",
-            }
-            // ">1"
-          )
-        
-          .to(`.${styles.video}`, { borderRadius: "50%", duration: 1 });
+          maxWidth: "100%",
+          paddingLeft: "0px",
+          paddingRight: "0px",
+          duration: 1,
+        }).to(`.${styles.video}`, {
+          width: "1440px",
+          height: "100%",
+          minWidth: "1440px",
+          paddingLeft: "7.5rem",
+          paddingRight: "7.5rem",
+          paddingBottom: "8rem",
+          duration: 1,
+        });
       });
       return () => ctx.revert();
     }
@@ -78,7 +67,7 @@ const HomepageIntro = (props) => {
     >
       <div className={styles.videoCont}>
         <video
-          className={styles.video}
+          className={cn(styles.video)}
           id="my-video"
           width={props.width}
           height={props.height}
