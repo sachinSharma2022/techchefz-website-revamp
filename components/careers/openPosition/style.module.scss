@@ -175,7 +175,12 @@
                   font-weight: 500;
                   line-height: 2rem;
 
-                  @include mobile-tablet-p {
+                  @include tablet-p {
+                     font-size: text(large);
+                     line-height: text(xl);
+                     margin-bottom: 0rem;
+                  }
+                  @include mobile {
                      font-size: text(normal);
                      line-height: text(xl);
                      margin-bottom: 0rem;
@@ -264,7 +269,7 @@
             align-items: flex-start;
             gap: 2rem;
 
-            @include mobile-tablet-p {
+            @include mobile {
                flex-direction: column;
             }
 

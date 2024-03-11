@@ -45,6 +45,7 @@
       line-height: 3.375rem;
       text-align: center;
       max-width: 55%;
+
       @include mobile-tablet-p {
         text-align: left;
         font-size: 2rem;
@@ -65,8 +66,8 @@
     }
    
     @include tablet {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2.7rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
     }
 
     @include mobile {
@@ -87,14 +88,24 @@
       border: 0.125rem solid rgba(color(text-primary), 0.12);
       @include transition(0.5s);
 
-      @include mobile-tablet-p {
+      @include tablet-p {
+        width: 100%;
+        padding: 2rem 0;
+      }
+
+      @include mobile {
         width: 100%;
       }
+      
 
       .bgImage div {
         width: 100%;
         height: 180px;
         @include transition(0.5s);
+
+        @include tablet-p {
+          height: 80px;
+        }
 
         img {
           object-fit: contain;
@@ -127,7 +138,13 @@
           text-align: center;
           color: color(primary-blue);
           
-          @include mobile-tablet-p {
+          @include tablet {
+            font-size: 1.5rem;
+            color: color(text-primary);
+            line-height: 1.5;
+          }
+
+          @include mobile {
             font-size: 2rem;
             color: color(text-primary);
           }
