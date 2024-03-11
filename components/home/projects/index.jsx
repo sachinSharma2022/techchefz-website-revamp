@@ -13,7 +13,7 @@ import { useMediaQuery } from "react-responsive";
 // Import Swiper React components
 import { base_Uri } from "@/lib/constants";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { opacity, slideUp } from "./animation";
+import { slideUp } from "./animation";
 import styles from "./style.module.scss";
 // Import Swiper styles
 import "swiper/css";
@@ -24,7 +24,7 @@ import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
 
 const Card = ({ ...props }) => {
-  const isMobileScreen = useMediaQuery({ query: "(max-width: 767px)" });
+  const isMobileScreen = useMediaQuery({ query: "(max-width: 1199px)" });
   const description = useRef(null);
   const isInView = useInView(description);
 
