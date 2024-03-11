@@ -621,8 +621,14 @@ input:-webkit-autofill {
       bottom: -50px;
       position: relative;
 
-      @include mobile-tablet-p {
+      @include tablet-p {
          display: flex !important;
+         width: calc(100% - 3rem);
+      }
+
+      @include mobile {
+         display: flex !important;
+         width: 100%;
       }
 
       &::before {
@@ -665,6 +671,13 @@ input:-webkit-autofill {
       @include desktop-hd {
          max-width: 1440px;
          display: flex;
+      }
+   }
+
+   .slick-slider {
+
+      @include tablet-p {
+         margin-right: -3rem;
       }
    }
 }
