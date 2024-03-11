@@ -10,7 +10,7 @@ import { api_Coe_Page } from "@/lib/constants";
 
 export const metadata = {
   title: "Centre of Excellence | TechChefz Digital",
-  description: "Centre of Excellence | TechChefz Digital",
+  description: "Learn about TechChefz Digital's Centre of Excellence, where we drive innovation and excellence in digital technologies and solutions.",
 };
 
 const Coe = async () => {

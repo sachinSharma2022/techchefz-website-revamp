@@ -16,7 +16,7 @@ import NotFound from "../not-found";
 export const metadata = {
   title: "Humanizing Digital Experiences",
   description:
-    "TechChefz Digital (TCZ Digital Private Ltd) is a new breed of innovative digital transformation agency, redefining storytelling for an always-on world.",
+    "New breed of innovative digital transformation agency, redefining storytelling for an always-on world.",
 };
 
 const HomePage = async () => {

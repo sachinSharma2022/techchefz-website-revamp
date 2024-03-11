@@ -14,6 +14,11 @@ import {
 } from "@/lib/constants";
 import { getData, getDataDynamic } from "@/lib/fetchData";
 
+export const metadata = {
+  title: "Analytics Automation Services and Solutions | TechChefz Digitial",
+  description: "Discover how TechChefz Digital's analytics automation services and solutions can help you streamline data analysis processes and make informed business decisions.",
+};
+
 const Cms = async () => {
   const data = await getData(api_analytics_automations_Page);
   const data_related_cases = await getDataDynamic(api_Case_study_Page);
