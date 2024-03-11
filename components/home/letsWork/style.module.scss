@@ -117,10 +117,17 @@
               max-width: 100%;
             }
 
-            .policyHighlight {
-              color: color(primary-blue);
+            .policyHighlight {             
               font-size: text(xxs);
               margin-left: 3px;
+
+              a{
+                color: color(heading-liner);
+                
+                &:hover{
+                 text-decoration: underline;
+                }
+              }
             }
           }
 

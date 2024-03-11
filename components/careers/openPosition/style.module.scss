@@ -144,7 +144,6 @@
             background: color(primary-white);
             padding: 2rem;
             border: 0.14rem solid transparent;
-            cursor: pointer;
 
             &:hover {
                border: 0.14rem solid color(heading-liner);
@@ -163,6 +162,8 @@
             display: flex;
             justify-content: space-between;
             width: 100%;
+            cursor: pointer;
+
 
             @include mobile-tablet-p {
                padding: 0;
