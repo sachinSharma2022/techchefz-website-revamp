@@ -12,6 +12,11 @@ import { getData, getDataDynamic } from "@/lib/fetchData";
 import { api_techcommerces_Page, api_Case_study_Page } from "@/lib/constants";
 import SolutionTheProcess from "@/components/solutions/solutionTheProcess";
 
+export const metadata = {
+  title: "Commerce Services and Solutions | TechChefz Digital",
+  description: "Explore TechChefz Digital's commerce services and solutions, designed to help businesses create seamless and personalized shopping experiences for their customers.",
+};
+
 const Cms = async () => {
   const data = await getData(api_techcommerces_Page);
   const data_related_cases = await getDataDynamic(api_Case_study_Page);

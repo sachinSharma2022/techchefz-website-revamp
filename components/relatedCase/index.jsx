@@ -16,7 +16,6 @@ const RelatedCase = ({ props, className, sliderClassName, params }) => {
   const [activeSlide2, setActiveSlide2] = useState(0);
   const slider = useRef(null);
   const { theme, setTheme } = useContext(MyContext);
-
   var settings = {
     dots: true,
     infinite: false,
@@ -115,25 +114,27 @@ const RelatedCase = ({ props, className, sliderClassName, params }) => {
           )}
         >
           <Slider {...settings} ref={slider}>
-            {props.map((data, index) => (
-              <div key={index}>
-                <CaptionCard
-                  className={styles.cardStyle}
-                  imgSrc={
-                    data?.attributes?.Banner?.PortfolioImage?.data?.attributes
-                      ?.url
-                      ? base_Uri +
-                        data?.attributes?.Banner?.PortfolioImage?.data
-                          ?.attributes?.url
-                      : `${base_Uri}/`
-                  }
-                  title={data?.attributes?.Banner?.PortfolioTitle}
-                  redirect={data.id}
-                  textStyle={styles.textStyle}
-                  params={params}
-                />
-              </div>
-            ))}
+            {props
+              .filter((data) => params?.caseStudy != data.id)
+              .map((data, index) => (
+                <div key={index}>
+                  <CaptionCard
+                    className={styles.cardStyle}
+                    imgSrc={
+                      data?.attributes?.Banner?.PortfolioImage?.data?.attributes
+                        ?.url
+                        ? base_Uri +
+                          data?.attributes?.Banner?.PortfolioImage?.data
+                            ?.attributes?.url
+                        : `${base_Uri}/`
+                    }
+                    title={data?.attributes?.Banner?.PortfolioTitle}
+                    redirect={data.id}
+                    textStyle={styles.textStyle}
+                    params={params}
+                  />
+                </div>
+              ))}
           </Slider>
         </div>
       </div>

@@ -3,7 +3,7 @@
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -14,6 +14,7 @@ import TextRevel from "@/components/ui/sectionAnimation";
 
 const FounderDesk = ({ props }) => {
   const { theme } = useContext(MyContext);
+  const [readMore, setReadMore] = useState(false);
 
   return (
     <section
@@ -72,11 +73,17 @@ const FounderDesk = ({ props }) => {
           <div className={styles.paraSection}>
             <TextRevel>
               <div
-                className={styles.textWrapper}
+                className={readMore ? "" : styles.textWrapper}
                 dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
               ></div>
               <div className={styles.buttonSection}>
-                <Button>Read More</Button>
+                <Button
+                  onClick={() => {
+                    setReadMore(!readMore);
+                  }}
+                >
+                  Read More
+                </Button>
               </div>
             </TextRevel>
           </div>

@@ -10,8 +10,8 @@ import styles from "./style.module.scss";
 import NotFound from "../not-found";
 
 export const metadata = {
-  title: "Solutions | TechChefz  Digital",
-  description: "Solutions | TechChefz  Digital",
+  title: "Solutions | TechChefz Digital",
+  description: "Discover a wide range of innovative solutions offered by TechChefz Digital to help businesses succeed in the digital age.",
 };
 
 const Solutions = async () => {

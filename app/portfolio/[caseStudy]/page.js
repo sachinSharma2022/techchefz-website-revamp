@@ -14,7 +14,6 @@ import { api_Case_study_Page } from "@/lib/constants";
 const CaseStudy = async ({ params }) => {
   const data = await getDataDynamic(api_Case_study_Page);
   let index = 0;
-  console.log(params, "-----------------");
   for (const i in data) {
     if (data[i].id == params.caseStudy) {
       index = i;
@@ -42,7 +41,9 @@ const CaseStudy = async ({ params }) => {
           <LetsWork contact={data[index].attributes.LetsWork} />
         </div>
       ) : (
-        <><NotFound /></>
+        <>
+          <NotFound />
+        </>
       )}
     </>
   );

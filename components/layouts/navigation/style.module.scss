@@ -73,7 +73,7 @@
 
       @include tablet {
         flex-wrap: wrap;
-        padding: 2rem 2rem;
+        padding: 2rem 3.2rem;
       }
 
       @include mobile {
@@ -274,6 +274,14 @@
     position: relative;
     z-index: 99;
 
+    @include tablet-p {
+      padding: 10px;
+      height: 40px;
+      margin-left: -10px;
+      margin-right: -7px;
+      justify-content: center;
+    }
+
     @include desktop {
       display: none;
     }
@@ -312,7 +320,7 @@
 
   @include mobile-tablet-p {
     .estimateSection {
-      padding: 2rem 2rem 5rem;
+      padding: 2rem 3.2rem 5rem;
 
       .description {
         color: color(primary-white);
@@ -412,14 +420,15 @@
 
     @include mobile-tablet-p {
       display: block;
-      //left: 0;
+      // left: 0;
       transform: inherit;
       top: 70px;
       min-width: auto;
       width: 100%;
       height: calc(100dvh - 70px);
-      padding: 0;
+      padding: 0 !important;
       position: fixed;
+      margin-left: 0;
       background-color: color(text-primary);
       overflow-y: scroll;
     }
@@ -691,6 +700,10 @@
           height: 60px;
           margin-bottom: 16px;
 
+          @include mobile-tablet-p {
+            justify-content: center;
+          }
+
           .head {
             display: flex;
             justify-content: space-between;
@@ -914,6 +927,7 @@
 }
 .slideIn {
   animation: slideIn 0.5s ease-in-out;
+  left: 0;
 }
 
 @keyframes slideIn {

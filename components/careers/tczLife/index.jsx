@@ -12,7 +12,7 @@ import TextRevel from "@/components/ui/sectionAnimation";
 
 const TczLife = ({ props }) => {
   console.log("rr", props);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(-1);
   const slider = useRef(null);
   const [oldSlide, setOldSlide] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
@@ -105,7 +105,7 @@ const TczLife = ({ props }) => {
               <button
                 key={index}
                 className={styles.videoWhapper}
-                onClick={() => setIsOpen(true)}
+                onClick={() => setIsOpen(index)}
               >
                 <div>
                   <video
@@ -133,9 +133,8 @@ const TczLife = ({ props }) => {
             ))}
           </Slider>
         </div>
-
-        <PrimaryModal open={isOpen} onClose={() => setIsOpen(false)}>
-          {props?.VideoSlider?.map((data, index) => (
+        {props?.VideoSlider?.map((data, index) => (
+          <PrimaryModal open={isOpen === index} onClose={() => setIsOpen(-1)}>
             <video
               key={index}
               width="100"
@@ -154,8 +153,8 @@ const TczLife = ({ props }) => {
                 type="video/mp4"
               />
             </video>
-          ))}
-        </PrimaryModal>
+          </PrimaryModal>
+        ))}
       </div>
 
       <TextRevel>

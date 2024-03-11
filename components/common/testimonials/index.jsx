@@ -61,7 +61,7 @@ const Testimonials = ({ props }) => {
               <div className={styles.mobileSlider}>
                 <Swiper
                   spaceBetween={isTabletScreen ? 25 : 5}
-                  slidesPerView={isTabletScreen ? 1.5 : 1}
+                  slidesPerView={isTabletScreen ? 1.7 : 1}
                   navigation={{
                     prevEl: navigationPrevRef.current,
                     nextEl: navigationNextRef.current,

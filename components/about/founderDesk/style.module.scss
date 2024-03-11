@@ -159,7 +159,11 @@
       position: relative;
       transition: all 0.5s ease-in-out;
 
-      @include mobile-tablet-p {
+      @include tablet-p {
+        width: 60%;
+      }
+
+      @include mobile {
         width: 100%;
       }
 

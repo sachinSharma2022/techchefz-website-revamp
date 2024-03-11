@@ -87,7 +87,9 @@ const Footer = ({ props, Subscribe, SocialMedia, footerinner, Reserved }) => {
                       {touched.email && errors.email && (
                         <Error>{errors.email}</Error>
                       )}
-                      {success && <Success>{Subscribe[0]?.Link}</Success>}
+                      {success && !errors.email && (
+                        <Success>{Subscribe[0]?.Link}</Success>
+                      )}
 
                       <div className="d-flex align-items-center">
                         <Button
@@ -139,13 +141,13 @@ const Footer = ({ props, Subscribe, SocialMedia, footerinner, Reserved }) => {
 
             <div className={styles.footerBox}>
               <div className={styles.footerCols}>
-                <ul >
-                {footerinner[0]?.menuinner?.map((data, index) => (
+                <ul>
+                  {footerinner[0]?.menuinner?.map((data, index) => (
                     <li key={index}>
                       <Link href={data.Link}>{data.Title}</Link>
                     </li>
-                ))}
-                  </ul>
+                  ))}
+                </ul>
               </div>
 
               <div className={styles.footerCols}>
@@ -154,23 +156,23 @@ const Footer = ({ props, Subscribe, SocialMedia, footerinner, Reserved }) => {
                     {footerinner[1]?.Heading}
                   </Link>
                 </h5>
-                <ul className={styles.fadeLink} >
-                {footerinner[1]?.menuinner?.map((data, index) => (
+                <ul className={styles.fadeLink}>
+                  {footerinner[1]?.menuinner?.map((data, index) => (
                     <li key={index}>
                       <Link href={data.Link}>{data.Title}</Link>
                     </li>
-                ))}
+                  ))}
                 </ul>
               </div>
 
               <div className={styles.footerCols}>
                 <h5>More</h5>
-                <ul className={styles.fadeLink} >
-                {footerinner[2]?.menuinner?.map((data, index) => (
+                <ul className={styles.fadeLink}>
+                  {footerinner[2]?.menuinner?.map((data, index) => (
                     <li key={index}>
                       <Link href={data.Link}>{data.Title}</Link>
                     </li>
-                ))}
+                  ))}
                 </ul>
               </div>
             </div>

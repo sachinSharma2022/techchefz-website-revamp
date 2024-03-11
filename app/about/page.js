@@ -15,7 +15,7 @@ import { getData } from "@/lib/fetchData";
 
 export const metadata = {
   title: "About TechChefz | Humanizing Digital Experiences",
-  description: "About TechChefz | Humanizing Digital Experiences",
+  description: "Learn about TechChefz and how we are dedicated to humanizing digital experiences through innovative technologies and solutions.",
 };
 
 const AboutPage = async () => {

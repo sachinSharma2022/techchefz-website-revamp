@@ -23,7 +23,13 @@
     height: 31.25rem;
     width: 100%;
 
-    @include mobile-tablet-p {
+    @include tablet-p {
+      height: 18rem;
+      margin-bottom: 5rem;
+      margin-top: 0;
+    }
+
+    @include mobile {
       height: 15rem;
       margin-bottom: 5rem;
       margin-top: 0;

@@ -24,7 +24,12 @@
     margin-top: -15rem;
     position: relative;
 
-    @include mobile-tablet-p {
+    @include tablet-p {
+      margin-top: 1.25rem;
+      padding: spacing(tablet-padding);
+    }
+
+    @include mobile {
       margin-top: 1.25rem;
       padding: 1.75rem text(lg);
     }
