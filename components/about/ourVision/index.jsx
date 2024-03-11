@@ -8,7 +8,6 @@ import VideoCustom from "@/components/ui/videoCustom";
 import { cn } from "@/lib/utils";
 import { base_Uri } from "@/lib/constants";
 import { base_Url } from "@/lib/constants";
-import TextRevel from "@/components/ui/sectionAnimation";
 
 const OurVision = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -17,7 +16,6 @@ const OurVision = ({ props }) => {
       className={`${styles.ourVision} ${theme ? styles.ourVisionDark : ""}`}
     >
       <div className={cn("primary-container")}>
-        <TextRevel>
           <div className={cn(styles.flexContainer)}>
             <h3
               className={cn(styles.aboutHeading, "gradient-text")}
@@ -37,7 +35,6 @@ const OurVision = ({ props }) => {
                 })}
             </div>
           </div>
-        </TextRevel>
 
         <div className={styles.videoWrapper}>
           <VideoCustom

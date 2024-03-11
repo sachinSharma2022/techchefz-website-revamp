@@ -91,7 +91,7 @@ const Footer = ({ props, Subscribe, SocialMedia, footerinner, Reserved }) => {
 
                       <div className="d-flex align-items-center">
                         <Button
-                          variant="lightBlueBtn"
+                          variant="blueBtnDark"
                           size="lg"
                           disabled={inprogress ? true : false}
                         >

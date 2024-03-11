@@ -76,7 +76,6 @@
   .resultCard {
     border: 0.14rem solid rgba(color(text-primary), 12%);
     width: 100%;
-    height: 13.87rem;
     padding: 2rem;
     background-color: color(bg-soft);
     border-radius: 1.25rem;
@@ -91,7 +90,7 @@
     }
 
     .cardNum {
-      font-size: text(larger);
+      font-size: text(xl);
       color: color(heading-liner);
       margin-bottom: 0;
     }

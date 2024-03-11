@@ -13,7 +13,6 @@ import NotFound from "../not-found";
 import { api_About_Page } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
 
-
 export const metadata = {
   title: "About TechChefz | Humanizing Digital Experiences",
   description: "About TechChefz | Humanizing Digital Experiences",
@@ -41,7 +40,9 @@ const AboutPage = async () => {
           <LetsWork contact={data.ContactUs} />
         </div>
       ) : (
-        <><NotFound /></>
+        <>
+          <NotFound />
+        </>
       )}
     </Curve>
   );

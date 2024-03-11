@@ -27,7 +27,7 @@ const ScrollToTopButton = () => {
    };
 
    return (
-      <Button variant="lightBlueBtn" size="lg" className={`${isVisible ? "opacity-100" : "opacity-0"} ${styles.scrollTop}`} onClick={scrollToTop}>
+      <Button variant="lightBlueBtn" size="md" className={`${isVisible ? "opacity-100" : "opacity-0"} ${styles.scrollTop}`} onClick={scrollToTop}>
          <Icons.ArrowRight size={20} />
       </Button>
    );
