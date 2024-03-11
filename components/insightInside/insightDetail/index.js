@@ -28,7 +28,13 @@ const InsightDetail = ({ props, BlockTitle }) => {
           <div className={styles.socialMediaFlex}>
             {iconMediaData.map((key) => (
               <div key={key} className={styles.iconDiv}>
-                <div>{key.iconPath}</div>
+                <div>
+                  <a
+                    href={`https://www.linkedin.com/sharing/share-offsite/?url=https://demo.techchefz.com/insights/10`}
+                  >
+                    {key.iconPath}
+                  </a>
+                </div>
               </div>
             ))}
           </div>
@@ -61,7 +67,8 @@ const InsightDetail = ({ props, BlockTitle }) => {
                   dangerouslySetInnerHTML={{ __html: `${value.Title}` }}
                 ></h3>
 
-                <p className={styles.linkTag}
+                <p
+                  className={styles.linkTag}
                   dangerouslySetInnerHTML={{ __html: `${value.Description}` }}
                 ></p>
 
