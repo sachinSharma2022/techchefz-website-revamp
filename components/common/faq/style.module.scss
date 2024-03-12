@@ -18,7 +18,7 @@
     .projectHighlight {
       color: color(text-primary);
       text-transform: uppercase;
-      opacity: 0.8;
+      opacity: opacity(light);
       font-size: text(normal);
       font-weight: 500;
       line-height: 1.5rem;
@@ -104,7 +104,7 @@
 
       .accordionBody {
         padding: 0 1.5rem 1.5rem 1.5rem;
-        opacity: 0.8;
+        opacity: opacity(light);
         max-width: 94%;
         margin-left: 0;
         margin-right: auto;
@@ -121,6 +121,10 @@
 
       h6 {
         color: color(primary-white);
+      }
+
+      .projectHighlight {
+        opacity: opacity(dark);
       }
     }
 

@@ -4,7 +4,7 @@
   .formText {
     font-size: text(lg);
     font-weight: 400;
-    opacity: 0.8;
+    opacity: opacity(light);
     margin-bottom: text(xl);
     line-height: 1.875rem;
 
@@ -90,5 +90,9 @@
     right: 20px;
     top: 20px;
     z-index: 1;
+  }
+
+  .formText {
+    opacity: opacity(dark);
   }
 }

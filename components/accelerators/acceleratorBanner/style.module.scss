@@ -43,7 +43,7 @@
       p {
         font-size: text(lg);
         line-height: 1.875rem;
-        opacity: 0.8;
+        opacity: opacity(light);
 
         @include mobile-tablet-p {
           font-size: text(normal);
@@ -57,5 +57,14 @@
   &.bannerDark {
     background-color: color(input-bg);
     color: color(primary-white);
+
+    .bannerContent {
+  
+      .bannerRight {
+        p {
+          opacity: opacity(dark);
+        }
+      }
+    }
   }
 }

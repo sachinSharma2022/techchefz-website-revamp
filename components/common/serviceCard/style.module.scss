@@ -53,7 +53,7 @@
     font-weight: 400;
     font-size: text(normal);
     line-height: 1.5rem;
-    opacity: 0.8;
+    opacity: opacity(light);
     text-align: left;
 
     @include mobile-tablet-p {
@@ -68,6 +68,11 @@
 
     &:hover {
       border: 0.125rem solid color(heading-liner);
+    }
+
+
+    .sbText {
+      opacity: opacity(dark);
     }
   }
 }

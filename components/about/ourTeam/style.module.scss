@@ -58,7 +58,7 @@
 
     .ourTeamTitle {
       font-size: text(normal);
-      opacity: 0.8;
+      opacity: opacity(light);
       letter-spacing: 0.2rem;
       text-transform: uppercase;
       font-weight: 500;
@@ -212,7 +212,7 @@
         p {
           font-size: text(lg);
           font-weight: 400;
-          opacity: 0.6;
+          opacity: opacity(light);
           @include mobile-tablet-p {
             line-height: 1.875rem;
             font-size: text(normal);
@@ -345,6 +345,16 @@
         color: color(primary-white);
       }
     }
+
+    .teamCards {
+      .teamCardBg {
+        .cardHead {
+          p {
+            opacity: opacity(dark)
+          }
+        }
+      }
+    }
   }
 }
 
@@ -358,7 +368,7 @@
     font-size: text(lg);
     font-weight: 400;
     line-height: 1.875rem;
-    opacity: 0.6;
+    opacity: opacity(light);
   }
   .teamMail {
     color: color(primary-white);
@@ -407,7 +417,7 @@
       font-size: text(normal);
       font-weight: 400;
       line-height: 1.5rem;
-      opacity: 0.6;
+      opacity: opacity(light);
     }
 
     .modalTitle {
@@ -446,6 +456,10 @@
   &.darkThemeStyle {
     color: color(text-primary);
 
+    .modalContent {
+      opacity: opacity(dark);
+    }
+
     .teamMail {
       color: color(text-primary);
     }
@@ -453,6 +467,10 @@
     .modalInfo {
       background-color: color(primary-black);
       color: color(primary-white);
+
+      .teamRole {
+        opacity: opacity(dark);
+      }
     }
   }
 }

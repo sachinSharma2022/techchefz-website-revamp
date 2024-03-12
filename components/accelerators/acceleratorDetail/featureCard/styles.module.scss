@@ -18,7 +18,7 @@
     line-height: 1.5rem;
     letter-spacing: 0.2rem;
     text-transform: uppercase;
-    opacity: 0.8;
+    opacity: opacity(light);
   }
   .challengeHeading {
     font-size: text(larger);
@@ -50,5 +50,9 @@
   &.challengesDark {
     background-color: color(input-bg);
     color: color(primary-white);
+
+    .challengeTitle {
+      opacity: opacity(dark);
+    }
   }
 }

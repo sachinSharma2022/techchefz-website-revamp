@@ -63,7 +63,7 @@
                font-weight: 400;
                font-size: text(normal);
                color: color(primary-white);
-               opacity: 0.6;
+               opacity: opacity(dark);
                margin: 0;
                line-height: 1rem;
 
@@ -94,7 +94,7 @@
             font-weight: 400;
             font-size: text(normal);
             color: color(primary-white);
-            opacity: 0.6;
+            opacity: opacity(dark);
             line-height: 1rem;
 
             @include mobile {
@@ -194,7 +194,7 @@
          .publishFlex {
             p {
                color: color(text-primary);
-               opacity: 0.6;
+               opacity: opacity(light);
             }
 
             h5 {
@@ -206,7 +206,7 @@
       .serviceDiv {
          p {
             color: color(text-primary);
-            opacity: 0.6;
+            opacity: opacity(light);
          }
 
          .techStackDiv {

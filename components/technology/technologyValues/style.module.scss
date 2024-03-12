@@ -4,11 +4,11 @@
   padding: spacing(section-primary-padding);
 
   @include tablet {
-    padding: 3.75rem  spacing(tablet-padding);
+    padding: 3.75rem spacing(tablet-padding);
   }
 
   @include mobile {
-    padding: 3.75rem  spacing(mobile-padding);
+    padding: 3.75rem spacing(mobile-padding);
   }
 
   .valuesTitle {
@@ -17,7 +17,7 @@
     line-height: 1.5rem;
     letter-spacing: 0.2rem;
     text-transform: uppercase;
-    opacity: 0.8;
+    opacity: opacity(dark);
 
     @include mobile-tablet-p {
       font-weight: 400;
@@ -41,7 +41,7 @@
     font-size: text(lg);
     font-weight: 400;
     line-height: 1.875rem;
-    opacity: 0.6;
+    opacity: opacity(light);
     max-width: 65%;
     @include mobile-tablet-p {
       max-width: 100%;
@@ -105,7 +105,7 @@
   .content {
     font-weight: 400;
     line-height: 1.5rem;
-    opacity: 0.6;
+    opacity: opacity(light);
     max-width: 80%;
     margin-bottom: 0;
     font-size: text(lg);
@@ -132,5 +132,13 @@
   // dark Mode
   &.technologyValuesDark {
     color: color(primary-white);
+
+    .valuesText {
+      opacity: opacity(dark);
+    }
+
+    .content {
+      opacity: opacity(dark);
+    }
   }
 }

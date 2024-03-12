@@ -17,7 +17,7 @@
     line-height: 1.5rem;
     letter-spacing: 0.2rem;
     text-transform: uppercase;
-    opacity: 0.8;
+    opacity: opacity(light);
     margin-bottom: 0.75rem;
     min-width: 16.875rem;
     height: 20rem;
@@ -48,7 +48,7 @@
     font-size: text(lg);
     font-weight: 400;
     line-height: 1.875rem;
-    opacity: 0.8;
+    opacity: opacity(light);
 
     @include mobile-tablet-p {
       font-size: text(normal);
@@ -150,7 +150,7 @@
       font-size: text(lg);
       font-weight: 400;
       line-height: 1.875rem;
-      opacity: 0.6;
+      opacity: opacity(light);
       padding: 0 0.4rem;
       margin-bottom: 0;
 
@@ -214,6 +214,17 @@
           fill: color(primary-white);
         }
       }
+
+      .goalsText {
+        opacity: opacity(dark);
+      }
+    }
+
+    .solutionText {
+      font-size: text(lg);
+      font-weight: 400;
+      line-height: 1.875rem;
+      opacity: opacity(dark);
     }
   }
 }

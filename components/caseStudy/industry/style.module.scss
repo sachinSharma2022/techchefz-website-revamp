@@ -19,7 +19,7 @@
       font-size: text(normal);
       font-weight: 400;
       line-height: 1.5rem;
-      opacity: 0.6;
+      opacity: opacity(light);
       margin-bottom: 0.2rem;
     }
 
@@ -63,7 +63,7 @@
   .industryHeading {
     font-weight: 500;
     line-height: 3.375rem;
-    opacity: 0.8;
+    opacity: opacity(light);
     font-size: text(larger);
     color: color(text-primary);
     margin-bottom: 2rem;
@@ -80,7 +80,7 @@
     font-size: text(lg);
     font-weight: 400;
     line-height: 1.875rem;
-    opacity: 0.6;
+    opacity: opacity(light);
 
     @include mobile-tablet-p {
       font-size: text(normal);
@@ -143,6 +143,10 @@
     }
 
     .industryLeft {
+      h6 {
+        opacity: opacity(dark);
+      }
+
       .serviceBtn {
         button {
           color: color(primary-white);
@@ -158,6 +162,7 @@
 
     .industryText {
       color: color(primary-white);
+      opacity: opacity(dark);
     }
   }
 }

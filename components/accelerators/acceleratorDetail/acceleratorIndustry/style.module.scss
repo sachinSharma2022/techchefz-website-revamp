@@ -25,7 +25,7 @@
       font-size: text(normal);
       font-weight: 400;
       line-height: 1.5rem;
-      opacity: 0.6;
+      opacity: opacity(light);
       margin-bottom: 0.5rem;
     }
     .heading {
@@ -61,7 +61,7 @@
   .industryHeading {
     font-weight: 500;
     line-height: 3.375rem;
-    opacity: 0.8;
+    opacity: opacity(dark);
     font-size: text(larger);
     color: color(text-primary);
     margin-bottom: 2rem;
@@ -77,7 +77,7 @@
     font-weight: 400;
     line-height: 1.875rem;
     margin-bottom: 0;
-    opacity: 0.8;
+    opacity: opacity(dark);
 
     @include mobile-tablet-p {
       font-size: text(normal);
@@ -140,6 +140,13 @@
       button {
         color: color(primary-white);
         border: 0.14rem solid rgba(255, 255, 255, 0.4);
+      }
+    }
+
+    .industryLeft {
+  
+      h6 {
+        opacity: opacity(dark);
       }
     }
   }

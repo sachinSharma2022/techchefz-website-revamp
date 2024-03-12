@@ -36,7 +36,7 @@
     line-height: 1.5rem;
     letter-spacing: 0.2rem;
     text-transform: uppercase;
-    opacity: 0.8;
+    opacity: opacity(dark);
     margin-bottom: 1rem;
 
     @include mobile-tablet-p {
