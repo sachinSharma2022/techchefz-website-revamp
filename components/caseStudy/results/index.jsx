@@ -4,7 +4,7 @@ import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 import MobileSlider from "@/components/common/mobileSlider";
 import { useMediaQuery } from "react-responsive";
-import { base_Url } from "@/lib/constants";
+import { base_Uri } from "@/lib/constants";
 import { ImageCustom } from "@/components/ui/imageCustom";
 
 import styles from "./style.module.scss";
@@ -42,8 +42,8 @@ const Results = ({ props }) => {
                           <ImageCustom
                             src={
                               data?.image?.data?.attributes?.url
-                                ? `${base_Url}${data?.image?.data?.attributes?.url}`
-                                : `${base_Url}/`
+                                ? `${base_Uri}${data?.image?.data?.attributes?.url}`
+                                : `${base_Uri}/`
                             }
                             width={40}
                             height={28}

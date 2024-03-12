@@ -7,6 +7,7 @@ const nextConfig = {
     domains: [
       "plus.unsplash.com",
       "images.unsplash.com",
+      "flagcdn.com",
       "127.0.0.1",
       "122.176.75.250",
     ],

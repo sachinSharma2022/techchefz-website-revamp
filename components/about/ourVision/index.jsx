@@ -7,7 +7,7 @@ import styles from "./style.module.scss";
 import VideoCustom from "@/components/ui/videoCustom";
 import { cn } from "@/lib/utils";
 import { base_Uri } from "@/lib/constants";
-import { base_Url } from "@/lib/constants";
+
 
 const OurVision = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -40,8 +40,8 @@ const OurVision = ({ props }) => {
           <VideoCustom
             src={
               props[0].Video.data[0].attributes.url
-                ? `${base_Url}${props[0].Video.data[0].attributes.url}`
-                : `${base_Url}/`
+                ? `${base_Uri}${props[0].Video.data[0].attributes.url}`
+                : `${base_Uri}/`
             }
             width={1200}
             height={500}

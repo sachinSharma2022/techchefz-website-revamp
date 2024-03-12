@@ -6,7 +6,7 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
-import { base_Url } from "@/lib/constants";
+
 
 const Solutions = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -40,8 +40,8 @@ const Solutions = ({ props }) => {
                           <ImageCustom
                             src={
                               data?.Image?.data?.attributes?.url
-                                ? `${base_Url}${data?.Image?.data?.attributes?.url}`
-                                : `${base_Url}/`
+                                ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
+                                : `${base_Uri}/`
                             }
                             width={40}
                             height={28}
