@@ -15,6 +15,11 @@ import {
   api_Case_study_Page,
 } from "@/lib/constants";
 
+export const metadata = {
+  title: "Content Management Services and Solutions | TechChefz Digital",
+  description: "Explore TechChefz Digital's comprehensive content management services and solutions designed to streamline your content workflow and enhance user engagement.",
+};
+
 const Cms = async () => {
   const data = await getData(api_cms_technologies_Page);
   const data_related_cases = await getDataDynamic(api_Case_study_Page);

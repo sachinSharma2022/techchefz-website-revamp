@@ -15,6 +15,11 @@ import {
 } from "@/lib/constants";
 import SolutionTheProcess from "@/components/solutions/solutionTheProcess";
 
+export const metadata = {
+  title: "Microservices Services and Solutions | TechChefz Digital",
+  description: "Learn about TechChefz Digital's microservices services and solutions, designed to help businesses build agile and scalable software applications.",
+};
+
 const Cms = async () => {
   const data = await getData(api_tech_microservices_Page);
   const data_related_cases = await getDataDynamic(api_Case_study_Page);
