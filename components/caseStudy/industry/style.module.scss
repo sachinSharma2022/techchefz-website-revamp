@@ -1,15 +1,15 @@
 @import "~/styles/partials/config";
 
 .industry {
-  padding: spacing(section-primary-padding);
+  padding: 4.75rem 7.5rem;
   padding-bottom: 0;
 
   @include tablet {
-    padding: 3.75rem spacing(tablet-padding) 0;
+    padding: 3.75rem spacing(tablet-padding);
   }
 
   @include mobile {
-    padding: 3.75rem spacing(mobile-padding) 0;
+    padding: 3.75rem spacing(mobile-padding);
   }
 
   .industryLeft {
@@ -107,7 +107,7 @@
       margin: 3rem 0rem;
     }
 
-    @include samsung-fold{
+    @include samsung-fold {
       height: 16rem;
     }
 

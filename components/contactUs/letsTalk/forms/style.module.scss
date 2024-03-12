@@ -58,6 +58,13 @@
         color: color(primary-blue);
         font-size: text(xxs);
         margin-left: 3px;
+        a{
+          color: color(heading-liner);
+          
+          &:hover{
+           text-decoration: underline;
+          }
+        }
       }
     }
 

@@ -100,8 +100,8 @@ const TechnologyValues = ({ props, wrapperStyle }) => {
                     className={styles.icons}
                     src={
                       data?.Images?.data?.attributes?.url
-                        ? `${base_Url}${data?.Images?.data?.attributes?.url}`
-                        : `${base_Url}/`
+                        ? `${base_Uri}${data?.Images?.data?.attributes?.url}`
+                        : `${base_Uri}/`
                     }
                   />
                   <h4 className={styles.subTitle}>{data?.Title}</h4>

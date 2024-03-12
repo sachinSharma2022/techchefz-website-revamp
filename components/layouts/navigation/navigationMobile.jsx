@@ -22,15 +22,13 @@ const NavigationMobile = ({ props, featureArticle }) => {
   const { theme, setTheme } = useContext(MyContext);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const feartureTech = featureArticle
-  .filter(
+  const feartureTech = featureArticle.filter(
     (data) => data?.attributes?.InsightOverview[0]?.TechMenuFeatured == true
-  )
+  );
 
-  const feartureMore = featureArticle
-  .filter(
+  const feartureMore = featureArticle.filter(
     (data) => data?.attributes?.InsightOverview[0]?.MoreMenuFeatured == true
-  )
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -98,7 +96,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
             </div>
             <div className={styles.infoBox}>
               <p className={styles.description}>
-              {feartureArray[0]?.attributes?.InsightOverview[0].Title}
+                {feartureArray[0]?.attributes?.InsightOverview[0].Title}
               </p>
               <Icons.ArrowRight size={16} />
             </div>
@@ -106,7 +104,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
           <div className={styles.imageTech}>
             <div className={styles.infoBox}>
               <p className={styles.description}>
-              {feartureArray[1]?.attributes?.InsightOverview[0].Title}
+                {feartureArray[1]?.attributes?.InsightOverview[0].Title}
               </p>
               <Icons.ArrowRight size={16} />
             </div>
