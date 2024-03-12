@@ -1,7 +1,7 @@
 "use client";
 import { Icons } from "@/components/icons";
 import { MyContext } from "@/context/theme";
-import { base_Url } from "@/lib/constants";
+import { base_Uri } from "@/lib/constants";
 import { useContext, useRef, useState } from "react";
 import Slider from "react-slick";
 
@@ -118,8 +118,8 @@ const TczLife = ({ props }) => {
                     <source
                       src={
                         data?.Video?.data?.attributes?.url
-                          ? `${base_Url}${data.Video.data.attributes.url}`
-                          : `${base_Url}/`
+                          ? `${base_Uri}${data.Video.data.attributes.url}`
+                          : `${base_Uri}/`
                       }
                       type="video/mp4"
                     />
@@ -147,8 +147,8 @@ const TczLife = ({ props }) => {
               <source
                 src={
                   data?.Video?.data?.attributes?.url
-                    ? `${base_Url}${data.Video.data.attributes.url}`
-                    : `${base_Url}/`
+                    ? `${base_Uri}${data.Video.data.attributes.url}`
+                    : `${base_Uri}/`
                 }
                 type="video/mp4"
               />

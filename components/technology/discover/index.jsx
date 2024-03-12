@@ -10,7 +10,7 @@ import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { base_Uri } from "@/lib/constants";
-import { base_Url } from "@/lib/constants";
+
 import { useMediaQuery } from "react-responsive";
 import TextRevel from "@/components/ui/sectionAnimation";
 
@@ -92,8 +92,8 @@ const Discover = ({ props }) => {
                                 <ImageCustom
                                   src={
                                     subItems?.Images?.data?.attributes?.url
-                                      ? `${base_Url}${subItems?.Images?.data?.attributes?.url}`
-                                      : `${base_Url}/`
+                                      ? `${base_Uri}${subItems?.Images?.data?.attributes?.url}`
+                                      : `${base_Uri}/`
                                   }
                                   width={28}
                                   height={28}
@@ -124,8 +124,8 @@ const Discover = ({ props }) => {
                                 <ImageCustom
                                   src={
                                     subItems?.Images?.data?.attributes?.url
-                                      ? `${base_Url}${subItems?.Images?.data?.attributes?.url}`
-                                      : `${base_Url}/`
+                                      ? `${base_Uri}${subItems?.Images?.data?.attributes?.url}`
+                                      : `${base_Uri}/`
                                   }
                                   width={24}
                                   height={22}
@@ -196,8 +196,8 @@ const Discover = ({ props }) => {
                                         src={
                                           subItems?.Images?.data?.attributes
                                             ?.url
-                                            ? `${base_Url}${subItems?.Images?.data?.attributes?.url}`
-                                            : `${base_Url}/`
+                                            ? `${base_Uri}${subItems?.Images?.data?.attributes?.url}`
+                                            : `${base_Uri}/`
                                         }
                                         width={28}
                                         height={28}
@@ -229,8 +229,8 @@ const Discover = ({ props }) => {
                                         src={
                                           subItems?.Images?.data?.attributes
                                             ?.url
-                                            ? `${base_Url}${subItems?.Images?.data?.attributes?.url}`
-                                            : `${base_Url}/`
+                                            ? `${base_Uri}${subItems?.Images?.data?.attributes?.url}`
+                                            : `${base_Uri}/`
                                         }
                                         width={24}
                                         height={22}

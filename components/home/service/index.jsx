@@ -10,7 +10,7 @@ import Link from "next/link";
 import { useContext } from "react";
 import { useMediaQuery } from "react-responsive";
 
-import { base_Url } from "@/lib/constants";
+import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
 
 const Service = ({ props }) => {
@@ -53,8 +53,8 @@ const Service = ({ props }) => {
                   key={index}
                   icon={
                     data?.Image?.data?.attributes?.url
-                      ? `${base_Url}${data?.Image?.data.attributes.url}`
-                      : `${base_Url}/`
+                      ? `${base_Uri}${data?.Image?.data.attributes.url}`
+                      : `${base_Uri}/`
                   }
                   subTitle={data.Title}
                   subText={data.Description}
@@ -71,8 +71,8 @@ const Service = ({ props }) => {
                 key={index}
                 icon={
                   data?.Image?.data?.attributes?.url
-                    ? `${base_Url}${data?.Image?.data.attributes.url}`
-                    : `${base_Url}/`
+                    ? `${base_Uri}${data?.Image?.data.attributes.url}`
+                    : `${base_Uri}/`
                 }
                 subTitle={data.Title}
                 subText={data.Description}

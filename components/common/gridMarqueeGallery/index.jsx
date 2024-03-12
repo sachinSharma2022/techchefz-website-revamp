@@ -4,7 +4,7 @@ import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import { useContext } from "react";
 import styles from "./style.module.scss";
-import { base_Url } from "@/lib/constants";
+
 import { base_Uri } from "@/lib/constants";
 
 const GridMarqueeGallery = ({ props }) => {

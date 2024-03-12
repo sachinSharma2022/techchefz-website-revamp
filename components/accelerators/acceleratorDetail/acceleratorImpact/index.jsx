@@ -7,7 +7,7 @@ import { useContext } from "react";
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
-import { base_Url } from "@/lib/constants";
+
 import Link from "next/link";
 
 const AcceleratorImpact = ({ props }) => {
@@ -56,8 +56,8 @@ const AcceleratorImpact = ({ props }) => {
             <a
               href={
                 props?.imagelinks[0]?.Document?.data?.attributes?.url
-                  ? `${base_Url}${props?.imagelinks[0]?.Document?.data?.attributes?.url}`
-                  : `${base_Url}/`
+                  ? `${base_Uri}${props?.imagelinks[0]?.Document?.data?.attributes?.url}`
+                  : `${base_Uri}/`
               }
               target="_blank"
               download
@@ -87,8 +87,8 @@ const AcceleratorImpact = ({ props }) => {
             <a
               href={
                 props?.imagelinks[1]?.Document?.data?.attributes?.url
-                  ? `${base_Url}${props?.imagelinks[0]?.Document?.data?.attributes?.url}`
-                  : `${base_Url}/`
+                  ? `${base_Uri}${props?.imagelinks[0]?.Document?.data?.attributes?.url}`
+                  : `${base_Uri}/`
               }
               target="_blank"
               download
@@ -141,8 +141,8 @@ const AcceleratorImpact = ({ props }) => {
             <a
               href={
                 props?.imagelinks[2]?.Document?.data?.attributes?.url
-                  ? `${base_Url}${props?.imagelinks[0]?.Document?.data?.attributes?.url}`
-                  : `${base_Url}/`
+                  ? `${base_Uri}${props?.imagelinks[0]?.Document?.data?.attributes?.url}`
+                  : `${base_Uri}/`
               }
               target="_blank"
               download

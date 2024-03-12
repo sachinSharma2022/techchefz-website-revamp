@@ -3,7 +3,7 @@
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
-import { base_Url } from "@/lib/constants";
+import { base_Uri } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { Tab } from "@headlessui/react";
 import { useContext } from "react";
@@ -117,8 +117,8 @@ const LetsTalk = ({ props }) => {
                           width={40}
                           src={
                             props?.Image1?.data?.attributes?.url
-                              ? `${base_Url}${props?.Image1?.data?.attributes?.url}`
-                              : `${base_Url}/`
+                              ? `${base_Uri}${props?.Image1?.data?.attributes?.url}`
+                              : `${base_Uri}/`
                           }
                         />
                         <h1>{props.Title1}</h1>
@@ -146,8 +146,8 @@ const LetsTalk = ({ props }) => {
                           width={40}
                           src={
                             props?.Image2?.data?.attributes?.url
-                              ? `${base_Url}${props?.Image2?.data?.attributes?.url}`
-                              : `${base_Url}/`
+                              ? `${base_Uri}${props?.Image2?.data?.attributes?.url}`
+                              : `${base_Uri}/`
                           }
                         />
                         <h1>{props.Title2}</h1>
@@ -175,8 +175,8 @@ const LetsTalk = ({ props }) => {
                           width={40}
                           src={
                             props?.Image3?.data?.attributes?.url
-                              ? `${base_Url}${props?.Image3?.data?.attributes?.url}`
-                              : `${base_Url}/`
+                              ? `${base_Uri}${props?.Image3?.data?.attributes?.url}`
+                              : `${base_Uri}/`
                           }
                         />
                         <h1>{props.Title3}</h1>
@@ -204,8 +204,8 @@ const LetsTalk = ({ props }) => {
                           width={40}
                           src={
                             props?.Image4?.data?.attributes?.url
-                              ? `${base_Url}${props?.Image4?.data?.attributes?.url}`
-                              : `${base_Url}/`
+                              ? `${base_Uri}${props?.Image4?.data?.attributes?.url}`
+                              : `${base_Uri}/`
                           }
                         />
                         <h1>{props.Title4}</h1>

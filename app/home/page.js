@@ -9,7 +9,7 @@ import TechnologyStack from "@/components/home/technologyStack";
 import WeAreFuture from "@/components/home/weAreFuture";
 import HomepageIntro from "@/components/ui/homepageIntro";
 import Curve from "@/components/ui/pageTransition";
-import { api_Home_Page, base_Url } from "@/lib/constants";
+import { api_Home_Page, base_Uri } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
 import NotFound from "../not-found";
 
@@ -29,8 +29,8 @@ const HomePage = async () => {
           <HomepageIntro
             src={
               data?.Technology?.Video?.data?.attributes?.url
-                ? `${base_Url}${data?.Technology?.Video?.data?.attributes?.url}`
-                : `${base_Url}/`
+                ? `${base_Uri}${data?.Technology?.Video?.data?.attributes?.url}`
+                : `${base_Uri}/`
             }
           />
           <WeAreFuture props={data.Technology} />

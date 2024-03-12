@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
-import { base_Url, base_Uri } from "@/lib/constants";
+import {  base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
 import AnimatedLogo from "@/components/common/animatedLogo";
 
@@ -100,8 +100,8 @@ const NavigationDesktop = ({ props, featureArticle }) => {
             <ImageCustom
               src={
                 props[2]?.DropDown[0]?.Image?.data?.attributes?.url
-                  ? `${base_Url}${props[2]?.DropDown[0]?.Image?.data?.attributes?.url}`
-                  : `${base_Url}/`
+                  ? `${base_Uri}${props[2]?.DropDown[0]?.Image?.data?.attributes?.url}`
+                  : `${base_Uri}/`
               }
               width={56}
               height={56}

@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useContext } from "react";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
-import { base_Url } from "@/lib/constants";
+
 import TextRevel from "@/components/ui/sectionAnimation";
 
 const Innovation = ({ props }) => {

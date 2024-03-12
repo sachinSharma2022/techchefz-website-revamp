@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useContext, useEffect, useState } from "react";
-import { base_Uri, base_Url } from "@/lib/constants";
+import { base_Uri } from "@/lib/constants";
 import { SvgLoader } from "@/components/ui/svgCircleLoader/svgLoader";
 
 import styles from "./style.module.scss";
@@ -147,8 +147,8 @@ const SolutionTheProcess = ({ props }) => {
                 <ImageCustom
                   src={
                     props?.images[0]?.Image?.data?.attributes?.url
-                      ? `${base_Url}${props?.images[0]?.Image?.data?.attributes?.url}`
-                      : `${base_Url}/`
+                      ? `${base_Uri}${props?.images[0]?.Image?.data?.attributes?.url}`
+                      : `${base_Uri}/`
                   }
                   width={258}
                   height={258}
@@ -163,8 +163,8 @@ const SolutionTheProcess = ({ props }) => {
                 <ImageCustom
                   src={
                     props?.images[1]?.Image?.data?.attributes?.url
-                      ? `${base_Url}${props?.images[1]?.Image?.data?.attributes?.url}`
-                      : `${base_Url}/`
+                      ? `${base_Uri}${props?.images[1]?.Image?.data?.attributes?.url}`
+                      : `${base_Uri}/`
                   }
                   width={258}
                   height={258}
@@ -179,8 +179,8 @@ const SolutionTheProcess = ({ props }) => {
                 <ImageCustom
                   src={
                     props?.images[2]?.Image?.data?.attributes?.url
-                      ? `${base_Url}${props?.images[2]?.Image?.data?.attributes?.url}`
-                      : `${base_Url}/`
+                      ? `${base_Uri}${props?.images[2]?.Image?.data?.attributes?.url}`
+                      : `${base_Uri}/`
                   }
                   width={258}
                   height={258}
@@ -195,8 +195,8 @@ const SolutionTheProcess = ({ props }) => {
                 <ImageCustom
                   src={
                     props?.images[3]?.Image?.data?.attributes?.url
-                      ? `${base_Url}${props?.images[3]?.Image?.data?.attributes?.url}`
-                      : `${base_Url}/`
+                      ? `${base_Uri}${props?.images[3]?.Image?.data?.attributes?.url}`
+                      : `${base_Uri}/`
                   }
                   width={258}
                   height={258}
@@ -211,8 +211,8 @@ const SolutionTheProcess = ({ props }) => {
                 <ImageCustom
                   src={
                     props?.images[4]?.Image?.data?.attributes?.url
-                      ? `${base_Url}${props?.images[4]?.Image?.data?.attributes?.url}`
-                      : `${base_Url}/`
+                      ? `${base_Uri}${props?.images[4]?.Image?.data?.attributes?.url}`
+                      : `${base_Uri}/`
                   }
                   width={258}
                   height={258}
@@ -227,8 +227,8 @@ const SolutionTheProcess = ({ props }) => {
                 <ImageCustom
                   src={
                     props?.images[5]?.Image?.data?.attributes?.url
-                      ? `${base_Url}${props?.images[5]?.Image?.data?.attributes?.url}`
-                      : `${base_Url}/`
+                      ? `${base_Uri}${props?.images[5]?.Image?.data?.attributes?.url}`
+                      : `${base_Uri}/`
                   }
                   width={258}
                   height={258}
