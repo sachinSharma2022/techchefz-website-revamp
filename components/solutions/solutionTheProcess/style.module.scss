@@ -43,7 +43,7 @@
     .heading {
       color: color(text-primary);
       text-transform: uppercase;
-      opacity: 0.8;
+      opacity: opacity(dark);
       font-size: text(normal);
       font-weight: 500;
       line-height: 1.5rem;
@@ -152,7 +152,7 @@
 
       p {
         margin-bottom: 0;
-        opacity: 0.8;
+        opacity: opacity(dark);
       }
       @include mobile {
         min-width: 100%;

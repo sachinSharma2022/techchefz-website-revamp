@@ -7,7 +7,7 @@ import BadgeInfoCard from "@/components/common/badgeInfoCard";
 import { Icons } from "@/components/icons";
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
-import { base_Url } from "@/lib/constants";
+import { base_Uri } from "@/lib/constants";
 
 const BrowserAccelerator = ({props}) => {
   console.log("aa",props);
@@ -69,7 +69,7 @@ const BrowserAccelerator = ({props}) => {
           {props?.map((item, index) => (
             <BadgeInfoCard
               key={index}
-              icons={item?.attributes?.BrowserAccelerator?.Image?.data?.attributes?.url?`${base_Url}${item?.attributes?.BrowserAccelerator?.Image?.data.attributes.url}`:`${base_Url}/`} 
+              icons={item?.attributes?.BrowserAccelerator?.Image?.data?.attributes?.url?`${base_Uri}${item?.attributes?.BrowserAccelerator?.Image?.data.attributes.url}`:`${base_Uri}/`} 
               subHeading={item?.attributes?.BrowserAccelerator?.Title}
               heading={item?.attributes?.BrowserAccelerator?.Heading}
               description={item?.attributes?.BrowserAccelerator?.Description}

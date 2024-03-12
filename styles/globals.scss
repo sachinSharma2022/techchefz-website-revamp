@@ -81,8 +81,15 @@ button[disabled] {
    button[disabled] {
       border-color: rgba(color(primary-white), 0.6) !important;
       background-color: rgba(color(primary-white), 0.6);
-      color: color(primary-white);
       cursor: not-allowed;
+
+      > div {
+         color: color(dark-bg);
+
+         svg > path {
+            stroke: color(dark-bg);
+         }
+      }
    }
 }
 
@@ -1080,7 +1087,7 @@ html.lenis {
    }
 
    @include mobile {
-      margin-block: 2rem 0;
+      margin-block:0;
       padding: spacing(mobile-padding);
    }
 }

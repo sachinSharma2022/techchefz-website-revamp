@@ -41,7 +41,7 @@
   .projectHighlight {
     font-size: text(normal);
     font-weight: 500;
-    opacity: 0.6;
+    opacity: opacity(light);
     text-transform: uppercase;
     letter-spacing: 0.2rem;
   }
@@ -208,7 +208,9 @@
         }
       }
     }
-  
+    .projectHighlight {
+      opacity: opacity(dark);
+    }
     
   }
 }

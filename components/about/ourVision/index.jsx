@@ -6,8 +6,8 @@ import { useContext } from "react";
 import styles from "./style.module.scss";
 import VideoCustom from "@/components/ui/videoCustom";
 import { cn } from "@/lib/utils";
-import { base_Uri } from "@/lib/constants";
-import { base_Url } from "@/lib/constants";
+import { base_Uri, base_Url } from "@/lib/constants";
+
 
 const OurVision = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);

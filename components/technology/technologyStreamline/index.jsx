@@ -11,7 +11,7 @@ import { useEffect, useRef } from "react";
 import { useMediaQuery } from "react-responsive";
 import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
-import { base_Url } from "@/lib/constants";
+
 import Link from "next/link";
 
 const Streamline = ({ props }) => {
@@ -86,8 +86,8 @@ const Streamline = ({ props }) => {
                   width={100}
                   src={
                     data?.Image?.data?.attributes?.url
-                      ? `${base_Url}${data?.Image?.data?.attributes?.url}`
-                      : `${base_Url}/`
+                      ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
+                      : `${base_Uri}/`
                   }
                 />
               </div>

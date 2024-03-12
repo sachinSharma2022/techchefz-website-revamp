@@ -38,7 +38,7 @@
     font-size: text(lg);
     color: color(primary-white);
     line-height: 1.8rem;
-    opacity: 0.6;
+    opacity: opacity(dark);
     margin-bottom: 0;
     margin: 0;
 
@@ -54,7 +54,7 @@
     font-size: text(lg);
     color: color(primary-white);
     line-height: 1.8rem;
-    opacity: 0.6;
+    opacity: opacity(dark);
 
     @include mobile {
       font-size: text(normal);
@@ -87,8 +87,10 @@
   }
   p {
     color: color(text-primary);
+    opacity: opacity(light);
   }
   li {
     color: color(text-primary);
+    opacity: opacity(light);
   }
 }

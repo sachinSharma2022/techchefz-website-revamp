@@ -98,7 +98,7 @@
       .projectHighlight {
         font-size: text(normal);
         font-weight: 500;
-        opacity: 0.8;
+        opacity: opacity(light);
         text-transform: uppercase;
         letter-spacing: 0.2rem;
       }
@@ -192,7 +192,7 @@
       border: 0.125rem solid rgba(color(primary-white), 0.12);
       .careerRow {
         .techHeading {
-          opacity: 0.87;
+          opacity: opacity(dark);
         }
         .techText {
           opacity: 0.9;

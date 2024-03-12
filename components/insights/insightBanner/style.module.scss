@@ -51,7 +51,7 @@
     font-size: text(lg);
     color: rgba(color(text-primary), 0.8);
     line-height: 1.875rem;
-    opacity: 0.8;
+    opacity: opacity(dark);
     margin-bottom: 0;
 
     @include mobile-tablet-p {

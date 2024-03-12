@@ -30,7 +30,7 @@
       font-size: text(normal);
       font-weight: 700;
       color: color(text-primary);
-      opacity: 0.6;
+      opacity: opacity(light);
       letter-spacing: 0.2rem;
       line-height: 1.5rem;
 
@@ -155,7 +155,7 @@
           color: rgba(color(text-primary), 0.8);
           letter-spacing: 0.2rem;
           text-transform: uppercase;
-          opacity: 0.6;
+          opacity: opacity(light);
           text-align: center;
           line-height: 1.5rem;
           margin-bottom: 0;
@@ -180,11 +180,13 @@
   .innovationMain {
     .text {
       color: color(primary-white);
+      opacity: opacity(dark);
     }
     .title {
       color: color(primary-white);
     }
   }
+  
   .innovationCardsGrid {
     .innovationBox {
       background: linear-gradient(

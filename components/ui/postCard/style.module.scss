@@ -1,106 +1,105 @@
 @import "~/styles/partials/config";
 
 @mixin postCardStyles {
-   padding: text(lg);
-   border-radius: 20px;
-   border: 0.125rem solid rgba(color(text-primary), 0.12);
-   background: color(bg-soft);
-   width: 100%;
-   transition: all 0.3s ease-in-out;
-   cursor: pointer;
-   display: flex;
-   flex-direction: column;
-   gap: 20px;
-   color: color(text-primary);
+  padding: text(lg);
+  border-radius: 20px;
+  border: 0.125rem solid rgba(color(text-primary), 0.12);
+  background: color(bg-soft);
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: color(text-primary);
 
-   &:hover {
-      border-color: color(heading-liner);
+  &:hover {
+    border-color: color(heading-liner);
+  }
+
+  .cardImg div {
+    height: 170px;
+    min-width: 230px;
+    width: 100%;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+
+    @include mobile {
+      min-width: inherit;
     }
 
-   .cardImg div {
-      height: 170px;
-      min-width: 230px;
+    img {
+      object-fit: cover;
       width: 100%;
-      position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-
-      @include mobile{
-         min-width: inherit;
-      }
-
-      img {
-         object-fit: cover;
-         width: 100%;
-         height: 100%;
-         @include transition(0.5s);
-      }
-   }
-   .cardBody {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      text-align: left;
       height: 100%;
+      @include transition(0.5s);
+    }
+  }
+  .cardBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    height: 100%;
 
-      .cardTitle {
-         font-size: text(xl);
-         font-weight: 400;
-         line-height: 2rem;
-         @include truncate(3);
-      }
+    .cardTitle {
+      font-size: text(xl);
+      font-weight: 400;
+      line-height: 2rem;
+      @include truncate(3);
+    }
 
-      .cardDateText{
-         display: flex;
-         width: 100%;
-         gap: 0.5rem;
-      }
+    .cardDateText {
+      display: flex;
+      width: 100%;
+      gap: 0.5rem;
+    }
 
-      .cardDate {
-         line-height: 1.5rem;
-         opacity: 0.6;
-         margin-bottom: 0;
-         max-width: 60%;
-      }
-   }
+    .cardDate {
+      line-height: 1.5rem;
+      opacity: opacity(light);
+      margin-bottom: 0;
+      max-width: 60%;
+    }
+  }
 
-   &:hover {
-
-   .cardImg div {
+  &:hover {
+    .cardImg div {
       img {
-         scale: 1.1
+        scale: 1.1;
       }
-   }
-   }
+    }
+  }
 }
 
-.postCard{
-   @include postCardStyles();
+.postCard {
+  @include postCardStyles();
 }
 
-//dark Mode 
+//dark Mode
 
 .darkMode {
-   @include postCardStyles();
+  @include postCardStyles();
 
-   background: color(text-primary);
-   border: 0.125rem solid rgba(255, 255, 255, 0.12);
+  background: color(text-primary);
+  border: 0.125rem solid rgba(255, 255, 255, 0.12);
 
-   &:hover {
-      border-color: color(heading-liner);
+  &:hover {
+    border-color: color(heading-liner);
+  }
+
+  .cardBody {
+    .cardTitle {
+      color: color(primary-white);
     }
 
-    .cardBody {
-      .cardTitle {
-         color:color(primary-white)
-      }
+    .cardDate {
+      color: rgba(color(primary-white), opacity(dark));
+    }
 
-      .cardDate {
-         color: rgba(color(primary-white), 0.6);
-      }
-
-      .arrowIcon svg path{
-         fill: color(primary-white) !important;
-      }
-   }
+    .arrowIcon svg path {
+      fill: color(primary-white) !important;
+    }
+  }
 }

@@ -8,17 +8,21 @@ import { useContext } from "react";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
 
-const InsightDetail = ({ props, BlockTitle }) => {
+const InsightDetail = ({ props, BlockTitle, index }) => {
   const { theme, setTheme } = useContext(MyContext);
 
-  const iconMediaData = [
-    { iconPath: <Icons.Linkedin size={30} /> },
-    { iconPath: <Icons.facebookInsight size={30} /> },
-    { iconPath: <Icons.twitter color="#000000" size={26} /> },
-    { iconPath: <Icons.MailIcon size={27} /> },
-    { iconPath: <Icons.chat size={27} /> },
-  ];
+  const url = `http://localhost:3000/insights/${index}`;
 
+  // const iconMediaData = [
+  //   { iconPath: <Icons.Linkedin size={30} /> },
+  //   { iconPath: <Icons.facebookInsight size={30} /> },
+  //   { iconPath: <Icons.twitter color="#000000" size={26} /> },
+  //   { iconPath: <Icons.MailIcon size={27} /> },
+  //   { iconPath: <Icons.chat size={27} /> },
+  // ];
+  const handleClick = (event) => {
+    navigator.clipboard.writeText(url);
+  };
   return (
     <section
       className={theme ? styles.insightDetailContainer : styles.lightMode}
@@ -26,17 +30,53 @@ const InsightDetail = ({ props, BlockTitle }) => {
       <div className={cn("primary-container", styles.flexContainer)}>
         <div className={styles.insightDetailFlex}>
           <div className={styles.socialMediaFlex}>
-            {iconMediaData.map((key) => (
-              <div key={key} className={styles.iconDiv}>
-                <div>
-                  <a
-                    href={`https://www.linkedin.com/sharing/share-offsite/?url=https://demo.techchefz.com/insights/10`}
-                  >
-                    {key.iconPath}
-                  </a>
-                </div>
+            <div className={styles.iconDiv}>
+              <div>
+                <a
+                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}`}
+                >
+                  <Icons.Linkedin size={30} />
+                </a>
               </div>
-            ))}
+            </div>
+            <div className={styles.iconDiv}>
+              <div>
+                <a href={`https://www.facebook.com/share.php?u=${url}`}>
+                  <Icons.facebookInsight size={30} />
+                </a>
+              </div>
+            </div>
+            <div className={styles.iconDiv}>
+              <div>
+                <a
+                  href={`http://twitter.com/share?&url=${url}&text=${encodeURIComponent(
+                    "Hey, I found this article"
+                  )}`}
+                >
+                  <Icons.twitter color="#000000" size={26} />
+                </a>
+              </div>
+            </div>
+            <div className={styles.iconDiv}>
+              <div>
+                <a
+                  href={`mailto:?subject=I wanted you to see this site&amp;body=Check out this site ${url}`}
+                  title="Share by Email"
+                >
+                  <Icons.MailIcon size={27} />
+                </a>
+              </div>
+            </div>
+            <div
+              className={styles.iconDiv}
+              onClick={(e) => {
+                handleClick(e);
+              }}
+            >
+              <div>
+                <Icons.chat size={27} />
+              </div>
+            </div>
           </div>
 
           <div className={styles.insightDetailPara}>

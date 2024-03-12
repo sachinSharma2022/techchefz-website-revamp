@@ -37,7 +37,7 @@
     line-height: text(xl);
     margin-bottom: 2.5rem;
     color: color(text-primary);
-    opacity: 0.6;
+    opacity: opacity(light);
 
     @include mobile-tablet-p {
       font-size: text(lg);
@@ -124,6 +124,10 @@
     svg rect {
       fill: color(primary-background);
     }
+  }
+
+  .subTitle {
+    opacity: opacity(dark);
   }
 }
 

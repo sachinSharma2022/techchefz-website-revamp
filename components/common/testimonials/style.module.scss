@@ -29,7 +29,7 @@
     .projectHighlight {
       font-size: text(normal);
       font-weight: 500;
-      opacity: 0.8;
+      opacity: opacity(dark);
       text-transform: uppercase;
       letter-spacing: 0.2rem;
       color: color(text-primary);
@@ -52,7 +52,7 @@
     .testimonialsText {
       font-size: text(lg);
       font-weight: 400;
-      opacity: 0.6;
+      opacity: opacity(light);
       line-height: 1.875rem;
 
       @include mobile-tablet-p {
@@ -119,7 +119,7 @@
         font-size: text(normal);
         font-weight: 400;
         line-height: text(xl);
-        opacity: 0.8;
+        opacity: opacity(dark);
         margin-bottom: 0;
       }
     }
@@ -177,7 +177,7 @@
       .testimonialsLeft {
         .projectHighlight {
           color: color(primary-white);
-          opacity: 0.8;
+          opacity: opacity(dark);
         }
       }
     }
@@ -194,6 +194,10 @@
       .customerName {
         color: color(info-blue);
       }
+    }
+
+    .testimonialsText {
+      opacity: opacity(dark);
     }
   }
 }

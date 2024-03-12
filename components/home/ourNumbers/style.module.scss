@@ -35,7 +35,7 @@
   .projectHighlight {
     font-size: text(normal);
     font-weight: 500;
-    opacity: 0.6;
+    opacity: opacity(light);
     text-transform: uppercase;
     letter-spacing: 0.2rem;
   }
@@ -67,7 +67,7 @@
       }
 
       @include mobile {
-    display: none;
+        display: none;
       }
 
       .ourNumbersImg div {
@@ -105,7 +105,7 @@
       font-weight: 400;
       line-height: 1.875rem;
       margin-bottom: 3.75rem;
-      opacity: 0.8;
+      opacity: opacity(light);
 
       @include mobile-tablet-p {
         font-size: text(normal);
@@ -133,5 +133,12 @@
   &.numberStyleDark {
     background-color: color(dark-bg);
     color: color(primary-white);
+
+    .projectHighlight {
+      opacity: opacity(dark);
+    }
+    .ourNumbersText {
+      opacity: opacity(dark);
+    }
   }
 }

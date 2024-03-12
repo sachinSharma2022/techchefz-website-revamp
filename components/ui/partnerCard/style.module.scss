@@ -91,7 +91,7 @@
   .cardContent {
     font-size: text(normal);
     line-height: 1.5rem;
-    opacity: 0.8;
+    opacity: opacity(dark);
     margin-bottom: 0;
     @include truncate(5);
   }

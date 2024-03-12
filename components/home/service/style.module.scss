@@ -142,7 +142,7 @@
     .serviceGrid {
       .serviceHeading {
         .serviceText {
-          opacity: 0.8;
+          opacity: opacity(dark);
         }
         .serviceTitle {
           color: rgba(color(primary-white), 0.87);

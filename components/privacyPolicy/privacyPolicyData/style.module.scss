@@ -81,16 +81,16 @@
       .customerList {
         .list {
           color: color(primary-white);
-          opacity: 0.8;
+          opacity: opacity(dark);
         }
       }
       .title {
-        opacity: 0.8;
+        opacity: opacity(dark);
       }
 
       .leadText {
         color: color(primary-white);
-        opacity: 0.8;
+        opacity: opacity(dark);
       }
     }
   }

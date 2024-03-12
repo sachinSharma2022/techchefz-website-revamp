@@ -47,7 +47,7 @@
     .ourValuesTitle {
       color: color(text-primary);
       text-transform: uppercase;
-      opacity: 0.8;
+      opacity: opacity(dark);
       font-size: text(normal);
       font-weight: 500;
       line-height: 1.5rem;
@@ -78,7 +78,7 @@
     .ourValuesText {
       font-size: text(lg);
       font-weight: 400;
-      opacity: 0.8;
+      opacity: opacity(dark);
       line-height: 1.875rem;
       margin-bottom: 0;
       @include mobile {
@@ -222,7 +222,7 @@
         border-color: rgba(color(primary-white), 0.12);
         .accordionBodyContent {
           color: color(primary-white);
-          opacity: 0.8;
+          opacity: opacity(dark);
         }
       }
     }

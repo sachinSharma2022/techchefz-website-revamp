@@ -56,7 +56,7 @@
       margin-bottom: 2.5rem;
       text-transform: uppercase;
       color: color(text-primary);
-      opacity: 0.6;
+      opacity: opacity(light);
 
       @include mobile-tablet-p {
         width: 100%;
@@ -143,7 +143,7 @@
   .aboutText {
     font-size: text(lg);
     font-weight: 400;
-    opacity: 0.6;
+    opacity: opacity(light);
     margin-bottom: text(larger);
     color: color(text-primary);
     max-width: 37rem;
@@ -172,9 +172,11 @@
     }
     .aboutText {
       color: color(primary-white);
+      opacity: opacity(dark);
     }
     .datingText {
-      color: rgba(color(primary-white), 0.8);
+      color: rgba(color(primary-white), opacity(dark));
     }
+    
   }
 }

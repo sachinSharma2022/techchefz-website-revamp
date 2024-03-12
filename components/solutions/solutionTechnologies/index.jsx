@@ -4,7 +4,7 @@ import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
-import { base_Uri, base_Url } from "@/lib/constants";
+import { base_Uri } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useContext } from "react";
@@ -102,8 +102,8 @@ const SolutionTechnologies = ({ props }) => {
                     sbTitle={data.Title}
                     icon={
                       data?.Image?.data?.attributes?.url
-                        ? `${base_Url}${data?.Image?.data?.attributes?.url}`
-                        : `${base_Url}/`
+                        ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
+                        : `${base_Uri}/`
                     }
                     sbText={data.Description}
                   />
@@ -134,8 +134,8 @@ const SolutionTechnologies = ({ props }) => {
               sbTitle={data.Title}
               icon={
                 data?.Image?.data?.attributes?.url
-                  ? `${base_Url}${data?.Image?.data?.attributes?.url}`
-                  : `${base_Url}/`
+                  ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
+                  : `${base_Uri}/`
               }
               sbText={data.Description}
             />

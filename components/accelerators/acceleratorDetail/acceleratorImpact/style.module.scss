@@ -14,11 +14,6 @@
     gap: 3.75rem;
   }
 
-  &.impactDark {
-    background-color: color(text-primary);
-    color: color(primary-white);
-  }
-
   .impactContainer {
     display: flex;
     flex-direction: column;
@@ -36,7 +31,7 @@
     line-height: 1.5rem;
     letter-spacing: 0.2rem;
     text-transform: uppercase;
-    opacity: 0.8;
+    opacity: opacity(light);
     margin-bottom: 1rem;
 
     @include mobile-tablet-p {
@@ -74,86 +69,103 @@
       padding: 0;
     }
 
+    @include mobile-tablet-p {
+      gap: 3.75rem;
+    }
+  }
+
+  .subHeading {
+    font-size: text(normal);
+    font-weight: 700;
+    line-height: 1.5rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    opacity: opacity(light);
+    margin-bottom: 1rem;
+
+    @include mobile-tablet-p {
+      height: auto;
+    }
+
+    @include mobile {
+      height: 18.813rem;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .topSectionRight {
+    width: 100%;
+
+    h4 {
+      font-size: text(xxxl);
+      font-weight: 500;
+      line-height: 2.5rem;
+      max-width: 90%;
+      margin-bottom: 0.75rem;
+
       @include mobile-tablet-p {
-         gap: 3.75rem;
-      }
-   }
-
-   .subHeading {
-      font-size: text(normal);
-      font-weight: 700;
-      line-height: 1.5rem;
-      letter-spacing: 0.2rem;
-      text-transform: uppercase;
-      opacity: 0.8;
-      margin-bottom: 1rem;
-
-      @include mobile-tablet-p {
-        height: auto;
-      }
-
-      @include mobile {
-        height: 18.813rem;
-      }
-
-      img {
-        width: 100%;
-        height: auto;
+        font-size: text(xl);
+        line-height: 1.875rem;
+        max-width: 100%;
       }
     }
 
-    .topSectionRight {
-      width: 100%;
+    p {
+      margin-bottom: 0;
+    }
 
-      h4 {
-        font-size: text(xxxl);
-        font-weight: 500;
-        line-height: 2.5rem;
-        max-width: 90%;
-        margin-bottom: 0.75rem;
+    ul {
+      list-style: square;
 
-        @include mobile-tablet-p {
-          font-size: text(xl);
-          line-height: 1.875rem;
-          max-width: 100%;
-        }
-      }
-
-      p {
-        margin-bottom: 0;
-      }
-
-      ul {
-        list-style: square;
-
-        li {
-          font-size: text(lg);
-          font-weight: 400;
-          line-height: 1.875rem;
-          opacity: 0.6;
-          margin-bottom: 0;
-          @include mobile-tablet-p {
-            font-size: text(normal);
-            line-height: 1.5rem;
-          }
-        }
-      }
-
-      p {
+      li {
         font-size: text(lg);
         font-weight: 400;
         line-height: 1.875rem;
-        opacity: 0.6;
-
+        opacity: opacity(light);
+        margin-bottom: 0;
         @include mobile-tablet-p {
           font-size: text(normal);
           line-height: 1.5rem;
         }
       }
+    }
 
-      button {
-        margin: 2.5rem 0;
+    p {
+      font-size: text(lg);
+      font-weight: 400;
+      line-height: 1.875rem;
+      opacity: opacity(light);
+
+      @include mobile-tablet-p {
+        font-size: text(normal);
+        line-height: 1.5rem;
       }
+    }
+
+    button {
+      margin: 2.5rem 0;
     }
   }
 
+  // DarK theme
+  &.impactDark {
+    background-color: color(text-primary);
+    color: color(primary-white);
+
+    .topSectionRight {
+      ul {
+        li {
+          opacity: opacity(dark);
+        }
+      }
+
+      p {
+        opacity: opacity(dark);
+      }
+    }
+  }
+}
