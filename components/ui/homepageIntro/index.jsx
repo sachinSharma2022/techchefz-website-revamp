@@ -11,7 +11,7 @@ import styles from "./style.module.scss";
 
 const HomepageIntro = (props) => {
   const isBigScreen = useMediaQuery({ query: "(min-width: 1025px)" });
-  const isBigScreenDesktop = useMediaQuery({ query: "(max-width: 1440px)" });
+  const isBigScreenDesktop = useMediaQuery({ query: "(max-width: 1472px)" });
   const { theme } = useContext(MyContext);
   const videoRef = useRef();
   gsap.registerPlugin(ScrollTrigger);
@@ -44,7 +44,7 @@ const HomepageIntro = (props) => {
           maxWidth: "100%",
           duration: 1,
         }).to(`.${styles.video}`, {
-          width: isBigScreenDesktop ? "1440px" : "1228px",
+          width: isBigScreenDesktop ? "1228px" : "1440px",
           height: "100%",
           duration: 1,
         });
