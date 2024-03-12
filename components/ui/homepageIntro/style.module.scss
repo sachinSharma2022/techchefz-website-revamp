@@ -25,10 +25,12 @@
 
     .video {
       object-fit: cover;
-      padding-inline: 7.5rem;
-      max-width: 1440px;
+      border-radius: 1.25rem;
+      max-width: 1228px;
+
+      object-fit: cover;
       @include desktop-hd {
-        padding-inline: 0px !important;
+        max-width: 1440px;
       }
 
       @include mobile-tablet-p {

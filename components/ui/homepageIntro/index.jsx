@@ -11,6 +11,7 @@ import styles from "./style.module.scss";
 
 const HomepageIntro = (props) => {
   const isBigScreen = useMediaQuery({ query: "(min-width: 1025px)" });
+  const isBigScreenDesktop = useMediaQuery({ query: "(max-width: 1440px)" });
   const { theme } = useContext(MyContext);
   const videoRef = useRef();
   gsap.registerPlugin(ScrollTrigger);
@@ -23,7 +24,7 @@ const HomepageIntro = (props) => {
         ScrollTrigger.create({
           trigger: `.${styles.videoCont}`,
           pin: true,
-          markers: false,
+          markers: true,
           start: "top 80rem",
           end: "400rem",
         });
@@ -41,16 +42,10 @@ const HomepageIntro = (props) => {
           width: "100%",
           height: "100%",
           maxWidth: "100%",
-          paddingLeft: "0px",
-          paddingRight: "0px",
           duration: 1,
         }).to(`.${styles.video}`, {
-          width: "1440px",
+          width: isBigScreenDesktop ? "1440px" : "1228px",
           height: "100%",
-          minWidth: "1440px",
-          paddingLeft: "7.5rem",
-          paddingRight: "7.5rem",
-          paddingBottom: "8rem",
           duration: 1,
         });
       });
