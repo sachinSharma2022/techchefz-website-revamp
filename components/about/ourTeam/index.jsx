@@ -140,6 +140,7 @@ const OurTeam = ({ props }) => {
           onClose={() => setIsOpen(false)}
         >
           <div
+            data-lenis-prevent
             className={cn(styles.modalBody, theme ? styles.darkThemeStyle : "")}
           >
             <div className={styles.modalInfo}>
