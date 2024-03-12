@@ -51,8 +51,8 @@ const Innovation = ({ props }) => {
                 <ImageCustom
                   src={
                     data?.Image?.data?.attributes?.url
-                      ? `${base_Url}${data?.Image?.data?.attributes?.url}`
-                      : `${base_Url}/`
+                      ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
+                      : `${base_Uri}/`
                   }
                   width="500"
                   height="500"
