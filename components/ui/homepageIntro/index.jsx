@@ -24,7 +24,7 @@ const HomepageIntro = (props) => {
         ScrollTrigger.create({
           trigger: `.${styles.videoCont}`,
           pin: true,
-          markers: true,
+          markers: false,
           start: "top 80rem",
           end: "400rem",
         });
