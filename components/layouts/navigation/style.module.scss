@@ -830,7 +830,7 @@
         li {
           &.dropDown {
             .more {
-              color: white;
+              color: color(primary-white);
               font-weight: 500;
               padding: 0.4rem 0.7rem;
               margin: 0 0.5rem;
@@ -853,6 +853,7 @@
                   transition: all 0.5s;
                 }
                 &:hover {
+                  
                   &::before {
                     opacity: 1;
                   }

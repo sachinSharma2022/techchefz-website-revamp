@@ -1,4 +1,3 @@
-
 import NavigationDesktop from "../navigation/navigationDesktop";
 import NavigationMobile from "../navigation/navigationMobile";
 import NotFound from "@/app/not-found";
@@ -12,11 +11,19 @@ const Header = async () => {
     <>
       {data ? (
         <>
-          <NavigationMobile props={data?.attributes?.HeaderMenu} featureArticle={data_inside}/>
-          <NavigationDesktop props={data?.attributes?.HeaderMenu} featureArticle={data_inside}/>
+          <NavigationMobile
+            props={data?.attributes?.HeaderMenu}
+            featureArticle={data_inside}
+          />
+          <NavigationDesktop
+            props={data?.attributes?.HeaderMenu}
+            featureArticle={data_inside}
+          />
         </>
       ) : (
-        <><NotFound /></>
+        <>
+          <NotFound />
+        </>
       )}
     </>
   );

@@ -13,7 +13,6 @@ import { api_Home_Page, base_Url } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
 import NotFound from "../not-found";
 
-
 export const metadata = {
   title: "Humanizing Digital Experiences",
   description:
