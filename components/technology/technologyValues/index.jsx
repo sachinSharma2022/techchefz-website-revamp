@@ -1,7 +1,7 @@
 "use client";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
-import { base_Uri, base_Url } from "@/lib/constants";
+import { base_Uri } from "@/lib/constants";
 import { useContext } from "react";
 // Swiper Styles
 import "swiper/css";

@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Slider from "react-slick";
 import styles from "./style.module.scss";
-import { base_Uri, base_Url } from "@/lib/constants";
+import { base_Uri } from "@/lib/constants";
 import TextRevel from "@/components/ui/sectionAnimation";
 
 const OurClients = ({ props }) => {
@@ -110,8 +110,8 @@ const OurClients = ({ props }) => {
                       <ImageCustom
                         src={
                           item?.Image?.data?.attributes?.url
-                            ? `${base_Url}${item?.Image?.data?.attributes?.url}`
-                            : `${base_Url}/`
+                            ? `${base_Uri}${item?.Image?.data?.attributes?.url}`
+                            : `${base_Uri}/`
                         }
                         width={240}
                         height={320}
@@ -128,8 +128,8 @@ const OurClients = ({ props }) => {
                       <ImageCustom
                         src={
                           item?.Image?.data?.attributes?.url
-                            ? `${base_Url}${item?.Image?.data?.attributes?.url}`
-                            : `${base_Url}/`
+                            ? `${base_Uri}${item?.Image?.data?.attributes?.url}`
+                            : `${base_Uri}/`
                         }
                         width={240}
                         height={320}
@@ -146,8 +146,8 @@ const OurClients = ({ props }) => {
                       <ImageCustom
                         src={
                           item?.Image?.data?.attributes?.url
-                            ? `${base_Url}${item?.Image?.data?.attributes?.url}`
-                            : `${base_Url}/`
+                            ? `${base_Uri}${item?.Image?.data?.attributes?.url}`
+                            : `${base_Uri}/`
                         }
                         width={240}
                         height={320}

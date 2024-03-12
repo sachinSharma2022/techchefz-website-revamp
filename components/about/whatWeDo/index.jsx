@@ -4,7 +4,7 @@ import MobileSlider from "@/components/common/mobileSlider";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import TextRevel from "@/components/ui/sectionAnimation";
 import { MyContext } from "@/context/theme";
-import { base_Url } from "@/lib/constants";
+import { base_Uri } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { useContext } from "react";
 import { useMediaQuery } from "react-responsive";
@@ -44,8 +44,8 @@ const WhatWeDo = ({ props }) => {
                         width={100}
                         src={
                           data?.Image?.data?.attributes?.url
-                            ? `${base_Url}${data?.Image?.data?.attributes?.url}`
-                            : `${base_Url}/`
+                            ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
+                            : `${base_Uri}/`
                         }
                       />
                     </div>
@@ -76,8 +76,8 @@ const WhatWeDo = ({ props }) => {
                         width={100}
                         src={
                           data?.Image?.data?.attributes?.url
-                            ? `${base_Url}${data?.Image?.data?.attributes?.url}`
-                            : `${base_Url}/`
+                            ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
+                            : `${base_Uri}/`
                         }
                       />
                     </div>
