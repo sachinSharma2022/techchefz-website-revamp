@@ -34,3 +34,14 @@
   @return null;
 }
 
+@function opacity($key) {
+  @if map-has-key($opacity, $key) {
+    @return map-get($opacity, $key);
+  }
+
+  @warn "Unknown '#{$key}' in $opacity.";
+  @return null;
+}
+
+
+
