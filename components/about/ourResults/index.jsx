@@ -24,7 +24,7 @@ const OurResults = ({ props }) => {
       <div className={cn("primary-container")}>
         <TextRevel>
           {/* <div className={cn(styles.flexContainer)}> */}
-          <div >
+          <div className={styles}>
             <h6
               className={cn(styles.ourResultsTitle, "gradient-text")}
               dangerouslySetInnerHTML={{ __html: `${props[0].Title}` }}

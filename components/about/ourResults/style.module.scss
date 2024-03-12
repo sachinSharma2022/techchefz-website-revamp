@@ -3,8 +3,12 @@
 .ourResults {
   padding: spacing(section-primary-padding);
 
-  @include mobile-tablet-p {
-    padding: 0 0 5rem;
+  @include tablet {
+    padding: 3.75rem spacing(tablet-padding);
+  }
+
+  @include mobile {
+    padding: 3.75rem spacing(mobile-padding);
   }
 
   .flexContainer {
@@ -51,7 +55,7 @@
     margin-bottom: 5rem;
 
     @include mobile-tablet-p {
-      margin-bottom: 0;
+      margin-bottom: 3.75rem;
       font-size: text(normal);
       line-height: text(xl);
     }
@@ -62,7 +66,6 @@
     gap: 2.5rem;
 
     @include tablet {
-      padding-inline: spacing(tablet-padding);
       display: grid;
       grid-template-columns: repeat(2, 1fr);
     }
@@ -106,6 +109,10 @@
 
   .mobileSlider {
     padding-left: 1.25rem;
+
+    @include mobile {
+      padding-left: 0;
+    }
   }
 
   // Dark Mode
