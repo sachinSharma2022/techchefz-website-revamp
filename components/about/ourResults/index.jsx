@@ -10,7 +10,7 @@ import { base_Uri } from "@/lib/constants";
 import MobileSlider from "@/components/common/mobileSlider";
 import { useMediaQuery } from "react-responsive";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import { base_Url } from "@/lib/constants";
+
 import TextRevel from "@/components/ui/sectionAnimation";
 
 const OurResults = ({ props }) => {
@@ -23,7 +23,8 @@ const OurResults = ({ props }) => {
     >
       <div className={cn("primary-container")}>
         <TextRevel>
-          <div className={cn(styles.flexContainer)}>
+          {/* <div className={cn(styles.flexContainer)}> */}
+          <div >
             <h6
               className={cn(styles.ourResultsTitle, "gradient-text")}
               dangerouslySetInnerHTML={{ __html: `${props[0].Title}` }}
@@ -47,8 +48,8 @@ const OurResults = ({ props }) => {
                       width={36}
                       src={
                         data?.Image?.data?.attributes?.url
-                          ? `${base_Url}${data?.Image?.data?.attributes?.url}`
-                          : `${base_Url}/`
+                          ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
+                          : `${base_Uri}/`
                       }
                     />
                   </div>
@@ -73,8 +74,8 @@ const OurResults = ({ props }) => {
                       width={36}
                       src={
                         data?.Image?.data?.attributes?.url
-                          ? `${base_Url}${data?.Image?.data?.attributes?.url}`
-                          : `${base_Url}/`
+                          ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
+                          : `${base_Uri}/`
                       }
                     />
                   </div>

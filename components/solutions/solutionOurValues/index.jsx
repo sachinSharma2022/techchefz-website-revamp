@@ -8,7 +8,7 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import { cn } from "@/lib/utils";
 import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
-import { base_Url } from "@/lib/constants";
+
 import { motion, AnimatePresence } from "framer-motion";
 
 const SolutionOurValues = ({ props }) => {
@@ -71,8 +71,8 @@ const SolutionOurValues = ({ props }) => {
                       <ImageCustom
                         src={
                           data.Image.data.attributes.url
-                            ? `${base_Url}${data.Image.data.attributes.url}`
-                            : `${base_Url}/`
+                            ? `${base_Uri}${data.Image.data.attributes.url}`
+                            : `${base_Uri}/`
                         }
                         width={30}
                         height={30}

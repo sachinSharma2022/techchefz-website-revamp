@@ -1,9 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     domains: [
       "plus.unsplash.com",
       "images.unsplash.com",
+      "flagcdn.com",
       "127.0.0.1",
       "122.176.75.250",
     ],

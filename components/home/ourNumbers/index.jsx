@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 import { useContext } from "react";
 import styles from "./style.module.scss";
 
-import { base_Url } from "@/lib/constants";
+
 import Link from "next/link";
 import { useMediaQuery } from "react-responsive";
 
@@ -77,8 +77,8 @@ const OurNumbers = ({ carrer, experience }) => {
                     sbTitle={data.Title}
                     icon={
                       data?.Image?.data.attributes.url
-                        ? `${base_Url}${data?.Image?.data.attributes.url}`
-                        : `${base_Url}/`
+                        ? `${base_Uri}${data?.Image?.data.attributes.url}`
+                        : `${base_Uri}/`
                     }
                     sbText={data.Description}
                   />
@@ -95,8 +95,8 @@ const OurNumbers = ({ carrer, experience }) => {
                   sbTitle={data.Title}
                   icon={
                     data?.Image?.data.attributes.url
-                      ? `${base_Url}${data?.Image?.data.attributes.url}`
-                      : `${base_Url}/`
+                      ? `${base_Uri}${data?.Image?.data.attributes.url}`
+                      : `${base_Uri}/`
                   }
                   sbText={data.Description}
                 />

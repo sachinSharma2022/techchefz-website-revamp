@@ -10,8 +10,8 @@ import {
 } from "@/lib/constants";
 
 export const metadata = {
-  title: "Accelerators | TechChefz Digital",
-  description: "Accelerators | TechChefz Digital",
+  title: "Explore Accelerators | TechChefz Digital",
+  description: "Discover TechChefz Digital's accelerators, designed to help businesses accelerate their digital transformation journey and achieve rapid growth.",
 };
 
 const Accelerators = async () => {

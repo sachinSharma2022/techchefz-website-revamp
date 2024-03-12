@@ -15,6 +15,11 @@ import {
 } from "@/lib/constants";
 import SolutionTheProcess from "@/components/solutions/solutionTheProcess";
 
+export const metadata = {
+  title: "Custom Development | TechChefz Digital",
+  description: "TechChefz Digital offers custom development services to help businesses create tailored solutions that meet their unique needs and objectives.",
+};
+
 const Cms = async () => {
   const data = await getData(api_custom_developments_Page);
   const data_related_cases = await getDataDynamic(api_Case_study_Page);
