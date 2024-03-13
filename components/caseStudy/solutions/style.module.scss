@@ -83,7 +83,7 @@
         aspect-ratio: 1;
         height: 11.6875rem;
       }
-      @include samsung-fold{
+      @include samsung-fold {
         height: 16rem;
       }
       &:nth-child(1) {
@@ -133,6 +133,10 @@
         margin-right: 0.8rem;
         max-width: 2rem;
         top: 2px;
+
+        img {
+          filter: invert(100);
+        }
 
         .goalsIcon {
           width: 80%;

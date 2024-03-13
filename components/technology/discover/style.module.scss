@@ -266,7 +266,6 @@
     .subContent {
       opacity: opacity(dark);
     }
-  
 
     .iconBox {
       background-color: rgba(color(text-primary), 0.8);
@@ -330,7 +329,6 @@
     transform: translateY(-10px);
   }
   100% {
-    opacity: opacity(light);
     transform: translateY(0px);
   }
 }

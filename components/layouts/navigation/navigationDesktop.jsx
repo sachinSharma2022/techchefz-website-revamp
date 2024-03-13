@@ -41,8 +41,8 @@ const NavigationDesktop = ({ props, featureArticle }) => {
 
   const closeMenu = () => {
     setMobileMenuShow(!mobileMenuShow);
-    setTechMenu(false);
-    setMoreMenu(false);
+    // setTechMenu(false);
+    // setMoreMenu(false);
   };
 
   function LatestTech(feartureArray) {
@@ -397,7 +397,12 @@ const NavigationDesktop = ({ props, featureArticle }) => {
         </nav>
         <div className={styles.headerRight}>
           <div className={styles.modeBtn}>
-            <button variant="default" onClick={() => setTheme(!theme)}>
+            <button
+              variant="default"
+              onClick={() => setTheme(!theme)}
+              aria-label="theme-mode"
+              title="theme-mode"
+            >
               {theme ? (
                 <Icons.DarkThemeIcon size={30} />
               ) : (

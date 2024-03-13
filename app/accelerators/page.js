@@ -11,7 +11,8 @@ import {
 
 export const metadata = {
   title: "Explore Accelerators | TechChefz Digital",
-  description: "Discover TechChefz Digital's accelerators, designed to help businesses accelerate their digital transformation journey and achieve rapid growth.",
+  description:
+    "Discover TechChefz Digital's accelerators, designed to help businesses accelerate their digital transformation journey and achieve rapid growth.",
 };
 
 const Accelerators = async () => {
@@ -24,10 +25,10 @@ const Accelerators = async () => {
     <>
       {data ? (
         <div>
-          <AcceleratorBanner props={data.AcceleratorBanner} />
+          {/* <AcceleratorBanner props={data.AcceleratorBanner} />
           <BrowserAccelerator props={data_browser_accelerator} />
           <Faq props={data.Faq} />
-          <LetsWork contact={data.LetsWork} />
+          <LetsWork contact={data.LetsWork} /> */}
         </div>
       ) : (
         <>

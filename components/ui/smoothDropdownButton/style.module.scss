@@ -4,10 +4,10 @@
   position: relative;
   display: inline-block;
 
-  @include mobile-tablet-p{
+  @include mobile-tablet-p {
     width: 100%;
 
-    button{
+    button {
       width: 100%;
     }
   }
@@ -35,7 +35,7 @@
         top: 100%;
       }
     }
- 
+
     a {
       font-weight: 400;
       font-size: text(normal);
@@ -44,13 +44,13 @@
       text-decoration: none;
       display: block;
 
-      .contentFlex{
+      .contentFlex {
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 100%;
       }
-      .innerIconFlex{
+      .innerIconFlex {
         display: flex;
         align-items: center;
         gap: 1rem;
@@ -63,9 +63,18 @@
     }
   }
 
-  
-  &:hover .dropdownContent {
-    opacity: 1;
-    pointer-events: auto;
+  .iconStyle {
+    @include transition(0.5s);
+  }
+
+  &:hover {
+    .dropdownContent {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .iconStyle {
+      transform: rotate(180deg);
+    }
   }
 }

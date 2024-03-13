@@ -83,6 +83,11 @@
       max-width: 2rem;
       top: 8px;
 
+
+      img {
+        filter: invert(100);
+      }
+
       .goalsIcon {
         width: 100%;
         height: 100%;
@@ -90,6 +95,10 @@
         svg {
           width: 100%;
           height: 100%;
+
+          path {
+            fill: color(text-primary);
+          }
         }
       }
     }

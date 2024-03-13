@@ -7,8 +7,7 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import { cn } from "@/lib/utils";
 import { base_Uri } from "@/lib/constants";
 
-const InsightOverview = ({props, Insightinner, TechStackData}) => {
- 
+const InsightOverview = ({ props, Insightinner, TechStackData }) => {
   const { theme, setTheme } = useContext(MyContext);
 
   return (
@@ -17,16 +16,14 @@ const InsightOverview = ({props, Insightinner, TechStackData}) => {
     >
       <div className={cn("primary-container", styles.flexContainer)}>
         <div className={styles.textContainer}>
-          <h1>
-            {props[0]?.Title}
-          </h1>
+          <h1>{props[0]?.Title}</h1>
           <div className={styles.publishDiv}>
             <div className={styles.publishFlex}>
               <p>{Insightinner[0].Title}</p>
               <h5>{Insightinner[0].Description}</h5>
             </div>
             <div className={styles.publishFlex}>
-            <p>{Insightinner[1].Title}</p>
+              <p>{Insightinner[1].Title}</p>
               <h5>{Insightinner[1].Description}</h5>
             </div>
           </div>
@@ -44,7 +41,11 @@ const InsightOverview = ({props, Insightinner, TechStackData}) => {
       </div>
       <div className={styles.imageDiv}>
         <ImageCustom
-          src={props[0]?.Image?.data?.attributes?.url?`${base_Uri}${props[0]?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+          src={
+            props[0]?.Image?.data?.attributes?.url
+              ? `${base_Uri}${props[0]?.Image?.data?.attributes?.url}`
+              : `${base_Uri}/`
+          }
           alt="Image"
           width={600}
           height={600}
