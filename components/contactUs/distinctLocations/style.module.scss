@@ -78,7 +78,7 @@
         padding: 2rem;
         border-radius: text(xl);
         border: 0.14rem solid rgba(color(text-primary), 0.12);
-        height: 31.5625rem;
+        height: 100%;
         @include transition(0.5s);
 
         &:hover {
@@ -128,6 +128,11 @@
           gap: 12px;
           align-items: flex-start;
           margin-bottom: text(lg);
+
+          svg {
+            min-width: 20px;
+            height: 20px;
+          }
 
           &:last-child {
             margin-bottom: 0;

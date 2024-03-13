@@ -21,7 +21,10 @@ const SmoothDropdown = ({ buttonLabel, options, variant, size }) => {
       onMouseLeave={handleMouseLeave}
     >
       <Button variant={variant} size={size}>
-        {buttonLabel} <Icons.ArrowSubDown />
+        {buttonLabel}{" "}
+        <span className={styles.iconStyle}>
+          <Icons.ArrowSubDown />
+        </span>
       </Button>
       {isDropdownOpen && (
         <div className={styles.dropdownContent}>

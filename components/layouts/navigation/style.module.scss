@@ -70,6 +70,7 @@
       list-style: none;
       padding: 0;
       margin: 0;
+      gap: 2rem;
 
       @include tablet {
         flex-wrap: wrap;
@@ -125,7 +126,7 @@
           display: inline-flex;
           align-items: center;
           position: relative;
-          padding: 0.4rem 0.7rem;
+          padding: 0.4rem 0;
           margin: 0 0.5rem;
           border-radius: 0.5rem;
           transition: all 0.5s;
@@ -829,12 +830,15 @@
       ul {
         li {
           &.dropDown {
+            color: white;
+            cursor: pointer;
+            
             .more {
-              color: color(primary-white);
               font-weight: 500;
               padding: 0.4rem 0.7rem;
               margin: 0 0.5rem;
               cursor: pointer;
+
               @include desktop {
                 &::before {
                   content: "";
@@ -853,7 +857,6 @@
                   transition: all 0.5s;
                 }
                 &:hover {
-                  
                   &::before {
                     opacity: 1;
                   }

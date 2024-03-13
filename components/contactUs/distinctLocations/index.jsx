@@ -70,7 +70,7 @@ const DistinctLocations = ({ props }) => {
                   </div>
                   <p className={styles.sbText}>{data.SubTitle}</p>
                   <div className={styles.addressArea}>
-                    <Icons.ContactLocation width={40} height={40} />
+                    <Icons.ContactLocation width={20} height={20} />
                     <p className={styles.addressText}>{data.location}</p>
                   </div>
 

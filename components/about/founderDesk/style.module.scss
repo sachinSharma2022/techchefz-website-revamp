@@ -178,10 +178,6 @@
         background-size: cover;
       }
 
-      &:hover {
-        border-color: color(border-light-blue);
-      }
-
       .teamImg {
         position: absolute;
         bottom: 0;
@@ -228,6 +224,16 @@
         bottom: 1rem;
         left: 1rem;
         z-index: 1;
+        @include transition(0.2s);
+      }
+
+      &:hover {
+        border-color: color(border-light-blue);
+
+        .linkedInIcon {
+          box-shadow: 10px 10px 50px rgba(color(primary-black), 0.9);
+          overflow: hidden;
+        }
       }
     }
   }
