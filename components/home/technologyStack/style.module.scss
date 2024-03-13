@@ -192,13 +192,13 @@
       border: 0.125rem solid rgba(color(primary-white), 0.12);
       .careerRow {
         .techHeading {
-          opacity: opacity(dark);
+          opacity: opacity(light);
         }
         .techText {
-          opacity: 0.9;
+          opacity: opacity(light);
         }
         .countsText {
-          opacity: 0.9;
+          opacity: opacity(light);
         }
       }
     }
