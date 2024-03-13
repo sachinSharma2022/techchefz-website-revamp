@@ -16,6 +16,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "cookies-next": "^4.1.0",
+    "critters": "^0.0.22",
     "dotenv": "^16.4.1",
     "formidable": "^3.5.1",
     "formik": "^2.4.5",

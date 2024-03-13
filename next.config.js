@@ -2,7 +2,7 @@
 const nextConfig = {
   images: {
     dangerouslyAllowSVG: true,
-    contentDispositionType: 'attachment',
+    contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     domains: [
       "plus.unsplash.com",
@@ -22,6 +22,7 @@ const nextConfig = {
     NEXT_PUBLIC_RECAPTCHA_SITE_KEY: "6LcmhoQpAAAAAIwjH8R1VFF6bfJW9yXyiUMFPDlF",
     RECAPTCHA_SECRET_KEY: "6LcmhoQpAAAAAHPLccD_GcVT879yK1R6tBG3hzpI",
   },
+  experimental: { optimizeCss: true },
 };
 
 module.exports = nextConfig;
