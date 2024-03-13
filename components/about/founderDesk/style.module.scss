@@ -77,7 +77,7 @@
     }
 
     p {
-      opacity: 0.8;
+      opacity: opacity(light);
       font-weight: 400;
       line-height: 1.875rem;
       font-size: text(lg);
@@ -112,7 +112,7 @@
 
     .ourTeamTitle {
       font-size: text(normal);
-      opacity: 0.8;
+      opacity: opacity(light);;
       letter-spacing: 0.2rem;
       text-transform: uppercase;
       font-weight: 500;
@@ -262,14 +262,18 @@
       border: 0.14rem solid color(input-bg);
     }
 
-    .cardHead {
-      p {
-        opacity: opacity(dark);
-      }
-    }
-
     .subHeading {
       opacity: opacity(dark);
+    }
+
+    .teamCards {
+      .teamCardBg {
+        .cardHead {
+          p {
+            opacity: opacity(dark);
+          }
+        }
+      }
     }
   }
 }

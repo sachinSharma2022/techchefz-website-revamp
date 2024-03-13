@@ -56,7 +56,7 @@
           font-weight: 400;
           font-size: text(lg);
           color: color(primary-white);
-          opacity: 0.6;
+          opacity: opacity(dark);
 
           @include mobile {
             font-size: text(normal);
@@ -101,11 +101,13 @@
       .detail {
         span {
           color: color(text-primary);
+          opacity: opacity(light);
         }
       }
       .detail svg path {
         fill: color(text-primary);
       }
     }
+    
   }
 }

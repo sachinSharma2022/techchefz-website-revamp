@@ -6,21 +6,31 @@ import { getDataDynamic } from "@/lib/fetchData";
 import NotFound from "@/app/not-found";
 import { api_insight_insides_Page, api_Case_study_Page } from "@/lib/constants";
 
-export const metadata = {
-  metadataBase: new URL("https://demo.techchefz.com/"),
-  openGraph: {
-    title: "Next.js",
-    description: "The React Framework for the Web",
-    url: "https://demo.techchefz.com/insights/10",
-    images: [
-      {
-        url: "https://demo.techchefz.com/_next/image?url=http%3A%2F%2F127.0.0.1%3A4561%2Fuploads%2FTitle_Image_fd88ba718f.webp&w=1200&q=75", // Must be an absolute URL
-        width: 800,
-        height: 600,
-      },
-    ],
-  },
-};
+export async function generateMetadata({ params }) {
+  const data = await getDataDynamic(api_insight_insides_Page);
+  let index = 0;
+  for (const i in data) {
+    if (data[i].id == params.insightInside) {
+      index = i;
+    }
+  }
+  return {
+    title: data[index].attributes.InsightOverview[0].Title,
+    description: data[index].attributes.InsightOverview[0].Title,
+    openGraph: {
+      title: data[index].attributes.InsightOverview[0].Title,
+      description: data[index].attributes.InsightOverview[0].Title,
+      url: `https://demo.techchefz.com/insights/${params.insightInside}`,
+      images: [
+        {
+          url: `https://cms-strapi.techchefz.com${data[index].attributes.InsightOverview[0]?.Image?.data?.attributes?.url}`, // Must be an absolute URL
+          width: 800,
+          height: 600,
+        },
+      ],
+    },
+  };
+}
 
 const InsightInside = async ({ params }) => {
   const data = await getDataDynamic(api_insight_insides_Page);
@@ -44,6 +54,7 @@ const InsightInside = async ({ params }) => {
           <InsightDetail
             props={data[index].attributes.insightDetailData}
             BlockTitle={data[index].attributes.BlockTitle}
+            index={data[index].id}
           />
           <RelatedCase props={data_related_cases} />
           <Innovation props={data[index].attributes.ourInnvotion} />

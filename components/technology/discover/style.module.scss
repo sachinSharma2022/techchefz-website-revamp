@@ -36,7 +36,7 @@
     line-height: 1.5rem;
     letter-spacing: 0.2rem;
     text-transform: uppercase;
-    opacity: 0.8;
+    opacity: opacity(dark);
   }
 
   .discoverHeading {
@@ -67,7 +67,7 @@
     font-size: text(normal);
     font-weight: 400;
     line-height: 1.5rem;
-    opacity: 0.6;
+    opacity: opacity(light);
     display: none;
   }
 
@@ -263,6 +263,11 @@
     background-color: color(input-bg);
     color: color(primary-white);
 
+    .subContent {
+      opacity: opacity(dark);
+    }
+  
+
     .iconBox {
       background-color: rgba(color(text-primary), 0.8);
     }
@@ -325,7 +330,7 @@
     transform: translateY(-10px);
   }
   100% {
-    opacity: 0.6;
+    opacity: opacity(light);
     transform: translateY(0px);
   }
 }

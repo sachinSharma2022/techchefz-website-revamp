@@ -86,6 +86,7 @@ const CountryDropdown = (props) => {
       )}
     >
       <div
+        data-lenis-prevent
         className={cn(
           styles.countryDropdown,
           props.inputError && styles.inputErrorStyle

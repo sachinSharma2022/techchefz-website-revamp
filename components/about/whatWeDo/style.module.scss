@@ -23,7 +23,7 @@
   .weDoTitle {
     color: color(text-primary);
     text-transform: uppercase;
-    opacity: 0.8;
+    opacity: opacity(light);
     font-size: text(normal);
     font-weight: 500;
     line-height: 1.5rem;
@@ -157,7 +157,7 @@
 
       p {
         font-size: text(normal);
-        opacity: 0.8;
+        opacity: opacity(light);
         @include mobile-tablet-p {
           line-height: text(xl);
           font-weight: 400;
@@ -193,6 +193,7 @@
 
     .weDoTitle {
       color: color(primary-white);
+      opacity: opacity(dark);
     }
 
     .workCardMain {
@@ -207,6 +208,10 @@
         .workCols {
           background-color: color(text-primary);
           border: 0.14rem solid rgba(color(primary-white), 0.12);
+        }
+
+        p {
+          opacity: opacity(dark);
         }
       }
     }

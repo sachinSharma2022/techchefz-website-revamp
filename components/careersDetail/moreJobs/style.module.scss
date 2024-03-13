@@ -32,7 +32,7 @@
       color: color(text-primary);
       line-height: 1.5rem;
       letter-spacing: 0.2rem;
-      opacity: 0.8;
+      opacity: opacity(light);
       margin-bottom: 0;
     }
     
@@ -116,6 +116,7 @@
       }
       h6 {
         color: color(primary-white);
+        opacity: opacity(dark);
       }
     }
 

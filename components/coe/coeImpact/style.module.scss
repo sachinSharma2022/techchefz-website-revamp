@@ -39,7 +39,7 @@
     line-height: 1.5rem;
     letter-spacing: 0.2rem;
     text-transform: uppercase;
-    opacity: 0.8;
+    opacity: opacity(light);
     margin-bottom: 1rem;
   }
   .impactHeading {
@@ -75,7 +75,7 @@
       padding: 0;
     }
 
-    .impactImage{
+    .impactImage {
       width: 100%;
     }
 
@@ -123,7 +123,7 @@
           font-size: text(lg);
           font-weight: 400;
           line-height: 1.875rem;
-          opacity: 0.6;
+          opacity: opacity(light);
         }
       }
 
@@ -131,7 +131,7 @@
         font-size: text(lg);
         font-weight: 400;
         line-height: 1.875rem;
-        opacity: 0.6;
+        opacity: opacity(light);
       }
 
       button {
@@ -153,5 +153,21 @@
   &.impactDark {
     background-color: color(text-primary);
     color: color(primary-white);
+
+    .topSectionRight {
+      ul {
+        li {
+          opacity: opacity(dark);
+        }
+      }
+
+      p {
+        opacity: opacity(dark);
+      }
+    }
+
+    .subHeading {
+      opacity: opacity(dark);
+    }
   }
 }

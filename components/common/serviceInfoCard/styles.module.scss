@@ -38,7 +38,7 @@
     font-weight: 400;
     font-size: text(lg);
     line-height: 1.875rem;
-    opacity: 0.8;
+    opacity: opacity(light);
     text-align: left;
     margin-bottom: 0;
 
@@ -54,6 +54,10 @@
 
     &:hover {
       border-color: color(heading-liner);
+    }
+
+    .sbText {
+      opacity: opacity(dark);
     }
   }
 }

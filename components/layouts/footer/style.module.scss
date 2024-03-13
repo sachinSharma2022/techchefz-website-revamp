@@ -363,7 +363,7 @@
       margin: 0;
       font-weight: 500;
       font-size: text(xxs);
-      opacity: 0.6;
+      opacity: opacity(light);
 
       @include mobile {
         width: 100%;
@@ -443,7 +443,7 @@
   }
 
   .fadeLink {
-    opacity: 0.8;
+    opacity: opacity(dark);
   }
 
   .subscribe {

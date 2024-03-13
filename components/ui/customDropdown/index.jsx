@@ -86,6 +86,11 @@ const CustomDropdown = ({
       position: "relative",
       left: 10,
     }),
+    dropdownIndicator: (styles) => ({
+      ...styles,
+      right: 10,
+      position: "relative",
+    }),
     placeholder: (provided, state) => ({
       ...provided,
       position: "absolute",
@@ -222,6 +227,11 @@ export const ServiceDropdown = ({
       position: "relative",
       left: 10,
     }),
+    dropdownIndicator: (styles) => ({
+      ...styles,
+      right: 10,
+      position: "relative",
+    }),
     placeholder: (provided, state) => ({
       ...provided,
       position: "absolute",
@@ -231,6 +241,7 @@ export const ServiceDropdown = ({
       fontSize: (state.hasValue || state.selectProps.inputValue) && 13,
       color: "#8d8d8d",
       fontWeight: 400,
+      fontSize: state.hasValue && "0.8rem",
     }),
     option: (styles, { isFocused }) => {
       return {

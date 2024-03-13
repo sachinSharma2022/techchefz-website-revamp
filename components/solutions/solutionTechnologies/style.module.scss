@@ -40,7 +40,7 @@
   .projectHighlight {
     font-size: text(normal);
     font-weight: 500;
-    opacity: 0.6;
+    opacity: opacity(light);
     text-transform: uppercase;
     letter-spacing: 0.2rem;
   }
@@ -108,7 +108,7 @@
       font-weight: 400;
       line-height: 1.875rem;
       margin-bottom: 3.75rem;
-      opacity: 0.8;
+      opacity: opacity(dark);
 
       @include mobile-tablet-p {
         font-size: text(normal);
@@ -160,7 +160,7 @@
           font-weight: 400;
           font-size: text(lg);
           line-height: 1.875rem;
-          opacity: 0.8;
+          opacity: opacity(dark);
           text-align: left;
           margin-bottom: 0;
           @include mobile {
@@ -191,5 +191,10 @@
         border: 0.14rem solid rgba(255, 255, 255, 0.12);
       }
     }
+
+    .projectHighlight {
+      opacity: opacity(dark);
+    }
+  
   }
 }

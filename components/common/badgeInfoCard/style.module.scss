@@ -50,7 +50,7 @@
   .cardContent {
     font-size: text(normal);
     line-height: 1.5rem;
-    opacity: 0.8;
+    opacity: opacity(dark);
     margin-bottom: 1.25rem;
     @include truncate(3);
   }
@@ -82,7 +82,7 @@
 
   .heading {
     font-size: 1rem;
-    opacity: 0.6;
+    opacity: opacity(light);
     font-weight: normal;
   }
 
@@ -107,6 +107,10 @@
       .arrowUp path {
         fill: color(primary-white);
       }
+    }
+
+    .heading {
+      opacity: opacity(dark);
     }
   }
 }

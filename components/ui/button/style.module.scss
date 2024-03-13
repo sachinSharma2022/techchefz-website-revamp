@@ -1,321 +1,322 @@
 @import "../../../styles/partials/config";
 
 .base {
-  display: inline-flex;
-  border: none;
-  outline: none;
-  align-items: center;
-  justify-content: center;
-  font-weight: 500;
-  font-size: text(lg);
-  line-height: 0.938;
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-  position: relative;
-  column-gap: 0.375rem;
-  background: none;
-  color: color(foreground);
-  text-decoration: none;
-  font-family: font(primary);
-  flex-direction: column;
+   display: inline-flex;
+   border: none;
+   outline: none;
+   align-items: center;
+   justify-content: center;
+   font-weight: 500;
+   font-size: text(lg);
+   line-height: 0.938;
+   transition: all 0.2s ease-in-out;
+   cursor: pointer;
+   position: relative;
+   column-gap: 0.375rem;
+   background: none;
+   color: color(foreground);
+   text-decoration: none;
+   font-family: font(primary);
+   flex-direction: column;
 
-  &:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 0.125rem rgba(color(primary-blue), 0.5);
-  }
+   &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 0.125rem rgba(color(primary-blue), 0.5);
+   }
 
-  &:disabled {
-    pointer-events: none;
-    border-color: color(primary-blue);
-    background-color: color(gray-medium);
-    color: color(muted-background);
-  }
+   &:disabled {
+      pointer-events: none;
+      border-color: color(primary-blue);
+      background-color: color(gray-medium);
+      color: color(muted-background);
+   }
 }
 
 .btnText {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
+   display: flex;
+   gap: 1rem;
+   align-items: center;
 }
 
 .variant_default {
-  padding: 0;
-  height: auto;
-  color: color(primary-white);
+   padding: 0;
+   height: auto;
+   color: color(primary-white);
 }
 
 .variant_blueBtn {
-  border-radius: 3em;
-  cursor: pointer;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  padding: 15px 60px 15px 60px;
-  background-color: color(primary-blue);
-  color: color(primary-white);
-  gap: 1rem;
+   border-radius: 3em;
+   cursor: pointer;
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   overflow: hidden;
+   padding: 15px 60px 15px 60px;
+   background-color: color(primary-blue);
+   color: color(primary-white);
+   gap: 1rem;
 
-  .btnText {
-    position: relative;
-    z-index: 1;
-    transition: color 0.4s linear;
-    color: color(primary-white);
-    margin-bottom: 0px;
-  }
-  .circle {
-    width: 100%;
-    height: 150%;
-    position: absolute;
-    border-radius: 50%;
-    top: 100%;
-    background-color: color(info-blue);
-  }
-  svg {
-    display: inline-block;
-  }
+   .btnText {
+      position: relative;
+      z-index: 1;
+      transition: color 0.4s linear;
+      color: color(primary-white);
+      margin-bottom: 0px;
+   }
+   .circle {
+      width: 100%;
+      height: 150%;
+      position: absolute;
+      border-radius: 50%;
+      top: 100%;
+      background-color: color(info-blue);
+   }
+   svg {
+      display: inline-block;
+   }
 }
 
 .variant_blueBtnDark {
-  border-radius: 3em;
-  cursor: pointer;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  padding: 15px 60px 15px 60px;
-  background-color: color(Pervenche-blue);
-  // color: color(primary-white);
-  color: color(dark-bg);
-  //border: 0.14rem solid color(primary-blue);
+   border-radius: 3em;
+   cursor: pointer;
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   overflow: hidden;
+   padding: 15px 60px 15px 60px;
+   background-color: color(Pervenche-blue);
+   // color: color(primary-white);
+   color: color(dark-bg);
+   //border: 0.14rem solid color(primary-blue);
 
-  .btnText {
-    position: relative;
-    z-index: 1;
-    transition: color 0.4s linear;
-    color: color(primary-white);
-    margin-bottom: 0px;
-  }
-  .circle {
-    width: 100%;
-    height: 150%;
-    position: absolute;
-    border-radius: 50%;
-    top: 100%;
-    background-color: color(primary-blue);
-  }
+   .btnText {
+      position: relative;
+      z-index: 1;
+      transition: color 0.4s linear;
+      color: color(primary-white);
+      margin-bottom: 0px;
+   }
+   .circle {
+      width: 100%;
+      height: 150%;
+      position: absolute;
+      border-radius: 50%;
+      top: 100%;
+      background-color: color(primary-blue);
+   }
 
-  svg {
-    display: inline-block;
-    // margin-left: 0.4rem;
-    // margin-top: 0.2rem;
-  }
+   svg {
+      display: inline-block;
+      // margin-left: 0.4rem;
+      // margin-top: 0.2rem;
+   }
 }
 
 // With Animation
 .variant_lightBlueBtn {
-  background-color: color(info-blue);
-  color: color(primary-white);
-  overflow: hidden;
+   background-color: color(info-blue);
+   color: color(primary-white);
+   overflow: hidden;
 
-  .btnText {
-    position: relative;
-    z-index: 1;
-    transition: color 0.4s linear;
-    margin-bottom: 0px;
-  }
+   .btnText {
+      position: relative;
+      z-index: 1;
+      transition: color 0.4s linear;
+      margin-bottom: 0px;
+   }
 
-  p {
-    margin: 0;
-  }
+   p {
+      margin: 0;
+   }
 
-  svg {
-    display: inline-block;
-    // margin-left: 0.4rem;
-    margin-top: 0.2rem;
+   svg {
+      display: inline-block;
+      // margin-left: 0.4rem;
+      margin-top: 0.2rem;
 
-    path {
-      stroke: color(primary-white);
-    }
-  }
-
-  &:hover {
-    .btnText {
-      color: color(primary-white);
-    }
-    svg {
       path {
-        stroke: color(primary-white);
+         stroke: color(primary-white);
       }
-    }
-  }
+   }
 
-  .circle {
-    width: 100%;
-    height: 150%;
-    position: absolute;
-    border-radius: 50%;
-    top: 100%;
-    background-color: color(primary-blue);
-  }
+   &:hover {
+      .btnText {
+         color: color(primary-white);
+      }
+      svg {
+         path {
+            stroke: color(primary-white);
+         }
+      }
+   }
+
+   .circle {
+      width: 100%;
+      height: 150%;
+      position: absolute;
+      border-radius: 50%;
+      top: 100%;
+      background-color: color(primary-blue);
+   }
 }
 
 // With Animation
 .variant_lightBlueOutline {
-  background-color: transparent;
-  color: color(info-blue);
-  border: 0.14rem solid color(info-blue);
-  overflow: hidden;
+   background-color: transparent;
+   color: color(info-blue);
+   border: 0.14rem solid color(info-blue);
+   overflow: hidden;
 
-  .btnText {
-    position: relative;
-    z-index: 1;
-    transition: color 0.4s linear;
-    margin-bottom: 0px;
-  }
+   .btnText {
+      position: relative;
+      z-index: 1;
+      transition: color 0.4s linear;
+      margin-bottom: 0px;
+   }
 
-  svg {
-    display: inline-block;
-    margin-top: 0.2rem;
+   svg {
+      display: inline-block;
+      margin-top: 0.2rem;
 
-    path {
-      stroke: color(info-blue);
-    }
-  }
-
-  &:hover {
-    .btnText {
-      color: color(primary-white);
-    }
-    svg {
       path {
-        stroke: color(primary-white);
+         stroke: color(info-blue);
       }
-    }
-  }
+   }
 
-  .circle {
-    width: 100%;
-    height: 150%;
-    position: absolute;
-    border-radius: 50%;
-    top: 100%;
-    background-color: color(primary-blue);
-  }
-  svg {
-    display: inline-block;
-    // margin-left: 0.4rem;
-    margin-top: 0.2rem;
-    transition: color 0.4s linear;
 
-    path {
-      stroke: color(primary-blue);
-      transition: stroke 0.4s linear;
-    }
-  }
+   &:hover {
+      .btnText {
+         color: color(primary-white);
+      }
+      svg {
+         path {
+            stroke: color(primary-white);
+         }
+      }
+   }
+
+   .circle {
+      width: 100%;
+      height: 150%;
+      position: absolute;
+      border-radius: 50%;
+      top: 100%;
+      background-color: color(primary-blue);
+   }
+   svg {
+      display: inline-block;
+      // margin-left: 0.4rem;
+      margin-top: 0.2rem;
+      transition: color 0.4s linear;
+
+      path {
+         stroke: color(primary-blue);
+         transition: stroke 0.4s linear;
+      }
+   }
 }
 
 .variant_outline {
-  background-color: transparent;
-  color: color(primary-blue);
-  border: 0.14rem solid color(primary-blue);
-  overflow: hidden;
+   background-color: transparent;
+   color: color(primary-blue);
+   border: 0.14rem solid color(primary-blue);
+   overflow: hidden;
 
-  .btnText {
-    position: relative;
-    z-index: 1;
-    transition: color 0.4s linear;
-    margin-bottom: 0px;
-  }
+   .btnText {
+      position: relative;
+      z-index: 1;
+      transition: color 0.4s linear;
+      margin-bottom: 0px;
+   }
 
-  &:hover {
-    .btnText {
-      color: color(primary-white);
-    }
-    svg {
-      path {
-        stroke: color(primary-white);
+   &:hover {
+      .btnText {
+         color: color(primary-white);
       }
-    }
-  }
+      svg {
+         path {
+            stroke: color(primary-white);
+         }
+      }
+   }
 
-  .circle {
-    width: 100%;
-    height: 150%;
-    position: absolute;
-    border-radius: 50%;
-    top: 100%;
-    background-color: color(primary-blue);
-  }
-  svg {
-    display: inline-block;
-    // margin-left: 0.4rem;
-    margin-top: 0.2rem;
-    transition: color 0.4s linear;
+   .circle {
+      width: 100%;
+      height: 150%;
+      position: absolute;
+      border-radius: 50%;
+      top: 100%;
+      background-color: color(primary-blue);
+   }
+   svg {
+      display: inline-block;
+      // margin-left: 0.4rem;
+      margin-top: 0.2rem;
+      transition: color 0.4s linear;
 
-    path {
-      stroke: color(primary-blue);
-      transition: stroke 0.4s linear;
-    }
-  }
+      path {
+         stroke: color(primary-blue);
+         transition: stroke 0.4s linear;
+      }
+   }
 }
 
 .size_default {
-  height: auto;
-  padding: 0;
+   height: auto;
+   padding: 0;
 }
 
 .size_sm {
-  height: 2.75rem;
-  padding: 0.625rem 1.15rem;
-  font-size: text(normal);
-  border-radius: 0.5rem;
+   height: 2.75rem;
+   padding: 0.625rem 1.15rem;
+   font-size: text(normal);
+   border-radius: 0.5rem;
 }
 
 .size_lg {
-  height: 3.25rem;
-  padding: 0.625rem 1.25rem;
-  font-size: text(normal);
-  border-radius: 0.5rem;
-  font-weight: 500;
+   height: 3.25rem;
+   padding: 0.625rem 1.25rem;
+   font-size: text(normal);
+   border-radius: 0.5rem;
+   font-weight: 500;
 }
 
 .size_xs {
-  height: 2.188rem;
-  padding: 0.625rem 1.15rem;
-  font-size: text(normal);
-  border-radius: 0.3rem;
+   height: 2.188rem;
+   padding: 0.625rem 1.15rem;
+   font-size: text(normal);
+   border-radius: 0.3rem;
 }
 
 .size_md {
-  height: 3.75rem;
-  padding: 0 2rem;
-  font-size: text(lg);
-  border-radius: 0.75rem;
-  font-weight: 500;
+   height: 3.75rem;
+   padding: 0 2rem;
+   font-size: text(lg);
+   border-radius: 0.75rem;
+   font-weight: 500;
 
-  @include mobile-tablet-p {
-    height: 3.25rem;
-    padding: 0 1.8rem;
-    border-radius: 0.5rem;
-  }
+   @include mobile-tablet-p {
+      height: 3.25rem;
+      padding: 0 1.8rem;
+      border-radius: 0.5rem;
+   }
 
-  .btnText {
-    font-size: text(lg);
+   .btnText {
+      font-size: text(lg);
 
-    @include mobile {
-      font-size: text(normal);
-    }
-  }
+      @include mobile {
+         font-size: text(normal);
+      }
+   }
 }
 
 .size_number {
-  padding: 0.5rem;
+   padding: 0.5rem;
 }
 
 .size_icon {
-  height: 2.15rem;
-  width: 2.15rem;
+   height: 2.15rem;
+   width: 2.15rem;
 }

@@ -21,7 +21,7 @@
     .ourValuesTitle {
       color: color(text-primary);
       text-transform: uppercase;
-      opacity: 0.8;
+      opacity: opacity(light);
       font-size: text(normal);
       font-weight: 700;
       line-height: 1.5rem;
@@ -62,7 +62,7 @@
     }
     .ourValuesText {
       font-size: text(lg);
-      opacity: 0.6;
+      opacity: opacity(light);
       @include mobile-tablet-p {
         line-height: 1.875rem;
       }
@@ -81,7 +81,7 @@
       }
       .accordionBody {
         padding: 1.25rem 0;
-        opacity: 0.6;
+        opacity: opacity(light);
       }
     }
   }
@@ -110,10 +110,16 @@
       }
     }
     .ourValuesContent {
+      .ourValuesText {
+        opacity: opacity(dark);
+      }
       .ourValuesAccordion {
         .accordionHead {
           color: color(primary-white);
           border-bottom: 0.14rem solid rgba(color(primary-white), 0.12);
+        }
+        .accordionBody {
+          opacity: opacity(dark);
         }
       }
     }

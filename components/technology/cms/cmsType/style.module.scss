@@ -22,7 +22,7 @@
   .projectHighlight {
     font-size: text(normal);
     font-weight: 500;
-    opacity: 0.6;
+    opacity: opacity(light);
     color: color(text-primary);
     text-transform: uppercase;
     letter-spacing: 0.2rem;
@@ -99,7 +99,7 @@
         font-weight: 400;
         font-size: text(normal);
         line-height: text(xl);
-        opacity: 0.8;
+        opacity: opacity(dark);
         text-align: left;
         margin-bottom: 0;
         @include mobile {
@@ -126,7 +126,9 @@
 
     .projectHighlight {
       color: color(primary-white);
+      opacity: opacity(dark);
     }
+    
   }
 }
 
@@ -153,7 +155,7 @@
     font-size: text(lg);
     font-weight: 400;
     line-height: 1.875rem;
-    opacity: 0.6;
+    opacity: opacity(light);
     color: color(text-primary);
     border-top: 0.14rem solid rgba(color(text-primary), 0.12);
     padding-top: 24px;
@@ -203,6 +205,7 @@
     .modalContent {
       color: color(primary-white);
       border-color: rgba(color(primary-white), 0.12);
+      opacity: opacity(dark);
     }
 
     .teamMail {

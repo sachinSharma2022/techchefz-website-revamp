@@ -43,7 +43,7 @@
   .projectHighlight {
     font-size: text(normal);
     font-weight: 500;
-    opacity: 0.6;
+    opacity: opacity(light);
     color: color(text-primary);
     text-transform: uppercase;
     letter-spacing: 0.2rem;
@@ -127,7 +127,7 @@
           font-weight: 400;
           font-size: text(normal);
           line-height: text(xl);
-          opacity: 0.8;
+          opacity: opacity(dark);
           text-align: left;
           margin: 1.25rem 0 1.25rem 0;
           @include mobile-tablet-p {

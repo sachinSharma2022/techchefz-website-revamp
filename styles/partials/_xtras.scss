@@ -585,7 +585,7 @@ $social-colors-prefixes: (
     transition: all 0.1s linear;
 
     &.hover:hover {
-      opacity: 0.8;
+      opacity: opacity(dark);
       color: #ffffff;
       transition: all 0.1s linear;
     }
@@ -607,7 +607,7 @@ $social-colors-prefixes: (
     transition: all 0.1s linear;
 
     &.hover:hover {
-      opacity: 0.8;
+      opacity: opacity(dark);
       color: #ffffff;
       transition: all 0.1s linear;
     }

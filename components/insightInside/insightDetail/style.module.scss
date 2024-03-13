@@ -115,7 +115,7 @@
         font-size: text(lg);
         color: color(primary-white);
         line-height: 1.8rem;
-        opacity: 0.8;
+        opacity: opacity(dark);
 
         @include mobile {
           font-size: text(normal);
@@ -191,7 +191,7 @@
           font-size: text(lg);
           color: color(primary-white);
           line-height: 1.8rem;
-          opacity: 0.8;
+          opacity: opacity(dark);
           padding-bottom: 0.2rem;
           margin: 0;
 
@@ -235,7 +235,7 @@
 
       p {
         color: color(text-primary);
-        opacity: 0.8;
+        opacity: opacity(dark);
       }
 
       .insightSection {
@@ -245,11 +245,11 @@
 
         p {
           color: color(text-primary);
-          opacity: 0.8;
+          opacity: opacity(dark);
         }
         li {
           color: color(text-primary);
-          opacity: 0.8;
+          opacity: opacity(dark);
         }
       }
     }

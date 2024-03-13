@@ -25,7 +25,7 @@
   .ourHistoryTitle {
     color: color(text-primary);
     text-transform: uppercase;
-    opacity: 0.8;
+    opacity: opacity(light);
     font-size: text(normal);
     font-weight: 500;
     line-height: 1.5rem;
@@ -176,11 +176,15 @@
       }
     }
 
+    .ourHistoryTitle {
+      opacity: opacity(dark);
+    }
+
     .cardStyle {
       .infoStyle {
         .ourHistoryContent {
           color: color(primary-white);
-          opacity: 0.6;
+          opacity: opacity(dark);
         }
       }
     }

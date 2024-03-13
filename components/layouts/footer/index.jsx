@@ -76,7 +76,7 @@ const Footer = ({ props, Subscribe, SocialMedia, footerinner, Reserved }) => {
                       <Input
                         inputFloatingStyle={styles.inputFloatingStyle}
                         inputStyle={styles.inputStyle}
-                        placeholder="Business Email Address"
+                        placeholder="Your Email Address"
                         id="email"
                         name="email"
                         error={Boolean(touched.email && errors.email)}

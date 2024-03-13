@@ -149,7 +149,6 @@ const NavigationMobile = ({ props, featureArticle }) => {
       </div>
     );
   }
-  console.log(isTechMenu, isMoreMenu, "menuname");
   return (
     <header
       className={cn(
@@ -161,7 +160,10 @@ const NavigationMobile = ({ props, featureArticle }) => {
           : isScrolled && styles.headerLight
       )}
     >
-      <div className={cn(styles.headerContainer, "primary-container")}>
+      <div
+        data-lenis-prevent
+        className={cn(styles.headerContainer, "primary-container")}
+      >
         <AnimatedLogo />
         <nav className={mobileMenuShow ? styles.showNav : styles.hideNav}>
           <h4 className={styles.mobileTitle}>Menu</h4>

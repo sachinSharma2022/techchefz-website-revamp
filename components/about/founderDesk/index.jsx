@@ -73,6 +73,7 @@ const FounderDesk = ({ props }) => {
           <div className={styles.paraSection}>
             <TextRevel>
               <div
+                data-lenis-prevent
                 className={readMore ? "" : styles.textWrapper}
                 dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
               ></div>

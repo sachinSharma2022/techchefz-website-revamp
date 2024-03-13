@@ -8,26 +8,23 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
-import {  base_Uri } from "@/lib/constants";
+import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
 import AnimatedLogo from "@/components/common/animatedLogo";
 
 const NavigationDesktop = ({ props, featureArticle }) => {
-
   const pathname = usePathname();
   const { theme, setTheme } = useContext(MyContext);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuShow, setMobileMenuShow] = useState(false);
 
-  const feartureTech = featureArticle
-  .filter(
+  const feartureTech = featureArticle.filter(
     (data) => data?.attributes?.InsightOverview[0]?.TechMenuFeatured == true
-  )
+  );
 
-  const feartureMore = featureArticle
-  .filter(
+  const feartureMore = featureArticle.filter(
     (data) => data?.attributes?.InsightOverview[0]?.MoreMenuFeatured == true
-  )
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,48 +44,48 @@ const NavigationDesktop = ({ props, featureArticle }) => {
     setTechMenu(false);
     setMoreMenu(false);
   };
-  
 
   function LatestTech(feartureArray) {
- 
     return (
-      <>     
-       
-      <div className={cn(styles.latestTech)}>
-        <h1>{props[2]?.DropDown[8]?.Title}</h1>
-        <Link href={`/insights/${feartureArray[0]?.id}`} className={styles.imageTech}>
-          <div className={styles.imgBox}>
-            <ImageCustom
-              src={feartureArray[0]?.attributes?.InsightOverview[0]?.Image?.data
-                ?.attributes?.url
-                ? `${base_Uri}${feartureArray[0]?.attributes?.InsightOverview[0]?.Image?.data?.attributes?.url}`
-                : `${base_Uri}/`
-              }
-              width={300}
-              height={300}
-              alt="nav-image"
-            />
-          </div>
-          <div className={styles.infoBox}>
-            <p className={styles.description}>
-              {feartureArray[0]?.attributes?.InsightOverview[0].Title}
-            </p>
-            <Icons.ArrowRight size={16} />
-          </div>
-        </Link>
-        <Link href={`/insights/${feartureArray[1]?.id}`}>
-        <div className={styles.imageTech}>
-          <div className={styles.infoBox}>
-            <p className={styles.description}>
-            {feartureArray[1]?.attributes?.InsightOverview[0].Title}
-            </p>
-            <Icons.ArrowRight size={16} />
-          </div>
+      <>
+        <div className={cn(styles.latestTech)}>
+          <h1>{props[2]?.DropDown[8]?.Title}</h1>
+          <Link
+            href={`/insights/${feartureArray[0]?.id}`}
+            className={styles.imageTech}
+          >
+            <div className={styles.imgBox}>
+              <ImageCustom
+                src={
+                  feartureArray[0]?.attributes?.InsightOverview[0]?.Image?.data
+                    ?.attributes?.url
+                    ? `${base_Uri}${feartureArray[0]?.attributes?.InsightOverview[0]?.Image?.data?.attributes?.url}`
+                    : `${base_Uri}/`
+                }
+                width={300}
+                height={300}
+                alt="nav-image"
+              />
+            </div>
+            <div className={styles.infoBox}>
+              <p className={styles.description}>
+                {feartureArray[0]?.attributes?.InsightOverview[0].Title}
+              </p>
+              <Icons.ArrowRight size={16} />
+            </div>
+          </Link>
+          <Link href={`/insights/${feartureArray[1]?.id}`}>
+            <div className={styles.imageTech}>
+              <div className={styles.infoBox}>
+                <p className={styles.description}>
+                  {feartureArray[1]?.attributes?.InsightOverview[0].Title}
+                </p>
+                <Icons.ArrowRight size={16} />
+              </div>
+            </div>
+          </Link>
         </div>
-        </Link>
-      </div>
-     
-       </>
+      </>
     );
   }
 
@@ -168,7 +165,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
               </Link>
               <ul className={cn(styles.subMenu)}>
                 <div className={styles.subsection}>
-                  {LatestTech(feartureTech) }
+                  {LatestTech(feartureTech)}
 
                   <div className={cn(styles.overviewTech)}>
                     {OverTech()}
@@ -299,15 +296,14 @@ const NavigationDesktop = ({ props, featureArticle }) => {
               </Link>
             </li>
             <li className={styles.dropDown}>
-              <Link href="/">
-                <Icons.MoreDotIcon
-                  className={styles.dotIcon}
-                  width={4}
-                  height={14}
-                />
-                {props[4].Title}
-                <div className={cn(styles.arrow, styles.hideDesktopIcon)} />
-              </Link>
+              <Icons.MoreDotIcon
+                className={styles.dotIcon}
+                width={4}
+                height={14}
+              />
+              {props[4].Title}
+              <div className={cn(styles.arrow, styles.hideDesktopIcon)} />
+
               <ul className={cn(styles.subMenu, styles.singleLayout)}>
                 <div className={styles.subsection}>
                   {LatestTech(feartureMore)}

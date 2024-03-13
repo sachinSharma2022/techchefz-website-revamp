@@ -3,8 +3,12 @@
 .ourResults {
   padding: spacing(section-primary-padding);
 
-  @include mobile-tablet-p {
-    padding: 0 0 5rem;
+  @include tablet {
+    padding: 3.75rem spacing(tablet-padding);
+  }
+
+  @include mobile {
+    padding: 3.75rem spacing(mobile-padding);
   }
 
   .flexContainer {
@@ -23,7 +27,7 @@
   .ourResultsTitle {
     color: color(text-primary);
     text-transform: uppercase;
-    opacity: 0.8;
+    opacity: opacity(light);;
     font-size: text(normal);
     font-weight: 500;
     line-height: 1.5rem;
@@ -44,14 +48,14 @@
   }
   
   .ourResultsText {
-    opacity: 0.6;
+    opacity: opacity(light);
     font-weight: 400;
     line-height: 1.875rem;
     font-size: text(lg);
     margin-bottom: 5rem;
 
     @include mobile-tablet-p {
-      margin-bottom: 0;
+      margin-bottom: 3.75rem;
       font-size: text(normal);
       line-height: text(xl);
     }
@@ -62,7 +66,6 @@
     gap: 2.5rem;
 
     @include tablet {
-      padding-inline: spacing(tablet-padding);
       display: grid;
       grid-template-columns: repeat(2, 1fr);
     }
@@ -99,13 +102,17 @@
       font-size: text(lg);
       font-weight: 400;
       line-height: 1.875rem;
-      opacity: 0.8;
+      opacity: opacity(light);
       margin-top: 2rem;
     }
   }
 
   .mobileSlider {
     padding-left: 1.25rem;
+
+    @include mobile {
+      padding-left: 0;
+    }
   }
 
   // Dark Mode
@@ -124,6 +131,10 @@
       &:hover {
         border-color: color(heading-liner);
       }
+    }
+
+    .ourResultsText {
+      opacity: opacity(dark);
     }
   }
 }
