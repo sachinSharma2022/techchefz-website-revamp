@@ -41,8 +41,8 @@ const NavigationDesktop = ({ props, featureArticle }) => {
 
   const closeMenu = () => {
     setMobileMenuShow(!mobileMenuShow);
-    setTechMenu(false);
-    setMoreMenu(false);
+    // setTechMenu(false);
+    // setMoreMenu(false);
   };
 
   function LatestTech(feartureArray) {
