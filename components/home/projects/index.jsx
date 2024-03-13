@@ -144,6 +144,7 @@ const Projects = ({ project, brands }) => {
                 <Button
                   variant={!theme ? "lightBlueOutline" : "outline"}
                   size="md"
+                  aria-label="portfolio button"
                 >
                   {project[0]?.Btn} <Icons.ArrowRight size={18} />
                 </Button>
