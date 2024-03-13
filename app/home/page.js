@@ -22,7 +22,8 @@ export const metadata = {
 const HomePage = async () => {
   const data = await getData(api_Home_Page);
   return (
-    <Curve>
+    // <Curve>
+    <>
       {data ? (
         <div>
           <LandingBanner props={data.Banner} />
@@ -47,7 +48,9 @@ const HomePage = async () => {
           <NotFound />
         </>
       )}
-    </Curve>
+    </>
+
+    // </Curve>
   );
 };
 
