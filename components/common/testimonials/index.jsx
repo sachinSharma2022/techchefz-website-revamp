@@ -120,12 +120,14 @@ const Testimonials = ({ props }) => {
                 <button
                   ref={navigationPrevRef}
                   className="btn btn-arrow btn-back"
+                  aria-label="btn-previous"
                 >
                   <Icons.ArrowLeft size={20} className="asset-white" />
                 </button>
                 <button
                   ref={navigationNextRef}
                   className="btn btn-arrow btn-move"
+                  aria-label="btn-Next"
                 >
                   <Icons.ArrowRight size={20} />
                 </button>
