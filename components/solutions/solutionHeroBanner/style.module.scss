@@ -25,13 +25,13 @@
 
     @include tablet-p {
       height: 18rem;
-      margin-bottom: 5rem;
+      margin-bottom: 0;
       margin-top: 0;
     }
 
     @include mobile {
       height: 15rem;
-      margin-bottom: 5rem;
+      margin-bottom: 0;
       margin-top: 0;
     }
 
