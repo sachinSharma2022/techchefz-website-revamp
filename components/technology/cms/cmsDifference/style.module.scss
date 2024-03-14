@@ -89,6 +89,7 @@
         border: 0.14rem solid rgba(color(text-primary), 0.12);
         position: relative;
         height: 100%;
+        @include transition(0.5s);
 
         &:hover {
           border-color: color(heading-liner);
