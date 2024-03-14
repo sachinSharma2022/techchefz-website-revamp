@@ -56,7 +56,10 @@ const InsightInside = async ({ params }) => {
             BlockTitle={data[index].attributes.BlockTitle}
             index={data[index].id}
           />
-          <RelatedCase props={data_related_cases} />
+          <RelatedCase
+            className="insight-related-slider"
+            props={data_related_cases}
+          />
           <Innovation props={data[index].attributes.ourInnvotion} />
         </>
       ) : (
