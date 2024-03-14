@@ -2,22 +2,19 @@
 
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
+import CircleLoader from "@/components/ui/circleLoader";
+import ConfirmationPopup from "@/components/ui/confirmationPopup";
 import CountryDropdown from "@/components/ui/countryDropdown";
 import { ServiceDropdown } from "@/components/ui/customDropdown";
-import { ImageCustom } from "@/components/ui/imageCustom";
 import { Error, Input, Textarea } from "@/components/ui/inputCustom";
 import { MyContext } from "@/context/theme";
 import { serviceValidationSchema } from "@/lib/FormSchema";
+import { verifyCaptcha } from "@/lib/ServerActions";
 import { triggerMail } from "@/lib/triggerMail";
 import { Form, Formik } from "formik";
-import { useContext, useState, useRef } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
-import { verifyCaptcha } from "@/lib/ServerActions";
-import CircleLoader from "@/components/ui/circleLoader";
 import Link from "next/link";
-import ConfirmationPopup from "@/components/ui/confirmationPopup";
-
-import CustomDropdown from "@/components/ui/customDropdown";
+import { useContext, useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";

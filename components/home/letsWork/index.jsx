@@ -210,7 +210,7 @@ const LetsWork = ({ contact }) => {
                         errorStatus={
                           touched.selectPurpose && errors.selectPurpose
                         }
-                        className="custom-dropdown"
+                        className="custom-dropdown z-5"
                       />
                       {touched.selectPurpose && errors.selectPurpose && (
                         <Error>{errors.selectPurpose}</Error>
