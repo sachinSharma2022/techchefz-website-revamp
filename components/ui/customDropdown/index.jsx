@@ -238,10 +238,9 @@ export const ServiceDropdown = ({
       top: state.hasValue || state.selectProps.inputValue ? 0 : "0",
       left: -2,
       transition: "top 0.1s, font-size 0.1s",
-      fontSize: (state.hasValue || state.selectProps.inputValue) && 13,
+      fontSize: (state.hasValue || state.selectProps.inputValue) && "1rem",
       color: "#8d8d8d",
       fontWeight: 400,
-      fontSize: state.hasValue && "0.8rem",
     }),
     option: (styles, { isFocused }) => {
       return {
