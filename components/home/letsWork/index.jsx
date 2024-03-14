@@ -38,7 +38,7 @@ const LetsWork = ({ contact }) => {
     email: "",
     phone: "",
     countyCode: "+91",
-    selectPurpose: "India",
+    selectPurpose: "",
     companyName: "",
     projectExplanation: "",
   };
