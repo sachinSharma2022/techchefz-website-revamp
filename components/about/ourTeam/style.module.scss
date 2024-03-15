@@ -375,6 +375,11 @@
     line-height: 1.875rem;
     font-size: text(lg);
     margin-bottom: 2.5rem;
+    cursor: pointer;
+
+    &:hover{
+      text-decoration: underline;
+    }
   }
 
   .socialSection {
