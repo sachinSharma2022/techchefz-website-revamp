@@ -10,7 +10,6 @@ import styles from "./styles.module.scss";
 
 const CaptionCard = (props) => {
   const { theme, setTheme } = useContext(MyContext);
-  console.log(props, "caption");
   return (
     <Link
       href={props.params ? `${props.redirect}` : `/portfolio/${props.redirect}`}

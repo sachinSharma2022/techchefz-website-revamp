@@ -17,7 +17,7 @@ const Portfolio = async () => {
   console.log(data_case_study);
   return (
     <>
-      {data ? (
+      {data && data_case_study ? (
         <div className={styles.portfolioPageStyle}>
           <LandingBanner props={data.Banner} />
           <ImageCaptionCard case_study={data_case_study} />
