@@ -37,11 +37,11 @@ const Card = ({ ...props }) => {
       className={styles.cardSec}
       style={isMobileScreen ? "" : { scale }}
     >
-      <Link href="/case-study" className={styles.projectImg}>
+      <Link href={`/portfolio/${props.href}`} className={styles.projectImg}>
         <ImageCustom
           src={
-            props?.project?.Image?.data?.attributes?.url
-              ? `${base_Uri}${props?.project?.Image?.data?.attributes?.url}`
+            props?.project?.PortfolioImage?.data?.attributes?.url
+              ? `${base_Uri}${props?.project?.PortfolioImage?.data?.attributes?.url}`
               : `${base_Uri}/`
           }
           width={1440}
@@ -52,7 +52,7 @@ const Card = ({ ...props }) => {
 
       <div className={styles.cardContentStyle}>
         <h3 className={styles.projectBrand}>
-          {props?.project?.Title.split(" ").map((word, index) => {
+          {props?.project?.PortfolioTitle.split(" ").map((word, index) => {
             return (
               <span key={index} className={styles.mask}>
                 <motion.span
@@ -69,20 +69,22 @@ const Card = ({ ...props }) => {
         </h3>
 
         <p ref={description} className={styles.brandFromText}>
-          {props?.project?.Description.split(" ").map((word, index) => {
-            return (
-              <span key={index} className={styles.mask}>
-                <motion.span
-                  variants={slideUp}
-                  custom={index}
-                  animate={isInView ? "open" : "closed"}
-                  key={index}
-                >
-                  {word}
-                </motion.span>
-              </span>
-            );
-          })}
+          {props?.project?.PortfolioHomepageDes.split(" ").map(
+            (word, index) => {
+              return (
+                <span key={index} className={styles.mask}>
+                  <motion.span
+                    variants={slideUp}
+                    custom={index}
+                    animate={isInView ? "open" : "closed"}
+                    key={index}
+                  >
+                    {word}
+                  </motion.span>
+                </span>
+              );
+            }
+          )}
         </p>
         {/* <motion.div
           variants={opacity}
@@ -154,19 +156,31 @@ const Projects = ({ project, brands }) => {
         </TextRevel>
         {!isMobileScreen ? (
           <div ref={container} className={styles.cards}>
-            {brands.map((project, i) => {
-              const targetScale = 1 - (brands.length - i) * 0.05;
-              return (
-                <Card
-                  key={`p_${i}`}
-                  i={i}
-                  project={project}
-                  progress={scrollYProgress}
-                  range={[i * 0.25, 1]}
-                  targetScale={targetScale}
-                />
-              );
-            })}
+            {brands
+              .filter(
+                (data) => data?.attributes?.Banner?.PortfolioHomePage == true
+              )
+              .map((project, i) => {
+                const targetScale =
+                  1 -
+                  (brands.filter(
+                    (data) =>
+                      data?.attributes?.Banner?.PortfolioHomePage == true
+                  ).length -
+                    i) *
+                    0.05;
+                return (
+                  <Card
+                    key={`p_${i}`}
+                    i={i}
+                    project={project.attributes.Banner}
+                    href={project.id}
+                    progress={scrollYProgress}
+                    range={[i * 0.25, 1]}
+                    targetScale={targetScale}
+                  />
+                );
+              })}
           </div>
         ) : (
           <div ref={container} className={styles.cards}>
@@ -179,20 +193,32 @@ const Projects = ({ project, brands }) => {
                 disableOnInteraction: false,
               }}
             >
-              {brands.map((project, i) => {
-                const targetScale = 1 - (brands.length - i) * 0.1;
-                return (
-                  <SwiperSlide key={`p_${i}`}>
-                    <Card
-                      i={i}
-                      project={project}
-                      progress={scrollYProgress}
-                      range={[i * 0.25, 1]}
-                      targetScale={targetScale}
-                    />
-                  </SwiperSlide>
-                );
-              })}
+              {brands
+                .filter(
+                  (data) => data?.attributes?.Banner?.PortfolioHomePage == true
+                )
+                .map((project, i) => {
+                  const targetScale =
+                    1 -
+                    (brands.filter(
+                      (data) =>
+                        data?.attributes?.Banner?.PortfolioHomePage == true
+                    ).length -
+                      i) *
+                      0.1;
+                  return (
+                    <SwiperSlide key={`p_${i}`}>
+                      <Card
+                        i={i}
+                        project={project.attributes.Banner}
+                        href={project.id}
+                        progress={scrollYProgress}
+                        range={[i * 0.25, 1]}
+                        targetScale={targetScale}
+                      />
+                    </SwiperSlide>
+                  );
+                })}
             </Swiper>
           </div>
         )}

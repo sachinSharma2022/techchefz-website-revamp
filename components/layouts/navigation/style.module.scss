@@ -275,7 +275,6 @@
     gap: 0.5rem;
     position: relative;
     z-index: 99;
-    
 
     @include tablet {
       padding: 10px;
@@ -408,7 +407,7 @@
   .subMenu {
     display: none;
     position: absolute;
-    //left: 50%;
+    left: 50%;
     top: calc(100% + 0rem);
     transform: translate(-50%);
     background-color: color(dark-gray);
@@ -423,7 +422,7 @@
 
     @include mobile-tablet-p {
       display: block;
-      // left: 0;
+      left: -100%;
       transform: inherit;
       top: 70px;
       min-width: auto;
@@ -434,6 +433,32 @@
       margin-left: 0;
       background-color: color(text-primary);
       overflow-y: scroll;
+      &.slideIn {
+        animation: slideIn 0.5s ease-in-out;
+        left: 0;
+      }
+
+      @keyframes slideIn {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 0%;
+        }
+      }
+      &.slideOut {
+        left: -100%;
+        animation: slideOut 0.5s ease-in-out;
+      }
+
+      @keyframes slideOut {
+        0% {
+          left: 0%;
+        }
+        100% {
+          left: -100%;
+        }
+      }
     }
 
     &.singleLayout {
@@ -740,17 +765,17 @@
             }
           }
 
-         @include desktop {
-          &:hover {
-            height: 128px;
-            border: 0.125rem solid color(heading-liner);
-            z-index: 99;
+          @include desktop {
+            &:hover {
+              height: 128px;
+              border: 0.125rem solid color(heading-liner);
+              z-index: 99;
 
-            .excepPara {
-              opacity: opacity(dark);
+              .excepPara {
+                opacity: opacity(dark);
+              }
             }
           }
-         }
         }
         .multiMoreHrefs {
           @extend .multiHrefs;
@@ -838,7 +863,7 @@
           &.dropDown {
             color: white;
             cursor: pointer;
-            
+
             .more {
               font-weight: 500;
               padding: 0.4rem 0.7rem;
@@ -933,31 +958,5 @@
 .headerMobile {
   @include desktop-normal {
     display: none;
-  }
-}
-.slideIn {
-  animation: slideIn 0.5s ease-in-out;
-  left: 0;
-}
-
-@keyframes slideIn {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 0%;
-  }
-}
-.slideOut {
-  left: -100%;
-  animation: slideOut 0.5s ease-in-out;
-}
-
-@keyframes slideOut {
-  0% {
-    left: 0%;
-  }
-  100% {
-    left: -100%;
   }
 }
