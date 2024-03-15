@@ -1174,7 +1174,12 @@ html.lenis {
   padding-top: 6rem;
 
   @include mobile-tablet-p {
-    padding:5rem 1rem;
+    padding:5rem 1rem 5rem spacing(tablet-padding);
+    min-height: auto;
+  }
+
+  @include mobile {
+    padding:5rem 1rem 5rem spacing(mobile-padding);
     min-height: auto;
   }
 }
@@ -1258,6 +1263,10 @@ html.lenis {
       background-repeat: no-repeat;
       background-position: center;
       margin-left: -38vw;
+
+      @include tablet-p {
+        margin-left: -43vw;
+      }
 
       @include iphone5 {
         margin-left: -35vw;
