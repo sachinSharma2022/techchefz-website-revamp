@@ -1,95 +1,94 @@
 @import "~/styles/partials/config";
 
 .captionCard {
-   padding: 1.8rem;
-   border-radius: text(lg);
-   border: 0.14rem solid rgba(color(text-primary), 0.12);
-   background: color(primary-white);
-   margin-right: 2.5rem;
-   width: 100%;
-   @include transition(0.5s);
-   cursor: pointer;
-   
-   @include desktop {
-      min-height: 381px;
-   }
+  padding: 1.8rem;
+  border-radius: text(lg);
+  border: 0.14rem solid rgba(color(text-primary), 0.12);
+  background: color(primary-white);
+  margin-right: 2.5rem;
+  width: 100%;
+  @include transition(0.5s);
+  cursor: pointer;
 
-   &:hover {
-      border-color: color(heading-liner);
-   }
+  @include desktop {
+    min-height: 381px;
+  }
 
-   @include mobile-tablet-p {
-      margin-right: 0;
-      width: 92%;
-   }
+  &:hover {
+    border-color: color(heading-liner);
+  }
 
-   .cardImg div {
-      height: 240px;
+  @include mobile-tablet-p {
+    margin-right: 0;
+    width: 92%;
+  }
+
+  .cardImg div {
+    height: 240px;
+    width: 100%;
+    position: relative;
+    border-radius: 0.5rem;
+    margin-bottom: text(lg);
+    overflow: hidden;
+
+    @include mobile-tablet-p {
+      height: 200px;
+    }
+
+    @include desktop-hd {
+      width: 20vw;
+      height: 250px;
+    }
+
+    img {
+      object-fit: cover;
       width: 100%;
-      position: relative;
-      border-radius: 0.5rem;
-      margin-bottom: text(lg);
-      overflow: hidden;
+      height: 100%;
+    }
+  }
+
+  .cardBody {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+
+    .cardText {
+      font-size: text(xl);
+      font-weight: 500;
+      margin-bottom: 0;
+      @include truncate(2);
+      white-space: normal;
+
+      @include desktop-hd {
+        font-size: text(lg);
+      }
 
       @include mobile-tablet-p {
-         height: 200px;
+        font-size: text(lg);
+        max-width: 80%;
       }
-     
-      @include desktop-hd {
-         width: 20vw;
-         height: 250px;
+    }
+
+    svg {
+      cursor: pointer;
+    }
+  }
+
+  // Dark Mode
+  &.captionCardDark {
+    background-color: color(text-primary);
+    color: color(primary-white);
+    border-color: rgba(color(primary-white), 0.12);
+
+    &:hover {
+      border-color: color(heading-liner);
+    }
+
+    .cardBody {
+      svg path {
+        fill: color(primary-white);
       }
-
-      img {
-         object-fit: cover;
-         width: 100%;
-         height: 100%;
-      }
-   }
-
-   .cardBody {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 5px;
-
-      .cardText {
-         font-size: text(xl);
-         font-weight: 500;
-         margin-bottom: 0;
-         // @include truncate(3);
-         white-space: normal;
-
-         @include desktop-hd {
-            font-size: text(lg);
-         }
-
-         @include mobile-tablet-p {
-            font-size: text(lg);
-            max-width: 80%;
-         }
-      }
-
-      svg {
-         cursor: pointer;
-      }
-   }
-
-   // Dark Mode
-   &.captionCardDark {
-      background-color: color(text-primary);
-      color: color(primary-white);
-      border-color: rgba(color(primary-white), 0.12);
-
-      &:hover {
-         border-color: color(heading-liner);
-      }
-
-      .cardBody {
-         svg path {
-            fill: color(primary-white)
-         }
-      }
-   }
-
+    }
+  }
 }

@@ -16,8 +16,8 @@ import AnimatedLogo from "@/components/common/animatedLogo";
 const NavigationMobile = ({ props, featureArticle }) => {
   const pathname = usePathname();
   const [mobileMenuShow, setMobileMenuShow] = useState(false);
-  const [isTechMenu, setTechMenu] = useState(false);
-  const [isMoreMenu, setMoreMenu] = useState(false);
+  const [isTechMenu, setTechMenu] = useState(null);
+  const [isMoreMenu, setMoreMenu] = useState(null);
 
   const { theme, setTheme } = useContext(MyContext);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -62,8 +62,8 @@ const NavigationMobile = ({ props, featureArticle }) => {
 
   const mobileMenuToggle = () => {
     setMobileMenuShow(!mobileMenuShow);
-    setTechMenu(false);
-    setMoreMenu(false);
+    setTechMenu(null);
+    setMoreMenu(null);
   };
 
   const closeMenu = () => {
@@ -197,7 +197,11 @@ const NavigationMobile = ({ props, featureArticle }) => {
               <ul
                 className={cn(
                   styles.subMenu,
-                  isTechMenu ? styles.slideIn : styles.slideOut
+                  isTechMenu === true
+                    ? styles.slideIn
+                    : isTechMenu != null
+                    ? styles.slideOut
+                    : ""
                 )}
               >
                 <section className={styles.subsection}>
@@ -350,8 +354,11 @@ const NavigationMobile = ({ props, featureArticle }) => {
               <ul
                 className={cn(
                   styles.subMenu,
-                  styles.singleLayout,
-                  isMoreMenu ? styles.slideIn : styles.slideOut
+                  isMoreMenu === true
+                    ? styles.slideIn
+                    : isMoreMenu != null
+                    ? styles.slideOut
+                    : ""
                 )}
               >
                 <div className={styles.subsection}>
