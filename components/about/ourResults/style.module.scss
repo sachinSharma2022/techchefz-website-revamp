@@ -32,6 +32,7 @@
     font-weight: 500;
     line-height: 1.5rem;
     letter-spacing: 0.2rem;
+
     @include mobile-tablet-p {
       font-weight: 400;
     }
@@ -93,7 +94,7 @@
     }
 
     .cardNum {
-      font-size: text(xl);
+      font-size: 1.8rem;
       color: color(heading-liner);
       margin-bottom: 0;
     }

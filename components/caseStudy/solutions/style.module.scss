@@ -214,8 +214,9 @@
       }
 
       .goalsIcons {
-        svg > path {
-          fill: color(primary-white);
+      
+        img {
+          filter: none;
         }
       }
 
