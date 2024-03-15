@@ -8,7 +8,8 @@ import { api_insights_Page, api_insight_insides_Page } from "@/lib/constants";
 
 export const metadata = {
   title: "Insights | TechChefz Digital",
-  description: "Stay informed with the latest insights and trends in the digital industry from TechChefz Digital's team of experts.",
+  description:
+    "Stay informed with the latest insights and trends in the digital industry from TechChefz Digital's team of experts.",
 };
 
 const Insights = async () => {
