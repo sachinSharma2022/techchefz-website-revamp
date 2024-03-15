@@ -8,6 +8,10 @@
     height: 450px;
   }
 
+  @include ipad-p {
+    height: 800px;
+  }
+
   @include mobile {
     height: 250px;
   }
