@@ -15,8 +15,8 @@ import styles from "./style.module.scss";
 
 const Service = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
-  const isBigScreen = useMediaQuery({ query: "(min-width: 1024px)" });
-  const isTabletScreen = useMediaQuery({ query: "(min-width: 768px)" });
+  const isBigScreen = useMediaQuery({ query: "(min-width: 1025px)" });
+  const isTabletScreen = useMediaQuery({ query: "(min-width: 1024px)" });
 
   return (
     <section

@@ -57,7 +57,7 @@ const CmsDifference = ({ props }) => {
                   <div className={styles.backgroundImg}>
                     <ImageCustom
                       src={
-                        data?.Image.data.attributes.url
+                        data?.Image?.data?.attributes?.url
                           ? `${base_Uri}${data?.Image.data.attributes.url}`
                           : `${base_Uri}/`
                       }

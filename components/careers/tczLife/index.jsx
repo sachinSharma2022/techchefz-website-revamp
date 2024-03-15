@@ -134,9 +134,12 @@ const TczLife = ({ props }) => {
           </Slider>
         </div>
         {props?.VideoSlider?.map((data, index) => (
-          <PrimaryModal open={isOpen === index} onClose={() => setIsOpen(-1)}>
+          <PrimaryModal
+            open={isOpen === index}
+            onClose={() => setIsOpen(-1)}
+            key={index}
+          >
             <video
-              key={index}
               width="100"
               height="100"
               playsInline
