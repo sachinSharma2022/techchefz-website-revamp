@@ -1,10 +1,10 @@
 import InsightDetail from "@/components/insightInside/insightDetail";
 import InsightOverview from "@/components/insightInside/insightOverview";
-import RelatedCase from "@/components/relatedCase";
 import Innovation from "@/components/portfolio/innovation";
 import { getDataDynamic } from "@/lib/fetchData";
 import NotFound from "@/app/not-found";
-import { api_insight_insides_Page, api_Case_study_Page } from "@/lib/constants";
+import { api_insight_insides_Page } from "@/lib/constants";
+import RelatedInsight from "@/components/insightInside/relatedInsight";
 
 export async function generateMetadata({ params }) {
   const data = await getDataDynamic(api_insight_insides_Page);
@@ -34,7 +34,6 @@ export async function generateMetadata({ params }) {
 
 const InsightInside = async ({ params }) => {
   const data = await getDataDynamic(api_insight_insides_Page);
-  const data_related_cases = await getDataDynamic(api_Case_study_Page);
   let index = 0;
   for (const i in data) {
     if (data[i].id == params.insightInside) {
@@ -56,7 +55,7 @@ const InsightInside = async ({ params }) => {
             BlockTitle={data[index].attributes.BlockTitle}
             index={data[index].id}
           />
-          <RelatedCase props={data_related_cases} />
+          <RelatedInsight props={data} params={params} />
           <Innovation props={data[index].attributes.ourInnvotion} />
         </>
       ) : (

@@ -10,6 +10,7 @@ const nextConfig = {
       "flagcdn.com",
       "127.0.0.1",
       "122.176.75.250",
+      "cms-strapi.techchefz.com",
     ],
   },
   eslint: {

@@ -1,0 +1,186 @@
+@import "~/styles/partials/config";
+
+.relatedCase {
+  position: relative;
+
+  // For Space
+  &.spaceStyle {
+    margin-block: 8.75rem;
+
+    @include desktop-hd {
+      padding-block: 0;
+      min-height: 31.25rem;
+    }
+
+    @include mobile-tablet-p {
+      margin-block: 2rem 11rem;
+      padding: 5rem spacing(tablet-padding) 0;
+    }
+
+    @include mobile {
+      margin-block: 0rem 5rem;
+      padding: 5rem spacing(mobile-padding) 0;
+    }
+  }
+
+  .headSection {
+    padding-inline: spacing(p-120);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 5rem;
+
+    @include mobile-tablet-p {
+      padding: 0;
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 2rem;
+    }
+
+    @include desktop-hd {
+      padding-inline: 0;
+    }
+  }
+
+  .relatedCaseTitle {
+    font-size: text(normal);
+    font-weight: 500;
+    line-height: 1.5rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    opacity: opacity(dark);
+    margin-bottom: 1rem;
+
+    @include mobile-tablet-p {
+      font-weight: 400;
+      line-height: text(normal);
+    }
+  }
+
+  .relatedCaseHeading {
+    font-size: text(larger);
+    font-weight: 500;
+    line-height: 3.375rem;
+    margin: 0;
+
+    @include mobile-tablet-p {
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
+  }
+
+  .relatedCaseSlider {
+    padding-left: spacing(p-120);
+
+    @include tablet-p {
+      margin-bottom: 2.75rem;
+      padding: 0;
+    }
+
+    @include mobile {
+      margin-bottom: 2.75rem;
+      padding: 0;
+    }
+
+    @include desktop-hd {
+      position: absolute;
+      right: 0;
+      left: 0;
+      padding-left: 0;
+    }
+  }
+
+  .cardStyle {
+    max-width: 580px;
+    width: auto;
+
+    @include tablet-p {
+      width: 100%;
+      max-width: 95%;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  .textStyle {
+    max-width: 80%;
+  }
+
+  .sliderArrow {
+    display: flex;
+    gap: 24px;
+
+    @include mobile-tablet-p {
+      margin: 3rem 0 2rem;
+      width: 100%;
+      display: none;
+    }
+
+    .button {
+      background-color: color(primary-blue);
+      padding: 0;
+      border-radius: 0.5rem;
+      width: 3rem;
+      height: 3rem;
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      svg > path {
+        stroke: color(primary-white);
+      }
+    }
+  }
+
+  .arrowDisabled {
+    border-radius: 0.5rem;
+    width: 3rem;
+    height: 3rem;
+    border: 0.14rem solid rgba(color(text-primary), 0.2);
+    color: color(primary-blue);
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg > path {
+      stroke: color(primary-black);
+    }
+  }
+
+  // Dark theme style
+  &.relatedCaseDark {
+    color: color(primary-white);
+
+    &.spaceStyle {
+      background-color: color(input-bg);
+    }
+
+    .arrowDisabled {
+      border: 0.14rem solid rgba(color(primary-white), 0.2);
+    }
+
+    .button {
+      svg > path {
+        fill: color(primary-white);
+      }
+    }
+
+    .sliderArrow {
+      svg > path {
+        stroke: color(primary-white);
+      }
+
+      .button {
+        background-color: color(info-blue);
+      }
+    }
+  }
+}
