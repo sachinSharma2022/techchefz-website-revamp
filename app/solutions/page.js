@@ -11,7 +11,8 @@ import NotFound from "../not-found";
 
 export const metadata = {
   title: "Solutions | TechChefz Digital",
-  description: "Discover a wide range of innovative solutions offered by TechChefz Digital to help businesses succeed in the digital age.",
+  description:
+    "Discover a wide range of innovative solutions offered by TechChefz Digital to help businesses succeed in the digital age.",
 };
 
 const Solutions = async () => {
@@ -25,7 +26,10 @@ const Solutions = async () => {
           <SolutionOurValues props={data.ourValues} />
           <SolutionTheProcess props={data.OurProcess} />
           <SolutionTechnologies props={data.Technology} />
-          <RelatedCase props={data_related_cases} />
+          <RelatedCase
+            className="solution-related-style"
+            props={data_related_cases}
+          />
           <Faq props={data.Faq} />
         </div>
       ) : (

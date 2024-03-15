@@ -13,7 +13,8 @@ import NotFound from "../not-found";
 
 export const metadata = {
   title: "Explore Technologies | TechChefz Digital",
-  description: "Discover the latest technologies and solutions offered by TechChefz Digital to transform your business and enhance your digital presence.",
+  description:
+    "Discover the latest technologies and solutions offered by TechChefz Digital to transform your business and enhance your digital presence.",
 };
 
 const Technology = async () => {
@@ -40,7 +41,9 @@ const Technology = async () => {
           <LetsWork contact={data.LetsWork} />
         </div>
       ) : (
-        <><NotFound /></>
+        <>
+          <NotFound />
+        </>
       )}
     </>
   );
