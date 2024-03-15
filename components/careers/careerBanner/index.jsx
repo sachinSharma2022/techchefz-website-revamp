@@ -1,14 +1,13 @@
 "use client";
+import GridMarqueeGallery from "@/components/common/gridMarqueeGallery";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
+import TextRevel from "@/components/ui/sectionAnimation";
 import { MyContext } from "@/context/theme";
-import { useContext } from "react";
-import GridMarqueeGallery from "@/components/common/gridMarqueeGallery";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { useContext } from "react";
 import styles from "./style.module.scss";
-import { base_Uri } from "@/lib/constants";
-import TextRevel from "@/components/ui/sectionAnimation";
 
 const CareerBanner = ({ props, gallary, href }) => {
   console.log("dataaa", props);

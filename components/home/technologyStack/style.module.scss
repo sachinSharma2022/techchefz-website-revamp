@@ -83,13 +83,14 @@
       max-width: 56rem;
     }
 
-    @include mobile-tablet-p {
+    @include tablet {
       width: 100%;
       position: relative;
       transform: inherit;
       padding: 2.5rem 1rem;
       top: inherit;
       left: inherit;
+      margin:0 auto;
     }
 
     .careerRow {

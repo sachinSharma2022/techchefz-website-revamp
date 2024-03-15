@@ -18,7 +18,22 @@ const Discover = ({ props }) => {
   const isBigScreen = useMediaQuery({ query: "(min-width: 1199px)" });
   const { theme, setTheme } = useContext(MyContext);
   const [tabIndex, setTabIndex] = useState(0);
-  //console.log(tabIndex,"tab")
+  const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
+
+  function togglePanels(newPanel) {
+    if (activeDisclosurePanel) {
+      if (
+        activeDisclosurePanel.key !== newPanel.key &&
+        activeDisclosurePanel.open
+      ) {
+        activeDisclosurePanel.close();
+      }
+    }
+    setActiveDisclosurePanel({
+      ...newPanel,
+      open: !newPanel.open,
+    });
+  }
   return (
     <section
       className={`${styles.discoverSection} ${
@@ -148,106 +163,117 @@ const Discover = ({ props }) => {
             <div>
               {props?.techStack?.map((item, index) => (
                 <Disclosure key={index}>
-                  {({ open }) => (
-                    <>
-                      <Disclosure.Button className={styles.discoverLeft}>
-                        <div className={styles.discoverHead}>
-                          <h5 className={`${styles.subHeading}`}>
-                            {item.Title}
-                          </h5>
-                          <p className={styles.subContent}>
-                            {item.Description}
-                          </p>
-                        </div>
-                        <div className={styles.iconBox}>
-                          <motion.span
-                            initial={{ backgroundColor: "transparent" }}
-                            animate={{ rotate: open ? 180 : 0 }}
-                            transition={{
-                              duration: 0.15,
-                              type: "tween",
-                            }}
-                          >
-                            <Icons.ArrowDown />
-                          </motion.span>
-                        </div>
-                      </Disclosure.Button>
-                      <Disclosure.Panel
-                        className={cn(styles.platformsButtons, "fadeinout")}
-                      >
-                        <div className={styles.tabContainer}>
-                          {console.log(tabIndex === index, "ind")}
-                          <div className={styles.dataSection}>
-                            <h6 className={styles.subTitle}>
-                              {item.TechDetail[0]?.Heading}
-                            </h6>
+                  {(panel) => {
+                    const { open, close } = panel;
+                    return (
+                      <>
+                        <Disclosure.Button
+                          onClick={() => {
+                            if (!open) {
+                              close();
+                            }
+                            togglePanels({ ...panel, key: index });
+                          }}
+                          className={styles.discoverLeft}
+                        >
+                          <div className={styles.discoverHead}>
+                            <h5 className={`${styles.subHeading}`}>
+                              {item.Title}
+                            </h5>
+                            <p className={styles.subContent}>
+                              {item.Description}
+                            </p>
+                          </div>
+                          <div className={styles.iconBox}>
+                            <motion.span
+                              initial={{ backgroundColor: "transparent" }}
+                              animate={{ rotate: open ? 180 : 0 }}
+                              transition={{
+                                duration: 0.15,
+                                type: "tween",
+                              }}
+                            >
+                              <Icons.ArrowDown />
+                            </motion.span>
+                          </div>
+                        </Disclosure.Button>
+                        <Disclosure.Panel
+                          className={cn(styles.platformsButtons, "fadeinout")}
+                        >
+                          <div className={styles.tabContainer}>
+                            {console.log(tabIndex === index, "ind")}
+                            <div className={styles.dataSection}>
+                              <h6 className={styles.subTitle}>
+                                {item.TechDetail[0]?.Heading}
+                              </h6>
 
-                            {/* Sub Section */}
-                            <div className={styles.buttonSection}>
-                              {item?.TechDetail?.map((subItems, index) => (
-                                <Link
-                                  href="/"
-                                  key={index}
-                                  className={styles.platformsBtn}
-                                >
-                                  <div className="d-flex align-items-center">
-                                    <div className={styles.iconImg}>
-                                      <ImageCustom
-                                        src={
-                                          subItems?.Images?.data?.attributes
-                                            ?.url
-                                            ? `${base_Uri}${subItems?.Images?.data?.attributes?.url}`
-                                            : `${base_Uri}/`
-                                        }
-                                        width={28}
-                                        height={28}
-                                        alt="image"
-                                      />
+                              {/* Sub Section */}
+                              <div className={styles.buttonSection}>
+                                {item?.TechDetail?.map((subItems, index) => (
+                                  <Link
+                                    href="/"
+                                    key={index}
+                                    className={styles.platformsBtn}
+                                  >
+                                    <div className="d-flex align-items-center">
+                                      <div className={styles.iconImg}>
+                                        <ImageCustom
+                                          src={
+                                            subItems?.Images?.data?.attributes
+                                              ?.url
+                                              ? `${base_Uri}${subItems?.Images?.data?.attributes?.url}`
+                                              : `${base_Uri}/`
+                                          }
+                                          width={28}
+                                          height={28}
+                                          alt="image"
+                                        />
+                                      </div>
+                                      <p>{subItems.Title} </p>
                                     </div>
-                                    <p>{subItems.Title} </p>
-                                  </div>
-                                  {/* <Icons.ArrowUpRight /> */}
-                                </Link>
-                              ))}
+                                    {/* <Icons.ArrowUpRight /> */}
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
+
+                            <div className={styles.dataSection}>
+                              <h6 className={styles.subTitle}>
+                                {item.multipletech2[0]?.Heading}
+                              </h6>
+                              <div className={styles.buttonSection}>
+                                {item?.multipletech2?.map((subItems, index) => (
+                                  <Link
+                                    href="/"
+                                    key={index}
+                                    className={styles.platformsBtn}
+                                  >
+                                    <div className="d-flex align-items-center">
+                                      <div className={styles.iconImg}>
+                                        <ImageCustom
+                                          src={
+                                            subItems?.Images?.data?.attributes
+                                              ?.url
+                                              ? `${base_Uri}${subItems?.Images?.data?.attributes?.url}`
+                                              : `${base_Uri}/`
+                                          }
+                                          width={24}
+                                          height={22}
+                                          alt="image"
+                                        />
+                                      </div>
+                                      <p>{subItems.Title} </p>
+                                    </div>
+                                    {/* <Icons.ArrowUpRight /> */}
+                                  </Link>
+                                ))}
+                              </div>
                             </div>
                           </div>
-
-                          <div className={styles.dataSection}>
-                            <h6 className={styles.subTitle}>
-                              {item.multipletech2[0]?.Heading}
-                            </h6>
-                            <div className={styles.buttonSection}>
-                              {item?.multipletech2?.map((subItems, index) => (
-                                <Link
-                                  href="/"
-                                  key={index}
-                                  className={styles.platformsBtn}
-                                >
-                                  <div className="d-flex align-items-center">
-                                    <div className={styles.iconImg}>
-                                      <ImageCustom
-                                        src={
-                                          subItems?.Images?.data?.attributes
-                                            ?.url
-                                            ? `${base_Uri}${subItems?.Images?.data?.attributes?.url}`
-                                            : `${base_Uri}/`
-                                        }
-                                        width={24}
-                                        height={22}
-                                        alt="image"
-                                      />
-                                    </div>
-                                    <p>{subItems.Title} </p>
-                                  </div>
-                                  {/* <Icons.ArrowUpRight /> */}
-                                </Link>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                      </Disclosure.Panel>
-                    </>
-                  )}
+                        </Disclosure.Panel>
+                      </>
+                    );
+                  }}
                 </Disclosure>
               ))}
             </div>

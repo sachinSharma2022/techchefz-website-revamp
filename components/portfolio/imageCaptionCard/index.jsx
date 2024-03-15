@@ -12,27 +12,14 @@ import styles from "./style.module.scss";
 
 const ImageCaptionCard = ({ case_study }) => {
   const { theme, setTheme } = useContext(MyContext);
-
-  const dataServices = [
-    { value: "Data", label: "Data" },
-    { value: "It Development", label: "It Development" },
-    { value: "Network Security", label: "Network Security" },
-    { value: "Cloud Service", label: "Cloud Service" },
+  const sortedCards = [
+    ...case_study.filter(
+      (element) => element.attributes?.Banner?.PortfolioHomePage
+    ),
+    ...case_study.filter(
+      (element) => !element.attributes?.Banner?.PortfolioHomePage
+    ),
   ];
-  const dataIndustry = [
-    { value: "Hardware", label: "Hardware" },
-    { value: "Software", label: "Software" },
-    { value: "Systems Integrator", label: "Systems Integrator" },
-  ];
-  const dataTechnology = [
-    { value: "Web Content", label: "Web Content" },
-    { value: "Frontend", label: "Frontend" },
-    { value: "Backend", label: "Backend" },
-    { value: "Mobile Development", label: "Mobile Development" },
-    { value: "Artificial Intelligence", label: "Artificial Intelligence" },
-    { value: "DevOps & Cloud", label: "DevOps & Cloud" },
-  ];
-
   return (
     <section
       className={cn(styles.imageCaptionCard, theme ? styles.darkStyle : "")}
@@ -74,7 +61,7 @@ const ImageCaptionCard = ({ case_study }) => {
             "captionCardSection"
           )}
         >
-          {case_study.map((data, index) => (
+          {sortedCards.map((data, index) => (
             <Link
               href={`/portfolio/${data.id}`}
               key={index}

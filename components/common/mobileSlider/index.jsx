@@ -7,6 +7,24 @@ import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 
+function SampleNextArrow(props) {
+  const { onClick } = props;
+  return (
+    <div className={cn(styles.sliderArrow, "slideArrow")} onClick={onClick}>
+      <Icons.ArrowLeft />
+    </div>
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { onClick } = props;
+  return (
+    <div className={cn(styles.sliderArrow, "slideArrow")} onClick={onClick}>
+      <Icons.ArrowRight fill="black" stroke="black" />
+    </div>
+  );
+}
+
 const MobileSlider = ({ children, slidesToShow }) => {
   const slider = useRef(null);
   const [oldSlide, setOldSlide] = useState(0);
@@ -17,7 +35,7 @@ const MobileSlider = ({ children, slidesToShow }) => {
   const settings = {
     dots: false,
     infinite: false,
-    arrows: false,
+    arrows: true,
     speed: 500,
     slidesToShow: slidesToShow || 1,
     slidesToScroll: 1,
@@ -30,14 +48,18 @@ const MobileSlider = ({ children, slidesToShow }) => {
 
   return (
     <div
-      className={cn(styles.mobileSlider, theme ? styles.mobileSliderDark : "")}
+      className={cn(
+        styles.mobileSlider,
+        theme ? styles.mobileSliderDark : "",
+        "mobile-slider"
+      )}
     >
       <div className={cn(styles.sliderSection)}>
         <Slider {...settings} ref={slider}>
           {children}
         </Slider>
       </div>
-      <div className={styles.sliderArrow}>
+      {/* <div className={styles.sliderArrow}>
         <button
           className={activeSlide === 0 ? styles.arrowDisabled : styles.button}
           onClick={() => slider?.current?.slickPrev()}
@@ -50,7 +72,7 @@ const MobileSlider = ({ children, slidesToShow }) => {
         >
           <Icons.ArrowRight fill="black" stroke="black" />
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };

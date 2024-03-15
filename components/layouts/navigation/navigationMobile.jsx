@@ -460,8 +460,8 @@ const NavigationMobile = ({ props, featureArticle }) => {
             <button
               variant="default"
               onClick={() => setTheme(!theme)}
-              aria-label="theme-mode"
-              title="theme-mode"
+              aria-label="Switch Theme"
+              title="Switch Theme"
             >
               {theme ? (
                 <Icons.DarkThemeIcon size={30} />

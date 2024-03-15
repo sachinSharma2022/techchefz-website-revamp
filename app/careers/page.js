@@ -11,7 +11,8 @@ import ContactSection from "@/components/careersDetail/contactSection";
 
 export const metadata = {
   title: "Job Openings and Career Opportunities at TechChefz Digital",
-  description: "Explore exciting job openings and career opportunities at TechChefz Digital and join our team of digital innovators.",
+  description:
+    "Explore exciting job openings and career opportunities at TechChefz Digital and join our team of digital innovators.",
 };
 
 const Career = async () => {

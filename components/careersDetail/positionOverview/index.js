@@ -55,7 +55,7 @@ const CareerPositionOverview = ({ props, href }) => {
 
           <SmoothDropdown
             options={options}
-            buttonLabel="Apply through"
+            buttonLabel="Apply Through"
             variant={theme ? "lightBlueOutline" : "outline"}
             size="md"
           />

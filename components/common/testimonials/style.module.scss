@@ -151,7 +151,7 @@
       margin: 2.5rem 0rem 4rem 0px;
     }
 
-    @include desktop {
+    @include desktop-normal {
       display: none;
     }
   }

@@ -1,15 +1,15 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import { Dialog } from "@headlessui/react";
 import Link from "next/link";
+import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 import styles from "./style.module.scss";
 
 const ConfirmationPopup = (props) => {
-  //const { theme } = useContext(MyContext);
+  const { theme } = useContext(MyContext);
   return (
     <Dialog open={props.open} onClose={props.onClose}>
       <div className={styles.primaryOverlayStyle} />
@@ -20,7 +20,7 @@ const ConfirmationPopup = (props) => {
           props.className
         )}
       >
-        <div className={styles.thankyouCenter}>
+        <div className={`${styles.thankyouCenter} ${theme ? styles.thankyouCenterDark : ""}`}>
           <ImageCustom
             src={"/images/thankyou.svg"}
             width={64}
@@ -35,8 +35,7 @@ const ConfirmationPopup = (props) => {
 
           {/* <Link href="/"> */}
             <Button
-              // variant={props.theme ? "lightBlueOutline" : "outline"}
-              variant="lightBlueBtn"
+              variant={theme ? "blueBtnDark" : "blueBtn"}
               className={styles.thankyouBtn}
               size="md"
               onClick={props.onClose}

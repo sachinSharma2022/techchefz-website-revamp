@@ -8,7 +8,7 @@
   width: 100%;
   box-shadow: 0 0 0.125rem rgba(color(text-primary), 0.3);
 
-  @include mobile-tablet-p {
+  @include tablet {
     height: 70px;
     display: flex;
     align-items: center;
@@ -277,7 +277,7 @@
     z-index: 99;
     
 
-    @include tablet-p {
+    @include tablet {
       padding: 10px;
       height: 40px;
       margin-left: -10px;
@@ -285,7 +285,7 @@
       justify-content: center;
     }
 
-    @include desktop {
+    @include desktop-normal {
       display: none;
     }
 
@@ -925,13 +925,13 @@
 }
 
 .headerMainDesktop {
-  @include mobile-tablet-p {
+  @include tablet {
     display: none;
   }
 }
 
 .headerMobile {
-  @include desktop {
+  @include desktop-normal {
     display: none;
   }
 }

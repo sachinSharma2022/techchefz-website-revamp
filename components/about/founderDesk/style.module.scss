@@ -65,7 +65,7 @@
 
   .paraSection {
     .textWrapper {
-      @include desktop {
+      @include desktop-normal {
         overflow-y: scroll;
         height: 32.5rem;
         padding-right: 1.25rem;
@@ -241,7 +241,7 @@
   .buttonSection {
     margin-top: 0.75rem;
 
-    @include desktop {
+    @include desktop-normal {
       display: none;
     }
 

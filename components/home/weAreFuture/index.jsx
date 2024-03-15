@@ -26,10 +26,11 @@ const WeAreFuture = ({ props }) => {
           ></h6>
           <h2 className={styles.title}>
             {props?.SubTitle}
+
             <span className={styles.globalText}>
               {props?.Description}
               {/* <div className={styles.space} /> */}
-              {props?.SubTitle2}
+               {props?.SubTitle2}
             </span>
             <span className={styles.titleHighlight}>{props?.SubTitle3}</span>
           </h2>

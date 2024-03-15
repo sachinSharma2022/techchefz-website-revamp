@@ -256,11 +256,12 @@
       }
 
       .goalsIcons {
-        svg > path {
-          fill: color(primary-white);
+      
+        img {
+          filter: none;
         }
       }
-
+      
       .goalsText {
         opacity: opacity(dark);
       }

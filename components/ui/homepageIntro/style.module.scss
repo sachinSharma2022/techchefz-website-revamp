@@ -6,10 +6,16 @@
 
   @include mobile-tablet-p {
     height: 450px;
+    margin-bottom: 7rem;
+  }
+
+  @include ipad-p {
+    height: 800px;
   }
 
   @include mobile {
     height: 250px;
+    margin-bottom: 5rem;
   }
 
   .videoCont {
@@ -17,8 +23,12 @@
     justify-content: center;
     height: 70%;
     width: 100%;
-
     z-index: 99;
+
+    @include mobile-tablet-p {
+      height: 100%;
+    }
+
     @include desktop-hd {
       height: 80%;
     }

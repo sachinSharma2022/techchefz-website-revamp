@@ -52,7 +52,7 @@ const OurValues = ({ props }) => {
 
         <div className={styles.ourValuesContent}>
           <div className="row justify-content-between">
-            <div className="col-12 col-lg-6">
+            <div className="col-12 col-xl-6">
               <div className={styles.ourValueImg}>
                 <ImageCustom
                   src={
@@ -66,7 +66,7 @@ const OurValues = ({ props }) => {
                 />
               </div>
             </div>
-            <div className="col-12 col-lg-5">
+            <div className="col-12 col-xl-5">
               <p className={styles.ourValuesText}>{props?.Description}</p>
               <div className={styles.ourValuesAccordion}>
                 {props?.FaqComponent?.map((data, index) => (

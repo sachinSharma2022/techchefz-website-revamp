@@ -9,8 +9,8 @@ import Service from "@/components/home/service";
 import WeAreFuture from "@/components/home/weAreFuture";
 import HomepageIntro from "@/components/ui/homepageIntro";
 import Curve from "@/components/ui/pageTransition";
-import { api_Home_Page, base_Url } from "@/lib/constants";
-import { getData } from "@/lib/fetchData";
+import { api_Home_Page, base_Url, api_Case_study_Page } from "@/lib/constants";
+import { getData, getDataDynamic } from "@/lib/fetchData";
 import NotFound from "../not-found";
 import dynamic from "next/dynamic";
 const LetsWork = dynamic(() => import("@/components/home/letsWork"));
@@ -33,6 +33,7 @@ export const metadata = {
 
 const HomePage = async () => {
   const data = await getData(api_Home_Page);
+  const data_Portfolio = await getDataDynamic(api_Case_study_Page);
   return (
     <Curve>
       <>
@@ -48,7 +49,7 @@ const HomePage = async () => {
             />
             <WeAreFuture props={data.Technology} />
             <Service props={data.Services} />
-            <Projects project={data.Project} brands={data.Brands} />
+            <Projects project={data.Project} brands={data_Portfolio} />
             <OurNumbers carrer={data.carrer} experience={data.ourExperience} />
             <TechnologyStack technology={data.Technologys} />
             <DigitalTransformation digital={data.digitalTransform} />

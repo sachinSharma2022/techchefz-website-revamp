@@ -31,6 +31,7 @@ $desktop-width-xl: 1199px;
 $desktop-width-lg: 1500px;
 $desktop-width-hd: 1600px;
 $desktop-4k: 2000px;
+$desktop-normal: 1025px;
 
 // iPhone5 Mixin
 @mixin iphone5 {
@@ -76,7 +77,7 @@ $desktop-4k: 2000px;
 
 // Tablet (P) Mixin
 @mixin tablet-p {
-  @media (min-width: #{$tablet-width}) and (max-width: #{$tablet-p-width}) {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width}) {
     @content;
   }
 }
@@ -108,6 +109,14 @@ $desktop-4k: 2000px;
     @content;
   }
 }
+
+// Desktop Mixin
+@mixin desktop-normal {
+  @media (min-width: #{$desktop-normal}) {
+    @content;
+  }
+}
+
 // Xl Desktop
 @mixin desktop-xl {
   @media (min-width: #{$desktop-width-xl}) {
@@ -131,6 +140,12 @@ $desktop-4k: 2000px;
 
 @mixin desktop-4k {
   @media (min-width: #{$desktop-4k}) {
+    @content;
+  }
+}
+
+@mixin ipad-p {
+  @media (min-width: #{$desktop-width}) {
     @content;
   }
 }
@@ -288,8 +303,6 @@ $desktop-4k: 2000px;
   background-color: $color;
 }
 
-
-
 // ----------- display flex------------------
 
 @mixin d-flex($jc, $ai) {
@@ -311,14 +324,20 @@ $desktop-4k: 2000px;
 }
 
 @mixin logoGradient {
-  background: linear-gradient(92deg, #0B9DEB 100%, #FFC43B 100%, #C17911 100%, #6413F0 100%, #3651F0 100%, #00A3FF 100%);
+  background: linear-gradient(
+    92deg,
+    #0b9deb 100%,
+    #ffc43b 100%,
+    #c17911 100%,
+    #6413f0 100%,
+    #3651f0 100%,
+    #00a3ff 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
 }
-
-
 
 @mixin truncate($line) {
   display: -webkit-box;
@@ -326,7 +345,6 @@ $desktop-4k: 2000px;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-
 
 // transition
 @mixin transition($time) {

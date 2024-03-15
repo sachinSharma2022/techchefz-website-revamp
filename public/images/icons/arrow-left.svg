@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="12px" viewBox="0 0 14 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>arrow-left</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="arrow-left" transform="translate(6.999900, 6.000089) scale(-1, -1) translate(-6.999900, -6.000089) translate(1.000000, 0.857178)" stroke="#FFFFFF" stroke-width="1.5">
+            <line x1="0" y1="5.143062" x2="11.9998" y2="5.143062" id="Path"></line>
+            <line x1="6.85693" y1="10.285822" x2="11.9997" y2="5.143062" id="Path"></line>
+            <line x1="6.85693" y1="0" x2="11.9997" y2="5.142792" id="Path"></line>
+        </g>
+    </g>
+</svg>

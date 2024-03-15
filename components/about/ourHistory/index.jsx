@@ -101,7 +101,7 @@ const OurHistory = ({ props, OurHistory }) => {
           </div>
         </TextRevel>
         <div className={cn(styles.sliderSection, "row")}>
-          <div className="col-12 col-lg-6">
+          <div className="col-12 col-xl-6">
             <div className={styles.controlSection}>
               <Slider asNavFor={nav2} ref={slider1} {...setting1}>
                 {OurHistory.map((data, index) => (
@@ -137,7 +137,7 @@ const OurHistory = ({ props, OurHistory }) => {
             </div>
           </div>
 
-          <div className="col-12 col-lg-6">
+          <div className="col-12 col-xl-6">
             <Slider
               asNavFor={nav3}
               ref={slider2}
