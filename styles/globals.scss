@@ -1023,6 +1023,10 @@ html.lenis {
   @include desktop {
     margin-top: 8.5rem;
   }
+
+  @include mobile-tablet-p{
+    margin-top: 0;
+  }
 }
 
 .dark .technology-career-style {
