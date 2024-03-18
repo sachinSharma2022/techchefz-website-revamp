@@ -72,7 +72,7 @@
     .featureInsightCards {
       display: grid;
       gap: 2.5rem;
-      grid-template-columns: auto auto;
+      grid-template-columns: 60% auto;
 
       @include tablet {
         grid-template-columns: repeat(2, 1fr);
@@ -110,7 +110,6 @@
           @include desktop {
             grid-column: 2;
             grid-row: 1;
-            max-width: 477px;
             flex-direction: row;
           }
           .featureImgBox div {
@@ -125,7 +124,6 @@
         &:nth-child(3) {
           grid-column: 2;
           grid-row: 2;
-          max-width: 477px;
           flex-direction: row;
 
           @include mobile-tablet-p {

@@ -2,7 +2,7 @@
 
 .challenges {
   padding: spacing(section-primary-padding);
-  padding-block: spacing(space80);
+  // padding-block: spacing(space80);
 
   @include tablet{
     padding: 1.25rem spacing(tablet-padding);
