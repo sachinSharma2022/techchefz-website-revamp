@@ -6,6 +6,7 @@ import { aeonik, helvetica } from "../lib/fonts";
 import { cn } from "../lib/utils";
 import "../styles/globals.scss";
 import Head from "next/head";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata = {
   title: "TechChefz Digital | Humanizing Digital Experiences",
@@ -16,15 +17,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <Head>
+      {/* <Head>
         <script
           dangerouslySetInnerHTML={{
             __html: `</script><link rel='preload' href='style.css' as='style' onload="this.onload=null;this.rel='stylesheet'"/><script>`,
           }}
         />
-      </Head>
+      </Head> */}
 
       <body className={cn(aeonik.variable, helvetica.variable)}>
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
         <ThemeProvider>
           <Header />
           <div className={cn("main-style")}>{children}</div>

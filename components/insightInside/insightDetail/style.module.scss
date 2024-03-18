@@ -148,8 +148,9 @@
           padding-bottom: 1rem;
           padding-top: 1rem;
 
-          @include mobile {
+          @include mobile-tablet-p {
             font-size: text(lg);
+            padding-bottom: 0;
           }
         }
         p {
@@ -157,13 +158,13 @@
           font-size: text(lg);
           color: color(primary-white);
           line-height: 1.8rem;
-
           padding-bottom: 1rem;
           margin: 0;
 
-          @include mobile {
+          @include mobile-tablet-p {
             font-size: text(normal);
             font-weight: 400;
+            padding-bottom: 0;
           }
         }
 

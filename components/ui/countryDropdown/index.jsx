@@ -20,7 +20,7 @@ const CountryDropdown = (props) => {
   const controlStyle = {
     control: (styles) => ({
       ...styles,
-      height: 60,
+      height: 64,
       minWidth: 80,
       maxWidth: 80,
       borderRadius: 0,
@@ -56,11 +56,11 @@ const CountryDropdown = (props) => {
     indicatorsContainer: (styles) => ({
       ...styles,
       paddingTop: 0,
-      top: 23,
+      top: 21,
       height: 20,
       position: "relative",
     }),
-    valueContainer: () => ({ top: 15, position: "relative", left: 0 }),
+    valueContainer: () => ({ top: 13, position: "relative", left: 0 }),
     option: (styles, { isFocused }) => {
       return {
         ...styles,

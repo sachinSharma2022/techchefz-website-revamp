@@ -11,7 +11,7 @@
     position: relative;
     border: 0.14rem solid rgba(color(text-primary), 0.12);
     border-radius: 0.75rem;
-    height: 3.875rem;
+    height: 4rem;
     gap: .625rem;
     padding: 0 0 0 1rem;
     background-color: color(primary-white);
@@ -49,6 +49,10 @@
     .inputFloatingStyle {
       border: none;
       border-radius: 0 10px 10px 0px;
+
+      input {
+        height: 57px;
+      }
     }
 
     .countryList {

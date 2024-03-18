@@ -1,7 +1,7 @@
 @import "~/styles/partials/config";
 
 .goals {
-  padding: 5rem 7.5rem;
+  padding: 5rem 7.5rem 0;
 
   @include tablet {
     padding: 0 spacing(tablet-padding);
@@ -83,7 +83,6 @@
       max-width: 2rem;
       top: 8px;
 
-
       img {
         filter: invert(100);
       }
@@ -142,8 +141,8 @@
       @include mobile {
         height: 11.343rem;
       }
-      
-      @include samsung-fold{
+
+      @include samsung-fold {
         height: 16rem;
       }
 
@@ -152,6 +151,14 @@
           grid-column: 1 / 3;
           grid-row: 1;
           height: 51.1875rem;
+        }
+
+        @include mobile-tablet-p {
+          height: 25rem;
+        }
+
+        @include mobile {
+          height: 11.343rem;
         }
       }
 
@@ -182,7 +189,6 @@
     }
 
     .goalsIcons {
-      
       img {
         filter: none;
       }
@@ -195,6 +201,5 @@
     .goalsText {
       opacity: opacity(dark);
     }
-  
   }
 }
