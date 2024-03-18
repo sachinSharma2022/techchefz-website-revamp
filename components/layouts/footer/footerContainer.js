@@ -17,7 +17,7 @@ export const FooterContainer = async () => {
         />
       ) : (
         <>
-          <NotFound />
+         
         </>
       )}
     </>
