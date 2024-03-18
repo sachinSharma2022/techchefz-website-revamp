@@ -21,7 +21,7 @@ export default async function sitemap() {
     changeFrequency,
   }));
   const careerPosts = career.map((slug) => ({
-    url: `${process.env.NEXT_PUBLIC_SITEMAP_URL}/portfolio/${slug.id}`,
+    url: `${process.env.NEXT_PUBLIC_SITEMAP_URL}/careers/${slug.id}`,
     lastModified: slug?.attributes?.updatedAt,
     changeFrequency,
   }));
@@ -31,8 +31,19 @@ export default async function sitemap() {
     "/about",
     "/solutions",
     "/technology",
+    "/technology/cms",
+    "/technology/commerce",
+    "/technology/microservices",
+    "/technology/cloud-devsec-ops",
+    "/technology/data-intelligence",
+    "/technology/custom-development",
+    "/technology/analytics-automation",
+    "/portfolio",
     "/careers",
+    "/insights",
+    "/coe",
     "/contact-us",
+    
   ].map((route) => ({
     url: `${process.env.NEXT_PUBLIC_SITEMAP_URL}${route}`,
     lastModified: new Date().toISOString(),
