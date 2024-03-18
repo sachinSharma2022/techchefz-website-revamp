@@ -25,11 +25,21 @@ const TechnologyStack = dynamic(() =>
   import("@/components/home/technologyStack")
 );
 
-export const metadata = {
-  title: "Humanizing Digital Experiences",
-  description:
-    "New breed of innovative digital transformation agency, redefining storytelling for an always-on world.",
-};
+// export const metadata = {
+//   title: "Humanizing Digital Experiences",
+//   description:
+//     "New breed of innovative digital transformation agency, redefining storytelling for an always-on world.",
+// };
+
+export async function generateMetadata() {
+  const data = await getData(api_Home_Page);
+  
+  return {
+    title: data[index].attributes.InsightOverview[0].Title,
+    description: data[index].attributes.InsightOverview[0].Title,
+   
+  };
+}
 
 const HomePage = async () => {
   const data = await getData(api_Home_Page);
