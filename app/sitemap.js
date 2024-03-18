@@ -1,8 +1,13 @@
 import { getDataDynamic } from "@/lib/fetchData";
-import { api_insight_insides_Page, api_Case_study_Page } from "@/lib/constants";
+import {
+  api_insight_insides_Page,
+  api_Case_study_Page,
+  api_Career_detail_Page,
+} from "@/lib/constants";
 export default async function sitemap() {
   const insights = await getDataDynamic(api_insight_insides_Page);
   const portfolio = await getDataDynamic(api_Case_study_Page);
+  const career = await getDataDynamic(api_Career_detail_Page);
   const changeFrequency = "daily";
 
   const insightsPosts = insights.map((slug) => ({
@@ -11,6 +16,11 @@ export default async function sitemap() {
     changeFrequency,
   }));
   const portfolioPosts = portfolio.map((slug) => ({
+    url: `${process.env.NEXT_PUBLIC_SITEMAP_URL}/portfolio/${slug.id}`,
+    lastModified: slug?.attributes?.updatedAt,
+    changeFrequency,
+  }));
+  const careerPosts = career.map((slug) => ({
     url: `${process.env.NEXT_PUBLIC_SITEMAP_URL}/portfolio/${slug.id}`,
     lastModified: slug?.attributes?.updatedAt,
     changeFrequency,
@@ -29,5 +39,5 @@ export default async function sitemap() {
     changeFrequency,
   }));
 
-  return [...routes, ...insightsPosts, ...portfolioPosts];
+  return [...routes, ...insightsPosts, ...portfolioPosts, ...careerPosts];
 }
