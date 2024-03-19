@@ -16,6 +16,24 @@ const GlobalPresence = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   const isMobileScreen = useMediaQuery({ query: "(max-width: 767px)" });
 
+  const locations = [
+    {
+      locationName: "San Francisco",
+    },
+    {
+      locationName: "London",
+    },
+    {
+      locationName: "New Delhi",
+    },
+    {
+      locationName: "Pune",
+    },
+    {
+      locationName: "Dubai",
+    },
+  ];
+
   return (
     <section
       className={`${styles.globalPresenceStyle} ${
@@ -49,11 +67,21 @@ const GlobalPresence = ({ props }) => {
               /> */}
 
             <ImageCustom
-              src="/img/map.svg"
+              src="/images/img/map.svg"
               width={1000}
               height={1000}
               alt="map"
+              className={styles.mapImage}
             />
+
+            <div className={styles.locationSection}>
+              {locations.map((item, index) => (
+                <div key={index} className={styles.dotSec}>
+                  <div className={styles.locationDot}></div>
+                  <div className={styles.locationName}>{item.locationName}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

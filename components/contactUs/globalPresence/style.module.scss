@@ -1,8 +1,12 @@
 @import "~/styles/partials/config";
 
+$c: #ce2b37;
+$s: 10px;
+
 .globalPresenceStyle {
   background-color: color(bg-soft);
   padding-block: 8.75rem 8.75rem;
+  position: relative;
 
   @include mobile-tablet-p {
     padding: spacing(section-mob-padding);
@@ -43,24 +47,28 @@
         }
       }
     }
-    .contactMap > div {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 566px;
-      width: 100%;
+    .contactMap {
+      position: relative;
 
-      @include mobile-tablet-p {
-        height: auto;
-      }
-
-      img {
+      .mapImage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        opacity: 0.2;
 
         @include mobile-tablet-p {
-          margin-bottom: 40px;
+          height: auto;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+
+          @include mobile-tablet-p {
+            margin-bottom: 40px;
+          }
         }
       }
     }
@@ -142,4 +150,89 @@
     }
   }
 
+  .dotSec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px 0;
+    position: absolute;
+    
+    &:nth-child(1) {
+      bottom: 273px;
+      left: 7vw;
+      flex-direction: column;
+    }
+
+    &:nth-child(2) {
+      top: 170px;
+      left: -58px;
+      right: 0;
+      flex-direction: column;
+    }
+
+    &:nth-child(3) {
+      top: 250px;
+      right: 0;
+      left: 590px;
+      gap: 40px 50px;
+    }
+
+    &:nth-child(4) {
+      bottom: 43%;
+      right: 0;
+      left: 520px;
+      gap: 40px 30px;
+    }
+
+    &:nth-child(5) {
+      bottom: 199px;
+      right: 0;
+      left: 340px;
+      flex-direction: column;
+    }
+
+
+    // Location Dot.
+    .locationDot {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 10px;
+      height: 10px;
+      background-color: color(info-blue);
+      border-radius: 50%;
+      position: relative;
+      z-index: 1;
+
+      &::before {
+        content: "";
+        width: inherit;
+        height: inherit;
+        border: 5px solid color(info-blue);
+        border-radius: inherit;
+        position: absolute;
+        z-index: -10;
+        opacity: 0;
+        animation: 2s expand cubic-bezier(0.29, 0, 0, 1) infinite;
+        animation-delay: 1s;
+      }
+    }
+  }
+
+  @keyframes expand {
+    1% {
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+    100% {
+      width: 450%;
+      height: 450%;
+      opacity: 0;
+      border-color: #fff;
+      background-color: none;
+      border-width: 2px;
+    }
+  }
 }
