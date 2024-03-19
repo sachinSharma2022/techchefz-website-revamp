@@ -25,22 +25,8 @@ const TechnologyStack = dynamic(() =>
   import("@/components/home/technologyStack")
 );
 
-// export const metadata = {
-//   title: "Humanizing Digital Experiences",
-//   description:
-//     "New breed of innovative digital transformation agency, redefining storytelling for an always-on world.",
-// };
 
-export async function generateMetadata() {
-  const data = await getData(api_Home_Page);
-  console.log(data,"------------------");
-  
-  return {
-    title: data?.attributes?.SeoData?.Title,
-    description: data?.attributes?.SeoData?.Description,
-   
-  };
-}
+
 
 const HomePage = async () => {
   const data = await getData(api_Home_Page);
