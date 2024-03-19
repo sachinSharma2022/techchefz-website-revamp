@@ -306,6 +306,7 @@ const ContactSection = ({ props, id }) => {
                           : false
                       }
                       type="submit"
+                      className={styles.btnSection}
                     >
                       Send a Message
                       {inprogress ? (

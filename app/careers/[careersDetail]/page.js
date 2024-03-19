@@ -28,7 +28,7 @@ const CareerDetail = async ({ params }) => {
             id="contactSection"
             props={data[index].attributes.Developercontact}
           />
-          <MoreJobs props={data[index].attributes.MoreDetail} />
+          {data.length > 1 && <MoreJobs props={data} params={params} />}
         </>
       ) : (
         <>

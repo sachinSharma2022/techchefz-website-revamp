@@ -6,10 +6,17 @@ import { getData, getDataDynamic } from "@/lib/fetchData";
 import styles from "./style.module.scss";
 import NotFound from "../not-found";
 
-export const metadata = {
-  title: "Our Portfolio | TechChefz Digital",
-  description: "Explore TechChefz Digital's portfolio of successful projects and see how we have helped businesses achieve their digital transformation goals.",
-};
+
+
+export async function generateMetadata() {
+  const data = await getData(api_portfolios_Page); 
+  
+  return {
+    title: data?.SeoData?.Title,
+    description: data?.SeoData?.Description,
+   
+  };
+}
 
 const Portfolio = async () => {
   const data = await getData(api_portfolios_Page);

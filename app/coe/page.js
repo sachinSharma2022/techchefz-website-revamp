@@ -8,10 +8,20 @@ import NotFound from "../not-found";
 import { getData } from "@/lib/fetchData";
 import { api_Coe_Page } from "@/lib/constants";
 
-export const metadata = {
-  title: "Centre of Excellence | TechChefz Digital",
-  description: "Learn about TechChefz Digital's Centre of Excellence, where we drive innovation and excellence in digital technologies and solutions.",
-};
+// export const metadata = {
+//   title: "Centre of Excellence | TechChefz Digital",
+//   description: "Learn about TechChefz Digital's Centre of Excellence, where we drive innovation and excellence in digital technologies and solutions.",
+// };
+
+export async function generateMetadata() {
+  const data = await getData(api_Coe_Page); 
+  
+  return {
+    title: data?.SeoData?.Title,
+    description: data?.SeoData?.Description,
+   
+  };
+}
 
 const Coe = async () => {
   const data = await getData(api_Coe_Page);

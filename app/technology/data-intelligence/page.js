@@ -15,10 +15,17 @@ import {
 } from "@/lib/constants";
 import SolutionTheProcess from "@/components/solutions/solutionTheProcess";
 
-export const metadata = {
-  title: "Data Intelligence / AI / ML Service s and Solutions | TechChefz Digital",
-  description: "TechChefz Digital offers cutting-edge data intelligence, artificial intelligence, and machine learning services and solutions to help businesses unlock valuable insights and drive growth.",
-};
+
+
+export async function generateMetadata() {
+  const data = await getData(api_data_intelligences_Page); 
+  
+  return {
+    title: data?.SeoData?.Title,
+    description: data?.SeoData?.Description,
+   
+  };
+}
 
 const Cms = async () => {
   const data = await getData(api_data_intelligences_Page);
