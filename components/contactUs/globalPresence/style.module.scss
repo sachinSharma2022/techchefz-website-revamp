@@ -9,25 +9,6 @@
     padding-block: 3.75rem 3.75rem;
   }
 
-  &.globalPresenceBannerDark {
-    background-color: color(dark-bg);
-    color: color(primary-white);
-
-    .locationPopoverCard {
-      background-color: color(input-bg);
-      color: color(primary-white);
-      @include mobile-tablet-p {
-        border: 0.14rem solid color(bg-soft);
-      }
-    }
-
-    .contactMap > div {
-      img {
-        filter: contrast(0) brightness(100);
-      }
-    }
-  }
-
   .globalStackBox {
     .globalRow {
       flex-direction: column;
@@ -141,4 +122,24 @@
     top: 0;
     z-index: 99;
   }
+
+  &.globalPresenceBannerDark {
+    background-color: color(dark-bg);
+    color: color(primary-white);
+
+    .locationPopoverCard {
+      background-color: color(input-bg);
+      color: color(primary-white);
+      @include mobile-tablet-p {
+        border: 0.14rem solid color(bg-soft);
+      }
+    }
+
+    .contactMap > div {
+      img {
+        filter: contrast(0) brightness(100);
+      }
+    }
+  }
+
 }
