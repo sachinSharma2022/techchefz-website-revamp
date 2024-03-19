@@ -265,6 +265,13 @@
     }
   }
 
+  .btnSection {
+
+    @include mobile-tablet-p {
+      width: 100%;
+    }
+  }
+
   // Dark Theme here
   &.contactSectionStyleDark {
     background-color: color(text-primary);
