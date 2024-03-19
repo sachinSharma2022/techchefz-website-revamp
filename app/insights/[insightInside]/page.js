@@ -29,6 +29,18 @@ export async function generateMetadata({ params }) {
         },
       ],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: data[index].attributes.InsightOverview[0].Title,
+      description: data[index].attributes.InsightOverview[0].Title,
+      images: [
+        {
+          url: `https://cms-strapi.techchefz.com${data[index].attributes.InsightOverview[0]?.Image?.data?.attributes?.url}`, // Must be an absolute URL
+          width: 800,
+          height: 600,
+        },
+      ],
+    },
   };
 }
 

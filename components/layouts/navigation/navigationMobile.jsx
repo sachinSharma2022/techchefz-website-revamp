@@ -51,6 +51,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
           <Button
             variant={theme ? "blueBtnDark" : "blueBtn"}
             className={styles.headerBtn}
+            onClick={closeMenu}
             size="lg"
           >
             {props[5]?.Title}

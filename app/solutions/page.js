@@ -12,8 +12,7 @@ import NotFound from "../not-found";
 
 
 export async function generateMetadata() {
-  const data = await getData(api_Solutions_Page);
-  
+  const data = await getData(api_Solutions_Page); 
   
   return {
     title: data?.SeoData?.Title,

@@ -12,10 +12,17 @@ import { getData, getDataDynamic } from "@/lib/fetchData";
 import { api_devsec_ops_Page, api_Case_study_Page } from "@/lib/constants";
 import SolutionTheProcess from "@/components/solutions/solutionTheProcess";
 
-export const metadata = {
-  title: "Cloud Services and Solutions | TechChefz Digital",
-  description: "TechChefz Digital provides scalable and secure cloud services and solutions to help businesses leverage the power of the cloud for enhanced flexibility and efficiency.",
-};
+
+
+export async function generateMetadata() {
+  const data = await getData(api_devsec_ops_Page); 
+  
+  return {
+    title: data?.SeoData?.Title,
+    description: data?.SeoData?.Description,
+   
+  };
+}
 
 const Cms = async () => {
   const data = await getData(api_devsec_ops_Page);
