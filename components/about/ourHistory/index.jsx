@@ -2,15 +2,17 @@
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
-import { useContext, useState, useRef, useEffect } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 
-import { cn } from "@/lib/utils";
-import styles from "./style.module.scss";
-import { base_Uri } from "@/lib/constants";
 import TextRevel from "@/components/ui/sectionAnimation";
+import { base_Uri } from "@/lib/constants";
+import { cn } from "@/lib/utils";
+import { useMediaQuery } from "react-responsive";
+import styles from "./style.module.scss";
 
 const OurHistory = ({ props, OurHistory }) => {
+  const isBigScreen = useMediaQuery({ query: "(min-width: 1024px)" });
   const { theme } = useContext(MyContext);
   const [oldSlide, setOldSlide] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
@@ -53,33 +55,44 @@ const OurHistory = ({ props, OurHistory }) => {
   };
 
   const settingTimeline = {
-    customPaging: function (index) {
-      var num = index + 1;
-      return (
-        <div>
-          <span className="yearCount">{2016 + num}</span>
-          <button />
-        </div>
-      );
-    },
-    dots: true,
+    dots: false,
     infinite: false,
     arrows: false,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: isBigScreen ? 8 : 4,
     slidesToScroll: 1,
-    centerMode: true,
-    responsive: [
-      {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 5,
-          slidesToScroll: 1,
-          centerPadding: "60px",
-        },
-      },
-    ],
+    focusOnSelect: true,
   };
+
+  const yearCount = [
+    {
+      year: 2017,
+    },
+    {
+      year: 2018,
+    },
+    {
+      year: 2019,
+    },
+    {
+      year: 2020,
+    },
+    {
+      year: 2020,
+    },
+    {
+      year: 2021,
+    },
+    {
+      year: 2022,
+    },
+    {
+      year: 2023,
+    },
+    {
+      year: 2024,
+    },
+  ];
 
   return (
     <section
@@ -170,8 +183,11 @@ const OurHistory = ({ props, OurHistory }) => {
       <div className={cn(styles.timelineSection, "ourHistorySlider")}>
         <div className={cn("primary-container")}>
           <Slider asNavFor={nav1} ref={slider3} {...settingTimeline}>
-            {OurHistory.map((index) => (
-              <div key={index} />
+            {yearCount.map((item, index) => (
+              <div className={styles.countItem} key={index}>
+                <h4>{item.year}</h4>
+                <div className="slide-dot"></div>
+              </div>
             ))}
           </Slider>
         </div>
