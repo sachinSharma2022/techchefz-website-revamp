@@ -83,7 +83,7 @@ const FounderDesk = ({ props }) => {
                     setReadMore(!readMore);
                   }}
                 >
-                  Read More
+                  {readMore ? "Read Less" : "Read More"}
                 </Button>
               </div>
             </TextRevel>

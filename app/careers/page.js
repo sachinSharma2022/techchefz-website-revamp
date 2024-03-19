@@ -28,7 +28,7 @@ const Career = async () => {
             gallary={data.gallary}
           />
           <TczLife props={data.Lifeattechchefz} />
-          {data_career_details.length ? (
+          {data_career_details.length && data?.CareerBanner[0]?.CareerForm ? (
             <OpenPosition id="OpenPosition" props={data_career_details} />
           ) : (
             <ContactSection

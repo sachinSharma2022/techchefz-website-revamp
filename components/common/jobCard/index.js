@@ -6,6 +6,7 @@ import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import { useContext } from "react";
 import styles from "./style.module.scss";
+import Link from "next/link";
 
 const JobCard = (props) => {
   const { theme } = useContext(MyContext);
@@ -26,9 +27,11 @@ const JobCard = (props) => {
             <span>{props.location}</span>
           </div>
         </div>
-        <Button variant={theme ? "lightBlueBtn" : "blueBtn"} size="md">
-          Apply
-        </Button>
+        <Link href={`/careers/${props.link}`}>
+          <Button variant={theme ? "lightBlueBtn" : "blueBtn"} size="md">
+            Apply
+          </Button>
+        </Link>
       </div>
     </div>
   );

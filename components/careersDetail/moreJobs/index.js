@@ -9,7 +9,7 @@ import Slider from "react-slick";
 import styles from "./style.module.scss";
 import TextRevel from "@/components/ui/sectionAnimation";
 
-const MoreJobs = ({ props }) => {
+const MoreJobs = ({ props, params }) => {
   const { theme, setTheme } = useContext(MyContext);
   const [oldSlide, setOldSlide] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
@@ -107,26 +107,36 @@ const MoreJobs = ({ props }) => {
       >
         <div className={cn("primary-container", styles.containerStyle)}>
           <TextRevel>
-          <div className={styles.titleSection}>
-            <div>
-              <h6>{props[0]?.Title}</h6>
-              <h3>{props[0]?.SubTitle}</h3>
+            <div className={styles.titleSection}>
+              <div>
+                <h6>{props[0]?.attributes?.MoreDetail[0]?.Title}</h6>
+                <h3>{props[0]?.attributes?.MoreDetail[0]?.SubTitle}</h3>
+              </div>
             </div>
-          </div>
           </TextRevel>
-          
 
           <div className={cn(styles.sliderSection)}>
             <Slider {...settings} ref={slider}>
-              {sliderData.map((value, index) => (
-                <JobCard
-                  key={index}
-                  title={value.title}
-                  content={value.content}
-                  exp={value.exp}
-                  location={value.location}
-                />
-              ))}
+              {props
+                .filter((value) => {
+                  return params?.careersDetail != value.id;
+                })
+                .map((value, index) => (
+                  <JobCard
+                    key={index}
+                    title={value?.attributes?.DeveloperApply[0]?.Title}
+                    content={value?.attributes?.Cards?.Description}
+                    exp={
+                      value?.attributes?.DeveloperApply[0]?.Developerinner[0]
+                        ?.Title
+                    }
+                    location={
+                      value?.attributes?.DeveloperApply[0]?.Developerinner[1]
+                        ?.Title
+                    }
+                    link={value.id}
+                  />
+                ))}
             </Slider>
 
             <div className={styles.sliderArrow}>
