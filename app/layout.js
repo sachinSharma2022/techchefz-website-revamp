@@ -21,7 +21,7 @@ export async function generateMetadata() {
       url: process.env.NEXT_PUBLIC_SITEMAP_URL,
       images: [
         {
-          url: `https://cms-strapi.techchefz.com${data?.SeoData?.Image?.data?.attributes?.url}`, // Must be an absolute URL
+          url: `https://cms-strapi.techchefz.com${data?.SeoData?.Images?.data?.attributes?.url}`, // Must be an absolute URL
           width: 800,
           height: 600,
         },
@@ -33,7 +33,7 @@ export async function generateMetadata() {
       description: data?.SeoData?.Description,
       images: [
         {
-          url: `https://cms-strapi.techchefz.com${data?.SeoData?.Image?.data?.attributes?.url}`, // Must be an absolute URL
+          url: `https://cms-strapi.techchefz.com${data?.SeoData?.Images?.data?.attributes?.url}`, // Must be an absolute URL
           width: 800,
           height: 600,
         },
