@@ -33,10 +33,11 @@ const TechnologyStack = dynamic(() =>
 
 export async function generateMetadata() {
   const data = await getData(api_Home_Page);
+  console.log(data,"------------------");
   
   return {
-    title: data[index].attributes.InsightOverview[0].Title,
-    description: data[index].attributes.InsightOverview[0].Title,
+    title: data?.attributes?.SeoData?.Title,
+    description: data?.attributes?.SeoData?.Description,
    
   };
 }
