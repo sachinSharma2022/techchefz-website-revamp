@@ -9,11 +9,17 @@ import TechnologyValues from "@/components/technology/technologyValues";
 import NotFound from "../not-found";
 import ContactSection from "@/components/careersDetail/contactSection";
 
-export const metadata = {
-  title: "Job Openings and Career Opportunities at TechChefz Digital",
-  description:
-    "Explore exciting job openings and career opportunities at TechChefz Digital and join our team of digital innovators.",
-};
+
+
+export async function generateMetadata() {
+  const data = await getData(api_Career_Page); 
+  
+  return {
+    title: data?.SeoData?.Title,
+    description: data?.SeoData?.Description,
+   
+  };
+}
 
 const Career = async () => {
   const data = await getData(api_Career_Page);

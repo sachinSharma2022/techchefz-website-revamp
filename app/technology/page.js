@@ -11,11 +11,17 @@ import { getData, getDataDynamic } from "@/lib/fetchData";
 import RelatedCase from "@/components/relatedCase";
 import NotFound from "../not-found";
 
-export const metadata = {
-  title: "Explore Technologies | TechChefz Digital",
-  description:
-    "Discover the latest technologies and solutions offered by TechChefz Digital to transform your business and enhance your digital presence.",
-};
+
+
+export async function generateMetadata() {
+  const data = await getData(api_Technology_Page); 
+  
+  return {
+    title: data?.SeoData?.Title,
+    description: data?.SeoData?.Description,
+   
+  };
+}
 
 const Technology = async () => {
   const data = await getData(api_Technology_Page);
