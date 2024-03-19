@@ -10,20 +10,35 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { api_Home_Page } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
 
-
-// export const metadata = {
-//   title: "TechChefz Digital | Humanizing Digital Experiences",
-//   description: "TechChefz Digital | Humanizing Digital Experiences",
-// };
-
 export async function generateMetadata() {
   const data = await getData(api_Home_Page);
-  
-  
   return {
     title: data?.SeoData?.Title,
     description: data?.SeoData?.Description,
-   
+    openGraph: {
+      title: data?.SeoData?.Title,
+      description: data?.SeoData?.Description,
+      url: process.env.NEXT_PUBLIC_SITEMAP_URL,
+      images: [
+        {
+          url: `https://cms-strapi.techchefz.com${data?.SeoData?.Image?.data?.attributes?.url}`, // Must be an absolute URL
+          width: 800,
+          height: 600,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: data?.SeoData?.Title,
+      description: data?.SeoData?.Description,
+      images: [
+        {
+          url: `https://cms-strapi.techchefz.com${data?.SeoData?.Image?.data?.attributes?.url}`, // Must be an absolute URL
+          width: 800,
+          height: 600,
+        },
+      ],
+    },
   };
 }
 
