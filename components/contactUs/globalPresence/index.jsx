@@ -85,29 +85,6 @@ const GlobalPresence = ({ props }) => {
           </div>
         </div>
       </div>
-
-      {isMobileScreen && (
-        <div className={styles.popoverCardMobile}>
-          {props?.DescriptionInner?.map((data, index) => (
-            <div key={index} className={styles.locationPopoverCard}>
-              <div className={styles.popoverMapIcon}>
-                <ImageCustom
-                  src={
-                    data?.Images?.data?.attributes?.url
-                      ? `${base_Uri}${data?.Images?.data?.attributes?.url}`
-                      : `${base_Uri}/`
-                  }
-                  width={40}
-                  height={26}
-                  alt="flag-img"
-                />
-              </div>
-              <h1 className={styles.locationHeading}>{data.Title}</h1>
-              <p className={styles.locationAreaText}>{data.Description}</p>
-            </div>
-          ))}
-        </div>
-      )}
     </section>
   );
 };
