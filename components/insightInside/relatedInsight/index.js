@@ -136,6 +136,7 @@ const RelatedInsight = ({ props, className, sliderClassName, params }) => {
                     redirect={data.id}
                     textStyle={styles.textStyle}
                     params={params}
+                    postDate
                   />
                 </div>
               ))}
