@@ -38,17 +38,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 60px;
 
     @include mobile {
       flex-direction: column;
       align-items: flex-start;
+      gap: 20px;
     }
 
     .policyText {
       font-size: text(xxs);
       font-weight: 400;
       line-height: text(lg);
-      max-width: 21.5rem;
 
       @include mobile {
         margin-bottom: text(lg);
@@ -71,6 +72,7 @@
     .buttonGrid {
       display: flex;
       justify-content: flex-end;
+      white-space: nowrap;
 
       @include mobile {
         flex-direction: column;

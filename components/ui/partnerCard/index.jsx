@@ -7,7 +7,7 @@ import styles from "./style.module.scss";
 const PartnerCard = (props) => {
   const { theme, setTheme } = useContext(MyContext);
   return (
-    <button
+    <div
       className={`${styles.partnerCard} ${theme ? styles.partnerCardDark : ""}`}
       onClick={props.onClick}
     >
@@ -32,7 +32,7 @@ const PartnerCard = (props) => {
       </div>
       <h6 className={styles.cardTitle}>{props.cardTitle} </h6>
       <p className={styles.cardContent}>{props.cardContent} </p>
-    </button>
+    </div>
   );
 };
 

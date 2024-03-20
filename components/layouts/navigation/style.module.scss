@@ -185,7 +185,7 @@
             height: 0.4rem;
             width: 0.4rem;
             border-style: solid;
-            border-color: color(text-primary);
+            border-color: color(primary-white);
             border-width: 0rem 0.1rem 0.1rem 0rem;
             transform: rotate(45deg);
             transition: border-width 150ms ease-in-out;
@@ -320,7 +320,7 @@
     }
   }
 
-  @include mobile-tablet-p {
+  @include mobile {
     .estimateSection {
       padding: 2rem 3.2rem 5rem;
 
@@ -346,6 +346,13 @@
       padding: 2rem spacing(mobile-padding) 5rem;
     }
   }
+
+  @include tablet-p {
+    .estimateSection {
+     display: none;
+    }
+  }
+
 
   .hideDesktop {
     @include desktop {
@@ -398,7 +405,11 @@
       }
     }
     .headerBtn {
-      @include tablet {
+      @include tablet-p {
+        margin-right: 3rem;
+      }
+
+      @include mobile {
         display: none;
       }
     }
@@ -552,6 +563,14 @@
             display: flex;
             gap: 1.25rem;
             flex-direction: column;
+          }
+        }
+
+        .latestTechCard {
+          display: flex;
+
+          a {
+            width: 100%;
           }
         }
 
