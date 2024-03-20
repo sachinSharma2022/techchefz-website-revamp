@@ -238,7 +238,10 @@
   &.resultsDark {
     background-color: color(input-bg);
     color: color(primary-white);
-
+ 
+    .resultText{
+      opacity: opacity(dark);
+    }
     .resultCards {
       .resultCard {
         background-color: color(text-primary);
