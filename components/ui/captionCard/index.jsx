@@ -23,7 +23,7 @@ const CaptionCard = (props) => {
                <h4 className={`${styles.cardText} ${props.textStyle}`}>{props.title}</h4>
                <Icons.ArrowLongRight size={18} />
             </div>
-            {props.postDate && <p className={styles.cardDate}>Feb 15, 2024-2min</p>}
+            {props.postDate && <p className={styles.cardDate}>Feb 16, 2024-2min</p>}
          </div>
       </Link>
    );
