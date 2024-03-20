@@ -491,86 +491,48 @@ input:-webkit-autofill {
 
 .ourHistorySlider {
   margin-top: 6.25rem;
+  scale: 1.1;
 
   @include mobile-tablet-p {
     margin: 1.5rem 0;
+    scale:1;
   }
 
-  .slick-dots {
-    position: relative;
-    width: 100%;
-    padding: 0;
+  .slide-dot {
+    width: 1rem;
+    height: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     margin: 0;
-    text-align: center;
-    left: 0;
-    display: flex !important;
-    justify-content: space-between;
+    z-index: 9;
+    border: 0.14rem solid transparent;
+    background-color: color(bg-gray);
+    border-radius: 50%;
+    position: relative;
+    bottom: 8px;
+  }
 
-    // @include mobile-tablet-p {
-    //   gap: 60px;
-    // }
+  .slick-current {
 
-    .yearCount {
-      color: color(bg-gray);
-      position: absolute;
-      top: -2.875rem;
-      left: 0;
-    }
 
-    &::after {
-      content: "";
-      width: 100vw;
-      height: 0.063rem;
-      position: absolute;
-      left: 50%;
-      transform: translate(-50%);
-      bottom: 1rem;
-      background-image: linear-gradient(
-        to right,
-        color(bg-gray) 33%,
-        rgba(color(bg-gray), 0) 0%
-      );
-      background-position: bottom;
-      background-size: 10px 1px;
-      background-repeat: repeat-x;
-    }
+    .slide-dot {
+      background-color: color(info-blue);
 
-    li {
-      min-width: 2.125rem;
-      height: 2.125rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0;
-      z-index: 9;
-      border: 0.14rem solid transparent;
-
-      button {
-        padding: 0;
-        width: 1rem;
-        height: 1rem;
-        background-color: color(bg-gray);
+      &::after {
+        content: '';
+        border: 0.14rem solid color(info-blue);
         border-radius: 50%;
-
-        &::before {
-          font-size: 0;
-        }
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 30px;
+        height: 30px;
       }
     }
-
-    .slick-active {
-      border: 0.14rem solid color(info-blue);
-      border-radius: 50%;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      button {
-        background-color: color(info-blue);
-      }
-      .yearCount {
-        color: color(info-blue);
-        top: -2.875rem;
-      }
+    .yearCount {
+      color: color(info-blue);
+      top: -2.875rem;
     }
   }
 }
@@ -1251,6 +1213,10 @@ html.lenis {
     display: flex !important;
     justify-content: center;
     align-items: center;
+    
+    @include mobile-tablet-p {
+      border-radius: 0.25rem;
+    }
 
     &::before {
       display: none;

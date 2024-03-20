@@ -77,10 +77,6 @@ const Partners = ({ props }) => {
                   }
                   cardTitle={data.Title}
                   cardContent={data.Description}
-                  onClick={() => {
-                    setIsOpen(true);
-                    setIndex(index);
-                  }}
                   arrowUp
                 />
               ))}
@@ -89,7 +85,7 @@ const Partners = ({ props }) => {
         )}
       </div>
 
-      <LeftDrawer
+      {/* <LeftDrawer
         title={props?.Slider[index]?.Title}
         open={isOpen}
         onClose={() => setIsOpen(false)}
@@ -117,7 +113,7 @@ const Partners = ({ props }) => {
             {props?.Slider[index]?.BtnLink}
           </Link>
         </div>
-      </LeftDrawer>
+      </LeftDrawer> */}
     </section>
   );
 };

@@ -10,7 +10,7 @@ import styles from "./style.module.scss";
 
 const InsightDetail = ({ props, BlockTitle, index }) => {
   const { theme, setTheme } = useContext(MyContext);
-  const url = `http://localhost:3000/insights/${index}`;
+  const url = `${process.env.NEXT_PUBLIC_SITEMAP_URL}/insights/${index}`;
   const handleClick = (event) => {
     navigator.clipboard.writeText(url);
   };

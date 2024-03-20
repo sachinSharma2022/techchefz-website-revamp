@@ -35,32 +35,31 @@ export default function Curve({ children, backgroundColor }) {
     };
   }, []);
   return (
-    <>{children}</>
-    // <div
-    //   className={cn(styles.curve, styles.curveAnimation)}
-    //   style={{ backgroundColor }}
-    // >
-    //   <div
-    //     style={{ opacity: dimensions.width === null ? 1 : 0 }}
-    //     className={styles.background}
-    //   />
+    <div
+      className={cn(styles.curve, styles.curveAnimation)}
+      style={{ backgroundColor }}
+    >
+      <div
+        style={{ display: dimensions.width === null ? "block" : "none" }}
+        className={styles.background}
+      />
 
-    //   {dimensions && (
-    //     <>
-    //       <motion.div className={styles.route} {...anim(text)}>
-    //         <ImageCustom
-    //           src="/images/logo-icon.svg"
-    //           width={180}
-    //           height={180}
-    //           alt="logo"
-    //           className={styles.routeLogo}
-    //         />
-    //       </motion.div>
-    //       {dimensions.width != null && <SVG {...dimensions} />}
-    //     </>
-    //   )}
-    //   {children}
-    // </div>
+      {dimensions && (
+        <>
+          <motion.div className={styles.route} {...anim(text)}>
+            <ImageCustom
+              src="/images/logo-icon.svg"
+              width={180}
+              height={180}
+              alt="logo"
+              className={styles.routeLogo}
+            />
+          </motion.div>
+          {dimensions.width != null && <SVG {...dimensions} />}
+        </>
+      )}
+      {children}
+    </div>
   );
 }
 

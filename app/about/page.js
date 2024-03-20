@@ -13,10 +13,18 @@ import NotFound from "../not-found";
 import { api_About_Page } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
 
-export const metadata = {
-  title: "About TechChefz | Humanizing Digital Experiences",
-  description: "Learn about TechChefz and how we are dedicated to humanizing digital experiences through innovative technologies and solutions.",
-};
+
+
+export async function generateMetadata() {
+  const data = await getData(api_About_Page);
+  
+  
+  return {
+    title: data?.SeoData?.Title,
+    description: data?.SeoData?.Description,
+   
+  };
+}
 
 const AboutPage = async () => {
   const data = await getData(api_About_Page);

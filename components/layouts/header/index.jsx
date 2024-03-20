@@ -22,7 +22,7 @@ const Header = async () => {
         </>
       ) : (
         <>
-          <NotFound />
+         
         </>
       )}
     </>

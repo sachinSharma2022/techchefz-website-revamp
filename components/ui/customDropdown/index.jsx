@@ -4,8 +4,8 @@ import { cn } from "@/lib/utils";
 import React, { useContext, useRef } from "react";
 import Select, { components } from "react-select";
 
-import dropdownStyle from "./style.module.scss";
 import { ImageCustom } from "../imageCustom";
+import dropdownStyle from "./style.module.scss";
 
 // clearIndicator
 // container
@@ -60,7 +60,7 @@ const CustomDropdown = ({
   const controlStyle = {
     control: (styles) => ({
       ...styles,
-      height: 60,
+      height: 64,
       borderRadius: 12,
       backgroundColor: theme ? "#1F1F1F" : "#F1F1F1",
       borderWidth: "0.14rem",
@@ -201,7 +201,7 @@ export const ServiceDropdown = ({
   const controlStyle = {
     control: (styles) => ({
       ...styles,
-      height: 60,
+      height: 64,
       borderRadius: 12,
       backgroundColor: theme ? "#1F1F1F" : "#F1F1F1",
       borderWidth: "0.14rem",

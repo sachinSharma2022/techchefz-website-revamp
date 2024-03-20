@@ -12,12 +12,27 @@ import { base_Uri } from "@/lib/constants";
 
 import TextRevel from "@/components/ui/sectionAnimation";
 
-const GlobalPresence = ({props}) => {
- 
+const GlobalPresence = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   const isMobileScreen = useMediaQuery({ query: "(max-width: 767px)" });
 
-  
+  const locations = [
+    {
+      locationName: "San Francisco",
+    },
+    {
+      locationName: "London",
+    },
+    {
+      locationName: "New Delhi",
+    },
+    {
+      locationName: "Pune",
+    },
+    {
+      locationName: "Dubai",
+    },
+  ];
 
   return (
     <section
@@ -27,45 +42,48 @@ const GlobalPresence = ({props}) => {
     >
       <div className={styles.globalStackBox}>
         <TextRevel>
-        <div className={cn("primary-container", styles.globalRow)}>
-          <h2 className={cn(styles.globalHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}></h2>
-          <p className={cn(styles.globalText, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
-          </p>
-        </div>
+          <div className={cn("primary-container", styles.globalRow)}>
+            <h2
+              className={cn(styles.globalHeading, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+            ></h2>
+            <p
+              className={cn(styles.globalText, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
+            ></p>
+          </div>
         </TextRevel>
-       
-
-        <Popover className={cn(styles.popoverContainer)}>
-          <Popover.Button>
-            <div className={styles.contactMap}>
-              <ImageCustom
-                src={props?.Image?.data?.attributes?.url?`${base_Uri}${props?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
+        <div className={styles.popoverContainer}>
+          <div className={styles.contactMap}>
+            {/* <ImageCustom
+                src={
+                  props?.Image?.data?.attributes?.url
+                    ? `${base_Uri}${props?.Image?.data?.attributes?.url}`
+                    : `${base_Uri}/`
+                }
                 width={1000}
                 height={1000}
                 alt="map"
-              />
-            </div>
-          </Popover.Button>
+              /> */}
 
-          <Popover.Panel className={styles.popoverStyle}>
-            {!isMobileScreen && (
-              <div className={styles.locationPopoverCard}>
-                <div className={styles.popoverMapIcon}>
-                  <ImageCustom
-                    src="/images/united-state-flag.png"
-                    width={40}
-                    height={26}
-                    alt="flag-img"
-                  />
+            <ImageCustom
+              src="/images/img/map.svg"
+              width={1000}
+              height={1000}
+              alt="map"
+              className={styles.mapImage}
+            />
+
+            <div className={styles.locationSection}>
+              {locations.map((item, index) => (
+                <div key={index} className={styles.dotSec}>
+                  <div className={styles.locationDot}></div>
+                  <div className={styles.locationName}>{item.locationName}</div>
                 </div>
-                <h1 className={styles.locationHeading}>{props.DescriptionInner[0].Title}</h1>
-                <p className={styles.locationAreaText}>
-                  {props?.DescriptionInner[0].Description}
-                </p>
-              </div>
-            )}
-          </Popover.Panel>
-        </Popover>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
 
       {isMobileScreen && (
@@ -74,7 +92,11 @@ const GlobalPresence = ({props}) => {
             <div key={index} className={styles.locationPopoverCard}>
               <div className={styles.popoverMapIcon}>
                 <ImageCustom
-                  src={data?.Images?.data?.attributes?.url?`${base_Uri}${data?.Images?.data?.attributes?.url}`:`${base_Uri}/`}
+                  src={
+                    data?.Images?.data?.attributes?.url
+                      ? `${base_Uri}${data?.Images?.data?.attributes?.url}`
+                      : `${base_Uri}/`
+                  }
                   width={40}
                   height={26}
                   alt="flag-img"

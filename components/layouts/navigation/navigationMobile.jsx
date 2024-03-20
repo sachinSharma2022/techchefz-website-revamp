@@ -51,6 +51,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
           <Button
             variant={theme ? "blueBtnDark" : "blueBtn"}
             className={styles.headerBtn}
+            onClick={closeMenu}
             size="lg"
           >
             {props[5]?.Title}
@@ -80,7 +81,11 @@ const NavigationMobile = ({ props, featureArticle }) => {
       <div className={cn(styles.latestTech)}>
         <h1>{props[2]?.DropDown[8]?.Title}</h1>
         <div>
-          <Link href="/technology" className={styles.imageTech}>
+          <Link
+            href={`/insights/${feartureArray[0].id}`}
+            className={styles.imageTech}
+            onClick={closeMenu}
+          >
             <div className={styles.imgBox}>
               <ImageCustom
                 src={
@@ -101,14 +106,16 @@ const NavigationMobile = ({ props, featureArticle }) => {
               <Icons.ArrowRight size={16} />
             </div>
           </Link>
-          <div className={styles.imageTech}>
-            <div className={styles.infoBox}>
-              <p className={styles.description}>
-                {feartureArray[1]?.attributes?.InsightOverview[0].Title}
-              </p>
-              <Icons.ArrowRight size={16} />
+          <Link href={`/insights/${feartureArray[1].id}`} onClick={closeMenu}>
+            <div className={styles.imageTech}>
+              <div className={styles.infoBox}>
+                <p className={styles.description}>
+                  {feartureArray[1]?.attributes?.InsightOverview[0].Title}
+                </p>
+                <Icons.ArrowRight size={16} />
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     );
@@ -234,6 +241,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                           </Link>
                           <Link
                             href={props[2]?.DropDown[2]?.Links}
+                            onClick={closeMenu}
                             className={cn(styles.hrefInnerFlex)}
                           >
                             <div className={styles.head}>
@@ -248,6 +256,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                           </Link>
                           <Link
                             href={props[2]?.DropDown[3]?.Links}
+                            onClick={closeMenu}
                             className={cn(styles.hrefInnerFlex)}
                           >
                             <div className={styles.head}>
@@ -262,6 +271,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                           </Link>
                           <Link
                             href={props[2]?.DropDown[4]?.Links}
+                            onClick={closeMenu}
                             className={cn(styles.hrefInnerFlex)}
                           >
                             <div className={styles.head}>
@@ -280,6 +290,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                           <Link
                             href={props[2]?.DropDown[5]?.Links}
                             className={cn(styles.hrefInnerFlex)}
+                            onClick={closeMenu}
                           >
                             <div className={styles.head}>
                               <h4 className={styles.linkTitle}>
@@ -294,6 +305,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                           <Link
                             href={props[2]?.DropDown[6]?.Links}
                             className={cn(styles.hrefInnerFlex)}
+                            onClick={closeMenu}
                           >
                             <div className={styles.head}>
                               <h4 className={styles.linkTitle}>
@@ -308,6 +320,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                           <Link
                             href={props[2]?.DropDown[7]?.Links}
                             className={cn(styles.hrefInnerFlex)}
+                            onClick={closeMenu}
                           >
                             <div className={styles.head}>
                               <h4 className={styles.linkTitle}>

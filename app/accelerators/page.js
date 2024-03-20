@@ -9,11 +9,21 @@ import {
   api_accelerators_details_Page,
 } from "@/lib/constants";
 
-export const metadata = {
-  title: "Explore Accelerators | TechChefz Digital",
-  description:
-    "Discover TechChefz Digital's accelerators, designed to help businesses accelerate their digital transformation journey and achieve rapid growth.",
-};
+// export const metadata = {
+//   title: "Explore Accelerators | TechChefz Digital",
+//   description:
+//     "Discover TechChefz Digital's accelerators, designed to help businesses accelerate their digital transformation journey and achieve rapid growth.",
+// };
+
+export async function generateMetadata() {
+  const data = await getData(api_accelerators_Page); 
+  
+  return {
+    title: data?.SeoData?.Title,
+    description: data?.SeoData?.Description,
+   
+  };
+}
 
 const Accelerators = async () => {
   const data = await getData(api_accelerators_Page);

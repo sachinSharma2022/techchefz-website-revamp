@@ -129,6 +129,10 @@
       display: flex !important;
       justify-content: center;
       align-items: center;
+
+      @include mobile-tablet-p {
+        border-radius: 0.25rem;
+      }
     }
 
     svg {
@@ -160,6 +164,39 @@
   .sliderSection {
     @include mobile-tablet-p {
       flex-direction: column-reverse;
+    }
+  }
+
+  .timelineSection {
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 100vw;
+      height: 0.063rem;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%);
+      bottom: 1rem;
+      background-image: linear-gradient(
+        to right,
+        color(bg-gray) 33%,
+        rgba(color(bg-gray), 0) 0%
+      );
+      background-position: bottom;
+      background-size: 10px 1px;
+      background-repeat: repeat-x;
+    }
+  }
+
+  .countItem {
+    display: flex !important;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+
+    h4 {
+      font-size: 0.9rem;
     }
   }
 
