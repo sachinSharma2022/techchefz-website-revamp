@@ -8,22 +8,17 @@ import RelatedInsight from "@/components/insightInside/relatedInsight";
 
 export async function generateMetadata({ params }) {
   const data = await getDataDynamic(api_insight_insides_Page);
-  let index = 0;
-  for (const i in data) {
-    if (data[i].id == params.insightInside) {
-      index = i;
-    }
-  }
+  const [page] = data.filter((value) => value.id == params.insightInside);
   return {
-    title: data[index].attributes.InsightOverview[0].Title,
-    description: data[index].attributes.InsightOverview[0].Title,
+    title: page.attributes.InsightOverview[0].Title,
+    description: page.attributes.InsightOverview[0].Title,
     openGraph: {
-      title: data[index].attributes.InsightOverview[0].Title,
-      description: data[index].attributes.InsightOverview[0].Title,
+      title: page.attributes.InsightOverview[0].Title,
+      description: page.attributes.InsightOverview[0].Title,
       url: `https://demo.techchefz.com/insights/${params.insightInside}`,
       images: [
         {
-          url: `https://cms-strapi.techchefz.com${data[index].attributes.InsightOverview[0]?.Image?.data?.attributes?.url}`, // Must be an absolute URL
+          url: `https://cms-strapi.techchefz.com${page.attributes.InsightOverview[0]?.Image?.data?.attributes?.url}`, // Must be an absolute URL
           width: 800,
           height: 600,
         },
@@ -31,11 +26,11 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: "summary_large_image",
-      title: data[index].attributes.InsightOverview[0].Title,
-      description: data[index].attributes.InsightOverview[0].Title,
+      title: page.attributes.InsightOverview[0].Title,
+      description: page.attributes.InsightOverview[0].Title,
       images: [
         {
-          url: `https://cms-strapi.techchefz.com${data[index].attributes.InsightOverview[0]?.Image?.data?.attributes?.url}`, // Must be an absolute URL
+          url: `https://cms-strapi.techchefz.com${page.attributes.InsightOverview[0]?.Image?.data?.attributes?.url}`, // Must be an absolute URL
           width: 800,
           height: 600,
         },
@@ -46,29 +41,24 @@ export async function generateMetadata({ params }) {
 
 const InsightInside = async ({ params }) => {
   const data = await getDataDynamic(api_insight_insides_Page);
-  let index = 0;
-  for (const i in data) {
-    if (data[i].id == params.insightInside) {
-      index = i;
-    }
-  }
+  const [page] = data.filter((value) => value.id == params.insightInside);
 
   return (
     <>
       {data ? (
         <>
           <InsightOverview
-            props={data[index].attributes.InsightOverview}
-            Insightinner={data[index].attributes.Insightinner}
-            TechStackData={data[index].attributes.TechStackData}
+            props={page.attributes.InsightOverview}
+            Insightinner={page.attributes.Insightinner}
+            TechStackData={page.attributes.TechStackData}
           />
           <InsightDetail
-            props={data[index].attributes.insightDetailData}
-            BlockTitle={data[index].attributes.BlockTitle}
-            index={data[index].id}
+            props={page.attributes.insightDetailData}
+            BlockTitle={page.attributes.BlockTitle}
+            index={page.id}
           />
           <RelatedInsight props={data} params={params} />
-          <Innovation props={data[index].attributes.ourInnvotion} />
+          <Innovation props={page.attributes.ourInnvotion} />
         </>
       ) : (
         <>

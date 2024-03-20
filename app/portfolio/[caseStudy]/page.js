@@ -13,32 +13,27 @@ import { api_Case_study_Page } from "@/lib/constants";
 
 const CaseStudy = async ({ params }) => {
   const data = await getDataDynamic(api_Case_study_Page);
-  let index = 0;
-  for (const i in data) {
-    if (data[i].id == params.caseStudy) {
-      index = i;
-    }
-  }
+  const [page] = data.filter((value) => value.id == params.caseStudy);
   return (
     <>
       {data ? (
         <div>
-          <CaseStudyBanner props={data[index].attributes.Banner} />
+          <CaseStudyBanner props={page.attributes.Banner} />
           <Industry
-            props={data[index].attributes.Industry}
-            CMSImplementation={data[index].attributes.CMSImplementation}
-            Industryinner={data[index].attributes.Industryinner}
+            props={page.attributes.Industry}
+            CMSImplementation={page.attributes.CMSImplementation}
+            Industryinner={page.attributes.Industryinner}
           />
-          <Goals props={data[index].attributes.Goals} />
-          <Challenges props={data[index].attributes.Challenges} />
-          <Solutions props={data[index].attributes.Solutions} />
-          <Results props={data[index].attributes.Results} />
+          <Goals props={page.attributes.Goals} />
+          <Challenges props={page.attributes.Challenges} />
+          <Solutions props={page.attributes.Solutions} />
+          <Results props={page.attributes.Results} />
           <RelatedCase
             className="tech-related-style"
             props={data}
             params={params}
           />
-          <LetsWork contact={data[index].attributes.LetsWork} />
+          <LetsWork contact={page.attributes.LetsWork} />
         </div>
       ) : (
         <>
