@@ -495,7 +495,7 @@ input:-webkit-autofill {
 
   @include mobile-tablet-p {
     margin: 1.5rem 0;
-    scale:1;
+    scale: 1;
   }
 
   .slide-dot {
@@ -514,13 +514,11 @@ input:-webkit-autofill {
   }
 
   .slick-current {
-
-
     .slide-dot {
       background-color: color(info-blue);
 
       &::after {
-        content: '';
+        content: "";
         border: 0.14rem solid color(info-blue);
         border-radius: 50%;
         display: inline-flex;
@@ -986,7 +984,7 @@ html.lenis {
     margin-top: 8.5rem;
   }
 
-  @include mobile-tablet-p{
+  @include mobile-tablet-p {
     margin-top: 0;
   }
 }
@@ -1140,12 +1138,12 @@ html.lenis {
   padding-top: 6rem;
 
   @include mobile-tablet-p {
-    padding:5rem 1rem 5rem spacing(tablet-padding);
+    padding: 5rem 1rem 5rem spacing(tablet-padding);
     min-height: auto;
   }
 
   @include mobile {
-    padding:5rem 1rem 5rem spacing(mobile-padding);
+    padding: 5rem 1rem 5rem spacing(mobile-padding);
     min-height: auto;
   }
 }
@@ -1213,7 +1211,7 @@ html.lenis {
     display: flex !important;
     justify-content: center;
     align-items: center;
-    
+
     @include mobile-tablet-p {
       border-radius: 0.25rem;
     }
@@ -1271,7 +1269,7 @@ html.lenis {
     }
     .slick-next,
     .slick-prev {
-      filter:none;
+      filter: none;
     }
   }
 

@@ -45,13 +45,13 @@
       justify-content: flex-start;
       text-align: left;
       align-items: start;
-      margin-bottom: 2.5rem;
+      margin-bottom:2rem;
     }
 
     @include mobile {
       justify-content: flex-start;
       align-items: start;
-      margin-bottom: 2.5rem;
+      margin-bottom: 1rem;
     }
 
     .text {
@@ -105,6 +105,8 @@
 
       @include mobile-tablet-p {
         text-align: left;
+        font-size: text(larger);
+        line-height: 1.2;
       }
 
       span {
@@ -113,6 +115,11 @@
         line-height: 5rem;
         color: color(heading-liner);
         @include textGradient;
+
+        @include tablet-p {
+          font-size: text(larger);
+          line-height: 1.2;
+        }
 
         @include mobile {
           font-size: text(xxxl);
@@ -134,11 +141,13 @@
 
     @include mobile-tablet-p {
       max-width: 100%;
+      font-size: text(lg);
+      line-height: 1.4;
     }
 
     @include mobile {
-      font-size: text(xl);
-      line-height: 1.875rem;
+      font-size: text(normal);
+      line-height: 1.4;
       padding-right: 0;
     }
   }
@@ -157,8 +166,8 @@
     }
 
     @include mobile {
-      font-size: text(lg);
-      line-height: 1.875rem;
+      font-size: text(normal);
+      line-height: 1.5rem;
       margin-bottom: 2.25rem;
     }
   }

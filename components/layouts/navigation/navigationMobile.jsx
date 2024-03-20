@@ -80,7 +80,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
     return (
       <div className={cn(styles.latestTech)}>
         <h1>{props[2]?.DropDown[8]?.Title}</h1>
-        <div>
+        <div className={styles.latestTechCard}>
           <Link
             href={`/insights/${feartureArray[0].id}`}
             className={styles.imageTech}
@@ -432,21 +432,6 @@ const NavigationMobile = ({ props, featureArticle }) => {
                               {props[4]?.DropDown[2]?.Description}
                             </p>
                           </Link>
-                          {/* <Link
-                              href={props[4]?.DropDown[3]?.Links}
-                              onClick={closeMenu}
-                              className={cn(styles.hrefInnerFlex)}
-                            >
-                              <div className={styles.head}>
-                                <h4 className={styles.linkTitle}>
-                                  {props[4]?.DropDown[3]?.Title}
-                                </h4>
-                                <Icons.ArrowForward />
-                              </div>
-                              <p className={styles.excepPara}>
-                                {props[4]?.DropDown[3]?.Description}
-                              </p>
-                            </Link> */}
                           <Link
                             href={props[4]?.DropDown[4]?.Links}
                             onClick={closeMenu}
@@ -490,6 +475,16 @@ const NavigationMobile = ({ props, featureArticle }) => {
               )}
             </button>
           </div>
+
+          <Link href={props[5]?.Link}>
+            <Button
+              variant={theme ? "blueBtnDark" : "blueBtn"}
+              className={styles.headerBtn}
+              size="sm"
+            >
+              {props[5]?.Title}
+            </Button>
+          </Link>
 
           <button
             className={cn(

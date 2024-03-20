@@ -63,9 +63,9 @@
     color: color(primary-white);
 
     @include mobile-tablet-p {
-      line-height: 3.375rem;
+      line-height: 1.2;
       padding-right: 0;
-      margin-bottom: text(lg);
+      font-size: text(xxxl);
       max-width: 100%;
     }
     @include mobile {
@@ -202,6 +202,11 @@
       span {
         margin-right: 3px;
         font-size: text(lg);
+
+        @include mobile-tablet-p {
+          font-size: 1.1rem;
+          color: rgba(color(text-primary), 0.6);
+        }
       }
 
       .mask {
