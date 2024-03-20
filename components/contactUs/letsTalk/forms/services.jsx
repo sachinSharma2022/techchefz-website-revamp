@@ -202,7 +202,6 @@ const ServicesForm = () => {
                       value={values.companyName}
                       errorStatus={touched.companyName && errors.companyName}
                       onKeyDown={(event) => {
-                        console.log(event.keyCode, "keycode");
                         var regex = new RegExp("^[a-zA-Z 0-9]*$");
                         if (!regex.test(event.key)) {
                           event.preventDefault();
@@ -215,18 +214,28 @@ const ServicesForm = () => {
                     )}
                   </div>
                   <div className={cn(styles.inputSpace, "input-item")}>
-                    <ServiceDropdown
+                    <Input
                       label="Service Required*"
                       name="serviceRequired"
-                      setFieldValue={setFieldValue}
+                      error={Boolean(
+                        touched.serviceRequired && errors.serviceRequired
+                      )}
+                      onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.serviceRequired}
-                      options={options}
                       errorStatus={
                         touched.serviceRequired && errors.serviceRequired
                       }
-                      className="custom-dropdown"
+                      onKeyDown={(event) => {
+                        console.log(event.keyCode, "keycode");
+                        var regex = new RegExp("^[a-zA-Z 0-9]*$");
+                        if (!regex.test(event.key)) {
+                          event.preventDefault();
+                          return false;
+                        }
+                      }}
                       placeholder="Service Required*"
+                      maxlenght={100}
                     />
                     {touched.serviceRequired && errors.serviceRequired && (
                       <Error>{errors.serviceRequired}</Error>

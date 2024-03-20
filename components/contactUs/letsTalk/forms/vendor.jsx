@@ -214,18 +214,28 @@ const VendorForm = () => {
                     )}
                   </div>
                   <div className={cn(styles.inputSpace, "input-item")}>
-                    <ServiceDropdown
+                    <Input
                       label="Service Offered"
                       name="serviceOffered"
-                      setFieldValue={setFieldValue}
+                      error={Boolean(
+                        touched.serviceOffered && errors.serviceOffered
+                      )}
+                      onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.serviceOffered}
-                      options={options}
                       errorStatus={
                         touched.serviceOffered && errors.serviceOffered
                       }
-                      className="custom-dropdown"
+                      onKeyDown={(event) => {
+                        console.log(event.keyCode, "keycode");
+                        var regex = new RegExp("^[a-zA-Z 0-9]*$");
+                        if (!regex.test(event.key)) {
+                          event.preventDefault();
+                          return false;
+                        }
+                      }}
                       placeholder="Service Offered*"
+                      maxlenght={100}
                     />
                     {touched.serviceOffered && errors.serviceOffered && (
                       <Error>{errors.serviceOffered}</Error>
