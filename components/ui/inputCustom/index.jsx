@@ -56,7 +56,7 @@ const Input = React.forwardRef(
               inputStyle,
               "form-control"
             )}
-            maxLength={50}
+            maxLength={props.maxlenght ? props.maxlenght : 50}
             ref={ref}
             {...props}
           />
