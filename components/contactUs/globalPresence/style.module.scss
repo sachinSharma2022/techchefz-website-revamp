@@ -154,7 +154,7 @@ $s: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px 0;
+    gap: 20px 0;
     position: absolute;
     
     &:nth-child(1) {
@@ -174,14 +174,14 @@ $s: 10px;
       top: 250px;
       right: 0;
       left: 590px;
-      gap: 40px 50px;
+      gap: 20px 20px;
     }
 
     &:nth-child(4) {
       bottom: 43%;
       right: 0;
       left: 520px;
-      gap: 40px 30px;
+      gap: 20px 20px;
     }
 
     &:nth-child(5) {
@@ -227,8 +227,8 @@ $s: 10px;
       opacity: 1;
     }
     100% {
-      width: 450%;
-      height: 450%;
+      width: 500%;
+      height: 500%;
       opacity: 0;
       border-color: #fff;
       background-color: none;
