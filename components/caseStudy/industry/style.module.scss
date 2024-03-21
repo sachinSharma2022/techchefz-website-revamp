@@ -92,6 +92,7 @@
   .industryImg {
     padding: 5rem 0 0;
     position: relative;
+    border-radius: 0.75rem;
     // margin-bottom: 5rem;
     
     @include mobile-tablet-p {
@@ -115,6 +116,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border-radius: 0.75rem;
     }
   }
 
