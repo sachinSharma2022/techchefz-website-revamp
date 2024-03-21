@@ -1,8 +1,9 @@
 "use client";
 
-import { Icons } from "@/components/icons";
 import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
+import { Icons } from "@/components/icons";
+import { Button } from "../button";
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -21,21 +22,22 @@ const ScrollToTopButton = () => {
     isVisible &&
       window.scrollTo({
         top: 0,
-        behavior: "auto",
+        behavior: "smooth",
       });
   };
 
   return (
-    <button
+    <Button
       aria-label="back-to-top"
-      title="back-to-top"
+      variant="lightBlueBtn"
+      size="md"
       className={`${isVisible ? "opacity-100" : "opacity-0"} ${
         styles.scrollTop
       }`}
       onClick={scrollToTop}
     >
-      <Icons.ArrowRight size={20} />
-    </button>
+      <Icons.ArrowUp />
+    </Button>
   );
 };
 

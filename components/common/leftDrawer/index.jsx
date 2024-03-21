@@ -25,7 +25,7 @@ const LeftDrawer = (props) => {
         <div className={styles.modalTitle}>
           <h5 className={styles.title}>{props.title}</h5>
           <Button variant="default" onClick={props.onClose}>
-            <Icons.ModalCross width={32} height={32} />
+            <Icons.ModalCross width={40} height={40} />
           </Button>
         </div>
         {props.children}

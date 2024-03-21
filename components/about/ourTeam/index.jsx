@@ -169,10 +169,13 @@ const OurTeam = ({ props }) => {
               <p className={styles.modalContent}>
                 {props[0]?.ListofDirectors[index]?.Description}
               </p>
-              <p className={styles.teamMail}>
+              <a
+                href={`mailto:${props[0]?.ListofDirectors[index]?.email}`}
+                className={styles.teamMail}
+              >
                 <Icons.MailIcon width={24} height={24} className="me-2" />
                 {props[0]?.ListofDirectors[index]?.email}
-              </p>
+              </a>
 
               <div className={styles.socialSection}>
                 <h4>Let’s Connect</h4>
