@@ -8,11 +8,12 @@ import Service from "@/components/home/service";
 //import TechnologyStack from "@/components/home/technologyStack";
 import WeAreFuture from "@/components/home/weAreFuture";
 import HomepageIntro from "@/components/ui/homepageIntro";
-import Curve from "@/components/ui/pageTransition";
+//import Curve from "@/components/ui/pageTransition";
 import { api_Home_Page, base_Url, api_Case_study_Page } from "@/lib/constants";
 import { getData, getDataDynamic } from "@/lib/fetchData";
 import NotFound from "../not-found";
 import dynamic from "next/dynamic";
+import Cookies from "@/components/ui/cookiesPopup";
 const LetsWork = dynamic(() => import("@/components/home/letsWork"));
 const HomeTestimonials = dynamic(() =>
   import("@/components/home/homeTestimonials")
@@ -29,7 +30,7 @@ const HomePage = async () => {
   const data = await getData(api_Home_Page);
   const data_Portfolio = await getDataDynamic(api_Case_study_Page);
   return (
-    <Curve>
+    // <Curve>
     <>
       {data ? (
         <div>
@@ -49,6 +50,7 @@ const HomePage = async () => {
           <DigitalTransformation digital={data.digitalTransform} />
           <HomeTestimonials testimonials={data.Testimonials} />
           <LetsWork contact={data.ContactUs} />
+            <Cookies props={data.cookie} />
         </div>
       ) : (
         <>
@@ -56,7 +58,7 @@ const HomePage = async () => {
         </>
       )}
     </>
-     </Curve>
+    //  </Curve>
   );
 };
 

@@ -91,6 +91,11 @@
             min-width: 30px;
             min-height: 30px;
             margin-left: 20px;
+
+            @include mobile-tablet-p{
+              min-width: 25px;
+              min-height: 25px;
+            }
           }
         }
       }

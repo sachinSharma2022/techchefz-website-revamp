@@ -17,7 +17,7 @@ const PrivacyPolicy = async () => {
           <PrivacyHeroBanner props={data.PrivacyHeroBanner} />
           <PrivacyPolicyData props={data.PrivacyPolicyData} />
           <LetsWork contact={data.LetsWork} />
-          <Cookies props={data.cookie} />
+         
         </div>
       ) : (
         <>

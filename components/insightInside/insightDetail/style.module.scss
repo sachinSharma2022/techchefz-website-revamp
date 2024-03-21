@@ -91,7 +91,6 @@
 
     .insightDetailPara {
       width: 100%;
-      //  padding-right: 26%;
 
       @include mobile-tablet-p {
         padding: 0;
@@ -115,6 +114,10 @@
         color: color(primary-white);
         line-height: 1.8rem;
         opacity: opacity(dark);
+
+        a {
+          opacity: 1;
+        }
 
         @include mobile {
           font-size: text(normal);
@@ -169,9 +172,11 @@
         }
 
         .linkTag {
+
           a {
             font-size: text(lg);
             color: color(info-blue);
+            
             &:hover {
               text-decoration: underline;
               color: color(info-blue);

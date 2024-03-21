@@ -105,7 +105,7 @@
 
       @include mobile-tablet-p {
         text-align: left;
-        font-size: text(larger);
+        font-size: text(xxxl);
         line-height: 1.2;
       }
 
@@ -117,7 +117,7 @@
         @include textGradient;
 
         @include tablet-p {
-          font-size: text(larger);
+          font-size: text(xxxl);
           line-height: 1.2;
         }
 

@@ -1,12 +1,12 @@
 "use client";
-import * as React from "react";
 import { cva } from "class-variance-authority";
-import { cn } from "../../../lib/utils";
-import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import * as React from "react";
+import { useEffect, useRef } from "react";
+import { cn } from "../../../lib/utils";
 
-import styles from "./style.module.scss";
 import CircleLoader from "../circleLoader";
+import styles from "./style.module.scss";
 
 const buttonVariants = cva(styles.base, {
   variants: {
@@ -45,6 +45,7 @@ const Button = React.forwardRef(
       loader,
       repeatCount,
       dur,
+      ariaLabel,
       ...props
     },
     ref
@@ -90,6 +91,7 @@ const Button = React.forwardRef(
         ref={ref}
         {...props}
         disabled={disabled}
+        aria-label={ariaLabel}
       >
         <div className={cn(styles.btnText, props.pStyle)}>
           {children}

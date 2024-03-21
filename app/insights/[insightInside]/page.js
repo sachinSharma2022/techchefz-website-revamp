@@ -57,7 +57,11 @@ const InsightInside = async ({ params }) => {
             BlockTitle={page.attributes.BlockTitle}
             index={page.id}
           />
-          <RelatedInsight props={data} params={params} />
+          <RelatedInsight
+           
+            props={data}
+            params={params}
+          />
           <Innovation props={page.attributes.ourInnvotion} />
         </>
       ) : (
