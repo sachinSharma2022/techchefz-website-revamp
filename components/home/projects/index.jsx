@@ -22,6 +22,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Autoplay, Pagination } from "swiper/modules";
+import useLazyLoad from "@/lib/useLazyLoad";
 
 const Card = ({ ...props }) => {
   const isMobileScreen = useMediaQuery({ query: "(max-width: 1199px)" });
@@ -52,7 +53,7 @@ const Card = ({ ...props }) => {
 
       <div className={styles.cardContentStyle}>
         <h3 className={styles.projectBrand}>
-          {props?.project?.PortfolioTitle.split(" ").map((word, index) => {
+          {props?.project?.PortfolioTitle?.split(" ").map((word, index) => {
             return (
               <span key={index} className={styles.mask}>
                 <motion.span
@@ -117,82 +118,49 @@ const Projects = ({ project, brands }) => {
       return '<span class="' + className + '">' + (index + 1) + "</span>";
     },
   };
-
+   const { targetRef, isVisible } = useLazyLoad();
   return (
     <section
+      ref={targetRef}
       className={cn(
         styles.projectsStyle,
         theme ? styles.projectsStyleDark : "",
         "project-slider"
       )}
     >
-      <div className={cn("primary-container")}>
-        <TextRevel>
-          <div className={cn(styles.rowSection)}>
-            <div>
-              <h6
-                className={cn(styles.projectHighlight, "gradient-text")}
-                dangerouslySetInnerHTML={{ __html: `${project[0]?.Title}` }}
-              ></h6>
-              <h3
-                className={cn(styles.datingText, "gradient-text")}
-                dangerouslySetInnerHTML={{ __html: `${project[0]?.SubTitle}` }}
-              ></h3>
-            </div>
-            <div className={styles.paraSec}>
-              <p className={styles.aboutText}>{project[0]?.Description}</p>
+      {isVisible && (
+        <div className={cn("primary-container")}>
+          <TextRevel>
+            <div className={cn(styles.rowSection)}>
+              <div>
+                <h6
+                  className={cn(styles.projectHighlight, "gradient-text")}
+                  dangerouslySetInnerHTML={{ __html: `${project[0]?.Title}` }}
+                ></h6>
+                <h3
+                  className={cn(styles.datingText, "gradient-text")}
+                  dangerouslySetInnerHTML={{
+                    __html: `${project[0]?.SubTitle}`,
+                  }}
+                ></h3>
+              </div>
+              <div className={styles.paraSec}>
+                <p className={styles.aboutText}>{project[0]?.Description}</p>
 
-              <Link href={project[0]?.BtnLink}>
-                <Button
-                  variant={!theme ? "lightBlueOutline" : "outline"}
-                  size="md"
-                  aria-label="portfolio button"
-                >
-                  {project[0]?.Btn} <Icons.ArrowRight size={18} />
-                </Button>
-              </Link>
+                <Link href={project[0]?.BtnLink}>
+                  <Button
+                    variant={!theme ? "lightBlueOutline" : "outline"}
+                    size="md"
+                    aria-label="portfolio button"
+                  >
+                    {project[0]?.Btn} <Icons.ArrowRight size={18} />
+                  </Button>
+                </Link>
+              </div>
             </div>
-          </div>
-        </TextRevel>
-        {!isMobileScreen ? (
-          <div ref={container} className={styles.cards}>
-            {brands
-              .filter(
-                (data) => data?.attributes?.Banner?.PortfolioHomePage == true
-              )
-              .map((project, i) => {
-                const targetScale =
-                  1 -
-                  (brands.filter(
-                    (data) =>
-                      data?.attributes?.Banner?.PortfolioHomePage == true
-                  ).length -
-                    i) *
-                    0.05;
-                return (
-                  <Card
-                    key={`p_${i}`}
-                    i={i}
-                    project={project.attributes.Banner}
-                    href={project.id}
-                    progress={scrollYProgress}
-                    range={[i * 0.25, 1]}
-                    targetScale={targetScale}
-                  />
-                );
-              })}
-          </div>
-        ) : (
-          <div ref={container} className={styles.cards}>
-            <Swiper
-              pagination={pagination}
-              modules={[Pagination, Autoplay]}
-              className="mySwiper"
-              autoplay={{
-                delay: 5000,
-                disableOnInteraction: false,
-              }}
-            >
+          </TextRevel>
+          {!isMobileScreen ? (
+            <div ref={container} className={styles.cards}>
               {brands
                 .filter(
                   (data) => data?.attributes?.Banner?.PortfolioHomePage == true
@@ -205,24 +173,63 @@ const Projects = ({ project, brands }) => {
                         data?.attributes?.Banner?.PortfolioHomePage == true
                     ).length -
                       i) *
-                      0.1;
+                      0.05;
                   return (
-                    <SwiperSlide key={`p_${i}`}>
-                      <Card
-                        i={i}
-                        project={project.attributes.Banner}
-                        href={project.id}
-                        progress={scrollYProgress}
-                        range={[i * 0.25, 1]}
-                        targetScale={targetScale}
-                      />
-                    </SwiperSlide>
+                    <Card
+                      key={`p_${i}`}
+                      i={i}
+                      project={project.attributes.Banner}
+                      href={project.id}
+                      progress={scrollYProgress}
+                      range={[i * 0.25, 1]}
+                      targetScale={targetScale}
+                    />
                   );
                 })}
-            </Swiper>
-          </div>
-        )}
-      </div>
+            </div>
+          ) : (
+            <div ref={container} className={styles.cards}>
+              <Swiper
+                pagination={pagination}
+                modules={[Pagination, Autoplay]}
+                className="mySwiper"
+                autoplay={{
+                  delay: 5000,
+                  disableOnInteraction: false,
+                }}
+              >
+                {brands
+                  .filter(
+                    (data) =>
+                      data?.attributes?.Banner?.PortfolioHomePage == true
+                  )
+                  .map((project, i) => {
+                    const targetScale =
+                      1 -
+                      (brands.filter(
+                        (data) =>
+                          data?.attributes?.Banner?.PortfolioHomePage == true
+                      ).length -
+                        i) *
+                        0.1;
+                    return (
+                      <SwiperSlide key={`p_${i}`}>
+                        <Card
+                          i={i}
+                          project={project.attributes.Banner}
+                          href={project.id}
+                          progress={scrollYProgress}
+                          range={[i * 0.25, 1]}
+                          targetScale={targetScale}
+                        />
+                      </SwiperSlide>
+                    );
+                  })}
+              </Swiper>
+            </div>
+          )}
+        </div>
+      )}
     </section>
   );
 };

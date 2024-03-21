@@ -14,18 +14,21 @@ import { base_Uri } from "@/lib/constants";
 import { Form, Formik, useFormik } from "formik";
 import { commonValidationSchema } from "@/lib/FormSchema";
 import { triggerMail } from "@/lib/triggerMail";
-import ReCAPTCHA from "react-google-recaptcha";
+//import ReCAPTCHA from "react-google-recaptcha";
 import { verifyCaptcha } from "@/lib/ServerActions";
 import { useRef, useState } from "react";
 import CircleLoader from "@/components/ui/circleLoader";
 import { ServiceDropdown } from "@/components/ui/customDropdown";
 import { countryList } from "@/lib/country";
 import ConfirmationPopup from "@/components/ui/confirmationPopup";
+import dynamic from "next/dynamic";
+const ReCAPTCHA = dynamic(() => import("react-google-recaptcha"));
 
 const LetsWork = ({ contact }) => {
   const { theme, setTheme } = useContext(MyContext);
   const [inprogress, setinprogress] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [recaptchaNeeded, setRecaptchaNeeded] = useState(false);
   const options = [
     { name: "Frontend" },
     { name: "Backend" },
@@ -114,7 +117,7 @@ const LetsWork = ({ contact }) => {
                         value={values.firstName}
                         errorStatus={touched.firstName && errors.firstName}
                         onKeyDown={(event) => {
-                          console.log(event.keyCode, "keycode");
+                          setRecaptchaNeeded(true);
                           var regex = new RegExp("^[a-zA-Z]*$");
                           if (!regex.test(event.key) && !(event.key === "'")) {
                             event.preventDefault();
@@ -257,12 +260,14 @@ const LetsWork = ({ contact }) => {
                     </div>
                   </div>
                   <div className={styles.captchaImg}>
-                    <ReCAPTCHA
-                      sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                      ref={recaptchaRef}
-                      onChange={handleCaptchaSubmission}
-                      theme={"dark"}
-                    />
+                    {recaptchaNeeded && (
+                      <ReCAPTCHA
+                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                        ref={recaptchaRef}
+                        onChange={handleCaptchaSubmission}
+                        theme={"dark"}
+                      />
+                    )}
                   </div>
                   <div className={styles.policyArea}>
                     <p className={styles.policyText}>
