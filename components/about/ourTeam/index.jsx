@@ -175,7 +175,7 @@ const OurTeam = ({ props }) => {
               </p>
 
               <div className={styles.socialSection}>
-                <h4>Let’s Get Connect</h4>
+                <h4>Let’s Connect</h4>
                 <div className={styles.modalIcons}>
                   <Link
                     href={props[0]?.ListofDirectors[index]?.LinkedinLink}
@@ -187,7 +187,7 @@ const OurTeam = ({ props }) => {
                       height={34}
                     />
                   </Link>
-                  <Link
+                  {/* <Link
                     href={props[0]?.ListofDirectors[index]?.twitterlink}
                     target="_blank"
                   >
@@ -196,7 +196,7 @@ const OurTeam = ({ props }) => {
                       width={34}
                       height={34}
                     />
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             </div>

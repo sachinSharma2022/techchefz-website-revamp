@@ -83,9 +83,9 @@
       }
 
       h3 {
-        font-size: text(xl-larger);
+        font-size: 3rem;
         font-weight: 500;
-        line-height: 5rem;
+        line-height: 3rem;
         margin-bottom: 2rem;
         @include textGradient;
 
@@ -249,6 +249,10 @@
 
         &:hover {
           border-color: color(heading-liner);
+        }
+
+        h4{
+          opacity: opacity(dark);
         }
       }
     }
