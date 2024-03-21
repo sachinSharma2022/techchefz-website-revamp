@@ -7,14 +7,19 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 3rem;
-  height: 3rem;
-  border-radius: 0.5rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 0.25rem;
   background-color: color(info-blue);
   color: color(primary-white);
   z-index: 99;
   transition: all 0.5s;
-  transform: rotate(-90deg);
+  overflow: hidden;
+  scale: 0.8;
+
+  svg {
+    scale: 1.2;
+  }
 
   @include mobile-tablet-p {
     display: none;
