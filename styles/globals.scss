@@ -1154,6 +1154,12 @@ html.lenis {
   padding: 6rem 0;
 }
 
+.insight-detail-related-slider {
+  background-color: color(bg-soft);
+  min-height: 54rem;
+  padding: 6rem 0;
+}
+
 .fadeinout {
   animation: fadeinout 1s ease-in-out;
 }
@@ -1277,6 +1283,7 @@ html.lenis {
   .tech-related-style,
   .case-related-style,
   .cms-related-style,
+  .insight-detail-related-slider,
   .insight-related-slider {
     background-color: color(dark-bg);
   }
