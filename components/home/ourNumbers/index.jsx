@@ -6,6 +6,7 @@ import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 //import TextRevel from "@/components/ui/sectionAnimation";
+import dynamic from "next/dynamic";
 const TextRevel = dynamic(() => import("@/components/ui/sectionAnimation"));
 import { MyContext } from "@/context/theme";
 

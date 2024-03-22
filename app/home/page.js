@@ -55,7 +55,7 @@ const HomePage = async () => {
           <DigitalTransformation digital={data.digitalTransform} />
           <HomeTestimonials testimonials={data.Testimonials} />
           <LetsWork contact={data.ContactUs} />
-            <Cookies props={data.cookie} />
+          <Cookies props={data.cookie} />
         </div>
       ) : (
         <>

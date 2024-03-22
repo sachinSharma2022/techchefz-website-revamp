@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { base_Uri } from "@/lib/constants";
 //import TextRevel from "@/components/ui/sectionAnimation";
+import dynamic from "next/dynamic";
 const TextRevel = dynamic(() => import("@/components/ui/sectionAnimation"));
 import useLazyLoad from "@/lib/useLazyLoad";
 

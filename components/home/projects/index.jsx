@@ -4,16 +4,11 @@ import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 //import TextRevel from "@/components/ui/sectionAnimation";
+import dynamic from "next/dynamic";
 const TextRevel = dynamic(() => import("@/components/ui/sectionAnimation"));
 import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
-import {
-  motion,
-  useInView,
-  useScroll,
-  useTransform,
-  LazyMotion,
-} from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { useContext, useRef } from "react";
 import { useMediaQuery } from "react-responsive";
@@ -29,7 +24,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Autoplay, Pagination } from "swiper/modules";
-import useLazyLoad from "@/lib/useLazyLoad";
+//import useLazyLoad from "@/lib/useLazyLoad";
 
 const Card = ({ ...props }) => {
   const isMobileScreen = useMediaQuery({ query: "(max-width: 1199px)" });
@@ -41,24 +36,44 @@ const Card = ({ ...props }) => {
     props.targetScale,
   ]);
   return (
-    <LazyMotion features={domAnimation}>
-      <m.div className={styles.cardSec} style={isMobileScreen ? "" : { scale }}>
-        <Link href={`/portfolio/${props.href}`} className={styles.projectImg}>
-          <ImageCustom
-            src={
-              props?.project?.PortfolioImage?.data?.attributes?.url
-                ? `${base_Uri}${props?.project?.PortfolioImage?.data?.attributes?.url}`
-                : `${base_Uri}/`
-            }
-            width={1440}
-            height={900}
-            alt="projectImg"
-          />
-        </Link>
+    <motion.div
+      className={styles.cardSec}
+      style={isMobileScreen ? "" : { scale }}
+    >
+      <Link href={`/portfolio/${props.href}`} className={styles.projectImg}>
+        <ImageCustom
+          src={
+            props?.project?.PortfolioImage?.data?.attributes?.url
+              ? `${base_Uri}${props?.project?.PortfolioImage?.data?.attributes?.url}`
+              : `${base_Uri}/`
+          }
+          width={1440}
+          height={900}
+          alt="projectImg"
+        />
+      </Link>
 
-        <div className={styles.cardContentStyle}>
-          <h3 className={styles.projectBrand}>
-            {props?.project?.PortfolioTitle?.split(" ").map((word, index) => {
+      <div className={styles.cardContentStyle}>
+        <h3 className={styles.projectBrand}>
+          {props?.project?.PortfolioTitle?.split(" ").map((word, index) => {
+            return (
+              <span key={index} className={styles.mask}>
+                <motion.span
+                  variants={slideUp}
+                  custom={index}
+                  animate={isInView ? "open" : "closed"}
+                  key={index}
+                >
+                  {word}
+                </motion.span>
+              </span>
+            );
+          })}
+        </h3>
+
+        <p ref={description} className={styles.brandFromText}>
+          {props?.project?.PortfolioHomepageDes.split(" ").map(
+            (word, index) => {
               return (
                 <span key={index} className={styles.mask}>
                   <motion.span
@@ -71,28 +86,10 @@ const Card = ({ ...props }) => {
                   </motion.span>
                 </span>
               );
-            })}
-          </h3>
-
-          <p ref={description} className={styles.brandFromText}>
-            {props?.project?.PortfolioHomepageDes.split(" ").map(
-              (word, index) => {
-                return (
-                  <span key={index} className={styles.mask}>
-                    <motion.span
-                      variants={slideUp}
-                      custom={index}
-                      animate={isInView ? "open" : "closed"}
-                      key={index}
-                    >
-                      {word}
-                    </motion.span>
-                  </span>
-                );
-              }
-            )}
-          </p>
-          {/* <motion.div
+            }
+          )}
+        </p>
+        {/* <motion.div
           variants={opacity}
           animate={isInView ? "open" : "closed"}
           className={styles.projectBtn}
@@ -103,9 +100,8 @@ const Card = ({ ...props }) => {
             </Link>
           ))}
         </motion.div> */}
-        </div>
-      </m.div>
-    </LazyMotion>
+      </div>
+    </motion.div>
   );
 };
 
@@ -124,10 +120,10 @@ const Projects = ({ project, brands }) => {
       return '<span class="' + className + '">' + (index + 1) + "</span>";
     },
   };
-  const { targetRef, isVisible } = useLazyLoad();
+  // const { targetRef, isVisible } = useLazyLoad();
   return (
-    <div ref={targetRef}>
-      {isVisible && (
+    // <div ref={targetRef}>
+    //   {isVisible && (
         <section
           className={cn(
             styles.projectsStyle,
@@ -237,8 +233,8 @@ const Projects = ({ project, brands }) => {
             )}
           </div>
         </section>
-      )}
-    </div>
+    //   )}
+    // </div>
   );
 };
 
