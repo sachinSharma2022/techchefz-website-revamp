@@ -3,10 +3,17 @@
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import TextRevel from "@/components/ui/sectionAnimation";
+//import TextRevel from "@/components/ui/sectionAnimation";
+const TextRevel = dynamic(() => import("@/components/ui/sectionAnimation"));
 import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useInView,
+  useScroll,
+  useTransform,
+  LazyMotion,
+} from "framer-motion";
 import Link from "next/link";
 import { useContext, useRef } from "react";
 import { useMediaQuery } from "react-responsive";
@@ -34,44 +41,24 @@ const Card = ({ ...props }) => {
     props.targetScale,
   ]);
   return (
-    <motion.div
-      className={styles.cardSec}
-      style={isMobileScreen ? "" : { scale }}
-    >
-      <Link href={`/portfolio/${props.href}`} className={styles.projectImg}>
-        <ImageCustom
-          src={
-            props?.project?.PortfolioImage?.data?.attributes?.url
-              ? `${base_Uri}${props?.project?.PortfolioImage?.data?.attributes?.url}`
-              : `${base_Uri}/`
-          }
-          width={1440}
-          height={900}
-          alt="projectImg"
-        />
-      </Link>
+    <LazyMotion features={domAnimation}>
+      <m.div className={styles.cardSec} style={isMobileScreen ? "" : { scale }}>
+        <Link href={`/portfolio/${props.href}`} className={styles.projectImg}>
+          <ImageCustom
+            src={
+              props?.project?.PortfolioImage?.data?.attributes?.url
+                ? `${base_Uri}${props?.project?.PortfolioImage?.data?.attributes?.url}`
+                : `${base_Uri}/`
+            }
+            width={1440}
+            height={900}
+            alt="projectImg"
+          />
+        </Link>
 
-      <div className={styles.cardContentStyle}>
-        <h3 className={styles.projectBrand}>
-          {props?.project?.PortfolioTitle?.split(" ").map((word, index) => {
-            return (
-              <span key={index} className={styles.mask}>
-                <motion.span
-                  variants={slideUp}
-                  custom={index}
-                  animate={isInView ? "open" : "closed"}
-                  key={index}
-                >
-                  {word}
-                </motion.span>
-              </span>
-            );
-          })}
-        </h3>
-
-        <p ref={description} className={styles.brandFromText}>
-          {props?.project?.PortfolioHomepageDes.split(" ").map(
-            (word, index) => {
+        <div className={styles.cardContentStyle}>
+          <h3 className={styles.projectBrand}>
+            {props?.project?.PortfolioTitle?.split(" ").map((word, index) => {
               return (
                 <span key={index} className={styles.mask}>
                   <motion.span
@@ -84,10 +71,28 @@ const Card = ({ ...props }) => {
                   </motion.span>
                 </span>
               );
-            }
-          )}
-        </p>
-        {/* <motion.div
+            })}
+          </h3>
+
+          <p ref={description} className={styles.brandFromText}>
+            {props?.project?.PortfolioHomepageDes.split(" ").map(
+              (word, index) => {
+                return (
+                  <span key={index} className={styles.mask}>
+                    <motion.span
+                      variants={slideUp}
+                      custom={index}
+                      animate={isInView ? "open" : "closed"}
+                      key={index}
+                    >
+                      {word}
+                    </motion.span>
+                  </span>
+                );
+              }
+            )}
+          </p>
+          {/* <motion.div
           variants={opacity}
           animate={isInView ? "open" : "closed"}
           className={styles.projectBtn}
@@ -98,8 +103,9 @@ const Card = ({ ...props }) => {
             </Link>
           ))}
         </motion.div> */}
-      </div>
-    </motion.div>
+        </div>
+      </m.div>
+    </LazyMotion>
   );
 };
 
@@ -118,86 +124,49 @@ const Projects = ({ project, brands }) => {
       return '<span class="' + className + '">' + (index + 1) + "</span>";
     },
   };
-   const { targetRef, isVisible } = useLazyLoad();
+  const { targetRef, isVisible } = useLazyLoad();
   return (
-    <section
-      ref={targetRef}
-      className={cn(
-        styles.projectsStyle,
-        theme ? styles.projectsStyleDark : "",
-        "project-slider"
-      )}
-    >
+    <div ref={targetRef}>
       {isVisible && (
-        <div className={cn("primary-container")}>
-          <TextRevel>
-            <div className={cn(styles.rowSection)}>
-              <div>
-                <h6
-                  className={cn(styles.projectHighlight, "gradient-text")}
-                  dangerouslySetInnerHTML={{ __html: `${project[0]?.Title}` }}
-                ></h6>
-                <h3
-                  className={cn(styles.datingText, "gradient-text")}
-                  dangerouslySetInnerHTML={{
-                    __html: `${project[0]?.SubTitle}`,
-                  }}
-                ></h3>
-              </div>
-              <div className={styles.paraSec}>
-                <p className={styles.aboutText}>{project[0]?.Description}</p>
+        <section
+          className={cn(
+            styles.projectsStyle,
+            theme ? styles.projectsStyleDark : "",
+            "project-slider"
+          )}
+        >
+          <div className={cn("primary-container")}>
+            <TextRevel>
+              <div className={cn(styles.rowSection)}>
+                <div>
+                  <h6
+                    className={cn(styles.projectHighlight, "gradient-text")}
+                    dangerouslySetInnerHTML={{ __html: `${project[0]?.Title}` }}
+                  ></h6>
+                  <h3
+                    className={cn(styles.datingText, "gradient-text")}
+                    dangerouslySetInnerHTML={{
+                      __html: `${project[0]?.SubTitle}`,
+                    }}
+                  ></h3>
+                </div>
+                <div className={styles.paraSec}>
+                  <p className={styles.aboutText}>{project[0]?.Description}</p>
 
-                <Link href={project[0]?.BtnLink}>
-                  <Button
-                    variant={!theme ? "lightBlueOutline" : "outline"}
-                    size="md"
-                    aria-label="portfolio button"
-                  >
-                    {project[0]?.Btn} <Icons.ArrowRight size={18} />
-                  </Button>
-                </Link>
+                  <Link href={project[0]?.BtnLink}>
+                    <Button
+                      variant={!theme ? "lightBlueOutline" : "outline"}
+                      size="md"
+                      aria-label="portfolio button"
+                    >
+                      {project[0]?.Btn} <Icons.ArrowRight size={18} />
+                    </Button>
+                  </Link>
+                </div>
               </div>
-            </div>
-          </TextRevel>
-          {!isMobileScreen ? (
-            <div ref={container} className={styles.cards}>
-              {brands
-                .filter(
-                  (data) => data?.attributes?.Banner?.PortfolioHomePage == true
-                )
-                .map((project, i) => {
-                  const targetScale =
-                    1 -
-                    (brands.filter(
-                      (data) =>
-                        data?.attributes?.Banner?.PortfolioHomePage == true
-                    ).length -
-                      i) *
-                      0.05;
-                  return (
-                    <Card
-                      key={`p_${i}`}
-                      i={i}
-                      project={project.attributes.Banner}
-                      href={project.id}
-                      progress={scrollYProgress}
-                      range={[i * 0.25, 1]}
-                      targetScale={targetScale}
-                    />
-                  );
-                })}
-            </div>
-          ) : (
-            <div ref={container} className={styles.cards}>
-              <Swiper
-                pagination={pagination}
-                modules={[Pagination, Autoplay]}
-                className="mySwiper"
-                autoplay={{
-                  delay: 5000,
-                  disableOnInteraction: false,
-                }}
-              >
+            </TextRevel>
+            {!isMobileScreen ? (
+              <div ref={container} className={styles.cards}>
                 {brands
                   .filter(
                     (data) =>
@@ -211,26 +180,65 @@ const Projects = ({ project, brands }) => {
                           data?.attributes?.Banner?.PortfolioHomePage == true
                       ).length -
                         i) *
-                        0.1;
+                        0.05;
                     return (
-                      <SwiperSlide key={`p_${i}`}>
-                        <Card
-                          i={i}
-                          project={project.attributes.Banner}
-                          href={project.id}
-                          progress={scrollYProgress}
-                          range={[i * 0.25, 1]}
-                          targetScale={targetScale}
-                        />
-                      </SwiperSlide>
+                      <Card
+                        key={`p_${i}`}
+                        i={i}
+                        project={project.attributes.Banner}
+                        href={project.id}
+                        progress={scrollYProgress}
+                        range={[i * 0.25, 1]}
+                        targetScale={targetScale}
+                      />
                     );
                   })}
-              </Swiper>
-            </div>
-          )}
-        </div>
+              </div>
+            ) : (
+              <div ref={container} className={styles.cards}>
+                <Swiper
+                  pagination={pagination}
+                  modules={[Pagination, Autoplay]}
+                  className="mySwiper"
+                  autoplay={{
+                    delay: 5000,
+                    disableOnInteraction: false,
+                  }}
+                >
+                  {brands
+                    .filter(
+                      (data) =>
+                        data?.attributes?.Banner?.PortfolioHomePage == true
+                    )
+                    .map((project, i) => {
+                      const targetScale =
+                        1 -
+                        (brands.filter(
+                          (data) =>
+                            data?.attributes?.Banner?.PortfolioHomePage == true
+                        ).length -
+                          i) *
+                          0.1;
+                      return (
+                        <SwiperSlide key={`p_${i}`}>
+                          <Card
+                            i={i}
+                            project={project.attributes.Banner}
+                            href={project.id}
+                            progress={scrollYProgress}
+                            range={[i * 0.25, 1]}
+                            targetScale={targetScale}
+                          />
+                        </SwiperSlide>
+                      );
+                    })}
+                </Swiper>
+              </div>
+            )}
+          </div>
+        </section>
       )}
-    </section>
+    </div>
   );
 };
 

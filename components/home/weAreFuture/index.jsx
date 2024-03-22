@@ -9,66 +9,70 @@ import { useContext } from "react";
 import { useEffect, useRef, useState } from "react";
 
 import styles from "./style.module.scss";
-import TextRevel from "@/components/ui/sectionAnimation";
+//import TextRevel from "@/components/ui/sectionAnimation";
+import dynamic from "next/dynamic";
 import useLazyLoad from "@/lib/useLazyLoad";
-
+const TextRevel = dynamic(() => import("@/components/ui/sectionAnimation"));
 const WeAreFuture = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   const { targetRef, isVisible } = useLazyLoad();
 
   return (
-    <section
-      ref={targetRef}
-      className={`${styles.futureSpacing} ${
-        theme ? styles.futureSpacingDark : ""
-      }`}
-    >
+    <div ref={targetRef}>
       {isVisible && (
-        <div className={cn("primary-container")}>
-          <div className={styles.futureTitle}>
-            <h6
-              className={cn(styles.text, "gradient-text")}
-              dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
-            ></h6>
-            <h2 className={styles.title}>
-              {props?.SubTitle}
+        <section
+          className={`${styles.futureSpacing} ${
+            theme ? styles.futureSpacingDark : ""
+          }`}
+        >
+          <div className={cn("primary-container")}>
+            <div className={styles.futureTitle}>
+              <h6
+                className={cn(styles.text, "gradient-text")}
+                dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+              ></h6>
+              <h2 className={styles.title}>
+                {props?.SubTitle}
 
-              <span className={styles.globalText}>
-                {props?.Description}
-                {/* <div className={styles.space} /> */}
-                {props?.SubTitle2}
-              </span>
-              <span className={styles.titleHighlight}>{props?.SubTitle3}</span>
-            </h2>
-          </div>
-          <TextRevel>
-            <div className={styles.contentSection}>
-              <h3
-                className={cn(styles.datingText, "gradient-text")}
-                dangerouslySetInnerHTML={{
-                  __html: `${props?.CompanyTechnology[0]?.title}`,
-                }}
-              ></h3>
-              <div>
-                <p className={styles.aboutText}>
-                  {props?.CompanyTechnology[0]?.description}
-                </p>
-
-                <Link href={props?.CompanyTechnology[0]?.BtnLink}>
-                  <Button
-                    variant={theme ? "lightBlueOutline" : "outline"}
-                    size="md"
-                  >
-                    {props?.CompanyTechnology[0]?.button}{" "}
-                    <Icons.ArrowRight size={18} />
-                  </Button>
-                </Link>
-              </div>
+                <span className={styles.globalText}>
+                  {props?.Description}
+                  {/* <div className={styles.space} /> */}
+                  {props?.SubTitle2}
+                </span>
+                <span className={styles.titleHighlight}>
+                  {props?.SubTitle3}
+                </span>
+              </h2>
             </div>
-          </TextRevel>
-        </div>
+            <TextRevel>
+              <div className={styles.contentSection}>
+                <h3
+                  className={cn(styles.datingText, "gradient-text")}
+                  dangerouslySetInnerHTML={{
+                    __html: `${props?.CompanyTechnology[0]?.title}`,
+                  }}
+                ></h3>
+                <div>
+                  <p className={styles.aboutText}>
+                    {props?.CompanyTechnology[0]?.description}
+                  </p>
+
+                  <Link href={props?.CompanyTechnology[0]?.BtnLink}>
+                    <Button
+                      variant={theme ? "lightBlueOutline" : "outline"}
+                      size="md"
+                    >
+                      {props?.CompanyTechnology[0]?.button}{" "}
+                      <Icons.ArrowRight size={18} />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </TextRevel>
+          </div>
+        </section>
       )}
-    </section>
+    </div>
   );
 };
 

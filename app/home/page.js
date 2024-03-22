@@ -1,19 +1,24 @@
 //import DigitalTransformation from "@/components/home/digitalTransformation";
 //import HomeTestimonials from "@/components/home/homeTestimonials";
-import LandingBanner from "@/components/home/landingBanner";
+//import LandingBanner from "@/components/home/landingBanner";
 //import LetsWork from "@/components/home/letsWork";
 //import OurNumbers from "@/components/home/ourNumbers";
-import Projects from "@/components/home/projects";
-import Service from "@/components/home/service";
+// import Projects from "@/components/home/projects";
+// import Service from "@/components/home/service";
 //import TechnologyStack from "@/components/home/technologyStack";
-import WeAreFuture from "@/components/home/weAreFuture";
-import HomepageIntro from "@/components/ui/homepageIntro";
+//import WeAreFuture from "@/components/home/weAreFuture";
+//import HomepageIntro from "@/components/ui/homepageIntro";
 //import Curve from "@/components/ui/pageTransition";
 import { api_Home_Page, base_Url, api_Case_study_Page } from "@/lib/constants";
 import { getData, getDataDynamic } from "@/lib/fetchData";
 import NotFound from "../not-found";
 import dynamic from "next/dynamic";
 import Cookies from "@/components/ui/cookiesPopup";
+const LandingBanner = dynamic(() => import("@/components/home/landingBanner"));
+const HomepageIntro = dynamic(() => import("@/components/ui/homepageIntro"));
+const WeAreFuture = dynamic(() => import("@/components/home/weAreFuture"));
+const Projects = dynamic(() => import("@/components/home/projects"));
+const Service = dynamic(() => import("@/components/home/service"));
 const LetsWork = dynamic(() => import("@/components/home/letsWork"));
 const HomeTestimonials = dynamic(() =>
   import("@/components/home/homeTestimonials")

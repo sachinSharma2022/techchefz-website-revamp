@@ -1,7 +1,7 @@
-import { FooterContainer } from "@/components/layouts/footer/footerContainer";
+//import { FooterContainer } from "@/components/layouts/footer/footerContainer";
 import ThemeProvider from "@/context/theme";
 import "bootstrap/dist/css/bootstrap.css";
-import Header from "../components/layouts/header";
+//import Header from "../components/layouts/header";
 import { aeonik, helvetica } from "../lib/fonts";
 import { cn } from "../lib/utils";
 import "../styles/globals.scss";
@@ -9,7 +9,11 @@ import Head from "next/head";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { api_Home_Page } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
-
+import dynamic from "next/dynamic";
+const Header = dynamic(() => import("@/components/layouts/header"));
+const FooterContainer = dynamic(() =>
+  import("@/components/layouts/footer/footerContainer")
+);
 export async function generateMetadata() {
   const data = await getData(api_Home_Page);
   return {

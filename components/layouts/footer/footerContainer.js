@@ -2,7 +2,7 @@ import Footer from ".";
 import { getDataDynamic } from "@/lib/fetchData";
 import { api_footer_Page } from "@/lib/constants";
 import NotFound from "@/app/not-found";
-export const FooterContainer = async () => {
+const FooterContainer = async () => {
   const data = await getDataDynamic(api_footer_Page);
 
   return (
@@ -16,10 +16,9 @@ export const FooterContainer = async () => {
           Reserved={data?.attributes?.Reserved}
         />
       ) : (
-        <>
-         
-        </>
+        <></>
       )}
     </>
   );
 };
+export default FooterContainer;
