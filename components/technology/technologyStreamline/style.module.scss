@@ -203,6 +203,7 @@
     .streamlineCard {
       background: color(input-bg);
       border-color: rgba(color(primary-white), 0.12);
+      @include transition(0.5s);
 
       &:hover {
         border-color: rgba(color(heading-liner), 1);

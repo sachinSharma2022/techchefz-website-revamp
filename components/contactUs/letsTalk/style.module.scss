@@ -264,6 +264,7 @@
       .contactInnerFlex {
         background-color: rgba(color(input-bg), 0.8);
         color: color(primary-white);
+        @include transition(0.3s);
 
         &:hover {
           background-color: rgba(color(input-bg), 1);

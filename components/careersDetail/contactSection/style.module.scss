@@ -2,16 +2,14 @@
 
 .contactSectionStyle {
   padding: spacing(section-primary-padding);
-  background-color: color(primary-background);
+  background-color: color(bg-soft);
 
   @include mobile-tablet-p {
     padding: 4.75rem 0.5rem;
   }
 
   @include mobile {
-    padding: 1rem 1.25rem;
-    border-radius: text(xl);
-    margin: 0 1.5rem;
+    padding: 1rem 0;
   }
   
   .workArea {
@@ -247,6 +245,7 @@
         
         a{
           color: color(heading-liner);
+          @include transition(0.5s);
           
           &:hover{
            text-decoration: underline;

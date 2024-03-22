@@ -65,6 +65,7 @@
   &.serviceBoxDark {
     background-color: color(text-primary);
     border: 0.14rem solid rgba(color(primary-white), 0.12);
+    @include transition(0.5s);
 
     &:hover {
       border: 0.125rem solid color(heading-liner);

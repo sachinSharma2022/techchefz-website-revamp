@@ -94,6 +94,7 @@
         min-height: 4.875rem;
         display: flex;
         align-items: center;
+        @include transition(0.5s);
 
         @include mobile-tablet-p {
           width: 100%;
@@ -130,7 +131,7 @@
           padding: 0.4rem 0;
           margin: 0 0.5rem;
           border-radius: 0.5rem;
-          transition: all 0.5s;
+          @include transition(0.5s);
 
           @include mobile-tablet-p {
             font-size: 20px;
@@ -387,8 +388,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: all 0.5s;
         position: relative;
+        @include transition(0.5s);
 
         &:hover {
           background-color: rgba(color(text-primary), 0.12);
@@ -496,7 +497,7 @@
         color: color(primary-white);
         margin: 0;
         white-space: nowrap;
-        transition: all 0.3s;
+        @include transition(0.3s);
 
         &:hover {
           margin-left: 0.7rem;
@@ -588,7 +589,7 @@
           border-radius: 12px;
           margin-top: 1rem;
           border: 0.14rem solid transparent;
-          transition: all 0.5s ease-in-out;
+          @include transition(0.5s);
           display: flex;
           flex-direction: column;
 
@@ -864,6 +865,7 @@
       .modeBtn {
         button {
           border: 0.14rem solid rgba(color(primary-white), 0.12);
+          @include transition(0.3s);
 
           &:hover {
             background-color: rgba(color(primary-white), 0.2);
@@ -904,7 +906,7 @@
                   left: 50%;
                   transform: translate(-50%);
                   opacity: 0;
-                  transition: all 0.5s;
+                  @include transition(0.5s);
                 }
                 &:hover {
                   &::before {

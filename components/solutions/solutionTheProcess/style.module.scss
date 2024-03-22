@@ -149,6 +149,7 @@
 
       @include mobile-tablet-p {
         opacity: 1;
+        padding: 1.5rem;
       }
 
       &[style*="opacity: 1"] {

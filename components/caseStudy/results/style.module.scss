@@ -50,8 +50,7 @@
     opacity: opacity(light);
 
     @include mobile-tablet-p {
-      font-size: text(normal);
-      line-height: text(xl);
+      line-height: 1.5;
     }
   }
   .resultCards {
@@ -246,6 +245,7 @@
       .resultCard {
         background-color: color(text-primary);
         border-color: rgba(color(primary-white), 0.12);
+        @include transition(0.5s);
 
         &:hover {
           border-color: color(heading-liner);

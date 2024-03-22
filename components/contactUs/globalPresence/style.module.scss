@@ -162,6 +162,11 @@ $s: 10px;
       bottom: 273px;
       left: 7vw;
       flex-direction: column;
+
+      @include mobile-tablet-p {
+        bottom: 100px;
+        left: 4vw;
+      }
     }
 
     &:nth-child(2) {
@@ -169,6 +174,12 @@ $s: 10px;
       left: -58px;
       right: 0;
       flex-direction: column;
+
+      @include mobile-tablet-p {
+        top: 10px;
+    left: -19px;
+    flex-direction: column-reverse;
+      }
     }
 
     &:nth-child(3) {
@@ -176,6 +187,11 @@ $s: 10px;
       right: 0;
       left: 590px;
       gap: 20px 20px;
+
+      @include mobile-tablet-p {
+        top: 70px;
+    left: 224px;
+      }
     }
 
     &:nth-child(4) {
@@ -190,6 +206,20 @@ $s: 10px;
       right: 0;
       left: 340px;
       flex-direction: column;
+
+      @include mobile-tablet-p {
+        bottom: 77px;
+        right: 0;
+        left: 89px;
+      }
+    }
+
+    .locationName {
+      font-size: text(normal);
+
+      @include mobile-tablet-p {
+        font-size: 0.8rem;
+      }
     }
 
 
@@ -234,6 +264,11 @@ $s: 10px;
       border-color: #fff;
       background-color: none;
       border-width: 2px;
+
+      @include mobile-tablet-p {
+        width: 400%;
+        height: 400%;
+      }
     }
   }
 }
