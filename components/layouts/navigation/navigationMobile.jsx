@@ -72,6 +72,17 @@ const NavigationMobile = ({ props, featureArticle }) => {
     setTechMenu(false);
     setMoreMenu(false);
   };
+  const onlycloseMenu = () => {
+    setMobileMenuShow(!mobileMenuShow);
+  };
+  const onlycloseTechMenu = () => {
+    setMobileMenuShow(!mobileMenuShow);
+    setTechMenu(false);
+  };
+  const onlycloseMoreMenu = () => {
+    setMobileMenuShow(!mobileMenuShow);
+    setMoreMenu(false);
+  };
 
   const technologyToggle = () => {
     setTechMenu(true);
@@ -156,6 +167,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
       </div>
     );
   }
+  console.log(mobileMenuShow, "mobileMenuShow");
   return (
     <header
       className={cn(
@@ -178,7 +190,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
             <li className={styles.menuItem}>
               <Link
                 href={props[0]?.Link}
-                onClick={closeMenu}
+                onClick={onlycloseMenu}
                 className={pathname == "/about" ? styles.active : ""}
               >
                 {props[0]?.Title}
@@ -187,7 +199,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
             <li className={styles.menuItem}>
               <Link
                 href={props[1]?.Link}
-                onClick={closeMenu}
+                onClick={onlycloseMenu}
                 className={pathname == "/solutions" ? styles.active : ""}
               >
                 {props[1]?.Title}
@@ -226,7 +238,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                         <div className="col-sm-6">
                           <Link
                             href={props[2]?.DropDown[1]?.Links}
-                            onClick={closeMenu}
+                            onClick={onlycloseTechMenu}
                             className={cn(styles.hrefInnerFlex)}
                           >
                             <div className={styles.head}>
@@ -241,7 +253,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                           </Link>
                           <Link
                             href={props[2]?.DropDown[2]?.Links}
-                            onClick={closeMenu}
+                            onClick={onlycloseTechMenu}
                             className={cn(styles.hrefInnerFlex)}
                           >
                             <div className={styles.head}>
@@ -256,7 +268,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                           </Link>
                           <Link
                             href={props[2]?.DropDown[3]?.Links}
-                            onClick={closeMenu}
+                            onClick={onlycloseTechMenu}
                             className={cn(styles.hrefInnerFlex)}
                           >
                             <div className={styles.head}>
@@ -271,7 +283,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                           </Link>
                           <Link
                             href={props[2]?.DropDown[4]?.Links}
-                            onClick={closeMenu}
+                            onClick={onlycloseTechMenu}
                             className={cn(styles.hrefInnerFlex)}
                           >
                             <div className={styles.head}>
@@ -290,7 +302,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                           <Link
                             href={props[2]?.DropDown[5]?.Links}
                             className={cn(styles.hrefInnerFlex)}
-                            onClick={closeMenu}
+                            onClick={onlycloseTechMenu}
                           >
                             <div className={styles.head}>
                               <h4 className={styles.linkTitle}>
@@ -305,7 +317,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                           <Link
                             href={props[2]?.DropDown[6]?.Links}
                             className={cn(styles.hrefInnerFlex)}
-                            onClick={closeMenu}
+                            onClick={onlycloseTechMenu}
                           >
                             <div className={styles.head}>
                               <h4 className={styles.linkTitle}>
@@ -320,7 +332,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                           <Link
                             href={props[2]?.DropDown[7]?.Links}
                             className={cn(styles.hrefInnerFlex)}
-                            onClick={closeMenu}
+                            onClick={onlycloseTechMenu}
                           >
                             <div className={styles.head}>
                               <h4 className={styles.linkTitle}>
@@ -344,7 +356,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
             <li className={styles.menuItem}>
               <Link
                 href={props[3].Link}
-                onClick={closeMenu}
+                onClick={onlycloseMenu}
                 className={pathname == "/portfolio" ? styles.active : ""}
               >
                 {props[3].Title}
@@ -389,7 +401,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                         <div className="col-sm-12">
                           <Link
                             href={props[4]?.DropDown[0]?.Links}
-                            onClick={closeMenu}
+                            onClick={onlycloseMoreMenu}
                             className={cn(styles.hrefInnerFlex)}
                           >
                             <div className={styles.head}>
@@ -404,7 +416,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                           </Link>
                           <Link
                             href={props[4]?.DropDown[1]?.Links}
-                            onClick={closeMenu}
+                            onClick={onlycloseMoreMenu}
                             className={cn(styles.hrefInnerFlex)}
                           >
                             <div className={styles.head}>
@@ -419,7 +431,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                           </Link>
                           <Link
                             href={props[4]?.DropDown[2]?.Links}
-                            onClick={closeMenu}
+                            onClick={onlycloseMoreMenu}
                             className={cn(styles.hrefInnerFlex)}
                           >
                             <div className={styles.head}>
@@ -434,7 +446,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                           </Link>
                           <Link
                             href={props[4]?.DropDown[4]?.Links}
-                            onClick={closeMenu}
+                            onClick={onlycloseMoreMenu}
                             className={cn(styles.hrefInnerFlex)}
                           >
                             <div className={styles.head}>
