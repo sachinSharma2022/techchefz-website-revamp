@@ -22,7 +22,11 @@ import { ServiceDropdown } from "@/components/ui/customDropdown";
 import { countryList } from "@/lib/country";
 import ConfirmationPopup from "@/components/ui/confirmationPopup";
 import dynamic from "next/dynamic";
-const ReCAPTCHA = dynamic(() => import("react-google-recaptcha"));
+import React from "react";
+const ReCAPTCHA = dynamic(() => import("@/lib/recapchaRef"));
+const ForwardedRefComponent = React.forwardRef((props, ref) => {
+  return <ReCAPTCHA {...props} forwardedRef={ref} />;
+});
 
 const LetsWork = ({ contact }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -80,7 +84,6 @@ const LetsWork = ({ contact }) => {
   }
   const dialogOpen = () => setIsOpen(true);
   const dialogClose = () => setIsOpen(false);
-
   return (
     <section
       className={cn(
@@ -261,7 +264,7 @@ const LetsWork = ({ contact }) => {
                   </div>
                   <div className={styles.captchaImg}>
                     {recaptchaNeeded && (
-                      <ReCAPTCHA
+                      <ForwardedRefComponent
                         sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                         ref={recaptchaRef}
                         onChange={handleCaptchaSubmission}
