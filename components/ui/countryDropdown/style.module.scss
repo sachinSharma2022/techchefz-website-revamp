@@ -13,7 +13,7 @@
     border-radius: 0.75rem;
     height: 4rem;
     gap: .625rem;
-    padding: 0 0 0 1rem;
+    // padding: 0 0 0 1rem;
     background-color: color(primary-white);
     @include transition(0.5s);
 
@@ -36,6 +36,7 @@
       border: none;
       color: color(text-primary);
       border-radius: 0;
+      padding-left: 15px;
     }
     input::-webkit-inner-spin-button {
       -webkit-appearance: none;
@@ -127,5 +128,10 @@
       }
   
     }
+  }
+
+  .selectSection {
+    left: 15px;
+    margin-right: 20px;
   }
 }

@@ -6,7 +6,7 @@ import { Button } from "../button";
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 
-const Cookies = ({props}) => {
+const Cookies = ({ props }) => {
   const [showDiv, setShowDiv] = useState(false);
 
   useEffect(() => {
@@ -28,9 +28,9 @@ const Cookies = ({props}) => {
         <div className={cn(styles.cookies)}>
           <div className={styles.cookiesContent}>
             <Icons.Cookie size={40} />
-            <p dangerouslySetInnerHTML={{ __html: `${props?.Description}`}}>
-              
-            </p>
+            <p
+              dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
+            ></p>
           </div>
           <div className={styles.cookiesButtons}>
             <Button
@@ -47,7 +47,7 @@ const Cookies = ({props}) => {
               size="lg"
               onClick={() => cookieToggle(!showDiv)}
             >
-               {props?.Btn}
+              {props?.Btn}
             </Button>
           </div>
         </div>

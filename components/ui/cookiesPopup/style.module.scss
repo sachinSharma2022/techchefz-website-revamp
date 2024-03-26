@@ -33,7 +33,9 @@
     gap: 1.25rem;
 
     @include mobile {
+      flex-direction: column;
       margin-bottom: text(normal);
+      align-items: flex-start;
     }
 
     p {
@@ -50,9 +52,21 @@
     gap: 1.5rem;
     width: 270px;
 
+    @include mobile-tablet-p {
+      width: 100%;
+      flex-direction: row;
+    }
+
     button {
       width: 100%;
       gap: 1rem;
+
+      > div {
+        
+        @include mobile-tablet-p {
+          font-size: 0.9rem;
+        }
+      }
     }
   }
 }

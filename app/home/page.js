@@ -26,9 +26,6 @@ const TechnologyStack = dynamic(() =>
   import("@/components/home/technologyStack")
 );
 
-
-
-
 const HomePage = async () => {
   const data = await getData(api_Home_Page);
   const data_Portfolio = await getDataDynamic(api_Case_study_Page);
