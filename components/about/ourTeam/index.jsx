@@ -190,16 +190,6 @@ const OurTeam = ({ props }) => {
                       height={34}
                     />
                   </Link>
-                  {/* <Link
-                    href={props[0]?.ListofDirectors[index]?.twitterlink}
-                    target="_blank"
-                  >
-                    <Icons.twitter
-                      className={styles.twitter}
-                      width={34}
-                      height={34}
-                    />
-                  </Link> */}
                 </div>
               </div>
             </div>

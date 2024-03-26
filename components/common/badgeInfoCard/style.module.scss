@@ -8,7 +8,7 @@
   border-radius: 1.25rem;
   border: 0.14rem solid rgba(color(text-primary), 0.12);
   cursor: pointer;
-  transition: all 0.5s ease-in-out;
+  @include transition(0.5s);
   color: color(text-primary);
 
   &:hover {
@@ -90,6 +90,7 @@
     background-color: color(text-primary);
     color: color(primary-white);
     border-color: rgba(color(primary-white), 0.12);
+    @include transition(0.5s);
 
     &:hover {
       border-color: color(heading-liner);

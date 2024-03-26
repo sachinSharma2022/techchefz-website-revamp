@@ -15,6 +15,7 @@
     gap: .625rem;
     padding: 0 0 0 1rem;
     background-color: color(primary-white);
+    @include transition(0.5s);
 
     &:hover,
     &:focus {
@@ -22,7 +23,7 @@
     }
 
     @include mobile-tablet-p{
-      margin: 0.5rem 0;
+      margin: 0;
     }
     
 

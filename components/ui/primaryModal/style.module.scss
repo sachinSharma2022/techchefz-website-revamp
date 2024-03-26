@@ -57,6 +57,12 @@
     position: absolute;
     top: 0;
     right: -60px;
+    z-index: 1;
+
+    @include mobile-tablet-p {
+      top: 10px;
+    right: 10px;
+    }
 
     svg rect {
       fill: color(primary-background);

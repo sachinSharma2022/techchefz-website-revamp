@@ -68,6 +68,7 @@
       padding: 0 2rem;
       height: 44px;
       white-space: nowrap;
+      @include transition(0.5s);
 
       @include mobile-tablet-p {
         margin: 0.25rem;
@@ -144,6 +145,7 @@
         background: color(primary-white);
         padding: 2rem;
         border: 0.14rem solid transparent;
+        @include transition(0.5s);
 
         &:hover {
           border: 0.14rem solid color(heading-liner);
@@ -304,6 +306,7 @@
         background: color(text-primary);
         color: color(primary-white);
         border: 0.14rem solid rgba(255, 255, 255, 0.4);
+        @include transition(0.5s);
 
         &:hover {
           border: 0.14rem solid color(heading-liner);

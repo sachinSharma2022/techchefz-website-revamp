@@ -41,6 +41,7 @@
   &.titleCardDark {
     background: color(primary-black);
     border-color: rgba(color(primary-white), 0.18);
+    @include transition(0.5s);
 
     &:hover {
       border-color: color(heading-liner);
