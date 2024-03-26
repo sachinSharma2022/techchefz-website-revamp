@@ -21,9 +21,8 @@ const RelatedInsight = ({ props, className, sliderClassName, params }) => {
     infinite: false,
     arrows: false,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: 3,
     slidesToScroll: 1,
-    initialSlide: 0,
     beforeChange: (current, next) => {
       setOldSlide(current);
       setActiveSlide(next);
@@ -33,12 +32,12 @@ const RelatedInsight = ({ props, className, sliderClassName, params }) => {
       {
         breakpoint: 3000,
         settings: {
-          slidesToShow: 3.8,
+          slidesToShow: 3.5,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 1500,
+        breakpoint: 1700,
         settings: {
           slidesToShow: 2.5,
           slidesToScroll: 1,
@@ -60,7 +59,6 @@ const RelatedInsight = ({ props, className, sliderClassName, params }) => {
       },
     ],
   };
-  console.log(props, "propsOninsghts");
   return (
     <section
       className={cn(
