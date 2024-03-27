@@ -28,6 +28,7 @@ const TechnologyStack = ({ technology }) => {
   useEffect(() => {
     const ele = document.getElementById("tech-Stack");
     ele.addEventListener("mousemove", move);
+    return () => ele.removeEventListener("mousemove", move);
   }, []);
   return (
     <section
