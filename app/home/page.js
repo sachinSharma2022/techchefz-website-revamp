@@ -14,22 +14,23 @@ import { getData, getDataDynamic } from "@/lib/fetchData";
 import NotFound from "../not-found";
 import dynamic from "next/dynamic";
 import Cookies from "@/components/ui/cookiesPopup";
-const LandingBanner = dynamic(() => import("@/components/home/landingBanner"));
-const HomepageIntro = dynamic(() => import("@/components/ui/homepageIntro"));
-const WeAreFuture = dynamic(() => import("@/components/home/weAreFuture"));
-const Projects = dynamic(() => import("@/components/home/projects"));
-const Service = dynamic(() => import("@/components/home/service"));
-const LetsWork = dynamic(() => import("@/components/home/letsWork"));
-const HomeTestimonials = dynamic(() =>
-  import("@/components/home/homeTestimonials")
-);
-const OurNumbers = dynamic(() => import("@/components/home/ourNumbers"));
-const DigitalTransformation = dynamic(() =>
-  import("@/components/home/digitalTransformation")
-);
-const TechnologyStack = dynamic(() =>
-  import("@/components/home/technologyStack")
-);
+// const LandingBanner = dynamic(() => import("@/components/home/landingBanner"));
+// const HomepageIntro = dynamic(() => import("@/components/ui/homepageIntro"));
+// const WeAreFuture = dynamic(() => import("@/components/home/weAreFuture"));
+// const Projects = dynamic(() => import("@/components/home/projects"));
+// const Service = dynamic(() => import("@/components/home/service"));
+// const LetsWork = dynamic(() => import("@/components/home/letsWork"));
+// const HomeTestimonials = dynamic(() =>
+//   import("@/components/home/homeTestimonials")
+// );
+// const OurNumbers = dynamic(() => import("@/components/home/ourNumbers"));
+// const DigitalTransformation = dynamic(() =>
+//   import("@/components/home/digitalTransformation")
+// );
+// const TechnologyStack = dynamic(() =>
+//   import("@/components/home/technologyStack")
+// );
+import HomeContainer from "@/components/home/homeContainer";
 
 const HomePage = async () => {
   const data = await getData(api_Home_Page);
@@ -39,7 +40,7 @@ const HomePage = async () => {
     <>
       {data ? (
         <div>
-          <LandingBanner props={data.Banner} />
+          {/* <LandingBanner props={data.Banner} />
           <HomepageIntro
             src={
               data?.Technology?.Video?.data?.attributes?.url
@@ -55,7 +56,8 @@ const HomePage = async () => {
           <DigitalTransformation digital={data.digitalTransform} />
           <HomeTestimonials testimonials={data.Testimonials} />
           <LetsWork contact={data.ContactUs} />
-          <Cookies props={data.cookie} />
+          <Cookies props={data.cookie} /> */}
+          <HomeContainer data={data} data_Portfolio={data_Portfolio} />
         </div>
       ) : (
         <>

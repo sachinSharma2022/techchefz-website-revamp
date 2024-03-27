@@ -14,11 +14,9 @@ import { base_Uri } from "@/lib/constants";
 //import TextRevel from "@/components/ui/sectionAnimation";
 import dynamic from "next/dynamic";
 const TextRevel = dynamic(() => import("@/components/ui/sectionAnimation"));
-import useLazyLoad from "@/lib/useLazyLoad";
 
 const DigitalTransformation = ({ digital }) => {
   const { theme, setTheme } = useContext(MyContext);
-  const { targetRef, isVisible } = useLazyLoad();
   const settings = {
     className: "center",
     centerPadding: "0px",
@@ -59,85 +57,78 @@ const DigitalTransformation = ({ digital }) => {
     ],
   };
   return (
-    <div ref={targetRef}>
-      {isVisible && (
-        <section
-          className={`${styles.digitalStyle} ${
-            theme ? styles.digitalStyleDark : ""
-          }`}
-        >
-          <div className={cn("primary-container")}>
-            <TextRevel>
-              <div className={styles.serviceRow}>
-                <div>
-                  <h6
-                    className={cn(styles.projectHighlight, "gradient-text")}
-                    dangerouslySetInnerHTML={{ __html: `${digital[0]?.Title}` }}
-                  ></h6>
+    <section
+      className={`${styles.digitalStyle} ${
+        theme ? styles.digitalStyleDark : ""
+      }`}
+    >
+      <div className={cn("primary-container")}>
+        <TextRevel>
+          <div className={styles.serviceRow}>
+            <div>
+              <h6
+                className={cn(styles.projectHighlight, "gradient-text")}
+                dangerouslySetInnerHTML={{ __html: `${digital[0]?.Title}` }}
+              ></h6>
 
-                  <h3
-                    className={cn(styles.datingText, "gradient-text")}
-                    dangerouslySetInnerHTML={{
-                      __html: `${digital[0]?.SubTitle}`,
-                    }}
-                  ></h3>
-                </div>
+              <h3
+                className={cn(styles.datingText, "gradient-text")}
+                dangerouslySetInnerHTML={{
+                  __html: `${digital[0]?.SubTitle}`,
+                }}
+              ></h3>
+            </div>
 
-                <div className={`${styles.servicesBtn}`}>
-                  <Link href={digital[0]?.BtnLink}>
-                    <Button
-                      variant={theme ? "lightBlueOutline" : "outline"}
-                      size="md"
-                    >
-                      {digital[0]?.Btn} <Icons.ArrowRight size={18} />
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-            </TextRevel>
-
-            <div className={`${styles.digitalMain} digital-transformation`}>
-              <Slider {...settings}>
-                {digital[0]?.Experience.map((data, index) => (
-                  <div key={index}>
-                    <div className={styles.digitalGrid}>
-                      <div className={styles.digitalImg}>
-                        <ImageCustom
-                          src={
-                            data?.Image?.data?.attributes?.url
-                              ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
-                              : `${base_Uri}/`
-                          }
-                          width={421}
-                          height={318}
-                          alt="bannerImg"
-                        />
-                      </div>
-
-                      <div className={styles.experienceCardBox}>
-                        <h4
-                          className={cn(
-                            styles.CustomerHeading,
-                            "gradient-text"
-                          )}
-                          dangerouslySetInnerHTML={{ __html: `${data?.Title}` }}
-                        ></h4>
-                        <p
-                          className={cn(styles.digitalText, "gradient-text")}
-                          dangerouslySetInnerHTML={{
-                            __html: `${data?.Description}`,
-                          }}
-                        ></p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </Slider>
+            <div className={`${styles.servicesBtn}`}>
+              <Link href={digital[0]?.BtnLink}>
+                <Button
+                  variant={theme ? "lightBlueOutline" : "outline"}
+                  size="md"
+                >
+                  {digital[0]?.Btn} <Icons.ArrowRight size={18} />
+                </Button>
+              </Link>
             </div>
           </div>
-        </section>
-      )}
-    </div>
+        </TextRevel>
+
+        <div className={`${styles.digitalMain} digital-transformation`}>
+          <Slider {...settings}>
+            {digital[0]?.Experience.map((data, index) => (
+              <div key={index}>
+                <div className={styles.digitalGrid}>
+                  <div className={styles.digitalImg}>
+                    <ImageCustom
+                      src={
+                        data?.Image?.data?.attributes?.url
+                          ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
+                          : `${base_Uri}/`
+                      }
+                      width={421}
+                      height={318}
+                      alt="bannerImg"
+                    />
+                  </div>
+
+                  <div className={styles.experienceCardBox}>
+                    <h4
+                      className={cn(styles.CustomerHeading, "gradient-text")}
+                      dangerouslySetInnerHTML={{ __html: `${data?.Title}` }}
+                    ></h4>
+                    <p
+                      className={cn(styles.digitalText, "gradient-text")}
+                      dangerouslySetInnerHTML={{
+                        __html: `${data?.Description}`,
+                      }}
+                    ></p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </div>
+    </section>
   );
 };
 

@@ -8,21 +8,16 @@ import OurValues from "@/components/about/ourValues";
 import OurVision from "@/components/about/ourVision";
 import WhatWeDo from "@/components/about/whatWeDo";
 import LetsWork from "@/components/home/letsWork";
-import Curve from "@/components/ui/pageTransition";
 import NotFound from "../not-found";
 import { api_About_Page } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
 
-
-
 export async function generateMetadata() {
   const data = await getData(api_About_Page);
-  
-  
+
   return {
     title: data?.SeoData?.Title,
     description: data?.SeoData?.Description,
-   
   };
 }
 
@@ -30,7 +25,7 @@ const AboutPage = async () => {
   const data = await getData(api_About_Page);
 
   return (
-    <Curve>
+    <>
       {data ? (
         <div className="overflow-hidden">
           <AboutBanner props={data.BannerComponent} />
@@ -52,7 +47,7 @@ const AboutPage = async () => {
           <NotFound />
         </>
       )}
-    </Curve>
+    </>
   );
 };
 

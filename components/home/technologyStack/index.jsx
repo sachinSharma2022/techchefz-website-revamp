@@ -8,7 +8,6 @@ import { useContext, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import styles from "./style.module.scss";
-import useLazyLoad from "@/lib/useLazyLoad";
 
 const TechnologyStack = ({ technology }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -24,7 +23,7 @@ const TechnologyStack = ({ technology }) => {
     var newvalueY = height * pageY * -1 - 50;
     el.style.backgroundPosition = newvalueX + "px     " + newvalueY + "px";
   }
-  const { targetRef, isVisible } = useLazyLoad();
+
   useEffect(() => {
     const ele = document.getElementById("tech-Stack");
     ele.addEventListener("mousemove", move);
@@ -32,48 +31,45 @@ const TechnologyStack = ({ technology }) => {
   }, []);
   return (
     <section
-      ref={targetRef}
       className={cn(
         styles.technologyStyle,
         theme ? styles.technologyStyleDark : ""
       )}
       id="tech-Stack"
     >
-      {isVisible && (
-        <div className={cn("primary-container")}>
-          <div className={styles.technologyStackBox}>
-            <div className={styles.careerRow}>
-              <h6
-                className={cn(styles.projectHighlight, "gradient-text")}
-                dangerouslySetInnerHTML={{ __html: `${technology[0]?.Title}` }}
-              ></h6>
-              <h3
-                className={cn(styles.techHeading, "gradient-text")}
-                dangerouslySetInnerHTML={{
-                  __html: `${technology[0]?.SubTitle}`,
-                }}
-              ></h3>
-              <p className={styles.techText}>{technology[0]?.Description}</p>
-              <div className={styles.partnerCounter}>
-                {technology[0]?.Ratings.map((data, index) => (
-                  <div key={index} className={styles.counterCard}>
-                    <h3 className={styles.counts}>{data.Rating}</h3>
-                    <p className={styles.countsText}>{data.Title}</p>
-                  </div>
-                ))}
-              </div>
-              <Link href={technology[0]?.BtnLink}>
-                <Button
-                  variant={theme ? "lightBlueOutline" : "outline"}
-                  size="md"
-                >
-                  {technology[0]?.Btn} <Icons.ArrowRight size={18} />
-                </Button>
-              </Link>
+      <div className={cn("primary-container")}>
+        <div className={styles.technologyStackBox}>
+          <div className={styles.careerRow}>
+            <h6
+              className={cn(styles.projectHighlight, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${technology[0]?.Title}` }}
+            ></h6>
+            <h3
+              className={cn(styles.techHeading, "gradient-text")}
+              dangerouslySetInnerHTML={{
+                __html: `${technology[0]?.SubTitle}`,
+              }}
+            ></h3>
+            <p className={styles.techText}>{technology[0]?.Description}</p>
+            <div className={styles.partnerCounter}>
+              {technology[0]?.Ratings.map((data, index) => (
+                <div key={index} className={styles.counterCard}>
+                  <h3 className={styles.counts}>{data.Rating}</h3>
+                  <p className={styles.countsText}>{data.Title}</p>
+                </div>
+              ))}
             </div>
+            <Link href={technology[0]?.BtnLink}>
+              <Button
+                variant={theme ? "lightBlueOutline" : "outline"}
+                size="md"
+              >
+                {technology[0]?.Btn} <Icons.ArrowRight size={18} />
+              </Button>
+            </Link>
           </div>
         </div>
-      )}
+      </div>
     </section>
   );
 };

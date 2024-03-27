@@ -12,7 +12,6 @@ import Slider from "react-slick";
 
 // Style
 import styles from "./style.module.scss";
-
 const LandingBanner = ({ props }) => {
   const { theme } = useContext(MyContext);
   const settings = {
@@ -26,6 +25,7 @@ const LandingBanner = ({ props }) => {
     verticalSwiping: true,
     swipeToSlide: true,
   };
+
   return (
     <section
       className={cn(
