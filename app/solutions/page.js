@@ -9,15 +9,12 @@ import { getData, getDataDynamic } from "@/lib/fetchData";
 import styles from "./style.module.scss";
 import NotFound from "../not-found";
 
-
-
 export async function generateMetadata() {
-  const data = await getData(api_Solutions_Page); 
-  
+  const data = await getData(api_Solutions_Page);
+
   return {
     title: data?.SeoData?.Title,
     description: data?.SeoData?.Description,
-   
   };
 }
 

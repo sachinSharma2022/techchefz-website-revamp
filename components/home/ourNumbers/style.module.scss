@@ -59,7 +59,11 @@
     .ourNumberGrid {
       display: grid;
       gap: 8.9375rem;
-      grid-template-columns: auto 55%;
+      grid-template-columns: repeat(2, 1fr);
+
+      @include desktop-lg {
+        grid-template-columns:auto 50%;
+      }
 
       @include tablet {
         grid-template-columns: repeat(1, 1fr);
