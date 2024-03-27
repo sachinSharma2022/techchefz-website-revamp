@@ -90,7 +90,7 @@ const RelatedCase = ({ props, className, sliderClassName, params }) => {
             <div className={styles.sliderArrow}>
               <button
                 aria-label="Move Left"
-                title="Move Right"
+                title="Move Left"
                 className={
                   activeSlide === 0 ? styles.arrowDisabled : styles.button
                 }
