@@ -89,6 +89,8 @@ const RelatedCase = ({ props, className, sliderClassName, params }) => {
 
             <div className={styles.sliderArrow}>
               <button
+                aria-label="Move Left"
+                title="Move Right"
                 className={
                   activeSlide === 0 ? styles.arrowDisabled : styles.button
                 }
@@ -97,6 +99,8 @@ const RelatedCase = ({ props, className, sliderClassName, params }) => {
                 <Icons.ArrowLeft />
               </button>
               <button
+                aria-label="Move Right"
+                title="Move Right"
                 className={styles.button}
                 onClick={() => slider?.current?.slickNext()}
               >
