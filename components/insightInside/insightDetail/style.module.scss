@@ -177,6 +177,7 @@
           a {
             font-size: text(lg);
             color: color(info-blue);
+            @include transition(0.3s);
             
             &:hover {
               text-decoration: underline;
@@ -228,6 +229,8 @@
     .socialMediaFlex {
       .iconDiv {
         border: 0.06rem solid rgba(color(text-primary), 0.4);
+        @include transition(0.5s);
+        
         &:hover {
           background-color: color(bg-soft);
         }

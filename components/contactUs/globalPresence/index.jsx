@@ -1,14 +1,11 @@
 "use client";
 
-import React from "react";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import { cn } from "@/lib/utils";
 import { MyContext } from "@/context/theme";
+import { cn } from "@/lib/utils";
 import { useContext } from "react";
-import { Popover } from "@headlessui/react";
 import { useMediaQuery } from "react-responsive";
 import styles from "./style.module.scss";
-import { base_Uri } from "@/lib/constants";
 
 import TextRevel from "@/components/ui/sectionAnimation";
 
@@ -24,7 +21,7 @@ const GlobalPresence = ({ props }) => {
       locationName: "London",
     },
     {
-      locationName: "New Delhi",
+      locationName: isMobileScreen ? "India" : "New Delhi",
     },
     {
       locationName: "Pune",
@@ -55,17 +52,6 @@ const GlobalPresence = ({ props }) => {
         </TextRevel>
         <div className={styles.popoverContainer}>
           <div className={styles.contactMap}>
-            {/* <ImageCustom
-                src={
-                  props?.Image?.data?.attributes?.url
-                    ? `${base_Uri}${props?.Image?.data?.attributes?.url}`
-                    : `${base_Uri}/`
-                }
-                width={1000}
-                height={1000}
-                alt="map"
-              /> */}
-
             <ImageCustom
               src="/images/img/map.svg"
               width={1000}

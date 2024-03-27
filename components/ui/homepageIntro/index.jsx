@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 
 import { useMediaQuery } from "react-responsive";
 import styles from "./style.module.scss";
+import { ImageCustom } from "../imageCustom";
 
 const HomepageIntro = (props) => {
   const isBigScreen = useMediaQuery({ query: "(min-width: 1025px)" });
@@ -51,6 +52,22 @@ const HomepageIntro = (props) => {
       });
       return () => ctx.revert();
     }
+
+    const videoElement = document.querySelector("video");
+    const playPauseButton = document.querySelector("button");
+
+    playPauseButton.addEventListener("click", () => {
+      playPauseButton.classList.toggle("playing");
+      if (playPauseButton.classList.contains("playing")) {
+        videoElement.play();
+      } else {
+        videoElement.pause();
+      }
+    });
+
+    videoElement.addEventListener("ended", () => {
+      playPauseButton.classList.remove("playing");
+    });
   }, []);
 
   return (

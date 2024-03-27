@@ -84,10 +84,16 @@
         padding: spacing(section-primary-padding);
         padding: 2rem;
 
-        @include mobile-tablet-p {
+        @include tablet-p {
           min-width: 100%;
-          max-width: 90vw;
-          padding: 2.5rem 2.5rem;
+          max-width: 95vw;
+          padding: 2rem;
+        }
+
+        @include mobile {
+          min-width: 100%;
+          max-width: 95vw;
+          padding: 1.5rem;
         }
       }
 
@@ -133,7 +139,7 @@
       }
 
       .workCardIcon {
-        transition: all 0.5s;
+        @include transition(0.5s);
       }
 
       &:hover {
@@ -147,7 +153,7 @@
         max-width: 9rem;
         margin-top: 5.5rem;
         padding-bottom: 2rem;
-        transition: all 0.5s;
+        @include transition(0.5s);
         @include mobile-tablet-p {
           font-size: text(lg);
           font-weight: 500;
@@ -197,6 +203,8 @@
     }
 
     .workCardMain {
+      @include transition(0.5s);
+
       &:hover {
         .workCard {
           .workCols {

@@ -24,6 +24,7 @@
     height: 70%;
     width: 100%;
     z-index: 99;
+    position: relative;
 
     @include mobile-tablet-p {
       height: 100%;
@@ -50,6 +51,16 @@
       }
     }
   }
+
+  // .videoControls {
+  //   position: absolute;
+  //   bottom: 20px;
+  //   right: 20px;
+
+  //   button {
+  //     color: white;
+  //   }
+  // }
 
   &.videoCustomDark {
     background-color: color(input-bg);

@@ -89,6 +89,10 @@
     width: auto;
     padding: 1rem;
     height: auto;
+
+    @include tablet-p {
+      width: 90%;
+    }
   }
 
   .buttonUpload {

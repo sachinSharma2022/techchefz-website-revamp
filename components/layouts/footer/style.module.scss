@@ -58,7 +58,7 @@
         margin-bottom: 0.5rem;
         display: block;
         font-size: text(normal);
-        transition: all 0.5s;
+        @include transition(0.5s);
 
         @include mobile{
           margin-bottom: 0;
@@ -103,6 +103,7 @@
           font-size: text(lg);
           font-weight: 500;
           color: rgba(color(primary-white), 0.8);
+          @include transition(0.5s);
 
           @include mobile-tablet-p {
             font-size: text(normal);
@@ -397,7 +398,7 @@
           color: rgba(color(primary-white), 0.8);
           font-weight: 400;
           font-size: text(normal);
-          transition: all 0.5s;
+          @include transition(0.5s);
 
           @include mobile {
             margin: 0;

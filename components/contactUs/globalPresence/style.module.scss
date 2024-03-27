@@ -55,7 +55,8 @@ $s: 10px;
         justify-content: center;
         align-items: center;
         width: 100%;
-        opacity: 0.2;
+        opacity: 0.1;
+        filter: brightness(0) contrast(100);
 
         @include mobile-tablet-p {
           height: auto;
@@ -81,7 +82,7 @@ $s: 10px;
     text-align: center;
     max-width: 16rem;
     border-radius: text(lg);
-    
+
     @include mobile-tablet-p {
       max-width: 100%;
       padding: text(lg);
@@ -132,36 +133,22 @@ $s: 10px;
     z-index: 99;
   }
 
-  &.globalPresenceBannerDark {
-    background-color: color(dark-bg);
-    color: color(primary-white);
-
-    .locationPopoverCard {
-      background-color: color(input-bg);
-      color: color(primary-white);
-      @include mobile-tablet-p {
-        border: 0.14rem solid color(bg-soft);
-      }
-    }
-
-    .contactMap > div {
-      img {
-        filter: contrast(0) brightness(100);
-      }
-    }
-  }
-
   .dotSec {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px 0;
     position: absolute;
-    
+
     &:nth-child(1) {
       bottom: 273px;
       left: 7vw;
       flex-direction: column;
+
+      @include mobile-tablet-p {
+        bottom: 100px;
+        left: 4vw;
+      }
     }
 
     &:nth-child(2) {
@@ -169,6 +156,12 @@ $s: 10px;
       left: -58px;
       right: 0;
       flex-direction: column;
+
+      @include mobile-tablet-p {
+        top: 10px;
+        left: -19px;
+        flex-direction: column-reverse;
+      }
     }
 
     &:nth-child(3) {
@@ -176,6 +169,11 @@ $s: 10px;
       right: 0;
       left: 590px;
       gap: 20px 20px;
+
+      @include mobile-tablet-p {
+        top: 70px;
+        left: 224px;
+      }
     }
 
     &:nth-child(4) {
@@ -190,8 +188,21 @@ $s: 10px;
       right: 0;
       left: 340px;
       flex-direction: column;
+
+      @include mobile-tablet-p {
+        bottom: 77px;
+        right: 0;
+        left: 89px;
+      }
     }
 
+    .locationName {
+      font-size: text(normal);
+
+      @include mobile-tablet-p {
+        font-size: 0.8rem;
+      }
+    }
 
     // Location Dot.
     .locationDot {
@@ -234,6 +245,31 @@ $s: 10px;
       border-color: #fff;
       background-color: none;
       border-width: 2px;
+
+      @include mobile-tablet-p {
+        width: 400%;
+        height: 400%;
+      }
+    }
+  }
+
+  &.globalPresenceBannerDark {
+    background-color: color(dark-bg);
+    color: color(primary-white);
+
+    .locationPopoverCard {
+      background-color: color(input-bg);
+      color: color(primary-white);
+      @include mobile-tablet-p {
+        border: 0.14rem solid color(bg-soft);
+      }
+    }
+
+    .contactMap {
+      .mapImage {
+        filter:none;
+        opacity: 0.2;
+      }
     }
   }
 }

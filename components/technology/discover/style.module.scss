@@ -275,6 +275,7 @@
       .platformsBtn {
         background-color: color(text-primary);
         color: color(primary-white);
+        @include transition(0.5s);
 
         &:hover {
           border: 1px solid color(heading-liner);
