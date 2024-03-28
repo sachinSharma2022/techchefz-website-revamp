@@ -315,20 +315,6 @@
         justify-content: center;
       }
 
-      svg {
-        path {
-          color: color(primary-blue);
-        }
-      }
-
-      &:last-child {
-        svg {
-          path {
-            color: color(primary-white);
-          }
-        }
-      }
-
       &:hover {
         background-color: color(primary-white);
         color: color(text-primary);
