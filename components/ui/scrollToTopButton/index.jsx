@@ -29,6 +29,7 @@ const ScrollToTopButton = () => {
   return (
     <Button
       aria-label="back-to-top"
+      buttonTitle="back-to-top"
       variant="lightBlueBtn"
       className={`${isVisible ? "opacity-100" : "opacity-0"} ${
         styles.scrollTop

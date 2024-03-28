@@ -1,65 +1,23 @@
 "use client";
-import React, { useRef, useState } from "react";
-import { MyContext } from "@/context/theme";
-import { useContext } from "react";
-import { Icons } from "@/components/icons";
 import CaptionCard from "@/components/ui/captionCard";
-import { cn } from "@/lib/utils";
-import Slider from "react-slick";
+import { MyContext } from "@/context/theme";
 import { base_Uri } from "@/lib/constants";
-import styles from "./style.module.scss";
+import { cn } from "@/lib/utils";
+import { useContext } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import TextRevel from "../ui/sectionAnimation";
+import styles from "./style.module.scss";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+
+// import required modules
+import { Navigation } from "swiper/modules";
+import { Icons } from "../icons";
 
 const RelatedCase = ({ props, className, sliderClassName, params }) => {
-  const [oldSlide, setOldSlide] = useState(0);
-  const [activeSlide, setActiveSlide] = useState(0);
-  const [activeSlide2, setActiveSlide2] = useState(0);
-  const slider = useRef(null);
   const { theme, setTheme } = useContext(MyContext);
-  var settings = {
-    dots: true,
-    infinite: false,
-    arrows: false,
-    speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    beforeChange: (current, next) => {
-      setOldSlide(current);
-      setActiveSlide(next);
-    },
-    afterChange: (current) => setActiveSlide2(current),
-    responsive: [
-      {
-        breakpoint: 3000,
-        settings: {
-          slidesToShow: 3.8,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 1500,
-        settings: {
-          slidesToShow: 2.5,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 1.5,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
 
   return (
     <section
@@ -87,18 +45,18 @@ const RelatedCase = ({ props, className, sliderClassName, params }) => {
               ></h3>
             </div>
 
-            <div className={styles.sliderArrow}>
+            <div className="slider-arrow">
               <button
-                className={
-                  activeSlide === 0 ? styles.arrowDisabled : styles.button
-                }
-                onClick={() => slider?.current?.slickPrev()}
+                aria-label="Move Left"
+                title="Move Left"
+                className={cn(styles.button, "arrow-left arrow")}
               >
                 <Icons.ArrowLeft />
               </button>
               <button
-                className={styles.button}
-                onClick={() => slider?.current?.slickNext()}
+                aria-label="Move Right"
+                title="Move Right"
+                className={cn(styles.button, "arrow-right arrow")}
               >
                 <Icons.ArrowRight fill="black" stroke="black" />
               </button>
@@ -113,11 +71,32 @@ const RelatedCase = ({ props, className, sliderClassName, params }) => {
             "related-case-slider"
           )}
         >
-          <Slider {...settings} ref={slider}>
+          <Swiper
+            slidesPerView={3.5}
+            spaceBetween={0}
+            navigation={{ nextEl: ".arrow-right", prevEl: ".arrow-left" }}
+            pagination={false}
+            modules={[Navigation]}
+            breakpoints={{
+              767: {
+                slidesPerView: 1,
+              },
+              1199: {
+                slidesPerView: 2,
+              },
+              1200: {
+                slidesPerView: 2.4,
+              },
+              1700: {
+                slidesPerView: 3.4,
+              },
+            }}
+            className="mySwiper"
+          >
             {props
               .filter((data) => params?.caseStudy != data.id)
               .map((data, index) => (
-                <div key={index}>
+                <SwiperSlide key={index}>
                   <CaptionCard
                     className={styles.cardStyle}
                     imgSrc={
@@ -133,9 +112,9 @@ const RelatedCase = ({ props, className, sliderClassName, params }) => {
                     textStyle={styles.textStyle}
                     params={params}
                   />
-                </div>
+                </SwiperSlide>
               ))}
-          </Slider>
+          </Swiper>
         </div>
       </div>
     </section>

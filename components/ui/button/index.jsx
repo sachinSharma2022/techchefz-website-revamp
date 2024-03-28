@@ -46,6 +46,7 @@ const Button = React.forwardRef(
       repeatCount,
       dur,
       ariaLabel,
+      buttonTitle,
       ...props
     },
     ref
@@ -92,6 +93,7 @@ const Button = React.forwardRef(
         {...props}
         disabled={disabled}
         aria-label={ariaLabel}
+        title={buttonTitle}
       >
         <div className={cn(styles.btnText, props.pStyle)}>
           {children}

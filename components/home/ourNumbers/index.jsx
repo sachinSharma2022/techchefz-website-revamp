@@ -13,7 +13,6 @@ import { cn } from "@/lib/utils";
 import { useContext } from "react";
 import styles from "./style.module.scss";
 
-
 import Link from "next/link";
 import { useMediaQuery } from "react-responsive";
 

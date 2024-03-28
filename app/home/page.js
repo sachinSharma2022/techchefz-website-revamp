@@ -7,13 +7,13 @@ import Projects from "@/components/home/projects";
 import Service from "@/components/home/service";
 //import TechnologyStack from "@/components/home/technologyStack";
 import WeAreFuture from "@/components/home/weAreFuture";
+import Cookies from "@/components/ui/cookiesPopup";
 import HomepageIntro from "@/components/ui/homepageIntro";
 import Curve from "@/components/ui/pageTransition";
-import { api_Home_Page, base_Url, api_Case_study_Page } from "@/lib/constants";
+import { api_Case_study_Page, api_Home_Page, base_Url } from "@/lib/constants";
 import { getData, getDataDynamic } from "@/lib/fetchData";
-import NotFound from "../not-found";
 import dynamic from "next/dynamic";
-import Cookies from "@/components/ui/cookiesPopup";
+import NotFound from "../not-found";
 const LetsWork = dynamic(() => import("@/components/home/letsWork"));
 const HomeTestimonials = dynamic(() =>
   import("@/components/home/homeTestimonials")
@@ -25,9 +25,6 @@ const DigitalTransformation = dynamic(() =>
 const TechnologyStack = dynamic(() =>
   import("@/components/home/technologyStack")
 );
-
-
-
 
 const HomePage = async () => {
   const data = await getData(api_Home_Page);
