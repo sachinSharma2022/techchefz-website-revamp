@@ -1,6 +1,6 @@
 //import { FooterContainer } from "@/components/layouts/footer/footerContainer";
 import ThemeProvider from "@/context/theme";
-//import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.css";
 //import Header from "../components/layouts/header";
 import { aeonik, helvetica } from "../lib/fonts";
 import { cn } from "../lib/utils";
