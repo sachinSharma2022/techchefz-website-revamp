@@ -1,7 +1,6 @@
 "use client";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
-import { ImageCustom } from "@/components/ui/imageCustom";
 import { Input, Error, Success } from "@/components/ui/inputCustom";
 import ScrollToTopButton from "@/components/ui/scrollToTopButton";
 import { cn } from "@/lib/utils";
@@ -10,13 +9,11 @@ import styles from "./style.module.scss";
 import { Form, Formik, useFormik } from "formik";
 import { footerValidationSchema } from "@/lib/FormSchema";
 import { triggerMail } from "@/lib/triggerMail";
-import AnimatedLogo from "@/components/common/animatedLogo";
 import { useState } from "react";
 import CircleLoader from "@/components/ui/circleLoader";
 import AnimatedFooterLogo from "@/components/common/animatedFooterLogo";
 
 const Footer = ({ props, Subscribe, SocialMedia, footerinner, Reserved }) => {
-  console.log("ff", Reserved);
   const [inprogress, setinprogress] = useState(false);
   const [success, setsuccess] = useState(false);
   const formInitialSchema = {
