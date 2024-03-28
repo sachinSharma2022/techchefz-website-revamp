@@ -159,7 +159,7 @@
       margin-bottom: 0;
 
       @include mobile-tablet-p {
-        font-size: text(normal);
+        // font-size: text(normal);
         line-height: text(xl);
       }
     }

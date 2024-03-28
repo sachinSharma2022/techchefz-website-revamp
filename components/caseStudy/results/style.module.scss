@@ -189,7 +189,7 @@
       padding: 0 0.4rem;
 
       @include mobile-tablet-p {
-        font-size: text(normal);
+        // font-size: text(normal);
         line-height: text(xl);
       }
     }
