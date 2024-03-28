@@ -98,7 +98,7 @@
         gap: 1rem 0;
       }
 
-      .digitalImg div {
+      .digitalImg {
         padding: 0 2.813rem 0 2.813rem;
         width: 32rem;
         height: 19.875rem;
@@ -118,7 +118,6 @@
 
           @include mobile-tablet-p{
             height: 100%;
-            object-fit: cover;
           }
         }
       }

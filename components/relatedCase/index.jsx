@@ -78,7 +78,7 @@ const RelatedCase = ({ props, className, sliderClassName, params }) => {
             pagination={false}
             modules={[Navigation]}
             breakpoints={{
-              767: {
+              300: {
                 slidesPerView: 1,
               },
               1199: {
@@ -115,6 +115,23 @@ const RelatedCase = ({ props, className, sliderClassName, params }) => {
                 </SwiperSlide>
               ))}
           </Swiper>
+        </div>
+
+        <div className="slider-arrow show-mobile-only">
+          <button
+            aria-label="Move Left"
+            title="Move Left"
+            className={cn(styles.button, "arrow-left arrow")}
+          >
+            <Icons.ArrowLeft />
+          </button>
+          <button
+            aria-label="Move Right"
+            title="Move Right"
+            className={cn(styles.button, "arrow-right arrow")}
+          >
+            <Icons.ArrowRight fill="black" stroke="black" />
+          </button>
         </div>
       </div>
     </section>

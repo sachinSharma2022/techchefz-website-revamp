@@ -1137,12 +1137,12 @@ html.lenis {
   padding-top: 6rem;
 
   @include mobile-tablet-p {
-    padding: 5rem 1rem 5rem spacing(tablet-padding);
+    padding: 5rem 1rem 2rem spacing(tablet-padding);
     min-height: auto;
   }
 
   @include mobile {
-    padding: 5rem 1rem 5rem spacing(mobile-padding);
+    padding: 5rem 1rem 2rem spacing(mobile-padding);
     min-height: auto;
   }
 }
@@ -1157,6 +1157,11 @@ html.lenis {
   background-color: color(bg-soft);
   min-height: 54rem;
   padding: 6rem 0;
+
+  @include mobile-tablet-p {
+    min-height: auto;
+    padding: 4rem 1.25rem;
+  }
 }
 
 .fadeinout {
@@ -1280,6 +1285,10 @@ html.lenis {
     margin: 3rem 0 2rem;
     width: 100%;
     display: none;
+  }
+
+  &.show-mobile-only {
+    display: flex;
   }
 
   .arrow {
