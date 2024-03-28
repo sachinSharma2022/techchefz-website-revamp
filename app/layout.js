@@ -6,7 +6,7 @@ import { aeonik, helvetica } from "../lib/fonts";
 import { cn } from "../lib/utils";
 import "../styles/globals.scss";
 import Head from "next/head";
-import { GoogleAnalytics } from "@next/third-parties/google";
+//import { GoogleAnalytics } from "@next/third-parties/google";
 import { api_Home_Page } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
 import dynamic from "next/dynamic";
@@ -59,7 +59,7 @@ export default function RootLayout({ children }) {
       </Head> */}
 
       <body className={cn(aeonik.variable, helvetica.variable)}>
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        {/* <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} /> */}
         <ThemeProvider>
           <Header />
           <div className={cn("main-style")}>{children}</div>
