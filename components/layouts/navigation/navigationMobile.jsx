@@ -503,6 +503,8 @@ const NavigationMobile = ({ props, featureArticle }) => {
               styles.navHamburger,
               mobileMenuShow ? styles.toggleActive : ""
             )}
+            aria-label="menu"
+            title="menu"
             onClick={mobileMenuToggle}
           >
             <span />
