@@ -120,9 +120,7 @@
           opacity: 1;
         }
 
-        @include mobile {
-          font-size: text(normal);
-        }
+        
       }
 
       .insightImageDiv div {
@@ -166,7 +164,6 @@
           margin: 0;
 
           @include mobile-tablet-p {
-            font-size: text(normal);
             font-weight: 400;
             padding-bottom: 0;
           }
@@ -202,9 +199,7 @@
           padding-bottom: 0.2rem;
           margin: 0;
 
-          @include mobile {
-            font-size: text(normal);
-          }
+          
         }
 
         b {
