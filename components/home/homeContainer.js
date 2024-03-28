@@ -4,11 +4,11 @@ import { base_Url } from "@/lib/constants";
 import useLazyLoad from "@/lib/useLazyLoad";
 import { useRef } from "react";
 import LandingBanner from "@/components/home/landingBanner";
-// import HomepageIntro from "@/components/ui/homepageIntro";
+import HomepageIntro from "@/components/ui/homepageIntro";
 //const LandingBanner = dynamic(() => import("@/components/home/landingBanner"));
-const HomepageIntro = dynamic(() => {
-    console.log("videoloadded")
-    return import("@/components/ui/homepageIntro")});
+// const HomepageIntro = dynamic(() => {
+//     console.log("videoloadded")
+//     return import("@/components/ui/homepageIntro")});
 const WeAreFuture = dynamic(() => import("@/components/home/weAreFuture"));
 const Projects = dynamic(() => import("@/components/home/projects"));
 const Service = dynamic(() => import("@/components/home/service"));
@@ -25,7 +25,7 @@ const TechnologyStack = dynamic(() =>
 );
 const HomeContainer = ({ data, data_Portfolio }) => {
   //   const targetRefLandingBanner = useRef(null);
-  const targetRefHomepageIntro = useRef(null);
+//   const targetRefHomepageIntro = useRef(null);
   const targetRefWeAreFuture = useRef(null);
   const targetRefService = useRef(null);
   const targetRefProjects = useRef(null);
@@ -35,7 +35,7 @@ const HomeContainer = ({ data, data_Portfolio }) => {
   const targetRefHomeTestimonials = useRef(null);
   const targetRefLetsWork = useRef(null);
   //   const isVisibleLandingBanner = useLazyLoad(targetRefLandingBanner);
-  const isVisibleHomepageIntro = useLazyLoad(targetRefHomepageIntro);
+//   const isVisibleHomepageIntro = useLazyLoad(targetRefHomepageIntro);
   const isVisibleWeAreFuture = useLazyLoad(targetRefWeAreFuture);
   const isVisibleService = useLazyLoad(targetRefService);
   const isVisibleProjects = useLazyLoad(targetRefProjects);
@@ -50,8 +50,7 @@ const HomeContainer = ({ data, data_Portfolio }) => {
   return (
     <>
       <LandingBanner props={data.Banner} />
-      <div ref={targetRefHomepageIntro}>
-        {isVisibleHomepageIntro && (
+      
           <HomepageIntro
             src={
               data?.Technology?.Video?.data?.attributes?.url
@@ -59,8 +58,7 @@ const HomeContainer = ({ data, data_Portfolio }) => {
                 : `${base_Url}/`
             }
           />
-        )}
-      </div>
+       
 
       <div ref={targetRefWeAreFuture}>
         {isVisibleWeAreFuture && <WeAreFuture props={data.Technology} />}
