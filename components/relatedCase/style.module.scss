@@ -86,7 +86,7 @@
       position: absolute;
       right: 0;
       left: 0;
-      padding-left: 0;
+      padding-left: 12.5vw;
     }
   }
 
@@ -106,57 +106,6 @@
 
   .textStyle {
     max-width: 80%;
-  }
-
-  .sliderArrow {
-    display: flex;
-    gap: 24px;
-
-    @include mobile-tablet-p {
-      margin: 3rem 0 2rem;
-      width: 100%;
-      display: none;
-    }
-
-    .button {
-      background-color: color(primary-blue);
-      padding: 0;
-      border-radius: 0.5rem;
-      width: 3rem;
-      height: 3rem;
-      display: flex !important;
-      justify-content: center;
-      align-items: center;
-
-      @include mobile-tablet-p {
-        border-radius: 0.25rem;
-      }
-
-      svg {
-        width: 18px;
-        height: 18px;
-      }
-
-      svg > path {
-        stroke: color(primary-white);
-      }
-    }
-  }
-
-  .arrowDisabled {
-    border-radius: 0.5rem;
-    width: 3rem;
-    height: 3rem;
-    border: 0.14rem solid rgba(color(text-primary), 0.2);
-    color: color(primary-blue);
-    background: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    svg > path {
-      stroke: color(primary-black);
-    }
   }
 
   // Dark theme style

@@ -132,6 +132,8 @@ const OurHistory = ({ props, OurHistory }) => {
               </Slider>
               <div className={styles.sliderArrow}>
                 <button
+                  aria-label="Move Left"
+                  title="Move Left"
                   className={
                     (cn(styles.button),
                     activeSlide === 0 ? styles.arrowDisabled : styles.button)
@@ -141,6 +143,8 @@ const OurHistory = ({ props, OurHistory }) => {
                   <Icons.ArrowLeft />
                 </button>
                 <button
+                  aria-label="Move Right"
+                  title="Move Right"
                   className={styles.button}
                   onClick={() => slider2?.current?.slickNext()}
                 >

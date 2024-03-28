@@ -1,6 +1,8 @@
 @import "~/styles/partials/config";
 
 .videoCustom {
+  position: relative;
+  
   .video {
     object-fit: cover;
     width: 100%;
@@ -9,5 +11,23 @@
 
   &.videoCustomDark {
     background-color: color(input-bg);
+  }
+
+  .videoControl {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    width: 6.375rem;
+    height: 2.5rem;
+    border: 0.14rem solid color(primary-white);
+    border-radius: .25rem;
+    color: color(primary-white);
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
   }
 }

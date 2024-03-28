@@ -11,6 +11,7 @@
 //import Curve from "@/components/ui/pageTransition";
 import { api_Home_Page, base_Url, api_Case_study_Page } from "@/lib/constants";
 import { getData, getDataDynamic } from "@/lib/fetchData";
+import dynamic from "next/dynamic";
 import NotFound from "../not-found";
 import dynamic from "next/dynamic";
 import Cookies from "@/components/ui/cookiesPopup";

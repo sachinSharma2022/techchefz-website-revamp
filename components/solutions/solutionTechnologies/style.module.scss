@@ -66,6 +66,10 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 8.9375rem;
 
+      @include desktop-lg {
+        grid-template-columns:auto 50%;
+      }
+
       @include mobile-tablet-p {
         gap: 0 1rem;
         display: flex;
