@@ -67,7 +67,7 @@ const SolutionTheProcess = ({ props }) => {
               setdashOffset((prev) => {
                 prevsetdashOffset(prev);
                 return dashArray - (dashArray / titles.length) * (i + 1);
-                //return (100 / titles.length) * (i + 1);
+                
               });
             },
             scrollTrigger: {
@@ -89,22 +89,14 @@ const SolutionTheProcess = ({ props }) => {
             duration: 3,
             ease: "power1.inOut",
           },
-          //   {
-          //     "--p": `${dashOffset}%`,
-          //     //  duration: 4,
-          //     //  ease: "expo.out",
-          //   }
+          
           {
             strokeDashoffset: dashOffset,
             transition: "stroke-dashoffset 1.6s linear 0s",
             duration: 9,
             ease: "power1.inOut",
           }
-          //   {
-          //     "--p": `${dashOffset}%`,
-          //     duration: 4,
-          //     ease: "expo.out",
-          //   }
+         
         );
       });
       return () => ctx.revert();
@@ -139,9 +131,7 @@ const SolutionTheProcess = ({ props }) => {
                 theme={theme}
                 dashArray={dashArray}
               />
-              {/* <div class="circular-pbar">
-                <span class="_circle_inner"></span>
-              </div> */}
+              
 
               <div id="1-img" className={cn(styles.stepperImg, "fadeinout")}>
                 <ImageCustom

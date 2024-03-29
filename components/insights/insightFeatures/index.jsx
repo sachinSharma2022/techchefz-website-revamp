@@ -20,16 +20,7 @@ const InsightFeatures = ({ props, featureInsight, feature }) => {
             {/* <SearchInput theme={theme} /> */}
           </div>
           <div className={styles.serviceBtn}>
-            {/* {props.map((buttonItem) => (
-              <button
-                variant="outline"
-                size="sm"
-                // onClick={() => filterItem(buttonItem.id)}
-                key={buttonItem}
-              >
-                {buttonItem.Title}
-              </button>
-            ))} */}
+            
           </div>
         </div>
         <div className={styles.featureInsight}>

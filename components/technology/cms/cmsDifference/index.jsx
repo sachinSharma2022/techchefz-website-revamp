@@ -34,16 +34,7 @@ const CmsDifference = ({ props }) => {
               ></h2>
             </div>
 
-            {/* <div className={`${styles.careerBtn}`}>
-            <Link href={props?.ButtonLink}>
-              <Button
-                variant={theme ? "lightBlueOutline" : "outline"}
-                size="md"
-              >
-                {props?.Button} <Icons.ArrowRight size={18} />
-              </Button>
-            </Link>
-          </div> */}
+           
           </div>
         </TextRevel>
 

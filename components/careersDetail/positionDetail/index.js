@@ -28,9 +28,7 @@ const PositionDescription = ({ props }) => {
           <ul
             dangerouslySetInnerHTML={{ __html: `${props[2]?.FullDescription}` }}
           >
-            {/* {props[1]?.FullDescription?.split(",").map((point, idx) => (
-                <li key={idx}>{point}</li>
-              ))} */}
+           
           </ul>
         </div>
 
