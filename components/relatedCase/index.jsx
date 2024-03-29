@@ -45,7 +45,7 @@ const RelatedCase = ({ props, className, sliderClassName, params }) => {
               ></h3>
             </div>
 
-            <div className="slider-arrow">
+            <div className="slider-arrow show-mobile-desktop">
               <button
                 aria-label="Move Left"
                 title="Move Left"
