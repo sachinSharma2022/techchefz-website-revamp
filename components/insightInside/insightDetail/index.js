@@ -7,10 +7,11 @@ import { base_Uri } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { useContext } from "react";
 import styles from "./style.module.scss";
+import { rootURl } from "@/lib/constants";
 
 const InsightDetail = ({ props, BlockTitle, index }) => {
   const { theme, setTheme } = useContext(MyContext);
-  const url = `${process.env.NEXT_PUBLIC_SITEMAP_URL}/insights/${index}`;
+  const url = `${rootURl}/insights/${index}`;
   const handleClick = (event) => {
     navigator.clipboard.writeText(url);
   };
