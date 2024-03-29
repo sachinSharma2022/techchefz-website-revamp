@@ -1289,6 +1289,10 @@ html.lenis {
 
   &.show-mobile-only {
     display: flex;
+
+    @include desktop {
+      display: none;
+    }
   }
 
   .arrow {
