@@ -106,7 +106,7 @@ const Testimonials = ({ props }) => {
               </div>
               {/* End Mobile Slider */}
 
-              <div className="slider-arrow show-mobile-only">
+              <div className="slider-arrow">
                 <button
                   aria-label="Move Left"
                   title="Move Left"
