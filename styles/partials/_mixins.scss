@@ -31,6 +31,7 @@ $desktop-width-xl: 1199px;
 $desktop-width-lg: 1500px;
 $desktop-width-hd: 1600px;
 $desktop-4k: 2000px;
+$desktop-width-large: 1899px;
 $desktop-normal: 1025px;
 
 // iPhone5 Mixin
@@ -126,7 +127,7 @@ $desktop-normal: 1025px;
 
 // Large Desktops
 @mixin desktop-lg {
-  @media (min-width: #{$desktop-width-lg}) {
+  @media (min-width: #{$desktop-width-lg}) and (max-width: #{$desktop-width-large}) {
     @content;
   }
 }
