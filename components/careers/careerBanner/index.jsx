@@ -27,7 +27,7 @@ const CareerBanner = ({ props, gallary, href, onClick }) => {
             ></h1>
             <div className={styles.desc}>
               <p className={styles.leadText}>{props[0]?.Description}</p>
-              <Link href={href}>
+              <Link href={href} className="smooth-scroll">
                 <Button
                   variant={theme ? "blueBtnDark" : "blueBtn"}
                   className={styles.headerBtn}
