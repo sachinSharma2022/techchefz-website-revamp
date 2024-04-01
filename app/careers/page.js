@@ -9,21 +9,25 @@ import TechnologyValues from "@/components/technology/technologyValues";
 import NotFound from "../not-found";
 import ContactSection from "@/components/careersDetail/contactSection";
 
-
-
 export async function generateMetadata() {
-  const data = await getData(api_Career_Page); 
-  
+  const data = await getData(api_Career_Page);
+
   return {
     title: data?.SeoData?.Title,
     description: data?.SeoData?.Description,
-   
   };
 }
 
 const Career = async () => {
   const data = await getData(api_Career_Page);
   const data_career_details = await getDataDynamic(api_Career_detail_Page);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <>
       {data ? (
@@ -32,13 +36,14 @@ const Career = async () => {
             href="#OpenPosition"
             props={data.CareerBanner}
             gallary={data.gallary}
+            onClick={() => scrollToTop()}
           />
           <TczLife props={data.Lifeattechchefz} />
           {data_career_details.length && data?.CareerBanner[0]?.CareerForm ? (
             <OpenPosition id="OpenPosition" props={data_career_details} />
           ) : (
             <ContactSection
-              id="contactSection"
+              id="OpenPosition"
               props={data_career_details[0].attributes.Developercontact}
             />
           )}
