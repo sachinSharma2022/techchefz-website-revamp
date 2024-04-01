@@ -81,6 +81,9 @@ const RelatedCase = ({ props, className, sliderClassName, params }) => {
               300: {
                 slidesPerView: 1,
               },
+              767: {
+                slidesPerView: 2,
+              },
               1199: {
                 slidesPerView: 2,
               },
