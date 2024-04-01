@@ -215,7 +215,7 @@ const ServicesForm = () => {
                   </div>
                   <div className={cn(styles.inputSpace, "input-item")}>
                     <Input
-                      label="Service Required*"
+                      label="What service do you require?"
                       name="serviceRequired"
                       error={Boolean(
                         touched.serviceRequired && errors.serviceRequired
@@ -234,7 +234,7 @@ const ServicesForm = () => {
                           return false;
                         }
                       }}
-                      placeholder="Service Required*"
+                      placeholder="What service do you require?"
                       maxlenght={100}
                     />
                     {touched.serviceRequired && errors.serviceRequired && (

@@ -215,7 +215,7 @@ const VendorForm = () => {
                   </div>
                   <div className={cn(styles.inputSpace, "input-item")}>
                     <Input
-                      label="Service Offered"
+                      label="What service do you provide?"
                       name="serviceOffered"
                       error={Boolean(
                         touched.serviceOffered && errors.serviceOffered
@@ -234,7 +234,7 @@ const VendorForm = () => {
                           return false;
                         }
                       }}
-                      placeholder="Service Offered*"
+                      placeholder="What service do you provide?"
                       maxlenght={100}
                     />
                     {touched.serviceOffered && errors.serviceOffered && (
