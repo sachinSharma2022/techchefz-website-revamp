@@ -17,6 +17,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
   const { theme, setTheme } = useContext(MyContext);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuShow, setMobileMenuShow] = useState(false);
+  const [isSubMenu, setisSubhMenu] = useState(true);
 
   const feartureTech = featureArticle.filter(
     (data) => data?.attributes?.InsightOverview[0]?.TechMenuFeatured == true
@@ -41,8 +42,13 @@ const NavigationDesktop = ({ props, featureArticle }) => {
 
   const closeMenu = () => {
     setMobileMenuShow(!mobileMenuShow);
-    // setTechMenu(false);
-    // setMoreMenu(false);
+    console.log(isSubMenu, "issubmenu");
+    setisSubhMenu(false);
+  };
+  const openMenu = () => {
+    setMobileMenuShow(!mobileMenuShow);
+    console.log(isSubMenu, "issubmenu");
+    setisSubhMenu(true);
   };
 
   function LatestTech(feartureArray) {
@@ -156,14 +162,16 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                 {props[1].Title}
               </Link>
             </li>
-            <li className={styles.dropDown}>
+            <li className={styles.dropDown} onMouseOver={openMenu}>
               <Link
                 href={props[2].Link}
                 className={pathname == "/technology" ? styles.active : ""}
               >
                 {props[2].Title} <div className={styles.arrow} />
               </Link>
-              <ul className={cn(styles.subMenu)}>
+              <ul
+                className={cn(styles.subMenu, !isSubMenu && styles.subMenuHide)}
+              >
                 <div className={styles.subsection}>
                   {LatestTech(feartureTech)}
 
@@ -295,7 +303,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                 {props[3]?.Title}
               </Link>
             </li>
-            <li className={styles.dropDown}>
+            <li className={styles.dropDown} onMouseOver={openMenu}>
               <Icons.MoreDotIcon
                 className={styles.dotIcon}
                 width={4}
@@ -304,7 +312,13 @@ const NavigationDesktop = ({ props, featureArticle }) => {
               {props[4].Title}
               <div className={cn(styles.arrow, styles.hideDesktopIcon)} />
 
-              <ul className={cn(styles.subMenu, styles.singleLayout)}>
+              <ul
+                className={cn(
+                  styles.subMenu,
+                  styles.singleLayout,
+                  !isSubMenu && styles.subMenuHide
+                )}
+              >
                 <div className={styles.subsection}>
                   {LatestTech(feartureMore)}
                   <div className={cn(styles.overviewTech)}>

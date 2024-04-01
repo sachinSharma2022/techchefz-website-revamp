@@ -207,6 +207,9 @@
   // Dropdown Menu
   @include desktop {
     .dropDown {
+      .subMenuHide {
+        display: none !important;
+      }
       &:hover {
         .subMenu {
           display: block;
@@ -350,10 +353,9 @@
 
   @include tablet-p {
     .estimateSection {
-     display: none;
+      display: none;
     }
   }
-
 
   .hideDesktop {
     @include desktop {
