@@ -21,13 +21,6 @@ export async function generateMetadata() {
 const Career = async () => {
   const data = await getData(api_Career_Page);
   const data_career_details = await getDataDynamic(api_Career_detail_Page);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
   return (
     <>
       {data ? (
@@ -36,7 +29,6 @@ const Career = async () => {
             href="#OpenPosition"
             props={data.CareerBanner}
             gallary={data.gallary}
-            onClick={() => scrollToTop()}
           />
           <TczLife props={data.Lifeattechchefz} />
           {data_career_details.length && data?.CareerBanner[0]?.CareerForm ? (

@@ -67,7 +67,6 @@ const SolutionTheProcess = ({ props }) => {
               setdashOffset((prev) => {
                 prevsetdashOffset(prev);
                 return dashArray - (dashArray / titles.length) * (i + 1);
-                
               });
             },
             scrollTrigger: {
@@ -89,14 +88,13 @@ const SolutionTheProcess = ({ props }) => {
             duration: 3,
             ease: "power1.inOut",
           },
-          
+
           {
             strokeDashoffset: dashOffset,
             transition: "stroke-dashoffset 1.6s linear 0s",
             duration: 9,
             ease: "power1.inOut",
           }
-         
         );
       });
       return () => ctx.revert();
@@ -131,7 +129,6 @@ const SolutionTheProcess = ({ props }) => {
                 theme={theme}
                 dashArray={dashArray}
               />
-              
 
               <div id="1-img" className={cn(styles.stepperImg, "fadeinout")}>
                 <ImageCustom
