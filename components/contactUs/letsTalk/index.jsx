@@ -20,8 +20,8 @@ const LetsTalk = ({ props }) => {
 
   const dropdownData = [
     { value: "Projects", label: "Projects" },
-    { value: "Careers", label: "Careers" },
     { value: "Services", label: "Services" },
+    { value: "Careers", label: "Careers" },
     { value: "Vendors", label: "Vendors" },
   ];
   const [form, setForm] = useState(dropdownData[0].value);
