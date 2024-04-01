@@ -2,7 +2,6 @@
 import React from "react";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
-import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { cn } from "@/lib/utils";
 import { base_Uri } from "@/lib/constants";

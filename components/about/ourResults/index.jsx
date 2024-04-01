@@ -1,11 +1,11 @@
 "use client";
 
-import { Icons } from "@/components/icons";
+
 import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import { useContext } from "react";
 import styles from "./style.module.scss";
-import Image from "next/image";
+
 import { base_Uri } from "@/lib/constants";
 import MobileSlider from "@/components/common/mobileSlider";
 import { useMediaQuery } from "react-responsive";

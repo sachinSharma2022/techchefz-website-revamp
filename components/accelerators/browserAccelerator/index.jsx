@@ -15,21 +15,21 @@ const BrowserAccelerator = ({props}) => {
 
  
 
-  const dataServices = [
-    { value: "Data", label: "Data" },
-    { value: "It Development", label: "It Development" },
-    { value: "Network Security", label: "Network Security" },
-    { value: "Cloud Service", label: "Cloud Service" },
-  ];
-  const dataIndustry = [
-    { value: "Hardware", label: "Hardware" },
-    { value: "Software", label: "Software" },
-    { value: "Systems Integrator", label: "Systems Integrator" },
-  ];
-  const dataTechnology = [
-    { value: "Newest First", label: "Web Content" },
-    { value: "It Development", label: "Frontend" },
-  ];
+  // const dataServices = [
+  //   { value: "Data", label: "Data" },
+  //   { value: "It Development", label: "It Development" },
+  //   { value: "Network Security", label: "Network Security" },
+  //   { value: "Cloud Service", label: "Cloud Service" },
+  // ];
+  // const dataIndustry = [
+  //   { value: "Hardware", label: "Hardware" },
+  //   { value: "Software", label: "Software" },
+  //   { value: "Systems Integrator", label: "Systems Integrator" },
+  // ];
+  // const dataTechnology = [
+  //   { value: "Newest First", label: "Web Content" },
+  //   { value: "It Development", label: "Frontend" },
+  // ];
 
   return (
     <section
@@ -38,7 +38,7 @@ const BrowserAccelerator = ({props}) => {
       }`}
     >
       <div className={cn("primary-container")}>
-        <div className={styles.topSection}>
+        {/* <div className={styles.topSection}>
           <SearchInput />
 
           <div className={styles.inputSection}>
@@ -60,8 +60,8 @@ const BrowserAccelerator = ({props}) => {
               className={styles.grayInput}
             />
           </div>
-        </div>
-        <hr className={styles.breakLine} />
+        </div> */}
+        {/* <hr className={styles.breakLine} /> */}
         <h5 className={cn(styles.browserAcceleratorHeading, "gradient-text")} >
         {props[0]?.attributes?.BrowserAccelerator?.SubTitle}
         </h5>

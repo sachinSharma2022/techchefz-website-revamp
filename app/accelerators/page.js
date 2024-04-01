@@ -35,10 +35,10 @@ const Accelerators = async () => {
     <>
       {data ? (
         <div>
-          {/* <AcceleratorBanner props={data.AcceleratorBanner} />
+          <AcceleratorBanner props={data.AcceleratorBanner} />
           <BrowserAccelerator props={data_browser_accelerator} />
           <Faq props={data.Faq} />
-          <LetsWork contact={data.LetsWork} /> */}
+          <LetsWork contact={data.LetsWork} />
         </div>
       ) : (
         <>

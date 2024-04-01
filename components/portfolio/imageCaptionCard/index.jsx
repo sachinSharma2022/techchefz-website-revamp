@@ -25,34 +25,7 @@ const ImageCaptionCard = ({ case_study }) => {
       className={cn(styles.imageCaptionCard, theme ? styles.darkStyle : "")}
     >
       <div className={cn("primary-container")}>
-        {/* <div
-          className={cn(styles.dropdownStyle, theme ? styles.dropdownDark : "")}
-        >
-          <div className={`${styles.inputDropPadding}`}>
-            <CustomDropdown
-              title="Services"
-              options={dataServices}
-              className="custom-dropdown"
-              placeholder="Select Services"
-            />
-          </div>
-          <div className={`${styles.inputDropPadding}`}>
-            <CustomDropdown
-              title="Industry"
-              options={dataIndustry}
-              className="custom-dropdown"
-              placeholder="Select Industry"
-            />
-          </div>
-          <div className={`${styles.inputDropPadding}`}>
-            <CustomDropdown
-              title="Technology"
-              options={dataTechnology}
-              className="custom-dropdown"
-              placeholder="Select Technology"
-            />
-          </div>
-        </div> */}
+       
 
         <div
           className={cn(

@@ -3,7 +3,7 @@
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import CountryDropdown from "@/components/ui/countryDropdown";
-import { ImageCustom } from "@/components/ui/imageCustom";
+
 import { Input, InputFile, Textarea, Error } from "@/components/ui/inputCustom";
 import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
