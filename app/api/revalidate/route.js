@@ -3,7 +3,7 @@ export async function POST(request) {
   try {
     const text = await request.text();
     const obj = JSON.parse(text);
-    if (obj.model) revalidatePath(`/${obj.model}/[slug]`);
+    if (obj.model) revalidatePath(`/${obj.model}/[slug]`, 'page');
   } catch (error) {
     return new Response(`Webhook error: ${error.message}`, {
       status: 400,
