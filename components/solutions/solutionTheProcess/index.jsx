@@ -145,9 +145,6 @@ const SolutionTheProcess = ({ props }) => {
                 theme={theme}
                 dashArray={dashArray}
               />
-              {/* <div class="circular-pbar">
-                <span class="_circle_inner"></span>
-              </div> */}
 
               <div id="1-img" className={cn(styles.stepperImg, "fadeinout")}>
                 <ImageCustom

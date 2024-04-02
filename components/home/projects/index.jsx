@@ -88,17 +88,7 @@ const Card = ({ ...props }) => {
             }
           )}
         </p>
-        {/* <motion.div
-          variants={opacity}
-          animate={isInView ? "open" : "closed"}
-          className={styles.projectBtn}
-        >
-          {props?.project?.Tag.map((tagItem) => (
-            <Link key={tagItem} href="/portfolio" className={styles.badgeStyle}>
-              {tagItem.Title}
-            </Link>
-          ))}
-        </motion.div> */}
+        
       </div>
     </motion.div>
   );

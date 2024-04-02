@@ -1,67 +1,25 @@
 "use client";
 import { Icons } from "@/components/icons";
 import { MyContext } from "@/context/theme";
-import { base_Url, base_Uri } from "@/lib/constants";
-import { useContext, useRef, useState } from "react";
-import Slider from "react-slick";
+import { base_Url } from "@/lib/constants";
+import { useContext, useState } from "react";
 
 import PrimaryModal from "@/components/ui/primaryModal";
-import { cn } from "@/lib/utils";
-import styles from "./style.module.scss";
 import TextRevel from "@/components/ui/sectionAnimation";
+import { cn } from "@/lib/utils";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+
+// import required modules
+import { Navigation } from "swiper/modules";
+import styles from "./style.module.scss";
 
 const TczLife = ({ props }) => {
-  console.log("rr", props);
   const [isOpen, setIsOpen] = useState(-1);
-  const slider = useRef(null);
-  const [oldSlide, setOldSlide] = useState(0);
-  const [activeSlide, setActiveSlide] = useState(0);
-  const [activeSlide2, setActiveSlide2] = useState(0);
   const { theme, setTheme } = useContext(MyContext);
-
-  const settings = {
-    dots: false,
-    infinite: false,
-    arrows: false,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    beforeChange: (current, next) => {
-      setOldSlide(current);
-      setActiveSlide(next);
-    },
-    afterChange: (current) => setActiveSlide2(current),
-    responsive: [
-      {
-        breakpoint: 3000,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 1900,
-        settings: {
-          slidesToShow: 1.8,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 1500,
-        settings: {
-          slidesToShow: 1.6,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 1.3,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
 
   return (
     <section
@@ -82,60 +40,80 @@ const TczLife = ({ props }) => {
             </div>
           </TextRevel>
 
-          <div className={styles.sliderArrow}>
+          <div className="slider-arrow">
             <button
               aria-label="Move Left"
               title="Move Left"
-              className={
-                activeSlide === 0 ? styles.arrowDisabled : styles.button
-              }
-              onClick={() => slider?.current?.slickPrev()}
+              className={cn(styles.button, "arrow-left arrow")}
             >
               <Icons.ArrowLeft />
             </button>
             <button
               aria-label="Move Right"
               title="Move Right"
-              className={styles.button}
-              onClick={() => slider?.current?.slickNext()}
+              className={cn(styles.button, "arrow-right arrow")}
             >
               <Icons.ArrowRight fill="black" stroke="black" />
             </button>
           </div>
         </div>
         <div className={cn(styles.sliderSection, "col-sm-6 tczLifeSlider")}>
-          <Slider {...settings} ref={slider}>
+          <Swiper
+            slidesPerView={3.5}
+            spaceBetween={0}
+            navigation={{ nextEl: ".arrow-right", prevEl: ".arrow-left" }}
+            pagination={false}
+            modules={[Navigation]}
+            breakpoints={{
+              300: {
+                slidesPerView: 1,
+              },
+              767: {
+                slidesPerView: 2,
+              },
+              1199: {
+                slidesPerView: 2,
+              },
+              1200: {
+                slidesPerView: 1.5,
+              },
+              1700: {
+                slidesPerView: 2.2,
+              },
+            }}
+            className="mySwiper"
+          >
             {props?.VideoSlider?.map((data, index) => (
-              <button
-                key={index}
-                className={styles.videoWhapper}
-                onClick={() => setIsOpen(index)}
-              >
-                <div>
-                  <video
-                    key={index}
-                    width="100"
-                    height="100"
-                    muted
-                    className="video-block"
-                  >
-                    <source
-                      src={
-                        data?.Video?.data?.attributes?.url
-                          ? `${base_Url}${data.Video.data.attributes.url}`
-                          : `${base_Url}/`
-                      }
-                      type="video/mp4"
-                    />
-                  </video>
-                </div>
+              <SwiperSlide key={index}>
+                <button
+                  className={styles.videoWhapper}
+                  onClick={() => setIsOpen(index)}
+                >
+                  <div>
+                    <video
+                      width="100"
+                      height="100"
+                      muted
+                      className="video-block"
+                    >
+                      <source
+                        src={
+                          data?.Video?.data?.attributes?.url
+                            ? `${base_Url}${data.Video.data.attributes.url}`
+                            : `${base_Url}/`
+                        }
+                        type="video/mp4"
+                      />
+                    </video>
+                  </div>
 
-                <div className={cn(styles.videoButton)}>
-                  <Icons.VideoButton />
-                </div>
-              </button>
+                  <div className={cn(styles.videoButton)}>
+                    <Icons.VideoButton />
+                  </div>
+                </button>
+              </SwiperSlide>
             ))}
-          </Slider>
+          </Swiper>
         </div>
         {props?.VideoSlider?.map((data, index) => (
           <PrimaryModal

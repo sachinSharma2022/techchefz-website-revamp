@@ -88,36 +88,7 @@ const CmsType = ({ props }) => {
           </div>
         )}
       </div>
-      {/* 
-      <LeftDrawer
-        title={props?.Slider[index]?.Title}
-        open={isOpen}
-        onClose={() => setIsOpen(false)}
-      >
-        <div
-          className={cn(styles.modalBody, theme ? styles.darkThemeStyle : "")}
-        >
-          <div className={styles.cardImg}>
-            <ImageCustom
-              src={
-                props?.Slider[index]?.Image?.data?.attributes?.url
-                  ? `${base_Uri}${props?.Slider[index]?.Image?.data?.attributes?.url}`
-                  : `${base_Uri}/`
-              }
-              width={110}
-              height={40}
-              alt="partner-logo"
-              className={styles.imgStyle}
-            />
-          </div>
-          <p className={styles.modalContent}>
-            {props?.Slider[index]?.Description}
-          </p>
-          <Link href={props?.Slider[index]?.BtnLink} target="_blank">
-            {props?.Slider[index]?.BtnLink}
-          </Link>
-        </div>
-      </LeftDrawer> */}
+      
     </section>
   );
 };

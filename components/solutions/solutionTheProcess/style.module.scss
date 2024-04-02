@@ -171,6 +171,8 @@
       }
       @include mobile {
         min-width: 100%;
+        min-height: 25rem;
+        @include truncate(6);
       }
 
       .title {

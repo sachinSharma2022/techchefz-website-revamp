@@ -2,101 +2,23 @@
 
 import JobCard from "@/components/common/jobCard";
 import { Icons } from "@/components/icons";
+import TextRevel from "@/components/ui/sectionAnimation";
 import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
-import { useContext, useRef, useState } from "react";
-import Slider from "react-slick";
+import { useContext } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+
+// import required modules
+import { Navigation } from "swiper/modules";
 import styles from "./style.module.scss";
-import TextRevel from "@/components/ui/sectionAnimation";
 
 const MoreJobs = ({ props, params }) => {
   const { theme, setTheme } = useContext(MyContext);
-  const [oldSlide, setOldSlide] = useState(0);
-  const [activeSlide, setActiveSlide] = useState(0);
-  const [activeSlide2, setActiveSlide2] = useState(0);
-  const slider = useRef(null);
 
-  const settings = {
-    dots: false,
-    infinite: false,
-    arrows: false,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    beforeChange: (current, next) => {
-      setOldSlide(current);
-      setActiveSlide(next);
-    },
-    afterChange: (current) => setActiveSlide2(current),
-    responsive: [
-      {
-        breakpoint: 1900,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 1199,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
-
-  const sliderData = [
-    {
-      title: "Developer - NodeJS",
-      content:
-        "As IT infrastructures grow in complexity, so do the threats they face. Cyberattacks have evolved, becoming more sophisticated and harder to detect.",
-      exp: "4-6 Years",
-      location: "Work From Home",
-    },
-    {
-      title: "QA Engineer",
-      content:
-        "As IT infrastructures grow in complexity, so do the threats they face. Cyberattacks have evolved, becoming more sophisticated and harder to detect.",
-      exp: "4-6 Years",
-      location: "Work From Home",
-    },
-    {
-      title: "Software Developer",
-      content:
-        "As IT infrastructures grow in complexity, so do the threats they face. Cyberattacks have evolved, becoming more sophisticated and harder to detect.",
-      exp: "4-6 Years",
-      location: "Work From Home",
-    },
-    {
-      title: "Developer - NodeJS",
-      content:
-        "As IT infrastructures grow in complexity, so do the threats they face. Cyberattacks have evolved, becoming more sophisticated and harder to detect.",
-      exp: "4-6 Years",
-      location: "Work From Home",
-    },
-    {
-      title: "Developer - NodeJS",
-      content:
-        "As IT infrastructures grow in complexity, so do the threats they face. Cyberattacks have evolved, becoming more sophisticated and harder to detect.",
-      exp: "4-6 Years",
-      location: "Work From Home",
-    },
-    {
-      title: "Developer - NodeJS",
-      content:
-        "As IT infrastructures grow in complexity, so do the threats they face. Cyberattacks have evolved, becoming more sophisticated and harder to detect.",
-      exp: "4-6 Years",
-      location: "Work From Home",
-    },
-  ];
   return (
     <>
       <div
@@ -106,55 +28,95 @@ const MoreJobs = ({ props, params }) => {
         )}
       >
         <div className={cn("primary-container", styles.containerStyle)}>
-          <TextRevel>
-            <div className={styles.titleSection}>
-              <div>
-                <h6>{props[0]?.attributes?.MoreDetail[0]?.Title}</h6>
-                <h3>{props[0]?.attributes?.MoreDetail[0]?.SubTitle}</h3>
+          <div className={styles.headerStyle}>
+            <TextRevel>
+              <div className={styles.titleSection}>
+                <div>
+                  <h6>{props[0]?.attributes?.MoreDetail[0]?.Title}</h6>
+                  <h3>{props[0]?.attributes?.MoreDetail[0]?.SubTitle}</h3>
+                </div>
               </div>
-            </div>
-          </TextRevel>
+            </TextRevel>
 
-          <div className={cn(styles.sliderSection)}>
-            <Slider {...settings} ref={slider}>
-              {props
-                .filter((value) => {
-                  return params?.careersDetail != value.id;
-                })
-                .map((value, index) => (
-                  <JobCard
-                    key={index}
-                    title={value?.attributes?.DeveloperApply[0]?.Title}
-                    content={value?.attributes?.Cards?.Description}
-                    exp={
-                      value?.attributes?.DeveloperApply[0]?.Developerinner[0]
-                        ?.Title
-                    }
-                    location={
-                      value?.attributes?.DeveloperApply[0]?.Developerinner[1]
-                        ?.Title
-                    }
-                    link={value.id}
-                  />
-                ))}
-            </Slider>
-
-            <div className={styles.sliderArrow}>
+            <div className="slider-arrow show-mobile-desktop">
               <button
                 aria-label="Move Left"
                 title="Move Left"
-                className={
-                  activeSlide === 0 ? styles.arrowDisabled : styles.button
-                }
-                onClick={() => slider?.current?.slickPrev()}
+                className={cn(styles.button, "arrow-left arrow")}
               >
                 <Icons.ArrowLeft />
               </button>
               <button
                 aria-label="Move Right"
                 title="Move Right"
-                className={styles.button}
-                onClick={() => slider?.current?.slickNext()}
+                className={cn(styles.button, "arrow-right arrow")}
+              >
+                <Icons.ArrowRight fill="black" stroke="black" />
+              </button>
+            </div>
+          </div>
+
+          <div className={cn(styles.sliderSection)}>
+            <Swiper
+              slidesPerView={3.5}
+              spaceBetween={0}
+              navigation={{ nextEl: ".arrow-right", prevEl: ".arrow-left" }}
+              pagination={false}
+              modules={[Navigation]}
+              breakpoints={{
+                300: {
+                  slidesPerView: 1,
+                },
+                767: {
+                  slidesPerView: 2,
+                },
+                1199: {
+                  slidesPerView: 2,
+                },
+                1200: {
+                  slidesPerView: 3,
+                },
+                1700: {
+                  slidesPerView: 4,
+                },
+              }}
+              className="mySwiper"
+            >
+              {props
+                .filter((value) => {
+                  return params?.careersDetail != value.id;
+                })
+                .map((value, index) => (
+                  <SwiperSlide key={index}>
+                    <JobCard
+                      title={value?.attributes?.DeveloperApply[0]?.Title}
+                      content={value?.attributes?.Cards?.Description}
+                      exp={
+                        value?.attributes?.DeveloperApply[0]?.Developerinner[0]
+                          ?.Title
+                      }
+                      location={
+                        value?.attributes?.DeveloperApply[0]?.Developerinner[1]
+                          ?.Title
+                      }
+                      link={value.id}
+                    />
+                  </SwiperSlide>
+                ))}
+            </Swiper>
+
+            <div className="slider-arrow show-mobile-only">
+              <button
+                aria-label="Move Left"
+                title="Move Left"
+                className={cn(styles.button, "arrow-left arrow")}
+              >
+                <Icons.ArrowLeft />
+              </button>
+              <button
+                aria-label="Move Right"
+                title="Move Right"
+                className={cn(styles.button, "arrow-right arrow")}
               >
                 <Icons.ArrowRight fill="black" stroke="black" />
               </button>

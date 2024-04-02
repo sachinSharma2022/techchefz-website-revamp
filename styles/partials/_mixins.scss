@@ -29,9 +29,11 @@ $tablet-p-width: 991px;
 $desktop-width: 1024px;
 $desktop-width-xl: 1199px;
 $desktop-width-lg: 1500px;
-$desktop-width-hd: 1600px;
 $desktop-4k: 2000px;
+$desktop-width-large: 1899px;
 $desktop-normal: 1025px;
+$desktop-xl: 1800px;
+$desktop-2xl: 1920px;
 
 // iPhone5 Mixin
 @mixin iphone5 {
@@ -50,13 +52,6 @@ $desktop-normal: 1025px;
 // Mobile Mixin
 @mixin mobile {
   @media (max-width: #{$tablet-width - 1px}) {
-    @content;
-  }
-}
-
-// Mobile Mixin (Landscape Orientation)
-@mixin mobile-o-l {
-  @media (max-width: #{$tablet-width - 1px}) and (orientation:landscape) {
     @content;
   }
 }
@@ -82,27 +77,6 @@ $desktop-normal: 1025px;
   }
 }
 
-// Tablet (L) Mixin
-@mixin tablet-l {
-  @media (min-width: #{$tablet-p-width + 1px}) and (max-width: #{$desktop-width - 1px}) {
-    @content;
-  }
-}
-
-// Tablet & Desktop Mixin
-@mixin tablet-desktop {
-  @media (min-width: #{$tablet-p-width + 1px}) {
-    @content;
-  }
-}
-
-// Tablet (L/P) & Desktop Mixin
-@mixin tablet-desktop-full {
-  @media (min-width: #{$tablet-width - 1px}) {
-    @content;
-  }
-}
-
 // Desktop Mixin
 @mixin desktop {
   @media (min-width: #{$desktop-width}) {
@@ -117,16 +91,9 @@ $desktop-normal: 1025px;
   }
 }
 
-// Xl Desktop
-@mixin desktop-xl {
-  @media (min-width: #{$desktop-width-xl}) {
-    @content;
-  }
-}
-
 // Large Desktops
 @mixin desktop-lg {
-  @media (min-width: #{$desktop-width-lg}) {
+  @media (min-width: #{$desktop-width-lg}) and (max-width: #{$desktop-width-large}) {
     @content;
   }
 }
@@ -144,8 +111,9 @@ $desktop-normal: 1025px;
   }
 }
 
-@mixin ipad-p {
-  @media (min-width: #{$desktop-width}) {
+
+@mixin desktop-xl {
+  @media (min-width: #{$desktop-xl}) and (max-width: #{$desktop-2xl - 1px}) {
     @content;
   }
 }

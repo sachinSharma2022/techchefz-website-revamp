@@ -9,15 +9,12 @@ import TechnologyValues from "@/components/technology/technologyValues";
 import NotFound from "../not-found";
 import ContactSection from "@/components/careersDetail/contactSection";
 
-
-
 export async function generateMetadata() {
-  const data = await getData(api_Career_Page); 
-  
+  const data = await getData(api_Career_Page);
+
   return {
     title: data?.SeoData?.Title,
     description: data?.SeoData?.Description,
-   
   };
 }
 
@@ -38,7 +35,7 @@ const Career = async () => {
             <OpenPosition id="OpenPosition" props={data_career_details} />
           ) : (
             <ContactSection
-              id="contactSection"
+              id="OpenPosition"
               props={data_career_details[0].attributes.Developercontact}
             />
           )}

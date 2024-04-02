@@ -67,7 +67,7 @@
       gap: 8.9375rem;
 
       @include desktop-lg {
-        grid-template-columns:auto 50%;
+        grid-template-columns:auto 40%;
       }
 
       @include mobile-tablet-p {

@@ -50,7 +50,6 @@
     opacity: opacity(light);
 
     @include mobile-tablet-p {
-      font-size: text(normal);
       line-height: text(xl);
     }
   }
