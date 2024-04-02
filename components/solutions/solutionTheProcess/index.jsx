@@ -21,6 +21,7 @@ const SolutionTheProcess = ({ props }) => {
   const dashArray = radius * Math.PI * 2;
   const [dashOffset, setdashOffset] = useState(dashArray);
   const [prevdashOffset, prevsetdashOffset] = useState(dashArray);
+  const [cardActive, setcardActive] = useState(true);
 
   gsap.registerPlugin(ScrollTrigger);
   useEffect(() => {
@@ -55,61 +56,66 @@ const SolutionTheProcess = ({ props }) => {
           },
         });
         const titles = gsap.utils.toArray(`.${styles.processCard}`);
-
+        const fillcircle = (prevvalue, newvalue) => {
+          gsap.fromTo(
+            ".circleFil",
+            {
+              strokeDashoffset: prevvalue,
+              // duration: 2,
+              ease: "power1.inOut",
+            },
+            {
+              strokeDashoffset: newvalue,
+              // duration: 2,
+              transition: "stroke-dashoffset 1s linear 0s",
+              ease: "power1.inOut",
+            }
+          );
+        };
         titles.forEach((text, i) => {
           gsap.to(text, {
             onStart: function () {
+              if (i != 0) setcardActive(false);
+              else setcardActive(true);
               setTimeout(() => {
-                changeDot(i + 1);
+                if (i != 0) changeDot(i);
                 changeImg(i + 1);
               }, 100);
 
               setdashOffset((prev) => {
                 prevsetdashOffset(prev);
-                return dashArray - (dashArray / titles.length) * (i + 1);
-                //return (100 / titles.length) * (i + 1);
+                if (i == titles.length - 1) fillcircle(prev, 0);
+                else
+                  fillcircle(prev, dashArray - (dashArray / titles.length) * i);
+                return dashArray - (dashArray / titles.length) * i;
               });
+            },
+            onReverseComplete: function () {
+              if (i == 0) {
+                setcardActive(true);
+                // fillcircle(
+                //   dashArray - (dashArray / titles.length) * (i + 1),
+                //   prevdashOffset
+                // );
+              }
+              if (i == 1) {
+                changeDot(i - 1);
+              }
             },
             scrollTrigger: {
               trigger: text,
               start: "top 390rem",
               end: "center 232rem",
-              markers: false,
+              markers: true,
               toggleActions: "play reset play reverse",
             },
             opacity: 1,
           });
         });
-        console.log(dashOffset, prevdashOffset, "dashofsett");
-
-        gsap.fromTo(
-          ".circleFil",
-          {
-            strokeDashoffset: prevdashOffset,
-            duration: 3,
-            ease: "power1.inOut",
-          },
-          //   {
-          //     "--p": `${dashOffset}%`,
-          //     //  duration: 4,
-          //     //  ease: "expo.out",
-          //   }
-          {
-            strokeDashoffset: dashOffset,
-            transition: "stroke-dashoffset 1.6s linear 0s",
-            duration: 9,
-            ease: "power1.inOut",
-          }
-          //   {
-          //     "--p": `${dashOffset}%`,
-          //     duration: 4,
-          //     ease: "expo.out",
-          //   }
-        );
       });
       return () => ctx.revert();
     }
-  }, [dashOffset, prevdashOffset]);
+  }, []);
 
   return (
     <section
@@ -244,7 +250,9 @@ const SolutionTheProcess = ({ props }) => {
             {props?.ITSolutionsCards?.map((data, index) => (
               <div
                 key={index}
-                className={`${styles.processCard} ${data.current}`}
+                className={`${styles.processCard} ${data.current} ${
+                  index == 0 && cardActive && styles.cardActive
+                }`}
               >
                 <div className={styles.textGradient}>{data.Title}</div>
                 <h4 className={styles.title}>{data?.Description}</h4>

@@ -20,15 +20,16 @@ export const SvgLoader = (props) => {
           r="230"
           stroke={props.theme ? "#707070" : "#979797"}
           stroke-opacity="0.4"
-          stroke-width="10"
+          stroke-width="16"
         />
         <circle
           className="circleFil"
           cx="235"
           cy="255"
           r="230"
+          stroke-linecap="round"
           stroke="url(#paint4_linear_1035_26193)"
-          stroke-width="10"
+          stroke-width="16"
           style={{
             strokeDasharray: props.dashArray,
             strokeDashoffset: props.dashArray,
@@ -46,21 +47,22 @@ export const SvgLoader = (props) => {
         <g>
           <circle
             className="dot"
-            id="4"
+            id="0"
             cx="235"
-            cy="20"
+            cy="24"
             r="20"
             fill="#26A0F8"
             stroke-width="2"
             stroke="#26A0F8"
           />
           <text
+            font-weight="500"
             x="235"
-            y="20"
+            y="24"
             text-anchor="middle"
             fill="white"
             alignment-baseline="middle"
-            style={{}}
+            style={{ fontSize: 18 }}
           >
             1
           </text>
@@ -82,7 +84,7 @@ export const SvgLoader = (props) => {
             text-anchor="middle"
             fill="white"
             alignment-baseline="middle"
-            style={{}}
+            style={{ fontSize: 18 }}
           >
             4
           </text>
@@ -126,7 +128,7 @@ export const SvgLoader = (props) => {
             text-anchor="middle"
             fill="white"
             alignment-baseline="middle"
-            style={{}}
+            style={{ fontSize: 18 }}
           >
             3
           </text>
@@ -157,7 +159,7 @@ export const SvgLoader = (props) => {
           <circle
             className="dot"
             id="1"
-            cx="460"
+            cx="464"
             cy="250"
             r="19"
             fill="white"
@@ -165,12 +167,12 @@ export const SvgLoader = (props) => {
             stroke="#26A0F8"
           />
           <text
-            x="460"
+            x="464"
             y="250"
             text-anchor="middle"
             fill="white"
             alignment-baseline="middle"
-            style={{}}
+            style={{ fontSize: 18 }}
           >
             2
           </text>
@@ -299,15 +301,16 @@ export const SvgLoader = (props) => {
           r="230"
           stroke={props.theme ? "#707070" : "#979797"}
           stroke-opacity="0.4"
-          stroke-width="10"
+          stroke-width="16"
         />
         <circle
           className="circleFil"
           cx="235"
           cy="255"
           r="230"
+          stroke-linecap="round"
           stroke="url(#paint4_linear_1035_26193)"
-          stroke-width="10"
+          stroke-width="16"
           style={{
             strokeDasharray: props.dashArray,
             strokeDashoffset: props.dashArray,
@@ -325,7 +328,7 @@ export const SvgLoader = (props) => {
         <g>
           <circle
             className="dot"
-            id="5"
+            id="0"
             cx="235"
             cy="20"
             r="20"
@@ -339,7 +342,7 @@ export const SvgLoader = (props) => {
             text-anchor="middle"
             fill="white"
             alignment-baseline="middle"
-            style={{}}
+            style={{ fontSize: 18 }}
           >
             1
           </text>
@@ -361,7 +364,7 @@ export const SvgLoader = (props) => {
             text-anchor="middle"
             fill="white"
             alignment-baseline="middle"
-            style={{}}
+            style={{ fontSize: 18 }}
           >
             5
           </text>
@@ -383,7 +386,7 @@ export const SvgLoader = (props) => {
             text-anchor="middle"
             fill="white"
             alignment-baseline="middle"
-            style={{}}
+            style={{ fontSize: 18 }}
           >
             4
           </text>
@@ -405,7 +408,7 @@ export const SvgLoader = (props) => {
             text-anchor="middle"
             fill="white"
             alignment-baseline="middle"
-            style={{}}
+            style={{ fontSize: 18 }}
           >
             3
           </text>
@@ -427,7 +430,7 @@ export const SvgLoader = (props) => {
             text-anchor="middle"
             fill="white"
             alignment-baseline="middle"
-            style={{}}
+            style={{ fontSize: 18 }}
           >
             2
           </text>
@@ -556,15 +559,16 @@ export const SvgLoader = (props) => {
           r="230"
           stroke={props.theme ? "#707070" : "#979797"}
           stroke-opacity="0.4"
-          stroke-width="10"
+          stroke-width="16"
         />
         <circle
           className="circleFil"
           cx="235"
           cy="255"
           r="230"
+          stroke-linecap="round"
           stroke="url(#paint4_linear_1035_26193)"
-          stroke-width="10"
+          stroke-width="16"
           style={{
             strokeDasharray: props.dashArray,
             strokeDashoffset: props.dashArray,
@@ -582,7 +586,7 @@ export const SvgLoader = (props) => {
         <g>
           <circle
             className="dot"
-            id="6"
+            id="0"
             cx="235"
             cy="20"
             r="20"
@@ -596,7 +600,7 @@ export const SvgLoader = (props) => {
             text-anchor="middle"
             fill="white"
             alignment-baseline="middle"
-            style={{}}
+            style={{ fontSize: 18 }}
           >
             1
           </text>
@@ -618,7 +622,7 @@ export const SvgLoader = (props) => {
             text-anchor="middle"
             fill="white"
             alignment-baseline="middle"
-            style={{}}
+            style={{ fontSize: 18 }}
           >
             6
           </text>
@@ -640,7 +644,7 @@ export const SvgLoader = (props) => {
             text-anchor="middle"
             fill="white"
             alignment-baseline="middle"
-            style={{}}
+            style={{ fontSize: 18 }}
           >
             5
           </text>
@@ -662,7 +666,7 @@ export const SvgLoader = (props) => {
             text-anchor="middle"
             fill="white"
             alignment-baseline="middle"
-            style={{}}
+            style={{ fontSize: 18 }}
           >
             4
           </text>
@@ -684,7 +688,7 @@ export const SvgLoader = (props) => {
             text-anchor="middle"
             fill="white"
             alignment-baseline="middle"
-            style={{}}
+            style={{ fontSize: 18 }}
           >
             3
           </text>
@@ -706,7 +710,7 @@ export const SvgLoader = (props) => {
             text-anchor="middle"
             fill="white"
             alignment-baseline="middle"
-            style={{}}
+            style={{ fontSize: 18 }}
           >
             2
           </text>
