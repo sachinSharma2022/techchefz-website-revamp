@@ -3,6 +3,10 @@
 .relatedCase {
   position: relative;
 
+  @include desktop-hd {
+    padding: spacing(section-primary-padding);
+  }
+
   // For Space
   &.spaceStyle {
     margin-block: 8.75rem;
@@ -87,6 +91,14 @@
       right: 0;
       left: 0;
       padding-left: 12.5vw;
+    }
+
+    @include desktop-lg {
+      padding-left: 8vw;
+    }
+
+    @include desktop-xl {
+      padding-left: 10vw;
     }
   }
 
