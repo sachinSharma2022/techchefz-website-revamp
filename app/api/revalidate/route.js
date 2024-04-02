@@ -28,7 +28,9 @@ export async function POST(request) {
       "insight-inside": "insights",
       "career-detail": "careers",
     };
-    if (obj.model) revalidatePath(`/${alias[obj.model]}/`, "layout");
+    if (obj.model && obj.model != "landing-page")
+      revalidatePath(`/${alias[obj.model]}/`, "layout");
+    else revalidatePath(`/`, "page");
   } catch (error) {
     return new Response(`Webhook error: ${error.message}`, {
       status: 400,
