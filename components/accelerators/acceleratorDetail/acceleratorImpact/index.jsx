@@ -1,6 +1,5 @@
 "use client";
-import { Icons } from "@/components/icons";
-import { Button } from "@/components/ui/button";
+
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
@@ -8,7 +7,7 @@ import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
 
-import Link from "next/link";
+
 
 const AcceleratorImpact = ({ props }) => {
   console.log("ac", props);
