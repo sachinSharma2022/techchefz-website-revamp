@@ -28,7 +28,6 @@
   }
 
   .headSection {
-    padding-inline: spacing(p-120);
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -74,7 +73,6 @@
   }
 
   .relatedCaseSlider {
-    padding-left: spacing(p-120);
 
     @include tablet-p {
       margin-bottom: 2.75rem;
@@ -86,20 +84,6 @@
       padding: 0;
     }
 
-    @include desktop-hd {
-      position: absolute;
-      right: 0;
-      left: 0;
-      padding-left: 12.5vw;
-    }
-
-    @include desktop-lg {
-      padding-left: 8vw;
-    }
-
-    @include desktop-xl {
-      padding-left: 10vw;
-    }
   }
 
   .cardStyle {

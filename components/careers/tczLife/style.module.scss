@@ -3,7 +3,6 @@
 .tczLife {
   background-color: color(bg-soft);
   padding-block: spacing(section-primary-padding);
-  padding-left: spacing(p-120);
   overflow: hidden;
   position: relative;
 
@@ -25,23 +24,6 @@
     @include desktop-hd {
       max-width: 1440px;
       margin-inline: auto;
-    }
-
-    .sliderSection {
-      padding: 0;
-      position: absolute;
-      right: 0;
-
-      @include tablet {
-        margin-top: 3.75rem;
-      }
-
-      @include mobile {
-        position: relative;
-        margin-top: 3.75rem;
-        padding-left: spacing(mobile-padding);
-        padding-right: 0;
-      }
     }
 
     .tczActionSection {
@@ -110,7 +92,7 @@
     justify-content: center;
 
     div {
-      width: 47vw;
+      width: 470px;
       height: 264px;
       position: relative;
       overflow: hidden;

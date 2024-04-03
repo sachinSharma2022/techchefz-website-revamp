@@ -97,6 +97,7 @@
     line-height: 2rem;
     margin-bottom: 0.5rem;
     font-family: font(primary);
+    @include transition(0.5s);
     @include mobile-tablet-p {
       font-size: text(lg);
       line-height: 1.75rem;
@@ -127,6 +128,12 @@
 
   .infoSec {
     margin-top: 24px;
+    
+    &:hover {
+      .subTitle {
+        color: color(primary-blue);
+      }
+    }
   }
 
   // dark Mode

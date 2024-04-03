@@ -55,7 +55,7 @@
   .subHeading {
     font-size: 1.125rem;
     font-weight: 500;
-    margin-bottom: 0.625rem;
+    margin-bottom: 0;
     color: rgba(color(text-primary), 0.6);
 
     @include mobile-tablet-p {
@@ -69,6 +69,7 @@
     line-height: 1.5rem;
     opacity: opacity(light);
     display: none;
+    margin-top: 0.625rem;
   }
 
   .subTitle {
