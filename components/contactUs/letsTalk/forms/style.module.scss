@@ -83,6 +83,13 @@
   }
 }
 
+.inputCountryDropdown {
+
+  @include mobile-tablet-p {
+    z-index: 9;
+  }
+}
+
 // Attach Style
 .attachStyle {
   position: relative;

@@ -37,90 +37,29 @@ const MoreJobs = ({ props, params }) => {
                 </div>
               </div>
             </TextRevel>
-
-            <div className="slider-arrow show-mobile-desktop">
-              <button
-                aria-label="Move Left"
-                title="Move Left"
-                className={cn(styles.button, "arrow-left arrow")}
-              >
-                <Icons.ArrowLeft />
-              </button>
-              <button
-                aria-label="Move Right"
-                title="Move Right"
-                className={cn(styles.button, "arrow-right arrow")}
-              >
-                <Icons.ArrowRight fill="black" stroke="black" />
-              </button>
-            </div>
           </div>
 
           <div className={cn(styles.sliderSection)}>
-            <Swiper
-              slidesPerView={3.5}
-              spaceBetween={0}
-              navigation={{ nextEl: ".arrow-right", prevEl: ".arrow-left" }}
-              pagination={false}
-              modules={[Navigation]}
-              breakpoints={{
-                300: {
-                  slidesPerView: 1,
-                },
-                767: {
-                  slidesPerView: 2,
-                },
-                1199: {
-                  slidesPerView: 2,
-                },
-                1200: {
-                  slidesPerView: 3,
-                },
-                1700: {
-                  slidesPerView: 4,
-                },
-              }}
-              className="mySwiper"
-            >
-              {props
-                .filter((value) => {
-                  return params?.careersDetail != value.id;
-                })
-                .map((value, index) => (
-                  <SwiperSlide key={index}>
-                    <JobCard
-                      title={value?.attributes?.DeveloperApply[0]?.Title}
-                      content={value?.attributes?.Cards?.Description}
-                      exp={
-                        value?.attributes?.DeveloperApply[0]?.Developerinner[0]
-                          ?.Title
-                      }
-                      location={
-                        value?.attributes?.DeveloperApply[0]?.Developerinner[1]
-                          ?.Title
-                      }
-                      link={value.id}
-                    />
-                  </SwiperSlide>
-                ))}
-            </Swiper>
-
-            <div className="slider-arrow show-mobile-only">
-              <button
-                aria-label="Move Left"
-                title="Move Left"
-                className={cn(styles.button, "arrow-left arrow")}
-              >
-                <Icons.ArrowLeft />
-              </button>
-              <button
-                aria-label="Move Right"
-                title="Move Right"
-                className={cn(styles.button, "arrow-right arrow")}
-              >
-                <Icons.ArrowRight fill="black" stroke="black" />
-              </button>
-            </div>
+            {props
+              .filter((value) => {
+                return params?.careersDetail != value.id;
+              })
+              .map((value, index) => (
+                <JobCard
+                  key={index}
+                  title={value?.attributes?.DeveloperApply[0]?.Title}
+                  content={value?.attributes?.Cards?.Description}
+                  exp={
+                    value?.attributes?.DeveloperApply[0]?.Developerinner[0]
+                      ?.Title
+                  }
+                  location={
+                    value?.attributes?.DeveloperApply[0]?.Developerinner[1]
+                      ?.Title
+                  }
+                  link={value.id}
+                />
+              ))}
           </div>
         </div>
       </div>
