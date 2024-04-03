@@ -239,8 +239,8 @@ const JobsForm = () => {
 
                   <div className={cn(styles.inputSpace, "input-item")}>
                     <Textarea
-                      label="Brief Explanation of your project*"
-                      placeholder="Brief Explanation of your project*"
+                      label="Cover Letter*"
+                      placeholder="Cover Letter*"
                       type="textarea"
                       rows="4"
                       id="projectExplanation"
