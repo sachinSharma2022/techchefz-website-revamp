@@ -210,7 +210,13 @@ const ProjectForm = () => {
                     <Error>{errors.companyName}</Error>
                   )}
                 </div>
-                <div className={cn(styles.inputSpace, "input-item")}>
+                <div
+                  className={cn(
+                    styles.inputSpace,
+                    styles.inputCountryDropdown,
+                    "input-item"
+                  )}
+                >
                   <CustomDropdown
                     label="Country"
                     name="countrySelection"
@@ -231,8 +237,8 @@ const ProjectForm = () => {
                 </div>
                 <div className={cn(styles.inputSpace, "input-item")}>
                   <Textarea
-                    label="Brief Explanation of your project*"
-                    placeholder="Brief Explanation of your project*"
+                    label="Cover Letter*"
+                    placeholder="Cover Letter*"
                     type="textarea"
                     rows="4"
                     id="projectExplanation"

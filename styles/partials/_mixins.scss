@@ -34,6 +34,7 @@ $desktop-width-large: 1899px;
 $desktop-normal: 1025px;
 $desktop-xl: 1800px;
 $desktop-2xl: 1920px;
+$desktop-14: 1440px;
 
 // iPhone5 Mixin
 @mixin iphone5 {
@@ -100,7 +101,13 @@ $desktop-2xl: 1920px;
 
 // Large HD Desktops
 @mixin desktop-hd {
-  @media (min-width: #{$desktop-width-lg}) {
+  @media (max-width: #{$desktop-width-lg}) {
+    @content;
+  }
+}
+
+@mixin desktop-14 {
+  @media (min-width: #{$desktop-14}) {
     @content;
   }
 }

@@ -648,9 +648,14 @@
         max-height: 75vh;
         overflow-y: auto;
 
-        @include desktop-hd {
-          min-height: 60vh;
-          max-height: 60vh;
+        @include desktop-14 {
+          min-height: 70vh;
+          max-height: 70vh;
+        }
+
+        @include desktop-lg {
+          min-height: 75vh;
+          max-height: 75vh;
         }
 
         @include mobile-tablet-p {

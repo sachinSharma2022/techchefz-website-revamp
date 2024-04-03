@@ -4,6 +4,10 @@
   padding: spacing(section-primary-padding);
   margin-top: 8rem;
 
+  @include desktop-lg {
+    margin-top: 14rem;
+  }
+
   @include mobile-tablet-p {
     padding: 0 spacing(tablet-padding) 5rem;
     margin-top: 0rem;
@@ -45,7 +49,7 @@
       justify-content: flex-start;
       text-align: left;
       align-items: start;
-      margin-bottom:2rem;
+      margin-bottom: 2rem;
     }
 
     @include mobile {
@@ -189,6 +193,5 @@
     .datingText {
       color: rgba(color(primary-white), opacity(dark));
     }
-    
   }
 }
