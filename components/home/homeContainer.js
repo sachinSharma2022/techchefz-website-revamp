@@ -25,8 +25,8 @@ const TechnologyStack = dynamic(() =>
 );
 const HomeContainer = ({ data, data_Portfolio }) => {
   //   const targetRefLandingBanner = useRef(null);
-//   const targetRefHomepageIntro = useRef(null);
-  const targetRefWeAreFuture = useRef(null);
+  //   const targetRefHomepageIntro = useRef(null);
+  //const targetRefWeAreFuture = useRef(null);
   const targetRefService = useRef(null);
   const targetRefProjects = useRef(null);
   const targetRefOurNumbers = useRef(null);
@@ -35,8 +35,8 @@ const HomeContainer = ({ data, data_Portfolio }) => {
   const targetRefHomeTestimonials = useRef(null);
   const targetRefLetsWork = useRef(null);
   //   const isVisibleLandingBanner = useLazyLoad(targetRefLandingBanner);
-//   const isVisibleHomepageIntro = useLazyLoad(targetRefHomepageIntro);
-  const isVisibleWeAreFuture = useLazyLoad(targetRefWeAreFuture);
+  //   const isVisibleHomepageIntro = useLazyLoad(targetRefHomepageIntro);
+  //const isVisibleWeAreFuture = useLazyLoad(targetRefWeAreFuture);
   const isVisibleService = useLazyLoad(targetRefService);
   const isVisibleProjects = useLazyLoad(targetRefProjects);
   const isVisibleOurNumbers = useLazyLoad(targetRefOurNumbers);
@@ -46,23 +46,23 @@ const HomeContainer = ({ data, data_Portfolio }) => {
   );
   const isVisibleHomeTestimonials = useLazyLoad(targetRefHomeTestimonials);
   const isVisibleLetsWork = useLazyLoad(targetRefLetsWork);
-  console.log(targetRefWeAreFuture, "LetsWork");
   return (
     <>
       <LandingBanner props={data.Banner} />
-      
-          <HomepageIntro
-            src={
-              data?.Technology?.Video?.data?.attributes?.url
-                ? `${base_Url}${data?.Technology?.Video?.data?.attributes?.url}`
-                : `${base_Url}/`
-            }
-          />
-       
 
-      <div ref={targetRefWeAreFuture}>
-        {isVisibleWeAreFuture && <WeAreFuture props={data.Technology} />}
-      </div>
+      <HomepageIntro
+        src={
+          data?.Technology?.Video?.data?.attributes?.url
+            ? `${base_Url}${data?.Technology?.Video?.data?.attributes?.url}`
+            : `${base_Url}/`
+        }
+      />
+
+      {/* <div ref={targetRefWeAreFuture}>
+        {isVisibleWeAreFuture &&  */}
+      <WeAreFuture props={data.Technology} />
+      {/* //     }
+    //   </div> */}
       <div ref={targetRefService}>
         {isVisibleService && <Service props={data.Services} />}
       </div>
