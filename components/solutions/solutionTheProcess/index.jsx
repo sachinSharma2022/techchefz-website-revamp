@@ -1,17 +1,17 @@
 "use client";
 import { ImageCustom } from "@/components/ui/imageCustom";
+import { SvgLoader } from "@/components/ui/svgCircleLoader/svgLoader";
 import { MyContext } from "@/context/theme";
+import { base_Uri } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useContext, useEffect, useState } from "react";
-import { base_Uri } from "@/lib/constants";
-import { SvgLoader } from "@/components/ui/svgCircleLoader/svgLoader";
 
-import styles from "./style.module.scss";
+import MobileSlider from "@/components/common/mobileSlider";
 import TextRevel from "@/components/ui/sectionAnimation";
 import { useMediaQuery } from "react-responsive";
-import MobileSlider from "@/components/common/mobileSlider";
+import styles from "./style.module.scss";
 
 const SolutionTheProcess = ({ props }) => {
   const isBigScreen = useMediaQuery({ query: "(min-width: 1200px)" });
