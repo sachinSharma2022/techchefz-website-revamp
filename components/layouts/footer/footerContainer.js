@@ -5,16 +5,6 @@ import FooterLazyLoad from "./footerLazyLoad";
 const FooterContainer = async () => {
   const data = await getDataDynamic(api_footer_Page);
 
-  return (
-    <>
-      {data ? (
-        <FooterLazyLoad
-         data={data}
-        />
-      ) : (
-        <></>
-      )}
-    </>
-  );
+  return <>{data ? <FooterLazyLoad data={data} /> : <></>}</>;
 };
 export default FooterContainer;

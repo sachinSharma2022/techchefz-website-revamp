@@ -15,6 +15,7 @@
     display: flex;
     justify-content: space-between;
     gap: 8.938rem;
+    position: relative;
 
     @include mobile-tablet-p {
       flex-direction: column;
@@ -123,9 +124,10 @@
   .processCardSection {
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
     gap: 2.5rem;
     margin-top: 10.75rem;
-    min-width: 50%;
+    width: 100%;
 
     @include tablet-p {
       margin-top: 0;
@@ -151,6 +153,17 @@
       }
       &.cardActive {
         opacity: 1 !important;
+      }
+
+      @include desktop-2k {
+        min-width: 700px;
+        max-width: 700px;
+      }
+
+      @include desktop-4k {
+        min-width: 700px;
+        max-width: 700px;
+        margin-left: -50px;
       }
 
       @include mobile-tablet-p {

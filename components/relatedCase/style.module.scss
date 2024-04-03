@@ -100,6 +100,10 @@
     @include desktop-xl {
       padding-left: 10vw;
     }
+
+    @include desktop-4k {
+      padding-left: 21.5vw;
+    }
   }
 
   .cardStyle {
