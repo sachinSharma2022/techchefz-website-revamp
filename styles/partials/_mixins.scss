@@ -105,6 +105,12 @@ $desktop-2xl: 1920px;
   }
 }
 
+@mixin desktop-2k {
+  @media (min-width: #{$desktop-2xl}) and (max-width: #{$desktop-4k - 1px}) {
+    @content;
+  }
+}
+
 @mixin desktop-4k {
   @media (min-width: #{$desktop-4k}) {
     @content;
