@@ -5,7 +5,7 @@ import ContactSection from "@/components/careersDetail/contactSection";
 import MoreJobs from "@/components/careersDetail/moreJobs";
 import { api_Career_detail_Page } from "@/lib/constants";
 import NotFound from "@/app/not-found";
-import { getData, getDataDynamic } from "@/lib/fetchData";
+import { getDataDynamic } from "@/lib/fetchData";
 
 const CareerDetail = async ({ params }) => {
   const data = await getDataDynamic(api_Career_detail_Page);

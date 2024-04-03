@@ -1,5 +1,4 @@
 "use client";
-import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
 import { useContext, useEffect, useRef, useState } from "react";
