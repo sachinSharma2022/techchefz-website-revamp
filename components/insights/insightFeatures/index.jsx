@@ -19,9 +19,7 @@ const InsightFeatures = ({ props, featureInsight, feature }) => {
           <div className={styles.searchButton}>
             {/* <SearchInput theme={theme} /> */}
           </div>
-          <div className={styles.serviceBtn}>
-            
-          </div>
+          <div className={styles.serviceBtn}></div>
         </div>
         <div className={styles.featureInsight}>
           <h5
