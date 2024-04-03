@@ -46,7 +46,7 @@ const Footer = ({ props, Subscribe, SocialMedia, footerinner, Reserved }) => {
         </div>
 
         <div className="row">
-          <div className="col-12 col-lg-6">
+          <div className="col-12 col-lg-12 col-xl-6">
             <div className={styles.footLeftPanel}>
               <p className={styles.description}>{props[0]?.Description}</p>
 
@@ -108,7 +108,7 @@ const Footer = ({ props, Subscribe, SocialMedia, footerinner, Reserved }) => {
               </div>
             </div>
           </div>
-          <div className="col-12 col-lg-6">
+          <div className="col-12 col-lg-12 col-xl-6">
             <div className={styles.footSocial}>
               <h4 className="mb-3">{SocialMedia[0].Title}</h4>
               <div className={styles.footSocialLinks}>
