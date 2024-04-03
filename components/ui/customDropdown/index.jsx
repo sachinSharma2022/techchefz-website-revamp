@@ -173,7 +173,7 @@ const CustomDropdown = ({
             <ImageCustom
               width={24}
               height={15}
-              src={`https://flagcdn.com/${country.code.toLowerCase()}.svg`}
+              // src={`https://flagcdn.com/${country.code.toLowerCase()}.svg`}
               alt="country-image"
             />
             <span>{country.value}</span>
@@ -210,7 +210,7 @@ export const ServiceDropdown = ({
         borderColor: "#05bed7",
       },
       boxShadow: "none",
-      fontWeight: 400,
+      fontWeight: 500,
       fontFamily: "../public/fonts/Aeonik-Regular.otf",
       fontSize: "1rem",
       color: "#000000",
@@ -240,7 +240,7 @@ export const ServiceDropdown = ({
       transition: "top 0.1s, font-size 0.1s",
       fontSize: (state.hasValue || state.selectProps.inputValue) && "1rem",
       color: "#8d8d8d",
-      fontWeight: 400,
+      fontWeight: 500,
     }),
     option: (styles, { isFocused }) => {
       return {

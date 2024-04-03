@@ -96,18 +96,17 @@ const DigitalTransformation = ({ digital }) => {
             {digital[0]?.Experience.map((data, index) => (
               <div key={index}>
                 <div className={styles.digitalGrid}>
-                  <div className={styles.digitalImg}>
-                    <ImageCustom
-                      src={
-                        data?.Image?.data?.attributes?.url
-                          ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
-                          : `${base_Uri}/`
-                      }
-                      width={421}
-                      height={318}
-                      alt="bannerImg"
-                    />
-                  </div>
+                  <ImageCustom
+                    src={
+                      data?.Image?.data?.attributes?.url
+                        ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
+                        : `${base_Uri}/`
+                    }
+                    width={421}
+                    height={318}
+                    alt="bannerImg"
+                    className={styles.digitalImg}
+                  />
 
                   <div className={styles.experienceCardBox}>
                     <h4

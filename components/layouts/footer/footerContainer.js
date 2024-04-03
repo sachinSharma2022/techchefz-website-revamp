@@ -16,9 +16,7 @@ export const FooterContainer = async () => {
           Reserved={data?.attributes?.Reserved}
         />
       ) : (
-        <>
-         
-        </>
+        <></>
       )}
     </>
   );

@@ -119,7 +119,7 @@ const Footer = ({ props, Subscribe, SocialMedia, footerinner, Reserved }) => {
                   href={SocialMedia[0]?.SocialMediaInner[0]?.Link}
                   target="_blank"
                 >
-                  <Icons.linkedin size={16} />{" "}
+                  <Icons.linkedinSecond size={16} />{" "}
                   <span>{SocialMedia[0]?.SocialMediaInner[0]?.Title}</span>
                 </Link>
                 <Link
@@ -133,7 +133,7 @@ const Footer = ({ props, Subscribe, SocialMedia, footerinner, Reserved }) => {
                   href={SocialMedia[0]?.SocialMediaInner[2]?.Link}
                   target="_blank"
                 >
-                  <Icons.twitter size={16} />{" "}
+                  <Icons.instagram size={16} />{" "}
                   <span>{SocialMedia[0]?.SocialMediaInner[2]?.Title}</span>
                 </Link>
               </div>

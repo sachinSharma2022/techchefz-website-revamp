@@ -89,6 +89,10 @@
     width: auto;
     padding: 1rem;
     height: auto;
+
+    @include tablet-p {
+      width: 90%;
+    }
   }
 
   .buttonUpload {
@@ -111,6 +115,10 @@
     align-items: center;
     justify-content: flex-end;
     padding-right: 20px;
+
+    @include iphone5{
+      padding-right: 5px;
+    }
   }
 
   .buttonUpload:focus {

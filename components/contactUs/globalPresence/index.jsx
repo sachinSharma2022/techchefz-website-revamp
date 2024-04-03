@@ -21,7 +21,7 @@ const GlobalPresence = ({ props }) => {
       locationName: "London",
     },
     {
-      locationName: "New Delhi",
+      locationName: isMobileScreen ? "India" : "New Delhi",
     },
     {
       locationName: "Pune",
@@ -52,17 +52,6 @@ const GlobalPresence = ({ props }) => {
         </TextRevel>
         <div className={styles.popoverContainer}>
           <div className={styles.contactMap}>
-            {/* <ImageCustom
-                src={
-                  props?.Image?.data?.attributes?.url
-                    ? `${base_Uri}${props?.Image?.data?.attributes?.url}`
-                    : `${base_Uri}/`
-                }
-                width={1000}
-                height={1000}
-                alt="map"
-              /> */}
-
             <ImageCustom
               src="/images/img/map.svg"
               width={1000}

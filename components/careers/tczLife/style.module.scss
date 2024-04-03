@@ -49,15 +49,18 @@
       flex-direction: column;
       justify-content: space-between;
       min-width: 23.25rem;
+      min-height: 260px;
 
       @include tablet {
         margin: 3.75rem spacing(tablet-padding) 0;
         min-width: auto;
+        min-height: auto;
       }
 
       @include mobile {
         margin: 3.75rem spacing(mobile-padding) 0;
         min-width: auto;
+        min-height: auto;
       }
     }
 

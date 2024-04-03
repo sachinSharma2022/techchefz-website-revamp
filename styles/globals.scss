@@ -217,7 +217,7 @@ input:-webkit-autofill {
 
       &::after {
         content: "";
-        width: 6.25rem;
+        width: 5.25rem;
         height: 8.7rem;
         position: absolute;
         right: 0;
@@ -680,7 +680,6 @@ input:-webkit-autofill {
   .slick-track {
     @include desktop-hd {
       max-width: 1440px;
-      display: flex;
     }
   }
 
@@ -974,6 +973,7 @@ html.lenis {
 .video-block {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 // Pages BG Style
@@ -1134,16 +1134,20 @@ html.lenis {
 }
 
 .solution-related-style {
-  min-height: 48rem;
+  min-height: 52rem;
   padding-top: 6rem;
 
+  @include desktop-lg {
+    min-height: 53rem;
+  }
+
   @include mobile-tablet-p {
-    padding: 5rem 1rem 5rem spacing(tablet-padding);
+    padding: 5rem 1rem 2rem spacing(tablet-padding);
     min-height: auto;
   }
 
   @include mobile {
-    padding: 5rem 1rem 5rem spacing(mobile-padding);
+    padding: 5rem 1rem 2rem spacing(mobile-padding);
     min-height: auto;
   }
 }
@@ -1158,6 +1162,15 @@ html.lenis {
   background-color: color(bg-soft);
   min-height: 54rem;
   padding: 6rem 0;
+
+  @include desktop-lg {
+    min-height: 58rem;
+  }
+
+  @include mobile-tablet-p {
+    min-height: auto;
+    padding: 4rem 1.25rem;
+  }
 }
 
 .fadeinout {
@@ -1267,6 +1280,66 @@ html.lenis {
   }
 }
 
+// .css-1oeztk8-control
+.css-1oeztk8-control {
+  font-family: font(primary);
+}
+
+// Slider Button
+.slider-arrow {
+  display: flex;
+  gap: 24px;
+
+  @include mobile-tablet-p {
+    margin: 3rem 0 2rem;
+    width: 100%;
+    display: none;
+  }
+
+  &.show-mobile-only {
+    display: flex;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  .arrow {
+    background-color: color(primary-blue);
+    padding: 0;
+    border-radius: 0.5rem;
+    width: 3rem;
+    height: 3rem;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+
+    @include mobile-tablet-p {
+      border-radius: 0.25rem;
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    svg > path {
+      stroke: color(primary-white);
+    }
+  }
+
+  .swiper-button-disabled {
+    border: 0.14rem solid rgba(color(text-primary), 0.2);
+    color: color(primary-blue);
+    background-color: transparent !important;
+
+    svg {
+      filter: brightness(0.3);
+    }
+  }
+}
+
+
 // Dark Style here
 .dark {
   .mobile-slider {
@@ -1286,5 +1359,83 @@ html.lenis {
   .insight-detail-related-slider,
   .insight-related-slider {
     background-color: color(dark-bg);
+  }
+
+  .slider-arrow {
+    .swiper-button-disabled {
+      opacity: 0.7;
+      svg {
+        filter: none;
+      }
+    }
+  }
+}
+
+// history-control-Section
+.history-control-Section {
+
+  .slick-slider {
+    display: flex;
+    flex-direction: column;
+
+    .slick-arrow {
+      position: relative;
+      background-color: color(primary-blue);
+      padding: 0;
+      border-radius: 0.5rem;
+      width: 3rem;
+      height: 3rem;
+      top: auto;
+      bottom: 0;
+      left: 0;
+      margin-top: 36px;
+
+      @include mobile-tablet-p {
+        border-radius: 0.25rem;
+        margin-top: 0px;
+      }
+
+      &::before {
+        display: none;
+       }
+    }
+
+    .slick-prev {
+      order: 2;
+      bottom: -84px;
+      background-image: url('../public/images/icons/arrow-left.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @include mobile-tablet-p {
+        bottom: -48px;
+      }
+    }
+
+    .slick-next {
+      order: 3;
+      left: 80px;
+      background-image: url('../public/images/icons/arrow-right.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .slick-list {
+      order: 1;
+    }
+
+    .slick-disabled {
+      border-radius: 0.5rem;
+      width: 3rem;
+      height: 3rem;
+      border: 0.14rem solid rgba(color(primary-white), 0.4);
+      color: color(primary-blue);
+      background-color: transparent;
+      filter: contrast(0) brightness(0.8);
+  
+      @include mobile-tablet-p {
+        border-radius: 0.25rem;
+      }
+    }
   }
 }

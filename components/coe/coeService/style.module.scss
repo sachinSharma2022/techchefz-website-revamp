@@ -1,8 +1,9 @@
 @import "~/styles/partials/config";
 
 .coeService {
-  background-color: color(bg-soft);
+  background-color: color(primary-white);
   padding: spacing(section-primary-padding);
+  // margin-top: 8.8rem;
 
   @include tablet {
     padding:3.75rem spacing(tablet-padding);

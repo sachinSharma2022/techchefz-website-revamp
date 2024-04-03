@@ -108,18 +108,7 @@ const SolutionOurValues = ({ props }) => {
                         }}
                         className={styles.accordionBody}
                       >
-                        {/* <div className={styles.imgBox}>
-                        <ImageCustom
-                          src={
-                            data.img.data.attributes.url
-                              ? `${base_Uri}${data.img.data.attributes.url}`
-                              : `${base_Uri}/`
-                          }
-                          width={200}
-                          height={200}
-                          alt="bannerImg"
-                        />
-                      </div>  */}
+                       
                         <div className={styles.accordionBodyContent}>
                           {data.Description}
                           <ul className={styles.listStyle}>

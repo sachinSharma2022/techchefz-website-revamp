@@ -13,16 +13,12 @@ import NotFound from "../not-found";
 import { api_About_Page } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
 
-
-
 export async function generateMetadata() {
   const data = await getData(api_About_Page);
-  
-  
+
   return {
     title: data?.SeoData?.Title,
     description: data?.SeoData?.Description,
-   
   };
 }
 

@@ -39,7 +39,7 @@ const OurHistory = ({ props, OurHistory }) => {
     dots: false,
     fade: true,
     infinite: false,
-    arrows: false,
+    // arrows: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -73,9 +73,6 @@ const OurHistory = ({ props, OurHistory }) => {
     },
     {
       year: 2019,
-    },
-    {
-      year: 2020,
     },
     {
       year: 2020,
@@ -115,7 +112,9 @@ const OurHistory = ({ props, OurHistory }) => {
         </TextRevel>
         <div className={cn(styles.sliderSection, "row")}>
           <div className="col-12 col-xl-6">
-            <div className={styles.controlSection}>
+            <div
+              className={cn(styles.controlSection, "history-control-Section")}
+            >
               <Slider asNavFor={nav2} ref={slider1} {...setting1}>
                 {OurHistory.map((data, index) => (
                   <div key={index} className={styles.cardStyle}>
@@ -130,23 +129,6 @@ const OurHistory = ({ props, OurHistory }) => {
                   </div>
                 ))}
               </Slider>
-              <div className={styles.sliderArrow}>
-                <button
-                  className={
-                    (cn(styles.button),
-                    activeSlide === 0 ? styles.arrowDisabled : styles.button)
-                  }
-                  onClick={() => slider2?.current?.slickPrev()}
-                >
-                  <Icons.ArrowLeft />
-                </button>
-                <button
-                  className={styles.button}
-                  onClick={() => slider2?.current?.slickNext()}
-                >
-                  <Icons.ArrowRight fill="black" stroke="black" />
-                </button>
-              </div>
             </div>
           </div>
 

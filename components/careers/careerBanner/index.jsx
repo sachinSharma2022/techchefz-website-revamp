@@ -9,7 +9,7 @@ import Link from "next/link";
 import { useContext } from "react";
 import styles from "./style.module.scss";
 
-const CareerBanner = ({ props, gallary, href }) => {
+const CareerBanner = ({ props, gallary, href, onClick }) => {
   console.log("dataaa", props);
   const { theme, setTheme } = useContext(MyContext);
   return (
@@ -27,11 +27,12 @@ const CareerBanner = ({ props, gallary, href }) => {
             ></h1>
             <div className={styles.desc}>
               <p className={styles.leadText}>{props[0]?.Description}</p>
-              <Link href={href}>
+              <Link href={href} className="smooth-scroll">
                 <Button
                   variant={theme ? "blueBtnDark" : "blueBtn"}
                   className={styles.headerBtn}
                   size="md"
+                  onClick={onClick}
                 >
                   {props[0]?.Button}{" "}
                   <Icons.ArrowRight size={20} className="ms-2" />

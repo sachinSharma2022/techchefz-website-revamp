@@ -210,7 +210,13 @@ const ProjectForm = () => {
                     <Error>{errors.companyName}</Error>
                   )}
                 </div>
-                <div className={cn(styles.inputSpace, "input-item")}>
+                <div
+                  className={cn(
+                    styles.inputSpace,
+                    styles.inputCountryDropdown,
+                    "input-item"
+                  )}
+                >
                   <CustomDropdown
                     label="Country"
                     name="countrySelection"

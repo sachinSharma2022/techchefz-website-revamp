@@ -35,7 +35,7 @@
     }
 
     .mobileTabContainer {
-      @include desktop {
+      @include desktop-normal {
         display: none;
       }
 

@@ -33,8 +33,6 @@ const CountryDropdown = (props) => {
       },
       flexWrap: "nowrap",
       boxShadow: "none",
-      // fontFamily: "../public/fonts/Aeonik-Regular.otf",
-      fontFamily: "arial",
     }),
     placeholder: (defaultStyles) => {
       return {
@@ -59,6 +57,7 @@ const CountryDropdown = (props) => {
       top: 21,
       height: 20,
       position: "relative",
+      left: -5,
     }),
     valueContainer: () => ({ top: 13, position: "relative", left: 0 }),
     option: (styles, { isFocused }) => {
@@ -68,15 +67,12 @@ const CountryDropdown = (props) => {
         color: isFocused ? "white" : "#111",
         fontSize: "1rem",
         borderColor: isFocused ? "#05bed7" : "#05bed7",
-        minWidth: isBigScreen ? "20vw" : "50vw",
+        minWidth: isBigScreen ? "15vw" : "50vw",
         cursor: "pointer",
       };
     },
   };
   console.log(props.clear, "selectClear");
-  // if (props.clear) {
-  //   ref.current.clearValue();
-  // }
 
   return (
     <div
@@ -93,6 +89,7 @@ const CountryDropdown = (props) => {
         )}
       >
         <Select
+          className={styles.selectSection}
           onChange={(option) => {
             if (option) props.setFieldValue("countyCode", option.label);
           }}

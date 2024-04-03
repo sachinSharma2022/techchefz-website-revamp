@@ -14,11 +14,7 @@ import {
 } from "@/lib/constants";
 import { getData, getDataDynamic } from "@/lib/fetchData";
 
-// export const metadata = {
-//   title: "Content Management Services and Solutions | TechChefz Digital",
-//   description:
-//     "Explore TechChefz Digital's comprehensive content management services and solutions designed to streamline your content workflow and enhance user engagement.",
-// };
+
 
 export async function generateMetadata() {
   const data = await getData(api_cms_technologies_Page); 

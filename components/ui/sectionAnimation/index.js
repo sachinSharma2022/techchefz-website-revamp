@@ -1,19 +1,24 @@
+import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 import { slideUp } from "./animation";
-import { motion} from "framer-motion";
 
-
-const TextRevel=({children})=>{
-    return(
-        <>       
+const TextRevel = ({ children }) => {
+  const isNormalScreen = useMediaQuery({ query: "(min-width: 1199px)" });
+  return (
+    <>
+      {isNormalScreen ? (
         <motion.div
-                  variants={slideUp}
-                  initial="initial"
-                  whileInView="enter"
-                  viewport={{ once: true }}
-                >
-                  {children}
-                </motion.div>
-        </>
-    )
-}
-export default TextRevel
+          variants={slideUp}
+          initial="initial"
+          whileInView="enter"
+          viewport={{ once: true }}
+        >
+          {children}
+        </motion.div>
+      ) : (
+        <>{children}</>
+      )}
+    </>
+  );
+};
+export default TextRevel;

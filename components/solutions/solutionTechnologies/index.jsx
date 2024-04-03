@@ -91,7 +91,7 @@ const SolutionTechnologies = ({ props }) => {
 
         <div className={styles.ourNumberMain}>
           <div className={styles.ourNumberGrid}>
-            <div>
+            <div className={styles.cards}>
               <p className={styles.ourNumbersText}>{props?.Description}</p>
               <div
                 className={`${styles.desktopCards} ${styles.ourNumberOption} `}
