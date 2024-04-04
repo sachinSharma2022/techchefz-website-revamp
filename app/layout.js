@@ -5,7 +5,6 @@ import "bootstrap/dist/css/bootstrap.css";
 import { aeonik, helvetica } from "../lib/fonts";
 import { cn } from "../lib/utils";
 import "../styles/globals.scss";
-import Head from "next/head";
 //import { GoogleAnalytics } from "@next/third-parties/google";
 import { api_Home_Page } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
@@ -50,14 +49,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      {/* <Head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `</script><link rel='preload' href='style.css' as='style' onload="this.onload=null;this.rel='stylesheet'"/><script>`,
-          }}
-        />
-      </Head> */}
-
       <body className={cn(aeonik.variable, helvetica.variable)}>
         {/* <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} /> */}
         <ThemeProvider>
