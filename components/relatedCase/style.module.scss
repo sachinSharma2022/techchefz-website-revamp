@@ -2,10 +2,7 @@
 
 .relatedCase {
   position: relative;
-
-  @include desktop-lg {
-    padding: spacing(section-primary-padding);
-  }
+  padding-inline: 7.5rem;
 
   // For Space
   &.spaceStyle {
