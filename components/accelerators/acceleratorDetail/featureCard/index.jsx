@@ -9,23 +9,7 @@ import TitleCard from "@/components/common/titleCard";
 
 const FeatureCard = ({props}) => {
   const { theme } = useContext(MyContext);
-  const cardData = [
-    {
-      title: "Enhanced Customer Support",
-      content:
-        "Customers can ask support-related questions in natural language, and the system can guide them to the most relevant articles, FAQs, or support tickets, reducing support workload.",
-    },
-    {
-      title: "E-Commerce Personalization",
-      content:
-        "Online retailers can integrate the Conversational Search System to help customers find products using colloquial language, leading to a more personalized shopping experience.",
-    },
-    {
-      title: "Data Retrieval for Enterprises",
-      content:
-        "Enterprises with large internal databases can use conversational search to help employees find documents or information using natural language queries, streamlining workflow.",
-    },
-  ];
+  
   return (
     <section
       className={cn(

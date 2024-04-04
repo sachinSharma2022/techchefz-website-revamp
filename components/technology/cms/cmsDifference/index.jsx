@@ -2,13 +2,13 @@
 import React from "react";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
-import { Icons } from "@/components/icons";
+
 import { ImageCustom } from "@/components/ui/imageCustom";
 import styles from "./style.module.scss";
-import { Button } from "@/components/ui/button";
+
 import { cn } from "@/lib/utils";
 import { base_Uri } from "@/lib/constants";
-import Link from "next/link";
+
 import TextRevel from "@/components/ui/sectionAnimation";
 
 const CmsDifference = ({ props }) => {

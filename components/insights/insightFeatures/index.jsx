@@ -3,7 +3,7 @@
 import React, { useContext } from "react";
 import { Button } from "@/components/ui/button";
 import { MyContext } from "@/context/theme";
-import SearchInput from "@/components/ui/searchInput";
+
 import PostCard from "@/components/ui/postCard";
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";

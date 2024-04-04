@@ -3,7 +3,7 @@ import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 import { Disclosure } from "@headlessui/react";
 import { useState } from "react";
-// import { ChevronRightIcon } from '@heroicons/react/20/solid'
+
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { cn } from "@/lib/utils";
