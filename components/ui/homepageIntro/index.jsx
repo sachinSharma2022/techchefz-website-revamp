@@ -9,7 +9,6 @@ import { cn } from "@/lib/utils";
 import { useMediaQuery } from "react-responsive";
 import styles from "./style.module.scss";
 
-
 const HomepageIntro = (props) => {
   const isBigScreen = useMediaQuery({ query: "(min-width: 1025px)" });
   const isBigScreenDesktop = useMediaQuery({ query: "(max-width: 1472px)" });
