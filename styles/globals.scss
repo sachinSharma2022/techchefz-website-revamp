@@ -621,75 +621,6 @@ input:-webkit-autofill {
   }
 }
 
-.related-case-slider {
-  .slick-dots {
-    justify-content: space-between;
-    bottom: -50px;
-    position: relative;
-
-    @include tablet-p {
-      display: flex !important;
-      width: calc(100% - 3rem);
-    }
-
-    @include mobile {
-      display: flex !important;
-      width: 100%;
-    }
-
-    &::before {
-      height: 1px;
-      content: "";
-      width: 100%;
-      top: 1.5px;
-      position: absolute;
-      background-color: rgba(color(primary-white), 0.2);
-    }
-
-    li {
-      width: 100%;
-      margin: 0;
-
-      button {
-        padding: 0;
-        width: 100%;
-
-        &::before {
-          display: none;
-        }
-      }
-
-      &.slick-active {
-        button {
-          background: linear-gradient(
-            124.4deg,
-            color(primary-blue) 0%,
-            color(heading-liner) 89.84%
-          );
-          height: 4px;
-          border-radius: 0.5rem;
-        }
-      }
-    }
-
-    @include desktop {
-      display: none !important;
-    }
-  }
-
-  .slick-track {
-    @include desktop-hd {
-      max-width: 1440px;
-    }
-  }
-
-  .slick-slider {
-    @include tablet-p {
-      margin-right: -3rem;
-    }
-  }
-}
-
 // Technology Values
 .technology-value {
   .swiper-horizontal > .swiper-pagination-progressbar,
@@ -1044,26 +975,8 @@ html.lenis {
   }
 }
 
-// Case Related Spacing
-.case-related-style {
-  margin-block: 0 3.125rem;
-  min-height: 70vh;
-  padding-top: 0rem;
-
-  @include tablet {
-    margin-block: 3.125rem 4rem;
-    padding: 0 0 0 spacing(tablet-padding);
-  }
-
-  @include mobile {
-    margin-block: 0;
-    padding: spacing(mobile-padding);
-  }
-}
-
 .tech-related-style {
-  padding-top: 7rem;
-  min-height: 85vh;
+  padding: 7.5rem;
   background-color: color(bg-soft);
 
   @include tablet {
@@ -1079,8 +992,7 @@ html.lenis {
 }
 
 .cms-related-style {
-  min-height: 45rem;
-  padding-top: 0;
+  padding: 0 0 7.5rem;
   background-color: color(bg-soft);
 
   @include tablet {
@@ -1094,25 +1006,6 @@ html.lenis {
   }
 }
 
-.solution-related-style {
-  min-height: 52rem;
-  padding-top: 6rem;
-
-  @include desktop-lg {
-    min-height: 53rem;
-  }
-
-  @include mobile-tablet-p {
-    padding: 5rem 1rem 2rem spacing(tablet-padding);
-    min-height: auto;
-  }
-
-  @include mobile {
-    padding: 5rem 1rem 2rem spacing(mobile-padding);
-    min-height: auto;
-  }
-}
-
 .insight-related-slider {
   background-color: color(bg-soft);
   min-height: 50rem;
@@ -1121,15 +1014,9 @@ html.lenis {
 
 .insight-detail-related-slider {
   background-color: color(bg-soft);
-  min-height: 54rem;
-  padding: 6rem 0;
-
-  @include desktop-lg {
-    min-height: 58rem;
-  }
+  padding: 7.5rem 0;
 
   @include mobile-tablet-p {
-    min-height: auto;
     padding: 4rem 1.25rem;
   }
 }

@@ -94,7 +94,7 @@ const RelatedCase = ({ props, className, sliderClassName, params }) => {
                 slidesPerView: 3.4,
               },
               2000: {
-                slidesPerView: 4.4,
+                slidesPerView: 3.5,
               },
             }}
             className="mySwiper"

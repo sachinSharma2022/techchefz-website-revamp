@@ -9,13 +9,8 @@
 
   // For Space
   &.spaceStyle {
-    margin-block: 8.75rem;
+    margin-block: 7.5rem;
 
-    @include desktop-hd {
-      padding-block: 0;
-      min-height: 31.25rem;
-    }
-  
     @include mobile-tablet-p {
       margin-block: 2rem 11rem;
       padding: 5rem spacing(tablet-padding) 0;

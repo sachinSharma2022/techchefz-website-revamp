@@ -29,11 +29,7 @@ const Solutions = async () => {
           <SolutionOurValues props={data.ourValues} />
           <SolutionTheProcess props={data.OurProcess} />
           <SolutionTechnologies props={data.Technology} />
-          <RelatedCase
-            className="solution-related-style"
-            props={data_related_cases}
-          />
-          <Faq props={data.Faq} />
+          <RelatedCase props={data_related_cases} />
         </div>
       ) : (
         <>
