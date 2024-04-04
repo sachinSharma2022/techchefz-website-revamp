@@ -26,7 +26,7 @@
       height: 100%;
     }
 
-    @include desktop-hd {
+    @include desktop-hd-min {
       height: 80%;
     }
 
@@ -36,7 +36,7 @@
       max-width: 1228px;
 
       object-fit: cover;
-      @include desktop-hd {
+      @include desktop-hd-min {
         max-width: 1440px;
       }
 
