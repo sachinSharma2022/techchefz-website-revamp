@@ -4,7 +4,7 @@ import AcceleratorIndustry from "@/components/accelerators/acceleratorDetail/acc
 import FeatureCard from "@/components/accelerators/acceleratorDetail/featureCard";
 import LetsWork from "@/components/home/letsWork";
 import RelatedCase from "@/components/relatedCase";
-import { getData, getDataDynamic } from "@/lib/fetchData";
+import { getDataDynamic } from "@/lib/fetchData";
 import { api_accelerators_details_Page } from "@/lib/constants";
 import NotFound from "@/app/not-found";
 

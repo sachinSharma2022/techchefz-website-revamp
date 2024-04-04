@@ -1,10 +1,9 @@
 "use client";
-import CustomDropdown from "@/components/ui/customDropdown";
-import SearchInput from "@/components/ui/searchInput";
+
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 import BadgeInfoCard from "@/components/common/badgeInfoCard";
-import { Icons } from "@/components/icons";
+
 import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
