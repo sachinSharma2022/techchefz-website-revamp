@@ -3,7 +3,7 @@
 .relatedCase {
   position: relative;
 
-  @include desktop-hd {
+  @include desktop-lg {
     padding: spacing(section-primary-padding);
   }
 

@@ -756,45 +756,6 @@ input:-webkit-autofill {
   background: rgba(color(primary-white), 0.2);
 }
 
-.tczLifeSlider {
-  .slick-track {
-    display: flex;
-  }
-
-  /* the slides */
-  .slick-slide {
-    margin: 0 15px;
-
-    @include mobile-tablet-p {
-      margin: 0 5px;
-    }
-  }
-
-  /* the parent */
-  .slick-list {
-    margin: 0 -15px;
-
-    @include mobile-tablet-p {
-      margin: 0 -5px;
-    }
-  }
-
-  .slick-disabled {
-    background-color: color(bg-soft);
-    border: 0.14rem solid rgba(color(text-primary), 0.5);
-
-    &:hover {
-      background-color: color(primary-white);
-    }
-
-    svg {
-      path {
-        stroke: rgba(color(text-primary), 0.5);
-      }
-    }
-  }
-}
-
 .insight-explore-slider {
   .slick-arrow {
     background-color: color(primary-blue);
@@ -1299,7 +1260,7 @@ html.lenis {
   &.show-mobile-only {
     display: flex;
 
-    @include desktop {
+    @include desktop-normal {
       display: none;
     }
   }

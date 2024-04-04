@@ -296,12 +296,14 @@ const NavigationDesktop = ({ props, featureArticle }) => {
               </Link>
             </li>
             <li className={styles.dropDown}>
-              <Icons.MoreDotIcon
-                className={styles.dotIcon}
-                width={4}
-                height={14}
-              />
-              {props[4].Title}
+              <Link href="javascript:void(0)" aria-disabled="true">
+                <Icons.MoreDotIcon
+                  className={styles.dotIcon}
+                  width={4}
+                  height={14}
+                />
+                {props[4].Title}
+              </Link>
               <div className={cn(styles.arrow, styles.hideDesktopIcon)} />
 
               <ul className={cn(styles.subMenu, styles.singleLayout)}>

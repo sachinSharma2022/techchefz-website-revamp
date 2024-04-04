@@ -1,7 +1,6 @@
-import Footer from ".";
-import { getDataDynamic } from "@/lib/fetchData";
 import { api_footer_Page } from "@/lib/constants";
-import NotFound from "@/app/not-found";
+import { getDataDynamic } from "@/lib/fetchData";
+import Footer from ".";
 export const FooterContainer = async () => {
   const data = await getDataDynamic(api_footer_Page);
 
