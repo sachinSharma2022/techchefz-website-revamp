@@ -1106,6 +1106,9 @@ html.lenis {
       @include iphone5 {
         margin-left: -35vw;
       }
+      @include samsung-fold {
+        margin-left: -43vw;
+      }
     }
   }
 
@@ -1150,6 +1153,11 @@ html.lenis {
     @include desktop-normal {
       display: none;
     }
+  }
+
+  &.show-both {
+    display: flex;
+    margin: 0;
   }
 
   .arrow {

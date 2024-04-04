@@ -20,7 +20,7 @@ import { useMediaQuery } from "react-responsive";
 
 const OurNumbers = ({ carrer, experience }) => {
   const { theme, setTheme } = useContext(MyContext);
-  const isTabletScreen = useMediaQuery({ query: "(min-width: 768px)" });
+  const isTabletScreen = useMediaQuery({ query: "(min-width: 691px)" });
 
   return (
     <section
@@ -91,7 +91,7 @@ const OurNumbers = ({ carrer, experience }) => {
           </div>
 
           <div className={cn(styles.mobileCards, styles.ourNumberOption)}>
-            <MobileSlider slidesToShow={isTabletScreen ? 2.1 : 1.3}>
+            <MobileSlider slidesToShow={isTabletScreen && 2.2}>
               {experience.Vews.map((data, index) => (
                 <ServiceInfoCard
                   key={index}

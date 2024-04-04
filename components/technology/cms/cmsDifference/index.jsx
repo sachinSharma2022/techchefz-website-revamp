@@ -33,8 +33,6 @@ const CmsDifference = ({ props }) => {
                 dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
               ></h2>
             </div>
-
-           
           </div>
         </TextRevel>
 

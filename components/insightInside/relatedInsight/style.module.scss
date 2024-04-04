@@ -3,8 +3,8 @@
 .relatedCase {
   position: relative;
   
-  @include desktop-hd {
-    padding: spacing(section-primary-padding);
+  @include desktop-normal {
+    padding-inline: 7.5rem;
   }
 
   // For Space

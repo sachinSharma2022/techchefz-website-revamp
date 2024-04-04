@@ -22,7 +22,7 @@ const Testimonials = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
-  const isTabletScreen = useMediaQuery({ query: "(min-width: 768px)" });
+  const isTabletScreen = useMediaQuery({ query: "(min-width: 691px)" });
 
   return (
     <section
@@ -106,7 +106,7 @@ const Testimonials = ({ props }) => {
               </div>
               {/* End Mobile Slider */}
 
-              <div className="slider-arrow">
+              <div className="slider-arrow show-both">
                 <button
                   aria-label="Move Left"
                   title="Move Left"

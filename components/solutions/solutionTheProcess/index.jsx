@@ -16,6 +16,7 @@ import styles from "./style.module.scss";
 const SolutionTheProcess = ({ props }) => {
   const isBigScreen = useMediaQuery({ query: "(min-width: 1200px)" });
   const isMobileScreen = useMediaQuery({ query: "(max-width: 767px)" });
+  const isSmallMobile = useMediaQuery({ query: "(max-width: 690px)" });
   const { theme } = useContext(MyContext);
   const radius = 235;
   const dashArray = radius * Math.PI * 2;
@@ -261,7 +262,7 @@ const SolutionTheProcess = ({ props }) => {
 
         {isMobileScreen && (
           <div className={`${styles.processCardSection}`}>
-            <MobileSlider slidesToShow={1}>
+            <MobileSlider slidesToShow={isSmallMobile ? 1 : 1.5}>
               {props?.ITSolutionsCards?.map((data, index) => (
                 <div
                   key={index}

@@ -23,6 +23,10 @@
     @include mobile-tablet-p {
       margin-top: 1.5rem;
     }
+
+    @include samsung-fold {
+      padding: 0 0;
+    }
   }
 
   .tczLifeSliderSection {

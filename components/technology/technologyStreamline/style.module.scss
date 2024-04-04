@@ -98,6 +98,14 @@
       padding: 0 spacing(mobile-padding);
     }
 
+    @include samsung-fold {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      padding: 0 1.25rem 5rem;
+    }
+
+
     .streamlineCard {
       width: 31.25rem;
       height: 36.375rem;

@@ -16,7 +16,7 @@ import styles from "./style.module.scss";
 const Service = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   const isBigScreen = useMediaQuery({ query: "(min-width: 1025px)" });
-  const isTabletScreen = useMediaQuery({ query: "(min-width: 1024px)" });
+  const isTabletScreen = useMediaQuery({ query: "(min-width: 691px)" });
 
   return (
     <section
@@ -67,7 +67,7 @@ const Service = ({ props }) => {
         </div>
 
         <div className={cn(styles.mobileCards)}>
-          <MobileSlider slidesToShow={isTabletScreen ? 2.1 : 1.3}>
+          <MobileSlider slidesToShow={isTabletScreen && 2.2}>
             {props[0]?.Service.map((data, index) => (
               <ServiceCard
                 key={index}

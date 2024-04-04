@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 const Results = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   const isMobileScreen = useMediaQuery({ query: "(max-width: 767px)" });
+  const isSmallScreen = useMediaQuery({ query: "(max-width: 690px)" });
 
   return (
     <section className={cn(styles.results, theme ? styles.resultsDark : "")}>
@@ -73,7 +74,7 @@ const Results = ({ props }) => {
       {isMobileScreen && (
         <div className={styles.mobileSliderCard}>
           <div className={styles.resultCards}>
-            <MobileSlider slidesToShow={1.3}>
+            <MobileSlider slidesToShow={isSmallScreen ? 1.3 : 2.2}>
               {props.ITSolutionsCards.map((data, index) => (
                 <div key={index} className={styles.resultCard}>
                   <h3>{data.Title} </h3>

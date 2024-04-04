@@ -81,7 +81,11 @@ const RelatedInsight = ({ props, className, sliderClassName, params }) => {
               300: {
                 slidesPerView: 1,
               },
-              767: {
+              600: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              599: {
                 slidesPerView: 2,
               },
               1199: {

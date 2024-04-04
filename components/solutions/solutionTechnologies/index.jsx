@@ -11,50 +11,13 @@ import { useContext } from "react";
 import styles from "./style.module.scss";
 import MobileSlider from "@/components/common/mobileSlider";
 import TextRevel from "@/components/ui/sectionAnimation";
+import { useMediaQuery } from "react-responsive";
 
 const SolutionTechnologies = ({ props }) => {
   console.log("neee", props);
   const { theme, setTheme } = useContext(MyContext);
+  const isSmallMobile = useMediaQuery({ query: "(max-width: 690px)" });
 
-  const settings = {
-    className: "center",
-    centerPadding: "0px",
-    centerMode: true,
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-
-    responsive: [
-      {
-        breakpoint: 1199,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          centerMode: false,
-          arrows: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: true,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: true,
-          centerPadding: "15px",
-        },
-      },
-    ],
-  };
   return (
     <section
       className={`${styles.solutionTechnologiesStyle} ${
@@ -127,7 +90,7 @@ const SolutionTechnologies = ({ props }) => {
       </div>
 
       <div className={`${styles.mobileSlider} ${styles.ourNumberOption} `}>
-        <MobileSlider slidesToShow={1.4}>
+        <MobileSlider slidesToShow={isSmallMobile ? 1.4 : 2.2}>
           {props?.TechnologyInner?.map((data, index) => (
             <ServiceInfoCard
               key={index}

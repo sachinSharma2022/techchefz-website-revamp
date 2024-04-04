@@ -2,7 +2,10 @@
 
 .relatedCase {
   position: relative;
-  padding-inline: 7.5rem;
+
+  @include desktop-normal {
+    padding-inline: 7.5rem;
+  }
 
   // For Space
   &.spaceStyle {

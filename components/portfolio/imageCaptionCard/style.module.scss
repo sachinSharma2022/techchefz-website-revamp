@@ -47,6 +47,11 @@
     padding: spacing(mobile-padding);
   }
 
+  @include samsung-fold {
+    grid-template-columns: repeat(2, 1fr);
+    padding: spacing(mobile-padding);
+  }
+
   .imageCard {
     padding: text(lg);
     border-radius: text(lg);

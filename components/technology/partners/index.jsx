@@ -4,7 +4,6 @@ import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import { useContext, useState } from "react";
 
-
 import MobileSlider from "@/components/common/mobileSlider";
 
 import { base_Uri } from "@/lib/constants";
@@ -18,6 +17,7 @@ const Partners = ({ props }) => {
   let [isOpen, setIsOpen] = useState(false);
   const [index, setIndex] = useState(0);
   const isBigScreen = useMediaQuery({ query: "(min-width: 1199px)" });
+  const isSmallScreen = useMediaQuery({ query: "(min-width: 690px)" });
 
   return (
     <section className={`${styles.partner} ${theme ? styles.partnerDark : ""}`}>
@@ -61,7 +61,7 @@ const Partners = ({ props }) => {
           </div>
         ) : (
           <div className={styles.mobileSlider}>
-            <MobileSlider slidesToShow={1.4}>
+            <MobileSlider slidesToShow={isSmallScreen ? 2 : 1.4}>
               {props?.Slider?.map((data, index) => (
                 <PartnerCard
                   key={index}
@@ -84,8 +84,6 @@ const Partners = ({ props }) => {
           </div>
         )}
       </div>
-
-      
     </section>
   );
 };
