@@ -33,7 +33,7 @@ const Solutions = async () => {
             className="solution-related-style"
             props={data_related_cases}
           />
-          <Faq props={data.Faq} />
+          {/* <Faq props={data.Faq} /> */}
         </div>
       ) : (
         <>
