@@ -303,13 +303,15 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                 {props[3]?.Title}
               </Link>
             </li>
-            <li className={styles.dropDown} onMouseOver={openMenu}>
-              <Icons.MoreDotIcon
-                className={styles.dotIcon}
-                width={4}
-                height={14}
-              />
-              {props[4].Title}
+            <li className={styles.dropDown}>
+              <Link href="javascript:void(0)" aria-disabled="true">
+                <Icons.MoreDotIcon
+                  className={styles.dotIcon}
+                  width={4}
+                  height={14}
+                />
+                {props[4].Title}
+              </Link>
               <div className={cn(styles.arrow, styles.hideDesktopIcon)} />
 
               <ul

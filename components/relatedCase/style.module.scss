@@ -3,19 +3,14 @@
 .relatedCase {
   position: relative;
 
-  @include desktop-hd {
+  @include desktop-lg {
     padding: spacing(section-primary-padding);
   }
 
   // For Space
   &.spaceStyle {
-    margin-block: 8.75rem;
+    margin-block: 7.5rem;
 
-    @include desktop-hd {
-      padding-block: 0;
-      min-height: 31.25rem;
-    }
-  
     @include mobile-tablet-p {
       margin-block: 2rem 11rem;
       padding: 5rem spacing(tablet-padding) 0;
@@ -28,7 +23,6 @@
   }
 
   .headSection {
-    padding-inline: spacing(p-120);
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -74,7 +68,6 @@
   }
 
   .relatedCaseSlider {
-    padding-left: spacing(p-120);
 
     @include tablet-p {
       margin-bottom: 2.75rem;
@@ -86,24 +79,6 @@
       padding: 0;
     }
 
-    @include desktop-hd {
-      position: absolute;
-      right: 0;
-      left: 0;
-      padding-left: 12.5vw;
-    }
-
-    @include desktop-lg {
-      padding-left: 8vw;
-    }
-
-    @include desktop-xl {
-      padding-left: 10vw;
-    }
-
-    @include desktop-4k {
-      padding-left: 21.5vw;
-    }
   }
 
   .cardStyle {

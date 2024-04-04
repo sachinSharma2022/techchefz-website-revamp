@@ -21,6 +21,7 @@
     font-size: text(xl);
     font-weight: 500;
     line-height: 2rem;
+    margin-bottom: 1rem;
 
     @include mobile-tablet-p {
       font-size: text(lg);

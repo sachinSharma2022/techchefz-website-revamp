@@ -3,20 +3,26 @@
 .tczLife {
   background-color: color(bg-soft);
   padding-block: spacing(section-primary-padding);
-  padding-left: spacing(p-120);
   overflow: hidden;
   position: relative;
 
-  @include tablet{
-    padding: 0 0 5rem;
-  }
-
-  @include mobile {
-    padding: 0 0 5rem;
+  @include mobile-tablet-p{
+    padding: 5rem 0 5rem;
   }
 
   @include desktop-hd {
     padding-inline: 0;
+  }
+
+  .sliderSection {
+
+    @include mobile-tablet-p {
+      padding: 0 2.5rem;
+    }
+
+    @include mobile-tablet-p {
+      margin-top: 1.5rem;
+    }
   }
 
   .tczLifeSliderSection {
@@ -27,23 +33,6 @@
       margin-inline: auto;
     }
 
-    .sliderSection {
-      padding: 0;
-      position: absolute;
-      right: 0;
-
-      @include tablet {
-        margin-top: 3.75rem;
-      }
-
-      @include mobile {
-        position: relative;
-        margin-top: 3.75rem;
-        padding-left: spacing(mobile-padding);
-        padding-right: 0;
-      }
-    }
-
     .tczActionSection {
       display: flex;
       flex-direction: column;
@@ -52,13 +41,13 @@
       min-height: 260px;
 
       @include tablet {
-        margin: 3.75rem spacing(tablet-padding) 0;
+        padding-inline: spacing(tablet-padding);
         min-width: auto;
         min-height: auto;
       }
 
       @include mobile {
-        margin: 3.75rem spacing(mobile-padding) 0;
+        padding-inline: 1.2rem;
         min-width: auto;
         min-height: auto;
       }
@@ -110,13 +99,18 @@
     justify-content: center;
 
     div {
-      width: 47vw;
+      width: 470px;
       height: 264px;
       position: relative;
       overflow: hidden;
 
-      @include mobile-tablet-p {
-        height: 139px;
+      @include tablet-p {
+        height: 250px;
+        width: 100vw;
+      }
+
+      @include mobile {
+        height: 180px;
         width: 100vw;
       }
 
@@ -162,7 +156,7 @@
     }
 
     @include mobile-tablet-p {
-      margin-top: 3.75rem;
+      margin-top: 1rem;
       min-width: 100%;
       padding: 0 spacing(tablet-padding);
     }
@@ -186,49 +180,7 @@
   }
 
   .sliderArrow {
-    display: flex;
-    gap: 24px;
-    margin-top: 3.5rem;
-
-    .button {
-      background-color: color(primary-blue);
-      padding: 0;
-      border-radius: 0.5rem;
-      width: 3rem;
-      height: 3rem;
-      display: flex !important;
-      justify-content: center;
-      align-items: center;
-
-      @include mobile-tablet-p {
-        border-radius: 0.25rem;
-      }
-    }
-
-    svg {
-      width: 18px;
-      height: 18px;
-    }
-
-    svg > path {
-      stroke: color(primary-white);
-    }
-  }
-
-  .arrowDisabled {
-    border-radius: 0.5rem;
-    width: 3rem;
-    height: 3rem;
-    border: 0.14rem solid rgba(color(text-primary), 0.2);
-    color: color(primary-blue);
-    background: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    svg > path {
-      stroke: color(primary-black);
-    }
+    padding: 0 0.5rem;
   }
 
   //Dark mode style

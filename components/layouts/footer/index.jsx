@@ -1,17 +1,17 @@
 "use client";
+import AnimatedFooterLogo from "@/components/common/animatedFooterLogo";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
-import { Input, Error, Success } from "@/components/ui/inputCustom";
+import CircleLoader from "@/components/ui/circleLoader";
+import { Error, Input, Success } from "@/components/ui/inputCustom";
 import ScrollToTopButton from "@/components/ui/scrollToTopButton";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
-import styles from "./style.module.scss";
-import { Form, Formik, useFormik } from "formik";
 import { footerValidationSchema } from "@/lib/FormSchema";
 import { triggerMail } from "@/lib/triggerMail";
+import { cn } from "@/lib/utils";
+import { Form, Formik, useFormik } from "formik";
+import Link from "next/link";
 import { useState } from "react";
-import CircleLoader from "@/components/ui/circleLoader";
-import AnimatedFooterLogo from "@/components/common/animatedFooterLogo";
+import styles from "./style.module.scss";
 
 const Footer = ({ props, Subscribe, SocialMedia, footerinner, Reserved }) => {
   const [inprogress, setinprogress] = useState(false);
@@ -49,22 +49,6 @@ const Footer = ({ props, Subscribe, SocialMedia, footerinner, Reserved }) => {
           <div className="col-12 col-lg-12 col-xl-6">
             <div className={styles.footLeftPanel}>
               <p className={styles.description}>{props[0]?.Description}</p>
-
-              {/* <Link href="/contact-us" className={styles.partnerCard}>
-                <div className={styles.partnerCols}>
-                  <Link href="/contact-us">
-                    Become our Partner <Icons.ArrowRight size={16} />
-                  </Link>
-                  <p>Join our partnership network now!</p>
-                </div>
-                <ImageCustom
-                  src="/images/partner.jpg"
-                  width={294}
-                  height={198}
-                  alt="partner-img"
-                />
-              </Link> */}
-
               <div className={styles.subscribe}>
                 <h4 className="mb-3">{Subscribe[0]?.Title}</h4>
                 <Formik>

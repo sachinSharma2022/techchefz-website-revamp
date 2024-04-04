@@ -1,5 +1,8 @@
 //import { FooterContainer } from "@/components/layouts/footer/footerContainer";
 import ThemeProvider from "@/context/theme";
+import { api_Home_Page } from "@/lib/constants";
+import { getData } from "@/lib/fetchData";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "bootstrap/dist/css/bootstrap.css";
 //import Header from "../components/layouts/header";
 import { aeonik, helvetica } from "../lib/fonts";

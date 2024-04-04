@@ -1,18 +1,18 @@
 "use client";
-import { MyContext } from "@/context/theme";
-import { useContext, useState } from "react";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
-import { Tab, Disclosure } from "@headlessui/react";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import { motion } from "framer-motion";
-import styles from "./style.module.scss";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
+import { MyContext } from "@/context/theme";
 import { base_Uri } from "@/lib/constants";
+import { cn } from "@/lib/utils";
+import { Disclosure, Tab } from "@headlessui/react";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { useContext, useState } from "react";
+import styles from "./style.module.scss";
 
-import { useMediaQuery } from "react-responsive";
 import TextRevel from "@/components/ui/sectionAnimation";
+import { useMediaQuery } from "react-responsive";
 
 const Discover = ({ props }) => {
   const isBigScreen = useMediaQuery({ query: "(min-width: 1199px)" });
@@ -52,16 +52,6 @@ const Discover = ({ props }) => {
                 className={cn(styles.discoverHeading, "gradient-text")}
                 dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
               ></h3>
-            </div>
-            <div className={styles.buttonSec}>
-              <Link href={props.BtnLink}>
-                <Button
-                  variant={theme ? "lightBlueOutline" : "outline"}
-                  size="md"
-                >
-                  {props.Btn} <Icons.ArrowRight size={18} />
-                </Button>
-              </Link>
             </div>
           </div>
         </TextRevel>

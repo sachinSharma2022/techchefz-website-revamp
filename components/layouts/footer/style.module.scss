@@ -65,7 +65,7 @@
         }
 
         &:hover {
-          color: color(info-blue);
+          color: rgba(color(info-blue), 1);
         }
       }
     }
@@ -430,7 +430,14 @@
   }
 
   .fadeLink {
-    opacity: opacity(dark);
+
+    a {
+      opacity: opacity(dark);
+
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 
   .subscribe {

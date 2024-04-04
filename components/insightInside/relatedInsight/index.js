@@ -91,7 +91,10 @@ const RelatedInsight = ({ props, className, sliderClassName, params }) => {
                 slidesPerView: 2.4,
               },
               1700: {
-                slidesPerView: 3.4,
+                slidesPerView: 2.5,
+              },
+              2000: {
+                slidesPerView: 3.5,
               },
             }}
             className="mySwiper"
