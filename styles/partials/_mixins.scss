@@ -106,6 +106,12 @@ $desktop-14: 1440px;
   }
 }
 
+@mixin desktop-hd-min {
+  @media (min-width: #{$desktop-width-lg}) {
+    @content;
+  }
+}
+
 @mixin desktop-14 {
   @media (min-width: #{$desktop-14}) {
     @content;
