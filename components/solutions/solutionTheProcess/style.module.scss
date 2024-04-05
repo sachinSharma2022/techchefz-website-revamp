@@ -2,6 +2,7 @@
 
 .theProcessStyle {
   padding: 8.75rem 7.5rem 20rem;
+  overflow: hidden;
 
   @include tablet {
     padding: 3.75rem spacing(tablet-padding);
@@ -151,13 +152,13 @@
       @include desktop-normal {
         opacity: 0.4;
 
-      &:first-child {
-        opacity: 0.4 !important;
+        &:first-child {
+          opacity: 0.4 !important;
+        }
+        &.cardActive {
+          opacity: 1 !important;
+        }
       }
-      &.cardActive {
-        opacity: 1 !important;
-      }
-    }
 
       @include desktop-2k {
         min-width: 700px;
