@@ -15,6 +15,7 @@ const CmsType = ({ props }) => {
   let [isOpen, setIsOpen] = useState(false);
   const [index, setIndex] = useState(0);
   const isBigScreen = useMediaQuery({ query: "(min-width: 1199px)" });
+  const isSmallScreen = useMediaQuery({ query: "(min-width: 690px)" });
 
   return (
     <section
@@ -61,7 +62,7 @@ const CmsType = ({ props }) => {
           </div>
         ) : (
           <div className={styles.mobileSlider}>
-            <MobileSlider slidesToShow={1.4}>
+            <MobileSlider slidesToShow={isSmallScreen ? 2.2 : 1.4}>
               {props?.Slider?.map((data, index) => (
                 <PartnerCard
                   key={index}
@@ -88,7 +89,6 @@ const CmsType = ({ props }) => {
           </div>
         )}
       </div>
-      
     </section>
   );
 };

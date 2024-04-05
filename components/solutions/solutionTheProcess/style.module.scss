@@ -146,14 +146,18 @@
       border-radius: 1.25rem;
       border: 0.14rem solid rgba(color(text-primary), 0.12);
       max-width: 587px;
-      opacity: 0.4;
       @include transition(0.5s);
+
+      @include desktop-normal {
+        opacity: 0.4;
+
       &:first-child {
         opacity: 0.4 !important;
       }
       &.cardActive {
         opacity: 1 !important;
       }
+    }
 
       @include desktop-2k {
         min-width: 700px;
@@ -181,11 +185,20 @@
         margin-bottom: 0;
         opacity: opacity(dark);
         font-size: text(lg);
+
+        @include mobile-tablet-p {
+          @include truncate(6);
+        }
       }
+
       @include mobile {
         min-width: 100%;
         min-height: 25rem;
-        @include truncate(6);
+      }
+
+      @include samsung-fold {
+        min-width: auto;
+        max-width: 90%;
       }
 
       .title {

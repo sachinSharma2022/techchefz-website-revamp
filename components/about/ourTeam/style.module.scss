@@ -150,6 +150,12 @@
       margin-top: 0;
     }
 
+    @include samsung-fold {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 0;
+    }
+
     .teamCardBg {
       border: 0.14rem solid color(primary-white);
       background: linear-gradient(

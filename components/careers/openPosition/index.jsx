@@ -88,7 +88,7 @@ const OpenPosition = ({ props, id }) => {
         <div className={styles.serviceBtn}>
           {jobCatogery?.map((buttonItem) => (
             <button
-              className={styles.badgeButton}
+              className={cn(styles.badgeButton)}
               onClick={() => filterItem(buttonItem)}
               key={buttonItem}
             >

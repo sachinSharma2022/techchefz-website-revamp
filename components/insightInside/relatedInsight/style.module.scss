@@ -1,24 +1,16 @@
 @import "~/styles/partials/config";
 
-.relatedCase {
+.relatedInsightCase {
   position: relative;
+  padding: spacing(section-primary-padding);
   
-  @include desktop-hd {
-    padding: spacing(section-primary-padding);
+  @include mobile-tablet-p {
+    padding: 5rem spacing(tablet-padding);
   }
 
-  // For Space
-  &.spaceStyle {
-    // margin-block: 8.75rem;
-
-    @include mobile-tablet-p {
-      padding: 5rem spacing(tablet-padding) 0;
-    }
-
-    @include mobile {
-      margin-block: 0rem 5rem;
-      padding: 5rem spacing(mobile-padding) 0;
-    }
+  @include mobile {
+    margin-block: 0rem 5rem;
+    padding: 5rem spacing(mobile-padding);
   }
 
   .headSection {
@@ -150,10 +142,7 @@
   // Dark theme style
   &.relatedCaseDark {
     color: color(primary-white);
-
-    &.spaceStyle {
-      background-color: color(input-bg);
-    }
+    background-color: color(dark-bg);
 
     .arrowDisabled {
       border: 0.14rem solid rgba(color(primary-white), 0.2);

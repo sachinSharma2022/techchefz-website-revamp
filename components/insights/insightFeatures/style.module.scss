@@ -83,6 +83,11 @@
         flex-direction: column;
       }
 
+      @include samsung-fold {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       .featureInsightCard {
         width: 100%;
 
@@ -168,6 +173,11 @@
 
       @include mobile {
         grid-template-columns: repeat(1, 1fr);
+      }
+
+      @include samsung-fold {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 

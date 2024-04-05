@@ -22,7 +22,7 @@ const RelatedInsight = ({ props, className, sliderClassName, params }) => {
   return (
     <section
       className={cn(
-        styles.relatedCase,
+        styles.relatedInsightCase,
         theme ? styles.relatedCaseDark : "",
         className ? className : styles.spaceStyle
       )}
@@ -68,7 +68,7 @@ const RelatedInsight = ({ props, className, sliderClassName, params }) => {
           className={cn(
             styles.relatedCaseSlider,
             sliderClassName,
-            "related-case-slider"
+            "related-insight-slider"
           )}
         >
           <Swiper
@@ -81,7 +81,11 @@ const RelatedInsight = ({ props, className, sliderClassName, params }) => {
               300: {
                 slidesPerView: 1,
               },
-              767: {
+              600: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              599: {
                 slidesPerView: 2,
               },
               1199: {
@@ -91,7 +95,7 @@ const RelatedInsight = ({ props, className, sliderClassName, params }) => {
                 slidesPerView: 2.4,
               },
               1700: {
-                slidesPerView: 2.5,
+                slidesPerView: 3.2,
               },
               2000: {
                 slidesPerView: 3.5,

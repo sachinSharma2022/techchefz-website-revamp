@@ -167,6 +167,10 @@
         width: 100%;
       }
 
+      @include samsung-fold {
+        width: 60%;
+      }
+
       &::before {
         position: absolute;
         top: 0;

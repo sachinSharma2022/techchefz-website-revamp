@@ -12,7 +12,8 @@ import styles from "./style.module.scss";
 
 const WhatWeDo = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
-  const isBigScreen = useMediaQuery({ query: "(min-width: 48rem)" });
+  const isBigScreen = useMediaQuery({ query: "(min-width: 768px)" });
+  const isMobileScreen = useMediaQuery({ query: "(max-width: 690px)" });
 
   return (
     <section
@@ -65,7 +66,7 @@ const WhatWeDo = ({ props }) => {
 
       {!isBigScreen && (
         <div className={styles.mobileSlider}>
-          <MobileSlider slidesToShow={1.4}>
+          <MobileSlider slidesToShow={!isMobileScreen ? 2.2 : 1.2}>
             {props[0]?.CardComponent?.map((data, index) => (
               <div key={index} className={styles.workCardMain}>
                 <div className={styles.workCard}>

@@ -291,6 +291,11 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
       }
+
+      @include samsung-fold {
+        display: flex;
+        gap: 1rem;
+      }
     }
 
     a {
