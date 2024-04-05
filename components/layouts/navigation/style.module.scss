@@ -97,7 +97,7 @@
         align-items: center;
         @include transition(0.5s);
 
-        @include tablet-p {
+        @include tablet {
           width: 100%;
           padding: 1rem 0;
           border-top: 1px solid rgba(color(primary-white), 0.06);
@@ -369,6 +369,12 @@
     }
   }
 
+  @include samsung-fold {
+    .estimateSection {
+      display: none;
+    }
+  }
+
   .hideDesktop {
     @include desktop {
       display: none;
@@ -426,6 +432,11 @@
 
       @include mobile {
         display: none;
+      }
+
+      @include samsung-fold {
+        display: flex;
+        margin-right: 2rem;
       }
     }
   }

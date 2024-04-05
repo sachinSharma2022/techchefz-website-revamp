@@ -52,7 +52,7 @@ $desktop-14: 1440px;
 
 // Mobile Mixin
 @mixin mobile {
-  @media (max-width: #{$tablet-width - 1px}) {
+  @media (max-width: #{$samsung-fold-width - 1px}) {
     @content;
   }
 }
