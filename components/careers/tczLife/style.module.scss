@@ -2,16 +2,12 @@
 
 .tczLife {
   background-color: color(bg-soft);
-  padding-block: spacing(section-primary-padding);
+  padding: spacing(section-primary-padding);
   overflow: hidden;
   position: relative;
 
   @include mobile-tablet-p{
     padding: 5rem 0 5rem;
-  }
-
-  @include desktop-hd {
-    padding-inline: 0;
   }
 
   .sliderSection {
