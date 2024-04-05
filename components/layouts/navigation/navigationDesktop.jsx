@@ -162,7 +162,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                 {props[1].Title}
               </Link>
             </li>
-            <li className={styles.dropDown} onMouseOver={openMenu}>
+            <li className={styles.dropDown} onMouseEnter={openMenu}>
               <Link
                 href={props[2].Link}
                 className={pathname == "/technology" ? styles.active : ""}
@@ -303,7 +303,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                 {props[3]?.Title}
               </Link>
             </li>
-            <li className={styles.dropDown}>
+            <li className={styles.dropDown} onMouseEnter={openMenu}>
               <Link href="javascript:void(0)" aria-disabled="true">
                 <Icons.MoreDotIcon
                   className={styles.dotIcon}

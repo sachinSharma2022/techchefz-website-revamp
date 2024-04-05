@@ -3,11 +3,10 @@
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
-import { base_Uri } from "@/lib/constants";
+import { base_Uri, rootURl } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { useContext, useState } from "react";
 import styles from "./style.module.scss";
-import { rootURl } from "@/lib/constants";
 
 const InsightDetail = ({ props, BlockTitle, index }) => {
   const [showTooltip, setShowTooltip] = useState(false);
