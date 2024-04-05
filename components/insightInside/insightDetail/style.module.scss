@@ -68,6 +68,7 @@
         width: 60px;
         height: 60px;
         @include transition(0.2s);
+        position: relative;
 
         @include tablet {
           padding: 1.5rem;
@@ -259,3 +260,4 @@
     }
   }
 }
+

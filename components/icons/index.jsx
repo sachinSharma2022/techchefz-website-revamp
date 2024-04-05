@@ -2837,6 +2837,21 @@ export const Icons = {
       </defs>
     </svg>
   ),
+  CaretUp: ({ size, ...props }) => (
+    <svg
+      width="20"
+      height="10"
+      viewBox="0 0 20 10"
+      fill="none"
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9.30056 0.684524C9.68927 0.304108 10.3107 0.304108 10.6994 0.684525L20 9.7867H0L9.30056 0.684524Z"
+        fill="#0066CC"
+      />
+    </svg>
+  ),
 
   Play: ({ size, ...props }) => (
     <svg

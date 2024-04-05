@@ -17,11 +17,11 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   env: {
-    NODEMAILER_FROM_EMAIL: "manoj.yadav@techchefz.com",
-    NODEMAILER_TO_EMAIL: "nowsheen.ayoubbhat@techchefz.com",
-    NODEMAILER_PW: "ucpw vzze prbs wooi",
-    NEXT_PUBLIC_RECAPTCHA_SITE_KEY: "6LcmhoQpAAAAAIwjH8R1VFF6bfJW9yXyiUMFPDlF",
-    RECAPTCHA_SECRET_KEY: "6LcmhoQpAAAAAHPLccD_GcVT879yK1R6tBG3hzpI",
+    NODEMAILER_FROM_EMAIL: "contactus@techchefz.com",
+    NODEMAILER_TO_EMAIL: "khalid.ansari@techchefz.com",
+    NODEMAILER_PW: "ovps czuv bujv wlwp",
+    NEXT_PUBLIC_RECAPTCHA_SITE_KEY: "6LevJ7ApAAAAAF5ZRMjbt3ii4S5ZPdrO-ht7vHi_",
+    RECAPTCHA_SECRET_KEY: "6LevJ7ApAAAAAJGJYMiS4ozpdGAQ7h7rMeZW3oIm",
     NEXT_PUBLIC_GA_ID: "G-7LY3Y95S06",
   },
 };

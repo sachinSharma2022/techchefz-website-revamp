@@ -5,6 +5,7 @@ import { getDataDynamic } from "@/lib/fetchData";
 import NotFound from "@/app/not-found";
 import { api_insight_insides_Page } from "@/lib/constants";
 import RelatedInsight from "@/components/insightInside/relatedInsight";
+import { rootURl } from "../../../lib/constants";
 
 export async function generateMetadata({ params }) {
   const data = await getDataDynamic(api_insight_insides_Page);
@@ -15,10 +16,10 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: page.attributes.InsightOverview[0].Title,
       description: page.attributes.InsightOverview[0].Title,
-      url: `https://demo.techchefz.com/insights/${params.insightInside}`,
+      url: `${rootURl}/insights/${params.insightInside}`,
       images: [
         {
-          url: `https://cms-strapi.techchefz.com${page.attributes.InsightOverview[0]?.Image?.data?.attributes?.url}`, // Must be an absolute URL
+          url: `https://cms-strapi.techchefz.in${page.attributes.InsightOverview[0]?.Image?.data?.attributes?.url}`, // Must be an absolute URL
           width: 800,
           height: 600,
         },
@@ -30,7 +31,7 @@ export async function generateMetadata({ params }) {
       description: page.attributes.InsightOverview[0].Title,
       images: [
         {
-          url: `https://cms-strapi.techchefz.com${page.attributes.InsightOverview[0]?.Image?.data?.attributes?.url}`, // Must be an absolute URL
+          url: `https://cms-strapi.techchefz.in${page.attributes.InsightOverview[0]?.Image?.data?.attributes?.url}`, // Must be an absolute URL
           width: 800,
           height: 600,
         },
@@ -57,11 +58,7 @@ const InsightInside = async ({ params }) => {
             BlockTitle={page.attributes.BlockTitle}
             index={page.id}
           />
-          <RelatedInsight
-           
-            props={data}
-            params={params}
-          />
+          <RelatedInsight props={data} params={params} />
           <Innovation props={page.attributes.ourInnvotion} />
         </>
       ) : (

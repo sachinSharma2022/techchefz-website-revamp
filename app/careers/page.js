@@ -32,12 +32,12 @@ const Career = async () => {
           />
           <TczLife props={data.Lifeattechchefz} />
           {data_career_details.length && data?.CareerBanner[0]?.CareerForm ? (
-            <OpenPosition id="OpenPosition" props={data_career_details} />
-          ) : (
             <ContactSection
               id="OpenPosition"
               props={data_career_details[0].attributes.Developercontact}
             />
+          ) : (
+            <OpenPosition id="OpenPosition" props={data_career_details} />
           )}
 
           <HomeTestimonials testimonials={data.Testimonials} />
