@@ -219,6 +219,9 @@
   // Dropdown Menu
   @include desktop {
     .dropDown {
+      .subMenuHide {
+        display: none !important;
+      }
       &:hover {
         .subMenu {
           display: block;
@@ -565,7 +568,6 @@
             gap: 1.25rem;
           }
         }
-
 
         @include mobile {
           padding: 1.25rem;
