@@ -16,8 +16,10 @@ const OpenPosition = ({ props, id }) => {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
   const [items, setItems] = useState(props);
   const { theme, setTheme } = useContext(MyContext);
-  const jobCatogery = ["Backend", "Frontend", "CMS "];
-  console.log(props, "");
+  const jobCatogery = props
+    .map((item) => item?.attributes?.DeveloperApply[0]?.Tag)
+    .filter((item, i, ar) => ar.indexOf(item) === i);
+  jobCatogery.push("All Openings");
   function togglePanels(newPanel) {
     if (activeDisclosurePanel) {
       if (
@@ -37,11 +39,15 @@ const OpenPosition = ({ props, id }) => {
   const [active, setActive] = useState(false);
 
   const filterItem = (categItem) => {
-    const updateItems = props.filter((curElem) => {
-      return curElem?.attributes?.DeveloperApply[0]?.Tag === categItem;
-    });
+    if (categItem === "All Openings") setItems(props);
+    else {
+      const updateItems = props.filter((curElem) => {
+        return curElem?.attributes?.DeveloperApply[0]?.Tag === categItem;
+      });
 
-    setItems(updateItems);
+      setItems(updateItems);
+    }
+
     setActive(true);
   };
 
