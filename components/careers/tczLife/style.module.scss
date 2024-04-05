@@ -13,15 +13,13 @@
   .sliderSection {
 
     @include mobile-tablet-p {
-      padding: 0 2.5rem;
-    }
-
-    @include mobile-tablet-p {
       margin-top: 1.5rem;
+      padding: 0 2rem;
     }
 
-    @include samsung-fold {
-      padding: 0 0;
+    @include mobile {
+      margin-top: 1.5rem;
+      padding: 0 2.5rem;
     }
   }
 
@@ -120,7 +118,7 @@
         object-fit: cover;
         border-radius: 0.75rem;
 
-        @include tablet-p {
+        @include tablet {
           width: 100%;
         }
       }

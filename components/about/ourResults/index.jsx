@@ -14,8 +14,7 @@ import TextRevel from "@/components/ui/sectionAnimation";
 
 const OurResults = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
-  const isMobileScreen = useMediaQuery({ query: "(max-width: 767px)" });
-  const isSmallMobile = useMediaQuery({ query: "(max-width: 690px)" });
+  const isMobileScreen = useMediaQuery({ query: "(max-width: 690px)" });
 
   return (
     <section
@@ -63,7 +62,7 @@ const OurResults = ({ props }) => {
 
       {isMobileScreen && (
         <div className={styles.mobileSlider}>
-          <MobileSlider slidesToShow={isSmallMobile ? 1.4 : 2.2}>
+          <MobileSlider slidesToShow={1.4}>
             {props[0]?.Views?.map((data, index) => (
               <div key={index} className={styles.resultCard}>
                 <div className="d-flex justify-content-between align-items-center">

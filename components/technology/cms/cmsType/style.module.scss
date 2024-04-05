@@ -110,7 +110,7 @@
   }
 
   .mobileSlider {
-    @include tablet-p {
+    @include tablet {
       margin-right: -3rem;
     }
     

@@ -11,9 +11,9 @@
   &.spaceStyle {
     margin-block: 7.5rem;
 
-    @include mobile-tablet-p {
-      margin-block: 2rem 11rem;
-      padding: 5rem spacing(tablet-padding) 0;
+    @include tablet {
+      margin-block: 5rem;
+      padding: 0 spacing(tablet-padding) 0;
     }
 
     @include mobile {

@@ -23,11 +23,22 @@
     border-radius: .25rem;
     color: color(primary-white);
 
+    @include tablet {
+      bottom: 20px;
+      right: 10px;
+      width: 6rem;
+      height: 2rem;
+    }
+
     span {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
+
+      @include mobile {
+      font-size: 0.9rem;
+      }
     }
   }
 }

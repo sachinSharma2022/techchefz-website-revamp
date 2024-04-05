@@ -997,7 +997,7 @@ html.lenis {
 
   @include tablet {
     min-height: auto;
-    padding: 4rem 0 5rem spacing(tablet-padding);
+    padding: 4rem spacing(tablet-padding);
   }
 
   @include mobile {

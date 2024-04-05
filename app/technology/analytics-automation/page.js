@@ -14,15 +14,12 @@ import {
 } from "@/lib/constants";
 import { getData, getDataDynamic } from "@/lib/fetchData";
 
-
-
 export async function generateMetadata() {
-  const data = await getData(api_analytics_automations_Page); 
-  
+  const data = await getData(api_analytics_automations_Page);
+
   return {
     title: data?.SeoData?.Title,
     description: data?.SeoData?.Description,
-   
   };
 }
 
@@ -52,7 +49,9 @@ const Cms = async () => {
           <LetsWork contact={data.ContactUs} />
         </div>
       ) : (
-        <><NotFound /></>
+        <>
+          <NotFound />
+        </>
       )}
     </>
   );

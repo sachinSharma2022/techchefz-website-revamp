@@ -130,7 +130,7 @@
     margin-top: 10.75rem;
     width: 100%;
 
-    @include tablet-p {
+    @include tablet {
       margin-top: 0;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -195,11 +195,6 @@
       @include mobile {
         min-width: 100%;
         min-height: 25rem;
-      }
-
-      @include samsung-fold {
-        min-width: auto;
-        max-width: 90%;
       }
 
       .title {
