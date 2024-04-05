@@ -3,9 +3,11 @@
 import React, { useContext } from "react";
 import styles from "./style.module.scss";
 import { Icons } from "@/components/icons";
+import { ImageCustom } from "@/components/ui/imageCustom";
 import { Button } from "@/components/ui/button";
 import { MyContext } from "@/context/theme";
 import SmoothDropdown from "@/components/ui/smoothDropdownButton";
+import { base_Uri } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
@@ -39,7 +41,16 @@ const CareerPositionOverview = ({ props, href }) => {
             {props[0].Developerinner.map((data, index) => {
               return (
                 <div className={styles.detail} key={index}>
-                  <Icons.TimerIcon size={24} />
+                  <ImageCustom
+                    src={
+                      data?.Image?.data?.attributes?.url
+                        ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
+                        : `${base_Uri}/`
+                    }
+                    width={26}
+                    height={26}
+                    alt="banner-img"
+                  />
                   <span>{data.Title}</span>
                 </div>
               );
