@@ -7,6 +7,7 @@ import { base_Uri, rootURl } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { useContext, useState } from "react";
 import styles from "./style.module.scss";
+import Link from "next/link";
 
 const InsightDetail = ({ props, BlockTitle, index }) => {
   const [showTooltip, setShowTooltip] = useState(false);
@@ -25,7 +26,7 @@ const InsightDetail = ({ props, BlockTitle, index }) => {
       <div className={cn("primary-container", styles.flexContainer)}>
         <div className={styles.insightDetailFlex}>
           <div className={styles.socialMediaFlex}>
-            <a
+            <Link
               href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}`}
               target="_blank"
             >
@@ -34,8 +35,8 @@ const InsightDetail = ({ props, BlockTitle, index }) => {
                   <Icons.Linkedin size={28} />
                 </div>
               </div>
-            </a>
-            <a
+            </Link>
+            <Link
               href={`https://www.facebook.com/share.php?u=${url}`}
               target="_blank"
             >
@@ -44,8 +45,8 @@ const InsightDetail = ({ props, BlockTitle, index }) => {
                   <Icons.facebookInsight size={25} />
                 </div>
               </div>
-            </a>
-            <a
+            </Link>
+            <Link
               href={`http://twitter.com/share?&url=${url}&text=${encodeURIComponent(
                 "Hey, I found this article"
               )}`}
@@ -56,7 +57,7 @@ const InsightDetail = ({ props, BlockTitle, index }) => {
                   <Icons.twitter color="#000000" size={21} />
                 </div>
               </div>
-            </a>
+            </Link>
 
             <a
               href={`mailto:?subject=I wanted you to see this site&amp;body=Check out this site ${url}`}

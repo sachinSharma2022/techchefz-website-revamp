@@ -191,6 +191,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
               <Link
                 href={props[0]?.Link}
                 onClick={onlycloseMenu}
+                prefetch={false}
                 className={pathname == "/about" ? styles.active : ""}
               >
                 {props[0]?.Title}
@@ -200,6 +201,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
               <Link
                 href={props[1]?.Link}
                 onClick={onlycloseMenu}
+                prefetch={false}
                 className={pathname == "/solutions" ? styles.active : ""}
               >
                 {props[1]?.Title}
@@ -357,6 +359,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
               <Link
                 href={props[3].Link}
                 onClick={onlycloseMenu}
+                prefetch={false}
                 className={pathname == "/portfolio" ? styles.active : ""}
               >
                 {props[3].Title}
