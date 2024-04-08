@@ -243,8 +243,8 @@ const VendorForm = () => {
                   </div>
                   <div className={cn(styles.inputSpace, "input-item")}>
                     <Textarea
-                      label="Cover Letter*"
-                      placeholder="Cover Letter*"
+                      label="Brief Explanation of your project*"
+                      placeholder="Brief Explanation of your project*"
                       type="textarea"
                       rows="4"
                       id="projectExplanation"
