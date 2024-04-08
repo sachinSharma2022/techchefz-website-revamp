@@ -59,6 +59,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
           <Link
             href={`/insights/${feartureArray[0]?.id}`}
             className={styles.imageTech}
+            prefetch={false}
           >
             <div className={styles.imgBox}>
               <ImageCustom
@@ -80,7 +81,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
               <Icons.ArrowRight size={16} />
             </div>
           </Link>
-          <Link href={`/insights/${feartureArray[1]?.id}`}>
+          <Link href={`/insights/${feartureArray[1]?.id}`} prefetch={false}>
             <div className={styles.imageTech}>
               <div className={styles.infoBox}>
                 <p className={styles.description}>
@@ -186,6 +187,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                           <Link
                             href={props[2]?.DropDown[1]?.Links}
                             className={cn(styles.hrefInnerFlex)}
+                            prefetch={false}
                             onClick={closeMenu}
                           >
                             <div className={styles.head}>
@@ -201,6 +203,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                           <Link
                             href={props[2]?.DropDown[2]?.Links}
                             className={cn(styles.hrefInnerFlex)}
+                            prefetch={false}
                             onClick={closeMenu}
                           >
                             <div className={styles.head}>
@@ -216,6 +219,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                           <Link
                             href={props[2]?.DropDown[3]?.Links}
                             className={cn(styles.hrefInnerFlex)}
+                            prefetch={false}
                             onClick={closeMenu}
                           >
                             <div className={styles.head}>
@@ -231,6 +235,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                           <Link
                             href={props[2]?.DropDown[4]?.Links}
                             className={cn(styles.hrefInnerFlex)}
+                            prefetch={false}
                             onClick={closeMenu}
                           >
                             <div className={styles.head}>
@@ -249,6 +254,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                           <Link
                             href={props[2]?.DropDown[5]?.Links}
                             className={cn(styles.hrefInnerFlex)}
+                            prefetch={false}
                             onClick={closeMenu}
                           >
                             <div className={styles.head}>
@@ -264,6 +270,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                           <Link
                             href={props[2]?.DropDown[6]?.Links}
                             className={cn(styles.hrefInnerFlex)}
+                            prefetch={false}
                             onClick={closeMenu}
                           >
                             <div className={styles.head}>
@@ -279,6 +286,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                           <Link
                             href={props[2]?.DropDown[7]?.Links}
                             className={cn(styles.hrefInnerFlex)}
+                            prefetch={false}
                             onClick={closeMenu}
                           >
                             <div className={styles.head}>
@@ -334,6 +342,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                           <Link
                             href={props[4]?.DropDown[0]?.Links}
                             className={cn(styles.hrefInnerFlex)}
+                            prefetch={false}
                             onClick={closeMenu}
                           >
                             <div className={styles.head}>
@@ -349,6 +358,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                           <Link
                             href={props[4]?.DropDown[1]?.Links}
                             className={cn(styles.hrefInnerFlex)}
+                            prefetch={false}
                             onClick={closeMenu}
                           >
                             <div className={styles.head}>
@@ -364,6 +374,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                           <Link
                             href={props[4]?.DropDown[2]?.Links}
                             className={cn(styles.hrefInnerFlex)}
+                            prefetch={false}
                             onClick={closeMenu}
                           >
                             <div className={styles.head}>
@@ -394,6 +405,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                           <Link
                             href={props[4]?.DropDown[4]?.Links}
                             className={cn(styles.hrefInnerFlex)}
+                            prefetch={false}
                             onClick={closeMenu}
                           >
                             <div className={styles.head}>
