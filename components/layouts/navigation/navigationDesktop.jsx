@@ -149,6 +149,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
             <li className={styles.menuItem}>
               <Link
                 href={props[0].Link}
+                prefetch={false}
                 className={pathname == "/about" ? styles.active : ""}
               >
                 {props[0].Title}
@@ -157,6 +158,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
             <li className={styles.menuItem}>
               <Link
                 href={props[1].Link}
+                prefetch={false}
                 className={pathname == "/solutions" ? styles.active : ""}
               >
                 {props[1].Title}
@@ -165,6 +167,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
             <li className={styles.dropDown} onMouseEnter={openMenu}>
               <Link
                 href={props[2].Link}
+                prefetch={false}
                 className={pathname == "/technology" ? styles.active : ""}
               >
                 {props[2].Title} <div className={styles.arrow} />
@@ -298,6 +301,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
             <li className={styles.menuItem}>
               <Link
                 href={props[3]?.Link}
+                prefetch={false}
                 className={pathname == "/portfolio" ? styles.active : ""}
               >
                 {props[3]?.Title}
