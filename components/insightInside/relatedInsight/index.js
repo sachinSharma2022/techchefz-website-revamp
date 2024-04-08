@@ -16,7 +16,8 @@ import "swiper/css/navigation";
 // import required modules
 import { Navigation } from "swiper/modules";
 
-const RelatedInsight = ({ props, className, sliderClassName, params }) => {
+const RelatedInsight = ({ props, className, sliderClassName, params, data1 }) => {
+  console.log("-------", data1);
   const { theme, setTheme } = useContext(MyContext);
 
   return (
@@ -34,13 +35,13 @@ const RelatedInsight = ({ props, className, sliderClassName, params }) => {
               <h6
                 className={cn(styles.relatedCaseTitle, "gradient-text")}
                 dangerouslySetInnerHTML={{
-                  __html: `${props[0]?.attributes?.RelatedInsight?.Title}`,
+                  __html: `${data1?.RelatedInsight?.Title}`,
                 }}
               ></h6>
               <h3
                 className={cn(styles.relatedCaseHeading, "gradient-text")}
                 dangerouslySetInnerHTML={{
-                  __html: `${props[0]?.attributes?.CaseStudy?.Description}`,
+                  __html: `${data1?.RelatedInsight?.Description}`,
                 }}
               ></h3>
             </div>
