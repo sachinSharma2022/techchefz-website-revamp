@@ -59,6 +59,27 @@
   }
 
   .relatedCaseSlider {
+    position: relative;
+
+    &::after {
+      content: "";
+      bottom: 0;
+      right: 0;
+      width: 10%;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+      background: -webkit-linear-gradient(
+        left,
+        rgba(color(primary-white), 0),
+        rgba(color(primary-white), 1)
+      );
+
+      @include mobile-tablet-p {
+        display: none;
+      }
+    }
+
     @include tablet-p {
       margin-bottom: 2.75rem;
       padding: 0;
@@ -143,6 +164,17 @@
   &.relatedCaseDark {
     color: color(primary-white);
     background-color: color(dark-bg);
+
+    .relatedCaseSlider {
+  
+      &::after {
+        background: -webkit-linear-gradient(
+          left,
+          rgba(color(dark-bg), 0),
+          rgba(color(dark-bg), 1)
+        );
+      }
+    }
 
     .arrowDisabled {
       border: 0.14rem solid rgba(color(primary-white), 0.2);

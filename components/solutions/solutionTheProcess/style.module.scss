@@ -137,8 +137,10 @@
       gap: 10px;
     }
 
-    @include mobile-tablet-p {
+    @include mobile {
       margin-top: 0;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
     }
 
     .processCard {

@@ -24,7 +24,7 @@ body {
   }
 
   @include desktop-4k {
-    //zoom: 1.15;
+    font-size: 1.4rem;
   }
 }
 
@@ -147,6 +147,10 @@ button[disabled] {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
+
+  @include desktop-4k {
+    max-width: 1920px;
+  }
 }
 
 /* Change the white to any color */
@@ -1097,7 +1101,7 @@ html.lenis {
       background-image: url("../public/images/icons/arrow-right.svg");
       background-repeat: no-repeat;
       background-position: center;
-      margin-left: -38vw;
+      margin-left: -36vw;
 
       @include tablet-p {
         margin-left: -43vw;
