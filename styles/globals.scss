@@ -1248,7 +1248,7 @@ html.lenis {
       top: auto;
       bottom: 0;
       left: 0;
-      margin-top: 36px;
+      margin-top: 2px;
 
       @include mobile-tablet-p {
         border-radius: 0.25rem;
@@ -1262,14 +1262,10 @@ html.lenis {
 
     .slick-prev {
       order: 2;
-      bottom: -84px;
+      bottom: -50px;
       background-image: url('../public/images/icons/arrow-left.svg');
       background-repeat: no-repeat;
       background-position: center;
-
-      @include mobile-tablet-p {
-        bottom: -48px;
-      }
     }
 
     .slick-next {
