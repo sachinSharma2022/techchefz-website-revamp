@@ -148,12 +148,6 @@ const OpenPosition = ({ props, id }) => {
                                           ?.Title
                                       }{" "}
                                     </h4>
-                                    {/* <p>
-                                      {
-                                        item?.attributes?.DeveloperDetail[5]
-                                          ?.Title
-                                      }
-                                    </p> */}
                                     <ul
                                       dangerouslySetInnerHTML={{
                                         __html: `${item?.attributes?.DeveloperDetail[5]?.FullDescription}`,
@@ -191,45 +185,45 @@ const OpenPosition = ({ props, id }) => {
                                   className={cn(styles.accordionPanel)}
                                 >
                                   <div className={styles.accordionContent}>
-                                    <h6
+                                    <h4
                                       dangerouslySetInnerHTML={{
                                         __html: `${item?.attributes?.DeveloperDetail[0]?.Title}`,
                                       }}
-                                    ></h6>
+                                    ></h4>
                                     <p>
                                       {
                                         item?.attributes?.DeveloperDetail[0]
                                           ?.FullDescription
                                       }
                                     </p>
-                                    <h6>
+                                    <h4>
                                       {
                                         item?.attributes?.DeveloperDetail[2]
                                           ?.Title
                                       }{" "}
-                                    </h6>
+                                    </h4>
                                     <ul
                                       dangerouslySetInnerHTML={{
                                         __html: `${item?.attributes?.DeveloperDetail[2]?.FullDescription}`,
                                       }}
                                     ></ul>
-                                    <h6>
+                                    <h4>
                                       {
                                         item?.attributes?.DeveloperDetail[4]
                                           ?.Title
                                       }
-                                    </h6>
+                                    </h4>
                                     <ul
                                       dangerouslySetInnerHTML={{
                                         __html: `${item?.attributes?.DeveloperDetail[4]?.FullDescription}`,
                                       }}
                                     ></ul>
-                                    <h6>
+                                    <h4>
                                       {
                                         item?.attributes?.DeveloperDetail[5]
                                           ?.Title
                                       }
-                                    </h6>
+                                    </h4>
                                     <ul
                                       dangerouslySetInnerHTML={{
                                         __html: `${item?.attributes?.DeveloperDetail[5]?.FullDescription}`,
