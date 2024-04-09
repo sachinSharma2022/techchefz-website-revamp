@@ -79,13 +79,13 @@ const LetsTalk = ({ props }) => {
   };
 
   return (
-    <section className={cn("primary-container")}>
-      <div
-        className={cn(
-          styles.letsContactStyle,
-          theme ? styles.letsContactStyleDark : ""
-        )}
-      >
+    <section
+      className={cn(
+        styles.letsContactStyle,
+        theme ? styles.letsContactStyleDark : ""
+      )}
+    >
+      <div className={cn("primary-container")}>
         <div className={styles.workArea}>
           <div className={styles.headingMain}>
             <h3
