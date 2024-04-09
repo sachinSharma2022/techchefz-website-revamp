@@ -8,11 +8,12 @@ import Solutions from "@/components/caseStudy/solutions";
 import LetsWork from "@/components/home/letsWork";
 import React from "react";
 import NotFound from "@/app/not-found";
-import { getDataDynamic } from "@/lib/fetchData";
-import { api_Case_study_Page } from "@/lib/constants";
+import { getDataDynamic, getData } from "@/lib/fetchData";
+import { api_Case_study_Page, api_portfolios_Page } from "@/lib/constants";
 
 const CaseStudy = async ({ params }) => {
   const data = await getDataDynamic(api_Case_study_Page);
+  const data1 = await getData(api_portfolios_Page);
   const [page] = data.filter((value) => value.id == params.caseStudy);
   return (
     <>
@@ -32,6 +33,7 @@ const CaseStudy = async ({ params }) => {
             className="tech-related-style"
             props={data}
             params={params}
+            RelatedInsight={data1.RelatedInsight}
           />
           <LetsWork contact={page.attributes.LetsWork} />
         </div>
