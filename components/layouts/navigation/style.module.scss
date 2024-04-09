@@ -798,6 +798,10 @@
           height: 60px;
           margin-bottom: 16px;
 
+          @include desktop-4k {
+            height: 80px;
+          }
+
           @include mobile-tablet-p {
             justify-content: center;
 
@@ -1000,13 +1004,14 @@
     .overviewBtn button {
       color: color(info-blue);
       justify-content: center;
-      padding: 0;
-      height: 44px;
-      width: 143px;
+      padding: 0 20px;
+      min-height: 44px;
+      min-width: 143px;
 
       @include mobile-tablet-p {
         height: 55px;
         width: 100%;
+        padding: 0 10px;
       }
     }
   }

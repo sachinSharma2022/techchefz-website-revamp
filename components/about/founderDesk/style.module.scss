@@ -159,16 +159,13 @@
       position: relative;
       transition: all 0.5s ease-in-out;
 
-      @include tablet-p {
+      @include tablet {
         width: 60%;
+        height: 30.5rem;
       }
 
       @include mobile {
         width: 100%;
-      }
-
-      @include samsung-fold {
-        width: 60%;
       }
 
       &::before {

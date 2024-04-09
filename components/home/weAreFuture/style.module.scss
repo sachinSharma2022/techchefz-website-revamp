@@ -120,7 +120,7 @@
         color: color(heading-liner);
         @include textGradient;
 
-        @include tablet-p {
+        @include tablet {
           font-size: text(xxxl);
           line-height: 1.2;
         }
@@ -130,6 +130,7 @@
           line-height: 2.5rem;
         }
       }
+
       @include mobile {
         font-size: text(xxxl);
         line-height: 2.5rem;

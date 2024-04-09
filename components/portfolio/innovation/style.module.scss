@@ -93,12 +93,13 @@
       border: 0.125rem solid rgba(color(text-primary), 0.12);
       @include transition(0.5s);
 
-      @include tablet-p {
+      @include tablet {
         width: 100%;
         padding: 1rem;
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
+        justify-content: space-between;
       }
 
       @include mobile {
@@ -110,21 +111,15 @@
         max-height: 124px;
       }
 
-      @include samsung-fold {
-        display: flex;
-        flex-direction: column-reverse;
-        max-height: 100%;
-      }
-
       .bgImage div {
         width: 100%;
         height: 150px;
         @include transition(0.5s);
 
-        @include tablet-p {
-          height: 100px;
-          width: 100px;
-          margin-bottom: 1.5rem;
+        @include tablet {
+          height: 90px;
+          width: 90px;
+          margin-bottom: 1rem;
         }
 
         @include mobile {
@@ -136,8 +131,7 @@
         @include samsung-fold {
           height: 80px;
           width: 80px;
-          margin-bottom: 1.5rem;
-          margin-inline: auto;
+          justify-content: center;
         }
 
         img {
@@ -192,7 +186,7 @@
           }
 
           @include samsung-fold {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: color(text-primary);
             line-height: 1.2;
             text-align: center;
@@ -226,6 +220,7 @@
             font-size: 0.8rem;
             text-align: center;
             letter-spacing: 1px;
+            line-height: 1.2rem
           }
         }
       }
