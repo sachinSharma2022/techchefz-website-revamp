@@ -122,7 +122,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
           </div>
         </div>
         <div className={styles.overviewBtn}>
-          <Link href={props[2]?.DropDown[0]?.Links}>
+          <Link href={props[2]?.DropDown[0]?.Links} prefetch={false}>
             <Button onClick={closeMenu} variant="outline" size="sm">
               Overview <Icons.ArrowRight size={18} />
             </Button>
@@ -442,7 +442,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
               )}
             </button>
           </div>
-          <Link href={props[5]?.Link}>
+          <Link href={props[5]?.Link} prefetch={false}>
             <Button
               variant={theme ? "blueBtnDark" : "blueBtn"}
               className={styles.headerBtn}
