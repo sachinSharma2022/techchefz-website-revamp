@@ -209,8 +209,8 @@ const ContactSection = ({ props, id }) => {
                       </div>
                       <div className="input-item">
                         <InputFile
-                          label="Upload CV* (pdf/doc upto 5mb)"
-                          placeholder="Upload CV* (pdf/doc upto 5mb)"
+                          label="Upload CV* (pdf, doc, docx upto 5MB)"
+                          placeholder="Upload CV* (pdf, doc, docx upto 5MB)"
                           type="file"
                           id="uploadCV"
                           name="uploadCV"
