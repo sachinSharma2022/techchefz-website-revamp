@@ -14,7 +14,6 @@ import TextRevel from "@/components/ui/sectionAnimation";
 import { useMediaQuery } from "react-responsive";
 
 const SolutionTechnologies = ({ props }) => {
-  console.log("neee", props);
   const { theme, setTheme } = useContext(MyContext);
   const isSmallMobile = useMediaQuery({ query: "(max-width: 690px)" });
 
