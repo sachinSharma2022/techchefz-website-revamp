@@ -18,6 +18,10 @@
     padding-inline: 0;
   }
 
+  @include desktop-4k {
+    padding-inline: 0;
+  }
+
   .infoSection {
     display: flex;
     flex-direction: column;
