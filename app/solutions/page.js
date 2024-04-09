@@ -20,6 +20,7 @@ export async function generateMetadata() {
 
 const Solutions = async () => {
   const data = await getData(api_Solutions_Page);
+  console.log("---------------", data);
   const data_related_cases = await getDataDynamic(api_Case_study_Page);
   return (
     <>
@@ -29,7 +30,7 @@ const Solutions = async () => {
           <SolutionOurValues props={data.ourValues} />
           <SolutionTheProcess props={data.OurProcess} />
           <SolutionTechnologies props={data.Technology} />
-          <RelatedCase props={data_related_cases} />
+          <RelatedCase props={data_related_cases} RelatedInsight={data.RelatedInsight}/>
         </div>
       ) : (
         <>
