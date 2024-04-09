@@ -138,10 +138,6 @@
     gap: 4.5rem;
     margin-top: 3rem;
 
-    @include desktop-4k {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
     @include tablet-p {
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
@@ -175,11 +171,7 @@
       color: color(primary-white);
       position: relative;
       @include transition(0.5s);
-
-      @include desktop-4k {
-        height: 26rem;
-      }
-
+      
       @include tablet {
         height: 29rem;
       }
