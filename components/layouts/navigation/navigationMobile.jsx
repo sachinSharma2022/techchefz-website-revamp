@@ -94,6 +94,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
         <div className={styles.latestTechCard}>
           <Link
             href={`/insights/${feartureArray[0].id}`}
+            prefetch={false}
             className={styles.imageTech}
             onClick={closeMenu}
           >
@@ -117,7 +118,11 @@ const NavigationMobile = ({ props, featureArticle }) => {
               <Icons.ArrowRight size={16} />
             </div>
           </Link>
-          <Link href={`/insights/${feartureArray[1].id}`} onClick={closeMenu}>
+          <Link
+            href={`/insights/${feartureArray[1].id}`}
+            prefetch={false}
+            onClick={closeMenu}
+          >
             <div className={styles.imageTech}>
               <div className={styles.infoBox}>
                 <p className={styles.description}>
@@ -240,6 +245,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                         <div className="col-sm-6">
                           <Link
                             href={props[2]?.DropDown[1]?.Links}
+                            prefetch={false}
                             onClick={onlycloseTechMenu}
                             className={cn(styles.hrefInnerFlex)}
                           >
@@ -255,6 +261,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                           </Link>
                           <Link
                             href={props[2]?.DropDown[2]?.Links}
+                            prefetch={false}
                             onClick={onlycloseTechMenu}
                             className={cn(styles.hrefInnerFlex)}
                           >
@@ -270,6 +277,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                           </Link>
                           <Link
                             href={props[2]?.DropDown[3]?.Links}
+                            prefetch={false}
                             onClick={onlycloseTechMenu}
                             className={cn(styles.hrefInnerFlex)}
                           >
@@ -285,6 +293,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                           </Link>
                           <Link
                             href={props[2]?.DropDown[4]?.Links}
+                            prefetch={false}
                             onClick={onlycloseTechMenu}
                             className={cn(styles.hrefInnerFlex)}
                           >
@@ -303,6 +312,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                         <div className="col-sm-6">
                           <Link
                             href={props[2]?.DropDown[5]?.Links}
+                            prefetch={false}
                             className={cn(styles.hrefInnerFlex)}
                             onClick={onlycloseTechMenu}
                           >
@@ -318,6 +328,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                           </Link>
                           <Link
                             href={props[2]?.DropDown[6]?.Links}
+                            prefetch={false}
                             className={cn(styles.hrefInnerFlex)}
                             onClick={onlycloseTechMenu}
                           >
@@ -333,6 +344,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                           </Link>
                           <Link
                             href={props[2]?.DropDown[7]?.Links}
+                            prefetch={false}
                             className={cn(styles.hrefInnerFlex)}
                             onClick={onlycloseTechMenu}
                           >
@@ -404,6 +416,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                         <div className="col-sm-12">
                           <Link
                             href={props[4]?.DropDown[0]?.Links}
+                            prefetch={false}
                             onClick={onlycloseMoreMenu}
                             className={cn(styles.hrefInnerFlex)}
                           >
@@ -419,6 +432,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                           </Link>
                           <Link
                             href={props[4]?.DropDown[1]?.Links}
+                            prefetch={false}
                             onClick={onlycloseMoreMenu}
                             className={cn(styles.hrefInnerFlex)}
                           >
@@ -434,6 +448,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                           </Link>
                           <Link
                             href={props[4]?.DropDown[2]?.Links}
+                            prefetch={false}
                             onClick={onlycloseMoreMenu}
                             className={cn(styles.hrefInnerFlex)}
                           >
@@ -449,6 +464,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                           </Link>
                           <Link
                             href={props[4]?.DropDown[4]?.Links}
+                            prefetch={false}
                             onClick={onlycloseMoreMenu}
                             className={cn(styles.hrefInnerFlex)}
                           >
