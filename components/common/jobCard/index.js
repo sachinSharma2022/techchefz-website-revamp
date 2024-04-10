@@ -5,10 +5,14 @@ import { Button } from "@/components/ui/button";
 import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import { useContext } from "react";
+import { ImageCustom } from "@/components/ui/imageCustom";
 import styles from "./style.module.scss";
 import Link from "next/link";
+import { base_Uri } from "@/lib/constants";
 
-const JobCard = (props) => {
+const JobCard = (props ) => {
+ 
+  
   const { theme } = useContext(MyContext);
   return (
     <div
@@ -19,11 +23,29 @@ const JobCard = (props) => {
         <p className={styles.description}>{props.content}</p>
         <div className={styles.spanDiv}>
           <div className={styles.spanDetail}>
-            <Icons.TimerIcon size={16} />
+          <ImageCustom
+                    src={
+                      props?.icon[0]?.Image?.data?.attributes?.url
+                        ? `${base_Uri}${props?.icon[0]?.Image?.data?.attributes?.url}`
+                        : `${base_Uri}/`
+                    }
+                    width={16}
+                    height={16}
+                    alt="banner-img"
+                  />
             <span>{props.exp}</span>
           </div>
           <div className={styles.spanDetail}>
-            <Icons.LocationIcon size={16} />
+          <ImageCustom
+                    src={
+                      props?.icon[1]?.Image?.data?.attributes?.url
+                        ? `${base_Uri}${props?.icon[1]?.Image?.data?.attributes?.url}`
+                        : `${base_Uri}/`
+                    }
+                    width={16}
+                    height={16}
+                    alt="banner-img"
+                  />
             <span>{props.location}</span>
           </div>
         </div>

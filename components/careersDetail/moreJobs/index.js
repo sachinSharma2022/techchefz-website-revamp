@@ -49,6 +49,7 @@ const MoreJobs = ({ props, params }) => {
                   key={index}
                   title={value?.attributes?.DeveloperApply[0]?.Title}
                   content={value?.attributes?.Cards?.Description}
+                  icon={value.attributes.DeveloperApply[0].Developerinner}
                   exp={
                     value?.attributes?.DeveloperApply[0]?.Developerinner[0]
                       ?.Title
