@@ -31,7 +31,7 @@ const RelatedCase = ({
       className={cn(
         styles.relatedCase,
         theme ? styles.relatedCaseDark : "",
-        className ? className : styles.spaceStyle
+        className
       )}
     >
       <div className={cn("primary-container relative")}>
