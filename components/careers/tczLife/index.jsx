@@ -64,10 +64,10 @@ const TczLife = ({ props }) => {
             </div>
           </div>
           <div className={cn("col-sm-12 col-lg-12 col-xl-8")}>
-            <div className={styles.sliderSection}>
+            <div className={cn(styles.sliderSection, "tcz-life-slider")}>
               <Swiper
-                slidesPerView={3.5}
-                spaceBetween={0}
+                slidesPerView={"auto"}
+                spaceBetween={40}
                 navigation={{ nextEl: ".arrow-right", prevEl: ".arrow-left" }}
                 pagination={false}
                 modules={[Navigation]}
@@ -83,10 +83,7 @@ const TczLife = ({ props }) => {
                     slidesPerView: 2,
                   },
                   1200: {
-                    slidesPerView: 2.2,
-                  },
-                  1700: {
-                    slidesPerView: 2.2,
+                    slidesPerView: "auto",
                   },
                 }}
                 className="mySwiper"
