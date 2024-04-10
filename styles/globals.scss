@@ -978,7 +978,7 @@ html.lenis {
   @include tablet {
     min-height: auto;
     margin-block: 3.125rem 0;
-    padding: 4rem 0 5rem spacing(tablet-padding);
+    padding: 4rem spacing(tablet-padding);
   }
 
   @include mobile {
@@ -1138,7 +1138,7 @@ html.lenis {
   gap: 24px;
 
   @include mobile-tablet-p {
-    margin: 3rem 0 2rem;
+    margin: 3rem 0 0;
     width: 100%;
     display: none;
   }
