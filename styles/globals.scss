@@ -22,10 +22,6 @@ body {
   .dark {
     background-color: color(dark-gray);
   }
-
-  @include desktop-4k {
-    font-size: 1.4rem;
-  }
 }
 
 // main-container
@@ -147,10 +143,6 @@ button[disabled] {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-
-  @include desktop-4k {
-    max-width: 1920px;
-  }
 }
 
 /* Change the white to any color */
@@ -986,7 +978,7 @@ html.lenis {
   @include tablet {
     min-height: auto;
     margin-block: 3.125rem 0;
-    padding: 4rem 0 5rem spacing(tablet-padding);
+    padding: 4rem spacing(tablet-padding);
   }
 
   @include mobile {
@@ -996,32 +988,11 @@ html.lenis {
 }
 
 .cms-related-style {
-  padding: 0 0 7.5rem;
   background-color: color(bg-soft);
-
-  @include tablet {
-    min-height: auto;
-    padding: 4rem spacing(tablet-padding);
-  }
-
-  @include mobile {
-    padding-block: 4rem 4rem;
-    padding-inline: spacing(mobile-padding);
-  }
-}
-
-.insight-related-slider {
-  background-color: color(bg-soft);
-  min-height: 50rem;
-  padding: 6rem 0;
-}
-
-.insight-detail-related-slider {
-  background-color: color(bg-soft);
-  padding: 7.5rem 0;
+  padding-top: 0 !important;
 
   @include mobile-tablet-p {
-    padding: 4rem 1.25rem;
+    padding-top: 2rem !important;
   }
 }
 
@@ -1146,7 +1117,7 @@ html.lenis {
   gap: 24px;
 
   @include mobile-tablet-p {
-    margin: 3rem 0 2rem;
+    margin: 3rem 0 0;
     width: 100%;
     display: none;
   }
@@ -1214,10 +1185,7 @@ html.lenis {
 
   // For Related slider
   .tech-related-style,
-  .case-related-style,
-  .cms-related-style,
-  .insight-detail-related-slider,
-  .insight-related-slider {
+  .cms-related-style {
     background-color: color(dark-bg);
   }
 

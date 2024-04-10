@@ -9,7 +9,6 @@
   }
 
   @include mobile {
-    margin-block: 0rem 5rem;
     padding: 5rem spacing(mobile-padding);
   }
 
@@ -80,14 +79,16 @@
       }
     }
 
-    @include tablet-p {
+    @include tablet {
       margin-bottom: 2.75rem;
       padding: 0;
+      margin-right: -3rem;
     }
 
     @include mobile {
       margin-bottom: 2.75rem;
       padding: 0;
+      margin-right: 0;
     }
   }
 

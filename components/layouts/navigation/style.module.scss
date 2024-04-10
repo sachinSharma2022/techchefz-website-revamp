@@ -798,10 +798,6 @@
           height: 60px;
           margin-bottom: 16px;
 
-          @include desktop-4k {
-            height: 80px;
-          }
-
           @include mobile-tablet-p {
             justify-content: center;
 

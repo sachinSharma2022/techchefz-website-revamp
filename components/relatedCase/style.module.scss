@@ -2,24 +2,34 @@
 
 .relatedCase {
   position: relative;
+  padding-block: 7.5rem;
 
   @include desktop-normal {
     padding-inline: 7.5rem;
   }
-  // For Space
-  &.spaceStyle {
-    margin-block: 7.5rem;
 
-    @include tablet {
-      margin-block: 5rem;
-      padding: 0 spacing(tablet-padding) 0;
-    }
-
-    @include mobile {
-      margin-block: 0rem 5rem;
-      padding: 5rem spacing(mobile-padding) 0;
-    }
+  @include tablet {
+    padding: 5rem spacing(tablet-padding);
   }
+
+  @include mobile {
+    padding: 5rem spacing(mobile-padding);
+  }
+
+  // For Space
+  // &.spaceStyle {
+  //   margin-block: 7.5rem;
+
+  //   @include tablet {
+  //     margin-block: 5rem;
+  //     padding: 0 spacing(tablet-padding) 0;
+  //   }
+
+  //   @include mobile {
+  //     margin-block: 0rem 5rem;
+  //     padding: 5rem spacing(mobile-padding) 0;
+  //   }
+  // }
 
   .headSection {
     display: flex;
@@ -88,14 +98,16 @@
       }
     }
 
-    @include tablet-p {
+    @include tablet {
       margin-bottom: 2.75rem;
       padding: 0;
+      margin-right: -3rem;
     }
 
     @include mobile {
       margin-bottom: 2.75rem;
       padding: 0;
+      margin-right: 0;
     }
   }
 
@@ -122,7 +134,6 @@
     color: color(primary-white);
 
     .relatedCaseSlider {
-  
       &::after {
         background: -webkit-linear-gradient(
           left,

@@ -3,9 +3,7 @@
 .letsContactStyle {
   padding: spacing(section-primary-padding);
 
-  @include desktop-hd {
-    padding-inline: 0;
-  }
+
 
   @include tablet {
     padding: 0;
@@ -21,7 +19,7 @@
     background-color: color(primary-background);
     padding: 3.75rem;
     border-radius: text(lg);
-    margin-top: -15rem;
+    margin-top: -20rem;
     position: relative;
 
     @include tablet-p {
@@ -129,7 +127,7 @@
     gap: 9rem;
 
     @include desktop-hd {
-      gap: 14rem;
+      gap: 10rem;
     }
 
     @include mobile-tablet-p {
@@ -244,7 +242,6 @@
 
   // Dark Mode
   &.letsContactStyleDark {
-    background-color: color(dark-gray);
 
     .workArea {
       background-color: color(text-primary);
