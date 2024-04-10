@@ -15,15 +15,12 @@ import {
 } from "@/lib/constants";
 import SolutionTheProcess from "@/components/solutions/solutionTheProcess";
 
-
-
 export async function generateMetadata() {
-  const data = await getData(api_tech_microservices_Page); 
-  
+  const data = await getData(api_tech_microservices_Page);
+
   return {
     title: data?.SeoData?.Title,
     description: data?.SeoData?.Description,
-   
   };
 }
 
@@ -54,7 +51,9 @@ const Cms = async () => {
           <LetsWork contact={data.ContactUs} />
         </div>
       ) : (
-        <><NotFound /></>
+        <>
+          <NotFound />
+        </>
       )}
     </>
   );

@@ -16,7 +16,13 @@ import "swiper/css/navigation";
 // import required modules
 import { Navigation } from "swiper/modules";
 
-const RelatedInsight = ({ props, className, sliderClassName, params, data1 }) => {
+const RelatedInsight = ({
+  props,
+  className,
+  sliderClassName,
+  params,
+  data1,
+}) => {
   console.log("-------", data1);
   const { theme, setTheme } = useContext(MyContext);
 
@@ -83,7 +89,7 @@ const RelatedInsight = ({ props, className, sliderClassName, params, data1 }) =>
                 slidesPerView: 1,
               },
               600: {
-                slidesPerView: 2,
+                slidesPerView: 1.5,
                 spaceBetween: 20,
               },
               599: {

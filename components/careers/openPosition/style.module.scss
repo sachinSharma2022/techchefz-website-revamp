@@ -57,6 +57,9 @@
       padding-bottom: 2rem;
       margin-bottom: 2rem;
     }
+    .activeButton {
+      border: 0.14rem solid color(heading-liner);
+    }
 
     button {
       color: color(text-primary);
@@ -301,6 +304,9 @@
 
     .serviceBtn {
       border-color: rgba(color(primary-white), 0.12);
+      .activeButton {
+        border: 0.14rem solid color(heading-liner);
+      }
 
       button {
         background: color(text-primary);

@@ -16,7 +16,13 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { Icons } from "../icons";
 
-const RelatedCase = ({ props, className, sliderClassName, params, RelatedInsight }) => {
+const RelatedCase = ({
+  props,
+  className,
+  sliderClassName,
+  params,
+  RelatedInsight,
+}) => {
   console.log("RelatedInsight", RelatedInsight);
   const { theme, setTheme } = useContext(MyContext);
 
@@ -25,7 +31,7 @@ const RelatedCase = ({ props, className, sliderClassName, params, RelatedInsight
       className={cn(
         styles.relatedCase,
         theme ? styles.relatedCaseDark : "",
-        className ? className : styles.spaceStyle
+        className
       )}
     >
       <div className={cn("primary-container relative")}>
@@ -83,7 +89,7 @@ const RelatedCase = ({ props, className, sliderClassName, params, RelatedInsight
                 slidesPerView: 1,
               },
               600: {
-                slidesPerView: 2,
+                slidesPerView: 1.4,
                 spaceBetween: 20,
               },
               599: {
