@@ -94,9 +94,9 @@ const ContactSection = ({ props, id }) => {
               <p>{props?.Description}</p>
               <h3>{props.Hedding}</h3>
               <ul>
-                <li>Only pdf/doc are accepted up to 5mb only.</li>
+                <li>Only pdf, doc and docx are accepted upto 5mb only.</li>
                 <li>
-                  Designers are appreciated to share their portfolio links.
+                Applicants are appreciated to share their portfolio.
                 </li>
               </ul>
             </div>
@@ -209,8 +209,8 @@ const ContactSection = ({ props, id }) => {
                       </div>
                       <div className="input-item">
                         <InputFile
-                          label="Upload CV* (pdf, doc, docx upto 5MB)"
-                          placeholder="Upload CV* (pdf, doc, docx upto 5MB)"
+                          label="Upload CV* (pdf, doc upto 5MB)"
+                          placeholder="Upload CV* (pdf, doc upto 5MB)"
                           type="file"
                           id="uploadCV"
                           name="uploadCV"
