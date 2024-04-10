@@ -48,6 +48,7 @@ const Cms = async () => {
           <RelatedCase
             className="cms-related-style"
             props={data_related_cases}
+            RelatedInsight={data.RelatedInsight}
           />
 
           <LetsWork contact={data.ContactUs} />

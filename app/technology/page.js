@@ -43,6 +43,7 @@ const Technology = async () => {
           <RelatedCase
             className="tech-related-style"
             props={data_related_cases}
+            RelatedInsight={data.RelatedInsight}
           />
           <LetsWork contact={data.LetsWork} />
         </div>
