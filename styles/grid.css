@@ -1347,3 +1347,13 @@
     --bs-gutter-y: 3rem;
   }
 }
+
+/* flex Styles */
+
+.d-flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
