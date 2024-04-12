@@ -49,7 +49,7 @@
     }
 
     .inputFloatingStyle {
-      border: none;
+      border: none !important;
       border-radius: 0 10px 10px 0px;
 
       input {
