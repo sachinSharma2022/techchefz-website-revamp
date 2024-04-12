@@ -1296,6 +1296,16 @@ html.lenis {
   top: 16px;
   font-size: 0.8rem;
 }
+
+// tcz-life-slider
+.tcz-life-slider {
+
+  @include desktop-normal {
+    .swiper-slide {
+      width: auto;
+    }
+  }
+}
 //ng-progressbar for page transition
 #nprogress .bar {
   background: linear-gradient(
