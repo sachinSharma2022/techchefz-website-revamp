@@ -1170,7 +1170,6 @@ html.lenis {
   }
 }
 
-
 // Dark Style here
 .dark {
   .mobile-slider {
@@ -1190,7 +1189,6 @@ html.lenis {
   }
 
   .slider-arrow {
-
     .arrow {
       background-color: color(info-blue);
     }
@@ -1205,7 +1203,6 @@ html.lenis {
 
 // history-control-Section
 .history-control-Section {
-
   .slick-slider {
     display: flex;
     flex-direction: column;
@@ -1229,13 +1226,13 @@ html.lenis {
 
       &::before {
         display: none;
-       }
+      }
     }
 
     .slick-prev {
       order: 2;
       bottom: -50px;
-      background-image: url('../public/images/icons/arrow-left.svg');
+      background-image: url("../public/images/icons/arrow-left.svg");
       background-repeat: no-repeat;
       background-position: center;
     }
@@ -1243,7 +1240,7 @@ html.lenis {
     .slick-next {
       order: 3;
       left: 80px;
-      background-image: url('../public/images/icons/arrow-right.svg');
+      background-image: url("../public/images/icons/arrow-right.svg");
       background-repeat: no-repeat;
       background-position: center;
     }
@@ -1260,14 +1257,13 @@ html.lenis {
       color: color(primary-blue);
       background-color: transparent;
       filter: contrast(0) brightness(0.8);
-  
+
       @include mobile-tablet-p {
         border-radius: 0.25rem;
       }
     }
   }
 }
-
 
 // Tooltip Style
 .tooltip-container {
@@ -1299,4 +1295,12 @@ html.lenis {
   position: relative;
   top: 16px;
   font-size: 0.8rem;
+}
+//ng-progressbar for page transition
+#nprogress .bar {
+  background: linear-gradient(
+    right, color(primary-blue) 11.5%,
+    color(heading-liner) 55.42%
+  ) !important;
+  border-radius: 50px;
 }
