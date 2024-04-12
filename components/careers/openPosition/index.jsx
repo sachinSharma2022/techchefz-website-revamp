@@ -52,6 +52,15 @@ const OpenPosition = ({ props, id }) => {
       if (jobCatogeryActive["All Openings"]) return true;
       return jobCatogeryActive[curElem?.attributes?.DeveloperApply[0]?.Tag];
     });
+    //if all filter are removed , all filter is activated
+     if (Object.values(jobCatogeryActive).every((value) => value === false)) {
+       setjobCatogeryActive((prevActiveFilters) => {
+         return {
+           ...prevActiveFilters,
+           "All Openings": true, 
+         };
+       });
+     }
     setItems(updateItems);
   }, [jobCatogeryActive]);
 
@@ -74,14 +83,10 @@ const OpenPosition = ({ props, id }) => {
         };
       });
     }
+   
   };
 
   const options = [
-    {
-      label: "Techchef Portal",
-      link: "https://www.techchefz.com/careers/applyjob/",
-      icon: "/images/logo-icon-blue.svg",
-    },
     {
       label: "Linkedin",
       link: "https://in.linkedin.com/",

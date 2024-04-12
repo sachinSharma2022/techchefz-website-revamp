@@ -9,6 +9,7 @@ import { cn } from "../lib/utils";
 import "../styles/globals.scss";
 //import { GoogleAnalytics } from "@next/third-parties/google";
 import dynamic from "next/dynamic";
+import Providers from "@/components/ui/pageTransition/ProgressBarProvider";
 const Header = dynamic(() => import("@/components/layouts/header"));
 const FooterContainer = dynamic(() =>
   import("@/components/layouts/footer/footerContainer")
@@ -53,7 +54,10 @@ export default function RootLayout({ children }) {
         {/* <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} /> */}
         <ThemeProvider>
           <Header />
-          <div className={cn("main-style")}>{children}</div>
+          <Providers>
+            <div className={cn("main-style")}>{children}</div>
+          </Providers>
+
           <FooterContainer />
         </ThemeProvider>
       </body>
