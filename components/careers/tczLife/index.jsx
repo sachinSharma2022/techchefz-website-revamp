@@ -76,7 +76,7 @@ const TczLife = ({ props }) => {
                     slidesPerView: 1,
                   },
                   690: {
-                    slidesPerView: 2,
+                    slidesPerView: 1.5,
                     spaceBetween: 20,
                   },
                   1199: {
