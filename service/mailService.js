@@ -11,7 +11,7 @@ export async function sendMail(htmlContent, filecontent) {
   var mailOptions = filecontent
     ? {
         from: process.env.NODEMAILER_FROM_EMAIL,
-        to: process.env.NODEMAILER_TO_EMAIL,
+        to: process.env.NODEMAILER_TO_JOB_EMAIL,
         subject: mailer_Subject,
         html: htmlContent,
         attachments: [
