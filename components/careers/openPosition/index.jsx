@@ -5,7 +5,7 @@ import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import { Disclosure } from "@headlessui/react";
 import Link from "next/link";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import SmoothDropdown from "@/components/ui/smoothDropdownButton";
@@ -16,10 +16,21 @@ const OpenPosition = ({ props, id }) => {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
   const [items, setItems] = useState(props);
   const { theme, setTheme } = useContext(MyContext);
+
   const jobCatogery = props
     .map((item) => item?.attributes?.DeveloperApply[0]?.Tag)
     .filter((item, i, ar) => ar.indexOf(item) === i);
-  jobCatogery.push("All Openings");
+  const createInitialFilters = (filters) => {
+    const initialFilters = { "All Openings": true }; // Start with 'all' set to true
+    filters.forEach((filter) => {
+      initialFilters[filter] = false; // Set each individual filter to false initially
+    });
+    return initialFilters;
+  };
+  const [jobCatogeryActive, setjobCatogeryActive] = useState(
+    createInitialFilters(jobCatogery)
+  );
+  console.log(jobCatogeryActive, "jobCatogeryActive");
   function togglePanels(newPanel) {
     if (activeDisclosurePanel) {
       if (
@@ -36,27 +47,46 @@ const OpenPosition = ({ props, id }) => {
     });
   }
 
-  const [active, setActive] = useState(false);
+  useEffect(() => {
+    const updateItems = props.filter((curElem) => {
+      if (jobCatogeryActive["All Openings"]) return true;
+      return jobCatogeryActive[curElem?.attributes?.DeveloperApply[0]?.Tag];
+    });
+    //if all filter are removed , all filter is activated
+     if (Object.values(jobCatogeryActive).every((value) => value === false)) {
+       setjobCatogeryActive((prevActiveFilters) => {
+         return {
+           ...prevActiveFilters,
+           "All Openings": true, 
+         };
+       });
+     }
+    setItems(updateItems);
+  }, [jobCatogeryActive]);
 
-  const filterItem = (categItem) => {
-    if (categItem === "All Openings") setItems(props);
-    else {
-      const updateItems = props.filter((curElem) => {
-        return curElem?.attributes?.DeveloperApply[0]?.Tag === categItem;
+  const filterItem = (categItem, i) => {
+    if (categItem === "All Openings") {
+      setItems(props);
+      const newActiveFilters = { ...jobCatogeryActive, "All Openings": true };
+      Object.keys(jobCatogeryActive).forEach((key) => {
+        if (key !== "All Openings") {
+          newActiveFilters[key] = false;
+        }
       });
-
-      setItems(updateItems);
+      setjobCatogeryActive(newActiveFilters);
+    } else {
+      setjobCatogeryActive((prevActiveFilters) => {
+        return {
+          ...prevActiveFilters,
+          [categItem]: !prevActiveFilters[categItem],
+          "All Openings": false, // Deactivate "All" if any other filter is clicked
+        };
+      });
     }
-
-    setActive(true);
+   
   };
 
   const options = [
-    {
-      label: "Techchef Portal",
-      link: "https://www.techchefz.com/careers/applyjob/",
-      icon: "/images/logo-icon-blue.svg",
-    },
     {
       label: "Linkedin",
       link: "https://in.linkedin.com/",
@@ -92,10 +122,13 @@ const OpenPosition = ({ props, id }) => {
         </TextRevel>
 
         <div className={styles.serviceBtn}>
-          {jobCatogery?.map((buttonItem) => (
+          {Object.keys(jobCatogeryActive)?.map((buttonItem, i) => (
             <button
-              className={cn(styles.badgeButton)}
-              onClick={() => filterItem(buttonItem)}
+              className={cn(
+                styles.badgeButton,
+                jobCatogeryActive[buttonItem] && styles.activeButton
+              )}
+              onClick={() => filterItem(buttonItem, i)}
               key={buttonItem}
             >
               {buttonItem}

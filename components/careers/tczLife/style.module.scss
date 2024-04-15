@@ -12,14 +12,15 @@
 
   .sliderSection {
 
-    @include mobile-tablet-p {
+    @include tablet {
       margin-top: 1.5rem;
       padding: 0 2rem;
+      margin-right: -40px;
     }
 
     @include mobile {
       margin-top: 1.5rem;
-      padding: 0 2.5rem;
+      padding: 0 0rem;
     }
   }
 
@@ -97,23 +98,27 @@
     justify-content: center;
 
     div {
+      min-width: 470px;
       width: 470px;
       height: 264px;
+      max-height: 264px;
       position: relative;
       overflow: hidden;
 
-      @include tablet-p {
+      @include tablet {
         height: 250px;
+        min-width: 100%;
         width: 100vw;
       }
 
       @include mobile {
         height: 180px;
         width: 100vw;
+        min-width: 100%;
       }
 
       video {
-        width: 90%;
+        width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: 0.75rem;

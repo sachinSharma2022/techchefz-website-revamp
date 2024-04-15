@@ -7,7 +7,7 @@
   position: relative;
 
   @include tablet {
-    padding: 3.125rem spacing(tablet-padding);
+    padding: 3.125rem spacing(tablet-padding) 0;
   }
   @include mobile {
     padding: 3.125rem 1.25rem 2.5rem;

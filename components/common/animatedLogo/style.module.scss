@@ -12,6 +12,11 @@
       display: none;
     }
 
+
+    img {
+      filter: contrast(1) brightness(0);
+    }
+
     @include mobile {
       width: 130px;
 
@@ -50,6 +55,12 @@
 
   // Dark Mode
   &.animatedLogoDark {
+
+    .logo {
+      img {
+        filter: none;
+      }
+    }
  
   }
 }

@@ -57,6 +57,9 @@
       padding-bottom: 2rem;
       margin-bottom: 2rem;
     }
+    .activeButton {
+      border: 0.14rem solid color(heading-liner);
+    }
 
     button {
       color: color(text-primary);
@@ -65,7 +68,7 @@
       line-height: 1.875rem;
       border: 0.14rem solid rgba(color(text-primary), 0.4);
       border-radius: 8px;
-      padding: 0 2rem;
+      padding: 0 1.4rem;
       height: 44px;
       white-space: nowrap;
       @include transition(0.5s);
@@ -301,6 +304,9 @@
 
     .serviceBtn {
       border-color: rgba(color(primary-white), 0.12);
+      .activeButton {
+        border: 0.14rem solid color(heading-liner);
+      }
 
       button {
         background: color(text-primary);

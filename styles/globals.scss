@@ -22,10 +22,6 @@ body {
   .dark {
     background-color: color(dark-gray);
   }
-
-  @include desktop-4k {
-    font-size: 1.4rem;
-  }
 }
 
 // main-container
@@ -147,10 +143,6 @@ button[disabled] {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-
-  @include desktop-4k {
-    max-width: 1920px;
-  }
 }
 
 /* Change the white to any color */
@@ -986,7 +978,7 @@ html.lenis {
   @include tablet {
     min-height: auto;
     margin-block: 3.125rem 0;
-    padding: 4rem 0 5rem spacing(tablet-padding);
+    padding: 4rem spacing(tablet-padding);
   }
 
   @include mobile {
@@ -996,32 +988,11 @@ html.lenis {
 }
 
 .cms-related-style {
-  padding: 0 0 7.5rem;
   background-color: color(bg-soft);
-
-  @include tablet {
-    min-height: auto;
-    padding: 4rem spacing(tablet-padding);
-  }
-
-  @include mobile {
-    padding-block: 4rem 4rem;
-    padding-inline: spacing(mobile-padding);
-  }
-}
-
-.insight-related-slider {
-  background-color: color(bg-soft);
-  min-height: 50rem;
-  padding: 6rem 0;
-}
-
-.insight-detail-related-slider {
-  background-color: color(bg-soft);
-  padding: 7.5rem 0;
+  padding-top: 0 !important;
 
   @include mobile-tablet-p {
-    padding: 4rem 1.25rem;
+    padding-top: 2rem !important;
   }
 }
 
@@ -1146,7 +1117,7 @@ html.lenis {
   gap: 24px;
 
   @include mobile-tablet-p {
-    margin: 3rem 0 2rem;
+    margin: 3rem 0 0;
     width: 100%;
     display: none;
   }
@@ -1199,7 +1170,6 @@ html.lenis {
   }
 }
 
-
 // Dark Style here
 .dark {
   .mobile-slider {
@@ -1214,15 +1184,11 @@ html.lenis {
 
   // For Related slider
   .tech-related-style,
-  .case-related-style,
-  .cms-related-style,
-  .insight-detail-related-slider,
-  .insight-related-slider {
+  .cms-related-style {
     background-color: color(dark-bg);
   }
 
   .slider-arrow {
-
     .arrow {
       background-color: color(info-blue);
     }
@@ -1237,7 +1203,6 @@ html.lenis {
 
 // history-control-Section
 .history-control-Section {
-
   .slick-slider {
     display: flex;
     flex-direction: column;
@@ -1261,13 +1226,13 @@ html.lenis {
 
       &::before {
         display: none;
-       }
+      }
     }
 
     .slick-prev {
       order: 2;
       bottom: -50px;
-      background-image: url('../public/images/icons/arrow-left.svg');
+      background-image: url("../public/images/icons/arrow-left.svg");
       background-repeat: no-repeat;
       background-position: center;
     }
@@ -1275,7 +1240,7 @@ html.lenis {
     .slick-next {
       order: 3;
       left: 80px;
-      background-image: url('../public/images/icons/arrow-right.svg');
+      background-image: url("../public/images/icons/arrow-right.svg");
       background-repeat: no-repeat;
       background-position: center;
     }
@@ -1292,14 +1257,13 @@ html.lenis {
       color: color(primary-blue);
       background-color: transparent;
       filter: contrast(0) brightness(0.8);
-  
+
       @include mobile-tablet-p {
         border-radius: 0.25rem;
       }
     }
   }
 }
-
 
 // Tooltip Style
 .tooltip-container {
@@ -1331,4 +1295,22 @@ html.lenis {
   position: relative;
   top: 16px;
   font-size: 0.8rem;
+}
+
+// tcz-life-slider
+.tcz-life-slider {
+
+  @include desktop-normal {
+    .swiper-slide {
+      width: auto;
+    }
+  }
+}
+//ng-progressbar for page transition
+#nprogress .bar {
+  background: linear-gradient(
+    right, color(primary-blue) 11.5%,
+    color(heading-liner) 55.42%
+  ) !important;
+  border-radius: 50px;
 }
