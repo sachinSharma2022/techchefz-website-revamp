@@ -100,6 +100,7 @@ const TczLife = ({ props }) => {
                           height="100"
                           muted
                           className="video-block"
+                          poster="../images/case2.png"
                         >
                           <source
                             src={
