@@ -142,9 +142,9 @@ $s: 10px;
 
     &:nth-child(1) {
       bottom: 273px;
-      left: 7vw;
+      left: 137px;
       flex-direction: column;
-
+      
       @include mobile-tablet-p {
         bottom: 100px;
         left: 4vw;
