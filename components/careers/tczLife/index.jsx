@@ -100,6 +100,11 @@ const TczLife = ({ props }) => {
                           height="100"
                           muted
                           className="video-block"
+                          poster={
+                            data?.Images?.data?.attributes?.url
+                              ? `${base_Url}${data.Images.data.attributes.url}`
+                              : `${base_Url}/`
+                          }
                         >
                           <source
                             src={
