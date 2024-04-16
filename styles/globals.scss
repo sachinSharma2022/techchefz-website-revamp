@@ -1210,15 +1210,7 @@ html.lenis {
     }
   }
 }
-.dark {
-  .history-control-Section {
-    .slick-slider {
-      .slick-arrow {
-        background-color: color(info-blue);
-      }
-    }
-  }
-}
+
 
 // history-control-Section
 .history-control-Section {
@@ -1279,6 +1271,30 @@ html.lenis {
 
       @include mobile-tablet-p {
         border-radius: 0.25rem;
+      }
+    }
+  }
+}
+
+.dark {
+  .history-control-Section {
+    .slick-slider {
+      .slick-arrow {
+        background-color: color(info-blue);
+      }
+
+      .slick-disabled {
+        border-radius: 0.5rem;
+        width: 3rem;
+        height: 3rem;
+        border: 0.14rem solid rgba(color(primary-white), 0.4);
+        color: color(primary-blue);
+        background-color: transparent;
+        filter: contrast(0) brightness(0.8);
+  
+        @include mobile-tablet-p {
+          border-radius: 0.25rem;
+        }
       }
     }
   }
