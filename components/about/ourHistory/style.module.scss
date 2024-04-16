@@ -149,6 +149,15 @@
 
     h4 {
       font-size: 0.9rem;
+      @include transition(0.3s);
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      h4 {
+        color: color(info-blue);
+      }
     }
   }
 

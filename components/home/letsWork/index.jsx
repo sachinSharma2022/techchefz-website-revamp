@@ -34,10 +34,10 @@ const LetsWork = ({ contact }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [recaptchaNeeded, setRecaptchaNeeded] = useState(false);
   const options = [
-    { name: "Frontend" },
-    { name: "Backend" },
-    { name: "CMS" },
-    { name: "Animation" },
+    { name: "Project Related Discussion" },
+    { name: "Service Related Query" },
+    { name: "Vendor Related Query" },
+    { name: "Other" },
   ];
   const formInitialSchema = {
     firstName: "",
@@ -242,8 +242,8 @@ const LetsWork = ({ contact }) => {
                     </div>
                     <div className={`${styles.inputSpace}`}>
                       <Textarea
-                        label="Brief Explanation of your project*"
-                        placeholder="Brief Explanation of your project*"
+                        label="Your Message*"
+                        placeholder="Your Message*"
                         type="textarea"
                         rows="4"
                         id="projectExplanation"
