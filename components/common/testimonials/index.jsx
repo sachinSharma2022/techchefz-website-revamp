@@ -18,7 +18,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import styles from "./style.module.scss";
 
-const Testimonials = ({ props }) => {
+const   Testimonials = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);

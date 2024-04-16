@@ -1,13 +1,14 @@
 "use client";
 import { MyContext } from "@/context/theme";
 import { useContext } from "react";
+import { cn } from "@/lib/utils";
 
 import styles from "./styles.module.scss";
 
 const CircleLoader = (props) => {
   const { theme, setTheme } = useContext(MyContext);
   return (
-    <div className={styles.btnLoader}>
+    <div className={cn(styles.btnLoader,"btn-loading")}>
       <svg
         version="1.1"
         id="circle"

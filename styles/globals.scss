@@ -84,6 +84,11 @@ button[disabled] {
 
       svg > path {
         stroke: color(dark-bg);
+        // display: none;
+      }
+    }
+    .btn-loading {
+      svg > path {
         display: none;
       }
     }
@@ -336,7 +341,7 @@ input:-webkit-autofill {
       &.swiper-slide-prev {
         opacity: 0;
       }
-      
+
       @include desktop-hd {
         opacity: 0.3;
 
@@ -1201,6 +1206,15 @@ html.lenis {
       opacity: 0.7;
       svg {
         filter: none;
+      }
+    }
+  }
+}
+.dark {
+  .history-control-Section {
+    .slick-slider {
+      .slick-arrow {
+        background-color: color(info-blue);
       }
     }
   }
