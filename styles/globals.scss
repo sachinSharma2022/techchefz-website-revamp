@@ -84,6 +84,7 @@ button[disabled] {
 
       svg > path {
         stroke: color(dark-bg);
+        display: none;
       }
     }
   }
@@ -332,6 +333,10 @@ input:-webkit-autofill {
         border-color: color(heading-liner);
       }
 
+      &.swiper-slide-prev {
+        opacity: 0;
+      }
+      
       @include desktop-hd {
         opacity: 0.3;
 
@@ -1299,7 +1304,6 @@ html.lenis {
 
 // tcz-life-slider
 .tcz-life-slider {
-
   @include desktop-normal {
     .swiper-slide {
       width: auto;
@@ -1309,7 +1313,8 @@ html.lenis {
 //ng-progressbar for page transition
 #nprogress .bar {
   background: linear-gradient(
-    right, color(primary-blue) 11.5%,
+    right,
+    color(primary-blue) 11.5%,
     color(heading-liner) 55.42%
   ) !important;
   border-radius: 50px;
