@@ -163,6 +163,10 @@
       padding-left: 5vw;
     }
 
+    @include desktop-hd-min {
+      width: 90%;
+    }
+
     @include mobile-tablet-p {
       display: none;
     }
