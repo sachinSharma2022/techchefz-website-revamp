@@ -4,6 +4,10 @@
   padding: 8.75rem 7.5rem 20rem;
   overflow: hidden;
 
+  @include desktop-hd-min {
+    padding: 8.75rem 7.5rem 10rem;
+  }
+
   @include tablet {
     padding: 3.75rem spacing(tablet-padding);
   }
