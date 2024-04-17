@@ -7,6 +7,7 @@ import { useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import TextRevel from "../ui/sectionAnimation";
 import styles from "./style.module.scss";
+import { generateSlug } from "@/lib/utils";
 
 // Import Swiper styles
 import "swiper/css";
@@ -125,7 +126,9 @@ const RelatedCase = ({
                         : `${base_Uri}/`
                     }
                     title={data?.attributes?.Banner?.PortfolioTitle}
-                    redirect={data.id}
+                    redirect={generateSlug(
+                      data?.attributes?.Banner?.PortfolioTitle
+                    )}
                     textStyle={styles.textStyle}
                     params={params}
                   />

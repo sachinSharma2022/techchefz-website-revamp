@@ -10,11 +10,16 @@ import React from "react";
 import NotFound from "@/app/not-found";
 import { getDataDynamic, getData } from "@/lib/fetchData";
 import { api_Case_study_Page, api_portfolios_Page } from "@/lib/constants";
+import { generateSlug } from "@/lib/utils";
 
 const CaseStudy = async ({ params }) => {
   const data = await getDataDynamic(api_Case_study_Page);
   const data1 = await getData(api_portfolios_Page);
-  const [page] = data.filter((value) => value.id == params.caseStudy);
+  const [page] = data.filter(
+    (value) =>
+      generateSlug(value?.attributes?.Banner?.PortfolioTitle) ==
+      params.caseStudy
+  );
   return (
     <>
       {data ? (
