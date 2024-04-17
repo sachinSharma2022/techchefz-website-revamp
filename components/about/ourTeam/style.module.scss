@@ -334,15 +334,15 @@
     }
 
     .teamImage div {
-      width: 3rem;
-      height: 3rem;
+      width: 3.75rem;
+      height: 3.75rem;
       position: relative;
       border-radius: 100%;
       overflow: hidden;
 
       @include mobile-tablet-p {
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 2.8rem;
+        height: 2.8rem;
       }
 
       img {
