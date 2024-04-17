@@ -9,7 +9,7 @@ import { rootURl } from "../../../lib/constants";
 
 export async function generateMetadata({ params }) {
   const data = await getDataDynamic(api_insight_insides_Page);
-  
+
   const [page] = data.filter((value) => value.id == params.insightInside);
   return {
     title: page.attributes.InsightOverview[0].Title,
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }) {
       url: `${rootURl}/insights/${params.insightInside}`,
       images: [
         {
-          url: `https://cms-strapi.techchefz.in${page.attributes.InsightOverview[0]?.Image?.data?.attributes?.url}`, // Must be an absolute URL
+          url: `${process.env.NEXT_PUBLIC_STRAPIE_BASE_URL}${page.attributes.InsightOverview[0]?.Image?.data?.attributes?.url}`, // Must be an absolute URL
           width: 800,
           height: 600,
         },
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }) {
       description: page.attributes.InsightOverview[0].Title,
       images: [
         {
-          url: `https://cms-strapi.techchefz.in${page.attributes.InsightOverview[0]?.Image?.data?.attributes?.url}`, // Must be an absolute URL
+          url: `${process.env.NEXT_PUBLIC_STRAPIE_BASE_URL}${page.attributes.InsightOverview[0]?.Image?.data?.attributes?.url}`, // Must be an absolute URL
           width: 800,
           height: 600,
         },
@@ -60,7 +60,7 @@ const InsightInside = async ({ params }) => {
             BlockTitle={page.attributes.BlockTitle}
             index={page.id}
           />
-          <RelatedInsight props={data} params={params} data1={data1}/>
+          <RelatedInsight props={data} params={params} data1={data1} />
           <Innovation props={page.attributes.ourInnvotion} />
         </>
       ) : (
