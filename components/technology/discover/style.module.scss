@@ -212,7 +212,7 @@
       text-align: left;
       border-bottom: 0.14rem solid rgba(color(text-primary), 0.12);
       width: 100%;
-      padding: 1rem 0;
+      padding: 1.2rem 0;
 
       @include mobile-tablet-p {
         border-bottom: none;
@@ -313,9 +313,19 @@
 
     .subHeading {
       color: rgba(color(primary-white), 0.6);
+      @include transition(0.3s);
 
       @include mobile-tablet-p {
         margin: 0;
+      }
+    }
+
+    .discoverHead {
+
+      &:hover {
+        .subHeading {
+          color: color(primary-white);
+        }
       }
     }
   }
