@@ -23,7 +23,7 @@ const RelatedInsight = ({
   params,
   data1,
 }) => {
-  console.log("-------", data1);
+
   const { theme, setTheme } = useContext(MyContext);
 
   return (

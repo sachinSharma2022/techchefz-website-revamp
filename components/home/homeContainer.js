@@ -7,7 +7,6 @@ import LandingBanner from "@/components/home/landingBanner";
 import HomepageIntro from "@/components/ui/homepageIntro";
 //const LandingBanner = dynamic(() => import("@/components/home/landingBanner"));
 // const HomepageIntro = dynamic(() => {
-//     console.log("videoloadded")
 //     return import("@/components/ui/homepageIntro")});
 const WeAreFuture = dynamic(() => import("@/components/home/weAreFuture"));
 const Projects = dynamic(() => import("@/components/home/projects"));

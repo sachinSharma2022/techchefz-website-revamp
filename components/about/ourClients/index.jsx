@@ -14,7 +14,7 @@ import { base_Uri } from "@/lib/constants";
 import TextRevel from "@/components/ui/sectionAnimation";
 
 const OurClients = ({ props }) => {
-  console.log("aa", props);
+
   const { theme } = useContext(MyContext);
   const sliderLeft = {
     speed: 15000,

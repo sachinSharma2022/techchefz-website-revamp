@@ -30,7 +30,7 @@ const OpenPosition = ({ props, id }) => {
   const [jobCatogeryActive, setjobCatogeryActive] = useState(
     createInitialFilters(jobCatogery)
   );
-  console.log(jobCatogeryActive, "jobCatogeryActive");
+ 
   function togglePanels(newPanel) {
     if (activeDisclosurePanel) {
       if (

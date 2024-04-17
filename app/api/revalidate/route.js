@@ -28,7 +28,7 @@ export async function POST(request) {
       "insight-inside": "insights",
       "career-detail": "careers",
     };
-    console.log(obj,"dynamictextChnage")
+
     if (obj.model && obj.model != "landing-page")
       revalidatePath(`/${alias[obj.model]}/`, "layout");
     else revalidatePath(`/`, "page");

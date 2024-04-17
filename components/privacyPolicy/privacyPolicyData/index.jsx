@@ -6,7 +6,7 @@ import { useContext } from "react";
 import styles from "./style.module.scss";
 
 const PrivacyPolicyData = ({props}) => {
-  console.log("pp",props);
+ 
   const { theme } = useContext(MyContext);
   return (
     <section

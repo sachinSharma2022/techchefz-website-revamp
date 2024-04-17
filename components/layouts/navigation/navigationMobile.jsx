@@ -167,7 +167,6 @@ const NavigationMobile = ({ props, featureArticle }) => {
       </div>
     );
   }
-  console.log(mobileMenuShow, "mobileMenuShow");
   return (
     <header
       className={cn(

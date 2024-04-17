@@ -20,7 +20,7 @@ export async function generateMetadata() {
 
 const Solutions = async () => {
   const data = await getData(api_Solutions_Page);
-  console.log("---------------", data);
+  
   const data_related_cases = await getDataDynamic(api_Case_study_Page);
   return (
     <>

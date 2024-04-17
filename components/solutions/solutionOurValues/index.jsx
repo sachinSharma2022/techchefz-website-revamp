@@ -55,7 +55,7 @@ const SolutionOurValues = ({ props }) => {
             <Disclosure key={index}>
               {(panel) => {
                 const { open, close } = panel;
-                console.log("jj", data.secoundDescription.split(","));
+               
 
                 return (
                   <>

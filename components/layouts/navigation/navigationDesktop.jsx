@@ -42,12 +42,12 @@ const NavigationDesktop = ({ props, featureArticle }) => {
 
   const closeMenu = () => {
     setMobileMenuShow(!mobileMenuShow);
-    console.log(isSubMenu, "issubmenu");
+    
     setisSubhMenu(false);
   };
   const openMenu = () => {
     setMobileMenuShow(!mobileMenuShow);
-    console.log(isSubMenu, "issubmenu");
+    
     setisSubhMenu(true);
   };
 

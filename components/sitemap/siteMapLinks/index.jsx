@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import styles from "./style.module.scss";
 
 function SiteMapLinks({ props }) {
-  console.log("sm", props);
+ 
   const { theme } = useContext(MyContext);
   return (
     <section

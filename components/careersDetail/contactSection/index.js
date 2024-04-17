@@ -147,7 +147,7 @@ const ContactSection = ({ props, id }) => {
                           onBlur={handleBlur}
                           value={values.lastName}
                           onKeyDown={(event) => {
-                            console.log(event.keyCode, "keycode");
+                           
                             var regex = new RegExp("^[a-zA-Z]*$");
                             if (
                               !regex.test(event.key) &&
@@ -190,7 +190,7 @@ const ContactSection = ({ props, id }) => {
                           value={values.phone}
                           valueCountryCode={values.countyCode}
                           onKeyDown={(event) => {
-                            console.log(event.key, "keycode");
+                           
                             var regex = new RegExp("^[0-9]*$");
                             if (
                               !regex.test(event.key) &&

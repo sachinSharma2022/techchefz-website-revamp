@@ -13,7 +13,7 @@ import Link from "next/link";
 
 const CareerPositionOverview = ({ props, href }) => {
   const { theme, setTheme } = useContext(MyContext);
-  console.log(props, "pop");
+ 
 
   const options = [
     {

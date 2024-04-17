@@ -23,7 +23,7 @@ const RelatedCase = ({
   params,
   RelatedInsight,
 }) => {
-  console.log("RelatedInsight", RelatedInsight);
+  
   const { theme, setTheme } = useContext(MyContext);
 
   return (

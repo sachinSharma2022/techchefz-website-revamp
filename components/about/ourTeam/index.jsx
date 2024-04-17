@@ -14,7 +14,7 @@ import { base_Uri } from "@/lib/constants";
 import TextRevel from "@/components/ui/sectionAnimation";
 
 const OurTeam = ({ props }) => {
-  console.log("aa", props);
+  
   const { theme } = useContext(MyContext);
   let [isOpen, setIsOpen] = useState(false);
   const [index, setIndex] = useState(0);

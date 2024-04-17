@@ -18,7 +18,7 @@ export async function generateMetadata() {
 const Portfolio = async () => {
   const data = await getData(api_portfolios_Page);
   const data_case_study = await getDataDynamic(api_Case_study_Page);
-  console.log(data_case_study);
+
   return (
     <>
       {data && data_case_study ? (
