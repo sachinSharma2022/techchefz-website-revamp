@@ -150,6 +150,12 @@ $desktop-medium: 1260px;
   }
 }
 
+@mixin min-desktop-medium {
+  @media (min-width: #{$desktop-width-xl + 1px}) {
+    @content;
+  }
+}
+
 // Chrome Browsers Only
 @mixin chrome {
   @media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {

@@ -30,8 +30,10 @@
       font-weight: 500;
       margin-bottom: 0;
       min-height: 2.75rem;
-      color: color(heading-liner);
-      @include textGradient;
+      color: color(info-blue);
+      @include min-desktop-medium {
+        @include textGradient;
+      }
     }
   }
   .sbText {

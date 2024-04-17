@@ -22,8 +22,11 @@
     .bannerHeading {
       font-size: text(xl-larger);
       font-weight: 500;
-      @include textGradient;
       margin: -10px 0 0;
+      color: color(info-blue);
+      @include min-desktop-medium {
+        @include textGradient;
+      }
 
       @include mobile-tablet-p {
         margin-bottom: 1rem;

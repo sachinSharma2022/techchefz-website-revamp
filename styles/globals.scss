@@ -181,8 +181,12 @@ input:-webkit-autofill {
 // Span Gradient
 .gradient-text {
   span {
-    @include textGradient;
+    color: color(info-blue);
     font-size: 1em;
+    
+    @include min-desktop-medium {
+      @include textGradient;
+    }
   }
 }
 

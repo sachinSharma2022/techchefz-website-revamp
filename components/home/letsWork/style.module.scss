@@ -56,7 +56,9 @@
             font-weight: 500;
             line-height: 3.375rem;
             color: color(primary-blue);
-            @include textGradient;
+            @include min-desktop-medium {
+              @include textGradient;
+            }
 
             @include mobile-tablet-p {
               padding-right: 0;

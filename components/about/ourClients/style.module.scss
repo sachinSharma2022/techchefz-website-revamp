@@ -26,7 +26,10 @@
     span {
       font-size: text(larger);
       margin-bottom: 2.75rem;
-      @include textGradient;
+      color: color(info-blue);
+      @include min-desktop-medium {
+        @include textGradient;
+      }
       @include mobile-tablet-p {
         font-size: 2rem;
         line-height: 2.5rem;

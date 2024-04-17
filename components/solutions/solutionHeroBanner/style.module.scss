@@ -57,8 +57,10 @@
     span {
       font-size: 4rem;
       font-weight: 500;
-      color: color(heading-liner);
-      @include textGradient;
+      color: color(info-blue);
+      @include min-desktop-medium {
+        @include textGradient;
+      }
 
       @include mobile-tablet-p {
         font-size: text(larger);
