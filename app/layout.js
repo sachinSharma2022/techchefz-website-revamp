@@ -7,7 +7,9 @@ import "bootstrap/dist/css/bootstrap.css";
 import { aeonik, helvetica } from "../lib/fonts";
 import { cn } from "../lib/utils";
 import "../styles/globals.scss";
-//import { GoogleAnalytics } from "@next/third-parties/google";
+import Script from "next/script";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { HotjarSnippet } from "@/lib/hotjar";
 import dynamic from "next/dynamic";
 import Providers from "@/components/ui/pageTransition/ProgressBarProvider";
 const Header = dynamic(() => import("@/components/layouts/header"));
@@ -51,11 +53,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <body className={cn(aeonik.variable, helvetica.variable)}>
-        {/* <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} /> */}
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
         <ThemeProvider>
           <Header />
           <Providers>
             <div className={cn("main-style")}>{children}</div>
+            <HotjarSnippet />
           </Providers>
 
           <FooterContainer />
