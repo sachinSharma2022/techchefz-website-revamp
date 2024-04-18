@@ -1354,11 +1354,7 @@ html.lenis {
   border-radius: 50px;
 }
 
-
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  /* CSS styles for Samsung Internet */
-  /* For example, change the background color */
-  body {
-      background-color: red;
-  }
+.samsung-phone-style {
+  padding: 100px;
+  background-color: red;
 }
