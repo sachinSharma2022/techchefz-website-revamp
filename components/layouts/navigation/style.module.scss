@@ -371,7 +371,7 @@
     }
   }
 
-  @include mobile-tablet-p {
+  @include tablet-p {
     .estimateSection {
       display: none;
     }

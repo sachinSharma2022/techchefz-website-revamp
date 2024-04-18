@@ -32,8 +32,10 @@
     .titleHighlight {
       font-size: text(xl-larger);
       font-weight: 500;
-      color: color(heading-liner);
-      @include textGradient;
+      color: color(info-blue);
+      @include min-desktop-medium {
+        @include textGradient;
+      }
 
       @include mobile {
         font-size: 2.75rem;

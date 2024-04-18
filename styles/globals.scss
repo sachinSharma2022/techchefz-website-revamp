@@ -181,8 +181,12 @@ input:-webkit-autofill {
 // Span Gradient
 .gradient-text {
   span {
-    @include textGradient;
+    color: color(info-blue);
     font-size: 1em;
+    
+    @include min-desktop-medium {
+      @include textGradient;
+    }
   }
 }
 
@@ -892,11 +896,11 @@ html.lenis {
 }
 
 .technology-styles {
-  background-color: color(primary-white);
+  background-color: color(bg-soft);
 }
 
 .dark .technology-styles {
-  background-color: color(input-bg);
+  background-color: color(dark-bg);
 }
 
 .technology-cms-styles {

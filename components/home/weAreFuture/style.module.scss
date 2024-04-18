@@ -117,8 +117,10 @@
         font-size: text(xl-larger);
         font-weight: 500;
         line-height: 5rem;
-        color: color(heading-liner);
-        @include textGradient;
+        color: color(info-blue);
+        @include min-desktop-medium {
+          @include textGradient;
+        }
 
         @include tablet {
           font-size: text(xxxl);
