@@ -1,6 +1,6 @@
-import { mailer_Subject } from "@/lib/constants";
+import { mailer_Subject, mailer_Subject_job } from "@/lib/constants";
 var nodemailer = require("nodemailer");
-export async function sendMail(htmlContent, filecontent) {
+export async function sendMail(htmlContent, filecontent, fileName) {
   var transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -12,12 +12,12 @@ export async function sendMail(htmlContent, filecontent) {
     ? {
         from: process.env.NODEMAILER_FROM_EMAIL,
         to: process.env.NODEMAILER_TO_JOB_EMAIL,
-        subject: mailer_Subject,
+        subject: mailer_Subject_job,
         html: htmlContent,
         attachments: [
           {
             // use URL as an attachment
-            filename: "CV.pdf",
+            filename: fileName,
             content: filecontent,
           },
         ],
