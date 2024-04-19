@@ -17,6 +17,7 @@ import { useMediaQuery } from "react-responsive";
 import "swiper/css";
 import "swiper/css/navigation";
 import styles from "./style.module.scss";
+import MobileSlider from "../mobileSlider";
 
 const Testimonials = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -59,74 +60,44 @@ const Testimonials = ({ props }) => {
 
               {/* Mobile Slider */}
               <div className={styles.mobileSlider}>
-                <Swiper
-                  spaceBetween={isTabletScreen ? 25 : 5}
-                  slidesPerView={isTabletScreen ? 1.7 : 1}
-                  navigation={{ nextEl: ".arrow-right", prevEl: ".arrow-left" }}
-                  pagination={false}
-                  modules={[Pagination, Navigation]}
-                  className="mySwiper"
-                  onSwiper={(swiper) => {
-                    swiper.params.navigation.prevEl = navigationPrevRef.current;
-                    swiper.params.navigation.nextEl = navigationNextRef.current;
-                    swiper.navigation.destroy();
-                    swiper.navigation.init();
-                    swiper.navigation.update();
-                  }}
-                >
+                <MobileSlider slidesToShow={1}>
                   {props[0]?.Testimonials.map((data, index) => (
-                    <SwiperSlide key={index}>
-                      <div className={styles.testimonialCardBox}>
-                        <div>
-                          <div className={styles.commaImg}>
-                            <Icons.Comma width={29} height={24} />
-                          </div>
-                          <p className={styles.customerText}>
-                            {data.Description}
-                          </p>
+                    <div key={index} className={styles.testimonialCardBox}>
+                      <div>
+                        <div className={styles.commaImg}>
+                          <Icons.Comma width={29} height={24} />
                         </div>
-                        <div className={styles.customerProfile}>
-                          <div className={styles.customerImg}>
-                            <ImageCustom
-                              src={
-                                data?.ProfileImage?.data?.attributes?.url
-                                  ? `${base_Uri}${data?.ProfileImage?.data?.attributes?.url}`
-                                  : `${base_Uri}/`
-                              }
-                              width={88}
-                              height={88}
-                              alt="profileImg"
-                            />
-                          </div>
-                          <p className={styles.customerName}>
-                            {data.ProfileName}
-                          </p>
-
-                          <p className={styles.customerRole}>
-                            {data?.Designation}
-                          </p>
-                        </div>
+                        <p className={styles.customerText}>
+                          {data.Description}
+                        </p>
                       </div>
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-              </div>
-              {/* End Mobile Slider */}
+                      <div className={styles.customerProfile}>
+                        <div className={styles.customerImg}>
+                          <ImageCustom
+                            src={
+                              data?.ProfileImage?.data?.attributes?.url
+                                ? `${base_Uri}${data?.ProfileImage?.data?.attributes?.url}`
+                                : `${base_Uri}/`
+                            }
+                            width={88}
+                            height={88}
+                            alt="profileImg"
+                          />
+                        </div>
+                        <p className={styles.customerName}>
+                          {data.ProfileName}
+                        </p>
 
-              <div className={styles.sliderController}>
-                <button
-                  ref={navigationPrevRef}
-                  className="btn btn-arrow btn-back"
-                >
-                  <Icons.ArrowLeft size={20} className="asset-white" />
-                </button>
-                <button
-                  ref={navigationNextRef}
-                  className="btn btn-arrow btn-move"
-                >
-                  <Icons.ArrowRight size={20} />
-                </button>
+                        <p className={styles.customerRole}>
+                          {data?.Designation}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </MobileSlider>
               </div>
+
+              {/* End Mobile Slider */}
             </div>
           </div>
 
@@ -197,6 +168,20 @@ const Testimonials = ({ props }) => {
                   </SwiperSlide>
                 ))}
               </Swiper>
+              <div className={styles.sliderController}>
+                <button
+                  ref={navigationPrevRef}
+                  className="btn btn-arrow btn-back"
+                >
+                  <Icons.ArrowLeft size={20} className="asset-white" />
+                </button>
+                <button
+                  ref={navigationNextRef}
+                  className="btn btn-arrow btn-move"
+                >
+                  <Icons.ArrowRight size={20} />
+                </button>
+              </div>
             </div>
           </div>
         </div>

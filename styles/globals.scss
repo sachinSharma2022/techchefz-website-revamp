@@ -1120,6 +1120,16 @@ html.lenis {
   }
 }
 
+.dark .mobile-slider {
+  .slick-arrow {
+    background-color: color(info-blue);
+  }
+
+  .slick-disabled {
+    background-color: transparent;
+  }
+}
+
 // .css-1oeztk8-control
 .css-1oeztk8-control {
   font-family: font(primary);

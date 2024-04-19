@@ -59,20 +59,6 @@ const MobileSlider = ({ children, slidesToShow }) => {
           {children}
         </Slider>
       </div>
-      {/* <div className={styles.sliderArrow}>
-        <button
-          className={activeSlide === 0 ? styles.arrowDisabled : styles.button}
-          onClick={() => slider?.current?.slickPrev()}
-        >
-          <Icons.ArrowLeft />
-        </button>
-        <button
-          className={styles.button}
-          onClick={() => slider?.current?.slickNext()}
-        >
-          <Icons.ArrowRight fill="black" stroke="black" />
-        </button>
-      </div> */}
     </div>
   );
 };
