@@ -942,7 +942,6 @@
         li {
           &.dropDown {
             color: white;
-            cursor: pointer;
 
             .more {
               font-weight: 500;
@@ -998,6 +997,10 @@
               color: color(info-blue);
             }
           }
+        }
+
+        a {
+          cursor: pointer;
         }
       }
     }
