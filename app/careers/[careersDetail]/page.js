@@ -6,10 +6,15 @@ import MoreJobs from "@/components/careersDetail/moreJobs";
 import { api_Career_detail_Page } from "@/lib/constants";
 import NotFound from "@/app/not-found";
 import { getDataDynamic } from "@/lib/fetchData";
+import { generateSlug } from "@/lib/utils";
 
 const CareerDetail = async ({ params }) => {
   const data = await getDataDynamic(api_Career_detail_Page);
-   const [page] = data.filter((value) => value.id == params.careersDetail);
+   const [page] = data.filter(
+     (value) =>
+       generateSlug(value?.attributes?.DeveloperApply[0].Title) ==
+       params.careersDetail
+   );
   return (
     <>
       {data ? (

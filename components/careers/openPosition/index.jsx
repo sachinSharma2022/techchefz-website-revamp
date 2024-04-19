@@ -7,6 +7,7 @@ import { Disclosure } from "@headlessui/react";
 import Link from "next/link";
 import { useContext, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { generateSlug } from "@/lib/utils";
 
 import SmoothDropdown from "@/components/ui/smoothDropdownButton";
 import styles from "./style.module.scss";
@@ -264,7 +265,12 @@ const OpenPosition = ({ props, id }) => {
                                     ></ul>
 
                                     <div className={styles.btnSection}>
-                                      <Link href={`/careers/${item?.id}`}>
+                                      <Link
+                                        href={`/careers/${generateSlug(
+                                          item.attributes?.DeveloperApply[0]
+                                            .Title
+                                        )}`}
+                                      >
                                         <Button
                                           variant={
                                             theme ? "blueBtnDark" : "blueBtn"
