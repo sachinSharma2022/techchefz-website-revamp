@@ -73,6 +73,7 @@
     overflow: hidden;
     border-radius: 0.75rem;
     @include transition(0.5s);
+    position: relative;
 
     @include mobile-tablet-p {
       padding: text(lg);
@@ -101,6 +102,13 @@
       }
     }
     .customerProfile {
+
+      @include mobile-tablet-p {
+        position: absolute;
+        bottom: 25px;
+        width: 90%;
+      }
+
       .customerImg {
         margin-bottom: text(normal);
         img {
@@ -128,6 +136,10 @@
   .sliderController {
     display: flex;
     gap: 1.5rem;
+
+    @include mobile-tablet-p {
+      display: none;
+    }
 
     button {
       width: 3.75rem;

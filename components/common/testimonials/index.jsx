@@ -96,8 +96,22 @@ const Testimonials = ({ props }) => {
                   ))}
                 </MobileSlider>
               </div>
-
               {/* End Mobile Slider */}
+
+              <div className={styles.sliderController}>
+                <button
+                  ref={navigationPrevRef}
+                  className="btn btn-arrow btn-back"
+                >
+                  <Icons.ArrowLeft size={20} className="asset-white" />
+                </button>
+                <button
+                  ref={navigationNextRef}
+                  className="btn btn-arrow btn-move"
+                >
+                  <Icons.ArrowRight size={20} />
+                </button>
+              </div>
             </div>
           </div>
 
@@ -168,20 +182,6 @@ const Testimonials = ({ props }) => {
                   </SwiperSlide>
                 ))}
               </Swiper>
-              <div className={styles.sliderController}>
-                <button
-                  ref={navigationPrevRef}
-                  className="btn btn-arrow btn-back"
-                >
-                  <Icons.ArrowLeft size={20} className="asset-white" />
-                </button>
-                <button
-                  ref={navigationNextRef}
-                  className="btn btn-arrow btn-move"
-                >
-                  <Icons.ArrowRight size={20} />
-                </button>
-              </div>
             </div>
           </div>
         </div>
