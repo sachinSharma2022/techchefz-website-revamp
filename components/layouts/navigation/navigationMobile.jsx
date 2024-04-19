@@ -190,7 +190,14 @@ const NavigationMobile = ({ props, featureArticle }) => {
         data-lenis-prevent
         className={cn(styles.headerContainer, "primary-container")}
       >
-        <AnimatedLogo />
+        <AnimatedLogo
+          mobileMenuShow={mobileMenuShow}
+          isTechMenu={isTechMenu}
+          isMoreMenu={isMoreMenu}
+          setMobileMenuShow={setMobileMenuShow}
+          setTechMenu={setTechMenu}
+          setMoreMenu={setMoreMenu}
+        />
         <nav className={mobileMenuShow ? styles.showNav : styles.hideNav}>
           <h4 className={styles.mobileTitle}>Menu</h4>
           <ul>

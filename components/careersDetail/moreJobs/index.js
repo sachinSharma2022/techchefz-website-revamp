@@ -6,7 +6,7 @@ import TextRevel from "@/components/ui/sectionAnimation";
 import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
 import { useContext } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { generateSlug } from "@/lib/utils";
 
 // Import Swiper styles
 import "swiper/css";
@@ -58,7 +58,9 @@ const MoreJobs = ({ props, params }) => {
                     value?.attributes?.DeveloperApply[0]?.Developerinner[1]
                       ?.Title
                   }
-                  link={value.id}
+                  link={generateSlug(
+                    value?.attributes?.DeveloperApply[0]?.Title
+                  )}
                 />
               ))}
           </div>

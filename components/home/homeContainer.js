@@ -5,12 +5,14 @@ import useLazyLoad from "@/lib/useLazyLoad";
 import { useRef } from "react";
 import LandingBanner from "@/components/home/landingBanner";
 import HomepageIntro from "@/components/ui/homepageIntro";
+import WeAreFuture from "./weAreFuture";
+import Service from "./service";
 //const LandingBanner = dynamic(() => import("@/components/home/landingBanner"));
 // const HomepageIntro = dynamic(() => {
 //     return import("@/components/ui/homepageIntro")});
-const WeAreFuture = dynamic(() => import("@/components/home/weAreFuture"));
+//const WeAreFuture = dynamic(() => import("@/components/home/weAreFuture"));
 const Projects = dynamic(() => import("@/components/home/projects"));
-const Service = dynamic(() => import("@/components/home/service"));
+//const Service = dynamic(() => import("@/components/home/service"));
 const LetsWork = dynamic(() => import("@/components/home/letsWork"));
 const HomeTestimonials = dynamic(() =>
   import("@/components/home/homeTestimonials")
@@ -26,7 +28,7 @@ const HomeContainer = ({ data, data_Portfolio }) => {
   //   const targetRefLandingBanner = useRef(null);
   //   const targetRefHomepageIntro = useRef(null);
   //const targetRefWeAreFuture = useRef(null);
-  const targetRefService = useRef(null);
+  // const targetRefService = useRef(null);
   const targetRefProjects = useRef(null);
   const targetRefOurNumbers = useRef(null);
   const targetRefTechnologyStack = useRef(null);
@@ -36,7 +38,7 @@ const HomeContainer = ({ data, data_Portfolio }) => {
   //   const isVisibleLandingBanner = useLazyLoad(targetRefLandingBanner);
   //   const isVisibleHomepageIntro = useLazyLoad(targetRefHomepageIntro);
   //const isVisibleWeAreFuture = useLazyLoad(targetRefWeAreFuture);
-  const isVisibleService = useLazyLoad(targetRefService);
+  // const isVisibleService = useLazyLoad(targetRefService);
   const isVisibleProjects = useLazyLoad(targetRefProjects);
   const isVisibleOurNumbers = useLazyLoad(targetRefOurNumbers);
   const isVisibleTechnologyStack = useLazyLoad(targetRefTechnologyStack);
@@ -62,9 +64,11 @@ const HomeContainer = ({ data, data_Portfolio }) => {
       <WeAreFuture props={data.Technology} />
       {/* //     }
     //   </div> */}
-      <div ref={targetRefService}>
-        {isVisibleService && <Service props={data.Services} />}
-      </div>
+      {/* <div ref={targetRefService}>
+        {isVisibleService &&  */}
+      <Service props={data.Services} />
+      {/* }
+      </div> */}
       <div ref={targetRefProjects}>
         {isVisibleProjects && (
           <Projects project={data.Project} brands={data_Portfolio} />

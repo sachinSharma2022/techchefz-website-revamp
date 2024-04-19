@@ -4,6 +4,7 @@ import {
   api_Case_study_Page,
   api_Career_detail_Page,
 } from "@/lib/constants";
+import { generateSlug } from "@/lib/utils";
 export default async function sitemap() {
   const insights = await getDataDynamic(api_insight_insides_Page);
   const portfolio = await getDataDynamic(api_Case_study_Page);
@@ -11,17 +12,23 @@ export default async function sitemap() {
   const changeFrequency = "daily";
 
   const insightsPosts = insights.map((slug) => ({
-    url: `${process.env.NEXT_PUBLIC_SITEMAP_URL}/insights/${slug.id}`,
+    url: `${process.env.NEXT_PUBLIC_SITEMAP_URL}/insights/${generateSlug(
+      slug?.attributes.InsightOverview[0].Title
+    )}`,
     lastModified: slug?.attributes?.updatedAt,
     changeFrequency,
   }));
   const portfolioPosts = portfolio.map((slug) => ({
-    url: `${process.env.NEXT_PUBLIC_SITEMAP_URL}/portfolio/${slug.id}`,
+    url: `${process.env.NEXT_PUBLIC_SITEMAP_URL}/portfolio/${generateSlug(
+      slug?.attributes?.Banner?.PortfolioTitle
+    )}`,
     lastModified: slug?.attributes?.updatedAt,
     changeFrequency,
   }));
   const careerPosts = career.map((slug) => ({
-    url: `${process.env.NEXT_PUBLIC_SITEMAP_URL}/careers/${slug.id}`,
+    url: `${process.env.NEXT_PUBLIC_SITEMAP_URL}/careers/${generateSlug(
+      slug?.attributes?.DeveloperApply[0].Title
+    )}`,
     lastModified: slug?.attributes?.updatedAt,
     changeFrequency,
   }));
@@ -43,7 +50,6 @@ export default async function sitemap() {
     "/insights",
     "/coe",
     "/contact-us",
-    
   ].map((route) => ({
     url: `${process.env.NEXT_PUBLIC_SITEMAP_URL}${route}`,
     lastModified: new Date().toISOString(),
