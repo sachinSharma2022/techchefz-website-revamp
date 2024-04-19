@@ -18,7 +18,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import styles from "./style.module.scss";
 
-const   Testimonials = ({ props }) => {
+const Testimonials = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
@@ -66,6 +66,13 @@ const   Testimonials = ({ props }) => {
                   pagination={false}
                   modules={[Pagination, Navigation]}
                   className="mySwiper"
+                  onSwiper={(swiper) => {
+                    swiper.params.navigation.prevEl = navigationPrevRef.current;
+                    swiper.params.navigation.nextEl = navigationNextRef.current;
+                    swiper.navigation.destroy();
+                    swiper.navigation.init();
+                    swiper.navigation.update();
+                  }}
                 >
                   {props[0]?.Testimonials.map((data, index) => (
                     <SwiperSlide key={index}>
@@ -106,20 +113,18 @@ const   Testimonials = ({ props }) => {
               </div>
               {/* End Mobile Slider */}
 
-              <div className="slider-arrow show-both">
+              <div className={styles.sliderController}>
                 <button
-                  aria-label="Move Left"
-                  title="Move Left"
-                  className={cn(styles.button, "arrow-left arrow")}
+                  ref={navigationPrevRef}
+                  className="btn btn-arrow btn-back"
                 >
-                  <Icons.ArrowLeft />
+                  <Icons.ArrowLeft size={20} className="asset-white" />
                 </button>
                 <button
-                  aria-label="Move Right"
-                  title="Move Right"
-                  className={cn(styles.button, "arrow-right arrow")}
+                  ref={navigationNextRef}
+                  className="btn btn-arrow btn-move"
                 >
-                  <Icons.ArrowRight fill="black" stroke="black" />
+                  <Icons.ArrowRight size={20} />
                 </button>
               </div>
             </div>
@@ -149,6 +154,13 @@ const   Testimonials = ({ props }) => {
                 pagination={false}
                 modules={[EffectCoverflow, Pagination, Navigation]}
                 className="mySwiper"
+                onSwiper={(swiper) => {
+                  swiper.params.navigation.prevEl = navigationPrevRef.current;
+                  swiper.params.navigation.nextEl = navigationNextRef.current;
+                  swiper.navigation.destroy();
+                  swiper.navigation.init();
+                  swiper.navigation.update();
+                }}
               >
                 {props[0]?.Testimonials.map((data, index) => (
                   <SwiperSlide key={index}>
