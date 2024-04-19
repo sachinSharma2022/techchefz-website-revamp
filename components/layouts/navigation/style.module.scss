@@ -206,7 +206,7 @@
             height: 0.4rem;
             width: 0.4rem;
             border-style: solid;
-            border-color: color(text-primary);
+            border-color: color(primary-white);
             border-width: 0rem 0.1rem 0.1rem 0rem;
             transform: rotate(45deg);
             transition: border-width 150ms ease-in-out;
@@ -942,7 +942,6 @@
         li {
           &.dropDown {
             color: white;
-            cursor: pointer;
 
             .more {
               font-weight: 500;
@@ -998,6 +997,10 @@
               color: color(info-blue);
             }
           }
+        }
+
+        a {
+          cursor: pointer;
         }
       }
     }
