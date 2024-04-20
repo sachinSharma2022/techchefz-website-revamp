@@ -1027,7 +1027,7 @@ html.lenis {
 .career-page {
   .testimonial-style {
     @include mobile-tablet-p {
-      padding-bottom: 5rem;
+      padding-bottom: 0rem;
     }
   }
 }
@@ -1117,6 +1117,16 @@ html.lenis {
     &.slick-prev {
       filter: brightness(0) contrast(100);
     }
+  }
+}
+
+.dark .mobile-slider {
+  .slick-arrow {
+    background-color: color(info-blue);
+  }
+
+  .slick-disabled {
+    background-color: transparent;
   }
 }
 
