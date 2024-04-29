@@ -124,7 +124,7 @@ const OurTeam = ({ props }) => {
                       </div>
                       <div className={styles.infoSection}>
                         <h4 className={styles.nameTitle}>{item.Name}</h4>
-                        <p className={styles.departmentText}>MERN &gt; REACT</p>
+                        <p className={styles.departmentText} >{item.Designation}</p>
                       </div>
                     </div>
                   ))}
