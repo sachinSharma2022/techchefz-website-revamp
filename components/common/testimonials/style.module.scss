@@ -82,6 +82,11 @@
     
     @include tablet {
       min-height: 32rem;
+      max-width: 90%;
+    }
+    
+    @include mobile {
+      max-width: 100%;
     }
 
     .commaImg {

@@ -24,6 +24,7 @@ export async function generateMetadata() {
     openGraph: {
       title: data?.SeoData?.Title,
       description: data?.SeoData?.Description,
+      name: "Techchefz Digital",
       url: process.env.NEXT_PUBLIC_SITEMAP_URL,
       images: [
         {

@@ -60,7 +60,7 @@ const Testimonials = ({ props }) => {
 
               {/* Mobile Slider */}
               <div className={styles.mobileSlider}>
-                <MobileSlider slidesToShow={1}>
+                <MobileSlider slidesToShow={isTabletScreen ? 1.5 : 1}>
                   {props[0]?.Testimonials.map((data, index) => (
                     <div key={index} className={styles.testimonialCardBox}>
                       <div>
