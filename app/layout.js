@@ -25,6 +25,7 @@ export async function generateMetadata() {
       title: data?.SeoData?.Title,
       description: data?.SeoData?.Description,
       url: process.env.NEXT_PUBLIC_SITEMAP_URL,
+      siteName:"Techchefz Digital",
       images: [
         {
           url: `${process.env.NEXT_PUBLIC_STRAPIE_BASE_URL}${data?.SeoData?.Images?.data?.attributes?.url}`, // Must be an absolute URL
