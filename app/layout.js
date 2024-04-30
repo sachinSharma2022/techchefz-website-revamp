@@ -21,7 +21,7 @@ export async function generateMetadata() {
   return {
     title: data?.SeoData?.Title,
     description: data?.SeoData?.Description,
-    name: "Techchefz Digital",
+    site_name: "Techchefz Digital",
     openGraph: {
       title: data?.SeoData?.Title,
       description: data?.SeoData?.Description,
