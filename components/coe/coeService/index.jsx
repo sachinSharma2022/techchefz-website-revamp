@@ -34,7 +34,7 @@ const CoeService = ({ props }) => {
             ></h3>
             <div>
               <p className={styles.coeServiceText}>{props[0]?.Description}</p>
-              <Link href={props[0].BtnLink}>
+              <Link href={props[0]?.BtnLink}>
                 <Button
                   variant={theme ? "lightBlueOutline" : "outline"}
                   size="md"
