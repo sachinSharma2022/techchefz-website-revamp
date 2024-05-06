@@ -7,6 +7,8 @@ import CmsType from "@/components/technology/cms/cmsType";
 import Faq from "@/components/common/faq";
 import WhyCms from "@/components/technology/cms/whyCms";
 import NotFound from "@/app/not-found";
+import TechnologyValues from "@/components/technology/technologyValues";
+import CoeService from "@/components/coe/coeService";
 
 import { getData, getDataDynamic } from "@/lib/fetchData";
 import {
@@ -33,14 +35,21 @@ const Cms = async () => {
         <div>
           <CmsBanner props={data.Banner} />
           <CmsPlayer props={data.Player} />
+         
           <WhyCms props={data.Why} />
+          <SolutionTheProcess props={data.OurProcess} />
+          <CoeService props={data.CoeService} />
+          <TechnologyValues
+            wrapperStyle="technology-styles"
+            props={data.Technology}
+          />
           <CmsType props={data.Type} />
-          <CmsDifference props={data.Difference} />
+          {/* <CmsDifference props={data.Difference} /> */}
           {/* <TechnologyValues
             wrapperStyle="technology-cms-styles"
             props={data.Technology}
           /> */}
-          <SolutionTheProcess props={data.OurProcess} />
+        
           <Faq props={data.Faq} />
           <RelatedCase
             className="cms-related-style"
