@@ -26,11 +26,11 @@ const Solutions = async () => {
     <>
       {data ? (
         <div className={styles.solutionsPageStyle}>
-          <SolutionHeroBanner props={data.Banner} />
+          {/* <SolutionHeroBanner props={data.Banner} />
           <SolutionOurValues props={data.ourValues} />
           <SolutionTheProcess props={data.OurProcess} />
           <SolutionTechnologies props={data.Technology} />
-          <RelatedCase props={data_related_cases} RelatedInsight={data.RelatedInsight}/>
+          <RelatedCase props={data_related_cases} RelatedInsight={data.RelatedInsight}/> */}
         </div>
       ) : (
         <>
