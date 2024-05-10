@@ -38,19 +38,19 @@ const nextConfig = {
     RECAPTCHA_SECRET_KEY: "6LevJ7ApAAAAAJGJYMiS4ozpdGAQ7h7rMeZW3oIm",
     NEXT_PUBLIC_GA_ID: "G-KMJWG2JXQB",
   },
-  async headers() {
-    return [
-      {
-        source: "/(.*)",
-        headers: [
-          {
-            key: "Content-Security-Policy",
-            value: cspHeader.replace(/\n/g, ""),
-          },
-        ],
-      },
-    ];
-  },
+  // async headers() {
+  //   return [
+  //     {
+  //       source: "/(.*)",
+  //       headers: [
+  //         {
+  //           key: "Content-Security-Policy",
+  //           value: cspHeader.replace(/\n/g, ""),
+  //         },
+  //       ],
+  //     },
+  //   ];
+  // },
 };
 
 module.exports = nextConfig;
