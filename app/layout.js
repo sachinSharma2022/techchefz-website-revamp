@@ -18,16 +18,17 @@ const FooterContainer = dynamic(() =>
 );
 export async function generateMetadata() {
   const data = await getData(api_Home_Page);
+  console.log( data);
   return {
     title: data?.SeoData?.Title,
     description: data?.SeoData?.Description,
-    '@type': 'WebPage',
-    '@context': 'http://schema.org',
-    siteName : "TechChefz Digital",
     openGraph: {
       title: data?.SeoData?.Title,
       description: data?.SeoData?.Description,
       url: process.env.NEXT_PUBLIC_SITEMAP_URL,
+      '@type': 'Website',
+      '@context': 'http://schema.org',
+      siteName : "TechChefz Digital",
       images: [
         {
           url: `${process.env.NEXT_PUBLIC_STRAPIE_BASE_URL}${data?.SeoData?.Images?.data?.attributes?.url}`, // Must be an absolute URL
