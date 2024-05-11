@@ -21,10 +21,12 @@ export async function generateMetadata() {
   return {
     title: data?.SeoData?.Title,
     description: data?.SeoData?.Description,
+    '@type': 'WebPage',
+    '@context': 'http://schema.org',
+    siteName : "TechChefz Digital",
     openGraph: {
       title: data?.SeoData?.Title,
       description: data?.SeoData?.Description,
-      siteName: "TechChefz Digital",
       url: process.env.NEXT_PUBLIC_SITEMAP_URL,
       images: [
         {
