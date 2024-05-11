@@ -12,6 +12,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { HotjarSnippet } from "@/lib/hotjar";
 import dynamic from "next/dynamic";
 import Providers from "@/components/ui/pageTransition/ProgressBarProvider";
+import { Context } from "react-responsive";
 const Header = dynamic(() => import("@/components/layouts/header"));
 const FooterContainer = dynamic(() =>
   import("@/components/layouts/footer/footerContainer")
@@ -26,8 +27,9 @@ export async function generateMetadata() {
       title: data?.SeoData?.Title,
       description: data?.SeoData?.Description,
       url: process.env.NEXT_PUBLIC_SITEMAP_URL,
-      '@type': 'Website',
-      '@context': 'http://schema.org',
+      type: "website",
+      Context: "https://schema.org",
+      locale: "en_US",
       siteName : "TechChefz Digital",
       images: [
         {
