@@ -19,7 +19,18 @@ const FooterContainer = dynamic(() =>
 );
 export async function generateMetadata() {
   const data = await getData(api_Home_Page);
-  console.log( data);
+
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "TechChefz Digital",
+    "url": process.env.NEXT_PUBLIC_SITEMAP_URL,
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": `${process.env.NEXT_PUBLIC_SITEMAP_URL}/search?q={search_term_string}`,
+      "query-input": "required name=search_term_string"
+    }
+  };
   return {
     title: data?.SeoData?.Title,
     description: data?.SeoData?.Description,
