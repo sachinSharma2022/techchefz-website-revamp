@@ -33,7 +33,7 @@ const nextConfig = {
         headers: [
           {
             key: "Content-Security-Policy",
-            value: commonCSP,
+            value: "commonCSP",
           },
           {
             key: "X-Frame-Options",
