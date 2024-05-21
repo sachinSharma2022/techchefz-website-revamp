@@ -21,7 +21,12 @@ const AcceleratorDetails = async ({ params }) => {
           <AcceleratorIndustry props={page.attributes.Media} />
           <Impact props={page.attributes.Impact} />
           <FeatureCard props={page.attributes.Challanges} />
-          <RelatedCase className="mt-0 mb-5 pt-5 pb-0" props={data} />
+          <RelatedCase
+            className="tech-related-style"
+            props={data}
+            params={params}
+            RelatedInsight={data.RelatedInsight}
+          />
           <LetsWork contact={page.attributes.LetsWork} />
         </div>
       ) : (
