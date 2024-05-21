@@ -26,6 +26,7 @@ const RelatedCase = ({
 }) => {
   
   const { theme, setTheme } = useContext(MyContext);
+  
 
   return (
     <section
