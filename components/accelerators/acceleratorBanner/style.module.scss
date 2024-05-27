@@ -8,10 +8,14 @@
   }
 
   .bannerContent {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
     .bannerTitle {
       font-size: text(xl-larger);
       font-weight: 500;
       line-height: 5rem;
+      width: 50%;
 
       @include mobile-tablet-p {
         font-size: text(larger);
@@ -37,6 +41,7 @@
       justify-content: center;
       align-items: flex-start;
       gap: 4rem;
+      width: 40%;
 
       @include mobile-tablet-p {
         gap: 2.25rem;
