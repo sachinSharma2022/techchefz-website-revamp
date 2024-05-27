@@ -44,12 +44,7 @@ const Cms = async () => {
             props={data.Technology}
           />
           <CmsType props={data.Type} />
-          {/* <CmsDifference props={data.Difference} /> */}
-          {/* <TechnologyValues
-            wrapperStyle="technology-cms-styles"
-            props={data.Technology}
-          /> */}
-        
+          
           <Faq props={data.Faq} />
           <RelatedCase
             className="cms-related-style"

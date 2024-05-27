@@ -20,7 +20,12 @@ const CoeService = ({ props }) => {
       <div className={cn("primary-container")}>
         <div className={styles.coeServiceImg}>
           <ImageCustom
-            src={`${base_Uri}${props[0]?.Image?.data.attributes.url}`}
+           src={
+            props[0]?.Image?.data?.attributes?.url
+              ? `${base_Uri}${props[0]?.Image?.data?.attributes?.url}`
+              : `${base_Uri}/`
+          }
+            
             width={2560}
             height={1068}
             alt="img"
