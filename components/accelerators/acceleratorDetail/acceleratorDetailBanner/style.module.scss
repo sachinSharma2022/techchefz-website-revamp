@@ -3,6 +3,9 @@
 .banner {
   .bannerContent {
     padding-block: 10rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
 
     @include mobile-tablet-p{
       padding-block: 3rem 1.5rem;
