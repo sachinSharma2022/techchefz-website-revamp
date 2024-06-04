@@ -67,9 +67,9 @@ const ImageCaptionCard = ({ case_study }) => {
                   </div>
                 </div>
                 <div className={styles.cardBody}>
-                  <h2 className={styles.cardText}>
+                  <h3 className={styles.cardText}>
                     {data?.attributes?.Banner?.PortfolioTitle}
-                  </h2>
+                  </h3>
                   <Icons.ArrowLongRight size={18} />
                 </div>
               </div>
