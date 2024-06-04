@@ -26,10 +26,10 @@ const DistinctLocations = ({ props }) => {
               className={cn(styles.projectHighlight, "gradient-text")}
               dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
             ></h6>
-            <h2
+            <h3
               className={cn(styles.datingText, "gradient-text")}
               dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
-            ></h2>
+            ></h3>
             <p
               className={styles.descriptionText}
               dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}

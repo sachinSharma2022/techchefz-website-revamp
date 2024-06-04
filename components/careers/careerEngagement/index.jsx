@@ -108,7 +108,7 @@ const CareerEngagement = () => {
           <Swiper
             onSwiper={setThumbsSwiper}
             spaceBetween={10}
-            slidesPerView={isBigScreen ? 4 : 1}
+            slidesPerView={1}
             freeMode={true}
             watchSlidesProgress={true}
             modules={[FreeMode, Navigation, Thumbs]}

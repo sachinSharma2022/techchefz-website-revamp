@@ -28,10 +28,10 @@ const CmsDifference = ({ props }) => {
                 className={cn(styles.projectHighlight, "gradient-text")}
                 dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
               ></h6>
-              <h2
+              <h3
                 className={cn(styles.datingText, "gradient-text")}
                 dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
-              ></h2>
+              ></h3>
             </div>
           </div>
         </TextRevel>
