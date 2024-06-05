@@ -33,11 +33,11 @@ const Technology = async () => {
     <>
       {data ? (
         <div>
-          {/* <TechnologyBanner props={data.BannerComponent} />
+          <TechnologyBanner props={data.BannerComponent} />
           <Streamline props={data.Extensive} />
-          <Partners props={data.PARTNERS} /> */}
-          {/* <Consistent props={data.Consistent} /> */}
-          {/* <TechnologyValues
+          <Partners props={data.PARTNERS} />
+          <Consistent props={data.Consistent} />
+          <TechnologyValues
             wrapperStyle="technology-styles"
             props={data.Technology}
           />
@@ -49,11 +49,11 @@ const Technology = async () => {
             props={data_related_cases}
             RelatedInsight={data.RelatedInsight}
           />
-          <LetsWork contact={data.LetsWork} /> */}
+          <LetsWork contact={data.LetsWork} />
         </div>
       ) : (
         <>
-          <NotFound />
+          {/* <NotFound /> */}
         </>
       )}
     </>

@@ -34,12 +34,12 @@ const OurNumbers = ({ carrer, experience }) => {
                 className={cn(styles.projectHighlight, "gradient-text")}
                 dangerouslySetInnerHTML={{ __html: `${carrer?.title}` }}
               ></h6>
-              <h2
+              <h3
                 className={cn(styles.datingText, "gradient-text")}
                 dangerouslySetInnerHTML={{
                   __html: `${carrer?.description}`,
                 }}
-              ></h2>
+              ></h3>
             </div>
 
             <div>
