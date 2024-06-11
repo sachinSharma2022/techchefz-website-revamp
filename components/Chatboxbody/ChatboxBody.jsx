@@ -1,9 +1,10 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { Icons } from "@/components/icons";
-import "./style.css";
+// import "./style.css";
 import axios from "axios";
 import styles from "./style.module.scss"
+import Image from "next/image";
 
 const ChatboxBody = () => {
   const [chatbotMessages, setchatbotMessages] = useState([
@@ -384,7 +385,7 @@ const ChatboxBody = () => {
     <div className={styles.chatboxBody}>
       <div className={styles.chatbotHeader}>
         <p className={styles.chatbotTitle}>
-        <span>Logo</span>
+        <Image src="/images/chatbotLogo.svg" width={30} height={30} alt="logo" />
           Techchefz Digital Assistant
         </p>
 
@@ -437,7 +438,7 @@ const ChatboxBody = () => {
                     )}
                     {index === 1 && FeatureType === "study" ? (
                       <>
-                        <div className="choosebtns2">
+                        <div className={styles.chooseBtns2}>
                           <button
                             value={"School Student"}
                             onClick={() => {
@@ -448,6 +449,7 @@ const ChatboxBody = () => {
                             School Student
                           </button>
                           <button
+                          className="btn2"
                             ref={profession2Ref}
                             value={"Graduate"}
                             onClick={() => {
@@ -494,7 +496,7 @@ const ChatboxBody = () => {
                           </div>
                         </div>
 
-                        <div className="choosebtns2">
+                        <div className={styles.chooseBtns2}>
                           <button
                             ref={profession3Ref}
                             value={"Professionals"}
@@ -520,7 +522,7 @@ const ChatboxBody = () => {
                       <></>
                     )}
                   </>
-                  <p className="message-time">{items.time}</p>
+                  <p className={styles.messageTime}>{items.time}</p>
                 </div>
               ) : (
                 <div className={styles.userbox}>

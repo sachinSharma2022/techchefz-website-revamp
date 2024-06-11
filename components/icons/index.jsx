@@ -2964,7 +2964,7 @@ export const Icons = {
   ),
 
   Cross:({size, ...props}) =>(
-    <svg fill="none" viewBox="0 0 15 15" height="25" width="25" {...props}>
+    <svg fill="none" viewBox="0 0 15 15" height="24" width="24" {...props}>
     <path
       fill="#fff"
       fillRule="evenodd"
