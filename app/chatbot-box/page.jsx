@@ -1,8 +1,9 @@
 import React from "react";
 import ChatboxBody from "@/components/Chatboxbody/ChatboxBody";
+import styles from "./style.module.scss"
 const page = () => {
   return (
-    <section className="chatboxpage">
+    <section className={styles.chatboxpage}>
       <ChatboxBody />
     </section>
   );

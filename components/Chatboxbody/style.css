@@ -1,15 +1,15 @@
-.chatboxpage {
+/* .chatboxpage {
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #d6d4d4;
-}
+} */
 
-.chatboxBody {
-  width: 480px;
-  height: 800px;
+/* .chatboxBody {
+  width: 30rem;
+  height: 50rem;
   background-color: #ffffff;
   border: 1px solid rgba(199, 196, 196, 0.721);
   border-radius: 20px;
@@ -17,9 +17,9 @@
   z-index: 100000;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-}
+} */
 
-.chatbot-header {
+/* .chatbot-header {
   width: 100%;
   height: 65px;
   color: #ffffff;
@@ -35,23 +35,24 @@
 .action-button {
   display: flex;
   align-items: center;
+  gap: 1rem;
 }
 .chatbot-header p {
   margin-left: 20px;
-}
+} */
 
-.chatbot-txtbody {
+/* .chatbot-txtbody {
   width: 100%;
-  height: 600px;
+  height: 500px;
   overflow-y: scroll;
-}
+} */
 .chatbot-txtbody::-webkit-scrollbar {
   width: 5px; /* Set the width of the scrollbar */
 }
-.system-message {
+/* .system-message {
   display: inline-block;
-  background-color: #f5f5f5;
-  border: 1px solid #eaeaea;
+  background-color: rgb(114, 114, 114);
+  border: 1px solid gray;
   color: #191b1f;
   max-width: 76%;
   padding: 9px 12px;
@@ -59,7 +60,7 @@
   margin: 10px 0 20px 10px;
   display: flex;
   flex-direction: column;
-}
+} */
 .userbox {
   width: 100%;
   display: flex;
@@ -79,14 +80,13 @@
 }
 .message-time {
   width: 100%;
-  font-size: 10px;
+  font-size: 12px;
   display: flex;
   justify-content: flex-end;
   margin-top: 5px;
-  font-style: oblique;
 }
 
-.chatbot-sendtxt {
+/* .chatbot-sendtxt {
   width: 100%;
   height: 120px;
   border-top: 1px solid rgba(199, 196, 196, 0.721);
@@ -108,14 +108,14 @@
   background: #000;
   border-radius: 50%;
   margin-left: 10px;
-}
+} */
 .chatbot-sendtxt button .sentbtn {
   color: #ffffff;
   font-size: 26px;
   margin: 8px;
 }
 
-.choosebtns {
+/* .choosebtns {
   display: flex;
 }
 .choosebtns button {
@@ -126,7 +126,7 @@
   border-radius: 20px;
   margin-top: 10px;
   margin: 18px 3px 0 2px;
-}
+} */
 
 .choosebtns2 {
   display: flex;

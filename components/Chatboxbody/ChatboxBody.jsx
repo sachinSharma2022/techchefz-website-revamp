@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Icons } from "@/components/icons";
 import "./style.css";
 import axios from "axios";
+import styles from "./style.module.scss"
 
 const ChatboxBody = () => {
   const [chatbotMessages, setchatbotMessages] = useState([
@@ -17,7 +18,7 @@ const ChatboxBody = () => {
             Could you please tell us which of our services you&apos;re
             interested in?
           </p>
-          <div className="choosebtns">
+          <div className={styles.choosebtns}>
             <button className="btn2">Migrate</button>
             <button className="btn2">Study</button>
           </div>
@@ -189,7 +190,7 @@ const ChatboxBody = () => {
                   Could you please tell us which of our services you&apos;re
                   interested in?
                 </p>
-                <div className="choosebtns">
+                <div className={styles.choosebtns}>
                   <button className="btn2">Migrate</button>
                   <button onClick={studyFeatureAdd} className="btn2">
                     Study
@@ -380,26 +381,29 @@ const ChatboxBody = () => {
   };
 
   return (
-    <div className="chatboxBody">
-      <div className="chatbot-header">
-        <p className="text-transform: capitalize">
+    <div className={styles.chatboxBody}>
+      <div className={styles.chatbotHeader}>
+        <p className={styles.chatbotTitle}>
+        <span>Logo</span>
           Techchefz Digital Assistant
         </p>
 
-        <div className="action-button">
+        <div className={styles.actionButton}>
           <button>
             <Icons.RefreshIcon />
           </button>
-          <button>x</button>
+          <button>
+          <Icons.Cross />
+          </button>
         </div>
       </div>
 
-      <div className="chatbot-txtbody">
+      <div className={styles.chatbotTxtbody}>
         {chatbotMessages?.map((items, index) => {
           return (
             <div className="w-[100%]" key={index}>
               {items.username === "system" ? (
-                <div className="system-message">
+                <div className={styles.systemMessage}>
                   <>
                     {(items.message === "select" &&
                       FeatureType === "migrate") ||
@@ -519,10 +523,10 @@ const ChatboxBody = () => {
                   <p className="message-time">{items.time}</p>
                 </div>
               ) : (
-                <div className="userbox">
-                  <div className="users-message">
+                <div className={styles.userbox}>
+                  <div className={styles.usersMessage}>
                     <p>{items.message}</p>
-                    <p className="message-time">{items.time}</p>
+                    <p className={styles.messageTime}>{items.time}</p>
                   </div>
                 </div>
               )}
@@ -535,10 +539,10 @@ const ChatboxBody = () => {
         <div ref={messagesEndRef} />
       </div>
 
-      <div className="chatbot-sendtxt">
+      <div className={styles.chatbotSendtxt}>
         <input
           type="text"
-          placeholder="Type here..."
+          placeholder="Enter Your Massage..."
           ref={userinfo}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
