@@ -1,7 +1,7 @@
 @import "~/styles/partials/config";
 .chatboxBody {
    width: 30rem;
-   height: 44rem;
+   max-height: 44rem;
    background-color: black;
    border: 1px solid rgba(199, 196, 196, 0.721);
    border-radius: 20px;
@@ -90,12 +90,12 @@
 
    .chatbotSendtxt {
       width: 100%;
-      height: 120px;
-      // border-top: 1px solid rgba(199, 196, 196, 0.721);
-      margin-top: 20px;
+      margin: 20px 0;
+      padding: 0 10px;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-end;
+      position: relative;
 
       input {
          border-radius: 10px;
@@ -112,7 +112,8 @@
          border-radius: 50%;
          margin-left: 10px;
          position: absolute;
-         right: 2rem;
+         right: 35px;
+         top: 10px;
       }
    }
 }
