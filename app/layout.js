@@ -8,7 +8,7 @@ import { aeonik, helvetica } from "../lib/fonts";
 import { cn } from "../lib/utils";
 import "../styles/globals.scss";
 import Script from "next/script";
-import { GoogleAnalytics } from "@next/third-parties/google";
+//import { GoogleAnalytics } from "@next/third-parties/google";
 import { HotjarSnippet } from "@/lib/hotjar";
 import dynamic from "next/dynamic";
 import Providers from "@/components/ui/pageTransition/ProgressBarProvider";
@@ -26,7 +26,7 @@ export async function generateMetadata() {
       description: data?.SeoData?.Description,
       name: "Techchefz Digital",
       url: process.env.NEXT_PUBLIC_SITEMAP_URL,
-      siteName:"Techchefz Digital",
+      siteName: "Techchefz Digital",
       images: [
         {
           url: `${process.env.NEXT_PUBLIC_STRAPIE_BASE_URL}${data?.SeoData?.Images?.data?.attributes?.url}`, // Must be an absolute URL
@@ -55,7 +55,18 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <body className={cn(aeonik.variable, helvetica.variable)}>
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        {/* <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} /> */}
+        <Script
+          defer
+          strategy="lazyOnload"
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','${process.env.NEXT_PUBLIC_GA_ID}');`,
+          }}
+        />
         <ThemeProvider>
           <Header />
           <Providers>
