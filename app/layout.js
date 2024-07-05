@@ -71,7 +71,8 @@ export default function RootLayout({ children }) {
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <body className={cn(aeonik.variable, helvetica.variable)}>
         {/* <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} /> */}
-        <Script defer
+        <Script
+          id="gtm-script"
           strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
