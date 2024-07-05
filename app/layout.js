@@ -8,8 +8,8 @@ import { aeonik, helvetica } from "../lib/fonts";
 import { cn } from "../lib/utils";
 import "../styles/globals.scss";
 //import { GoogleAnalytics } from "@next/third-parties/google";
-import dynamic from "next/dynamic";
 import Providers from "@/components/ui/pageTransition/ProgressBarProvider";
+import dynamic from "next/dynamic";
 const Header = dynamic(() => import("@/components/layouts/header"));
 const FooterContainer = dynamic(() =>
   import("@/components/layouts/footer/footerContainer")
