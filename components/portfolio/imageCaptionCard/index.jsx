@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useContext } from "react";
 import { base_Uri } from "@/lib/constants";
-
+import { generateSlug } from "@/lib/utils";
 import styles from "./style.module.scss";
 
 const ImageCaptionCard = ({ case_study }) => {
@@ -20,13 +20,12 @@ const ImageCaptionCard = ({ case_study }) => {
       (element) => !element.attributes?.Banner?.PortfolioHomePage
     ),
   ];
+
   return (
     <section
       className={cn(styles.imageCaptionCard, theme ? styles.darkStyle : "")}
     >
       <div className={cn("primary-container")}>
-       
-
         <div
           className={cn(
             styles.captionCardStyle,
@@ -36,7 +35,9 @@ const ImageCaptionCard = ({ case_study }) => {
         >
           {sortedCards.map((data, index) => (
             <Link
-              href={`/portfolio/${data.id}`}
+              href={`/portfolio/${generateSlug(
+                data?.attributes?.Banner?.PortfolioTitle
+              )}`}
               key={index}
               className={`grid-${index}`}
             >

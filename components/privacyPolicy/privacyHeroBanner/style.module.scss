@@ -29,8 +29,10 @@
       margin-left: 1rem;
       font-size: 4rem;
       font-weight: 500;
-      color: color(heading-liner);
-      @include textGradient;
+      color: color(info-blue);
+      @include min-desktop-medium {
+        @include textGradient;
+      }
 
       @include mobile-tablet-p {
         margin-left: 0;

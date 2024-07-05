@@ -11,6 +11,7 @@ import { useContext, useEffect, useState } from "react";
 import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
 import AnimatedLogo from "@/components/common/animatedLogo";
+import { generateSlug } from "@/lib/utils";
 
 const NavigationDesktop = ({ props, featureArticle }) => {
   const pathname = usePathname();
@@ -42,12 +43,12 @@ const NavigationDesktop = ({ props, featureArticle }) => {
 
   const closeMenu = () => {
     setMobileMenuShow(!mobileMenuShow);
-    console.log(isSubMenu, "issubmenu");
+
     setisSubhMenu(false);
   };
   const openMenu = () => {
     setMobileMenuShow(!mobileMenuShow);
-    console.log(isSubMenu, "issubmenu");
+
     setisSubhMenu(true);
   };
 
@@ -57,7 +58,9 @@ const NavigationDesktop = ({ props, featureArticle }) => {
         <div className={cn(styles.latestTech)}>
           <h1>{props[2]?.DropDown[8]?.Title}</h1>
           <Link
-            href={`/insights/${feartureArray[0]?.id}`}
+            href={`/insights/${generateSlug(
+              feartureArray[0]?.attributes?.InsightOverview[0].Title
+            )}`}
             className={styles.imageTech}
           >
             <div className={styles.imgBox}>
@@ -80,7 +83,11 @@ const NavigationDesktop = ({ props, featureArticle }) => {
               <Icons.ArrowRight size={16} />
             </div>
           </Link>
-          <Link href={`/insights/${feartureArray[1]?.id}`}>
+          <Link
+            href={`/insights/${generateSlug(
+              feartureArray[1]?.attributes?.InsightOverview[0].Title
+            )}`}
+          >
             <div className={styles.imageTech}>
               <div className={styles.infoBox}>
                 <p className={styles.description}>
@@ -304,14 +311,14 @@ const NavigationDesktop = ({ props, featureArticle }) => {
               </Link>
             </li>
             <li className={styles.dropDown} onMouseEnter={openMenu}>
-              <Link href="javascript:void(0)" aria-disabled="true">
+              <button>
                 <Icons.MoreDotIcon
                   className={styles.dotIcon}
                   width={4}
                   height={14}
                 />
                 {props[4].Title}
-              </Link>
+              </button>
               <div className={cn(styles.arrow, styles.hideDesktopIcon)} />
 
               <ul

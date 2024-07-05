@@ -12,6 +12,7 @@ import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { useContext, useRef } from "react";
 import { useMediaQuery } from "react-responsive";
+import { generateSlug } from "@/lib/utils";
 // Import Swiper React components
 import { base_Uri } from "@/lib/constants";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -88,7 +89,6 @@ const Card = ({ ...props }) => {
             }
           )}
         </p>
-        
       </div>
     </motion.div>
   );
@@ -167,7 +167,9 @@ const Projects = ({ project, brands }) => {
                     key={`p_${i}`}
                     i={i}
                     project={project.attributes.Banner}
-                    href={project.id}
+                    href={generateSlug(
+                      project.attributes.Banner.PortfolioTitle
+                    )}
                     progress={scrollYProgress}
                     range={[i * 0.25, 1]}
                     targetScale={targetScale}
@@ -204,7 +206,9 @@ const Projects = ({ project, brands }) => {
                       <Card
                         i={i}
                         project={project.attributes.Banner}
-                        href={project.id}
+                        href={generateSlug(
+                          project.attributes.Banner.PortfolioTitle
+                        )}
                         progress={scrollYProgress}
                         range={[i * 0.25, 1]}
                         targetScale={targetScale}

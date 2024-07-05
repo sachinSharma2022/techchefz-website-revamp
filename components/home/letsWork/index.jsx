@@ -145,7 +145,7 @@ const LetsWork = ({ contact }) => {
                         value={values.lastName}
                         errorStatus={touched.lastName && errors.lastName}
                         onKeyDown={(event) => {
-                          console.log(event.keyCode, "keycode");
+                          
                           var regex = new RegExp("^[a-zA-Z]*$");
                           if (
                             !regex.test(event.key) &&
@@ -171,7 +171,7 @@ const LetsWork = ({ contact }) => {
                         value={values.phone}
                         valueCountryCode={values.countyCode}
                         onKeyDown={(event) => {
-                          console.log(event.key, "keycode");
+                          
                           var regex = new RegExp("^[0-9]*$");
                           if (
                             !regex.test(event.key) &&

@@ -281,7 +281,7 @@
   .coreTeam {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.25rem 2.5rem;
+    gap: 1.25rem;
     margin-top: 5rem;
     position: relative;
     z-index: 1;
@@ -293,7 +293,13 @@
     }
 
     @include mobile {
-      grid-template-columns: 48% 48%;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 0;
+    }
+
+    @include samsung-fold {
+      grid-template-columns: repeat(2, 1fr);
       gap: 1rem;
       margin-top: 0;
     }
@@ -313,8 +319,10 @@
       }
 
       @include mobile {
-        padding: 0.5rem;
+        padding: 1rem;
         gap: 1rem;
+        flex-direction: column;
+        text-align: center;
       }
     }
 
@@ -334,15 +342,15 @@
     }
 
     .teamImage div {
-      width: 3rem;
-      height: 3rem;
+      width: 3.75rem;
+      height: 3.75rem;
       position: relative;
       border-radius: 100%;
       overflow: hidden;
 
       @include mobile-tablet-p {
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 3.2rem;
+        height: 3.2rem;
       }
 
       img {
@@ -351,6 +359,18 @@
         object-fit: cover;
       }
     }
+  }
+
+  .infoSection {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .departmentText {
+    font-size: 0.9rem;
+    color: rgba(color(text-primary), 0.8);
+    margin-bottom: 0;
   }
 
   // Dark theme style
@@ -387,6 +407,10 @@
           }
         }
       }
+    }
+
+    .departmentText {
+      color: rgba(color(primary-white), 0.6);
     }
   }
 }

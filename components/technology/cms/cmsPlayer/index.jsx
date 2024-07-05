@@ -5,7 +5,7 @@ import { base_Uri } from "@/lib/constants";
 
 
 const CmsPlayer = ({ props }) => {
-  console.log("cms", props);
+ 
   return (
     <ImageCustom
       src={

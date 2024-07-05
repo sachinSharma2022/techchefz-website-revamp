@@ -109,8 +109,10 @@ $border-radius: 5px;
       color: color(primary-white);
       font-size: text(xxl-larger);
       font-weight: 500;
-      color: color(heading-liner);
-      @include textGradient;
+      color: color(info-blue);
+      @include min-desktop-medium {
+        @include textGradient;
+      }
       
       @include mobile-tablet-p{
         font-size: text(xl-larger);

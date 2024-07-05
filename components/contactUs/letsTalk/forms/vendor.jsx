@@ -103,7 +103,7 @@ const VendorForm = () => {
                       value={values.firstName}
                       errorStatus={touched.firstName && errors.firstName}
                       onKeyDown={(event) => {
-                        console.log(event.keyCode, "keycode");
+                        
                         var regex = new RegExp("^[a-zA-Z]*$");
                         if (!regex.test(event.key) && !(event.key === "'")) {
                           event.preventDefault();
@@ -128,7 +128,7 @@ const VendorForm = () => {
                       value={values.lastName}
                       errorStatus={touched.lastName && errors.lastName}
                       onKeyDown={(event) => {
-                        console.log(event.keyCode, "keycode");
+                        
                         var regex = new RegExp("^[a-zA-Z]*$");
                         if (
                           !regex.test(event.key) &&
@@ -171,7 +171,7 @@ const VendorForm = () => {
                       value={values.phone}
                       errorStatus={touched.phone && errors.phone}
                       onKeyDown={(event) => {
-                        console.log(event.key, "keycode");
+                       
                         var regex = new RegExp("^[0-9]*$");
                         if (
                           !regex.test(event.key) &&
@@ -201,7 +201,7 @@ const VendorForm = () => {
                       value={values.companyName}
                       errorStatus={touched.companyName && errors.companyName}
                       onKeyDown={(event) => {
-                        console.log(event.keyCode, "keycode");
+                       
                         var regex = new RegExp("^[a-zA-Z 0-9]*$");
                         if (!regex.test(event.key)) {
                           event.preventDefault();
@@ -227,7 +227,7 @@ const VendorForm = () => {
                         touched.serviceOffered && errors.serviceOffered
                       }
                       onKeyDown={(event) => {
-                        console.log(event.keyCode, "keycode");
+                        
                         var regex = new RegExp("^[a-zA-Z 0-9]*$");
                         if (!regex.test(event.key)) {
                           event.preventDefault();

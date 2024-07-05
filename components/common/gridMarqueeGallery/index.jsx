@@ -8,7 +8,7 @@ import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
 
 const GridMarqueeGallery = ({ props }) => {
-  console.log("nnn", props);
+ 
   const { theme, setTheme } = useContext(MyContext);
   const gridData = [1, 2, 3, 4, 5, 6];
   return (

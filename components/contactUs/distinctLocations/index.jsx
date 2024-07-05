@@ -10,7 +10,7 @@ import { base_Uri } from "@/lib/constants";
 import TextRevel from "@/components/ui/sectionAnimation";
 
 const DistinctLocations = ({ props }) => {
-  console.log("us", props);
+ 
   const { theme, setTheme } = useContext(MyContext);
 
   return (

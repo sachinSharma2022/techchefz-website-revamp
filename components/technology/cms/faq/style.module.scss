@@ -75,7 +75,10 @@
 
          [aria-expanded="true"] {
             &.accordionHead {
-               @include textGradient;
+               color: color(info-blue);
+               @include min-desktop-medium {
+                 @include textGradient;
+               }
             }
          }
 

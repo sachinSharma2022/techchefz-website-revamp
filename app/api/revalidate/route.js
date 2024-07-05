@@ -28,6 +28,7 @@ export async function POST(request) {
       "insight-inside": "insights",
       "career-detail": "careers",
     };
+
     if (obj.model && obj.model != "landing-page")
       revalidatePath(`/${alias[obj.model]}/`, "layout");
     else revalidatePath(`/`, "page");

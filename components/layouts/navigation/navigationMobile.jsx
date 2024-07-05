@@ -9,6 +9,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
 import { base_Uri } from "@/lib/constants";
+import { generateSlug } from "@/lib/utils";
 
 import styles from "./style.module.scss";
 import AnimatedLogo from "@/components/common/animatedLogo";
@@ -93,7 +94,9 @@ const NavigationMobile = ({ props, featureArticle }) => {
         <h1>{props[2]?.DropDown[8]?.Title}</h1>
         <div className={styles.latestTechCard}>
           <Link
-            href={`/insights/${feartureArray[0].id}`}
+            href={`/insights/${generateSlug(
+              feartureArray[0]?.attributes?.InsightOverview[0].Title
+            )}`}
             className={styles.imageTech}
             onClick={closeMenu}
           >
@@ -117,7 +120,12 @@ const NavigationMobile = ({ props, featureArticle }) => {
               <Icons.ArrowRight size={16} />
             </div>
           </Link>
-          <Link href={`/insights/${feartureArray[1].id}`} onClick={closeMenu}>
+          <Link
+            href={`/insights/${generateSlug(
+              feartureArray[1]?.attributes?.InsightOverview[0].Title
+            )}`}
+            onClick={closeMenu}
+          >
             <div className={styles.imageTech}>
               <div className={styles.infoBox}>
                 <p className={styles.description}>
@@ -167,7 +175,6 @@ const NavigationMobile = ({ props, featureArticle }) => {
       </div>
     );
   }
-  console.log(mobileMenuShow, "mobileMenuShow");
   return (
     <header
       className={cn(
@@ -183,7 +190,14 @@ const NavigationMobile = ({ props, featureArticle }) => {
         data-lenis-prevent
         className={cn(styles.headerContainer, "primary-container")}
       >
-        <AnimatedLogo />
+        <AnimatedLogo
+          mobileMenuShow={mobileMenuShow}
+          isTechMenu={isTechMenu}
+          isMoreMenu={isMoreMenu}
+          setMobileMenuShow={setMobileMenuShow}
+          setTechMenu={setTechMenu}
+          setMoreMenu={setMoreMenu}
+        />
         <nav className={mobileMenuShow ? styles.showNav : styles.hideNav}>
           <h4 className={styles.mobileTitle}>Menu</h4>
           <ul>

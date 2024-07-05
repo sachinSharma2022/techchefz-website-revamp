@@ -10,7 +10,7 @@ import { base_Uri } from "@/lib/constants";
 
 
 const AcceleratorImpact = ({ props }) => {
-  console.log("ac", props);
+  
   const { theme } = useContext(MyContext);
   return (
     <section className={`${styles.impact} ${theme ? styles.impactDark : ""}`}>

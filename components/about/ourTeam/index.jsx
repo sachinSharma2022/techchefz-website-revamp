@@ -14,7 +14,6 @@ import { base_Uri } from "@/lib/constants";
 import TextRevel from "@/components/ui/sectionAnimation";
 
 const OurTeam = ({ props }) => {
-  console.log("aa", props);
   const { theme } = useContext(MyContext);
   let [isOpen, setIsOpen] = useState(false);
   const [index, setIndex] = useState(0);
@@ -123,7 +122,10 @@ const OurTeam = ({ props }) => {
                           alt="profile"
                         />
                       </div>
-                      <h4 className={styles.nameTitle}>{item.Name}</h4>
+                      <div className={styles.infoSection}>
+                        <h4 className={styles.nameTitle}>{item.Name}</h4>
+                        <p className={styles.departmentText} dangerouslySetInnerHTML={{ __html: `${item.Designation}` }}></p>
+                      </div>
                     </div>
                   ))}
                 </div>

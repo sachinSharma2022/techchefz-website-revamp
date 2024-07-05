@@ -110,7 +110,7 @@ const LetsTalk = ({ props }) => {
                         selected && styles.buttonActive
                       )}
                     >
-                      {console.log(selected, "selected")}
+                     
                       <div className={styles.highlightIcon}>
                         <ImageCustom
                           height={40}

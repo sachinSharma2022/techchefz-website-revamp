@@ -35,6 +35,7 @@ $desktop-normal: 1025px;
 $desktop-xl: 1800px;
 $desktop-2xl: 1920px;
 $desktop-14: 1440px;
+$desktop-medium: 1260px;
 
 // iPhone5 Mixin
 @mixin iphone5 {
@@ -92,6 +93,18 @@ $desktop-14: 1440px;
   }
 }
 
+@mixin desktop-medium {
+  @media (min-width: #{$desktop-medium}) {
+    @content;
+  }
+}
+
+@mixin desktop-medium-max {
+  @media (max-width: #{$desktop-medium}) {
+    @content;
+  }
+}
+
 // Large Desktops
 @mixin desktop-lg {
   @media (min-width: #{$desktop-width-lg}) and (max-width: #{$desktop-width-large}) {
@@ -133,6 +146,12 @@ $desktop-14: 1440px;
 
 @mixin desktop-xl {
   @media (min-width: #{$desktop-xl}) and (max-width: #{$desktop-2xl - 1px}) {
+    @content;
+  }
+}
+
+@mixin min-desktop-medium {
+  @media (min-width: #{$desktop-width-xl + 1px}) {
     @content;
   }
 }

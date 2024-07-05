@@ -86,7 +86,10 @@
         font-weight: 500;
         line-height: 3rem;
         margin-bottom: 2rem;
-        @include textGradient;
+        color: color(info-blue);
+        @include min-desktop-medium {
+          @include textGradient;
+        }
 
         @include mobile-tablet-p {
           margin-bottom: 1.25rem;

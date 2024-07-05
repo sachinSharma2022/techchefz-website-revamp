@@ -19,9 +19,10 @@ export default async function handler(req, res) {
     res.status(500).json({ success: false });
   }
   const fileContent = fs.readFileSync(files.uploadCV[0].filepath);
+  const fileName = files.uploadCV[0].originalFilename;
   const content = prepEmailTemplate(JSON.stringify(fields), fields["formType"]);
   try {
-    const response = await sendMail(content, fileContent);
+    const response = await sendMail(content, fileContent, fileName);
     res.status(200).send({ success: true });
   } catch (error) {
     res.status(400).json({

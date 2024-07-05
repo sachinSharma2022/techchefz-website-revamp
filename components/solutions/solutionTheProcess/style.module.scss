@@ -4,6 +4,10 @@
   padding: 8.75rem 7.5rem 20rem;
   overflow: hidden;
 
+  @include desktop-hd-min {
+    padding: 8.75rem 7.5rem 10rem;
+  }
+
   @include tablet {
     padding: 3.75rem spacing(tablet-padding);
   }
@@ -66,7 +70,9 @@
       span {
         font-size: text(larger);
         color: color(heading-liner);
-        @include textGradient;
+        @include min-desktop-medium {
+          @include textGradient;
+        }
 
         @include mobile-tablet-p {
           font-size: text(xxxl);
@@ -107,14 +113,15 @@
 
     .circularStepperContainer > span {
       font-size: text(larger);
-      color: color(heading-liner);
+      color: color(info-blue);
       background: linear-gradient(
         118deg,
         color(primary-blue) 11.5%,
         color(heading-liner) 55.42%
       );
-
-      @include textGradient;
+      @include min-desktop-medium {
+        @include textGradient;
+      }
 
       @include mobile-tablet-p {
         font-size: text(xxxl);

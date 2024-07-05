@@ -6,11 +6,16 @@ import NotFound from "@/app/not-found";
 import { api_insights_Page, api_insight_insides_Page } from "@/lib/constants";
 import RelatedInsight from "@/components/insightInside/relatedInsight";
 import { rootURl } from "../../../lib/constants";
+import { generateSlug } from "@/lib/utils";
 
 export async function generateMetadata({ params }) {
   const data = await getDataDynamic(api_insight_insides_Page);
-  
-  const [page] = data.filter((value) => value.id == params.insightInside);
+
+  const [page] = data.filter(
+    (value) =>
+      generateSlug(value?.attributes?.InsightOverview[0].Title) ==
+      params.insightInside
+  );
   return {
     title: page.attributes.InsightOverview[0].Title,
     description: page.attributes.InsightOverview[0].Title,
@@ -20,7 +25,7 @@ export async function generateMetadata({ params }) {
       url: `${rootURl}/insights/${params.insightInside}`,
       images: [
         {
-          url: `https://cms-strapi.techchefz.in${page.attributes.InsightOverview[0]?.Image?.data?.attributes?.url}`, // Must be an absolute URL
+          url: `${process.env.NEXT_PUBLIC_STRAPIE_BASE_URL}${page.attributes.InsightOverview[0]?.Image?.data?.attributes?.url}`, // Must be an absolute URL
           width: 800,
           height: 600,
         },
@@ -32,7 +37,7 @@ export async function generateMetadata({ params }) {
       description: page.attributes.InsightOverview[0].Title,
       images: [
         {
-          url: `https://cms-strapi.techchefz.in${page.attributes.InsightOverview[0]?.Image?.data?.attributes?.url}`, // Must be an absolute URL
+          url: `${process.env.NEXT_PUBLIC_STRAPIE_BASE_URL}${page.attributes.InsightOverview[0]?.Image?.data?.attributes?.url}`, // Must be an absolute URL
           width: 800,
           height: 600,
         },
@@ -44,7 +49,11 @@ export async function generateMetadata({ params }) {
 const InsightInside = async ({ params }) => {
   const data = await getDataDynamic(api_insight_insides_Page);
   const data1 = await getData(api_insights_Page);
-  const [page] = data.filter((value) => value.id == params.insightInside);
+  const [page] = data.filter(
+    (value) =>
+      generateSlug(value?.attributes?.InsightOverview[0].Title) ==
+      params.insightInside
+  );
 
   return (
     <>
@@ -58,9 +67,9 @@ const InsightInside = async ({ params }) => {
           <InsightDetail
             props={page.attributes.insightDetailData}
             BlockTitle={page.attributes.BlockTitle}
-            index={page.id}
+            index={generateSlug(page?.attributes?.InsightOverview[0].Title)}
           />
-          <RelatedInsight props={data} params={params} data1={data1}/>
+          <RelatedInsight props={data} params={params} data1={data1} />
           <Innovation props={page.attributes.ourInnvotion} />
         </>
       ) : (

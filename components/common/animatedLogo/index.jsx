@@ -8,6 +8,11 @@ import styles from "./style.module.scss";
 
 const AnimatedLogo = (props) => {
   const { theme, setTheme } = useContext(MyContext);
+  const handleClick = () => {
+    mobileMenuShow && setMobileMenuShow(false);
+    isTechMenu && setTechMenu(false);
+    isMoreMenu && setMoreMenu(false);
+  };
   return (
     <Link
       href={props.href || "/"}
@@ -16,6 +21,7 @@ const AnimatedLogo = (props) => {
         theme ? styles.animatedLogoDark : "",
         props.className
       )}
+      onClick={handleClick}
     >
       <div className={styles.logo}>
         <ImageCustom

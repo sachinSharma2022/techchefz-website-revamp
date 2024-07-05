@@ -6,7 +6,7 @@ import { useContext } from "react";
 import styles from "./style.module.scss";
 
 const PositionDescription = ({ props }) => {
-  console.log("cc", props);
+  
   const { theme, setTheme } = useContext(MyContext);
 
   return (

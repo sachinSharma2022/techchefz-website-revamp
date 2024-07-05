@@ -103,7 +103,7 @@ const ServicesForm = () => {
                       value={values.firstName}
                       errorStatus={touched.firstName && errors.firstName}
                       onKeyDown={(event) => {
-                        console.log(event.keyCode, "keycode");
+                        
                         var regex = new RegExp("^[a-zA-Z]*$");
                         if (!regex.test(event.key) && !(event.key === "'")) {
                           event.preventDefault();
@@ -128,7 +128,7 @@ const ServicesForm = () => {
                       value={values.lastName}
                       errorStatus={touched.lastName && errors.lastName}
                       onKeyDown={(event) => {
-                        console.log(event.keyCode, "keycode");
+                       
                         var regex = new RegExp("^[a-zA-Z]*$");
                         if (
                           !regex.test(event.key) &&
@@ -172,7 +172,7 @@ const ServicesForm = () => {
                       errorStatus={touched.phone && errors.phone}
                       valueCountryCode={values.countyCode}
                       onKeyDown={(event) => {
-                        console.log(event.key, "keycode");
+                       
                         var regex = new RegExp("^[0-9]*$");
                         if (
                           !regex.test(event.key) &&
@@ -227,7 +227,7 @@ const ServicesForm = () => {
                         touched.serviceRequired && errors.serviceRequired
                       }
                       onKeyDown={(event) => {
-                        console.log(event.keyCode, "keycode");
+                        
                         var regex = new RegExp("^[a-zA-Z 0-9]*$");
                         if (!regex.test(event.key)) {
                           event.preventDefault();

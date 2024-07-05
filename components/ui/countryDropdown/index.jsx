@@ -72,7 +72,7 @@ const CountryDropdown = (props) => {
       };
     },
   };
-  console.log(props.clear, "selectClear");
+ 
 
   return (
     <div

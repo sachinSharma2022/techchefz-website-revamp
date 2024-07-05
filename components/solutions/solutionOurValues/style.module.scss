@@ -72,7 +72,9 @@
       span {
         font-size: text(larger);
         color: color(heading-liner);
-        @include textGradient;
+        @include min-desktop-medium {
+          @include textGradient;
+        }
 
         @include mobile-tablet-p {
           font-size: text(xxxl);

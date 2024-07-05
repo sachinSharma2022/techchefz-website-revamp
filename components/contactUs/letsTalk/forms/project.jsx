@@ -102,7 +102,7 @@ const ProjectForm = () => {
                     onBlur={handleBlur}
                     value={values.firstName}
                     onKeyDown={(event) => {
-                      console.log(event.keyCode, "keycode");
+                      
                       var regex = new RegExp("^[a-zA-Z]*$");
                       if (!regex.test(event.key) && !(event.key === "'")) {
                         event.preventDefault();
@@ -126,7 +126,7 @@ const ProjectForm = () => {
                     onBlur={handleBlur}
                     value={values.lastName}
                     onKeyDown={(event) => {
-                      console.log(event.keyCode, "keycode");
+                      
                       var regex = new RegExp("^[a-zA-Z]*$");
                       if (
                         !regex.test(event.key) &&
@@ -169,7 +169,7 @@ const ProjectForm = () => {
                     clear={inprogress}
                     valueCountryCode={values.countyCode}
                     onKeyDown={(event) => {
-                      console.log(event.key, "keycode");
+                      
                       var regex = new RegExp("^[0-9]*$");
                       if (
                         !regex.test(event.key) &&
@@ -198,7 +198,7 @@ const ProjectForm = () => {
                     onBlur={handleBlur}
                     value={values.companyName}
                     onKeyDown={(event) => {
-                      console.log(event.keyCode, "keycode");
+                      
                       var regex = new RegExp("^[a-zA-Z 0-9]*$");
                       if (!regex.test(event.key)) {
                         event.preventDefault();

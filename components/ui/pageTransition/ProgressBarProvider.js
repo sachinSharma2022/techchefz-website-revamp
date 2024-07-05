@@ -1,8 +1,17 @@
 "use client";
 
 import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
+import { useEffect } from "react";
 
 const Providers = ({ children }) => {
+  useEffect(() => {
+    const isSamsungBrowser = /SamsungBrowser/i.test(navigator.userAgent);
+    if (isSamsungBrowser) {
+      console.log("This is Samsung Browser");
+      // alert("Samsung Phone is detect");
+      document.body.classList.add("samsung-phone-style");
+    }
+  }, []);
   return (
     <>
       {children}

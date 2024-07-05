@@ -2,7 +2,6 @@
 import { useRef } from "react";
 import dynamic from "next/dynamic";
 const Footer = dynamic(() => {
-  console.log("Footeradded");
   return import("@/components/layouts/footer");
 });
 //import Footer from ".";

@@ -24,7 +24,6 @@ const Footer = ({ props, Subscribe, SocialMedia, footerinner, Reserved }) => {
       initialValues: formInitialSchema,
       validationSchema: footerValidationSchema,
       onSubmit: (values, action) => {
-        console.log(values);
         setinprogress(true);
         triggerMail({
           content: JSON.stringify(values),

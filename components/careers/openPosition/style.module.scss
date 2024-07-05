@@ -34,7 +34,10 @@
       }
 
       span {
-        @include textGradient;
+        color: color(info-blue);
+        @include min-desktop-medium {
+          @include textGradient;
+        }
         font-size: text(xl-larger);
 
         @include mobile-tablet-p {

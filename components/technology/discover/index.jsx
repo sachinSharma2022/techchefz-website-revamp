@@ -191,7 +191,7 @@ const Discover = ({ props }) => {
                           className={cn(styles.platformsButtons, "fadeinout")}
                         >
                           <div className={styles.tabContainer}>
-                            {console.log(tabIndex === index, "ind")}
+                            
                             <div className={styles.dataSection}>
                               <h6 className={styles.subTitle}>
                                 {item.TechDetail[0]?.Heading}

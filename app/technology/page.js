@@ -6,25 +6,28 @@ import Partners from "@/components/technology/partners";
 import TechnologyBanner from "@/components/technology/technologyBanner";
 import Streamline from "@/components/technology/technologyStreamline";
 import TechnologyValues from "@/components/technology/technologyValues";
-import { api_Technology_Page, api_Case_study_Page } from "@/lib/constants";
+import {
+  api_Technology_Page,
+  api_Case_study_Page,
+  api_About_Page,
+} from "@/lib/constants";
 import { getData, getDataDynamic } from "@/lib/fetchData";
 import RelatedCase from "@/components/relatedCase";
 import NotFound from "../not-found";
-
-
+import WhatWeDo from "@/components/about/whatWeDo";
 
 export async function generateMetadata() {
-  const data = await getData(api_Technology_Page); 
-  
+  const data = await getData(api_Technology_Page);
+
   return {
     title: data?.SeoData?.Title,
     description: data?.SeoData?.Description,
-   
   };
 }
 
 const Technology = async () => {
   const data = await getData(api_Technology_Page);
+  const data1 = await getData(api_About_Page);
   const data_related_cases = await getDataDynamic(api_Case_study_Page);
   return (
     <>
@@ -33,11 +36,12 @@ const Technology = async () => {
           <TechnologyBanner props={data.BannerComponent} />
           <Streamline props={data.Extensive} />
           <Partners props={data.PARTNERS} />
-          <Consistent props={data.Consistent} />
+          {/* <Consistent props={data.Consistent} /> */}
           <TechnologyValues
             wrapperStyle="technology-styles"
             props={data.Technology}
           />
+          <WhatWeDo props={data.WhatWeDoComponent} />
           <OurNumbers carrer={data.carrer} experience={data.ourExperience} />
           <Discover props={data.DiscoverTech} />
           <RelatedCase

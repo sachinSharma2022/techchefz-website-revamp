@@ -8,6 +8,7 @@ import PostCard from "@/components/ui/postCard";
 import styles from "./style.module.scss";
 import { cn } from "@/lib/utils";
 import { base_Uri } from "@/lib/constants";
+import { generateSlug } from "@/lib/utils";
 
 const InsightFeatures = ({ props, featureInsight, feature }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -46,7 +47,9 @@ const InsightFeatures = ({ props, featureInsight, feature }) => {
                   readTime={data?.attributes?.InsightOverview[0]?.ReadingTime}
                   cardStyle={styles.featureImgBox}
                   theme={theme}
-                  href={`/insights/${data?.id}`}
+                  href={`/insights/${generateSlug(
+                    data?.attributes?.InsightOverview[0].Title
+                  )}`}
                 />
               ))}
           </div>
@@ -71,7 +74,9 @@ const InsightFeatures = ({ props, featureInsight, feature }) => {
                   date={data?.attributes?.InsightOverview[0]?.Date}
                   readTime={data?.attributes?.InsightOverview[0]?.ReadingTime}
                   theme={theme}
-                  href={`/insights/${data?.id}`}
+                  href={`/insights/${generateSlug(
+                    data?.attributes?.InsightOverview[0].Title
+                  )}`}
                 />
               ))}
           </div>

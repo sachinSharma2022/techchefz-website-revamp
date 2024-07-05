@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { useContext } from "react";
 import { SwiperSlide, Swiper } from "swiper/react";
 import styles from "./style.module.scss";
+import { generateSlug } from "@/lib/utils";
 
 // Import Swiper styles
 import "swiper/css";
@@ -23,7 +24,7 @@ const RelatedInsight = ({
   params,
   data1,
 }) => {
-  console.log("-------", data1);
+
   const { theme, setTheme } = useContext(MyContext);
 
   return (
@@ -129,7 +130,9 @@ const RelatedInsight = ({
                         : `${base_Uri}/`
                     }
                     title={data?.attributes?.InsightOverview[0]?.Title}
-                    redirect={data.id}
+                    redirect={generateSlug(
+                      data?.attributes?.InsightOverview[0]?.Title
+                    )}
                     textStyle={styles.textStyle}
                     params={params}
                     postDate

@@ -21,6 +21,7 @@
     @include mobile {
       margin-top: 1.5rem;
       padding: 0 0rem;
+      margin-right: 0;
     }
   }
 
@@ -78,7 +79,10 @@
       }
       span {
         font-size: text(larger);
-        @include textGradient;
+        color: color(info-blue);
+        @include min-desktop-medium {
+          @include textGradient;
+        }
         @include mobile-tablet-p {
           font-size: 2rem;
           line-height: 2.5rem;
