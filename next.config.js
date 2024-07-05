@@ -36,10 +36,6 @@ const nextConfig = {
             value: "commonCSP",
           },
           {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-          {
             key: "X-Frame-Options",
             value: "SAMEORIGIN",
           },
@@ -59,6 +55,15 @@ const nextConfig = {
           {
             key: "X-Content-Type-Options",
             value: "nosniff",
+          },
+        ],
+      },
+      {
+        source: "/:all*(svg|jpg|png|css|js|mp4|webp)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
           },
         ],
       },
