@@ -59,7 +59,6 @@ const NavigationDesktop = ({ props, featureArticle }) => {
           <Link
             href={`/insights/${feartureArray[0]?.id}`}
             className={styles.imageTech}
-             
           >
             <div className={styles.imgBox}>
               <ImageCustom
@@ -81,7 +80,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
               <Icons.ArrowRight size={16} />
             </div>
           </Link>
-          <Link href={`/insights/${feartureArray[1]?.id}`}  >
+          <Link href={`/insights/${feartureArray[1]?.id}`}>
             <div className={styles.imageTech}>
               <div className={styles.infoBox}>
                 <p className={styles.description}>
@@ -122,7 +121,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
           </div>
         </div>
         <div className={styles.overviewBtn}>
-          <Link href={props[2]?.DropDown[0]?.Links}  >
+          <Link href={props[2]?.DropDown[0]?.Links}>
             <Button onClick={closeMenu} variant="outline" size="sm">
               Overview <Icons.ArrowRight size={18} />
             </Button>
@@ -150,7 +149,6 @@ const NavigationDesktop = ({ props, featureArticle }) => {
             <li className={styles.menuItem}>
               <Link
                 href={props[0].Link}
-                
                 className={pathname == "/about" ? styles.active : ""}
               >
                 {props[0].Title}
@@ -159,7 +157,6 @@ const NavigationDesktop = ({ props, featureArticle }) => {
             <li className={styles.menuItem}>
               <Link
                 href={props[1].Link}
-                
                 className={pathname == "/solutions" ? styles.active : ""}
               >
                 {props[1].Title}
@@ -168,7 +165,6 @@ const NavigationDesktop = ({ props, featureArticle }) => {
             <li className={styles.dropDown} onMouseEnter={openMenu}>
               <Link
                 href={props[2].Link}
-                
                 className={pathname == "/technology" ? styles.active : ""}
               >
                 {props[2].Title} <div className={styles.arrow} />
@@ -187,7 +183,6 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                           <Link
                             href={props[2]?.DropDown[1]?.Links}
                             className={cn(styles.hrefInnerFlex)}
-                            
                             onClick={closeMenu}
                           >
                             <div className={styles.head}>
@@ -203,7 +198,6 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                           <Link
                             href={props[2]?.DropDown[2]?.Links}
                             className={cn(styles.hrefInnerFlex)}
-                            
                             onClick={closeMenu}
                           >
                             <div className={styles.head}>
@@ -219,7 +213,6 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                           <Link
                             href={props[2]?.DropDown[3]?.Links}
                             className={cn(styles.hrefInnerFlex)}
-                            
                             onClick={closeMenu}
                           >
                             <div className={styles.head}>
@@ -235,7 +228,6 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                           <Link
                             href={props[2]?.DropDown[4]?.Links}
                             className={cn(styles.hrefInnerFlex)}
-                            
                             onClick={closeMenu}
                           >
                             <div className={styles.head}>
@@ -254,7 +246,6 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                           <Link
                             href={props[2]?.DropDown[5]?.Links}
                             className={cn(styles.hrefInnerFlex)}
-                            
                             onClick={closeMenu}
                           >
                             <div className={styles.head}>
@@ -270,7 +261,6 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                           <Link
                             href={props[2]?.DropDown[6]?.Links}
                             className={cn(styles.hrefInnerFlex)}
-                            
                             onClick={closeMenu}
                           >
                             <div className={styles.head}>
@@ -283,10 +273,9 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                               {props[2]?.DropDown[6]?.Description}
                             </p>
                           </Link>
-                          <Link
+                          {/* <Link
                             href={props[2]?.DropDown[7]?.Links}
                             className={cn(styles.hrefInnerFlex)}
-                            
                             onClick={closeMenu}
                           >
                             <div className={styles.head}>
@@ -298,7 +287,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                             <p className={styles.excepPara}>
                               {props[2]?.DropDown[7]?.Description}
                             </p>
-                          </Link>
+                          </Link> */}
                         </div>
                       </div>
                     </div>
@@ -309,7 +298,6 @@ const NavigationDesktop = ({ props, featureArticle }) => {
             <li className={styles.menuItem}>
               <Link
                 href={props[3]?.Link}
-                
                 className={pathname == "/portfolio" ? styles.active : ""}
               >
                 {props[3]?.Title}
@@ -342,7 +330,6 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                           <Link
                             href={props[4]?.DropDown[0]?.Links}
                             className={cn(styles.hrefInnerFlex)}
-                            
                             onClick={closeMenu}
                           >
                             <div className={styles.head}>
@@ -358,7 +345,6 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                           <Link
                             href={props[4]?.DropDown[1]?.Links}
                             className={cn(styles.hrefInnerFlex)}
-                            
                             onClick={closeMenu}
                           >
                             <div className={styles.head}>
@@ -374,7 +360,6 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                           <Link
                             href={props[4]?.DropDown[2]?.Links}
                             className={cn(styles.hrefInnerFlex)}
-                            
                             onClick={closeMenu}
                           >
                             <div className={styles.head}>
@@ -387,25 +372,9 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                               {props[4]?.DropDown[2]?.Description}
                             </p>
                           </Link>
-                          {/* <Link
-                            href={props[4]?.DropDown[3]?.Links}
-                            className={cn(styles.hrefInnerFlex)}
-                            onClick={closeMenu}
-                          >
-                            <div className={styles.head}>
-                              <h4 className={styles.linkTitle}>
-                                {props[4]?.DropDown[3]?.Title}
-                              </h4>
-                              <Icons.ArrowForward />
-                            </div>
-                            <p className={styles.excepPara}>
-                              {props[4]?.DropDown[3]?.Description}
-                            </p>
-                          </Link> */}
                           <Link
                             href={props[4]?.DropDown[4]?.Links}
                             className={cn(styles.hrefInnerFlex)}
-                            
                             onClick={closeMenu}
                           >
                             <div className={styles.head}>
@@ -442,7 +411,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
               )}
             </button>
           </div>
-          <Link href={props[5]?.Link} >
+          <Link href={props[5]?.Link}>
             <Button
               variant={theme ? "blueBtnDark" : "blueBtn"}
               className={styles.headerBtn}

@@ -243,8 +243,8 @@ const ServicesForm = () => {
                   </div>
                   <div className={cn(styles.inputSpace, "input-item")}>
                     <Textarea
-                      label="Brief Explanation of your project*"
-                      placeholder="Brief Explanation of your project*"
+                      label="Your Message*"
+                      placeholder="Your Message*"
                       type="textarea"
                       rows="4"
                       id="projectExplanation"

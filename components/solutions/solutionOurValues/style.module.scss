@@ -35,6 +35,11 @@
     top: 14rem;
     height: 27rem;
 
+    @include desktop-4k {
+      max-width: 450px;
+      min-width: 450px;
+    }
+
     @include mobile-tablet-p {
       top: 0;
       position: static;

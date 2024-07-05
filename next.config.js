@@ -19,7 +19,8 @@ const nextConfig = {
   },
   env: {
     NODEMAILER_FROM_EMAIL: "contactus@techchefz.com",
-    NODEMAILER_TO_EMAIL: "khalid.ansari@techchefz.com",
+    NODEMAILER_TO_EMAIL: "sales@techchefz.com",
+    NODEMAILER_TO_JOB_EMAIL: "joinus@techchefz.com",
     NODEMAILER_PW: "ovps czuv bujv wlwp",
     NEXT_PUBLIC_RECAPTCHA_SITE_KEY: "6LevJ7ApAAAAAF5ZRMjbt3ii4S5ZPdrO-ht7vHi_",
     RECAPTCHA_SECRET_KEY: "6LevJ7ApAAAAAJGJYMiS4ozpdGAQ7h7rMeZW3oIm",

@@ -571,6 +571,11 @@
         background-color: color(dark-gray);
         padding: 3rem;
 
+        @include desktop-4k {
+          min-width: 490px;
+          max-width: 40%;
+        }
+
         @include tablet {
           max-width: 100%;
 
@@ -686,6 +691,11 @@
         @include desktop-14 {
           min-height: 68vh;
           max-height: 68vh;
+        }
+
+        @include desktop-4k {
+          min-height: 60vh;
+          max-height: 60vh;
         }
 
         @include desktop-lg {
