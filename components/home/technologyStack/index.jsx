@@ -36,6 +36,7 @@ const TechnologyStack = ({ technology }) => {
         theme ? styles.technologyStyleDark : ""
       )}
       id="tech-Stack"
+      style={{ backgroundImage: !theme ? "url(/images/techstack-white.webp)" : "url(/images/techstack-dark.webp)" }}
     >
       <div className={cn("primary-container")}>
         <div className={styles.technologyStackBox}>

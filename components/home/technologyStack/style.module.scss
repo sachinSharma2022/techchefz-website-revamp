@@ -4,7 +4,6 @@
   padding: 1.25rem;
   position: relative;
   overflow: hidden;
-  background: url("/images/techstack-white.webp");
   background-repeat: space repeat;
   height: 100vh;
   background-size: 150vw;
@@ -177,7 +176,6 @@
   }
 
   &.technologyStyleDark {
-    background: color(dark-bg) url("/images/techstack-dark.webp");
     background-size: 150vw;
     background-repeat: space repeat;
 
