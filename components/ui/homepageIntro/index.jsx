@@ -86,7 +86,7 @@ const HomepageIntro = (props) => {
           ref={videoRef}
           {...props}
         >
-          {/* <source src={props.src} type={props.type || "video/mp4"} /> */}
+          <source src={props.src} type={props.type || "video/mp4"} />
         </video>
       </div>
     </div>
