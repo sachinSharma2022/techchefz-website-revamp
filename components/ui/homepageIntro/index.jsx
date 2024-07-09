@@ -97,7 +97,7 @@ const HomepageIntro = (props) => {
           ref={videoRef}
           {...props}
           preload="auto"
-          poster="/images/value.png"
+          // poster="/images/value.png"
         >
           <source src={props.src} type={props.type || "video/mp4"} />
         </video>

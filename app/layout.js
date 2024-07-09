@@ -2,8 +2,8 @@
 import ThemeProvider from "@/context/theme";
 import { api_Home_Page } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
-// import "../styles/grid.min.css";
-import "../styles/bootstrap.css";
+import "../styles/grid.min.css";
+// import "../styles/bootstrap.css";
 //import Header from "../components/layouts/header";
 import { aeonik, helvetica } from "../lib/fonts";
 import { cn } from "../lib/utils";
