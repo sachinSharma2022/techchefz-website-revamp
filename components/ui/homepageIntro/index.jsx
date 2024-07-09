@@ -98,7 +98,9 @@ const HomepageIntro = (props) => {
           {...props}
           preload="auto"
           poster="/images/value.png"
-        />
+        >
+          <source src={props.src} type={props.type || "video/mp4"} />
+        </video>
       </div>
     </div>
   );

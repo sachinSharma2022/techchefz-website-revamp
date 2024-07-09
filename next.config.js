@@ -59,7 +59,7 @@ const nextConfig = {
         ],
       },
       {
-        source: "/:all*(svg|jpg|png|css|js|mp4|webp)",
+        source: "/:all*(svg|jpg|png|css|js|mp4|webp|woff2)",
         headers: [
           {
             key: "Cache-Control",

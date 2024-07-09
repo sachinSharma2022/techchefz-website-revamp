@@ -1,17 +1,17 @@
-import DigitalTransformation from "@/components/home/digitalTransformation";
-import HomeTestimonials from "@/components/home/homeTestimonials";
-import LandingBanner from "@/components/home/landingBanner";
-import LetsWork from "@/components/home/letsWork";
-import OurNumbers from "@/components/home/ourNumbers";
-import Projects from "@/components/home/projects";
-import Service from "@/components/home/service";
-import TechnologyStack from "@/components/home/technologyStack";
-import WeAreFuture from "@/components/home/weAreFuture";
-import HomepageIntro from "@/components/ui/homepageIntro";
+// import DigitalTransformation from "@/components/home/digitalTransformation";
+// import HomeTestimonials from "@/components/home/homeTestimonials";
+// import LandingBanner from "@/components/home/landingBanner";
+// import LetsWork from "@/components/home/letsWork";
+// import OurNumbers from "@/components/home/ourNumbers";
+// import Projects from "@/components/home/projects";
+// import Service from "@/components/home/service";
+// import TechnologyStack from "@/components/home/technologyStack";
+// import WeAreFuture from "@/components/home/weAreFuture";
+// import HomepageIntro from "@/components/ui/homepageIntro";
 import { api_Home_Page, base_Url, api_Case_study_Page } from "@/lib/constants";
+import HomeContainer from "@/components/home/homeContainer";
 import { getData, getDataDynamic } from "@/lib/fetchData";
 import NotFound from "../not-found";
-
 
 const HomePage = async () => {
   const data = await getData(api_Home_Page);
@@ -20,7 +20,7 @@ const HomePage = async () => {
     <>
       {data ? (
         <div>
-          <LandingBanner props={data.Banner} />
+          {/* <LandingBanner props={data.Banner} />
           <HomepageIntro
             src={
               data?.Technology?.Video?.data?.attributes?.url
@@ -35,8 +35,8 @@ const HomePage = async () => {
           <TechnologyStack technology={data.Technologys} />
           <DigitalTransformation digital={data.digitalTransform} />
           <HomeTestimonials testimonials={data.Testimonials} />
-          <LetsWork contact={data.ContactUs} />
-          {/* <HomeContainer data={data} data_Portfolio={data_Portfolio} /> */}
+          <LetsWork contact={data.ContactUs} /> */}
+          <HomeContainer data={data} data_Portfolio={data_Portfolio} />
         </div>
       ) : (
         <>
