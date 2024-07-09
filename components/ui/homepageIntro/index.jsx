@@ -17,8 +17,6 @@ const HomepageIntro = (props) => {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    videoRef.current.play();
-
     if (isBigScreen) {
       let ctx = gsap.context(() => {
         ScrollTrigger.create({
@@ -69,6 +67,19 @@ const HomepageIntro = (props) => {
     });
   }, []);
 
+  useEffect(() => {
+    if (videoRef.current) {
+      const playVideo = () => {
+        videoRef.current.play().catch((error) => {
+          console.error("Error attempting to play video:", error);
+        });
+      };
+      // Play video after a user interaction to ensure it works on iOS
+      document.addEventListener("touchstart", playVideo, { once: true });
+      playVideo();
+    }
+  }, []);
+
   return (
     <div
       className={`${styles.videoCustom} ${theme ? styles.videoCustomDark : ""}`}
@@ -79,15 +90,15 @@ const HomepageIntro = (props) => {
           id="my-video"
           width={props.width}
           height={props.height}
-          autoplay
-          playsinline
+          autoPlay
+          playsInline
           muted
           loop
           ref={videoRef}
           {...props}
-        >
-          {/* <source src={props.src} type={props.type || "video/mp4"} /> */}
-        </video>
+          preload="auto"
+          poster="/images/value.png"
+        />
       </div>
     </div>
   );
