@@ -41,7 +41,7 @@ const Technology = async () => {
             wrapperStyle="technology-styles"
             props={data.Technology}
           />
-          {/* <WhatWeDo props={data.WhatWeDoComponent} /> */}
+          <WhatWeDo props={data.WhatWeDoComponent} />
           <OurNumbers carrer={data.carrer} experience={data.ourExperience} />
           <Discover props={data.DiscoverTech} />
           <RelatedCase

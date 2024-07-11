@@ -9,7 +9,7 @@ const nextConfig = {
       "images.unsplash.com",
       "flagcdn.com",
       "127.0.0.1",
-      "122.176.75.250",
+      "4.186.56.66",
       "cms-strapi.techchefz.in",
       "cms-strapi.techchefz.digital",
     ],
