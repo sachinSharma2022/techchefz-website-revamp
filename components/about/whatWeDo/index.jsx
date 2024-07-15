@@ -11,6 +11,7 @@ import { useMediaQuery } from "react-responsive";
 import styles from "./style.module.scss";
 
 const WhatWeDo = ({ props }) => {
+ 
   const { theme, setTheme } = useContext(MyContext);
   const isBigScreen = useMediaQuery({ query: "(min-width: 690px)" });
 
@@ -47,6 +48,7 @@ const WhatWeDo = ({ props }) => {
                             ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
                             : `${base_Uri}/`
                         }
+                        alt = {data?.Image?.data?.attributes?.alternativeText}
                       />
                     </div>
 
@@ -79,6 +81,7 @@ const WhatWeDo = ({ props }) => {
                             ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
                             : `${base_Uri}/`
                         }
+                        alt = {data?.Image?.data?.attributes?.alternativeText}
                       />
                     </div>
                     <h3>{data.Title}</h3>

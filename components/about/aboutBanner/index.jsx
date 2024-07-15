@@ -8,6 +8,7 @@ import { useContext } from "react";
 import styles from "./style.module.scss";
 
 const AboutBanner = ({ props }) => {
+
   const { theme, setTheme } = useContext(MyContext);
 
   return (
@@ -32,7 +33,7 @@ const AboutBanner = ({ props }) => {
           }
           width={2560}
           height={1068}
-          alt="bannerImg"
+          alt = {props[0]?.image?.data?.attributes?.alternativeText}
         />
       </div>
     </section>
