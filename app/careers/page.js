@@ -31,7 +31,7 @@ const Career = async () => {
             gallary={data.gallary}
           />
           <TczLife props={data.Lifeattechchefz} />
-          {data_career_details.length && data?.CareerBanner[0]?.CareerForm ? (
+          {!data_career_details.length && data?.CareerBanner[0]?.CareerForm ? (
             <ContactSection
               id="OpenPosition"
               props={data_career_details[0].attributes.Developercontact}
@@ -39,6 +39,11 @@ const Career = async () => {
           ) : (
             <OpenPosition id="OpenPosition" props={data_career_details} />
           )}
+
+          {/* <ContactSection
+            id="OpenPosition"
+            props={data_career_details[0].attributes.Developercontact}
+          /> */}
 
           <HomeTestimonials testimonials={data.Testimonials} />
           <TechnologyValues

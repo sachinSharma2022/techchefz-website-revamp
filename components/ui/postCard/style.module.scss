@@ -77,6 +77,12 @@
   @include postCardStyles();
 }
 
+.flexCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 //dark Mode
 
 .darkMode {

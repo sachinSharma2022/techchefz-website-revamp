@@ -136,6 +136,12 @@
     }
   }
 
+  .flexCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   // Dark Mode
   &.ourResultsDark {
     background-color: color(input-bg);
