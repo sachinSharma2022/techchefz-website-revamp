@@ -17,7 +17,7 @@ const PartnerCard = (props) => {
             src={props.imgSrc}
             width={300}
             height={300}
-            alt="partner-logo"
+            alt={props.alt}
             className={styles.imgStyle}
           />
         ) : (
@@ -25,7 +25,7 @@ const PartnerCard = (props) => {
             src={props.darkImgSrc}
             width={300}
             height={300}
-            alt="partner-logo"
+            alt={props.alt}
             className={styles.imgStyle}
           />
         )}

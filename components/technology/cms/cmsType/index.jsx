@@ -45,6 +45,7 @@ const CmsType = ({ props }) => {
                     ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
                     : `${base_Uri}/`
                 }
+                alt = { data?.Image?.data?.attributes?.alternativeText}
                 darkImgSrc={
                   data?.Image?.data?.attributes?.url
                     ? `${base_Uri}${data?.Image?.data?.attributes?.url}`

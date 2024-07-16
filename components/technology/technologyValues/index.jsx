@@ -69,13 +69,13 @@ const TechnologyValues = ({ props, wrapperStyle }) => {
               <SwiperSlide key={index} className={styles.valuesImg}>
                 <ImageCustom
                   src={
-                    data?.SliderImage?.data.attributes.url
+                    data?.SliderImage?.data?.attributes?.url
                       ? `${base_Uri}${data?.SliderImage?.data.attributes.url}`
                       : `${base_Uri}/`
                   }
                   width={2560}
                   height={1068}
-                  alt="img"
+                  alt = {data?.SliderImage?.data?.attributes?.alternativeText}
                 />
               </SwiperSlide>
             ))}
@@ -103,6 +103,7 @@ const TechnologyValues = ({ props, wrapperStyle }) => {
                         ? `${base_Uri}${data?.Images?.data?.attributes?.url}`
                         : `${base_Uri}/`
                     }
+                    alt = {data?.Images?.data?.attributes?.alternativeText}
                   />
                   <h4 className={styles.subTitle}>{data?.Title}</h4>
                   <p className={styles.content}>{data?.Description} </p>
