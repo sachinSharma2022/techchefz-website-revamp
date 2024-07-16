@@ -56,7 +56,7 @@ const Innovation = ({ props }) => {
                   }
                   width="500"
                   height="500"
-                  alt="Innovation"
+                  alt = {data?.Image?.data?.attributes?.alternativeText}
                 />
               </div>
             </Link>

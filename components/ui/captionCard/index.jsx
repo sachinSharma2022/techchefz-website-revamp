@@ -16,7 +16,7 @@ const CaptionCard = (props) => {
          className={`${styles.captionCard} ${props.className} ${theme ? styles.captionCardDark : ""} card`}
       >
          <div className={styles.cardImg}>
-            <ImageCustom src={props.imgSrc} width={1360} height={450} alt="captionImg" />
+            <ImageCustom src={props.imgSrc} width={1360} height={450} alt={props.alt} />
          </div>
          <div className={styles.cardBodyWrapper}>
             <div className={styles.cardBody}>

@@ -8,6 +8,7 @@ import { useContext } from "react";
 import styles from "./style.module.scss";
 
 const Industry = ({ props, CMSImplementation, Industryinner }) => {
+  console.log(CMSImplementation,"case");
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section className={cn(styles.industry, theme ? styles.industryDark : "")}>
@@ -53,7 +54,7 @@ const Industry = ({ props, CMSImplementation, Industryinner }) => {
               }
               width={1300}
               height={500}
-              alt="website-img"
+              alt = {CMSImplementation[0]?.Image?.data?.attributes?.alternativeText}
               className={styles.industryImg}
             />
           )}
