@@ -81,7 +81,7 @@ const Testimonials = ({ props }) => {
                             }
                             width={88}
                             height={88}
-                            alt="profileImg"
+                            alt = {data?.ProfileImage?.data?.attributes?.alternativeText}
                           />
                         </div>
                         <p className={styles.customerName}>
@@ -168,7 +168,7 @@ const Testimonials = ({ props }) => {
                             }
                             width={100}
                             height={100}
-                            alt="profileImg"
+                            alt = {data?.ProfileImage?.data?.attributes?.alternativeText}
                           />
                         </div>
                         <p className={styles.customerName}>

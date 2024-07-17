@@ -33,7 +33,7 @@ const GridMarqueeGallery = ({ props }) => {
                         }
                         width={800}
                         height={800}
-                        alt="gallery-img"
+                        alt = {props[8]?.Image?.data?.attributes?.alternativeText}
                       />
                     </div>
                     <div className={cn(styles.galleryImage)}>
@@ -45,7 +45,7 @@ const GridMarqueeGallery = ({ props }) => {
                         }
                         width={800}
                         height={800}
-                        alt="gallery-img"
+                        alt = {props[9]?.Image?.data?.attributes?.alternativeText}
                       />
                     </div>
                   </div>
@@ -59,7 +59,7 @@ const GridMarqueeGallery = ({ props }) => {
                         }
                         width={800}
                         height={800}
-                        alt="gallery-img"
+                        alt = {props[0]?.Image?.data?.attributes?.alternativeText}
                       />
                     </div>
                   </div>
@@ -73,7 +73,7 @@ const GridMarqueeGallery = ({ props }) => {
                         }
                         width={800}
                         height={800}
-                        alt="gallery-img"
+                        alt = {props[1]?.Image?.data?.attributes?.alternativeText}
                       />
                     </div>
                     <div className={cn(styles.galleryImage)}>
@@ -85,7 +85,7 @@ const GridMarqueeGallery = ({ props }) => {
                         }
                         width={800}
                         height={800}
-                        alt="gallery-img"
+                        alt = {props[2]?.Image?.data?.attributes?.alternativeText}
                       />
                     </div>
                   </div>
@@ -99,7 +99,7 @@ const GridMarqueeGallery = ({ props }) => {
                         }
                         width={800}
                         height={800}
-                        alt="gallery-img"
+                        alt = {props[3]?.Image?.data?.attributes?.alternativeText}
                       />
                     </div>
                     <div className={cn(styles.smGrid, "row")}>
@@ -113,7 +113,7 @@ const GridMarqueeGallery = ({ props }) => {
                             }
                             width={800}
                             height={300}
-                            alt="gallery-img"
+                            alt = {props[4]?.Image?.data?.attributes?.alternativeText}
                           />
                         </div>
                       </div>
@@ -127,7 +127,7 @@ const GridMarqueeGallery = ({ props }) => {
                             }
                             width={800}
                             height={300}
-                            alt="gallery-img"
+                            alt = {props[5]?.Image?.data?.attributes?.alternativeText}
                           />
                         </div>
                       </div>
@@ -143,7 +143,7 @@ const GridMarqueeGallery = ({ props }) => {
                         }
                         width={800}
                         height={800}
-                        alt="gallery-img"
+                        alt = {props[6]?.Image?.data?.attributes?.alternativeText}
                       />
                     </div>
                     <div className={cn(styles.galleryImage)}>
@@ -155,7 +155,7 @@ const GridMarqueeGallery = ({ props }) => {
                         }
                         width={800}
                         height={800}
-                        alt="gallery-img"
+                        alt = {props[7]?.Image?.data?.attributes?.alternativeText}
                       />
                     </div>
                   </div>

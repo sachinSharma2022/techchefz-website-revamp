@@ -8,7 +8,7 @@ import { useContext } from "react";
 import styles from "./style.module.scss";
 
 const Industry = ({ props, CMSImplementation, Industryinner }) => {
-  console.log(CMSImplementation,"case");
+ 
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section className={cn(styles.industry, theme ? styles.industryDark : "")}>
