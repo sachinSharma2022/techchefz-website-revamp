@@ -95,6 +95,7 @@
   .cardStyle {
     max-width: 580px;
     width: auto;
+    display: block;
 
     @include tablet-p {
       width: 100%;

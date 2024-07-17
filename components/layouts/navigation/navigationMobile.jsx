@@ -237,7 +237,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                     : ""
                 )}
               >
-                <section className={styles.subsection}>
+                <div className={styles.subsection}>
                   <button
                     className={styles.backButton}
                     onClick={() => setTechMenu(false)}
@@ -365,7 +365,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                   </div>
 
                   {LatestTech(feartureTech)}
-                </section>
+                </div>
               </ul>
             </li>
             <li className={styles.menuItem}>

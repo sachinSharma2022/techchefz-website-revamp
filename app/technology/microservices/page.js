@@ -34,8 +34,8 @@ const Cms = async () => {
           <CmsBanner props={data.Banner} />
           <CmsPlayer props={data.Player} />
           <WhyCms props={data.Why} />
-          <CmsType props={data.Type} />
-          <CmsDifference props={data.Difference} />
+          {/* <CmsType props={data.Type} />
+          <CmsDifference props={data.Difference} /> */}
           {/* <TechnologyValues
             wrapperStyle="technology-cms-styles"
             props={data.Technology}

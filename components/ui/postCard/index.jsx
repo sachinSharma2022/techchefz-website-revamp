@@ -41,7 +41,7 @@ const PostCard = (props) => {
       </div>
       <div className={styles.cardBody}>
         <h5 className={styles.cardTitle}>{props.title}</h5>
-        <div className="d-flex justify-content-between align-items-center">
+        <div className={styles.flexCard}>
           <div className={styles.cardDateText}>
             <p className={styles.cardDate}>
               {`${

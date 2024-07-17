@@ -352,6 +352,7 @@
         color: color(primary-white);
         font-size: 1rem;
         opacity: opacity(dark);
+        margin-bottom: 2rem;
       }
 
       .headerBtn {
@@ -694,6 +695,11 @@
         @include desktop-14 {
           min-height: 68vh;
           max-height: 68vh;
+        }
+
+        @include desktop-4k {
+          min-height: 60vh;
+          max-height: 60vh;
         }
 
         @include desktop-lg {

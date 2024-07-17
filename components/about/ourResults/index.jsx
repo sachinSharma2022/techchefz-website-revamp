@@ -39,7 +39,7 @@ const OurResults = ({ props }) => {
           <div className={styles.resultCardWrapper}>
             {props[0]?.Views?.map((data, index) => (
               <div key={index} className={styles.resultCard}>
-                <div className="d-flex justify-content-between align-items-center">
+                <div className={styles.flexCard}>
                   <h6 className={styles.cardNum}>{data.Title}</h6>
                   <div className={styles.cardNum}>
                     <ImageCustom
@@ -65,7 +65,7 @@ const OurResults = ({ props }) => {
           <MobileSlider slidesToShow={1.4}>
             {props[0]?.Views?.map((data, index) => (
               <div key={index} className={styles.resultCard}>
-                <div className="d-flex justify-content-between align-items-center">
+                <div className={styles.flexCard}>
                   <h6 className={styles.cardNum}>{data.Title}</h6>
                   <div className={styles.cardNum}>
                     <ImageCustom
