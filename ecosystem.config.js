@@ -1,11 +1,18 @@
 module.exports = {
   apps: [
     {
-      name: "techchefz-website-revamp",
-      cwd: "/techchefz-website-revamp",
-      script: "npm",
+      name: "nextjs-app",
+      script: "node_modules/next/dist/bin/next",
       args: "start",
-      watch: true,
+
+      env: {
+        NODE_ENV: "development",
+        PORT: 4562,
+      },
+      env_production: {
+        NODE_ENV: "production",
+        PORT: 4562,
+      },
     },
   ],
 };

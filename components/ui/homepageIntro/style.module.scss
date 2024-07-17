@@ -11,7 +11,7 @@
 
   @include mobile {
     height: 250px;
-    margin-bottom: 5rem;
+    margin-bottom: 1rem;
   }
 
   .videoCont {
@@ -23,7 +23,7 @@
     position: relative;
 
     @include mobile-tablet-p {
-      height: 100%;
+      height: 300px;
     }
 
     @include desktop-hd-min {
@@ -34,16 +34,17 @@
       object-fit: cover;
       border-radius: 1.25rem;
       max-width: 1228px;
-
       object-fit: cover;
+
       @include desktop-hd-min {
         max-width: 1440px;
       }
 
       @include mobile-tablet-p {
-        width: 100%;
-        height: 100%;
-        border-radius: 0rem;
+        width: 100vw;
+        height: 200px;
+        border-radius: 0;
+        object-fit: cover;
       }
     }
   }

@@ -11,6 +11,7 @@ import { useMediaQuery } from "react-responsive";
 import styles from "./style.module.scss";
 
 const WhatWeDo = ({ props }) => {
+  console.log(props, "props");
   const { theme, setTheme } = useContext(MyContext);
   const isBigScreen = useMediaQuery({ query: "(min-width: 690px)" });
 
