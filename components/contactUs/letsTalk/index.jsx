@@ -121,7 +121,7 @@ const LetsTalk = ({ props }) => {
                               : `${base_Uri}/`
                           }
                         />
-                        <h1>{props.Title1}</h1>
+                        <h3>{props.Title1}</h3>
                       </div>
 
                       {selected && (
@@ -150,7 +150,7 @@ const LetsTalk = ({ props }) => {
                               : `${base_Uri}/`
                           }
                         />
-                        <h1>{props.Title2}</h1>
+                        <h3>{props.Title2}</h3>
                       </div>
 
                       {selected && (
@@ -179,7 +179,7 @@ const LetsTalk = ({ props }) => {
                               : `${base_Uri}/`
                           }
                         />
-                        <h1>{props.Title3}</h1>
+                        <h3>{props.Title3}</h3>
                       </div>
 
                       {selected && (
@@ -208,7 +208,7 @@ const LetsTalk = ({ props }) => {
                               : `${base_Uri}/`
                           }
                         />
-                        <h1>{props.Title4}</h1>
+                        <h3>{props.Title4}</h3>
                       </div>
 
                       {selected && (

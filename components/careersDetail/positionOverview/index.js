@@ -1,15 +1,14 @@
 "use client";
 
-import React, { useContext } from "react";
-import styles from "./style.module.scss";
-import { Icons } from "@/components/icons";
-import { ImageCustom } from "@/components/ui/imageCustom";
 import { Button } from "@/components/ui/button";
-import { MyContext } from "@/context/theme";
+import { ImageCustom } from "@/components/ui/imageCustom";
 import SmoothDropdown from "@/components/ui/smoothDropdownButton";
+import { MyContext } from "@/context/theme";
 import { base_Uri } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { useContext } from "react";
+import styles from "./style.module.scss";
 
 const CareerPositionOverview = ({ props, href }) => {
   const { theme, setTheme } = useContext(MyContext);

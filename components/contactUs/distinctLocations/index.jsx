@@ -54,7 +54,7 @@ const DistinctLocations = ({ props }) => {
                     />
                   </div>
                   <div className={styles.countryFlag}>
-                    <h2 className={styles.sbTitle}>{data.Title}</h2>
+                    <h3 className={styles.sbTitle}>{data.Title}</h3>
                     <div className={styles.flag}>
                       <ImageCustom
                         src={

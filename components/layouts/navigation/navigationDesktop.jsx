@@ -56,7 +56,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
     return (
       <>
         <div className={cn(styles.latestTech)}>
-          <h1>{props[2]?.DropDown[8]?.Title}</h1>
+          <h3 className={styles.title}>{props[2]?.DropDown[8]?.Title}</h3>
           <Link
             href={`/insights/${generateSlug(
               feartureArray[0]?.attributes?.InsightOverview[0].Title
@@ -119,7 +119,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
             />
           </div>
           <div className={styles.overviewTitle}>
-            <h1>{props[2]?.DropDown[0]?.Title}</h1>
+            <h3 className={styles.title}>{props[2]?.DropDown[0]?.Title}</h3>
             <p
               dangerouslySetInnerHTML={{
                 __html: `${props[2]?.DropDown[0]?.Description}`,
