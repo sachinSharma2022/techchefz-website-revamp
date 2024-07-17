@@ -12,7 +12,7 @@ const AnimatedFooterLogo = (props) => {
           src="/images/animated-logo/logo-white.svg"
           width={153}
           height={40}
-          alt="header-logo"
+          alt="Techchefz Digital"
         />
         <h4 className={styles.header}>digital</h4>
       </div>

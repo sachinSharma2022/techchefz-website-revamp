@@ -37,7 +37,7 @@ const ContactHeroBanner = ({ props }) => {
           }
           width={2560}
           height={1068}
-          alt="contactBannerImg"
+          alt = {props?.image?.data?.attributes?.alternativeText}
         />
       </div>
     </section>

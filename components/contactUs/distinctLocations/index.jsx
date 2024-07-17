@@ -50,7 +50,7 @@ const DistinctLocations = ({ props }) => {
                       }
                       width={330}
                       height={162}
-                      alt="image"
+                      alt = { data?.brandImg?.data?.attributes?.alternativeText}
                     />
                   </div>
                   <div className={styles.countryFlag}>
@@ -64,7 +64,7 @@ const DistinctLocations = ({ props }) => {
                         }
                         width={100}
                         height={24}
-                        alt="flag"
+                        alt = {data?.countryFlagImg?.data?.attributes?.alternativeText}
                       />
                     </div>
                   </div>

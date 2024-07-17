@@ -73,7 +73,8 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                 }
                 width={300}
                 height={300}
-                alt="nav-image"
+                alt = {feartureArray[0]?.attributes?.InsightOverview[0]?.Image?.data
+                  ?.attributes?.alternativeText}
               />
             </div>
             <div className={styles.infoBox}>
@@ -115,7 +116,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
               }
               width={56}
               height={56}
-              alt="bannerImg"
+              alt = {props[2]?.DropDown[0]?.Image?.data?.attributes?.alternativeText}
             />
           </div>
           <div className={styles.overviewTitle}>

@@ -120,6 +120,7 @@ const LetsTalk = ({ props }) => {
                               ? `${base_Uri}${props?.Image1?.data?.attributes?.url}`
                               : `${base_Uri}/`
                           }
+                          alt = {props?.Image1?.data?.attributes?.alternativeText}
                         />
                         <h1>{props.Title1}</h1>
                       </div>
@@ -149,6 +150,7 @@ const LetsTalk = ({ props }) => {
                               ? `${base_Uri}${props?.Image2?.data?.attributes?.url}`
                               : `${base_Uri}/`
                           }
+                          alt = {props?.Image2?.data?.attributes?.alternativeText}
                         />
                         <h1>{props.Title2}</h1>
                       </div>
@@ -178,6 +180,7 @@ const LetsTalk = ({ props }) => {
                               ? `${base_Uri}${props?.Image3?.data?.attributes?.url}`
                               : `${base_Uri}/`
                           }
+                          alt = {props?.Image3?.data?.attributes?.alternativeText}
                         />
                         <h1>{props.Title3}</h1>
                       </div>
@@ -207,6 +210,7 @@ const LetsTalk = ({ props }) => {
                               ? `${base_Uri}${props?.Image4?.data?.attributes?.url}`
                               : `${base_Uri}/`
                           }
+                          alt = {props?.Image4?.data?.attributes?.alternativeText}
                         />
                         <h1>{props.Title4}</h1>
                       </div>
