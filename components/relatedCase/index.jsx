@@ -125,6 +125,8 @@ const RelatedCase = ({
                             ?.attributes?.url
                         : `${base_Uri}/`
                     }
+                    alt = {data?.attributes?.Banner?.PortfolioImage?.data
+                      ?.attributes?.alternativeText}
                     title={data?.attributes?.Banner?.PortfolioTitle}
                     redirect={generateSlug(
                       data?.attributes?.Banner?.PortfolioTitle
