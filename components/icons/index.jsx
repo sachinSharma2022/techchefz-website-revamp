@@ -953,6 +953,30 @@ export const Icons = {
       </defs>
     </svg>
   ),
+  SendIcon: ({ size, ...props }) => (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M21.5 2.5L14.85 21.5L11.05 12.95L2.5 9.15L21.5 2.5Z"
+        stroke="#008BF0"
+        stroke-width="2"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M21.5003 2.5L11.0503 12.95"
+        stroke="#008BF0"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  ),
   IconPlus: ({ size, ...props }) => (
     <svg
       width="24"

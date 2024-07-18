@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { Icons } from "@/components/icons";
 import styles from "./style.module.scss";
 import axios from "axios";
+import { Icons } from "@/components/icons";
 
-const ChatboxBody = ({ sethidden, hidden, setclearConversation }) => {
+const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
   const buttonRef = useRef();
   const userinfo = useRef("");
   const messagesEndRef = useRef();
@@ -657,7 +657,7 @@ const ChatboxBody = ({ sethidden, hidden, setclearConversation }) => {
   };
 
   return (
-    <section className={hidden ? styles.chatboxBodyhidden : styles.chatboxBody}>
+    <div className={hidden ? styles.chatboxBodyhidden : styles.chatboxBody}>
       <div className={styles.chatbotHeader}>
         <p className={styles.chatbotTitle}>Techchefz Digital Assistant</p>
         <div className={styles.headbtn}>
@@ -721,8 +721,8 @@ const ChatboxBody = ({ sethidden, hidden, setclearConversation }) => {
           <Icons.SendIcon />
         </button>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default ChatboxBody;
+export default ChatBoxBody;

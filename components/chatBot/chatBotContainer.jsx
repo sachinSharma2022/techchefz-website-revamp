@@ -1,7 +1,7 @@
 "use client";
-import React, { useState } from "react";
-import ChatboxBody from "./chatBoxBody/ChatboxBody";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./chatBoxBody/style.module.scss";
+import ChatBoxBody from "./chatBoxBody/ChatBoxBody";
 
 const ChatBotContainer = () => {
   const [hidden, sethidden] = useState(true);
@@ -11,7 +11,7 @@ const ChatBotContainer = () => {
       {clearConversation ? (
         <></>
       ) : (
-        <ChatboxBody
+        <ChatBoxBody
           sethidden={sethidden}
           hidden={hidden}
           setclearConversation={setclearConversation}
@@ -33,5 +33,6 @@ const ChatBotContainer = () => {
     </section>
   );
 };
+
 
 export default ChatBotContainer;
