@@ -151,7 +151,7 @@ const OurHistory = ({ props, OurHistory }) => {
                       }
                       width={530}
                       height={397}
-                      alt="slider-img"
+                      alt = {data?.OurHistoryCard?.Image?.data?.attributes?.alternativeText}
                     />
                   </div>
                 </div>

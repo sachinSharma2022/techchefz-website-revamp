@@ -70,13 +70,13 @@ const SolutionOurValues = ({ props }) => {
                     >
                       <ImageCustom
                         src={
-                          data.Image.data.attributes.url
+                          data?.Image?.data?.attributes?.url
                             ? `${base_Uri}${data.Image.data.attributes.url}`
                             : `${base_Uri}/`
                         }
                         width={30}
                         height={30}
-                        alt="bannerImg"
+                        alt = {data?.Image?.data?.attributes?.alternativeText}
                       />
                       <h4 className={styles.title}>{data.Title}</h4>
                       <div className={styles.iconBox}>
