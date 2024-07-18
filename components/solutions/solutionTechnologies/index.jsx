@@ -14,6 +14,7 @@ import TextRevel from "@/components/ui/sectionAnimation";
 import { useMediaQuery } from "react-responsive";
 
 const SolutionTechnologies = ({ props }) => {
+  console.log(props,"aa");
   const { theme, setTheme } = useContext(MyContext);
   const isSmallMobile = useMediaQuery({ query: "(max-width: 690px)" });
 
@@ -67,6 +68,7 @@ const SolutionTechnologies = ({ props }) => {
                         ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
                         : `${base_Uri}/`
                     }
+                    alt={data?.Image?.data?.attributes?.alternativeText}
                     sbText={data.Description}
                   />
                 ))}
@@ -81,7 +83,7 @@ const SolutionTechnologies = ({ props }) => {
                 }
                 width={1000}
                 height={100}
-                alt="bannerImg"
+                alt = {props?.image?.data?.attributes?.alternativeText}
               />
             </div>
           </div>
@@ -99,6 +101,7 @@ const SolutionTechnologies = ({ props }) => {
                   ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
                   : `${base_Uri}/`
               }
+              alt = {data?.Image?.data?.attributes?.alternativeText}
               sbText={data.Description}
             />
           ))}

@@ -17,7 +17,7 @@ const ServiceInfoCard = (props) => {
             width={56}
             height={56}
             src={props.icon}
-            alt="bannerImg"
+            alt={props.alt}
           />
         </div>
       </div>
