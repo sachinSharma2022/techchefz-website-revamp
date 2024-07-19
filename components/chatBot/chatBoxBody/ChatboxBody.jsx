@@ -33,7 +33,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
           </p>
           <div className={styles.choosebtns}>
             <button
-              className="btn2"
+              className={styles.choosebtn}
               onClick={() => {
                 departmentSelection("Hiring");
               }}
@@ -41,7 +41,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
               Resource Hiring/Job Application
             </button>
             <button
-              className="btn2"
+              className={styles.choosebtn}
               onClick={() => {
                 departmentSelection("Partner Collaboration");
               }}
@@ -49,7 +49,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
               Partner Collaboration
             </button>
             <button
-              className="btn2"
+              className={styles.choosebtn}
               onClick={() => {
                 departmentSelection("Services");
               }}
@@ -94,7 +94,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                 </p>
                 <div className={styles.choosebtns}>
                   <button
-                    className="btn2"
+                    className={styles.choosebtn}
                     onClick={() => {
                       serviceSelection("hiring1", departmentName,"I am interested in applying for a job at Techchefz.");
                     }}
@@ -102,7 +102,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                     Apply for a Job
                   </button>
                   <button
-                    className="btn2"
+                    className={styles.choosebtn}
                     onClick={() => {
                       serviceSelection("hiring2", departmentName,"I am interested in applying for a job at Techchefz.");
                     }}
@@ -132,7 +132,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                 </p>
                 <div className={styles.choosebtns}>
                   <button
-                    className="btn2"
+                    className={styles.choosebtn}
                     onClick={() => {
                       serviceSelection("Technology Partnership", departmentName,"I am interested in collaborating as a Technology Partner with Techchefz.");
                     }}
@@ -140,7 +140,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                     Technology Partnership
                   </button>
                   <button
-                    className="btn2"
+                    className={styles.choosebtn}
                     onClick={() => {
                       serviceSelection("Marketing Partnership", departmentName,"I am interested in collaborating as a Marketing Partner with Techchefz.");
                     }}
@@ -148,7 +148,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                     Marketing Partnership
                   </button>
                   <button
-                    className="btn2"
+                    className={styles.choosebtn}
                     onClick={() => {
                       serviceSelection("Other Collaborations", departmentName,"I am interested in collaborating as a Other Collaborations with Techchefz.");
                     }}
@@ -178,7 +178,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                 </p>
                 <div className={styles.choosebtns}>
                   <button
-                    className="btn2"
+                    className={styles.choosebtn}
                     onClick={() => {
                       serviceSelection("Website Development", departmentName,"Excellent choice! Please share your details with us to schedule a free consultation.");
                     }}
@@ -186,7 +186,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                      Website Development
                   </button>
                   <button
-                    className="btn2"
+                    className={styles.choosebtn}
                     onClick={() => {
                       serviceSelection("Digital Transformation", departmentName,"Excellent choice! Please share your details with us to schedule a free consultation.");
                     }}
@@ -194,7 +194,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                     Digital Transformation
                   </button>
                   <button
-                    className="btn2"
+                    className={styles.choosebtn}
                     onClick={() => {
                       serviceSelection("SEO Services", departmentName,"Excellent choice! Please share your details with us to schedule a free consultation.");
                     }}
@@ -202,7 +202,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                     SEO Services
                   </button>
                   <button
-                    className="btn2"
+                    className={styles.choosebtn}
                     onClick={() => {
                       serviceSelection("Other Services", departmentName,"Excellent choice! Please share your details with us to schedule a free consultation.");
                     }}
@@ -278,7 +278,6 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
     }),
   };
   const validateEmail = (email) => {
-    // Simple regex pattern for basic email validation
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(email);
   };
@@ -713,6 +712,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
           rows="1"
         />
         <button
+          className={styles.sendbtn}
           ref={buttonRef}
           onClick={() => {
             sendMessage(userinfo);

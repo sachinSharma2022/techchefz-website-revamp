@@ -5,8 +5,6 @@ import LetsTalk from "@/components/contactUs/letsTalk";
 import { api_contact_us_Page } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
 import NotFound from "../not-found";
-import ChatBotContainer from "@/components/chatBot/chatBotContainer";
-
 
 export async function generateMetadata() {
   const data = await getData(api_contact_us_Page); 
@@ -29,7 +27,6 @@ const ContactUs = async () => {
           <LetsTalk props={data.Connect} />
           <GlobalPresence props={data.Presence} />
           <DistinctLocations props={data.DistinctLocations} />
-          <ChatBotContainer/>
         </div>
       ) : (
         <>

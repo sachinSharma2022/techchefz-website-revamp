@@ -12,6 +12,7 @@ import { api_Home_Page, base_Url, api_Case_study_Page } from "@/lib/constants";
 import HomeContainer from "@/components/home/homeContainer";
 import { getData, getDataDynamic } from "@/lib/fetchData";
 import NotFound from "../not-found";
+import ChatBotContainer from "@/components/chatBot/chatBotContainer";
 
 const HomePage = async () => {
   const data = await getData(api_Home_Page);
@@ -37,6 +38,7 @@ const HomePage = async () => {
           <HomeTestimonials testimonials={data.Testimonials} />
           <LetsWork contact={data.ContactUs} /> */}
           <HomeContainer data={data} data_Portfolio={data_Portfolio} />
+          <ChatBotContainer/>
         </div>
       ) : (
         <>
