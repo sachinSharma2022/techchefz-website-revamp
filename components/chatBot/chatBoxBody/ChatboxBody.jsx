@@ -19,8 +19,12 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
   const [service, setservice] = useState("");
   const [serviceActionCount, setserviceActionCount] = useState(0);
   // const [uploadResumeAction, setuploadResumeAction] = useState(false);
-  const [phoneNumber, setphoneNumber] = useState('');
+  const [phoneNumber, setphoneNumber] = useState("");
   const resumeRef = useRef();
+  const [jobRole, setjobRole] = useState("");
+  const [jobExperience, setjobExperience] = useState("");
+  const [jobType, setjobType] = useState("");
+  const [budget, setbudget] = useState("");
 
   const [chatbotMessages, setchatbotMessages] = useState([
     {
@@ -29,7 +33,8 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
       message: (
         <>
           <p>
-          Hello! Welcome to Techchefz. How can we assist you today? Please choose one of the following options:
+            Hello! Welcome to Techchefz. How can we assist you today? Please
+            choose one of the following options:
           </p>
           <div className={styles.choosebtns}>
             <button
@@ -68,7 +73,11 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
     },
   ]);
 
-  const serviceSelection = async (serviceName, departmentName,servicemessage) => {
+  const serviceSelection = async (
+    serviceName,
+    departmentName,
+    servicemessage
+  ) => {
     setservice(serviceName);
     sendMessage({
       current: {
@@ -90,13 +99,18 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
             message: (
               <div>
                 <p>
-                Welcome to the Techchefz HR department. How can we assist you today?
+                  Welcome to the Techchefz HR department. How can we assist you
+                  today?
                 </p>
                 <div className={styles.choosebtns}>
                   <button
                     className={styles.choosebtn}
                     onClick={() => {
-                      serviceSelection("hiring1", departmentName,"I am interested in applying for a job at Techchefz.");
+                      serviceSelection(
+                        "Apply for a Job",
+                        departmentName,
+                        "I am interested in applying for a job at Techchefz."
+                      );
                     }}
                   >
                     Apply for a Job
@@ -104,10 +118,14 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                   <button
                     className={styles.choosebtn}
                     onClick={() => {
-                      serviceSelection("hiring2", departmentName,"I am interested in applying for a job at Techchefz.");
+                      serviceSelection(
+                        "Hire a Resource",
+                        departmentName,
+                        "I am interested in hiring a resource at Techchefz."
+                      );
                     }}
                   >
-                     Hire a Resource
+                    Hire a Resource
                   </button>
                 </div>
               </div>
@@ -128,13 +146,18 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
             message: (
               <div>
                 <p>
-                Hello! Welcome to Techchefz. Are you looking to collaborate with us? Please choose from the following options:
+                  Hello! Welcome to Techchefz. Are you looking to collaborate
+                  with us? Please choose from the following options:
                 </p>
                 <div className={styles.choosebtns}>
                   <button
                     className={styles.choosebtn}
                     onClick={() => {
-                      serviceSelection("Technology Partnership", departmentName,"I am interested in collaborating as a Technology Partner with Techchefz.");
+                      serviceSelection(
+                        "Technology Partnership",
+                        departmentName,
+                        "I am interested in collaborating as a Technology Partner with Techchefz."
+                      );
                     }}
                   >
                     Technology Partnership
@@ -142,7 +165,11 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                   <button
                     className={styles.choosebtn}
                     onClick={() => {
-                      serviceSelection("Marketing Partnership", departmentName,"I am interested in collaborating as a Marketing Partner with Techchefz.");
+                      serviceSelection(
+                        "Marketing Partnership",
+                        departmentName,
+                        "I am interested in collaborating as a Marketing Partner with Techchefz."
+                      );
                     }}
                   >
                     Marketing Partnership
@@ -150,7 +177,11 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                   <button
                     className={styles.choosebtn}
                     onClick={() => {
-                      serviceSelection("Other Collaborations", departmentName,"I am interested in collaborating as a Other Collaborations with Techchefz.");
+                      serviceSelection(
+                        "Other Collaborations",
+                        departmentName,
+                        "I am interested in collaborating as a Other Collaborations with Techchefz."
+                      );
                     }}
                   >
                     Other Collaborations
@@ -174,21 +205,30 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
             message: (
               <div>
                 <p>
-                We offer a wide range of services to meet your needs. Please choose from the following:
+                  We offer a wide range of services to meet your needs. Please
+                  choose from the following:
                 </p>
                 <div className={styles.choosebtns}>
                   <button
                     className={styles.choosebtn}
                     onClick={() => {
-                      serviceSelection("Website Development", departmentName,"Excellent choice! Please share your details with us to schedule a free consultation.");
+                      serviceSelection(
+                        "Website Development",
+                        departmentName,
+                        "Excellent choice! Please share your details with us to schedule a free consultation."
+                      );
                     }}
                   >
-                     Website Development
+                    Website Development
                   </button>
                   <button
                     className={styles.choosebtn}
                     onClick={() => {
-                      serviceSelection("Digital Transformation", departmentName,"Excellent choice! Please share your details with us to schedule a free consultation.");
+                      serviceSelection(
+                        "Digital Transformation",
+                        departmentName,
+                        "Excellent choice! Please share your details with us to schedule a free consultation."
+                      );
                     }}
                   >
                     Digital Transformation
@@ -196,7 +236,11 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                   <button
                     className={styles.choosebtn}
                     onClick={() => {
-                      serviceSelection("SEO Services", departmentName,"Excellent choice! Please share your details with us to schedule a free consultation.");
+                      serviceSelection(
+                        "SEO Services",
+                        departmentName,
+                        "Excellent choice! Please share your details with us to schedule a free consultation."
+                      );
                     }}
                   >
                     SEO Services
@@ -204,7 +248,11 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                   <button
                     className={styles.choosebtn}
                     onClick={() => {
-                      serviceSelection("Other Services", departmentName,"Excellent choice! Please share your details with us to schedule a free consultation.");
+                      serviceSelection(
+                        "Other Services",
+                        departmentName,
+                        "Excellent choice! Please share your details with us to schedule a free consultation."
+                      );
                     }}
                   >
                     Other Services
@@ -226,17 +274,14 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
     }
   };
 
-  // const handleKeyPress = (event) => {
-  //   if (event.key === "Enter") {
-  //     event.preventDefault(); // Prevents the default behavior of moving to the next line
-  //     sendMessage(info);
-  //   }
-  // };
+
 
   const handleKeyPressResume = (event) => {
     if (event.key === "Enter") {
       event.preventDefault(); // Prevents the default behavior of moving to the next line
-      sendMessage({current:{value:"file uploaded",resume_stats:"uploaded"}});
+      sendMessage({
+        current: { value: "file uploaded", resume_stats: "uploaded" },
+      });
     }
   };
 
@@ -265,18 +310,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
     settextValue(e.target.value);
   };
 
-  const IntroMessage = {
-    username: "system",
-    messageType: "conversation",
-    message:
-      "Ask me anything about TechChefz services and features or choose a sample question below to start a conversation.",
-    time: new Date().toLocaleString("en-US", {
-      hour: "numeric",
-      minute: "numeric",
-      hour12: true,
-      timeZone: "Asia/Kolkata",
-    }),
-  };
+  
   const validateEmail = (email) => {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(email);
@@ -287,7 +321,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
       if (department !== "" || info?.current?.department !== undefined) {
         const userQuery = info.current.value;
         const resume_stats = info.current.resume_stats;
-        if(info?.current?.value !== "file uploaded"){
+        if (info?.current?.value !== "file uploaded") {
           info.current.value = "";
           userinfo.current.value = "";
           settextValue("");
@@ -301,13 +335,11 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
               hour12: true,
               timeZone: "Asia/Kolkata",
             }),
-          }
+          };
           setchatbotMessages((prevMessages) => [...prevMessages, messageInfo]);
         }
         setloadershow(true);
-       if (
-          (service !== "" || info?.current?.service !== "")
-        ) {
+        if (service !== "" || info?.current?.service !== "") {
           if (serviceActionCount === 0) {
             setTimeout(() => {
               setloadershow(false);
@@ -319,11 +351,15 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                   message: (
                     <>
                       <div>
-                      {department === "Services" || info?.current?.department === "Services"
-                      ? "Please provide your name."
-                      : department === "Hiring"|| info?.current?.department === "Hiring"
-                      ? "That's great! Could you please provide your name."
-                      :"Thank you for your interest in partnering with us! Could you provide your company name."}
+                        {department === "Services" ||
+                        info?.current?.department === "Services"
+                          ? "Please provide your name."
+                          : department === "Hiring" ||
+                            info?.current?.department === "Hiring"?
+                           service === "Hire a Resource" || info.current.service === "Hire a Resource"
+                            ? 'Hello! Welcome to Techchefz. I’m here to help you find the perfect resource for your needs. May I know your name, please?':
+                             "That's great! Could you please provide your name."
+                          : "Thank you for your interest in partnering with us! Could you provide your company name."}
                       </div>
                     </>
                   ),
@@ -337,7 +373,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
               ]);
             }, 1000);
             setserviceActionCount(1);
-          }  else if (serviceActionCount === 1) {
+          } else if (serviceActionCount === 1) {
             setuserName(userQuery);
             setTimeout(() => {
               setchatbotMessages((prevMessages) => [
@@ -365,8 +401,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
               setloadershow(false);
             }, 1000);
             setserviceActionCount(2);
-          } 
-          else if (serviceActionCount === 2) {
+          } else if (serviceActionCount === 2) {
             setphoneNumber(userQuery);
             setTimeout(() => {
               setchatbotMessages((prevMessages) => [
@@ -394,10 +429,8 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
               setloadershow(false);
             }, 1000);
             setserviceActionCount(3);
-          } 
-          else if (serviceActionCount === 3) {
-            console.log(userQuery);
-            if(resume_stats !== "uploaded"){
+          } else if (serviceActionCount === 3) {
+            if (resume_stats !== "uploaded") {
               if (validateEmail(userQuery)) {
                 const response = await axios.post(
                   `${process.env.NEXT_PUBLIC_BACKEND_URI}/create_conversation`,
@@ -408,7 +441,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                 );
                 setuserEmail(userQuery);
                 setconversationID(response?.data?.convo_id);
-                if(department!=="Hiring"){
+                if (department !== "Hiring") {
                   setTimeout(() => {
                     setloadershow(false);
                     setchatbotMessages((prevMessages) => [
@@ -420,11 +453,13 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                           <>
                             <div>
                               <p>
-                                {department === "Services" || info?.current?.department === "Services"
-                                ? `  Thank you, ${userName}. Your consultation for ${service} is booked. You will receive an email confirmation shortly.`
-                                : department === "Hiring"|| info?.current?.department === "Hiring"
-                                ? `Thank you, ${userName}! Our HR team will review your application and get in touch with you shortly. Have a great day!`
-                                :`Thank you! Our team will contact you shortly to discuss partnership opportunities. Have a great day!`}
+                                {department === "Services" ||
+                                info?.current?.department === "Services"
+                                  ? `  Thank you, ${userName}. Your consultation for ${service} is booked. You will receive an email confirmation shortly.`
+                                  : department === "Hiring" ||
+                                    info?.current?.department === "Hiring"
+                                  ? `Thank you, ${userName}! Our HR team will review your application and get in touch with you shortly. Have a great day!`
+                                  : `Thank you! Our team will contact you shortly to discuss partnership opportunities. Have a great day!`}
                               </p>
                             </div>
                           </>
@@ -443,7 +478,8 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                           <>
                             <div>
                               <p>
-                              If you have any specific questions, feel free to ask!
+                                If you have any specific questions, feel free to
+                                ask!
                               </p>
                             </div>
                           </>
@@ -457,44 +493,68 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                       },
                     ]);
                   }, 1000);
-                }
-                else{
-                  setTimeout(() => {
-                    setloadershow(false);
-                    setchatbotMessages((prevMessages) => [
-                      ...prevMessages,
-                      {
-                        username: "system",
-                        messageType: "system",
-                        message: (
-                          <>
-                            <div>
-                              <p>
-                                Please attach your resume.
-                              </p>
-                              <input
-                              type="file"
-                              placeholder="attach"
-                              className={styles.emailinput}
-                              ref={resumeRef}
-                              onKeyDown={handleKeyPressResume}
-                            />
-                            </div>
-                          </>
-                        ),
-                        time: new Date().toLocaleString("en-US", {
-                          hour: "numeric",
-                          minute: "numeric",
-                          hour12: true,
-                          timeZone: "Asia/Kolkata",
-                        }),
-                      },
-                    ]);
-                  }, 1000);
+                } else {
+                  if(service === "Hire a Resource" || userQuery?.current?.service === "Hire a Resource"){
+                    setTimeout(() => {
+                      setloadershow(false);
+                      setchatbotMessages((prevMessages) => [
+                        ...prevMessages,
+                        {
+                          username: "system",
+                          messageType: "system",
+                          message: (
+                            <>
+                              <div>
+                                <p>Which position or role are you looking to fill?</p>
+                              </div>
+                            </>
+                          ),
+                          time: new Date().toLocaleString("en-US", {
+                            hour: "numeric",
+                            minute: "numeric",
+                            hour12: true,
+                            timeZone: "Asia/Kolkata",
+                          }),
+                        },
+                      ]);
+                    }, 1000);
+                  }
+                  else{
+                    setTimeout(() => {
+                      setloadershow(false);
+                      setchatbotMessages((prevMessages) => [
+                        ...prevMessages,
+                        {
+                          username: "system",
+                          messageType: "system",
+                          message: (
+                            <>
+                              <div>
+                                <p>Please attach your resume.</p>
+                                <input
+                                  type="file"
+                                  placeholder="attach"
+                                  className={styles.emailinput}
+                                  ref={resumeRef}
+                                  onKeyDown={handleKeyPressResume}
+                                />
+                              </div>
+                            </>
+                          ),
+                          time: new Date().toLocaleString("en-US", {
+                            hour: "numeric",
+                            minute: "numeric",
+                            hour12: true,
+                            timeZone: "Asia/Kolkata",
+                          }),
+                        },
+                      ]);
+                    }, 1000);
+                  }
                 }
                 setserviceActionCount(4);
-              }
-              else{
+              } 
+              else {
                 setTimeout(() => {
                   setchatbotMessages((prevMessages) => [
                     ...prevMessages,
@@ -521,8 +581,8 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                   setloadershow(false);
                 }, 1000);
               }
-            }
-            else{
+            } 
+            else {
               setTimeout(() => {
                 setloadershow(false);
                 setchatbotMessages((prevMessages) => [
@@ -534,7 +594,16 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                       <>
                         <div>
                           <p>
-                          Thank you for your application! To explore more job opportunities, please visit our <a href="https://www.techchefz.digital/careers" target="_blank">Careers Page</a>.  
+                            Thank you for your application! To explore more job
+                            opportunities, please visit our{" "}
+                            <a
+                              href="https://www.techchefz.digital/careers"
+                              target="_blank"
+                              className={styles.careerslink}
+                            >
+                              Careers Page
+                            </a>
+                            .
                           </p>
                         </div>
                       </>
@@ -553,7 +622,8 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                       <>
                         <div>
                           <p>
-                          If you have any specific questions, don&apos;t hesitate to ask!
+                            If you have any specific questions, don&apos;t
+                            hesitate to ask!
                           </p>
                         </div>
                       </>
@@ -570,6 +640,121 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
               setserviceActionCount(4);
             }
           } 
+          else if(serviceActionCount===4 && service === "Hire a Resource"){
+            setjobRole(userQuery);
+            setTimeout(() => {
+              setloadershow(false);
+              setchatbotMessages((prevMessages) => [
+                ...prevMessages,
+                {
+                  username: "system",
+                  messageType: "system",
+                  message: (
+                    <>
+                      <div>
+                        <p>How many years of experience should the candidate have in this field?</p>
+                      </div>
+                    </>
+                  ),
+                  time: new Date().toLocaleString("en-US", {
+                    hour: "numeric",
+                    minute: "numeric",
+                    hour12: true,
+                    timeZone: "Asia/Kolkata",
+                  }),
+                },
+              ]);
+            }, 1000);
+            setserviceActionCount(5);
+          }
+          else if(serviceActionCount===5 && service === "Hire a Resource"){
+            setjobExperience(userQuery);
+            setTimeout(() => {
+              setloadershow(false);
+              setchatbotMessages((prevMessages) => [
+                ...prevMessages,
+                {
+                  username: "system",
+                  messageType: "system",
+                  message: (
+                    <>
+                      <div>
+                        <p>What type of work arrangement are you offering? (e.g., full-time, part-time, remote, on-site)</p>
+                      </div>
+                    </>
+                  ),
+                  time: new Date().toLocaleString("en-US", {
+                    hour: "numeric",
+                    minute: "numeric",
+                    hour12: true,
+                    timeZone: "Asia/Kolkata",
+                  }),
+                },
+              ]);
+            }, 1000);
+            setserviceActionCount(6);
+          }
+          else if(serviceActionCount===6 && service === "Hire a Resource"){
+            setjobType(userQuery);
+            setTimeout(() => {
+              setloadershow(false);
+              setchatbotMessages((prevMessages) => [
+                ...prevMessages,
+                {
+                  username: "system",
+                  messageType: "system",
+                  message: (
+                    <>
+                      <div>
+                        <p>What is your budget for this role? (Please specify if it is hourly, monthly, or project-based)</p>
+                      </div>
+                    </>
+                  ),
+                  time: new Date().toLocaleString("en-US", {
+                    hour: "numeric",
+                    minute: "numeric",
+                    hour12: true,
+                    timeZone: "Asia/Kolkata",
+                  }),
+                },
+              ]);
+            }, 1000);
+            setserviceActionCount(7);
+          }
+          else if(serviceActionCount===7 && service === "Hire a Resource"){
+            setbudget(userQuery);
+            console.log(userName);
+            console.log(phoneNumber);
+            console.log(userEmail);
+            console.log(jobRole);
+            console.log(jobExperience);
+            console.log(jobType);
+            console.log(userQuery);
+            setTimeout(() => {
+              setloadershow(false);
+              setchatbotMessages((prevMessages) => [
+                ...prevMessages,
+                {
+                  username: "system",
+                  messageType: "system",
+                  message: (
+                    <>
+                      <div>
+                        <p>Thank you for providing your details. Someone from our team will reach out to you. Meanwhile, feel free to ask any questions you may have!</p>
+                      </div>
+                    </>
+                  ),
+                  time: new Date().toLocaleString("en-US", {
+                    hour: "numeric",
+                    minute: "numeric",
+                    hour12: true,
+                    timeZone: "Asia/Kolkata",
+                  }),
+                },
+              ]);
+            }, 1000);
+            setserviceActionCount(8);
+          }
           else {
             const queryResponse = await axios.post(
               `${process.env.NEXT_PUBLIC_BACKEND_URI}/create_message`,
