@@ -40,7 +40,20 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
             <button
               className={styles.choosebtn}
               onClick={() => {
-                departmentSelection("Hiring");
+                departmentSelection(
+                  "Hiring",
+                  [
+                  {
+                    serviceName:"Apply for a Job",
+                    serviceSelectReply:"I am interested in applying for a job at Techchefz.",
+                  },
+                  {
+                    serviceName:"Hire a Resource",
+                    serviceSelectReply:"I am interested in hiring a resource at Techchefz.",
+                  },
+                ]
+                ,
+                "Welcome to the Techchefz HR department. How can we assist youtoday?");
               }}
             >
               Resource Hiring/Job Application
@@ -48,7 +61,25 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
             <button
               className={styles.choosebtn}
               onClick={() => {
-                departmentSelection("Partner Collaboration");
+                departmentSelection(
+                  "Partner Collaboration",
+                  [
+                    {
+                      serviceName:"Technology Partnership",
+                      serviceSelectReply:"I am interested in collaborating as a Technology Partner with Techchefz.",
+                    },
+                    {
+                      serviceName:"Marketing Partnership",
+                      serviceSelectReply:"I am interested in collaborating as a Marketing Partner with Techchefz.",
+                    },
+                   {
+                      serviceName:"Other Collaborations",
+                      serviceSelectReply:"I am interested in collaborating as a Other Collaborations with Techchefz.",
+                    },
+                  ]
+                  ,
+                  "Hello! Welcome to Techchefz. Are you looking to collaborate with us? Please choose from the following options:"
+                );
               }}
             >
               Partner Collaboration
@@ -56,7 +87,29 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
             <button
               className={styles.choosebtn}
               onClick={() => {
-                departmentSelection("Services");
+                departmentSelection(
+                  "Services",
+                  [
+                    {
+                      serviceName:"Website Development",
+                      serviceSelectReply: "Excellent choice! Please share your details with us to schedule a free consultation.",
+                    },
+                    {
+                      serviceName:"Digital Transformation",
+                      serviceSelectReply:"Excellent choice! Please share your details with us to schedule a free consultation.",
+                    },
+                   {
+                      serviceName:"SEO Services",
+                      serviceSelectReply: "Excellent choice! Please share your details with us to schedule a free consultation.",
+                    },
+                    {
+                      serviceName:"Other Services",
+                      serviceSelectReply: "Excellent choice! Please share your details with us to schedule a free consultation.",
+                    },
+                  ]
+                  ,
+                  "We offer a wide range of services to meet your needs. Please choose from the following:"
+                );
               }}
             >
               Services
@@ -78,20 +131,19 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
     departmentName,
     servicemessage
   ) => {
-    setservice(serviceName);
-    sendMessage({
-      current: {
-        value: servicemessage,
-        service: serviceName,
-        department: departmentName,
-      },
-    });
+      setservice(serviceName);
+      sendMessage({
+        current: {
+          value: servicemessage,
+          service: serviceName,
+          department: departmentName,
+        },
+      });
   };
 
-  const departmentSelection = async (departmentName) => {
+  const departmentSelection = async (departmentName,serviceData,serviceSelectMessage) => {
     try {
       setdepartment((prev) => departmentName);
-      if (departmentName === "Hiring") {
         setchatbotMessages([
           {
             username: "system",
@@ -99,34 +151,30 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
             message: (
               <div>
                 <p>
-                  Welcome to the Techchefz HR department. How can we assist you
-                  today?
+                 {serviceSelectMessage}
                 </p>
                 <div className={styles.choosebtns}>
-                  <button
+                  {
+                    serviceData.map((data,index)=>{
+                      return(
+                        <>
+                        <button
+                        key={index}
                     className={styles.choosebtn}
                     onClick={() => {
                       serviceSelection(
-                        "Apply for a Job",
+                        data.serviceName,
                         departmentName,
-                        "I am interested in applying for a job at Techchefz."
+                        data.serviceSelectReply
                       );
                     }}
                   >
-                    Apply for a Job
+                    {data.serviceName}
                   </button>
-                  <button
-                    className={styles.choosebtn}
-                    onClick={() => {
-                      serviceSelection(
-                        "Hire a Resource",
-                        departmentName,
-                        "I am interested in hiring a resource at Techchefz."
-                      );
-                    }}
-                  >
-                    Hire a Resource
-                  </button>
+                  </>
+                      )
+                    })
+                  }
                 </div>
               </div>
             ),
@@ -137,138 +185,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
               timeZone: "Asia/Kolkata",
             }),
           },
-        ]);
-      } else if (departmentName === "Partner Collaboration") {
-        setchatbotMessages([
-          {
-            username: "system",
-            messageType: "service",
-            message: (
-              <div>
-                <p>
-                  Hello! Welcome to Techchefz. Are you looking to collaborate
-                  with us? Please choose from the following options:
-                </p>
-                <div className={styles.choosebtns}>
-                  <button
-                    className={styles.choosebtn}
-                    onClick={() => {
-                      serviceSelection(
-                        "Technology Partnership",
-                        departmentName,
-                        "I am interested in collaborating as a Technology Partner with Techchefz."
-                      );
-                    }}
-                  >
-                    Technology Partnership
-                  </button>
-                  <button
-                    className={styles.choosebtn}
-                    onClick={() => {
-                      serviceSelection(
-                        "Marketing Partnership",
-                        departmentName,
-                        "I am interested in collaborating as a Marketing Partner with Techchefz."
-                      );
-                    }}
-                  >
-                    Marketing Partnership
-                  </button>
-                  <button
-                    className={styles.choosebtn}
-                    onClick={() => {
-                      serviceSelection(
-                        "Other Collaborations",
-                        departmentName,
-                        "I am interested in collaborating as a Other Collaborations with Techchefz."
-                      );
-                    }}
-                  >
-                    Other Collaborations
-                  </button>
-                </div>
-              </div>
-            ),
-            time: new Date().toLocaleString("en-US", {
-              hour: "numeric",
-              minute: "numeric",
-              hour12: true,
-              timeZone: "Asia/Kolkata",
-            }),
-          },
-        ]);
-      } else if (departmentName === "Services") {
-        setchatbotMessages([
-          {
-            username: "system",
-            messageType: "service",
-            message: (
-              <div>
-                <p>
-                  We offer a wide range of services to meet your needs. Please
-                  choose from the following:
-                </p>
-                <div className={styles.choosebtns}>
-                  <button
-                    className={styles.choosebtn}
-                    onClick={() => {
-                      serviceSelection(
-                        "Website Development",
-                        departmentName,
-                        "Excellent choice! Please share your details with us to schedule a free consultation."
-                      );
-                    }}
-                  >
-                    Website Development
-                  </button>
-                  <button
-                    className={styles.choosebtn}
-                    onClick={() => {
-                      serviceSelection(
-                        "Digital Transformation",
-                        departmentName,
-                        "Excellent choice! Please share your details with us to schedule a free consultation."
-                      );
-                    }}
-                  >
-                    Digital Transformation
-                  </button>
-                  <button
-                    className={styles.choosebtn}
-                    onClick={() => {
-                      serviceSelection(
-                        "SEO Services",
-                        departmentName,
-                        "Excellent choice! Please share your details with us to schedule a free consultation."
-                      );
-                    }}
-                  >
-                    SEO Services
-                  </button>
-                  <button
-                    className={styles.choosebtn}
-                    onClick={() => {
-                      serviceSelection(
-                        "Other Services",
-                        departmentName,
-                        "Excellent choice! Please share your details with us to schedule a free consultation."
-                      );
-                    }}
-                  >
-                    Other Services
-                  </button>
-                </div>
-              </div>
-            ),
-            time: new Date().toLocaleString("en-US", {
-              hour: "numeric",
-              minute: "numeric",
-              hour12: true,
-              timeZone: "Asia/Kolkata",
-            }),
-          },
-        ]);
-      }
+        ]); 
     } catch (error) {
       console.error("Error setting department:", error);
     }
@@ -318,7 +235,8 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
 
   const sendMessage = async (info) => {
     try {
-      if (department !== "" || info?.current?.department !== undefined) {
+      if(info?.current?.value !== ""){
+        if ((department !== "" || info?.current?.department !== undefined) && (service !== "" || info?.current?.service !== undefined)) {
         const userQuery = info.current.value;
         const resume_stats = info.current.resume_stats;
         if (info?.current?.value !== "file uploaded") {
@@ -825,6 +743,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
             info.current.value = "";
             setchatbotMessages((prevMessages) => [...prevMessages, SystemInfo]);
           }
+        }
         }
       }
     } catch (error) {
