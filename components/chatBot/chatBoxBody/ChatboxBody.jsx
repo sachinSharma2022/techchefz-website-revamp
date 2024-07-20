@@ -43,17 +43,19 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                 departmentSelection(
                   "Hiring",
                   [
-                  {
-                    serviceName:"Apply for a Job",
-                    serviceSelectReply:"I am interested in applying for a job at Techchefz.",
-                  },
-                  {
-                    serviceName:"Hire a Resource",
-                    serviceSelectReply:"I am interested in hiring a resource at Techchefz.",
-                  },
-                ]
-                ,
-                "Welcome to the Techchefz HR department. How can we assist youtoday?");
+                    {
+                      serviceName: "Apply for a Job",
+                      serviceSelectReply:
+                        "I am interested in applying for a job at Techchefz.",
+                    },
+                    {
+                      serviceName: "Hire a Resource",
+                      serviceSelectReply:
+                        "I am interested in hiring a resource at Techchefz.",
+                    },
+                  ],
+                  "Welcome to the Techchefz HR department. How can we assist youtoday?"
+                );
               }}
             >
               Resource Hiring/Job Application
@@ -65,19 +67,21 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                   "Partner Collaboration",
                   [
                     {
-                      serviceName:"Technology Partnership",
-                      serviceSelectReply:"I am interested in collaborating as a Technology Partner with Techchefz.",
+                      serviceName: "Technology Partnership",
+                      serviceSelectReply:
+                        "I am interested in collaborating as a Technology Partner with Techchefz.",
                     },
                     {
-                      serviceName:"Marketing Partnership",
-                      serviceSelectReply:"I am interested in collaborating as a Marketing Partner with Techchefz.",
+                      serviceName: "Marketing Partnership",
+                      serviceSelectReply:
+                        "I am interested in collaborating as a Marketing Partner with Techchefz.",
                     },
-                   {
-                      serviceName:"Other Collaborations",
-                      serviceSelectReply:"I am interested in collaborating as a Other Collaborations with Techchefz.",
+                    {
+                      serviceName: "Other Collaborations",
+                      serviceSelectReply:
+                        "I am interested in collaborating as a Other Collaborations with Techchefz.",
                     },
-                  ]
-                  ,
+                  ],
                   "Hello! Welcome to Techchefz. Are you looking to collaborate with us? Please choose from the following options:"
                 );
               }}
@@ -91,23 +95,26 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                   "Services",
                   [
                     {
-                      serviceName:"Website Development",
-                      serviceSelectReply: "Excellent choice! Please share your details with us to schedule a free consultation.",
+                      serviceName: "Website Development",
+                      serviceSelectReply:
+                        "Excellent choice! Please share your details with us to schedule a free consultation.",
                     },
                     {
-                      serviceName:"Digital Transformation",
-                      serviceSelectReply:"Excellent choice! Please share your details with us to schedule a free consultation.",
-                    },
-                   {
-                      serviceName:"SEO Services",
-                      serviceSelectReply: "Excellent choice! Please share your details with us to schedule a free consultation.",
+                      serviceName: "Digital Transformation",
+                      serviceSelectReply:
+                        "Excellent choice! Please share your details with us to schedule a free consultation.",
                     },
                     {
-                      serviceName:"Other Services",
-                      serviceSelectReply: "Excellent choice! Please share your details with us to schedule a free consultation.",
+                      serviceName: "SEO Services",
+                      serviceSelectReply:
+                        "Excellent choice! Please share your details with us to schedule a free consultation.",
                     },
-                  ]
-                  ,
+                    {
+                      serviceName: "Other Services",
+                      serviceSelectReply:
+                        "Excellent choice! Please share your details with us to schedule a free consultation.",
+                    },
+                  ],
                   "We offer a wide range of services to meet your needs. Please choose from the following:"
                 );
               }}
@@ -131,67 +138,65 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
     departmentName,
     servicemessage
   ) => {
-      setservice(serviceName);
-      sendMessage({
-        current: {
-          value: servicemessage,
-          service: serviceName,
-          department: departmentName,
-        },
-      });
+    setservice(serviceName);
+    sendMessage({
+      current: {
+        value: servicemessage,
+        service: serviceName,
+        department: departmentName,
+      },
+    });
   };
 
-  const departmentSelection = async (departmentName,serviceData,serviceSelectMessage) => {
+  const departmentSelection = async (
+    departmentName,
+    serviceData,
+    serviceSelectMessage
+  ) => {
     try {
       setdepartment((prev) => departmentName);
-        setchatbotMessages([
-          {
-            username: "system",
-            messageType: "service",
-            message: (
-              <div>
-                <p>
-                 {serviceSelectMessage}
-                </p>
-                <div className={styles.choosebtns}>
-                  {
-                    serviceData.map((data,index)=>{
-                      return(
-                        <>
-                        <button
+      setchatbotMessages([
+        {
+          username: "system",
+          messageType: "service",
+          message: (
+            <div>
+              <p>{serviceSelectMessage}</p>
+              <div className={styles.choosebtns}>
+                {serviceData.map((data, index) => {
+                  return (
+                    <>
+                      <button
                         key={index}
-                    className={styles.choosebtn}
-                    onClick={() => {
-                      serviceSelection(
-                        data.serviceName,
-                        departmentName,
-                        data.serviceSelectReply
-                      );
-                    }}
-                  >
-                    {data.serviceName}
-                  </button>
-                  </>
-                      )
-                    })
-                  }
-                </div>
+                        className={styles.choosebtn}
+                        onClick={() => {
+                          serviceSelection(
+                            data.serviceName,
+                            departmentName,
+                            data.serviceSelectReply
+                          );
+                        }}
+                      >
+                        {data.serviceName}
+                      </button>
+                    </>
+                  );
+                })}
               </div>
-            ),
-            time: new Date().toLocaleString("en-US", {
-              hour: "numeric",
-              minute: "numeric",
-              hour12: true,
-              timeZone: "Asia/Kolkata",
-            }),
-          },
-        ]); 
+            </div>
+          ),
+          time: new Date().toLocaleString("en-US", {
+            hour: "numeric",
+            minute: "numeric",
+            hour12: true,
+            timeZone: "Asia/Kolkata",
+          }),
+        },
+      ]);
     } catch (error) {
       console.error("Error setting department:", error);
     }
   };
-
-
 
   const handleKeyPressResume = (event) => {
     if (event.key === "Enter") {
@@ -227,7 +232,6 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
     settextValue(e.target.value);
   };
 
-  
   const validateEmail = (email) => {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(email);
@@ -235,169 +239,266 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
 
   const sendMessage = async (info) => {
     try {
-      if(info?.current?.value !== ""){
-        if ((department !== "" || info?.current?.department !== undefined) && (service !== "" || info?.current?.service !== undefined)) {
-        const userQuery = info.current.value;
-        const resume_stats = info.current.resume_stats;
-        if (info?.current?.value !== "file uploaded") {
-          info.current.value = "";
-          userinfo.current.value = "";
-          settextValue("");
-          const messageInfo = {
-            username: "user",
-            message: userQuery,
-            messageType: "conversation",
-            time: new Date().toLocaleString("en-US", {
-              hour: "numeric",
-              minute: "numeric",
-              hour12: true,
-              timeZone: "Asia/Kolkata",
-            }),
-          };
-          setchatbotMessages((prevMessages) => [...prevMessages, messageInfo]);
-        }
-        setloadershow(true);
-        if (service !== "" || info?.current?.service !== "") {
-          if (serviceActionCount === 0) {
-            setTimeout(() => {
-              setloadershow(false);
-              setchatbotMessages((prevMessages) => [
-                ...prevMessages,
-                {
-                  username: "system",
-                  messageType: "userName",
-                  message: (
-                    <>
-                      <div>
-                        {department === "Services" ||
-                        info?.current?.department === "Services"
-                          ? "Please provide your name."
-                          : department === "Hiring" ||
-                            info?.current?.department === "Hiring"?
-                           service === "Hire a Resource" || info.current.service === "Hire a Resource"
-                            ? 'Hello! Welcome to Techchefz. I’m here to help you find the perfect resource for your needs. May I know your name, please?':
-                             "That's great! Could you please provide your name."
-                          : "Thank you for your interest in partnering with us! Could you provide your company name."}
-                      </div>
-                    </>
-                  ),
-                  time: new Date().toLocaleString("en-US", {
-                    hour: "numeric",
-                    minute: "numeric",
-                    hour12: true,
-                    timeZone: "Asia/Kolkata",
-                  }),
-                },
-              ]);
-            }, 1000);
-            setserviceActionCount(1);
-          } else if (serviceActionCount === 1) {
-            setuserName(userQuery);
-            setTimeout(() => {
-              setchatbotMessages((prevMessages) => [
-                ...prevMessages,
-                {
-                  username: "system",
-                  messageType: "email",
-                  message: (
-                    <>
-                      <div>
-                        <p className="email">
-                          Please provide your phone number.
-                        </p>
-                      </div>
-                    </>
-                  ),
-                  time: new Date().toLocaleString("en-US", {
-                    hour: "numeric",
-                    minute: "numeric",
-                    hour12: true,
-                    timeZone: "Asia/Kolkata",
-                  }),
-                },
-              ]);
-              setloadershow(false);
-            }, 1000);
-            setserviceActionCount(2);
-          } else if (serviceActionCount === 2) {
-            setphoneNumber(userQuery);
-            setTimeout(() => {
-              setchatbotMessages((prevMessages) => [
-                ...prevMessages,
-                {
-                  username: "system",
-                  messageType: "email",
-                  message: (
-                    <>
-                      <div>
-                        <p className="email">
-                          Please provide your email address.
-                        </p>
-                      </div>
-                    </>
-                  ),
-                  time: new Date().toLocaleString("en-US", {
-                    hour: "numeric",
-                    minute: "numeric",
-                    hour12: true,
-                    timeZone: "Asia/Kolkata",
-                  }),
-                },
-              ]);
-              setloadershow(false);
-            }, 1000);
-            setserviceActionCount(3);
-          } else if (serviceActionCount === 3) {
-            if (resume_stats !== "uploaded") {
-              if (validateEmail(userQuery)) {
-                const response = await axios.post(
-                  `${process.env.NEXT_PUBLIC_BACKEND_URI}/create_conversation`,
+      if (info?.current?.value !== "") {
+        if (
+          (department !== "" || info?.current?.department !== undefined) &&
+          (service !== "" || info?.current?.service !== undefined)
+        ) {
+          const userQuery = info.current.value;
+          const resume_stats = info.current.resume_stats;
+          if (info?.current?.value !== "file uploaded") {
+            info.current.value = "";
+            userinfo.current.value = "";
+            settextValue("");
+            const messageInfo = {
+              username: "user",
+              message: userQuery,
+              messageType: "conversation",
+              time: new Date().toLocaleString("en-US", {
+                hour: "numeric",
+                minute: "numeric",
+                hour12: true,
+                timeZone: "Asia/Kolkata",
+              }),
+            };
+            setchatbotMessages((prevMessages) => [
+              ...prevMessages,
+              messageInfo,
+            ]);
+          }
+          setloadershow(true);
+          if (service !== "" || info?.current?.service !== "") {
+            if (serviceActionCount === 0) {
+              setTimeout(() => {
+                setloadershow(false);
+                setchatbotMessages((prevMessages) => [
+                  ...prevMessages,
                   {
-                    user_email: userQuery,
-                    source: "web design",
+                    username: "system",
+                    messageType: "userName",
+                    message: (
+                      <>
+                        <div>
+                          {department === "Services" ||
+                          info?.current?.department === "Services"
+                            ? "Please provide your name."
+                            : department === "Hiring" ||
+                              info?.current?.department === "Hiring"
+                            ? service === "Hire a Resource" ||
+                              info.current.service === "Hire a Resource"
+                              ? "Hello! Welcome to Techchefz. I’m here to help you find the perfect resource for your needs. May I know your name, please?"
+                              : "That's great! Could you please provide your name."
+                            : "Thank you for your interest in partnering with us! Could you provide your company name."}
+                        </div>
+                      </>
+                    ),
+                    time: new Date().toLocaleString("en-US", {
+                      hour: "numeric",
+                      minute: "numeric",
+                      hour12: true,
+                      timeZone: "Asia/Kolkata",
+                    }),
+                  },
+                ]);
+              }, 1000);
+              setserviceActionCount(1);
+            } else if (serviceActionCount === 1) {
+              setuserName(userQuery);
+              setTimeout(() => {
+                setchatbotMessages((prevMessages) => [
+                  ...prevMessages,
+                  {
+                    username: "system",
+                    messageType: "email",
+                    message: (
+                      <>
+                        <div>
+                          <p className="email">
+                            Please provide your phone number.
+                          </p>
+                        </div>
+                      </>
+                    ),
+                    time: new Date().toLocaleString("en-US", {
+                      hour: "numeric",
+                      minute: "numeric",
+                      hour12: true,
+                      timeZone: "Asia/Kolkata",
+                    }),
+                  },
+                ]);
+                setloadershow(false);
+              }, 1000);
+              setserviceActionCount(2);
+            } else if (serviceActionCount === 2) {
+              setphoneNumber(userQuery);
+              setTimeout(() => {
+                setchatbotMessages((prevMessages) => [
+                  ...prevMessages,
+                  {
+                    username: "system",
+                    messageType: "email",
+                    message: (
+                      <>
+                        <div>
+                          <p className="email">
+                            Please provide your email address.
+                          </p>
+                        </div>
+                      </>
+                    ),
+                    time: new Date().toLocaleString("en-US", {
+                      hour: "numeric",
+                      minute: "numeric",
+                      hour12: true,
+                      timeZone: "Asia/Kolkata",
+                    }),
+                  },
+                ]);
+                setloadershow(false);
+              }, 1000);
+              setserviceActionCount(3);
+            } else if (serviceActionCount === 3) {
+              if (resume_stats !== "uploaded") {
+                if (validateEmail(userQuery)) {
+                  const response = await axios.post(
+                    `${process.env.NEXT_PUBLIC_BACKEND_URI}/create_conversation`,
+                    {
+                      user_email: userQuery,
+                      source: "web design",
+                    }
+                  );
+                  setuserEmail(userQuery);
+                  setconversationID(response?.data?.convo_id);
+                  if (department !== "Hiring") {
+                    setTimeout(() => {
+                      setloadershow(false);
+                      setchatbotMessages((prevMessages) => [
+                        ...prevMessages,
+                        {
+                          username: "system",
+                          messageType: "system",
+                          message: (
+                            <>
+                              <div>
+                                <p>
+                                  {department === "Services" ||
+                                  info?.current?.department === "Services"
+                                    ? `  Thank you, ${userName}. Your consultation for ${service} is booked. You will receive an email confirmation shortly.`
+                                    : department === "Hiring" ||
+                                      info?.current?.department === "Hiring"
+                                    ? `Thank you, ${userName}! Our HR team will review your application and get in touch with you shortly. Have a great day!`
+                                    : `Thank you! Our team will contact you shortly to discuss partnership opportunities. Have a great day!`}
+                                </p>
+                              </div>
+                            </>
+                          ),
+                          time: new Date().toLocaleString("en-US", {
+                            hour: "numeric",
+                            minute: "numeric",
+                            hour12: true,
+                            timeZone: "Asia/Kolkata",
+                          }),
+                        },
+                        {
+                          username: "system",
+                          messageType: "system",
+                          message: (
+                            <>
+                              <div>
+                                <p>
+                                  If you have any specific questions, feel free
+                                  to ask!
+                                </p>
+                              </div>
+                            </>
+                          ),
+                          time: new Date().toLocaleString("en-US", {
+                            hour: "numeric",
+                            minute: "numeric",
+                            hour12: true,
+                            timeZone: "Asia/Kolkata",
+                          }),
+                        },
+                      ]);
+                    }, 1000);
+                  } else {
+                    if (
+                      service === "Hire a Resource" ||
+                      userQuery?.current?.service === "Hire a Resource"
+                    ) {
+                      setTimeout(() => {
+                        setloadershow(false);
+                        setchatbotMessages((prevMessages) => [
+                          ...prevMessages,
+                          {
+                            username: "system",
+                            messageType: "system",
+                            message: (
+                              <>
+                                <div>
+                                  <p>
+                                    Which position or role are you looking to
+                                    fill?
+                                  </p>
+                                </div>
+                              </>
+                            ),
+                            time: new Date().toLocaleString("en-US", {
+                              hour: "numeric",
+                              minute: "numeric",
+                              hour12: true,
+                              timeZone: "Asia/Kolkata",
+                            }),
+                          },
+                        ]);
+                      }, 1000);
+                    } else {
+                      setTimeout(() => {
+                        setloadershow(false);
+                        setchatbotMessages((prevMessages) => [
+                          ...prevMessages,
+                          {
+                            username: "system",
+                            messageType: "system",
+                            message: (
+                              <>
+                                <div>
+                                  <p>Please attach your resume.</p>
+                                  <input
+                                    type="file"
+                                    placeholder="attach"
+                                    className={styles.emailinput}
+                                    ref={resumeRef}
+                                    onKeyDown={handleKeyPressResume}
+                                  />
+                                </div>
+                              </>
+                            ),
+                            time: new Date().toLocaleString("en-US", {
+                              hour: "numeric",
+                              minute: "numeric",
+                              hour12: true,
+                              timeZone: "Asia/Kolkata",
+                            }),
+                          },
+                        ]);
+                      }, 1000);
+                    }
                   }
-                );
-                setuserEmail(userQuery);
-                setconversationID(response?.data?.convo_id);
-                if (department !== "Hiring") {
+                  setserviceActionCount(4);
+                } else {
                   setTimeout(() => {
-                    setloadershow(false);
                     setchatbotMessages((prevMessages) => [
                       ...prevMessages,
                       {
                         username: "system",
-                        messageType: "system",
+                        messageType: "email",
                         message: (
                           <>
                             <div>
-                              <p>
-                                {department === "Services" ||
-                                info?.current?.department === "Services"
-                                  ? `  Thank you, ${userName}. Your consultation for ${service} is booked. You will receive an email confirmation shortly.`
-                                  : department === "Hiring" ||
-                                    info?.current?.department === "Hiring"
-                                  ? `Thank you, ${userName}! Our HR team will review your application and get in touch with you shortly. Have a great day!`
-                                  : `Thank you! Our team will contact you shortly to discuss partnership opportunities. Have a great day!`}
-                              </p>
-                            </div>
-                          </>
-                        ),
-                        time: new Date().toLocaleString("en-US", {
-                          hour: "numeric",
-                          minute: "numeric",
-                          hour12: true,
-                          timeZone: "Asia/Kolkata",
-                        }),
-                      },
-                      {
-                        username: "system",
-                        messageType: "system",
-                        message: (
-                          <>
-                            <div>
-                              <p>
-                                If you have any specific questions, feel free to
-                                ask!
+                              <p className="email">
+                                Please provide a valid email address.
                               </p>
                             </div>
                           </>
@@ -410,80 +511,51 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                         }),
                       },
                     ]);
+                    setloadershow(false);
                   }, 1000);
-                } else {
-                  if(service === "Hire a Resource" || userQuery?.current?.service === "Hire a Resource"){
-                    setTimeout(() => {
-                      setloadershow(false);
-                      setchatbotMessages((prevMessages) => [
-                        ...prevMessages,
-                        {
-                          username: "system",
-                          messageType: "system",
-                          message: (
-                            <>
-                              <div>
-                                <p>Which position or role are you looking to fill?</p>
-                              </div>
-                            </>
-                          ),
-                          time: new Date().toLocaleString("en-US", {
-                            hour: "numeric",
-                            minute: "numeric",
-                            hour12: true,
-                            timeZone: "Asia/Kolkata",
-                          }),
-                        },
-                      ]);
-                    }, 1000);
-                  }
-                  else{
-                    setTimeout(() => {
-                      setloadershow(false);
-                      setchatbotMessages((prevMessages) => [
-                        ...prevMessages,
-                        {
-                          username: "system",
-                          messageType: "system",
-                          message: (
-                            <>
-                              <div>
-                                <p>Please attach your resume.</p>
-                                <input
-                                  type="file"
-                                  placeholder="attach"
-                                  className={styles.emailinput}
-                                  ref={resumeRef}
-                                  onKeyDown={handleKeyPressResume}
-                                />
-                              </div>
-                            </>
-                          ),
-                          time: new Date().toLocaleString("en-US", {
-                            hour: "numeric",
-                            minute: "numeric",
-                            hour12: true,
-                            timeZone: "Asia/Kolkata",
-                          }),
-                        },
-                      ]);
-                    }, 1000);
-                  }
                 }
-                setserviceActionCount(4);
-              } 
-              else {
+              } else {
                 setTimeout(() => {
+                  setloadershow(false);
                   setchatbotMessages((prevMessages) => [
                     ...prevMessages,
                     {
                       username: "system",
-                      messageType: "email",
+                      messageType: "system",
                       message: (
                         <>
                           <div>
-                            <p className="email">
-                              Please provide a valid email address.
+                            <p>
+                              Thank you for your application! To explore more
+                              job opportunities, please visit our{" "}
+                              <a
+                                href="https://www.techchefz.digital/careers"
+                                target="_blank"
+                                className={styles.careerslink}
+                              >
+                                Careers Page
+                              </a>
+                              .
+                            </p>
+                          </div>
+                        </>
+                      ),
+                      time: new Date().toLocaleString("en-US", {
+                        hour: "numeric",
+                        minute: "numeric",
+                        hour12: true,
+                        timeZone: "Asia/Kolkata",
+                      }),
+                    },
+                    {
+                      username: "system",
+                      messageType: "system",
+                      message: (
+                        <>
+                          <div>
+                            <p>
+                              If you have any specific questions, don&apos;t
+                              hesitate to ask!
                             </p>
                           </div>
                         </>
@@ -496,11 +568,14 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                       }),
                     },
                   ]);
-                  setloadershow(false);
                 }, 1000);
+                setserviceActionCount(4);
               }
-            } 
-            else {
+            } else if (
+              serviceActionCount === 4 &&
+              service === "Hire a Resource"
+            ) {
+              setjobRole(userQuery);
               setTimeout(() => {
                 setloadershow(false);
                 setchatbotMessages((prevMessages) => [
@@ -512,36 +587,8 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                       <>
                         <div>
                           <p>
-                            Thank you for your application! To explore more job
-                            opportunities, please visit our{" "}
-                            <a
-                              href="https://www.techchefz.digital/careers"
-                              target="_blank"
-                              className={styles.careerslink}
-                            >
-                              Careers Page
-                            </a>
-                            .
-                          </p>
-                        </div>
-                      </>
-                    ),
-                    time: new Date().toLocaleString("en-US", {
-                      hour: "numeric",
-                      minute: "numeric",
-                      hour12: true,
-                      timeZone: "Asia/Kolkata",
-                    }),
-                  },
-                  {
-                    username: "system",
-                    messageType: "system",
-                    message: (
-                      <>
-                        <div>
-                          <p>
-                            If you have any specific questions, don&apos;t
-                            hesitate to ask!
+                            How many years of experience should the candidate
+                            have in this field?
                           </p>
                         </div>
                       </>
@@ -555,195 +602,185 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                   },
                 ]);
               }, 1000);
-              setserviceActionCount(4);
-            }
-          } 
-          else if(serviceActionCount===4 && service === "Hire a Resource"){
-            setjobRole(userQuery);
-            setTimeout(() => {
-              setloadershow(false);
-              setchatbotMessages((prevMessages) => [
-                ...prevMessages,
-                {
-                  username: "system",
-                  messageType: "system",
-                  message: (
-                    <>
-                      <div>
-                        <p>How many years of experience should the candidate have in this field?</p>
-                      </div>
-                    </>
-                  ),
-                  time: new Date().toLocaleString("en-US", {
-                    hour: "numeric",
-                    minute: "numeric",
-                    hour12: true,
-                    timeZone: "Asia/Kolkata",
-                  }),
-                },
-              ]);
-            }, 1000);
-            setserviceActionCount(5);
-          }
-          else if(serviceActionCount===5 && service === "Hire a Resource"){
-            setjobExperience(userQuery);
-            setTimeout(() => {
-              setloadershow(false);
-              setchatbotMessages((prevMessages) => [
-                ...prevMessages,
-                {
-                  username: "system",
-                  messageType: "system",
-                  message: (
-                    <>
-                      <div>
-                        <p>What type of work arrangement are you offering? (e.g., full-time, part-time, remote, on-site)</p>
-                      </div>
-                    </>
-                  ),
-                  time: new Date().toLocaleString("en-US", {
-                    hour: "numeric",
-                    minute: "numeric",
-                    hour12: true,
-                    timeZone: "Asia/Kolkata",
-                  }),
-                },
-              ]);
-            }, 1000);
-            setserviceActionCount(6);
-          }
-          else if(serviceActionCount===6 && service === "Hire a Resource"){
-            setjobType(userQuery);
-            setTimeout(() => {
-              setloadershow(false);
-              setchatbotMessages((prevMessages) => [
-                ...prevMessages,
-                {
-                  username: "system",
-                  messageType: "system",
-                  message: (
-                    <>
-                      <div>
-                        <p>What is your budget for this role? (Please specify if it is hourly, monthly, or project-based)</p>
-                      </div>
-                    </>
-                  ),
-                  time: new Date().toLocaleString("en-US", {
-                    hour: "numeric",
-                    minute: "numeric",
-                    hour12: true,
-                    timeZone: "Asia/Kolkata",
-                  }),
-                },
-              ]);
-            }, 1000);
-            setserviceActionCount(7);
-          }
-          else if(serviceActionCount===7 && service === "Hire a Resource"){
-            setbudget(userQuery);
-            console.log(userName);
-            console.log(phoneNumber);
-            console.log(userEmail);
-            console.log(jobRole);
-            console.log(jobExperience);
-            console.log(jobType);
-            console.log(userQuery);
-            setTimeout(() => {
-              setloadershow(false);
-              setchatbotMessages((prevMessages) => [
-                ...prevMessages,
-                {
-                  username: "system",
-                  messageType: "system",
-                  message: (
-                    <>
-                      <div>
-                        <p>Thank you for providing your details. Someone from our team will reach out to you. Meanwhile, feel free to ask any questions you may have!</p>
-                      </div>
-                    </>
-                  ),
-                  time: new Date().toLocaleString("en-US", {
-                    hour: "numeric",
-                    minute: "numeric",
-                    hour12: true,
-                    timeZone: "Asia/Kolkata",
-                  }),
-                },
-              ]);
-            }, 1000);
-            setserviceActionCount(8);
-          }
-          else {
-            const queryResponse = await axios.post(
-              `${process.env.NEXT_PUBLIC_BACKEND_URI}/create_message`,
-              {
-                user_email: userEmail,
-                conversation_id: conversationID,
-                input: userQuery,
-                source: "web design",
-              }
-            );
-            setloadershow(false);
-            const content_check =
-              queryResponse?.data?.content !==
-              "Sorry, I am not able to understand your question fully. Could you please provide more details or clarify your query?"
-                ? true
-                : false;
-            const uniqueSources = queryResponse?.data?.sources_list?.reduce(
-              (acc, current) => {
-                const x = acc.find((item) => item?.url === current?.url);
-                if (!x) {
-                  return acc.concat([current]);
-                } else {
-                  return acc;
-                }
-              },
-              []
-            );
-            const SystemInfo = {
-              username: "system",
-              message: (
-                <div>
-                  <div>{queryResponse?.data?.content}</div>
-                  <div>
-                    {uniqueSources.length > 0 && content_check ? (
+              setserviceActionCount(5);
+            } else if (
+              serviceActionCount === 5 &&
+              service === "Hire a Resource"
+            ) {
+              setjobExperience(userQuery);
+              setTimeout(() => {
+                setloadershow(false);
+                setchatbotMessages((prevMessages) => [
+                  ...prevMessages,
+                  {
+                    username: "system",
+                    messageType: "system",
+                    message: (
                       <>
-                        <h6 className={styles.sourcesbox}>Sources</h6>
-                        {uniqueSources?.map((items, index) => {
-                          return (
-                            <div key={index} className={styles.sourcecont}>
-                              <p className={styles.sourcescount}>
-                                [{index + 1}]
-                              </p>{" "}
-                              <a
-                                href={items?.url}
-                                className={styles.sourcelist}
-                                target="_blank"
-                              >
-                                {items?.title}
-                              </a>
-                            </div>
-                          );
-                        })}
+                        <div>
+                          <p>
+                            What type of work arrangement are you offering?
+                            (e.g., full-time, part-time, remote, on-site)
+                          </p>
+                        </div>
                       </>
-                    ) : (
-                      <></>
-                    )}
+                    ),
+                    time: new Date().toLocaleString("en-US", {
+                      hour: "numeric",
+                      minute: "numeric",
+                      hour12: true,
+                      timeZone: "Asia/Kolkata",
+                    }),
+                  },
+                ]);
+              }, 1000);
+              setserviceActionCount(6);
+            } else if (
+              serviceActionCount === 6 &&
+              service === "Hire a Resource"
+            ) {
+              setjobType(userQuery);
+              setTimeout(() => {
+                setloadershow(false);
+                setchatbotMessages((prevMessages) => [
+                  ...prevMessages,
+                  {
+                    username: "system",
+                    messageType: "system",
+                    message: (
+                      <>
+                        <div>
+                          <p>
+                            What is your budget for this role? (Please specify
+                            if it is hourly, monthly, or project-based)
+                          </p>
+                        </div>
+                      </>
+                    ),
+                    time: new Date().toLocaleString("en-US", {
+                      hour: "numeric",
+                      minute: "numeric",
+                      hour12: true,
+                      timeZone: "Asia/Kolkata",
+                    }),
+                  },
+                ]);
+              }, 1000);
+              setserviceActionCount(7);
+            } else if (
+              serviceActionCount === 7 &&
+              service === "Hire a Resource"
+            ) {
+              setbudget(userQuery);
+              console.log(userName);
+              console.log(phoneNumber);
+              console.log(userEmail);
+              console.log(jobRole);
+              console.log(jobExperience);
+              console.log(jobType);
+              console.log(userQuery);
+              setTimeout(() => {
+                setloadershow(false);
+                setchatbotMessages((prevMessages) => [
+                  ...prevMessages,
+                  {
+                    username: "system",
+                    messageType: "system",
+                    message: (
+                      <>
+                        <div>
+                          <p>
+                            Thank you for providing your details. Someone from
+                            our team will reach out to you. Meanwhile, feel free
+                            to ask any questions you may have!
+                          </p>
+                        </div>
+                      </>
+                    ),
+                    time: new Date().toLocaleString("en-US", {
+                      hour: "numeric",
+                      minute: "numeric",
+                      hour12: true,
+                      timeZone: "Asia/Kolkata",
+                    }),
+                  },
+                ]);
+              }, 1000);
+              setserviceActionCount(8);
+            } else {
+              const queryResponse = await axios.post(
+                `${process.env.NEXT_PUBLIC_BACKEND_URI}/create_message`,
+                {
+                  user_email: userEmail,
+                  conversation_id: conversationID,
+                  input: userQuery,
+                  source: "web design",
+                }
+              );
+              setloadershow(false);
+              const content_check =
+                queryResponse?.data?.content !==
+                "Sorry, I am not able to understand your question fully. Could you please provide more details or clarify your query?"
+                  ? true
+                  : false;
+              const uniqueSources = queryResponse?.data?.sources_list?.reduce(
+                (acc, current) => {
+                  const x = acc.find((item) => item?.url === current?.url);
+                  if (!x) {
+                    return acc.concat([current]);
+                  } else {
+                    return acc;
+                  }
+                },
+                []
+              );
+              const SystemInfo = {
+                username: "system",
+                message: (
+                  <div>
+                    <div>{queryResponse?.data?.content}</div>
+                    <div>
+                      {uniqueSources.length > 0 && content_check ? (
+                        <>
+                          <h6 className={styles.sourcesbox}>Sources</h6>
+                          {uniqueSources?.map((items, index) => {
+                            return (
+                              <div key={index} className={styles.sourcecont}>
+                                <p className={styles.sourcescount}>
+                                  [{index + 1}]
+                                </p>{" "}
+                                <a
+                                  href={items?.url}
+                                  className={styles.sourcelist}
+                                  target="_blank"
+                                >
+                                  {items?.title}
+                                </a>
+                              </div>
+                            );
+                          })}
+                        </>
+                      ) : (
+                        <></>
+                      )}
+                    </div>
                   </div>
-                </div>
-              ),
-              messageType: "conversation",
-              time: new Date().toLocaleString("en-US", {
-                hour: "numeric",
-                minute: "numeric",
-                hour12: true,
-                timeZone: "Asia/Kolkata",
-              }),
-            };
-            info.current.value = "";
-            setchatbotMessages((prevMessages) => [...prevMessages, SystemInfo]);
+                ),
+                messageType: "conversation",
+                time: new Date().toLocaleString("en-US", {
+                  hour: "numeric",
+                  minute: "numeric",
+                  hour12: true,
+                  timeZone: "Asia/Kolkata",
+                }),
+              };
+              info.current.value = "";
+              setchatbotMessages((prevMessages) => [
+                ...prevMessages,
+                SystemInfo,
+              ]);
+            }
           }
-        }
         }
       }
     } catch (error) {
