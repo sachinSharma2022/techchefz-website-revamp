@@ -693,8 +693,8 @@
         overflow-y: auto;
 
         @include desktop-14 {
-          min-height: 68vh;
-          max-height: 68vh;
+          min-height: 60vh;
+          max-height: 60vh;
         }
 
         @include desktop-4k {
@@ -706,6 +706,17 @@
           min-height: 75vh;
           max-height: 75vh;
         }
+
+        &.solutionTech {
+          min-height: 54vh;
+          max-height: 54vh;
+        }
+
+        // &.moreTech {
+        //   min-height: 48vh;
+        //   max-height: 48vh;
+        // }
+
 
         @include mobile-tablet-p {
           max-width: 100%;
@@ -1049,4 +1060,10 @@
   @media (min-width: 1200px) {
     display: none;
   }
+}
+
+.spaceBottom {
+  height: 128px;
+  background-color: red;
+  width: 100%;
 }
