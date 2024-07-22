@@ -19,6 +19,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
   const [mobileMenuShow, setMobileMenuShow] = useState(false);
   const [isTechMenu, setTechMenu] = useState(null);
   const [isMoreMenu, setMoreMenu] = useState(null);
+  const [isSolutionMenu, setSolutionMenu] = useState(null);
 
   const { theme, setTheme } = useContext(MyContext);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -83,6 +84,10 @@ const NavigationMobile = ({ props, featureArticle }) => {
   const onlycloseMoreMenu = () => {
     setMobileMenuShow(!mobileMenuShow);
     setMoreMenu(false);
+  };
+  const onlycloseSolutionMenu = () => {
+    setMobileMenuShow(!mobileMenuShow);
+    setSolutionMenu(false);
   };
 
   const technologyToggle = () => {
@@ -175,6 +180,41 @@ const NavigationMobile = ({ props, featureArticle }) => {
       </div>
     );
   }
+  function SolutionTech() {
+    return (
+      <div className={styles.overviewFlex}>
+        <div className={styles.overviewSubFlex}>
+          <div>
+            <ImageCustom
+              src={
+                props[2]?.DropDown[0]?.Image?.data?.attributes?.url
+                  ? `${base_Uri}${props[2]?.DropDown[0]?.Image?.data?.attributes?.url}`
+                  : `${base_Uri}/`
+              }
+              width={56}
+              height={56}
+              alt="nav-image"
+            />
+          </div>
+          <div className={styles.overviewTitle}>
+            <h3 className={styles.title}>{props[2]?.DropDown[0]?.Title}</h3>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: `${props[2]?.DropDown[0]?.Description}`,
+              }}
+            ></p>
+          </div>
+        </div>
+        <div className={styles.overviewBtn}>
+          <Link href={props[2]?.DropDown[0]?.Links}>
+            <Button onClick={closeMenu} variant="outline" size="sm">
+              Overview <Icons.ArrowRight size={18} />
+            </Button>
+          </Link>
+        </div>
+      </div>
+    );
+  }
   return (
     <header
       className={cn(
@@ -194,6 +234,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
           mobileMenuShow={mobileMenuShow}
           isTechMenu={isTechMenu}
           isMoreMenu={isMoreMenu}
+          isSolutionMenu={isSolutionMenu}
           setMobileMenuShow={setMobileMenuShow}
           setTechMenu={setTechMenu}
           setMoreMenu={setMoreMenu}
@@ -210,14 +251,81 @@ const NavigationMobile = ({ props, featureArticle }) => {
                 {props[0]?.Title}
               </Link>
             </li>
-            <li className={styles.menuItem}>
-              <Link
+            <li className={styles.dropDown}>
+              {/* <Link
                 href={props[1]?.Link}
                 onClick={onlycloseMenu}
-                className={pathname == "/solutions" ? styles.active : ""}
               >
                 {props[1]?.Title}
-              </Link>
+              </Link> */}
+
+              <button
+                className={cn(styles.linkButton)}
+                onClick={() => setSolutionMenu(true)}
+              >
+                {props[1]?.Title} <div className={styles.arrow} />
+              </button>
+
+              <ul
+                className={cn(
+                  styles.subMenu,
+                  isSolutionMenu === true
+                    ? styles.slideIn
+                    : isSolutionMenu != null
+                    ? styles.slideOut
+                    : ""
+                )}
+              >
+                <div className={styles.subsection}>
+                  <button
+                    className={styles.backButton}
+                    onClick={() => setSolutionMenu(false)}
+                  >
+                    <Icons.ArrowLeft />
+                    Go Back
+                  </button>
+
+                  <div className={cn(styles.overviewTech)}>
+                    <div className={cn(styles.multiHrefs)}>
+                      <div className="row">
+                        <div className="col-sm-12">
+                          <Link
+                            href={props[4]?.DropDown[0]?.Links}
+                            onClick={onlycloseSolutionMenu}
+                            className={cn(styles.hrefInnerFlex)}
+                          >
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>
+                               Overview
+                              </h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              {props[4]?.DropDown[0]?.Description}
+                            </p>
+                          </Link>
+                          <Link
+                            href={props[4]?.DropDown[1]?.Links}
+                            onClick={onlycloseSolutionMenu}
+                            className={cn(styles.hrefInnerFlex)}
+                          >
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>
+                               Design Solution
+                              </h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              {props[4]?.DropDown[1]?.Description}
+                            </p>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {LatestTech(feartureMore)}
+                </div>
+              </ul>
             </li>
             <li className={styles.dropDown}>
               <button
