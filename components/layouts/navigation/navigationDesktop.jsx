@@ -14,6 +14,7 @@ import AnimatedLogo from "@/components/common/animatedLogo";
 import { generateSlug } from "@/lib/utils";
 
 const NavigationDesktop = ({ props, featureArticle }) => {
+  console.log(props,"hhhhh");
   const pathname = usePathname();
   const { theme, setTheme } = useContext(MyContext);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -77,7 +78,8 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                 }
                 width={300}
                 height={300}
-                alt="nav-image"
+                alt = {feartureArray[0]?.attributes?.InsightOverview[0]?.Image?.data
+                  ?.attributes?.alternativeText}
               />
             </div>
             <div className={styles.infoBox}>
@@ -127,7 +129,8 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                 }
                 width={300}
                 height={300}
-                alt="nav-image"
+                alt = {feartureArray[0]?.attributes?.InsightOverview[0]?.Image?.data
+                  ?.attributes?.alternativeText}
               />
             </div>
             <div className={styles.infoBox}>
@@ -165,7 +168,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
               }
               width={56}
               height={56}
-              alt="bannerImg"
+              alt = {props[2]?.DropDown[0]?.Image?.data?.attributes?.alternativeText}
             />
           </div>
           <div className={styles.overviewTitle}>
@@ -233,31 +236,31 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                       <div className="row">
                         <div className="col-sm-12">
                           <Link
-                            href={props[4]?.DropDown[0]?.Links}
+                            href={props[1]?.DropDown[0]?.Links}
                             className={cn(styles.hrefInnerFlex)}
                             onClick={closeMenu}
                           >
                             <div className={styles.head}>
-                              <h4 className={styles.linkTitle}>Overview</h4>
+                              <h4 className={styles.linkTitle}>{props[1]?.DropDown[0]?.Title}</h4>
                               <Icons.ArrowForward />
                             </div>
                             <p className={styles.excepPara}>
-                              {props[4]?.DropDown[0]?.Description}
+                              {props[1]?.DropDown[0]?.Description}
                             </p>
                           </Link>
                           <Link
-                            href={props[4]?.DropDown[1]?.Links}
+                            href={props[1]?.DropDown[1]?.Links}
                             className={cn(styles.hrefInnerFlex)}
                             onClick={closeMenu}
                           >
                             <div className={styles.head}>
                               <h4 className={styles.linkTitle}>
-                                Design Solution
+                                {props[1]?.DropDown[1]?.Title}
                               </h4>
                               <Icons.ArrowForward />
                             </div>
                             <p className={styles.excepPara}>
-                              {props[4]?.DropDown[1]?.Description}
+                              {props[1]?.DropDown[1]?.Description}
                             </p>
                           </Link>
                         </div>
@@ -476,6 +479,21 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                             </div>
                             <p className={styles.excepPara}>
                               {props[4]?.DropDown[2]?.Description}
+                            </p>
+                          </Link>
+                          <Link
+                            href={props[4]?.DropDown[3]?.Links}
+                            className={cn(styles.hrefInnerFlex)}
+                            onClick={closeMenu}
+                          >
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>
+                                {props[4]?.DropDown[3]?.Title}
+                              </h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              {props[4]?.DropDown[3]?.Description}
                             </p>
                           </Link>
                           <Link
