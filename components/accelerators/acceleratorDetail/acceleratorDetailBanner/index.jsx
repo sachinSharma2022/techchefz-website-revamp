@@ -36,6 +36,8 @@ const DetailBanner = ({ props }) => {
           </div>
         </div>
       </div>
+      {props?.Image?.data?.attributes?.url !== undefined &&
+        props?.Image?.data?.attributes?.url !== "" && (
       <div className={styles.imgBox}>
         <ImageCustom
           src={
@@ -48,6 +50,7 @@ const DetailBanner = ({ props }) => {
           alt = { props?.Image?.data?.attributes?.alternativeText}
         />
       </div>
+        )}
     </section>
   );
 };
