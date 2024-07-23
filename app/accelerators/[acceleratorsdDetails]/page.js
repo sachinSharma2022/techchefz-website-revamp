@@ -3,16 +3,17 @@ import Impact from "@/components/accelerators/acceleratorDetail/acceleratorImpac
 import AcceleratorIndustry from "@/components/accelerators/acceleratorDetail/acceleratorIndustry";
 import FeatureCard from "@/components/accelerators/acceleratorDetail/featureCard";
 import LetsWork from "@/components/home/letsWork";
-import RelatedCase from "@/components/relatedCase";
 import { getDataDynamic } from "@/lib/fetchData";
 import { api_accelerators_details_Page } from "@/lib/constants";
 import NotFound from "@/app/not-found";
+import { generateSlug } from "@/lib/utils";
 
 const AcceleratorDetails = async ({ params }) => {
   const data = await getDataDynamic(api_accelerators_details_Page);
-  
   const [page] = data.filter(
-    (value) => value.id == params.acceleratorsdDetails
+    (value) =>
+      generateSlug(value?.attributes?.BrowserAccelerator?.Heading) ==
+      params.acceleratorsdDetails
   );
   return (
     <>
@@ -22,7 +23,7 @@ const AcceleratorDetails = async ({ params }) => {
           <AcceleratorIndustry props={page.attributes.Media} />
           <Impact props={page.attributes.Impact} />
           <FeatureCard props={page.attributes.Challanges} />
-         
+
           <LetsWork contact={page.attributes.LetsWork} />
         </div>
       ) : (

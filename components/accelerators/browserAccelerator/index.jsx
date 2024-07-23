@@ -4,7 +4,7 @@ import { MyContext } from "@/context/theme";
 import { useContext } from "react";
 import BadgeInfoCard from "@/components/common/badgeInfoCard";
 
-import { cn } from "@/lib/utils";
+import { cn, generateSlug } from "@/lib/utils";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
 
@@ -72,7 +72,7 @@ const BrowserAccelerator = ({props}) => {
               subHeading={item?.attributes?.BrowserAccelerator?.Title}
               heading={item?.attributes?.BrowserAccelerator?.Heading}
               description={item?.attributes?.BrowserAccelerator?.Description}
-              href={`/accelerators/${item.id}`}
+              href={`/accelerators/${generateSlug(item?.attributes?.BrowserAccelerator?.Heading)}`}
               options={item?.attributes?.BrowserAccelerator?.TitleWithLinks.map((x)=>x.Title)}
             />
           ))}
