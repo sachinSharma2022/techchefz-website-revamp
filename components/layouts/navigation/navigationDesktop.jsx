@@ -263,6 +263,21 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                               {props[1]?.DropDown[1]?.Description}
                             </p>
                           </Link>
+                          <Link
+                            href={props[1]?.DropDown[2]?.Links}
+                            className={cn(styles.hrefInnerFlex)}
+                            onClick={closeMenu}
+                          >
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>
+                                {props[1]?.DropDown[2]?.Title}
+                              </h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              {props[1]?.DropDown[2]?.Description}
+                            </p>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -481,7 +496,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                               {props[4]?.DropDown[2]?.Description}
                             </p>
                           </Link>
-                          <Link
+                          {/* <Link
                             href={props[4]?.DropDown[3]?.Links}
                             className={cn(styles.hrefInnerFlex)}
                             onClick={closeMenu}
@@ -495,7 +510,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                             <p className={styles.excepPara}>
                               {props[4]?.DropDown[3]?.Description}
                             </p>
-                          </Link>
+                          </Link> */}
                           <Link
                             href={props[4]?.DropDown[4]?.Links}
                             className={cn(styles.hrefInnerFlex)}
