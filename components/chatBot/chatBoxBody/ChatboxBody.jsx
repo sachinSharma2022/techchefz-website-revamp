@@ -18,7 +18,6 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
   const [department, setdepartment] = useState("");
   const [service, setservice] = useState("");
   const [serviceActionCount, setserviceActionCount] = useState(0);
-  // const [uploadResumeAction, setuploadResumeAction] = useState(false);
   const [phoneNumber, setphoneNumber] = useState("");
   const resumeRef = useRef();
   const [jobRole, setjobRole] = useState("");
@@ -212,19 +211,19 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
   }, [chatbotMessages, department, service]);
   useEffect(() => {
     if (userinfo.current && chatbody.current && chatfooter.current) {
-      userinfo.current.style.height = "auto";
-      userinfo.current.style.height = `${userinfo.current.scrollHeight}px`;
-      if (userinfo.current.scrollHeight < 200) {
-        userinfo.current.style.overflowY = "hidden";
-        userinfo.current.style.paddingRight = "45px";
-      } else {
-        userinfo.current.style.overflowY = "auto";
-        userinfo.current.style.paddingRight = "30px";
-      }
-      chatfooter.current.style.height = `${userinfo.current.scrollHeight}px`;
-      chatbody.current.style.height = `${
-        580 - (userinfo.current.scrollHeight - 44)
-      }px`;
+        userinfo.current.style.height = "auto";
+        userinfo.current.style.height = `${userinfo.current.scrollHeight}px`;
+        if (userinfo.current.scrollHeight < 120) {
+          userinfo.current.style.overflowY = "hidden";
+          userinfo.current.style.paddingRight = "45px";
+        } else {
+          userinfo.current.style.overflowY = "auto";
+          userinfo.current.style.paddingRight = "30px";
+        }
+        chatfooter.current.style.height = `${userinfo.current.scrollHeight}px`;
+        chatbody.current.style.height = `${
+          500 - (userinfo.current.scrollHeight - 44)
+        }px`;
     }
   }, [textvalue]);
 
@@ -236,6 +235,48 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(email);
   };
+
+  const validatePhoneNumber = (numberString)=>{
+    const validMobileNumberRegex = /^\d{10}$/;
+    return validMobileNumberRegex.test(numberString);
+  }
+
+  const validateName = (nameString)=>{
+    return nameString.length()>30?false:true;
+  }
+
+  
+  const detailsCapture = async(userEmail,userData)=>{
+    //userData upload
+    fetch(`${process.env.NEXT_PUBLIC_BACKEND_URI}/upload_leads`, { 
+      method: "POST", 
+      body: JSON.stringify({ 
+        input: userData,
+        file: resumeRef,
+      }), 
+      headers: { 
+          "Content-type": 'multipart/form-data'
+      } 
+    }) 
+    .then(response => response.json()) 
+    .then(json => console.log(json)); 
+    
+    //create conversation FId
+    const createConversationId = await axios.post(
+      `${process.env.NEXT_PUBLIC_BACKEND_URI}/create_conversation`,
+      {
+        user_email: userEmail,
+        source: "web design",
+      },
+      {
+        headers: {
+            'Content-Type': 'application/json',
+        }
+      }
+    );
+    console.log(createConversationId?.data);
+    setconversationID(createConversationId?.data?.convo_id);
+  }
 
   const sendMessage = async (info) => {
     try {
@@ -361,15 +402,17 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
             } else if (serviceActionCount === 3) {
               if (resume_stats !== "uploaded") {
                 if (validateEmail(userQuery)) {
-                  const response = await axios.post(
-                    `${process.env.NEXT_PUBLIC_BACKEND_URI}/create_conversation`,
-                    {
-                      user_email: userQuery,
-                      source: "web design",
+                  if(service!=="Apply for a Job"){
+                    const userDataInfo = {
+                      "userName":userName,
+                      "userEmail":userQuery,
+                      "userPhone":phoneNumber,
+                      "department":department,
+                      "services": service,
                     }
-                  );
+                    detailsCapture(userQuery,JSON.stringify(userDataInfo));
+                  }
                   setuserEmail(userQuery);
-                  setconversationID(response?.data?.convo_id);
                   if (department !== "Hiring") {
                     setTimeout(() => {
                       setloadershow(false);
@@ -515,6 +558,14 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                   }, 1000);
                 }
               } else {
+                const userDataInfo = {
+                  "userName":userName,
+                  "userEmail":userEmail,
+                  "userPhone":phoneNumber,
+                  "department":department,
+                  "services": service,
+                }
+                detailsCapture(userEmail,JSON.stringify(userDataInfo));
                 setTimeout(() => {
                   setloadershow(false);
                   setchatbotMessages((prevMessages) => [
@@ -671,14 +722,19 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
               serviceActionCount === 7 &&
               service === "Hire a Resource"
             ) {
+              const userDataInfo = {
+                "userName":userName,
+                "userEmail":userQuery,
+                "userPhone":phoneNumber,
+                "jobRole": jobRole,
+                "jobExperience": jobExperience,
+                "jobType": jobType,
+                "Budget": userQuery,
+                "department":department,
+                "services": service,
+              }
+              detailsCapture(userQuery,JSON.stringify(userDataInfo));
               setbudget(userQuery);
-              console.log(userName);
-              console.log(phoneNumber);
-              console.log(userEmail);
-              console.log(jobRole);
-              console.log(jobExperience);
-              console.log(jobType);
-              console.log(userQuery);
               setTimeout(() => {
                 setloadershow(false);
                 setchatbotMessages((prevMessages) => [
@@ -808,7 +864,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
         </div>
       </div>
 
-      <div className={styles.chatbotTxtbody} ref={chatbody}>
+      <div className={styles.chatbotTxtbody} ref={chatbody} style={{minHeight:"390px"}}>
         {chatbotMessages?.map((items, index) => (
           <div className="w-[100%]" key={index}>
             {items.username === "system" ? (
@@ -848,7 +904,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
           onChange={handleChange}
           style={{
             resize: "none",
-            maxHeight: "200px",
+            maxHeight: "120px",
           }}
           rows="1"
         />
