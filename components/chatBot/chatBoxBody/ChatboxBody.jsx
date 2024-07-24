@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./style.module.scss";
-import axios from "axios";
 import { Icons } from "@/components/icons";
 
 const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
@@ -211,24 +210,27 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
   }, [chatbotMessages, department, service]);
   useEffect(() => {
     if (userinfo.current && chatbody.current && chatfooter.current) {
-        userinfo.current.style.height = "auto";
-        userinfo.current.style.height = `${userinfo.current.scrollHeight}px`;
-        if (userinfo.current.scrollHeight < 120) {
-          userinfo.current.style.overflowY = "hidden";
-          userinfo.current.style.paddingRight = "45px";
-        } else {
-          userinfo.current.style.overflowY = "auto";
-          userinfo.current.style.paddingRight = "30px";
-        }
-        chatfooter.current.style.height = `${userinfo.current.scrollHeight}px`;
-        chatbody.current.style.height = `${
-          500 - (userinfo.current.scrollHeight - 44)
-        }px`;
+      userinfo.current.style.height = "auto";
+      userinfo.current.style.height = `${userinfo.current.scrollHeight}px`;
+      if (userinfo.current.scrollHeight < 120) {
+        userinfo.current.style.overflowY = "hidden";
+        userinfo.current.style.paddingRight = "45px";
+      } else {
+        userinfo.current.style.overflowY = "auto";
+        userinfo.current.style.paddingRight = "30px";
+      }
+      chatfooter.current.style.height = `${userinfo.current.scrollHeight}px`;
+      chatbody.current.style.height = `${
+        500 - (userinfo.current.scrollHeight - 44)
+      }px`;
     }
   }, [textvalue]);
 
   const handleChange = (e) => {
-    settextValue(e.target.value);
+    const spaceRemovedcharacters = e.target.value.replace(/\s+/g, '');
+    if(spaceRemovedcharacters.length<=500){
+      settextValue(e.target.value);
+    }
   };
 
   const validateEmail = (email) => {
@@ -236,51 +238,58 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
     return emailPattern.test(email);
   };
 
-  const validatePhoneNumber = (numberString)=>{
-    const validMobileNumberRegex = /^\d{10}$/;
-    return validMobileNumberRegex.test(numberString);
-  }
+  const validatePhoneNumber = (phoneNumber) => {
+    const pattern = /^\d{10}$/;
+    return pattern.test(phoneNumber);
+  };
 
-  const validateName = (nameString)=>{
-    return nameString.length()>30?false:true;
-  }
+  const validateName = (name) => {
+    const cleanedName = name.replace(/\s+/g, "");
+    const isValid = cleanedName.length >= 4 && cleanedName.length <= 250;
+    return isValid;
+  };
 
-  
-  const detailsCapture = async(userEmail,userData)=>{
-    //userData upload
-    fetch(`${process.env.NEXT_PUBLIC_BACKEND_URI}/upload_leads`, { 
-      method: "POST", 
-      body: JSON.stringify({ 
-        input: userData,
-        file: resumeRef,
-      }), 
-      headers: { 
-          "Content-type": 'multipart/form-data'
-      } 
-    }) 
-    .then(response => response.json()) 
-    .then(json => console.log(json)); 
-    
-    //create conversation FId
-    const createConversationId = await axios.post(
-      `${process.env.NEXT_PUBLIC_BACKEND_URI}/create_conversation`,
-      {
+  const detailsCapture = async (userEmail, userData) => {
+    let formData = new FormData();
+    formData.append("input", userData);
+    formData.append("file", resumeRef);
+
+    fetch(`${process.env.NEXT_PUBLIC_BACKEND_URI}/upload_leads`, {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+
+
+    fetch(`${process.env.NEXT_PUBLIC_BACKEND_URI}/create_conversation`, {
+      method: "POST",
+      body: JSON.stringify({
         user_email: userEmail,
         source: "web design",
+      }),
+      headers: {
+        "Content-type": "application/json",
       },
-      {
-        headers: {
-            'Content-Type': 'application/json',
-        }
-      }
-    );
-    console.log(createConversationId?.data);
-    setconversationID(createConversationId?.data?.convo_id);
-  }
+    })
+      .then((response) => response.json())
+      .then((createConversationId) => {
+        console.log(createConversationId?.convo_id);
+        setconversationID(createConversationId?.convo_id);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
 
   const sendMessage = async (info) => {
     try {
-      if (info?.current?.value !== "") {
+      if (info?.current?.value !== "" && !loadershow) {
         if (
           (department !== "" || info?.current?.department !== undefined) &&
           (service !== "" || info?.current?.service !== undefined)
@@ -344,73 +353,129 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
               }, 1000);
               setserviceActionCount(1);
             } else if (serviceActionCount === 1) {
-              setuserName(userQuery);
-              setTimeout(() => {
-                setchatbotMessages((prevMessages) => [
-                  ...prevMessages,
-                  {
-                    username: "system",
-                    messageType: "email",
-                    message: (
-                      <>
-                        <div>
-                          <p className="email">
-                            Please provide your phone number.
-                          </p>
-                        </div>
-                      </>
-                    ),
-                    time: new Date().toLocaleString("en-US", {
-                      hour: "numeric",
-                      minute: "numeric",
-                      hour12: true,
-                      timeZone: "Asia/Kolkata",
-                    }),
-                  },
-                ]);
-                setloadershow(false);
-              }, 1000);
-              setserviceActionCount(2);
+              if (validateName(userQuery)) {
+                setuserName(userQuery);
+                setTimeout(() => {
+                  setchatbotMessages((prevMessages) => [
+                    ...prevMessages,
+                    {
+                      username: "system",
+                      messageType: "email",
+                      message: (
+                        <>
+                          <div>
+                            <p className="email">
+                              Please provide your phone number.
+                            </p>
+                          </div>
+                        </>
+                      ),
+                      time: new Date().toLocaleString("en-US", {
+                        hour: "numeric",
+                        minute: "numeric",
+                        hour12: true,
+                        timeZone: "Asia/Kolkata",
+                      }),
+                    },
+                  ]);
+                  setloadershow(false);
+                }, 1000);
+                setserviceActionCount(2);
+              } else {
+                setTimeout(() => {
+                  setchatbotMessages((prevMessages) => [
+                    ...prevMessages,
+                    {
+                      username: "system",
+                      messageType: "email",
+                      message: (
+                        <>
+                          <div>
+                            <p className="email">
+                              Name must be between 4 to 250 characters.
+                            </p>
+                          </div>
+                        </>
+                      ),
+                      time: new Date().toLocaleString("en-US", {
+                        hour: "numeric",
+                        minute: "numeric",
+                        hour12: true,
+                        timeZone: "Asia/Kolkata",
+                      }),
+                    },
+                  ]);
+                  setloadershow(false);
+                }, 1000);
+              }
             } else if (serviceActionCount === 2) {
-              setphoneNumber(userQuery);
-              setTimeout(() => {
-                setchatbotMessages((prevMessages) => [
-                  ...prevMessages,
-                  {
-                    username: "system",
-                    messageType: "email",
-                    message: (
-                      <>
-                        <div>
-                          <p className="email">
-                            Please provide your email address.
-                          </p>
-                        </div>
-                      </>
-                    ),
-                    time: new Date().toLocaleString("en-US", {
-                      hour: "numeric",
-                      minute: "numeric",
-                      hour12: true,
-                      timeZone: "Asia/Kolkata",
-                    }),
-                  },
-                ]);
-                setloadershow(false);
-              }, 1000);
-              setserviceActionCount(3);
+              if (validatePhoneNumber(userQuery)) {
+                setphoneNumber(userQuery);
+                setTimeout(() => {
+                  setchatbotMessages((prevMessages) => [
+                    ...prevMessages,
+                    {
+                      username: "system",
+                      messageType: "email",
+                      message: (
+                        <>
+                          <div>
+                            <p className="email">
+                              Please provide your email address.
+                            </p>
+                          </div>
+                        </>
+                      ),
+                      time: new Date().toLocaleString("en-US", {
+                        hour: "numeric",
+                        minute: "numeric",
+                        hour12: true,
+                        timeZone: "Asia/Kolkata",
+                      }),
+                    },
+                  ]);
+                  setloadershow(false);
+                }, 1000);
+                setserviceActionCount(3);
+              } else {
+                setTimeout(() => {
+                  setchatbotMessages((prevMessages) => [
+                    ...prevMessages,
+                    {
+                      username: "system",
+                      messageType: "email",
+                      message: (
+                        <>
+                          <div>
+                            <p className="email">
+                              Please enter a valid phone number(10 Digits).
+                            </p>
+                          </div>
+                        </>
+                      ),
+                      time: new Date().toLocaleString("en-US", {
+                        hour: "numeric",
+                        minute: "numeric",
+                        hour12: true,
+                        timeZone: "Asia/Kolkata",
+                      }),
+                    },
+                  ]);
+                  setloadershow(false);
+                }, 1000);
+              }
             } else if (serviceActionCount === 3) {
               if (resume_stats !== "uploaded") {
                 if (validateEmail(userQuery)) {
-                  if(service!=="Apply for a Job"){
+                  if (service !== "Apply for a Job") {
                     const userDataInfo = {
-                      "userName":userName,
-                      "userEmail":userQuery,
-                      "userPhone":phoneNumber,
-                      "department":department,
-                      "services": service,
-                    }
-                    detailsCapture(userQuery,JSON.stringify(userDataInfo));
+                      userName: userName,
+                      userEmail: userQuery,
+                      userPhone: phoneNumber,
+                      department: department,
+                      services: service,
+                    };
+                    detailsCapture(userQuery, JSON.stringify(userDataInfo));
                   }
                   setuserEmail(userQuery);
                   if (department !== "Hiring") {
@@ -559,13 +624,13 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                 }
               } else {
                 const userDataInfo = {
-                  "userName":userName,
-                  "userEmail":userEmail,
-                  "userPhone":phoneNumber,
-                  "department":department,
-                  "services": service,
-                }
-                detailsCapture(userEmail,JSON.stringify(userDataInfo));
+                  userName: userName,
+                  userEmail: userEmail,
+                  userPhone: phoneNumber,
+                  department: department,
+                  services: service,
+                };
+                detailsCapture(userEmail, JSON.stringify(userDataInfo));
                 setTimeout(() => {
                   setloadershow(false);
                   setchatbotMessages((prevMessages) => [
@@ -723,17 +788,17 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
               service === "Hire a Resource"
             ) {
               const userDataInfo = {
-                "userName":userName,
-                "userEmail":userQuery,
-                "userPhone":phoneNumber,
-                "jobRole": jobRole,
-                "jobExperience": jobExperience,
-                "jobType": jobType,
-                "Budget": userQuery,
-                "department":department,
-                "services": service,
-              }
-              detailsCapture(userQuery,JSON.stringify(userDataInfo));
+                userName: userName,
+                userEmail: userQuery,
+                userPhone: phoneNumber,
+                jobRole: jobRole,
+                jobExperience: jobExperience,
+                jobType: jobType,
+                Budget: userQuery,
+                department: department,
+                services: service,
+              };
+              detailsCapture(userQuery, JSON.stringify(userDataInfo));
               setbudget(userQuery);
               setTimeout(() => {
                 setloadershow(false);
@@ -764,77 +829,87 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
               }, 1000);
               setserviceActionCount(8);
             } else {
-              const queryResponse = await axios.post(
-                `${process.env.NEXT_PUBLIC_BACKEND_URI}/create_message`,
-                {
+              fetch(`${process.env.NEXT_PUBLIC_BACKEND_URI}/create_message`, {
+                method: "POST",
+                body: JSON.stringify({
                   user_email: userEmail,
                   conversation_id: conversationID,
                   input: userQuery,
                   source: "web design",
-                }
-              );
-              setloadershow(false);
-              const content_check =
-                queryResponse?.data?.content !==
-                "Sorry, I am not able to understand your question fully. Could you please provide more details or clarify your query?"
-                  ? true
-                  : false;
-              const uniqueSources = queryResponse?.data?.sources_list?.reduce(
-                (acc, current) => {
-                  const x = acc.find((item) => item?.url === current?.url);
-                  if (!x) {
-                    return acc.concat([current]);
-                  } else {
-                    return acc;
-                  }
-                },
-                []
-              );
-              const SystemInfo = {
-                username: "system",
-                message: (
-                  <div>
-                    <div>{queryResponse?.data?.content}</div>
-                    <div>
-                      {uniqueSources.length > 0 && content_check ? (
-                        <>
-                          <h6 className={styles.sourcesbox}>Sources</h6>
-                          {uniqueSources?.map((items, index) => {
-                            return (
-                              <div key={index} className={styles.sourcecont}>
-                                <p className={styles.sourcescount}>
-                                  [{index + 1}]
-                                </p>{" "}
-                                <a
-                                  href={items?.url}
-                                  className={styles.sourcelist}
-                                  target="_blank"
-                                >
-                                  {items?.title}
-                                </a>
-                              </div>
-                            );
-                          })}
-                        </>
-                      ) : (
-                        <></>
-                      )}
-                    </div>
-                  </div>
-                ),
-                messageType: "conversation",
-                time: new Date().toLocaleString("en-US", {
-                  hour: "numeric",
-                  minute: "numeric",
-                  hour12: true,
-                  timeZone: "Asia/Kolkata",
                 }),
-              };
-              info.current.value = "";
-              setchatbotMessages((prevMessages) => [
-                ...prevMessages,
-                SystemInfo,
-              ]);
+                headers: {
+                  "Content-type": "application/json",
+                },
+              })
+                .then((response) => response.json())
+                .then((queryResponse) => {
+                  console.log(queryResponse);
+                  setloadershow(false);
+                  const content_check =
+                    queryResponse?.content !==
+                    "Sorry, I am not able to understand your question fully. Could you please provide more details or clarify your query?"
+                      ? true
+                      : false;
+                  const uniqueSources = queryResponse?.sources_list?.reduce(
+                    (acc, current) => {
+                      const x = acc.find((item) => item?.url === current?.url);
+                      if (!x) {
+                        return acc.concat([current]);
+                      } else {
+                        return acc;
+                      }
+                    },
+                    []
+                  );
+                  const SystemInfo = {
+                    username: "system",
+                    message: (
+                      <div>
+                        <div>{queryResponse?.content}</div>
+                        <div>
+                          {uniqueSources.length > 0 && content_check ? (
+                            <>
+                              <h6 className={styles.sourcesbox}>Sources</h6>
+                              {uniqueSources?.map((items, index) => {
+                                return (
+                                  <div
+                                    key={index}
+                                    className={styles.sourcecont}
+                                  >
+                                    <p className={styles.sourcescount}>
+                                      [{index + 1}]
+                                    </p>{" "}
+                                    <a
+                                      href={items?.url}
+                                      className={styles.sourcelist}
+                                      target="_blank"
+                                    >
+                                      {items?.title}
+                                    </a>
+                                  </div>
+                                );
+                              })}
+                            </>
+                          ) : (
+                            <></>
+                          )}
+                        </div>
+                      </div>
+                    ),
+                    messageType: "conversation",
+                    time: new Date().toLocaleString("en-US", {
+                      hour: "numeric",
+                      minute: "numeric",
+                      hour12: true,
+                      timeZone: "Asia/Kolkata",
+                    }),
+                  };
+                  info.current.value = "";
+                  setchatbotMessages((prevMessages) => [
+                    ...prevMessages,
+                    SystemInfo,
+                  ]);
+                });
             }
           }
         }
@@ -864,7 +939,11 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
         </div>
       </div>
 
-      <div className={styles.chatbotTxtbody} ref={chatbody} style={{minHeight:"390px"}}>
+      <div
+        className={styles.chatbotTxtbody}
+        ref={chatbody}
+        style={{ minHeight: "390px" }}
+      >
         {chatbotMessages?.map((items, index) => (
           <div className="w-[100%]" key={index}>
             {items.username === "system" ? (
@@ -918,6 +997,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
           <Icons.SendIcon />
         </button>
       </div>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus amet quas error non animi veniam iste consectetur voluptatum ullam? Illo tempore, quae nesciunt laboriosam placeat facilis reiciendis fuga vel doloremque iure maiores quod. At necessitatibus sunt explicabo quae ipsa eligendi, ducimus voluptate natus autem laboriosam voluptatibus error saepe aut accusantium esse dolor quas totam vitae repellat cupiditate, suscipit possimus. Ea quae laborum cupiditate porro ipsam. Consectetur error accusantium nobis? Dolores, molestiae magnam nisi natus itaque qui voluptate animi adipisci eius harum obcaecati laudantium libero nulla quibusdam facilis inventore eveniet eum perferendis vitae quam impedit nostrum maxime? Voluptatem unde porro qui maiores in amet aliquam culpa cumque sequi error sint, saepe laudantium architecto mollitia aut odio voluptatibus! Quaerat quo quia hic ipsam totam vitae fugiat eaque cupiditate, earum a beatae. Consequuntur ratione fugit nihil illo nobis voluptas odit voluptates similique cum voluptate! Quod eius molestiae placeat doloremque! Cum quod nobis non quos nulla tenetur odio, possimus numquam accusantium debitis necessitatibus aliquam temporibus excepturi et magnam, aperiam fugit velit animi officiis ab impedit beatae provident. Vero, eius perferendis eveniet facilis deleniti iure cumque veritatis dolore dolorum est voluptas odit illum aliquam ipsum fugiat maxime, doloribus quidem omnis vitae temporibus. Eum, minima? Quia impedit, eligendi ipsam sint quisquam modi ex ducimus similique blanditiis nobis numquam repellendus accusamus praesentium velit soluta dignissimos laboriosam facilis earum iste consequatur cum porro iusto? Labore consequatur assumenda maiores fuga odio, atque nulla recusandae natus porro ad blanditiis rerum sapiente a at dicta quisquam nobis, praesentium dolore iure tenetur.
     </div>
   );
 };
