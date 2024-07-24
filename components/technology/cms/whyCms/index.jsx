@@ -12,7 +12,7 @@ import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
 import TextRevel from "@/components/ui/sectionAnimation";
 
-const WhyCms = ({props}) => {
+const WhyCms = ({ props }) => {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
   const { theme, setTheme } = useContext(MyContext);
 
@@ -36,24 +36,24 @@ const WhyCms = ({props}) => {
     <section className={`${styles.whyCmsStyle} ${theme ? styles.whyCmsDark : ""}`}>
       <div className={cn("primary-container")}>
         <TextRevel>
-        <div className={styles.ourValuesHead}>
-          <h6 className={cn(styles.ourValuesTitle,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}`}}>
-          </h6>
-          <h3 className={cn(styles.ourValuesHeading,"gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}`}}>
-          </h3>
-        </div>
+          <div className={styles.ourValuesHead}>
+            <h6 className={cn(styles.ourValuesTitle, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}>
+            </h6>
+            <h3 className={cn(styles.ourValuesHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}>
+            </h3>
+          </div>
         </TextRevel>
-        
+
 
         <div className={styles.ourValuesContent}>
           <div className={styles.ourValueImg}>
-          <ImageCustom
-                  src= {props?.Image?.data?.attributes?.url?`${base_Uri}${props?.Image?.data?.attributes?.url}`:`${base_Uri}/`}
-                 
-                  width={600}
-                  height={550}
-                  alt="content-img"
-                />
+            <ImageCustom
+              src={props?.Image?.data?.attributes?.url ? `${base_Uri}${props?.Image?.data?.attributes?.url}` : `${base_Uri}/`}
+
+              width={600}
+              height={550}
+              alt={props?.Image?.data?.attributes?.alternativeText}
+            />
           </div>
           <div>
             <p className={styles.ourValuesText}>
@@ -81,7 +81,7 @@ const WhyCms = ({props}) => {
                           </div>
                         </Disclosure.Button>
                         <Disclosure.Panel className={styles.accordionBody}>
-                        {data?.Description}
+                          {data?.Description}
                         </Disclosure.Panel>
                       </>
                     );

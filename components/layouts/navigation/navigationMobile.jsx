@@ -117,6 +117,8 @@ const NavigationMobile = ({ props, featureArticle }) => {
                 height={300}
                 alt = {feartureArray[0]?.attributes?.InsightOverview[0]?.Image?.data
                   ?.attributes?.alternativeText}
+                alt = {feartureArray[0]?.attributes?.InsightOverview[0]?.Image?.data
+                  ?.attributes?.alternativeText}
               />
             </div>
             <div className={styles.infoBox}>
@@ -194,7 +196,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
               }
               width={56}
               height={56}
-              alt="nav-image"
+              alt = {props[2]?.DropDown[0]?.Image?.data?.attributes?.alternativeText}
             />
           </div>
           <div className={styles.overviewTitle}>

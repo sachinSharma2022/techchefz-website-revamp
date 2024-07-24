@@ -43,6 +43,8 @@ const Goals = ({ props }) => {
                             }
                             width={40}
                             height={28}
+                            alt = {data?.Image?.data?.attributes?.alternativeText}
+
                           />
                         </div>
                       )}
@@ -65,7 +67,7 @@ const Goals = ({ props }) => {
                 }
                 width={2560}
                 height={1068}
-                alt="content-img"
+                alt = {props[0]?.gallaryImages[0]?.Image?.data?.attributes?.alternativeText}
                 className={styles.goalInnerImage}
               />
             </div>

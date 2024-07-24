@@ -40,7 +40,7 @@ const CaseStudyBanner = ({ props }) => {
               }
               width={2560}
               height={1068}
-              alt="banner-img"
+              alt = {props?.CaseStudyImage?.data?.attributes?.alternativeText}
             />
           </div>
         )}

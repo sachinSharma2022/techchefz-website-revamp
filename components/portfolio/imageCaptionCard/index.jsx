@@ -53,7 +53,8 @@ const ImageCaptionCard = ({ case_study }) => {
                       }
                       width={1500}
                       height={1500}
-                      alt="captionImg"
+                      alt = {data?.attributes?.Banner?.PortfolioImage?.data
+                        ?.attributes?.alternativeText}
                     />
                   </div>
                   <div className={styles.cardBadges}>

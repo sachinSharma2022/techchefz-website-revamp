@@ -58,6 +58,7 @@ const Service = ({ props }) => {
                       ? `${base_Uri}${data?.Image?.data.attributes.url}`
                       : `${base_Uri}/`
                   }
+                  alt = {data?.Image?.data?.attributes?.alternativeText}
                   subTitle={data.Title}
                   subText={data.Description}
                 />
@@ -76,6 +77,7 @@ const Service = ({ props }) => {
                     ? `${base_Uri}${data?.Image?.data.attributes.url}`
                     : `${base_Uri}/`
                 }
+                alt = {data?.Image?.data?.attributes?.alternativeText}
                 subTitle={data.Title}
                 subText={data.Description}
               />

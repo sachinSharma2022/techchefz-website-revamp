@@ -75,7 +75,7 @@ const TechnologyValues = ({ props, wrapperStyle }) => {
                   }
                   width={2560}
                   height={1068}
-                  alt = { data?.SliderImage?.data?.attributes?.alternativeText}
+                  alt="img"
                 />
               </SwiperSlide>
             ))}

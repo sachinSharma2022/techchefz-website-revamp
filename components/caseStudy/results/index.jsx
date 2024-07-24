@@ -47,6 +47,7 @@ const Results = ({ props }) => {
                             }
                             width={40}
                             height={28}
+                            alt = {data?.image?.data?.attributes?.alternativeText}
                           />
                         </div>
                       )}

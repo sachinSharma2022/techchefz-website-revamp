@@ -66,7 +66,7 @@ const OurNumbers = ({ carrer, experience }) => {
                 }
                 width={1000}
                 height={100}
-                alt="bannerImg"
+                alt = {experience?.Image?.data?.attributes?.alternativeText}
               />
             </div>
             <div>
@@ -79,10 +79,11 @@ const OurNumbers = ({ carrer, experience }) => {
                     key={index}
                     sbTitle={data.Title}
                     icon={
-                      data?.Image?.data.attributes.url
+                      data?.Image?.data?.attributes?.url
                         ? `${base_Uri}${data?.Image?.data.attributes.url}`
                         : `${base_Uri}/`
                     }
+                    alt = {data?.Image?.data?.attributes?.alternativeText}
                     sbText={data.Description}
                   />
                 ))}
@@ -97,10 +98,11 @@ const OurNumbers = ({ carrer, experience }) => {
                   key={index}
                   sbTitle={data.Title}
                   icon={
-                    data?.Image?.data.attributes.url
+                    data?.Image?.data?.attributes?.url
                       ? `${base_Uri}${data?.Image?.data.attributes.url}`
                       : `${base_Uri}/`
                   }
+                  alt = {data?.Image?.data?.attributes?.alternativeText} 
                   sbText={data.Description}
                 />
               ))}

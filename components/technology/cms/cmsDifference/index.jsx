@@ -52,7 +52,7 @@ const CmsDifference = ({ props }) => {
                       }
                       width={330}
                       height={162}
-                      alt="image"
+                      alt = {data?.Image?.data?.attributes?.alternativeText}
                     />
                   </div>
                 </div>

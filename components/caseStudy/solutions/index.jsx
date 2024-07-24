@@ -44,6 +44,7 @@ const Solutions = ({ props }) => {
                             }
                             width={40}
                             height={28}
+                            alt = {data?.Image?.data?.attributes?.alternativeText}
                           />
                         </div>
                       )}
@@ -69,29 +70,29 @@ const Solutions = ({ props }) => {
                 }
                 width={2560}
                 height={1068}
-                alt="content-img"
+                alt = {props?.gallaryImages[0].Image?.data?.attributes?.alternativeText}
                 className={styles.goalInnerImage}
               />
               <ImageCustom
                 src={
-                  props?.gallaryImages[1].Image.data?.attributes.url
+                  props?.gallaryImages[1].Image.data?.attributes?.url
                     ? `${base_Uri}${props?.gallaryImages[1].Image.data?.attributes.url}`
                     : `${base_Uri}/`
                 }
                 width={500}
                 height={400}
-                alt="content-img"
+                alt = {props?.gallaryImages[1].Image.data?.attributes.alternativeText}
                 className={styles.goalInnerImage}
               />
               <ImageCustom
                 src={
-                  props?.gallaryImages[2].Image.data?.attributes.url
+                  props?.gallaryImages[2].Image.data?.attributes?.url
                     ? `${base_Uri}${props?.gallaryImages[2].Image.data?.attributes.url}`
                     : `${base_Uri}/`
                 }
                 width={500}
                 height={400}
-                alt="content-img"
+                alt = {props?.gallaryImages[2].Image.data?.attributes.alternativeText}
                 className={styles.goalInnerImage}
               />
             </div>
