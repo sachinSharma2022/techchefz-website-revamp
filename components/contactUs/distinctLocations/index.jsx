@@ -50,11 +50,11 @@ const DistinctLocations = ({ props }) => {
                       }
                       width={330}
                       height={162}
-                      alt="image"
+                      alt = { data?.brandImg?.data?.attributes?.alternativeText}
                     />
                   </div>
                   <div className={styles.countryFlag}>
-                    <h2 className={styles.sbTitle}>{data.Title}</h2>
+                    <h3 className={styles.sbTitle}>{data.Title}</h3>
                     <div className={styles.flag}>
                       <ImageCustom
                         src={
@@ -64,7 +64,7 @@ const DistinctLocations = ({ props }) => {
                         }
                         width={100}
                         height={24}
-                        alt="flag"
+                        alt = {data?.countryFlagImg?.data?.attributes?.alternativeText}
                       />
                     </div>
                   </div>

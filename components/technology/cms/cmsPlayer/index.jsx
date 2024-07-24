@@ -15,7 +15,7 @@ const CmsPlayer = ({ props }) => {
       }
       width={2560}
       height={1068}
-      alt="bannerImg"
+      alt = {props?.Image?.data?.attributes?.alternativeText}
       className={styles.landingPlayerStyle}
     />
   );

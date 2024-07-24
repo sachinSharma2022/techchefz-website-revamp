@@ -22,7 +22,7 @@
       margin-bottom: 0;
     }
   }
-  h2 {
+  h4 {
     font-weight: 500;
     font-size: text(lg);
     color: color(primary-white);
@@ -84,7 +84,7 @@
   @include jobDetailContainer();
   background-color: color(primary-white);
 
-  h2 {
+  h4 {
     color: color(text-primary);
   }
   p {

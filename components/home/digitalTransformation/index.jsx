@@ -105,7 +105,7 @@ const DigitalTransformation = ({ digital }) => {
                     }
                     width={421}
                     height={318}
-                    alt="bannerImg"
+                    alt = {data?.Image?.data?.attributes?.alternativeText}
                     className={styles.digitalImg}
                   />
 

@@ -57,7 +57,8 @@ const AcceleratorIndustry = ({ props }) => {
             </div>
           </div>
         </div>
-
+        {props?.Image?.data?.attributes?.url !== undefined &&
+        props?.Image?.data?.attributes?.url !== "" && (
         <div className={styles.industryImg}>
           <ImageCustom
             src={
@@ -67,9 +68,10 @@ const AcceleratorIndustry = ({ props }) => {
             }
             width={2560}
             height={1068}
-            alt="website-img"
+            alt = {props?.Image?.data?.attributes?.alternativeText}
           />
         </div>
+        )}
       </div>
     </section>
   );

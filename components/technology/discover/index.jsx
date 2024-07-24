@@ -102,7 +102,7 @@ const Discover = ({ props }) => {
                                   }
                                   width={28}
                                   height={28}
-                                  alt="image"
+                                  alt = {subItems?.Images?.data?.attributes?.alternativeText}
                                 />
                               </div>
                               <p>{subItems.Title} </p>
@@ -134,7 +134,7 @@ const Discover = ({ props }) => {
                                   }
                                   width={24}
                                   height={22}
-                                  alt="image"
+                                  alt = {subItems?.Images?.data?.attributes?.alternativeText}
                                 />
                               </div>
                               <p>{subItems.Title} </p>
@@ -216,7 +216,7 @@ const Discover = ({ props }) => {
                                           }
                                           width={28}
                                           height={28}
-                                          alt="image"
+                                          alt = {subItems?.Images?.data?.attributes?.alternativeText}
                                         />
                                       </div>
                                       <p>{subItems.Title} </p>
@@ -249,7 +249,7 @@ const Discover = ({ props }) => {
                                           }
                                           width={24}
                                           height={22}
-                                          alt="image"
+                                          alt = {subItems?.Images?.data?.attributes?.alternativeText}
                                         />
                                       </div>
                                       <p>{subItems.Title} </p>

@@ -39,7 +39,7 @@ const CoeBanner = ({ props }) => {
           }
           width={2560}
           height={1068}
-          alt="banner-img"
+          alt = {props?.Image?.data?.attributes?.alternativeText}
         />
       </div>
     </section>

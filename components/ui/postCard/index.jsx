@@ -36,7 +36,7 @@ const PostCard = (props) => {
           src={props.imgSrc}
           width={1000}
           height={1000}
-          alt="captionImg"
+          alt={props.alt}
         />
       </div>
       <div className={styles.cardBody}>

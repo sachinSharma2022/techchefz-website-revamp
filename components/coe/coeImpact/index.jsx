@@ -30,13 +30,13 @@ const CoeImpact = ({ props }) => {
             <div className={styles.impactImage}>
               <ImageCustom
                 src={
-                  props?.TechnologicalCard[0].Image.data.attributes.url
+                  props?.TechnologicalCard[0]?.Image?.data?.attributes?.url
                     ? `${base_Uri}${props?.TechnologicalCard[0].Image.data.attributes.url}`
                     : `${base_Uri}/`
                 }
                 width={700}
                 height={600}
-                alt="impact-img"
+                alt = { props?.TechnologicalCard[0]?.Image?.data?.attributes?.alternativeText}
               />
             </div>
             <div className={styles.topSectionRight}>
@@ -53,13 +53,13 @@ const CoeImpact = ({ props }) => {
             <div className={styles.impactImage}>
               <ImageCustom
                 src={
-                  props?.TechnologicalCard[1].Image.data.attributes.url
+                  props?.TechnologicalCard[1]?.Image?.data?.attributes?.url
                     ? `${base_Uri}${props?.TechnologicalCard[1].Image.data.attributes.url}`
                     : `${base_Uri}/`
                 }
                 width={700}
                 height={600}
-                alt="impact-img"
+                alt = { props?.TechnologicalCard[1]?.Image?.data?.attributes?.alternativeText}
               />
             </div>
           </div>
@@ -68,13 +68,13 @@ const CoeImpact = ({ props }) => {
             <div className={styles.impactImage}>
               <ImageCustom
                 src={
-                  props?.TechnologicalCard[2].Image.data.attributes.url
+                  props?.TechnologicalCard[2].Image?.data?.attributes?.url
                     ? `${base_Uri}${props?.TechnologicalCard[2].Image.data.attributes.url}`
                     : `${base_Uri}/`
                 }
                 width={700}
                 height={600}
-                alt="impact-img"
+                alt = {props?.TechnologicalCard[2].Image?.data?.attributes?.alternativeText}
               />
             </div>
             <div className={styles.topSectionRight}>

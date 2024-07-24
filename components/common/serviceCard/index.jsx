@@ -15,7 +15,7 @@ const ServiceCard = (props) => {
           width={40}
           height={40}
           src={props.icon}
-          alt="Service Icon"
+          alt={props.alt}
           className={styles.iconImage}
         />
       </div>

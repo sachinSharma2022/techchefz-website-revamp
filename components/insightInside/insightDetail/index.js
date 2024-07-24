@@ -105,7 +105,7 @@ const InsightDetail = ({ props, BlockTitle, index }) => {
                     }
                     width={850}
                     height={445}
-                    alt="insight-img"
+                    alt = {BlockTitle?.Image?.data?.attributes?.alternativeText}
                   />
                 </div>
               )}
@@ -132,7 +132,7 @@ const InsightDetail = ({ props, BlockTitle, index }) => {
                         }
                         width={690}
                         height={480}
-                        alt="insight-img"
+                        alt = {value?.Image?.data?.attributes?.alternativeText}
                       />
                     </div>
                   )}

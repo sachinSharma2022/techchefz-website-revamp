@@ -98,7 +98,7 @@ const OurTeam = ({ props }) => {
                           }
                           width={1000}
                           height={1000}
-                          alt="team-member"
+                          alt = {data?.Images?.data?.attributes?.alternativeText}
                           className={styles.teamImg}
                         />
                       </div>
@@ -119,7 +119,7 @@ const OurTeam = ({ props }) => {
                           }
                           width={500}
                           height={530}
-                          alt="profile"
+                          alt = {item?.Images?.data?.attributes?.alternativeText}
                         />
                       </div>
                       <div className={styles.infoSection}>
@@ -156,7 +156,7 @@ const OurTeam = ({ props }) => {
                   }
                   width={500}
                   height={530}
-                  alt="profile"
+                  alt = {props[0]?.ListofDirectors[index]?.Images?.data?.attributes?.alternativeText}
                 />
               </div>
               <h4 className={styles.teamName}>

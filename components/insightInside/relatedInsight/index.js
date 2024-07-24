@@ -129,6 +129,8 @@ const RelatedInsight = ({
                             ?.attributes?.url
                         : `${base_Uri}/`
                     }
+                    alt = {data?.attributes?.InsightOverview[0]?.Image?.data
+                      ?.attributes?.alternativeText}
                     title={data?.attributes?.InsightOverview[0]?.Title}
                     redirect={generateSlug(
                       data?.attributes?.InsightOverview[0]?.Title

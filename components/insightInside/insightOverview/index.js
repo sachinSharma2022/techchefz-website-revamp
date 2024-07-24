@@ -46,7 +46,7 @@ const InsightOverview = ({ props, Insightinner, TechStackData }) => {
               ? `${base_Uri}${props[0]?.Image?.data?.attributes?.url}`
               : `${base_Uri}/`
           }
-          alt="Image"
+          alt = { props[0]?.Image?.data?.attributes?.alternativeText}
           width={600}
           height={600}
         />

@@ -49,7 +49,7 @@ const Card = ({ ...props }) => {
           }
           width={1440}
           height={900}
-          alt="projectImg"
+          alt = {props?.project?.PortfolioImage?.data?.attributes?.alternativeText}
         />
       </Link>
 

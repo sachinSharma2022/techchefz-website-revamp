@@ -42,6 +42,8 @@ const InsightFeatures = ({ props, featureInsight, feature }) => {
                       ? `${base_Uri}${data?.attributes?.InsightOverview[0]?.Image?.data?.attributes?.url}`
                       : `${base_Uri}/`
                   }
+                  alt = {data?.attributes?.InsightOverview[0]?.Image?.data
+                    ?.attributes?.alternativeText}
                   title={data?.attributes?.InsightOverview[0].Title}
                   date={data?.attributes?.InsightOverview[0]?.Date}
                   readTime={data?.attributes?.InsightOverview[0]?.ReadingTime}
@@ -70,6 +72,8 @@ const InsightFeatures = ({ props, featureInsight, feature }) => {
                       ? `${base_Uri}${data?.attributes?.InsightOverview[0]?.Image?.data?.attributes?.url}`
                       : `${base_Uri}/`
                   }
+                  alt = { data?.attributes?.InsightOverview[0]?.Image?.data
+                    ?.attributes?.alternativeText}
                   title={data?.attributes?.InsightOverview[0].Title}
                   date={data?.attributes?.InsightOverview[0]?.Date}
                   readTime={data?.attributes?.InsightOverview[0]?.ReadingTime}

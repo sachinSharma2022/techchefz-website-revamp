@@ -27,6 +27,8 @@ const AcceleratorImpact = ({ props }) => {
         </div>
 
         <div className={styles.impactTopSection}>
+        {props?.imagelinks[0]?.Image?.data?.attributes?.url !== undefined &&
+        props?.imagelinks[0]?.Image?.data?.attributes?.url !== "" && (
           <div className={styles.impactImage}>
             <ImageCustom
               src={
@@ -36,9 +38,10 @@ const AcceleratorImpact = ({ props }) => {
               }
               width={1000}
               height={1000}
-              alt="impact-img"
+              alt = {props?.imagelinks[0]?.Image?.data?.attributes?.alternativeText}
             />
           </div>
+        )}
           <div className={styles.topSectionRight}>
             <h4
               dangerouslySetInnerHTML={{
@@ -100,6 +103,8 @@ const AcceleratorImpact = ({ props }) => {
               </Button> */}
             </a>
           </div>
+          {props?.imagelinks[1]?.Image?.data?.attributes?.url !== undefined &&
+        props?.imagelinks[1]?.Image?.data?.attributes?.url !== "" && (
           <div className={styles.impactImage}>
             <ImageCustom
               src={
@@ -109,12 +114,15 @@ const AcceleratorImpact = ({ props }) => {
               }
               width={1000}
               height={1000}
-              alt="impact-img"
+              alt = {props?.imagelinks[1]?.Image?.data?.attributes?.alternativeText}
             />
           </div>
+        )}
         </div>
 
         <div className={styles.impactTopSection}>
+        {props?.imagelinks[2]?.Image?.data?.attributes?.url !== undefined &&
+        props?.imagelinks[2]?.Image?.data?.attributes?.url !== "" && (
           <ImageCustom
             src={
               props?.imagelinks[2]?.Image?.data?.attributes?.url
@@ -124,8 +132,9 @@ const AcceleratorImpact = ({ props }) => {
             width={1000}
             height={1000}
             className={styles.impactImage}
-            alt="impact-img"
+            alt = {props?.imagelinks[2]?.Image?.data?.attributes?.alternativeText}
           />
+        )}
           <div className={styles.topSectionRight}>
             <h4
               dangerouslySetInnerHTML={{

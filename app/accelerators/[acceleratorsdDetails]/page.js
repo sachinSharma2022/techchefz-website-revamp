@@ -4,14 +4,19 @@ import AcceleratorIndustry from "@/components/accelerators/acceleratorDetail/acc
 import FeatureCard from "@/components/accelerators/acceleratorDetail/featureCard";
 import LetsWork from "@/components/home/letsWork";
 import RelatedCase from "@/components/relatedCase";
-import { getDataDynamic } from "@/lib/fetchData";
-import { api_accelerators_details_Page } from "@/lib/constants";
+import { getDataDynamic,getData } from "@/lib/fetchData";
+import { api_accelerators_details_Page,api_Case_study_Page,api_accelerators_Page } from "@/lib/constants";
 import NotFound from "@/app/not-found";
+import { generateSlug } from "@/lib/utils";
 
 const AcceleratorDetails = async ({ params }) => {
   const data = await getDataDynamic(api_accelerators_details_Page);
+  const data_related_cases = await getDataDynamic(api_Case_study_Page);
+  const data1 = await getData(api_accelerators_Page);
   const [page] = data.filter(
-    (value) => value.id == params.acceleratorsdDetails
+    (value) =>
+      generateSlug(value?.attributes?.BrowserAccelerator?.Heading) ==
+      params.acceleratorsdDetails
   );
   return (
     <>
@@ -21,7 +26,11 @@ const AcceleratorDetails = async ({ params }) => {
           <AcceleratorIndustry props={page.attributes.Media} />
           <Impact props={page.attributes.Impact} />
           <FeatureCard props={page.attributes.Challanges} />
-          <RelatedCase className="mt-0 mb-5 pt-5 pb-0" props={data} />
+          <RelatedCase
+            className="cms-related-style"
+            props={data_related_cases}
+            RelatedInsight={data1.RelatedInsight}
+          />
           <LetsWork contact={page.attributes.LetsWork} />
         </div>
       ) : (
