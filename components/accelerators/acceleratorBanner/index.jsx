@@ -10,9 +10,9 @@ import styles from "./style.module.scss";
 const AcceleratorBanner = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   return (
-    <section className={`${styles.banner} ${theme ? styles.bannerDark : ""}`}>
+    <section className={`${styles.banner} ${theme ? styles.bannerDark : ""} "header-container"`}>
       <div className={cn("primary-container")}>
-        <div className={cn(styles.bannerContent, "header-container")}>
+        <div className={cn(styles.bannerContent,)}>
           <h1
             className={cn(styles.bannerTitle, "gradient-text")}
             dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
