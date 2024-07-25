@@ -65,7 +65,7 @@ const FounderDesk = ({ props }) => {
                 width={1000}
                 height={1000}
                 className={styles.teamImg}
-                alt="team-member"
+                alt = {props?.ProfileImage?.data?.attributes?.alternativeText}
               />
             </div>
           </div>

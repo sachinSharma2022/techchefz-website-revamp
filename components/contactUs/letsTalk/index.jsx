@@ -120,8 +120,9 @@ const LetsTalk = ({ props }) => {
                               ? `${base_Uri}${props?.Image1?.data?.attributes?.url}`
                               : `${base_Uri}/`
                           }
+                          alt = {props?.Image1?.data?.attributes?.alternativeText}
                         />
-                        <h1>{props.Title1}</h1>
+                        <h3>{props.Title1}</h3>
                       </div>
 
                       {selected && (
@@ -149,8 +150,9 @@ const LetsTalk = ({ props }) => {
                               ? `${base_Uri}${props?.Image2?.data?.attributes?.url}`
                               : `${base_Uri}/`
                           }
+                          alt = {props?.Image2?.data?.attributes?.alternativeText}
                         />
-                        <h1>{props.Title2}</h1>
+                        <h3>{props.Title2}</h3>
                       </div>
 
                       {selected && (
@@ -178,8 +180,9 @@ const LetsTalk = ({ props }) => {
                               ? `${base_Uri}${props?.Image3?.data?.attributes?.url}`
                               : `${base_Uri}/`
                           }
+                          alt = {props?.Image3?.data?.attributes?.alternativeText}
                         />
-                        <h1>{props.Title3}</h1>
+                        <h3>{props.Title3}</h3>
                       </div>
 
                       {selected && (
@@ -207,8 +210,9 @@ const LetsTalk = ({ props }) => {
                               ? `${base_Uri}${props?.Image4?.data?.attributes?.url}`
                               : `${base_Uri}/`
                           }
+                          alt = {props?.Image4?.data?.attributes?.alternativeText}
                         />
-                        <h1>{props.Title4}</h1>
+                        <h3>{props.Title4}</h3>
                       </div>
 
                       {selected && (

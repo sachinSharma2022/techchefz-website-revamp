@@ -318,7 +318,7 @@ const LetsWork = ({ contact }) => {
                   }
                   width={480}
                   height={616}
-                  alt="contactImg"
+                  alt = {contact?.Image?.data?.attributes?.alternativeText}
                   className={styles.contactImg}
                 />
               )}

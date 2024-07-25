@@ -115,7 +115,7 @@ const OurClients = ({ props }) => {
                         }
                         width={240}
                         height={320}
-                        alt="team-member"
+                        alt = {item?.Image?.data?.attributes?.alternativeText}
                       />
                     </div>
                   ))}
@@ -133,7 +133,7 @@ const OurClients = ({ props }) => {
                         }
                         width={240}
                         height={320}
-                        alt="team-member"
+                        alt = {item?.Image?.data?.attributes?.alternativeText}
                       />
                     </div>
                   ))}
@@ -151,7 +151,7 @@ const OurClients = ({ props }) => {
                         }
                         width={240}
                         height={320}
-                        alt="team-member"
+                        alt = {item?.Image?.data?.attributes?.alternativeText}
                       />
                     </div>
                   ))}

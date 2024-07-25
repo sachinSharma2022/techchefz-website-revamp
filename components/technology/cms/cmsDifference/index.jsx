@@ -41,7 +41,7 @@ const CmsDifference = ({ props }) => {
             {props?.TechnologyInner.map((data, index) => (
               <div key={index} className={styles.cardStyle}>
                 <div className={styles.differenceCmsBox}>
-                  <h2 className={styles.sbTitle}>{data?.Title}</h2>
+                  <h3 className={styles.sbTitle}>{data?.Title}</h3>
                   <p className={styles.sbText}>{data?.Description}</p>
                   <div className={styles.backgroundImg}>
                     <ImageCustom
@@ -52,7 +52,7 @@ const CmsDifference = ({ props }) => {
                       }
                       width={330}
                       height={162}
-                      alt="image"
+                      alt = {data?.Image?.data?.attributes?.alternativeText}
                     />
                   </div>
                 </div>

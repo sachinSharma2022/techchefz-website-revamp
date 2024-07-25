@@ -13,18 +13,18 @@ const PositionDescription = ({ props }) => {
     <div className={theme ? styles.jobDetailContainer : styles.lightMode}>
       <div className={cn("primary-container")}>
         <div className={styles.section}>
-          <h2>{props[0]?.Title}</h2>
+          <h4>{props[0]?.Title}</h4>
           <p>{props[0]?.FullDescription}</p>
         </div>
 
         <div className={styles.section}>
-          <h2>{props[1]?.Title}</h2>
+          <h4>{props[1]?.Title}</h4>
           <ul
             dangerouslySetInnerHTML={{ __html: `${props[1]?.FullDescription}` }}
           ></ul>
         </div>
         <div className={styles.section}>
-          <h2>{props[2]?.Title}</h2>
+          <h4>{props[2]?.Title}</h4>
           <ul
             dangerouslySetInnerHTML={{ __html: `${props[2]?.FullDescription}` }}
           >
@@ -33,7 +33,7 @@ const PositionDescription = ({ props }) => {
         </div>
 
         <div className={styles.section}>
-          <h2>{props[3]?.Title}</h2>
+          <h4>{props[3]?.Title}</h4>
           <p>{props[3].FullDescription}</p>
         </div>
       </div>
