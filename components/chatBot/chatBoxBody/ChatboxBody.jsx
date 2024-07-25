@@ -931,23 +931,24 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
     <div className={hidden ? styles.chatboxBodyhidden : styles.chatboxBody}>
       <div className={styles.chatbotHeader}>
         <p className={styles.chatbotTitle}>
-        <ImageCustom
-          src={cn(
-            theme
-              ? "/images/animated-logo/logo-white.svg"
-              : "/images/animated-logo/logo.svg"
-          )}
-          width={153}
-          height={40}
-          alt="header-logo"
-        />  Techchefz Digital Assistant
+          <ImageCustom
+            src={cn(
+              theme
+                ? "/images/animated-logo/logo-white.svg"
+                : "/images/animated-logo/logo.svg"
+            )}
+            width={153}
+            height={40}
+            alt="header-logo"
+          />{" "}
+          Techchefz Digital Assistant
         </p>
         <div className={styles.headbtn}>
           <button onClick={minimiseConversation} className={styles.minimise}>
             -
           </button>
           <button onClick={clearConversation}>
-            <Icons.Close/>
+            <Icons.Close />
           </button>
         </div>
       </div>

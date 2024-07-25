@@ -87,20 +87,20 @@ $scrollbar-thumb-hover-color: #555;
       justify-content: space-between;
       padding: 1rem;
 
-      .chatbotTitle {
-        margin-bottom: 0;
-        text-transform: capitalize;
-        font-size: 20px;
-        font-weight: 500;
-        display: flex;
-        gap: 0.7rem;
-        align-items: center;
-        font-family: font(primary);
+      // .chatbotTitle {
+      //   margin-bottom: 0;
+      //   text-transform: capitalize;
+      //   font-size: 20px;
+      //   font-weight: 500;
+      //   display: flex;
+      //   gap: 0.7rem;
+      //   align-items: center;
+      //   font-family: font(primary);
 
-        span {
-          padding: 0 0.8rem;
-        }
-      }
+      //   span {
+      //     padding: 0 0.8rem;
+      //   }
+      // }
 
       .actionButton {
         display: flex;
@@ -261,7 +261,7 @@ $scrollbar-thumb-hover-color: #555;
 
   .chatbotSendtxt {
     width: 100%;
-    max-width: 95%;
+    max-width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
