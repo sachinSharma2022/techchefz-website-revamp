@@ -8,6 +8,29 @@ import RelatedInsight from "@/components/insightInside/relatedInsight";
 import { rootURl } from "../../../lib/constants";
 import { generateSlug } from "@/lib/utils";
 
+export async function generateMetadata() {
+  const data = await getData(api_About_Page);
+
+  return {
+    title: data?.SeoData?.metaTitle,
+    description: data?.SeoData?.metaDescription,
+    keywords: data?.SeoData?.keywords,
+    metaRobots: data?.SeoData?.metaRobots,
+    structuredData: data?.SeoData?.structuredData,
+    metaViewport: data?.SeoData?.metaViewport,
+    canonicalURL: data?.SeoData?.canonicalURL,
+    metaSocialTitle: data?.SeoData?.metaSocial?.socialNetwork?.title,
+    metaSocialDescription: data?.SeoData?.metaSocial?.socialNetwork?.description,
+    images: [
+      {
+        url: `${process.env.NEXT_PUBLIC_STRAPIE_BASE_URL}${data?.SeoData?.metaSocial?.socialNetwork?.image?.data?.attributes?.url}`, // Must be an absolute URL
+        width: 800,
+        height: 600,
+      },
+    ],
+  };
+}
+
 export async function generateMetadata({ params }) {
   const data = await getDataDynamic(api_insight_insides_Page);
 
