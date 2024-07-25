@@ -2930,4 +2930,43 @@ export const Icons = {
       </defs>
     </svg>
   ),
+  Chats: ({ size, ...props }) => (
+    <svg
+      width="28"
+      height="28"
+      viewBox="0 0 28 28"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      {...props}
+    >
+      <path
+        d="M2.33266 14C2.33266 20.4433 7.556 25.6666 13.9993 25.6666C17.4839 25.6666 25.666 25.6666 25.666 25.6666C25.666 25.6666 25.666 16.9588 25.666 14C25.666 7.55665 20.4427 2.33331 13.9993 2.33331C7.556 2.33331 2.33266 7.55665 2.33266 14Z"
+        stroke="white"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M19.25 10.5H8.75"
+        stroke="white"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M19.25 15.1667H8.75"
+        stroke="white"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M16.916 19.8333H11.0827"
+        stroke="white"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  ),
 };

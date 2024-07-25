@@ -1,13 +1,14 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
-import styles from "./chatBoxBody/style.module.scss";
+import { useState } from "react";
+import { Icons } from "../icons";
 import ChatBoxBody from "./chatBoxBody/ChatBoxBody";
+import styles from "./chatBoxBody/style.module.scss";
 
 const ChatBotContainer = () => {
   const [hidden, sethidden] = useState(true);
   const [clearConversation, setclearConversation] = useState(true);
   return (
-    <section className={styles.chatboxpage}>
+    <section className={styles.chatBoxPage}>
       {clearConversation ? (
         <></>
       ) : (
@@ -17,22 +18,21 @@ const ChatBotContainer = () => {
           setclearConversation={setclearConversation}
         />
       )}
-      {  hidden || clearConversation?
-            <div
-            className={styles.chatopencont}
-            onClick={() => {
-              sethidden(false);
-              setclearConversation(false);
-            }}
-          >
-            chat
-          </div>
-          :<></>
-
-      }
+      {hidden || clearConversation ? (
+        <div
+          className={styles.chatOpenCont}
+          onClick={() => {
+            sethidden(false);
+            setclearConversation(false);
+          }}
+        >
+         <Icons.Chats/>
+        </div>
+      ) : (
+        <></>
+      )}
     </section>
   );
 };
-
 
 export default ChatBotContainer;
