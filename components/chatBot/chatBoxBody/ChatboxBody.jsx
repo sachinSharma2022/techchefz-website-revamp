@@ -930,7 +930,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
   return (
     <div className={hidden ? styles.chatboxBodyhidden : styles.chatboxBody}>
       <div className={styles.chatbotHeader}>
-        {/* <p className={styles.chatbotTitle}>
+        <p className={styles.chatbotTitle}>
         <ImageCustom
           src={cn(
             theme
@@ -941,7 +941,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
           height={40}
           alt="header-logo"
         />  Techchefz Digital Assistant
-        </p> */}
+        </p>
         <div className={styles.headbtn}>
           <button onClick={minimiseConversation} className={styles.minimise}>
             -
