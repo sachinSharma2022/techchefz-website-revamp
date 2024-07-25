@@ -227,8 +227,8 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
   }, [textvalue]);
 
   const handleChange = (e) => {
-    const spaceRemovedcharacters = e.target.value.replace(/\s+/g, '');
-    if(spaceRemovedcharacters.length<=500){
+    const spaceRemovedcharacters = e.target.value.replace(/\s+/g, "");
+    if (spaceRemovedcharacters.length <= 500) {
       settextValue(e.target.value);
     }
   };
@@ -265,7 +265,6 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
       .catch((error) => {
         console.error("Error:", error);
       });
-
 
     fetch(`${process.env.NEXT_PUBLIC_BACKEND_URI}/create_conversation`, {
       method: "POST",
@@ -930,7 +929,9 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
   return (
     <div className={hidden ? styles.chatboxBodyhidden : styles.chatboxBody}>
       <div className={styles.chatbotHeader}>
-        <p className={styles.chatbotTitle}>Techchefz Digital Assistant</p>
+        <p className={styles.chatbotTitle}>
+          Techchefz Digital Assistant
+        </p>
         <div className={styles.headbtn}>
           <button onClick={minimiseConversation} className={styles.minimise}>
             -
