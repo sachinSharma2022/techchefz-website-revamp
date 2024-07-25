@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./style.module.scss";
 import { Icons } from "@/components/icons";
+import { ImageCustom } from "@/components/ui/imageCustom";
 
 const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
   const buttonRef = useRef();
@@ -929,14 +930,25 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
   return (
     <div className={hidden ? styles.chatboxBodyhidden : styles.chatboxBody}>
       <div className={styles.chatbotHeader}>
-        <p className={styles.chatbotTitle}>
-          Techchefz Digital Assistant
-        </p>
+        {/* <p className={styles.chatbotTitle}>
+        <ImageCustom
+          src={cn(
+            theme
+              ? "/images/animated-logo/logo-white.svg"
+              : "/images/animated-logo/logo.svg"
+          )}
+          width={153}
+          height={40}
+          alt="header-logo"
+        />  Techchefz Digital Assistant
+        </p> */}
         <div className={styles.headbtn}>
           <button onClick={minimiseConversation} className={styles.minimise}>
             -
           </button>
-          <button onClick={clearConversation}>X</button>
+          <button onClick={clearConversation}>
+            <Icons.Close/>
+          </button>
         </div>
       </div>
 
