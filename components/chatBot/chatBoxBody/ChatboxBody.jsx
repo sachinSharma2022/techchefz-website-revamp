@@ -932,11 +932,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
       <div className={styles.chatbotHeader}>
         <p className={styles.chatbotTitle}>
           <ImageCustom
-            src={cn(
-              theme
-                ? "/images/animated-logo/logo-white.svg"
-                : "/images/animated-logo/logo.svg"
-            )}
+            src="/images/animated-logo/logo-white.svg"
             width={153}
             height={40}
             alt="header-logo"

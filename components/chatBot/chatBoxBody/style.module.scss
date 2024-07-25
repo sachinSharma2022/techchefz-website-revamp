@@ -57,8 +57,12 @@ $scrollbar-thumb-hover-color: #555;
   right: 0;
   bottom: 20px;
   right: 20px;
-  box-shadow: 0 6px 32px rgba(256, 256, 256, 0.05);
+  box-shadow: 0 6px 20px rgba(256, 256, 256, 0.05);
   overflow: hidden;
+
+  * {
+   font-family: font(secondary);
+  }
 
   .chatbotHeader {
     width: 100%;
@@ -87,34 +91,22 @@ $scrollbar-thumb-hover-color: #555;
       justify-content: space-between;
       padding: 1rem;
 
-      // .chatbotTitle {
-      //   margin-bottom: 0;
-      //   text-transform: capitalize;
-      //   font-size: 20px;
-      //   font-weight: 500;
-      //   display: flex;
-      //   gap: 0.7rem;
-      //   align-items: center;
-      //   font-family: font(primary);
-
-      //   span {
-      //     padding: 0 0.8rem;
-      //   }
-      // }
-
       .actionButton {
         display: flex;
         align-items: center;
         gap: 1rem;
       }
+
       .headbtn {
         display: flex;
         color: #fff;
+
         button {
           color: #fff;
           font-size: 16px;
           cursor: pointer;
         }
+
         .minimise {
           width: 40px;
           font-size: 40px;
@@ -147,9 +139,6 @@ $scrollbar-thumb-hover-color: #555;
         padding: 1rem;
         border-radius: 8px 8px 8px 0px;
         margin: 10px 0 20px 10px;
-        //  display: flex;
-        //  flex-direction: column;
-        //  border: 2px solid red;
         position: relative;
         animation: fadeIn 1s ease-in;
 
@@ -242,20 +231,6 @@ $scrollbar-thumb-hover-color: #555;
       margin: 10px 0 20px 10px;
       position: relative;
       animation: fadeIn 1s ease-in;
-
-      // &::after {
-      //   content: "";
-      //   position: absolute;
-      //   width: 0;
-      //   height: 0;
-      //   border: 20px solid transparent;
-      //   border-bottom: 0;
-      //   bottom: -1px;
-      //   left: 0;
-      //   border-right-color: rgb(72, 66, 66);
-      //   border-left: 0;
-      //   margin-left: -21px;
-      // }
     }
   }
 
@@ -282,7 +257,7 @@ $scrollbar-thumb-hover-color: #555;
       justify-content: center;
       padding-left: 20px;
       padding-right: 50px !important;
-      padding-block: 20px;
+      padding-block: 17px;
     }
 
     button {
