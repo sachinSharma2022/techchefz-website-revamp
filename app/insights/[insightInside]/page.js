@@ -8,8 +8,10 @@ import RelatedInsight from "@/components/insightInside/relatedInsight";
 import { rootURl } from "../../../lib/constants";
 import { generateSlug } from "@/lib/utils";
 
+
+
 export async function generateMetadata() {
-  const data = await getData(api_About_Page);
+  const data = await getData(api_insight_insides_Page);
 
   return {
     title: data?.SeoData?.metaTitle,
@@ -30,45 +32,6 @@ export async function generateMetadata() {
     ],
   };
 }
-
-export async function generateMetadata({ params }) {
-  const data = await getDataDynamic(api_insight_insides_Page);
-
-  const [page] = data.filter(
-    (value) =>
-      generateSlug(value?.attributes?.InsightOverview[0].Title) ==
-      params.insightInside
-  );
-  return {
-    title: page.attributes.InsightOverview[0].Title,
-    description: page.attributes.InsightOverview[0].Title,
-    openGraph: {
-      title: page.attributes.InsightOverview[0].Title,
-      description: page.attributes.InsightOverview[0].Title,
-      url: `${rootURl}/insights/${params.insightInside}`,
-      images: [
-        {
-          url: `${process.env.NEXT_PUBLIC_STRAPIE_BASE_URL}${page.attributes.InsightOverview[0]?.Image?.data?.attributes?.url}`, // Must be an absolute URL
-          width: 800,
-          height: 600,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: page.attributes.InsightOverview[0].Title,
-      description: page.attributes.InsightOverview[0].Title,
-      images: [
-        {
-          url: `${process.env.NEXT_PUBLIC_STRAPIE_BASE_URL}${page.attributes.InsightOverview[0]?.Image?.data?.attributes?.url}`, // Must be an absolute URL
-          width: 800,
-          height: 600,
-        },
-      ],
-    },
-  };
-}
-
 const InsightInside = async ({ params }) => {
   const data = await getDataDynamic(api_insight_insides_Page);
   const data1 = await getData(api_insights_Page);

@@ -11,7 +11,7 @@ import { generateSlug } from "@/lib/utils";
 
 
 export async function generateMetadata() {
-  const data = await getData(api_About_Page);
+  const data = await getData(api_accelerators_Page);
 
   return {
     title: data?.SeoData?.metaTitle,

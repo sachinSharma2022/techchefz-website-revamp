@@ -13,7 +13,7 @@ import { api_Case_study_Page, api_portfolios_Page } from "@/lib/constants";
 import { generateSlug } from "@/lib/utils";
 
 export async function generateMetadata() {
-  const data = await getData(api_About_Page);
+  const data = await getData(api_portfolios_Page);
 
   return {
     title: data?.SeoData?.metaTitle,
