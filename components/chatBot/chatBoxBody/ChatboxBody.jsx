@@ -936,14 +936,9 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
             width={24}
             height={32}
             alt="header-logo"
-<<<<<<< HEAD
-          />{" "}
-          {/* Techchefz Digital Assistant */}
-=======
             className={styles.iconStyle}
           />
           <p>Techchefz Digital Assistant</p>
->>>>>>> fec1ce3bba4358daa6a7d2a9bcc2d3c2aeb453cf
         </div>
         <div className={styles.headbtn}>
           <button onClick={minimiseConversation} className={styles.minimise}>
