@@ -8,7 +8,7 @@ const ChatBotContainer = () => {
   const [hidden, sethidden] = useState(true);
   const [clearConversation, setclearConversation] = useState(true);
   return (
-    <section className={styles.chatBoxPage}>
+    <div className={styles.chatBoxPage}>
       {clearConversation ? (
         <></>
       ) : (
@@ -31,7 +31,7 @@ const ChatBotContainer = () => {
       ) : (
         <></>
       )}
-    </section>
+    </div>
   );
 };
 

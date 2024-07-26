@@ -965,15 +965,15 @@ export const Icons = {
       <path
         d="M21.5 2.5L14.85 21.5L11.05 12.95L2.5 9.15L21.5 2.5Z"
         stroke="#008BF0"
-        stroke-width="2"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
       <path
         d="M21.5003 2.5L11.0503 12.95"
         stroke="#008BF0"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   ),
@@ -2982,16 +2982,16 @@ export const Icons = {
         <path
           d="M18 6L6 18"
           stroke="white"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M6 6L18 18"
           stroke="white"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
       <defs>
