@@ -90,6 +90,10 @@ $scrollbar-thumb-hover-color: #555;
       align-items: center;
       justify-content: space-between;
 
+      p {
+        margin: 0;
+      }
+
       .iconStyle {
          width: 24px;
          margin-right: 10px;
