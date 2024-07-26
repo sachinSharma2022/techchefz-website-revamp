@@ -1,14 +1,14 @@
 "use client";
 import { useState } from "react";
 import { Icons } from "../icons";
-import {styles} from "./chatBoxBody/style.module.scss";
+import styles from "./chatBoxBody/style.module.scss";
 import ChatBoxBody from "./chatBoxBody/ChatboxBody";
 
 const ChatBotContainer = () => {
   const [hidden, sethidden] = useState(true);
   const [clearConversation, setclearConversation] = useState(true);
   return (
-    <div className={`${styles?.caseStudyBanner}`}>
+    <div className={styles.chatBoxPage}>
       {clearConversation ? (
         <></>
       ) : (
@@ -20,7 +20,7 @@ const ChatBotContainer = () => {
       )}
       {hidden || clearConversation ? (
         <div
-          className={styles?.chatOpenCont}
+          className={styles.chatOpenCont}
           onClick={() => {
             sethidden(false);
             setclearConversation(false);
