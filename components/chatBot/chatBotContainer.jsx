@@ -8,7 +8,7 @@ const ChatBotContainer = () => {
   const [hidden, sethidden] = useState(true);
   const [clearConversation, setclearConversation] = useState(true);
   return (
-    <div className={styles?.chatBoxPage}>
+    <div className={`${styles?.caseStudyBanner}`}>
       {clearConversation ? (
         <></>
       ) : (
