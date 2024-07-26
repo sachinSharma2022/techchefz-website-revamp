@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
 import { Icons } from "../icons";
-import ChatBoxBody from "./chatBoxBody/ChatBoxBody";
-import styles from "./chatBoxBody/style.module.scss";
+import {ChatBoxBody} from "./chatBoxBody/ChatBoxBody";
+import {styles} from "./chatBoxBody/style.module.scss";
 
 const ChatBotContainer = () => {
   const [hidden, sethidden] = useState(true);
