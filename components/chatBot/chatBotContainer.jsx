@@ -8,7 +8,7 @@ const ChatBotContainer = () => {
   const [hidden, sethidden] = useState(true);
   const [clearConversation, setclearConversation] = useState(true);
   return (
-    <div className={styles.chatBoxPage}>
+    <div className={styles?.chatBoxPage}>
       {clearConversation ? (
         <></>
       ) : (
@@ -20,7 +20,7 @@ const ChatBotContainer = () => {
       )}
       {hidden || clearConversation ? (
         <div
-          className={styles.chatOpenCont}
+          className={styles?.chatOpenCont}
           onClick={() => {
             sethidden(false);
             setclearConversation(false);
