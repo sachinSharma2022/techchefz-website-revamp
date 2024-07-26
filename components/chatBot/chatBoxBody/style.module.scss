@@ -60,6 +60,13 @@ $scrollbar-thumb-hover-color: #555;
   box-shadow: 0 6px 20px rgba(256, 256, 256, 0.05);
   overflow: hidden;
 
+  @include mobile {
+    width: auto;
+    bottom: 0px;
+    right: 0px;
+    height: 100dvh;
+  }
+
   * {
    font-family: font(secondary);
   }
@@ -256,6 +263,13 @@ $scrollbar-thumb-hover-color: #555;
     min-height: 60px;
     margin-inline: auto;
 
+    @include mobile {
+      position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    }
+
     textarea {
       border-radius: 4px;
       position: absolute;
@@ -357,6 +371,17 @@ $scrollbar-thumb-hover-color: #555;
   bottom: 60px;
   position: fixed;
   z-index: 9999;
+
+  @include mobile {
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+
+    svg {
+      width: 20px;
+    }
+  }
 }
 .emailinput {
   width: 100%;
