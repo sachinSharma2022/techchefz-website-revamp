@@ -31,10 +31,10 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
       messageType: "Department",
       message: (
         <>
-          <p>
+          <div>
             Hello! Welcome to Techchefz. How can we assist you today? Please
             choose one of the following options:
-          </p>
+          </div>
           <div className={styles.choosebtns}>
             <button
               className={styles.choosebtn}
@@ -160,7 +160,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
           messageType: "service",
           message: (
             <div>
-              <p>{serviceSelectMessage}</p>
+              <div>{serviceSelectMessage}</div>
               <div className={styles.choosebtns}>
                 {serviceData.map((data, index) => {
                   return (
@@ -489,7 +489,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                           message: (
                             <>
                               <div>
-                                <p>
+                                <div>
                                   {department === "Services" ||
                                   info?.current?.department === "Services"
                                     ? `  Thank you, ${userName}. Your consultation for ${service} is booked. You will receive an email confirmation shortly.`
@@ -497,7 +497,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                                       info?.current?.department === "Hiring"
                                     ? `Thank you, ${userName}! Our HR team will review your application and get in touch with you shortly. Have a great day!`
                                     : `Thank you! Our team will contact you shortly to discuss partnership opportunities. Have a great day!`}
-                                </p>
+                                </div>
                               </div>
                             </>
                           ),
@@ -514,10 +514,10 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                           message: (
                             <>
                               <div>
-                                <p>
+                                <div>
                                   If you have any specific questions, feel free
                                   to ask!
-                                </p>
+                                </div>
                               </div>
                             </>
                           ),
@@ -545,10 +545,10 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                             message: (
                               <>
                                 <div>
-                                  <p>
+                                  <div>
                                     Which position or role are you looking to
                                     fill?
-                                  </p>
+                                  </div>
                                 </div>
                               </>
                             ),
@@ -572,7 +572,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                             message: (
                               <>
                                 <div>
-                                  <p>Please attach your resume.</p>
+                                  <div>Please attach your resume.</div>
                                   <input
                                     type="file"
                                     placeholder="attach"
@@ -641,7 +641,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                       message: (
                         <>
                           <div>
-                            <p>
+                            <div>
                               Thank you for your application! To explore more
                               job opportunities, please visit our{" "}
                               <a
@@ -652,7 +652,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                                 Careers Page
                               </a>
                               .
-                            </p>
+                            </div>
                           </div>
                         </>
                       ),
@@ -669,10 +669,10 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                       message: (
                         <>
                           <div>
-                            <p>
+                            <div>
                               If you have any specific questions, don&apos;t
                               hesitate to ask!
-                            </p>
+                            </div>
                           </div>
                         </>
                       ),
@@ -702,10 +702,10 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                     message: (
                       <>
                         <div>
-                          <p>
+                          <div>
                             How many years of experience should the candidate
                             have in this field?
-                          </p>
+                          </div>
                         </div>
                       </>
                     ),
@@ -734,10 +734,10 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                     message: (
                       <>
                         <div>
-                          <p>
+                          <div>
                             What type of work arrangement are you offering?
                             (e.g., full-time, part-time, remote, on-site)
-                          </p>
+                          </div>
                         </div>
                       </>
                     ),
@@ -766,10 +766,10 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                     message: (
                       <>
                         <div>
-                          <p>
+                          <div>
                             What is your budget for this role? (Please specify
                             if it is hourly, monthly, or project-based)
-                          </p>
+                          </div>
                         </div>
                       </>
                     ),
@@ -810,11 +810,11 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                     message: (
                       <>
                         <div>
-                          <p>
+                          <div>
                             Thank you for providing your details. Someone from
                             our team will reach out to you. Meanwhile, feel free
                             to ask any questions you may have!
-                          </p>
+                          </div>
                         </div>
                       </>
                     ),
