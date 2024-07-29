@@ -15,6 +15,7 @@ import { HotjarSnippet } from "@/lib/hotjar";
 import dynamic from "next/dynamic";
 import Providers from "@/components/ui/pageTransition/ProgressBarProvider";
 import { Context } from "react-responsive";
+import ChatBotContainer from "@/components/chatBot/chatBotContainer";
 const Header = dynamic(() => import("@/components/layouts/header"));
 const FooterContainer = dynamic(() =>
   import("@/components/layouts/footer/footerContainer")
@@ -106,7 +107,7 @@ export default function RootLayout({ children }) {
             <div className={cn("main-style")}>{children}</div>
             <HotjarSnippet />
           </Providers>
-
+          <ChatBotContainer/>
           <FooterContainer />
         </ThemeProvider>
       </body>

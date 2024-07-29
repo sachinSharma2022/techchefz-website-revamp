@@ -953,6 +953,30 @@ export const Icons = {
       </defs>
     </svg>
   ),
+  SendIcon: ({ size, ...props }) => (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M21.5 2.5L14.85 21.5L11.05 12.95L2.5 9.15L21.5 2.5Z"
+        stroke="#008BF0"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M21.5003 2.5L11.0503 12.95"
+        stroke="#008BF0"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  ),
   IconPlus: ({ size, ...props }) => (
     <svg
       width="24"
@@ -2902,6 +2926,77 @@ export const Icons = {
       <defs>
         <clipPath id="clip0_5517_4221">
           <rect width="16" height="16" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  ),
+  Chats: ({ size, ...props }) => (
+    <svg
+      width="28"
+      height="28"
+      viewBox="0 0 28 28"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      {...props}
+    >
+      <path
+        d="M2.33266 14C2.33266 20.4433 7.556 25.6666 13.9993 25.6666C17.4839 25.6666 25.666 25.6666 25.666 25.6666C25.666 25.6666 25.666 16.9588 25.666 14C25.666 7.55665 20.4427 2.33331 13.9993 2.33331C7.556 2.33331 2.33266 7.55665 2.33266 14Z"
+        stroke="white"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M19.25 10.5H8.75"
+        stroke="white"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M19.25 15.1667H8.75"
+        stroke="white"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M16.916 19.8333H11.0827"
+        stroke="white"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  ),
+  Close: ({ size, ...props }) => (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <g clip-path="url(#clip0_115_572)">
+        <path
+          d="M18 6L6 18"
+          stroke="white"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M6 6L18 18"
+          stroke="white"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_115_572">
+          <rect width="24" height="24" fill="white" />
         </clipPath>
       </defs>
     </svg>
