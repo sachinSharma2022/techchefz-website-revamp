@@ -28,13 +28,13 @@ const BadgeInfoCard = (props) => {
       </div>
       <h3 className={styles.cardTitle}>{props.heading}</h3>
       <p className={styles.cardContent}>{props.description}</p>
-      <div className={styles.cardsTags}>
+      {/* <div className={styles.cardsTags}>
         {props.options.map((option) => (
           <div className={styles.badgeStyle} key={option.value}>
             {option}
           </div>
         ))}
-      </div>
+      </div> */}
     </Link>
   );
 };

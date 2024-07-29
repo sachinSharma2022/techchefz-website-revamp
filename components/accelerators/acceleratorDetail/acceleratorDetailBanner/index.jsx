@@ -15,7 +15,7 @@ const DetailBanner = ({ props }) => {
   return (
     <section className={`${styles.banner} ${theme ? styles.bannerDark : ""}`}>
       <div className="primary-container">
-        <div className={cn(styles.bannerContent, "header-container")}>
+        <div className={cn(styles.bannerContent, "grid-col-2")}>
           <h1
             className={cn(styles.bannerTitle, "gradient-text")}
             dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
@@ -38,18 +38,18 @@ const DetailBanner = ({ props }) => {
       </div>
       {props?.Image?.data?.attributes?.url !== undefined &&
         props?.Image?.data?.attributes?.url !== "" && (
-      <div className={styles.imgBox}>
-        <ImageCustom
-          src={
-            props?.Image?.data?.attributes?.url
-              ? `${base_Uri}${props?.Image?.data?.attributes?.url}`
-              : `${base_Uri}/`
-          }
-          width={1500}
-          height={1500}
-          alt = { props?.Image?.data?.attributes?.alternativeText}
-        />
-      </div>
+          <div className={styles.imgBox}>
+            <ImageCustom
+              src={
+                props?.Image?.data?.attributes?.url
+                  ? `${base_Uri}${props?.Image?.data?.attributes?.url}`
+                  : `${base_Uri}/`
+              }
+              width={1500}
+              height={1500}
+              alt={props?.Image?.data?.attributes?.alternativeText}
+            />
+          </div>
         )}
     </section>
   );

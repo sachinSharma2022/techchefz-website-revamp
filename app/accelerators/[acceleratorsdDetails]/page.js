@@ -51,7 +51,7 @@ const AcceleratorDetails = async ({ params }) => {
           <Impact props={page.attributes.Impact} />
           <FeatureCard props={page.attributes.Challanges} />
           <RelatedCase
-            className="cms-related-style"
+            // className="cms-related-style"
             props={data_related_cases}
             RelatedInsight={data1.RelatedInsight}
           />

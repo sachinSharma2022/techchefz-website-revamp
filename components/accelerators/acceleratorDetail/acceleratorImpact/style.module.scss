@@ -14,6 +14,13 @@
     gap: 3.75rem;
   }
 
+  .headCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
   .impactContainer {
     display: flex;
     flex-direction: column;
