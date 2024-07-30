@@ -1,0 +1,38 @@
+"use client";
+import { useState } from "react";
+import { Icons } from "../icons";
+import styles from "./chatBoxBody/style.module.scss";
+import ChatBoxBody from "./chatBoxBody/ChatboxBody";
+
+const ChatBotContainer = () => {
+  const [hidden, sethidden] = useState(true);
+  const [clearConversation, setclearConversation] = useState(true);
+  return (
+    <div className={styles.chatBoxPage}>
+      {clearConversation ? (
+        <></>
+      ) : (
+        <ChatBoxBody
+          sethidden={sethidden}
+          hidden={hidden}
+          setclearConversation={setclearConversation}
+        />
+      )}
+      {hidden || clearConversation ? (
+        <div
+          className={styles.chatOpenCont}
+          onClick={() => {
+            sethidden(false);
+            setclearConversation(false);
+          }}
+        >
+         <Icons.Chats/>
+        </div>
+      ) : (
+        <></>
+      )}
+    </div>
+  );
+};
+
+export default ChatBotContainer;

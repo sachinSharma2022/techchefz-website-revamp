@@ -15,12 +15,14 @@ import { HotjarSnippet } from "@/lib/hotjar";
 import dynamic from "next/dynamic";
 import Providers from "@/components/ui/pageTransition/ProgressBarProvider";
 import { Context } from "react-responsive";
+import ChatBotContainer from "@/components/chatBot/chatBotContainer";
 const Header = dynamic(() => import("@/components/layouts/header"));
 const FooterContainer = dynamic(() =>
   import("@/components/layouts/footer/footerContainer")
 );
 export async function generateMetadata() {
   const data = await getData(api_Home_Page);
+ 
 
   const schemaData = {
     "@context": "https://schema.org",
@@ -34,11 +36,26 @@ export async function generateMetadata() {
     },
   };
   return {
-    title: data?.SeoData?.Title,
-    description: data?.SeoData?.Description,
+    title: data?.SeoData?.metaTitle,
+    description: data?.SeoData?.metaDescription,
+    keywords: data?.SeoData?.keywords,
+    metaRobots: data?.SeoData?.metaRobots,
+    structuredData: data?.SeoData?.structuredData,
+    metaViewport: data?.SeoData?.metaViewport,
+    canonicalURL: data?.SeoData?.canonicalURL,
+    metaSocialTitle: data?.SeoData?.metaSocial?.socialNetwork?.title,
+    metaSocialDescription: data?.SeoData?.metaSocial?.socialNetwork?.description,
+    images: [
+      {
+        url: `${process.env.NEXT_PUBLIC_STRAPIE_BASE_URL}${data?.SeoData?.metaSocial?.socialNetwork?.image?.data?.attributes?.url}`, // Must be an absolute URL
+        width: 800,
+        height: 600,
+      },
+    ],
+
     openGraph: {
-      title: data?.SeoData?.Title,
-      description: data?.SeoData?.Description,
+      title: data?.SeoData?.metaTitle,
+      description: data?.SeoData?.metaDescription,
       url: process.env.NEXT_PUBLIC_SITEMAP_URL,
       type: "website",
       Context: "https://schema.org",
@@ -46,7 +63,7 @@ export async function generateMetadata() {
       siteName: "TechChefz Digital",
       images: [
         {
-          url: `${process.env.NEXT_PUBLIC_STRAPIE_BASE_URL}${data?.SeoData?.Images?.data?.attributes?.url}`, // Must be an absolute URL
+          url: `${process.env.NEXT_PUBLIC_STRAPIE_BASE_URL}${data?.SeoData?.metaImage?.data?.attributes?.url}`, // Must be an absolute URL
           width: 800,
           height: 600,
         },
@@ -54,8 +71,8 @@ export async function generateMetadata() {
     },
     twitter: {
       card: "summary_large_image",
-      title: data?.SeoData?.Title,
-      description: data?.SeoData?.Description,
+      title: data?.SeoData?.metaTitle,
+      description: data?.SeoData?.metaDescription,
       images: [
         {
           url: `${process.env.NEXT_PUBLIC_STRAPIE_BASE_URL}${data?.SeoData?.Images?.data?.attributes?.url}`, // Must be an absolute URL
@@ -90,7 +107,7 @@ export default function RootLayout({ children }) {
             <div className={cn("main-style")}>{children}</div>
             <HotjarSnippet />
           </Providers>
-
+          <ChatBotContainer/>
           <FooterContainer />
         </ThemeProvider>
       </body>
