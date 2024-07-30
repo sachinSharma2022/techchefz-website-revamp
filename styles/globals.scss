@@ -1006,7 +1006,7 @@ html.lenis {
 }
 
 .accelerator-related-style {
-  padding: 3rem 0 0 !important;
+  padding-block: 3rem 0 !important;
 
   @include tablet {
     min-height: auto;
