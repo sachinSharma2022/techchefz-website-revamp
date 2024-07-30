@@ -41,7 +41,7 @@ $scrollbar-thumb-hover-color: #555;
 
 .chatBoxPage {
   width: 100%;
-  height: 100vh;
+  // height: 100vh;
 }
 .chatboxBodyhidden {
   visibility: hidden;
@@ -82,7 +82,7 @@ $scrollbar-thumb-hover-color: #555;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 1rem 2rem;
     border-width: 1px;
     border-bottom-style: solid;
     border-color: rgba(128, 128, 128, 0.335);
@@ -312,6 +312,11 @@ $scrollbar-thumb-hover-color: #555;
     border-radius: 10px;
     margin-top: 5px;
     cursor: pointer;
+    @include transition(0.5s);
+
+    &:hover {
+      border-color: color(info-blue);
+    }
   }
 }
 
