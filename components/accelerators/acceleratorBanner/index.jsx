@@ -10,7 +10,7 @@ import styles from "./style.module.scss";
 const AcceleratorBanner = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   return (
-    <section className={`${styles.banner} ${theme ? styles.bannerDark : ""} "header-container"`}>
+    <section className={`${styles.banner} ${theme ? styles.bannerDark : ""} header-container`}>
       <div className={cn("primary-container")}>
         <div className={cn(styles.bannerContent, "grid-col-2")}>
           <h1

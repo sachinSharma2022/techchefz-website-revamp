@@ -1005,6 +1005,21 @@ html.lenis {
   }
 }
 
+.accelerator-related-style {
+  padding: 3rem 0 0 !important;
+
+  @include tablet {
+    min-height: auto;
+    margin-block: 3.125rem 0;
+    padding: 4rem spacing(tablet-padding);
+  }
+
+  @include mobile {
+    margin-block: 4rem 0rem;
+    padding: 4rem spacing(mobile-padding) 3rem;
+  }
+}
+
 .cms-related-style {
   background-color: color(bg-soft);
   padding-top: 0 !important;
