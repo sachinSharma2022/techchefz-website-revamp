@@ -54,7 +54,7 @@
     @include mobile-tablet-p {
       font-size: text(xxxl);
       line-height: 2.5rem;
-      text-align: start;
+      text-align: center;
     }
   }
 
@@ -95,7 +95,7 @@
     }
 
     @include mobile {
-      height: 18.813rem;
+      height: auto;
     }
 
     img {

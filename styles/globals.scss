@@ -1015,7 +1015,7 @@ html.lenis {
   }
 
   @include mobile {
-    margin-block: 4rem 0rem;
+    margin-block: 0rem 3rem;
     padding: 4rem spacing(mobile-padding) 3rem;
   }
 }
