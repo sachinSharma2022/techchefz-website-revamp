@@ -1,6 +1,15 @@
 @import "~/styles/partials/config";
 
 .ourGallery {
+  padding-inline: 7.5rem;
+  padding-bottom: 7.5rem;
+
+  .titleWrapper {
+
+    p {
+      max-width: 36.25rem;
+    }
+  }
 
   .ourGalleryTitle {
     font-size: text(normal);
@@ -35,6 +44,7 @@
 
   .ourGalleryHeading {
     font-size: text(larger);
+    
     @include mobile-tablet-p {
       font-size: 2rem;
       line-height: 2.5rem;

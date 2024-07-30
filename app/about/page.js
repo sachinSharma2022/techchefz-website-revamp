@@ -11,6 +11,7 @@ import LetsWork from "@/components/home/letsWork";
 import NotFound from "../not-found";
 import { api_About_Page } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
+import OurGallery from "@/components/about/ourGallery";
 
 export async function generateMetadata() {
   const data = await getData(api_About_Page);
@@ -53,6 +54,7 @@ const AboutPage = async () => {
           <OurResults props={data.Result} />
           <FounderDesk props={data.FounderDesk} />
           <OurTeam props={data.Team} />
+          <OurGallery props={data.Team} />
           <OurClients props={data.OurClient} />
           <LetsWork contact={data.ContactUs} />
         </div>

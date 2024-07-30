@@ -12,6 +12,7 @@ const nextConfig = {
       "4.186.56.66",
       "cms-strapi.techchefz.in",
       "cms-strapi.techchefz.digital",
+      "swiperjs.com"
     ],
   },
   eslint: {

@@ -183,7 +183,7 @@ input:-webkit-autofill {
   span {
     color: color(info-blue);
     font-size: 1em;
-    
+
     @include min-desktop-medium {
       @include textGradient;
     }
@@ -1244,7 +1244,6 @@ html.lenis {
   }
 }
 
-
 // history-control-Section
 .history-control-Section {
   .slick-slider {
@@ -1324,7 +1323,7 @@ html.lenis {
         color: color(primary-blue);
         background-color: transparent;
         filter: contrast(0) brightness(0.8);
-  
+
         @include mobile-tablet-p {
           border-radius: 0.25rem;
         }
@@ -1400,3 +1399,122 @@ html.lenis {
 // .samsung-phone-style {
 //   border-bottom: 1px solid red;
 // }
+
+// gallery Section
+.about-gallery-section {
+  .gallery-main {
+    margin-block: 5rem 2.5rem;
+
+    .swiper-slide div {
+      width: 100%;
+      height: 42.1875rem;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      position: relative;
+      background-color: red;
+
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        object-fit: cover;
+      }
+    }
+
+    .main-image-sec {
+      position: relative;
+
+      .description {
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+        font-size: 1.5rem;
+        line-height: 1.875rem;
+        max-width: 95%;
+        padding: 2.5rem 3.75rem;
+      }
+    }
+  }
+
+  .gallery-thumb {
+    .swiper-slide {
+      position: relative;
+      cursor: pointer;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        background-color: rgba(color(text-primary), 0.7);
+        border-radius: 0.5rem;
+        z-index: 1;
+        opacity: 0;
+        @include transition(0.3s);
+      }
+
+      svg {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        opacity: 0;
+        @include transition(0.3s);
+      }
+
+      > div {
+        height: 86px;
+        min-height: 86px;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        position: relative;
+        background-color: red;
+
+        img {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          object-fit: cover;
+        }
+      }
+
+      &:hover {
+        &::before,
+        svg {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .swiper-button-next, .swiper-button-prev {
+    background-color: color(info-blue);
+    width: 50px;
+    height: 50px;
+    border-radius: .5rem;
+    top: 40px;
+
+    &::after {
+      font-size: 20px;
+    }
+  }
+
+  .swiper-button-disabled {
+    background-color: color(primary-white);
+    width: 50px;
+    height: 50px;
+    opacity: 1 !important;
+    border-radius: .5rem;
+
+    &::after {
+      font-size: 20px;
+      color: color(primary-black);
+    }
+  }
+
+}
