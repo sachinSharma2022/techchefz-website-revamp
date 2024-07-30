@@ -2,7 +2,7 @@
 import dynamic from "next/dynamic";
 import { base_Url } from "@/lib/constants";
 import useLazyLoad from "@/lib/useLazyLoad";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import LandingBanner from "@/components/home/landingBanner";
 import HomepageIntro from "@/components/ui/homepageIntro";
 import WeAreFuture from "./weAreFuture";
@@ -25,12 +25,13 @@ const TechnologyStack = dynamic(() =>
   import("@/components/home/technologyStack")
 );
 const HomeContainer = ({ data, data_Portfolio }) => {
+
   //   const targetRefLandingBanner = useRef(null);
   //   const targetRefHomepageIntro = useRef(null);
   //const targetRefWeAreFuture = useRef(null);
   // const targetRefService = useRef(null);
-  const targetRefProjects = useRef(null);
-  const targetRefOurNumbers = useRef(null);
+  const targetRefProjects = useRef();
+  const targetRefOurNumbers = useRef();
   const targetRefTechnologyStack = useRef(null);
   const targetRefDigitalTransformation = useRef(null);
   const targetRefHomeTestimonials = useRef(null);
@@ -47,6 +48,7 @@ const HomeContainer = ({ data, data_Portfolio }) => {
   );
   const isVisibleHomeTestimonials = useLazyLoad(targetRefHomeTestimonials);
   const isVisibleLetsWork = useLazyLoad(targetRefLetsWork);
+
   return (
     <>
       <LandingBanner props={data.Banner} />
@@ -69,32 +71,32 @@ const HomeContainer = ({ data, data_Portfolio }) => {
       <Service props={data.Services} />
       {/* }
       </div> */}
-      <div ref={targetRefProjects}>
+      <div style={{paddingTop:"30px"}} ref={targetRefProjects}>
         {isVisibleProjects && (
-          <Projects project={data.Project} brands={data_Portfolio} />
-        )}
+      <Projects project={data.Project} brands={data_Portfolio} />
+      )}
       </div>
-      <div ref={targetRefOurNumbers}>
+      <div style={{paddingTop:"30px"}} ref={targetRefOurNumbers}>
         {isVisibleOurNumbers && (
           <OurNumbers carrer={data.carrer} experience={data.ourExperience} />
         )}
       </div>
-      <div ref={targetRefTechnologyStack}>
+      <div style={{paddingTop:"30px"}} ref={targetRefTechnologyStack}>
         {isVisibleTechnologyStack && (
           <TechnologyStack technology={data.Technologys} />
         )}
       </div>
-      <div ref={targetRefDigitalTransformation}>
+      <div style={{paddingTop:"30px"}} ref={targetRefDigitalTransformation}>
         {isVisibleDigitalTransformation && (
           <DigitalTransformation digital={data.digitalTransform} />
         )}
       </div>
-      <div ref={targetRefHomeTestimonials}>
+      <div style={{paddingTop:"30px"}} ref={targetRefHomeTestimonials}>
         {isVisibleHomeTestimonials && (
           <HomeTestimonials testimonials={data.Testimonials} />
         )}
       </div>
-      <div ref={targetRefLetsWork}>
+      <div style={{paddingTop:"30px"}} ref={targetRefLetsWork}>
         {isVisibleLetsWork && <LetsWork contact={data.ContactUs} />}
       </div>
     </>
