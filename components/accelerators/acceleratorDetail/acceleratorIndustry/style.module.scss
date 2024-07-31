@@ -2,7 +2,6 @@
 
 .industry {
   padding: spacing(section-primary-padding);
-  padding-bottom: 0;
 
   @include mobile-tablet-p {
     padding: 2.75rem 1.5rem;
@@ -14,7 +13,7 @@
 
     @include mobile-tablet-p {
       flex-direction: column;
-      gap: 3.75rem;
+      gap: 2rem;
     }
   }
 

@@ -15,7 +15,7 @@ const AcceleratorImpact = ({ props }) => {
   return (
     <section className={`${styles.impact} ${theme ? styles.impactDark : ""}`}>
       <div className={cn("primary-container", styles.impactContainer)}>
-        <div className="text-center text-sm-start">
+        <div className={styles.headCenter}>
           <h6
             className={cn(styles.subHeading, "gradient-text")}
             dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
