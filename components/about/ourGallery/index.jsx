@@ -110,7 +110,7 @@ const OurGallery = ({ props }) => {
             {gallery.map((item, index) => (
               <SwiperSlide key={index}>
                 <div className="main-image-sec">
-                  <ImageCustom width={500} height={500} src={item.imageUrl} />
+                  <ImageCustom className="img-style" width={500} height={500} src={item.imageUrl} />
                   <p className="description">{item.description}</p>
                 </div>
               </SwiperSlide>

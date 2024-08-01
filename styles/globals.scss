@@ -1446,7 +1446,11 @@ html.lenis {
   .gallery-main {
     margin-block: 5rem 2.5rem;
 
-    .swiper-slide div {
+    @include mobile {
+      margin-block: 2.5rem;
+    }
+
+    .img-style {
       width: 100%;
       height: 42.1875rem;
       border-radius: 0.5rem;
@@ -1467,6 +1471,10 @@ html.lenis {
 
     .main-image-sec {
       position: relative;
+      @include mobile {
+        display: flex;
+        flex-direction: column;
+      }
 
       .description {
         position: absolute;
@@ -1479,6 +1487,10 @@ html.lenis {
 
         @include mobile {
           position: relative;
+          padding: 1.5rem 0 0;
+          font-size: 1rem;
+          line-height: 1.5rem;
+          max-width: 100%;
         }
       }
     }
