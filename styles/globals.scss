@@ -1252,9 +1252,7 @@ html.lenis {
     width: 44px;
     height: 44px;
   }
-    
 }
-
 
 // Dark Style here
 .dark {
@@ -1490,6 +1488,7 @@ html.lenis {
     .swiper-slide {
       position: relative;
       cursor: pointer;
+      border-radius: 0.5rem;
 
       &::before {
         position: absolute;
@@ -1527,13 +1526,12 @@ html.lenis {
         border-radius: 0.5rem;
         overflow: hidden;
         position: relative;
-        background-color: red;
 
         @include mobile {
           max-width: 60px;
           max-height: 33px;
           min-height: 33px;
-          border-radius: .25rem;
+          border-radius: 0.25rem;
         }
 
         img {
@@ -1552,5 +1550,4 @@ html.lenis {
       }
     }
   }
-
 }
