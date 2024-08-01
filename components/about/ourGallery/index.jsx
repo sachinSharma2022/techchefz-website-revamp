@@ -116,27 +116,60 @@ const OurGallery = ({ props }) => {
               </SwiperSlide>
             ))}
           </Swiper>
-          <Swiper
-            onSwiper={setThumbsSwiper}
-            spaceBetween={10}
-            slidesPerView={7}
-            freeMode={true}
-            watchSlidesProgress={true}
-            navigation={true}
-            modules={[FreeMode, Navigation, Thumbs]}
-            className="gallery-thumb"
-            style={{
-              "--swiper-navigation-color": "#fff",
-              "--swiper-pagination-color": "#fff",
-            }}
-          >
-            {gallery.map((item, index) => (
-              <SwiperSlide key={index}>
-                <ImageCustom width={300} height={300} src={item.imageUrl} />
-                <Icons.eye/>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+
+          <div className="thumb-section">
+            <Swiper
+              onSwiper={setThumbsSwiper}
+              spaceBetween={10}
+              breakpoints={{
+                300: {
+                  slidesPerView: 3,
+                },
+                768: {
+                  slidesPerView: 4,
+                },
+                1024: {
+                  slidesPerView: 5,
+                },
+                1300: {
+                  slidesPerView: 7,
+                },
+              }}
+              freeMode={true}
+              watchSlidesProgress={true}
+              modules={[FreeMode, Navigation, Thumbs]}
+              className="gallery-thumb"
+              style={{
+                "--swiper-navigation-color": "#fff",
+                "--swiper-pagination-color": "#fff",
+              }}
+              navigation={{ nextEl: ".arrow-right", prevEl: ".arrow-left" }}
+              pagination={false}
+            >
+              {gallery.map((item, index) => (
+                <SwiperSlide key={index}>
+                  <ImageCustom width={300} height={300} src={item.imageUrl} />
+                  <Icons.eye />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            <div className="slider-arrow gallery-slider-nav">
+              <button
+                aria-label="Move Left"
+                title="Move Left"
+                className={cn(styles.button, "arrow-left arrow")}
+              >
+                <Icons.ArrowLeft />
+              </button>
+              <button
+                aria-label="Move Right"
+                title="Move Right"
+                className={cn(styles.button, "arrow-right arrow")}
+              >
+                <Icons.ArrowRight fill="black" stroke="black" />
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>

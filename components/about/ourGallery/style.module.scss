@@ -4,8 +4,11 @@
   padding-inline: 7.5rem;
   padding-bottom: 7.5rem;
 
-  .titleWrapper {
+  @include mobile {
+    padding-inline: 1.25rem;
+  }
 
+  .titleWrapper {
     p {
       max-width: 36.25rem;
     }
@@ -17,7 +20,7 @@
     line-height: 1.5rem;
     letter-spacing: 0.2rem;
     text-transform: uppercase;
-    opacity: opacity(light);;
+    opacity: opacity(light);
 
     @include mobile-tablet-p {
       font-weight: 400;
@@ -44,7 +47,7 @@
 
   .ourGalleryHeading {
     font-size: text(larger);
-    
+
     @include mobile-tablet-p {
       font-size: 2rem;
       line-height: 2.5rem;
@@ -56,6 +59,7 @@
     font-size: text(lg);
     font-weight: 400;
     line-height: 1.875rem;
+
     @include mobile-tablet-p {
       margin-bottom: 0;
       font-size: text(normal);
@@ -74,6 +78,11 @@
       margin-top: 20px;
       height: 230px;
       width: 205px;
+
+      @include mobile {
+        width: 60px;
+        height: 33.73px;
+      }
 
       div {
         height: 100%;
