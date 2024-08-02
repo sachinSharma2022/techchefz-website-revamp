@@ -10,7 +10,7 @@ const FooterLazyLoad = ({ data }) => {
   const targetRefFooter = useRef();
   const isVisibleFooter = useLazyLoad(targetRefFooter);
   return (
-    <div ref={targetRefFooter}>
+    <div style={{paddingTop:"30px"}} ref={targetRefFooter}>
       {isVisibleFooter && (
         <Footer
           props={data?.attributes?.Logo}
