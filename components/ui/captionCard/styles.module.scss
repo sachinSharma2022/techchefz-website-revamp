@@ -11,7 +11,7 @@
    cursor: pointer;
 
    @include desktop {
-      min-height: 381px;
+      min-height: 330px;
    }
 
    &:hover {
@@ -24,7 +24,8 @@
    }
 
    .cardImg div {
-      height: 240px;
+      // height: 240px;
+      aspect-ratio: 2/1;
       width: 100%;
       position: relative;
       border-radius: 0.5rem;
@@ -69,7 +70,7 @@
          font-size: text(xl);
          font-weight: 500;
          margin-bottom: 0;
-         @include truncate(2);
+         @include truncate(3);
          white-space: normal;
 
          @include desktop-hd {

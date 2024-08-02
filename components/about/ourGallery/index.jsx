@@ -91,11 +91,6 @@ const OurGallery = ({ props }) => {
               <h3 className={cn(styles.ourGalleryHeading, "gradient-text")}>
                 From Vision to Reality
               </h3>
-              <p className={styles.ourGalleryText}>
-                Our workspace reflects our philosophy: open, collaborative, and
-                vibrant. Take a virtual tour of where the magic happens, from
-                state-of-the-art labs to cozy brainstorming nooks.
-              </p>
             </div>
           </div>
         </TextRevel>
