@@ -1,50 +1,10 @@
-// import DigitalTransformation from "@/components/home/digitalTransformation";
-// import HomeTestimonials from "@/components/home/homeTestimonials";
-// import LandingBanner from "@/components/home/landingBanner";
-// import LetsWork from "@/components/home/letsWork";
-// import OurNumbers from "@/components/home/ourNumbers";
-// import Projects from "@/components/home/projects";
-// import Service from "@/components/home/service";
-// import TechnologyStack from "@/components/home/technologyStack";
-// import WeAreFuture from "@/components/home/weAreFuture";
-// import HomepageIntro from "@/components/ui/homepageIntro";
-import { api_Home_Page, base_Url, api_Case_study_Page } from "@/lib/constants";
-import HomeContainer from "@/components/home/homeContainer";
-import { getData, getDataDynamic } from "@/lib/fetchData";
+import { useAmp } from 'next/amp';
 import NotFound from "../not-found";
+export const config = { amp: 'hybrid' };
 
 const HomePage = async () => {
-  const data = await getData(api_Home_Page);
-  const data_Portfolio = await getDataDynamic(api_Case_study_Page);
-  return (
-    <>
-      {data ? (
-        <div>
-          {/* <LandingBanner props={data.Banner} />
-          <HomepageIntro
-            src={
-              data?.Technology?.Video?.data?.attributes?.url
-                ? `${base_Url}${data?.Technology?.Video?.data?.attributes?.url}`
-                : `${base_Url}/`
-            }
-          />
-          <WeAreFuture props={data.Technology} />
-          <Service props={data.Services} />
-          <Projects project={data.Project} brands={data_Portfolio} />
-          <OurNumbers carrer={data.carrer} experience={data.ourExperience} />
-          <TechnologyStack technology={data.Technologys} />
-          <DigitalTransformation digital={data.digitalTransform} />
-          <HomeTestimonials testimonials={data.Testimonials} />
-          <LetsWork contact={data.ContactUs} /> */}
-          <HomeContainer data={data} data_Portfolio={data_Portfolio} />
-        </div>
-      ) : (
-        <>
-          <NotFound />
-        </>
-      )}
-    </>
-  );
+  const isAmp = useAmp();
+  return <>{isAmp ? <h1>AMP VIEW</h1> : <NotFound />}</>;
 };
 
 export default HomePage;

@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   images: {
     dangerouslyAllowSVG: true,
@@ -16,6 +17,10 @@ const nextConfig = {
   },
   eslint: {
     ignoreDuringBuilds: true,
+  },
+  amp: {
+    canonicalBase: 'http://localhost:3000/',
+    hybrid: true,
   },
   env: {
     NODEMAILER_FROM_EMAIL: "contactus@techchefz.com",
