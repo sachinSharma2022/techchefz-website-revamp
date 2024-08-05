@@ -25,7 +25,7 @@ const CircleLoader = (props) => {
         <circle
           fill="none"
           stroke="white"
-          stroke-width="8"
+          strokeWidth="8"
           cx="50"
           cy="50"
           r="45"

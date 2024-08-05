@@ -25,7 +25,6 @@ const TechnologyStack = dynamic(() =>
   import("@/components/home/technologyStack")
 );
 const HomeContainer = ({ data, data_Portfolio }) => {
-
   //   const targetRefLandingBanner = useRef(null);
   //   const targetRefHomepageIntro = useRef(null);
   //const targetRefWeAreFuture = useRef(null);
@@ -60,45 +59,36 @@ const HomeContainer = ({ data, data_Portfolio }) => {
             : `${base_Url}/`
         }
       />
-
-      {/* <div ref={targetRefWeAreFuture}>
-        {isVisibleWeAreFuture &&  */}
       <WeAreFuture props={data.Technology} />
-      {/* //     }
-    //   </div> */}
-      {/* <div ref={targetRefService}>
-        {isVisibleService &&  */}
       <Service props={data.Services} />
-      {/* }
-      </div> */}
-      <div style={{paddingTop:"30px"}} ref={targetRefProjects}>
+      <section className="pt-5" ref={targetRefProjects}>
         {isVisibleProjects && (
-      <Projects project={data.Project} brands={data_Portfolio} />
-      )}
-      </div>
-      <div style={{paddingTop:"30px"}} ref={targetRefOurNumbers}>
+          <Projects project={data.Project} brands={data_Portfolio} />
+        )}
+      </section>
+      <section className="pt-5" ref={targetRefOurNumbers}>
         {isVisibleOurNumbers && (
           <OurNumbers carrer={data.carrer} experience={data.ourExperience} />
         )}
-      </div>
-      <div style={{paddingTop:"30px"}} ref={targetRefTechnologyStack}>
+      </section>
+      <section className="pt-5" ref={targetRefTechnologyStack}>
         {isVisibleTechnologyStack && (
           <TechnologyStack technology={data.Technologys} />
         )}
-      </div>
-      <div style={{paddingTop:"30px"}} ref={targetRefDigitalTransformation}>
+      </section>
+      <section className="pt-5" ref={targetRefDigitalTransformation}>
         {isVisibleDigitalTransformation && (
           <DigitalTransformation digital={data.digitalTransform} />
         )}
-      </div>
-      <div style={{paddingTop:"30px"}} ref={targetRefHomeTestimonials}>
+      </section>
+      <section className="pt-5" ref={targetRefHomeTestimonials}>
         {isVisibleHomeTestimonials && (
           <HomeTestimonials testimonials={data.Testimonials} />
         )}
-      </div>
-      <div style={{paddingTop:"30px"}} ref={targetRefLetsWork}>
+      </section>
+      <section className="pt-5" ref={targetRefLetsWork}>
         {isVisibleLetsWork && <LetsWork contact={data.ContactUs} />}
-      </div>
+      </section>
     </>
   );
 };

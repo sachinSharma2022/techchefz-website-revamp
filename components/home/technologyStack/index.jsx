@@ -30,7 +30,7 @@ const TechnologyStack = ({ technology }) => {
     return () => ele.removeEventListener("mousemove", move);
   }, []);
   return (
-    <section
+    <div
       className={cn(
         styles.technologyStyle,
         theme ? styles.technologyStyleDark : ""
@@ -71,7 +71,7 @@ const TechnologyStack = ({ technology }) => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

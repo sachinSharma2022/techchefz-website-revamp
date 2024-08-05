@@ -26,7 +26,7 @@ const Testimonials = ({ props }) => {
   const isTabletScreen = useMediaQuery({ query: "(min-width: 691px)" });
 
   return (
-    <section
+    <div
       className={cn(
         styles.testimonialsStyle,
         theme ? styles.testimonialsStyleDark : "",
@@ -186,7 +186,7 @@ const Testimonials = ({ props }) => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

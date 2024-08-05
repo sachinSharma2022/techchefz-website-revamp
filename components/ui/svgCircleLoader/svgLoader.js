@@ -19,17 +19,17 @@ export const SvgLoader = (props) => {
           cy="255"
           r="230"
           stroke={props.theme ? "#707070" : "#979797"}
-          stroke-opacity="0.4"
-          stroke-width="16"
+          strokeOpacity="0.4"
+          strokeWidth="16"
         />
         <circle
           className="circleFil"
           cx="235"
           cy="255"
           r="230"
-          stroke-linecap="round"
+          strokeLinecap="round"
           stroke="url(#paint4_linear_1035_26193)"
-          stroke-width="16"
+          strokeWidth="16"
           style={{
             strokeDasharray: props.dashArray,
             strokeDashoffset: props.dashArray,
@@ -52,7 +52,7 @@ export const SvgLoader = (props) => {
             cy="24"
             r="20"
             fill="#26A0F8"
-            stroke-width="2"
+            strokeWidth="2"
             stroke="#26A0F8"
           />
           <text
@@ -75,7 +75,7 @@ export const SvgLoader = (props) => {
             cy="250"
             r="20"
             fill="white"
-            stroke-width="2"
+            strokeWidth="2"
             stroke="#26A0F8"
           />
           <text
@@ -97,7 +97,7 @@ export const SvgLoader = (props) => {
                     cy="373"
                     r="20"
                     fill="white"
-                    stroke-width="2"
+                    strokeWidth="2"
                     stroke="#26A0F8"
                   />
                   <text
@@ -119,7 +119,7 @@ export const SvgLoader = (props) => {
             cy="490"
             r="20"
             fill="white"
-            stroke-width="2"
+            strokeWidth="2"
             stroke="#26A0F8"
           />
           <text
@@ -141,7 +141,7 @@ export const SvgLoader = (props) => {
                     cy="373"
                     r="20"
                     fill="white"
-                    stroke-width="2"
+                    strokeWidth="2"
                     stroke="#26A0F8"
                   />
                   <text
@@ -163,7 +163,7 @@ export const SvgLoader = (props) => {
             cy="250"
             r="19"
             fill="white"
-            stroke-width="2"
+            strokeWidth="2"
             stroke="#26A0F8"
           />
           <text
@@ -222,8 +222,8 @@ export const SvgLoader = (props) => {
             y2="255.919"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#1E8AF2" />
-            <stop offset="1" stop-color="#05BED7" />
+            <stop stopColor="#1E8AF2" />
+            <stop offset="1" stopColor="#05BED7" />
           </linearGradient>
           <linearGradient
             id="paint1_linear_1035_26193"
@@ -233,8 +233,8 @@ export const SvgLoader = (props) => {
             y2="302.296"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#1E8AF2" />
-            <stop offset="1" stop-color="#05BED7" />
+            <stop stopColor="#1E8AF2" />
+            <stop offset="1" stopColor="#05BED7" />
           </linearGradient>
           <linearGradient
             id="paint2_linear_1035_26193"
@@ -244,8 +244,8 @@ export const SvgLoader = (props) => {
             y2="290.914"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#1E8AF2" />
-            <stop offset="1" stop-color="#05BED7" />
+            <stop stopColor="#1E8AF2" />
+            <stop offset="1" stopColor="#05BED7" />
           </linearGradient>
           <linearGradient
             id="paint3_linear_1035_26193"
@@ -255,8 +255,8 @@ export const SvgLoader = (props) => {
             y2="216.359"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#1E8AF2" />
-            <stop offset="1" stop-color="#05BED7" />
+            <stop stopColor="#1E8AF2" />
+            <stop offset="1" stopColor="#05BED7" />
           </linearGradient>
           <linearGradient
             id="paint4_linear_1035_26193"
@@ -266,8 +266,8 @@ export const SvgLoader = (props) => {
             y2="296.342"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#1E8AF2" />
-            <stop offset="1" stop-color="#05BED7" />
+            <stop stopColor="#1E8AF2" />
+            <stop offset="1" stopColor="#05BED7" />
           </linearGradient>
           <clipPath id="clip0_1035_26193">
             <rect
@@ -300,17 +300,17 @@ export const SvgLoader = (props) => {
           cy="255"
           r="230"
           stroke={props.theme ? "#707070" : "#979797"}
-          stroke-opacity="0.4"
-          stroke-width="16"
+          strokeOpacity="0.4"
+          strokeWidth="16"
         />
         <circle
           className="circleFil"
           cx="235"
           cy="255"
           r="230"
-          stroke-linecap="round"
+          strokeLinecap="round"
           stroke="url(#paint4_linear_1035_26193)"
-          stroke-width="16"
+          strokeWidth="16"
           style={{
             strokeDasharray: props.dashArray,
             strokeDashoffset: props.dashArray,
@@ -333,7 +333,7 @@ export const SvgLoader = (props) => {
             cy="20"
             r="20"
             fill="#26A0F8"
-            stroke-width="2"
+            strokeWidth="2"
             stroke="#26A0F8"
           />
           <text
@@ -355,7 +355,7 @@ export const SvgLoader = (props) => {
             cy="182"
             r="20"
             fill="white"
-            stroke-width="2"
+            strokeWidth="2"
             stroke="#26A0F8"
           />
           <text
@@ -377,7 +377,7 @@ export const SvgLoader = (props) => {
             cy="440"
             r="20"
             fill="white"
-            stroke-width="2"
+            strokeWidth="2"
             stroke="#26A0F8"
           />
           <text
@@ -399,7 +399,7 @@ export const SvgLoader = (props) => {
             cy="435"
             r="20"
             fill="white"
-            stroke-width="2"
+            strokeWidth="2"
             stroke="#26A0F8"
           />
           <text
@@ -421,7 +421,7 @@ export const SvgLoader = (props) => {
             cy="183"
             r="20"
             fill="white"
-            stroke-width="2"
+            strokeWidth="2"
             stroke="#26A0F8"
           />
           <text
@@ -480,8 +480,8 @@ export const SvgLoader = (props) => {
             y2="255.919"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#1E8AF2" />
-            <stop offset="1" stop-color="#05BED7" />
+            <stop stopColor="#1E8AF2" />
+            <stop offset="1" stopColor="#05BED7" />
           </linearGradient>
           <linearGradient
             id="paint1_linear_1035_26193"
@@ -491,8 +491,8 @@ export const SvgLoader = (props) => {
             y2="302.296"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#1E8AF2" />
-            <stop offset="1" stop-color="#05BED7" />
+            <stop stopColor="#1E8AF2" />
+            <stop offset="1" stopColor="#05BED7" />
           </linearGradient>
           <linearGradient
             id="paint2_linear_1035_26193"
@@ -502,8 +502,8 @@ export const SvgLoader = (props) => {
             y2="290.914"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#1E8AF2" />
-            <stop offset="1" stop-color="#05BED7" />
+            <stop stopColor="#1E8AF2" />
+            <stop offset="1" stopColor="#05BED7" />
           </linearGradient>
           <linearGradient
             id="paint3_linear_1035_26193"
@@ -513,8 +513,8 @@ export const SvgLoader = (props) => {
             y2="216.359"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#1E8AF2" />
-            <stop offset="1" stop-color="#05BED7" />
+            <stop stopColor="#1E8AF2" />
+            <stop offset="1" stopColor="#05BED7" />
           </linearGradient>
           <linearGradient
             id="paint4_linear_1035_26193"
@@ -524,8 +524,8 @@ export const SvgLoader = (props) => {
             y2="296.342"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#1E8AF2" />
-            <stop offset="1" stop-color="#05BED7" />
+            <stop stopColor="#1E8AF2" />
+            <stop offset="1" stopColor="#05BED7" />
           </linearGradient>
           <clipPath id="clip0_1035_26193">
             <rect
@@ -558,17 +558,17 @@ export const SvgLoader = (props) => {
           cy="255"
           r="230"
           stroke={props.theme ? "#707070" : "#979797"}
-          stroke-opacity="0.4"
-          stroke-width="16"
+          strokeOpacity="0.4"
+          strokeWidth="16"
         />
         <circle
           className="circleFil"
           cx="235"
           cy="255"
           r="230"
-          stroke-linecap="round"
+          strokeLinecap="round"
           stroke="url(#paint4_linear_1035_26193)"
-          stroke-width="16"
+          strokeWidth="16"
           style={{
             strokeDasharray: props.dashArray,
             strokeDashoffset: props.dashArray,
@@ -591,7 +591,7 @@ export const SvgLoader = (props) => {
             cy="20"
             r="20"
             fill="#26A0F8"
-            stroke-width="2"
+            strokeWidth="2"
             stroke="#26A0F8"
           />
           <text
@@ -613,7 +613,7 @@ export const SvgLoader = (props) => {
             cy="138"
             r="20"
             fill="white"
-            stroke-width="2"
+            strokeWidth="2"
             stroke="#26A0F8"
           />
           <text
@@ -635,7 +635,7 @@ export const SvgLoader = (props) => {
             cy="373"
             r="20"
             fill="white"
-            stroke-width="2"
+            strokeWidth="2"
             stroke="#26A0F8"
           />
           <text
@@ -657,7 +657,7 @@ export const SvgLoader = (props) => {
             cy="490"
             r="20"
             fill="white"
-            stroke-width="2"
+            strokeWidth="2"
             stroke="#26A0F8"
           />
           <text
@@ -679,7 +679,7 @@ export const SvgLoader = (props) => {
             cy="373"
             r="20"
             fill="white"
-            stroke-width="2"
+            strokeWidth="2"
             stroke="#26A0F8"
           />
           <text
@@ -701,7 +701,7 @@ export const SvgLoader = (props) => {
             cy="138"
             r="19"
             fill="white"
-            stroke-width="2"
+            strokeWidth="2"
             stroke="#26A0F8"
           />
           <text
@@ -760,8 +760,8 @@ export const SvgLoader = (props) => {
             y2="255.919"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#1E8AF2" />
-            <stop offset="1" stop-color="#05BED7" />
+            <stop stopColor="#1E8AF2" />
+            <stop offset="1" stopColor="#05BED7" />
           </linearGradient>
           <linearGradient
             id="paint1_linear_1035_26193"
@@ -771,8 +771,8 @@ export const SvgLoader = (props) => {
             y2="302.296"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#1E8AF2" />
-            <stop offset="1" stop-color="#05BED7" />
+            <stop stopColor="#1E8AF2" />
+            <stop offset="1" stopColor="#05BED7" />
           </linearGradient>
           <linearGradient
             id="paint2_linear_1035_26193"
@@ -782,8 +782,8 @@ export const SvgLoader = (props) => {
             y2="290.914"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#1E8AF2" />
-            <stop offset="1" stop-color="#05BED7" />
+            <stop stopColor="#1E8AF2" />
+            <stop offset="1" stopColor="#05BED7" />
           </linearGradient>
           <linearGradient
             id="paint3_linear_1035_26193"
@@ -793,8 +793,8 @@ export const SvgLoader = (props) => {
             y2="216.359"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#1E8AF2" />
-            <stop offset="1" stop-color="#05BED7" />
+            <stop stopColor="#1E8AF2" />
+            <stop offset="1" stopColor="#05BED7" />
           </linearGradient>
           <linearGradient
             id="paint4_linear_1035_26193"
@@ -804,8 +804,8 @@ export const SvgLoader = (props) => {
             y2="296.342"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#1E8AF2" />
-            <stop offset="1" stop-color="#05BED7" />
+            <stop stopColor="#1E8AF2" />
+            <stop offset="1" stopColor="#05BED7" />
           </linearGradient>
           <clipPath id="clip0_1035_26193">
             <rect

@@ -61,7 +61,7 @@ const Input = React.forwardRef(
             {...props}
           />
           {label && (
-            <label className={styles.labelCustom} for="floatingInput">
+            <label className={styles.labelCustom} htmlFor="floatingInput">
               {label}
             </label>
           )}
