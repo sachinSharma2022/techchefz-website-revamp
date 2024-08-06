@@ -1400,3 +1400,13 @@ html.lenis {
 // .samsung-phone-style {
 //   border-bottom: 1px solid red;
 // }
+
+.amp-page {
+  height: 100vh;
+  width: 100%;
+  background-color: olive;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+}
