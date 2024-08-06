@@ -127,7 +127,8 @@ const OurGallery = ({ props }) => {
                   slidesPerView: 5,
                 },
                 1300: {
-                  slidesPerView: 7,
+                  slidesPerView: 8,
+                  spaceBetween: 20
                 },
               }}
               freeMode={true}
