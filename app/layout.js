@@ -1,21 +1,16 @@
-//import { FooterContainer } from "@/components/layouts/footer/footerContainer";
 import ThemeProvider from "@/context/theme";
 import { api_Home_Page } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
 import "../styles/grid.min.css";
-// import "../styles/bootstrap.css";
-//import Header from "../components/layouts/header";
+import Script from "next/script";
 import { aeonik, helvetica } from "../lib/fonts";
 import { cn } from "../lib/utils";
 import "../styles/globals.scss";
-import Script from "next/script";
-//import { GoogleAnalytics } from "@next/third-parties/google";
-//import { GoogleAnalytics } from "@next/third-parties/google";
+import ChatBotContainer from "@/components/chatBot/chatBotContainer";
+import Providers from "@/components/ui/pageTransition/ProgressBarProvider";
 import { HotjarSnippet } from "@/lib/hotjar";
 import dynamic from "next/dynamic";
-import Providers from "@/components/ui/pageTransition/ProgressBarProvider";
-import { Context } from "react-responsive";
-import ChatBotContainer from "@/components/chatBot/chatBotContainer";
+
 const Header = dynamic(() => import("@/components/layouts/header"));
 const FooterContainer = dynamic(() =>
   import("@/components/layouts/footer/footerContainer")
@@ -23,7 +18,6 @@ const FooterContainer = dynamic(() =>
 export async function generateMetadata() {
   const data = await getData(api_Home_Page);
  
-
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -89,7 +83,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <body className={cn(aeonik.variable, helvetica.variable)}>
-        {/* <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} /> */}
         <Script
           id="gtm-script"
           strategy="lazyOnload"
