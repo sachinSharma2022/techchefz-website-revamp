@@ -114,13 +114,13 @@ const Footer = ({ props, Subscribe, SocialMedia, footerinner, Reserved }) => {
                   <Icons.instagram size={16} />{" "}
                 </Link>
                 <Link
-                  href={SocialMedia[0]?.SocialMediaInner[2]?.Link}
+                  href={SocialMedia[0]?.SocialMediaInner[3]?.Link}
                   target="_blank"
                 >
                   <Icons.twitter size={16} />{" "}
                 </Link>
                 <Link
-                  href={SocialMedia[0]?.SocialMediaInner[2]?.Link}
+                  href={SocialMedia[0]?.SocialMediaInner[4]?.Link}
                   target="_blank"
                 >
                   <Icons.youtube size={16} />{" "}
