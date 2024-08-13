@@ -100,21 +100,30 @@ const Footer = ({ props, Subscribe, SocialMedia, footerinner, Reserved }) => {
                   target="_blank"
                 >
                   <Icons.linkedinSecond size={16} />{" "}
-                  <span>{SocialMedia[0]?.SocialMediaInner[0]?.Title}</span>
                 </Link>
                 <Link
                   href={SocialMedia[0]?.SocialMediaInner[1]?.Link}
                   target="_blank"
                 >
                   <Icons.facebook size={16} />{" "}
-                  <span>{SocialMedia[0]?.SocialMediaInner[1]?.Title}</span>
                 </Link>
                 <Link
                   href={SocialMedia[0]?.SocialMediaInner[2]?.Link}
                   target="_blank"
                 >
                   <Icons.instagram size={16} />{" "}
-                  <span>{SocialMedia[0]?.SocialMediaInner[2]?.Title}</span>
+                </Link>
+                <Link
+                  href={SocialMedia[0]?.SocialMediaInner[3]?.Link}
+                  target="_blank"
+                >
+                  <Icons.twitter size={16} />{" "}
+                </Link>
+                <Link
+                  href={SocialMedia[0]?.SocialMediaInner[4]?.Link}
+                  target="_blank"
+                >
+                  <Icons.youtube size={16} />{" "}
                 </Link>
               </div>
             </div>

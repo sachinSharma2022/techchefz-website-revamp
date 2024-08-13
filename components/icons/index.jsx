@@ -3001,4 +3001,67 @@ export const Icons = {
       </defs>
     </svg>
   ),
+  // twitter: ({ size, color, ...props }) => (
+  //   <svg
+  //     width="20"
+  //     height="20"
+  //     viewBox="0 0 20 20"
+  //     fill="none"
+  //     {...props}
+  //     xmlns="http://www.w3.org/2000/svg"
+  //   >
+  //     <g clip-path="url(#clip0_6039_11001)">
+  //       <path
+  //         d="M11.9047 8.46958L19.3513 0H17.5873L11.1187 7.35251L5.956 0H0L7.80867 11.1194L0 19.9999H1.764L8.59067 12.2338L14.044 19.9999H20M2.40067 1.30158H5.11067L17.586 18.7623H14.8753"
+  //         fill="url(#paint0_linear_6039_11001)"
+  //       />
+  //     </g>
+  //     <defs>
+  //       <linearGradient
+  //         id="paint0_linear_6039_11001"
+  //         x1="0.233334"
+  //         y1="6.19998"
+  //         x2="15.4944"
+  //         y2="18.7586"
+  //         gradientUnits="userSpaceOnUse"
+  //       >
+  //         <stop stop-color="#1E8AF2" />
+  //         <stop offset="1" stop-color="#05BED7" />
+  //       </linearGradient>
+  //       <clipPath id="clip0_6039_11001">
+  //         <rect width="20" height="20" fill="white" />
+  //       </clipPath>
+  //     </defs>
+  //   </svg>
+  // ),
+  youtube: ({ size, color, ...props }) => (
+    <svg
+      {...props}
+      width="20"
+      height="14"
+      viewBox="0 0 20 14"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M17.8136 0.417687C18.6746 0.648178 19.3513 1.32483 19.5818 2.18588C19.9983 3.74498 20 6.99984 20 6.99984C20 6.99984 20 10.2547 19.5818 11.8138C19.3513 12.6749 18.6746 13.3515 17.8136 13.582C16.2545 14.0002 9.99996 14.0002 9.99996 14.0002C9.99996 14.0002 3.74547 14.0002 2.18636 13.582C1.32532 13.3515 0.648666 12.6749 0.418176 11.8138C0 10.2547 0 6.99984 0 6.99984C0 6.99984 0 3.74498 0.418176 2.18588C0.648666 1.32483 1.32532 0.648178 2.18636 0.417687C3.74547 -0.000488281 9.99996 -0.000488281 9.99996 -0.000488281C9.99996 -0.000488281 16.2545 -0.000488281 17.8136 0.417687ZM13.194 7.00018L7.99805 9.99982V4.00049L13.194 7.00018Z"
+        fill="url(#paint0_linear_6039_11007)"
+      />
+      <defs>
+        <linearGradient
+          id="paint0_linear_6039_11007"
+          x1="0.233334"
+          y1="4.33971"
+          x2="10.9793"
+          y2="16.9721"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#1E8AF2" />
+          <stop offset="1" stop-color="#05BED7" />
+        </linearGradient>
+      </defs>
+    </svg>
+  ),
 };
