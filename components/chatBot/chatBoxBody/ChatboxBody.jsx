@@ -4,6 +4,18 @@ import styles from "./style.module.scss";
 import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
 
+export const ConvertUserMessageToHTML = ({ text }) => {
+  const lines = text.split('\n');
+  
+  return (
+    <div>
+      {lines.map((line, index) => (
+        line.trim() ? <p key={index}>{line.trim()}</p> : <br key={index} />
+      ))}
+    </div>
+  );
+};
+
 const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
   const buttonRef = useRef();
   const userinfo = useRef("");
@@ -865,7 +877,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                     username: "system",
                     message: (
                       <div>
-                        <div>{queryResponse?.content}</div>
+                        <div cleanedName={styles.userMessageText}><ConvertUserMessageToHTML text={queryResponse?.content}/></div>
                         <div>
                           {uniqueSources.length > 0 && content_check ? (
                             <>
@@ -965,7 +977,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
             ) : (
               <div className={styles.userbox}>
                 <div className={styles.usersMessage}>
-                  <div>{items.message}</div>
+                  <div className={styles.userMessageText}>{items.message}</div>
                   <div className={styles.messageTime}>{items.time}</div>
                 </div>
               </div>
