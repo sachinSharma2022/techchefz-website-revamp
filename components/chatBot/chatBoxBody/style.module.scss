@@ -48,17 +48,25 @@ $scrollbar-thumb-hover-color: #555;
 }
 .chatboxBody {
   @include custom-scrollbar;
-  width: 29.8125rem;
+  width: 26rem;
   height: 40rem;
   background-color: #111111;
   border-radius: 8px;
   z-index: 9999;
   position: fixed;
   right: 0;
-  bottom: 20px;
+  bottom: 90px;
   right: 20px;
   box-shadow: 0 6px 20px rgba(256, 256, 256, 0.05);
   overflow: hidden;
+  scale: 0;
+  transform-origin: right bottom;
+  animation: mymove 0.3s normal forwards ease-in-out;
+
+  @keyframes mymove {
+    from {  scale: 0;}
+    to {  scale: 1}
+  }
 
   @include mobile {
     width: auto;
@@ -68,7 +76,7 @@ $scrollbar-thumb-hover-color: #555;
   }
 
   * {
-   font-family: font(secondary);
+    font-family: font(secondary);
   }
 
   .chatbotHeader {
@@ -102,12 +110,12 @@ $scrollbar-thumb-hover-color: #555;
       }
 
       .iconStyle {
-         width: 24px;
-         margin-right: 10px;
+        width: 24px;
+        margin-right: 10px;
 
-         img {
-            width: 24px;
-         }
+        img {
+          width: 24px;
+        }
       }
 
       .actionButton {
@@ -153,13 +161,16 @@ $scrollbar-thumb-hover-color: #555;
         background-color: color(input-bg);
         border: 1px solid rgb(72, 66, 66);
         color: color(primary-white);
-        opacity: 60%;
         max-width: 90%;
         padding: 1rem;
         border-radius: 8px 8px 8px 0px;
         margin: 10px 0 20px 10px;
         position: relative;
         animation: fadeIn 1s ease-in;
+
+        > div {
+          opacity: 0.8;
+        }
 
         &::after {
           content: "";
@@ -243,13 +254,16 @@ $scrollbar-thumb-hover-color: #555;
       background-color: color(input-bg);
       border: 1px solid rgb(72, 66, 66);
       color: color(primary-white);
-      opacity: 60%;
       max-width: 90%;
       padding: 1rem;
       border-radius: 8px 8px 8px 0px;
       margin: 10px 0 20px 10px;
       position: relative;
       animation: fadeIn 1s ease-in;
+
+      > div {
+        opacity: 0.8;
+      }
     }
   }
 
@@ -265,13 +279,13 @@ $scrollbar-thumb-hover-color: #555;
 
     @include mobile {
       position: fixed;
-    bottom: 20px;
-    left: 0;
-    right: 0;
+      bottom: 20px;
+      left: 0;
+      right: 0;
     }
 
     textarea {
-      border-radius: 4px;
+      border-radius: 10px;
       position: absolute;
       width: 100%;
       border: 1px solid rgba(67, 57, 57, 0.721);
@@ -283,16 +297,25 @@ $scrollbar-thumb-hover-color: #555;
       justify-content: center;
       padding-left: 20px;
       padding-right: 50px !important;
-      padding-block: 17px;
+      padding-block: 16px;
     }
 
     button {
-      background: none;
-      border-radius: 50%;
+      border-radius: 10%;
       position: absolute;
-      right: 20px;
-      width: 18px;
-      top: 22px;
+      right: 12px;
+      width: 34px;
+      height: 34px;
+      top: 13px;
+      background-color: color(info-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+
+      svg path {
+        stroke: white;
+      }
     }
   }
 }
@@ -305,18 +328,19 @@ $scrollbar-thumb-hover-color: #555;
 
   button {
     width: 100%;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1.5px solid rgba(255, 255, 255, 0.8);
     color: color(primary-white);
-    padding: 25px;
+    padding: 20px;
     text-align: left;
     font-size: 16px;
     border-radius: 10px;
     margin-top: 5px;
     cursor: pointer;
-    @include transition(0.5s);
+    @include transition(0.2s);
 
     &:hover {
       border-color: color(info-blue);
+      opacity: 1;
     }
   }
 }
@@ -358,23 +382,23 @@ $scrollbar-thumb-hover-color: #555;
   font-size: 12px;
   display: flex;
   justify-content: flex-end;
-  margin-top: 5px;
+  margin-top: 15px;
 }
 .sendbtn {
   cursor: pointer;
 }
 .chatOpenCont {
   background-color: #000;
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: color(Pervenche-blue);
   cursor: pointer;
-  right: 60px;
-  bottom: 60px;
+  right: 20px;
+  bottom: 20px;
   position: fixed;
   z-index: 9999;
 
@@ -388,6 +412,11 @@ $scrollbar-thumb-hover-color: #555;
       width: 20px;
     }
   }
+
+  svg path {
+    stroke: white;
+  }
+
 }
 .emailinput {
   width: 100%;

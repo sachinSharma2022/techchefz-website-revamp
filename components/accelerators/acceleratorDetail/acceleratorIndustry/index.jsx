@@ -44,7 +44,7 @@ const AcceleratorIndustry = ({ props }) => {
                   __html: `${props?.DescriptionInner[0].Description}`,
                 }}
               ></p>
-              <Link href={props?.DescriptionInner[0].BtnLink}>
+              {/* <Link href={props?.DescriptionInner[0].BtnLink}>
                 <Button
                   variant={theme ? "lightBlueOutline" : "outline"}
                   className="info"
@@ -53,7 +53,7 @@ const AcceleratorIndustry = ({ props }) => {
                   {props?.DescriptionInner[0].Btn}{" "}
                   <Icons.ArrowRight size={18} />
                 </Button>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
