@@ -928,7 +928,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
   };
 
   return (
-    <div className={hidden ? styles.chatboxBodyhidden : styles.chatboxBody}>
+    <div data-lenis-prevent className={hidden ? styles.chatboxBodyhidden : styles.chatboxBody}>
       <div className={styles.chatbotHeader}>
         <div className={styles.chatbotTitle}>
           <ImageCustom

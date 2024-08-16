@@ -50,12 +50,12 @@ const AcceleratorDetails = async ({ params }) => {
           <AcceleratorIndustry props={page.attributes.Media} />
           <Impact props={page.attributes.Impact} />
           <FeatureCard props={page.attributes.Challanges} />
-          <RelatedCase
+          {/* <RelatedCase
             className="accelerator-related-style"
             props={data_related_cases}
             RelatedInsight={data1.RelatedInsight}
-          />
-          <LetsWork contact={page.attributes.LetsWork} />
+          /> */}
+          <LetsWork className="padding-accelerator" contact={page.attributes.LetsWork} />
         </div>
       ) : (
         <>

@@ -123,6 +123,7 @@ const AcceleratorImpact = ({ props }) => {
         <div className={styles.impactTopSection}>
         {props?.imagelinks[2]?.Image?.data?.attributes?.url !== undefined &&
         props?.imagelinks[2]?.Image?.data?.attributes?.url !== "" && (
+          <div className={styles.impactImage}>
           <ImageCustom
             src={
               props?.imagelinks[2]?.Image?.data?.attributes?.url
@@ -134,6 +135,7 @@ const AcceleratorImpact = ({ props }) => {
             className={styles.impactImage}
             alt = {props?.imagelinks[2]?.Image?.data?.attributes?.alternativeText}
           />
+          </div>
         )}
           <div className={styles.topSectionRight}>
             <h4
