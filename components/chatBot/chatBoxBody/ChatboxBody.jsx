@@ -209,19 +209,9 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
     }
   };
 
-  // const handleKeyPressResume = (event) => {
-  //   console.log("Rohit")
-  //   console.log(event);
-  //   event.preventDefault(); // Prevents the default behavior of moving to the next line
-  //   sendMessage({
-  //       current: { value: "file uploaded", resume_stats: "uploaded" },
-  //   });
-  // };
   const handleKeyPressResume = (event) => {
     const file = event.target.files[0]; // Access the uploaded file
     if (file) {
-        console.log("Rohit");
-        console.log(file);
         event.preventDefault();
         sendMessage({
             current: { value: "file uploaded", resume_stats: "uploaded" },
