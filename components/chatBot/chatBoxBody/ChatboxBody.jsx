@@ -209,14 +209,28 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
     }
   };
 
+  // const handleKeyPressResume = (event) => {
+  //   console.log("Rohit")
+  //   console.log(event);
+  //   event.preventDefault(); // Prevents the default behavior of moving to the next line
+  //   sendMessage({
+  //       current: { value: "file uploaded", resume_stats: "uploaded" },
+  //   });
+  // };
   const handleKeyPressResume = (event) => {
-    if (event.key === "Enter") {
-      event.preventDefault(); // Prevents the default behavior of moving to the next line
-      sendMessage({
-        current: { value: "file uploaded", resume_stats: "uploaded" },
-      });
+    const file = event.target.files[0]; // Access the uploaded file
+    if (file) {
+        console.log("Rohit");
+        console.log(file);
+        event.preventDefault();
+        sendMessage({
+            current: { value: "file uploaded", resume_stats: "uploaded" },
+        });
+    } else {
+        console.log("No file selected");
     }
-  };
+};
+
 
   useEffect(() => {
     messagesEndRef.current.scrollIntoView({ behavior: "smooth", block: "end" });
@@ -590,7 +604,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                                     placeholder="attach"
                                     className={styles.emailinput}
                                     ref={resumeRef}
-                                    onKeyDown={handleKeyPressResume}
+                                    onChange={handleKeyPressResume}
                                   />
                                 </div>
                               </>
