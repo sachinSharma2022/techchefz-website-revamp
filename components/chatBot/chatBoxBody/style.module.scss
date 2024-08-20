@@ -485,6 +485,10 @@ $scrollbar-thumb-hover-color: #555;
     background: #fff;
   }
 }
+.userMessageText{
+  white-space-collapse: preserve;
+  text-wrap: wrap;
+}
 
 .loadervisible {
   display: block;

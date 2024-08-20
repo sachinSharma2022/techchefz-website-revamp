@@ -236,10 +236,10 @@ export const ServiceDropdown = ({
     placeholder: (provided, state) => ({
       ...provided,
       position: "absolute",
-      top: state.hasValue || state.selectProps.inputValue ? 0 : "0",
+      top: state.hasValue || state.selectProps.inputValue ? -5 : "0",
       left: -2,
       transition: "top 0.1s, font-size 0.1s",
-      fontSize: (state.hasValue || state.selectProps.inputValue) && "1rem",
+      fontSize: (state.hasValue || state.selectProps.inputValue) && "0.95rem",
       color: "#8d8d8d",
       fontWeight: 500,
     }),
