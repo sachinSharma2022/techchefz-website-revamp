@@ -48,6 +48,10 @@ const HomeContainer = ({ data, data_Portfolio }) => {
   const isVisibleHomeTestimonials = useLazyLoad(targetRefHomeTestimonials);
   const isVisibleLetsWork = useLazyLoad(targetRefLetsWork);
 
+  useEffect(() => {
+    document.querySelector("body").classList.remove("error-page");
+  },[]);
+  
   return (
     <>
       <LandingBanner props={data.Banner} />
