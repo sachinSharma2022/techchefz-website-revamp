@@ -78,27 +78,27 @@ export const Icons = {
       fill="none"
       {...props}
     >
-      <g clip-path="url(#clip0_4_864)">
+      <g clipPath="url(#clip0_4_864)">
         <path
           opacity="0.6"
           d="M31.9243 37.51C31.9243 45.2211 25.6732 51.4722 17.9621 51.4722C10.2511 51.4722 4 45.2211 4 37.51C4 29.7989 10.2511 23.5479 17.9621 23.5479C25.6732 23.5479 31.9243 29.7989 31.9243 37.51Z"
           fill="url(#paint0_linear_4_864)"
           stroke="url(#paint1_linear_4_864)"
-          stroke-width="4"
+          strokeWidth="4"
         />
         <path
           opacity="0.4"
           d="M60.5679 44.5259V44.8655C60.3889 49.9385 56.2161 54 51.0997 54C46.2445 54 42.2358 50.3433 41.6843 45.6375C46.5251 43.6628 50.4412 39.9017 52.6172 35.1706C57.1249 35.8975 60.5679 39.8062 60.5679 44.5259Z"
           fill="url(#paint2_linear_4_864)"
           stroke="url(#paint3_linear_4_864)"
-          stroke-width="4"
+          strokeWidth="4"
         />
         <path
           d="M17.9561 17.0717C21.1951 11.6394 27.1354 8 33.9182 8C44.1792 8 52.4979 16.3187 52.4979 26.5797C52.4979 28.8566 52.0856 31.0379 51.3326 33.0578C49.3605 38.3645 45.0338 42.5239 39.6194 44.2689C38.7469 44.5498 37.8445 44.7709 36.9182 44.9203"
           stroke="url(#paint4_linear_4_864)"
-          stroke-width="4"
+          strokeWidth="4"
           stroke-miterlimit="10"
-          stroke-linecap="round"
+          strokeLinecap="round"
         />
       </g>
       <defs>
@@ -110,8 +110,8 @@ export const Icons = {
           y2="40.3181"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_4_864"
@@ -121,8 +121,8 @@ export const Icons = {
           y2="40.3181"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_4_864"
@@ -132,8 +132,8 @@ export const Icons = {
           y2="46.547"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_4_864"
@@ -143,8 +143,8 @@ export const Icons = {
           y2="46.547"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_4_864"
@@ -154,8 +154,8 @@ export const Icons = {
           y2="28.6805"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <clipPath id="clip0_4_864">
           <rect width="64" height="64" fill="white" />
@@ -172,24 +172,24 @@ export const Icons = {
       fill="none"
       {...props}
     >
-      <g clip-path="url(#clip0_4_831)">
+      <g clipPath="url(#clip0_4_831)">
         <path
           opacity="0.6"
           d="M33.1713 34.9138L43.3583 53.9997H19.8629L29.4058 34.9138H33.1713Z"
           fill="url(#paint0_linear_4_831)"
           stroke="url(#paint1_linear_4_831)"
-          stroke-width="4"
+          strokeWidth="4"
         />
         <path
           d="M31.6219 33.5252C35.4346 33.5252 38.5255 30.4344 38.5255 26.6216C38.5255 22.8089 35.4346 19.718 31.6219 19.718C27.8091 19.718 24.7183 22.8089 24.7183 26.6216C24.7183 30.4344 27.8091 33.5252 31.6219 33.5252Z"
           stroke="url(#paint2_linear_4_831)"
-          stroke-width="4"
+          strokeWidth="4"
           stroke-miterlimit="10"
         />
         <path
           d="M31.6215 45.243C41.9059 45.243 50.243 36.9059 50.243 26.6215C50.243 16.3371 41.9059 8 31.6215 8C21.3371 8 13 16.3371 13 26.6215C13 36.9059 21.3371 45.243 31.6215 45.243Z"
           stroke="url(#paint3_linear_4_831)"
-          stroke-width="4"
+          strokeWidth="4"
           stroke-miterlimit="10"
         />
       </g>
@@ -202,8 +202,8 @@ export const Icons = {
           y2="48.6648"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_4_831"
@@ -213,8 +213,8 @@ export const Icons = {
           y2="48.6648"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_4_831"
@@ -224,8 +224,8 @@ export const Icons = {
           y2="27.8361"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_4_831"
@@ -235,8 +235,8 @@ export const Icons = {
           y2="29.8975"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <clipPath id="clip0_4_831">
           <rect width="64" height="64" fill="white" />
@@ -253,11 +253,11 @@ export const Icons = {
       fill="none"
       {...props}
     >
-      <g clip-path="url(#clip0_4_875)">
+      <g clipPath="url(#clip0_4_875)">
         <path
           d="M40.9399 8H56V23.1544"
           stroke="url(#paint0_linear_4_875)"
-          stroke-width="4"
+          strokeWidth="4"
           stroke-miterlimit="10"
         />
         <path
@@ -265,24 +265,24 @@ export const Icons = {
           d="M10 54V10H29.2312V54H10Z"
           fill="url(#paint1_linear_4_875)"
           stroke="url(#paint2_linear_4_875)"
-          stroke-width="4"
+          strokeWidth="4"
         />
         <path
           d="M23.4765 55.9332H8.4165V40.7622"
           stroke="url(#paint3_linear_4_875)"
-          stroke-width="4"
+          strokeWidth="4"
           stroke-miterlimit="10"
         />
         <path
           d="M56 40.7622V55.9332H40.9399"
           stroke="url(#paint4_linear_4_875)"
-          stroke-width="4"
+          strokeWidth="4"
           stroke-miterlimit="10"
         />
         <path
           d="M8.4165 23.1544V8H23.4765"
           stroke="url(#paint5_linear_4_875)"
-          stroke-width="4"
+          strokeWidth="4"
           stroke-miterlimit="10"
         />
       </g>
@@ -295,8 +295,8 @@ export const Icons = {
           y2="16.8693"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_4_875"
@@ -306,8 +306,8 @@ export const Icons = {
           y2="26.6356"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_4_875"
@@ -317,8 +317,8 @@ export const Icons = {
           y2="26.6356"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_4_875"
@@ -328,8 +328,8 @@ export const Icons = {
           y2="49.634"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_4_875"
@@ -339,8 +339,8 @@ export const Icons = {
           y2="49.634"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint5_linear_4_875"
@@ -350,8 +350,8 @@ export const Icons = {
           y2="16.8693"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <clipPath id="clip0_4_875">
           <rect width="64" height="64" fill="white" />
@@ -368,17 +368,17 @@ export const Icons = {
       fill="none"
       {...props}
     >
-      <g clip-path="url(#clip0_4_841)">
+      <g clipPath="url(#clip0_4_841)">
         <path
           d="M16.1281 29.1506C16.1281 29.791 15.609 30.3101 14.9686 30.3101C14.3282 30.3101 13.8091 29.791 13.8091 29.1506C13.8091 28.5102 14.3282 27.9911 14.9686 27.9911C15.609 27.9911 16.1281 28.5102 16.1281 29.1506Z"
           fill="url(#paint0_linear_4_841)"
           stroke="url(#paint1_linear_4_841)"
-          stroke-width="4"
+          strokeWidth="4"
         />
         <path
           d="M48.0483 16H4V48.6204H48.0483V16Z"
           stroke="url(#paint2_linear_4_841)"
-          stroke-width="4"
+          strokeWidth="4"
           stroke-miterlimit="10"
         />
         <path
@@ -386,7 +386,7 @@ export const Icons = {
           d="M38.7103 33.9384L48.3667 28.3286L48.367 28.3285L58.0001 22.7303V33.9377V45.1464L48.3673 39.553L48.3663 39.5524L38.7103 33.9384Z"
           fill="url(#paint3_linear_4_841)"
           stroke="url(#paint4_linear_4_841)"
-          stroke-width="4"
+          strokeWidth="4"
         />
       </g>
       <defs>
@@ -398,8 +398,8 @@ export const Icons = {
           y2="29.7064"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_4_841"
@@ -409,8 +409,8 @@ export const Icons = {
           y2="29.7064"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_4_841"
@@ -420,8 +420,8 @@ export const Icons = {
           y2="40.1179"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_4_841"
@@ -431,8 +431,8 @@ export const Icons = {
           y2="34.7672"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_4_841"
@@ -442,8 +442,8 @@ export const Icons = {
           y2="34.7672"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <clipPath id="clip0_4_841">
           <rect width="64" height="64" fill="white" />
@@ -460,7 +460,7 @@ export const Icons = {
       fill="none"
       {...props}
     >
-      <g clip-path="url(#clip0_4_887)">
+      <g clipPath="url(#clip0_4_887)">
         <path
           opacity="0.6"
           d="M14 45.6216V19.6414C14 18.4526 15.0841 17.6766 16.008 18.2124L31.2093 28.3261C31.6774 28.5971 31.973 29.1515 31.973 29.7551V34.2453C31.973 34.8366 31.6897 35.3786 31.2401 35.6557L16.0388 47.026C15.1148 47.5926 14 46.8227 14 45.6155V45.6216Z"
@@ -469,7 +469,7 @@ export const Icons = {
         <path
           d="M31.2095 8V56L49.2318 41.7349L33.3344 31.9969L48.4619 22.7455L31.2095 8Z"
           stroke="url(#paint1_linear_4_887)"
-          stroke-width="4"
+          strokeWidth="4"
           stroke-miterlimit="10"
         />
       </g>
@@ -482,8 +482,8 @@ export const Icons = {
           y2="30.6462"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_4_887"
@@ -493,8 +493,8 @@ export const Icons = {
           y2="25.1972"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <clipPath id="clip0_4_887">
           <rect width="64" height="64" fill="white" />
@@ -511,7 +511,7 @@ export const Icons = {
       fill="none"
       {...props}
     >
-      <g clip-path="url(#clip0_4_851)">
+      <g clipPath="url(#clip0_4_851)">
         <path
           opacity="0.6"
           d="M38.3533 44.4107C48.4078 44.4107 56.5587 36.2599 56.5587 26.2053C56.5587 16.1508 48.4078 8 38.3533 8C28.2988 8 20.1479 16.1508 20.1479 26.2053C20.1479 36.2599 28.2988 44.4107 38.3533 44.4107Z"
@@ -541,8 +541,8 @@ export const Icons = {
           y2="29.4081"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_4_851"
@@ -552,8 +552,8 @@ export const Icons = {
           y2="46.915"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_4_851"
@@ -563,8 +563,8 @@ export const Icons = {
           y2="47.3296"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_4_851"
@@ -574,8 +574,8 @@ export const Icons = {
           y2="30.6501"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <clipPath id="clip0_4_851">
           <rect width="64" height="64" fill="white" />
@@ -654,7 +654,7 @@ export const Icons = {
       fill="none"
       {...props}
     >
-      <g clip-path="url(#clip0_9_6196)">
+      <g clipPath="url(#clip0_9_6196)">
         <path
           d="M24 5C24 3.89543 24.8954 3 26 3H34C35.1046 3 36 3.89543 36 5V33H24V5Z"
           fill="#26A0F8"
@@ -899,7 +899,7 @@ export const Icons = {
         d="M11.0715 0.930021L11.0008 0.85931L10.9301 0.930022L10.1377 1.7224L10.067 1.79311L10.1377 1.86382L14.6135 6.33961L1 6.33961L0.9 6.33961L0.9 6.43961L0.9 7.5602L0.9 7.6602L1 7.6602L14.6135 7.6602L10.1377 12.136L10.067 12.2067L10.1377 12.2774L10.9301 13.0698L11.0008 13.1405L11.0715 13.0698L17.0707 7.07062L17.1414 6.9999L17.0707 6.92919L11.0715 0.930021Z"
         fill="#111111"
         stroke="#111111"
-        stroke-width="0.2"
+        strokeWidth="0.2"
       />
     </svg>
   ),
@@ -934,9 +934,9 @@ export const Icons = {
       <path
         d="M1 1H15"
         stroke="url(#paint0_linear_1142_2179)"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <defs>
         <linearGradient
@@ -947,8 +947,8 @@ export const Icons = {
           y2="2.55558"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
       </defs>
     </svg>
@@ -986,20 +986,20 @@ export const Icons = {
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <g clip-path="url(#clip0_1142_2166)">
+      <g clipPath="url(#clip0_1142_2166)">
         <path
           d="M12 5V19"
           stroke="url(#paint0_linear_1142_2166)"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M5 12H19"
           stroke="url(#paint1_linear_1142_2166)"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
       <defs>
@@ -1011,8 +1011,8 @@ export const Icons = {
           y2="9.36539"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_1142_2166"
@@ -1022,8 +1022,8 @@ export const Icons = {
           y2="13.5556"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <clipPath id="clip0_1142_2166">
           <rect width="24" height="24" fill="white" />
@@ -1043,23 +1043,23 @@ export const Icons = {
       <path
         d="M1 8H16.9996"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M10.1426 14.857L16.9996 8"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M10.1426 1.14307L16.9996 8.00005"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   ),
@@ -1108,9 +1108,9 @@ export const Icons = {
       <path
         d="M12.6 8.4668L7 14.0668"
         stroke="url(#paint0_linear_924_45579)"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M1.40039 8.4668L7.00039 14.0668L1.40039 8.4668Z"
@@ -1119,17 +1119,17 @@ export const Icons = {
       <path
         d="M1.40039 8.4668L7.00039 14.0668"
         stroke="url(#paint1_linear_924_45579)"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path d="M7 1V14.0667V1Z" fill="#F1F1F1" />
       <path
         d="M7 1V14.0667"
         stroke="url(#paint2_linear_924_45579)"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <defs>
         <linearGradient
@@ -1140,8 +1140,8 @@ export const Icons = {
           y2="11.7594"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_924_45579"
@@ -1151,8 +1151,8 @@ export const Icons = {
           y2="11.7594"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_924_45579"
@@ -1162,8 +1162,8 @@ export const Icons = {
           y2="5.07787"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
       </defs>
     </svg>
@@ -1181,25 +1181,25 @@ export const Icons = {
       <path
         d="M12.6 7.5332L7 1.9332"
         stroke="url(#paint0_linear_1035_26163)"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path d="M1.40039 7.5332L7.00039 1.9332L1.40039 7.5332Z" fill="white" />
       <path
         d="M1.40039 7.5332L7.00039 1.9332"
         stroke="url(#paint1_linear_1035_26163)"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path d="M7 15V1.93333V15Z" fill="white" />
       <path
         d="M7 15V1.93333"
         stroke="url(#paint2_linear_1035_26163)"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <defs>
         <linearGradient
@@ -1210,8 +1210,8 @@ export const Icons = {
           y2="4.24062"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_1035_26163"
@@ -1221,8 +1221,8 @@ export const Icons = {
           y2="4.24062"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_1035_26163"
@@ -1232,8 +1232,8 @@ export const Icons = {
           y2="10.9221"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
       </defs>
     </svg>
@@ -1250,16 +1250,16 @@ export const Icons = {
       <path
         d="M16 10L12 14"
         stroke="#26A0F8"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M8 10L12 14"
         stroke="#26A0F8"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   ),
@@ -1276,7 +1276,7 @@ export const Icons = {
         d="M8.07027 7.06988L8.14098 6.99917L8.07027 6.92846L2.07109 0.929289L2.00038 0.858578L1.92967 0.92929L1.1373 1.72167L1.06601 1.79296L1.13787 1.86366L6.35742 6.99917L1.13787 12.1347L1.06601 12.2054L1.1373 12.2767L1.92967 13.0691L2.00038 13.1398L2.07109 13.0691L8.07027 7.06988Z"
         fill="white"
         stroke="white"
-        stroke-width="0.2"
+        strokeWidth="0.2"
       />
     </svg>
   ),
@@ -1302,8 +1302,8 @@ export const Icons = {
           y2="18.7587"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
       </defs>
     </svg>
@@ -1880,7 +1880,7 @@ export const Icons = {
       fill="none"
       {...props}
     >
-      <g clip-path="url(#clip0_146_986)">
+      <g clipPath="url(#clip0_146_986)">
         <rect width="34" height="34" rx="4" fill="white" />
         <path
           d="M31.4901 0H2.50986C1.8442 0 1.20581 0.264431 0.735122 0.735122C0.264431 1.20581 0 1.8442 0 2.50986V31.4901C0 32.1558 0.264431 32.7942 0.735122 33.2649C1.20581 33.7356 1.8442 34 2.50986 34H31.4901C32.1558 34 32.7942 33.7356 33.2649 33.2649C33.7356 32.7942 34 32.1558 34 31.4901V2.50986C34 1.8442 33.7356 1.20581 33.2649 0.735122C32.7942 0.264431 32.1558 0 31.4901 0ZM10.1339 28.9637H5.02208V12.7264H10.1339V28.9637ZM7.57445 10.4763C6.9946 10.473 6.42871 10.298 5.94821 9.97346C5.4677 9.64889 5.09411 9.18925 4.87458 8.65256C4.65505 8.11587 4.59942 7.52617 4.71471 6.95789C4.83 6.38962 5.11105 5.86823 5.52239 5.45952C5.93372 5.05082 6.4569 4.77313 7.02591 4.66149C7.59492 4.54984 8.18424 4.60926 8.71951 4.83223C9.25479 5.0552 9.71201 5.43174 10.0335 5.91432C10.355 6.3969 10.5263 6.9639 10.5258 7.54375C10.5313 7.93196 10.4586 8.31731 10.3119 8.67681C10.1653 9.03631 9.94781 9.36261 9.67239 9.63626C9.39698 9.90991 9.06929 10.1253 8.70885 10.2696C8.34842 10.4139 7.96262 10.4842 7.57445 10.4763ZM28.9756 28.9779H23.8661V20.1072C23.8661 17.4911 22.754 16.6836 21.3185 16.6836C19.8026 16.6836 18.3151 17.8264 18.3151 20.1733V28.9779H13.2033V12.7382H18.1192V14.9883H18.1853C18.6788 13.9896 20.4071 12.2825 23.0444 12.2825C25.8967 12.2825 28.9779 13.9754 28.9779 18.9338L28.9756 28.9779Z"
@@ -1896,8 +1896,8 @@ export const Icons = {
           y2="19.9907"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <clipPath id="clip0_146_986">
           <rect width="34" height="34" rx="4" fill="white" />
@@ -1926,8 +1926,8 @@ export const Icons = {
           y2="18.7587"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
       </defs>
     </svg>
@@ -1954,8 +1954,8 @@ export const Icons = {
           y2="10.7828"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
       </defs>
     </svg>
@@ -1986,8 +1986,8 @@ export const Icons = {
           y2="42.3045"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
       </defs>
     </svg>
@@ -2015,8 +2015,8 @@ export const Icons = {
           y2="41.7405"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
       </defs>
     </svg>
@@ -2044,8 +2044,8 @@ export const Icons = {
           y2="18.7581"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
       </defs>
     </svg>
@@ -2060,20 +2060,20 @@ export const Icons = {
       fill="none"
       {...props}
     >
-      <g clip-path="url(#clip0_2127_3994)">
+      <g clipPath="url(#clip0_2127_3994)">
         <path
           d="M3.5 7C3.5 6.46957 3.71071 5.96086 4.08579 5.58579C4.46086 5.21071 4.96957 5 5.5 5H19.5C20.0304 5 20.5391 5.21071 20.9142 5.58579C21.2893 5.96086 21.5 6.46957 21.5 7V17C21.5 17.5304 21.2893 18.0391 20.9142 18.4142C20.5391 18.7893 20.0304 19 19.5 19H5.5C4.96957 19 4.46086 18.7893 4.08579 18.4142C3.71071 18.0391 3.5 17.5304 3.5 17V7Z"
           stroke="url(#paint0_linear_2127_3994)"
-          stroke-width="1.4"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M3.5 7L12.5 13L21.5 7"
           stroke="url(#paint1_linear_2127_3994)"
-          stroke-width="1.4"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
       <defs>
@@ -2085,8 +2085,8 @@ export const Icons = {
           y2="14.9674"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_2127_3994"
@@ -2096,8 +2096,8 @@ export const Icons = {
           y2="14.3114"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <clipPath id="clip0_2127_3994">
           <rect
@@ -2166,8 +2166,8 @@ export const Icons = {
           y2="42.3256"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_477_313"
@@ -2177,8 +2177,8 @@ export const Icons = {
           y2="42.3256"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_477_313"
@@ -2188,8 +2188,8 @@ export const Icons = {
           y2="33.2799"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
       </defs>
     </svg>
@@ -2207,9 +2207,9 @@ export const Icons = {
       <path
         d="M6.99855 1.00533C7.08655 1.00533 7.17389 1.00533 7.26055 1.00533C6.40411 1.80114 5.85361 2.8719 5.70474 4.03148C5.55588 5.19106 5.81806 6.36615 6.44571 7.35249C7.07336 8.33882 8.0268 9.07403 9.14029 9.43031C10.2538 9.7866 11.4569 9.74143 12.5406 9.30267C12.1237 10.3057 11.4424 11.1767 10.5693 11.8228C9.69627 12.469 8.66418 12.866 7.58316 12.9716C6.50213 13.0772 5.41273 12.8873 4.43114 12.4223C3.44956 11.9572 2.61263 11.2345 2.00961 10.3311C1.4066 9.42766 1.06012 8.37752 1.00714 7.29265C0.954165 6.20777 1.19667 5.12886 1.7088 4.17101C2.22093 3.21315 2.98346 2.41228 3.91506 1.85382C4.84666 1.29536 5.91239 1.00026 6.99855 1V1.00533Z"
         stroke="#111111"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   ),
@@ -2226,23 +2226,23 @@ export const Icons = {
       <path
         d="M1 8.00024H16.9998"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M10.1428 14.8573L16.9999 8.00024"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M10.1428 1.14282L16.9999 7.99987"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   ),
@@ -2270,7 +2270,7 @@ export const Icons = {
       fill="none"
       {...props}
     >
-      <g clip-path="url(#clip0_596_26981)">
+      <g clipPath="url(#clip0_596_26981)">
         <rect width="32" height="32" rx="16" fill="#F1F1F1" />
         <path
           fill-rule="evenodd"
@@ -2288,8 +2288,8 @@ export const Icons = {
           y2="16.8995"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <clipPath id="clip0_596_26981">
           <rect width="32" height="32" rx="16" fill="white" />
@@ -2353,8 +2353,8 @@ export const Icons = {
           y2="34.3362"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_477_314"
@@ -2364,8 +2364,8 @@ export const Icons = {
           y2="40.7319"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
       </defs>
     </svg>
@@ -2400,20 +2400,20 @@ export const Icons = {
       fill="none"
       {...props}
     >
-      <rect x="0.5" y="0.5" rx="15.5" stroke="white" stroke-opacity="0.12" />
+      <rect x="0.5" y="0.5" rx="15.5" stroke="white" strokeOpacity="0.12" />
       <path
         d="M12.4448 15.9999C12.4448 16.9429 12.8194 17.8473 13.4862 18.514C14.153 19.1808 15.0574 19.5554 16.0004 19.5554C16.9434 19.5554 17.8477 19.1808 18.5145 18.514C19.1813 17.8473 19.5559 16.9429 19.5559 15.9999C19.5559 15.0569 19.1813 14.1525 18.5145 13.4857C17.8477 12.8189 16.9434 12.4443 16.0004 12.4443C15.0574 12.4443 14.153 12.8189 13.4862 13.4857C12.8194 14.1525 12.4448 15.0569 12.4448 15.9999Z"
         stroke="white"
-        stroke-width="1.2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M8 16H8.88889M16 8V8.88889M23.1111 16H24M16 23.1111V24M10.3111 10.3111L10.9333 10.9333M21.6889 10.3111L21.0667 10.9333M21.0667 21.0667L21.6889 21.6889M10.9333 21.0667L10.3111 21.6889"
         stroke="white"
-        stroke-width="1.2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   ),
@@ -2429,9 +2429,9 @@ export const Icons = {
       <path
         d="M1 6L6 11L16 1"
         stroke="url(#paint0_linear_1035_25565)"
-        stroke-width="1.6"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <defs>
         <linearGradient
@@ -2442,8 +2442,8 @@ export const Icons = {
           y2="9.00918"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
       </defs>
     </svg>
@@ -2460,9 +2460,9 @@ export const Icons = {
       <path
         d="M21 21L15 15M17 9.99998C16.9996 11.3843 16.5889 12.7375 15.8196 13.8884C15.0504 15.0393 13.9572 15.9364 12.6782 16.4661C11.3993 16.9959 9.99199 17.1346 8.63422 16.8648C7.27645 16.5949 6.02916 15.9286 5.05 14.95C4.23608 14.136 3.63546 13.1338 3.30135 12.0322C2.96723 10.9307 2.90994 9.76372 3.13453 8.63472C3.35913 7.50572 3.85868 6.44954 4.58895 5.55971C5.31922 4.66989 6.25766 3.97389 7.32115 3.53336C8.38464 3.09284 9.54036 2.92138 10.6859 3.03418C11.8315 3.14698 12.9316 3.54055 13.8888 4.18004C14.8459 4.81953 15.6306 5.6852 16.1733 6.70036C16.716 7.71553 16.9999 8.84886 17 9.99998Z"
         stroke="#111111"
-        stroke-width="1.6"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   ),
@@ -2478,9 +2478,9 @@ export const Icons = {
       <path
         d="M1 6L6 11L16 1"
         stroke="url(#paint0_linear_1035_25565)"
-        stroke-width="1.6"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <defs>
         <linearGradient
@@ -2491,8 +2491,8 @@ export const Icons = {
           y2="9.00918"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
       </defs>
     </svg>
@@ -2507,7 +2507,7 @@ export const Icons = {
       style={{ fill: color }}
       {...props}
     >
-      <g clip-path="url(#clip0_1423_39562)">
+      <g clipPath="url(#clip0_1423_39562)">
         <path
           d="M17 3.33989C18.5083 4.21075 19.7629 5.46042 20.6398 6.96519C21.5167 8.46997 21.9854 10.1777 21.9994 11.9192C22.0135 13.6608 21.5725 15.3758 20.72 16.8946C19.8676 18.4133 18.6332 19.6831 17.1392 20.5782C15.6452 21.4733 13.9434 21.9627 12.2021 21.998C10.4608 22.0332 8.74055 21.6131 7.21155 20.7791C5.68256 19.9452 4.39787 18.7264 3.48467 17.2434C2.57146 15.7604 2.06141 14.0646 2.005 12.3239L2 11.9999L2.005 11.6759C2.061 9.94888 2.56355 8.26585 3.46364 6.79089C4.36373 5.31592 5.63065 4.09934 7.14089 3.25977C8.65113 2.42021 10.3531 1.98629 12.081 2.00033C13.8089 2.01437 15.5036 2.47589 17 3.33989ZM12 5.99989C11.7551 5.99992 11.5187 6.08985 11.3356 6.25261C11.1526 6.41537 11.0357 6.63964 11.007 6.88289L11 6.99989V11.9999L11.009 12.1309C11.0318 12.3044 11.0997 12.4689 11.206 12.6079L11.293 12.7079L14.293 15.7079L14.387 15.7899C14.5624 15.926 14.778 15.9998 15 15.9998C15.222 15.9998 15.4376 15.926 15.613 15.7899L15.707 15.7069L15.79 15.6129C15.9261 15.4375 15.9999 15.2219 15.9999 14.9999C15.9999 14.7779 15.9261 14.5623 15.79 14.3869L15.707 14.2929L13 11.5849V6.99989L12.993 6.88289C12.9643 6.63964 12.8474 6.41537 12.6644 6.25261C12.4813 6.08985 12.2449 5.99992 12 5.99989Z"
           fill="white"
@@ -2529,7 +2529,7 @@ export const Icons = {
       fill="none"
       {...props}
     >
-      <g clip-path="url(#clip0_1423_39567)">
+      <g clipPath="url(#clip0_1423_39567)">
         <path
           d="M18.3641 4.63606C20.0164 6.28819 20.9614 8.51817 20.9993 10.8545C21.0372 13.1908 20.1649 15.4502 18.5671 17.1551L18.3641 17.3651L14.1211 21.6071C13.5827 22.1451 12.8599 22.4584 12.0992 22.4834C11.3385 22.5085 10.5967 22.2435 10.0241 21.7421L9.88006 21.6071L5.63606 17.3641C3.94822 15.6762 3 13.387 3 11.0001C3 8.61309 3.94822 6.32389 5.63606 4.63606C7.32389 2.94822 9.61309 2 12.0001 2C14.387 2 16.6762 2.94822 18.3641 4.63606ZM12.0001 8.00006C11.6061 8.00006 11.216 8.07765 10.852 8.22842C10.488 8.37918 10.1573 8.60016 9.87873 8.87873C9.60016 9.15731 9.37918 9.48803 9.22842 9.85201C9.07765 10.216 9.00006 10.6061 9.00006 11.0001C9.00006 11.394 9.07765 11.7841 9.22842 12.1481C9.37918 12.5121 9.60016 12.8428 9.87873 13.1214C10.1573 13.4 10.488 13.6209 10.852 13.7717C11.216 13.9225 11.6061 14.0001 12.0001 14.0001C12.7957 14.0001 13.5588 13.684 14.1214 13.1214C14.684 12.5588 15.0001 11.7957 15.0001 11.0001C15.0001 10.2044 14.684 9.44134 14.1214 8.87873C13.5588 8.31613 12.7957 8.00006 12.0001 8.00006Z"
           fill="white"
@@ -2551,7 +2551,7 @@ export const Icons = {
       fill="none"
       {...props}
     >
-      <g clip-path="url(#clip0_1423_39572)">
+      <g clipPath="url(#clip0_1423_39572)">
         <path
           d="M10 3H4C3.73478 3 3.48043 3.10536 3.29289 3.29289C3.10536 3.48043 3 3.73478 3 4V10C3 10.2652 3.10536 10.5196 3.29289 10.7071C3.48043 10.8946 3.73478 11 4 11H10C10.2652 11 10.5196 10.8946 10.7071 10.7071C10.8946 10.5196 11 10.2652 11 10V4C11 3.73478 10.8946 3.48043 10.7071 3.29289C10.5196 3.10536 10.2652 3 10 3Z"
           fill="white"
@@ -2588,9 +2588,9 @@ export const Icons = {
       <path
         d="M13.0007 5.99996L6.50068 12.5C6.10286 12.8978 5.87936 13.4374 5.87936 14C5.87936 14.5626 6.10286 15.1021 6.50068 15.5C6.8985 15.8978 7.43807 16.1213 8.00068 16.1213C8.56329 16.1213 9.10286 15.8978 9.50068 15.5L16.0007 8.99996C16.7963 8.20432 17.2433 7.12518 17.2433 5.99996C17.2433 4.87475 16.7963 3.79561 16.0007 2.99996C15.205 2.20432 14.1259 1.75732 13.0007 1.75732C11.8755 1.75732 10.7963 2.20432 10.0007 2.99996L3.50068 9.49996C2.30721 10.6934 1.63672 12.3121 1.63672 14C1.63672 15.6878 2.30721 17.3065 3.50068 18.5C4.69415 19.6934 6.31285 20.3639 8.00068 20.3639C9.68851 20.3639 11.3072 19.6934 12.5007 18.5L19.0007 12"
         stroke="white"
-        stroke-width="1.6"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   ),
@@ -2602,20 +2602,20 @@ export const Icons = {
       viewBox="0 0 20 20"
       fill="none"
     >
-      <g clip-path="url(#clip0_1566_2665)">
+      <g clipPath="url(#clip0_1566_2665)">
         <path
           d="M14.1673 5.8335L5.83398 14.1668"
           stroke="url(#paint0_linear_1566_2665)"
-          stroke-width="1.4"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M6.66602 5.8335H14.166V13.3335"
           stroke="url(#paint1_linear_1566_2665)"
-          stroke-width="1.4"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
       <defs>
@@ -2627,8 +2627,8 @@ export const Icons = {
           y2="10.7332"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_1566_2665"
@@ -2638,8 +2638,8 @@ export const Icons = {
           y2="10.2432"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <clipPath id="clip0_1566_2665">
           <rect width="20" height="20" fill="white" />
@@ -2669,8 +2669,8 @@ export const Icons = {
           y2="10.7286"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
       </defs>
     </svg>
@@ -2697,8 +2697,8 @@ export const Icons = {
           y2="11.9957"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
       </defs>
     </svg>
@@ -2715,23 +2715,23 @@ export const Icons = {
       <path
         d="M12.4648 17.1996L18.0648 11.5996"
         stroke="url(#paint0_linear_3491_10291)"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M12.4688 6L18.0687 11.6"
         stroke="url(#paint1_linear_3491_10291)"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M5 11.5996L18.0667 11.5996"
         stroke="url(#paint2_linear_3491_10291)"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <defs>
         <linearGradient
@@ -2742,8 +2742,8 @@ export const Icons = {
           y2="14.603"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_3491_10291"
@@ -2753,8 +2753,8 @@ export const Icons = {
           y2="9.00336"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_3491_10291"
@@ -2764,8 +2764,8 @@ export const Icons = {
           y2="12.2821"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1E8AF2" />
-          <stop offset="1" stop-color="#05BED7" />
+          <stop stopColor="#1E8AF2" />
+          <stop offset="1" stopColor="#05BED7" />
         </linearGradient>
       </defs>
     </svg>
@@ -2796,48 +2796,48 @@ export const Icons = {
       fill="none"
       {...props}
     >
-      <g clip-path="url(#clip0_2817_4326)">
+      <g clipPath="url(#clip0_2817_4326)">
         <path
           d="M13.332 21.6667V21.6801"
           stroke="white"
-          stroke-width="2.75"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2.75"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M20 28.3333V28.3466"
           stroke="white"
-          stroke-width="2.75"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2.75"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M20 20V20.0134"
           stroke="white"
-          stroke-width="2.75"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2.75"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M26.668 23.3333V23.3466"
           stroke="white"
-          stroke-width="2.75"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2.75"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M18.332 13.3333V13.3466"
           stroke="white"
-          stroke-width="2.75"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2.75"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M21.9146 5.79341L26.3596 7.63341C25.4787 8.79244 25.0013 10.208 25.0005 11.6638C24.9997 13.1196 25.4755 14.5357 26.3551 15.6957C27.2348 16.8558 28.4699 17.6959 29.872 18.088C31.2741 18.48 32.7659 18.4023 34.1196 17.8667L34.208 18.0867C34.7154 19.3118 34.7154 20.6883 34.208 21.9134C33.3796 23.2234 32.8113 24.2534 32.5013 25.0001C32.1863 25.7601 31.8196 26.9901 31.4013 28.6934C30.8935 29.9183 29.9198 30.8913 28.6946 31.3984C26.948 31.8367 25.7163 32.2034 25.0013 32.5001C24.2096 32.8284 23.1813 33.3967 21.9146 34.2067C20.6895 34.7142 19.3131 34.7142 18.088 34.2067C16.7513 33.3684 15.723 32.8001 15.0013 32.5001C14.2163 32.1751 12.9846 31.8084 11.308 31.4001C10.0831 30.8922 9.11005 29.9186 8.60296 28.6934C8.1613 26.9401 7.79463 25.7101 7.5013 25.0001C7.1713 24.2017 6.6013 23.1734 5.79463 21.9134C5.28721 20.6883 5.28721 19.3118 5.79463 18.0867C6.59463 16.8467 7.1613 15.8184 7.5013 15.0001C7.7863 14.3117 8.15296 13.0801 8.6013 11.3067C9.10914 10.0818 10.0828 9.10883 11.308 8.60174C13.028 8.17508 14.258 7.80841 15.0013 7.50008C15.7646 7.18341 16.793 6.61508 18.088 5.79341C19.3131 5.28599 20.6895 5.28599 21.9146 5.79341Z"
           stroke="white"
-          stroke-width="2.75"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2.75"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
       <defs>
@@ -2857,13 +2857,13 @@ export const Icons = {
       {...props}
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_1842_3698)">
+      <g clipPath="url(#clip0_1842_3698)">
         <path
           d="M15.0007 6.99996L8.50068 13.5C8.10286 13.8978 7.87936 14.4374 7.87936 15C7.87936 15.5626 8.10286 16.1021 8.50068 16.5C8.8985 16.8978 9.43807 17.1213 10.0007 17.1213C10.5633 17.1213 11.1029 16.8978 11.5007 16.5L18.0007 9.99996C18.7963 9.20432 19.2433 8.12518 19.2433 6.99996C19.2433 5.87475 18.7963 4.79561 18.0007 3.99996C17.205 3.20432 16.1259 2.75732 15.0007 2.75732C13.8755 2.75732 12.7963 3.20432 12.0007 3.99996L5.50068 10.5C4.30721 11.6934 3.63672 13.3121 3.63672 15C3.63672 16.6878 4.30721 18.3065 5.50068 19.5C6.69415 20.6934 8.31285 21.3639 10.0007 21.3639C11.6885 21.3639 13.3072 20.6934 14.5007 19.5L21.0007 13"
           stroke="white"
-          stroke-width="1.6"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
       <defs>
@@ -2913,7 +2913,7 @@ export const Icons = {
       {...props}
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_5517_4221)">
+      <g clipPath="url(#clip0_5517_4221)">
         <path
           d="M5.99992 2.66675H4.66659C4.31296 2.66675 3.97382 2.80722 3.72378 3.05727C3.47373 3.30732 3.33325 3.64646 3.33325 4.00008V12.0001C3.33325 12.3537 3.47373 12.6928 3.72378 12.9429C3.97382 13.1929 4.31296 13.3334 4.66659 13.3334H5.99992C6.35354 13.3334 6.69268 13.1929 6.94273 12.9429C7.19278 12.6928 7.33325 12.3537 7.33325 12.0001V4.00008C7.33325 3.64646 7.19278 3.30732 6.94273 3.05727C6.69268 2.80722 6.35354 2.66675 5.99992 2.66675Z"
           fill="white"
@@ -2942,30 +2942,30 @@ export const Icons = {
       <path
         d="M2.33266 14C2.33266 20.4433 7.556 25.6666 13.9993 25.6666C17.4839 25.6666 25.666 25.6666 25.666 25.6666C25.666 25.6666 25.666 16.9588 25.666 14C25.666 7.55665 20.4427 2.33331 13.9993 2.33331C7.556 2.33331 2.33266 7.55665 2.33266 14Z"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M19.25 10.5H8.75"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M19.25 15.1667H8.75"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M16.916 19.8333H11.0827"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   ),
@@ -2978,7 +2978,7 @@ export const Icons = {
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <g clip-path="url(#clip0_115_572)">
+      <g clipPath="url(#clip0_115_572)">
         <path
           d="M18 6L6 18"
           stroke="white"

@@ -110,7 +110,7 @@ const Projects = ({ project, brands }) => {
     },
   };
   return (
-    <section
+    <div
       className={cn(
         styles.projectsStyle,
         theme ? styles.projectsStyleDark : "",
@@ -220,7 +220,7 @@ const Projects = ({ project, brands }) => {
           </div>
         )}
       </div>
-    </section>
+    </div>
   );
 };
 

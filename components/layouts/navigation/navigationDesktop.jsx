@@ -14,7 +14,6 @@ import AnimatedLogo from "@/components/common/animatedLogo";
 import { generateSlug } from "@/lib/utils";
 
 const NavigationDesktop = ({ props, featureArticle }) => {
-  console.log(props,"hhhhh");
   const pathname = usePathname();
   const { theme, setTheme } = useContext(MyContext);
   const [isScrolled, setIsScrolled] = useState(false);

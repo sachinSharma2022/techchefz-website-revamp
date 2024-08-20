@@ -23,7 +23,7 @@ const OurNumbers = ({ carrer, experience }) => {
   const isTabletScreen = useMediaQuery({ query: "(min-width: 691px)" });
 
   return (
-    <section
+    <div
       className={`${styles.numberStyle} ${theme ? styles.numberStyleDark : ""}`}
     >
       <div className={cn("primary-container")}>
@@ -110,7 +110,7 @@ const OurNumbers = ({ carrer, experience }) => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -85,7 +85,7 @@ const LetsWork = ({ contact, className }) => {
   const dialogOpen = () => setIsOpen(true);
   const dialogClose = () => setIsOpen(false);
   return (
-    <section
+    <div
       className={cn(
         styles.lestWorkStyle,
         theme ? styles.lestWorkStyleDark : "",
@@ -326,7 +326,7 @@ const LetsWork = ({ contact, className }) => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
