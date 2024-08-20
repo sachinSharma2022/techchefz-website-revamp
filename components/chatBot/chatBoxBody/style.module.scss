@@ -73,6 +73,12 @@ $scrollbar-thumb-hover-color: #555;
     bottom: 0px;
     right: 0px;
     height: 100dvh;
+    z-index: 99999;
+  }
+
+  @include samsung-fold {
+    z-index: 99999;
+    bottom: 10px;
   }
 
   * {
@@ -95,6 +101,10 @@ $scrollbar-thumb-hover-color: #555;
     border-bottom-style: solid;
     border-color: rgba(128, 128, 128, 0.335);
     // border-image: linear-gradient(to right, #fd1d1d, #833ab4) 1;
+
+    @include mobile {
+      padding: 1rem 1.5rem;
+    }
 
     .chatbotTitle {
       margin-bottom: 0;
@@ -301,7 +311,7 @@ $scrollbar-thumb-hover-color: #555;
     }
 
     button {
-      border-radius: 10%;
+      border-radius: 10px;
       position: absolute;
       right: 12px;
       width: 34px;
