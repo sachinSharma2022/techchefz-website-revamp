@@ -4,17 +4,17 @@ import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
-import { cn } from "@/lib/utils";
+import { base_Uri } from "@/lib/constants";
+import { cn, generateSlug } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
-import { base_Uri } from "@/lib/constants";
-import { generateSlug } from "@/lib/utils";
 
-import styles from "./style.module.scss";
 import AnimatedLogo from "@/components/common/animatedLogo";
+import styles from "./style.module.scss";
 
 const NavigationMobile = ({ props, featureArticle }) => {
+  console.log("mmmmmmmm",props)
   const pathname = usePathname();
   const [mobileMenuShow, setMobileMenuShow] = useState(false);
   const [isTechMenu, setTechMenu] = useState(null);
@@ -117,8 +117,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                 height={300}
                 alt = {feartureArray[0]?.attributes?.InsightOverview[0]?.Image?.data
                   ?.attributes?.alternativeText}
-                alt = {feartureArray[0]?.attributes?.InsightOverview[0]?.Image?.data
-                  ?.attributes?.alternativeText}
+                
               />
             </div>
             <div className={styles.infoBox}>
@@ -293,33 +292,48 @@ const NavigationMobile = ({ props, featureArticle }) => {
                       <div className="row">
                         <div className="col-sm-12">
                           <Link
-                            href={props[4]?.DropDown[0]?.Links}
+                            href={props[1]?.DropDown[0]?.Links}
                             onClick={onlycloseSolutionMenu}
                             className={cn(styles.hrefInnerFlex)}
                           >
                             <div className={styles.head}>
                               <h4 className={styles.linkTitle}>
-                               Overview
+                              {props[1]?.DropDown[0]?.Title}
                               </h4>
                               <Icons.ArrowForward />
                             </div>
                             <p className={styles.excepPara}>
-                              {props[4]?.DropDown[0]?.Description}
+                              {props[1]?.DropDown[0]?.Description}
                             </p>
                           </Link>
                           <Link
-                            href={props[4]?.DropDown[1]?.Links}
+                            href={props[1]?.DropDown[1]?.Links}
                             onClick={onlycloseSolutionMenu}
                             className={cn(styles.hrefInnerFlex)}
                           >
                             <div className={styles.head}>
                               <h4 className={styles.linkTitle}>
-                               Design Solution
+                              {props[1]?.DropDown[1]?.Title}
                               </h4>
                               <Icons.ArrowForward />
                             </div>
                             <p className={styles.excepPara}>
-                              {props[4]?.DropDown[1]?.Description}
+                              {props[1]?.DropDown[1]?.Description}
+                            </p>
+                          </Link>
+                          <Link
+                            href={props[1]?.DropDown[2]?.Links}
+                            onClick={onlycloseSolutionMenu}
+                            className={cn(styles.hrefInnerFlex)}
+                          >
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>
+                              {props[1]?.DropDown[2]?.Title}
+                              </h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              {props[1]?.DropDown[2]?.Description}
                             </p>
                           </Link>
                         </div>
