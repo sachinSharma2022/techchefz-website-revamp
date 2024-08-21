@@ -112,7 +112,9 @@ const RelatedCase = ({
             className="mySwiper"
           >
             {props
-              .filter((data) => params?.caseStudy != data.id)
+              .filter((data) => params?.caseStudy !== generateSlug(
+                data?.attributes?.Banner?.PortfolioTitle
+              ))
               .map((data, index) => (
                 <SwiperSlide key={index}>
                   <CaptionCard

@@ -6,6 +6,7 @@ export async function POST(request) {
     const alias = {
       "landing-page": "home",
       about: "about",
+      "technology-solution": "design-services",
       solution: "solutions",
       technology: "technology",
       "cms-technology": "technology/cms",
@@ -22,8 +23,8 @@ export async function POST(request) {
       "contact-us": "contact-us",
       "privacy-policy": "privacy-policy",
       sitemap: "sitemap",
-      accelerator: "",
-      "accelerators-detail": "",
+      accelerator: "accelerators",
+      "accelerators-detail": "accelerators",
       "case-study": "portfolio",
       "insight-inside": "insights",
       "career-detail": "careers",
