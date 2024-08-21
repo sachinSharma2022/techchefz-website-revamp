@@ -74,6 +74,7 @@ $scrollbar-thumb-hover-color: #555;
     right: 0px;
     height: 100dvh;
     z-index: 99999;
+    border-radius: 0px;
   }
 
   @include samsung-fold {
@@ -257,6 +258,14 @@ $scrollbar-thumb-hover-color: #555;
 
     &::-webkit-scrollbar {
       width: 5px;
+    }
+
+    @include mobile {
+      min-height: 80dvh !important;
+    }
+
+    @include iphone5 {
+      min-height: 65dvh !important;
     }
 
     .systemMessage {
