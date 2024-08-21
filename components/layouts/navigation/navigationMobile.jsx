@@ -73,6 +73,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
     setMobileMenuShow(!mobileMenuShow);
     setTechMenu(false);
     setMoreMenu(false);
+    setSolutionMenu(false)
   };
   const onlycloseMenu = () => {
     setMobileMenuShow(!mobileMenuShow);
