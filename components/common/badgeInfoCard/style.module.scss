@@ -52,7 +52,7 @@
     line-height: 1.5rem;
     opacity: opacity(dark);
     margin-bottom: 1.25rem;
-    @include truncate(3);
+    @include truncate(5);
   }
 
   .cardsTags {
