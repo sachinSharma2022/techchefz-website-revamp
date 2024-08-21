@@ -4,14 +4,49 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    domains: [
-      "plus.unsplash.com",
-      "images.unsplash.com",
-      "flagcdn.com",
-      "127.0.0.1",
-      "4.186.56.66",
-      "cms-strapi.techchefz.in",
-      "cms-strapi.techchefz.digital",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "plus.unsplash.com",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "flagcdn.com",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "http",
+        hostname: "127.0.0.1",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "http",
+        hostname: "4.186.56.66",
+        port: "4561",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "cms-strapi.techchefz.in",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "cms-strapi.techchefz.digital",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
   eslint: {
@@ -70,5 +105,4 @@ const nextConfig = {
     ];
   },
 };
-
 module.exports = nextConfig;
