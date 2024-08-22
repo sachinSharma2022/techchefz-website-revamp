@@ -1,17 +1,16 @@
 "use client";
 
+import AnimatedLogo from "@/components/common/animatedLogo";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
-import { cn } from "@/lib/utils";
+import { base_Uri } from "@/lib/constants";
+import { cn, generateSlug } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
-import { base_Uri } from "@/lib/constants";
 import styles from "./style.module.scss";
-import AnimatedLogo from "@/components/common/animatedLogo";
-import { generateSlug } from "@/lib/utils";
 
 const NavigationDesktop = ({ props, featureArticle }) => {
   const pathname = usePathname();
@@ -133,7 +132,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
               />
             </div>
             <div className={styles.infoBox}>
-              Explore Solutions
+             {  feartureArray[0]?.attributes?.InsightOverview[0].Title}
               <Icons.ArrowRight size={16} />
             </div>
           </Link>
@@ -144,7 +143,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
           >
             <div className={styles.imageTech}>
               <div className={styles.infoBox}>
-                <p className={styles.description}>UI/UX Services</p>
+                <p className={styles.description}> {feartureArray[1]?.attributes?.InsightOverview[0].Title}</p>
                 <Icons.ArrowRight size={16} />
               </div>
             </div>

@@ -1,15 +1,16 @@
 import NotFound from "@/app/not-found";
+import OurValues from "@/components/about/ourValues";
+import CoeService from "@/components/coe/coeService";
 import Faq from "@/components/common/faq";
 import LetsWork from "@/components/home/letsWork";
-import SolutionHeroBanner from "@/components/solutions/solutionHeroBanner";
-import OurValues from "@/components/about/ourValues";
-import SolutionTheProcess from "@/components/solutions/solutionTheProcess";
-import CoeService from "@/components/coe/coeService";
-import TechnologyValues from "@/components/technology/technologyValues";
-import CmsType from "@/components/technology/cms/cmsType";
 import RelatedCase from "@/components/relatedCase";
+import SolutionTheProcess from "@/components/solutions/solutionTheProcess";
+import CmsBanner from "@/components/technology/cms/cmsBanner";
+import CmsPlayer from "@/components/technology/cms/cmsPlayer";
+import CmsType from "@/components/technology/cms/cmsType";
+import TechnologyValues from "@/components/technology/technologyValues";
 
-import {
+  import {
   api_Case_study_Page,
   api_tech_solution_Page,
 } from "@/lib/constants";
@@ -46,8 +47,9 @@ const Tech_Solution = async () => {
     <>
       {data ? (
         <div>
-           <SolutionHeroBanner props={data.Banner} />
-           <OurValues props={data.Design} />
+          <CmsBanner props={data.DesignBanner} />
+          <CmsPlayer props={data.BannerImage} />
+          <OurValues props={data.Design} />
            <SolutionTheProcess props={data.Process} />
            <CoeService props={data.Service} />
            <TechnologyValues

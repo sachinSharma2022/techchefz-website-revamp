@@ -1,14 +1,12 @@
 "use client";
 
-import React, { useContext } from "react";
-import { Button } from "@/components/ui/button";
 import { MyContext } from "@/context/theme";
+import { useContext } from "react";
 
 import PostCard from "@/components/ui/postCard";
-import styles from "./style.module.scss";
-import { cn } from "@/lib/utils";
 import { base_Uri } from "@/lib/constants";
-import { generateSlug } from "@/lib/utils";
+import { cn, generateSlug } from "@/lib/utils";
+import styles from "./style.module.scss";
 
 const InsightFeatures = ({ props, featureInsight, feature }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -84,7 +82,7 @@ const InsightFeatures = ({ props, featureInsight, feature }) => {
                 />
               ))}
           </div>
-          {feature.length > 9 && (
+          {/* {feature.length > 9 && (
             <div className={styles.insightButton}>
               <Button
                 variant={theme ? "lightBlueOutline" : "outline"}
@@ -93,7 +91,7 @@ const InsightFeatures = ({ props, featureInsight, feature }) => {
                 {feature[1].Button}
               </Button>
             </div>
-          )}
+          )} */}
         </div>
       </div>
     </section>
