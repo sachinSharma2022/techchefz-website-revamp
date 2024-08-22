@@ -28,7 +28,7 @@ const ForwardedRefComponent = React.forwardRef((props, ref) => {
   return <ReCAPTCHA {...props} forwardedRef={ref} />;
 });
 
-const LetsWork = ({ contact }) => {
+const LetsWork = ({ contact, className }) => {
   const { theme, setTheme } = useContext(MyContext);
   const [inprogress, setinprogress] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -85,10 +85,11 @@ const LetsWork = ({ contact }) => {
   const dialogOpen = () => setIsOpen(true);
   const dialogClose = () => setIsOpen(false);
   return (
-    <section
+    <div
       className={cn(
         styles.lestWorkStyle,
-        theme ? styles.lestWorkStyleDark : ""
+        theme ? styles.lestWorkStyleDark : "",
+        className
       )}
     >
       <div className={cn("primary-container")}>
@@ -325,7 +326,7 @@ const LetsWork = ({ contact }) => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

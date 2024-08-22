@@ -1,13 +1,9 @@
 "use client";
-import React from "react";
-import { MyContext } from "@/context/theme";
-import { useContext } from "react";
-import { Button } from "@/components/ui/button";
 import { ImageCustom } from "@/components/ui/imageCustom";
-import { Icons } from "@/components/icons";
-import styles from "./style.module.scss";
+import { MyContext } from "@/context/theme";
 import { base_Uri } from "@/lib/constants";
-import Link from "next/link";
+import { useContext } from "react";
+import styles from "./style.module.scss";
 
 const AcceleratorIndustry = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
@@ -33,18 +29,14 @@ const AcceleratorIndustry = ({ props }) => {
           <div>
             <div className={styles.industryRight}>
               <h3
-                className={styles.industryHeading}
-                dangerouslySetInnerHTML={{
-                  __html: `${props?.DescriptionInner[0].Title}`,
-                }}
-              ></h3>
+                className={styles.industryHeading}          
+              
+              > {props?.DescriptionInner[0].Title}</h3>
               <p
                 className={styles.industryText}
-                dangerouslySetInnerHTML={{
-                  __html: `${props?.DescriptionInner[0].Description}`,
-                }}
-              ></p>
-              <Link href={props?.DescriptionInner[0].BtnLink}>
+               
+              >{props?.DescriptionInner[0].Description}</p>
+              {/* <Link href={props?.DescriptionInner[0].BtnLink}>
                 <Button
                   variant={theme ? "lightBlueOutline" : "outline"}
                   className="info"
@@ -53,7 +45,7 @@ const AcceleratorIndustry = ({ props }) => {
                   {props?.DescriptionInner[0].Btn}{" "}
                   <Icons.ArrowRight size={18} />
                 </Button>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

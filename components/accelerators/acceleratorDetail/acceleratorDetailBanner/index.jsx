@@ -25,7 +25,7 @@ const DetailBanner = ({ props }) => {
             <p
               dangerouslySetInnerHTML={{ __html: `${props?.Description}` }}
             ></p>
-            <Link href={props?.BtnLink}>
+            <a target="_blank" href={props?.BtnLink} rel="noopener noreferrer">
               <Button
                 variant={theme ? "blueBtnDark" : "blueBtn"}
                 className={styles.headerBtn}
@@ -33,7 +33,7 @@ const DetailBanner = ({ props }) => {
               >
                 {props?.Btn} <Icons.ArrowRight size={20} className="ms-2" />
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
       </div>

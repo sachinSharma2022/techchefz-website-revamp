@@ -2,6 +2,7 @@
 
 .industry {
   padding: spacing(section-primary-padding);
+  padding-bottom: 3rem;
 
   @include mobile-tablet-p {
     padding: 2.75rem 1.5rem;

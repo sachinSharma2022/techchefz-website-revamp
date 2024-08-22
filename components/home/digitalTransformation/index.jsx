@@ -57,7 +57,7 @@ const DigitalTransformation = ({ digital }) => {
     ],
   };
   return (
-    <section
+    <div
       className={`${styles.digitalStyle} ${
         theme ? styles.digitalStyleDark : ""
       }`}
@@ -127,7 +127,7 @@ const DigitalTransformation = ({ digital }) => {
           </Slider>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

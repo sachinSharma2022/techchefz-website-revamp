@@ -1,6 +1,11 @@
 @import "~/styles/partials/config";
 
 .animatedLogo {
+  cursor: pointer;
+
+  button {
+    cursor: pointer;
+  }
 
   .logo {
     position: relative;

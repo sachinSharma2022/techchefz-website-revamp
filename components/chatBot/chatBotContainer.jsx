@@ -18,19 +18,15 @@ const ChatBotContainer = () => {
           setclearConversation={setclearConversation}
         />
       )}
-      {hidden || clearConversation ? (
-        <div
+      <div
           className={styles.chatOpenCont}
           onClick={() => {
-            sethidden(false);
+            sethidden(!hidden);
             setclearConversation(false);
           }}
         >
-         <Icons.Chats/>
+        {hidden || clearConversation ?  <Icons.Chats/> : <Icons.ArrowDown/>}
         </div>
-      ) : (
-        <></>
-      )}
     </div>
   );
 };

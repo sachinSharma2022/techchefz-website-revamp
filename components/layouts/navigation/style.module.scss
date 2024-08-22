@@ -691,6 +691,7 @@
         min-height: 75vh;
         max-height: 75vh;
         overflow-y: auto;
+        padding-top: 1rem;
 
         @include desktop-14 {
           min-height: 60vh;

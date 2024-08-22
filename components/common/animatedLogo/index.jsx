@@ -21,9 +21,8 @@ const AnimatedLogo = (props) => {
         theme ? styles.animatedLogoDark : "",
         props.className
       )}
-      onClick={handleClick}
     >
-      <div className={styles.logo}>
+      <button className={styles.logo}  onClick={handleClick}>
         <ImageCustom
           src={cn(
             theme
@@ -35,7 +34,7 @@ const AnimatedLogo = (props) => {
           alt="header-logo"
         />
         <h4 className={styles.header}>digital</h4>
-      </div>
+      </button>
     </Link>
   );
 };
