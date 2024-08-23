@@ -7,7 +7,7 @@
     padding: spacing(tablet-padding);
   }
   @include mobile {
-    padding: spacing(mobile-padding);
+    padding: 3rem 1.25rem;
   }
 
   .sitemap {
@@ -24,12 +24,14 @@
       font-weight: 500;
       margin: -10px 0 0;
       color: color(info-blue);
+
       @include min-desktop-medium {
         @include textGradient;
       }
 
       @include mobile-tablet-p {
         margin-bottom: 1rem;
+        font-size: 2.75rem;
       }
     }
 
@@ -42,7 +44,7 @@
 
       @include mobile-tablet-p {
         width: 90%;
-        line-height: 3.125rem;
+        // line-height: 3.125rem;
       }
     }
   }
