@@ -1,8 +1,8 @@
 "use client";
 import { MyContext } from "@/context/theme";
-import { useContext } from "react";
-import Link from "next/link";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { useContext } from "react";
 import styles from "./style.module.scss";
 
 function SiteMapLinks({ props }) {
@@ -33,8 +33,18 @@ function SiteMapLinks({ props }) {
           ))}
         </div>
         <div className={styles.sitemapContent}>
+        <Link href={props?.Links3}>
           <h6 dangerouslySetInnerHTML={{ __html: `${props?.Title3}` }}></h6>
+          </Link>
           {props?.tags3?.map((data, index) => (
+            <Link key={index} href={data?.Links}>
+              <p dangerouslySetInnerHTML={{ __html: `${data?.Title}` }}></p>
+            </Link>
+          ))}
+        </div>
+        <div className={styles.sitemapContent}>
+          <h6 dangerouslySetInnerHTML={{ __html: `${props?.Title4}` }}></h6>
+          {props?.tags4?.map((data, index) => (
             <Link key={index} href={data?.Links}>
               <p dangerouslySetInnerHTML={{ __html: `${data?.Title}` }}></p>
             </Link>

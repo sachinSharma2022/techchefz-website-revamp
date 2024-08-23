@@ -156,6 +156,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
         value: servicemessage,
         service: serviceName,
         department: departmentName,
+        selectOption:true,
       },
     });
   };
@@ -344,15 +345,19 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
 
   const sendMessage = async (info) => {
     try {
+      console.log("select");
       if (info?.current?.value !== "" && (!loadershow || !info?.current?.loadershow)) {
         if (
           (department !== "" || info?.current?.department !== undefined) &&
           (service !== "" || info?.current?.service !== undefined)
         ) {
-          const userQuery = info.current.value;
+          const userQuery = info?.current?.value;
           if (info?.current?.value !== "file uploaded") {
-            info.current.value = "";
-            userinfo.current.value = "";
+            if(!info?.current?.selectOption){
+              info.current.value = "";
+              userinfo.current.value = "";
+            }
+            
             settextValue("");
             const messageInfo = {
               username: "user",
@@ -978,7 +983,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
       <div
         className={styles.chatbotTxtbody}
         ref={chatbody}
-        style={{ minHeight: "390px" }}
+        style={{ maxHeight: "486px" }}
       >
         {chatbotMessages?.map((items, index) => (
           <div className="w-[100%]" key={index}>
@@ -1005,8 +1010,10 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
         <div ref={messagesEndRef} />
       </div>
 
-      <div className={styles.chatbotSendtxt} ref={chatfooter}>
-        <textarea
+      <div className={styles.chatbotSendtxt} ref={chatfooter} >
+      {department !=="" && service!="" ?
+        <>
+       <textarea
           placeholder="Ask me anything about Techchefz"
           ref={userinfo}
           value={textvalue}
@@ -1032,6 +1039,9 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
         >
           <Icons.SendIcon />
         </button>
+      </>
+       :<></> 
+    }
       </div>
     </div>
   );
