@@ -456,7 +456,7 @@
     left: 50%;
     top: calc(100% + 0rem);
     transform: translate(-50%);
-    background-color: color(dark-gray);
+    background-color: color(text-primary);
     width: auto;
     min-width: 70rem;
     z-index: 99;
@@ -578,6 +578,7 @@
         min-width: 378px;
         max-width: 30%;
         background-color: color(dark-gray);
+        // background-color: red;
         padding: 3rem;
 
         @include mobile-tablet-p {
@@ -691,7 +692,6 @@
         min-height: 75vh;
         max-height: 75vh;
         overflow-y: auto;
-        padding-top: 1rem;
 
         @include desktop-14 {
           min-height: 60vh;
@@ -892,6 +892,11 @@
     @include desktop {
       min-width: 50rem;
     }
+  }
+
+  .solutionSection .overviewTech {
+    padding-top: 2rem !important;
+
   }
 
   // Back Button

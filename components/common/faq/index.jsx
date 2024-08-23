@@ -92,7 +92,7 @@ const Faq = ({ props }) => {
                           }}
                           className={styles.accordionBody}
                         >
-                          {data.FullDescription}
+                         <p> {data.FullDescription}</p>
                         </Disclosure.Panel>
                       </div>
                     </div>

@@ -2,15 +2,12 @@
 
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
-import { useContext } from "react";
-import { cn } from "@/lib/utils";
-import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
-
-
+import { cn } from "@/lib/utils";
+import { useContext } from "react";
+import styles from "./style.module.scss";
 
 const AcceleratorImpact = ({ props }) => {
-  
   const { theme } = useContext(MyContext);
   return (
     <section className={`${styles.impact} ${theme ? styles.impactDark : ""}`}>
@@ -27,34 +24,36 @@ const AcceleratorImpact = ({ props }) => {
         </div>
 
         <div className={styles.impactTopSection}>
-        {props?.imagelinks[0]?.Image?.data?.attributes?.url !== undefined &&
-        props?.imagelinks[0]?.Image?.data?.attributes?.url !== "" && (
-          <div className={styles.impactImage}>
-            <ImageCustom
-              src={
-                props?.imagelinks[0]?.Image?.data?.attributes?.url
-                  ? `${base_Uri}${props?.imagelinks[0]?.Image?.data?.attributes?.url}`
-                  : `${base_Uri}/`
-              }
-              width={1000}
-              height={1000}
-              alt = {props?.imagelinks[0]?.Image?.data?.attributes?.alternativeText}
-            />
-          </div>
-        )}
+          {props?.imagelinks[0]?.Image?.data?.attributes?.url !== undefined &&
+            props?.imagelinks[0]?.Image?.data?.attributes?.url !== "" && (
+              <div className={styles.impactImage}>
+                <ImageCustom
+                  src={
+                    props?.imagelinks[0]?.Image?.data?.attributes?.url
+                      ? `${base_Uri}${props?.imagelinks[0]?.Image?.data?.attributes?.url}`
+                      : `${base_Uri}/`
+                  }
+                  width={1000}
+                  height={1000}
+                  alt={
+                    props?.imagelinks[0]?.Image?.data?.attributes
+                      ?.alternativeText
+                  }
+                />
+              </div>
+            )}
           <div className={styles.topSectionRight}>
             <h4
               dangerouslySetInnerHTML={{
                 __html: `${props?.imagelinks[0].Title}`,
               }}
             ></h4>
-            <ul>
-              <li
-                dangerouslySetInnerHTML={{
+            <p  dangerouslySetInnerHTML={{
                   __html: `${props?.imagelinks[0].Description}`,
-                }}
-              ></li>
-            </ul>
+                }}>
+              
+               
+              </p>
             <a
               href={
                 props?.imagelinks[0]?.Document?.data?.attributes?.url
@@ -104,39 +103,45 @@ const AcceleratorImpact = ({ props }) => {
             </a>
           </div>
           {props?.imagelinks[1]?.Image?.data?.attributes?.url !== undefined &&
-        props?.imagelinks[1]?.Image?.data?.attributes?.url !== "" && (
-          <div className={styles.impactImage}>
-            <ImageCustom
-              src={
-                props?.imagelinks[1]?.Image?.data?.attributes?.url
-                  ? `${base_Uri}${props?.imagelinks[1]?.Image?.data?.attributes?.url}`
-                  : `${base_Uri}/`
-              }
-              width={1000}
-              height={1000}
-              alt = {props?.imagelinks[1]?.Image?.data?.attributes?.alternativeText}
-            />
-          </div>
-        )}
+            props?.imagelinks[1]?.Image?.data?.attributes?.url !== "" && (
+              <div className={styles.impactImage}>
+                <ImageCustom
+                  src={
+                    props?.imagelinks[1]?.Image?.data?.attributes?.url
+                      ? `${base_Uri}${props?.imagelinks[1]?.Image?.data?.attributes?.url}`
+                      : `${base_Uri}/`
+                  }
+                  width={1000}
+                  height={1000}
+                  alt={
+                    props?.imagelinks[1]?.Image?.data?.attributes
+                      ?.alternativeText
+                  }
+                />
+              </div>
+            )}
         </div>
 
         <div className={styles.impactTopSection}>
-        {props?.imagelinks[2]?.Image?.data?.attributes?.url !== undefined &&
-        props?.imagelinks[2]?.Image?.data?.attributes?.url !== "" && (
-          <div className={styles.impactImage}>
-          <ImageCustom
-            src={
-              props?.imagelinks[2]?.Image?.data?.attributes?.url
-                ? `${base_Uri}${props?.imagelinks[2]?.Image?.data?.attributes?.url}`
-                : `${base_Uri}/`
-            }
-            width={1000}
-            height={1000}
-            className={styles.impactImage}
-            alt = {props?.imagelinks[2]?.Image?.data?.attributes?.alternativeText}
-          />
-          </div>
-        )}
+          {props?.imagelinks[2]?.Image?.data?.attributes?.url !== undefined &&
+            props?.imagelinks[2]?.Image?.data?.attributes?.url !== "" && (
+              <div className={styles.impactImage}>
+                <ImageCustom
+                  src={
+                    props?.imagelinks[2]?.Image?.data?.attributes?.url
+                      ? `${base_Uri}${props?.imagelinks[2]?.Image?.data?.attributes?.url}`
+                      : `${base_Uri}/`
+                  }
+                  width={1000}
+                  height={1000}
+                  className={styles.impactImage}
+                  alt={
+                    props?.imagelinks[2]?.Image?.data?.attributes
+                      ?.alternativeText
+                  }
+                />
+              </div>
+            )}
           <div className={styles.topSectionRight}>
             <h4
               dangerouslySetInnerHTML={{

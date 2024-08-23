@@ -10,10 +10,7 @@ import CmsPlayer from "@/components/technology/cms/cmsPlayer";
 import CmsType from "@/components/technology/cms/cmsType";
 import TechnologyValues from "@/components/technology/technologyValues";
 
-  import {
-  api_Case_study_Page,
-  api_tech_solution_Page,
-} from "@/lib/constants";
+import { api_Case_study_Page, api_tech_solution_Page } from "@/lib/constants";
 import { getData, getDataDynamic } from "@/lib/fetchData";
 
 export async function generateMetadata() {
@@ -28,7 +25,8 @@ export async function generateMetadata() {
     metaViewport: data?.SeoData?.metaViewport,
     canonicalURL: data?.SeoData?.canonicalURL,
     metaSocialTitle: data?.SeoData?.metaSocial?.socialNetwork?.title,
-    metaSocialDescription: data?.SeoData?.metaSocial?.socialNetwork?.description,
+    metaSocialDescription:
+      data?.SeoData?.metaSocial?.socialNetwork?.description,
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_STRAPIE_BASE_URL}${data?.SeoData?.metaSocial?.socialNetwork?.image?.data?.attributes?.url}`, // Must be an absolute URL
@@ -41,7 +39,7 @@ export async function generateMetadata() {
 
 const Tech_Solution = async () => {
   const data = await getData(api_tech_solution_Page);
- 
+
   const data_related_cases = await getDataDynamic(api_Case_study_Page);
   return (
     <>
@@ -50,9 +48,9 @@ const Tech_Solution = async () => {
           <CmsBanner props={data.DesignBanner} />
           <CmsPlayer props={data.BannerImage} />
           <OurValues props={data.Design} />
-           <SolutionTheProcess props={data.Process} />
-           <CoeService props={data.Service} />
-           <TechnologyValues
+          <SolutionTheProcess props={data.Process} />
+          {/* <CoeService props={data.Service} /> */}
+          <TechnologyValues
             wrapperStyle="technology-styles"
             props={data.Technology}
           />
@@ -63,7 +61,7 @@ const Tech_Solution = async () => {
             props={data_related_cases}
             RelatedInsight={data.RelatedInsight}
           />
-         
+
           <LetsWork contact={data.ContactUs} />
         </div>
       ) : (

@@ -78,10 +78,14 @@
         border-bottom: 0.14rem solid rgba(color(text-primary), 0.12);
         display: flex;
         justify-content: space-between;
+        cursor: pointer;
       }
       .accordionBody {
         padding: 1.25rem 0;
-        opacity: opacity(light);
+
+        > p {
+          opacity: 0.6;
+        }
       }
     }
   }

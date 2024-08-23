@@ -115,7 +115,7 @@ const OurValues = ({ props }) => {
                               }}
                               className={styles.accordionBody}
                             >
-                              {data.Description}
+                             <p>{data.Description}</p>
                             </Disclosure.Panel>
                           </AnimatePresence>
                         </>
