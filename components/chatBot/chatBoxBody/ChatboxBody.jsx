@@ -5,13 +5,13 @@ import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
 
 export const ConvertUserMessageToHTML = ({ text }) => {
-  const lines = text.split("\n");
-
+  const lines = text.split('\n');
+  
   return (
     <div>
-      {lines.map((line, index) =>
+      {lines.map((line, index) => (
         line.trim() ? <p key={index}>{line.trim()}</p> : <br key={index} />
-      )}
+      ))}
     </div>
   );
 };
@@ -156,6 +156,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
         value: servicemessage,
         service: serviceName,
         department: departmentName,
+        selectOption:true,
       },
     });
   };
@@ -213,21 +214,17 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
   const handleKeyPressResume = (event) => {
     const file = event.target.files[0]; // Access the uploaded file
     if (file) {
-      setloadershow(false);
-      event.preventDefault();
-      sendMessage({
-        current: {
-          value: "file uploaded",
-          resume_stats: "uploaded",
-          resume_docs: file,
-          loadershow: false,
-        },
-      });
-      console.log("hello");
+        setloadershow(false);
+        event.preventDefault();
+        sendMessage({
+            current: { value: "file uploaded", resume_stats: "uploaded",resume_docs:file,loadershow:false},
+        });
+        console.log("hello");
     } else {
-      console.log("No file selected");
+        console.log("No file selected");
     }
-  };
+};
+
 
   useEffect(() => {
     messagesEndRef.current.scrollIntoView({ behavior: "smooth", block: "end" });
@@ -250,12 +247,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
     }
   }, [textvalue]);
   useEffect(() => {
-    if (
-      userEmail !== "" &&
-      serviceActionCount === 4 &&
-      department === "Hiring" &&
-      service === "Apply for a Job"
-    ) {
+    if (userEmail !== '' && serviceActionCount === 4 && department==="Hiring" && service==="Apply for a Job") {
       setTimeout(() => {
         setloadershow(false);
         setchatbotMessages((prevMessages) => [
@@ -286,7 +278,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
           },
         ]);
       }, 1000);
-      setserviceActionCount(5);
+      setserviceActionCount(5)
     }
   }, [userEmail, serviceActionCount]);
 
@@ -317,7 +309,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
     let formData = new FormData();
     formData.append("input", userData);
     // console.log(Object.keys(resume_docs).length)
-    formData.append("file", resume_docs);
+    formData.append("file",resume_docs );
 
     fetch(`${process.env.NEXT_PUBLIC_BACKEND_URI}/upload_leads`, {
       method: "POST",
@@ -353,18 +345,19 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
 
   const sendMessage = async (info) => {
     try {
-      if (
-        info?.current?.value !== "" &&
-        (!loadershow || !info?.current?.loadershow)
-      ) {
+      console.log("select");
+      if (info?.current?.value !== "" && (!loadershow || !info?.current?.loadershow)) {
         if (
           (department !== "" || info?.current?.department !== undefined) &&
           (service !== "" || info?.current?.service !== undefined)
         ) {
-          const userQuery = info.current.value;
+          const userQuery = info?.current?.value;
           if (info?.current?.value !== "file uploaded") {
-            info.current.value = "";
-            userinfo.current.value = "";
+            if(selectOption){
+              info.current.value = "";
+              userinfo.current.value = "";
+            }
+            
             settextValue("");
             const messageInfo = {
               username: "user",
@@ -384,6 +377,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
           }
           setloadershow(true);
           if (service !== "" || info?.current?.service !== "") {
+           
             if (serviceActionCount === 0) {
               setTimeout(() => {
                 setloadershow(false);
@@ -531,74 +525,18 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                 }, 1000);
               }
             } else if (serviceActionCount === 3) {
-              if (validateEmail(userQuery)) {
-                setuserEmail(userQuery);
-                setserviceActionCount(4);
-                if (department !== "Hiring") {
-                  const userDataInfo = {
-                    userName: userName,
-                    userEmail: userQuery,
-                    userPhone: phoneNumber,
-                    department: department,
-                    services: service,
-                  };
-                  detailsCapture(userQuery, JSON.stringify(userDataInfo), {});
-                  setTimeout(() => {
-                    setloadershow(false);
-                    setchatbotMessages((prevMessages) => [
-                      ...prevMessages,
-                      {
-                        username: "system",
-                        messageType: "system",
-                        message: (
-                          <>
-                            <div>
-                              <div>
-                                {department === "Services" ||
-                                info?.current?.department === "Services"
-                                  ? `  Thank you, ${userName}. Your consultation for ${service} is booked. You will receive an email confirmation shortly.`
-                                  : department === "Hiring" ||
-                                    info?.current?.department === "Hiring"
-                                  ? `Thank you, ${userName}! Our HR team will review your application and get in touch with you shortly. Have a great day!`
-                                  : `Thank you! Our team will contact you shortly to discuss partnership opportunities. Have a great day!`}
-                              </div>
-                            </div>
-                          </>
-                        ),
-                        time: new Date().toLocaleString("en-US", {
-                          hour: "numeric",
-                          minute: "numeric",
-                          hour12: true,
-                          timeZone: "Asia/Kolkata",
-                        }),
-                      },
-                      {
-                        username: "system",
-                        messageType: "system",
-                        message: (
-                          <>
-                            <div>
-                              <div>
-                                If you have any specific questions, feel free to
-                                ask!
-                              </div>
-                            </div>
-                          </>
-                        ),
-                        time: new Date().toLocaleString("en-US", {
-                          hour: "numeric",
-                          minute: "numeric",
-                          hour12: true,
-                          timeZone: "Asia/Kolkata",
-                        }),
-                      },
-                    ]);
-                  }, 1000);
-                } else {
-                  if (
-                    service === "Hire a Resource" ||
-                    userQuery?.current?.service === "Hire a Resource"
-                  ) {
+                if (validateEmail(userQuery)) {
+                  setuserEmail(userQuery);
+                  setserviceActionCount(4);
+                  if (department !== "Hiring") {
+                    const userDataInfo = {
+                      userName: userName,
+                      userEmail: userQuery,
+                      userPhone: phoneNumber,
+                      department: department,
+                      services: service,
+                    };
+                    detailsCapture(userQuery, JSON.stringify(userDataInfo),{});
                     setTimeout(() => {
                       setloadershow(false);
                       setchatbotMessages((prevMessages) => [
@@ -610,8 +548,33 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                             <>
                               <div>
                                 <div>
-                                  Which position or role are you looking to
-                                  fill?
+                                  {department === "Services" ||
+                                  info?.current?.department === "Services"
+                                    ? `  Thank you, ${userName}. Your consultation for ${service} is booked. You will receive an email confirmation shortly.`
+                                    : department === "Hiring" ||
+                                      info?.current?.department === "Hiring"
+                                    ? `Thank you, ${userName}! Our HR team will review your application and get in touch with you shortly. Have a great day!`
+                                    : `Thank you! Our team will contact you shortly to discuss partnership opportunities. Have a great day!`}
+                                </div>
+                              </div>
+                            </>
+                          ),
+                          time: new Date().toLocaleString("en-US", {
+                            hour: "numeric",
+                            minute: "numeric",
+                            hour12: true,
+                            timeZone: "Asia/Kolkata",
+                          }),
+                        },
+                        {
+                          username: "system",
+                          messageType: "system",
+                          message: (
+                            <>
+                              <div>
+                                <div>
+                                  If you have any specific questions, feel free
+                                  to ask!
                                 </div>
                               </div>
                             </>
@@ -625,37 +588,73 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                         },
                       ]);
                     }, 1000);
+                  } else {
+                    if (
+                      service === "Hire a Resource" ||
+                      userQuery?.current?.service === "Hire a Resource"
+                    ) {
+                      setTimeout(() => {
+                        setloadershow(false);
+                        setchatbotMessages((prevMessages) => [
+                          ...prevMessages,
+                          {
+                            username: "system",
+                            messageType: "system",
+                            message: (
+                              <>
+                                <div>
+                                  <div>
+                                    Which position or role are you looking to
+                                    fill?
+                                  </div>
+                                </div>
+                              </>
+                            ),
+                            time: new Date().toLocaleString("en-US", {
+                              hour: "numeric",
+                              minute: "numeric",
+                              hour12: true,
+                              timeZone: "Asia/Kolkata",
+                            }),
+                          },
+                        ]);
+                      }, 1000);
+                    }
                   }
                 }
-              } else {
-                setTimeout(() => {
-                  setchatbotMessages((prevMessages) => [
-                    ...prevMessages,
-                    {
-                      username: "system",
-                      messageType: "email",
-                      message: (
-                        <>
-                          <div>
-                            <p className="email">
-                              Please provide a valid email address.
-                            </p>
-                          </div>
-                        </>
-                      ),
-                      time: new Date().toLocaleString("en-US", {
-                        hour: "numeric",
-                        minute: "numeric",
-                        hour12: true,
-                        timeZone: "Asia/Kolkata",
-                      }),
-                    },
-                  ]);
-                  setloadershow(false);
-                }, 1000);
-              }
-            } else if (serviceActionCount === 4 && department === "Hiring") {
-              if (service === "Hire a Resource") {
+                else {
+                  setTimeout(() => {
+                    setchatbotMessages((prevMessages) => [
+                      ...prevMessages,
+                      {
+                        username: "system",
+                        messageType: "email",
+                        message: (
+                          <>
+                            <div>
+                              <p className="email">
+                                Please provide a valid email address.
+                              </p>
+                            </div>
+                          </>
+                        ),
+                        time: new Date().toLocaleString("en-US", {
+                          hour: "numeric",
+                          minute: "numeric",
+                          hour12: true,
+                          timeZone: "Asia/Kolkata",
+                        }),
+                      },
+                    ]);
+                    setloadershow(false);
+                  }, 1000);
+                }
+            } else if (
+              serviceActionCount === 4 &&
+              department === "Hiring"
+            ) {
+                       
+              if(service==="Hire a Resource"){
                 setjobRole(userQuery);
                 setTimeout(() => {
                   setloadershow(false);
@@ -683,7 +682,8 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                     },
                   ]);
                 }, 1000);
-              } else {
+              }
+              else {
                 const userDataInfo = {
                   userName: userName,
                   userEmail: userEmail,
@@ -691,11 +691,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                   department: department,
                   services: service,
                 };
-                detailsCapture(
-                  userEmail,
-                  JSON.stringify(userDataInfo),
-                  info?.current?.resume_docs
-                );
+                detailsCapture(userEmail, JSON.stringify(userDataInfo),info?.current?.resume_docs);
                 setTimeout(() => {
                   setloadershow(false);
                   setchatbotMessages((prevMessages) => [
@@ -756,34 +752,34 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
               serviceActionCount === 5 &&
               service === "Hire a Resource"
             ) {
-              setjobExperience(userQuery);
-              setTimeout(() => {
-                setloadershow(false);
-                setchatbotMessages((prevMessages) => [
-                  ...prevMessages,
-                  {
-                    username: "system",
-                    messageType: "system",
-                    message: (
-                      <>
-                        <div>
+                setjobExperience(userQuery);
+                setTimeout(() => {
+                  setloadershow(false);
+                  setchatbotMessages((prevMessages) => [
+                    ...prevMessages,
+                    {
+                      username: "system",
+                      messageType: "system",
+                      message: (
+                        <>
                           <div>
-                            What type of work arrangement are you offering?
-                            (e.g., full-time, part-time, remote, on-site)
+                            <div>
+                              What type of work arrangement are you offering?
+                              (e.g., full-time, part-time, remote, on-site)
+                            </div>
                           </div>
-                        </div>
-                      </>
-                    ),
-                    time: new Date().toLocaleString("en-US", {
-                      hour: "numeric",
-                      minute: "numeric",
-                      hour12: true,
-                      timeZone: "Asia/Kolkata",
-                    }),
-                  },
-                ]);
-              }, 1000);
-
+                        </>
+                      ),
+                      time: new Date().toLocaleString("en-US", {
+                        hour: "numeric",
+                        minute: "numeric",
+                        hour12: true,
+                        timeZone: "Asia/Kolkata",
+                      }),
+                    },
+                  ]);
+                }, 1000);
+              
               setserviceActionCount(6);
             } else if (
               serviceActionCount === 6 &&
@@ -832,11 +828,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                 department: department,
                 services: service,
               };
-              detailsCapture(
-                userEmail,
-                JSON.stringify(userDataInfo),
-                info?.current?.resume_docs
-              );
+              detailsCapture(userEmail, JSON.stringify(userDataInfo),info?.current?.resume_docs);
               setbudget(userQuery);
               setTimeout(() => {
                 setloadershow(false);
@@ -902,11 +894,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                     username: "system",
                     message: (
                       <div>
-                        <div cleanedName={styles.userMessageText}>
-                          <ConvertUserMessageToHTML
-                            text={queryResponse?.content}
-                          />
-                        </div>
+                        <div cleanedName={styles.userMessageText}><ConvertUserMessageToHTML text={queryResponse?.content}/></div>
                         <div>
                           {uniqueSources.length > 0 && content_check ? (
                             <>
@@ -958,6 +946,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
     } catch (error) {
       console.log("Error: ", error);
     }
+    
   };
 
   const clearConversation = async () => {
@@ -969,10 +958,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
   };
 
   return (
-    <div
-      data-lenis-prevent
-      className={hidden ? styles.chatboxBodyhidden : styles.chatboxBody}
-    >
+    <div data-lenis-prevent className={hidden ? styles.chatboxBodyhidden : styles.chatboxBody}>
       <div className={styles.chatbotHeader}>
         <div className={styles.chatbotTitle}>
           <ImageCustom
@@ -1024,15 +1010,10 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
         <div ref={messagesEndRef} />
       </div>
 
-      <div
-        className={
-          department !== "" && service != ""
-            ? styles.chatbotSendtxt
-            : styles.hidden
-        }
-        ref={chatfooter}
-      >
-        <textarea
+      <div className={styles.chatbotSendtxt} ref={chatfooter} >
+      {department !=="" && service!="" ?
+        <>
+       <textarea
           placeholder="Ask me anything about Techchefz"
           ref={userinfo}
           value={textvalue}
@@ -1058,6 +1039,9 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
         >
           <Icons.SendIcon />
         </button>
+      </>
+       :<></> 
+    }
       </div>
     </div>
   );
