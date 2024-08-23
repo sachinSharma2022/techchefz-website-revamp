@@ -155,11 +155,11 @@ const Footer = ({ props, Subscribe, SocialMedia, footerinner, Reserved }) => {
               </div>
 
               <div className={styles.footerCols}>
-                <Link href="/">
-                  <h5>Solutions</h5>
+                <Link href={footerinner[3]?.Link}>
+                  <h5> {footerinner[3]?.Heading}</h5>
                 </Link>
                 <ul className={styles.fadeLink}>
-                  {footerinner[2]?.menuinner?.map((data, index) => (
+                  {footerinner[3]?.menuinner?.map((data, index) => (
                     <li key={index}>
                       <Link href={data.Link}>{data.Title}</Link>
                     </li>
