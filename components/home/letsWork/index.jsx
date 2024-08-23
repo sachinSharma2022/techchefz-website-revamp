@@ -146,7 +146,6 @@ const LetsWork = ({ contact, className }) => {
                         value={values.lastName}
                         errorStatus={touched.lastName && errors.lastName}
                         onKeyDown={(event) => {
-                          
                           var regex = new RegExp("^[a-zA-Z]*$");
                           if (
                             !regex.test(event.key) &&
@@ -172,7 +171,6 @@ const LetsWork = ({ contact, className }) => {
                         value={values.phone}
                         valueCountryCode={values.countyCode}
                         onKeyDown={(event) => {
-                          
                           var regex = new RegExp("^[0-9]*$");
                           if (
                             !regex.test(event.key) &&
@@ -233,7 +231,12 @@ const LetsWork = ({ contact, className }) => {
                         error={Boolean(
                           touched.companyName && errors.companyName
                         )}
-                        onChange={handleChange}
+                        onChange={(e) => {
+                          const { value } = e.target;
+                          if (/^[A-Za-z\s]*$/.test(value)) {
+                            handleChange(e);
+                          }
+                        }}
                         onBlur={handleBlur}
                         value={values.companyName}
                       />
@@ -319,7 +322,7 @@ const LetsWork = ({ contact, className }) => {
                   }
                   width={480}
                   height={616}
-                  alt = {contact?.Image?.data?.attributes?.alternativeText}
+                  alt={contact?.Image?.data?.attributes?.alternativeText}
                   className={styles.contactImg}
                 />
               )}

@@ -14,7 +14,6 @@ import AnimatedLogo from "@/components/common/animatedLogo";
 import styles from "./style.module.scss";
 
 const NavigationMobile = ({ props, featureArticle }) => {
-  console.log("mmmmmmmm",props)
   const pathname = usePathname();
   const [mobileMenuShow, setMobileMenuShow] = useState(false);
   const [isTechMenu, setTechMenu] = useState(null);
