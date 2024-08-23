@@ -15,7 +15,7 @@
   }
 
   @include tablet {
-    padding: spacing(tablet-padding);
+    padding: 3rem 1.25rem;
   }
   @include mobile {
     padding: 3rem 1.25rem;
