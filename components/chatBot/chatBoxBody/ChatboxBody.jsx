@@ -36,6 +36,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
   const [jobExperience, setjobExperience] = useState("");
   const [jobType, setjobType] = useState("");
   const [budget, setbudget] = useState("");
+  const [Emailprovided, setEmailprovided] = useState(false);
 
   const [chatbotMessages, setchatbotMessages] = useState([
     {
@@ -212,10 +213,12 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
   const handleKeyPressResume = (event) => {
     const file = event.target.files[0]; // Access the uploaded file
     if (file) {
+        setloadershow(false);
         event.preventDefault();
         sendMessage({
-            current: { value: "file uploaded", resume_stats: "uploaded" },
+            current: { value: "file uploaded", resume_stats: "uploaded",resume_docs:file,loadershow:false},
         });
+        console.log("hello");
     } else {
         console.log("No file selected");
     }
@@ -242,6 +245,41 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
       }px`;
     }
   }, [textvalue]);
+  useEffect(() => {
+    if (userEmail !== '' && serviceActionCount === 4 && department==="Hiring" && service==="Apply for a Job") {
+      setTimeout(() => {
+        setloadershow(false);
+        setchatbotMessages((prevMessages) => [
+          ...prevMessages,
+          {
+            username: "system",
+            messageType: "system",
+            message: (
+              <>
+                <div>
+                  <div>Please attach your resume.</div>
+                  <input
+                    type="file"
+                    placeholder="attach"
+                    className="emailinput"
+                    ref={resumeRef}
+                    onChange={handleKeyPressResume}
+                  />
+                </div>
+              </>
+            ),
+            time: new Date().toLocaleString("en-US", {
+              hour: "numeric",
+              minute: "numeric",
+              hour12: true,
+              timeZone: "Asia/Kolkata",
+            }),
+          },
+        ]);
+      }, 1000);
+      setserviceActionCount(5)
+    }
+  }, [userEmail, serviceActionCount]);
 
   const handleChange = (e) => {
     const spaceRemovedcharacters = e.target.value.replace(/\s+/g, "");
@@ -266,10 +304,11 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
     return isValid;
   };
 
-  const detailsCapture = async (userEmail, userData) => {
+  const detailsCapture = async (userEmail, userData, resume_docs) => {
     let formData = new FormData();
     formData.append("input", userData);
-    formData.append("file", resumeRef);
+    // console.log(Object.keys(resume_docs).length)
+    formData.append("file",resume_docs );
 
     fetch(`${process.env.NEXT_PUBLIC_BACKEND_URI}/upload_leads`, {
       method: "POST",
@@ -305,13 +344,12 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
 
   const sendMessage = async (info) => {
     try {
-      if (info?.current?.value !== "" && !loadershow) {
+      if (info?.current?.value !== "" && (!loadershow || !info?.current?.loadershow)) {
         if (
           (department !== "" || info?.current?.department !== undefined) &&
           (service !== "" || info?.current?.service !== undefined)
         ) {
           const userQuery = info.current.value;
-          const resume_stats = info.current.resume_stats;
           if (info?.current?.value !== "file uploaded") {
             info.current.value = "";
             userinfo.current.value = "";
@@ -334,6 +372,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
           }
           setloadershow(true);
           if (service !== "" || info?.current?.service !== "") {
+           
             if (serviceActionCount === 0) {
               setTimeout(() => {
                 setloadershow(false);
@@ -481,9 +520,10 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                 }, 1000);
               }
             } else if (serviceActionCount === 3) {
-              if (resume_stats !== "uploaded") {
                 if (validateEmail(userQuery)) {
-                  if (service !== "Apply for a Job") {
+                  setuserEmail(userQuery);
+                  setserviceActionCount(4);
+                  if (department !== "Hiring") {
                     const userDataInfo = {
                       userName: userName,
                       userEmail: userQuery,
@@ -491,10 +531,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                       department: department,
                       services: service,
                     };
-                    detailsCapture(userQuery, JSON.stringify(userDataInfo));
-                  }
-                  setuserEmail(userQuery);
-                  if (department !== "Hiring") {
+                    detailsCapture(userQuery, JSON.stringify(userDataInfo),{});
                     setTimeout(() => {
                       setloadershow(false);
                       setchatbotMessages((prevMessages) => [
@@ -577,41 +614,10 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                           },
                         ]);
                       }, 1000);
-                    } else {
-                      setTimeout(() => {
-                        setloadershow(false);
-                        setchatbotMessages((prevMessages) => [
-                          ...prevMessages,
-                          {
-                            username: "system",
-                            messageType: "system",
-                            message: (
-                              <>
-                                <div>
-                                  <div>Please attach your resume.</div>
-                                  <input
-                                    type="file"
-                                    placeholder="attach"
-                                    className={styles.emailinput}
-                                    ref={resumeRef}
-                                    onChange={handleKeyPressResume}
-                                  />
-                                </div>
-                              </>
-                            ),
-                            time: new Date().toLocaleString("en-US", {
-                              hour: "numeric",
-                              minute: "numeric",
-                              hour12: true,
-                              timeZone: "Asia/Kolkata",
-                            }),
-                          },
-                        ]);
-                      }, 1000);
                     }
                   }
-                  setserviceActionCount(4);
-                } else {
+                }
+                else {
                   setTimeout(() => {
                     setchatbotMessages((prevMessages) => [
                       ...prevMessages,
@@ -638,7 +644,41 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                     setloadershow(false);
                   }, 1000);
                 }
-              } else {
+            } else if (
+              serviceActionCount === 4 &&
+              department === "Hiring"
+            ) {
+                       
+              if(service==="Hire a Resource"){
+                setjobRole(userQuery);
+                setTimeout(() => {
+                  setloadershow(false);
+                  setchatbotMessages((prevMessages) => [
+                    ...prevMessages,
+                    {
+                      username: "system",
+                      messageType: "system",
+                      message: (
+                        <>
+                          <div>
+                            <div>
+                              How many years of experience should the candidate
+                              have in this field?
+                            </div>
+                          </div>
+                        </>
+                      ),
+                      time: new Date().toLocaleString("en-US", {
+                        hour: "numeric",
+                        minute: "numeric",
+                        hour12: true,
+                        timeZone: "Asia/Kolkata",
+                      }),
+                    },
+                  ]);
+                }, 1000);
+              }
+              else {
                 const userDataInfo = {
                   userName: userName,
                   userEmail: userEmail,
@@ -646,7 +686,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                   department: department,
                   services: service,
                 };
-                detailsCapture(userEmail, JSON.stringify(userDataInfo));
+                detailsCapture(userEmail, JSON.stringify(userDataInfo),info?.current?.resume_docs);
                 setTimeout(() => {
                   setloadershow(false);
                   setchatbotMessages((prevMessages) => [
@@ -701,71 +741,40 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                     },
                   ]);
                 }, 1000);
-                setserviceActionCount(4);
               }
-            } else if (
-              serviceActionCount === 4 &&
-              service === "Hire a Resource"
-            ) {
-              setjobRole(userQuery);
-              setTimeout(() => {
-                setloadershow(false);
-                setchatbotMessages((prevMessages) => [
-                  ...prevMessages,
-                  {
-                    username: "system",
-                    messageType: "system",
-                    message: (
-                      <>
-                        <div>
-                          <div>
-                            How many years of experience should the candidate
-                            have in this field?
-                          </div>
-                        </div>
-                      </>
-                    ),
-                    time: new Date().toLocaleString("en-US", {
-                      hour: "numeric",
-                      minute: "numeric",
-                      hour12: true,
-                      timeZone: "Asia/Kolkata",
-                    }),
-                  },
-                ]);
-              }, 1000);
               setserviceActionCount(5);
             } else if (
               serviceActionCount === 5 &&
               service === "Hire a Resource"
             ) {
-              setjobExperience(userQuery);
-              setTimeout(() => {
-                setloadershow(false);
-                setchatbotMessages((prevMessages) => [
-                  ...prevMessages,
-                  {
-                    username: "system",
-                    messageType: "system",
-                    message: (
-                      <>
-                        <div>
+                setjobExperience(userQuery);
+                setTimeout(() => {
+                  setloadershow(false);
+                  setchatbotMessages((prevMessages) => [
+                    ...prevMessages,
+                    {
+                      username: "system",
+                      messageType: "system",
+                      message: (
+                        <>
                           <div>
-                            What type of work arrangement are you offering?
-                            (e.g., full-time, part-time, remote, on-site)
+                            <div>
+                              What type of work arrangement are you offering?
+                              (e.g., full-time, part-time, remote, on-site)
+                            </div>
                           </div>
-                        </div>
-                      </>
-                    ),
-                    time: new Date().toLocaleString("en-US", {
-                      hour: "numeric",
-                      minute: "numeric",
-                      hour12: true,
-                      timeZone: "Asia/Kolkata",
-                    }),
-                  },
-                ]);
-              }, 1000);
+                        </>
+                      ),
+                      time: new Date().toLocaleString("en-US", {
+                        hour: "numeric",
+                        minute: "numeric",
+                        hour12: true,
+                        timeZone: "Asia/Kolkata",
+                      }),
+                    },
+                  ]);
+                }, 1000);
+              
               setserviceActionCount(6);
             } else if (
               serviceActionCount === 6 &&
@@ -805,7 +814,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
             ) {
               const userDataInfo = {
                 userName: userName,
-                userEmail: userQuery,
+                userEmail: userEmail,
                 userPhone: phoneNumber,
                 jobRole: jobRole,
                 jobExperience: jobExperience,
@@ -814,7 +823,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                 department: department,
                 services: service,
               };
-              detailsCapture(userQuery, JSON.stringify(userDataInfo));
+              detailsCapture(userEmail, JSON.stringify(userDataInfo),info?.current?.resume_docs);
               setbudget(userQuery);
               setTimeout(() => {
                 setloadershow(false);
@@ -859,7 +868,6 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
               })
                 .then((response) => response.json())
                 .then((queryResponse) => {
-                  console.log(queryResponse);
                   setloadershow(false);
                   const content_check =
                     queryResponse?.content !==
@@ -933,6 +941,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
     } catch (error) {
       console.log("Error: ", error);
     }
+    
   };
 
   const clearConversation = async () => {

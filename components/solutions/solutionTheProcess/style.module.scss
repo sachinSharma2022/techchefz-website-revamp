@@ -158,6 +158,10 @@
       max-width: 587px;
       @include transition(0.5s);
 
+      @include tablet {
+        height: 100%;
+      }
+
       @include desktop-normal {
         opacity: 0.4;
 

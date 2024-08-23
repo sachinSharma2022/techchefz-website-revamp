@@ -28,6 +28,11 @@
     overflow: hidden;
     border-radius: 12px;
 
+    @include mobile-tablet-p {
+      height:auto;
+      aspect-ratio: 2/2;
+    }
+
     img {
       width: 100%;
       height: 100%;
