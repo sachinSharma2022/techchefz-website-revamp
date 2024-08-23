@@ -227,7 +227,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                   !isSubMenu && styles.subMenuHide
                 )}
               >
-                <div className={styles.subsection}>
+                <div className={cn(styles.subsection, styles.solutionSection)}>
                   {SolutionTech(solutionMore)}
                   <div className={cn(styles.overviewTech, styles.solutionTech)}>
                     <div className={cn(styles.multiHrefs)}>
