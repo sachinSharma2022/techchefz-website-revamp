@@ -65,32 +65,32 @@ const HomeContainer = ({ data, data_Portfolio }) => {
       />
       <WeAreFuture props={data.Technology} />
       <Service props={data.Services} />
-      <section className="pt-5" ref={targetRefProjects}>
+      <section ref={targetRefProjects}>
         {isVisibleProjects && (
           <Projects project={data.Project} brands={data_Portfolio} />
         )}
       </section>
-      <section className="pt-5" ref={targetRefOurNumbers}>
+      <section ref={targetRefOurNumbers}>
         {isVisibleOurNumbers && (
           <OurNumbers carrer={data.carrer} experience={data.ourExperience} />
         )}
       </section>
-      <section className="pt-5" ref={targetRefTechnologyStack}>
+      <section ref={targetRefTechnologyStack}>
         {isVisibleTechnologyStack && (
           <TechnologyStack technology={data.Technologys} />
         )}
       </section>
-      <section className="pt-5" ref={targetRefDigitalTransformation}>
+      <section ref={targetRefDigitalTransformation}>
         {isVisibleDigitalTransformation && (
           <DigitalTransformation digital={data.digitalTransform} />
         )}
       </section>
-      <section className="pt-5" ref={targetRefHomeTestimonials}>
+      <section ref={targetRefHomeTestimonials}>
         {isVisibleHomeTestimonials && (
           <HomeTestimonials testimonials={data.Testimonials} />
         )}
       </section>
-      <section className="pt-5" ref={targetRefLetsWork}>
+      <section ref={targetRefLetsWork}>
         {isVisibleLetsWork && <LetsWork contact={data.ContactUs} />}
       </section>
     </>
