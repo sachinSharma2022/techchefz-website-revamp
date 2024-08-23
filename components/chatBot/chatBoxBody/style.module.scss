@@ -63,8 +63,12 @@ $scrollbar-thumb-hover-color: #555;
   animation: mymove 0.3s normal forwards ease-in-out;
 
   @keyframes mymove {
-    from {  scale: 0;}
-    to {  scale: 1}
+    from {
+      scale: 0;
+    }
+    to {
+      scale: 1;
+    }
   }
 
   @include mobile {
@@ -423,11 +427,11 @@ $scrollbar-thumb-hover-color: #555;
   justify-content: center;
   align-items: center;
   background-color: color(Pervenche-blue);
-  cursor: pointer;
   right: 20px;
   bottom: 20px;
   position: fixed;
   z-index: 9999;
+  cursor: pointer;
 
   @include mobile {
     right: 20px;
@@ -443,7 +447,6 @@ $scrollbar-thumb-hover-color: #555;
   svg path {
     stroke: white;
   }
-
 }
 .emailinput {
   width: 100%;
@@ -512,7 +515,7 @@ $scrollbar-thumb-hover-color: #555;
     background: #fff;
   }
 }
-.userMessageText{
+.userMessageText {
   white-space-collapse: preserve;
   text-wrap: wrap;
 }
@@ -520,4 +523,9 @@ $scrollbar-thumb-hover-color: #555;
 .loadervisible {
   display: block;
   margin-left: 15px;
+}
+
+.chatIcon {
+  width: 24px;
+  height: 24px;
 }

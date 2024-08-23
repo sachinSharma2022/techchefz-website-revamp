@@ -33,7 +33,7 @@ const ChatBotContainer = () => {
         }}
         role="button"
       >
-        {hidden || clearConversation ? <Icons.Chats /> : <Icons.ArrowDown />}
+        {hidden || clearConversation ? <Icons.ChatbotIcon className={styles.chatIcon} /> : <Icons.ArrowDown />}
       </button>
     </div>
   );
