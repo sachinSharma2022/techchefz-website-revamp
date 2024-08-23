@@ -353,7 +353,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
         ) {
           const userQuery = info?.current?.value;
           if (info?.current?.value !== "file uploaded") {
-            if(selectOption){
+            if(!info?.current?.selectOption){
               info.current.value = "";
               userinfo.current.value = "";
             }
@@ -983,7 +983,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
       <div
         className={styles.chatbotTxtbody}
         ref={chatbody}
-        style={{ minHeight: "390px" }}
+        style={{ maxHeight: "486px" }}
       >
         {chatbotMessages?.map((items, index) => (
           <div className="w-[100%]" key={index}>
