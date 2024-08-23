@@ -18,13 +18,7 @@ const AcceleratorIndustry = ({ props }) => {
               <h6>{props?.Title}</h6>
               <h4 className={styles.heading}>{props?.SubTitle}</h4>
             </div>
-
             <h6>{props?.Description}</h6>
-            <div className={styles.serviceBtn}>
-              <button variant="outline" size="xs">
-                {props?.DescriptionInner[0].Tags}
-              </button>
-            </div>
           </div>
           <div>
             <div className={styles.industryRight}>

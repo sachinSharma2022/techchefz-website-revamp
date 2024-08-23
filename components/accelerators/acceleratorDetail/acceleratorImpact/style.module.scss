@@ -21,25 +21,32 @@
     flex-direction: column;
   }
 
-  .impactImage div {
-    height: 520px;
+  .impactImage {
     width: 100%;
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
 
-    @include mobile-tablet-p {
-      height:auto;
-      aspect-ratio: 2/2;
-    }
-
-    img {
+    > div {
+      height: 520px;
       width: 100%;
-      height: 100%;
-      position: absolute;
-      object-fit: cover;
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+  
+      @include tablet {
+        height:400px;
+      }
+  
+      @include mobile {
+        height:320px;
+      }
+  
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        object-fit: cover;
+      }
     }
-  }
+  } 
 
   .impactContainer {
     display: flex;
@@ -83,21 +90,23 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 8.9375rem;
     padding: 2.5rem 0;
+    align-items: center;
 
     @include mobile-tablet-p {
-      gap: 3.75rem;
+      gap: 2rem;
       padding: 0;
     }
 
     @include mobile {
       display: flex;
       flex-direction: column;
-      gap: 3.75rem;
+      gap: 2rem;
       padding: 0;
-    }
 
-    @include mobile-tablet-p {
-      gap: 3.75rem;
+
+      &:nth-child(odd) {
+        flex-direction: column-reverse;
+      }
     }
   }
 

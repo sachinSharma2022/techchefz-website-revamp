@@ -82,6 +82,7 @@
         font-weight: 500;
         color: color(text-primary);
         padding: 1.4rem;
+        cursor: pointer;
 
         @include mobile-tablet-p {
           font-size: text(lg);
@@ -109,10 +110,13 @@
 
       .accordionBody {
         padding: 0 1.5rem 1.5rem 1.5rem;
-        opacity: opacity(light);
         max-width: 94%;
         margin-left: 0;
         margin-right: auto;
+
+        p {
+          opacity: 0.6;
+        }
       }
     }
   }

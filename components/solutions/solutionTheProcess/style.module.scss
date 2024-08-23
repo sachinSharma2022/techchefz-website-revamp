@@ -212,6 +212,10 @@
 
       .title {
         margin-bottom: 1rem;
+
+        @include mobile-tablet-p {
+          font-size: 1.5rem;
+        }
       }
     }
 
