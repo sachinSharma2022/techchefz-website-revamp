@@ -2,10 +2,10 @@
 
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
-import { useContext } from "react";
-import { cn } from "@/lib/utils";
-import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
+import { cn } from "@/lib/utils";
+import { useContext } from "react";
+import styles from "./style.module.scss";
 
 
 
@@ -48,13 +48,12 @@ const AcceleratorImpact = ({ props }) => {
                 __html: `${props?.imagelinks[0].Title}`,
               }}
             ></h4>
-            <ul>
-              <li
-                dangerouslySetInnerHTML={{
+            <p  dangerouslySetInnerHTML={{
                   __html: `${props?.imagelinks[0].Description}`,
-                }}
-              ></li>
-            </ul>
+                }}>
+              
+               
+              </p>
             <a
               href={
                 props?.imagelinks[0]?.Document?.data?.attributes?.url
