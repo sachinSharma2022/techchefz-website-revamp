@@ -5,12 +5,26 @@ import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
 
 export const ConvertUserMessageToHTML = ({ text }) => {
-  const lines = text.split('\n');
-  
+  // Function to convert **text** to <strong>text</strong>
+  const convertBoldText = (text) => {
+    const boldPattern = /\*\*(.*?)\*\*/g;
+    return text.replace(boldPattern, '<strong>$1</strong>');
+  };
+
+  // Convert bold markdown to HTML
+  const htmlText = convertBoldText(text);
+  console.log(htmlText)
+  // Split the text by line breaks
+  const lines = htmlText.split('\n');
+
   return (
     <div>
       {lines.map((line, index) => (
-        line.trim() ? <p key={index}>{line.trim()}</p> : <br key={index} />
+        line.trim() ? (
+          <p key={index} dangerouslySetInnerHTML={{ __html: line.trim() }} />
+        ) : (
+          <br key={index} />
+        )
       ))}
     </div>
   );
