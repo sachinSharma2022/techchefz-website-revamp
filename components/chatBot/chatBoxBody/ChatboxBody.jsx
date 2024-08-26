@@ -304,8 +304,8 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
   };
 
   const validateEmail = (email) => {
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailPattern.test(email);
+    const emailPattern = /^[A-Za-z]+[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email); 
   };
 
   const validatePhoneNumber = (phoneNumber) => {
@@ -314,10 +314,12 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
   };
 
   const validateName = (name) => {
-    const cleanedName = name.replace(/\s+/g, "");
-    const isValid = cleanedName.length >= 4 && cleanedName.length <= 250;
-    return isValid;
+    const cleanedName = name.replace(/\s+/g, ""); // Remove all whitespace
+    const isValidLength = cleanedName.length >= 4 && cleanedName.length <= 250;
+    const hasOnlyLetters = /^[A-Za-z]+$/.test(cleanedName); // Check if only letters
+    return isValidLength && hasOnlyLetters;
   };
+  
 
   const detailsCapture = async (userEmail, userData, resume_docs) => {
     let formData = new FormData();
@@ -466,7 +468,7 @@ const ChatBoxBody = ({ sethidden, hidden, setclearConversation }) => {
                         <>
                           <div>
                             <p className="email">
-                              Name must be between 4 to 250 characters.
+                              Please provide a valid name. (Characters only between 4 to 250 characters)
                             </p>
                           </div>
                         </>
