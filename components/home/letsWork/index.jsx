@@ -233,10 +233,12 @@ const LetsWork = ({ contact, className }) => {
                         )}
                         onChange={(e) => {
                           const { value } = e.target;
-                          if (/^[A-Za-z\s]*$/.test(value)) {
-                            handleChange(e);
+                          // Regular expression to allow only alphabets and numbers
+                          if (/^[A-Za-z0-9\s]*$/.test(value)) {
+                            handleChange(e); // Only update value if it matches the regex
                           }
                         }}
+
                         onBlur={handleBlur}
                         value={values.companyName}
                       />
