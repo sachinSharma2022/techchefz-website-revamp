@@ -83,7 +83,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <body className={cn(aeonik.variable, helvetica.variable)}>
-        <Script
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        {/* <Script
           id="gtm-script"
           strategy="lazyOnload"
           dangerouslySetInnerHTML={{
@@ -92,8 +93,8 @@ export default function RootLayout({ children }) {
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','${process.env.NEXT_PUBLIC_GA_ID}');`,
-          }}
-        />
+          }} */}
+        
         <ThemeProvider>
           <Header />
           <Providers>
