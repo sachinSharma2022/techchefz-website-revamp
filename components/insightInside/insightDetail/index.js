@@ -14,7 +14,7 @@ const InsightDetail = ({ props, BlockTitle, index }) => {
   const { theme, setTheme } = useContext(MyContext);
   const url = `${rootURl}/insights/${index}`;
   const handleClick = (event) => {
-    navigator.clipboard.writeText(window.location.href);
+    navigator.clipboard.writeText(url);
     setShowTooltip(true);
     setTimeout(() => setShowTooltip(false), 1500); // Hide after 1.5 seconds
   };
