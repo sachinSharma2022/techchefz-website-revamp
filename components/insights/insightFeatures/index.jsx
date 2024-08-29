@@ -70,7 +70,7 @@ const InsightFeatures = ({ props, featureInsight, feature }) => {
               size="sm"
               onClick={handleLoadMore}
             >
-              Load More
+              Read More
             </Button>
           </div>
         )}
