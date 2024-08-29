@@ -2,7 +2,7 @@ import ThemeProvider from "@/context/theme";
 import { api_Home_Page } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
 import "../styles/grid.min.css";
-import Script from "next/script";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { aeonik, helvetica } from "../lib/fonts";
 import { cn } from "../lib/utils";
 import "../styles/globals.scss";
