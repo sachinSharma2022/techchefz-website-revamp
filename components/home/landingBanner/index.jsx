@@ -48,7 +48,7 @@ const LandingBanner = ({ props }) => {
           </div>
         </h1>
 
-        <Link href={props?.BtnLink}>
+        <Link href={props?.BtnLink} className={styles.btnStyle}>
           <Button variant={theme ? "blueBtnDark" : "blueBtn"} size="md">
             {props?.button} <Icons.ArrowRight size={18} />
           </Button>
