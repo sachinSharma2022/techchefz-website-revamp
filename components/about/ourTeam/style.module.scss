@@ -435,6 +435,8 @@
     margin-bottom: 2.5rem;
     cursor: pointer;
     @include transition(0.5s);
+    display: flex;
+    align-items: center;
 
     &:hover {
       text-decoration: underline;
