@@ -52,22 +52,23 @@ const GlobalPresence = ({ props }) => {
         </TextRevel>
         <div className={styles.popoverContainer}>
           <div className={styles.contactMap}>
-            <ImageCustom
-              src="/images/img/map.svg"
-              width={1000}
-              height={1000}
-              alt="map"
-              className={styles.mapImage}
-            />
-
-            <div className={styles.locationSection}>
-              {locations.map((item, index) => (
-                <div key={index} className={styles.dotSec}>
-                  <div className={styles.locationDot}></div>
-                  <div className={styles.locationName}>{item.locationName}</div>
-                </div>
-              ))}
-            </div>
+            {theme ? (
+              <ImageCustom
+                src="/images/map/dark.gif"
+                width={2000}
+                height={2000}
+                alt="map"
+                className={styles.mapImage}
+              />
+            ) : (
+              <ImageCustom
+                src="/images/map/light.gif"
+                width={2000}
+                height={2000}
+                alt="map"
+                className={styles.mapImage}
+              />
+            )}
           </div>
         </div>
       </div>
