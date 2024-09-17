@@ -32,6 +32,7 @@ const ChatBotContainer = () => {
           setclearConversation(false);
         }}
         role="button"
+        title="TechChefz  Digital Assistant"
       >
         {hidden || clearConversation ? <Icons.ChatbotIcon className={styles.chatIcon} /> : <Icons.ArrowDown />}
       </button>
