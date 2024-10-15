@@ -53,21 +53,19 @@ $s: 10px;
       position: relative;
 
       .mapImage {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        opacity: 0.1;
-        filter: brightness(0) contrast(100);
+        position: relative;
+        width: 100vw;
+        height: 70vh;
 
         @include mobile-tablet-p {
-          height: auto;
+          height: 200px;
         }
 
         img {
           width: 100%;
           height: 100%;
-          object-fit: cover;
+          object-fit: contain;
+          position: absolute;
 
           @include mobile-tablet-p {
             margin-bottom: 40px;
@@ -264,13 +262,6 @@ $s: 10px;
       color: color(primary-white);
       @include mobile-tablet-p {
         border: 0.14rem solid color(bg-soft);
-      }
-    }
-
-    .contactMap {
-      .mapImage {
-        filter:none;
-        opacity: 0.2;
       }
     }
   }
