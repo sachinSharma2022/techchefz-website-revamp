@@ -13,7 +13,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import TextRevel from "@/components/ui/sectionAnimation";
 
 const OurValues = ({ props }) => {
-
   const { theme, setTheme } = useContext(MyContext);
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
 
@@ -63,7 +62,7 @@ const OurValues = ({ props }) => {
                   }
                   width={600}
                   height={550}
-                  alt = {props?.Image?.data?.attributes?.alternativeText}
+                  alt={props?.Image?.data?.attributes?.alternativeText}
                 />
               </div>
             </div>
@@ -115,7 +114,7 @@ const OurValues = ({ props }) => {
                               }}
                               className={styles.accordionBody}
                             >
-                             <p>{data.Description}</p>
+                              <p>{data.Description}</p>
                             </Disclosure.Panel>
                           </AnimatePresence>
                         </>

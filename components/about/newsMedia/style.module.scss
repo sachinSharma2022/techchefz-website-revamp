@@ -20,15 +20,15 @@
     }
 
     .subTitle {
-      color: color(primary-white);
+      color: color(text-primary);
       text-transform: uppercase;
-      opacity: opacity(light);;
+      opacity: opacity(light);
       font-size: text(normal);
       font-weight: 500;
       line-height: 1.5rem;
       letter-spacing: 0.2rem;
       font-weight: 700;
-  
+
       @include mobile-tablet-p {
         font-weight: 400;
       }
@@ -36,7 +36,7 @@
 
     .title {
       font-size: 2.75rem;
-      color: color(primary-white);
+      color: color(text-primary);
 
       @include mobile {
         font-size: 2rem;
@@ -59,7 +59,7 @@
       align-items: center;
       font-weight: 300;
 
-      @include mobile { 
+      @include mobile {
         font-size: 1rem;
         line-height: 20px;
       }
@@ -68,7 +68,7 @@
         font-size: 1.25rem;
         line-height: 24px;
 
-        @include mobile { 
+        @include mobile {
           font-size: 1rem;
           line-height: 20px;
         }
@@ -77,10 +77,10 @@
 
     .title {
       font-size: 2rem;
-      color: color(primary-white);
+      color: color(text-primary);
       line-height: 41px;
 
-      @include mobile { 
+      @include mobile {
         font-size: 1.5rem;
         line-height: 30px;
       }
@@ -90,7 +90,7 @@
   .imageSection {
     display: flex;
     gap: 143px;
-    color: color(primary-white);
+    color: color(text-primary);
 
     @include mobile {
       flex-direction: column;
@@ -127,7 +127,7 @@
   .circle {
     width: 4px;
     height: 4px;
-    background: color(primary-white);
+    background: color(text-primary);
     display: block;
     border-radius: 100px;
   }
@@ -136,13 +136,13 @@
     margin-top: 6.25rem;
     color: color(primary-white);
 
-    @include mobile { 
+    @include mobile {
       margin-top: 3.125rem;
     }
 
     .cardStyle {
-      background: color(text-primary);
-      border: 1px solid rgba(color(primary-white), 0.12);
+      background: color(bg-soft);
+      border: 1px solid rgba(color(text-primary), 0.12);
       padding: 2rem;
       border-radius: 12px;
       height: 470px;
@@ -166,12 +166,13 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      color: color(text-primary);
 
       p {
         margin: 0;
 
         @include mobile {
-         font-size: 0.9rem;
+          font-size: 0.9rem;
         }
       }
     }
@@ -181,13 +182,14 @@
       line-height: 31.2px;
       margin-top: 20px;
       @include truncate(4);
+      color:  color(text-primary);;
 
       @include mobile {
         font-size: 1.2rem;
         line-height: 1.4;
       }
     }
-    
+
     .sliderImage {
       width: 100%;
       height: 187px;
@@ -244,8 +246,8 @@
     .page {
       width: 60px;
       height: 60px;
-      border: 1px solid rgba(color(primary-white), 0.6);
-      color: color(primary-white);
+      border: 1px solid rgba(color(text-primary), 0.6);
+      color: color(text-primary);
       font-size: 20px;
       border-radius: 8px;
       cursor: pointer;
@@ -256,11 +258,54 @@
     }
 
     .btnDisabled {
-      border: 1px solid rgba(color(primary-white), 0.12);
+      border: 1px solid rgba(color(text-primary), 0.12);
       background-color: transparent;
 
       svg path {
-        stroke: rgba(color(primary-white), 0.6);
+        stroke: rgba(color(text-primary), 0.6);
+      }
+    }
+  }
+
+  // Dark Mode
+  &.newsMediaDark {
+    background-color: color(input-bg);
+
+    .headingSec, .mediaContent,  .imageSection, .cardTitleStyle,  .flexText, .subTitle, .title  {
+      color: color(primary-white);
+    }
+
+    .circle {
+      background-color: color(primary-white);
+    }
+
+    .cardStyle {
+      background: color(text-primary);
+      border: 1px solid rgba(color(primary-white), 0.12);
+    }
+
+    .customSliderNav {
+      .btn {
+        background-color: color(primary-blue);
+        color: color(primary-white);
+  
+        svg path {
+          stroke: color(primary-white);
+        }
+      }
+  
+      .page {
+        border: 1px solid rgba(color(primary-white), 0.6);
+        color: color(primary-white);
+      }
+  
+      .btnDisabled {
+        border: 1px solid rgba(color(primary-white), 0.12);
+        background-color: transparent;
+  
+        svg path {
+          stroke: rgba(color(primary-white), 0.6);
+        }
       }
     }
   }
