@@ -10,7 +10,6 @@ import { useContext } from "react";
 import styles from "./style.module.scss";
 
 const CareerBanner = ({ props, gallary, href, onClick }) => {
-  
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section

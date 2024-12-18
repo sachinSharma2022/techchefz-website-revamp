@@ -98,7 +98,7 @@ const OurTeam = ({ props }) => {
                           }
                           width={1000}
                           height={1000}
-                          alt = {data?.Images?.data?.attributes?.alternativeText}
+                          alt={data?.Images?.data?.attributes?.alternativeText}
                           className={styles.teamImg}
                         />
                       </div>
@@ -119,12 +119,17 @@ const OurTeam = ({ props }) => {
                           }
                           width={500}
                           height={530}
-                          alt = {item?.Images?.data?.attributes?.alternativeText}
+                          alt={item?.Images?.data?.attributes?.alternativeText}
                         />
                       </div>
                       <div className={styles.infoSection}>
                         <h4 className={styles.nameTitle}>{item.Name}</h4>
-                        <p className={styles.departmentText} dangerouslySetInnerHTML={{ __html: `${item.Designation}` }}></p>
+                        <p
+                          className={styles.departmentText}
+                          dangerouslySetInnerHTML={{
+                            __html: `${item.Designation}`,
+                          }}
+                        ></p>
                       </div>
                     </div>
                   ))}
@@ -156,7 +161,10 @@ const OurTeam = ({ props }) => {
                   }
                   width={500}
                   height={530}
-                  alt = {props[0]?.ListofDirectors[index]?.Images?.data?.attributes?.alternativeText}
+                  alt={
+                    props[0]?.ListofDirectors[index]?.Images?.data?.attributes
+                      ?.alternativeText
+                  }
                 />
               </div>
               <h4 className={styles.teamName}>

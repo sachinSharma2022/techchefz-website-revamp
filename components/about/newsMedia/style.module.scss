@@ -1,0 +1,180 @@
+@import "~/styles/partials/config";
+
+.newsMedia {
+  padding: spacing(section-primary-padding);
+
+  @include tablet {
+    padding: 3.75rem spacing(tablet-padding);
+  }
+
+  @include mobile {
+    padding: 3.75rem spacing(mobile-padding);
+  }
+
+  .headingSec {
+    margin-bottom: 5rem;
+    .subTitle {
+      font-size: 1rem;
+      font-weight: 700px;
+      line-height: 24px;
+      letter-spacing: 20%;
+      color: color(primary-white);
+    }
+
+    .title {
+      font-size: 2.75rem;
+      color: color(primary-white);
+    }
+  }
+
+  .mediaContent {
+
+    .subTitle {
+      font-size: 1.25rem;
+      line-height: 24px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      .textBlue {
+        font-size: 1.25rem;
+        line-height: 24px;
+      }
+    }
+
+    .title {
+      font-size: 2rem;
+      color: color(primary-white);
+      line-height: 41px;
+    }
+  }
+
+  .imageSection {
+    display: flex;
+    gap: 143px;
+    color: color(primary-white);
+
+    .imageStyle {
+      width: 100%;
+      max-width: 580px;
+      height: 326px;
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .textBlue {
+    color: color(heading-liner);
+    line-height: 19.2px;
+  }
+
+  .textWhite {
+    font-size: 1rem;
+    line-height: 19.2px;
+  }
+
+  .circle {
+    width: 4px;
+    height: 4px;
+    background: color(primary-white);
+    display: block;
+    border-radius: 100px;
+  }
+
+  .sliderSection {
+    margin-top: 6.25rem;
+    color: color(primary-white);
+
+    .cardStyle {
+      background: color(text-primary);
+      border: 1px solid rgba(color(primary-white), 0.12);
+      padding: 2rem;
+      border-radius: 12px;
+      height: 470px;
+      @include truncate(3);
+    }
+
+    .flexText {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    .cardTitleStyle {
+      font-size: 1.5rem;
+      line-height: 31.2px;
+      margin-top: 20px;
+      @include truncate(4);
+    }
+    
+    .sliderImage {
+      width: 100%;
+      height: 187px;
+      position: relative;
+      border-radius: 6px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .customSliderNav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 60px;
+    position: relative;
+    z-index: 9;
+
+    .btn {
+      width: 60px;
+      height: 60px;
+      background-color: color(primary-blue);
+      color: color(primary-white);
+      font-size: 20px;
+      border-radius: 8px;
+      cursor: pointer;
+
+      svg path {
+        stroke: color(primary-white);
+      }
+    }
+
+    .page {
+      width: 60px;
+      height: 60px;
+      border: 1px solid rgba(color(primary-white), 0.6);
+      color: color(primary-white);
+      font-size: 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .btnDisabled {
+      border: 1px solid rgba(color(primary-white), 0.12);
+      background-color: transparent;
+
+      svg path {
+        stroke: rgba(color(primary-white), 0.6);
+      }
+    }
+  }
+}
