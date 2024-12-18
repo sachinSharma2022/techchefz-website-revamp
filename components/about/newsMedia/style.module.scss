@@ -1,7 +1,8 @@
 @import "~/styles/partials/config";
 
 .newsMedia {
-  padding: spacing(section-primary-padding);
+  padding-inline: spacing(section-primary-padding);
+  padding-bottom: 7rem;
 
   @include tablet {
     padding: 3.75rem spacing(tablet-padding);
@@ -13,21 +14,42 @@
 
   .headingSec {
     margin-bottom: 5rem;
+
+    @include mobile {
+      margin-bottom: 3rem;
+    }
+
     .subTitle {
-      font-size: 1rem;
-      font-weight: 700px;
-      line-height: 24px;
-      letter-spacing: 20%;
       color: color(primary-white);
+      text-transform: uppercase;
+      opacity: opacity(light);;
+      font-size: text(normal);
+      font-weight: 500;
+      line-height: 1.5rem;
+      letter-spacing: 0.2rem;
+      font-weight: 700;
+  
+      @include mobile-tablet-p {
+        font-weight: 400;
+      }
     }
 
     .title {
       font-size: 2.75rem;
       color: color(primary-white);
+
+      @include mobile {
+        font-size: 2rem;
+      }
     }
   }
 
   .mediaContent {
+    max-width: 40vw;
+
+    @include mobile {
+      max-width: 100%;
+    }
 
     .subTitle {
       font-size: 1.25rem;
@@ -35,10 +57,21 @@
       display: flex;
       gap: 10px;
       align-items: center;
+      font-weight: 300;
+
+      @include mobile { 
+        font-size: 1rem;
+        line-height: 20px;
+      }
 
       .textBlue {
         font-size: 1.25rem;
         line-height: 24px;
+
+        @include mobile { 
+          font-size: 1rem;
+          line-height: 20px;
+        }
       }
     }
 
@@ -46,6 +79,11 @@
       font-size: 2rem;
       color: color(primary-white);
       line-height: 41px;
+
+      @include mobile { 
+        font-size: 1.5rem;
+        line-height: 30px;
+      }
     }
   }
 
@@ -53,6 +91,11 @@
     display: flex;
     gap: 143px;
     color: color(primary-white);
+
+    @include mobile {
+      flex-direction: column;
+      gap: 50px;
+    }
 
     .imageStyle {
       width: 100%;
@@ -93,6 +136,10 @@
     margin-top: 6.25rem;
     color: color(primary-white);
 
+    @include mobile { 
+      margin-top: 3.125rem;
+    }
+
     .cardStyle {
       background: color(text-primary);
       border: 1px solid rgba(color(primary-white), 0.12);
@@ -100,6 +147,19 @@
       border-radius: 12px;
       height: 470px;
       @include truncate(3);
+
+      @include mobile {
+        height: 400px;
+        padding: 1rem;
+      }
+    }
+
+    .textCard {
+      margin-top: 2.5rem;
+
+      @include mobile {
+        margin-top: 2rem;
+      }
     }
 
     .flexText {
@@ -109,6 +169,10 @@
 
       p {
         margin: 0;
+
+        @include mobile {
+         font-size: 0.9rem;
+        }
       }
     }
 
@@ -117,6 +181,11 @@
       line-height: 31.2px;
       margin-top: 20px;
       @include truncate(4);
+
+      @include mobile {
+        font-size: 1.2rem;
+        line-height: 1.4;
+      }
     }
     
     .sliderImage {
@@ -144,6 +213,12 @@
     position: relative;
     z-index: 9;
 
+    @include mobile {
+      justify-content: flex-start;
+      margin-top: 40px;
+      gap: 10px;
+    }
+
     .btn {
       width: 60px;
       height: 60px;
@@ -152,6 +227,14 @@
       font-size: 20px;
       border-radius: 8px;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include mobile {
+        width: 50px;
+        height: 50px;
+      }
 
       svg path {
         stroke: color(primary-white);
@@ -166,6 +249,10 @@
       font-size: 20px;
       border-radius: 8px;
       cursor: pointer;
+
+      @include mobile {
+        display: none;
+      }
     }
 
     .btnDisabled {

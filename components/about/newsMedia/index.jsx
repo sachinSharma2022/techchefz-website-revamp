@@ -1,21 +1,25 @@
 "use client";
-import { useContext, useState, useRef } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Icons } from "@/components/icons";
+import { ImageCustom } from "@/components/ui/imageCustom";
+import TextRevel from "@/components/ui/sectionAnimation";
 import { MyContext } from "@/context/theme";
 import { cn } from "@/lib/utils";
-import styles from "./style.module.scss";
-import { Icons } from "@/components/icons";
+import { useContext, useRef, useState } from "react";
+import { useMediaQuery } from "react-responsive";
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { ImageCustom } from "@/components/ui/imageCustom";
-import TextRevel from "@/components/ui/sectionAnimation";
+
+import styles from "./style.module.scss";
 
 const NewsMedia = () => {
   const { theme, setTheme } = useContext(MyContext);
+  const isMobileScreen = useMediaQuery({ query: "(max-width: 690px)" });
   const [currentPage, setCurrentPage] = useState(0);
-  const swiperRef = useRef(null); // Create a reference for Swiper instance
+  const swiperRef = useRef(null);
 
   const sliderData = [
     {
@@ -89,15 +93,13 @@ const NewsMedia = () => {
     },
   ];
 
-  const slidesPerPage = 3;
+  const slidesPerPage = isMobileScreen ? 1 : 3;
   const totalPages = Math.ceil(sliderData.length / slidesPerPage);
 
   const goToPage = (index) => {
     if (swiperRef.current) {
-      // Update currentPage state first
       setCurrentPage(index);
-      // Use swiperRef to navigate
-      swiperRef.current.swiper.slideTo(index * slidesPerPage); // Navigate to the page
+      swiperRef.current.swiper.slideTo(index * slidesPerPage);
     }
   };
 
@@ -152,7 +154,15 @@ const NewsMedia = () => {
               setCurrentPage(Math.floor(swiper.activeIndex / slidesPerPage))
             }
             loop={false}
-            ref={swiperRef} // Attach Swiper instance
+            ref={swiperRef}
+            breakpoints={{
+              768: {
+                slidesPerView: 1,
+              },
+              769: {
+                slidesPerView: slidesPerPage,
+              },
+            }}
           >
             {sliderData.map((item, index) => (
               <SwiperSlide key={index} className={styles.cardStyle}>
@@ -163,7 +173,7 @@ const NewsMedia = () => {
                   alt={item.title}
                   className={styles.sliderImage}
                 />
-                <div className="mt-5">
+                <div className={styles.textCard}>
                   <div className={styles.flexText}>
                     <p className={cn(styles.textBlue, "gradient-text")}>
                       {item.category}
