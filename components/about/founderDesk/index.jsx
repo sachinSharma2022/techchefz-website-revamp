@@ -23,14 +23,33 @@ const FounderDesk = ({ props }) => {
       <div className={cn("primary-container")}>
         <TextRevel>
           <div className={cn(styles.flexContainer)}>
-            <h6
-              className={cn(styles.subHeading, "gradient-text")}
-              dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
-            ></h6>
-            <h3
-              className={cn(styles.heading, "gradient-text")}
-              dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
-            ></h3>
+            <div className={styles.headSection}>
+              <h6
+                className={cn(styles.subHeading, "gradient-text")}
+                dangerouslySetInnerHTML={{ __html: `${props?.Title}` }}
+              ></h6>
+              <h3
+                className={cn(styles.heading, "gradient-text")}
+                dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
+              ></h3>
+            </div>
+
+            <div className={styles.actionSection}>
+              <Link href="/">
+                <Button
+                  variant={theme ? "blueBtnDark" : "blueBtn"}
+                  className={styles.headerBtn}
+                  size="md"
+                >
+                  <Icons.LinkedinWhite width={20} height={20} />
+                  Check LinkedIn
+                </Button>
+              </Link>
+
+              <Link href="">
+                <Icons.MediaIcon width={20} height={20} />
+              </Link>
+            </div>
           </div>
         </TextRevel>
 
@@ -65,7 +84,7 @@ const FounderDesk = ({ props }) => {
                 width={1000}
                 height={1000}
                 className={styles.teamImg}
-                alt = {props?.ProfileImage?.data?.attributes?.alternativeText}
+                alt={props?.ProfileImage?.data?.attributes?.alternativeText}
               />
             </div>
           </div>

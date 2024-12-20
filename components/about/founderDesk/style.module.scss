@@ -18,11 +18,22 @@
   }
 
   .flexContainer {
-    max-width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
     @include mobile-tablet-p {
       max-width: 100%;
       margin-bottom: 3.75rem;
+    }
+
+    .actionSection {
+      display: flex;
+      gap: 20px;
+    }
+
+    .headSection {
+      width: 60%;
     }
   }
 
