@@ -35,7 +35,7 @@ const FounderDesk = ({ props }) => {
             </div>
 
             <div className={styles.actionSection}>
-              <Link href="/">
+              <Link href={props.link} target="_blank">
                 <Button
                   variant={theme ? "blueBtnDark" : "blueBtn"}
                   className={styles.headerBtn}
@@ -68,13 +68,6 @@ const FounderDesk = ({ props }) => {
                   ></p>
                 </div>
               </div>
-              <Link
-                className={styles.linkedInIcon}
-                href={props.link}
-                target="_blank"
-              >
-                <Icons.Linkedin width={34} height={34} />
-              </Link>
               <ImageCustom
                 src={
                   props?.ProfileImage?.data?.attributes?.url
