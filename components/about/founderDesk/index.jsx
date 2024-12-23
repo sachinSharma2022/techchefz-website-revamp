@@ -46,7 +46,7 @@ const FounderDesk = ({ props }) => {
                 </Button>
               </Link>
 
-              <Link href="">
+              <Link href="" className={styles.mediaIcon}>
                 <Icons.MediaIcon width={20} height={20} />
               </Link>
             </div>

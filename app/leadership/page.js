@@ -9,6 +9,7 @@ import { api_About_Page } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
 import NotFound from "../not-found";
 import RelatedCase from "@/components/relatedCase";
+import CaseStudy from "@/components/leadership/caseStudy";
 
 export async function generateMetadata() {
   const data = await getData(api_About_Page);
@@ -46,6 +47,7 @@ const LeadershipPage = async () => {
           <FounderDesk props={data.FounderDesk} />
           <OurTeam props={data.Team} />
           <PhilosophyVision />
+          <CaseStudy />
           <LetsWork contact={data.ContactUs} />
         </div>
       ) : (
