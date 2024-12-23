@@ -8,6 +8,7 @@ import { useContext, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { base_Uri } from "@/lib/constants";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -15,86 +16,87 @@ import "swiper/css/pagination";
 
 import styles from "./style.module.scss";
 
-const NewsMedia = () => {
+const NewsMedia = ({ props }) => {
+  console.log("hiii", props);
   const { theme, setTheme } = useContext(MyContext);
   const isMobileScreen = useMediaQuery({ query: "(max-width: 690px)" });
   const [currentPage, setCurrentPage] = useState(0);
   const swiperRef = useRef(null);
 
-  const sliderData = [
-    {
-      image:
-        "https://plus.unsplash.com/premium_photo-1683121710572-7723bd2e235d?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      category: "Artificial Intelligence",
-      date: "28 Nov, 2024",
-      title:
-        "AI-Powered Customer Journeys: How TechChefz Delivers Personalized Experiences",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1644329770639-1a20809b82a3?q=80&w=2145&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      category: "Digital Transformation",
-      date: "28 Nov, 2024",
-      title: "The Future of Digital Transformation in 2025",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1644325349124-d1756b79dd42?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      category: "Digital Transformation",
-      date: "28 Nov, 2024",
-      title:
-        "5 Digital Transformation Challenges Businesses Face and How to Overcome Them",
-    },
-    {
-      image:
-        "https://plus.unsplash.com/premium_photo-1683121710572-7723bd2e235d?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      category: "Artificial Intelligence",
-      date: "28 Nov, 2024",
-      title:
-        "AI-Powered Customer Journeys: How TechChefz Delivers Personalized Experiences",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1644329770639-1a20809b82a3?q=80&w=2145&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      category: "Digital Transformation",
-      date: "28 Nov, 2024",
-      title: "The Future of Digital Transformation in 2025",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1644325349124-d1756b79dd42?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      category: "Digital Transformation",
-      date: "28 Nov, 2024",
-      title:
-        "5 Digital Transformation Challenges Businesses Face and How to Overcome Them",
-    },
-    {
-      image:
-        "https://plus.unsplash.com/premium_photo-1683121710572-7723bd2e235d?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      category: "Artificial Intelligence",
-      date: "28 Nov, 2024",
-      title:
-        "AI-Powered Customer Journeys: How TechChefz Delivers Personalized Experiences",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1644329770639-1a20809b82a3?q=80&w=2145&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      category: "Digital Transformation",
-      date: "28 Nov, 2024",
-      title: "The Future of Digital Transformation in 2025",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1644325349124-d1756b79dd42?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      category: "Digital Transformation",
-      date: "28 Nov, 2024",
-      title:
-        "5 Digital Transformation Challenges Businesses Face and How to Overcome Them",
-    },
-  ];
+  // const sliderData = [
+  //   {
+  //     image:
+  //       "https://plus.unsplash.com/premium_photo-1683121710572-7723bd2e235d?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  //     category: "Artificial Intelligence",
+  //     date: "28 Nov, 2024",
+  //     title:
+  //       "AI-Powered Customer Journeys: How TechChefz Delivers Personalized Experiences",
+  //   },
+  //   {
+  //     image:
+  //       "https://images.unsplash.com/photo-1644329770639-1a20809b82a3?q=80&w=2145&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  //     category: "Digital Transformation",
+  //     date: "28 Nov, 2024",
+  //     title: "The Future of Digital Transformation in 2025",
+  //   },
+  //   {
+  //     image:
+  //       "https://images.unsplash.com/photo-1644325349124-d1756b79dd42?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  //     category: "Digital Transformation",
+  //     date: "28 Nov, 2024",
+  //     title:
+  //       "5 Digital Transformation Challenges Businesses Face and How to Overcome Them",
+  //   },
+  //   {
+  //     image:
+  //       "https://plus.unsplash.com/premium_photo-1683121710572-7723bd2e235d?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  //     category: "Artificial Intelligence",
+  //     date: "28 Nov, 2024",
+  //     title:
+  //       "AI-Powered Customer Journeys: How TechChefz Delivers Personalized Experiences",
+  //   },
+  //   {
+  //     image:
+  //       "https://images.unsplash.com/photo-1644329770639-1a20809b82a3?q=80&w=2145&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  //     category: "Digital Transformation",
+  //     date: "28 Nov, 2024",
+  //     title: "The Future of Digital Transformation in 2025",
+  //   },
+  //   {
+  //     image:
+  //       "https://images.unsplash.com/photo-1644325349124-d1756b79dd42?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  //     category: "Digital Transformation",
+  //     date: "28 Nov, 2024",
+  //     title:
+  //       "5 Digital Transformation Challenges Businesses Face and How to Overcome Them",
+  //   },
+  //   {
+  //     image:
+  //       "https://plus.unsplash.com/premium_photo-1683121710572-7723bd2e235d?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  //     category: "Artificial Intelligence",
+  //     date: "28 Nov, 2024",
+  //     title:
+  //       "AI-Powered Customer Journeys: How TechChefz Delivers Personalized Experiences",
+  //   },
+  //   {
+  //     image:
+  //       "https://images.unsplash.com/photo-1644329770639-1a20809b82a3?q=80&w=2145&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  //     category: "Digital Transformation",
+  //     date: "28 Nov, 2024",
+  //     title: "The Future of Digital Transformation in 2025",
+  //   },
+  //   {
+  //     image:
+  //       "https://images.unsplash.com/photo-1644325349124-d1756b79dd42?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  //     category: "Digital Transformation",
+  //     date: "28 Nov, 2024",
+  //     title:
+  //       "5 Digital Transformation Challenges Businesses Face and How to Overcome Them",
+  //   },
+  // ];
 
   const slidesPerPage = isMobileScreen ? 1 : 3;
-  const totalPages = Math.ceil(sliderData.length / slidesPerPage);
+  const totalPages = Math.ceil(props.Slider.length / slidesPerPage);
 
   const goToPage = (index) => {
     if (swiperRef.current) {
@@ -111,10 +113,10 @@ const NewsMedia = () => {
         <TextRevel>
           <div className={styles.headingSec}>
             <h6 className={cn(styles.subTitle, "gradient-text")}>
-              Latest News and Media
+              {props?.Title}
             </h6>
             <h3 className={cn(styles.title, "gradient-text")}>
-              What’s Happening at Techchefz
+              {props?.SubTitle}
             </h3>
           </div>
         </TextRevel>
@@ -123,20 +125,25 @@ const NewsMedia = () => {
           <ImageCustom
             height={500}
             width={500}
-            src="https://images.unsplash.com/photo-1543269865-0a740d43b90c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            // src={props?.Image?.data?.attributes?.url}
+            src={
+              props?.Image?.data?.attributes?.url
+                ? `${base_Uri}${props?.Image?.data?.attributes?.url}`
+                : `${base_Uri}/`}
             alt=""
+
             className={styles.imageStyle}
           />
           <div className={styles.mediaContent}>
             <h6 className={styles.subTitle}>
               <span className={cn(styles.textBlue, "gradient-text")}>
-                Technology
+                {props?.Technology}
               </span>
               <span className={styles.circle} />
-              28 Nov, 2024
+              {props?.TechnologyDate}
             </h6>
             <h4 className={styles.title}>
-              Tech Outsourcing for Startups: How to Compete with the Big Players
+              {props?.Description}
             </h4>
           </div>
         </div>
@@ -164,24 +171,26 @@ const NewsMedia = () => {
               },
             }}
           >
-            {sliderData.map((item, index) => (
+            {props.Slider.map((item, index) => (
               <SwiperSlide key={index} className={styles.cardStyle}>
                 <ImageCustom
                   height={500}
                   width={500}
-                  src={item.image}
+                  src={item.Image?.data?.attributes?.url
+                    ? `${base_Uri}${item.Image?.data?.attributes?.url}`
+                    : `${base_Uri}/`}
                   alt={item.title}
                   className={styles.sliderImage}
                 />
                 <div className={styles.textCard}>
                   <div className={styles.flexText}>
                     <p className={cn(styles.textBlue, "gradient-text")}>
-                      {item.category}
+                      {item.Technology}
                     </p>
                     <span className={styles.circle} />
-                    <p className={styles.textDate}>{item.date}</p>
+                    <p className={styles.textDate}>{item.TechnologyDate}</p>
                   </div>
-                  <h3 className={styles.cardTitleStyle}>{item.title}</h3>
+                  <h3 className={styles.cardTitleStyle}>{item.Description}</h3>
                 </div>
               </SwiperSlide>
             ))}
