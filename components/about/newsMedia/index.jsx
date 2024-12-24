@@ -17,7 +17,7 @@ import "swiper/css/pagination";
 import styles from "./style.module.scss";
 
 const NewsMedia = ({ props }) => {
-  console.log("hiii", props);
+  // console.log("hiii", props);
   const { theme, setTheme } = useContext(MyContext);
   const isMobileScreen = useMediaQuery({ query: "(max-width: 690px)" });
   const [currentPage, setCurrentPage] = useState(0);

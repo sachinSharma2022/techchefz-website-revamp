@@ -52,38 +52,38 @@ const TeamBehind = ({ props }) => {
     }
   }, []);
 
-  const teamCard = [
-    {
-      name: "Mayank Maggon",
-      designation: "CEO & CTO",
-      src: "/images/img/team/team1.png",
-    },
-    {
-      name: "Akshit Maggon",
-      designation: "Director",
-      src: "/images/img/team/team2.png",
-    },
-    {
-      name: "Kunal Bhardwaj",
-      designation: "Director Technology",
-      src: "/images/img/team/team1.png",
-    },
-    {
-      name: "Mayank Maggon",
-      designation: "CEO & CTO",
-      src: "/images/img/team/team1.png",
-    },
-    {
-      name: "Akshit Maggon",
-      designation: "Director",
-      src: "/images/img/team/team2.png",
-    },
-    {
-      name: "Mayank Maggon",
-      designation: "CEO & CTO",
-      src: "/images/img/team/team1.png",
-    },
-  ];
+  // const teamCard = [
+  //   {
+  //     name: "Mayank Maggon",
+  //     designation: "CEO & CTO",
+  //     src: "/images/img/team/team1.png",
+  //   },
+  //   {
+  //     name: "Akshit Maggon",
+  //     designation: "Director",
+  //     src: "/images/img/team/team2.png",
+  //   },
+  //   {
+  //     name: "Kunal Bhardwaj",
+  //     designation: "Director Technology",
+  //     src: "/images/img/team/team1.png",
+  //   },
+  //   {
+  //     name: "Mayank Maggon",
+  //     designation: "CEO & CTO",
+  //     src: "/images/img/team/team1.png",
+  //   },
+  //   {
+  //     name: "Akshit Maggon",
+  //     designation: "Director",
+  //     src: "/images/img/team/team2.png",
+  //   },
+  //   {
+  //     name: "Mayank Maggon",
+  //     designation: "CEO & CTO",
+  //     src: "/images/img/team/team1.png",
+  //   },
+  // ];
 
   return (
     <div
@@ -97,14 +97,18 @@ const TeamBehind = ({ props }) => {
         <section className={cn("header-container", "full")}>
           <div className={cn("primary-container")}>
             <h1 className={cn(styles.bannerTitle, "gradient-text")}>
-              Meet our Leaders! <br /> Team Behind Techchefz
+              {props?.Title}
             </h1>
           </div>
         </section>
 
         <div className={styles.bannerImg}>
           <ImageCustom
-            src="/team-group.png"
+            src={
+              props?.Image?.data?.attributes?.url
+                ? `${base_Uri}${props?.Image?.data?.attributes?.url}`
+                : `${base_Uri}/`
+            }
             alt=""
             width={2560}
             height={1068}
@@ -114,22 +118,26 @@ const TeamBehind = ({ props }) => {
 
       {/* Other sections */}
       <section ref={component} className={styles.teamCards}>
-        {teamCard.map((data) => (
-          <div key={data} className={styles.teamCard}>
+        {props?.CardLeader?.map((items) => (
+          <div key={items} className={styles.teamCard}>
             <div className={styles.teamCardBg}>
               <div className={styles.cardHead}>
-                <h4>{data.name}</h4>
-                <p>{data.designation}</p>
+                <h4>{items.Title}</h4>
+                <p>{items.Desinagtion}</p>
               </div>
               {/* <Link className={styles.linkedInIcon} href="/" target="_blank">
                 <Icons.Linkedin width={34} height={34} />
               </Link> */}
               <ImageCustom
-                src={data.src}
+                src={
+                  items?.Image?.data?.attributes?.url
+                    ? `${base_Uri}${items?.Image?.data?.attributes?.url}`
+                    : `${base_Uri}/`
+                }
                 width={1000}
                 height={1000}
                 className={styles.teamImg}
-                alt={props?.ProfileImage?.data?.attributes?.alternativeText}
+                alt={items?.ProfileImage?.data?.attributes?.alternativeText}
               />
             </div>
           </div>

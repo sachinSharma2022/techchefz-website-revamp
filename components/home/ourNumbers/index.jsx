@@ -19,6 +19,7 @@ import Link from "next/link";
 import { useMediaQuery } from "react-responsive";
 
 const OurNumbers = ({ carrer, experience }) => {
+  console.log("shivanand", carrer)
   const { theme, setTheme } = useContext(MyContext);
   const isTabletScreen = useMediaQuery({ query: "(min-width: 691px)" });
 
@@ -37,18 +38,18 @@ const OurNumbers = ({ carrer, experience }) => {
               <h2
                 className={cn(styles.datingText, "gradient-text")}
                 dangerouslySetInnerHTML={{
-                  __html: `${carrer?.description}`,
+                  __html: `${carrer?.subtitle}`,
                 }}
               ></h2>
             </div>
 
             <div>
-              <Link href={carrer.BtnLink}>
+              <Link href={carrer?.BtnLink}>
                 <Button
                   variant={theme ? "lightBlueOutline" : "outline"}
                   size="md"
                 >
-                  {carrer.button}
+                  {carrer?.Btn}
                   <Icons.ArrowRight size={18} />
                 </Button>
               </Link>
@@ -93,7 +94,7 @@ const OurNumbers = ({ carrer, experience }) => {
 
           <div className={cn(styles.mobileCards, styles.ourNumberOption)}>
             <MobileSlider slidesToShow={isTabletScreen && 2.2}>
-              {experience.Vews.map((data, index) => (
+              {experience?.Vews?.map((data, index) => (
                 <ServiceInfoCard
                   key={index}
                   sbTitle={data.Title}

@@ -10,39 +10,36 @@ import Link from "next/link";
 import styles from "./style.module.scss";
 
 const HeroBanner = ({ props }) => {
+
   const { theme } = useContext(MyContext);
   return (
     <section
-      className={`${styles.heroBannerStyle} ${
-        theme ? styles.heroBannerDark : ""
-      }`}
+      className={`${styles.heroBannerStyle} ${theme ? styles.heroBannerDark : ""
+        }`}
     >
       <TextRevel>
         <div className={cn("header-container")}>
           <div className="primary-container grid-col-2">
             <h1
               className={cn(styles.title, "gradient-text")}
-              // dangerouslySetInnerHTML={{ __html: `${props?.title}` }}
+              dangerouslySetInnerHTML={{ __html: `${props?.title}` }}
             >
-              Alone, we can do so little, <span>together</span>, we can move
-              mountains.
+              {/* {props?.title} */}
             </h1>
             <div className={styles.contentSec}>
               <p
                 className={cn(styles.leadText, "gradient-text")}
-                // dangerouslySetInnerHTML={{ __html: `${props.subtitle}` }}
+              // dangerouslySetInnerHTML={{ __html: `${props.subtitle}` }}
               >
-                We are a worldwide presence, serving clients on four continents.
-                Our international expertise ensures innovative solutions
-                tailored to diverse global needs.
+                {props?.subtitle}
               </p>
-              <Link href="">
+              <Link href={props?.BtnLink}>
                 <Button
                   variant={theme ? "blueBtnDark" : "blueBtn"}
                   className={styles.headerBtn}
                   size="md"
                 >
-                  Let’s Work Together
+                  {props?.Btn}
                   {/* {props?.Btn} */}
                   <Icons.ArrowRight size={20} className="ms-2" />
                 </Button>
