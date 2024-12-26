@@ -2,6 +2,7 @@
 
 .philosophyVisionStyle {
   padding-inline: spacing(section-primary-padding);
+  padding-bottom: spacing(p-120);
 
   @include mobile-tablet-p {
     padding: 0;

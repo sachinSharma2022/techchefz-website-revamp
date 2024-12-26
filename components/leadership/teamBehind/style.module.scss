@@ -20,7 +20,7 @@
     background-position: center;
 
     @include mobile-tablet-p {
-      height: auto;
+      height: 370px;
       padding: 0;
       background-size: cover;
     }

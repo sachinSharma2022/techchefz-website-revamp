@@ -1031,6 +1031,23 @@ html.lenis {
   }
 }
 
+.case-study-style {
+  background-color: color(input-bg);
+  padding-bottom: 0 !important;
+
+  @include mobile-tablet-p {
+    padding-bottom: 3rem !important;
+  }
+
+  .slider-head-section {
+    max-width: 60%;
+
+    @include mobile-tablet-p {
+      max-width: 100%;
+    }
+  }
+}
+
 .fadeinout {
   animation: fadeinout 1s ease-in-out;
 }

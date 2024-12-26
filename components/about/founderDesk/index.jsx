@@ -35,7 +35,11 @@ const FounderDesk = ({ props }) => {
             </div>
 
             <div className={styles.actionSection}>
-              <Link href={props.link} target="_blank">
+              <Link
+                href={props.link}
+                target="_blank"
+                className={styles.socialBtn}
+              >
                 <Button
                   variant={theme ? "blueBtnDark" : "blueBtn"}
                   className={styles.headerBtn}

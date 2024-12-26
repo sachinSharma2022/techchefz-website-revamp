@@ -5,14 +5,14 @@ import OurNumbers from "@/components/home/ourNumbers";
 import HeroBanner from "@/components/leadership/heroBanner";
 import PhilosophyVision from "@/components/leadership/philosophy-vision";
 import TeamBehind from "@/components/leadership/teamBehind";
-import { api_About_Page } from "@/lib/constants";
+import { api_leadership_Page, api_Case_study_Page } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
 import NotFound from "../not-found";
 import RelatedCase from "@/components/relatedCase";
-import CaseStudy from "@/components/leadership/caseStudy";
+import { getDataDynamic } from "@/lib/fetchData";
 
 export async function generateMetadata() {
-  const data = await getData(api_About_Page);
+  const data = await getData(api_leadership_Page);
 
   return {
     title: data?.SeoData?.metaTitle,
@@ -36,18 +36,27 @@ export async function generateMetadata() {
 }
 
 const LeadershipPage = async () => {
-  const data = await getData(api_About_Page);
+  const data = await getData(api_leadership_Page);
+  const data_related_cases = await getDataDynamic(api_Case_study_Page);
 
   return (
     <>
       {data ? (
         <div className="overflow-hidden">
-          <HeroBanner />
-          <TeamBehind />
+          <HeroBanner props={data.LeadershipWorkTogether} />
+          <TeamBehind props={data.LeadershipBanner} />
           <FounderDesk props={data.FounderDesk} />
           <OurTeam props={data.Team} />
-          <PhilosophyVision />
-          <CaseStudy />
+          <PhilosophyVision props={data.PhilosophyVision} />
+          <OurNumbers
+            carrer={data.OurNumberBan}
+            experience={data.ourExperience}
+          />
+          <RelatedCase
+            className="case-study-style"
+            props={data_related_cases}
+            RelatedInsight={data.RelatedInsight}
+          />
           <LetsWork contact={data.ContactUs} />
         </div>
       ) : (
