@@ -28,20 +28,20 @@ const TeamBehind = ({ props }) => {
           },
         });
         tl.to(`.${styles.streamLineSection}`, {
-          xPercent: -101,
+          xPercent: -101, // Reduce the percentage to control the movement
           ease: "none",
         })
           .to(
             `.${styles.teamCards}`,
             {
-              xPercent: -100,
+              xPercent: -104, // Reduce percentage for smoother transition
               ease: "none",
-              duration: 1,
+              duration: 0.5, // Adjust duration for better alignment
             },
             "<"
           )
           .to(`.${styles.teamCards}`, {
-            duration: 0.1,
+            duration: 0.1, // Check if this is causing unnecessary delay
           });
       });
 
