@@ -102,8 +102,14 @@
       max-width: 580px;
       height: 326px;
       position: relative;
-      border-radius: 12px;
+      border-radius: text(lg);
       overflow: hidden;
+      border: 0.14rem solid transparent;
+      @include transition(0.5s);
+
+      &:hover {
+        border-color:color(heading-liner);
+      }
 
       img {
         width: 100%;
@@ -144,9 +150,14 @@
       background: color(bg-soft);
       border: 1px solid rgba(color(text-primary), 0.12);
       padding: 2rem;
-      border-radius: 12px;
+      border-radius: text(lg);
       height: 470px;
       @include truncate(3);
+      @include transition(0.5s);
+
+      &:hover {
+        border-color:color(heading-liner);
+      }
 
       @include mobile {
         height: 400px;

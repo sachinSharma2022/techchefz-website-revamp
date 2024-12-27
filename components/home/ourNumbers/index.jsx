@@ -19,7 +19,7 @@ import Link from "next/link";
 import { useMediaQuery } from "react-responsive";
 
 const OurNumbers = ({ carrer, experience }) => {
-  console.log("shivanand", carrer)
+  console.log("shivanand", carrer);
   const { theme, setTheme } = useContext(MyContext);
   const isTabletScreen = useMediaQuery({ query: "(min-width: 691px)" });
 

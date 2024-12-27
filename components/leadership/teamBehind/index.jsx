@@ -1,5 +1,4 @@
 "use client";
-import { Icons } from "@/components/icons";
 import { ImageCustom } from "@/components/ui/imageCustom";
 import { MyContext } from "@/context/theme";
 import { base_Uri } from "@/lib/constants";
@@ -9,8 +8,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useContext, useEffect, useRef } from "react";
 import { useMediaQuery } from "react-responsive";
 import styles from "./style.module.scss";
-
-import Link from "next/link";
 
 const TeamBehind = ({ props }) => {
   const isBigScreen = useMediaQuery({ minWidth: 1025 });
@@ -31,59 +28,26 @@ const TeamBehind = ({ props }) => {
           },
         });
         tl.to(`.${styles.streamLineSection}`, {
-          xPercent: -101,
+          xPercent: -101, // Reduce the percentage to control the movement
           ease: "none",
         })
           .to(
             `.${styles.teamCards}`,
             {
-              xPercent: -100,
+              xPercent: -104, // Reduce percentage for smoother transition
               ease: "none",
-              duration: 1,
+              duration: 0.5, // Adjust duration for better alignment
             },
             "<"
           )
           .to(`.${styles.teamCards}`, {
-            duration: 0.1,
+            duration: 0.1, // Check if this is causing unnecessary delay
           });
       });
 
       return () => ctx.revert();
     }
   }, []);
-
-  // const teamCard = [
-  //   {
-  //     name: "Mayank Maggon",
-  //     designation: "CEO & CTO",
-  //     src: "/images/img/team/team1.png",
-  //   },
-  //   {
-  //     name: "Akshit Maggon",
-  //     designation: "Director",
-  //     src: "/images/img/team/team2.png",
-  //   },
-  //   {
-  //     name: "Kunal Bhardwaj",
-  //     designation: "Director Technology",
-  //     src: "/images/img/team/team1.png",
-  //   },
-  //   {
-  //     name: "Mayank Maggon",
-  //     designation: "CEO & CTO",
-  //     src: "/images/img/team/team1.png",
-  //   },
-  //   {
-  //     name: "Akshit Maggon",
-  //     designation: "Director",
-  //     src: "/images/img/team/team2.png",
-  //   },
-  //   {
-  //     name: "Mayank Maggon",
-  //     designation: "CEO & CTO",
-  //     src: "/images/img/team/team1.png",
-  //   },
-  // ];
 
   return (
     <div

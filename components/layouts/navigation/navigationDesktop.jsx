@@ -160,6 +160,43 @@ const NavigationDesktop = ({ props, featureArticle }) => {
     );
   }
 
+  function AboutTech(feartureArray) {
+    return (
+      <>
+        <div className={cn(styles.latestTech)}>
+          <h3 className={styles.title}>{props[2]?.DropDown[8]?.Title}</h3>
+          <Link
+            href={`/insights/${generateSlug(
+              feartureArray[0]?.attributes?.InsightOverview[0].Title
+            )}`}
+            className={styles.imageTech}
+          >
+            <div className={styles.imgBox}>
+              <ImageCustom
+                src={
+                  feartureArray[0]?.attributes?.InsightOverview[0]?.Image?.data
+                    ?.attributes?.url
+                    ? `${base_Uri}${feartureArray[0]?.attributes?.InsightOverview[0]?.Image?.data?.attributes?.url}`
+                    : `${base_Uri}/`
+                }
+                width={300}
+                height={300}
+                alt={
+                  feartureArray[0]?.attributes?.InsightOverview[0]?.Image?.data
+                    ?.attributes?.alternativeText
+                }
+              />
+            </div>
+            <div className={styles.infoBox}>
+              {feartureArray[0]?.attributes?.InsightOverview[0].Title}
+              <Icons.ArrowRight size={16} />
+            </div>
+          </Link>
+        </div>
+      </>
+    );
+  }
+
   function OverTech() {
     return (
       <div className={styles.overviewFlex}>
@@ -213,13 +250,50 @@ const NavigationDesktop = ({ props, featureArticle }) => {
         <AnimatedLogo />
         <nav>
           <ul>
-            <li className={styles.menuItem}>
+            <li className={styles.dropDown} onMouseEnter={openMenu}>
               <Link
                 href={props[0].Link}
                 className={pathname == "/about" ? styles.active : ""}
               >
-                {props[0].Title}
+                {props[0].Title} <div className={styles.arrow} />
               </Link>
+
+              <ul
+                className={cn(
+                  styles.subMenu,
+                  styles.singleLayout,
+                  !isSubMenu && styles.subMenuHide
+                )}
+              >
+                <div className={cn(styles.subsection, styles.solutionSection)}>
+                  {AboutTech(solutionMore)}
+                  <div className={cn(styles.overviewTech, styles.aboutTech)}>
+                    <div className={cn(styles.multiHrefs)}>
+                      <div className="row">
+                        <div className="col-sm-12">
+                          <Link
+                            href="/leadership"
+                            // href={props[1]?.DropDown[0]?.Links}
+                            className={cn(styles.hrefInnerFlex)}
+                            onClick={closeMenu}
+                          >
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>
+                                Leadership
+                                {/* {props[1]?.DropDown[0]?.Title} */}
+                              </h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              {props[1]?.DropDown[0]?.Description}
+                            </p>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ul>
             </li>
 
             <li className={styles.dropDown} onMouseEnter={openMenu}>

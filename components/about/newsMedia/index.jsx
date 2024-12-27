@@ -23,78 +23,6 @@ const NewsMedia = ({ props }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const swiperRef = useRef(null);
 
-  // const sliderData = [
-  //   {
-  //     image:
-  //       "https://plus.unsplash.com/premium_photo-1683121710572-7723bd2e235d?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //     category: "Artificial Intelligence",
-  //     date: "28 Nov, 2024",
-  //     title:
-  //       "AI-Powered Customer Journeys: How TechChefz Delivers Personalized Experiences",
-  //   },
-  //   {
-  //     image:
-  //       "https://images.unsplash.com/photo-1644329770639-1a20809b82a3?q=80&w=2145&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //     category: "Digital Transformation",
-  //     date: "28 Nov, 2024",
-  //     title: "The Future of Digital Transformation in 2025",
-  //   },
-  //   {
-  //     image:
-  //       "https://images.unsplash.com/photo-1644325349124-d1756b79dd42?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //     category: "Digital Transformation",
-  //     date: "28 Nov, 2024",
-  //     title:
-  //       "5 Digital Transformation Challenges Businesses Face and How to Overcome Them",
-  //   },
-  //   {
-  //     image:
-  //       "https://plus.unsplash.com/premium_photo-1683121710572-7723bd2e235d?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //     category: "Artificial Intelligence",
-  //     date: "28 Nov, 2024",
-  //     title:
-  //       "AI-Powered Customer Journeys: How TechChefz Delivers Personalized Experiences",
-  //   },
-  //   {
-  //     image:
-  //       "https://images.unsplash.com/photo-1644329770639-1a20809b82a3?q=80&w=2145&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //     category: "Digital Transformation",
-  //     date: "28 Nov, 2024",
-  //     title: "The Future of Digital Transformation in 2025",
-  //   },
-  //   {
-  //     image:
-  //       "https://images.unsplash.com/photo-1644325349124-d1756b79dd42?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //     category: "Digital Transformation",
-  //     date: "28 Nov, 2024",
-  //     title:
-  //       "5 Digital Transformation Challenges Businesses Face and How to Overcome Them",
-  //   },
-  //   {
-  //     image:
-  //       "https://plus.unsplash.com/premium_photo-1683121710572-7723bd2e235d?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //     category: "Artificial Intelligence",
-  //     date: "28 Nov, 2024",
-  //     title:
-  //       "AI-Powered Customer Journeys: How TechChefz Delivers Personalized Experiences",
-  //   },
-  //   {
-  //     image:
-  //       "https://images.unsplash.com/photo-1644329770639-1a20809b82a3?q=80&w=2145&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //     category: "Digital Transformation",
-  //     date: "28 Nov, 2024",
-  //     title: "The Future of Digital Transformation in 2025",
-  //   },
-  //   {
-  //     image:
-  //       "https://images.unsplash.com/photo-1644325349124-d1756b79dd42?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //     category: "Digital Transformation",
-  //     date: "28 Nov, 2024",
-  //     title:
-  //       "5 Digital Transformation Challenges Businesses Face and How to Overcome Them",
-  //   },
-  // ];
-
   const slidesPerPage = isMobileScreen ? 1 : 3;
   const totalPages = Math.ceil(props.Slider.length / slidesPerPage);
 
@@ -129,9 +57,9 @@ const NewsMedia = ({ props }) => {
             src={
               props?.Image?.data?.attributes?.url
                 ? `${base_Uri}${props?.Image?.data?.attributes?.url}`
-                : `${base_Uri}/`}
+                : `${base_Uri}/`
+            }
             alt=""
-
             className={styles.imageStyle}
           />
           <div className={styles.mediaContent}>
@@ -142,9 +70,7 @@ const NewsMedia = ({ props }) => {
               <span className={styles.circle} />
               {props?.TechnologyDate}
             </h6>
-            <h4 className={styles.title}>
-              {props?.Description}
-            </h4>
+            <h4 className={styles.title}>{props?.Description}</h4>
           </div>
         </div>
 
@@ -176,9 +102,11 @@ const NewsMedia = ({ props }) => {
                 <ImageCustom
                   height={500}
                   width={500}
-                  src={item.Image?.data?.attributes?.url
-                    ? `${base_Uri}${item.Image?.data?.attributes?.url}`
-                    : `${base_Uri}/`}
+                  src={
+                    item.Image?.data?.attributes?.url
+                      ? `${base_Uri}${item.Image?.data?.attributes?.url}`
+                      : `${base_Uri}/`
+                  }
                   alt={item.title}
                   className={styles.sliderImage}
                 />

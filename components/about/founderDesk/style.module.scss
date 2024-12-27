@@ -5,8 +5,10 @@
   justify-content: center;
   align-items: center;
   padding: 7.5rem;
+  padding-top: 0;
   position: relative;
   background-color: color(bg-soft);
+  margin-top: -5rem;
 
   @include mobile-tablet-p {
     padding: spacing(tablet-padding);
@@ -25,15 +27,41 @@
     @include mobile-tablet-p {
       max-width: 100%;
       margin-bottom: 3.75rem;
+      flex-direction: column;
+      align-items: flex-start;
     }
 
     .actionSection {
       display: flex;
       gap: 20px;
+
+      @include mobile-tablet-p {
+        width: 100%;
+
+       .socialBtn, button {
+          width: 100%;
+        }
+      }
     }
 
     .headSection {
       width: 60%;
+
+      @include mobile-tablet-p {
+        width: 100%;
+      }
+    }
+  }
+
+  .mediaIcon svg {
+    width: 50px;
+    height: 50px;
+    scale: 1.15;
+    margin-top: 6px;
+
+    @include mobile-tablet-p {
+      scale: 1;
+      margin-top: 0px;
     }
   }
 
@@ -43,9 +71,9 @@
     line-height: 3.375rem;
 
     @include mobile-tablet-p {
-      font-size: 2rem;
-      line-height: 2.5rem;
-      margin-bottom: text(lg);
+      font-size: 1.7rem;
+      line-height: 2rem;
+      margin-bottom: 2.5rem;
     }
 
     span {
@@ -56,8 +84,8 @@
         @include textGradient;
       }
       @include mobile-tablet-p {
-        font-size: 2rem;
-        line-height: 2.5rem;
+        font-size: 1.7rem;
+        line-height: 2rem;
         margin-bottom: text(lg);
       }
     }
@@ -79,6 +107,9 @@
 
   .paraSection {
     .textWrapper {
+      opacity: 0.8;
+      line-height: 30px;
+      
       @include desktop-normal {
         overflow-y: scroll;
         height: 32.5rem;

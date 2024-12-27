@@ -44,14 +44,16 @@ const LeadershipPage = async () => {
       {data ? (
         <div className="overflow-hidden">
           <HeroBanner props={data.LeadershipWorkTogether} />
-
           <TeamBehind props={data.LeadershipBanner} />
           <FounderDesk props={data.FounderDesk} />
           <OurTeam props={data.Team} />
           <PhilosophyVision props={data.PhilosophyVision} />
-          <OurNumbers carrer={data.OurNumberBan} experience={data.ourExperience} />
+          <OurNumbers
+            carrer={data.OurNumberBan}
+            experience={data.ourExperience}
+          />
           <RelatedCase
-            className="cms-related-style"
+            className="case-study-style"
             props={data_related_cases}
             RelatedInsight={data.RelatedInsight}
           />
