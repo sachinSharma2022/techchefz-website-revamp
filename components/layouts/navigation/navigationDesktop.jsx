@@ -13,6 +13,8 @@ import { useContext, useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
 const NavigationDesktop = ({ props, featureArticle }) => {
+
+  // console.log("shivanand ji", props);
   const pathname = usePathname();
   const { theme, setTheme } = useContext(MyContext);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -272,20 +274,20 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                       <div className="row">
                         <div className="col-sm-12">
                           <Link
-                            href="/leadership"
-                            // href={props[1]?.DropDown[0]?.Links}
+                            // href="/leadership"
+                            href={props[0]?.DropDown[0]?.Links}
                             className={cn(styles.hrefInnerFlex)}
                             onClick={closeMenu}
                           >
                             <div className={styles.head}>
                               <h4 className={styles.linkTitle}>
-                                Leadership
-                                {/* {props[1]?.DropDown[0]?.Title} */}
+                                {/* Leadership */}
+                                {props[0]?.DropDown[0]?.Title}
                               </h4>
                               <Icons.ArrowForward />
                             </div>
                             <p className={styles.excepPara}>
-                              {props[1]?.DropDown[0]?.Description}
+                              {props[0]?.DropDown[0]?.Description}
                             </p>
                           </Link>
                         </div>

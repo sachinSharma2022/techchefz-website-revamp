@@ -312,8 +312,8 @@ const NavigationMobile = ({ props, featureArticle }) => {
                   isAboutMenu === true
                     ? styles.slideIn
                     : isAboutMenu != null
-                    ? styles.slideOut
-                    : ""
+                      ? styles.slideOut
+                      : ""
                 )}
               >
                 <div className={styles.subsection}>
@@ -330,19 +330,19 @@ const NavigationMobile = ({ props, featureArticle }) => {
                       <div className="row">
                         <div className="col-sm-12">
                           <Link
-                            href="/leadership"
+                            href={props[0]?.DropDown[0]?.Links}
                             onClick={onlyCloseAboutMenu}
                             className={cn(styles.hrefInnerFlex)}
                           >
                             <div className={styles.head}>
                               <h4 className={styles.linkTitle}>
-                                {/* {props[1]?.DropDown[0]?.Title} */}
-                                Leadership
+                                {props[0]?.DropDown[0]?.Title}
+                                {/* Leadership */}
                               </h4>
                               <Icons.ArrowForward />
                             </div>
                             <p className={styles.excepPara}>
-                              {props[1]?.DropDown[2]?.Description}
+                              {props[0]?.DropDown[0]?.Description}
                             </p>
                           </Link>
                         </div>
@@ -367,8 +367,8 @@ const NavigationMobile = ({ props, featureArticle }) => {
                   isSolutionMenu === true
                     ? styles.slideIn
                     : isSolutionMenu != null
-                    ? styles.slideOut
-                    : ""
+                      ? styles.slideOut
+                      : ""
                 )}
               >
                 <div className={styles.subsection}>
@@ -452,8 +452,8 @@ const NavigationMobile = ({ props, featureArticle }) => {
                   isTechMenu === true
                     ? styles.slideIn
                     : isTechMenu != null
-                    ? styles.slideOut
-                    : ""
+                      ? styles.slideOut
+                      : ""
                 )}
               >
                 <div className={styles.subsection}>
@@ -602,8 +602,8 @@ const NavigationMobile = ({ props, featureArticle }) => {
                   isMoreMenu === true
                     ? styles.slideIn
                     : isMoreMenu != null
-                    ? styles.slideOut
-                    : ""
+                      ? styles.slideOut
+                      : ""
                 )}
               >
                 <div className={styles.subsection}>
