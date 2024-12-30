@@ -14,8 +14,9 @@ const PhilosophyVision = ({ props }) => {
 
   return (
     <section
-      className={`${styles.philosophyVisionStyle} ${theme ? styles.philosophyVisionDark : ""
-        }`}
+      className={`${styles.philosophyVisionStyle} ${
+        theme ? styles.philosophyVisionDark : ""
+      }`}
     >
       <div className={cn("primary-container")}>
         <TextRevel>
@@ -31,7 +32,7 @@ const PhilosophyVision = ({ props }) => {
 
         <div className={styles.visionSection}>
           {props?.Philosophycard?.map((item, index) => (
-            <div>
+            <div key={index}>
               <ImageCustom
                 src={
                   item?.CardImage?.data?.attributes?.url
@@ -44,13 +45,9 @@ const PhilosophyVision = ({ props }) => {
                 className={styles.imageStyle}
               />
               <h4 className={styles.title}>{item?.Title}</h4>
-              <p className={styles.description}>
-                {item?.Description}
-              </p>
+              <p className={styles.description}>{item?.Description}</p>
             </div>
           ))}
-
-
         </div>
       </div>
     </section>
