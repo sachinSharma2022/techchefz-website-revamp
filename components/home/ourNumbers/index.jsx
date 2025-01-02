@@ -38,7 +38,7 @@ const OurNumbers = ({ carrer, experience }) => {
               <h2
                 className={cn(styles.datingText, "gradient-text")}
                 dangerouslySetInnerHTML={{
-                  __html: `${carrer?.subtitle}`,
+                  __html: `${carrer?.description}`,
                 }}
               ></h2>
             </div>
@@ -49,7 +49,7 @@ const OurNumbers = ({ carrer, experience }) => {
                   variant={theme ? "lightBlueOutline" : "outline"}
                   size="md"
                 >
-                  {carrer?.Btn}
+                  {carrer?.button}
                   <Icons.ArrowRight size={18} />
                 </Button>
               </Link>

@@ -49,7 +49,7 @@ const LeadershipPage = async () => {
           <OurTeam props={data.Team} />
           <PhilosophyVision props={data.PhilosophyVision} />
           <OurNumbers
-            carrer={data.OurNumberBan}
+            carrer={data.carrer}
             experience={data.ourExperience}
           />
           <RelatedCase
