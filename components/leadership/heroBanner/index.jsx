@@ -10,7 +10,7 @@ import Link from "next/link";
 import styles from "./style.module.scss";
 
 const HeroBanner = ({ props }) => {
-
+  console.log("hiii", props);
   const { theme } = useContext(MyContext);
   return (
     <section
@@ -31,7 +31,7 @@ const HeroBanner = ({ props }) => {
                 className={cn(styles.leadText, "gradient-text")}
               // dangerouslySetInnerHTML={{ __html: `${props.subtitle}` }}
               >
-                {props?.subtitle}
+                {props?.description}
               </p>
               <Link href={props?.BtnLink}>
                 <Button
@@ -39,7 +39,7 @@ const HeroBanner = ({ props }) => {
                   className={styles.headerBtn}
                   size="md"
                 >
-                  {props?.Btn}
+                  {props?.button}
                   {/* {props?.Btn} */}
                   <Icons.ArrowRight size={20} className="ms-2" />
                 </Button>
