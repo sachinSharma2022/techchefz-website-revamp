@@ -23,6 +23,7 @@
       height: 370px;
       padding: 0;
       background-size: cover;
+      background: color(dark-bg);
     }
 
     .flexContainer {
@@ -227,6 +228,7 @@
     text-align: center;
     max-width: 40vw;
     margin: 0 auto;
+    color: color(primary-white);
 
     @include mobile-tablet-p {
       padding-block: 3.75rem 3.75rem;

@@ -48,10 +48,7 @@ const LeadershipPage = async () => {
           <FounderDesk props={data.FounderDesk} />
           <OurTeam props={data.Team} />
           <PhilosophyVision props={data.PhilosophyVision} />
-          <OurNumbers
-            carrer={data.carrer}
-            experience={data.ourExperience}
-          />
+          <OurNumbers carrer={data.carrer} experience={data.ourExperience} />
           <RelatedCase
             className="case-study-style"
             props={data_related_cases}

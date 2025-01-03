@@ -1032,11 +1032,11 @@ html.lenis {
 }
 
 .case-study-style {
-  background-color: color(input-bg);
-  padding-bottom: 0 !important;
+  background-color: color(bg-soft);
+  padding-top: 0rem !important;
 
   @include mobile-tablet-p {
-    padding-bottom: 3rem !important;
+    padding-block:2rem 3rem !important;
   }
 
   .slider-head-section {
@@ -1246,7 +1246,7 @@ html.lenis {
 
   // For Related slider
   .tech-related-style,
-  .cms-related-style {
+  .cms-related-style, .case-study-style  {
     background-color: color(dark-bg);
   }
 
