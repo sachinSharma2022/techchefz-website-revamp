@@ -1032,11 +1032,11 @@ html.lenis {
 }
 
 .case-study-style {
-  background-color: color(bg-soft);
-  padding-top: 0rem !important;
+  background-color: color(primary-white);
+  padding-bottom: 0 !important;
 
   @include mobile-tablet-p {
-    padding-block:2rem 3rem !important;
+    padding-block:3rem !important;
   }
 
   .slider-head-section {
@@ -1259,6 +1259,14 @@ html.lenis {
       svg {
         filter: none;
       }
+    }
+  }
+
+  .case-study-style {
+    padding-block: 0 7.5rem !important;
+
+    @include mobile-tablet-p {
+      padding-block:2rem 3rem !important;
     }
   }
 }
