@@ -27,7 +27,8 @@ export async function generateMetadata() {
     metaViewport: data?.SeoData?.metaViewport,
     canonicalURL: data?.SeoData?.canonicalURL,
     metaSocialTitle: data?.SeoData?.metaSocial?.socialNetwork?.title,
-    metaSocialDescription: data?.SeoData?.metaSocial?.socialNetwork?.description,
+    metaSocialDescription:
+      data?.SeoData?.metaSocial?.socialNetwork?.description,
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_STRAPIE_BASE_URL}${data?.SeoData?.metaSocial?.socialNetwork?.image?.data?.attributes?.url}`, // Must be an absolute URL

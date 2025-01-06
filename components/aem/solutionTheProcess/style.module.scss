@@ -1,0 +1,243 @@
+@import "~/styles/partials/config";
+
+.theProcessStyle {
+  padding: 8.75rem 7.5rem 20rem;
+  overflow: hidden;
+
+  @include desktop-hd-min {
+    padding: 8.75rem 7.5rem 10rem;
+  }
+
+  @include tablet {
+    padding: 3.75rem spacing(tablet-padding);
+  }
+
+  @include mobile {
+    padding: 3.75rem spacing(mobile-padding);
+  }
+
+  .flexContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 8.938rem;
+    position: relative;
+
+    @include mobile-tablet-p {
+      flex-direction: column;
+      gap: 3.75rem;
+    }
+    .stepperImg {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .headSection {
+    margin-bottom: 5rem;
+    max-width: 50%;
+
+    @include mobile-tablet-p {
+      max-width: 100%;
+      margin-bottom: 0;
+    }
+
+    .heading {
+      color: color(text-primary);
+      text-transform: uppercase;
+      opacity: opacity(dark);
+      font-size: text(normal);
+      font-weight: 500;
+      line-height: 1.5rem;
+      letter-spacing: 0.2rem;
+    }
+
+    .subHeading {
+      font-size: text(larger);
+      margin-bottom: 2.75rem;
+      line-height: 3.375rem;
+      max-width: 90%;
+
+      @include mobile-tablet-p {
+        font-size: text(xxxl);
+        line-height: 2.5rem;
+        margin-bottom: 0;
+      }
+
+      span {
+        font-size: text(larger);
+        color: color(heading-liner);
+        @include min-desktop-medium {
+          @include textGradient;
+        }
+
+        @include mobile-tablet-p {
+          font-size: text(xxxl);
+        }
+      }
+    }
+
+    .ourNumbersImg {
+      width: 32vw;
+
+      @include mobile-tablet-p {
+        display: none;
+      }
+
+      @include desktop-hd {
+        width: 25vw;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .circularStepperContainer {
+      position: relative;
+      width: 510px;
+      scale: 0.8;
+
+      @include mobile-tablet-p {
+        width: 100vw;
+        scale: 0.8;
+        left: -20px;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .circularStepperContainer > span {
+      font-size: text(larger);
+      color: color(info-blue);
+      background: linear-gradient(
+        118deg,
+        color(primary-blue) 11.5%,
+        color(heading-liner) 55.42%
+      );
+      @include min-desktop-medium {
+        @include textGradient;
+      }
+
+      @include mobile-tablet-p {
+        font-size: text(xxxl);
+      }
+    }
+  }
+
+  .processCardSection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2.5rem;
+    margin-top: 10.75rem;
+    width: 100%;
+
+    @include tablet {
+      margin-top: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    @include mobile {
+      margin-top: 0;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .processCard {
+      background: color(bg-soft);
+      padding: 2.5rem;
+      border-radius: 1.25rem;
+      border: 0.14rem solid rgba(color(text-primary), 0.12);
+      max-width: 587px;
+      @include transition(0.5s);
+
+      @include tablet {
+        height: 100%;
+      }
+
+      @include desktop-normal {
+        opacity: 0.4;
+
+        &:first-child {
+          opacity: 0.4 !important;
+        }
+        &.cardActive {
+          opacity: 1 !important;
+        }
+      }
+
+      @include desktop-2k {
+        min-width: 700px;
+        max-width: 700px;
+      }
+
+      @include desktop-4k {
+        min-width: 700px;
+        max-width: 700px;
+        margin-left: -50px;
+      }
+
+      @include mobile-tablet-p {
+        opacity: 1;
+        padding: 1.5rem;
+      }
+
+      &[style*="opacity: 1"] {
+        &:hover {
+          border-color: color(heading-liner);
+        }
+      }
+
+      p {
+        margin-bottom: 0;
+        opacity: opacity(dark);
+        font-size: text(lg);
+
+        @include mobile-tablet-p {
+          @include truncate(6);
+        }
+      }
+
+      @include mobile {
+        min-width: 100%;
+        min-height: 25rem;
+      }
+
+      .title {
+        margin-bottom: 1rem;
+
+        @include mobile-tablet-p {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .textGradient {
+      font-size: text(xxxl);
+      color: color(Pervenche-blue);
+      margin-bottom: 20px;
+    }
+  }
+
+  //Dark mode style
+  &.theProcessDark {
+    background-color: color(dark-bg);
+    color: color(primary-white);
+
+    .heading {
+      color: color(primary-white);
+    }
+
+    .processCard {
+      background-color: color(text-primary);
+      border: 0.14rem solid rgba(color(primary-white), 0.12);
+    }
+  }
+}

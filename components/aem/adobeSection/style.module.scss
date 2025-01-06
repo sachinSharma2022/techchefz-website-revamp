@@ -1,0 +1,96 @@
+@import "~/styles/partials/config";
+
+.adobeSectionStyle {
+  padding-block:5rem 7.5rem;
+
+  @include mobile-tablet-p {
+    padding-block: 3.75rem 3.75rem;
+  }
+
+  .textSection {
+    display: flex;
+    gap: 8.9375rem;
+    margin-top: 5rem;
+  }
+
+  .imageBanner {
+    width: 100%;
+    height: 502px;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      object-fit: cover;
+    }
+  }
+
+  .title {
+    font-size: 2.75rem;
+    font-weight: 500;
+    line-height: 1.5;
+    display: inline;
+
+    @include mobile-tablet-p {
+      font-size: 2.75rem;
+      line-height: 3.5rem;
+      margin-bottom: text(xl);
+      word-break: break-word;
+    }
+
+    span {
+      font-size: 2.75rem;
+      font-weight: 500;
+      display: inline;
+      color: color(heading-liner);
+      @include textGradient;
+
+      @include mobile-tablet-p {
+        font-size: 2.75rem;
+        line-height: 3.5rem;
+      }
+    }
+  }
+
+  .contentSec {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .leadText {
+    font-size: text(lg);
+    font-weight: 400;
+    line-height: 1.875rem;
+    color: rgba(color(text-primary), 0.8);
+    margin-top: 0.8rem;
+
+    @include mobile-tablet-p {
+      margin: 0;
+    }
+  }
+
+  .flexCol {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .headerBtn {
+    @include mobile-tablet-p {
+      margin-top: 1.875rem;
+    }
+  }
+
+  //Dark mode style
+  &.adobeSectionDark {
+    color: color(primary-white);
+    background-color: color(input-bg);
+
+    .leadText {
+      color: rgba(color(primary-white), 0.8);
+    }
+  }
+}

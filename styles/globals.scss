@@ -1250,6 +1250,10 @@ html.lenis {
     background-color: color(dark-bg);
   }
 
+  .gray-bg {
+    background-color: color(input-bg);
+  }
+
   .slider-arrow {
     .arrow {
       background-color: color(info-blue);
@@ -1268,6 +1272,10 @@ html.lenis {
     @include mobile-tablet-p {
       padding-block:2rem 3rem !important;
     }
+  }
+
+  .gray-bg {
+    padding-block: 7.5rem !important;
   }
 }
 
