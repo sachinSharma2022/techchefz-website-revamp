@@ -47,8 +47,8 @@ const AEMPage = async () => {
           <AemHeroBanner />
           <AemImageBanner />
           <WhyChooseUs />
-          <AemServices />
           <AemTestimonials />
+          <AemServices />
           <SolutionTheProcess />
           <RelatedCase
             className="case-study-style gray-bg"

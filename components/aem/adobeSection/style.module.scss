@@ -1,7 +1,7 @@
 @import "~/styles/partials/config";
 
 .adobeSectionStyle {
-  padding-block:5rem 7.5rem;
+  padding:5rem 7.5rem 7.5rem 7.5rem;
 
   @include mobile-tablet-p {
     padding-block: 3.75rem 3.75rem;

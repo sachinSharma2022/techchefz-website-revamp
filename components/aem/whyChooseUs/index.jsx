@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 
 import TextRevel from "@/components/ui/sectionAnimation";
 import styles from "./style.module.scss";
+import AemSolution from "../aemSolution";
 
 const WhyChooseUs = ({ props }) => {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
@@ -110,7 +111,9 @@ const WhyChooseUs = ({ props }) => {
               ))}
             </div>
           </div>
-          <div className={styles.ourValueImg}>form Here</div>
+          <div className={styles.formSection}>
+            <AemSolution />
+          </div>
         </div>
       </div>
     </section>

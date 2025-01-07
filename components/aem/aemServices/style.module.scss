@@ -2,7 +2,7 @@
 
 .aemServicesStyle {
   padding: spacing(section-primary-padding);
-  background-color: color(dark-bg);
+  background-color: color(dark-gray);
 
   @include tablet {
     padding: 3.75rem spacing(tablet-padding);
@@ -155,7 +155,7 @@
 
   //Dark mode style
   &.cmsDifferenceDark {
-    background-color: color(dark-bg);
+    background-color: color(dark-gray);
     color: color(primary-white);
 
     .projectHighlight {
