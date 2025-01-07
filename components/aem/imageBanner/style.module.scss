@@ -4,6 +4,9 @@
   height: 660px;
   position: relative;
 
+  @include mobile-tablet-p {
+    height: 200px;
+  }
 
   img {
     width: 100%;

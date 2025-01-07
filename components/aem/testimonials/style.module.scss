@@ -78,6 +78,7 @@
     @include mobile-tablet-p {
       padding: text(lg);
       min-height: 28rem;
+      justify-content: flex-start;
     }
     
     @include tablet {
@@ -143,7 +144,8 @@
     gap: 1.5rem;
 
     @include mobile-tablet-p {
-      display: none;
+      // display: none;
+      margin-bottom: 3rem;
     }
 
     button {
@@ -160,12 +162,8 @@
   .mobileSlider {
     margin: 2.5rem 0;
 
-    @include tablet {
-      margin: 2.5rem -4rem 4rem 0px;
-    }
-
-    @include mobile {
-      margin: 2.5rem 0rem 4rem 0px;
+    @include mobile-tablet-p {
+      margin: 2.5rem 0rem 2.5rem 0px;
     }
 
     @include desktop-normal {

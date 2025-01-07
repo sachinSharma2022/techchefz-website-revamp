@@ -4,6 +4,10 @@
   border-radius: 20px;
   padding: 2.5rem;
 
+  @include mobile-tablet-p {
+    padding: 1.5rem;
+  }
+
   .formHeading {
     font-size: 2rem;
     font-weight: 500;
@@ -14,8 +18,8 @@
     color: color(primary-white);
 
     @include mobile-tablet-p {
-      font-size: text(xxxl);
-      line-height: 2.5rem;
+      font-size: text(xl);
+      line-height: 1.7rem;
       padding-right: 0;
       margin-bottom: text(lg);
     }
@@ -52,6 +56,10 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+
+    @include mobile-tablet-p {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   // Dark Mode
