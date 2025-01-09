@@ -52,9 +52,10 @@ const AemServices = () => {
 
   return (
     <section
-      className={`${styles.aemServicesStyle} ${
+      className={cn(
+        styles.aemServicesStyle,
         theme ? styles.aemServicesDark : ""
-      }`}
+      )}
     >
       <div className={cn("primary-container")}>
         <TextRevel>

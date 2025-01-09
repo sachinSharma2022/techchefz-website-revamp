@@ -210,7 +210,7 @@ const AemTheProcess = ({ props }) => {
         </div>
 
         {!isMobileScreen && (
-          <div className={`${styles.processCardSection}`}>
+          <div className={cn(styles.processCardSection)}>
             {accordionData.map((data, index) => (
               <div
                 key={index}
@@ -231,7 +231,7 @@ const AemTheProcess = ({ props }) => {
         )}
 
         {isMobileScreen && (
-          <div className={`${styles.processCardSection}`}>
+          <div className={cn(styles.processCardSection)}>
             <MobileSlider slidesToShow={1}>
               {accordionData.map((data, index) => (
                 <div
