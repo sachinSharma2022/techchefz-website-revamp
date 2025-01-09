@@ -119,34 +119,24 @@ const AemTheProcess = ({ props }) => {
 
   const accordionData = [
     {
-      title: "Navigating Cloud Integration Complexities",
+      title: "Assessment & Planning",
       description:
-        "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
+        "We start by thoroughly assessing your current CMS, and identifying its strengths and limitations. Based on your specific needs and goals, we define a custom Adobe Experience Manager strategy designed to maximize efficiency and scalability for your business.",
     },
     {
-      title: "Navigating Cloud Integration Complexities",
+      title: "AEM Development & Customization",
       description:
-        "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
+        "Our expert AEM developers design and implement scalable, flexible solutions fully customized to meet the unique requirements of your business. Whether it’s creating personalized user experiences or integrating third-party tools, we ensure your system is built for success.",
     },
     {
-      title: "Navigating Cloud Integration Complexities",
+      title: "Seamless Implementation & Migration",
       description:
-        "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
+        "We transition your existing platform to Adobe Experience Manager with no interruptions to your operations. Using our proven migration framework, we ensure all your data, content, and workflows are seamlessly integrated into the new system.",
     },
     {
-      title: "Navigating Cloud Integration Complexities",
+      title: "Ongoing AEM Managed Services",
       description:
-        "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
-    },
-    {
-      title: "Navigating Cloud Integration Complexities",
-      description:
-        "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
-    },
-    {
-      title: "Navigating Cloud Integration Complexities",
-      description:
-        "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
+        "Once your AEM platform is live, we provide continuous support through regular updates, performance optimization, and proactive troubleshooting. We handle every aspect of AEM management, so you can focus on your core business.",
     },
   ];
 
@@ -169,11 +159,7 @@ const AemTheProcess = ({ props }) => {
 
           <div className={styles.ourNumbersImg}>
             <div className={styles.circularStepperContainer}>
-              <SvgLoader
-                circle={props?.ITSolutionsCards?.length}
-                theme={theme}
-                dashArray={dashArray}
-              />
+              <SvgLoader circle={4} theme={theme} dashArray={dashArray} />
 
               <div id="1-img" className={cn(styles.stepperImg, "fadeinout")}>
                 <ImageCustom
@@ -214,30 +200,6 @@ const AemTheProcess = ({ props }) => {
               >
                 <ImageCustom
                   src="/images/icons/process/icon4.webp"
-                  width={258}
-                  height={258}
-                  alt="bannerImg"
-                />
-              </div>
-              <div
-                id="5-img"
-                className={cn(styles.stepperImg, "fadeinout")}
-                style={{ display: "none" }}
-              >
-                <ImageCustom
-                  src="/images/icons/process/icon5.webp"
-                  width={258}
-                  height={258}
-                  alt="bannerImg"
-                />
-              </div>
-              <div
-                id="6-img"
-                className={cn(styles.stepperImg, "fadeinout")}
-                style={{ display: "none" }}
-              >
-                <ImageCustom
-                  src="/images/icons/process/icon6.webp"
                   width={258}
                   height={258}
                   alt="bannerImg"
