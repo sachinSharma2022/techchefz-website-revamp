@@ -88,6 +88,9 @@ const AemTestimonials = (props) => {
                   <h3>
                     What Our <span>Clients</span> Say About Our AEM Services
                   </h3>
+                  <p className={styles.testimonialsText}>
+                    {props[0]?.Description}
+                  </p>
                 </div>
               </div>
 

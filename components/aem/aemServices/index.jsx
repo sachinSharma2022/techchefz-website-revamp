@@ -18,28 +18,35 @@ const AemServices = () => {
         "https://plus.unsplash.com/premium_photo-1661963212517-830bbb7d76fc?q=80&w=1986&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       title: "AEM Managed Services",
       description:
-        "Comprehensive management for your Adobe Experience Manager platform, ensuring uptime and peak performance",
+        "Comprehensive management for your Adobe Experience Manager platform, ensuring uptime and peak performance.",
     },
     {
       imgUrl:
         "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      title: "AEM Managed Services",
+      title: "Custom AEM Development",
       description:
-        "Comprehensive management for your Adobe Experience Manager platform, ensuring uptime and peak performance",
+        "Get AEM solutions tailored to your workflows, content needs, and user experience goals.",
     },
     {
       imgUrl:
         "https://plus.unsplash.com/premium_photo-1681399975135-252eab5fd2db?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      title: "AEM Managed Services",
+      title: "AEM Migration Services",
       description:
-        "Comprehensive management for your Adobe Experience Manager platform, ensuring uptime and peak performance",
+        "Effortlessly migrate your existing CMS to Adobe Experience Manager with our expert team.",
     },
     {
       imgUrl:
         "https://images.unsplash.com/photo-1646172615914-d980737c59b0?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      title: "AEM Managed Services",
+      title: "AEM Optimization & Upgrades",
       description:
-        "Comprehensive management for your Adobe Experience Manager platform, ensuring uptime and peak performance",
+        "Stay ahead with AEM upgrades and custom enhancements for improved functionality.",
+    },
+    {
+      imgUrl:
+        "https://images.unsplash.com/photo-1646172615914-d980737c59b0?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      title: "AEM Edge Delivery",
+      description:
+        "Leverage AEM's Edge Delivery to accelerate content delivery globally, ensuring fast, scalable, and secure experiences for your users, regardless of location.",
     },
   ];
 

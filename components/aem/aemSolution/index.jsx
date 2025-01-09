@@ -22,10 +22,9 @@ const AemSolution = ({ contact, className }) => {
   const [isVerified, setIsVerified] = useState(false);
 
   const options = [
-    { name: "Project Related Discussion" },
-    { name: "Service Related Query" },
-    { name: "Vendor Related Query" },
-    { name: "Other" },
+    { name: "AEM Development" },
+    { name: "AEM Migration" },
+    { name: "AEM Managed Services" },
   ];
 
   const formInitialSchema = {
@@ -202,7 +201,7 @@ const AemSolution = ({ contact, className }) => {
                 disabled={isVerified ? inprogress : true}
                 type="submit"
               >
-                Get Started with AEM Today
+                Request a Free AEM Consultation
                 <Icons.ArrowRight size={18} />
               </Button>
             </div>

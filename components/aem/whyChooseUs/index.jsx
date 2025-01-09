@@ -34,27 +34,31 @@ const WhyChooseUs = ({ props }) => {
     {
       title: "Comprehensive AEM Managed Services",
       description:
-        "From hosting to updates, our AEM Managed Services keep your CMS running smoothly",
+        "From hosting to updates, our AEM Managed Services keep your CMS running smoothly.",
     },
     {
       title: "Custom AEM Development",
       description:
-        "From hosting to updates, our AEM Managed Services keep your CMS running smoothly",
+        "Tailored AEM development solutions to meet the unique needs of your business.",
+    },
+    {
+      title: "AEM Edge Delivery:",
+      description:
+        "Leverage AEM's Edge Delivery to accelerate global content delivery, ensuring fast, scalable, and secure experiences for your users—regardless of location.",
     },
     {
       title: "Certified Adobe Experts",
       description:
-        "From hosting to updates, our AEM Managed Services keep your CMS running smoothly",
+        "Work with certified Adobe Experience Manager developers with years of expertise.",
     },
     {
       title: "Seamless AEM Migration",
-      description:
-        "From hosting to updates, our AEM Managed Services keep your CMS running smoothly",
+      description: "Migrate to AEM with zero downtime and no data loss.",
     },
     {
       title: "24/7 Support",
       description:
-        "From hosting to updates, our AEM Managed Services keep your CMS running smoothly",
+        "Continuous monitoring and proactive support for your Adobe Experience Manager platform.",
     },
   ];
 
@@ -69,7 +73,8 @@ const WhyChooseUs = ({ props }) => {
               Why Choose Us
             </h6>
             <h3 className={cn(styles.ourValuesHeading, "gradient-text")}>
-              Our <span>AEM Services</span> are part of everything we create.
+              Transform Your Digital Experience with Tailored{" "}
+              <span>AEM Solutions</span>
             </h3>
           </div>
         </TextRevel>
@@ -77,8 +82,10 @@ const WhyChooseUs = ({ props }) => {
         <div className={styles.ourValuesContent}>
           <div className={styles.toggleSection}>
             <p className={styles.ourValuesText}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Pellentesque nisi diam, tincidunt id sapien id, laoreet
+              Transform your digital experiences with our expert AEM Managed
+              services. From seamless implementation and smooth migrations to
+              tailored customizations and reliable support, we deliver scalable,
+              secure, and efficient results.
             </p>
             <div className={styles.ourValuesAccordion}>
               {toggleSection.map((data, index) => (
