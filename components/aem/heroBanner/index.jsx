@@ -1,14 +1,13 @@
 "use client";
-import { MyContext } from "@/context/theme";
-import { cn } from "@/lib/utils";
-import { useContext } from "react";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import TextRevel from "@/components/ui/sectionAnimation";
+import { MyContext } from "@/context/theme";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { useContext } from "react";
 
 import styles from "./style.module.scss";
-import { ImageCustom } from "@/components/ui/imageCustom";
 
 const AemHeroBanner = ({ props }) => {
   const { theme } = useContext(MyContext);
@@ -38,7 +37,7 @@ const AemHeroBanner = ({ props }) => {
                     className={styles.headerBtn}
                     size="md"
                   >
-                    Request a Free Consultation
+                    Request a Free AEM Consultation
                     <Icons.ArrowRight size={20} className="ms-2" />
                   </Button>
                 </Link>
