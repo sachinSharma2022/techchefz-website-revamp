@@ -252,7 +252,11 @@ const AemTheProcess = ({ props }) => {
             {accordionData.map((data, index) => (
               <div
                 key={index}
-                className={`${styles.processCard} ${data.current}`}
+                className={cn(
+                  styles.processCard,
+                  data.current,
+                  index == 0 && cardActive && styles.cardActive
+                )}
               >
                 <div className={styles.textGradient}>
                   {String(index + 1).padStart(2, "0")}
@@ -270,7 +274,11 @@ const AemTheProcess = ({ props }) => {
               {accordionData.map((data, index) => (
                 <div
                   key={index}
-                  className={`${styles.processCard} ${data.current}`}
+                  className={cn(
+                    styles.processCard,
+                    data.current,
+                    index == 0 && cardActive && styles.cardActive
+                  )}
                 >
                   <div className={styles.textGradient}>
                     {String(index + 1).padStart(2, "0")}
