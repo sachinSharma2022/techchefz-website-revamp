@@ -19,7 +19,7 @@
 
     @include mobile-tablet-p {
       font-size: text(xl);
-      line-height: 1.7rem;
+      line-height: 1.4;
       padding-right: 0;
       margin-bottom: text(lg);
     }
@@ -48,6 +48,10 @@
 
     button {
       width: 100%;
+
+      > div {
+        line-height: 1.4;
+      }
     }
   }
 

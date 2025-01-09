@@ -43,7 +43,7 @@ const AemServices = () => {
     },
     {
       imgUrl:
-        "https://images.unsplash.com/photo-1646172615914-d980737c59b0?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1529119368496-2dfda6ec2804?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       title: "AEM Edge Delivery",
       description:
         "Leverage AEM's Edge Delivery to accelerate content delivery globally, ensuring fast, scalable, and secure experiences for your users, regardless of location.",

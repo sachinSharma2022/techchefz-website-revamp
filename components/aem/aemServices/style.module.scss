@@ -141,6 +141,7 @@
           text-align: left;
           margin: 1.25rem 0 1.25rem 0;
           color: color(primary-white);
+          @include truncate(2);
 
           @include mobile-tablet-p {
             font-size: text(normal);
