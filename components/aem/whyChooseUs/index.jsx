@@ -73,8 +73,8 @@ const WhyChooseUs = ({ props }) => {
               Why Choose Us
             </h6>
             <h3 className={cn(styles.ourValuesHeading, "gradient-text")}>
-              Transform Your Digital Experience with Tailored{" "}
-              <span>AEM Solutions</span>
+              Enhance your digital experiences with scalable, secure, and
+              efficient <span>AEM Managed Services.</span>
             </h3>
           </div>
         </TextRevel>

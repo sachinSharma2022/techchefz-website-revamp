@@ -37,9 +37,9 @@ const AdobeSection = () => {
               </h1>
               <div className={styles.contentSec}>
                 <p className={cn(styles.leadText, "gradient-text")}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Pellentesque nisi diam, tincidunt id sapien id, laoreet
-                  ultricies dolor.
+                  Unlock the full potential of Adobe Experience Manager with
+                  tailored solutions for seamless implementation, optimization,
+                  and 24/7 managed services, elevating your digital experiences
                 </p>
                 <Link href="/">
                   <Button
