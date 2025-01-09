@@ -156,7 +156,9 @@ const SolutionTheProcess = ({ props }) => {
                   }
                   width={258}
                   height={258}
-                  alt = {props?.images[0]?.Image?.data?.attributes?.alternativeText}
+                  alt={
+                    props?.images[0]?.Image?.data?.attributes?.alternativeText
+                  }
                 />
               </div>
               <div
@@ -172,7 +174,9 @@ const SolutionTheProcess = ({ props }) => {
                   }
                   width={258}
                   height={258}
-                  alt = {props?.images[1]?.Image?.data?.attributes?.alternativeText}
+                  alt={
+                    props?.images[1]?.Image?.data?.attributes?.alternativeText
+                  }
                 />
               </div>
               <div
@@ -188,7 +192,9 @@ const SolutionTheProcess = ({ props }) => {
                   }
                   width={258}
                   height={258}
-                  alt = {props?.images[2]?.Image?.data?.attributes?.alternativeText}
+                  alt={
+                    props?.images[2]?.Image?.data?.attributes?.alternativeText
+                  }
                 />
               </div>
               <div
@@ -204,7 +210,9 @@ const SolutionTheProcess = ({ props }) => {
                   }
                   width={258}
                   height={258}
-                  alt = {props?.images[3]?.Image?.data?.attributes?.alternativeText}
+                  alt={
+                    props?.images[3]?.Image?.data?.attributes?.alternativeText
+                  }
                 />
               </div>
               <div
@@ -220,7 +228,9 @@ const SolutionTheProcess = ({ props }) => {
                   }
                   width={258}
                   height={258}
-                  alt = {props?.images[4]?.Image?.data?.attributes?.alternativeText}
+                  alt={
+                    props?.images[4]?.Image?.data?.attributes?.alternativeText
+                  }
                 />
               </div>
               <div
@@ -236,7 +246,9 @@ const SolutionTheProcess = ({ props }) => {
                   }
                   width={258}
                   height={258}
-                  alt = {props?.images[5]?.Image?.data?.attributes?.alternativeText}
+                  alt={
+                    props?.images[5]?.Image?.data?.attributes?.alternativeText
+                  }
                 />
               </div>
             </div>

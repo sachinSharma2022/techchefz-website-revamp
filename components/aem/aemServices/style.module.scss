@@ -92,9 +92,9 @@
       .differenceCmsBox {
         text-align: center;
         background-color: color(text-primary);
-        padding: 1.25rem;
+        padding: 2.5rem;
         border-radius: 1.25rem;
-        border: 0.14rem solid rgba(color(text-primary), 0.12);
+        border: 0.14rem solid rgba(color(primary-white), 0.12);
         position: relative;
         height: 100%;
         @include transition(0.5s);
@@ -141,7 +141,6 @@
           text-align: left;
           margin: 1.25rem 0 1.25rem 0;
           color: color(primary-white);
-          max-width: 80%;
 
           @include mobile-tablet-p {
             font-size: text(normal);

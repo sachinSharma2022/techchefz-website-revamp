@@ -1,16 +1,14 @@
+import AdobeSection from "@/components/aem/adobeSection";
 import AemServices from "@/components/aem/aemServices";
+import AemTheProcess from "@/components/aem/AemTheProcess";
 import AemHeroBanner from "@/components/aem/heroBanner";
 import AemImageBanner from "@/components/aem/imageBanner";
-import SolutionTheProcess from "@/components/aem/solutionTheProcess";
+import AemTestimonials from "@/components/aem/testimonials";
 import WhyChooseUs from "@/components/aem/whyChooseUs";
-import HomeTestimonials from "@/components/home/homeTestimonials";
-import LetsWork from "@/components/home/letsWork";
 import RelatedCase from "@/components/relatedCase";
 import { api_Case_study_Page, api_leadership_Page } from "@/lib/constants";
 import { getData, getDataDynamic } from "@/lib/fetchData";
 import NotFound from "../not-found";
-import AemTestimonials from "@/components/aem/testimonials";
-import AdobeSection from "@/components/aem/adobeSection";
 
 export async function generateMetadata() {
   const data = await getData(api_leadership_Page);
@@ -49,7 +47,7 @@ const AEMPage = async () => {
           <WhyChooseUs />
           <AemTestimonials />
           <AemServices />
-          <SolutionTheProcess />
+          <AemTheProcess />
           <RelatedCase
             className="case-study-style gray-bg"
             props={data_related_cases}

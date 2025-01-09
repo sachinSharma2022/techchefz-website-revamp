@@ -166,10 +166,10 @@
         opacity: 0.4;
 
         &:first-child {
-          opacity: 0.4 !important;
+          opacity: 0.4;
         }
         &.cardActive {
-          opacity: 1 !important;
+          opacity: 1;
         }
       }
 

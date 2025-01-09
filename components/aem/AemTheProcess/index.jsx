@@ -12,7 +12,7 @@ import TextRevel from "@/components/ui/sectionAnimation";
 import { useMediaQuery } from "react-responsive";
 import styles from "./style.module.scss";
 
-const SolutionTheProcess = ({ props }) => {
+const AemTheProcess = ({ props }) => {
   const isBigScreen = useMediaQuery({ query: "(min-width: 1200px)" });
   const isMobileScreen = useMediaQuery({ query: "(max-width: 690px)" });
   const isSmallMobile = useMediaQuery({ query: "(max-width: 690px)" });
@@ -22,39 +22,6 @@ const SolutionTheProcess = ({ props }) => {
   const [dashOffset, setdashOffset] = useState(dashArray);
   const [prevdashOffset, prevsetdashOffset] = useState(dashArray);
   const [cardActive, setcardActive] = useState(true);
-
-  const accordionData = [
-    {
-      title: "Navigating Cloud Integration Complexities",
-      description:
-        "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
-    },
-    {
-      title: "Navigating Cloud Integration Complexities",
-      description:
-        "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
-    },
-    {
-      title: "Navigating Cloud Integration Complexities",
-      description:
-        "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
-    },
-    {
-      title: "Navigating Cloud Integration Complexities",
-      description:
-        "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
-    },
-    {
-      title: "Navigating Cloud Integration Complexities",
-      description:
-        "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
-    },
-    {
-      title: "Navigating Cloud Integration Complexities",
-      description:
-        "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
-    },
-  ];
 
   gsap.registerPlugin(ScrollTrigger);
   useEffect(() => {
@@ -150,6 +117,39 @@ const SolutionTheProcess = ({ props }) => {
     }
   }, []);
 
+  const accordionData = [
+    {
+      title: "Navigating Cloud Integration Complexities",
+      description:
+        "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
+    },
+    {
+      title: "Navigating Cloud Integration Complexities",
+      description:
+        "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
+    },
+    {
+      title: "Navigating Cloud Integration Complexities",
+      description:
+        "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
+    },
+    {
+      title: "Navigating Cloud Integration Complexities",
+      description:
+        "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
+    },
+    {
+      title: "Navigating Cloud Integration Complexities",
+      description:
+        "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
+    },
+    {
+      title: "Navigating Cloud Integration Complexities",
+      description:
+        "The push for digital transformation has led many companies to embrace cloud solutions. However, the migration and integration of legacy systems into the cloud often present challenges. ",
+    },
+  ];
+
   return (
     <section
       className={cn(styles.theProcessStyle, theme ? styles.theProcessDark : "")}
@@ -177,7 +177,7 @@ const SolutionTheProcess = ({ props }) => {
 
               <div id="1-img" className={cn(styles.stepperImg, "fadeinout")}>
                 <ImageCustom
-                  src="/images/shield.png"
+                  src="/images/icons/process/icon1.webp"
                   width={258}
                   height={258}
                   alt="bannerImg"
@@ -189,7 +189,7 @@ const SolutionTheProcess = ({ props }) => {
                 style={{ display: "none" }}
               >
                 <ImageCustom
-                  src="/images/icon 4.svg"
+                  src="/images/icons/process/icon2.webp"
                   width={258}
                   height={258}
                   alt="bannerImg"
@@ -201,7 +201,7 @@ const SolutionTheProcess = ({ props }) => {
                 style={{ display: "none" }}
               >
                 <ImageCustom
-                  src="/images/icon 5.svg"
+                  src="/images/icons/process/icon3.webp"
                   width={258}
                   height={258}
                   alt="bannerImg"
@@ -213,7 +213,7 @@ const SolutionTheProcess = ({ props }) => {
                 style={{ display: "none" }}
               >
                 <ImageCustom
-                  src="/images/icon 4.svg"
+                  src="/images/icons/process/icon4.webp"
                   width={258}
                   height={258}
                   alt="bannerImg"
@@ -225,7 +225,7 @@ const SolutionTheProcess = ({ props }) => {
                 style={{ display: "none" }}
               >
                 <ImageCustom
-                  src="/images/icon 5.svg"
+                  src="/images/icons/process/icon5.webp"
                   width={258}
                   height={258}
                   alt="bannerImg"
@@ -237,7 +237,7 @@ const SolutionTheProcess = ({ props }) => {
                 style={{ display: "none" }}
               >
                 <ImageCustom
-                  src="/images/icon 4.svg"
+                  src="/images/icons/process/icon6.webp"
                   width={258}
                   height={258}
                   alt="bannerImg"
@@ -254,7 +254,9 @@ const SolutionTheProcess = ({ props }) => {
                 key={index}
                 className={`${styles.processCard} ${data.current}`}
               >
-                <div className={styles.textGradient}>{index}</div>
+                <div className={styles.textGradient}>
+                  {String(index + 1).padStart(2, "0")}
+                </div>
                 <h4 className={styles.title}>{data.title}</h4>
                 <p className={styles.description}>{data.description}</p>
               </div>
@@ -270,7 +272,9 @@ const SolutionTheProcess = ({ props }) => {
                   key={index}
                   className={`${styles.processCard} ${data.current}`}
                 >
-                  <div className={styles.textGradient}>{index}</div>
+                  <div className={styles.textGradient}>
+                    {String(index + 1).padStart(2, "0")}
+                  </div>
                   <h4 className={styles.title}>{data.title}</h4>
                   <p className={styles.description}>{data.description}</p>
                 </div>
@@ -283,4 +287,4 @@ const SolutionTheProcess = ({ props }) => {
   );
 };
 
-export default SolutionTheProcess;
+export default AemTheProcess;
