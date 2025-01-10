@@ -7,12 +7,16 @@
     padding-block: 3.75rem 3.75rem;
   }
 
+  .flexSection {
+    display: flex;
+    gap: 0 8.9375rem;
+  }
+
   .title {
     font-size: 4rem;
     font-weight: 500;
     line-height: 5rem;
     display: inline-block;
-    max-width: 80%;
 
     @include mobile-tablet-p {
       font-size: 2.75rem;
@@ -52,6 +56,10 @@
   .flexCol {
     display: flex;
     justify-content: flex-end;
+  }
+
+  .contentSec {
+    width: 90%;
   }
 
   .headerBtn {

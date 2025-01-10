@@ -20,7 +20,7 @@ const AemHeroBanner = ({ props }) => {
       >
         <TextRevel>
           <div className={cn("header-container")}>
-            <div className="primary-container grid-col-2">
+            <div className={cn(styles.flexSection, "primary-container")}>
               <h1 className={cn(styles.title, "gradient-text")}>
                 AEM Managed <span>Services</span> Tailored to Your Needs
               </h1>

@@ -87,8 +87,10 @@ const AemServices = () => {
             {cardData.map((data, index) => (
               <div key={index} className={styles.cardStyle}>
                 <div className={styles.differenceCmsBox}>
-                  <h3 className={styles.sbTitle}>{data.title}</h3>
-                  <p className={styles.sbText}>{data.description}</p>
+                  <div>
+                    <h3 className={styles.sbTitle}>{data.title}</h3>
+                    <p className={styles.sbText}>{data.description}</p>
+                  </div>
                   <div className={styles.backgroundImg}>
                     <ImageCustom
                       src={data.imgUrl}

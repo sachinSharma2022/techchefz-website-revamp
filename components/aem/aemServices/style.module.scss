@@ -90,6 +90,9 @@
       }
 
       .differenceCmsBox {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         text-align: center;
         background-color: color(text-primary);
         padding: 2.5rem;
