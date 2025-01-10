@@ -1,0 +1,150 @@
+@import "~/styles/partials/config";
+
+.whyChooseUs {
+  padding: spacing(section-primary-padding);
+  background-color: color(primary-white);
+
+  @include tablet {
+    padding: 3.75rem spacing(tablet-padding);
+  }
+
+  @include mobile {
+    padding: 3.75rem spacing(mobile-padding);
+  }
+
+  .ourValuesHead {
+    margin-bottom: 5rem;
+    max-width: 60%;
+
+    @include mobile-tablet-p {
+      max-width: 100%;
+      margin-bottom: 0rem;
+    }
+
+    .ourValuesTitle {
+      color: color(text-primary);
+      text-transform: uppercase;
+      opacity: opacity(dark);
+      font-size: text(normal);
+      font-weight: 500;
+      line-height: 1.5rem;
+      letter-spacing: 0.2rem;
+
+      @include mobile-tablet-p {
+        font-weight: 400;
+        margin-bottom: 0.75rem;
+      }
+    }
+
+    .ourValuesHeading {
+      font-size: text(larger);
+      margin-bottom: 2.75rem;
+
+      @include mobile-tablet-p {
+        margin-bottom: 3.75rem;
+        font-size: 2rem;
+        line-height: 2.5rem;
+      }
+      span {
+        font-size: text(larger);
+        color: color(heading-liner);
+        @include min-desktop-medium {
+          @include textGradient;
+        }
+        @include mobile-tablet-p {
+          font-size: 2rem;
+          line-height: 2.5rem;
+        }
+      }
+    }
+  }
+
+  .ourValuesContent {
+    display: grid;
+    grid-template-columns: 35% auto;
+    gap: 8.75rem;
+
+    @include mobile-tablet-p {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2.5rem;
+    }
+
+
+    .ourValuesText {
+      font-size: text(lg);
+      opacity: opacity(light);
+
+      @include mobile-tablet-p {
+        margin-bottom: 2.25rem;
+      }
+    }
+
+    .ourValuesAccordion {
+      .accordionHead {
+        width: 100%;
+        text-align: left;
+        font-size: text(xl);
+        font-weight: 500;
+        padding: 1.25rem 0;
+        border-bottom: 0.14rem solid rgba(color(text-primary), 0.12);
+        display: flex;
+        justify-content: space-between;
+        font-family: font(primary);
+
+        @include mobile-tablet-p {
+          font-size: text(lg);
+          padding: 1.25rem 10px;
+        }
+      }
+      .accordionBody {
+        padding: 1.25rem 0;
+        opacity: opacity(light);
+      }
+    }
+  }
+
+  .iconBox {
+    min-width: 36px;
+    min-height: 36px;
+    background: color(bg-soft);
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .formSection {
+
+  }
+
+  //Dark mode style
+  &.whyChooseUsDark {
+    color: color(primary-white);
+    background-color: color(dark-bg);
+
+    .ourValuesTitle {
+      color: color(primary-white);
+    }
+
+    .ourValuesAccordion {
+      .accordionHead {
+        color: color(primary-white);
+        border-color: rgba(color(primary-white), 0.12);
+      }
+    }
+
+    .iconBox {
+      background-color: color(text-primary);
+    }
+
+    .ourValuesText {
+      opacity: opacity(dark);
+    }
+
+    .ourValuesAccordion {
+      .accordionBody {
+        opacity: opacity(dark);
+      }
+    }
+  }
+}

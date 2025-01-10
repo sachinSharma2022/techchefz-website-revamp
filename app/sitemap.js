@@ -52,6 +52,7 @@ export default async function sitemap() {
     "/contact-us",
     "/design-services",
     "/accelerators",
+    "/aem",
   ].map((route) => ({
     url: `${process.env.NEXT_PUBLIC_SITEMAP_URL}${route}`,
     lastModified: new Date().toISOString(),

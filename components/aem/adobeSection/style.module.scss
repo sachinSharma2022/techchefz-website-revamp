@@ -1,0 +1,109 @@
+@import "~/styles/partials/config";
+
+.adobeSectionStyle {
+  padding:5rem 7.5rem 7.5rem 7.5rem;
+
+  @include mobile-tablet-p {
+    padding: 3.75rem 1.5rem;
+  }
+
+  .textSection {
+    display: flex;
+    gap: 8.9375rem;
+    margin-top: 5rem;
+
+    @include mobile-tablet-p {
+      display: flex;
+      flex-direction: column;
+      margin-top: 2rem;
+      gap: 0;
+    }
+  }
+
+  .imageBanner {
+    width: 100%;
+    height: 502px;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+
+    @include mobile-tablet-p {
+      height: 202px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      object-fit: cover;
+    }
+  }
+
+  .title {
+    font-size: 2.75rem;
+    font-weight: 500;
+    line-height: 1.5;
+    display: inline;
+
+    @include mobile-tablet-p {
+      font-size: 2rem;
+      line-height: 1.4;
+      margin-bottom: text(xl);
+      word-break: break-word;
+    }
+
+    span {
+      font-size: 2.75rem;
+      font-weight: 500;
+      display: inline;
+      color: color(heading-liner);
+      @include textGradient;
+
+      @include mobile-tablet-p {
+        font-size: 2rem;
+        line-height: 1.4;
+      }
+    }
+  }
+
+  .contentSec {
+    display: flex;
+    flex-direction: column;
+    gap: 40px 0;
+  }
+
+  .leadText {
+    font-size: text(lg);
+    font-weight: 400;
+    line-height: 1.875rem;
+    color: rgba(color(text-primary), 0.6);
+    margin-top: 0.8rem;
+    max-width: 80%;
+
+    @include mobile-tablet-p {
+      margin: 0;
+      max-width:100%;
+    }
+  }
+
+  .flexCol {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .headerBtn {
+    @include mobile-tablet-p {
+      margin-top: 0;
+    }
+  }
+
+  //Dark mode style
+  &.adobeSectionDark {
+    color: color(primary-white);
+    background-color: color(input-bg);
+
+    .leadText {
+      color: rgba(color(primary-white), 0.6);
+    }
+  }
+}
