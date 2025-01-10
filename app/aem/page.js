@@ -9,6 +9,7 @@ import RelatedCase from "@/components/relatedCase";
 import { api_Case_study_Page, api_leadership_Page } from "@/lib/constants";
 import { getData, getDataDynamic } from "@/lib/fetchData";
 import NotFound from "../not-found";
+import ClientScrollWrapper from "@/app/aem/useLocomotiveScroll";
 
 export async function generateMetadata() {
   const data = await getData(api_leadership_Page);
@@ -41,10 +42,12 @@ const AEMPage = async () => {
   return (
     <>
       {data ? (
-        <div className="overflow-hidden">
+        <div className="overflow-hidden scroll-smooth">
           <AemHeroBanner />
           <AemImageBanner />
-          <WhyChooseUs />
+          <ClientScrollWrapper>
+            <WhyChooseUs id="why-choose-us" data-scroll-section />
+          </ClientScrollWrapper>
           <AemTestimonials />
           <AemServices />
           <AemTheProcess />

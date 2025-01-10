@@ -10,7 +10,7 @@ import TextRevel from "@/components/ui/sectionAnimation";
 import styles from "./style.module.scss";
 import AemSolution from "../aemSolution";
 
-const WhyChooseUs = ({ props }) => {
+const WhyChooseUs = ({ id }) => {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
   const { theme, setTheme } = useContext(MyContext);
 
@@ -65,8 +65,9 @@ const WhyChooseUs = ({ props }) => {
   return (
     <section
       className={cn(styles.whyChooseUs, !theme ? styles.whyChooseUsDark : "")}
+      id={id}
     >
-      <div className={cn("primary-container")}>
+      <div className={cn("primary-container")} id="formScroll">
         <TextRevel>
           <div className={styles.ourValuesHead}>
             <h6 className={cn(styles.ourValuesTitle, "gradient-text")}>

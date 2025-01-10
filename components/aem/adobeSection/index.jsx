@@ -12,6 +12,13 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 
 const AdobeSection = () => {
   const { theme } = useContext(MyContext);
+  const scrollToForm = () => {
+    const target = document.querySelector("#why-choose-us");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <section
@@ -41,16 +48,17 @@ const AdobeSection = () => {
                   tailored solutions for seamless implementation, optimization,
                   and 24/7 managed services, elevating your digital experiences
                 </p>
-                <Link href="/">
+                <div>
                   <Button
                     variant={theme ? "lightBlueOutline" : "blueBtn"}
                     className={styles.headerBtn}
                     size="md"
+                    onClick={scrollToForm}
                   >
                     Get Started with AEM Today
                     <Icons.ArrowRight size={20} className="ms-2" />
                   </Button>
-                </Link>
+                </div>
               </div>
             </div>
           </TextRevel>

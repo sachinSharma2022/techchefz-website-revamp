@@ -69,7 +69,7 @@ const AemServices = () => {
               </h2>
             </div>
 
-            <Link href="/">
+            <Link href="/technology">
               <Button
                 variant={theme ? "lightBlueOutline" : "blueBtn"}
                 className={styles.headerBtn}

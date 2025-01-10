@@ -24,45 +24,24 @@ const AemTestimonials = (props) => {
   const serviceCard = [
     {
       CustomerText:
-        "Techchefz Digital demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their simplicity. They’re very well thought out and have an excellent response to feedback. All of these qualities are why they’re our go-to user experience experts.",
+        "Worked with TCZ on two business critical website development projects. The TCZ team is a group of experts in their respective domains and have helped us with excellent end-to-end development of a website right from the conceptualization to implementation and maintenance.",
       img: "/images/profile.png",
-      CustomerName: "Arjuna Pandean.",
-      CustomerRole: "Group Manager, Royal Enfield",
+      CustomerName: "Dr. Kunal Joshi",
+      CustomerRole: "Healthcare Marketing & Strategy Professional",
     },
     {
       CustomerText:
-        "Techchefz Digital demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their simplicity. They’re very well thought out and have an excellent response to feedback. All of these qualities are why they’re our go-to user experience experts.",
-      img: "/images/profile.png",
-      CustomerName: "Arjuna Pandean.",
-      CustomerRole: "Group Manager, Royal Enfield",
+        "TCZ helped us with our new website launch in a seamless manner. Through all our discussions, they made sure to have the website designed as we had envisioned it to be. Thank you team TCZ.",
+      img: "/images/profile2.webp",
+      CustomerName: "Dr. Sarita Ahlawat",
+      CustomerRole: "Managing Director and Co-Founder, Botlab Dynamics",
     },
     {
       CustomerText:
-        "Techchefz Digital demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their simplicity. They’re very well thought out and have an excellent response to feedback. All of these qualities are why they’re our go-to user experience experts.",
-      img: "/images/profile.png",
-      CustomerName: "Arjuna Pandean.",
-      CustomerRole: "Group Manager, Royal Enfield",
-    },
-    {
-      CustomerText:
-        "Techchefz Digital demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their simplicity. They’re very well thought out and have an excellent response to feedback. All of these qualities are why they’re our go-to user experience experts.",
-      img: "/images/profile.png",
-      CustomerName: "Arjuna Pandean.",
-      CustomerRole: "Group Manager, Royal Enfield",
-    },
-    {
-      CustomerText:
-        "Techchefz Digital demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their simplicity. They’re very well thought out and have an excellent response to feedback. All of these qualities are why they’re our go-to user experience experts.",
-      img: "/images/profile.png",
-      CustomerName: "Arjuna Pandean.",
-      CustomerRole: "Group Manager, Royal Enfield",
-    },
-    {
-      CustomerText:
-        "Techchefz Digital demonstrates an excellent understanding of user needs and all of their designs are creative and elegant in their simplicity. They’re very well thought out and have an excellent response to feedback. All of these qualities are why they’re our go-to user experience experts.",
-      img: "/images/profile.png",
-      CustomerName: "Arjuna Pandean.",
-      CustomerRole: "Group Manager, Royal Enfield",
+        "Working with TechChefz Digital on our website has been an absolute pleasure! With a site involving thousands of pages and complex requirements, their team has done an incredible job making the process smooth and efficient.",
+      img: "/images/profile3.webp",
+      CustomerName: "Sarabpreet Singh",
+      CustomerRole: "Webmaster, Manipal Institute",
     },
   ];
 
@@ -86,7 +65,8 @@ const AemTestimonials = (props) => {
                   className={cn(styles.testimonialsHeading, "gradient-text")}
                 >
                   <h3>
-                    What Our <span>Clients</span> Say About Our AEM Services
+                    What Our <span>Clients</span> Say about our{" "}
+                    <span>AEM Services</span>
                   </h3>
                   <p className={styles.testimonialsText}>
                     {props[0]?.Description}

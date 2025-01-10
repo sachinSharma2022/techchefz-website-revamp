@@ -9,8 +9,15 @@ import { useContext } from "react";
 
 import styles from "./style.module.scss";
 
-const AemHeroBanner = ({ props }) => {
+const AemHeroBanner = () => {
   const { theme } = useContext(MyContext);
+  const scrollToForm = () => {
+    const target = document.querySelector("#why-choose-us");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <section
@@ -31,16 +38,15 @@ const AemHeroBanner = ({ props }) => {
                   migration, we ensure seamless implementation and ongoing
                   support.
                 </p>
-                <Link href="/">
-                  <Button
-                    variant={theme ? "blueBtnDark" : "blueBtn"}
-                    className={styles.headerBtn}
-                    size="md"
-                  >
-                    Request a Free AEM Consultation
-                    <Icons.ArrowRight size={20} className="ms-2" />
-                  </Button>
-                </Link>
+                <Button
+                  onClick={scrollToForm}
+                  variant={theme ? "blueBtnDark" : "blueBtn"}
+                  className={styles.headerBtn}
+                  size="md"
+                >
+                  Request a Free AEM Consultation
+                  <Icons.ArrowRight size={20} className="ms-2" />
+                </Button>
               </div>
             </div>
           </div>
