@@ -14,9 +14,8 @@ const CmsBanner = ({ props }) => {
   const { theme, setTheme } = useContext(MyContext);
   return (
     <section
-      className={`${styles.cmsBannerStyle} ${
-        theme ? styles.cmsBannerDark : ""
-      }`}
+      className={`${styles.cmsBannerStyle} ${theme ? styles.cmsBannerDark : ""
+        }`}
     >
       <TextRevel>
         <div className={cn("header-container")}>
@@ -28,7 +27,7 @@ const CmsBanner = ({ props }) => {
             <div className={styles.contentSec}>
               <p
                 className={cn(styles.leadText, "gradient-text")}
-                dangerouslySetInnerHTML={{ __html: `${props.subtitle}` }}
+                dangerouslySetInnerHTML={{ __html: `${props.description}` }}
               ></p>
               <Link href={props?.BtnLink}>
                 <Button
@@ -36,7 +35,7 @@ const CmsBanner = ({ props }) => {
                   className={styles.headerBtn}
                   size="md"
                 >
-                  {props?.Btn}
+                  {props?.button}
                   <Icons.ArrowRight size={20} className="ms-2" />
                 </Button>
               </Link>
