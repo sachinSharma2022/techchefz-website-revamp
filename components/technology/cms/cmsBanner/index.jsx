@@ -16,6 +16,8 @@ const CmsBanner = ({ props }) => {
     <section
       className={`${styles.cmsBannerStyle} ${theme ? styles.cmsBannerDark : ""
         }`}
+      className={`${styles.cmsBannerStyle} ${theme ? styles.cmsBannerDark : ""
+        }`}
     >
       <TextRevel>
         <div className={cn("header-container")}>
@@ -35,6 +37,7 @@ const CmsBanner = ({ props }) => {
                   className={styles.headerBtn}
                   size="md"
                 >
+                  {props?.button}
                   {props?.button}
                   <Icons.ArrowRight size={20} className="ms-2" />
                 </Button>
