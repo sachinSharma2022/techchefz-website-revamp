@@ -15,7 +15,8 @@ import { Form, Formik } from "formik";
 import { useContext, useRef, useState } from "react";
 import styles from "./style.module.scss";
 
-const AemSolution = ({ contact, className }) => {
+const AemSolution = ({ contact, className, aemContact }) => {
+  console.log("hi shivaa", aemContact);
   const { theme } = useContext(MyContext);
   const [inprogress, setInProgress] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -61,11 +62,10 @@ const AemSolution = ({ contact, className }) => {
 
       <div className={styles.headSection}>
         <h3 className={styles.formHeading}>
-          Transform Your Digital Experience with Tailored AEM Solutions
+          {aemContact.Title}
         </h3>
         <p className={styles.formText}>
-          Fill in the required details so that we can craft an awesome and ideal
-          AEM solution for you.
+          {aemContact.SubTitle}
         </p>
       </div>
 
@@ -203,7 +203,7 @@ const AemSolution = ({ contact, className }) => {
                 disabled={isVerified ? inprogress : true}
                 type="submit"
               >
-                Request a Free AEM Consultation
+                {aemContact.Button}
                 <Icons.ArrowRight size={18} />
               </Button>
             </div>
