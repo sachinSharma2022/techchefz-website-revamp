@@ -18,7 +18,6 @@ import ReCAPTCHA from "react-google-recaptcha";
 import CircleLoader from "@/components/ui/circleLoader";
 
 const AemSolution = ({ contact, className, aemContact }) => {
-  console.log("hi shivaa", aemContact);
   const { theme } = useContext(MyContext);
   const [inprogress, setInProgress] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
