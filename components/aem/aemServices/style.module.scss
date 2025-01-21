@@ -70,7 +70,7 @@
   .gridNumberMain {
     .differenceGridCards {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 2.5rem;
 
       @include mobile-tablet-p {
@@ -80,7 +80,6 @@
 
       .cardStyle {
         position: relative;
-        min-width: 373px;
 
         @include mobile-tablet-p {
           min-width: 100%;
