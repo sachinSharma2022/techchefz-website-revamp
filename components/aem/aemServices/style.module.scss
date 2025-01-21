@@ -80,6 +80,11 @@
 
       .cardStyle {
         position: relative;
+        min-width: 373px;
+
+        @include mobile-tablet-p {
+          min-width: 100%;
+        }
       }
 
       .differenceCmsBox {
