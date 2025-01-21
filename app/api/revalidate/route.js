@@ -28,6 +28,7 @@ export async function POST(request) {
       "case-study": "portfolio",
       "insight-inside": "insights",
       "career-detail": "careers",
+      "google-ad":"aem"
     };
 
     if (obj.model && obj.model != "landing-page")
