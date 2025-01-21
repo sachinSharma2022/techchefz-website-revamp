@@ -7,19 +7,22 @@ import CountryDropdown from "@/components/ui/countryDropdown";
 import { ServiceDropdown } from "@/components/ui/customDropdown";
 import { Error, Input } from "@/components/ui/inputCustom";
 import { MyContext } from "@/context/theme";
-import { commonValidationSchema } from "@/lib/FormSchema";
+import { aemValidationSchema } from "@/lib/FormSchema";
 import { verifyCaptcha } from "@/lib/ServerActions";
 import { triggerMail } from "@/lib/triggerMail";
 import { cn } from "@/lib/utils";
-import { Form, Formik } from "formik";
+import { Form, Formik, useFormik } from "formik";
 import { useContext, useRef, useState } from "react";
 import styles from "./style.module.scss";
+import ReCAPTCHA from "react-google-recaptcha";
+import CircleLoader from "@/components/ui/circleLoader";
 
-const AemSolution = ({ contact, className }) => {
+const AemSolution = ({ contact, className, aemContact }) => {
   const { theme } = useContext(MyContext);
   const [inprogress, setInProgress] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isVerified, setIsVerified] = useState(false);
+  const recaptchaRef = useRef(null);
 
   const options = [
     { name: "AEM Development" },
@@ -33,12 +36,32 @@ const AemSolution = ({ contact, className }) => {
     email: "",
     phone: "",
     countyCode: "+91",
-    selectPurpose: "",
     companyName: "",
-    projectExplanation: "",
+    serviceInterest: "",
   };
-
-  const recaptchaRef = useRef(null);
+  const {
+    values,
+    errors,
+    touched,
+    handleBlur,
+    handleChange,
+    handleSubmit,
+    setFieldValue,
+    handleReset,
+  } = useFormik({
+    initialValues: formInitialSchema,
+    validationSchema: aemValidationSchema,
+    onSubmit: (values, action) => {
+      setInProgress(true);
+      triggerMail({ content: JSON.stringify(values) });
+      setTimeout(() => {
+        action.resetForm();
+        recaptchaRef.current.reset();
+        setInProgress(false);
+        dialogOpen();
+      }, 4000);
+    },
+  });
 
   async function handleCaptchaSubmission(token) {
     await verifyCaptcha(token)
@@ -57,158 +80,181 @@ const AemSolution = ({ contact, className }) => {
         className
       )}
     >
-      <ConfirmationPopup open={isOpen} onClose={dialogClose} />
+      <ConfirmationPopup open={isOpen} onClose={dialogClose} theme={theme} />
 
       <div className={styles.headSection}>
         <h3 className={styles.formHeading}>
-          Transform Your Digital Experience with Tailored AEM Solutions
+          {aemContact.Title}
         </h3>
         <p className={styles.formText}>
-          Fill in the required details so that we can craft an awesome and ideal
-          AEM solution for you.
+          {aemContact.SubTitle}
         </p>
       </div>
 
-      <Formik
-        initialValues={formInitialSchema}
-        validationSchema={commonValidationSchema}
-        onSubmit={(values, actions) => {
-          setInProgress(true);
-          triggerMail({ content: JSON.stringify(values) });
-          setTimeout(() => {
-            actions.resetForm();
-            recaptchaRef.current.reset();
-            setInProgress(false);
-            dialogOpen();
-          }, 4000);
-        }}
-      >
-        {({
-          values,
-          errors,
-          touched,
-          handleBlur,
-          handleChange,
-          handleSubmit,
-          setFieldValue,
-        }) => (
-          <Form onSubmit={handleSubmit}>
-            <div className={styles.contactFormArea}>
-              <div className={cn(styles.inputSpace)}>
-                <Input
-                  label="First Name*"
-                  placeholder="First Name*"
-                  type="text"
-                  id="firstName"
-                  name="firstName"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.firstName}
-                  errorStatus={touched.firstName && errors.firstName}
-                />
-                {touched.firstName && errors.firstName && (
-                  <Error>{errors.firstName}</Error>
-                )}
-              </div>
-
-              <div className={cn(styles.inputSpace)}>
-                <Input
-                  label="Last Name*"
-                  placeholder="Last Name*"
-                  type="text"
-                  id="lastName"
-                  name="lastName"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.lastName}
-                  errorStatus={touched.lastName && errors.lastName}
-                />
-                {touched.lastName && errors.lastName && (
-                  <Error>{errors.lastName}</Error>
-                )}
-              </div>
-
-              <div className={cn(styles.inputSpace)}>
-                <CountryDropdown
-                  id="phone"
-                  name="phone"
-                  onChange={handleChange}
-                  setFieldValue={setFieldValue}
-                  onBlur={handleBlur}
-                  value={values.phone}
-                  valueCountryCode={values.countyCode}
-                />
-                {touched.phone && errors.phone && <Error>{errors.phone}</Error>}
-              </div>
-
-              <div className={cn(styles.inputSpace)}>
-                <Input
-                  label="Email*"
-                  placeholder="Email*"
-                  type="email"
-                  id="email"
-                  name="email"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.email}
-                  errorStatus={touched.email && errors.email}
-                />
-                {touched.email && errors.email && <Error>{errors.email}</Error>}
-              </div>
-
-              <div className={cn(styles.inputSpace)}>
-                <Input
-                  label="Company Name*"
-                  placeholder="Company Name*"
-                  type="text"
-                  id="companyName"
-                  name="companyName"
-                  onChange={(e) => {
-                    const { value } = e.target;
-                    if (/^[A-Za-z0-9\s]*$/.test(value)) {
-                      handleChange(e);
-                    }
-                  }}
-                  onBlur={handleBlur}
-                  value={values.companyName}
-                  errorStatus={touched.companyName && errors.companyName}
-                />
-                {touched.companyName && errors.companyName && (
-                  <Error>{errors.companyName}</Error>
-                )}
-              </div>
-
-              <div className={cn(styles.inputSpace)}>
-                <ServiceDropdown
-                  placeholder="Service Interest*"
-                  title="Service Interest*"
-                  name="serviceInterest"
-                  setFieldValue={setFieldValue}
-                  onBlur={handleBlur}
-                  value={values.selectPurpose}
-                  options={options}
-                  errorStatus={touched.selectPurpose && errors.selectPurpose}
-                  className="custom-dropdown z-5"
-                />
-                {touched.selectPurpose && errors.selectPurpose && (
-                  <Error>{errors.selectPurpose}</Error>
-                )}
-              </div>
+      <Formik>
+        <Form onSubmit={handleSubmit}>
+          <div className={styles.contactFormArea}>
+            <div className={`${styles.inputSpace}`}>
+              <Input
+                label="First Name*"
+                placeholder="First Name*"
+                type="name"
+                id="firstName"
+                name="firstName"
+                // error={Boolean(touched.fullName && errors.fullName)}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.firstName}
+                errorStatus={touched.firstName && errors.firstName}
+                onKeyDown={(event) => {
+                  var regex = new RegExp("^[a-zA-Z]*$");
+                  if (!regex.test(event.key) && !(event.key === "'")) {
+                    event.preventDefault();
+                    return false;
+                  }
+                }}
+              />
+              {touched.firstName && errors.firstName && (
+                <Error>{errors.firstName}</Error>
+              )}
             </div>
 
-            <div className={cn(styles.buttonGrid)}>
-              <Button
-                variant={theme ? "blueBtnDark" : "blueBtn"}
-                size="md"
-                disabled={isVerified ? inprogress : true}
-                type="submit"
-              >
-                Request a Free AEM Consultation
+            <div className={`${styles.inputSpace}`}>
+              <Input
+                label="Last Name*"
+                placeholder="Last Name*"
+                type="name"
+                id="lastName"
+                name="lastName"
+                // error={Boolean(touched.fullName && errors.fullName)}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.lastName}
+                errorStatus={touched.lastName && errors.lastName}
+                onKeyDown={(event) => {
+                  var regex = new RegExp("^[a-zA-Z]*$");
+                  if (
+                    !regex.test(event.key) &&
+                    !(event.key === "-") &&
+                    !(event.key === " ")
+                  ) {
+                    event.preventDefault();
+                    return false;
+                  }
+                }}
+              />
+              {touched.lastName && errors.lastName && (
+                <Error>{errors.lastName}</Error>
+              )}
+            </div>
+
+            <div className={`${styles.inputSpace}`}>
+              <CountryDropdown
+                id="phone"
+                name="phone"
+                onChange={handleChange}
+                setFieldValue={setFieldValue}
+                onBlur={handleBlur}
+                value={values.phone}
+                valueCountryCode={values.countyCode}
+                onKeyDown={(event) => {
+                  var regex = new RegExp("^[0-9]*$");
+                  if (
+                    !regex.test(event.key) &&
+                    !(event.key == "Backspace") &&
+                    !(event.key == "ArrowRight") &&
+                    !(event.key == "ArrowLeft")
+                  ) {
+                    event.preventDefault();
+                    return false;
+                  }
+                }}
+              />
+              {touched.phone && errors.phone && <Error>{errors.phone}</Error>}
+            </div>
+
+            <div className={`${styles.inputSpace}`}>
+              <Input
+                label="Email*"
+                placeholder="Email*"
+                type="email"
+                id="email"
+                name="email"
+                error={Boolean(touched.email && errors.email)}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.email}
+              />
+              {touched.email && errors.email && <Error>{errors.email}</Error>}
+            </div>
+
+            <div className={`${styles.inputSpace}`}>
+              <Input
+                label="Company*"
+                placeholder="Company*"
+                type="text"
+                id="companyName"
+                name="companyName"
+                error={Boolean(touched.companyName && errors.companyName)}
+                onChange={(e) => {
+                  const { value } = e.target;
+                  // Regular expression to allow only alphabets and numbers
+                  if (/^[A-Za-z0-9\s]*$/.test(value)) {
+                    handleChange(e); // Only update value if it matches the regex
+                  }
+                }}
+                onBlur={handleBlur}
+                value={values.companyName}
+              />
+              {touched.companyName && errors.companyName && (
+                <Error>{errors.companyName}</Error>
+              )}
+            </div>
+
+            <div className={cn(styles.inputSpace)}>
+              <ServiceDropdown
+                placeholder="Service Interest*"
+                title="Service Interest*"
+                name="serviceInterest"
+                setFieldValue={setFieldValue}
+                onBlur={handleBlur}
+                value={values.serviceInterest}
+                options={options}
+                errorStatus={touched.serviceInterest && errors.serviceInterest}
+                className="custom-dropdown z-5"
+              />
+              {touched.serviceInterest && errors.serviceInterest && (
+                <Error>{errors.serviceInterest}</Error>
+              )}
+            </div>
+            <div className={styles.captchaImg}>
+              <ReCAPTCHA
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                ref={recaptchaRef}
+                onChange={handleCaptchaSubmission}
+                theme={"dark"}
+              />
+            </div>
+          </div>
+
+          <div className={cn(styles.buttonGrid)}>
+            <Button
+              variant={theme ? "blueBtnDark" : "blueBtn"}
+              size="md"
+              disabled={
+                (isVerified ? false : true) ? true : inprogress ? true : false
+              }
+              type="submit"
+            >
+              {aemContact.Button}
+              {inprogress ? (
+                <CircleLoader repeatCount={1} />
+              ) : (
                 <Icons.ArrowRight size={18} />
-              </Button>
-            </div>
-          </Form>
-        )}
+              )}
+            </Button>
+          </div>
+        </Form>
       </Formik>
     </div>
   );

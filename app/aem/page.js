@@ -6,13 +6,13 @@ import AemImageBanner from "@/components/aem/imageBanner";
 import AemTestimonials from "@/components/aem/testimonials";
 import WhyChooseUs from "@/components/aem/whyChooseUs";
 import RelatedCase from "@/components/relatedCase";
-import { api_Case_study_Page, api_tech_solution_Page } from "@/lib/constants";
+import { api_Case_study_Page, api_google_ads_Page } from "@/lib/constants";
 import { getData, getDataDynamic } from "@/lib/fetchData";
 import NotFound from "../not-found";
 import ClientScrollWrapper from "@/app/aem/useLocomotiveScroll";
 
 export async function generateMetadata() {
-  const data = await getData(api_tech_solution_Page);
+  const data = await getData(api_google_ads_Page);
 
   return {
     title: data?.SeoData?.metaTitle,
@@ -36,27 +36,27 @@ export async function generateMetadata() {
 }
 
 const AEMPage = async () => {
-  const data = await getData(api_tech_solution_Page);
+  const data = await getData(api_google_ads_Page);
   const data_related_cases = await getDataDynamic(api_Case_study_Page);
 
   return (
     <>
       {data ? (
         <div className="overflow-hidden scroll-smooth">
-          <AemHeroBanner />
-          <AemImageBanner />
+          <AemHeroBanner props={data.HeroBanner} />
+          <AemImageBanner props={data.imagebanner} />
           <ClientScrollWrapper>
-            <WhyChooseUs id="why-choose-us" data-scroll-section />
+            <WhyChooseUs props={data.whyChooseUs} id="why-choose-us" data-scroll-section />
           </ClientScrollWrapper>
-          <AemTestimonials />
-          <AemServices />
-          <AemTheProcess />
+          <AemTestimonials props={data.AemTestimonials} />
+          <AemServices props={data.aemServices} />
+          <AemTheProcess props={data.TheProcess} />
           <RelatedCase
             className="case-study-style gray-bg"
             props={data_related_cases}
             RelatedInsight={data.RelatedInsight}
           />
-          <AdobeSection />
+          <AdobeSection props={data.AdobeSection} />
         </div>
       ) : (
         <>

@@ -6,13 +6,14 @@ import { cn } from "@/lib/utils";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useContext, useEffect, useState } from "react";
-
+import { base_Uri } from "@/lib/constants";
 import MobileSlider from "@/components/common/mobileSlider";
 import TextRevel from "@/components/ui/sectionAnimation";
 import { useMediaQuery } from "react-responsive";
 import styles from "./style.module.scss";
 
 const AemTheProcess = ({ props }) => {
+  // console.log("hii google", props);
   const isBigScreen = useMediaQuery({ query: "(min-width: 1200px)" });
   const isMobileScreen = useMediaQuery({ query: "(max-width: 690px)" });
   const isSmallMobile = useMediaQuery({ query: "(max-width: 690px)" });
@@ -118,26 +119,26 @@ const AemTheProcess = ({ props }) => {
   }, []);
 
   const accordionData = [
-    {
-      title: "Assessment & Planning",
-      description:
-        "We start by thoroughly assessing your current CMS, and identifying its strengths and limitations. Based on your specific needs and goals, we define a custom Adobe Experience Manager strategy designed to maximize efficiency and scalability for your business.",
-    },
-    {
-      title: "AEM Development & Customization",
-      description:
-        "Our expert AEM developers design and implement scalable, flexible solutions fully customized to meet the unique requirements of your business. Whether it’s creating personalized user experiences or integrating third-party tools, we ensure your system is built for success.",
-    },
-    {
-      title: "Seamless Implementation & Migration",
-      description:
-        "We transition your existing platform to Adobe Experience Manager with no interruptions to your operations. Using our proven migration framework, we ensure all your data, content, and workflows are seamlessly integrated into the new system.",
-    },
-    {
-      title: "Ongoing AEM Managed Services",
-      description:
-        "Once your AEM platform is live, we provide continuous support through regular updates, performance optimization, and proactive troubleshooting. We handle every aspect of AEM management, so you can focus on your core business.",
-    },
+    // {
+    //   title: "Assessment & Planning",
+    //   description:
+    //     "We start by thoroughly assessing your current CMS, and identifying its strengths and limitations. Based on your specific needs and goals, we define a custom Adobe Experience Manager strategy designed to maximize efficiency and scalability for your business.",
+    // },
+    // {
+    //   title: "AEM Development & Customization",
+    //   description:
+    //     "Our expert AEM developers design and implement scalable, flexible solutions fully customized to meet the unique requirements of your business. Whether it’s creating personalized user experiences or integrating third-party tools, we ensure your system is built for success.",
+    // },
+    // {
+    //   title: "Seamless Implementation & Migration",
+    //   description:
+    //     "We transition your existing platform to Adobe Experience Manager with no interruptions to your operations. Using our proven migration framework, we ensure all your data, content, and workflows are seamlessly integrated into the new system.",
+    // },
+    // {
+    //   title: "Ongoing AEM Managed Services",
+    //   description:
+    //     "Once your AEM platform is live, we provide continuous support through regular updates, performance optimization, and proactive troubleshooting. We handle every aspect of AEM management, so you can focus on your core business.",
+    // },
   ];
 
   return (
@@ -149,10 +150,10 @@ const AemTheProcess = ({ props }) => {
           <TextRevel>
             <div>
               <h6 className={cn(styles.heading, "gradient-text")}>
-                The Process
+                {props?.Title}
               </h6>
-              <h3 className={cn(styles.subHeading, "gradient-text")}>
-                How Our <span>AEM</span> Services Work
+              <h3 className={cn(styles.subHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}>
+                {/* How Our <span>AEM</span> Services Work */}
               </h3>
             </div>
           </TextRevel>
@@ -163,7 +164,12 @@ const AemTheProcess = ({ props }) => {
 
               <div id="1-img" className={cn(styles.stepperImg, "fadeinout")}>
                 <ImageCustom
-                  src="/images/icons/process/icon1.webp"
+                  src={
+                    props?.images[0]?.Image?.data?.attributes?.url
+
+                      ? `${base_Uri}${props?.images[0]?.Image?.data?.attributes?.url}`
+                      : `${base_Uri}/`
+                  }
                   width={258}
                   height={258}
                   alt="bannerImg"
@@ -175,7 +181,12 @@ const AemTheProcess = ({ props }) => {
                 style={{ display: "none" }}
               >
                 <ImageCustom
-                  src="/images/icons/process/icon2.webp"
+                  src={
+                    props?.images[1]?.Image?.data?.attributes?.url
+
+                      ? `${base_Uri}${props?.images[1]?.Image?.data?.attributes?.url}`
+                      : `${base_Uri}/`
+                  }
                   width={258}
                   height={258}
                   alt="bannerImg"
@@ -187,7 +198,12 @@ const AemTheProcess = ({ props }) => {
                 style={{ display: "none" }}
               >
                 <ImageCustom
-                  src="/images/icons/process/icon3.webp"
+                  src={
+                    props?.images[2]?.Image?.data?.attributes?.url
+
+                      ? `${base_Uri}${props?.images[2]?.Image?.data?.attributes?.url}`
+                      : `${base_Uri}/`
+                  }
                   width={258}
                   height={258}
                   alt="bannerImg"
@@ -199,7 +215,12 @@ const AemTheProcess = ({ props }) => {
                 style={{ display: "none" }}
               >
                 <ImageCustom
-                  src="/images/icons/process/icon4.webp"
+                  src={
+                    props?.images[3]?.Image?.data?.attributes?.url
+
+                      ? `${base_Uri}${props?.images[3]?.Image?.data?.attributes?.url}`
+                      : `${base_Uri}/`
+                  }
                   width={258}
                   height={258}
                   alt="bannerImg"
@@ -211,7 +232,7 @@ const AemTheProcess = ({ props }) => {
 
         {!isMobileScreen && (
           <div className={cn(styles.processCardSection)}>
-            {accordionData.map((data, index) => (
+            {props?.ITSolutionsCards?.map((data, index) => (
               <div
                 key={index}
                 className={cn(
@@ -223,8 +244,8 @@ const AemTheProcess = ({ props }) => {
                 <div className={styles.textGradient}>
                   {String(index + 1).padStart(2, "0")}
                 </div>
-                <h4 className={styles.title}>{data.title}</h4>
-                <p className={styles.description}>{data.description}</p>
+                <h4 className={styles.title}>{data.Description}</h4>
+                <p className={styles.description}>{data.secoundDescription}</p>
               </div>
             ))}
           </div>
@@ -233,7 +254,7 @@ const AemTheProcess = ({ props }) => {
         {isMobileScreen && (
           <div className={cn(styles.processCardSection)}>
             <MobileSlider slidesToShow={1}>
-              {accordionData.map((data, index) => (
+              {props?.ITSolutionsCards?.map((data, index) => (
                 <div
                   key={index}
                   className={cn(
@@ -245,8 +266,8 @@ const AemTheProcess = ({ props }) => {
                   <div className={styles.textGradient}>
                     {String(index + 1).padStart(2, "0")}
                   </div>
-                  <h4 className={styles.title}>{data.title}</h4>
-                  <p className={styles.description}>{data.description}</p>
+                  <h4 className={styles.title}>{data.Description}</h4>
+                  <p className={styles.description}>{data.secoundDescription}</p>
                 </div>
               ))}
             </MobileSlider>

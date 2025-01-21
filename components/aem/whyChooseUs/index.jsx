@@ -10,7 +10,8 @@ import TextRevel from "@/components/ui/sectionAnimation";
 import styles from "./style.module.scss";
 import AemSolution from "../aemSolution";
 
-const WhyChooseUs = ({ id }) => {
+const WhyChooseUs = ({ id, props }) => {
+  console.log("hi choose", props);
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState(null);
   const { theme, setTheme } = useContext(MyContext);
 
@@ -30,37 +31,37 @@ const WhyChooseUs = ({ id }) => {
     });
   }
 
-  const toggleSection = [
-    {
-      title: "Comprehensive AEM Managed Services",
-      description:
-        "From hosting to updates, our AEM Managed Services keep your CMS running smoothly.",
-    },
-    {
-      title: "Custom AEM Development",
-      description:
-        "Tailored AEM development solutions to meet the unique needs of your business.",
-    },
-    {
-      title: "AEM Edge Delivery:",
-      description:
-        "Leverage AEM's Edge Delivery to accelerate global content delivery, ensuring fast, scalable, and secure experiences for your users—regardless of location.",
-    },
-    {
-      title: "Certified Adobe Experts",
-      description:
-        "Work with certified Adobe Experience Manager developers with years of expertise.",
-    },
-    {
-      title: "Seamless AEM Migration",
-      description: "Migrate to AEM with zero downtime and no data loss.",
-    },
-    {
-      title: "24/7 Support",
-      description:
-        "Continuous monitoring and proactive support for your Adobe Experience Manager platform.",
-    },
-  ];
+  // const toggleSection = [
+  //   {
+  //     title: "Comprehensive AEM Managed Services",
+  //     description:
+  //       "From hosting to updates, our AEM Managed Services keep your CMS running smoothly.",
+  //   },
+  //   {
+  //     title: "Custom AEM Development",
+  //     description:
+  //       "Tailored AEM development solutions to meet the unique needs of your business.",
+  //   },
+  //   {
+  //     title: "AEM Edge Delivery:",
+  //     description:
+  //       "Leverage AEM's Edge Delivery to accelerate global content delivery, ensuring fast, scalable, and secure experiences for your users—regardless of location.",
+  //   },
+  //   {
+  //     title: "Certified Adobe Experts",
+  //     description:
+  //       "Work with certified Adobe Experience Manager developers with years of expertise.",
+  //   },
+  //   {
+  //     title: "Seamless AEM Migration",
+  //     description: "Migrate to AEM with zero downtime and no data loss.",
+  //   },
+  //   {
+  //     title: "24/7 Support",
+  //     description:
+  //       "Continuous monitoring and proactive support for your Adobe Experience Manager platform.",
+  //   },
+  // ];
 
   return (
     <section
@@ -71,11 +72,12 @@ const WhyChooseUs = ({ id }) => {
         <TextRevel>
           <div className={styles.ourValuesHead}>
             <h6 className={cn(styles.ourValuesTitle, "gradient-text")}>
-              Why Choose Us
+              {props?.Title}
             </h6>
-            <h3 className={cn(styles.ourValuesHeading, "gradient-text")}>
-              Enhance your digital experiences with scalable, secure, and
-              efficient <span>AEM Managed Services.</span>
+            <h3 className={cn(styles.ourValuesHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}>
+
+              {/* Enhance your digital experiences with scalable, secure, and
+              efficient <span>AEM Managed Services.</span> */}
             </h3>
           </div>
         </TextRevel>
@@ -83,13 +85,10 @@ const WhyChooseUs = ({ id }) => {
         <div className={styles.ourValuesContent}>
           <div className={styles.toggleSection}>
             <p className={styles.ourValuesText}>
-              Transform your digital experiences with our expert AEM Managed
-              services. From seamless implementation and smooth migrations to
-              tailored customizations and reliable support, we deliver scalable,
-              secure, and efficient results.
+              {props?.Description}
             </p>
             <div className={styles.ourValuesAccordion}>
-              {toggleSection.map((data, index) => (
+              {props?.aemQuesAns?.map((data, index) => (
                 <Disclosure key={index}>
                   {(panel) => {
                     const { open, close } = panel;
@@ -104,13 +103,13 @@ const WhyChooseUs = ({ id }) => {
                             togglePanels({ ...panel, key: index });
                           }}
                         >
-                          {data.title}
+                          {data.Question}
                           <div className={styles.iconBox}>
                             {!open ? <Icons.ArrowDown /> : <Icons.ArrowUp />}
                           </div>
                         </Disclosure.Button>
                         <Disclosure.Panel className={styles.accordionBody}>
-                          {data.description}
+                          {data.answer}
                         </Disclosure.Panel>
                       </>
                     );
@@ -120,7 +119,7 @@ const WhyChooseUs = ({ id }) => {
             </div>
           </div>
           <div className={styles.formSection}>
-            <AemSolution />
+            <AemSolution aemContact={props?.aemContact} />
           </div>
         </div>
       </div>

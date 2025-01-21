@@ -4,8 +4,9 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import { base_Uri } from "@/lib/constants";
 
 
+
 const CmsPlayer = ({ props }) => {
- 
+
   return (
     <ImageCustom
       src={
@@ -15,7 +16,7 @@ const CmsPlayer = ({ props }) => {
       }
       width={2560}
       height={1068}
-      alt = {props?.Image?.data?.attributes?.alternativeText}
+      alt={props?.Image?.data?.attributes?.alternativeText}
       className={styles.landingPlayerStyle}
     />
   );
