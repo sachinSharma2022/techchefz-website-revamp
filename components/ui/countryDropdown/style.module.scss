@@ -12,7 +12,7 @@
     border: 0.14rem solid rgba(color(text-primary), 0.12);
     border-radius: 0.75rem;
     height: 4rem;
-    gap: .625rem;
+    gap: 0.625rem;
     // padding: 0 0 0 1rem;
     background-color: color(primary-white);
     @include transition(0.5s);
@@ -22,10 +22,9 @@
       border-color: color(heading-liner);
     }
 
-    @include mobile-tablet-p{
+    @include mobile-tablet-p {
       margin: 0;
     }
-    
 
     &.inputErrorStyle {
       border-color: color(error);
@@ -86,7 +85,7 @@
   .countryOption {
     display: flex;
     align-items: center;
-    gap: .625rem;
+    gap: 0.625rem;
   }
 
   // Dark Mode
@@ -95,16 +94,14 @@
       border-color: rgba(color(primary-white), 0.12);
       background-color: color(dark-gray);
 
-
-    &:hover,
-    &:focus {
-      border-color: color(heading-liner);
-    }
+      &:hover,
+      &:focus {
+        border-color: color(heading-liner);
+      }
 
       &.inputErrorStyle {
         border-color: color(error);
       }
-    
 
       .floatDropdown {
         button {
@@ -127,7 +124,13 @@
       input {
         color: color(primary-white);
       }
-  
+    }
+
+    .countryOption {
+
+      span {
+        color: color(primary-white);
+      }
     }
   }
 

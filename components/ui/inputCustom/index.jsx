@@ -28,6 +28,7 @@ const Input = React.forwardRef(
       inputStyle,
       inputFloatingStyle,
       inputContainerStyle,
+      darkTheme,
       ...props
     },
     ref
@@ -38,7 +39,8 @@ const Input = React.forwardRef(
         className={cn(
           styles.inputContainerStyle,
           theme ? styles.inputContainerStyleDark : "",
-          inputContainerStyle
+          inputContainerStyle,
+          darkTheme && styles.inputContainerStyleDark
         )}
       >
         <div

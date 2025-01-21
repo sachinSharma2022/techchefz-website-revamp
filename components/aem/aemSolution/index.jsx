@@ -77,30 +77,28 @@ const AemSolution = ({ contact, className, aemContact }) => {
       className={cn(
         styles.aemSolutionStyle,
         theme ? styles.aemSolutionStyleDark : "",
-        className
+        className,
+        "aem-form-style"
       )}
     >
       <ConfirmationPopup open={isOpen} onClose={dialogClose} theme={theme} />
 
       <div className={styles.headSection}>
-        <h3 className={styles.formHeading}>
-          {aemContact.Title}
-        </h3>
-        <p className={styles.formText}>
-          {aemContact.SubTitle}
-        </p>
+        <h3 className={styles.formHeading}>{aemContact.Title}</h3>
+        <p className={styles.formText}>{aemContact.SubTitle}</p>
       </div>
 
       <Formik>
         <Form onSubmit={handleSubmit}>
           <div className={styles.contactFormArea}>
-            <div className={`${styles.inputSpace}`}>
+            <div className={cn(styles.inputSpace)}>
               <Input
                 label="First Name*"
                 placeholder="First Name*"
                 type="name"
                 id="firstName"
                 name="firstName"
+                darkTheme
                 // error={Boolean(touched.fullName && errors.fullName)}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -119,13 +117,14 @@ const AemSolution = ({ contact, className, aemContact }) => {
               )}
             </div>
 
-            <div className={`${styles.inputSpace}`}>
+            <div className={cn(styles.inputSpace)}>
               <Input
                 label="Last Name*"
                 placeholder="Last Name*"
                 type="name"
                 id="lastName"
                 name="lastName"
+                darkTheme
                 // error={Boolean(touched.fullName && errors.fullName)}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -148,7 +147,7 @@ const AemSolution = ({ contact, className, aemContact }) => {
               )}
             </div>
 
-            <div className={`${styles.inputSpace}`}>
+            <div className={cn(styles.inputSpace)}>
               <CountryDropdown
                 id="phone"
                 name="phone"
@@ -169,17 +168,19 @@ const AemSolution = ({ contact, className, aemContact }) => {
                     return false;
                   }
                 }}
+                darkTheme
               />
               {touched.phone && errors.phone && <Error>{errors.phone}</Error>}
             </div>
 
-            <div className={`${styles.inputSpace}`}>
+            <div className={cn(styles.inputSpace)}>
               <Input
                 label="Email*"
                 placeholder="Email*"
                 type="email"
                 id="email"
                 name="email"
+                darkTheme
                 error={Boolean(touched.email && errors.email)}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -188,13 +189,14 @@ const AemSolution = ({ contact, className, aemContact }) => {
               {touched.email && errors.email && <Error>{errors.email}</Error>}
             </div>
 
-            <div className={`${styles.inputSpace}`}>
+            <div className={cn(styles.inputSpace)}>
               <Input
                 label="Company*"
                 placeholder="Company*"
                 type="text"
                 id="companyName"
                 name="companyName"
+                darkTheme
                 error={Boolean(touched.companyName && errors.companyName)}
                 onChange={(e) => {
                   const { value } = e.target;
@@ -222,6 +224,7 @@ const AemSolution = ({ contact, className, aemContact }) => {
                 options={options}
                 errorStatus={touched.serviceInterest && errors.serviceInterest}
                 className="custom-dropdown z-5"
+                darkTheme
               />
               {touched.serviceInterest && errors.serviceInterest && (
                 <Error>{errors.serviceInterest}</Error>
@@ -229,6 +232,7 @@ const AemSolution = ({ contact, className, aemContact }) => {
             </div>
             <div className={styles.captchaImg}>
               <ReCAPTCHA
+                style={{ transform: "scale(0.9)", transformOrigin: "0 0" }}
                 sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                 ref={recaptchaRef}
                 onChange={handleCaptchaSubmission}
@@ -239,12 +243,14 @@ const AemSolution = ({ contact, className, aemContact }) => {
 
           <div className={cn(styles.buttonGrid)}>
             <Button
-              variant={theme ? "blueBtnDark" : "blueBtn"}
+              variant="blueBtnDark"
               size="md"
+              disabledColor={styles.disabledColor}
               disabled={
                 (isVerified ? false : true) ? true : inprogress ? true : false
               }
               type="submit"
+              className={cn(styles.buttonItem)}
             >
               {aemContact.Button}
               {inprogress ? (

@@ -18,7 +18,6 @@ import "swiper/css/navigation";
 import styles from "./style.module.scss";
 
 const AemTestimonials = ({ props }) => {
-
   // console.log("hii samu", props);
   const { theme, setTheme } = useContext(MyContext);
   const navigationPrevRef = React.useRef(null);
@@ -67,8 +66,9 @@ const AemTestimonials = ({ props }) => {
                 <div
                   className={cn(styles.testimonialsHeading, "gradient-text")}
                 >
-                  <h3 dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}>
-
+                  <h3
+                    dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
+                  >
                     {/* What Our <span>Clients</span> Say about our{" "}
                     <span>AEM Services</span> */}
                   </h3>
@@ -108,19 +108,18 @@ const AemTestimonials = ({ props }) => {
                           {data.Description}
                         </p>
                         <div className={styles.customerProfile}>
-                          <div className={styles.customerImg}>
-                            <ImageCustom
-                              // src={data?.ProfileImage?.data?.attributes?.url}
-                              src={
-                                data?.ProfileImage?.data?.attributes?.url
-                                  ? `${base_Uri}${data?.ProfileImage?.data?.attributes?.url}`
-                                  : `${base_Uri}/`
-                              }
-                              width={100}
-                              height={100}
-                              alt="profileImg"
-                            />
-                          </div>
+                          <ImageCustom
+                            // src={data?.ProfileImage?.data?.attributes?.url}
+                            src={
+                              data?.ProfileImage?.data?.attributes?.url
+                                ? `${base_Uri}${data?.ProfileImage?.data?.attributes?.url}`
+                                : `${base_Uri}/`
+                            }
+                            width={100}
+                            height={100}
+                            alt="profileImg"
+                            className={styles.customerImg}
+                          />
                           <p className={styles.customerName}>
                             {data.ProfileName}
                           </p>
@@ -195,18 +194,17 @@ const AemTestimonials = ({ props }) => {
                       </div>
                       <p className={styles.customerText}>{data.Description}</p>
                       <div className={styles.customerProfile}>
-                        <div className={styles.customerImg}>
-                          <ImageCustom
-                            src={
-                              data?.ProfileImage?.data?.attributes?.url
-                                ? `${base_Uri}${data?.ProfileImage?.data?.attributes?.url}`
-                                : `${base_Uri}/`
-                            }
-                            width={100}
-                            height={100}
-                            alt="profileImg"
-                          />
-                        </div>
+                        <ImageCustom
+                          src={
+                            data?.ProfileImage?.data?.attributes?.url
+                              ? `${base_Uri}${data?.ProfileImage?.data?.attributes?.url}`
+                              : `${base_Uri}/`
+                          }
+                          width={100}
+                          height={100}
+                          alt="profileImg"
+                          className={styles.customerImg}
+                        />
                         <p className={styles.customerName}>
                           {data.ProfileName}
                         </p>
