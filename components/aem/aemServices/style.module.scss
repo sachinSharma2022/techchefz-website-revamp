@@ -74,19 +74,17 @@
       gap: 2.5rem;
 
       @include mobile-tablet-p {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      @include mobile {
-        grid-template-columns: repeat(1, 1fr);
-      }
-
-      @include samsung-fold {
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        flex-direction: column;
       }
 
       .cardStyle {
         position: relative;
+        min-width: 373px;
+
+        @include mobile-tablet-p {
+          min-width: 100%;
+        }
       }
 
       .differenceCmsBox {

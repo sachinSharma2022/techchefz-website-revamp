@@ -14,8 +14,8 @@ import { base_Uri } from "@/lib/constants";
 import TextRevel from "@/components/ui/sectionAnimation";
 
 const OurClients = ({ props }) => {
+  const { theme, setTheme } = useContext(MyContext);
 
-  const { theme } = useContext(MyContext);
   const sliderLeft = {
     speed: 15000,
     autoplay: true,
@@ -115,7 +115,7 @@ const OurClients = ({ props }) => {
                         }
                         width={240}
                         height={320}
-                        alt = {item?.Image?.data?.attributes?.alternativeText}
+                        alt={item?.Image?.data?.attributes?.alternativeText}
                       />
                     </div>
                   ))}
@@ -133,7 +133,7 @@ const OurClients = ({ props }) => {
                         }
                         width={240}
                         height={320}
-                        alt = {item?.Image?.data?.attributes?.alternativeText}
+                        alt={item?.Image?.data?.attributes?.alternativeText}
                       />
                     </div>
                   ))}
@@ -151,7 +151,7 @@ const OurClients = ({ props }) => {
                         }
                         width={240}
                         height={320}
-                        alt = {item?.Image?.data?.attributes?.alternativeText}
+                        alt={item?.Image?.data?.attributes?.alternativeText}
                       />
                     </div>
                   ))}

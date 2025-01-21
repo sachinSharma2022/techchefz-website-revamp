@@ -7,11 +7,11 @@
   position: relative;
 
   @include tablet {
-    padding:3.75rem spacing(tablet-padding) 1rem;
+    padding: 3.75rem spacing(tablet-padding) 1rem;
   }
 
   @include mobile {
-    padding:3.75rem spacing(mobile-padding) 1rem;
+    padding: 3.75rem spacing(mobile-padding) 1rem;
   }
 
   @include desktop-2k {
@@ -80,12 +80,12 @@
       min-height: 28rem;
       justify-content: flex-start;
     }
-    
+
     @include tablet {
       min-height: 32rem;
       max-width: 90%;
     }
-    
+
     @include mobile {
       max-width: 100%;
     }
@@ -108,7 +108,6 @@
       }
     }
     .customerProfile {
-
       @include mobile-tablet-p {
         position: absolute;
         bottom: 25px;
@@ -117,8 +116,15 @@
 
       .customerImg {
         margin-bottom: text(normal);
+        border-radius: 16.25rem;
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
         img {
-          border-radius: 16.25rem;
+          position: absolute;
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
         }
       }
       .customerName {

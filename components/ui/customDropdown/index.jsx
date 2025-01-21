@@ -7,28 +7,6 @@ import Select, { components } from "react-select";
 import { ImageCustom } from "../imageCustom";
 import dropdownStyle from "./style.module.scss";
 
-// clearIndicator
-// container
-// control
-// dropdownIndicator
-// group
-// groupHeading
-// indicatorsContainer
-// indicatorSeparator
-// input
-// loadingIndicator
-// loadingMessage
-// menu
-// menuList
-// menuPortal
-// multiValue
-// multiValueLabel
-// multiValueRemove
-// noOptionsMessage
-// option
-// placeholder
-// singleValue
-// valueContainer
 const { ValueContainer, Placeholder } = components;
 const CustomValueContainer = ({ children, ...props }) => {
   return (
@@ -195,6 +173,7 @@ export const ServiceDropdown = ({
   setFieldValue,
   name,
   value,
+  darkTheme,
 }) => {
   const { theme } = useContext(MyContext);
   const ref = useRef();
@@ -206,7 +185,11 @@ export const ServiceDropdown = ({
       borderRadius: 12,
       backgroundColor: theme ? "#1F1F1F" : "#F1F1F1",
       borderWidth: "0.14rem",
-      borderColor: theme ? "rgba(256,256,256,0.12)" : "rgba(17, 17, 17, 0.12)",
+      borderColor: darkTheme
+        ? "rgba(256,256,256,0.12)"
+        : theme
+        ? "rgba(256,256,256,0.12)"
+        : "rgba(17, 17, 17, 0.12)",
       "&:hover": {
         borderColor: "#05bed7",
       },
@@ -262,7 +245,9 @@ export const ServiceDropdown = ({
         dropdownStyle.wrapperStyle,
         inputError && "custom-dropdown-style",
         theme && dropdownStyle.darkThemeStyle,
-        theme && "dark-theme-style"
+        theme && "dark-theme-style",
+        darkTheme && "dark-theme-style",
+        darkTheme && dropdownStyle.darkTheme
       )}
     >
       <Select

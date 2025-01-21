@@ -72,13 +72,13 @@ const CountryDropdown = (props) => {
       };
     },
   };
- 
 
   return (
     <div
       className={cn(
         styles.dropdownContainerStyle,
-        theme ? styles.dropdownContainerStyleDark : ""
+        theme ? styles.dropdownContainerStyleDark : "",
+        props.darkTheme && styles.dropdownContainerStyleDark
       )}
     >
       <div
@@ -145,6 +145,7 @@ const CountryDropdown = (props) => {
           type="tel"
           pattern="[0-9]{}"
           maxLength="15"
+          darkTheme
           inputContainerStyle={styles.inputContainerStyle}
           inputFloatingStyle={styles.inputFloatingStyle}
           id={props.id}

@@ -47,6 +47,7 @@ const Button = React.forwardRef(
       dur,
       ariaLabel,
       buttonTitle,
+      disabledColor,
       ...props
     },
     ref
@@ -91,7 +92,7 @@ const Button = React.forwardRef(
         }}
         ref={ref}
         {...props}
-        disabled={disabled}
+        disabled={disabled ? disabled : disabledColor}
         aria-label={ariaLabel}
         title={buttonTitle}
       >

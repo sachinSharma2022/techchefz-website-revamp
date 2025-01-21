@@ -31,38 +31,6 @@ const WhyChooseUs = ({ id, props }) => {
     });
   }
 
-  // const toggleSection = [
-  //   {
-  //     title: "Comprehensive AEM Managed Services",
-  //     description:
-  //       "From hosting to updates, our AEM Managed Services keep your CMS running smoothly.",
-  //   },
-  //   {
-  //     title: "Custom AEM Development",
-  //     description:
-  //       "Tailored AEM development solutions to meet the unique needs of your business.",
-  //   },
-  //   {
-  //     title: "AEM Edge Delivery:",
-  //     description:
-  //       "Leverage AEM's Edge Delivery to accelerate global content delivery, ensuring fast, scalable, and secure experiences for your users—regardless of location.",
-  //   },
-  //   {
-  //     title: "Certified Adobe Experts",
-  //     description:
-  //       "Work with certified Adobe Experience Manager developers with years of expertise.",
-  //   },
-  //   {
-  //     title: "Seamless AEM Migration",
-  //     description: "Migrate to AEM with zero downtime and no data loss.",
-  //   },
-  //   {
-  //     title: "24/7 Support",
-  //     description:
-  //       "Continuous monitoring and proactive support for your Adobe Experience Manager platform.",
-  //   },
-  // ];
-
   return (
     <section
       className={cn(styles.whyChooseUs, !theme ? styles.whyChooseUsDark : "")}
@@ -74,19 +42,16 @@ const WhyChooseUs = ({ id, props }) => {
             <h6 className={cn(styles.ourValuesTitle, "gradient-text")}>
               {props?.Title}
             </h6>
-            <h3 className={cn(styles.ourValuesHeading, "gradient-text")} dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}>
-
-              {/* Enhance your digital experiences with scalable, secure, and
-              efficient <span>AEM Managed Services.</span> */}
-            </h3>
+            <h3
+              className={cn(styles.ourValuesHeading, "gradient-text")}
+              dangerouslySetInnerHTML={{ __html: `${props?.SubTitle}` }}
+            ></h3>
           </div>
         </TextRevel>
 
         <div className={styles.ourValuesContent}>
           <div className={styles.toggleSection}>
-            <p className={styles.ourValuesText}>
-              {props?.Description}
-            </p>
+            <p className={styles.ourValuesText}>{props?.Description}</p>
             <div className={styles.ourValuesAccordion}>
               {props?.aemQuesAns?.map((data, index) => (
                 <Disclosure key={index}>
