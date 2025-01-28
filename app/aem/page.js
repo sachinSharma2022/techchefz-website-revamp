@@ -1,3 +1,4 @@
+import ClientScrollWrapper from "@/app/aem/useLocomotiveScroll";
 import AdobeSection from "@/components/aem/adobeSection";
 import AemServices from "@/components/aem/aemServices";
 import AemTheProcess from "@/components/aem/AemTheProcess";
@@ -9,7 +10,6 @@ import RelatedCase from "@/components/relatedCase";
 import { api_Case_study_Page, api_google_ads_Page } from "@/lib/constants";
 import { getData, getDataDynamic } from "@/lib/fetchData";
 import NotFound from "../not-found";
-import ClientScrollWrapper from "@/app/aem/useLocomotiveScroll";
 
 export async function generateMetadata() {
   const data = await getData(api_google_ads_Page);
@@ -46,7 +46,11 @@ const AEMPage = async () => {
           <AemHeroBanner props={data.HeroBanner} />
           <AemImageBanner props={data.imagebanner} />
           <ClientScrollWrapper>
-            <WhyChooseUs props={data.whyChooseUs} id="why-choose-us" data-scroll-section />
+            <WhyChooseUs
+              props={data.whyChooseUs}
+              id="why-choose-us"
+              data-scroll-section
+            />
           </ClientScrollWrapper>
           <AemTestimonials props={data.AemTestimonials} />
           <AemServices props={data.aemServices} />
