@@ -6,7 +6,6 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import styles from "./style.module.scss";
 import { base_Uri } from "@/lib/constants";
 
-
 const AemImageBanner = ({ props }) => {
   console.log("hi shivaji", props);
   const { theme } = useContext(MyContext);

@@ -10,7 +10,6 @@ import { useContext } from "react";
 import styles from "./style.module.scss";
 
 const AemHeroBanner = ({ props }) => {
-
   console.log("hi prasad", props);
   const { theme } = useContext(MyContext);
   const scrollToForm = () => {
@@ -23,8 +22,9 @@ const AemHeroBanner = ({ props }) => {
   return (
     <>
       <section
-        className={`${styles.heroBannerStyle} ${theme ? styles.heroBannerDark : ""
-          }`}
+        className={`${styles.heroBannerStyle} ${
+          theme ? styles.heroBannerDark : ""
+        }`}
       >
         <TextRevel>
           <div className={cn("header-container")}>
