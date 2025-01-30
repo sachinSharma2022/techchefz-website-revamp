@@ -1,16 +1,15 @@
 import AboutBanner from "@/components/about/aboutBanner";
-import FounderDesk from "@/components/about/founderDesk";
+import NewsMedia from "@/components/about/newsMedia";
 import OurClients from "@/components/about/ourClients";
 import OurHistory from "@/components/about/ourHistory";
 import OurResults from "@/components/about/ourResults";
-import OurTeam from "@/components/about/ourTeam";
 import OurValues from "@/components/about/ourValues";
 import OurVision from "@/components/about/ourVision";
 import WhatWeDo from "@/components/about/whatWeDo";
 import LetsWork from "@/components/home/letsWork";
-import NotFound from "../not-found";
 import { api_About_Page } from "@/lib/constants";
 import { getData } from "@/lib/fetchData";
+import NotFound from "../not-found";
 
 export async function generateMetadata() {
   const data = await getData(api_About_Page);
@@ -24,7 +23,8 @@ export async function generateMetadata() {
     metaViewport: data?.SeoData?.metaViewport,
     canonicalURL: data?.SeoData?.canonicalURL,
     metaSocialTitle: data?.SeoData?.metaSocial?.socialNetwork?.title,
-    metaSocialDescription: data?.SeoData?.metaSocial?.socialNetwork?.description,
+    metaSocialDescription:
+      data?.SeoData?.metaSocial?.socialNetwork?.description,
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_STRAPIE_BASE_URL}${data?.SeoData?.metaSocial?.socialNetwork?.image?.data?.attributes?.url}`, // Must be an absolute URL
@@ -51,8 +51,9 @@ const AboutPage = async () => {
           <WhatWeDo props={data.WhatWeDoComponent} />
           <OurValues props={data.Ourvaluesection} />
           <OurResults props={data.Result} />
-          <FounderDesk props={data.FounderDesk} />
-          <OurTeam props={data.Team} />
+          <NewsMedia props={data.MediaSection} />
+          {/* <FounderDesk props={data.FounderDesk} />
+          <OurTeam props={data.Team} /> */}
           <OurClients props={data.OurClient} />
           <LetsWork contact={data.ContactUs} />
         </div>

@@ -19,6 +19,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
   const [isTechMenu, setTechMenu] = useState(null);
   const [isMoreMenu, setMoreMenu] = useState(null);
   const [isSolutionMenu, setSolutionMenu] = useState(null);
+  const [isAboutMenu, setAboutMenu] = useState(null);
 
   const { theme, setTheme } = useContext(MyContext);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -66,14 +67,16 @@ const NavigationMobile = ({ props, featureArticle }) => {
     setMobileMenuShow(!mobileMenuShow);
     setTechMenu(null);
     setMoreMenu(null);
-    setSolutionMenu(false)
+    setAboutMenu(null);
+    setSolutionMenu(false);
   };
 
   const closeMenu = () => {
     setMobileMenuShow(!mobileMenuShow);
     setTechMenu(false);
     setMoreMenu(false);
-    setSolutionMenu(false)
+    setAboutMenu(false);
+    setSolutionMenu(false);
   };
   const onlycloseMenu = () => {
     setMobileMenuShow(!mobileMenuShow);
@@ -86,6 +89,11 @@ const NavigationMobile = ({ props, featureArticle }) => {
     setMobileMenuShow(!mobileMenuShow);
     setMoreMenu(false);
   };
+  const onlyCloseAboutMenu = () => {
+    setMobileMenuShow(!mobileMenuShow);
+    setAboutMenu(false);
+  };
+
   const onlycloseSolutionMenu = () => {
     setMobileMenuShow(!mobileMenuShow);
     setSolutionMenu(false);
@@ -116,9 +124,10 @@ const NavigationMobile = ({ props, featureArticle }) => {
                 }
                 width={300}
                 height={300}
-                alt = {feartureArray[0]?.attributes?.InsightOverview[0]?.Image?.data
-                  ?.attributes?.alternativeText}
-                
+                alt={
+                  feartureArray[0]?.attributes?.InsightOverview[0]?.Image?.data
+                    ?.attributes?.alternativeText
+                }
               />
             </div>
             <div className={styles.infoBox}>
@@ -161,7 +170,9 @@ const NavigationMobile = ({ props, featureArticle }) => {
               }
               width={56}
               height={56}
-              alt = {props[2]?.DropDown[0]?.Image?.data?.attributes?.alternativeText}
+              alt={
+                props[2]?.DropDown[0]?.Image?.data?.attributes?.alternativeText
+              }
             />
           </div>
           <div className={styles.overviewTitle}>
@@ -183,6 +194,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
       </div>
     );
   }
+
   function SolutionTech() {
     return (
       <div className={styles.overviewFlex}>
@@ -196,7 +208,47 @@ const NavigationMobile = ({ props, featureArticle }) => {
               }
               width={56}
               height={56}
-              alt = {props[2]?.DropDown[0]?.Image?.data?.attributes?.alternativeText}
+              alt={
+                props[2]?.DropDown[0]?.Image?.data?.attributes?.alternativeText
+              }
+            />
+          </div>
+          <div className={styles.overviewTitle}>
+            <h3 className={styles.title}>{props[2]?.DropDown[0]?.Title}</h3>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: `${props[2]?.DropDown[0]?.Description}`,
+              }}
+            ></p>
+          </div>
+        </div>
+        <div className={styles.overviewBtn}>
+          <Link href={props[2]?.DropDown[0]?.Links}>
+            <Button onClick={closeMenu} variant="outline" size="sm">
+              Overview <Icons.ArrowRight size={18} />
+            </Button>
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  function AboutTech() {
+    return (
+      <div className={styles.overviewFlex}>
+        <div className={styles.overviewSubFlex}>
+          <div>
+            <ImageCustom
+              src={
+                props[2]?.DropDown[0]?.Image?.data?.attributes?.url
+                  ? `${base_Uri}${props[2]?.DropDown[0]?.Image?.data?.attributes?.url}`
+                  : `${base_Uri}/`
+              }
+              width={56}
+              height={56}
+              alt={
+                props[2]?.DropDown[0]?.Image?.data?.attributes?.alternativeText
+              }
             />
           </div>
           <div className={styles.overviewTitle}>
@@ -237,6 +289,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
           mobileMenuShow={mobileMenuShow}
           isTechMenu={isTechMenu}
           isMoreMenu={isMoreMenu}
+          isAboutMenu={isAboutMenu}
           isSolutionMenu={isSolutionMenu}
           setMobileMenuShow={setMobileMenuShow}
           setTechMenu={setTechMenu}
@@ -245,23 +298,62 @@ const NavigationMobile = ({ props, featureArticle }) => {
         <nav className={mobileMenuShow ? styles.showNav : styles.hideNav}>
           <h4 className={styles.mobileTitle}>Menu</h4>
           <ul>
-            <li className={styles.menuItem}>
-              <Link
-                href={props[0]?.Link}
-                onClick={onlycloseMenu}
-                className={pathname == "/about" ? styles.active : ""}
-              >
-                {props[0]?.Title}
-              </Link>
-            </li>
             <li className={styles.dropDown}>
-              {/* <Link
-                href={props[1]?.Link}
-                onClick={onlycloseMenu}
+              <button
+                className={cn(styles.linkButton)}
+                onClick={() => setAboutMenu(true)}
               >
-                {props[1]?.Title}
-              </Link> */}
+                {props[0]?.Title} <div className={styles.arrow} />
+              </button>
 
+              <ul
+                className={cn(
+                  styles.subMenu,
+                  isAboutMenu === true
+                    ? styles.slideIn
+                    : isAboutMenu != null
+                      ? styles.slideOut
+                      : ""
+                )}
+              >
+                <div className={styles.subsection}>
+                  <button
+                    className={styles.backButton}
+                    onClick={() => setAboutMenu(false)}
+                  >
+                    <Icons.ArrowLeft />
+                    Go Back
+                  </button>
+
+                  <div className={cn(styles.overviewTech)}>
+                    <div className={cn(styles.multiHrefs)}>
+                      <div className="row">
+                        <div className="col-sm-12">
+                          <Link
+                            href={props[0]?.DropDown[0]?.Links}
+                            onClick={onlyCloseAboutMenu}
+                            className={cn(styles.hrefInnerFlex)}
+                          >
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>
+                                {props[0]?.DropDown[0]?.Title}
+                                {/* Leadership */}
+                              </h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              {props[0]?.DropDown[0]?.Description}
+                            </p>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ul>
+            </li>
+
+            <li className={styles.dropDown}>
               <button
                 className={cn(styles.linkButton)}
                 onClick={() => setSolutionMenu(true)}
@@ -275,8 +367,8 @@ const NavigationMobile = ({ props, featureArticle }) => {
                   isSolutionMenu === true
                     ? styles.slideIn
                     : isSolutionMenu != null
-                    ? styles.slideOut
-                    : ""
+                      ? styles.slideOut
+                      : ""
                 )}
               >
                 <div className={styles.subsection}>
@@ -299,7 +391,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                           >
                             <div className={styles.head}>
                               <h4 className={styles.linkTitle}>
-                              {props[1]?.DropDown[0]?.Title}
+                                {props[1]?.DropDown[0]?.Title}
                               </h4>
                               <Icons.ArrowForward />
                             </div>
@@ -314,7 +406,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                           >
                             <div className={styles.head}>
                               <h4 className={styles.linkTitle}>
-                              {props[1]?.DropDown[1]?.Title}
+                                {props[1]?.DropDown[1]?.Title}
                               </h4>
                               <Icons.ArrowForward />
                             </div>
@@ -329,7 +421,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                           >
                             <div className={styles.head}>
                               <h4 className={styles.linkTitle}>
-                              {props[1]?.DropDown[2]?.Title}
+                                {props[1]?.DropDown[2]?.Title}
                               </h4>
                               <Icons.ArrowForward />
                             </div>
@@ -345,6 +437,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                 </div>
               </ul>
             </li>
+
             <li className={styles.dropDown}>
               <button
                 className={cn(styles.linkButton)}
@@ -359,8 +452,8 @@ const NavigationMobile = ({ props, featureArticle }) => {
                   isTechMenu === true
                     ? styles.slideIn
                     : isTechMenu != null
-                    ? styles.slideOut
-                    : ""
+                      ? styles.slideOut
+                      : ""
                 )}
               >
                 <div className={styles.subsection}>
@@ -469,22 +562,6 @@ const NavigationMobile = ({ props, featureArticle }) => {
                               {props[2]?.DropDown[6]?.Description}
                             </p>
                           </Link>
-                          {/* <Link
-                            href={props[2]?.DropDown[7]?.Links}
-                            
-                            className={cn(styles.hrefInnerFlex)}
-                            onClick={onlycloseTechMenu}
-                          >
-                            <div className={styles.head}>
-                              <h4 className={styles.linkTitle}>
-                                {props[2]?.DropDown[7]?.Title}
-                              </h4>
-                              <Icons.ArrowForward />
-                            </div>
-                            <p className={styles.excepPara}>
-                              {props[2]?.DropDown[7]?.Description}
-                            </p>
-                          </Link> */}
                         </div>
                       </div>
                     </div>
@@ -494,6 +571,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                 </div>
               </ul>
             </li>
+
             <li className={styles.menuItem}>
               <Link
                 href={props[3].Link}
@@ -503,6 +581,7 @@ const NavigationMobile = ({ props, featureArticle }) => {
                 {props[3].Title}
               </Link>
             </li>
+
             <li className={styles.dropDown}>
               <button
                 className={styles.linkButton}
@@ -523,8 +602,8 @@ const NavigationMobile = ({ props, featureArticle }) => {
                   isMoreMenu === true
                     ? styles.slideIn
                     : isMoreMenu != null
-                    ? styles.slideOut
-                    : ""
+                      ? styles.slideOut
+                      : ""
                 )}
               >
                 <div className={styles.subsection}>

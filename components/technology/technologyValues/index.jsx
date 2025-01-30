@@ -75,7 +75,7 @@ const TechnologyValues = ({ props, wrapperStyle }) => {
                   }
                   width={2560}
                   height={1068}
-                  alt = {data?.SliderImage?.data?.attributes?.alternativeText}
+                  alt={data?.SliderImage?.data?.attributes?.alternativeText}
                 />
               </SwiperSlide>
             ))}
@@ -103,7 +103,7 @@ const TechnologyValues = ({ props, wrapperStyle }) => {
                         ? `${base_Uri}${data?.Images?.data?.attributes?.url}`
                         : `${base_Uri}/`
                     }
-                    alt = {data?.Images?.data?.attributes?.alternativeText}
+                    alt={data?.Images?.data?.attributes?.alternativeText}
                   />
                   <h4 className={styles.subTitle}>{data?.Title}</h4>
                   <p className={styles.content}>{data?.Description} </p>

@@ -13,6 +13,8 @@ import { useContext, useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
 const NavigationDesktop = ({ props, featureArticle }) => {
+
+  // console.log("shivanand ji", props);
   const pathname = usePathname();
   const { theme, setTheme } = useContext(MyContext);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -76,8 +78,10 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                 }
                 width={300}
                 height={300}
-                alt = {feartureArray[0]?.attributes?.InsightOverview[0]?.Image?.data
-                  ?.attributes?.alternativeText}
+                alt={
+                  feartureArray[0]?.attributes?.InsightOverview[0]?.Image?.data
+                    ?.attributes?.alternativeText
+                }
               />
             </div>
             <div className={styles.infoBox}>
@@ -127,12 +131,14 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                 }
                 width={300}
                 height={300}
-                alt = {feartureArray[0]?.attributes?.InsightOverview[0]?.Image?.data
-                  ?.attributes?.alternativeText}
+                alt={
+                  feartureArray[0]?.attributes?.InsightOverview[0]?.Image?.data
+                    ?.attributes?.alternativeText
+                }
               />
             </div>
             <div className={styles.infoBox}>
-             {  feartureArray[0]?.attributes?.InsightOverview[0].Title}
+              {feartureArray[0]?.attributes?.InsightOverview[0].Title}
               <Icons.ArrowRight size={16} />
             </div>
           </Link>
@@ -143,9 +149,49 @@ const NavigationDesktop = ({ props, featureArticle }) => {
           >
             <div className={styles.imageTech}>
               <div className={styles.infoBox}>
-                <p className={styles.description}> {feartureArray[1]?.attributes?.InsightOverview[0].Title}</p>
+                <p className={styles.description}>
+                  {" "}
+                  {feartureArray[1]?.attributes?.InsightOverview[0].Title}
+                </p>
                 <Icons.ArrowRight size={16} />
               </div>
+            </div>
+          </Link>
+        </div>
+      </>
+    );
+  }
+
+  function AboutTech(feartureArray) {
+    return (
+      <>
+        <div className={cn(styles.latestTech)}>
+          <h3 className={styles.title}>{props[2]?.DropDown[8]?.Title}</h3>
+          <Link
+            href={`/insights/${generateSlug(
+              feartureArray[0]?.attributes?.InsightOverview[0].Title
+            )}`}
+            className={styles.imageTech}
+          >
+            <div className={styles.imgBox}>
+              <ImageCustom
+                src={
+                  feartureArray[0]?.attributes?.InsightOverview[0]?.Image?.data
+                    ?.attributes?.url
+                    ? `${base_Uri}${feartureArray[0]?.attributes?.InsightOverview[0]?.Image?.data?.attributes?.url}`
+                    : `${base_Uri}/`
+                }
+                width={300}
+                height={300}
+                alt={
+                  feartureArray[0]?.attributes?.InsightOverview[0]?.Image?.data
+                    ?.attributes?.alternativeText
+                }
+              />
+            </div>
+            <div className={styles.infoBox}>
+              {feartureArray[0]?.attributes?.InsightOverview[0].Title}
+              <Icons.ArrowRight size={16} />
             </div>
           </Link>
         </div>
@@ -166,7 +212,9 @@ const NavigationDesktop = ({ props, featureArticle }) => {
               }
               width={56}
               height={56}
-              alt = {props[2]?.DropDown[0]?.Image?.data?.attributes?.alternativeText}
+              alt={
+                props[2]?.DropDown[0]?.Image?.data?.attributes?.alternativeText
+              }
             />
           </div>
           <div className={styles.overviewTitle}>
@@ -204,14 +252,52 @@ const NavigationDesktop = ({ props, featureArticle }) => {
         <AnimatedLogo />
         <nav>
           <ul>
-            <li className={styles.menuItem}>
+            <li className={styles.dropDown} onMouseEnter={openMenu}>
               <Link
                 href={props[0].Link}
                 className={pathname == "/about" ? styles.active : ""}
               >
-                {props[0].Title}
+                {props[0].Title} <div className={styles.arrow} />
               </Link>
+
+              <ul
+                className={cn(
+                  styles.subMenu,
+                  styles.singleLayout,
+                  !isSubMenu && styles.subMenuHide
+                )}
+              >
+                <div className={cn(styles.subsection, styles.solutionSection)}>
+                  {AboutTech(solutionMore)}
+                  <div className={cn(styles.overviewTech, styles.aboutTech)}>
+                    <div className={cn(styles.multiHrefs)}>
+                      <div className="row">
+                        <div className="col-sm-12">
+                          <Link
+                            // href="/leadership"
+                            href={props[0]?.DropDown[0]?.Links}
+                            className={cn(styles.hrefInnerFlex)}
+                            onClick={closeMenu}
+                          >
+                            <div className={styles.head}>
+                              <h4 className={styles.linkTitle}>
+                                {/* Leadership */}
+                                {props[0]?.DropDown[0]?.Title}
+                              </h4>
+                              <Icons.ArrowForward />
+                            </div>
+                            <p className={styles.excepPara}>
+                              {props[0]?.DropDown[0]?.Description}
+                            </p>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ul>
             </li>
+
             <li className={styles.dropDown} onMouseEnter={openMenu}>
               <Link
                 href={props[1].Link}
@@ -239,7 +325,9 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                             onClick={closeMenu}
                           >
                             <div className={styles.head}>
-                              <h4 className={styles.linkTitle}>{props[1]?.DropDown[0]?.Title}</h4>
+                              <h4 className={styles.linkTitle}>
+                                {props[1]?.DropDown[0]?.Title}
+                              </h4>
                               <Icons.ArrowForward />
                             </div>
                             <p className={styles.excepPara}>
@@ -283,6 +371,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                 </div>
               </ul>
             </li>
+
             <li className={styles.dropDown} onMouseEnter={openMenu}>
               <Link
                 href={props[2].Link}
@@ -415,8 +504,8 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                   </div>
                 </div>
               </ul>
-
             </li>
+
             <li className={styles.menuItem}>
               <Link
                 href={props[3]?.Link}
@@ -425,6 +514,7 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                 {props[3]?.Title}
               </Link>
             </li>
+
             <li className={styles.dropDown} onMouseEnter={openMenu}>
               <button>
                 <Icons.MoreDotIcon
@@ -528,7 +618,6 @@ const NavigationDesktop = ({ props, featureArticle }) => {
                       </div>
                     </div>
                   </div>
-
                 </div>
               </ul>
             </li>

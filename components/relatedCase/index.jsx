@@ -24,7 +24,6 @@ const RelatedCase = ({
   params,
   RelatedInsight,
 }) => {
-  
   const { theme, setTheme } = useContext(MyContext);
 
   return (
@@ -38,7 +37,7 @@ const RelatedCase = ({
       <div className={cn("primary-container relative")}>
         <TextRevel>
           <div className={styles.headSection}>
-            <div>
+            <div className="slider-head-section">
               <h6
                 className={cn(styles.relatedCaseTitle, "gradient-text")}
                 dangerouslySetInnerHTML={{
@@ -112,9 +111,11 @@ const RelatedCase = ({
             className="mySwiper"
           >
             {props
-              .filter((data) => params?.caseStudy !== generateSlug(
-                data?.attributes?.Banner?.PortfolioTitle
-              ))
+              .filter(
+                (data) =>
+                  params?.caseStudy !==
+                  generateSlug(data?.attributes?.Banner?.PortfolioTitle)
+              )
               .map((data, index) => (
                 <SwiperSlide key={index}>
                   <CaptionCard
@@ -127,8 +128,10 @@ const RelatedCase = ({
                             ?.attributes?.url
                         : `${base_Uri}/`
                     }
-                    alt = {data?.attributes?.Banner?.PortfolioImage?.data
-                      ?.attributes?.alternativeText}
+                    alt={
+                      data?.attributes?.Banner?.PortfolioImage?.data?.attributes
+                        ?.alternativeText
+                    }
                     title={data?.attributes?.Banner?.PortfolioTitle}
                     redirect={generateSlug(
                       data?.attributes?.Banner?.PortfolioTitle

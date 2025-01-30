@@ -16,21 +16,6 @@
     padding: 5rem spacing(mobile-padding);
   }
 
-  // For Space
-  // &.spaceStyle {
-  //   margin-block: 7.5rem;
-
-  //   @include tablet {
-  //     margin-block: 5rem;
-  //     padding: 0 spacing(tablet-padding) 0;
-  //   }
-
-  //   @include mobile {
-  //     margin-block: 0rem 5rem;
-  //     padding: 5rem spacing(mobile-padding) 0;
-  //   }
-  // }
-
   .headSection {
     display: flex;
     justify-content: space-between;
@@ -128,6 +113,7 @@
 
   .textStyle {
     max-width: 80%;
+    color: color(primary-black);
   }
 
   // Dark theme style
@@ -167,5 +153,10 @@
         background-color: color(info-blue);
       }
     }
+
+    .textStyle {
+      color: color(primary-white);
+    }
+  
   }
 }

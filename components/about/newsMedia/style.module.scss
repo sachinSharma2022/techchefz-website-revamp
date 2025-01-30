@@ -1,0 +1,323 @@
+@import "~/styles/partials/config";
+
+.newsMedia {
+  padding-inline: spacing(section-primary-padding);
+  padding-bottom: 7rem;
+
+  @include tablet {
+    padding: 3.75rem spacing(tablet-padding);
+  }
+
+  @include mobile {
+    padding: 3.75rem spacing(mobile-padding);
+  }
+
+  .headingSec {
+    margin-bottom: 5rem;
+
+    @include mobile {
+      margin-bottom: 3rem;
+    }
+
+    .subTitle {
+      color: color(text-primary);
+      text-transform: uppercase;
+      opacity: opacity(light);
+      font-size: text(normal);
+      font-weight: 500;
+      line-height: 1.5rem;
+      letter-spacing: 0.2rem;
+      font-weight: 700;
+
+      @include mobile-tablet-p {
+        font-weight: 400;
+      }
+    }
+
+    .title {
+      font-size: 2.75rem;
+      color: color(text-primary);
+
+      @include mobile {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .mediaContent {
+    max-width: 40vw;
+
+    @include mobile {
+      max-width: 100%;
+    }
+
+    .subTitle {
+      font-size: 1.25rem;
+      line-height: 24px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-weight: 300;
+
+      @include mobile {
+        font-size: 1rem;
+        line-height: 20px;
+      }
+
+      .textBlue {
+        font-size: 1.25rem;
+        line-height: 24px;
+
+        @include mobile {
+          font-size: 1rem;
+          line-height: 20px;
+        }
+      }
+    }
+
+    .title {
+      font-size: 2rem;
+      color: color(text-primary);
+      line-height: 41px;
+
+      @include mobile {
+        font-size: 1.5rem;
+        line-height: 30px;
+      }
+    }
+  }
+
+  .imageSection {
+    display: flex;
+    gap: 143px;
+    color: color(text-primary);
+
+    @include mobile {
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .imageStyle {
+      width: 100%;
+      max-width: 580px;
+      height: 326px;
+      position: relative;
+      border-radius: text(lg);
+      overflow: hidden;
+      border: 0.14rem solid transparent;
+      @include transition(0.5s);
+
+      &:hover {
+        border-color:color(heading-liner);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .textBlue {
+    color: color(heading-liner);
+    line-height: 19.2px;
+  }
+
+  .textWhite {
+    font-size: 1rem;
+    line-height: 19.2px;
+  }
+
+  .circle {
+    width: 4px;
+    height: 4px;
+    background: color(text-primary);
+    display: block;
+    border-radius: 100px;
+  }
+
+  .sliderSection {
+    margin-top: 6.25rem;
+    color: color(primary-white);
+
+    @include mobile {
+      margin-top: 3.125rem;
+    }
+
+    .cardStyle {
+      background: color(bg-soft);
+      border: 1px solid rgba(color(text-primary), 0.12);
+      padding: 2rem;
+      border-radius: text(lg);
+      height: 470px;
+      @include truncate(3);
+      @include transition(0.5s);
+
+      &:hover {
+        border-color:color(heading-liner);
+      }
+
+      @include mobile {
+        height: 400px;
+        padding: 1rem;
+      }
+    }
+
+    .textCard {
+      margin-top: 2.5rem;
+
+      @include mobile {
+        margin-top: 2rem;
+      }
+    }
+
+    .flexText {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: color(text-primary);
+
+      p {
+        margin: 0;
+
+        @include mobile {
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .cardTitleStyle {
+      font-size: 1.5rem;
+      line-height: 31.2px;
+      margin-top: 20px;
+      @include truncate(4);
+      color:  color(text-primary);;
+
+      @include mobile {
+        font-size: 1.2rem;
+        line-height: 1.4;
+      }
+    }
+
+    .sliderImage {
+      width: 100%;
+      height: 187px;
+      position: relative;
+      border-radius: 6px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .customSliderNav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 60px;
+    position: relative;
+    z-index: 9;
+
+    @include mobile {
+      justify-content: flex-start;
+      margin-top: 40px;
+      gap: 10px;
+    }
+
+    .btn {
+      width: 60px;
+      height: 60px;
+      background-color: color(primary-blue);
+      color: color(primary-white);
+      font-size: 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include mobile {
+        width: 50px;
+        height: 50px;
+      }
+
+      svg path {
+        stroke: color(primary-white);
+      }
+    }
+
+    .page {
+      width: 60px;
+      height: 60px;
+      border: 1px solid rgba(color(text-primary), 0.6);
+      color: color(text-primary);
+      font-size: 20px;
+      border-radius: 8px;
+      cursor: pointer;
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    .btnDisabled {
+      border: 1px solid rgba(color(text-primary), 0.12);
+      background-color: transparent;
+
+      svg path {
+        stroke: rgba(color(text-primary), 0.6);
+      }
+    }
+  }
+
+  // Dark Mode
+  &.newsMediaDark {
+    background-color: color(input-bg);
+
+    .headingSec, .mediaContent,  .imageSection, .cardTitleStyle,  .flexText, .subTitle, .title  {
+      color: color(primary-white);
+    }
+
+    .circle {
+      background-color: color(primary-white);
+    }
+
+    .cardStyle {
+      background: color(text-primary);
+      border: 1px solid rgba(color(primary-white), 0.12);
+    }
+
+    .customSliderNav {
+      .btn {
+        background-color: color(primary-blue);
+        color: color(primary-white);
+  
+        svg path {
+          stroke: color(primary-white);
+        }
+      }
+  
+      .page {
+        border: 1px solid rgba(color(primary-white), 0.6);
+        color: color(primary-white);
+      }
+  
+      .btnDisabled {
+        border: 1px solid rgba(color(primary-white), 0.12);
+        background-color: transparent;
+  
+        svg path {
+          stroke: rgba(color(primary-white), 0.6);
+        }
+      }
+    }
+  }
+}

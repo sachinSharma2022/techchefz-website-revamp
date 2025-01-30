@@ -19,7 +19,10 @@ export default function ThemeProvider({ children }) {
 
   return (
     <MyContext.Provider value={{ theme, setTheme }}>
-      <main suppressHydrationWarning={true} className={cn("main-container", theme ? "dark" : "")}>
+      <main
+        suppressHydrationWarning={true}
+        className={cn("main-container", theme ? "dark" : "")}
+      >
         {children}
       </main>
     </MyContext.Provider>

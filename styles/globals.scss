@@ -1031,6 +1031,23 @@ html.lenis {
   }
 }
 
+.case-study-style {
+  background-color: color(primary-white);
+  padding-bottom: 0 !important;
+
+  @include mobile-tablet-p {
+    padding-block:3rem !important;
+  }
+
+  .slider-head-section {
+    max-width: 60%;
+
+    @include mobile-tablet-p {
+      max-width: 100%;
+    }
+  }
+}
+
 .fadeinout {
   animation: fadeinout 1s ease-in-out;
 }
@@ -1229,7 +1246,7 @@ html.lenis {
 
   // For Related slider
   .tech-related-style,
-  .cms-related-style {
+  .cms-related-style, .case-study-style  {
     background-color: color(dark-bg);
   }
 
@@ -1242,6 +1259,14 @@ html.lenis {
       svg {
         filter: none;
       }
+    }
+  }
+
+  .case-study-style {
+    padding-block: 0 7.5rem !important;
+
+    @include mobile-tablet-p {
+      padding-block:2rem 3rem !important;
     }
   }
 }

@@ -13,7 +13,6 @@ import { ImageCustom } from "@/components/ui/imageCustom";
 import TextRevel from "@/components/ui/sectionAnimation";
 
 const OurResults = ({ props }) => {
-
   const { theme, setTheme } = useContext(MyContext);
   const isMobileScreen = useMediaQuery({ query: "(max-width: 690px)" });
 
@@ -51,7 +50,7 @@ const OurResults = ({ props }) => {
                           ? `${base_Uri}${data?.Image?.data?.attributes?.url}`
                           : `${base_Uri}/`
                       }
-                      alt = {data?.Image?.data?.attributes?.alternativeText}
+                      alt={data?.Image?.data?.attributes?.alternativeText}
                     />
                   </div>
                 </div>
