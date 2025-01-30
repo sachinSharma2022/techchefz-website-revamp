@@ -1,15 +1,15 @@
-import ClientScrollWrapper from "@/app/aem/useLocomotiveScroll";
-import AdobeSection from "@/components/aem/adobeSection";
-import AemServices from "@/components/aem/aemServices";
-import AemTheProcess from "@/components/aem/AemTheProcess";
-import AemHeroBanner from "@/components/aem/heroBanner";
-import AemImageBanner from "@/components/aem/imageBanner";
-import AemTestimonials from "@/components/aem/testimonials";
-import WhyChooseUs from "@/components/aem/whyChooseUs";
+import AdobeSection from "@/components/aemSolutions/adobeSection";
+import AemServices from "@/components/aemSolutions/aemServices";
+import AemTheProcess from "@/components/aemSolutions/AemTheProcess";
+import AemHeroBanner from "@/components/aemSolutions/heroBanner";
+import AemImageBanner from "@/components/aemSolutions/imageBanner";
+import AemTestimonials from "@/components/aemSolutions/testimonials";
+import WhyChooseUs from "@/components/aemSolutions/whyChooseUs";
 import RelatedCase from "@/components/relatedCase";
 import { api_Case_study_Page, api_google_ads_Page } from "@/lib/constants";
 import { getData, getDataDynamic } from "@/lib/fetchData";
 import NotFound from "../not-found";
+import ClientScrollWrapper from "./useLocomotiveScroll";
 
 export async function generateMetadata() {
   const data = await getData(api_google_ads_Page);
