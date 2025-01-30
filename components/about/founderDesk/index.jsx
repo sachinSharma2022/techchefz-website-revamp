@@ -61,16 +61,15 @@ const FounderDesk = ({ props }) => {
           <div className={styles.teamCards}>
             <div className={styles.teamCardBg}>
               <div className={styles.cardHead}>
-                <div>
-                  <h4
-                    dangerouslySetInnerHTML={{ __html: `${props?.name}` }}
-                  ></h4>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: `${props?.Designation}`,
-                    }}
-                  ></p>
-                </div>
+                <h4
+                  className="mb-0"
+                  dangerouslySetInnerHTML={{ __html: `${props?.name}` }}
+                ></h4>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: `${props?.Designation}`,
+                  }}
+                ></p>
               </div>
               <ImageCustom
                 src={

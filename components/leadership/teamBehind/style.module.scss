@@ -259,7 +259,11 @@
   }
 
   .bannerImg {
-    margin-top: -3rem;
+    height: 679px;
+
+    @include mobile-tablet-p {
+      height: 235px;
+    }
     
     img {
       width: 100%;
